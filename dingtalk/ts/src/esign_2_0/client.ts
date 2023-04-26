@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -53,10 +55,12 @@ export class ApprovalListResponseBody extends $tea.Model {
 
 export class ApprovalListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ApprovalListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -64,6 +68,7 @@ export class ApprovalListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ApprovalListResponseBody,
     };
   }
@@ -135,10 +140,12 @@ export class CancelCorpAuthResponseBody extends $tea.Model {
 
 export class CancelCorpAuthResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CancelCorpAuthResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -146,6 +153,7 @@ export class CancelCorpAuthResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CancelCorpAuthResponseBody,
     };
   }
@@ -235,10 +243,12 @@ export class ChannelOrdersResponseBody extends $tea.Model {
 
 export class ChannelOrdersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ChannelOrdersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -246,6 +256,7 @@ export class ChannelOrdersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ChannelOrdersResponseBody,
     };
   }
@@ -329,10 +340,12 @@ export class CorpRealnameResponseBody extends $tea.Model {
 
 export class CorpRealnameResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CorpRealnameResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -340,6 +353,7 @@ export class CorpRealnameResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CorpRealnameResponseBody,
     };
   }
@@ -414,10 +428,12 @@ export class CreateDevelopersResponseBody extends $tea.Model {
 
 export class CreateDevelopersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateDevelopersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -425,6 +441,7 @@ export class CreateDevelopersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateDevelopersResponseBody,
     };
   }
@@ -517,10 +534,12 @@ export class CreateProcessResponseBody extends $tea.Model {
 
 export class CreateProcessResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateProcessResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -528,6 +547,7 @@ export class CreateProcessResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateProcessResponseBody,
     };
   }
@@ -586,10 +606,12 @@ export class GetAttachsApprovalResponseBody extends $tea.Model {
 
 export class GetAttachsApprovalResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAttachsApprovalResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -597,6 +619,7 @@ export class GetAttachsApprovalResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAttachsApprovalResponseBody,
     };
   }
@@ -677,10 +700,12 @@ export class GetAuthUrlResponseBody extends $tea.Model {
 
 export class GetAuthUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAuthUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -688,6 +713,7 @@ export class GetAuthUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAuthUrlResponseBody,
     };
   }
@@ -743,10 +769,12 @@ export class GetContractMarginResponseBody extends $tea.Model {
 
 export class GetContractMarginResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetContractMarginResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -754,6 +782,7 @@ export class GetContractMarginResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetContractMarginResponseBody,
     };
   }
@@ -809,10 +838,12 @@ export class GetCorpConsoleResponseBody extends $tea.Model {
 
 export class GetCorpConsoleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCorpConsoleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -820,6 +851,7 @@ export class GetCorpConsoleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCorpConsoleResponseBody,
     };
   }
@@ -878,10 +910,12 @@ export class GetCorpInfoResponseBody extends $tea.Model {
 
 export class GetCorpInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCorpInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -889,6 +923,7 @@ export class GetCorpInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCorpInfoResponseBody,
     };
   }
@@ -978,10 +1013,12 @@ export class GetExecuteUrlResponseBody extends $tea.Model {
 
 export class GetExecuteUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetExecuteUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -989,6 +1026,7 @@ export class GetExecuteUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetExecuteUrlResponseBody,
     };
   }
@@ -1059,10 +1097,12 @@ export class GetFileInfoResponseBody extends $tea.Model {
 
 export class GetFileInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFileInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1070,6 +1110,7 @@ export class GetFileInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFileInfoResponseBody,
     };
   }
@@ -1159,10 +1200,12 @@ export class GetFileUploadUrlResponseBody extends $tea.Model {
 
 export class GetFileUploadUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFileUploadUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1170,6 +1213,7 @@ export class GetFileUploadUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFileUploadUrlResponseBody,
     };
   }
@@ -1237,10 +1281,12 @@ export class GetFlowDetailResponseBody extends $tea.Model {
 
 export class GetFlowDetailResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFlowDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1248,6 +1294,7 @@ export class GetFlowDetailResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFlowDetailResponseBody,
     };
   }
@@ -1303,10 +1350,12 @@ export class GetFlowDocsResponseBody extends $tea.Model {
 
 export class GetFlowDocsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFlowDocsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1314,6 +1363,7 @@ export class GetFlowDocsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFlowDocsResponseBody,
     };
   }
@@ -1372,10 +1422,12 @@ export class GetIsvStatusResponseBody extends $tea.Model {
 
 export class GetIsvStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetIsvStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1383,6 +1435,7 @@ export class GetIsvStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetIsvStatusResponseBody,
     };
   }
@@ -1444,10 +1497,12 @@ export class GetSignDetailResponseBody extends $tea.Model {
 
 export class GetSignDetailResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSignDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1455,6 +1510,7 @@ export class GetSignDetailResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSignDetailResponseBody,
     };
   }
@@ -1513,10 +1569,12 @@ export class GetUserInfoResponseBody extends $tea.Model {
 
 export class GetUserInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1524,6 +1582,7 @@ export class GetUserInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserInfoResponseBody,
     };
   }
@@ -1625,10 +1684,12 @@ export class ProcessStartResponseBody extends $tea.Model {
 
 export class ProcessStartResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ProcessStartResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1636,6 +1697,7 @@ export class ProcessStartResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ProcessStartResponseBody,
     };
   }
@@ -1722,10 +1784,12 @@ export class ResaleOrderResponseBody extends $tea.Model {
 
 export class ResaleOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ResaleOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1733,6 +1797,7 @@ export class ResaleOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ResaleOrderResponseBody,
     };
   }
@@ -1816,10 +1881,12 @@ export class UsersRealnameResponseBody extends $tea.Model {
 
 export class UsersRealnameResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UsersRealnameResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1827,6 +1894,7 @@ export class UsersRealnameResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UsersRealnameResponseBody,
     };
   }
@@ -2323,9 +2391,12 @@ export class ProcessStartRequestSourceInfo extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2334,14 +2405,7 @@ export default class Client extends OpenApi {
   }
 
 
-  async approvalList(taskId: string): Promise<ApprovalListResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ApprovalListHeaders({ });
-    return await this.approvalListWithOptions(taskId, headers, runtime);
-  }
-
   async approvalListWithOptions(taskId: string, headers: ApprovalListHeaders, runtime: $Util.RuntimeOptions): Promise<ApprovalListResponse> {
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2358,13 +2422,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<ApprovalListResponse>(await this.doROARequest("ApprovalList", "esign_2.0", "HTTP", "GET", "AK", `/v2.0/esign/approvals/${taskId}`, "json", req, runtime), new ApprovalListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ApprovalList",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/approvals/${taskId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ApprovalListResponse>(await this.execute(params, req, runtime), new ApprovalListResponse({}));
   }
 
-  async cancelCorpAuth(request: CancelCorpAuthRequest): Promise<CancelCorpAuthResponse> {
+  async approvalList(taskId: string): Promise<ApprovalListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CancelCorpAuthHeaders({ });
-    return await this.cancelCorpAuthWithOptions(request, headers, runtime);
+    let headers = new ApprovalListHeaders({ });
+    return await this.approvalListWithOptions(taskId, headers, runtime);
   }
 
   async cancelCorpAuthWithOptions(request: CancelCorpAuthRequest, headers: CancelCorpAuthHeaders, runtime: $Util.RuntimeOptions): Promise<CancelCorpAuthResponse> {
@@ -2385,13 +2460,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<CancelCorpAuthResponse>(await this.doROARequest("CancelCorpAuth", "esign_2.0", "HTTP", "POST", "AK", `/v2.0/esign/auths/cancel`, "json", req, runtime), new CancelCorpAuthResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CancelCorpAuth",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/auths/cancel`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CancelCorpAuthResponse>(await this.execute(params, req, runtime), new CancelCorpAuthResponse({}));
   }
 
-  async channelOrders(request: ChannelOrdersRequest): Promise<ChannelOrdersResponse> {
+  async cancelCorpAuth(request: CancelCorpAuthRequest): Promise<CancelCorpAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ChannelOrdersHeaders({ });
-    return await this.channelOrdersWithOptions(request, headers, runtime);
+    let headers = new CancelCorpAuthHeaders({ });
+    return await this.cancelCorpAuthWithOptions(request, headers, runtime);
   }
 
   async channelOrdersWithOptions(request: ChannelOrdersRequest, headers: ChannelOrdersHeaders, runtime: $Util.RuntimeOptions): Promise<ChannelOrdersResponse> {
@@ -2438,13 +2524,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ChannelOrdersResponse>(await this.doROARequest("ChannelOrders", "esign_2.0", "HTTP", "POST", "AK", `/v2.0/esign/orders/channel`, "json", req, runtime), new ChannelOrdersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ChannelOrders",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/orders/channel`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ChannelOrdersResponse>(await this.execute(params, req, runtime), new ChannelOrdersResponse({}));
   }
 
-  async corpRealname(request: CorpRealnameRequest): Promise<CorpRealnameResponse> {
+  async channelOrders(request: ChannelOrdersRequest): Promise<ChannelOrdersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CorpRealnameHeaders({ });
-    return await this.corpRealnameWithOptions(request, headers, runtime);
+    let headers = new ChannelOrdersHeaders({ });
+    return await this.channelOrdersWithOptions(request, headers, runtime);
   }
 
   async corpRealnameWithOptions(request: CorpRealnameRequest, headers: CorpRealnameHeaders, runtime: $Util.RuntimeOptions): Promise<CorpRealnameResponse> {
@@ -2475,13 +2572,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CorpRealnameResponse>(await this.doROARequest("CorpRealname", "esign_2.0", "HTTP", "POST", "AK", `/v2.0/esign/corps/realnames`, "json", req, runtime), new CorpRealnameResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CorpRealname",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/corps/realnames`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CorpRealnameResponse>(await this.execute(params, req, runtime), new CorpRealnameResponse({}));
   }
 
-  async createDevelopers(request: CreateDevelopersRequest): Promise<CreateDevelopersResponse> {
+  async corpRealname(request: CorpRealnameRequest): Promise<CorpRealnameResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateDevelopersHeaders({ });
-    return await this.createDevelopersWithOptions(request, headers, runtime);
+    let headers = new CorpRealnameHeaders({ });
+    return await this.corpRealnameWithOptions(request, headers, runtime);
   }
 
   async createDevelopersWithOptions(request: CreateDevelopersRequest, headers: CreateDevelopersHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDevelopersResponse> {
@@ -2508,13 +2616,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateDevelopersResponse>(await this.doROARequest("CreateDevelopers", "esign_2.0", "HTTP", "POST", "AK", `/v2.0/esign/developers`, "json", req, runtime), new CreateDevelopersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateDevelopers",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/developers`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateDevelopersResponse>(await this.execute(params, req, runtime), new CreateDevelopersResponse({}));
   }
 
-  async createProcess(request: CreateProcessRequest): Promise<CreateProcessResponse> {
+  async createDevelopers(request: CreateDevelopersRequest): Promise<CreateDevelopersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateProcessHeaders({ });
-    return await this.createProcessWithOptions(request, headers, runtime);
+    let headers = new CreateDevelopersHeaders({ });
+    return await this.createDevelopersWithOptions(request, headers, runtime);
   }
 
   async createProcessWithOptions(request: CreateProcessRequest, headers: CreateProcessHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProcessResponse> {
@@ -2565,17 +2684,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateProcessResponse>(await this.doROARequest("CreateProcess", "esign_2.0", "HTTP", "POST", "AK", `/v2.0/esign/process/startAtOnce`, "json", req, runtime), new CreateProcessResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateProcess",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/process/startAtOnce`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateProcessResponse>(await this.execute(params, req, runtime), new CreateProcessResponse({}));
   }
 
-  async getAttachsApproval(instanceId: string): Promise<GetAttachsApprovalResponse> {
+  async createProcess(request: CreateProcessRequest): Promise<CreateProcessResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAttachsApprovalHeaders({ });
-    return await this.getAttachsApprovalWithOptions(instanceId, headers, runtime);
+    let headers = new CreateProcessHeaders({ });
+    return await this.createProcessWithOptions(request, headers, runtime);
   }
 
   async getAttachsApprovalWithOptions(instanceId: string, headers: GetAttachsApprovalHeaders, runtime: $Util.RuntimeOptions): Promise<GetAttachsApprovalResponse> {
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2596,13 +2725,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetAttachsApprovalResponse>(await this.doROARequest("GetAttachsApproval", "esign_2.0", "HTTP", "GET", "AK", `/v2.0/esign/dingInstances/${instanceId}/attachments`, "json", req, runtime), new GetAttachsApprovalResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAttachsApproval",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/dingInstances/${instanceId}/attachments`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAttachsApprovalResponse>(await this.execute(params, req, runtime), new GetAttachsApprovalResponse({}));
   }
 
-  async getAuthUrl(request: GetAuthUrlRequest): Promise<GetAuthUrlResponse> {
+  async getAttachsApproval(instanceId: string): Promise<GetAttachsApprovalResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAuthUrlHeaders({ });
-    return await this.getAuthUrlWithOptions(request, headers, runtime);
+    let headers = new GetAttachsApprovalHeaders({ });
+    return await this.getAttachsApprovalWithOptions(instanceId, headers, runtime);
   }
 
   async getAuthUrlWithOptions(request: GetAuthUrlRequest, headers: GetAuthUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetAuthUrlResponse> {
@@ -2629,13 +2769,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetAuthUrlResponse>(await this.doROARequest("GetAuthUrl", "esign_2.0", "HTTP", "POST", "AK", `/v2.0/esign/auths/urls`, "json", req, runtime), new GetAuthUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAuthUrl",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/auths/urls`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAuthUrlResponse>(await this.execute(params, req, runtime), new GetAuthUrlResponse({}));
   }
 
-  async getContractMargin(): Promise<GetContractMarginResponse> {
+  async getAuthUrl(request: GetAuthUrlRequest): Promise<GetAuthUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetContractMarginHeaders({ });
-    return await this.getContractMarginWithOptions(headers, runtime);
+    let headers = new GetAuthUrlHeaders({ });
+    return await this.getAuthUrlWithOptions(request, headers, runtime);
   }
 
   async getContractMarginWithOptions(headers: GetContractMarginHeaders, runtime: $Util.RuntimeOptions): Promise<GetContractMarginResponse> {
@@ -2655,13 +2806,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetContractMarginResponse>(await this.doROARequest("GetContractMargin", "esign_2.0", "HTTP", "GET", "AK", `/v2.0/esign/margins`, "json", req, runtime), new GetContractMarginResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetContractMargin",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/margins`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetContractMarginResponse>(await this.execute(params, req, runtime), new GetContractMarginResponse({}));
   }
 
-  async getCorpConsole(): Promise<GetCorpConsoleResponse> {
+  async getContractMargin(): Promise<GetContractMarginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCorpConsoleHeaders({ });
-    return await this.getCorpConsoleWithOptions(headers, runtime);
+    let headers = new GetContractMarginHeaders({ });
+    return await this.getContractMarginWithOptions(headers, runtime);
   }
 
   async getCorpConsoleWithOptions(headers: GetCorpConsoleHeaders, runtime: $Util.RuntimeOptions): Promise<GetCorpConsoleResponse> {
@@ -2681,13 +2843,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetCorpConsoleResponse>(await this.doROARequest("GetCorpConsole", "esign_2.0", "HTTP", "GET", "AK", `/v2.0/esign/corps/consoles`, "json", req, runtime), new GetCorpConsoleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCorpConsole",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/corps/consoles`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCorpConsoleResponse>(await this.execute(params, req, runtime), new GetCorpConsoleResponse({}));
   }
 
-  async getCorpInfo(): Promise<GetCorpInfoResponse> {
+  async getCorpConsole(): Promise<GetCorpConsoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCorpInfoHeaders({ });
-    return await this.getCorpInfoWithOptions(headers, runtime);
+    let headers = new GetCorpConsoleHeaders({ });
+    return await this.getCorpConsoleWithOptions(headers, runtime);
   }
 
   async getCorpInfoWithOptions(headers: GetCorpInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetCorpInfoResponse> {
@@ -2707,13 +2880,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetCorpInfoResponse>(await this.doROARequest("GetCorpInfo", "esign_2.0", "HTTP", "GET", "AK", `/v2.0/esign/corps/infos`, "json", req, runtime), new GetCorpInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCorpInfo",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/corps/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCorpInfoResponse>(await this.execute(params, req, runtime), new GetCorpInfoResponse({}));
   }
 
-  async getExecuteUrl(request: GetExecuteUrlRequest): Promise<GetExecuteUrlResponse> {
+  async getCorpInfo(): Promise<GetCorpInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetExecuteUrlHeaders({ });
-    return await this.getExecuteUrlWithOptions(request, headers, runtime);
+    let headers = new GetCorpInfoHeaders({ });
+    return await this.getCorpInfoWithOptions(headers, runtime);
   }
 
   async getExecuteUrlWithOptions(request: GetExecuteUrlRequest, headers: GetExecuteUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetExecuteUrlResponse> {
@@ -2748,17 +2932,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetExecuteUrlResponse>(await this.doROARequest("GetExecuteUrl", "esign_2.0", "HTTP", "POST", "AK", `/v2.0/esign/process/executeUrls`, "json", req, runtime), new GetExecuteUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetExecuteUrl",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/process/executeUrls`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetExecuteUrlResponse>(await this.execute(params, req, runtime), new GetExecuteUrlResponse({}));
   }
 
-  async getFileInfo(fileId: string): Promise<GetFileInfoResponse> {
+  async getExecuteUrl(request: GetExecuteUrlRequest): Promise<GetExecuteUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFileInfoHeaders({ });
-    return await this.getFileInfoWithOptions(fileId, headers, runtime);
+    let headers = new GetExecuteUrlHeaders({ });
+    return await this.getExecuteUrlWithOptions(request, headers, runtime);
   }
 
   async getFileInfoWithOptions(fileId: string, headers: GetFileInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileInfoResponse> {
-    fileId = OpenApiUtil.getEncodeParam(fileId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2775,13 +2969,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetFileInfoResponse>(await this.doROARequest("GetFileInfo", "esign_2.0", "HTTP", "GET", "AK", `/v2.0/esign/files/${fileId}`, "json", req, runtime), new GetFileInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFileInfo",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/files/${fileId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFileInfoResponse>(await this.execute(params, req, runtime), new GetFileInfoResponse({}));
   }
 
-  async getFileUploadUrl(request: GetFileUploadUrlRequest): Promise<GetFileUploadUrlResponse> {
+  async getFileInfo(fileId: string): Promise<GetFileInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFileUploadUrlHeaders({ });
-    return await this.getFileUploadUrlWithOptions(request, headers, runtime);
+    let headers = new GetFileInfoHeaders({ });
+    return await this.getFileInfoWithOptions(fileId, headers, runtime);
   }
 
   async getFileUploadUrlWithOptions(request: GetFileUploadUrlRequest, headers: GetFileUploadUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileUploadUrlResponse> {
@@ -2824,7 +3029,55 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetFileUploadUrlResponse>(await this.doROARequest("GetFileUploadUrl", "esign_2.0", "HTTP", "POST", "AK", `/v2.0/esign/files/uploadUrls`, "json", req, runtime), new GetFileUploadUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFileUploadUrl",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/files/uploadUrls`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFileUploadUrlResponse>(await this.execute(params, req, runtime), new GetFileUploadUrlResponse({}));
+  }
+
+  async getFileUploadUrl(request: GetFileUploadUrlRequest): Promise<GetFileUploadUrlResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetFileUploadUrlHeaders({ });
+    return await this.getFileUploadUrlWithOptions(request, headers, runtime);
+  }
+
+  async getFlowDetailWithOptions(taskId: string, headers: GetFlowDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlowDetailResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.serviceGroup)) {
+      realHeaders["serviceGroup"] = Util.toJSONString(headers.serviceGroup);
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "GetFlowDetail",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/flowTasks/${taskId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFlowDetailResponse>(await this.execute(params, req, runtime), new GetFlowDetailResponse({}));
   }
 
   async getFlowDetail(taskId: string): Promise<GetFlowDetailResponse> {
@@ -2833,8 +3086,7 @@ export default class Client extends OpenApi {
     return await this.getFlowDetailWithOptions(taskId, headers, runtime);
   }
 
-  async getFlowDetailWithOptions(taskId: string, headers: GetFlowDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlowDetailResponse> {
-    taskId = OpenApiUtil.getEncodeParam(taskId);
+  async getFlowDocsWithOptions(taskId: string, headers: GetFlowDocsHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlowDocsResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2851,40 +3103,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetFlowDetailResponse>(await this.doROARequest("GetFlowDetail", "esign_2.0", "HTTP", "GET", "AK", `/v2.0/esign/flowTasks/${taskId}`, "json", req, runtime), new GetFlowDetailResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFlowDocs",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/flowTasks/${taskId}/docs`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFlowDocsResponse>(await this.execute(params, req, runtime), new GetFlowDocsResponse({}));
   }
 
   async getFlowDocs(taskId: string): Promise<GetFlowDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetFlowDocsHeaders({ });
     return await this.getFlowDocsWithOptions(taskId, headers, runtime);
-  }
-
-  async getFlowDocsWithOptions(taskId: string, headers: GetFlowDocsHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlowDocsResponse> {
-    taskId = OpenApiUtil.getEncodeParam(taskId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.serviceGroup)) {
-      realHeaders["serviceGroup"] = Util.toJSONString(headers.serviceGroup);
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetFlowDocsResponse>(await this.doROARequest("GetFlowDocs", "esign_2.0", "HTTP", "GET", "AK", `/v2.0/esign/flowTasks/${taskId}/docs`, "json", req, runtime), new GetFlowDocsResponse({}));
-  }
-
-  async getIsvStatus(): Promise<GetIsvStatusResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetIsvStatusHeaders({ });
-    return await this.getIsvStatusWithOptions(headers, runtime);
   }
 
   async getIsvStatusWithOptions(headers: GetIsvStatusHeaders, runtime: $Util.RuntimeOptions): Promise<GetIsvStatusResponse> {
@@ -2904,7 +3140,55 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetIsvStatusResponse>(await this.doROARequest("GetIsvStatus", "esign_2.0", "HTTP", "GET", "AK", `/v2.0/esign/corps/appStatus`, "json", req, runtime), new GetIsvStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetIsvStatus",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/corps/appStatus`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetIsvStatusResponse>(await this.execute(params, req, runtime), new GetIsvStatusResponse({}));
+  }
+
+  async getIsvStatus(): Promise<GetIsvStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetIsvStatusHeaders({ });
+    return await this.getIsvStatusWithOptions(headers, runtime);
+  }
+
+  async getSignDetailWithOptions(taskId: string, headers: GetSignDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignDetailResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.serviceGroup)) {
+      realHeaders["serviceGroup"] = Util.toJSONString(headers.serviceGroup);
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "GetSignDetail",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/signTasks/${taskId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSignDetailResponse>(await this.execute(params, req, runtime), new GetSignDetailResponse({}));
   }
 
   async getSignDetail(taskId: string): Promise<GetSignDetailResponse> {
@@ -2913,8 +3197,7 @@ export default class Client extends OpenApi {
     return await this.getSignDetailWithOptions(taskId, headers, runtime);
   }
 
-  async getSignDetailWithOptions(taskId: string, headers: GetSignDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignDetailResponse> {
-    taskId = OpenApiUtil.getEncodeParam(taskId);
+  async getUserInfoWithOptions(userId: string, headers: GetUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserInfoResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2931,40 +3214,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetSignDetailResponse>(await this.doROARequest("GetSignDetail", "esign_2.0", "HTTP", "GET", "AK", `/v2.0/esign/signTasks/${taskId}`, "json", req, runtime), new GetSignDetailResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserInfo",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/users/${userId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserInfoResponse>(await this.execute(params, req, runtime), new GetUserInfoResponse({}));
   }
 
   async getUserInfo(userId: string): Promise<GetUserInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserInfoHeaders({ });
     return await this.getUserInfoWithOptions(userId, headers, runtime);
-  }
-
-  async getUserInfoWithOptions(userId: string, headers: GetUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserInfoResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.serviceGroup)) {
-      realHeaders["serviceGroup"] = Util.toJSONString(headers.serviceGroup);
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetUserInfoResponse>(await this.doROARequest("GetUserInfo", "esign_2.0", "HTTP", "GET", "AK", `/v2.0/esign/users/${userId}`, "json", req, runtime), new GetUserInfoResponse({}));
-  }
-
-  async processStart(request: ProcessStartRequest): Promise<ProcessStartResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ProcessStartHeaders({ });
-    return await this.processStartWithOptions(request, headers, runtime);
   }
 
   async processStartWithOptions(request: ProcessStartRequest, headers: ProcessStartHeaders, runtime: $Util.RuntimeOptions): Promise<ProcessStartResponse> {
@@ -3019,13 +3286,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ProcessStartResponse>(await this.doROARequest("ProcessStart", "esign_2.0", "HTTP", "POST", "AK", `/v2.0/esign/processes/startUrls`, "json", req, runtime), new ProcessStartResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ProcessStart",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/processes/startUrls`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ProcessStartResponse>(await this.execute(params, req, runtime), new ProcessStartResponse({}));
   }
 
-  async resaleOrder(request: ResaleOrderRequest): Promise<ResaleOrderResponse> {
+  async processStart(request: ProcessStartRequest): Promise<ProcessStartResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ResaleOrderHeaders({ });
-    return await this.resaleOrderWithOptions(request, headers, runtime);
+    let headers = new ProcessStartHeaders({ });
+    return await this.processStartWithOptions(request, headers, runtime);
   }
 
   async resaleOrderWithOptions(request: ResaleOrderRequest, headers: ResaleOrderHeaders, runtime: $Util.RuntimeOptions): Promise<ResaleOrderResponse> {
@@ -3068,13 +3346,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ResaleOrderResponse>(await this.doROARequest("ResaleOrder", "esign_2.0", "HTTP", "POST", "AK", `/v2.0/esign/orders/resale`, "json", req, runtime), new ResaleOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ResaleOrder",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/orders/resale`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ResaleOrderResponse>(await this.execute(params, req, runtime), new ResaleOrderResponse({}));
   }
 
-  async usersRealname(request: UsersRealnameRequest): Promise<UsersRealnameResponse> {
+  async resaleOrder(request: ResaleOrderRequest): Promise<ResaleOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UsersRealnameHeaders({ });
-    return await this.usersRealnameWithOptions(request, headers, runtime);
+    let headers = new ResaleOrderHeaders({ });
+    return await this.resaleOrderWithOptions(request, headers, runtime);
   }
 
   async usersRealnameWithOptions(request: UsersRealnameRequest, headers: UsersRealnameHeaders, runtime: $Util.RuntimeOptions): Promise<UsersRealnameResponse> {
@@ -3105,7 +3394,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UsersRealnameResponse>(await this.doROARequest("UsersRealname", "esign_2.0", "HTTP", "POST", "AK", `/v2.0/esign/users/realnames`, "json", req, runtime), new UsersRealnameResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UsersRealname",
+      version: "esign_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/esign/users/realnames`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UsersRealnameResponse>(await this.execute(params, req, runtime), new UsersRealnameResponse({}));
+  }
+
+  async usersRealname(request: UsersRealnameRequest): Promise<UsersRealnameResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UsersRealnameHeaders({ });
+    return await this.usersRealnameWithOptions(request, headers, runtime);
   }
 
 }

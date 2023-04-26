@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -84,10 +86,12 @@ export class CreateMiniAppResponseBody extends $tea.Model {
 
 export class CreateMiniAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateMiniAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -95,6 +99,7 @@ export class CreateMiniAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateMiniAppResponseBody,
     };
   }
@@ -181,10 +186,12 @@ export class CreateMiniAppPluginResponseBody extends $tea.Model {
 
 export class CreateMiniAppPluginResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateMiniAppPluginResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -192,6 +199,7 @@ export class CreateMiniAppPluginResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateMiniAppPluginResponseBody,
     };
   }
@@ -275,10 +283,12 @@ export class CreateVersionAcrossBundleResponseBody extends $tea.Model {
 
 export class CreateVersionAcrossBundleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateVersionAcrossBundleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -286,6 +296,7 @@ export class CreateVersionAcrossBundleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateVersionAcrossBundleResponseBody,
     };
   }
@@ -363,10 +374,12 @@ export class GetMaxVersionResponseBody extends $tea.Model {
 
 export class GetMaxVersionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetMaxVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -374,6 +387,7 @@ export class GetMaxVersionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetMaxVersionResponseBody,
     };
   }
@@ -463,10 +477,12 @@ export class GetMiniAppMetaDataResponseBody extends $tea.Model {
 
 export class GetMiniAppMetaDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetMiniAppMetaDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -474,6 +490,7 @@ export class GetMiniAppMetaDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetMiniAppMetaDataResponseBody,
     };
   }
@@ -526,10 +543,12 @@ export class GetSettingByMiniAppIdResponseBody extends $tea.Model {
 
 export class GetSettingByMiniAppIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSettingByMiniAppIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -537,6 +556,7 @@ export class GetSettingByMiniAppIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSettingByMiniAppIdResponseBody,
     };
   }
@@ -614,10 +634,12 @@ export class InvokeHtmlBundleBuildResponseBody extends $tea.Model {
 
 export class InvokeHtmlBundleBuildResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: InvokeHtmlBundleBuildResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -625,6 +647,7 @@ export class InvokeHtmlBundleBuildResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: InvokeHtmlBundleBuildResponseBody,
     };
   }
@@ -708,10 +731,12 @@ export class ListAvaiableVersionResponseBody extends $tea.Model {
 
 export class ListAvaiableVersionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListAvaiableVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -719,6 +744,7 @@ export class ListAvaiableVersionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListAvaiableVersionResponseBody,
     };
   }
@@ -796,10 +822,12 @@ export class QueryHtmlBundleBuildResponseBody extends $tea.Model {
 
 export class QueryHtmlBundleBuildResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryHtmlBundleBuildResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -807,6 +835,7 @@ export class QueryHtmlBundleBuildResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryHtmlBundleBuildResponseBody,
     };
   }
@@ -865,10 +894,12 @@ export class RollBackVersionResponseBody extends $tea.Model {
 
 export class RollBackVersionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RollBackVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -876,6 +907,7 @@ export class RollBackVersionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RollBackVersionResponseBody,
     };
   }
@@ -950,10 +982,12 @@ export class SetExtendSettingResponseBody extends $tea.Model {
 
 export class SetExtendSettingResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SetExtendSettingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -961,6 +995,7 @@ export class SetExtendSettingResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SetExtendSettingResponseBody,
     };
   }
@@ -1041,10 +1076,12 @@ export class UpdateVersionStatusResponseBody extends $tea.Model {
 
 export class UpdateVersionStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateVersionStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1052,6 +1089,7 @@ export class UpdateVersionStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateVersionStatusResponseBody,
     };
   }
@@ -1113,9 +1151,13 @@ export class ListAvaiableVersionResponseBodyVersions extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
+    this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1123,12 +1165,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async createMiniApp(request: CreateMiniAppRequest): Promise<CreateMiniAppResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateMiniAppHeaders({ });
-    return await this.createMiniAppWithOptions(request, headers, runtime);
-  }
 
   async createMiniAppWithOptions(request: CreateMiniAppRequest, headers: CreateMiniAppHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMiniAppResponse> {
     Util.validateModel(request);
@@ -1170,13 +1206,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateMiniAppResponse>(await this.doROARequest("CreateMiniApp", "miniapp_1.0", "HTTP", "POST", "AK", `/v1.0/miniapp/apps`, "json", req, runtime), new CreateMiniAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateMiniApp",
+      version: "miniapp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/miniapp/apps`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateMiniAppResponse>(await this.execute(params, req, runtime), new CreateMiniAppResponse({}));
   }
 
-  async createMiniAppPlugin(request: CreateMiniAppPluginRequest): Promise<CreateMiniAppPluginResponse> {
+  async createMiniApp(request: CreateMiniAppRequest): Promise<CreateMiniAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateMiniAppPluginHeaders({ });
-    return await this.createMiniAppPluginWithOptions(request, headers, runtime);
+    let headers = new CreateMiniAppHeaders({ });
+    return await this.createMiniAppWithOptions(request, headers, runtime);
   }
 
   async createMiniAppPluginWithOptions(request: CreateMiniAppPluginRequest, headers: CreateMiniAppPluginHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMiniAppPluginResponse> {
@@ -1219,13 +1266,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateMiniAppPluginResponse>(await this.doROARequest("CreateMiniAppPlugin", "miniapp_1.0", "HTTP", "POST", "AK", `/v1.0/miniapp/plugins`, "json", req, runtime), new CreateMiniAppPluginResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateMiniAppPlugin",
+      version: "miniapp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/miniapp/plugins`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateMiniAppPluginResponse>(await this.execute(params, req, runtime), new CreateMiniAppPluginResponse({}));
   }
 
-  async createVersionAcrossBundle(request: CreateVersionAcrossBundleRequest): Promise<CreateVersionAcrossBundleResponse> {
+  async createMiniAppPlugin(request: CreateMiniAppPluginRequest): Promise<CreateMiniAppPluginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateVersionAcrossBundleHeaders({ });
-    return await this.createVersionAcrossBundleWithOptions(request, headers, runtime);
+    let headers = new CreateMiniAppPluginHeaders({ });
+    return await this.createMiniAppPluginWithOptions(request, headers, runtime);
   }
 
   async createVersionAcrossBundleWithOptions(request: CreateVersionAcrossBundleRequest, headers: CreateVersionAcrossBundleHeaders, runtime: $Util.RuntimeOptions): Promise<CreateVersionAcrossBundleResponse> {
@@ -1264,13 +1322,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateVersionAcrossBundleResponse>(await this.doROARequest("CreateVersionAcrossBundle", "miniapp_1.0", "HTTP", "POST", "AK", `/v1.0/miniapp/versions/createAcrossBundle`, "json", req, runtime), new CreateVersionAcrossBundleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateVersionAcrossBundle",
+      version: "miniapp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/miniapp/versions/createAcrossBundle`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateVersionAcrossBundleResponse>(await this.execute(params, req, runtime), new CreateVersionAcrossBundleResponse({}));
   }
 
-  async getMaxVersion(request: GetMaxVersionRequest): Promise<GetMaxVersionResponse> {
+  async createVersionAcrossBundle(request: CreateVersionAcrossBundleRequest): Promise<CreateVersionAcrossBundleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetMaxVersionHeaders({ });
-    return await this.getMaxVersionWithOptions(request, headers, runtime);
+    let headers = new CreateVersionAcrossBundleHeaders({ });
+    return await this.createVersionAcrossBundleWithOptions(request, headers, runtime);
   }
 
   async getMaxVersionWithOptions(request: GetMaxVersionRequest, headers: GetMaxVersionHeaders, runtime: $Util.RuntimeOptions): Promise<GetMaxVersionResponse> {
@@ -1301,13 +1370,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetMaxVersionResponse>(await this.doROARequest("GetMaxVersion", "miniapp_1.0", "HTTP", "GET", "AK", `/v1.0/miniapp/apps/maxVersions`, "json", req, runtime), new GetMaxVersionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetMaxVersion",
+      version: "miniapp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/miniapp/apps/maxVersions`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetMaxVersionResponse>(await this.execute(params, req, runtime), new GetMaxVersionResponse({}));
   }
 
-  async getMiniAppMetaData(request: GetMiniAppMetaDataRequest): Promise<GetMiniAppMetaDataResponse> {
+  async getMaxVersion(request: GetMaxVersionRequest): Promise<GetMaxVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetMiniAppMetaDataHeaders({ });
-    return await this.getMiniAppMetaDataWithOptions(request, headers, runtime);
+    let headers = new GetMaxVersionHeaders({ });
+    return await this.getMaxVersionWithOptions(request, headers, runtime);
   }
 
   async getMiniAppMetaDataWithOptions(request: GetMiniAppMetaDataRequest, headers: GetMiniAppMetaDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetMiniAppMetaDataResponse> {
@@ -1342,17 +1422,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetMiniAppMetaDataResponse>(await this.doROARequest("GetMiniAppMetaData", "miniapp_1.0", "HTTP", "POST", "AK", `/v1.0/miniapp/apps/metadata`, "json", req, runtime), new GetMiniAppMetaDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetMiniAppMetaData",
+      version: "miniapp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/miniapp/apps/metadata`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetMiniAppMetaDataResponse>(await this.execute(params, req, runtime), new GetMiniAppMetaDataResponse({}));
   }
 
-  async getSettingByMiniAppId(miniAppId: string): Promise<GetSettingByMiniAppIdResponse> {
+  async getMiniAppMetaData(request: GetMiniAppMetaDataRequest): Promise<GetMiniAppMetaDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSettingByMiniAppIdHeaders({ });
-    return await this.getSettingByMiniAppIdWithOptions(miniAppId, headers, runtime);
+    let headers = new GetMiniAppMetaDataHeaders({ });
+    return await this.getMiniAppMetaDataWithOptions(request, headers, runtime);
   }
 
   async getSettingByMiniAppIdWithOptions(miniAppId: string, headers: GetSettingByMiniAppIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetSettingByMiniAppIdResponse> {
-    miniAppId = OpenApiUtil.getEncodeParam(miniAppId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -1365,13 +1455,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetSettingByMiniAppIdResponse>(await this.doROARequest("GetSettingByMiniAppId", "miniapp_1.0", "HTTP", "GET", "AK", `/v1.0/miniapp/apps/settings`, "json", req, runtime), new GetSettingByMiniAppIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSettingByMiniAppId",
+      version: "miniapp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/miniapp/apps/settings`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSettingByMiniAppIdResponse>(await this.execute(params, req, runtime), new GetSettingByMiniAppIdResponse({}));
   }
 
-  async invokeHtmlBundleBuild(request: InvokeHtmlBundleBuildRequest): Promise<InvokeHtmlBundleBuildResponse> {
+  async getSettingByMiniAppId(miniAppId: string): Promise<GetSettingByMiniAppIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new InvokeHtmlBundleBuildHeaders({ });
-    return await this.invokeHtmlBundleBuildWithOptions(request, headers, runtime);
+    let headers = new GetSettingByMiniAppIdHeaders({ });
+    return await this.getSettingByMiniAppIdWithOptions(miniAppId, headers, runtime);
   }
 
   async invokeHtmlBundleBuildWithOptions(request: InvokeHtmlBundleBuildRequest, headers: InvokeHtmlBundleBuildHeaders, runtime: $Util.RuntimeOptions): Promise<InvokeHtmlBundleBuildResponse> {
@@ -1402,13 +1503,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<InvokeHtmlBundleBuildResponse>(await this.doROARequest("InvokeHtmlBundleBuild", "miniapp_1.0", "HTTP", "POST", "AK", `/v1.0/miniapp/h5Bundles/build`, "json", req, runtime), new InvokeHtmlBundleBuildResponse({}));
+    let params = new $OpenApi.Params({
+      action: "InvokeHtmlBundleBuild",
+      version: "miniapp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/miniapp/h5Bundles/build`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<InvokeHtmlBundleBuildResponse>(await this.execute(params, req, runtime), new InvokeHtmlBundleBuildResponse({}));
   }
 
-  async listAvaiableVersion(request: ListAvaiableVersionRequest): Promise<ListAvaiableVersionResponse> {
+  async invokeHtmlBundleBuild(request: InvokeHtmlBundleBuildRequest): Promise<InvokeHtmlBundleBuildResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListAvaiableVersionHeaders({ });
-    return await this.listAvaiableVersionWithOptions(request, headers, runtime);
+    let headers = new InvokeHtmlBundleBuildHeaders({ });
+    return await this.invokeHtmlBundleBuildWithOptions(request, headers, runtime);
   }
 
   async listAvaiableVersionWithOptions(request: ListAvaiableVersionRequest, headers: ListAvaiableVersionHeaders, runtime: $Util.RuntimeOptions): Promise<ListAvaiableVersionResponse> {
@@ -1447,13 +1559,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ListAvaiableVersionResponse>(await this.doROARequest("ListAvaiableVersion", "miniapp_1.0", "HTTP", "POST", "AK", `/v1.0/miniapp/apps/versions/query`, "json", req, runtime), new ListAvaiableVersionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListAvaiableVersion",
+      version: "miniapp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/miniapp/apps/versions/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAvaiableVersionResponse>(await this.execute(params, req, runtime), new ListAvaiableVersionResponse({}));
   }
 
-  async queryHtmlBundleBuild(request: QueryHtmlBundleBuildRequest): Promise<QueryHtmlBundleBuildResponse> {
+  async listAvaiableVersion(request: ListAvaiableVersionRequest): Promise<ListAvaiableVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryHtmlBundleBuildHeaders({ });
-    return await this.queryHtmlBundleBuildWithOptions(request, headers, runtime);
+    let headers = new ListAvaiableVersionHeaders({ });
+    return await this.listAvaiableVersionWithOptions(request, headers, runtime);
   }
 
   async queryHtmlBundleBuildWithOptions(request: QueryHtmlBundleBuildRequest, headers: QueryHtmlBundleBuildHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHtmlBundleBuildResponse> {
@@ -1484,13 +1607,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryHtmlBundleBuildResponse>(await this.doROARequest("QueryHtmlBundleBuild", "miniapp_1.0", "HTTP", "GET", "AK", `/v1.0/miniapp/h5Bundles/buildResults`, "json", req, runtime), new QueryHtmlBundleBuildResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryHtmlBundleBuild",
+      version: "miniapp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/miniapp/h5Bundles/buildResults`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryHtmlBundleBuildResponse>(await this.execute(params, req, runtime), new QueryHtmlBundleBuildResponse({}));
   }
 
-  async rollBackVersion(request: RollBackVersionRequest): Promise<RollBackVersionResponse> {
+  async queryHtmlBundleBuild(request: QueryHtmlBundleBuildRequest): Promise<QueryHtmlBundleBuildResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers : {[key: string ]: string} = { };
-    return await this.rollBackVersionWithOptions(request, headers, runtime);
+    let headers = new QueryHtmlBundleBuildHeaders({ });
+    return await this.queryHtmlBundleBuildWithOptions(request, headers, runtime);
   }
 
   async rollBackVersionWithOptions(request: RollBackVersionRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<RollBackVersionResponse> {
@@ -1516,13 +1650,24 @@ export default class Client extends OpenApi {
       headers: headers,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RollBackVersionResponse>(await this.doROARequest("RollBackVersion", "miniapp_1.0", "HTTP", "POST", "AK", `/v1.0/miniapp/versions/rollback`, "json", req, runtime), new RollBackVersionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RollBackVersion",
+      version: "miniapp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/miniapp/versions/rollback`,
+      method: "POST",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RollBackVersionResponse>(await this.execute(params, req, runtime), new RollBackVersionResponse({}));
   }
 
-  async setExtendSetting(request: SetExtendSettingRequest): Promise<SetExtendSettingResponse> {
+  async rollBackVersion(request: RollBackVersionRequest): Promise<RollBackVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SetExtendSettingHeaders({ });
-    return await this.setExtendSettingWithOptions(request, headers, runtime);
+    let headers : {[key: string ]: string} = { };
+    return await this.rollBackVersionWithOptions(request, headers, runtime);
   }
 
   async setExtendSettingWithOptions(request: SetExtendSettingRequest, headers: SetExtendSettingHeaders, runtime: $Util.RuntimeOptions): Promise<SetExtendSettingResponse> {
@@ -1549,13 +1694,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SetExtendSettingResponse>(await this.doROARequest("SetExtendSetting", "miniapp_1.0", "HTTP", "PUT", "AK", `/v1.0/miniapp/apps/settings`, "json", req, runtime), new SetExtendSettingResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SetExtendSetting",
+      version: "miniapp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/miniapp/apps/settings`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SetExtendSettingResponse>(await this.execute(params, req, runtime), new SetExtendSettingResponse({}));
   }
 
-  async updateVersionStatus(request: UpdateVersionStatusRequest): Promise<UpdateVersionStatusResponse> {
+  async setExtendSetting(request: SetExtendSettingRequest): Promise<SetExtendSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateVersionStatusHeaders({ });
-    return await this.updateVersionStatusWithOptions(request, headers, runtime);
+    let headers = new SetExtendSettingHeaders({ });
+    return await this.setExtendSettingWithOptions(request, headers, runtime);
   }
 
   async updateVersionStatusWithOptions(request: UpdateVersionStatusRequest, headers: UpdateVersionStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateVersionStatusResponse> {
@@ -1590,7 +1746,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateVersionStatusResponse>(await this.doROARequest("UpdateVersionStatus", "miniapp_1.0", "HTTP", "POST", "AK", `/v1.0/miniapp/versions/status`, "json", req, runtime), new UpdateVersionStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateVersionStatus",
+      version: "miniapp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/miniapp/versions/status`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateVersionStatusResponse>(await this.execute(params, req, runtime), new UpdateVersionStatusResponse({}));
+  }
+
+  async updateVersionStatus(request: UpdateVersionStatusRequest): Promise<UpdateVersionStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateVersionStatusHeaders({ });
+    return await this.updateVersionStatusWithOptions(request, headers, runtime);
   }
 
 }

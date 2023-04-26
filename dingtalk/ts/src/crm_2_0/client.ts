@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -69,10 +71,12 @@ export class GetRelationUkSettingResponseBody extends $tea.Model {
 
 export class GetRelationUkSettingResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetRelationUkSettingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -80,6 +84,7 @@ export class GetRelationUkSettingResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetRelationUkSettingResponseBody,
     };
   }
@@ -154,9 +159,12 @@ export class GetRelationUkSettingResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -164,12 +172,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async getRelationUkSetting(request: GetRelationUkSettingRequest): Promise<GetRelationUkSettingResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetRelationUkSettingHeaders({ });
-    return await this.getRelationUkSettingWithOptions(request, headers, runtime);
-  }
 
   async getRelationUkSettingWithOptions(request: GetRelationUkSettingRequest, headers: GetRelationUkSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetRelationUkSettingResponse> {
     Util.validateModel(request);
@@ -191,7 +193,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetRelationUkSettingResponse>(await this.doROARequest("GetRelationUkSetting", "crm_2.0", "HTTP", "GET", "AK", `/v2.0/crm/relationUkSettings`, "json", req, runtime), new GetRelationUkSettingResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetRelationUkSetting",
+      version: "crm_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/crm/relationUkSettings`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRelationUkSettingResponse>(await this.execute(params, req, runtime), new GetRelationUkSettingResponse({}));
+  }
+
+  async getRelationUkSetting(request: GetRelationUkSettingRequest): Promise<GetRelationUkSettingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetRelationUkSettingHeaders({ });
+    return await this.getRelationUkSettingWithOptions(request, headers, runtime);
   }
 
 }

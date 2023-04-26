@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -69,10 +71,12 @@ export class BatchCreateTemplateResponseBody extends $tea.Model {
 
 export class BatchCreateTemplateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchCreateTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -80,6 +84,7 @@ export class BatchCreateTemplateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchCreateTemplateResponseBody,
     };
   }
@@ -151,10 +156,12 @@ export class BatchQueryByTemplateKeyResponseBody extends $tea.Model {
 
 export class BatchQueryByTemplateKeyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchQueryByTemplateKeyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -162,6 +169,7 @@ export class BatchQueryByTemplateKeyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchQueryByTemplateKeyResponseBody,
     };
   }
@@ -233,10 +241,12 @@ export class BatchUpdateTemplateResponseBody extends $tea.Model {
 
 export class BatchUpdateTemplateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchUpdateTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -244,6 +254,7 @@ export class BatchUpdateTemplateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchUpdateTemplateResponseBody,
     };
   }
@@ -296,10 +307,12 @@ export class QueryIndustryTagListResponseBody extends $tea.Model {
 
 export class QueryIndustryTagListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryIndustryTagListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -307,6 +320,7 @@ export class QueryIndustryTagListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryIndustryTagListResponseBody,
     };
   }
@@ -359,10 +373,12 @@ export class QueryRoleTagListResponseBody extends $tea.Model {
 
 export class QueryRoleTagListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryRoleTagListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -370,6 +386,7 @@ export class QueryRoleTagListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryRoleTagListResponseBody,
     };
   }
@@ -425,10 +442,12 @@ export class QueryTemplateCategorysResponseBody extends $tea.Model {
 
 export class QueryTemplateCategorysResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryTemplateCategorysResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -436,6 +455,7 @@ export class QueryTemplateCategorysResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryTemplateCategorysResponseBody,
     };
   }
@@ -507,10 +527,12 @@ export class RecallAuditTemplateResponseBody extends $tea.Model {
 
 export class RecallAuditTemplateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RecallAuditTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -518,6 +540,7 @@ export class RecallAuditTemplateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RecallAuditTemplateResponseBody,
     };
   }
@@ -815,9 +838,12 @@ export class RecallAuditTemplateResponseBodyRecallResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -825,12 +851,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async batchCreateTemplate(request: BatchCreateTemplateRequest): Promise<BatchCreateTemplateResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchCreateTemplateHeaders({ });
-    return await this.batchCreateTemplateWithOptions(request, headers, runtime);
-  }
 
   async batchCreateTemplateWithOptions(request: BatchCreateTemplateRequest, headers: BatchCreateTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<BatchCreateTemplateResponse> {
     Util.validateModel(request);
@@ -852,13 +872,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchCreateTemplateResponse>(await this.doROARequest("BatchCreateTemplate", "apaas_1.0", "HTTP", "POST", "AK", `/v1.0/apaas/templates`, "json", req, runtime), new BatchCreateTemplateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchCreateTemplate",
+      version: "apaas_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/apaas/templates`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchCreateTemplateResponse>(await this.execute(params, req, runtime), new BatchCreateTemplateResponse({}));
   }
 
-  async batchQueryByTemplateKey(request: BatchQueryByTemplateKeyRequest): Promise<BatchQueryByTemplateKeyResponse> {
+  async batchCreateTemplate(request: BatchCreateTemplateRequest): Promise<BatchCreateTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchQueryByTemplateKeyHeaders({ });
-    return await this.batchQueryByTemplateKeyWithOptions(request, headers, runtime);
+    let headers = new BatchCreateTemplateHeaders({ });
+    return await this.batchCreateTemplateWithOptions(request, headers, runtime);
   }
 
   async batchQueryByTemplateKeyWithOptions(request: BatchQueryByTemplateKeyRequest, headers: BatchQueryByTemplateKeyHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryByTemplateKeyResponse> {
@@ -881,13 +912,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchQueryByTemplateKeyResponse>(await this.doROARequest("BatchQueryByTemplateKey", "apaas_1.0", "HTTP", "POST", "AK", `/v1.0/apaas/templates/query`, "json", req, runtime), new BatchQueryByTemplateKeyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchQueryByTemplateKey",
+      version: "apaas_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/apaas/templates/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchQueryByTemplateKeyResponse>(await this.execute(params, req, runtime), new BatchQueryByTemplateKeyResponse({}));
   }
 
-  async batchUpdateTemplate(request: BatchUpdateTemplateRequest): Promise<BatchUpdateTemplateResponse> {
+  async batchQueryByTemplateKey(request: BatchQueryByTemplateKeyRequest): Promise<BatchQueryByTemplateKeyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchUpdateTemplateHeaders({ });
-    return await this.batchUpdateTemplateWithOptions(request, headers, runtime);
+    let headers = new BatchQueryByTemplateKeyHeaders({ });
+    return await this.batchQueryByTemplateKeyWithOptions(request, headers, runtime);
   }
 
   async batchUpdateTemplateWithOptions(request: BatchUpdateTemplateRequest, headers: BatchUpdateTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateTemplateResponse> {
@@ -910,13 +952,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchUpdateTemplateResponse>(await this.doROARequest("BatchUpdateTemplate", "apaas_1.0", "HTTP", "PUT", "AK", `/v1.0/apaas/templates`, "json", req, runtime), new BatchUpdateTemplateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchUpdateTemplate",
+      version: "apaas_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/apaas/templates`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchUpdateTemplateResponse>(await this.execute(params, req, runtime), new BatchUpdateTemplateResponse({}));
   }
 
-  async queryIndustryTagList(): Promise<QueryIndustryTagListResponse> {
+  async batchUpdateTemplate(request: BatchUpdateTemplateRequest): Promise<BatchUpdateTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryIndustryTagListHeaders({ });
-    return await this.queryIndustryTagListWithOptions(headers, runtime);
+    let headers = new BatchUpdateTemplateHeaders({ });
+    return await this.batchUpdateTemplateWithOptions(request, headers, runtime);
   }
 
   async queryIndustryTagListWithOptions(headers: QueryIndustryTagListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryIndustryTagListResponse> {
@@ -932,13 +985,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryIndustryTagListResponse>(await this.doROARequest("QueryIndustryTagList", "apaas_1.0", "HTTP", "GET", "AK", `/v1.0/apaas/templates/industries`, "json", req, runtime), new QueryIndustryTagListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryIndustryTagList",
+      version: "apaas_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/apaas/templates/industries`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryIndustryTagListResponse>(await this.execute(params, req, runtime), new QueryIndustryTagListResponse({}));
   }
 
-  async queryRoleTagList(): Promise<QueryRoleTagListResponse> {
+  async queryIndustryTagList(): Promise<QueryIndustryTagListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryRoleTagListHeaders({ });
-    return await this.queryRoleTagListWithOptions(headers, runtime);
+    let headers = new QueryIndustryTagListHeaders({ });
+    return await this.queryIndustryTagListWithOptions(headers, runtime);
   }
 
   async queryRoleTagListWithOptions(headers: QueryRoleTagListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRoleTagListResponse> {
@@ -954,13 +1018,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryRoleTagListResponse>(await this.doROARequest("QueryRoleTagList", "apaas_1.0", "HTTP", "GET", "AK", `/v1.0/apaas/templates/roles`, "json", req, runtime), new QueryRoleTagListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryRoleTagList",
+      version: "apaas_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/apaas/templates/roles`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryRoleTagListResponse>(await this.execute(params, req, runtime), new QueryRoleTagListResponse({}));
   }
 
-  async queryTemplateCategorys(): Promise<QueryTemplateCategorysResponse> {
+  async queryRoleTagList(): Promise<QueryRoleTagListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryTemplateCategorysHeaders({ });
-    return await this.queryTemplateCategorysWithOptions(headers, runtime);
+    let headers = new QueryRoleTagListHeaders({ });
+    return await this.queryRoleTagListWithOptions(headers, runtime);
   }
 
   async queryTemplateCategorysWithOptions(headers: QueryTemplateCategorysHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTemplateCategorysResponse> {
@@ -976,13 +1051,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryTemplateCategorysResponse>(await this.doROARequest("QueryTemplateCategorys", "apaas_1.0", "HTTP", "GET", "AK", `/v1.0/apaas/templates/categories`, "json", req, runtime), new QueryTemplateCategorysResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryTemplateCategorys",
+      version: "apaas_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/apaas/templates/categories`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryTemplateCategorysResponse>(await this.execute(params, req, runtime), new QueryTemplateCategorysResponse({}));
   }
 
-  async recallAuditTemplate(request: RecallAuditTemplateRequest): Promise<RecallAuditTemplateResponse> {
+  async queryTemplateCategorys(): Promise<QueryTemplateCategorysResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RecallAuditTemplateHeaders({ });
-    return await this.recallAuditTemplateWithOptions(request, headers, runtime);
+    let headers = new QueryTemplateCategorysHeaders({ });
+    return await this.queryTemplateCategorysWithOptions(headers, runtime);
   }
 
   async recallAuditTemplateWithOptions(request: RecallAuditTemplateRequest, headers: RecallAuditTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<RecallAuditTemplateResponse> {
@@ -1005,7 +1091,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RecallAuditTemplateResponse>(await this.doROARequest("RecallAuditTemplate", "apaas_1.0", "HTTP", "POST", "AK", `/v1.0/apaas/templates/audits/recall`, "json", req, runtime), new RecallAuditTemplateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RecallAuditTemplate",
+      version: "apaas_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/apaas/templates/audits/recall`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RecallAuditTemplateResponse>(await this.execute(params, req, runtime), new RecallAuditTemplateResponse({}));
+  }
+
+  async recallAuditTemplate(request: RecallAuditTemplateRequest): Promise<RecallAuditTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RecallAuditTemplateHeaders({ });
+    return await this.recallAuditTemplateWithOptions(request, headers, runtime);
   }
 
 }

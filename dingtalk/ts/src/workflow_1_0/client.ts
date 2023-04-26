@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -281,10 +283,12 @@ export class AddApproveDentryAuthResponseBody extends $tea.Model {
 
 export class AddApproveDentryAuthResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddApproveDentryAuthResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -292,6 +296,7 @@ export class AddApproveDentryAuthResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddApproveDentryAuthResponseBody,
     };
   }
@@ -375,10 +380,12 @@ export class AddProcessInstanceCommentResponseBody extends $tea.Model {
 
 export class AddProcessInstanceCommentResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddProcessInstanceCommentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -386,6 +393,7 @@ export class AddProcessInstanceCommentResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddProcessInstanceCommentResponseBody,
     };
   }
@@ -457,10 +465,12 @@ export class BatchUpdateProcessInstanceResponseBody extends $tea.Model {
 
 export class BatchUpdateProcessInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchUpdateProcessInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -468,6 +478,7 @@ export class BatchUpdateProcessInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchUpdateProcessInstanceResponseBody,
     };
   }
@@ -545,10 +556,12 @@ export class CancelIntegratedTaskResponseBody extends $tea.Model {
 
 export class CancelIntegratedTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CancelIntegratedTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -556,6 +569,7 @@ export class CancelIntegratedTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CancelIntegratedTaskResponseBody,
     };
   }
@@ -630,10 +644,12 @@ export class CleanProcessDataResponseBody extends $tea.Model {
 
 export class CleanProcessDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CleanProcessDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -641,6 +657,7 @@ export class CleanProcessDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CleanProcessDataResponseBody,
     };
   }
@@ -718,10 +735,12 @@ export class CopyProcessResponseBody extends $tea.Model {
 
 export class CopyProcessResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CopyProcessResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -729,6 +748,7 @@ export class CopyProcessResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CopyProcessResponseBody,
     };
   }
@@ -809,10 +829,12 @@ export class CreateIntegratedTaskResponseBody extends $tea.Model {
 
 export class CreateIntegratedTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateIntegratedTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -820,6 +842,7 @@ export class CreateIntegratedTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateIntegratedTaskResponseBody,
     };
   }
@@ -894,10 +917,12 @@ export class DeleteProcessResponseBody extends $tea.Model {
 
 export class DeleteProcessResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteProcessResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -905,6 +930,7 @@ export class DeleteProcessResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteProcessResponseBody,
     };
   }
@@ -994,10 +1020,12 @@ export class ExecuteProcessInstanceResponseBody extends $tea.Model {
 
 export class ExecuteProcessInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ExecuteProcessInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1005,6 +1033,7 @@ export class ExecuteProcessInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ExecuteProcessInstanceResponseBody,
     };
   }
@@ -1088,10 +1117,12 @@ export class FormCreateResponseBody extends $tea.Model {
 
 export class FormCreateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: FormCreateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1099,6 +1130,7 @@ export class FormCreateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: FormCreateResponseBody,
     };
   }
@@ -1176,10 +1208,12 @@ export class GetAttachmentSpaceResponseBody extends $tea.Model {
 
 export class GetAttachmentSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAttachmentSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1187,6 +1221,7 @@ export class GetAttachmentSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAttachmentSpaceResponseBody,
     };
   }
@@ -1261,10 +1296,12 @@ export class GetConditionFormComponentResponseBody extends $tea.Model {
 
 export class GetConditionFormComponentResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetConditionFormComponentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1272,6 +1309,7 @@ export class GetConditionFormComponentResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetConditionFormComponentResponseBody,
     };
   }
@@ -1324,10 +1362,12 @@ export class GetCrmProcCodesResponseBody extends $tea.Model {
 
 export class GetCrmProcCodesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCrmProcCodesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1335,6 +1375,7 @@ export class GetCrmProcCodesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCrmProcCodesResponseBody,
     };
   }
@@ -1409,10 +1450,12 @@ export class GetManageProcessByStaffIdResponseBody extends $tea.Model {
 
 export class GetManageProcessByStaffIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetManageProcessByStaffIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1420,6 +1463,7 @@ export class GetManageProcessByStaffIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetManageProcessByStaffIdResponseBody,
     };
   }
@@ -1491,10 +1535,12 @@ export class GetProcessCodeByNameResponseBody extends $tea.Model {
 
 export class GetProcessCodeByNameResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetProcessCodeByNameResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1502,6 +1548,7 @@ export class GetProcessCodeByNameResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetProcessCodeByNameResponseBody,
     };
   }
@@ -1573,10 +1620,12 @@ export class GetProcessConfigResponseBody extends $tea.Model {
 
 export class GetProcessConfigResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetProcessConfigResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1584,6 +1633,7 @@ export class GetProcessConfigResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetProcessConfigResponseBody,
     };
   }
@@ -1658,10 +1708,12 @@ export class GetProcessInstanceResponseBody extends $tea.Model {
 
 export class GetProcessInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetProcessInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1669,6 +1721,7 @@ export class GetProcessInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetProcessInstanceResponseBody,
     };
   }
@@ -1755,10 +1808,12 @@ export class GetSpaceWithDownloadAuthResponseBody extends $tea.Model {
 
 export class GetSpaceWithDownloadAuthResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSpaceWithDownloadAuthResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1766,6 +1821,7 @@ export class GetSpaceWithDownloadAuthResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSpaceWithDownloadAuthResponseBody,
     };
   }
@@ -1837,10 +1893,12 @@ export class GetUserTodoTaskSumResponseBody extends $tea.Model {
 
 export class GetUserTodoTaskSumResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserTodoTaskSumResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1848,6 +1906,7 @@ export class GetUserTodoTaskSumResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserTodoTaskSumResponseBody,
     };
   }
@@ -1909,15 +1968,18 @@ export class GrantCspaceAuthorizationRequest extends $tea.Model {
 
 export class GrantCspaceAuthorizationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -1994,10 +2056,12 @@ export class GrantProcessInstanceForDownloadFileResponseBody extends $tea.Model 
 
 export class GrantProcessInstanceForDownloadFileResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GrantProcessInstanceForDownloadFileResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2005,6 +2069,7 @@ export class GrantProcessInstanceForDownloadFileResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GrantProcessInstanceForDownloadFileResponseBody,
     };
   }
@@ -2082,10 +2147,12 @@ export class InstallAppResponseBody extends $tea.Model {
 
 export class InstallAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: InstallAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2093,6 +2160,7 @@ export class InstallAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: InstallAppResponseBody,
     };
   }
@@ -2185,10 +2253,12 @@ export class ListProcessInstanceIdsResponseBody extends $tea.Model {
 
 export class ListProcessInstanceIdsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListProcessInstanceIdsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2196,6 +2266,7 @@ export class ListProcessInstanceIdsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListProcessInstanceIdsResponseBody,
     };
   }
@@ -2276,10 +2347,12 @@ export class ListTodoWorkRecordsResponseBody extends $tea.Model {
 
 export class ListTodoWorkRecordsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListTodoWorkRecordsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2287,6 +2360,7 @@ export class ListTodoWorkRecordsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListTodoWorkRecordsResponseBody,
     };
   }
@@ -2364,10 +2438,12 @@ export class ListUserVisibleBpmsProcessesResponseBody extends $tea.Model {
 
 export class ListUserVisibleBpmsProcessesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListUserVisibleBpmsProcessesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2375,6 +2451,7 @@ export class ListUserVisibleBpmsProcessesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListUserVisibleBpmsProcessesResponseBody,
     };
   }
@@ -2455,10 +2532,12 @@ export class ProcessForecastResponseBody extends $tea.Model {
 
 export class ProcessForecastResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ProcessForecastResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2466,6 +2545,7 @@ export class ProcessForecastResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ProcessForecastResponseBody,
     };
   }
@@ -2546,10 +2626,12 @@ export class QueryAllFormInstancesResponseBody extends $tea.Model {
 
 export class QueryAllFormInstancesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAllFormInstancesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2557,6 +2639,7 @@ export class QueryAllFormInstancesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAllFormInstancesResponseBody,
     };
   }
@@ -2643,10 +2726,12 @@ export class QueryAllProcessInstancesResponseBody extends $tea.Model {
 
 export class QueryAllProcessInstancesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAllProcessInstancesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2654,6 +2739,7 @@ export class QueryAllProcessInstancesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAllProcessInstancesResponseBody,
     };
   }
@@ -2728,10 +2814,12 @@ export class QueryFormByBizTypeResponseBody extends $tea.Model {
 
 export class QueryFormByBizTypeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryFormByBizTypeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2739,6 +2827,7 @@ export class QueryFormByBizTypeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryFormByBizTypeResponseBody,
     };
   }
@@ -2849,10 +2938,12 @@ export class QueryFormInstanceResponseBody extends $tea.Model {
 
 export class QueryFormInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryFormInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2860,6 +2951,7 @@ export class QueryFormInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryFormInstanceResponseBody,
     };
   }
@@ -2940,10 +3032,12 @@ export class QueryIntegratedTodoTaskResponseBody extends $tea.Model {
 
 export class QueryIntegratedTodoTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryIntegratedTodoTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2951,6 +3045,7 @@ export class QueryIntegratedTodoTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryIntegratedTodoTaskResponseBody,
     };
   }
@@ -3025,10 +3120,12 @@ export class QueryProcessByBizCategoryIdResponseBody extends $tea.Model {
 
 export class QueryProcessByBizCategoryIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryProcessByBizCategoryIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3036,6 +3133,7 @@ export class QueryProcessByBizCategoryIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryProcessByBizCategoryIdResponseBody,
     };
   }
@@ -3110,10 +3208,12 @@ export class QuerySchemaByProcessCodeResponseBody extends $tea.Model {
 
 export class QuerySchemaByProcessCodeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QuerySchemaByProcessCodeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3121,6 +3221,7 @@ export class QuerySchemaByProcessCodeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QuerySchemaByProcessCodeResponseBody,
     };
   }
@@ -3207,10 +3308,12 @@ export class RedirectWorkflowTaskResponseBody extends $tea.Model {
 
 export class RedirectWorkflowTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RedirectWorkflowTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3218,6 +3321,7 @@ export class RedirectWorkflowTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RedirectWorkflowTaskResponseBody,
     };
   }
@@ -3304,10 +3408,12 @@ export class SaveIntegratedInstanceResponseBody extends $tea.Model {
 
 export class SaveIntegratedInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SaveIntegratedInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3315,6 +3421,7 @@ export class SaveIntegratedInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SaveIntegratedInstanceResponseBody,
     };
   }
@@ -3401,10 +3508,12 @@ export class SaveProcessResponseBody extends $tea.Model {
 
 export class SaveProcessResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SaveProcessResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3412,6 +3521,7 @@ export class SaveProcessResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SaveProcessResponseBody,
     };
   }
@@ -3507,10 +3617,12 @@ export class StartProcessInstanceResponseBody extends $tea.Model {
 
 export class StartProcessInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: StartProcessInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3518,6 +3630,7 @@ export class StartProcessInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: StartProcessInstanceResponseBody,
     };
   }
@@ -3601,10 +3714,12 @@ export class TerminateProcessInstanceResponseBody extends $tea.Model {
 
 export class TerminateProcessInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: TerminateProcessInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3612,6 +3727,7 @@ export class TerminateProcessInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: TerminateProcessInstanceResponseBody,
     };
   }
@@ -3686,10 +3802,12 @@ export class UpdateIntegratedTaskResponseBody extends $tea.Model {
 
 export class UpdateIntegratedTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateIntegratedTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3697,6 +3815,7 @@ export class UpdateIntegratedTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateIntegratedTaskResponseBody,
     };
   }
@@ -3777,10 +3896,12 @@ export class UpdateProcessInstanceResponseBody extends $tea.Model {
 
 export class UpdateProcessInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateProcessInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3788,6 +3909,7 @@ export class UpdateProcessInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateProcessInstanceResponseBody,
     };
   }
@@ -6675,9 +6797,12 @@ export class UpdateProcessInstanceRequestNotifiers extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -6685,12 +6810,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async addApproveDentryAuth(request: AddApproveDentryAuthRequest): Promise<AddApproveDentryAuthResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddApproveDentryAuthHeaders({ });
-    return await this.addApproveDentryAuthWithOptions(request, headers, runtime);
-  }
 
   async addApproveDentryAuthWithOptions(request: AddApproveDentryAuthRequest, headers: AddApproveDentryAuthHeaders, runtime: $Util.RuntimeOptions): Promise<AddApproveDentryAuthResponse> {
     Util.validateModel(request);
@@ -6716,13 +6835,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddApproveDentryAuthResponse>(await this.doROARequest("AddApproveDentryAuth", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processInstances/spaces/files/authDownload`, "json", req, runtime), new AddApproveDentryAuthResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddApproveDentryAuth",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processInstances/spaces/files/authDownload`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddApproveDentryAuthResponse>(await this.execute(params, req, runtime), new AddApproveDentryAuthResponse({}));
   }
 
-  async addProcessInstanceComment(request: AddProcessInstanceCommentRequest): Promise<AddProcessInstanceCommentResponse> {
+  async addApproveDentryAuth(request: AddApproveDentryAuthRequest): Promise<AddApproveDentryAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddProcessInstanceCommentHeaders({ });
-    return await this.addProcessInstanceCommentWithOptions(request, headers, runtime);
+    let headers = new AddApproveDentryAuthHeaders({ });
+    return await this.addApproveDentryAuthWithOptions(request, headers, runtime);
   }
 
   async addProcessInstanceCommentWithOptions(request: AddProcessInstanceCommentRequest, headers: AddProcessInstanceCommentHeaders, runtime: $Util.RuntimeOptions): Promise<AddProcessInstanceCommentResponse> {
@@ -6757,13 +6887,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddProcessInstanceCommentResponse>(await this.doROARequest("AddProcessInstanceComment", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processInstances/comments`, "json", req, runtime), new AddProcessInstanceCommentResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddProcessInstanceComment",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processInstances/comments`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddProcessInstanceCommentResponse>(await this.execute(params, req, runtime), new AddProcessInstanceCommentResponse({}));
   }
 
-  async batchUpdateProcessInstance(request: BatchUpdateProcessInstanceRequest): Promise<BatchUpdateProcessInstanceResponse> {
+  async addProcessInstanceComment(request: AddProcessInstanceCommentRequest): Promise<AddProcessInstanceCommentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchUpdateProcessInstanceHeaders({ });
-    return await this.batchUpdateProcessInstanceWithOptions(request, headers, runtime);
+    let headers = new AddProcessInstanceCommentHeaders({ });
+    return await this.addProcessInstanceCommentWithOptions(request, headers, runtime);
   }
 
   async batchUpdateProcessInstanceWithOptions(request: BatchUpdateProcessInstanceRequest, headers: BatchUpdateProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateProcessInstanceResponse> {
@@ -6786,13 +6927,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchUpdateProcessInstanceResponse>(await this.doROARequest("BatchUpdateProcessInstance", "workflow_1.0", "HTTP", "PUT", "AK", `/v1.0/workflow/processCentres/instances/batch`, "json", req, runtime), new BatchUpdateProcessInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchUpdateProcessInstance",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processCentres/instances/batch`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchUpdateProcessInstanceResponse>(await this.execute(params, req, runtime), new BatchUpdateProcessInstanceResponse({}));
   }
 
-  async cancelIntegratedTask(request: CancelIntegratedTaskRequest): Promise<CancelIntegratedTaskResponse> {
+  async batchUpdateProcessInstance(request: BatchUpdateProcessInstanceRequest): Promise<BatchUpdateProcessInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CancelIntegratedTaskHeaders({ });
-    return await this.cancelIntegratedTaskWithOptions(request, headers, runtime);
+    let headers = new BatchUpdateProcessInstanceHeaders({ });
+    return await this.batchUpdateProcessInstanceWithOptions(request, headers, runtime);
   }
 
   async cancelIntegratedTaskWithOptions(request: CancelIntegratedTaskRequest, headers: CancelIntegratedTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CancelIntegratedTaskResponse> {
@@ -6823,13 +6975,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CancelIntegratedTaskResponse>(await this.doROARequest("CancelIntegratedTask", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processCentres/tasks/cancel`, "json", req, runtime), new CancelIntegratedTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CancelIntegratedTask",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processCentres/tasks/cancel`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CancelIntegratedTaskResponse>(await this.execute(params, req, runtime), new CancelIntegratedTaskResponse({}));
   }
 
-  async cleanProcessData(request: CleanProcessDataRequest): Promise<CleanProcessDataResponse> {
+  async cancelIntegratedTask(request: CancelIntegratedTaskRequest): Promise<CancelIntegratedTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CleanProcessDataHeaders({ });
-    return await this.cleanProcessDataWithOptions(request, headers, runtime);
+    let headers = new CancelIntegratedTaskHeaders({ });
+    return await this.cancelIntegratedTaskWithOptions(request, headers, runtime);
   }
 
   async cleanProcessDataWithOptions(request: CleanProcessDataRequest, headers: CleanProcessDataHeaders, runtime: $Util.RuntimeOptions): Promise<CleanProcessDataResponse> {
@@ -6856,13 +7019,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CleanProcessDataResponse>(await this.doROARequest("CleanProcessData", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processes/clean`, "json", req, runtime), new CleanProcessDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CleanProcessData",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processes/clean`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CleanProcessDataResponse>(await this.execute(params, req, runtime), new CleanProcessDataResponse({}));
   }
 
-  async copyProcess(request: CopyProcessRequest): Promise<CopyProcessResponse> {
+  async cleanProcessData(request: CleanProcessDataRequest): Promise<CleanProcessDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CopyProcessHeaders({ });
-    return await this.copyProcessWithOptions(request, headers, runtime);
+    let headers = new CleanProcessDataHeaders({ });
+    return await this.cleanProcessDataWithOptions(request, headers, runtime);
   }
 
   async copyProcessWithOptions(request: CopyProcessRequest, headers: CopyProcessHeaders, runtime: $Util.RuntimeOptions): Promise<CopyProcessResponse> {
@@ -6893,13 +7067,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CopyProcessResponse>(await this.doROARequest("CopyProcess", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processes/copy`, "json", req, runtime), new CopyProcessResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CopyProcess",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processes/copy`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CopyProcessResponse>(await this.execute(params, req, runtime), new CopyProcessResponse({}));
   }
 
-  async createIntegratedTask(request: CreateIntegratedTaskRequest): Promise<CreateIntegratedTaskResponse> {
+  async copyProcess(request: CopyProcessRequest): Promise<CopyProcessResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateIntegratedTaskHeaders({ });
-    return await this.createIntegratedTaskWithOptions(request, headers, runtime);
+    let headers = new CopyProcessHeaders({ });
+    return await this.copyProcessWithOptions(request, headers, runtime);
   }
 
   async createIntegratedTaskWithOptions(request: CreateIntegratedTaskRequest, headers: CreateIntegratedTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateIntegratedTaskResponse> {
@@ -6930,13 +7115,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateIntegratedTaskResponse>(await this.doROARequest("CreateIntegratedTask", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processCentres/tasks`, "json", req, runtime), new CreateIntegratedTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateIntegratedTask",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processCentres/tasks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateIntegratedTaskResponse>(await this.execute(params, req, runtime), new CreateIntegratedTaskResponse({}));
   }
 
-  async deleteProcess(request: DeleteProcessRequest): Promise<DeleteProcessResponse> {
+  async createIntegratedTask(request: CreateIntegratedTaskRequest): Promise<CreateIntegratedTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteProcessHeaders({ });
-    return await this.deleteProcessWithOptions(request, headers, runtime);
+    let headers = new CreateIntegratedTaskHeaders({ });
+    return await this.createIntegratedTaskWithOptions(request, headers, runtime);
   }
 
   async deleteProcessWithOptions(request: DeleteProcessRequest, headers: DeleteProcessHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteProcessResponse> {
@@ -6963,13 +7159,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteProcessResponse>(await this.doROARequest("DeleteProcess", "workflow_1.0", "HTTP", "DELETE", "AK", `/v1.0/workflow/processCentres/schemas`, "json", req, runtime), new DeleteProcessResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteProcess",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processCentres/schemas`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteProcessResponse>(await this.execute(params, req, runtime), new DeleteProcessResponse({}));
   }
 
-  async executeProcessInstance(request: ExecuteProcessInstanceRequest): Promise<ExecuteProcessInstanceResponse> {
+  async deleteProcess(request: DeleteProcessRequest): Promise<DeleteProcessResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ExecuteProcessInstanceHeaders({ });
-    return await this.executeProcessInstanceWithOptions(request, headers, runtime);
+    let headers = new DeleteProcessHeaders({ });
+    return await this.deleteProcessWithOptions(request, headers, runtime);
   }
 
   async executeProcessInstanceWithOptions(request: ExecuteProcessInstanceRequest, headers: ExecuteProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteProcessInstanceResponse> {
@@ -7012,13 +7219,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ExecuteProcessInstanceResponse>(await this.doROARequest("ExecuteProcessInstance", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processInstances/execute`, "json", req, runtime), new ExecuteProcessInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ExecuteProcessInstance",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processInstances/execute`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ExecuteProcessInstanceResponse>(await this.execute(params, req, runtime), new ExecuteProcessInstanceResponse({}));
   }
 
-  async formCreate(request: FormCreateRequest): Promise<FormCreateResponse> {
+  async executeProcessInstance(request: ExecuteProcessInstanceRequest): Promise<ExecuteProcessInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new FormCreateHeaders({ });
-    return await this.formCreateWithOptions(request, headers, runtime);
+    let headers = new ExecuteProcessInstanceHeaders({ });
+    return await this.executeProcessInstanceWithOptions(request, headers, runtime);
   }
 
   async formCreateWithOptions(request: FormCreateRequest, headers: FormCreateHeaders, runtime: $Util.RuntimeOptions): Promise<FormCreateResponse> {
@@ -7057,13 +7275,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<FormCreateResponse>(await this.doROARequest("FormCreate", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/forms`, "json", req, runtime), new FormCreateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "FormCreate",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/forms`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<FormCreateResponse>(await this.execute(params, req, runtime), new FormCreateResponse({}));
   }
 
-  async getAttachmentSpace(request: GetAttachmentSpaceRequest): Promise<GetAttachmentSpaceResponse> {
+  async formCreate(request: FormCreateRequest): Promise<FormCreateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAttachmentSpaceHeaders({ });
-    return await this.getAttachmentSpaceWithOptions(request, headers, runtime);
+    let headers = new FormCreateHeaders({ });
+    return await this.formCreateWithOptions(request, headers, runtime);
   }
 
   async getAttachmentSpaceWithOptions(request: GetAttachmentSpaceRequest, headers: GetAttachmentSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetAttachmentSpaceResponse> {
@@ -7090,13 +7319,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetAttachmentSpaceResponse>(await this.doROARequest("GetAttachmentSpace", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processInstances/spaces/infos/query`, "json", req, runtime), new GetAttachmentSpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAttachmentSpace",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processInstances/spaces/infos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAttachmentSpaceResponse>(await this.execute(params, req, runtime), new GetAttachmentSpaceResponse({}));
   }
 
-  async getConditionFormComponent(request: GetConditionFormComponentRequest): Promise<GetConditionFormComponentResponse> {
+  async getAttachmentSpace(request: GetAttachmentSpaceRequest): Promise<GetAttachmentSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetConditionFormComponentHeaders({ });
-    return await this.getConditionFormComponentWithOptions(request, headers, runtime);
+    let headers = new GetAttachmentSpaceHeaders({ });
+    return await this.getAttachmentSpaceWithOptions(request, headers, runtime);
   }
 
   async getConditionFormComponentWithOptions(request: GetConditionFormComponentRequest, headers: GetConditionFormComponentHeaders, runtime: $Util.RuntimeOptions): Promise<GetConditionFormComponentResponse> {
@@ -7123,13 +7363,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetConditionFormComponentResponse>(await this.doROARequest("GetConditionFormComponent", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/processes/conditions/components`, "json", req, runtime), new GetConditionFormComponentResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetConditionFormComponent",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processes/conditions/components`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetConditionFormComponentResponse>(await this.execute(params, req, runtime), new GetConditionFormComponentResponse({}));
   }
 
-  async getCrmProcCodes(): Promise<GetCrmProcCodesResponse> {
+  async getConditionFormComponent(request: GetConditionFormComponentRequest): Promise<GetConditionFormComponentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCrmProcCodesHeaders({ });
-    return await this.getCrmProcCodesWithOptions(headers, runtime);
+    let headers = new GetConditionFormComponentHeaders({ });
+    return await this.getConditionFormComponentWithOptions(request, headers, runtime);
   }
 
   async getCrmProcCodesWithOptions(headers: GetCrmProcCodesHeaders, runtime: $Util.RuntimeOptions): Promise<GetCrmProcCodesResponse> {
@@ -7145,13 +7396,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetCrmProcCodesResponse>(await this.doROARequest("GetCrmProcCodes", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/crm/processes`, "json", req, runtime), new GetCrmProcCodesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCrmProcCodes",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/crm/processes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCrmProcCodesResponse>(await this.execute(params, req, runtime), new GetCrmProcCodesResponse({}));
   }
 
-  async getManageProcessByStaffId(request: GetManageProcessByStaffIdRequest): Promise<GetManageProcessByStaffIdResponse> {
+  async getCrmProcCodes(): Promise<GetCrmProcCodesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetManageProcessByStaffIdHeaders({ });
-    return await this.getManageProcessByStaffIdWithOptions(request, headers, runtime);
+    let headers = new GetCrmProcCodesHeaders({ });
+    return await this.getCrmProcCodesWithOptions(headers, runtime);
   }
 
   async getManageProcessByStaffIdWithOptions(request: GetManageProcessByStaffIdRequest, headers: GetManageProcessByStaffIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetManageProcessByStaffIdResponse> {
@@ -7174,13 +7436,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetManageProcessByStaffIdResponse>(await this.doROARequest("GetManageProcessByStaffId", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/processes/managements/templates`, "json", req, runtime), new GetManageProcessByStaffIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetManageProcessByStaffId",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processes/managements/templates`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetManageProcessByStaffIdResponse>(await this.execute(params, req, runtime), new GetManageProcessByStaffIdResponse({}));
   }
 
-  async getProcessCodeByName(request: GetProcessCodeByNameRequest): Promise<GetProcessCodeByNameResponse> {
+  async getManageProcessByStaffId(request: GetManageProcessByStaffIdRequest): Promise<GetManageProcessByStaffIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetProcessCodeByNameHeaders({ });
-    return await this.getProcessCodeByNameWithOptions(request, headers, runtime);
+    let headers = new GetManageProcessByStaffIdHeaders({ });
+    return await this.getManageProcessByStaffIdWithOptions(request, headers, runtime);
   }
 
   async getProcessCodeByNameWithOptions(request: GetProcessCodeByNameRequest, headers: GetProcessCodeByNameHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessCodeByNameResponse> {
@@ -7203,13 +7476,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetProcessCodeByNameResponse>(await this.doROARequest("GetProcessCodeByName", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/processCentres/schemaNames/processCodes`, "json", req, runtime), new GetProcessCodeByNameResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetProcessCodeByName",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processCentres/schemaNames/processCodes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetProcessCodeByNameResponse>(await this.execute(params, req, runtime), new GetProcessCodeByNameResponse({}));
   }
 
-  async getProcessConfig(request: GetProcessConfigRequest): Promise<GetProcessConfigResponse> {
+  async getProcessCodeByName(request: GetProcessCodeByNameRequest): Promise<GetProcessCodeByNameResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetProcessConfigHeaders({ });
-    return await this.getProcessConfigWithOptions(request, headers, runtime);
+    let headers = new GetProcessCodeByNameHeaders({ });
+    return await this.getProcessCodeByNameWithOptions(request, headers, runtime);
   }
 
   async getProcessConfigWithOptions(request: GetProcessConfigRequest, headers: GetProcessConfigHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessConfigResponse> {
@@ -7232,13 +7516,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetProcessConfigResponse>(await this.doROARequest("GetProcessConfig", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/crm/processes/configurations`, "json", req, runtime), new GetProcessConfigResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetProcessConfig",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/crm/processes/configurations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetProcessConfigResponse>(await this.execute(params, req, runtime), new GetProcessConfigResponse({}));
   }
 
-  async getProcessInstance(request: GetProcessInstanceRequest): Promise<GetProcessInstanceResponse> {
+  async getProcessConfig(request: GetProcessConfigRequest): Promise<GetProcessConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetProcessInstanceHeaders({ });
-    return await this.getProcessInstanceWithOptions(request, headers, runtime);
+    let headers = new GetProcessConfigHeaders({ });
+    return await this.getProcessConfigWithOptions(request, headers, runtime);
   }
 
   async getProcessInstanceWithOptions(request: GetProcessInstanceRequest, headers: GetProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessInstanceResponse> {
@@ -7261,13 +7556,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetProcessInstanceResponse>(await this.doROARequest("GetProcessInstance", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/processInstances`, "json", req, runtime), new GetProcessInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetProcessInstance",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processInstances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetProcessInstanceResponse>(await this.execute(params, req, runtime), new GetProcessInstanceResponse({}));
   }
 
-  async getSpaceWithDownloadAuth(request: GetSpaceWithDownloadAuthRequest): Promise<GetSpaceWithDownloadAuthResponse> {
+  async getProcessInstance(request: GetProcessInstanceRequest): Promise<GetProcessInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSpaceWithDownloadAuthHeaders({ });
-    return await this.getSpaceWithDownloadAuthWithOptions(request, headers, runtime);
+    let headers = new GetProcessInstanceHeaders({ });
+    return await this.getProcessInstanceWithOptions(request, headers, runtime);
   }
 
   async getSpaceWithDownloadAuthWithOptions(request: GetSpaceWithDownloadAuthRequest, headers: GetSpaceWithDownloadAuthHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceWithDownloadAuthResponse> {
@@ -7306,13 +7612,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetSpaceWithDownloadAuthResponse>(await this.doROARequest("GetSpaceWithDownloadAuth", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processInstances/spaces/authPreview`, "json", req, runtime), new GetSpaceWithDownloadAuthResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSpaceWithDownloadAuth",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processInstances/spaces/authPreview`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSpaceWithDownloadAuthResponse>(await this.execute(params, req, runtime), new GetSpaceWithDownloadAuthResponse({}));
   }
 
-  async getUserTodoTaskSum(request: GetUserTodoTaskSumRequest): Promise<GetUserTodoTaskSumResponse> {
+  async getSpaceWithDownloadAuth(request: GetSpaceWithDownloadAuthRequest): Promise<GetSpaceWithDownloadAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserTodoTaskSumHeaders({ });
-    return await this.getUserTodoTaskSumWithOptions(request, headers, runtime);
+    let headers = new GetSpaceWithDownloadAuthHeaders({ });
+    return await this.getSpaceWithDownloadAuthWithOptions(request, headers, runtime);
   }
 
   async getUserTodoTaskSumWithOptions(request: GetUserTodoTaskSumRequest, headers: GetUserTodoTaskSumHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserTodoTaskSumResponse> {
@@ -7335,13 +7652,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetUserTodoTaskSumResponse>(await this.doROARequest("GetUserTodoTaskSum", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/processes/todoTasks/numbers`, "json", req, runtime), new GetUserTodoTaskSumResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserTodoTaskSum",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processes/todoTasks/numbers`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserTodoTaskSumResponse>(await this.execute(params, req, runtime), new GetUserTodoTaskSumResponse({}));
   }
 
-  async grantCspaceAuthorization(request: GrantCspaceAuthorizationRequest): Promise<GrantCspaceAuthorizationResponse> {
+  async getUserTodoTaskSum(request: GetUserTodoTaskSumRequest): Promise<GetUserTodoTaskSumResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GrantCspaceAuthorizationHeaders({ });
-    return await this.grantCspaceAuthorizationWithOptions(request, headers, runtime);
+    let headers = new GetUserTodoTaskSumHeaders({ });
+    return await this.getUserTodoTaskSumWithOptions(request, headers, runtime);
   }
 
   async grantCspaceAuthorizationWithOptions(request: GrantCspaceAuthorizationRequest, headers: GrantCspaceAuthorizationHeaders, runtime: $Util.RuntimeOptions): Promise<GrantCspaceAuthorizationResponse> {
@@ -7376,13 +7704,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GrantCspaceAuthorizationResponse>(await this.doROARequest("GrantCspaceAuthorization", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/spaces/authorize`, "none", req, runtime), new GrantCspaceAuthorizationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GrantCspaceAuthorization",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/spaces/authorize`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<GrantCspaceAuthorizationResponse>(await this.execute(params, req, runtime), new GrantCspaceAuthorizationResponse({}));
   }
 
-  async grantProcessInstanceForDownloadFile(request: GrantProcessInstanceForDownloadFileRequest): Promise<GrantProcessInstanceForDownloadFileResponse> {
+  async grantCspaceAuthorization(request: GrantCspaceAuthorizationRequest): Promise<GrantCspaceAuthorizationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GrantProcessInstanceForDownloadFileHeaders({ });
-    return await this.grantProcessInstanceForDownloadFileWithOptions(request, headers, runtime);
+    let headers = new GrantCspaceAuthorizationHeaders({ });
+    return await this.grantCspaceAuthorizationWithOptions(request, headers, runtime);
   }
 
   async grantProcessInstanceForDownloadFileWithOptions(request: GrantProcessInstanceForDownloadFileRequest, headers: GrantProcessInstanceForDownloadFileHeaders, runtime: $Util.RuntimeOptions): Promise<GrantProcessInstanceForDownloadFileResponse> {
@@ -7409,13 +7748,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GrantProcessInstanceForDownloadFileResponse>(await this.doROARequest("GrantProcessInstanceForDownloadFile", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processInstances/spaces/files/urls/download`, "json", req, runtime), new GrantProcessInstanceForDownloadFileResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GrantProcessInstanceForDownloadFile",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processInstances/spaces/files/urls/download`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GrantProcessInstanceForDownloadFileResponse>(await this.execute(params, req, runtime), new GrantProcessInstanceForDownloadFileResponse({}));
   }
 
-  async installApp(request: InstallAppRequest): Promise<InstallAppResponse> {
+  async grantProcessInstanceForDownloadFile(request: GrantProcessInstanceForDownloadFileRequest): Promise<GrantProcessInstanceForDownloadFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new InstallAppHeaders({ });
-    return await this.installAppWithOptions(request, headers, runtime);
+    let headers = new GrantProcessInstanceForDownloadFileHeaders({ });
+    return await this.grantProcessInstanceForDownloadFileWithOptions(request, headers, runtime);
   }
 
   async installAppWithOptions(request: InstallAppRequest, headers: InstallAppHeaders, runtime: $Util.RuntimeOptions): Promise<InstallAppResponse> {
@@ -7446,13 +7796,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<InstallAppResponse>(await this.doROARequest("InstallApp", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processes/apps/install`, "json", req, runtime), new InstallAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "InstallApp",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processes/apps/install`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<InstallAppResponse>(await this.execute(params, req, runtime), new InstallAppResponse({}));
   }
 
-  async listProcessInstanceIds(request: ListProcessInstanceIdsRequest): Promise<ListProcessInstanceIdsResponse> {
+  async installApp(request: InstallAppRequest): Promise<InstallAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListProcessInstanceIdsHeaders({ });
-    return await this.listProcessInstanceIdsWithOptions(request, headers, runtime);
+    let headers = new InstallAppHeaders({ });
+    return await this.installAppWithOptions(request, headers, runtime);
   }
 
   async listProcessInstanceIdsWithOptions(request: ListProcessInstanceIdsRequest, headers: ListProcessInstanceIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListProcessInstanceIdsResponse> {
@@ -7499,13 +7860,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ListProcessInstanceIdsResponse>(await this.doROARequest("ListProcessInstanceIds", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processes/instanceIds/query`, "json", req, runtime), new ListProcessInstanceIdsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListProcessInstanceIds",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processes/instanceIds/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListProcessInstanceIdsResponse>(await this.execute(params, req, runtime), new ListProcessInstanceIdsResponse({}));
   }
 
-  async listTodoWorkRecords(request: ListTodoWorkRecordsRequest): Promise<ListTodoWorkRecordsResponse> {
+  async listProcessInstanceIds(request: ListProcessInstanceIdsRequest): Promise<ListProcessInstanceIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListTodoWorkRecordsHeaders({ });
-    return await this.listTodoWorkRecordsWithOptions(request, headers, runtime);
+    let headers = new ListProcessInstanceIdsHeaders({ });
+    return await this.listProcessInstanceIdsWithOptions(request, headers, runtime);
   }
 
   async listTodoWorkRecordsWithOptions(request: ListTodoWorkRecordsRequest, headers: ListTodoWorkRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<ListTodoWorkRecordsResponse> {
@@ -7540,13 +7912,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListTodoWorkRecordsResponse>(await this.doROARequest("ListTodoWorkRecords", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/workRecords/todoTasks`, "json", req, runtime), new ListTodoWorkRecordsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListTodoWorkRecords",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/workRecords/todoTasks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListTodoWorkRecordsResponse>(await this.execute(params, req, runtime), new ListTodoWorkRecordsResponse({}));
   }
 
-  async listUserVisibleBpmsProcesses(request: ListUserVisibleBpmsProcessesRequest): Promise<ListUserVisibleBpmsProcessesResponse> {
+  async listTodoWorkRecords(request: ListTodoWorkRecordsRequest): Promise<ListTodoWorkRecordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListUserVisibleBpmsProcessesHeaders({ });
-    return await this.listUserVisibleBpmsProcessesWithOptions(request, headers, runtime);
+    let headers = new ListTodoWorkRecordsHeaders({ });
+    return await this.listTodoWorkRecordsWithOptions(request, headers, runtime);
   }
 
   async listUserVisibleBpmsProcessesWithOptions(request: ListUserVisibleBpmsProcessesRequest, headers: ListUserVisibleBpmsProcessesHeaders, runtime: $Util.RuntimeOptions): Promise<ListUserVisibleBpmsProcessesResponse> {
@@ -7577,13 +7960,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListUserVisibleBpmsProcessesResponse>(await this.doROARequest("ListUserVisibleBpmsProcesses", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/processes/userVisibilities/templates`, "json", req, runtime), new ListUserVisibleBpmsProcessesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListUserVisibleBpmsProcesses",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processes/userVisibilities/templates`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListUserVisibleBpmsProcessesResponse>(await this.execute(params, req, runtime), new ListUserVisibleBpmsProcessesResponse({}));
   }
 
-  async processForecast(request: ProcessForecastRequest): Promise<ProcessForecastResponse> {
+  async listUserVisibleBpmsProcesses(request: ListUserVisibleBpmsProcessesRequest): Promise<ListUserVisibleBpmsProcessesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ProcessForecastHeaders({ });
-    return await this.processForecastWithOptions(request, headers, runtime);
+    let headers = new ListUserVisibleBpmsProcessesHeaders({ });
+    return await this.listUserVisibleBpmsProcessesWithOptions(request, headers, runtime);
   }
 
   async processForecastWithOptions(request: ProcessForecastRequest, headers: ProcessForecastHeaders, runtime: $Util.RuntimeOptions): Promise<ProcessForecastResponse> {
@@ -7618,13 +8012,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ProcessForecastResponse>(await this.doROARequest("ProcessForecast", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processes/forecast`, "json", req, runtime), new ProcessForecastResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ProcessForecast",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processes/forecast`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ProcessForecastResponse>(await this.execute(params, req, runtime), new ProcessForecastResponse({}));
   }
 
-  async queryAllFormInstances(request: QueryAllFormInstancesRequest): Promise<QueryAllFormInstancesResponse> {
+  async processForecast(request: ProcessForecastRequest): Promise<ProcessForecastResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAllFormInstancesHeaders({ });
-    return await this.queryAllFormInstancesWithOptions(request, headers, runtime);
+    let headers = new ProcessForecastHeaders({ });
+    return await this.processForecastWithOptions(request, headers, runtime);
   }
 
   async queryAllFormInstancesWithOptions(request: QueryAllFormInstancesRequest, headers: QueryAllFormInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllFormInstancesResponse> {
@@ -7659,13 +8064,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryAllFormInstancesResponse>(await this.doROARequest("QueryAllFormInstances", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/forms/pages/instances`, "json", req, runtime), new QueryAllFormInstancesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAllFormInstances",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/forms/pages/instances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAllFormInstancesResponse>(await this.execute(params, req, runtime), new QueryAllFormInstancesResponse({}));
   }
 
-  async queryAllProcessInstances(request: QueryAllProcessInstancesRequest): Promise<QueryAllProcessInstancesResponse> {
+  async queryAllFormInstances(request: QueryAllFormInstancesRequest): Promise<QueryAllFormInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAllProcessInstancesHeaders({ });
-    return await this.queryAllProcessInstancesWithOptions(request, headers, runtime);
+    let headers = new QueryAllFormInstancesHeaders({ });
+    return await this.queryAllFormInstancesWithOptions(request, headers, runtime);
   }
 
   async queryAllProcessInstancesWithOptions(request: QueryAllProcessInstancesRequest, headers: QueryAllProcessInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllProcessInstancesResponse> {
@@ -7708,13 +8124,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryAllProcessInstancesResponse>(await this.doROARequest("QueryAllProcessInstances", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/processes/pages/instances`, "json", req, runtime), new QueryAllProcessInstancesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAllProcessInstances",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processes/pages/instances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAllProcessInstancesResponse>(await this.execute(params, req, runtime), new QueryAllProcessInstancesResponse({}));
   }
 
-  async queryFormByBizType(request: QueryFormByBizTypeRequest): Promise<QueryFormByBizTypeResponse> {
+  async queryAllProcessInstances(request: QueryAllProcessInstancesRequest): Promise<QueryAllProcessInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryFormByBizTypeHeaders({ });
-    return await this.queryFormByBizTypeWithOptions(request, headers, runtime);
+    let headers = new QueryAllProcessInstancesHeaders({ });
+    return await this.queryAllProcessInstancesWithOptions(request, headers, runtime);
   }
 
   async queryFormByBizTypeWithOptions(request: QueryFormByBizTypeRequest, headers: QueryFormByBizTypeHeaders, runtime: $Util.RuntimeOptions): Promise<QueryFormByBizTypeResponse> {
@@ -7741,13 +8168,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryFormByBizTypeResponse>(await this.doROARequest("QueryFormByBizType", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/forms/forminfos/query`, "json", req, runtime), new QueryFormByBizTypeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryFormByBizType",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/forms/forminfos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryFormByBizTypeResponse>(await this.execute(params, req, runtime), new QueryFormByBizTypeResponse({}));
   }
 
-  async queryFormInstance(request: QueryFormInstanceRequest): Promise<QueryFormInstanceResponse> {
+  async queryFormByBizType(request: QueryFormByBizTypeRequest): Promise<QueryFormByBizTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryFormInstanceHeaders({ });
-    return await this.queryFormInstanceWithOptions(request, headers, runtime);
+    let headers = new QueryFormByBizTypeHeaders({ });
+    return await this.queryFormByBizTypeWithOptions(request, headers, runtime);
   }
 
   async queryFormInstanceWithOptions(request: QueryFormInstanceRequest, headers: QueryFormInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryFormInstanceResponse> {
@@ -7778,13 +8216,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryFormInstanceResponse>(await this.doROARequest("QueryFormInstance", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/forms/instances`, "json", req, runtime), new QueryFormInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryFormInstance",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/forms/instances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryFormInstanceResponse>(await this.execute(params, req, runtime), new QueryFormInstanceResponse({}));
   }
 
-  async queryIntegratedTodoTask(request: QueryIntegratedTodoTaskRequest): Promise<QueryIntegratedTodoTaskResponse> {
+  async queryFormInstance(request: QueryFormInstanceRequest): Promise<QueryFormInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryIntegratedTodoTaskHeaders({ });
-    return await this.queryIntegratedTodoTaskWithOptions(request, headers, runtime);
+    let headers = new QueryFormInstanceHeaders({ });
+    return await this.queryFormInstanceWithOptions(request, headers, runtime);
   }
 
   async queryIntegratedTodoTaskWithOptions(request: QueryIntegratedTodoTaskRequest, headers: QueryIntegratedTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<QueryIntegratedTodoTaskResponse> {
@@ -7819,13 +8268,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryIntegratedTodoTaskResponse>(await this.doROARequest("QueryIntegratedTodoTask", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/processCentres/todoTasks`, "json", req, runtime), new QueryIntegratedTodoTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryIntegratedTodoTask",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processCentres/todoTasks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryIntegratedTodoTaskResponse>(await this.execute(params, req, runtime), new QueryIntegratedTodoTaskResponse({}));
   }
 
-  async queryProcessByBizCategoryId(request: QueryProcessByBizCategoryIdRequest): Promise<QueryProcessByBizCategoryIdResponse> {
+  async queryIntegratedTodoTask(request: QueryIntegratedTodoTaskRequest): Promise<QueryIntegratedTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryProcessByBizCategoryIdHeaders({ });
-    return await this.queryProcessByBizCategoryIdWithOptions(request, headers, runtime);
+    let headers = new QueryIntegratedTodoTaskHeaders({ });
+    return await this.queryIntegratedTodoTaskWithOptions(request, headers, runtime);
   }
 
   async queryProcessByBizCategoryIdWithOptions(request: QueryProcessByBizCategoryIdRequest, headers: QueryProcessByBizCategoryIdHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProcessByBizCategoryIdResponse> {
@@ -7852,13 +8312,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryProcessByBizCategoryIdResponse>(await this.doROARequest("QueryProcessByBizCategoryId", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/processes/categories/templates`, "json", req, runtime), new QueryProcessByBizCategoryIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryProcessByBizCategoryId",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processes/categories/templates`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryProcessByBizCategoryIdResponse>(await this.execute(params, req, runtime), new QueryProcessByBizCategoryIdResponse({}));
   }
 
-  async querySchemaByProcessCode(request: QuerySchemaByProcessCodeRequest): Promise<QuerySchemaByProcessCodeResponse> {
+  async queryProcessByBizCategoryId(request: QueryProcessByBizCategoryIdRequest): Promise<QueryProcessByBizCategoryIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QuerySchemaByProcessCodeHeaders({ });
-    return await this.querySchemaByProcessCodeWithOptions(request, headers, runtime);
+    let headers = new QueryProcessByBizCategoryIdHeaders({ });
+    return await this.queryProcessByBizCategoryIdWithOptions(request, headers, runtime);
   }
 
   async querySchemaByProcessCodeWithOptions(request: QuerySchemaByProcessCodeRequest, headers: QuerySchemaByProcessCodeHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySchemaByProcessCodeResponse> {
@@ -7885,13 +8356,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QuerySchemaByProcessCodeResponse>(await this.doROARequest("QuerySchemaByProcessCode", "workflow_1.0", "HTTP", "GET", "AK", `/v1.0/workflow/forms/schemas/processCodes`, "json", req, runtime), new QuerySchemaByProcessCodeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QuerySchemaByProcessCode",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/forms/schemas/processCodes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QuerySchemaByProcessCodeResponse>(await this.execute(params, req, runtime), new QuerySchemaByProcessCodeResponse({}));
   }
 
-  async redirectWorkflowTask(request: RedirectWorkflowTaskRequest): Promise<RedirectWorkflowTaskResponse> {
+  async querySchemaByProcessCode(request: QuerySchemaByProcessCodeRequest): Promise<QuerySchemaByProcessCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RedirectWorkflowTaskHeaders({ });
-    return await this.redirectWorkflowTaskWithOptions(request, headers, runtime);
+    let headers = new QuerySchemaByProcessCodeHeaders({ });
+    return await this.querySchemaByProcessCodeWithOptions(request, headers, runtime);
   }
 
   async redirectWorkflowTaskWithOptions(request: RedirectWorkflowTaskRequest, headers: RedirectWorkflowTaskHeaders, runtime: $Util.RuntimeOptions): Promise<RedirectWorkflowTaskResponse> {
@@ -7934,13 +8416,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RedirectWorkflowTaskResponse>(await this.doROARequest("RedirectWorkflowTask", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/tasks/redirect`, "json", req, runtime), new RedirectWorkflowTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RedirectWorkflowTask",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/tasks/redirect`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RedirectWorkflowTaskResponse>(await this.execute(params, req, runtime), new RedirectWorkflowTaskResponse({}));
   }
 
-  async saveIntegratedInstance(request: SaveIntegratedInstanceRequest): Promise<SaveIntegratedInstanceResponse> {
+  async redirectWorkflowTask(request: RedirectWorkflowTaskRequest): Promise<RedirectWorkflowTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SaveIntegratedInstanceHeaders({ });
-    return await this.saveIntegratedInstanceWithOptions(request, headers, runtime);
+    let headers = new RedirectWorkflowTaskHeaders({ });
+    return await this.redirectWorkflowTaskWithOptions(request, headers, runtime);
   }
 
   async saveIntegratedInstanceWithOptions(request: SaveIntegratedInstanceRequest, headers: SaveIntegratedInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<SaveIntegratedInstanceResponse> {
@@ -7983,13 +8476,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SaveIntegratedInstanceResponse>(await this.doROARequest("SaveIntegratedInstance", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processCentres/instances`, "json", req, runtime), new SaveIntegratedInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SaveIntegratedInstance",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processCentres/instances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveIntegratedInstanceResponse>(await this.execute(params, req, runtime), new SaveIntegratedInstanceResponse({}));
   }
 
-  async saveProcess(request: SaveProcessRequest): Promise<SaveProcessResponse> {
+  async saveIntegratedInstance(request: SaveIntegratedInstanceRequest): Promise<SaveIntegratedInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SaveProcessHeaders({ });
-    return await this.saveProcessWithOptions(request, headers, runtime);
+    let headers = new SaveIntegratedInstanceHeaders({ });
+    return await this.saveIntegratedInstanceWithOptions(request, headers, runtime);
   }
 
   async saveProcessWithOptions(request: SaveProcessRequest, headers: SaveProcessHeaders, runtime: $Util.RuntimeOptions): Promise<SaveProcessResponse> {
@@ -8032,13 +8536,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SaveProcessResponse>(await this.doROARequest("SaveProcess", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processCentres/schemas`, "json", req, runtime), new SaveProcessResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SaveProcess",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processCentres/schemas`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveProcessResponse>(await this.execute(params, req, runtime), new SaveProcessResponse({}));
   }
 
-  async startProcessInstance(request: StartProcessInstanceRequest): Promise<StartProcessInstanceResponse> {
+  async saveProcess(request: SaveProcessRequest): Promise<SaveProcessResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new StartProcessInstanceHeaders({ });
-    return await this.startProcessInstanceWithOptions(request, headers, runtime);
+    let headers = new SaveProcessHeaders({ });
+    return await this.saveProcessWithOptions(request, headers, runtime);
   }
 
   async startProcessInstanceWithOptions(request: StartProcessInstanceRequest, headers: StartProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<StartProcessInstanceResponse> {
@@ -8093,13 +8608,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<StartProcessInstanceResponse>(await this.doROARequest("StartProcessInstance", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processInstances`, "json", req, runtime), new StartProcessInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "StartProcessInstance",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processInstances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<StartProcessInstanceResponse>(await this.execute(params, req, runtime), new StartProcessInstanceResponse({}));
   }
 
-  async terminateProcessInstance(request: TerminateProcessInstanceRequest): Promise<TerminateProcessInstanceResponse> {
+  async startProcessInstance(request: StartProcessInstanceRequest): Promise<StartProcessInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new TerminateProcessInstanceHeaders({ });
-    return await this.terminateProcessInstanceWithOptions(request, headers, runtime);
+    let headers = new StartProcessInstanceHeaders({ });
+    return await this.startProcessInstanceWithOptions(request, headers, runtime);
   }
 
   async terminateProcessInstanceWithOptions(request: TerminateProcessInstanceRequest, headers: TerminateProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<TerminateProcessInstanceResponse> {
@@ -8134,13 +8660,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<TerminateProcessInstanceResponse>(await this.doROARequest("TerminateProcessInstance", "workflow_1.0", "HTTP", "POST", "AK", `/v1.0/workflow/processInstances/terminate`, "json", req, runtime), new TerminateProcessInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "TerminateProcessInstance",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processInstances/terminate`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TerminateProcessInstanceResponse>(await this.execute(params, req, runtime), new TerminateProcessInstanceResponse({}));
   }
 
-  async updateIntegratedTask(request: UpdateIntegratedTaskRequest): Promise<UpdateIntegratedTaskResponse> {
+  async terminateProcessInstance(request: TerminateProcessInstanceRequest): Promise<TerminateProcessInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateIntegratedTaskHeaders({ });
-    return await this.updateIntegratedTaskWithOptions(request, headers, runtime);
+    let headers = new TerminateProcessInstanceHeaders({ });
+    return await this.terminateProcessInstanceWithOptions(request, headers, runtime);
   }
 
   async updateIntegratedTaskWithOptions(request: UpdateIntegratedTaskRequest, headers: UpdateIntegratedTaskHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateIntegratedTaskResponse> {
@@ -8167,13 +8704,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateIntegratedTaskResponse>(await this.doROARequest("UpdateIntegratedTask", "workflow_1.0", "HTTP", "PUT", "AK", `/v1.0/workflow/processCentres/tasks`, "json", req, runtime), new UpdateIntegratedTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateIntegratedTask",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processCentres/tasks`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateIntegratedTaskResponse>(await this.execute(params, req, runtime), new UpdateIntegratedTaskResponse({}));
   }
 
-  async updateProcessInstance(request: UpdateProcessInstanceRequest): Promise<UpdateProcessInstanceResponse> {
+  async updateIntegratedTask(request: UpdateIntegratedTaskRequest): Promise<UpdateIntegratedTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateProcessInstanceHeaders({ });
-    return await this.updateProcessInstanceWithOptions(request, headers, runtime);
+    let headers = new UpdateIntegratedTaskHeaders({ });
+    return await this.updateIntegratedTaskWithOptions(request, headers, runtime);
   }
 
   async updateProcessInstanceWithOptions(request: UpdateProcessInstanceRequest, headers: UpdateProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateProcessInstanceResponse> {
@@ -8208,7 +8756,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateProcessInstanceResponse>(await this.doROARequest("UpdateProcessInstance", "workflow_1.0", "HTTP", "PUT", "AK", `/v1.0/workflow/processCentres/instances`, "json", req, runtime), new UpdateProcessInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateProcessInstance",
+      version: "workflow_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workflow/processCentres/instances`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateProcessInstanceResponse>(await this.execute(params, req, runtime), new UpdateProcessInstanceResponse({}));
+  }
+
+  async updateProcessInstance(request: UpdateProcessInstanceRequest): Promise<UpdateProcessInstanceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateProcessInstanceHeaders({ });
+    return await this.updateProcessInstanceWithOptions(request, headers, runtime);
   }
 
 }

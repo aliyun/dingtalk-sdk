@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -520,10 +522,12 @@ export class GetAllJobLevelResponseBody extends $tea.Model {
 
 export class GetAllJobLevelResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAllJobLevelResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -531,6 +535,7 @@ export class GetAllJobLevelResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAllJobLevelResponseBody,
     };
   }
@@ -586,10 +591,12 @@ export class GetAllJobPositionResponseBody extends $tea.Model {
 
 export class GetAllJobPositionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAllJobPositionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -597,6 +604,7 @@ export class GetAllJobPositionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAllJobPositionResponseBody,
     };
   }
@@ -652,10 +660,12 @@ export class GetAllJobPostResponseBody extends $tea.Model {
 
 export class GetAllJobPostResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAllJobPostResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -663,6 +673,7 @@ export class GetAllJobPostResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAllJobPostResponseBody,
     };
   }
@@ -743,10 +754,12 @@ export class GetAnalyzeDataResponseBody extends $tea.Model {
 
 export class GetAnalyzeDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAnalyzeDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -754,6 +767,7 @@ export class GetAnalyzeDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAnalyzeDataResponseBody,
     };
   }
@@ -828,10 +842,12 @@ export class GetChildOrgListResponseBody extends $tea.Model {
 
 export class GetChildOrgListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetChildOrgListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -839,6 +855,7 @@ export class GetChildOrgListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetChildOrgListResponseBody,
     };
   }
@@ -913,10 +930,12 @@ export class GetEmployeeInfoByWorkNoResponseBody extends $tea.Model {
 
 export class GetEmployeeInfoByWorkNoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetEmployeeInfoByWorkNoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -924,6 +943,7 @@ export class GetEmployeeInfoByWorkNoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetEmployeeInfoByWorkNoResponseBody,
     };
   }
@@ -979,10 +999,12 @@ export class GetEmploymentRecordByWorkNoResponseBody extends $tea.Model {
 
 export class GetEmploymentRecordByWorkNoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetEmploymentRecordByWorkNoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -990,6 +1012,7 @@ export class GetEmploymentRecordByWorkNoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetEmploymentRecordByWorkNoResponseBody,
     };
   }
@@ -1064,10 +1087,12 @@ export class GetJobPositionResponseBody extends $tea.Model {
 
 export class GetJobPositionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetJobPositionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1075,6 +1100,7 @@ export class GetJobPositionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetJobPositionResponseBody,
     };
   }
@@ -1149,10 +1175,12 @@ export class GetJobPostResponseBody extends $tea.Model {
 
 export class GetJobPostResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetJobPostResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1160,6 +1188,7 @@ export class GetJobPostResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetJobPostResponseBody,
     };
   }
@@ -1234,10 +1263,12 @@ export class GetOrgInfoResponseBody extends $tea.Model {
 
 export class GetOrgInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetOrgInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1245,6 +1276,7 @@ export class GetOrgInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetOrgInfoResponseBody,
     };
   }
@@ -1319,10 +1351,12 @@ export class GetStaffInfoByWorkNoResponseBody extends $tea.Model {
 
 export class GetStaffInfoByWorkNoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetStaffInfoByWorkNoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1330,6 +1364,7 @@ export class GetStaffInfoByWorkNoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetStaffInfoByWorkNoResponseBody,
     };
   }
@@ -1416,10 +1451,12 @@ export class GetStaffPageQueryResponseBody extends $tea.Model {
 
 export class GetStaffPageQueryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetStaffPageQueryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1427,6 +1464,7 @@ export class GetStaffPageQueryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetStaffPageQueryResponseBody,
     };
   }
@@ -1507,10 +1545,12 @@ export class GetUserResponseBody extends $tea.Model {
 
 export class GetUserResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1518,6 +1558,7 @@ export class GetUserResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserResponseBody,
     };
   }
@@ -1576,10 +1617,12 @@ export class ListAnalyzePeriodsResponseBody extends $tea.Model {
 
 export class ListAnalyzePeriodsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListAnalyzePeriodsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1587,6 +1630,7 @@ export class ListAnalyzePeriodsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListAnalyzePeriodsResponseBody,
     };
   }
@@ -1664,10 +1708,12 @@ export class ListObjectiveByIdsResponseBody extends $tea.Model {
 
 export class ListObjectiveByIdsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListObjectiveByIdsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1675,6 +1721,7 @@ export class ListObjectiveByIdsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListObjectiveByIdsResponseBody,
     };
   }
@@ -1758,10 +1805,12 @@ export class ListObjectiveByUserResponseBody extends $tea.Model {
 
 export class ListObjectiveByUserResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListObjectiveByUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1769,6 +1818,7 @@ export class ListObjectiveByUserResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListObjectiveByUserResponseBody,
     };
   }
@@ -1846,10 +1896,12 @@ export class ListProgressByIdsResponseBody extends $tea.Model {
 
 export class ListProgressByIdsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListProgressByIdsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1857,6 +1909,7 @@ export class ListProgressByIdsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListProgressByIdsResponseBody,
     };
   }
@@ -1940,10 +1993,12 @@ export class PageListObjectiveProgressResponseBody extends $tea.Model {
 
 export class PageListObjectiveProgressResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PageListObjectiveProgressResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1951,6 +2006,7 @@ export class PageListObjectiveProgressResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PageListObjectiveProgressResponseBody,
     };
   }
@@ -2031,10 +2087,12 @@ export class TransferUserObjectiveResponseBody extends $tea.Model {
 
 export class TransferUserObjectiveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: TransferUserObjectiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2042,6 +2100,7 @@ export class TransferUserObjectiveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: TransferUserObjectiveResponseBody,
     };
   }
@@ -2319,9 +2378,12 @@ export class PageListObjectiveProgressResponseBodyContent extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2329,12 +2391,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async getAllJobLevel(): Promise<GetAllJobLevelResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAllJobLevelHeaders({ });
-    return await this.getAllJobLevelWithOptions(headers, runtime);
-  }
 
   async getAllJobLevelWithOptions(headers: GetAllJobLevelHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllJobLevelResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -2349,13 +2405,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetAllJobLevelResponse>(await this.doROARequest("GetAllJobLevel", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/jobLevels`, "json", req, runtime), new GetAllJobLevelResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAllJobLevel",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/jobLevels`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAllJobLevelResponse>(await this.execute(params, req, runtime), new GetAllJobLevelResponse({}));
   }
 
-  async getAllJobPosition(): Promise<GetAllJobPositionResponse> {
+  async getAllJobLevel(): Promise<GetAllJobLevelResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAllJobPositionHeaders({ });
-    return await this.getAllJobPositionWithOptions(headers, runtime);
+    let headers = new GetAllJobLevelHeaders({ });
+    return await this.getAllJobLevelWithOptions(headers, runtime);
   }
 
   async getAllJobPositionWithOptions(headers: GetAllJobPositionHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllJobPositionResponse> {
@@ -2371,13 +2438,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetAllJobPositionResponse>(await this.doROARequest("GetAllJobPosition", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/jobPositions`, "json", req, runtime), new GetAllJobPositionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAllJobPosition",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/jobPositions`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAllJobPositionResponse>(await this.execute(params, req, runtime), new GetAllJobPositionResponse({}));
   }
 
-  async getAllJobPost(): Promise<GetAllJobPostResponse> {
+  async getAllJobPosition(): Promise<GetAllJobPositionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAllJobPostHeaders({ });
-    return await this.getAllJobPostWithOptions(headers, runtime);
+    let headers = new GetAllJobPositionHeaders({ });
+    return await this.getAllJobPositionWithOptions(headers, runtime);
   }
 
   async getAllJobPostWithOptions(headers: GetAllJobPostHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllJobPostResponse> {
@@ -2393,13 +2471,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetAllJobPostResponse>(await this.doROARequest("GetAllJobPost", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/jobPosts`, "json", req, runtime), new GetAllJobPostResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAllJobPost",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/jobPosts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAllJobPostResponse>(await this.execute(params, req, runtime), new GetAllJobPostResponse({}));
   }
 
-  async getAnalyzeData(request: GetAnalyzeDataRequest): Promise<GetAnalyzeDataResponse> {
+  async getAllJobPost(): Promise<GetAllJobPostResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAnalyzeDataHeaders({ });
-    return await this.getAnalyzeDataWithOptions(request, headers, runtime);
+    let headers = new GetAllJobPostHeaders({ });
+    return await this.getAllJobPostWithOptions(headers, runtime);
   }
 
   async getAnalyzeDataWithOptions(request: GetAnalyzeDataRequest, headers: GetAnalyzeDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetAnalyzeDataResponse> {
@@ -2428,13 +2517,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetAnalyzeDataResponse>(await this.doROARequest("GetAnalyzeData", "chengfeng_1.0", "HTTP", "POST", "AK", `/v1.0/chengfeng/okr/analyses/datas/query`, "json", req, runtime), new GetAnalyzeDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAnalyzeData",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/okr/analyses/datas/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAnalyzeDataResponse>(await this.execute(params, req, runtime), new GetAnalyzeDataResponse({}));
   }
 
-  async getChildOrgList(request: GetChildOrgListRequest): Promise<GetChildOrgListResponse> {
+  async getAnalyzeData(request: GetAnalyzeDataRequest): Promise<GetAnalyzeDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetChildOrgListHeaders({ });
-    return await this.getChildOrgListWithOptions(request, headers, runtime);
+    let headers = new GetAnalyzeDataHeaders({ });
+    return await this.getAnalyzeDataWithOptions(request, headers, runtime);
   }
 
   async getChildOrgListWithOptions(request: GetChildOrgListRequest, headers: GetChildOrgListHeaders, runtime: $Util.RuntimeOptions): Promise<GetChildOrgListResponse> {
@@ -2457,13 +2557,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetChildOrgListResponse>(await this.doROARequest("GetChildOrgList", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/organizations`, "json", req, runtime), new GetChildOrgListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetChildOrgList",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/organizations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetChildOrgListResponse>(await this.execute(params, req, runtime), new GetChildOrgListResponse({}));
   }
 
-  async getEmployeeInfoByWorkNo(request: GetEmployeeInfoByWorkNoRequest): Promise<GetEmployeeInfoByWorkNoResponse> {
+  async getChildOrgList(request: GetChildOrgListRequest): Promise<GetChildOrgListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetEmployeeInfoByWorkNoHeaders({ });
-    return await this.getEmployeeInfoByWorkNoWithOptions(request, headers, runtime);
+    let headers = new GetChildOrgListHeaders({ });
+    return await this.getChildOrgListWithOptions(request, headers, runtime);
   }
 
   async getEmployeeInfoByWorkNoWithOptions(request: GetEmployeeInfoByWorkNoRequest, headers: GetEmployeeInfoByWorkNoHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmployeeInfoByWorkNoResponse> {
@@ -2486,17 +2597,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetEmployeeInfoByWorkNoResponse>(await this.doROARequest("GetEmployeeInfoByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/workNumbers/employees`, "json", req, runtime), new GetEmployeeInfoByWorkNoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetEmployeeInfoByWorkNo",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/workNumbers/employees`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetEmployeeInfoByWorkNoResponse>(await this.execute(params, req, runtime), new GetEmployeeInfoByWorkNoResponse({}));
   }
 
-  async getEmploymentRecordByWorkNo(workNumbers: string): Promise<GetEmploymentRecordByWorkNoResponse> {
+  async getEmployeeInfoByWorkNo(request: GetEmployeeInfoByWorkNoRequest): Promise<GetEmployeeInfoByWorkNoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetEmploymentRecordByWorkNoHeaders({ });
-    return await this.getEmploymentRecordByWorkNoWithOptions(workNumbers, headers, runtime);
+    let headers = new GetEmployeeInfoByWorkNoHeaders({ });
+    return await this.getEmployeeInfoByWorkNoWithOptions(request, headers, runtime);
   }
 
   async getEmploymentRecordByWorkNoWithOptions(workNumbers: string, headers: GetEmploymentRecordByWorkNoHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmploymentRecordByWorkNoResponse> {
-    workNumbers = OpenApiUtil.getEncodeParam(workNumbers);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2509,13 +2630,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetEmploymentRecordByWorkNoResponse>(await this.doROARequest("GetEmploymentRecordByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/users/workNumber/${workNumbers}employmentRecords`, "json", req, runtime), new GetEmploymentRecordByWorkNoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetEmploymentRecordByWorkNo",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/users/workNumber/${workNumbers}employmentRecords`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetEmploymentRecordByWorkNoResponse>(await this.execute(params, req, runtime), new GetEmploymentRecordByWorkNoResponse({}));
   }
 
-  async getJobPosition(request: GetJobPositionRequest): Promise<GetJobPositionResponse> {
+  async getEmploymentRecordByWorkNo(workNumbers: string): Promise<GetEmploymentRecordByWorkNoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetJobPositionHeaders({ });
-    return await this.getJobPositionWithOptions(request, headers, runtime);
+    let headers = new GetEmploymentRecordByWorkNoHeaders({ });
+    return await this.getEmploymentRecordByWorkNoWithOptions(workNumbers, headers, runtime);
   }
 
   async getJobPositionWithOptions(request: GetJobPositionRequest, headers: GetJobPositionHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobPositionResponse> {
@@ -2538,13 +2670,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetJobPositionResponse>(await this.doROARequest("GetJobPosition", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/jobPositions/infos`, "json", req, runtime), new GetJobPositionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetJobPosition",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/jobPositions/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetJobPositionResponse>(await this.execute(params, req, runtime), new GetJobPositionResponse({}));
   }
 
-  async getJobPost(request: GetJobPostRequest): Promise<GetJobPostResponse> {
+  async getJobPosition(request: GetJobPositionRequest): Promise<GetJobPositionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetJobPostHeaders({ });
-    return await this.getJobPostWithOptions(request, headers, runtime);
+    let headers = new GetJobPositionHeaders({ });
+    return await this.getJobPositionWithOptions(request, headers, runtime);
   }
 
   async getJobPostWithOptions(request: GetJobPostRequest, headers: GetJobPostHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobPostResponse> {
@@ -2567,13 +2710,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetJobPostResponse>(await this.doROARequest("GetJobPost", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/jobPosts/infos`, "json", req, runtime), new GetJobPostResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetJobPost",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/jobPosts/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetJobPostResponse>(await this.execute(params, req, runtime), new GetJobPostResponse({}));
   }
 
-  async getOrgInfo(request: GetOrgInfoRequest): Promise<GetOrgInfoResponse> {
+  async getJobPost(request: GetJobPostRequest): Promise<GetJobPostResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetOrgInfoHeaders({ });
-    return await this.getOrgInfoWithOptions(request, headers, runtime);
+    let headers = new GetJobPostHeaders({ });
+    return await this.getJobPostWithOptions(request, headers, runtime);
   }
 
   async getOrgInfoWithOptions(request: GetOrgInfoRequest, headers: GetOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrgInfoResponse> {
@@ -2596,13 +2750,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetOrgInfoResponse>(await this.doROARequest("GetOrgInfo", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/organizations/infos`, "json", req, runtime), new GetOrgInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetOrgInfo",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/organizations/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOrgInfoResponse>(await this.execute(params, req, runtime), new GetOrgInfoResponse({}));
   }
 
-  async getStaffInfoByWorkNo(request: GetStaffInfoByWorkNoRequest): Promise<GetStaffInfoByWorkNoResponse> {
+  async getOrgInfo(request: GetOrgInfoRequest): Promise<GetOrgInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetStaffInfoByWorkNoHeaders({ });
-    return await this.getStaffInfoByWorkNoWithOptions(request, headers, runtime);
+    let headers = new GetOrgInfoHeaders({ });
+    return await this.getOrgInfoWithOptions(request, headers, runtime);
   }
 
   async getStaffInfoByWorkNoWithOptions(request: GetStaffInfoByWorkNoRequest, headers: GetStaffInfoByWorkNoHeaders, runtime: $Util.RuntimeOptions): Promise<GetStaffInfoByWorkNoResponse> {
@@ -2625,13 +2790,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetStaffInfoByWorkNoResponse>(await this.doROARequest("GetStaffInfoByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/users`, "json", req, runtime), new GetStaffInfoByWorkNoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetStaffInfoByWorkNo",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/users`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetStaffInfoByWorkNoResponse>(await this.execute(params, req, runtime), new GetStaffInfoByWorkNoResponse({}));
   }
 
-  async getStaffPageQuery(request: GetStaffPageQueryRequest): Promise<GetStaffPageQueryResponse> {
+  async getStaffInfoByWorkNo(request: GetStaffInfoByWorkNoRequest): Promise<GetStaffInfoByWorkNoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetStaffPageQueryHeaders({ });
-    return await this.getStaffPageQueryWithOptions(request, headers, runtime);
+    let headers = new GetStaffInfoByWorkNoHeaders({ });
+    return await this.getStaffInfoByWorkNoWithOptions(request, headers, runtime);
   }
 
   async getStaffPageQueryWithOptions(request: GetStaffPageQueryRequest, headers: GetStaffPageQueryHeaders, runtime: $Util.RuntimeOptions): Promise<GetStaffPageQueryResponse> {
@@ -2670,13 +2846,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetStaffPageQueryResponse>(await this.doROARequest("GetStaffPageQuery", "chengfeng_1.0", "HTTP", "POST", "AK", `/v1.0/chengfeng/users/query`, "json", req, runtime), new GetStaffPageQueryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetStaffPageQuery",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/users/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetStaffPageQueryResponse>(await this.execute(params, req, runtime), new GetStaffPageQueryResponse({}));
   }
 
-  async getUser(request: GetUserRequest): Promise<GetUserResponse> {
+  async getStaffPageQuery(request: GetStaffPageQueryRequest): Promise<GetStaffPageQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserHeaders({ });
-    return await this.getUserWithOptions(request, headers, runtime);
+    let headers = new GetStaffPageQueryHeaders({ });
+    return await this.getStaffPageQueryWithOptions(request, headers, runtime);
   }
 
   async getUserWithOptions(request: GetUserRequest, headers: GetUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserResponse> {
@@ -2703,13 +2890,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetUserResponse>(await this.doROARequest("GetUser", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/okr/users`, "json", req, runtime), new GetUserResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUser",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/okr/users`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserResponse>(await this.execute(params, req, runtime), new GetUserResponse({}));
   }
 
-  async listAnalyzePeriods(): Promise<ListAnalyzePeriodsResponse> {
+  async getUser(request: GetUserRequest): Promise<GetUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListAnalyzePeriodsHeaders({ });
-    return await this.listAnalyzePeriodsWithOptions(headers, runtime);
+    let headers = new GetUserHeaders({ });
+    return await this.getUserWithOptions(request, headers, runtime);
   }
 
   async listAnalyzePeriodsWithOptions(headers: ListAnalyzePeriodsHeaders, runtime: $Util.RuntimeOptions): Promise<ListAnalyzePeriodsResponse> {
@@ -2725,13 +2923,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<ListAnalyzePeriodsResponse>(await this.doROARequest("ListAnalyzePeriods", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/okr/analyses/periods`, "json", req, runtime), new ListAnalyzePeriodsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListAnalyzePeriods",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/okr/analyses/periods`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAnalyzePeriodsResponse>(await this.execute(params, req, runtime), new ListAnalyzePeriodsResponse({}));
   }
 
-  async listObjectiveByIds(request: ListObjectiveByIdsRequest): Promise<ListObjectiveByIdsResponse> {
+  async listAnalyzePeriods(): Promise<ListAnalyzePeriodsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListObjectiveByIdsHeaders({ });
-    return await this.listObjectiveByIdsWithOptions(request, headers, runtime);
+    let headers = new ListAnalyzePeriodsHeaders({ });
+    return await this.listAnalyzePeriodsWithOptions(headers, runtime);
   }
 
   async listObjectiveByIdsWithOptions(request: ListObjectiveByIdsRequest, headers: ListObjectiveByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListObjectiveByIdsResponse> {
@@ -2754,13 +2963,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ListObjectiveByIdsResponse>(await this.doROARequest("ListObjectiveByIds", "chengfeng_1.0", "HTTP", "POST", "AK", `/v1.0/chengfeng/okr/objectives/query`, "json", req, runtime), new ListObjectiveByIdsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListObjectiveByIds",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/okr/objectives/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListObjectiveByIdsResponse>(await this.execute(params, req, runtime), new ListObjectiveByIdsResponse({}));
   }
 
-  async listObjectiveByUser(request: ListObjectiveByUserRequest): Promise<ListObjectiveByUserResponse> {
+  async listObjectiveByIds(request: ListObjectiveByIdsRequest): Promise<ListObjectiveByIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListObjectiveByUserHeaders({ });
-    return await this.listObjectiveByUserWithOptions(request, headers, runtime);
+    let headers = new ListObjectiveByIdsHeaders({ });
+    return await this.listObjectiveByIdsWithOptions(request, headers, runtime);
   }
 
   async listObjectiveByUserWithOptions(request: ListObjectiveByUserRequest, headers: ListObjectiveByUserHeaders, runtime: $Util.RuntimeOptions): Promise<ListObjectiveByUserResponse> {
@@ -2791,13 +3011,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListObjectiveByUserResponse>(await this.doROARequest("ListObjectiveByUser", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/okr/users/objectives`, "json", req, runtime), new ListObjectiveByUserResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListObjectiveByUser",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/okr/users/objectives`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListObjectiveByUserResponse>(await this.execute(params, req, runtime), new ListObjectiveByUserResponse({}));
   }
 
-  async listProgressByIds(request: ListProgressByIdsRequest): Promise<ListProgressByIdsResponse> {
+  async listObjectiveByUser(request: ListObjectiveByUserRequest): Promise<ListObjectiveByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListProgressByIdsHeaders({ });
-    return await this.listProgressByIdsWithOptions(request, headers, runtime);
+    let headers = new ListObjectiveByUserHeaders({ });
+    return await this.listObjectiveByUserWithOptions(request, headers, runtime);
   }
 
   async listProgressByIdsWithOptions(request: ListProgressByIdsRequest, headers: ListProgressByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListProgressByIdsResponse> {
@@ -2820,13 +3051,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ListProgressByIdsResponse>(await this.doROARequest("ListProgressByIds", "chengfeng_1.0", "HTTP", "POST", "AK", `/v1.0/chengfeng/okr/objectives/progresses/query`, "json", req, runtime), new ListProgressByIdsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListProgressByIds",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/okr/objectives/progresses/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListProgressByIdsResponse>(await this.execute(params, req, runtime), new ListProgressByIdsResponse({}));
   }
 
-  async pageListObjectiveProgress(request: PageListObjectiveProgressRequest): Promise<PageListObjectiveProgressResponse> {
+  async listProgressByIds(request: ListProgressByIdsRequest): Promise<ListProgressByIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PageListObjectiveProgressHeaders({ });
-    return await this.pageListObjectiveProgressWithOptions(request, headers, runtime);
+    let headers = new ListProgressByIdsHeaders({ });
+    return await this.listProgressByIdsWithOptions(request, headers, runtime);
   }
 
   async pageListObjectiveProgressWithOptions(request: PageListObjectiveProgressRequest, headers: PageListObjectiveProgressHeaders, runtime: $Util.RuntimeOptions): Promise<PageListObjectiveProgressResponse> {
@@ -2857,13 +3099,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<PageListObjectiveProgressResponse>(await this.doROARequest("PageListObjectiveProgress", "chengfeng_1.0", "HTTP", "GET", "AK", `/v1.0/chengfeng/okr/objectives/progresses/records`, "json", req, runtime), new PageListObjectiveProgressResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PageListObjectiveProgress",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/okr/objectives/progresses/records`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PageListObjectiveProgressResponse>(await this.execute(params, req, runtime), new PageListObjectiveProgressResponse({}));
   }
 
-  async transferUserObjective(request: TransferUserObjectiveRequest): Promise<TransferUserObjectiveResponse> {
+  async pageListObjectiveProgress(request: PageListObjectiveProgressRequest): Promise<PageListObjectiveProgressResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new TransferUserObjectiveHeaders({ });
-    return await this.transferUserObjectiveWithOptions(request, headers, runtime);
+    let headers = new PageListObjectiveProgressHeaders({ });
+    return await this.pageListObjectiveProgressWithOptions(request, headers, runtime);
   }
 
   async transferUserObjectiveWithOptions(request: TransferUserObjectiveRequest, headers: TransferUserObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<TransferUserObjectiveResponse> {
@@ -2890,7 +3143,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<TransferUserObjectiveResponse>(await this.doROARequest("TransferUserObjective", "chengfeng_1.0", "HTTP", "POST", "AK", `/v1.0/chengfeng/okr/objectives/transfer`, "json", req, runtime), new TransferUserObjectiveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "TransferUserObjective",
+      version: "chengfeng_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/chengfeng/okr/objectives/transfer`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<TransferUserObjectiveResponse>(await this.execute(params, req, runtime), new TransferUserObjectiveResponse({}));
+  }
+
+  async transferUserObjective(request: TransferUserObjectiveRequest): Promise<TransferUserObjectiveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new TransferUserObjectiveHeaders({ });
+    return await this.transferUserObjectiveWithOptions(request, headers, runtime);
   }
 
 }

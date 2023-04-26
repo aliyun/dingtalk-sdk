@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -50,15 +52,18 @@ export class AddDeviceVideoConferenceMembersRequest extends $tea.Model {
 
 export class AddDeviceVideoConferenceMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -132,10 +137,12 @@ export class CreateDeviceVideoConferenceResponseBody extends $tea.Model {
 
 export class CreateDeviceVideoConferenceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateDeviceVideoConferenceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -143,6 +150,7 @@ export class CreateDeviceVideoConferenceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateDeviceVideoConferenceResponseBody,
     };
   }
@@ -217,10 +225,12 @@ export class ExtractFacialFeatureResponseBody extends $tea.Model {
 
 export class ExtractFacialFeatureResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ExtractFacialFeatureResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -228,6 +238,7 @@ export class ExtractFacialFeatureResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ExtractFacialFeatureResponseBody,
     };
   }
@@ -280,15 +291,18 @@ export class KickDeviceVideoConferenceMembersRequest extends $tea.Model {
 
 export class KickDeviceVideoConferenceMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -349,15 +363,18 @@ export class MachineManagerUpdateRequest extends $tea.Model {
 
 export class MachineManagerUpdateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -424,15 +441,18 @@ export class MachineUsersUpdateRequest extends $tea.Model {
 
 export class MachineUsersUpdateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -487,10 +507,12 @@ export class QueryDeviceVideoConferenceBookResponseBody extends $tea.Model {
 
 export class QueryDeviceVideoConferenceBookResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryDeviceVideoConferenceBookResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -498,6 +520,7 @@ export class QueryDeviceVideoConferenceBookResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryDeviceVideoConferenceBookResponseBody,
     };
   }
@@ -543,9 +566,12 @@ export class MachineManagerUpdateRequestAtmManagerRightMap extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -554,16 +580,48 @@ export default class Client extends OpenApi {
   }
 
 
+  async addDeviceVideoConferenceMembersWithOptions(deviceId: string, conferenceId: string, request: AddDeviceVideoConferenceMembersRequest, headers: AddDeviceVideoConferenceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddDeviceVideoConferenceMembersResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userIds)) {
+      body["userIds"] = request.userIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddDeviceVideoConferenceMembers",
+      version: "smartDevice_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/smartDevice/devices/${deviceId}/videoConferences/${conferenceId}/members`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "none",
+    });
+    return $tea.cast<AddDeviceVideoConferenceMembersResponse>(await this.execute(params, req, runtime), new AddDeviceVideoConferenceMembersResponse({}));
+  }
+
   async addDeviceVideoConferenceMembers(deviceId: string, conferenceId: string, request: AddDeviceVideoConferenceMembersRequest): Promise<AddDeviceVideoConferenceMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddDeviceVideoConferenceMembersHeaders({ });
     return await this.addDeviceVideoConferenceMembersWithOptions(deviceId, conferenceId, request, headers, runtime);
   }
 
-  async addDeviceVideoConferenceMembersWithOptions(deviceId: string, conferenceId: string, request: AddDeviceVideoConferenceMembersRequest, headers: AddDeviceVideoConferenceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddDeviceVideoConferenceMembersResponse> {
+  async createDeviceVideoConferenceWithOptions(deviceId: string, request: CreateDeviceVideoConferenceRequest, headers: CreateDeviceVideoConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeviceVideoConferenceResponse> {
     Util.validateModel(request);
-    deviceId = OpenApiUtil.getEncodeParam(deviceId);
-    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userIds)) {
       body["userIds"] = request.userIds;
@@ -582,43 +640,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddDeviceVideoConferenceMembersResponse>(await this.doROARequest("AddDeviceVideoConferenceMembers", "smartDevice_1.0", "HTTP", "POST", "AK", `/v1.0/smartDevice/devices/${deviceId}/videoConferences/${conferenceId}/members`, "none", req, runtime), new AddDeviceVideoConferenceMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateDeviceVideoConference",
+      version: "smartDevice_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/smartDevice/devices/${deviceId}/videoConferences`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateDeviceVideoConferenceResponse>(await this.execute(params, req, runtime), new CreateDeviceVideoConferenceResponse({}));
   }
 
   async createDeviceVideoConference(deviceId: string, request: CreateDeviceVideoConferenceRequest): Promise<CreateDeviceVideoConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateDeviceVideoConferenceHeaders({ });
     return await this.createDeviceVideoConferenceWithOptions(deviceId, request, headers, runtime);
-  }
-
-  async createDeviceVideoConferenceWithOptions(deviceId: string, request: CreateDeviceVideoConferenceRequest, headers: CreateDeviceVideoConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeviceVideoConferenceResponse> {
-    Util.validateModel(request);
-    deviceId = OpenApiUtil.getEncodeParam(deviceId);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.userIds)) {
-      body["userIds"] = request.userIds;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<CreateDeviceVideoConferenceResponse>(await this.doROARequest("CreateDeviceVideoConference", "smartDevice_1.0", "HTTP", "POST", "AK", `/v1.0/smartDevice/devices/${deviceId}/videoConferences`, "json", req, runtime), new CreateDeviceVideoConferenceResponse({}));
-  }
-
-  async extractFacialFeature(request: ExtractFacialFeatureRequest): Promise<ExtractFacialFeatureResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ExtractFacialFeatureHeaders({ });
-    return await this.extractFacialFeatureWithOptions(request, headers, runtime);
   }
 
   async extractFacialFeatureWithOptions(request: ExtractFacialFeatureRequest, headers: ExtractFacialFeatureHeaders, runtime: $Util.RuntimeOptions): Promise<ExtractFacialFeatureResponse> {
@@ -645,19 +684,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ExtractFacialFeatureResponse>(await this.doROARequest("ExtractFacialFeature", "smartDevice_1.0", "HTTP", "POST", "AK", `/v1.0/smartDevice/faceRecognitions/features/extract`, "json", req, runtime), new ExtractFacialFeatureResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ExtractFacialFeature",
+      version: "smartDevice_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/smartDevice/faceRecognitions/features/extract`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ExtractFacialFeatureResponse>(await this.execute(params, req, runtime), new ExtractFacialFeatureResponse({}));
   }
 
-  async kickDeviceVideoConferenceMembers(deviceId: string, conferenceId: string, request: KickDeviceVideoConferenceMembersRequest): Promise<KickDeviceVideoConferenceMembersResponse> {
+  async extractFacialFeature(request: ExtractFacialFeatureRequest): Promise<ExtractFacialFeatureResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new KickDeviceVideoConferenceMembersHeaders({ });
-    return await this.kickDeviceVideoConferenceMembersWithOptions(deviceId, conferenceId, request, headers, runtime);
+    let headers = new ExtractFacialFeatureHeaders({ });
+    return await this.extractFacialFeatureWithOptions(request, headers, runtime);
   }
 
   async kickDeviceVideoConferenceMembersWithOptions(deviceId: string, conferenceId: string, request: KickDeviceVideoConferenceMembersRequest, headers: KickDeviceVideoConferenceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<KickDeviceVideoConferenceMembersResponse> {
     Util.validateModel(request);
-    deviceId = OpenApiUtil.getEncodeParam(deviceId);
-    conferenceId = OpenApiUtil.getEncodeParam(conferenceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userIds)) {
       body["userIds"] = request.userIds;
@@ -676,13 +724,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<KickDeviceVideoConferenceMembersResponse>(await this.doROARequest("KickDeviceVideoConferenceMembers", "smartDevice_1.0", "HTTP", "POST", "AK", `/v1.0/smartDevice/devices/${deviceId}/videoConferences/${conferenceId}/members/batchDelete`, "none", req, runtime), new KickDeviceVideoConferenceMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "KickDeviceVideoConferenceMembers",
+      version: "smartDevice_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/smartDevice/devices/${deviceId}/videoConferences/${conferenceId}/members/batchDelete`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "none",
+    });
+    return $tea.cast<KickDeviceVideoConferenceMembersResponse>(await this.execute(params, req, runtime), new KickDeviceVideoConferenceMembersResponse({}));
   }
 
-  async machineManagerUpdate(request: MachineManagerUpdateRequest): Promise<MachineManagerUpdateResponse> {
+  async kickDeviceVideoConferenceMembers(deviceId: string, conferenceId: string, request: KickDeviceVideoConferenceMembersRequest): Promise<KickDeviceVideoConferenceMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new MachineManagerUpdateHeaders({ });
-    return await this.machineManagerUpdateWithOptions(request, headers, runtime);
+    let headers = new KickDeviceVideoConferenceMembersHeaders({ });
+    return await this.kickDeviceVideoConferenceMembersWithOptions(deviceId, conferenceId, request, headers, runtime);
   }
 
   async machineManagerUpdateWithOptions(request: MachineManagerUpdateRequest, headers: MachineManagerUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<MachineManagerUpdateResponse> {
@@ -717,13 +776,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<MachineManagerUpdateResponse>(await this.doROARequest("MachineManagerUpdate", "smartDevice_1.0", "HTTP", "PUT", "AK", `/v1.0/smartDevice/atmachines/managers`, "none", req, runtime), new MachineManagerUpdateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "MachineManagerUpdate",
+      version: "smartDevice_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/smartDevice/atmachines/managers`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<MachineManagerUpdateResponse>(await this.execute(params, req, runtime), new MachineManagerUpdateResponse({}));
   }
 
-  async machineUsersUpdate(request: MachineUsersUpdateRequest): Promise<MachineUsersUpdateResponse> {
+  async machineManagerUpdate(request: MachineManagerUpdateRequest): Promise<MachineManagerUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new MachineUsersUpdateHeaders({ });
-    return await this.machineUsersUpdateWithOptions(request, headers, runtime);
+    let headers = new MachineManagerUpdateHeaders({ });
+    return await this.machineManagerUpdateWithOptions(request, headers, runtime);
   }
 
   async machineUsersUpdateWithOptions(request: MachineUsersUpdateRequest, headers: MachineUsersUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<MachineUsersUpdateResponse> {
@@ -766,18 +836,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<MachineUsersUpdateResponse>(await this.doROARequest("MachineUsersUpdate", "smartDevice_1.0", "HTTP", "PUT", "AK", `/v1.0/smartDevice/atmachines/users`, "none", req, runtime), new MachineUsersUpdateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "MachineUsersUpdate",
+      version: "smartDevice_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/smartDevice/atmachines/users`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<MachineUsersUpdateResponse>(await this.execute(params, req, runtime), new MachineUsersUpdateResponse({}));
   }
 
-  async queryDeviceVideoConferenceBook(deviceId: string, bookId: string): Promise<QueryDeviceVideoConferenceBookResponse> {
+  async machineUsersUpdate(request: MachineUsersUpdateRequest): Promise<MachineUsersUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDeviceVideoConferenceBookHeaders({ });
-    return await this.queryDeviceVideoConferenceBookWithOptions(deviceId, bookId, headers, runtime);
+    let headers = new MachineUsersUpdateHeaders({ });
+    return await this.machineUsersUpdateWithOptions(request, headers, runtime);
   }
 
   async queryDeviceVideoConferenceBookWithOptions(deviceId: string, bookId: string, headers: QueryDeviceVideoConferenceBookHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceVideoConferenceBookResponse> {
-    deviceId = OpenApiUtil.getEncodeParam(deviceId);
-    bookId = OpenApiUtil.getEncodeParam(bookId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -790,7 +869,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryDeviceVideoConferenceBookResponse>(await this.doROARequest("QueryDeviceVideoConferenceBook", "smartDevice_1.0", "HTTP", "GET", "AK", `/v1.0/smartDevice/devices/${deviceId}/books/${bookId}`, "json", req, runtime), new QueryDeviceVideoConferenceBookResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDeviceVideoConferenceBook",
+      version: "smartDevice_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/smartDevice/devices/${deviceId}/books/${bookId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDeviceVideoConferenceBookResponse>(await this.execute(params, req, runtime), new QueryDeviceVideoConferenceBookResponse({}));
+  }
+
+  async queryDeviceVideoConferenceBook(deviceId: string, bookId: string): Promise<QueryDeviceVideoConferenceBookResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryDeviceVideoConferenceBookHeaders({ });
+    return await this.queryDeviceVideoConferenceBookWithOptions(deviceId, bookId, headers, runtime);
   }
 
 }

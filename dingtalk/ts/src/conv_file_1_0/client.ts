@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -72,10 +74,12 @@ export class GetSpaceResponseBody extends $tea.Model {
 
 export class GetSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -83,6 +87,7 @@ export class GetSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSpaceResponseBody,
     };
   }
@@ -163,10 +168,12 @@ export class SendResponseBody extends $tea.Model {
 
 export class SendResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -174,6 +181,7 @@ export class SendResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendResponseBody,
     };
   }
@@ -251,10 +259,12 @@ export class SendByAppResponseBody extends $tea.Model {
 
 export class SendByAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendByAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -262,6 +272,7 @@ export class SendByAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendByAppResponseBody,
     };
   }
@@ -342,10 +353,12 @@ export class SendLinkResponseBody extends $tea.Model {
 
 export class SendLinkResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendLinkResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -353,6 +366,7 @@ export class SendLinkResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendLinkResponseBody,
     };
   }
@@ -584,9 +598,12 @@ export class SendLinkResponseBodyFile extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -594,12 +611,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async getSpace(request: GetSpaceRequest): Promise<GetSpaceResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSpaceHeaders({ });
-    return await this.getSpaceWithOptions(request, headers, runtime);
-  }
 
   async getSpaceWithOptions(request: GetSpaceRequest, headers: GetSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceResponse> {
     Util.validateModel(request);
@@ -627,13 +638,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetSpaceResponse>(await this.doROARequest("GetSpace", "convFile_1.0", "HTTP", "POST", "AK", `/v1.0/convFile/conversations/spaces/query`, "json", req, runtime), new GetSpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSpace",
+      version: "convFile_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/convFile/conversations/spaces/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSpaceResponse>(await this.execute(params, req, runtime), new GetSpaceResponse({}));
   }
 
-  async send(request: SendRequest): Promise<SendResponse> {
+  async getSpace(request: GetSpaceRequest): Promise<GetSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendHeaders({ });
-    return await this.sendWithOptions(request, headers, runtime);
+    let headers = new GetSpaceHeaders({ });
+    return await this.getSpaceWithOptions(request, headers, runtime);
   }
 
   async sendWithOptions(request: SendRequest, headers: SendHeaders, runtime: $Util.RuntimeOptions): Promise<SendResponse> {
@@ -670,13 +692,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendResponse>(await this.doROARequest("Send", "convFile_1.0", "HTTP", "POST", "AK", `/v1.0/convFile/conversations/files/send`, "json", req, runtime), new SendResponse({}));
+    let params = new $OpenApi.Params({
+      action: "Send",
+      version: "convFile_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/convFile/conversations/files/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendResponse>(await this.execute(params, req, runtime), new SendResponse({}));
   }
 
-  async sendByApp(request: SendByAppRequest): Promise<SendByAppResponse> {
+  async send(request: SendRequest): Promise<SendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendByAppHeaders({ });
-    return await this.sendByAppWithOptions(request, headers, runtime);
+    let headers = new SendHeaders({ });
+    return await this.sendWithOptions(request, headers, runtime);
   }
 
   async sendByAppWithOptions(request: SendByAppRequest, headers: SendByAppHeaders, runtime: $Util.RuntimeOptions): Promise<SendByAppResponse> {
@@ -709,13 +742,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendByAppResponse>(await this.doROARequest("SendByApp", "convFile_1.0", "HTTP", "POST", "AK", `/v1.0/convFile/apps/conversations/files/send`, "json", req, runtime), new SendByAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SendByApp",
+      version: "convFile_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/convFile/apps/conversations/files/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendByAppResponse>(await this.execute(params, req, runtime), new SendByAppResponse({}));
   }
 
-  async sendLink(request: SendLinkRequest): Promise<SendLinkResponse> {
+  async sendByApp(request: SendByAppRequest): Promise<SendByAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendLinkHeaders({ });
-    return await this.sendLinkWithOptions(request, headers, runtime);
+    let headers = new SendByAppHeaders({ });
+    return await this.sendByAppWithOptions(request, headers, runtime);
   }
 
   async sendLinkWithOptions(request: SendLinkRequest, headers: SendLinkHeaders, runtime: $Util.RuntimeOptions): Promise<SendLinkResponse> {
@@ -752,7 +796,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendLinkResponse>(await this.doROARequest("SendLink", "convFile_1.0", "HTTP", "POST", "AK", `/v1.0/convFile/conversations/files/links/send`, "json", req, runtime), new SendLinkResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SendLink",
+      version: "convFile_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/convFile/conversations/files/links/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendLinkResponse>(await this.execute(params, req, runtime), new SendLinkResponse({}));
+  }
+
+  async sendLink(request: SendLinkRequest): Promise<SendLinkResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendLinkHeaders({ });
+    return await this.sendLinkWithOptions(request, headers, runtime);
   }
 
 }

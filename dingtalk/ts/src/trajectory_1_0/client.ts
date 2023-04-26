@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -84,10 +86,12 @@ export class QueryAppActiveUsersResponseBody extends $tea.Model {
 
 export class QueryAppActiveUsersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAppActiveUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -95,6 +99,7 @@ export class QueryAppActiveUsersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAppActiveUsersResponseBody,
     };
   }
@@ -166,10 +171,12 @@ export class QueryCollectingTraceTaskResponseBody extends $tea.Model {
 
 export class QueryCollectingTraceTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryCollectingTraceTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -177,6 +184,7 @@ export class QueryCollectingTraceTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryCollectingTraceTaskResponseBody,
     };
   }
@@ -269,10 +277,12 @@ export class QueryPageTraceDataResponseBody extends $tea.Model {
 
 export class QueryPageTraceDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryPageTraceDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -280,6 +290,7 @@ export class QueryPageTraceDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryPageTraceDataResponseBody,
     };
   }
@@ -409,9 +420,12 @@ export class QueryPageTraceDataResponseBodyList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -419,12 +433,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async queryAppActiveUsers(request: QueryAppActiveUsersRequest): Promise<QueryAppActiveUsersResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAppActiveUsersHeaders({ });
-    return await this.queryAppActiveUsersWithOptions(request, headers, runtime);
-  }
 
   async queryAppActiveUsersWithOptions(request: QueryAppActiveUsersRequest, headers: QueryAppActiveUsersHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAppActiveUsersResponse> {
     Util.validateModel(request);
@@ -454,13 +462,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryAppActiveUsersResponse>(await this.doROARequest("QueryAppActiveUsers", "trajectory_1.0", "HTTP", "GET", "AK", `/v1.0/trajectory/activeUsers`, "json", req, runtime), new QueryAppActiveUsersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAppActiveUsers",
+      version: "trajectory_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trajectory/activeUsers`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAppActiveUsersResponse>(await this.execute(params, req, runtime), new QueryAppActiveUsersResponse({}));
   }
 
-  async queryCollectingTraceTask(request: QueryCollectingTraceTaskRequest): Promise<QueryCollectingTraceTaskResponse> {
+  async queryAppActiveUsers(request: QueryAppActiveUsersRequest): Promise<QueryAppActiveUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryCollectingTraceTaskHeaders({ });
-    return await this.queryCollectingTraceTaskWithOptions(request, headers, runtime);
+    let headers = new QueryAppActiveUsersHeaders({ });
+    return await this.queryAppActiveUsersWithOptions(request, headers, runtime);
   }
 
   async queryCollectingTraceTaskWithOptions(request: QueryCollectingTraceTaskRequest, headers: QueryCollectingTraceTaskHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCollectingTraceTaskResponse> {
@@ -483,13 +502,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryCollectingTraceTaskResponse>(await this.doROARequest("QueryCollectingTraceTask", "trajectory_1.0", "HTTP", "POST", "AK", `/v1.0/trajectory/currentTasks/queryByUserIds`, "json", req, runtime), new QueryCollectingTraceTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryCollectingTraceTask",
+      version: "trajectory_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trajectory/currentTasks/queryByUserIds`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCollectingTraceTaskResponse>(await this.execute(params, req, runtime), new QueryCollectingTraceTaskResponse({}));
   }
 
-  async queryPageTraceData(request: QueryPageTraceDataRequest): Promise<QueryPageTraceDataResponse> {
+  async queryCollectingTraceTask(request: QueryCollectingTraceTaskRequest): Promise<QueryCollectingTraceTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryPageTraceDataHeaders({ });
-    return await this.queryPageTraceDataWithOptions(request, headers, runtime);
+    let headers = new QueryCollectingTraceTaskHeaders({ });
+    return await this.queryCollectingTraceTaskWithOptions(request, headers, runtime);
   }
 
   async queryPageTraceDataWithOptions(request: QueryPageTraceDataRequest, headers: QueryPageTraceDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPageTraceDataResponse> {
@@ -532,7 +562,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryPageTraceDataResponse>(await this.doROARequest("QueryPageTraceData", "trajectory_1.0", "HTTP", "GET", "AK", `/v1.0/trajectory/data`, "json", req, runtime), new QueryPageTraceDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryPageTraceData",
+      version: "trajectory_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trajectory/data`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryPageTraceDataResponse>(await this.execute(params, req, runtime), new QueryPageTraceDataResponse({}));
+  }
+
+  async queryPageTraceData(request: QueryPageTraceDataRequest): Promise<QueryPageTraceDataResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryPageTraceDataHeaders({ });
+    return await this.queryPageTraceDataWithOptions(request, headers, runtime);
   }
 
 }

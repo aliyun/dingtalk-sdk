@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -53,15 +55,18 @@ export class AddWorkspaceDocMembersRequest extends $tea.Model {
 
 export class AddWorkspaceDocMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -135,10 +140,12 @@ export class AddWorkspaceMembersResponseBody extends $tea.Model {
 
 export class AddWorkspaceMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddWorkspaceMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -146,6 +153,7 @@ export class AddWorkspaceMembersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddWorkspaceMembersResponseBody,
     };
   }
@@ -201,15 +209,18 @@ export class AppendRowsRequest extends $tea.Model {
 
 export class AppendRowsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -283,10 +294,12 @@ export class BatchGetWorkspaceDocsResponseBody extends $tea.Model {
 
 export class BatchGetWorkspaceDocsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchGetWorkspaceDocsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -294,6 +307,7 @@ export class BatchGetWorkspaceDocsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchGetWorkspaceDocsResponseBody,
     };
   }
@@ -371,10 +385,12 @@ export class BatchGetWorkspacesResponseBody extends $tea.Model {
 
 export class BatchGetWorkspacesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchGetWorkspacesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -382,6 +398,7 @@ export class BatchGetWorkspacesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchGetWorkspacesResponseBody,
     };
   }
@@ -456,10 +473,12 @@ export class BindCoolAppToSheetResponseBody extends $tea.Model {
 
 export class BindCoolAppToSheetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BindCoolAppToSheetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -467,6 +486,7 @@ export class BindCoolAppToSheetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BindCoolAppToSheetResponseBody,
     };
   }
@@ -538,10 +558,12 @@ export class ClearResponseBody extends $tea.Model {
 
 export class ClearResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ClearResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -549,6 +571,7 @@ export class ClearResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ClearResponseBody,
     };
   }
@@ -620,10 +643,12 @@ export class ClearDataResponseBody extends $tea.Model {
 
 export class ClearDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ClearDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -631,6 +656,7 @@ export class ClearDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ClearDataResponseBody,
     };
   }
@@ -711,10 +737,12 @@ export class CreateConditionalFormattingRuleResponseBody extends $tea.Model {
 
 export class CreateConditionalFormattingRuleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateConditionalFormattingRuleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -722,6 +750,7 @@ export class CreateConditionalFormattingRuleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateConditionalFormattingRuleResponseBody,
     };
   }
@@ -802,10 +831,12 @@ export class CreateDeveloperMetadataResponseBody extends $tea.Model {
 
 export class CreateDeveloperMetadataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateDeveloperMetadataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -813,6 +844,7 @@ export class CreateDeveloperMetadataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateDeveloperMetadataResponseBody,
     };
   }
@@ -890,10 +922,12 @@ export class CreateRangeProtectionResponseBody extends $tea.Model {
 
 export class CreateRangeProtectionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateRangeProtectionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -901,6 +935,7 @@ export class CreateRangeProtectionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateRangeProtectionResponseBody,
     };
   }
@@ -981,10 +1016,12 @@ export class CreateSheetResponseBody extends $tea.Model {
 
 export class CreateSheetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateSheetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -992,6 +1029,7 @@ export class CreateSheetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateSheetResponseBody,
     };
   }
@@ -1078,10 +1116,12 @@ export class CreateWorkspaceResponseBody extends $tea.Model {
 
 export class CreateWorkspaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateWorkspaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1089,6 +1129,7 @@ export class CreateWorkspaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateWorkspaceResponseBody,
     };
   }
@@ -1184,10 +1225,12 @@ export class CreateWorkspaceDocResponseBody extends $tea.Model {
 
 export class CreateWorkspaceDocResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateWorkspaceDocResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1195,6 +1238,7 @@ export class CreateWorkspaceDocResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateWorkspaceDocResponseBody,
     };
   }
@@ -1272,10 +1316,12 @@ export class DeleteColumnsResponseBody extends $tea.Model {
 
 export class DeleteColumnsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteColumnsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1283,6 +1329,7 @@ export class DeleteColumnsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteColumnsResponseBody,
     };
   }
@@ -1354,10 +1401,12 @@ export class DeleteDropdownListsResponseBody extends $tea.Model {
 
 export class DeleteDropdownListsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteDropdownListsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1365,6 +1414,7 @@ export class DeleteDropdownListsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteDropdownListsResponseBody,
     };
   }
@@ -1436,10 +1486,12 @@ export class DeleteRangeProtectionResponseBody extends $tea.Model {
 
 export class DeleteRangeProtectionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteRangeProtectionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1447,6 +1499,7 @@ export class DeleteRangeProtectionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteRangeProtectionResponseBody,
     };
   }
@@ -1524,10 +1577,12 @@ export class DeleteRowsResponseBody extends $tea.Model {
 
 export class DeleteRowsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteRowsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1535,6 +1590,7 @@ export class DeleteRowsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteRowsResponseBody,
     };
   }
@@ -1606,10 +1662,12 @@ export class DeleteSheetResponseBody extends $tea.Model {
 
 export class DeleteSheetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteSheetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1617,6 +1675,7 @@ export class DeleteSheetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteSheetResponseBody,
     };
   }
@@ -1669,15 +1728,18 @@ export class DeleteWorkspaceDocRequest extends $tea.Model {
 
 export class DeleteWorkspaceDocResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -1732,15 +1794,18 @@ export class DeleteWorkspaceDocMembersRequest extends $tea.Model {
 
 export class DeleteWorkspaceDocMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -1795,15 +1860,18 @@ export class DeleteWorkspaceMembersRequest extends $tea.Model {
 
 export class DeleteWorkspaceMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -1874,10 +1942,12 @@ export class GetAllSheetsResponseBody extends $tea.Model {
 
 export class GetAllSheetsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAllSheetsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1885,6 +1955,7 @@ export class GetAllSheetsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAllSheetsResponseBody,
     };
   }
@@ -1962,10 +2033,12 @@ export class GetDeveloperMetadataResponseBody extends $tea.Model {
 
 export class GetDeveloperMetadataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetDeveloperMetadataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1973,6 +2046,7 @@ export class GetDeveloperMetadataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetDeveloperMetadataResponseBody,
     };
   }
@@ -2056,10 +2130,12 @@ export class GetRangeResponseBody extends $tea.Model {
 
 export class GetRangeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetRangeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2067,6 +2143,7 @@ export class GetRangeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetRangeResponseBody,
     };
   }
@@ -2147,10 +2224,12 @@ export class GetRecentEditDocsResponseBody extends $tea.Model {
 
 export class GetRecentEditDocsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetRecentEditDocsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2158,6 +2237,7 @@ export class GetRecentEditDocsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetRecentEditDocsResponseBody,
     };
   }
@@ -2238,10 +2318,12 @@ export class GetRecentOpenDocsResponseBody extends $tea.Model {
 
 export class GetRecentOpenDocsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetRecentOpenDocsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2249,6 +2331,7 @@ export class GetRecentOpenDocsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetRecentOpenDocsResponseBody,
     };
   }
@@ -2323,10 +2406,12 @@ export class GetRelatedWorkspacesResponseBody extends $tea.Model {
 
 export class GetRelatedWorkspacesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetRelatedWorkspacesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2334,6 +2419,7 @@ export class GetRelatedWorkspacesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetRelatedWorkspacesResponseBody,
     };
   }
@@ -2423,10 +2509,12 @@ export class GetSheetResponseBody extends $tea.Model {
 
 export class GetSheetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSheetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2434,6 +2522,7 @@ export class GetSheetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSheetResponseBody,
     };
   }
@@ -2529,10 +2618,12 @@ export class GetTemplateByIdResponseBody extends $tea.Model {
 
 export class GetTemplateByIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTemplateByIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2540,6 +2631,7 @@ export class GetTemplateByIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTemplateByIdResponseBody,
     };
   }
@@ -2601,10 +2693,12 @@ export class GetWorkspaceResponseBody extends $tea.Model {
 
 export class GetWorkspaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetWorkspaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2612,6 +2706,7 @@ export class GetWorkspaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetWorkspaceResponseBody,
     };
   }
@@ -2689,10 +2784,12 @@ export class GetWorkspaceNodeResponseBody extends $tea.Model {
 
 export class GetWorkspaceNodeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetWorkspaceNodeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2700,6 +2797,7 @@ export class GetWorkspaceNodeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetWorkspaceNodeResponseBody,
     };
   }
@@ -2758,15 +2856,18 @@ export class InsertBlocksRequest extends $tea.Model {
 
 export class InsertBlocksResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -2843,10 +2944,12 @@ export class InsertColumnsBeforeResponseBody extends $tea.Model {
 
 export class InsertColumnsBeforeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: InsertColumnsBeforeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2854,6 +2957,7 @@ export class InsertColumnsBeforeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: InsertColumnsBeforeResponseBody,
     };
   }
@@ -2928,10 +3032,12 @@ export class InsertDropdownListsResponseBody extends $tea.Model {
 
 export class InsertDropdownListsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: InsertDropdownListsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2939,6 +3045,7 @@ export class InsertDropdownListsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: InsertDropdownListsResponseBody,
     };
   }
@@ -3016,10 +3123,12 @@ export class InsertRowsBeforeResponseBody extends $tea.Model {
 
 export class InsertRowsBeforeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: InsertRowsBeforeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3027,6 +3136,7 @@ export class InsertRowsBeforeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: InsertRowsBeforeResponseBody,
     };
   }
@@ -3116,10 +3226,12 @@ export class ListTemplateResponseBody extends $tea.Model {
 
 export class ListTemplateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3127,6 +3239,7 @@ export class ListTemplateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListTemplateResponseBody,
     };
   }
@@ -3198,10 +3311,12 @@ export class MergeRangeResponseBody extends $tea.Model {
 
 export class MergeRangeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: MergeRangeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3209,6 +3324,7 @@ export class MergeRangeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: MergeRangeResponseBody,
     };
   }
@@ -3286,10 +3402,12 @@ export class RangeFindNextResponseBody extends $tea.Model {
 
 export class RangeFindNextResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RangeFindNextResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3297,6 +3415,7 @@ export class RangeFindNextResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RangeFindNextResponseBody,
     };
   }
@@ -3386,10 +3505,12 @@ export class SearchWorkspaceDocsResponseBody extends $tea.Model {
 
 export class SearchWorkspaceDocsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchWorkspaceDocsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3397,6 +3518,7 @@ export class SearchWorkspaceDocsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchWorkspaceDocsResponseBody,
     };
   }
@@ -3477,10 +3599,12 @@ export class SetColumnsVisibilityResponseBody extends $tea.Model {
 
 export class SetColumnsVisibilityResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SetColumnsVisibilityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3488,6 +3612,7 @@ export class SetColumnsVisibilityResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SetColumnsVisibilityResponseBody,
     };
   }
@@ -3568,10 +3693,12 @@ export class SetRowsVisibilityResponseBody extends $tea.Model {
 
 export class SetRowsVisibilityResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SetRowsVisibilityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3579,6 +3706,7 @@ export class SetRowsVisibilityResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SetRowsVisibilityResponseBody,
     };
   }
@@ -3659,10 +3787,12 @@ export class SheetAutofitRowsResponseBody extends $tea.Model {
 
 export class SheetAutofitRowsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SheetAutofitRowsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3670,6 +3800,7 @@ export class SheetAutofitRowsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SheetAutofitRowsResponseBody,
     };
   }
@@ -3750,10 +3881,12 @@ export class SheetFindAllResponseBody extends $tea.Model {
 
 export class SheetFindAllResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SheetFindAllResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3761,6 +3894,7 @@ export class SheetFindAllResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SheetFindAllResponseBody,
     };
   }
@@ -3835,10 +3969,12 @@ export class UnbindCoolAppToSheetResponseBody extends $tea.Model {
 
 export class UnbindCoolAppToSheetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UnbindCoolAppToSheetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3846,6 +3982,7 @@ export class UnbindCoolAppToSheetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UnbindCoolAppToSheetResponseBody,
     };
   }
@@ -3929,10 +4066,12 @@ export class UpdateRangeResponseBody extends $tea.Model {
 
 export class UpdateRangeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateRangeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3940,6 +4079,7 @@ export class UpdateRangeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateRangeResponseBody,
     };
   }
@@ -3998,15 +4138,18 @@ export class UpdateSheetRequest extends $tea.Model {
 
 export class UpdateSheetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -4061,15 +4204,18 @@ export class UpdateWorkspaceDocMembersRequest extends $tea.Model {
 
 export class UpdateWorkspaceDocMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -4124,15 +4270,18 @@ export class UpdateWorkspaceMembersRequest extends $tea.Model {
 
 export class UpdateWorkspaceMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -5375,9 +5524,12 @@ export class UpdateWorkspaceMembersRequestMembers extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -5386,16 +5538,8 @@ export default class Client extends OpenApi {
   }
 
 
-  async addWorkspaceDocMembers(workspaceId: string, nodeId: string, request: AddWorkspaceDocMembersRequest): Promise<AddWorkspaceDocMembersResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddWorkspaceDocMembersHeaders({ });
-    return await this.addWorkspaceDocMembersWithOptions(workspaceId, nodeId, request, headers, runtime);
-  }
-
   async addWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: AddWorkspaceDocMembersRequest, headers: AddWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceDocMembersResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
-    nodeId = OpenApiUtil.getEncodeParam(nodeId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.members)) {
       body["members"] = request.members;
@@ -5418,7 +5562,62 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddWorkspaceDocMembersResponse>(await this.doROARequest("AddWorkspaceDocMembers", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}/members`, "none", req, runtime), new AddWorkspaceDocMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddWorkspaceDocMembers",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}/members`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<AddWorkspaceDocMembersResponse>(await this.execute(params, req, runtime), new AddWorkspaceDocMembersResponse({}));
+  }
+
+  async addWorkspaceDocMembers(workspaceId: string, nodeId: string, request: AddWorkspaceDocMembersRequest): Promise<AddWorkspaceDocMembersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddWorkspaceDocMembersHeaders({ });
+    return await this.addWorkspaceDocMembersWithOptions(workspaceId, nodeId, request, headers, runtime);
+  }
+
+  async addWorkspaceMembersWithOptions(workspaceId: string, request: AddWorkspaceMembersRequest, headers: AddWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceMembersResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddWorkspaceMembers",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/${workspaceId}/members`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddWorkspaceMembersResponse>(await this.execute(params, req, runtime), new AddWorkspaceMembersResponse({}));
   }
 
   async addWorkspaceMembers(workspaceId: string, request: AddWorkspaceMembersRequest): Promise<AddWorkspaceMembersResponse> {
@@ -5427,44 +5626,8 @@ export default class Client extends OpenApi {
     return await this.addWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
   }
 
-  async addWorkspaceMembersWithOptions(workspaceId: string, request: AddWorkspaceMembersRequest, headers: AddWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<AddWorkspaceMembersResponse> {
-    Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.members)) {
-      body["members"] = request.members;
-    }
-
-    if (!Util.isUnset(request.operatorId)) {
-      body["operatorId"] = request.operatorId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<AddWorkspaceMembersResponse>(await this.doROARequest("AddWorkspaceMembers", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/members`, "json", req, runtime), new AddWorkspaceMembersResponse({}));
-  }
-
-  async appendRows(workbookId: string, sheetId: string, request: AppendRowsRequest): Promise<AppendRowsResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AppendRowsHeaders({ });
-    return await this.appendRowsWithOptions(workbookId, sheetId, request, headers, runtime);
-  }
-
   async appendRowsWithOptions(workbookId: string, sheetId: string, request: AppendRowsRequest, headers: AppendRowsHeaders, runtime: $Util.RuntimeOptions): Promise<AppendRowsResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5489,13 +5652,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AppendRowsResponse>(await this.doROARequest("AppendRows", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/appendRows`, "none", req, runtime), new AppendRowsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AppendRows",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/appendRows`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<AppendRowsResponse>(await this.execute(params, req, runtime), new AppendRowsResponse({}));
   }
 
-  async batchGetWorkspaceDocs(request: BatchGetWorkspaceDocsRequest): Promise<BatchGetWorkspaceDocsResponse> {
+  async appendRows(workbookId: string, sheetId: string, request: AppendRowsRequest): Promise<AppendRowsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchGetWorkspaceDocsHeaders({ });
-    return await this.batchGetWorkspaceDocsWithOptions(request, headers, runtime);
+    let headers = new AppendRowsHeaders({ });
+    return await this.appendRowsWithOptions(workbookId, sheetId, request, headers, runtime);
   }
 
   async batchGetWorkspaceDocsWithOptions(request: BatchGetWorkspaceDocsRequest, headers: BatchGetWorkspaceDocsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchGetWorkspaceDocsResponse> {
@@ -5522,13 +5696,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchGetWorkspaceDocsResponse>(await this.doROARequest("BatchGetWorkspaceDocs", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/docs/infos/query`, "json", req, runtime), new BatchGetWorkspaceDocsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchGetWorkspaceDocs",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/docs/infos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchGetWorkspaceDocsResponse>(await this.execute(params, req, runtime), new BatchGetWorkspaceDocsResponse({}));
   }
 
-  async batchGetWorkspaces(request: BatchGetWorkspacesRequest): Promise<BatchGetWorkspacesResponse> {
+  async batchGetWorkspaceDocs(request: BatchGetWorkspaceDocsRequest): Promise<BatchGetWorkspaceDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchGetWorkspacesHeaders({ });
-    return await this.batchGetWorkspacesWithOptions(request, headers, runtime);
+    let headers = new BatchGetWorkspaceDocsHeaders({ });
+    return await this.batchGetWorkspaceDocsWithOptions(request, headers, runtime);
   }
 
   async batchGetWorkspacesWithOptions(request: BatchGetWorkspacesRequest, headers: BatchGetWorkspacesHeaders, runtime: $Util.RuntimeOptions): Promise<BatchGetWorkspacesResponse> {
@@ -5559,18 +5744,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchGetWorkspacesResponse>(await this.doROARequest("BatchGetWorkspaces", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/infos/query`, "json", req, runtime), new BatchGetWorkspacesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchGetWorkspaces",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/infos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchGetWorkspacesResponse>(await this.execute(params, req, runtime), new BatchGetWorkspacesResponse({}));
   }
 
-  async bindCoolAppToSheet(workbookId: string, request: BindCoolAppToSheetRequest): Promise<BindCoolAppToSheetResponse> {
+  async batchGetWorkspaces(request: BatchGetWorkspacesRequest): Promise<BatchGetWorkspacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BindCoolAppToSheetHeaders({ });
-    return await this.bindCoolAppToSheetWithOptions(workbookId, request, headers, runtime);
+    let headers = new BatchGetWorkspacesHeaders({ });
+    return await this.batchGetWorkspacesWithOptions(request, headers, runtime);
   }
 
   async bindCoolAppToSheetWithOptions(workbookId: string, request: BindCoolAppToSheetRequest, headers: BindCoolAppToSheetHeaders, runtime: $Util.RuntimeOptions): Promise<BindCoolAppToSheetResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5595,7 +5790,58 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BindCoolAppToSheetResponse>(await this.doROARequest("BindCoolAppToSheet", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/coolApps`, "json", req, runtime), new BindCoolAppToSheetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BindCoolAppToSheet",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/coolApps`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BindCoolAppToSheetResponse>(await this.execute(params, req, runtime), new BindCoolAppToSheetResponse({}));
+  }
+
+  async bindCoolAppToSheet(workbookId: string, request: BindCoolAppToSheetRequest): Promise<BindCoolAppToSheetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new BindCoolAppToSheetHeaders({ });
+    return await this.bindCoolAppToSheetWithOptions(workbookId, request, headers, runtime);
+  }
+
+  async clearWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: ClearRequest, headers: ClearHeaders, runtime: $Util.RuntimeOptions): Promise<ClearResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "Clear",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/clear`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ClearResponse>(await this.execute(params, req, runtime), new ClearResponse({}));
   }
 
   async clear(workbookId: string, sheetId: string, rangeAddress: string, request: ClearRequest): Promise<ClearResponse> {
@@ -5604,11 +5850,8 @@ export default class Client extends OpenApi {
     return await this.clearWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
   }
 
-  async clearWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: ClearRequest, headers: ClearHeaders, runtime: $Util.RuntimeOptions): Promise<ClearResponse> {
+  async clearDataWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: ClearDataRequest, headers: ClearDataHeaders, runtime: $Util.RuntimeOptions): Promise<ClearDataResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
-    rangeAddress = OpenApiUtil.getEncodeParam(rangeAddress);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5627,7 +5870,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ClearResponse>(await this.doROARequest("Clear", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/clear`, "json", req, runtime), new ClearResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ClearData",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/clearData`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ClearDataResponse>(await this.execute(params, req, runtime), new ClearDataResponse({}));
   }
 
   async clearData(workbookId: string, sheetId: string, rangeAddress: string, request: ClearDataRequest): Promise<ClearDataResponse> {
@@ -5636,42 +5890,8 @@ export default class Client extends OpenApi {
     return await this.clearDataWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
   }
 
-  async clearDataWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: ClearDataRequest, headers: ClearDataHeaders, runtime: $Util.RuntimeOptions): Promise<ClearDataResponse> {
-    Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
-    rangeAddress = OpenApiUtil.getEncodeParam(rangeAddress);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.operatorId)) {
-      query["operatorId"] = request.operatorId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<ClearDataResponse>(await this.doROARequest("ClearData", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/clearData`, "json", req, runtime), new ClearDataResponse({}));
-  }
-
-  async createConditionalFormattingRule(workbookId: string, sheetId: string, request: CreateConditionalFormattingRuleRequest): Promise<CreateConditionalFormattingRuleResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateConditionalFormattingRuleHeaders({ });
-    return await this.createConditionalFormattingRuleWithOptions(workbookId, sheetId, request, headers, runtime);
-  }
-
   async createConditionalFormattingRuleWithOptions(workbookId: string, sheetId: string, request: CreateConditionalFormattingRuleRequest, headers: CreateConditionalFormattingRuleHeaders, runtime: $Util.RuntimeOptions): Promise<CreateConditionalFormattingRuleResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5704,18 +5924,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateConditionalFormattingRuleResponse>(await this.doROARequest("CreateConditionalFormattingRule", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/conditionalFormattingRules`, "json", req, runtime), new CreateConditionalFormattingRuleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateConditionalFormattingRule",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/conditionalFormattingRules`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateConditionalFormattingRuleResponse>(await this.execute(params, req, runtime), new CreateConditionalFormattingRuleResponse({}));
   }
 
-  async createDeveloperMetadata(workbookId: string, request: CreateDeveloperMetadataRequest): Promise<CreateDeveloperMetadataResponse> {
+  async createConditionalFormattingRule(workbookId: string, sheetId: string, request: CreateConditionalFormattingRuleRequest): Promise<CreateConditionalFormattingRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateDeveloperMetadataHeaders({ });
-    return await this.createDeveloperMetadataWithOptions(workbookId, request, headers, runtime);
+    let headers = new CreateConditionalFormattingRuleHeaders({ });
+    return await this.createConditionalFormattingRuleWithOptions(workbookId, sheetId, request, headers, runtime);
   }
 
   async createDeveloperMetadataWithOptions(workbookId: string, request: CreateDeveloperMetadataRequest, headers: CreateDeveloperMetadataHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeveloperMetadataResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5748,20 +5978,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateDeveloperMetadataResponse>(await this.doROARequest("CreateDeveloperMetadata", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/developerMetadatas`, "json", req, runtime), new CreateDeveloperMetadataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateDeveloperMetadata",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/developerMetadatas`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateDeveloperMetadataResponse>(await this.execute(params, req, runtime), new CreateDeveloperMetadataResponse({}));
   }
 
-  async createRangeProtection(workbookId: string, sheetId: string, rangeAddress: string, request: CreateRangeProtectionRequest): Promise<CreateRangeProtectionResponse> {
+  async createDeveloperMetadata(workbookId: string, request: CreateDeveloperMetadataRequest): Promise<CreateDeveloperMetadataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateRangeProtectionHeaders({ });
-    return await this.createRangeProtectionWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
+    let headers = new CreateDeveloperMetadataHeaders({ });
+    return await this.createDeveloperMetadataWithOptions(workbookId, request, headers, runtime);
   }
 
   async createRangeProtectionWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: CreateRangeProtectionRequest, headers: CreateRangeProtectionHeaders, runtime: $Util.RuntimeOptions): Promise<CreateRangeProtectionResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
-    rangeAddress = OpenApiUtil.getEncodeParam(rangeAddress);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5790,18 +6028,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateRangeProtectionResponse>(await this.doROARequest("CreateRangeProtection", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/protections`, "json", req, runtime), new CreateRangeProtectionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateRangeProtection",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/protections`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateRangeProtectionResponse>(await this.execute(params, req, runtime), new CreateRangeProtectionResponse({}));
   }
 
-  async createSheet(workbookId: string, request: CreateSheetRequest): Promise<CreateSheetResponse> {
+  async createRangeProtection(workbookId: string, sheetId: string, rangeAddress: string, request: CreateRangeProtectionRequest): Promise<CreateRangeProtectionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateSheetHeaders({ });
-    return await this.createSheetWithOptions(workbookId, request, headers, runtime);
+    let headers = new CreateRangeProtectionHeaders({ });
+    return await this.createRangeProtectionWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
   }
 
   async createSheetWithOptions(workbookId: string, request: CreateSheetRequest, headers: CreateSheetHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSheetResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5826,13 +6074,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateSheetResponse>(await this.doROARequest("CreateSheet", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets`, "json", req, runtime), new CreateSheetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateSheet",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateSheetResponse>(await this.execute(params, req, runtime), new CreateSheetResponse({}));
   }
 
-  async createWorkspace(request: CreateWorkspaceRequest): Promise<CreateWorkspaceResponse> {
+  async createSheet(workbookId: string, request: CreateSheetRequest): Promise<CreateSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateWorkspaceHeaders({ });
-    return await this.createWorkspaceWithOptions(request, headers, runtime);
+    let headers = new CreateSheetHeaders({ });
+    return await this.createSheetWithOptions(workbookId, request, headers, runtime);
   }
 
   async createWorkspaceWithOptions(request: CreateWorkspaceRequest, headers: CreateWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateWorkspaceResponse> {
@@ -5863,18 +6122,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateWorkspaceResponse>(await this.doROARequest("CreateWorkspace", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces`, "json", req, runtime), new CreateWorkspaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateWorkspace",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateWorkspaceResponse>(await this.execute(params, req, runtime), new CreateWorkspaceResponse({}));
   }
 
-  async createWorkspaceDoc(workspaceId: string, request: CreateWorkspaceDocRequest): Promise<CreateWorkspaceDocResponse> {
+  async createWorkspace(request: CreateWorkspaceRequest): Promise<CreateWorkspaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateWorkspaceDocHeaders({ });
-    return await this.createWorkspaceDocWithOptions(workspaceId, request, headers, runtime);
+    let headers = new CreateWorkspaceHeaders({ });
+    return await this.createWorkspaceWithOptions(request, headers, runtime);
   }
 
   async createWorkspaceDocWithOptions(workspaceId: string, request: CreateWorkspaceDocRequest, headers: CreateWorkspaceDocHeaders, runtime: $Util.RuntimeOptions): Promise<CreateWorkspaceDocResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.docType)) {
       body["docType"] = request.docType;
@@ -5913,19 +6182,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateWorkspaceDocResponse>(await this.doROARequest("CreateWorkspaceDoc", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs`, "json", req, runtime), new CreateWorkspaceDocResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateWorkspaceDoc",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/${workspaceId}/docs`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateWorkspaceDocResponse>(await this.execute(params, req, runtime), new CreateWorkspaceDocResponse({}));
   }
 
-  async deleteColumns(workbookId: string, sheetId: string, request: DeleteColumnsRequest): Promise<DeleteColumnsResponse> {
+  async createWorkspaceDoc(workspaceId: string, request: CreateWorkspaceDocRequest): Promise<CreateWorkspaceDocResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteColumnsHeaders({ });
-    return await this.deleteColumnsWithOptions(workbookId, sheetId, request, headers, runtime);
+    let headers = new CreateWorkspaceDocHeaders({ });
+    return await this.createWorkspaceDocWithOptions(workspaceId, request, headers, runtime);
   }
 
   async deleteColumnsWithOptions(workbookId: string, sheetId: string, request: DeleteColumnsRequest, headers: DeleteColumnsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteColumnsResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5954,7 +6232,58 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteColumnsResponse>(await this.doROARequest("DeleteColumns", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/deleteColumns`, "json", req, runtime), new DeleteColumnsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteColumns",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/deleteColumns`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteColumnsResponse>(await this.execute(params, req, runtime), new DeleteColumnsResponse({}));
+  }
+
+  async deleteColumns(workbookId: string, sheetId: string, request: DeleteColumnsRequest): Promise<DeleteColumnsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteColumnsHeaders({ });
+    return await this.deleteColumnsWithOptions(workbookId, sheetId, request, headers, runtime);
+  }
+
+  async deleteDropdownListsWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: DeleteDropdownListsRequest, headers: DeleteDropdownListsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDropdownListsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteDropdownLists",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/deleteDropdownLists`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteDropdownListsResponse>(await this.execute(params, req, runtime), new DeleteDropdownListsResponse({}));
   }
 
   async deleteDropdownLists(workbookId: string, sheetId: string, rangeAddress: string, request: DeleteDropdownListsRequest): Promise<DeleteDropdownListsResponse> {
@@ -5963,11 +6292,8 @@ export default class Client extends OpenApi {
     return await this.deleteDropdownListsWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
   }
 
-  async deleteDropdownListsWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: DeleteDropdownListsRequest, headers: DeleteDropdownListsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDropdownListsResponse> {
+  async deleteRangeProtectionWithOptions(workbookId: string, sheetId: string, rangeAddress: string, protectionId: string, request: DeleteRangeProtectionRequest, headers: DeleteRangeProtectionHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRangeProtectionResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
-    rangeAddress = OpenApiUtil.getEncodeParam(rangeAddress);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5986,7 +6312,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteDropdownListsResponse>(await this.doROARequest("DeleteDropdownLists", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/deleteDropdownLists`, "json", req, runtime), new DeleteDropdownListsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteRangeProtection",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/protections/${protectionId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteRangeProtectionResponse>(await this.execute(params, req, runtime), new DeleteRangeProtectionResponse({}));
   }
 
   async deleteRangeProtection(workbookId: string, sheetId: string, rangeAddress: string, protectionId: string, request: DeleteRangeProtectionRequest): Promise<DeleteRangeProtectionResponse> {
@@ -5995,43 +6332,8 @@ export default class Client extends OpenApi {
     return await this.deleteRangeProtectionWithOptions(workbookId, sheetId, rangeAddress, protectionId, request, headers, runtime);
   }
 
-  async deleteRangeProtectionWithOptions(workbookId: string, sheetId: string, rangeAddress: string, protectionId: string, request: DeleteRangeProtectionRequest, headers: DeleteRangeProtectionHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRangeProtectionResponse> {
-    Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
-    rangeAddress = OpenApiUtil.getEncodeParam(rangeAddress);
-    protectionId = OpenApiUtil.getEncodeParam(protectionId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.operatorId)) {
-      query["operatorId"] = request.operatorId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<DeleteRangeProtectionResponse>(await this.doROARequest("DeleteRangeProtection", "doc_1.0", "HTTP", "DELETE", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/protections/${protectionId}`, "json", req, runtime), new DeleteRangeProtectionResponse({}));
-  }
-
-  async deleteRows(workbookId: string, sheetId: string, request: DeleteRowsRequest): Promise<DeleteRowsResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteRowsHeaders({ });
-    return await this.deleteRowsWithOptions(workbookId, sheetId, request, headers, runtime);
-  }
-
   async deleteRowsWithOptions(workbookId: string, sheetId: string, request: DeleteRowsRequest, headers: DeleteRowsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRowsResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6060,7 +6362,58 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteRowsResponse>(await this.doROARequest("DeleteRows", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/deleteRows`, "json", req, runtime), new DeleteRowsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteRows",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/deleteRows`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteRowsResponse>(await this.execute(params, req, runtime), new DeleteRowsResponse({}));
+  }
+
+  async deleteRows(workbookId: string, sheetId: string, request: DeleteRowsRequest): Promise<DeleteRowsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteRowsHeaders({ });
+    return await this.deleteRowsWithOptions(workbookId, sheetId, request, headers, runtime);
+  }
+
+  async deleteSheetWithOptions(workbookId: string, sheetId: string, request: DeleteSheetRequest, headers: DeleteSheetHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSheetResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteSheet",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteSheetResponse>(await this.execute(params, req, runtime), new DeleteSheetResponse({}));
   }
 
   async deleteSheet(workbookId: string, sheetId: string, request: DeleteSheetRequest): Promise<DeleteSheetResponse> {
@@ -6069,10 +6422,8 @@ export default class Client extends OpenApi {
     return await this.deleteSheetWithOptions(workbookId, sheetId, request, headers, runtime);
   }
 
-  async deleteSheetWithOptions(workbookId: string, sheetId: string, request: DeleteSheetRequest, headers: DeleteSheetHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSheetResponse> {
+  async deleteWorkspaceDocWithOptions(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocRequest, headers: DeleteWorkspaceDocHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceDocResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6091,7 +6442,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteSheetResponse>(await this.doROARequest("DeleteSheet", "doc_1.0", "HTTP", "DELETE", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}`, "json", req, runtime), new DeleteSheetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteWorkspaceDoc",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<DeleteWorkspaceDocResponse>(await this.execute(params, req, runtime), new DeleteWorkspaceDocResponse({}));
   }
 
   async deleteWorkspaceDoc(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocRequest): Promise<DeleteWorkspaceDocResponse> {
@@ -6100,13 +6462,15 @@ export default class Client extends OpenApi {
     return await this.deleteWorkspaceDocWithOptions(workspaceId, nodeId, request, headers, runtime);
   }
 
-  async deleteWorkspaceDocWithOptions(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocRequest, headers: DeleteWorkspaceDocHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceDocResponse> {
+  async deleteWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocMembersRequest, headers: DeleteWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceDocMembersResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
-    nodeId = OpenApiUtil.getEncodeParam(nodeId);
-    let query : {[key: string ]: any} = { };
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
     if (!Util.isUnset(request.operatorId)) {
-      query["operatorId"] = request.operatorId;
+      body["operatorId"] = request.operatorId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -6120,9 +6484,20 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteWorkspaceDocResponse>(await this.doROARequest("DeleteWorkspaceDoc", "doc_1.0", "HTTP", "DELETE", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}`, "none", req, runtime), new DeleteWorkspaceDocResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteWorkspaceDocMembers",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}/members/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<DeleteWorkspaceDocMembersResponse>(await this.execute(params, req, runtime), new DeleteWorkspaceDocMembersResponse({}));
   }
 
   async deleteWorkspaceDocMembers(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocMembersRequest): Promise<DeleteWorkspaceDocMembersResponse> {
@@ -6131,10 +6506,8 @@ export default class Client extends OpenApi {
     return await this.deleteWorkspaceDocMembersWithOptions(workspaceId, nodeId, request, headers, runtime);
   }
 
-  async deleteWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: DeleteWorkspaceDocMembersRequest, headers: DeleteWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceDocMembersResponse> {
+  async deleteWorkspaceMembersWithOptions(workspaceId: string, request: DeleteWorkspaceMembersRequest, headers: DeleteWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceMembersResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
-    nodeId = OpenApiUtil.getEncodeParam(nodeId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.members)) {
       body["members"] = request.members;
@@ -6157,7 +6530,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteWorkspaceDocMembersResponse>(await this.doROARequest("DeleteWorkspaceDocMembers", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}/members/remove`, "none", req, runtime), new DeleteWorkspaceDocMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteWorkspaceMembers",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/${workspaceId}/members/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<DeleteWorkspaceMembersResponse>(await this.execute(params, req, runtime), new DeleteWorkspaceMembersResponse({}));
   }
 
   async deleteWorkspaceMembers(workspaceId: string, request: DeleteWorkspaceMembersRequest): Promise<DeleteWorkspaceMembersResponse> {
@@ -6166,16 +6550,11 @@ export default class Client extends OpenApi {
     return await this.deleteWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
   }
 
-  async deleteWorkspaceMembersWithOptions(workspaceId: string, request: DeleteWorkspaceMembersRequest, headers: DeleteWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWorkspaceMembersResponse> {
+  async getAllSheetsWithOptions(workbookId: string, request: GetAllSheetsRequest, headers: GetAllSheetsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllSheetsResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.members)) {
-      body["members"] = request.members;
-    }
-
+    let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
-      body["operatorId"] = request.operatorId;
+      query["operatorId"] = request.operatorId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -6189,9 +6568,20 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
+      query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteWorkspaceMembersResponse>(await this.doROARequest("DeleteWorkspaceMembers", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workspaces/${workspaceId}/members/remove`, "none", req, runtime), new DeleteWorkspaceMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAllSheets",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAllSheetsResponse>(await this.execute(params, req, runtime), new GetAllSheetsResponse({}));
   }
 
   async getAllSheets(workbookId: string, request: GetAllSheetsRequest): Promise<GetAllSheetsResponse> {
@@ -6200,9 +6590,8 @@ export default class Client extends OpenApi {
     return await this.getAllSheetsWithOptions(workbookId, request, headers, runtime);
   }
 
-  async getAllSheetsWithOptions(workbookId: string, request: GetAllSheetsRequest, headers: GetAllSheetsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllSheetsResponse> {
+  async getDeveloperMetadataWithOptions(workbookId: string, developerMetadataId: string, request: GetDeveloperMetadataRequest, headers: GetDeveloperMetadataHeaders, runtime: $Util.RuntimeOptions): Promise<GetDeveloperMetadataResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6221,7 +6610,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetAllSheetsResponse>(await this.doROARequest("GetAllSheets", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets`, "json", req, runtime), new GetAllSheetsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetDeveloperMetadata",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/developerMetadatas/${developerMetadataId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDeveloperMetadataResponse>(await this.execute(params, req, runtime), new GetDeveloperMetadataResponse({}));
   }
 
   async getDeveloperMetadata(workbookId: string, developerMetadataId: string, request: GetDeveloperMetadataRequest): Promise<GetDeveloperMetadataResponse> {
@@ -6230,42 +6630,8 @@ export default class Client extends OpenApi {
     return await this.getDeveloperMetadataWithOptions(workbookId, developerMetadataId, request, headers, runtime);
   }
 
-  async getDeveloperMetadataWithOptions(workbookId: string, developerMetadataId: string, request: GetDeveloperMetadataRequest, headers: GetDeveloperMetadataHeaders, runtime: $Util.RuntimeOptions): Promise<GetDeveloperMetadataResponse> {
-    Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    developerMetadataId = OpenApiUtil.getEncodeParam(developerMetadataId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.operatorId)) {
-      query["operatorId"] = request.operatorId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<GetDeveloperMetadataResponse>(await this.doROARequest("GetDeveloperMetadata", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workbooks/${workbookId}/developerMetadatas/${developerMetadataId}`, "json", req, runtime), new GetDeveloperMetadataResponse({}));
-  }
-
-  async getRange(workbookId: string, sheetId: string, rangeAddress: string, request: GetRangeRequest): Promise<GetRangeResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetRangeHeaders({ });
-    return await this.getRangeWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
-  }
-
   async getRangeWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: GetRangeRequest, headers: GetRangeHeaders, runtime: $Util.RuntimeOptions): Promise<GetRangeResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
-    rangeAddress = OpenApiUtil.getEncodeParam(rangeAddress);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6288,13 +6654,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetRangeResponse>(await this.doROARequest("GetRange", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}`, "json", req, runtime), new GetRangeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetRange",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRangeResponse>(await this.execute(params, req, runtime), new GetRangeResponse({}));
   }
 
-  async getRecentEditDocs(request: GetRecentEditDocsRequest): Promise<GetRecentEditDocsResponse> {
+  async getRange(workbookId: string, sheetId: string, rangeAddress: string, request: GetRangeRequest): Promise<GetRangeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetRecentEditDocsHeaders({ });
-    return await this.getRecentEditDocsWithOptions(request, headers, runtime);
+    let headers = new GetRangeHeaders({ });
+    return await this.getRangeWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
   }
 
   async getRecentEditDocsWithOptions(request: GetRecentEditDocsRequest, headers: GetRecentEditDocsHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecentEditDocsResponse> {
@@ -6325,13 +6702,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetRecentEditDocsResponse>(await this.doROARequest("GetRecentEditDocs", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/docs/recentEditDocs`, "json", req, runtime), new GetRecentEditDocsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetRecentEditDocs",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/docs/recentEditDocs`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRecentEditDocsResponse>(await this.execute(params, req, runtime), new GetRecentEditDocsResponse({}));
   }
 
-  async getRecentOpenDocs(request: GetRecentOpenDocsRequest): Promise<GetRecentOpenDocsResponse> {
+  async getRecentEditDocs(request: GetRecentEditDocsRequest): Promise<GetRecentEditDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetRecentOpenDocsHeaders({ });
-    return await this.getRecentOpenDocsWithOptions(request, headers, runtime);
+    let headers = new GetRecentEditDocsHeaders({ });
+    return await this.getRecentEditDocsWithOptions(request, headers, runtime);
   }
 
   async getRecentOpenDocsWithOptions(request: GetRecentOpenDocsRequest, headers: GetRecentOpenDocsHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecentOpenDocsResponse> {
@@ -6362,13 +6750,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetRecentOpenDocsResponse>(await this.doROARequest("GetRecentOpenDocs", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/docs/recentOpenDocs`, "json", req, runtime), new GetRecentOpenDocsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetRecentOpenDocs",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/docs/recentOpenDocs`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRecentOpenDocsResponse>(await this.execute(params, req, runtime), new GetRecentOpenDocsResponse({}));
   }
 
-  async getRelatedWorkspaces(request: GetRelatedWorkspacesRequest): Promise<GetRelatedWorkspacesResponse> {
+  async getRecentOpenDocs(request: GetRecentOpenDocsRequest): Promise<GetRecentOpenDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetRelatedWorkspacesHeaders({ });
-    return await this.getRelatedWorkspacesWithOptions(request, headers, runtime);
+    let headers = new GetRecentOpenDocsHeaders({ });
+    return await this.getRecentOpenDocsWithOptions(request, headers, runtime);
   }
 
   async getRelatedWorkspacesWithOptions(request: GetRelatedWorkspacesRequest, headers: GetRelatedWorkspacesHeaders, runtime: $Util.RuntimeOptions): Promise<GetRelatedWorkspacesResponse> {
@@ -6395,19 +6794,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetRelatedWorkspacesResponse>(await this.doROARequest("GetRelatedWorkspaces", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces`, "json", req, runtime), new GetRelatedWorkspacesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetRelatedWorkspaces",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRelatedWorkspacesResponse>(await this.execute(params, req, runtime), new GetRelatedWorkspacesResponse({}));
   }
 
-  async getSheet(workbookId: string, sheetId: string, request: GetSheetRequest): Promise<GetSheetResponse> {
+  async getRelatedWorkspaces(request: GetRelatedWorkspacesRequest): Promise<GetRelatedWorkspacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSheetHeaders({ });
-    return await this.getSheetWithOptions(workbookId, sheetId, request, headers, runtime);
+    let headers = new GetRelatedWorkspacesHeaders({ });
+    return await this.getRelatedWorkspacesWithOptions(request, headers, runtime);
   }
 
   async getSheetWithOptions(workbookId: string, sheetId: string, request: GetSheetRequest, headers: GetSheetHeaders, runtime: $Util.RuntimeOptions): Promise<GetSheetResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6426,18 +6834,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetSheetResponse>(await this.doROARequest("GetSheet", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}`, "json", req, runtime), new GetSheetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSheet",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSheetResponse>(await this.execute(params, req, runtime), new GetSheetResponse({}));
   }
 
-  async getTemplateById(templateId: string, request: GetTemplateByIdRequest): Promise<GetTemplateByIdResponse> {
+  async getSheet(workbookId: string, sheetId: string, request: GetSheetRequest): Promise<GetSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTemplateByIdHeaders({ });
-    return await this.getTemplateByIdWithOptions(templateId, request, headers, runtime);
+    let headers = new GetSheetHeaders({ });
+    return await this.getSheetWithOptions(workbookId, sheetId, request, headers, runtime);
   }
 
   async getTemplateByIdWithOptions(templateId: string, request: GetTemplateByIdRequest, headers: GetTemplateByIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTemplateByIdResponse> {
     Util.validateModel(request);
-    templateId = OpenApiUtil.getEncodeParam(templateId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.belong)) {
       query["belong"] = request.belong;
@@ -6460,17 +6878,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetTemplateByIdResponse>(await this.doROARequest("GetTemplateById", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/templates/${templateId}`, "json", req, runtime), new GetTemplateByIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTemplateById",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/templates/${templateId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTemplateByIdResponse>(await this.execute(params, req, runtime), new GetTemplateByIdResponse({}));
   }
 
-  async getWorkspace(workspaceId: string): Promise<GetWorkspaceResponse> {
+  async getTemplateById(templateId: string, request: GetTemplateByIdRequest): Promise<GetTemplateByIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetWorkspaceHeaders({ });
-    return await this.getWorkspaceWithOptions(workspaceId, headers, runtime);
+    let headers = new GetTemplateByIdHeaders({ });
+    return await this.getTemplateByIdWithOptions(templateId, request, headers, runtime);
   }
 
   async getWorkspaceWithOptions(workspaceId: string, headers: GetWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkspaceResponse> {
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -6483,19 +6911,28 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetWorkspaceResponse>(await this.doROARequest("GetWorkspace", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/${workspaceId}`, "json", req, runtime), new GetWorkspaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetWorkspace",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/${workspaceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetWorkspaceResponse>(await this.execute(params, req, runtime), new GetWorkspaceResponse({}));
   }
 
-  async getWorkspaceNode(workspaceId: string, nodeId: string, request: GetWorkspaceNodeRequest): Promise<GetWorkspaceNodeResponse> {
+  async getWorkspace(workspaceId: string): Promise<GetWorkspaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetWorkspaceNodeHeaders({ });
-    return await this.getWorkspaceNodeWithOptions(workspaceId, nodeId, request, headers, runtime);
+    let headers = new GetWorkspaceHeaders({ });
+    return await this.getWorkspaceWithOptions(workspaceId, headers, runtime);
   }
 
   async getWorkspaceNodeWithOptions(workspaceId: string, nodeId: string, request: GetWorkspaceNodeRequest, headers: GetWorkspaceNodeHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkspaceNodeResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
-    nodeId = OpenApiUtil.getEncodeParam(nodeId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6514,18 +6951,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetWorkspaceNodeResponse>(await this.doROARequest("GetWorkspaceNode", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}`, "json", req, runtime), new GetWorkspaceNodeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetWorkspaceNode",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetWorkspaceNodeResponse>(await this.execute(params, req, runtime), new GetWorkspaceNodeResponse({}));
   }
 
-  async insertBlocks(documentId: string, request: InsertBlocksRequest): Promise<InsertBlocksResponse> {
+  async getWorkspaceNode(workspaceId: string, nodeId: string, request: GetWorkspaceNodeRequest): Promise<GetWorkspaceNodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new InsertBlocksHeaders({ });
-    return await this.insertBlocksWithOptions(documentId, request, headers, runtime);
+    let headers = new GetWorkspaceNodeHeaders({ });
+    return await this.getWorkspaceNodeWithOptions(workspaceId, nodeId, request, headers, runtime);
   }
 
   async insertBlocksWithOptions(documentId: string, request: InsertBlocksRequest, headers: InsertBlocksHeaders, runtime: $Util.RuntimeOptions): Promise<InsertBlocksResponse> {
     Util.validateModel(request);
-    documentId = OpenApiUtil.getEncodeParam(documentId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.blocks)) {
       body["blocks"] = request.blocks;
@@ -6552,19 +6999,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<InsertBlocksResponse>(await this.doROARequest("InsertBlocks", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/documents/${documentId}/blocks`, "none", req, runtime), new InsertBlocksResponse({}));
+    let params = new $OpenApi.Params({
+      action: "InsertBlocks",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/documents/${documentId}/blocks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<InsertBlocksResponse>(await this.execute(params, req, runtime), new InsertBlocksResponse({}));
   }
 
-  async insertColumnsBefore(workbookId: string, sheetId: string, request: InsertColumnsBeforeRequest): Promise<InsertColumnsBeforeResponse> {
+  async insertBlocks(documentId: string, request: InsertBlocksRequest): Promise<InsertBlocksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new InsertColumnsBeforeHeaders({ });
-    return await this.insertColumnsBeforeWithOptions(workbookId, sheetId, request, headers, runtime);
+    let headers = new InsertBlocksHeaders({ });
+    return await this.insertBlocksWithOptions(documentId, request, headers, runtime);
   }
 
   async insertColumnsBeforeWithOptions(workbookId: string, sheetId: string, request: InsertColumnsBeforeRequest, headers: InsertColumnsBeforeHeaders, runtime: $Util.RuntimeOptions): Promise<InsertColumnsBeforeResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6593,20 +7049,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<InsertColumnsBeforeResponse>(await this.doROARequest("InsertColumnsBefore", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/insertColumnsBefore`, "json", req, runtime), new InsertColumnsBeforeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "InsertColumnsBefore",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/insertColumnsBefore`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<InsertColumnsBeforeResponse>(await this.execute(params, req, runtime), new InsertColumnsBeforeResponse({}));
   }
 
-  async insertDropdownLists(workbookId: string, sheetId: string, rangeAddress: string, request: InsertDropdownListsRequest): Promise<InsertDropdownListsResponse> {
+  async insertColumnsBefore(workbookId: string, sheetId: string, request: InsertColumnsBeforeRequest): Promise<InsertColumnsBeforeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new InsertDropdownListsHeaders({ });
-    return await this.insertDropdownListsWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
+    let headers = new InsertColumnsBeforeHeaders({ });
+    return await this.insertColumnsBeforeWithOptions(workbookId, sheetId, request, headers, runtime);
   }
 
   async insertDropdownListsWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: InsertDropdownListsRequest, headers: InsertDropdownListsHeaders, runtime: $Util.RuntimeOptions): Promise<InsertDropdownListsResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
-    rangeAddress = OpenApiUtil.getEncodeParam(rangeAddress);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6631,19 +7095,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<InsertDropdownListsResponse>(await this.doROARequest("InsertDropdownLists", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/insertDropdownLists`, "json", req, runtime), new InsertDropdownListsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "InsertDropdownLists",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/insertDropdownLists`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<InsertDropdownListsResponse>(await this.execute(params, req, runtime), new InsertDropdownListsResponse({}));
   }
 
-  async insertRowsBefore(workbookId: string, sheetId: string, request: InsertRowsBeforeRequest): Promise<InsertRowsBeforeResponse> {
+  async insertDropdownLists(workbookId: string, sheetId: string, rangeAddress: string, request: InsertDropdownListsRequest): Promise<InsertDropdownListsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new InsertRowsBeforeHeaders({ });
-    return await this.insertRowsBeforeWithOptions(workbookId, sheetId, request, headers, runtime);
+    let headers = new InsertDropdownListsHeaders({ });
+    return await this.insertDropdownListsWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
   }
 
   async insertRowsBeforeWithOptions(workbookId: string, sheetId: string, request: InsertRowsBeforeRequest, headers: InsertRowsBeforeHeaders, runtime: $Util.RuntimeOptions): Promise<InsertRowsBeforeResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6672,13 +7145,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<InsertRowsBeforeResponse>(await this.doROARequest("InsertRowsBefore", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/insertRowsBefore`, "json", req, runtime), new InsertRowsBeforeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "InsertRowsBefore",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/insertRowsBefore`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<InsertRowsBeforeResponse>(await this.execute(params, req, runtime), new InsertRowsBeforeResponse({}));
   }
 
-  async listTemplate(request: ListTemplateRequest): Promise<ListTemplateResponse> {
+  async insertRowsBefore(workbookId: string, sheetId: string, request: InsertRowsBeforeRequest): Promise<InsertRowsBeforeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListTemplateHeaders({ });
-    return await this.listTemplateWithOptions(request, headers, runtime);
+    let headers = new InsertRowsBeforeHeaders({ });
+    return await this.insertRowsBeforeWithOptions(workbookId, sheetId, request, headers, runtime);
   }
 
   async listTemplateWithOptions(request: ListTemplateRequest, headers: ListTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<ListTemplateResponse> {
@@ -6717,20 +7201,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListTemplateResponse>(await this.doROARequest("ListTemplate", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/templates`, "json", req, runtime), new ListTemplateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListTemplate",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/templates`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListTemplateResponse>(await this.execute(params, req, runtime), new ListTemplateResponse({}));
   }
 
-  async mergeRange(workbookId: string, sheetId: string, rangeAddress: string, request: MergeRangeRequest): Promise<MergeRangeResponse> {
+  async listTemplate(request: ListTemplateRequest): Promise<ListTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new MergeRangeHeaders({ });
-    return await this.mergeRangeWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
+    let headers = new ListTemplateHeaders({ });
+    return await this.listTemplateWithOptions(request, headers, runtime);
   }
 
   async mergeRangeWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: MergeRangeRequest, headers: MergeRangeHeaders, runtime: $Util.RuntimeOptions): Promise<MergeRangeResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
-    rangeAddress = OpenApiUtil.getEncodeParam(rangeAddress);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6749,20 +7241,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<MergeRangeResponse>(await this.doROARequest("MergeRange", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/merge`, "json", req, runtime), new MergeRangeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "MergeRange",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/merge`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<MergeRangeResponse>(await this.execute(params, req, runtime), new MergeRangeResponse({}));
   }
 
-  async rangeFindNext(workbookId: string, sheetId: string, rangeAddress: string, request: RangeFindNextRequest): Promise<RangeFindNextResponse> {
+  async mergeRange(workbookId: string, sheetId: string, rangeAddress: string, request: MergeRangeRequest): Promise<MergeRangeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RangeFindNextHeaders({ });
-    return await this.rangeFindNextWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
+    let headers = new MergeRangeHeaders({ });
+    return await this.mergeRangeWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
   }
 
   async rangeFindNextWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: RangeFindNextRequest, headers: RangeFindNextHeaders, runtime: $Util.RuntimeOptions): Promise<RangeFindNextResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
-    rangeAddress = OpenApiUtil.getEncodeParam(rangeAddress);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6791,13 +7291,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RangeFindNextResponse>(await this.doROARequest("RangeFindNext", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/findNext`, "json", req, runtime), new RangeFindNextResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RangeFindNext",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}/findNext`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RangeFindNextResponse>(await this.execute(params, req, runtime), new RangeFindNextResponse({}));
   }
 
-  async searchWorkspaceDocs(request: SearchWorkspaceDocsRequest): Promise<SearchWorkspaceDocsResponse> {
+  async rangeFindNext(workbookId: string, sheetId: string, rangeAddress: string, request: RangeFindNextRequest): Promise<RangeFindNextResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchWorkspaceDocsHeaders({ });
-    return await this.searchWorkspaceDocsWithOptions(request, headers, runtime);
+    let headers = new RangeFindNextHeaders({ });
+    return await this.rangeFindNextWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
   }
 
   async searchWorkspaceDocsWithOptions(request: SearchWorkspaceDocsRequest, headers: SearchWorkspaceDocsHeaders, runtime: $Util.RuntimeOptions): Promise<SearchWorkspaceDocsResponse> {
@@ -6836,19 +7347,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SearchWorkspaceDocsResponse>(await this.doROARequest("SearchWorkspaceDocs", "doc_1.0", "HTTP", "GET", "AK", `/v1.0/doc/docs`, "json", req, runtime), new SearchWorkspaceDocsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchWorkspaceDocs",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/docs`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchWorkspaceDocsResponse>(await this.execute(params, req, runtime), new SearchWorkspaceDocsResponse({}));
   }
 
-  async setColumnsVisibility(workbookId: string, sheetId: string, request: SetColumnsVisibilityRequest): Promise<SetColumnsVisibilityResponse> {
+  async searchWorkspaceDocs(request: SearchWorkspaceDocsRequest): Promise<SearchWorkspaceDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SetColumnsVisibilityHeaders({ });
-    return await this.setColumnsVisibilityWithOptions(workbookId, sheetId, request, headers, runtime);
+    let headers = new SearchWorkspaceDocsHeaders({ });
+    return await this.searchWorkspaceDocsWithOptions(request, headers, runtime);
   }
 
   async setColumnsVisibilityWithOptions(workbookId: string, sheetId: string, request: SetColumnsVisibilityRequest, headers: SetColumnsVisibilityHeaders, runtime: $Util.RuntimeOptions): Promise<SetColumnsVisibilityResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6881,19 +7401,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SetColumnsVisibilityResponse>(await this.doROARequest("SetColumnsVisibility", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/setColumnsVisibility`, "json", req, runtime), new SetColumnsVisibilityResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SetColumnsVisibility",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/setColumnsVisibility`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SetColumnsVisibilityResponse>(await this.execute(params, req, runtime), new SetColumnsVisibilityResponse({}));
   }
 
-  async setRowsVisibility(workbookId: string, sheetId: string, request: SetRowsVisibilityRequest): Promise<SetRowsVisibilityResponse> {
+  async setColumnsVisibility(workbookId: string, sheetId: string, request: SetColumnsVisibilityRequest): Promise<SetColumnsVisibilityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SetRowsVisibilityHeaders({ });
-    return await this.setRowsVisibilityWithOptions(workbookId, sheetId, request, headers, runtime);
+    let headers = new SetColumnsVisibilityHeaders({ });
+    return await this.setColumnsVisibilityWithOptions(workbookId, sheetId, request, headers, runtime);
   }
 
   async setRowsVisibilityWithOptions(workbookId: string, sheetId: string, request: SetRowsVisibilityRequest, headers: SetRowsVisibilityHeaders, runtime: $Util.RuntimeOptions): Promise<SetRowsVisibilityResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6926,19 +7455,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SetRowsVisibilityResponse>(await this.doROARequest("SetRowsVisibility", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/setRowsVisibility`, "json", req, runtime), new SetRowsVisibilityResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SetRowsVisibility",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/setRowsVisibility`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SetRowsVisibilityResponse>(await this.execute(params, req, runtime), new SetRowsVisibilityResponse({}));
   }
 
-  async sheetAutofitRows(workbookId: string, sheetId: string, request: SheetAutofitRowsRequest): Promise<SheetAutofitRowsResponse> {
+  async setRowsVisibility(workbookId: string, sheetId: string, request: SetRowsVisibilityRequest): Promise<SetRowsVisibilityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SheetAutofitRowsHeaders({ });
-    return await this.sheetAutofitRowsWithOptions(workbookId, sheetId, request, headers, runtime);
+    let headers = new SetRowsVisibilityHeaders({ });
+    return await this.setRowsVisibilityWithOptions(workbookId, sheetId, request, headers, runtime);
   }
 
   async sheetAutofitRowsWithOptions(workbookId: string, sheetId: string, request: SheetAutofitRowsRequest, headers: SheetAutofitRowsHeaders, runtime: $Util.RuntimeOptions): Promise<SheetAutofitRowsResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6971,19 +7509,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SheetAutofitRowsResponse>(await this.doROARequest("SheetAutofitRows", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/autofitRows`, "json", req, runtime), new SheetAutofitRowsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SheetAutofitRows",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/autofitRows`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SheetAutofitRowsResponse>(await this.execute(params, req, runtime), new SheetAutofitRowsResponse({}));
   }
 
-  async sheetFindAll(workbookId: string, sheetId: string, request: SheetFindAllRequest): Promise<SheetFindAllResponse> {
+  async sheetAutofitRows(workbookId: string, sheetId: string, request: SheetAutofitRowsRequest): Promise<SheetAutofitRowsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SheetFindAllHeaders({ });
-    return await this.sheetFindAllWithOptions(workbookId, sheetId, request, headers, runtime);
+    let headers = new SheetAutofitRowsHeaders({ });
+    return await this.sheetAutofitRowsWithOptions(workbookId, sheetId, request, headers, runtime);
   }
 
   async sheetFindAllWithOptions(workbookId: string, sheetId: string, request: SheetFindAllRequest, headers: SheetFindAllHeaders, runtime: $Util.RuntimeOptions): Promise<SheetFindAllResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -7016,18 +7563,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SheetFindAllResponse>(await this.doROARequest("SheetFindAll", "doc_1.0", "HTTP", "POST", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/findAll`, "json", req, runtime), new SheetFindAllResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SheetFindAll",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/findAll`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SheetFindAllResponse>(await this.execute(params, req, runtime), new SheetFindAllResponse({}));
   }
 
-  async unbindCoolAppToSheet(workbookId: string, request: UnbindCoolAppToSheetRequest): Promise<UnbindCoolAppToSheetResponse> {
+  async sheetFindAll(workbookId: string, sheetId: string, request: SheetFindAllRequest): Promise<SheetFindAllResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UnbindCoolAppToSheetHeaders({ });
-    return await this.unbindCoolAppToSheetWithOptions(workbookId, request, headers, runtime);
+    let headers = new SheetFindAllHeaders({ });
+    return await this.sheetFindAllWithOptions(workbookId, sheetId, request, headers, runtime);
   }
 
   async unbindCoolAppToSheetWithOptions(workbookId: string, request: UnbindCoolAppToSheetRequest, headers: UnbindCoolAppToSheetHeaders, runtime: $Util.RuntimeOptions): Promise<UnbindCoolAppToSheetResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.coolAppCode)) {
       query["coolAppCode"] = request.coolAppCode;
@@ -7050,20 +7607,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<UnbindCoolAppToSheetResponse>(await this.doROARequest("UnbindCoolAppToSheet", "doc_1.0", "HTTP", "DELETE", "AK", `/v1.0/doc/workbooks/${workbookId}/coolApps`, "json", req, runtime), new UnbindCoolAppToSheetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UnbindCoolAppToSheet",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/coolApps`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UnbindCoolAppToSheetResponse>(await this.execute(params, req, runtime), new UnbindCoolAppToSheetResponse({}));
   }
 
-  async updateRange(workbookId: string, sheetId: string, rangeAddress: string, request: UpdateRangeRequest): Promise<UpdateRangeResponse> {
+  async unbindCoolAppToSheet(workbookId: string, request: UnbindCoolAppToSheetRequest): Promise<UnbindCoolAppToSheetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateRangeHeaders({ });
-    return await this.updateRangeWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
+    let headers = new UnbindCoolAppToSheetHeaders({ });
+    return await this.unbindCoolAppToSheetWithOptions(workbookId, request, headers, runtime);
   }
 
   async updateRangeWithOptions(workbookId: string, sheetId: string, rangeAddress: string, request: UpdateRangeRequest, headers: UpdateRangeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRangeResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
-    rangeAddress = OpenApiUtil.getEncodeParam(rangeAddress);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -7100,19 +7665,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateRangeResponse>(await this.doROARequest("UpdateRange", "doc_1.0", "HTTP", "PUT", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}`, "json", req, runtime), new UpdateRangeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateRange",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}/ranges/${rangeAddress}`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateRangeResponse>(await this.execute(params, req, runtime), new UpdateRangeResponse({}));
   }
 
-  async updateSheet(workbookId: string, sheetId: string, request: UpdateSheetRequest): Promise<UpdateSheetResponse> {
+  async updateRange(workbookId: string, sheetId: string, rangeAddress: string, request: UpdateRangeRequest): Promise<UpdateRangeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateSheetHeaders({ });
-    return await this.updateSheetWithOptions(workbookId, sheetId, request, headers, runtime);
+    let headers = new UpdateRangeHeaders({ });
+    return await this.updateRangeWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
   }
 
   async updateSheetWithOptions(workbookId: string, sheetId: string, request: UpdateSheetRequest, headers: UpdateSheetHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSheetResponse> {
     Util.validateModel(request);
-    workbookId = OpenApiUtil.getEncodeParam(workbookId);
-    sheetId = OpenApiUtil.getEncodeParam(sheetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -7141,7 +7715,62 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateSheetResponse>(await this.doROARequest("UpdateSheet", "doc_1.0", "HTTP", "PUT", "AK", `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}`, "none", req, runtime), new UpdateSheetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateSheet",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workbooks/${workbookId}/sheets/${sheetId}`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<UpdateSheetResponse>(await this.execute(params, req, runtime), new UpdateSheetResponse({}));
+  }
+
+  async updateSheet(workbookId: string, sheetId: string, request: UpdateSheetRequest): Promise<UpdateSheetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateSheetHeaders({ });
+    return await this.updateSheetWithOptions(workbookId, sheetId, request, headers, runtime);
+  }
+
+  async updateWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: UpdateWorkspaceDocMembersRequest, headers: UpdateWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateWorkspaceDocMembersResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.members)) {
+      body["members"] = request.members;
+    }
+
+    if (!Util.isUnset(request.operatorId)) {
+      body["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateWorkspaceDocMembers",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}/members`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<UpdateWorkspaceDocMembersResponse>(await this.execute(params, req, runtime), new UpdateWorkspaceDocMembersResponse({}));
   }
 
   async updateWorkspaceDocMembers(workspaceId: string, nodeId: string, request: UpdateWorkspaceDocMembersRequest): Promise<UpdateWorkspaceDocMembersResponse> {
@@ -7150,10 +7779,8 @@ export default class Client extends OpenApi {
     return await this.updateWorkspaceDocMembersWithOptions(workspaceId, nodeId, request, headers, runtime);
   }
 
-  async updateWorkspaceDocMembersWithOptions(workspaceId: string, nodeId: string, request: UpdateWorkspaceDocMembersRequest, headers: UpdateWorkspaceDocMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateWorkspaceDocMembersResponse> {
+  async updateWorkspaceMembersWithOptions(workspaceId: string, request: UpdateWorkspaceMembersRequest, headers: UpdateWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateWorkspaceMembersResponse> {
     Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
-    nodeId = OpenApiUtil.getEncodeParam(nodeId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.members)) {
       body["members"] = request.members;
@@ -7176,41 +7803,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateWorkspaceDocMembersResponse>(await this.doROARequest("UpdateWorkspaceDocMembers", "doc_1.0", "HTTP", "PUT", "AK", `/v1.0/doc/workspaces/${workspaceId}/docs/${nodeId}/members`, "none", req, runtime), new UpdateWorkspaceDocMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateWorkspaceMembers",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/workspaces/${workspaceId}/members`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<UpdateWorkspaceMembersResponse>(await this.execute(params, req, runtime), new UpdateWorkspaceMembersResponse({}));
   }
 
   async updateWorkspaceMembers(workspaceId: string, request: UpdateWorkspaceMembersRequest): Promise<UpdateWorkspaceMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateWorkspaceMembersHeaders({ });
     return await this.updateWorkspaceMembersWithOptions(workspaceId, request, headers, runtime);
-  }
-
-  async updateWorkspaceMembersWithOptions(workspaceId: string, request: UpdateWorkspaceMembersRequest, headers: UpdateWorkspaceMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateWorkspaceMembersResponse> {
-    Util.validateModel(request);
-    workspaceId = OpenApiUtil.getEncodeParam(workspaceId);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.members)) {
-      body["members"] = request.members;
-    }
-
-    if (!Util.isUnset(request.operatorId)) {
-      body["operatorId"] = request.operatorId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<UpdateWorkspaceMembersResponse>(await this.doROARequest("UpdateWorkspaceMembers", "doc_1.0", "HTTP", "PUT", "AK", `/v1.0/doc/workspaces/${workspaceId}/members`, "none", req, runtime), new UpdateWorkspaceMembersResponse({}));
   }
 
 }

@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -90,10 +92,12 @@ export class CreateTicketResponseBody extends $tea.Model {
 
 export class CreateTicketResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateTicketResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -101,6 +105,7 @@ export class CreateTicketResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateTicketResponseBody,
     };
   }
@@ -190,10 +195,12 @@ export class ExecuteActivityResponseBody extends $tea.Model {
 
 export class ExecuteActivityResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ExecuteActivityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -201,6 +208,7 @@ export class ExecuteActivityResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ExecuteActivityResponseBody,
     };
   }
@@ -287,10 +295,12 @@ export class GetUserSourceListResponseBody extends $tea.Model {
 
 export class GetUserSourceListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserSourceListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -298,6 +308,7 @@ export class GetUserSourceListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserSourceListResponseBody,
     };
   }
@@ -384,10 +395,12 @@ export class PageListActionResponseBody extends $tea.Model {
 
 export class PageListActionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PageListActionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -395,6 +408,7 @@ export class PageListActionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PageListActionResponseBody,
     };
   }
@@ -487,10 +501,12 @@ export class PageListRobotResponseBody extends $tea.Model {
 
 export class PageListRobotResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PageListRobotResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -498,6 +514,7 @@ export class PageListRobotResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PageListRobotResponseBody,
     };
   }
@@ -605,10 +622,12 @@ export class PageListTicketResponseBody extends $tea.Model {
 
 export class PageListTicketResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PageListTicketResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -616,6 +635,7 @@ export class PageListTicketResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PageListTicketResponseBody,
     };
   }
@@ -850,9 +870,12 @@ export class PageListTicketResponseBodyList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -860,12 +883,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async createTicket(request: CreateTicketRequest): Promise<CreateTicketResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateTicketHeaders({ });
-    return await this.createTicketWithOptions(request, headers, runtime);
-  }
 
   async createTicketWithOptions(request: CreateTicketRequest, headers: CreateTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTicketResponse> {
     Util.validateModel(request);
@@ -915,18 +932,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateTicketResponse>(await this.doROARequest("CreateTicket", "customerService_1.0", "HTTP", "POST", "AK", `/v1.0/customerService/tickets`, "json", req, runtime), new CreateTicketResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateTicket",
+      version: "customerService_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/customerService/tickets`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateTicketResponse>(await this.execute(params, req, runtime), new CreateTicketResponse({}));
   }
 
-  async executeActivity(ticketId: string, request: ExecuteActivityRequest): Promise<ExecuteActivityResponse> {
+  async createTicket(request: CreateTicketRequest): Promise<CreateTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ExecuteActivityHeaders({ });
-    return await this.executeActivityWithOptions(ticketId, request, headers, runtime);
+    let headers = new CreateTicketHeaders({ });
+    return await this.createTicketWithOptions(request, headers, runtime);
   }
 
   async executeActivityWithOptions(ticketId: string, request: ExecuteActivityRequest, headers: ExecuteActivityHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteActivityResponse> {
     Util.validateModel(request);
-    ticketId = OpenApiUtil.getEncodeParam(ticketId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.activityCode)) {
       body["activityCode"] = request.activityCode;
@@ -969,13 +996,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ExecuteActivityResponse>(await this.doROARequest("ExecuteActivity", "customerService_1.0", "HTTP", "PUT", "AK", `/v1.0/customerService/tickets/${ticketId}`, "json", req, runtime), new ExecuteActivityResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ExecuteActivity",
+      version: "customerService_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/customerService/tickets/${ticketId}`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ExecuteActivityResponse>(await this.execute(params, req, runtime), new ExecuteActivityResponse({}));
   }
 
-  async getUserSourceList(request: GetUserSourceListRequest): Promise<GetUserSourceListResponse> {
+  async executeActivity(ticketId: string, request: ExecuteActivityRequest): Promise<ExecuteActivityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserSourceListHeaders({ });
-    return await this.getUserSourceListWithOptions(request, headers, runtime);
+    let headers = new ExecuteActivityHeaders({ });
+    return await this.executeActivityWithOptions(ticketId, request, headers, runtime);
   }
 
   async getUserSourceListWithOptions(request: GetUserSourceListRequest, headers: GetUserSourceListHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserSourceListResponse> {
@@ -1018,18 +1056,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetUserSourceListResponse>(await this.doROARequest("GetUserSourceList", "customerService_1.0", "HTTP", "GET", "AK", `/v1.0/customerService/customers/sources`, "json", req, runtime), new GetUserSourceListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserSourceList",
+      version: "customerService_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/customerService/customers/sources`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserSourceListResponse>(await this.execute(params, req, runtime), new GetUserSourceListResponse({}));
   }
 
-  async pageListAction(ticketId: string, request: PageListActionRequest): Promise<PageListActionResponse> {
+  async getUserSourceList(request: GetUserSourceListRequest): Promise<GetUserSourceListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PageListActionHeaders({ });
-    return await this.pageListActionWithOptions(ticketId, request, headers, runtime);
+    let headers = new GetUserSourceListHeaders({ });
+    return await this.getUserSourceListWithOptions(request, headers, runtime);
   }
 
   async pageListActionWithOptions(ticketId: string, request: PageListActionRequest, headers: PageListActionHeaders, runtime: $Util.RuntimeOptions): Promise<PageListActionResponse> {
     Util.validateModel(request);
-    ticketId = OpenApiUtil.getEncodeParam(ticketId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -1060,13 +1108,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<PageListActionResponse>(await this.doROARequest("PageListAction", "customerService_1.0", "HTTP", "GET", "AK", `/v1.0/customerService/tickets/${ticketId}/actions`, "json", req, runtime), new PageListActionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PageListAction",
+      version: "customerService_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/customerService/tickets/${ticketId}/actions`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<PageListActionResponse>(await this.execute(params, req, runtime), new PageListActionResponse({}));
   }
 
-  async pageListRobot(request: PageListRobotRequest): Promise<PageListRobotResponse> {
+  async pageListAction(ticketId: string, request: PageListActionRequest): Promise<PageListActionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PageListRobotHeaders({ });
-    return await this.pageListRobotWithOptions(request, headers, runtime);
+    let headers = new PageListActionHeaders({ });
+    return await this.pageListActionWithOptions(ticketId, request, headers, runtime);
   }
 
   async pageListRobotWithOptions(request: PageListRobotRequest, headers: PageListRobotHeaders, runtime: $Util.RuntimeOptions): Promise<PageListRobotResponse> {
@@ -1105,13 +1164,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<PageListRobotResponse>(await this.doROARequest("PageListRobot", "customerService_1.0", "HTTP", "GET", "AK", `/v1.0/customerService/robots`, "json", req, runtime), new PageListRobotResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PageListRobot",
+      version: "customerService_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/customerService/robots`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<PageListRobotResponse>(await this.execute(params, req, runtime), new PageListRobotResponse({}));
   }
 
-  async pageListTicket(request: PageListTicketRequest): Promise<PageListTicketResponse> {
+  async pageListRobot(request: PageListRobotRequest): Promise<PageListRobotResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PageListTicketHeaders({ });
-    return await this.pageListTicketWithOptions(request, headers, runtime);
+    let headers = new PageListRobotHeaders({ });
+    return await this.pageListRobotWithOptions(request, headers, runtime);
   }
 
   async pageListTicketWithOptions(request: PageListTicketRequest, headers: PageListTicketHeaders, runtime: $Util.RuntimeOptions): Promise<PageListTicketResponse> {
@@ -1174,7 +1244,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<PageListTicketResponse>(await this.doROARequest("PageListTicket", "customerService_1.0", "HTTP", "GET", "AK", `/v1.0/customerService/tickets`, "json", req, runtime), new PageListTicketResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PageListTicket",
+      version: "customerService_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/customerService/tickets`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<PageListTicketResponse>(await this.execute(params, req, runtime), new PageListTicketResponse({}));
+  }
+
+  async pageListTicket(request: PageListTicketRequest): Promise<PageListTicketResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PageListTicketHeaders({ });
+    return await this.pageListTicketWithOptions(request, headers, runtime);
   }
 
 }

@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -69,10 +71,12 @@ export class AddProjectMemberResponseBody extends $tea.Model {
 
 export class AddProjectMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddProjectMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -80,6 +84,7 @@ export class AddProjectMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddProjectMemberResponseBody,
     };
   }
@@ -132,10 +137,12 @@ export class ArchiveProjectResponseBody extends $tea.Model {
 
 export class ArchiveProjectResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ArchiveProjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -143,6 +150,7 @@ export class ArchiveProjectResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ArchiveProjectResponseBody,
     };
   }
@@ -195,10 +203,12 @@ export class ArchiveTaskResponseBody extends $tea.Model {
 
 export class ArchiveTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ArchiveTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -206,6 +216,7 @@ export class ArchiveTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ArchiveTaskResponseBody,
     };
   }
@@ -304,10 +315,12 @@ export class CreateOrganizationTaskResponseBody extends $tea.Model {
 
 export class CreateOrganizationTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateOrganizationTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -315,6 +328,7 @@ export class CreateOrganizationTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateOrganizationTaskResponseBody,
     };
   }
@@ -413,10 +427,12 @@ export class CreatePlanTimeResponseBody extends $tea.Model {
 
 export class CreatePlanTimeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreatePlanTimeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -424,6 +440,7 @@ export class CreatePlanTimeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreatePlanTimeResponseBody,
     };
   }
@@ -495,10 +512,12 @@ export class CreateProjectResponseBody extends $tea.Model {
 
 export class CreateProjectResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateProjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -506,6 +525,7 @@ export class CreateProjectResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateProjectResponseBody,
     };
   }
@@ -580,10 +600,12 @@ export class CreateProjectByTemplateResponseBody extends $tea.Model {
 
 export class CreateProjectByTemplateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateProjectByTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -591,6 +613,7 @@ export class CreateProjectByTemplateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateProjectByTemplateResponseBody,
     };
   }
@@ -671,10 +694,12 @@ export class CreateProjectCustomfieldStatusResponseBody extends $tea.Model {
 
 export class CreateProjectCustomfieldStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateProjectCustomfieldStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -682,6 +707,7 @@ export class CreateProjectCustomfieldStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateProjectCustomfieldStatusResponseBody,
     };
   }
@@ -786,10 +812,12 @@ export class CreateTaskResponseBody extends $tea.Model {
 
 export class CreateTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -797,6 +825,7 @@ export class CreateTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateTaskResponseBody,
     };
   }
@@ -868,10 +897,12 @@ export class CreateTaskObjectLinkResponseBody extends $tea.Model {
 
 export class CreateTaskObjectLinkResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateTaskObjectLinkResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -879,6 +910,7 @@ export class CreateTaskObjectLinkResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateTaskObjectLinkResponseBody,
     };
   }
@@ -977,10 +1009,12 @@ export class CreateWorkTimeResponseBody extends $tea.Model {
 
 export class CreateWorkTimeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateWorkTimeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -988,7 +1022,99 @@ export class CreateWorkTimeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateWorkTimeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateWorkTimeApproveHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateWorkTimeApproveRequest extends $tea.Model {
+  workTimeIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      workTimeIds: 'workTimeIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      workTimeIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateWorkTimeApproveResponseBody extends $tea.Model {
+  message?: string;
+  requestId?: string;
+  result?: CreateWorkTimeApproveResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      message: 'message',
+      requestId: 'requestId',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      message: 'string',
+      requestId: 'string',
+      result: CreateWorkTimeApproveResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateWorkTimeApproveResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: CreateWorkTimeApproveResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateWorkTimeApproveResponseBody,
     };
   }
 
@@ -1059,10 +1185,12 @@ export class DeleteProjectMemberResponseBody extends $tea.Model {
 
 export class DeleteProjectMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteProjectMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1070,6 +1198,7 @@ export class DeleteProjectMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteProjectMemberResponseBody,
     };
   }
@@ -1122,10 +1251,12 @@ export class DeleteTaskResponseBody extends $tea.Model {
 
 export class DeleteTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1133,6 +1264,7 @@ export class DeleteTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteTaskResponseBody,
     };
   }
@@ -1222,10 +1354,12 @@ export class GetDeptsByOrgIdResponseBody extends $tea.Model {
 
 export class GetDeptsByOrgIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetDeptsByOrgIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1233,6 +1367,7 @@ export class GetDeptsByOrgIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetDeptsByOrgIdResponseBody,
     };
   }
@@ -1322,10 +1457,12 @@ export class GetEmpsByOrgIdResponseBody extends $tea.Model {
 
 export class GetEmpsByOrgIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetEmpsByOrgIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1333,6 +1470,7 @@ export class GetEmpsByOrgIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetEmpsByOrgIdResponseBody,
     };
   }
@@ -1404,10 +1542,12 @@ export class GetOrganizatioTaskByIdsResponseBody extends $tea.Model {
 
 export class GetOrganizatioTaskByIdsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetOrganizatioTaskByIdsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1415,6 +1555,7 @@ export class GetOrganizatioTaskByIdsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetOrganizatioTaskByIdsResponseBody,
     };
   }
@@ -1467,10 +1608,12 @@ export class GetOrganizationPriorityListResponseBody extends $tea.Model {
 
 export class GetOrganizationPriorityListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetOrganizationPriorityListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1478,6 +1621,7 @@ export class GetOrganizationPriorityListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetOrganizationPriorityListResponseBody,
     };
   }
@@ -1530,10 +1674,12 @@ export class GetOrganizationTaskResponseBody extends $tea.Model {
 
 export class GetOrganizationTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetOrganizationTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1541,6 +1687,7 @@ export class GetOrganizationTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetOrganizationTaskResponseBody,
     };
   }
@@ -1615,10 +1762,12 @@ export class GetProjectGroupResponseBody extends $tea.Model {
 
 export class GetProjectGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetProjectGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1626,6 +1775,7 @@ export class GetProjectGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetProjectGroupResponseBody,
     };
   }
@@ -1706,10 +1856,12 @@ export class GetProjectMemebersResponseBody extends $tea.Model {
 
 export class GetProjectMemebersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetProjectMemebersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1717,6 +1869,7 @@ export class GetProjectMemebersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetProjectMemebersResponseBody,
     };
   }
@@ -1769,10 +1922,12 @@ export class GetProjectStatusListResponseBody extends $tea.Model {
 
 export class GetProjectStatusListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetProjectStatusListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1780,6 +1935,7 @@ export class GetProjectStatusListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetProjectStatusListResponseBody,
     };
   }
@@ -1854,10 +2010,12 @@ export class GetTaskByIdsResponseBody extends $tea.Model {
 
 export class GetTaskByIdsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTaskByIdsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1865,6 +2023,7 @@ export class GetTaskByIdsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTaskByIdsResponseBody,
     };
   }
@@ -1936,10 +2095,12 @@ export class GetTbOrgIdByDingOrgIdResponseBody extends $tea.Model {
 
 export class GetTbOrgIdByDingOrgIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTbOrgIdByDingOrgIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1947,6 +2108,7 @@ export class GetTbOrgIdByDingOrgIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTbOrgIdByDingOrgIdResponseBody,
     };
   }
@@ -2036,10 +2198,12 @@ export class GetTbProjectGrayResponseBody extends $tea.Model {
 
 export class GetTbProjectGrayResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTbProjectGrayResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2047,6 +2211,7 @@ export class GetTbProjectGrayResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTbProjectGrayResponseBody,
     };
   }
@@ -2114,10 +2279,12 @@ export class GetTbProjectSourceResponseBody extends $tea.Model {
 
 export class GetTbProjectSourceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTbProjectSourceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2125,6 +2292,7 @@ export class GetTbProjectSourceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTbProjectSourceResponseBody,
     };
   }
@@ -2199,10 +2367,12 @@ export class GetTbUserIdByStaffIdResponseBody extends $tea.Model {
 
 export class GetTbUserIdByStaffIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTbUserIdByStaffIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2210,6 +2380,7 @@ export class GetTbUserIdByStaffIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTbUserIdByStaffIdResponseBody,
     };
   }
@@ -2290,10 +2461,12 @@ export class GetUserJoinedProjectResponseBody extends $tea.Model {
 
 export class GetUserJoinedProjectResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserJoinedProjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2301,6 +2474,7 @@ export class GetUserJoinedProjectResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserJoinedProjectResponseBody,
     };
   }
@@ -2384,10 +2558,12 @@ export class QueryProjectResponseBody extends $tea.Model {
 
 export class QueryProjectResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryProjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2395,6 +2571,7 @@ export class QueryProjectResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryProjectResponseBody,
     };
   }
@@ -2478,10 +2655,12 @@ export class QueryTaskOfProjectResponseBody extends $tea.Model {
 
 export class QueryTaskOfProjectResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryTaskOfProjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2489,6 +2668,7 @@ export class QueryTaskOfProjectResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryTaskOfProjectResponseBody,
     };
   }
@@ -2578,10 +2758,12 @@ export class SeachTaskStageResponseBody extends $tea.Model {
 
 export class SeachTaskStageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SeachTaskStageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2589,6 +2771,7 @@ export class SeachTaskStageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SeachTaskStageResponseBody,
     };
   }
@@ -2684,10 +2867,12 @@ export class SearchOranizationCustomfieldResponseBody extends $tea.Model {
 
 export class SearchOranizationCustomfieldResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchOranizationCustomfieldResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2695,6 +2880,7 @@ export class SearchOranizationCustomfieldResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchOranizationCustomfieldResponseBody,
     };
   }
@@ -2790,10 +2976,12 @@ export class SearchProjectCustomfieldResponseBody extends $tea.Model {
 
 export class SearchProjectCustomfieldResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchProjectCustomfieldResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2801,6 +2989,7 @@ export class SearchProjectCustomfieldResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchProjectCustomfieldResponseBody,
     };
   }
@@ -2872,10 +3061,12 @@ export class SearchProjectTemplateResponseBody extends $tea.Model {
 
 export class SearchProjectTemplateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchProjectTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2883,6 +3074,7 @@ export class SearchProjectTemplateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchProjectTemplateResponseBody,
     };
   }
@@ -2963,10 +3155,12 @@ export class SearchTaskFlowResponseBody extends $tea.Model {
 
 export class SearchTaskFlowResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchTaskFlowResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2974,6 +3168,7 @@ export class SearchTaskFlowResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchTaskFlowResponseBody,
     };
   }
@@ -3060,10 +3255,12 @@ export class SearchTaskListResponseBody extends $tea.Model {
 
 export class SearchTaskListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchTaskListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3071,6 +3268,7 @@ export class SearchTaskListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchTaskListResponseBody,
     };
   }
@@ -3154,10 +3352,12 @@ export class SearchTaskflowStatusResponseBody extends $tea.Model {
 
 export class SearchTaskflowStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchTaskflowStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3165,6 +3365,7 @@ export class SearchTaskflowStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchTaskflowStatusResponseBody,
     };
   }
@@ -3251,10 +3452,12 @@ export class SearchUserTaskResponseBody extends $tea.Model {
 
 export class SearchUserTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchUserTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3262,6 +3465,7 @@ export class SearchUserTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchUserTaskResponseBody,
     };
   }
@@ -3314,10 +3518,12 @@ export class SuspendProjectResponseBody extends $tea.Model {
 
 export class SuspendProjectResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SuspendProjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3325,6 +3531,7 @@ export class SuspendProjectResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SuspendProjectResponseBody,
     };
   }
@@ -3377,10 +3584,12 @@ export class UnSuspendProjectResponseBody extends $tea.Model {
 
 export class UnSuspendProjectResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UnSuspendProjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3388,6 +3597,7 @@ export class UnSuspendProjectResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UnSuspendProjectResponseBody,
     };
   }
@@ -3465,10 +3675,12 @@ export class UpdateCustomfieldValueResponseBody extends $tea.Model {
 
 export class UpdateCustomfieldValueResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateCustomfieldValueResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3476,6 +3688,7 @@ export class UpdateCustomfieldValueResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateCustomfieldValueResponseBody,
     };
   }
@@ -3553,10 +3766,12 @@ export class UpdateOrganizationTaskContentResponseBody extends $tea.Model {
 
 export class UpdateOrganizationTaskContentResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateOrganizationTaskContentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3564,6 +3779,7 @@ export class UpdateOrganizationTaskContentResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateOrganizationTaskContentResponseBody,
     };
   }
@@ -3641,10 +3857,12 @@ export class UpdateOrganizationTaskDueDateResponseBody extends $tea.Model {
 
 export class UpdateOrganizationTaskDueDateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateOrganizationTaskDueDateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3652,6 +3870,7 @@ export class UpdateOrganizationTaskDueDateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateOrganizationTaskDueDateResponseBody,
     };
   }
@@ -3729,10 +3948,12 @@ export class UpdateOrganizationTaskExecutorResponseBody extends $tea.Model {
 
 export class UpdateOrganizationTaskExecutorResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateOrganizationTaskExecutorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3740,6 +3961,7 @@ export class UpdateOrganizationTaskExecutorResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateOrganizationTaskExecutorResponseBody,
     };
   }
@@ -3823,10 +4045,12 @@ export class UpdateOrganizationTaskInvolveMembersResponseBody extends $tea.Model
 
 export class UpdateOrganizationTaskInvolveMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateOrganizationTaskInvolveMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3834,6 +4058,7 @@ export class UpdateOrganizationTaskInvolveMembersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateOrganizationTaskInvolveMembersResponseBody,
     };
   }
@@ -3911,10 +4136,12 @@ export class UpdateOrganizationTaskNoteResponseBody extends $tea.Model {
 
 export class UpdateOrganizationTaskNoteResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateOrganizationTaskNoteResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3922,6 +4149,7 @@ export class UpdateOrganizationTaskNoteResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateOrganizationTaskNoteResponseBody,
     };
   }
@@ -3999,10 +4227,12 @@ export class UpdateOrganizationTaskPriorityResponseBody extends $tea.Model {
 
 export class UpdateOrganizationTaskPriorityResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateOrganizationTaskPriorityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4010,6 +4240,7 @@ export class UpdateOrganizationTaskPriorityResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateOrganizationTaskPriorityResponseBody,
     };
   }
@@ -4087,10 +4318,12 @@ export class UpdateOrganizationTaskStatusResponseBody extends $tea.Model {
 
 export class UpdateOrganizationTaskStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateOrganizationTaskStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4098,6 +4331,7 @@ export class UpdateOrganizationTaskStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateOrganizationTaskStatusResponseBody,
     };
   }
@@ -4172,10 +4406,12 @@ export class UpdateProjectGroupResponseBody extends $tea.Model {
 
 export class UpdateProjectGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateProjectGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4183,6 +4419,7 @@ export class UpdateProjectGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateProjectGroupResponseBody,
     };
   }
@@ -4254,10 +4491,12 @@ export class UpdateTaskContentResponseBody extends $tea.Model {
 
 export class UpdateTaskContentResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTaskContentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4265,6 +4504,7 @@ export class UpdateTaskContentResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTaskContentResponseBody,
     };
   }
@@ -4336,10 +4576,12 @@ export class UpdateTaskDueDateResponseBody extends $tea.Model {
 
 export class UpdateTaskDueDateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTaskDueDateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4347,6 +4589,7 @@ export class UpdateTaskDueDateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTaskDueDateResponseBody,
     };
   }
@@ -4418,10 +4661,12 @@ export class UpdateTaskExecutorResponseBody extends $tea.Model {
 
 export class UpdateTaskExecutorResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTaskExecutorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4429,6 +4674,7 @@ export class UpdateTaskExecutorResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTaskExecutorResponseBody,
     };
   }
@@ -4506,10 +4752,12 @@ export class UpdateTaskInvolvemembersResponseBody extends $tea.Model {
 
 export class UpdateTaskInvolvemembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTaskInvolvemembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4517,6 +4765,7 @@ export class UpdateTaskInvolvemembersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTaskInvolvemembersResponseBody,
     };
   }
@@ -4588,10 +4837,12 @@ export class UpdateTaskNoteResponseBody extends $tea.Model {
 
 export class UpdateTaskNoteResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTaskNoteResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4599,6 +4850,7 @@ export class UpdateTaskNoteResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTaskNoteResponseBody,
     };
   }
@@ -4670,10 +4922,12 @@ export class UpdateTaskPriorityResponseBody extends $tea.Model {
 
 export class UpdateTaskPriorityResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTaskPriorityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4681,6 +4935,7 @@ export class UpdateTaskPriorityResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTaskPriorityResponseBody,
     };
   }
@@ -4752,10 +5007,12 @@ export class UpdateTaskStageResponseBody extends $tea.Model {
 
 export class UpdateTaskStageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTaskStageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4763,6 +5020,7 @@ export class UpdateTaskStageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTaskStageResponseBody,
     };
   }
@@ -4834,10 +5092,12 @@ export class UpdateTaskStartdateResponseBody extends $tea.Model {
 
 export class UpdateTaskStartdateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTaskStartdateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4845,6 +5105,7 @@ export class UpdateTaskStartdateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTaskStartdateResponseBody,
     };
   }
@@ -4919,10 +5180,12 @@ export class UpdateTaskTaskflowstatusResponseBody extends $tea.Model {
 
 export class UpdateTaskTaskflowstatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTaskTaskflowstatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4930,7 +5193,114 @@ export class UpdateTaskTaskflowstatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTaskTaskflowstatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateWorkTimeApproveHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateWorkTimeApproveRequest extends $tea.Model {
+  finishTime?: string;
+  instanceId?: string;
+  status?: string;
+  submitTime?: string;
+  title?: string;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      finishTime: 'finishTime',
+      instanceId: 'instanceId',
+      status: 'status',
+      submitTime: 'submitTime',
+      title: 'title',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      finishTime: 'string',
+      instanceId: 'string',
+      status: 'string',
+      submitTime: 'string',
+      title: 'string',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateWorkTimeApproveResponseBody extends $tea.Model {
+  message?: string;
+  requestId?: string;
+  result?: UpdateWorkTimeApproveResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      message: 'message',
+      requestId: 'requestId',
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      message: 'string',
+      requestId: 'string',
+      result: UpdateWorkTimeApproveResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateWorkTimeApproveResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UpdateWorkTimeApproveResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateWorkTimeApproveResponseBody,
     };
   }
 
@@ -5655,6 +6025,52 @@ export class CreateWorkTimeResponseBodyResult extends $tea.Model {
       body: { 'type': 'array', 'itemType': CreateWorkTimeResponseBodyResultBody },
       message: 'string',
       ok: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateWorkTimeApproveResponseBodyResult extends $tea.Model {
+  approveOpenId?: string;
+  createdAt?: string;
+  creatorId?: string;
+  organizationId?: string;
+  status?: string;
+  taskId?: string;
+  time?: number;
+  updatedAt?: string;
+  userId?: string;
+  workTimeIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      approveOpenId: 'approveOpenId',
+      createdAt: 'createdAt',
+      creatorId: 'creatorId',
+      organizationId: 'organizationId',
+      status: 'status',
+      taskId: 'taskId',
+      time: 'time',
+      updatedAt: 'updatedAt',
+      userId: 'userId',
+      workTimeIds: 'workTimeIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      approveOpenId: 'string',
+      createdAt: 'string',
+      creatorId: 'string',
+      organizationId: 'string',
+      status: 'string',
+      taskId: 'string',
+      time: 'number',
+      updatedAt: 'string',
+      userId: 'string',
+      workTimeIds: { 'type': 'array', 'itemType': 'string' },
     };
   }
 
@@ -7368,11 +7784,75 @@ export class UpdateTaskTaskflowstatusResponseBodyResult extends $tea.Model {
   }
 }
 
+export class UpdateWorkTimeApproveResponseBodyResult extends $tea.Model {
+  approveOpenId?: string;
+  createdAt?: string;
+  creatorId?: string;
+  finishTime?: string;
+  instanceId?: string;
+  organizationId?: string;
+  status?: string;
+  submitTime?: string;
+  taskId?: string;
+  time?: number;
+  title?: string;
+  updatedAt?: string;
+  url?: string;
+  userId?: string;
+  workTimeIds?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      approveOpenId: 'approveOpenId',
+      createdAt: 'createdAt',
+      creatorId: 'creatorId',
+      finishTime: 'finishTime',
+      instanceId: 'instanceId',
+      organizationId: 'organizationId',
+      status: 'status',
+      submitTime: 'submitTime',
+      taskId: 'taskId',
+      time: 'time',
+      title: 'title',
+      updatedAt: 'updatedAt',
+      url: 'url',
+      userId: 'userId',
+      workTimeIds: 'workTimeIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      approveOpenId: 'string',
+      createdAt: 'string',
+      creatorId: 'string',
+      finishTime: 'string',
+      instanceId: 'string',
+      organizationId: 'string',
+      status: 'string',
+      submitTime: 'string',
+      taskId: 'string',
+      time: 'number',
+      title: 'string',
+      updatedAt: 'string',
+      url: 'string',
+      userId: 'string',
+      workTimeIds: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -7381,16 +7861,8 @@ export default class Client extends OpenApi {
   }
 
 
-  async addProjectMember(userId: string, projectId: string, request: AddProjectMemberRequest): Promise<AddProjectMemberResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddProjectMemberHeaders({ });
-    return await this.addProjectMemberWithOptions(userId, projectId, request, headers, runtime);
-  }
-
   async addProjectMemberWithOptions(userId: string, projectId: string, request: AddProjectMemberRequest, headers: AddProjectMemberHeaders, runtime: $Util.RuntimeOptions): Promise<AddProjectMemberResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    projectId = OpenApiUtil.getEncodeParam(projectId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userIds)) {
       body["userIds"] = request.userIds;
@@ -7409,7 +7881,51 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddProjectMemberResponse>(await this.doROARequest("AddProjectMember", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/members`, "json", req, runtime), new AddProjectMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddProjectMember",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/members`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddProjectMemberResponse>(await this.execute(params, req, runtime), new AddProjectMemberResponse({}));
+  }
+
+  async addProjectMember(userId: string, projectId: string, request: AddProjectMemberRequest): Promise<AddProjectMemberResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddProjectMemberHeaders({ });
+    return await this.addProjectMemberWithOptions(userId, projectId, request, headers, runtime);
+  }
+
+  async archiveProjectWithOptions(userId: string, projectId: string, headers: ArchiveProjectHeaders, runtime: $Util.RuntimeOptions): Promise<ArchiveProjectResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "ArchiveProject",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/archive`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ArchiveProjectResponse>(await this.execute(params, req, runtime), new ArchiveProjectResponse({}));
   }
 
   async archiveProject(userId: string, projectId: string): Promise<ArchiveProjectResponse> {
@@ -7418,9 +7934,7 @@ export default class Client extends OpenApi {
     return await this.archiveProjectWithOptions(userId, projectId, headers, runtime);
   }
 
-  async archiveProjectWithOptions(userId: string, projectId: string, headers: ArchiveProjectHeaders, runtime: $Util.RuntimeOptions): Promise<ArchiveProjectResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    projectId = OpenApiUtil.getEncodeParam(projectId);
+  async archiveTaskWithOptions(userId: string, taskId: string, headers: ArchiveTaskHeaders, runtime: $Util.RuntimeOptions): Promise<ArchiveTaskResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -7433,7 +7947,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<ArchiveProjectResponse>(await this.doROARequest("ArchiveProject", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/archive`, "json", req, runtime), new ArchiveProjectResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ArchiveTask",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/${taskId}/archive`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ArchiveTaskResponse>(await this.execute(params, req, runtime), new ArchiveTaskResponse({}));
   }
 
   async archiveTask(userId: string, taskId: string): Promise<ArchiveTaskResponse> {
@@ -7442,33 +7967,8 @@ export default class Client extends OpenApi {
     return await this.archiveTaskWithOptions(userId, taskId, headers, runtime);
   }
 
-  async archiveTaskWithOptions(userId: string, taskId: string, headers: ArchiveTaskHeaders, runtime: $Util.RuntimeOptions): Promise<ArchiveTaskResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<ArchiveTaskResponse>(await this.doROARequest("ArchiveTask", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/archive`, "json", req, runtime), new ArchiveTaskResponse({}));
-  }
-
-  async createOrganizationTask(userId: string, request: CreateOrganizationTaskRequest): Promise<CreateOrganizationTaskResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateOrganizationTaskHeaders({ });
-    return await this.createOrganizationTaskWithOptions(userId, request, headers, runtime);
-  }
-
   async createOrganizationTaskWithOptions(userId: string, request: CreateOrganizationTaskRequest, headers: CreateOrganizationTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOrganizationTaskResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.content)) {
       body["content"] = request.content;
@@ -7523,18 +8023,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateOrganizationTaskResponse>(await this.doROARequest("CreateOrganizationTask", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/organizations/users/${userId}/tasks`, "json", req, runtime), new CreateOrganizationTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateOrganizationTask",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/tasks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateOrganizationTaskResponse>(await this.execute(params, req, runtime), new CreateOrganizationTaskResponse({}));
   }
 
-  async createPlanTime(userId: string, request: CreatePlanTimeRequest): Promise<CreatePlanTimeResponse> {
+  async createOrganizationTask(userId: string, request: CreateOrganizationTaskRequest): Promise<CreateOrganizationTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreatePlanTimeHeaders({ });
-    return await this.createPlanTimeWithOptions(userId, request, headers, runtime);
+    let headers = new CreateOrganizationTaskHeaders({ });
+    return await this.createOrganizationTaskWithOptions(userId, request, headers, runtime);
   }
 
   async createPlanTimeWithOptions(userId: string, request: CreatePlanTimeRequest, headers: CreatePlanTimeHeaders, runtime: $Util.RuntimeOptions): Promise<CreatePlanTimeResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.tenantType)) {
       query["tenantType"] = request.tenantType;
@@ -7591,18 +8101,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreatePlanTimeResponse>(await this.doROARequest("CreatePlanTime", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/planTimes`, "json", req, runtime), new CreatePlanTimeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreatePlanTime",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/planTimes`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreatePlanTimeResponse>(await this.execute(params, req, runtime), new CreatePlanTimeResponse({}));
   }
 
-  async createProject(userId: string, request: CreateProjectRequest): Promise<CreateProjectResponse> {
+  async createPlanTime(userId: string, request: CreatePlanTimeRequest): Promise<CreatePlanTimeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateProjectHeaders({ });
-    return await this.createProjectWithOptions(userId, request, headers, runtime);
+    let headers = new CreatePlanTimeHeaders({ });
+    return await this.createPlanTimeWithOptions(userId, request, headers, runtime);
   }
 
   async createProjectWithOptions(userId: string, request: CreateProjectRequest, headers: CreateProjectHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProjectResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
@@ -7621,18 +8141,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateProjectResponse>(await this.doROARequest("CreateProject", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/projects`, "json", req, runtime), new CreateProjectResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateProject",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateProjectResponse>(await this.execute(params, req, runtime), new CreateProjectResponse({}));
   }
 
-  async createProjectByTemplate(userId: string, request: CreateProjectByTemplateRequest): Promise<CreateProjectByTemplateResponse> {
+  async createProject(userId: string, request: CreateProjectRequest): Promise<CreateProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateProjectByTemplateHeaders({ });
-    return await this.createProjectByTemplateWithOptions(userId, request, headers, runtime);
+    let headers = new CreateProjectHeaders({ });
+    return await this.createProjectWithOptions(userId, request, headers, runtime);
   }
 
   async createProjectByTemplateWithOptions(userId: string, request: CreateProjectByTemplateRequest, headers: CreateProjectByTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProjectByTemplateResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
@@ -7655,19 +8185,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateProjectByTemplateResponse>(await this.doROARequest("CreateProjectByTemplate", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/templates/projects`, "json", req, runtime), new CreateProjectByTemplateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateProjectByTemplate",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/templates/projects`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateProjectByTemplateResponse>(await this.execute(params, req, runtime), new CreateProjectByTemplateResponse({}));
   }
 
-  async createProjectCustomfieldStatus(userId: string, projectId: string, request: CreateProjectCustomfieldStatusRequest): Promise<CreateProjectCustomfieldStatusResponse> {
+  async createProjectByTemplate(userId: string, request: CreateProjectByTemplateRequest): Promise<CreateProjectByTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateProjectCustomfieldStatusHeaders({ });
-    return await this.createProjectCustomfieldStatusWithOptions(userId, projectId, request, headers, runtime);
+    let headers = new CreateProjectByTemplateHeaders({ });
+    return await this.createProjectByTemplateWithOptions(userId, request, headers, runtime);
   }
 
   async createProjectCustomfieldStatusWithOptions(userId: string, projectId: string, request: CreateProjectCustomfieldStatusRequest, headers: CreateProjectCustomfieldStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProjectCustomfieldStatusResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    projectId = OpenApiUtil.getEncodeParam(projectId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.customfieldId)) {
       body["customfieldId"] = request.customfieldId;
@@ -7698,18 +8237,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateProjectCustomfieldStatusResponse>(await this.doROARequest("CreateProjectCustomfieldStatus", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/customfields`, "json", req, runtime), new CreateProjectCustomfieldStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateProjectCustomfieldStatus",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/customfields`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateProjectCustomfieldStatusResponse>(await this.execute(params, req, runtime), new CreateProjectCustomfieldStatusResponse({}));
   }
 
-  async createTask(userId: string, request: CreateTaskRequest): Promise<CreateTaskResponse> {
+  async createProjectCustomfieldStatus(userId: string, projectId: string, request: CreateProjectCustomfieldStatusRequest): Promise<CreateProjectCustomfieldStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateTaskHeaders({ });
-    return await this.createTaskWithOptions(userId, request, headers, runtime);
+    let headers = new CreateProjectCustomfieldStatusHeaders({ });
+    return await this.createProjectCustomfieldStatusWithOptions(userId, projectId, request, headers, runtime);
   }
 
   async createTaskWithOptions(userId: string, request: CreateTaskRequest, headers: CreateTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTaskResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.content)) {
       body["content"] = request.content;
@@ -7772,19 +8321,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateTaskResponse>(await this.doROARequest("CreateTask", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/tasks`, "json", req, runtime), new CreateTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateTask",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateTaskResponse>(await this.execute(params, req, runtime), new CreateTaskResponse({}));
   }
 
-  async createTaskObjectLink(userId: string, taskId: string, request: CreateTaskObjectLinkRequest): Promise<CreateTaskObjectLinkResponse> {
+  async createTask(userId: string, request: CreateTaskRequest): Promise<CreateTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateTaskObjectLinkHeaders({ });
-    return await this.createTaskObjectLinkWithOptions(userId, taskId, request, headers, runtime);
+    let headers = new CreateTaskHeaders({ });
+    return await this.createTaskWithOptions(userId, request, headers, runtime);
   }
 
   async createTaskObjectLinkWithOptions(userId: string, taskId: string, request: CreateTaskObjectLinkRequest, headers: CreateTaskObjectLinkHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTaskObjectLinkResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.linkedData)) {
       body["linkedData"] = request.linkedData;
@@ -7803,18 +8361,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateTaskObjectLinkResponse>(await this.doROARequest("CreateTaskObjectLink", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/objectLinks`, "json", req, runtime), new CreateTaskObjectLinkResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateTaskObjectLink",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/${taskId}/objectLinks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateTaskObjectLinkResponse>(await this.execute(params, req, runtime), new CreateTaskObjectLinkResponse({}));
   }
 
-  async createWorkTime(userId: string, request: CreateWorkTimeRequest): Promise<CreateWorkTimeResponse> {
+  async createTaskObjectLink(userId: string, taskId: string, request: CreateTaskObjectLinkRequest): Promise<CreateTaskObjectLinkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateWorkTimeHeaders({ });
-    return await this.createWorkTimeWithOptions(userId, request, headers, runtime);
+    let headers = new CreateTaskObjectLinkHeaders({ });
+    return await this.createTaskObjectLinkWithOptions(userId, taskId, request, headers, runtime);
   }
 
   async createWorkTimeWithOptions(userId: string, request: CreateWorkTimeRequest, headers: CreateWorkTimeHeaders, runtime: $Util.RuntimeOptions): Promise<CreateWorkTimeResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.tenantType)) {
       query["tenantType"] = request.tenantType;
@@ -7871,19 +8439,68 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateWorkTimeResponse>(await this.doROARequest("CreateWorkTime", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/workTimes`, "json", req, runtime), new CreateWorkTimeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateWorkTime",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/workTimes`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateWorkTimeResponse>(await this.execute(params, req, runtime), new CreateWorkTimeResponse({}));
   }
 
-  async deleteProjectMember(userId: string, projectId: string, request: DeleteProjectMemberRequest): Promise<DeleteProjectMemberResponse> {
+  async createWorkTime(userId: string, request: CreateWorkTimeRequest): Promise<CreateWorkTimeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteProjectMemberHeaders({ });
-    return await this.deleteProjectMemberWithOptions(userId, projectId, request, headers, runtime);
+    let headers = new CreateWorkTimeHeaders({ });
+    return await this.createWorkTimeWithOptions(userId, request, headers, runtime);
+  }
+
+  async createWorkTimeApproveWithOptions(userId: string, request: CreateWorkTimeApproveRequest, headers: CreateWorkTimeApproveHeaders, runtime: $Util.RuntimeOptions): Promise<CreateWorkTimeApproveResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.workTimeIds)) {
+      body["workTimeIds"] = request.workTimeIds;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateWorkTimeApprove",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/workTimes/approvals`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateWorkTimeApproveResponse>(await this.execute(params, req, runtime), new CreateWorkTimeApproveResponse({}));
+  }
+
+  async createWorkTimeApprove(userId: string, request: CreateWorkTimeApproveRequest): Promise<CreateWorkTimeApproveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateWorkTimeApproveHeaders({ });
+    return await this.createWorkTimeApproveWithOptions(userId, request, headers, runtime);
   }
 
   async deleteProjectMemberWithOptions(userId: string, projectId: string, request: DeleteProjectMemberRequest, headers: DeleteProjectMemberHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteProjectMemberResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    projectId = OpenApiUtil.getEncodeParam(projectId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userIds)) {
       body["userIds"] = request.userIds;
@@ -7902,18 +8519,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteProjectMemberResponse>(await this.doROARequest("DeleteProjectMember", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/members/remove`, "json", req, runtime), new DeleteProjectMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteProjectMember",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/members/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteProjectMemberResponse>(await this.execute(params, req, runtime), new DeleteProjectMemberResponse({}));
   }
 
-  async deleteTask(userId: string, taskId: string): Promise<DeleteTaskResponse> {
+  async deleteProjectMember(userId: string, projectId: string, request: DeleteProjectMemberRequest): Promise<DeleteProjectMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteTaskHeaders({ });
-    return await this.deleteTaskWithOptions(userId, taskId, headers, runtime);
+    let headers = new DeleteProjectMemberHeaders({ });
+    return await this.deleteProjectMemberWithOptions(userId, projectId, request, headers, runtime);
   }
 
   async deleteTaskWithOptions(userId: string, taskId: string, headers: DeleteTaskHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTaskResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -7926,13 +8552,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<DeleteTaskResponse>(await this.doROARequest("DeleteTask", "project_1.0", "HTTP", "DELETE", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}`, "json", req, runtime), new DeleteTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteTask",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/${taskId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteTaskResponse>(await this.execute(params, req, runtime), new DeleteTaskResponse({}));
   }
 
-  async getDeptsByOrgId(request: GetDeptsByOrgIdRequest): Promise<GetDeptsByOrgIdResponse> {
+  async deleteTask(userId: string, taskId: string): Promise<DeleteTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetDeptsByOrgIdHeaders({ });
-    return await this.getDeptsByOrgIdWithOptions(request, headers, runtime);
+    let headers = new DeleteTaskHeaders({ });
+    return await this.deleteTaskWithOptions(userId, taskId, headers, runtime);
   }
 
   async getDeptsByOrgIdWithOptions(request: GetDeptsByOrgIdRequest, headers: GetDeptsByOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetDeptsByOrgIdResponse> {
@@ -7967,13 +8604,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetDeptsByOrgIdResponse>(await this.doROARequest("GetDeptsByOrgId", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/orgs/depts`, "json", req, runtime), new GetDeptsByOrgIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetDeptsByOrgId",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/orgs/depts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDeptsByOrgIdResponse>(await this.execute(params, req, runtime), new GetDeptsByOrgIdResponse({}));
   }
 
-  async getEmpsByOrgId(request: GetEmpsByOrgIdRequest): Promise<GetEmpsByOrgIdResponse> {
+  async getDeptsByOrgId(request: GetDeptsByOrgIdRequest): Promise<GetDeptsByOrgIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetEmpsByOrgIdHeaders({ });
-    return await this.getEmpsByOrgIdWithOptions(request, headers, runtime);
+    let headers = new GetDeptsByOrgIdHeaders({ });
+    return await this.getDeptsByOrgIdWithOptions(request, headers, runtime);
   }
 
   async getEmpsByOrgIdWithOptions(request: GetEmpsByOrgIdRequest, headers: GetEmpsByOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetEmpsByOrgIdResponse> {
@@ -8012,18 +8660,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetEmpsByOrgIdResponse>(await this.doROARequest("GetEmpsByOrgId", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/orgs/employees`, "json", req, runtime), new GetEmpsByOrgIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetEmpsByOrgId",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/orgs/employees`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetEmpsByOrgIdResponse>(await this.execute(params, req, runtime), new GetEmpsByOrgIdResponse({}));
   }
 
-  async getOrganizatioTaskByIds(userId: string, request: GetOrganizatioTaskByIdsRequest): Promise<GetOrganizatioTaskByIdsResponse> {
+  async getEmpsByOrgId(request: GetEmpsByOrgIdRequest): Promise<GetEmpsByOrgIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetOrganizatioTaskByIdsHeaders({ });
-    return await this.getOrganizatioTaskByIdsWithOptions(userId, request, headers, runtime);
+    let headers = new GetEmpsByOrgIdHeaders({ });
+    return await this.getEmpsByOrgIdWithOptions(request, headers, runtime);
   }
 
   async getOrganizatioTaskByIdsWithOptions(userId: string, request: GetOrganizatioTaskByIdsRequest, headers: GetOrganizatioTaskByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizatioTaskByIdsResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.taskIds)) {
       query["taskIds"] = request.taskIds;
@@ -8042,7 +8700,51 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetOrganizatioTaskByIdsResponse>(await this.doROARequest("GetOrganizatioTaskByIds", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/tasks`, "json", req, runtime), new GetOrganizatioTaskByIdsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetOrganizatioTaskByIds",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/tasks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOrganizatioTaskByIdsResponse>(await this.execute(params, req, runtime), new GetOrganizatioTaskByIdsResponse({}));
+  }
+
+  async getOrganizatioTaskByIds(userId: string, request: GetOrganizatioTaskByIdsRequest): Promise<GetOrganizatioTaskByIdsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOrganizatioTaskByIdsHeaders({ });
+    return await this.getOrganizatioTaskByIdsWithOptions(userId, request, headers, runtime);
+  }
+
+  async getOrganizationPriorityListWithOptions(userId: string, headers: GetOrganizationPriorityListHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationPriorityListResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "GetOrganizationPriorityList",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/priorities`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOrganizationPriorityListResponse>(await this.execute(params, req, runtime), new GetOrganizationPriorityListResponse({}));
   }
 
   async getOrganizationPriorityList(userId: string): Promise<GetOrganizationPriorityListResponse> {
@@ -8051,8 +8753,7 @@ export default class Client extends OpenApi {
     return await this.getOrganizationPriorityListWithOptions(userId, headers, runtime);
   }
 
-  async getOrganizationPriorityListWithOptions(userId: string, headers: GetOrganizationPriorityListHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationPriorityListResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
+  async getOrganizationTaskWithOptions(taskId: string, userId: string, headers: GetOrganizationTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationTaskResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -8065,7 +8766,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetOrganizationPriorityListResponse>(await this.doROARequest("GetOrganizationPriorityList", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/priorities`, "json", req, runtime), new GetOrganizationPriorityListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetOrganizationTask",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/tasks/${taskId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOrganizationTaskResponse>(await this.execute(params, req, runtime), new GetOrganizationTaskResponse({}));
   }
 
   async getOrganizationTask(taskId: string, userId: string): Promise<GetOrganizationTaskResponse> {
@@ -8074,33 +8786,8 @@ export default class Client extends OpenApi {
     return await this.getOrganizationTaskWithOptions(taskId, userId, headers, runtime);
   }
 
-  async getOrganizationTaskWithOptions(taskId: string, userId: string, headers: GetOrganizationTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationTaskResponse> {
-    taskId = OpenApiUtil.getEncodeParam(taskId);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetOrganizationTaskResponse>(await this.doROARequest("GetOrganizationTask", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}`, "json", req, runtime), new GetOrganizationTaskResponse({}));
-  }
-
-  async getProjectGroup(userId: string, request: GetProjectGroupRequest): Promise<GetProjectGroupResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetProjectGroupHeaders({ });
-    return await this.getProjectGroupWithOptions(userId, request, headers, runtime);
-  }
-
   async getProjectGroupWithOptions(userId: string, request: GetProjectGroupRequest, headers: GetProjectGroupHeaders, runtime: $Util.RuntimeOptions): Promise<GetProjectGroupResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.pageSize)) {
       query["pageSize"] = request.pageSize;
@@ -8123,19 +8810,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetProjectGroupResponse>(await this.doROARequest("GetProjectGroup", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/groups`, "json", req, runtime), new GetProjectGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetProjectGroup",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/groups`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetProjectGroupResponse>(await this.execute(params, req, runtime), new GetProjectGroupResponse({}));
   }
 
-  async getProjectMemebers(userId: string, projectId: string, request: GetProjectMemebersRequest): Promise<GetProjectMemebersResponse> {
+  async getProjectGroup(userId: string, request: GetProjectGroupRequest): Promise<GetProjectGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetProjectMemebersHeaders({ });
-    return await this.getProjectMemebersWithOptions(userId, projectId, request, headers, runtime);
+    let headers = new GetProjectGroupHeaders({ });
+    return await this.getProjectGroupWithOptions(userId, request, headers, runtime);
   }
 
   async getProjectMemebersWithOptions(userId: string, projectId: string, request: GetProjectMemebersRequest, headers: GetProjectMemebersHeaders, runtime: $Util.RuntimeOptions): Promise<GetProjectMemebersResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    projectId = OpenApiUtil.getEncodeParam(projectId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -8166,18 +8862,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetProjectMemebersResponse>(await this.doROARequest("GetProjectMemebers", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/members`, "json", req, runtime), new GetProjectMemebersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetProjectMemebers",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/members`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetProjectMemebersResponse>(await this.execute(params, req, runtime), new GetProjectMemebersResponse({}));
   }
 
-  async getProjectStatusList(userId: string, projectId: string): Promise<GetProjectStatusListResponse> {
+  async getProjectMemebers(userId: string, projectId: string, request: GetProjectMemebersRequest): Promise<GetProjectMemebersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetProjectStatusListHeaders({ });
-    return await this.getProjectStatusListWithOptions(userId, projectId, headers, runtime);
+    let headers = new GetProjectMemebersHeaders({ });
+    return await this.getProjectMemebersWithOptions(userId, projectId, request, headers, runtime);
   }
 
   async getProjectStatusListWithOptions(userId: string, projectId: string, headers: GetProjectStatusListHeaders, runtime: $Util.RuntimeOptions): Promise<GetProjectStatusListResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    projectId = OpenApiUtil.getEncodeParam(projectId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -8190,18 +8895,28 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetProjectStatusListResponse>(await this.doROARequest("GetProjectStatusList", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/statuses`, "json", req, runtime), new GetProjectStatusListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetProjectStatusList",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/statuses`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetProjectStatusListResponse>(await this.execute(params, req, runtime), new GetProjectStatusListResponse({}));
   }
 
-  async getTaskByIds(userId: string, request: GetTaskByIdsRequest): Promise<GetTaskByIdsResponse> {
+  async getProjectStatusList(userId: string, projectId: string): Promise<GetProjectStatusListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTaskByIdsHeaders({ });
-    return await this.getTaskByIdsWithOptions(userId, request, headers, runtime);
+    let headers = new GetProjectStatusListHeaders({ });
+    return await this.getProjectStatusListWithOptions(userId, projectId, headers, runtime);
   }
 
   async getTaskByIdsWithOptions(userId: string, request: GetTaskByIdsRequest, headers: GetTaskByIdsHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskByIdsResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.parentTaskId)) {
       query["parentTaskId"] = request.parentTaskId;
@@ -8224,13 +8939,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetTaskByIdsResponse>(await this.doROARequest("GetTaskByIds", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/users/${userId}/tasks`, "json", req, runtime), new GetTaskByIdsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTaskByIds",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTaskByIdsResponse>(await this.execute(params, req, runtime), new GetTaskByIdsResponse({}));
   }
 
-  async getTbOrgIdByDingOrgId(request: GetTbOrgIdByDingOrgIdRequest): Promise<GetTbOrgIdByDingOrgIdResponse> {
+  async getTaskByIds(userId: string, request: GetTaskByIdsRequest): Promise<GetTaskByIdsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTbOrgIdByDingOrgIdHeaders({ });
-    return await this.getTbOrgIdByDingOrgIdWithOptions(request, headers, runtime);
+    let headers = new GetTaskByIdsHeaders({ });
+    return await this.getTaskByIdsWithOptions(userId, request, headers, runtime);
   }
 
   async getTbOrgIdByDingOrgIdWithOptions(request: GetTbOrgIdByDingOrgIdRequest, headers: GetTbOrgIdByDingOrgIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbOrgIdByDingOrgIdResponse> {
@@ -8253,13 +8979,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetTbOrgIdByDingOrgIdResponse>(await this.doROARequest("GetTbOrgIdByDingOrgId", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/teambition/organizations`, "json", req, runtime), new GetTbOrgIdByDingOrgIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTbOrgIdByDingOrgId",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/teambition/organizations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTbOrgIdByDingOrgIdResponse>(await this.execute(params, req, runtime), new GetTbOrgIdByDingOrgIdResponse({}));
   }
 
-  async getTbProjectGray(request: GetTbProjectGrayRequest): Promise<GetTbProjectGrayResponse> {
+  async getTbOrgIdByDingOrgId(request: GetTbOrgIdByDingOrgIdRequest): Promise<GetTbOrgIdByDingOrgIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTbProjectGrayHeaders({ });
-    return await this.getTbProjectGrayWithOptions(request, headers, runtime);
+    let headers = new GetTbOrgIdByDingOrgIdHeaders({ });
+    return await this.getTbOrgIdByDingOrgIdWithOptions(request, headers, runtime);
   }
 
   async getTbProjectGrayWithOptions(request: GetTbProjectGrayRequest, headers: GetTbProjectGrayHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbProjectGrayResponse> {
@@ -8302,13 +9039,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetTbProjectGrayResponse>(await this.doROARequest("GetTbProjectGray", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/projects/gray`, "json", req, runtime), new GetTbProjectGrayResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTbProjectGray",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/projects/gray`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTbProjectGrayResponse>(await this.execute(params, req, runtime), new GetTbProjectGrayResponse({}));
   }
 
-  async getTbProjectSource(): Promise<GetTbProjectSourceResponse> {
+  async getTbProjectGray(request: GetTbProjectGrayRequest): Promise<GetTbProjectGrayResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTbProjectSourceHeaders({ });
-    return await this.getTbProjectSourceWithOptions(headers, runtime);
+    let headers = new GetTbProjectGrayHeaders({ });
+    return await this.getTbProjectGrayWithOptions(request, headers, runtime);
   }
 
   async getTbProjectSourceWithOptions(headers: GetTbProjectSourceHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbProjectSourceResponse> {
@@ -8344,13 +9092,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetTbProjectSourceResponse>(await this.doROARequest("GetTbProjectSource", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/projects/source`, "json", req, runtime), new GetTbProjectSourceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTbProjectSource",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/projects/source`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTbProjectSourceResponse>(await this.execute(params, req, runtime), new GetTbProjectSourceResponse({}));
   }
 
-  async getTbUserIdByStaffId(request: GetTbUserIdByStaffIdRequest): Promise<GetTbUserIdByStaffIdResponse> {
+  async getTbProjectSource(): Promise<GetTbProjectSourceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTbUserIdByStaffIdHeaders({ });
-    return await this.getTbUserIdByStaffIdWithOptions(request, headers, runtime);
+    let headers = new GetTbProjectSourceHeaders({ });
+    return await this.getTbProjectSourceWithOptions(headers, runtime);
   }
 
   async getTbUserIdByStaffIdWithOptions(request: GetTbUserIdByStaffIdRequest, headers: GetTbUserIdByStaffIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTbUserIdByStaffIdResponse> {
@@ -8377,18 +9136,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetTbUserIdByStaffIdResponse>(await this.doROARequest("GetTbUserIdByStaffId", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/teambition/users`, "json", req, runtime), new GetTbUserIdByStaffIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTbUserIdByStaffId",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/teambition/users`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTbUserIdByStaffIdResponse>(await this.execute(params, req, runtime), new GetTbUserIdByStaffIdResponse({}));
   }
 
-  async getUserJoinedProject(userId: string, request: GetUserJoinedProjectRequest): Promise<GetUserJoinedProjectResponse> {
+  async getTbUserIdByStaffId(request: GetTbUserIdByStaffIdRequest): Promise<GetTbUserIdByStaffIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserJoinedProjectHeaders({ });
-    return await this.getUserJoinedProjectWithOptions(userId, request, headers, runtime);
+    let headers = new GetTbUserIdByStaffIdHeaders({ });
+    return await this.getTbUserIdByStaffIdWithOptions(request, headers, runtime);
   }
 
   async getUserJoinedProjectWithOptions(userId: string, request: GetUserJoinedProjectRequest, headers: GetUserJoinedProjectHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserJoinedProjectResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -8411,18 +9180,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetUserJoinedProjectResponse>(await this.doROARequest("GetUserJoinedProject", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/users/${userId}/joinProjects`, "json", req, runtime), new GetUserJoinedProjectResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserJoinedProject",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/joinProjects`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserJoinedProjectResponse>(await this.execute(params, req, runtime), new GetUserJoinedProjectResponse({}));
   }
 
-  async queryProject(userId: string, request: QueryProjectRequest): Promise<QueryProjectResponse> {
+  async getUserJoinedProject(userId: string, request: GetUserJoinedProjectRequest): Promise<GetUserJoinedProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryProjectHeaders({ });
-    return await this.queryProjectWithOptions(userId, request, headers, runtime);
+    let headers = new GetUserJoinedProjectHeaders({ });
+    return await this.getUserJoinedProjectWithOptions(userId, request, headers, runtime);
   }
 
   async queryProjectWithOptions(userId: string, request: QueryProjectRequest, headers: QueryProjectHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProjectResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -8457,19 +9236,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryProjectResponse>(await this.doROARequest("QueryProject", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/projects/query`, "json", req, runtime), new QueryProjectResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryProject",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryProjectResponse>(await this.execute(params, req, runtime), new QueryProjectResponse({}));
   }
 
-  async queryTaskOfProject(userId: string, projectId: string, request: QueryTaskOfProjectRequest): Promise<QueryTaskOfProjectResponse> {
+  async queryProject(userId: string, request: QueryProjectRequest): Promise<QueryProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryTaskOfProjectHeaders({ });
-    return await this.queryTaskOfProjectWithOptions(userId, projectId, request, headers, runtime);
+    let headers = new QueryProjectHeaders({ });
+    return await this.queryProjectWithOptions(userId, request, headers, runtime);
   }
 
   async queryTaskOfProjectWithOptions(userId: string, projectId: string, request: QueryTaskOfProjectRequest, headers: QueryTaskOfProjectHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTaskOfProjectResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    projectId = OpenApiUtil.getEncodeParam(projectId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -8496,19 +9284,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryTaskOfProjectResponse>(await this.doROARequest("QueryTaskOfProject", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/users/${userId}/projectIds/${projectId}/tasks`, "json", req, runtime), new QueryTaskOfProjectResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryTaskOfProject",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projectIds/${projectId}/tasks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryTaskOfProjectResponse>(await this.execute(params, req, runtime), new QueryTaskOfProjectResponse({}));
   }
 
-  async seachTaskStage(userId: string, projectId: string, request: SeachTaskStageRequest): Promise<SeachTaskStageResponse> {
+  async queryTaskOfProject(userId: string, projectId: string, request: QueryTaskOfProjectRequest): Promise<QueryTaskOfProjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SeachTaskStageHeaders({ });
-    return await this.seachTaskStageWithOptions(userId, projectId, request, headers, runtime);
+    let headers = new QueryTaskOfProjectHeaders({ });
+    return await this.queryTaskOfProjectWithOptions(userId, projectId, request, headers, runtime);
   }
 
   async seachTaskStageWithOptions(userId: string, projectId: string, request: SeachTaskStageRequest, headers: SeachTaskStageHeaders, runtime: $Util.RuntimeOptions): Promise<SeachTaskStageResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    projectId = OpenApiUtil.getEncodeParam(projectId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -8543,18 +9340,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SeachTaskStageResponse>(await this.doROARequest("SeachTaskStage", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/taskStages/search`, "json", req, runtime), new SeachTaskStageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SeachTaskStage",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/taskStages/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SeachTaskStageResponse>(await this.execute(params, req, runtime), new SeachTaskStageResponse({}));
   }
 
-  async searchOranizationCustomfield(userId: string, request: SearchOranizationCustomfieldRequest): Promise<SearchOranizationCustomfieldResponse> {
+  async seachTaskStage(userId: string, projectId: string, request: SeachTaskStageRequest): Promise<SeachTaskStageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchOranizationCustomfieldHeaders({ });
-    return await this.searchOranizationCustomfieldWithOptions(userId, request, headers, runtime);
+    let headers = new SeachTaskStageHeaders({ });
+    return await this.seachTaskStageWithOptions(userId, projectId, request, headers, runtime);
   }
 
   async searchOranizationCustomfieldWithOptions(userId: string, request: SearchOranizationCustomfieldRequest, headers: SearchOranizationCustomfieldHeaders, runtime: $Util.RuntimeOptions): Promise<SearchOranizationCustomfieldResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.customfieldIds)) {
       query["customfieldIds"] = request.customfieldIds;
@@ -8597,19 +9404,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SearchOranizationCustomfieldResponse>(await this.doROARequest("SearchOranizationCustomfield", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/organizations/users/${userId}/customfields/search`, "json", req, runtime), new SearchOranizationCustomfieldResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchOranizationCustomfield",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/customfields/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchOranizationCustomfieldResponse>(await this.execute(params, req, runtime), new SearchOranizationCustomfieldResponse({}));
   }
 
-  async searchProjectCustomfield(userId: string, projectId: string, request: SearchProjectCustomfieldRequest): Promise<SearchProjectCustomfieldResponse> {
+  async searchOranizationCustomfield(userId: string, request: SearchOranizationCustomfieldRequest): Promise<SearchOranizationCustomfieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchProjectCustomfieldHeaders({ });
-    return await this.searchProjectCustomfieldWithOptions(userId, projectId, request, headers, runtime);
+    let headers = new SearchOranizationCustomfieldHeaders({ });
+    return await this.searchOranizationCustomfieldWithOptions(userId, request, headers, runtime);
   }
 
   async searchProjectCustomfieldWithOptions(userId: string, projectId: string, request: SearchProjectCustomfieldRequest, headers: SearchProjectCustomfieldHeaders, runtime: $Util.RuntimeOptions): Promise<SearchProjectCustomfieldResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    projectId = OpenApiUtil.getEncodeParam(projectId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.customfieldIds)) {
       query["customfieldIds"] = request.customfieldIds;
@@ -8652,18 +9468,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SearchProjectCustomfieldResponse>(await this.doROARequest("SearchProjectCustomfield", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/customfields/search`, "json", req, runtime), new SearchProjectCustomfieldResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchProjectCustomfield",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/customfields/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchProjectCustomfieldResponse>(await this.execute(params, req, runtime), new SearchProjectCustomfieldResponse({}));
   }
 
-  async searchProjectTemplate(userId: string, request: SearchProjectTemplateRequest): Promise<SearchProjectTemplateResponse> {
+  async searchProjectCustomfield(userId: string, projectId: string, request: SearchProjectCustomfieldRequest): Promise<SearchProjectCustomfieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchProjectTemplateHeaders({ });
-    return await this.searchProjectTemplateWithOptions(userId, request, headers, runtime);
+    let headers = new SearchProjectCustomfieldHeaders({ });
+    return await this.searchProjectCustomfieldWithOptions(userId, projectId, request, headers, runtime);
   }
 
   async searchProjectTemplateWithOptions(userId: string, request: SearchProjectTemplateRequest, headers: SearchProjectTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<SearchProjectTemplateResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.keyword)) {
       query["keyword"] = request.keyword;
@@ -8682,19 +9508,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SearchProjectTemplateResponse>(await this.doROARequest("SearchProjectTemplate", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/organizations/users/${userId}/templates`, "json", req, runtime), new SearchProjectTemplateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchProjectTemplate",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/templates`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchProjectTemplateResponse>(await this.execute(params, req, runtime), new SearchProjectTemplateResponse({}));
   }
 
-  async searchTaskFlow(userId: string, projectId: string, request: SearchTaskFlowRequest): Promise<SearchTaskFlowResponse> {
+  async searchProjectTemplate(userId: string, request: SearchProjectTemplateRequest): Promise<SearchProjectTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchTaskFlowHeaders({ });
-    return await this.searchTaskFlowWithOptions(userId, projectId, request, headers, runtime);
+    let headers = new SearchProjectTemplateHeaders({ });
+    return await this.searchProjectTemplateWithOptions(userId, request, headers, runtime);
   }
 
   async searchTaskFlowWithOptions(userId: string, projectId: string, request: SearchTaskFlowRequest, headers: SearchTaskFlowHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTaskFlowResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    projectId = OpenApiUtil.getEncodeParam(projectId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -8725,19 +9560,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SearchTaskFlowResponse>(await this.doROARequest("SearchTaskFlow", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/taskflows/search`, "json", req, runtime), new SearchTaskFlowResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchTaskFlow",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/taskflows/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchTaskFlowResponse>(await this.execute(params, req, runtime), new SearchTaskFlowResponse({}));
   }
 
-  async searchTaskList(userId: string, projectId: string, request: SearchTaskListRequest): Promise<SearchTaskListResponse> {
+  async searchTaskFlow(userId: string, projectId: string, request: SearchTaskFlowRequest): Promise<SearchTaskFlowResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchTaskListHeaders({ });
-    return await this.searchTaskListWithOptions(userId, projectId, request, headers, runtime);
+    let headers = new SearchTaskFlowHeaders({ });
+    return await this.searchTaskFlowWithOptions(userId, projectId, request, headers, runtime);
   }
 
   async searchTaskListWithOptions(userId: string, projectId: string, request: SearchTaskListRequest, headers: SearchTaskListHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTaskListResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    projectId = OpenApiUtil.getEncodeParam(projectId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -8768,19 +9612,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SearchTaskListResponse>(await this.doROARequest("SearchTaskList", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/taskLists/search`, "json", req, runtime), new SearchTaskListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchTaskList",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/taskLists/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchTaskListResponse>(await this.execute(params, req, runtime), new SearchTaskListResponse({}));
   }
 
-  async searchTaskflowStatus(userId: string, projectId: string, request: SearchTaskflowStatusRequest): Promise<SearchTaskflowStatusResponse> {
+  async searchTaskList(userId: string, projectId: string, request: SearchTaskListRequest): Promise<SearchTaskListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchTaskflowStatusHeaders({ });
-    return await this.searchTaskflowStatusWithOptions(userId, projectId, request, headers, runtime);
+    let headers = new SearchTaskListHeaders({ });
+    return await this.searchTaskListWithOptions(userId, projectId, request, headers, runtime);
   }
 
   async searchTaskflowStatusWithOptions(userId: string, projectId: string, request: SearchTaskflowStatusRequest, headers: SearchTaskflowStatusHeaders, runtime: $Util.RuntimeOptions): Promise<SearchTaskflowStatusResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    projectId = OpenApiUtil.getEncodeParam(projectId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -8815,18 +9668,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SearchTaskflowStatusResponse>(await this.doROARequest("SearchTaskflowStatus", "project_1.0", "HTTP", "GET", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/taskflowStatuses/search`, "json", req, runtime), new SearchTaskflowStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchTaskflowStatus",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/taskflowStatuses/search`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchTaskflowStatusResponse>(await this.execute(params, req, runtime), new SearchTaskflowStatusResponse({}));
   }
 
-  async searchUserTask(userId: string, request: SearchUserTaskRequest): Promise<SearchUserTaskResponse> {
+  async searchTaskflowStatus(userId: string, projectId: string, request: SearchTaskflowStatusRequest): Promise<SearchTaskflowStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchUserTaskHeaders({ });
-    return await this.searchUserTaskWithOptions(userId, request, headers, runtime);
+    let headers = new SearchTaskflowStatusHeaders({ });
+    return await this.searchTaskflowStatusWithOptions(userId, projectId, request, headers, runtime);
   }
 
   async searchUserTaskWithOptions(userId: string, request: SearchUserTaskRequest, headers: SearchUserTaskHeaders, runtime: $Util.RuntimeOptions): Promise<SearchUserTaskResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -8853,7 +9716,51 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SearchUserTaskResponse>(await this.doROARequest("SearchUserTask", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/tasks/search`, "json", req, runtime), new SearchUserTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchUserTask",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchUserTaskResponse>(await this.execute(params, req, runtime), new SearchUserTaskResponse({}));
+  }
+
+  async searchUserTask(userId: string, request: SearchUserTaskRequest): Promise<SearchUserTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchUserTaskHeaders({ });
+    return await this.searchUserTaskWithOptions(userId, request, headers, runtime);
+  }
+
+  async suspendProjectWithOptions(projectId: string, userId: string, headers: SuspendProjectHeaders, runtime: $Util.RuntimeOptions): Promise<SuspendProjectResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "SuspendProject",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/suspend`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SuspendProjectResponse>(await this.execute(params, req, runtime), new SuspendProjectResponse({}));
   }
 
   async suspendProject(projectId: string, userId: string): Promise<SuspendProjectResponse> {
@@ -8862,9 +9769,7 @@ export default class Client extends OpenApi {
     return await this.suspendProjectWithOptions(projectId, userId, headers, runtime);
   }
 
-  async suspendProjectWithOptions(projectId: string, userId: string, headers: SuspendProjectHeaders, runtime: $Util.RuntimeOptions): Promise<SuspendProjectResponse> {
-    projectId = OpenApiUtil.getEncodeParam(projectId);
-    userId = OpenApiUtil.getEncodeParam(userId);
+  async unSuspendProjectWithOptions(projectId: string, userId: string, headers: UnSuspendProjectHeaders, runtime: $Util.RuntimeOptions): Promise<UnSuspendProjectResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -8877,7 +9782,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<SuspendProjectResponse>(await this.doROARequest("SuspendProject", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/suspend`, "json", req, runtime), new SuspendProjectResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UnSuspendProject",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/unsuspend`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UnSuspendProjectResponse>(await this.execute(params, req, runtime), new UnSuspendProjectResponse({}));
   }
 
   async unSuspendProject(projectId: string, userId: string): Promise<UnSuspendProjectResponse> {
@@ -8886,34 +9802,8 @@ export default class Client extends OpenApi {
     return await this.unSuspendProjectWithOptions(projectId, userId, headers, runtime);
   }
 
-  async unSuspendProjectWithOptions(projectId: string, userId: string, headers: UnSuspendProjectHeaders, runtime: $Util.RuntimeOptions): Promise<UnSuspendProjectResponse> {
-    projectId = OpenApiUtil.getEncodeParam(projectId);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<UnSuspendProjectResponse>(await this.doROARequest("UnSuspendProject", "project_1.0", "HTTP", "POST", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/unsuspend`, "json", req, runtime), new UnSuspendProjectResponse({}));
-  }
-
-  async updateCustomfieldValue(userId: string, taskId: string, request: UpdateCustomfieldValueRequest): Promise<UpdateCustomfieldValueResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateCustomfieldValueHeaders({ });
-    return await this.updateCustomfieldValueWithOptions(userId, taskId, request, headers, runtime);
-  }
-
   async updateCustomfieldValueWithOptions(userId: string, taskId: string, request: UpdateCustomfieldValueRequest, headers: UpdateCustomfieldValueHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCustomfieldValueResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.customfieldId)) {
       body["customfieldId"] = request.customfieldId;
@@ -8940,19 +9830,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateCustomfieldValueResponse>(await this.doROARequest("UpdateCustomfieldValue", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/customFields`, "json", req, runtime), new UpdateCustomfieldValueResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateCustomfieldValue",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/${taskId}/customFields`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateCustomfieldValueResponse>(await this.execute(params, req, runtime), new UpdateCustomfieldValueResponse({}));
   }
 
-  async updateOrganizationTaskContent(taskId: string, userId: string, request: UpdateOrganizationTaskContentRequest): Promise<UpdateOrganizationTaskContentResponse> {
+  async updateCustomfieldValue(userId: string, taskId: string, request: UpdateCustomfieldValueRequest): Promise<UpdateCustomfieldValueResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateOrganizationTaskContentHeaders({ });
-    return await this.updateOrganizationTaskContentWithOptions(taskId, userId, request, headers, runtime);
+    let headers = new UpdateCustomfieldValueHeaders({ });
+    return await this.updateCustomfieldValueWithOptions(userId, taskId, request, headers, runtime);
   }
 
   async updateOrganizationTaskContentWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskContentRequest, headers: UpdateOrganizationTaskContentHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskContentResponse> {
     Util.validateModel(request);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.content)) {
       body["content"] = request.content;
@@ -8979,19 +9878,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskContentResponse>(await this.doROARequest("UpdateOrganizationTaskContent", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/contents`, "json", req, runtime), new UpdateOrganizationTaskContentResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateOrganizationTaskContent",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/contents`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateOrganizationTaskContentResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskContentResponse({}));
   }
 
-  async updateOrganizationTaskDueDate(taskId: string, userId: string, request: UpdateOrganizationTaskDueDateRequest): Promise<UpdateOrganizationTaskDueDateResponse> {
+  async updateOrganizationTaskContent(taskId: string, userId: string, request: UpdateOrganizationTaskContentRequest): Promise<UpdateOrganizationTaskContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateOrganizationTaskDueDateHeaders({ });
-    return await this.updateOrganizationTaskDueDateWithOptions(taskId, userId, request, headers, runtime);
+    let headers = new UpdateOrganizationTaskContentHeaders({ });
+    return await this.updateOrganizationTaskContentWithOptions(taskId, userId, request, headers, runtime);
   }
 
   async updateOrganizationTaskDueDateWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskDueDateRequest, headers: UpdateOrganizationTaskDueDateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskDueDateResponse> {
     Util.validateModel(request);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.disableActivity)) {
       body["disableActivity"] = request.disableActivity;
@@ -9018,19 +9926,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskDueDateResponse>(await this.doROARequest("UpdateOrganizationTaskDueDate", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/dueDates`, "json", req, runtime), new UpdateOrganizationTaskDueDateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateOrganizationTaskDueDate",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/dueDates`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateOrganizationTaskDueDateResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskDueDateResponse({}));
   }
 
-  async updateOrganizationTaskExecutor(taskId: string, userId: string, request: UpdateOrganizationTaskExecutorRequest): Promise<UpdateOrganizationTaskExecutorResponse> {
+  async updateOrganizationTaskDueDate(taskId: string, userId: string, request: UpdateOrganizationTaskDueDateRequest): Promise<UpdateOrganizationTaskDueDateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateOrganizationTaskExecutorHeaders({ });
-    return await this.updateOrganizationTaskExecutorWithOptions(taskId, userId, request, headers, runtime);
+    let headers = new UpdateOrganizationTaskDueDateHeaders({ });
+    return await this.updateOrganizationTaskDueDateWithOptions(taskId, userId, request, headers, runtime);
   }
 
   async updateOrganizationTaskExecutorWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskExecutorRequest, headers: UpdateOrganizationTaskExecutorHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskExecutorResponse> {
     Util.validateModel(request);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.disableActivity)) {
       body["disableActivity"] = request.disableActivity;
@@ -9057,19 +9974,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskExecutorResponse>(await this.doROARequest("UpdateOrganizationTaskExecutor", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/executors`, "json", req, runtime), new UpdateOrganizationTaskExecutorResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateOrganizationTaskExecutor",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/executors`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateOrganizationTaskExecutorResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskExecutorResponse({}));
   }
 
-  async updateOrganizationTaskInvolveMembers(taskId: string, userId: string, request: UpdateOrganizationTaskInvolveMembersRequest): Promise<UpdateOrganizationTaskInvolveMembersResponse> {
+  async updateOrganizationTaskExecutor(taskId: string, userId: string, request: UpdateOrganizationTaskExecutorRequest): Promise<UpdateOrganizationTaskExecutorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateOrganizationTaskInvolveMembersHeaders({ });
-    return await this.updateOrganizationTaskInvolveMembersWithOptions(taskId, userId, request, headers, runtime);
+    let headers = new UpdateOrganizationTaskExecutorHeaders({ });
+    return await this.updateOrganizationTaskExecutorWithOptions(taskId, userId, request, headers, runtime);
   }
 
   async updateOrganizationTaskInvolveMembersWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskInvolveMembersRequest, headers: UpdateOrganizationTaskInvolveMembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskInvolveMembersResponse> {
     Util.validateModel(request);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.addInvolvers)) {
       body["addInvolvers"] = request.addInvolvers;
@@ -9104,19 +10030,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskInvolveMembersResponse>(await this.doROARequest("UpdateOrganizationTaskInvolveMembers", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/involveMembers`, "json", req, runtime), new UpdateOrganizationTaskInvolveMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateOrganizationTaskInvolveMembers",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/involveMembers`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateOrganizationTaskInvolveMembersResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskInvolveMembersResponse({}));
   }
 
-  async updateOrganizationTaskNote(taskId: string, userId: string, request: UpdateOrganizationTaskNoteRequest): Promise<UpdateOrganizationTaskNoteResponse> {
+  async updateOrganizationTaskInvolveMembers(taskId: string, userId: string, request: UpdateOrganizationTaskInvolveMembersRequest): Promise<UpdateOrganizationTaskInvolveMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateOrganizationTaskNoteHeaders({ });
-    return await this.updateOrganizationTaskNoteWithOptions(taskId, userId, request, headers, runtime);
+    let headers = new UpdateOrganizationTaskInvolveMembersHeaders({ });
+    return await this.updateOrganizationTaskInvolveMembersWithOptions(taskId, userId, request, headers, runtime);
   }
 
   async updateOrganizationTaskNoteWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskNoteRequest, headers: UpdateOrganizationTaskNoteHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskNoteResponse> {
     Util.validateModel(request);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.disableActivity)) {
       body["disableActivity"] = request.disableActivity;
@@ -9143,19 +10078,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskNoteResponse>(await this.doROARequest("UpdateOrganizationTaskNote", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/notes`, "json", req, runtime), new UpdateOrganizationTaskNoteResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateOrganizationTaskNote",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/notes`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateOrganizationTaskNoteResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskNoteResponse({}));
   }
 
-  async updateOrganizationTaskPriority(taskId: string, userId: string, request: UpdateOrganizationTaskPriorityRequest): Promise<UpdateOrganizationTaskPriorityResponse> {
+  async updateOrganizationTaskNote(taskId: string, userId: string, request: UpdateOrganizationTaskNoteRequest): Promise<UpdateOrganizationTaskNoteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateOrganizationTaskPriorityHeaders({ });
-    return await this.updateOrganizationTaskPriorityWithOptions(taskId, userId, request, headers, runtime);
+    let headers = new UpdateOrganizationTaskNoteHeaders({ });
+    return await this.updateOrganizationTaskNoteWithOptions(taskId, userId, request, headers, runtime);
   }
 
   async updateOrganizationTaskPriorityWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskPriorityRequest, headers: UpdateOrganizationTaskPriorityHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskPriorityResponse> {
     Util.validateModel(request);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.disableActivity)) {
       body["disableActivity"] = request.disableActivity;
@@ -9182,19 +10126,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskPriorityResponse>(await this.doROARequest("UpdateOrganizationTaskPriority", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/priorities`, "json", req, runtime), new UpdateOrganizationTaskPriorityResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateOrganizationTaskPriority",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/priorities`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateOrganizationTaskPriorityResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskPriorityResponse({}));
   }
 
-  async updateOrganizationTaskStatus(taskId: string, userId: string, request: UpdateOrganizationTaskStatusRequest): Promise<UpdateOrganizationTaskStatusResponse> {
+  async updateOrganizationTaskPriority(taskId: string, userId: string, request: UpdateOrganizationTaskPriorityRequest): Promise<UpdateOrganizationTaskPriorityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateOrganizationTaskStatusHeaders({ });
-    return await this.updateOrganizationTaskStatusWithOptions(taskId, userId, request, headers, runtime);
+    let headers = new UpdateOrganizationTaskPriorityHeaders({ });
+    return await this.updateOrganizationTaskPriorityWithOptions(taskId, userId, request, headers, runtime);
   }
 
   async updateOrganizationTaskStatusWithOptions(taskId: string, userId: string, request: UpdateOrganizationTaskStatusRequest, headers: UpdateOrganizationTaskStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOrganizationTaskStatusResponse> {
     Util.validateModel(request);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.disableActivity)) {
       body["disableActivity"] = request.disableActivity;
@@ -9221,19 +10174,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOrganizationTaskStatusResponse>(await this.doROARequest("UpdateOrganizationTaskStatus", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/states`, "json", req, runtime), new UpdateOrganizationTaskStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateOrganizationTaskStatus",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/organizations/users/${userId}/tasks/${taskId}/states`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateOrganizationTaskStatusResponse>(await this.execute(params, req, runtime), new UpdateOrganizationTaskStatusResponse({}));
   }
 
-  async updateProjectGroup(userId: string, projectId: string, request: UpdateProjectGroupRequest): Promise<UpdateProjectGroupResponse> {
+  async updateOrganizationTaskStatus(taskId: string, userId: string, request: UpdateOrganizationTaskStatusRequest): Promise<UpdateOrganizationTaskStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateProjectGroupHeaders({ });
-    return await this.updateProjectGroupWithOptions(userId, projectId, request, headers, runtime);
+    let headers = new UpdateOrganizationTaskStatusHeaders({ });
+    return await this.updateOrganizationTaskStatusWithOptions(taskId, userId, request, headers, runtime);
   }
 
   async updateProjectGroupWithOptions(userId: string, projectId: string, request: UpdateProjectGroupRequest, headers: UpdateProjectGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateProjectGroupResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    projectId = OpenApiUtil.getEncodeParam(projectId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.addProjectGroupIds)) {
       body["addProjectGroupIds"] = request.addProjectGroupIds;
@@ -9256,19 +10218,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateProjectGroupResponse>(await this.doROARequest("UpdateProjectGroup", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/projects/${projectId}/groups`, "json", req, runtime), new UpdateProjectGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateProjectGroup",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/projects/${projectId}/groups`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateProjectGroupResponse>(await this.execute(params, req, runtime), new UpdateProjectGroupResponse({}));
   }
 
-  async updateTaskContent(userId: string, taskId: string, request: UpdateTaskContentRequest): Promise<UpdateTaskContentResponse> {
+  async updateProjectGroup(userId: string, projectId: string, request: UpdateProjectGroupRequest): Promise<UpdateProjectGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTaskContentHeaders({ });
-    return await this.updateTaskContentWithOptions(userId, taskId, request, headers, runtime);
+    let headers = new UpdateProjectGroupHeaders({ });
+    return await this.updateProjectGroupWithOptions(userId, projectId, request, headers, runtime);
   }
 
   async updateTaskContentWithOptions(userId: string, taskId: string, request: UpdateTaskContentRequest, headers: UpdateTaskContentHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskContentResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.content)) {
       body["content"] = request.content;
@@ -9287,19 +10258,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTaskContentResponse>(await this.doROARequest("UpdateTaskContent", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/contents`, "json", req, runtime), new UpdateTaskContentResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTaskContent",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/${taskId}/contents`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTaskContentResponse>(await this.execute(params, req, runtime), new UpdateTaskContentResponse({}));
   }
 
-  async updateTaskDueDate(userId: string, taskId: string, request: UpdateTaskDueDateRequest): Promise<UpdateTaskDueDateResponse> {
+  async updateTaskContent(userId: string, taskId: string, request: UpdateTaskContentRequest): Promise<UpdateTaskContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTaskDueDateHeaders({ });
-    return await this.updateTaskDueDateWithOptions(userId, taskId, request, headers, runtime);
+    let headers = new UpdateTaskContentHeaders({ });
+    return await this.updateTaskContentWithOptions(userId, taskId, request, headers, runtime);
   }
 
   async updateTaskDueDateWithOptions(userId: string, taskId: string, request: UpdateTaskDueDateRequest, headers: UpdateTaskDueDateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskDueDateResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.dueDate)) {
       body["dueDate"] = request.dueDate;
@@ -9318,19 +10298,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTaskDueDateResponse>(await this.doROARequest("UpdateTaskDueDate", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/dueDates`, "json", req, runtime), new UpdateTaskDueDateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTaskDueDate",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/${taskId}/dueDates`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTaskDueDateResponse>(await this.execute(params, req, runtime), new UpdateTaskDueDateResponse({}));
   }
 
-  async updateTaskExecutor(userId: string, taskId: string, request: UpdateTaskExecutorRequest): Promise<UpdateTaskExecutorResponse> {
+  async updateTaskDueDate(userId: string, taskId: string, request: UpdateTaskDueDateRequest): Promise<UpdateTaskDueDateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTaskExecutorHeaders({ });
-    return await this.updateTaskExecutorWithOptions(userId, taskId, request, headers, runtime);
+    let headers = new UpdateTaskDueDateHeaders({ });
+    return await this.updateTaskDueDateWithOptions(userId, taskId, request, headers, runtime);
   }
 
   async updateTaskExecutorWithOptions(userId: string, taskId: string, request: UpdateTaskExecutorRequest, headers: UpdateTaskExecutorHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskExecutorResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.executorId)) {
       body["executorId"] = request.executorId;
@@ -9349,19 +10338,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTaskExecutorResponse>(await this.doROARequest("UpdateTaskExecutor", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/executors`, "json", req, runtime), new UpdateTaskExecutorResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTaskExecutor",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/${taskId}/executors`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTaskExecutorResponse>(await this.execute(params, req, runtime), new UpdateTaskExecutorResponse({}));
   }
 
-  async updateTaskInvolvemembers(userId: string, taskId: string, request: UpdateTaskInvolvemembersRequest): Promise<UpdateTaskInvolvemembersResponse> {
+  async updateTaskExecutor(userId: string, taskId: string, request: UpdateTaskExecutorRequest): Promise<UpdateTaskExecutorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTaskInvolvemembersHeaders({ });
-    return await this.updateTaskInvolvemembersWithOptions(userId, taskId, request, headers, runtime);
+    let headers = new UpdateTaskExecutorHeaders({ });
+    return await this.updateTaskExecutorWithOptions(userId, taskId, request, headers, runtime);
   }
 
   async updateTaskInvolvemembersWithOptions(userId: string, taskId: string, request: UpdateTaskInvolvemembersRequest, headers: UpdateTaskInvolvemembersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskInvolvemembersResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.addInvolvers)) {
       body["addInvolvers"] = request.addInvolvers;
@@ -9388,19 +10386,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTaskInvolvemembersResponse>(await this.doROARequest("UpdateTaskInvolvemembers", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/involveMembers`, "json", req, runtime), new UpdateTaskInvolvemembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTaskInvolvemembers",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/${taskId}/involveMembers`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTaskInvolvemembersResponse>(await this.execute(params, req, runtime), new UpdateTaskInvolvemembersResponse({}));
   }
 
-  async updateTaskNote(userId: string, taskId: string, request: UpdateTaskNoteRequest): Promise<UpdateTaskNoteResponse> {
+  async updateTaskInvolvemembers(userId: string, taskId: string, request: UpdateTaskInvolvemembersRequest): Promise<UpdateTaskInvolvemembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTaskNoteHeaders({ });
-    return await this.updateTaskNoteWithOptions(userId, taskId, request, headers, runtime);
+    let headers = new UpdateTaskInvolvemembersHeaders({ });
+    return await this.updateTaskInvolvemembersWithOptions(userId, taskId, request, headers, runtime);
   }
 
   async updateTaskNoteWithOptions(userId: string, taskId: string, request: UpdateTaskNoteRequest, headers: UpdateTaskNoteHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskNoteResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.note)) {
       body["note"] = request.note;
@@ -9419,19 +10426,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTaskNoteResponse>(await this.doROARequest("UpdateTaskNote", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/notes`, "json", req, runtime), new UpdateTaskNoteResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTaskNote",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/${taskId}/notes`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTaskNoteResponse>(await this.execute(params, req, runtime), new UpdateTaskNoteResponse({}));
   }
 
-  async updateTaskPriority(userId: string, taskId: string, request: UpdateTaskPriorityRequest): Promise<UpdateTaskPriorityResponse> {
+  async updateTaskNote(userId: string, taskId: string, request: UpdateTaskNoteRequest): Promise<UpdateTaskNoteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTaskPriorityHeaders({ });
-    return await this.updateTaskPriorityWithOptions(userId, taskId, request, headers, runtime);
+    let headers = new UpdateTaskNoteHeaders({ });
+    return await this.updateTaskNoteWithOptions(userId, taskId, request, headers, runtime);
   }
 
   async updateTaskPriorityWithOptions(userId: string, taskId: string, request: UpdateTaskPriorityRequest, headers: UpdateTaskPriorityHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskPriorityResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.priority)) {
       body["priority"] = request.priority;
@@ -9450,19 +10466,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTaskPriorityResponse>(await this.doROARequest("UpdateTaskPriority", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/priorities`, "json", req, runtime), new UpdateTaskPriorityResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTaskPriority",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/${taskId}/priorities`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTaskPriorityResponse>(await this.execute(params, req, runtime), new UpdateTaskPriorityResponse({}));
   }
 
-  async updateTaskStage(userId: string, taskId: string, request: UpdateTaskStageRequest): Promise<UpdateTaskStageResponse> {
+  async updateTaskPriority(userId: string, taskId: string, request: UpdateTaskPriorityRequest): Promise<UpdateTaskPriorityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTaskStageHeaders({ });
-    return await this.updateTaskStageWithOptions(userId, taskId, request, headers, runtime);
+    let headers = new UpdateTaskPriorityHeaders({ });
+    return await this.updateTaskPriorityWithOptions(userId, taskId, request, headers, runtime);
   }
 
   async updateTaskStageWithOptions(userId: string, taskId: string, request: UpdateTaskStageRequest, headers: UpdateTaskStageHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskStageResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.stageId)) {
       body["stageId"] = request.stageId;
@@ -9481,19 +10506,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTaskStageResponse>(await this.doROARequest("UpdateTaskStage", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/stages`, "json", req, runtime), new UpdateTaskStageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTaskStage",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/${taskId}/stages`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTaskStageResponse>(await this.execute(params, req, runtime), new UpdateTaskStageResponse({}));
   }
 
-  async updateTaskStartdate(userId: string, taskId: string, request: UpdateTaskStartdateRequest): Promise<UpdateTaskStartdateResponse> {
+  async updateTaskStage(userId: string, taskId: string, request: UpdateTaskStageRequest): Promise<UpdateTaskStageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTaskStartdateHeaders({ });
-    return await this.updateTaskStartdateWithOptions(userId, taskId, request, headers, runtime);
+    let headers = new UpdateTaskStageHeaders({ });
+    return await this.updateTaskStageWithOptions(userId, taskId, request, headers, runtime);
   }
 
   async updateTaskStartdateWithOptions(userId: string, taskId: string, request: UpdateTaskStartdateRequest, headers: UpdateTaskStartdateHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskStartdateResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.startDate)) {
       body["startDate"] = request.startDate;
@@ -9512,19 +10546,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTaskStartdateResponse>(await this.doROARequest("UpdateTaskStartdate", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/startDates`, "json", req, runtime), new UpdateTaskStartdateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTaskStartdate",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/${taskId}/startDates`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTaskStartdateResponse>(await this.execute(params, req, runtime), new UpdateTaskStartdateResponse({}));
   }
 
-  async updateTaskTaskflowstatus(userId: string, taskId: string, request: UpdateTaskTaskflowstatusRequest): Promise<UpdateTaskTaskflowstatusResponse> {
+  async updateTaskStartdate(userId: string, taskId: string, request: UpdateTaskStartdateRequest): Promise<UpdateTaskStartdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTaskTaskflowstatusHeaders({ });
-    return await this.updateTaskTaskflowstatusWithOptions(userId, taskId, request, headers, runtime);
+    let headers = new UpdateTaskStartdateHeaders({ });
+    return await this.updateTaskStartdateWithOptions(userId, taskId, request, headers, runtime);
   }
 
   async updateTaskTaskflowstatusWithOptions(userId: string, taskId: string, request: UpdateTaskTaskflowstatusRequest, headers: UpdateTaskTaskflowstatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskTaskflowstatusResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.taskflowStatusId)) {
       body["taskflowStatusId"] = request.taskflowStatusId;
@@ -9547,7 +10590,84 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTaskTaskflowstatusResponse>(await this.doROARequest("UpdateTaskTaskflowstatus", "project_1.0", "HTTP", "PUT", "AK", `/v1.0/project/users/${userId}/tasks/${taskId}/taskflowStatuses`, "json", req, runtime), new UpdateTaskTaskflowstatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTaskTaskflowstatus",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/tasks/${taskId}/taskflowStatuses`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTaskTaskflowstatusResponse>(await this.execute(params, req, runtime), new UpdateTaskTaskflowstatusResponse({}));
+  }
+
+  async updateTaskTaskflowstatus(userId: string, taskId: string, request: UpdateTaskTaskflowstatusRequest): Promise<UpdateTaskTaskflowstatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateTaskTaskflowstatusHeaders({ });
+    return await this.updateTaskTaskflowstatusWithOptions(userId, taskId, request, headers, runtime);
+  }
+
+  async updateWorkTimeApproveWithOptions(userId: string, approveOpenId: string, request: UpdateWorkTimeApproveRequest, headers: UpdateWorkTimeApproveHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateWorkTimeApproveResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.finishTime)) {
+      body["finishTime"] = request.finishTime;
+    }
+
+    if (!Util.isUnset(request.instanceId)) {
+      body["instanceId"] = request.instanceId;
+    }
+
+    if (!Util.isUnset(request.status)) {
+      body["status"] = request.status;
+    }
+
+    if (!Util.isUnset(request.submitTime)) {
+      body["submitTime"] = request.submitTime;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.url)) {
+      body["url"] = request.url;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateWorkTimeApprove",
+      version: "project_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/project/users/${userId}/workTimes/approvals/${approveOpenId}`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateWorkTimeApproveResponse>(await this.execute(params, req, runtime), new UpdateWorkTimeApproveResponse({}));
+  }
+
+  async updateWorkTimeApprove(userId: string, approveOpenId: string, request: UpdateWorkTimeApproveRequest): Promise<UpdateWorkTimeApproveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateWorkTimeApproveHeaders({ });
+    return await this.updateWorkTimeApproveWithOptions(userId, approveOpenId, request, headers, runtime);
   }
 
 }

@@ -3,9 +3,63 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
+
+export class ResultDurationSettingsValue extends $tea.Model {
+  calcType?: number;
+  durationType?: number;
+  overtimeRedress?: boolean;
+  settings?: { [key: string]: any };
+  overtimeRedressBy?: string;
+  vacationRate?: number;
+  skipTime?: string;
+  skipTimeByFrames?: ResultDurationSettingsValueSkipTimeByFrames[];
+  skipTimeByDurations?: ResultDurationSettingsValueSkipTimeByDurations[];
+  holidayPlanOvertimeRedress?: boolean;
+  holidayPlanOvertimeRedressBy?: string;
+  holidayPlanVacationRate?: number;
+  static names(): { [key: string]: string } {
+    return {
+      calcType: 'calcType',
+      durationType: 'durationType',
+      overtimeRedress: 'overtimeRedress',
+      settings: 'settings',
+      overtimeRedressBy: 'overtimeRedressBy',
+      vacationRate: 'vacationRate',
+      skipTime: 'skipTime',
+      skipTimeByFrames: 'skipTimeByFrames',
+      skipTimeByDurations: 'skipTimeByDurations',
+      holidayPlanOvertimeRedress: 'holidayPlanOvertimeRedress',
+      holidayPlanOvertimeRedressBy: 'holidayPlanOvertimeRedressBy',
+      holidayPlanVacationRate: 'holidayPlanVacationRate',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      calcType: 'number',
+      durationType: 'number',
+      overtimeRedress: 'boolean',
+      settings: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      overtimeRedressBy: 'string',
+      vacationRate: 'number',
+      skipTime: 'string',
+      skipTimeByFrames: { 'type': 'array', 'itemType': ResultDurationSettingsValueSkipTimeByFrames },
+      skipTimeByDurations: { 'type': 'array', 'itemType': ResultDurationSettingsValueSkipTimeByDurations },
+      holidayPlanOvertimeRedress: 'boolean',
+      holidayPlanOvertimeRedressBy: 'string',
+      holidayPlanVacationRate: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
 
 export class AddLeaveTypeHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
@@ -96,10 +150,12 @@ export class AddLeaveTypeResponseBody extends $tea.Model {
 
 export class AddLeaveTypeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddLeaveTypeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -107,6 +163,7 @@ export class AddLeaveTypeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddLeaveTypeResponseBody,
     };
   }
@@ -187,10 +244,12 @@ export class AttendanceBleDevicesAddResponseBody extends $tea.Model {
 
 export class AttendanceBleDevicesAddResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AttendanceBleDevicesAddResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -198,6 +257,7 @@ export class AttendanceBleDevicesAddResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AttendanceBleDevicesAddResponseBody,
     };
   }
@@ -272,10 +332,12 @@ export class AttendanceBleDevicesQueryResponseBody extends $tea.Model {
 
 export class AttendanceBleDevicesQueryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AttendanceBleDevicesQueryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -283,6 +345,7 @@ export class AttendanceBleDevicesQueryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AttendanceBleDevicesQueryResponseBody,
     };
   }
@@ -363,10 +426,12 @@ export class AttendanceBleDevicesRemoveResponseBody extends $tea.Model {
 
 export class AttendanceBleDevicesRemoveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AttendanceBleDevicesRemoveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -374,6 +439,7 @@ export class AttendanceBleDevicesRemoveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AttendanceBleDevicesRemoveResponseBody,
     };
   }
@@ -457,10 +523,12 @@ export class CheckClosingAccountResponseBody extends $tea.Model {
 
 export class CheckClosingAccountResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CheckClosingAccountResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -468,6 +536,7 @@ export class CheckClosingAccountResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CheckClosingAccountResponseBody,
     };
   }
@@ -548,10 +617,12 @@ export class CheckWritePermissionResponseBody extends $tea.Model {
 
 export class CheckWritePermissionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CheckWritePermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -559,6 +630,7 @@ export class CheckWritePermissionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CheckWritePermissionResponseBody,
     };
   }
@@ -645,10 +717,12 @@ export class CreateApproveResponseBody extends $tea.Model {
 
 export class CreateApproveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateApproveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -656,6 +730,7 @@ export class CreateApproveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateApproveResponseBody,
     };
   }
@@ -739,10 +814,12 @@ export class DeleteWaterMarkTemplateResponseBody extends $tea.Model {
 
 export class DeleteWaterMarkTemplateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteWaterMarkTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -750,6 +827,7 @@ export class DeleteWaterMarkTemplateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteWaterMarkTemplateResponseBody,
     };
   }
@@ -833,10 +911,12 @@ export class DingTalkSecurityCheckResponseBody extends $tea.Model {
 
 export class DingTalkSecurityCheckResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DingTalkSecurityCheckResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -844,6 +924,7 @@ export class DingTalkSecurityCheckResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DingTalkSecurityCheckResponseBody,
     };
   }
@@ -921,10 +1002,12 @@ export class GetATManageScopeResponseBody extends $tea.Model {
 
 export class GetATManageScopeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetATManageScopeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -932,6 +1015,7 @@ export class GetATManageScopeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetATManageScopeResponseBody,
     };
   }
@@ -1006,10 +1090,12 @@ export class GetAdjustmentsResponseBody extends $tea.Model {
 
 export class GetAdjustmentsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAdjustmentsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1017,6 +1103,7 @@ export class GetAdjustmentsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAdjustmentsResponseBody,
     };
   }
@@ -1097,10 +1184,12 @@ export class GetCheckInSchemaTemplateResponseBody extends $tea.Model {
 
 export class GetCheckInSchemaTemplateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCheckInSchemaTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1108,6 +1197,7 @@ export class GetCheckInSchemaTemplateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCheckInSchemaTemplateResponseBody,
     };
   }
@@ -1179,10 +1269,12 @@ export class GetClosingAccountsResponseBody extends $tea.Model {
 
 export class GetClosingAccountsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetClosingAccountsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1190,6 +1282,7 @@ export class GetClosingAccountsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetClosingAccountsResponseBody,
     };
   }
@@ -1276,10 +1369,12 @@ export class GetLeaveRecordsResponseBody extends $tea.Model {
 
 export class GetLeaveRecordsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetLeaveRecordsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1287,6 +1382,7 @@ export class GetLeaveRecordsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetLeaveRecordsResponseBody,
     };
   }
@@ -1361,10 +1457,12 @@ export class GetLeaveTypeResponseBody extends $tea.Model {
 
 export class GetLeaveTypeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetLeaveTypeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1372,6 +1470,7 @@ export class GetLeaveTypeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetLeaveTypeResponseBody,
     };
   }
@@ -1424,10 +1523,12 @@ export class GetMachineResponseBody extends $tea.Model {
 
 export class GetMachineResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetMachineResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1435,6 +1536,7 @@ export class GetMachineResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetMachineResponseBody,
     };
   }
@@ -1509,10 +1611,12 @@ export class GetMachineUserResponseBody extends $tea.Model {
 
 export class GetMachineUserResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetMachineUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1520,6 +1624,7 @@ export class GetMachineUserResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetMachineUserResponseBody,
     };
   }
@@ -1591,10 +1696,12 @@ export class GetOvertimeSettingResponseBody extends $tea.Model {
 
 export class GetOvertimeSettingResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetOvertimeSettingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1602,6 +1709,7 @@ export class GetOvertimeSettingResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetOvertimeSettingResponseBody,
     };
   }
@@ -1676,10 +1784,12 @@ export class GetSimpleOvertimeSettingResponseBody extends $tea.Model {
 
 export class GetSimpleOvertimeSettingResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSimpleOvertimeSettingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1687,6 +1797,7 @@ export class GetSimpleOvertimeSettingResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSimpleOvertimeSettingResponseBody,
     };
   }
@@ -1764,10 +1875,12 @@ export class GetUserHolidaysResponseBody extends $tea.Model {
 
 export class GetUserHolidaysResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserHolidaysResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1775,6 +1888,7 @@ export class GetUserHolidaysResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserHolidaysResponseBody,
     };
   }
@@ -1975,10 +2089,12 @@ export class GroupAddResponseBody extends $tea.Model {
 
 export class GroupAddResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GroupAddResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1986,6 +2102,7 @@ export class GroupAddResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GroupAddResponseBody,
     };
   }
@@ -2147,10 +2264,12 @@ export class GroupUpdateResponseBody extends $tea.Model {
 
 export class GroupUpdateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GroupUpdateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2158,6 +2277,7 @@ export class GroupUpdateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GroupUpdateResponseBody,
     };
   }
@@ -2235,10 +2355,12 @@ export class InitAndGetLeaveALlocationQuotasResponseBody extends $tea.Model {
 
 export class InitAndGetLeaveALlocationQuotasResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: InitAndGetLeaveALlocationQuotasResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2246,6 +2368,7 @@ export class InitAndGetLeaveALlocationQuotasResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: InitAndGetLeaveALlocationQuotasResponseBody,
     };
   }
@@ -2326,10 +2449,12 @@ export class ListApproveByUsersResponseBody extends $tea.Model {
 
 export class ListApproveByUsersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListApproveByUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2337,6 +2462,7 @@ export class ListApproveByUsersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListApproveByUsersResponseBody,
     };
   }
@@ -2429,10 +2555,12 @@ export class ModifyWaterMarkTemplateResponseBody extends $tea.Model {
 
 export class ModifyWaterMarkTemplateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ModifyWaterMarkTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2440,6 +2568,7 @@ export class ModifyWaterMarkTemplateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ModifyWaterMarkTemplateResponseBody,
     };
   }
@@ -2526,10 +2655,12 @@ export class ProcessApproveCreateResponseBody extends $tea.Model {
 
 export class ProcessApproveCreateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ProcessApproveCreateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2537,6 +2668,7 @@ export class ProcessApproveCreateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ProcessApproveCreateResponseBody,
     };
   }
@@ -2629,10 +2761,12 @@ export class SaveCustomWaterMarkTemplateResponseBody extends $tea.Model {
 
 export class SaveCustomWaterMarkTemplateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SaveCustomWaterMarkTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2640,6 +2774,7 @@ export class SaveCustomWaterMarkTemplateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SaveCustomWaterMarkTemplateResponseBody,
     };
   }
@@ -2695,15 +2830,18 @@ export class SyncScheduleInfoRequest extends $tea.Model {
 
 export class SyncScheduleInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -2804,10 +2942,12 @@ export class UpdateLeaveTypeResponseBody extends $tea.Model {
 
 export class UpdateLeaveTypeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateLeaveTypeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2815,6 +2955,7 @@ export class UpdateLeaveTypeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateLeaveTypeResponseBody,
     };
   }
@@ -2824,50 +2965,45 @@ export class UpdateLeaveTypeResponse extends $tea.Model {
   }
 }
 
-export class ResultDurationSettingsValue extends $tea.Model {
-  calcType?: number;
-  durationType?: number;
-  overtimeRedress?: boolean;
-  settings?: { [key: string]: any };
-  overtimeRedressBy?: string;
-  vacationRate?: number;
-  skipTime?: string;
-  skipTimeByFrames?: ResultDurationSettingsValueSkipTimeByFrames[];
-  skipTimeByDurations?: ResultDurationSettingsValueSkipTimeByDurations[];
-  holidayPlanOvertimeRedress?: boolean;
-  holidayPlanOvertimeRedressBy?: string;
-  holidayPlanVacationRate?: number;
+export class ResultDurationSettingsValueSkipTimeByFrames extends $tea.Model {
+  startTime?: string;
+  endTime?: string;
+  valid?: boolean;
   static names(): { [key: string]: string } {
     return {
-      calcType: 'calcType',
-      durationType: 'durationType',
-      overtimeRedress: 'overtimeRedress',
-      settings: 'settings',
-      overtimeRedressBy: 'overtimeRedressBy',
-      vacationRate: 'vacationRate',
-      skipTime: 'skipTime',
-      skipTimeByFrames: 'skipTimeByFrames',
-      skipTimeByDurations: 'skipTimeByDurations',
-      holidayPlanOvertimeRedress: 'holidayPlanOvertimeRedress',
-      holidayPlanOvertimeRedressBy: 'holidayPlanOvertimeRedressBy',
-      holidayPlanVacationRate: 'holidayPlanVacationRate',
+      startTime: 'startTime',
+      endTime: 'endTime',
+      valid: 'valid',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      calcType: 'number',
-      durationType: 'number',
-      overtimeRedress: 'boolean',
-      settings: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
-      overtimeRedressBy: 'string',
-      vacationRate: 'number',
-      skipTime: 'string',
-      skipTimeByFrames: { 'type': 'array', 'itemType': ResultDurationSettingsValueSkipTimeByFrames },
-      skipTimeByDurations: { 'type': 'array', 'itemType': ResultDurationSettingsValueSkipTimeByDurations },
-      holidayPlanOvertimeRedress: 'boolean',
-      holidayPlanOvertimeRedressBy: 'string',
-      holidayPlanVacationRate: 'number',
+      startTime: 'string',
+      endTime: 'string',
+      valid: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ResultDurationSettingsValueSkipTimeByDurations extends $tea.Model {
+  duration?: number;
+  minus?: number;
+  static names(): { [key: string]: string } {
+    return {
+      duration: 'duration',
+      minus: 'minus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      duration: 'number',
+      minus: 'number',
     };
   }
 
@@ -4754,58 +4890,14 @@ export class UpdateLeaveTypeResponseBodyResult extends $tea.Model {
   }
 }
 
-export class ResultDurationSettingsValueSkipTimeByFrames extends $tea.Model {
-  startTime?: string;
-  endTime?: string;
-  valid?: boolean;
-  static names(): { [key: string]: string } {
-    return {
-      startTime: 'startTime',
-      endTime: 'endTime',
-      valid: 'valid',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      startTime: 'string',
-      endTime: 'string',
-      valid: 'boolean',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class ResultDurationSettingsValueSkipTimeByDurations extends $tea.Model {
-  duration?: number;
-  minus?: number;
-  static names(): { [key: string]: string } {
-    return {
-      duration: 'duration',
-      minus: 'minus',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      duration: 'number',
-      minus: 'number',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -4813,12 +4905,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async addLeaveType(request: AddLeaveTypeRequest): Promise<AddLeaveTypeResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddLeaveTypeHeaders({ });
-    return await this.addLeaveTypeWithOptions(request, headers, runtime);
-  }
 
   async addLeaveTypeWithOptions(request: AddLeaveTypeRequest, headers: AddLeaveTypeHeaders, runtime: $Util.RuntimeOptions): Promise<AddLeaveTypeResponse> {
     Util.validateModel(request);
@@ -4878,13 +4964,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddLeaveTypeResponse>(await this.doROARequest("AddLeaveType", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/leaves/types`, "json", req, runtime), new AddLeaveTypeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddLeaveType",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/leaves/types`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddLeaveTypeResponse>(await this.execute(params, req, runtime), new AddLeaveTypeResponse({}));
   }
 
-  async attendanceBleDevicesAdd(request: AttendanceBleDevicesAddRequest): Promise<AttendanceBleDevicesAddResponse> {
+  async addLeaveType(request: AddLeaveTypeRequest): Promise<AddLeaveTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AttendanceBleDevicesAddHeaders({ });
-    return await this.attendanceBleDevicesAddWithOptions(request, headers, runtime);
+    let headers = new AddLeaveTypeHeaders({ });
+    return await this.addLeaveTypeWithOptions(request, headers, runtime);
   }
 
   async attendanceBleDevicesAddWithOptions(request: AttendanceBleDevicesAddRequest, headers: AttendanceBleDevicesAddHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesAddResponse> {
@@ -4915,13 +5012,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AttendanceBleDevicesAddResponse>(await this.doROARequest("AttendanceBleDevicesAdd", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/group/bledevices`, "json", req, runtime), new AttendanceBleDevicesAddResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AttendanceBleDevicesAdd",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/group/bledevices`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AttendanceBleDevicesAddResponse>(await this.execute(params, req, runtime), new AttendanceBleDevicesAddResponse({}));
   }
 
-  async attendanceBleDevicesQuery(request: AttendanceBleDevicesQueryRequest): Promise<AttendanceBleDevicesQueryResponse> {
+  async attendanceBleDevicesAdd(request: AttendanceBleDevicesAddRequest): Promise<AttendanceBleDevicesAddResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AttendanceBleDevicesQueryHeaders({ });
-    return await this.attendanceBleDevicesQueryWithOptions(request, headers, runtime);
+    let headers = new AttendanceBleDevicesAddHeaders({ });
+    return await this.attendanceBleDevicesAddWithOptions(request, headers, runtime);
   }
 
   async attendanceBleDevicesQueryWithOptions(request: AttendanceBleDevicesQueryRequest, headers: AttendanceBleDevicesQueryHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesQueryResponse> {
@@ -4948,13 +5056,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AttendanceBleDevicesQueryResponse>(await this.doROARequestWithForm("AttendanceBleDevicesQuery", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/group/bledevices/query`, "json", req, runtime), new AttendanceBleDevicesQueryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AttendanceBleDevicesQuery",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/group/bledevices/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AttendanceBleDevicesQueryResponse>(await this.execute(params, req, runtime), new AttendanceBleDevicesQueryResponse({}));
   }
 
-  async attendanceBleDevicesRemove(request: AttendanceBleDevicesRemoveRequest): Promise<AttendanceBleDevicesRemoveResponse> {
+  async attendanceBleDevicesQuery(request: AttendanceBleDevicesQueryRequest): Promise<AttendanceBleDevicesQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AttendanceBleDevicesRemoveHeaders({ });
-    return await this.attendanceBleDevicesRemoveWithOptions(request, headers, runtime);
+    let headers = new AttendanceBleDevicesQueryHeaders({ });
+    return await this.attendanceBleDevicesQueryWithOptions(request, headers, runtime);
   }
 
   async attendanceBleDevicesRemoveWithOptions(request: AttendanceBleDevicesRemoveRequest, headers: AttendanceBleDevicesRemoveHeaders, runtime: $Util.RuntimeOptions): Promise<AttendanceBleDevicesRemoveResponse> {
@@ -4985,13 +5104,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AttendanceBleDevicesRemoveResponse>(await this.doROARequest("AttendanceBleDevicesRemove", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/group/bledevices/remove`, "json", req, runtime), new AttendanceBleDevicesRemoveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AttendanceBleDevicesRemove",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/group/bledevices/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AttendanceBleDevicesRemoveResponse>(await this.execute(params, req, runtime), new AttendanceBleDevicesRemoveResponse({}));
   }
 
-  async checkClosingAccount(request: CheckClosingAccountRequest): Promise<CheckClosingAccountResponse> {
+  async attendanceBleDevicesRemove(request: AttendanceBleDevicesRemoveRequest): Promise<AttendanceBleDevicesRemoveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CheckClosingAccountHeaders({ });
-    return await this.checkClosingAccountWithOptions(request, headers, runtime);
+    let headers = new AttendanceBleDevicesRemoveHeaders({ });
+    return await this.attendanceBleDevicesRemoveWithOptions(request, headers, runtime);
   }
 
   async checkClosingAccountWithOptions(request: CheckClosingAccountRequest, headers: CheckClosingAccountHeaders, runtime: $Util.RuntimeOptions): Promise<CheckClosingAccountResponse> {
@@ -5022,13 +5152,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CheckClosingAccountResponse>(await this.doROARequest("CheckClosingAccount", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/closingAccounts/status/query`, "json", req, runtime), new CheckClosingAccountResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CheckClosingAccount",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/closingAccounts/status/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CheckClosingAccountResponse>(await this.execute(params, req, runtime), new CheckClosingAccountResponse({}));
   }
 
-  async checkWritePermission(request: CheckWritePermissionRequest): Promise<CheckWritePermissionResponse> {
+  async checkClosingAccount(request: CheckClosingAccountRequest): Promise<CheckClosingAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CheckWritePermissionHeaders({ });
-    return await this.checkWritePermissionWithOptions(request, headers, runtime);
+    let headers = new CheckClosingAccountHeaders({ });
+    return await this.checkClosingAccountWithOptions(request, headers, runtime);
   }
 
   async checkWritePermissionWithOptions(request: CheckWritePermissionRequest, headers: CheckWritePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<CheckWritePermissionResponse> {
@@ -5063,13 +5204,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CheckWritePermissionResponse>(await this.doROARequest("CheckWritePermission", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/writePermissions/query`, "json", req, runtime), new CheckWritePermissionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CheckWritePermission",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/writePermissions/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CheckWritePermissionResponse>(await this.execute(params, req, runtime), new CheckWritePermissionResponse({}));
   }
 
-  async createApprove(request: CreateApproveRequest): Promise<CreateApproveResponse> {
+  async checkWritePermission(request: CheckWritePermissionRequest): Promise<CheckWritePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateApproveHeaders({ });
-    return await this.createApproveWithOptions(request, headers, runtime);
+    let headers = new CheckWritePermissionHeaders({ });
+    return await this.checkWritePermissionWithOptions(request, headers, runtime);
   }
 
   async createApproveWithOptions(request: CreateApproveRequest, headers: CreateApproveHeaders, runtime: $Util.RuntimeOptions): Promise<CreateApproveResponse> {
@@ -5112,13 +5264,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateApproveResponse>(await this.doROARequest("CreateApprove", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/approves`, "json", req, runtime), new CreateApproveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateApprove",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/approves`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateApproveResponse>(await this.execute(params, req, runtime), new CreateApproveResponse({}));
   }
 
-  async deleteWaterMarkTemplate(request: DeleteWaterMarkTemplateRequest): Promise<DeleteWaterMarkTemplateResponse> {
+  async createApprove(request: CreateApproveRequest): Promise<CreateApproveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteWaterMarkTemplateHeaders({ });
-    return await this.deleteWaterMarkTemplateWithOptions(request, headers, runtime);
+    let headers = new CreateApproveHeaders({ });
+    return await this.createApproveWithOptions(request, headers, runtime);
   }
 
   async deleteWaterMarkTemplateWithOptions(request: DeleteWaterMarkTemplateRequest, headers: DeleteWaterMarkTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteWaterMarkTemplateResponse> {
@@ -5157,13 +5320,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteWaterMarkTemplateResponse>(await this.doROARequest("DeleteWaterMarkTemplate", "attendance_1.0", "HTTP", "DELETE", "AK", `/v1.0/attendance/watermarks/templates`, "json", req, runtime), new DeleteWaterMarkTemplateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteWaterMarkTemplate",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/watermarks/templates`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteWaterMarkTemplateResponse>(await this.execute(params, req, runtime), new DeleteWaterMarkTemplateResponse({}));
   }
 
-  async dingTalkSecurityCheck(request: DingTalkSecurityCheckRequest): Promise<DingTalkSecurityCheckResponse> {
+  async deleteWaterMarkTemplate(request: DeleteWaterMarkTemplateRequest): Promise<DeleteWaterMarkTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DingTalkSecurityCheckHeaders({ });
-    return await this.dingTalkSecurityCheckWithOptions(request, headers, runtime);
+    let headers = new DeleteWaterMarkTemplateHeaders({ });
+    return await this.deleteWaterMarkTemplateWithOptions(request, headers, runtime);
   }
 
   async dingTalkSecurityCheckWithOptions(request: DingTalkSecurityCheckRequest, headers: DingTalkSecurityCheckHeaders, runtime: $Util.RuntimeOptions): Promise<DingTalkSecurityCheckResponse> {
@@ -5202,13 +5376,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DingTalkSecurityCheckResponse>(await this.doROARequest("DingTalkSecurityCheck", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/securities/check`, "json", req, runtime), new DingTalkSecurityCheckResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DingTalkSecurityCheck",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/securities/check`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DingTalkSecurityCheckResponse>(await this.execute(params, req, runtime), new DingTalkSecurityCheckResponse({}));
   }
 
-  async getATManageScope(request: GetATManageScopeRequest): Promise<GetATManageScopeResponse> {
+  async dingTalkSecurityCheck(request: DingTalkSecurityCheckRequest): Promise<DingTalkSecurityCheckResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetATManageScopeHeaders({ });
-    return await this.getATManageScopeWithOptions(request, headers, runtime);
+    let headers = new DingTalkSecurityCheckHeaders({ });
+    return await this.dingTalkSecurityCheckWithOptions(request, headers, runtime);
   }
 
   async getATManageScopeWithOptions(request: GetATManageScopeRequest, headers: GetATManageScopeHeaders, runtime: $Util.RuntimeOptions): Promise<GetATManageScopeResponse> {
@@ -5239,13 +5424,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetATManageScopeResponse>(await this.doROARequest("GetATManageScope", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/manageScopes`, "json", req, runtime), new GetATManageScopeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetATManageScope",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/manageScopes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetATManageScopeResponse>(await this.execute(params, req, runtime), new GetATManageScopeResponse({}));
   }
 
-  async getAdjustments(request: GetAdjustmentsRequest): Promise<GetAdjustmentsResponse> {
+  async getATManageScope(request: GetATManageScopeRequest): Promise<GetATManageScopeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAdjustmentsHeaders({ });
-    return await this.getAdjustmentsWithOptions(request, headers, runtime);
+    let headers = new GetATManageScopeHeaders({ });
+    return await this.getATManageScopeWithOptions(request, headers, runtime);
   }
 
   async getAdjustmentsWithOptions(request: GetAdjustmentsRequest, headers: GetAdjustmentsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAdjustmentsResponse> {
@@ -5272,13 +5468,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetAdjustmentsResponse>(await this.doROARequest("GetAdjustments", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/adjustments`, "json", req, runtime), new GetAdjustmentsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAdjustments",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/adjustments`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAdjustmentsResponse>(await this.execute(params, req, runtime), new GetAdjustmentsResponse({}));
   }
 
-  async getCheckInSchemaTemplate(request: GetCheckInSchemaTemplateRequest): Promise<GetCheckInSchemaTemplateResponse> {
+  async getAdjustments(request: GetAdjustmentsRequest): Promise<GetAdjustmentsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCheckInSchemaTemplateHeaders({ });
-    return await this.getCheckInSchemaTemplateWithOptions(request, headers, runtime);
+    let headers = new GetAdjustmentsHeaders({ });
+    return await this.getAdjustmentsWithOptions(request, headers, runtime);
   }
 
   async getCheckInSchemaTemplateWithOptions(request: GetCheckInSchemaTemplateRequest, headers: GetCheckInSchemaTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<GetCheckInSchemaTemplateResponse> {
@@ -5313,13 +5520,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetCheckInSchemaTemplateResponse>(await this.doROARequest("GetCheckInSchemaTemplate", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/watermarks/templates`, "json", req, runtime), new GetCheckInSchemaTemplateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCheckInSchemaTemplate",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/watermarks/templates`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCheckInSchemaTemplateResponse>(await this.execute(params, req, runtime), new GetCheckInSchemaTemplateResponse({}));
   }
 
-  async getClosingAccounts(request: GetClosingAccountsRequest): Promise<GetClosingAccountsResponse> {
+  async getCheckInSchemaTemplate(request: GetCheckInSchemaTemplateRequest): Promise<GetCheckInSchemaTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetClosingAccountsHeaders({ });
-    return await this.getClosingAccountsWithOptions(request, headers, runtime);
+    let headers = new GetCheckInSchemaTemplateHeaders({ });
+    return await this.getCheckInSchemaTemplateWithOptions(request, headers, runtime);
   }
 
   async getClosingAccountsWithOptions(request: GetClosingAccountsRequest, headers: GetClosingAccountsHeaders, runtime: $Util.RuntimeOptions): Promise<GetClosingAccountsResponse> {
@@ -5342,13 +5560,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetClosingAccountsResponse>(await this.doROARequest("GetClosingAccounts", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/closingAccounts/rules/query`, "json", req, runtime), new GetClosingAccountsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetClosingAccounts",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/closingAccounts/rules/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetClosingAccountsResponse>(await this.execute(params, req, runtime), new GetClosingAccountsResponse({}));
   }
 
-  async getLeaveRecords(request: GetLeaveRecordsRequest): Promise<GetLeaveRecordsResponse> {
+  async getClosingAccounts(request: GetClosingAccountsRequest): Promise<GetClosingAccountsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetLeaveRecordsHeaders({ });
-    return await this.getLeaveRecordsWithOptions(request, headers, runtime);
+    let headers = new GetClosingAccountsHeaders({ });
+    return await this.getClosingAccountsWithOptions(request, headers, runtime);
   }
 
   async getLeaveRecordsWithOptions(request: GetLeaveRecordsRequest, headers: GetLeaveRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<GetLeaveRecordsResponse> {
@@ -5387,13 +5616,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetLeaveRecordsResponse>(await this.doROARequest("GetLeaveRecords", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/vacations/records/query`, "json", req, runtime), new GetLeaveRecordsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetLeaveRecords",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/vacations/records/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetLeaveRecordsResponse>(await this.execute(params, req, runtime), new GetLeaveRecordsResponse({}));
   }
 
-  async getLeaveType(request: GetLeaveTypeRequest): Promise<GetLeaveTypeResponse> {
+  async getLeaveRecords(request: GetLeaveRecordsRequest): Promise<GetLeaveRecordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetLeaveTypeHeaders({ });
-    return await this.getLeaveTypeWithOptions(request, headers, runtime);
+    let headers = new GetLeaveRecordsHeaders({ });
+    return await this.getLeaveRecordsWithOptions(request, headers, runtime);
   }
 
   async getLeaveTypeWithOptions(request: GetLeaveTypeRequest, headers: GetLeaveTypeHeaders, runtime: $Util.RuntimeOptions): Promise<GetLeaveTypeResponse> {
@@ -5420,17 +5660,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetLeaveTypeResponse>(await this.doROARequest("GetLeaveType", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/leaves/types`, "json", req, runtime), new GetLeaveTypeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetLeaveType",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/leaves/types`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetLeaveTypeResponse>(await this.execute(params, req, runtime), new GetLeaveTypeResponse({}));
   }
 
-  async getMachine(devId: string): Promise<GetMachineResponse> {
+  async getLeaveType(request: GetLeaveTypeRequest): Promise<GetLeaveTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetMachineHeaders({ });
-    return await this.getMachineWithOptions(devId, headers, runtime);
+    let headers = new GetLeaveTypeHeaders({ });
+    return await this.getLeaveTypeWithOptions(request, headers, runtime);
   }
 
   async getMachineWithOptions(devId: string, headers: GetMachineHeaders, runtime: $Util.RuntimeOptions): Promise<GetMachineResponse> {
-    devId = OpenApiUtil.getEncodeParam(devId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -5443,18 +5693,28 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetMachineResponse>(await this.doROARequest("GetMachine", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/machines/${devId}`, "json", req, runtime), new GetMachineResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetMachine",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/machines/${devId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetMachineResponse>(await this.execute(params, req, runtime), new GetMachineResponse({}));
   }
 
-  async getMachineUser(devId: string, request: GetMachineUserRequest): Promise<GetMachineUserResponse> {
+  async getMachine(devId: string): Promise<GetMachineResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetMachineUserHeaders({ });
-    return await this.getMachineUserWithOptions(devId, request, headers, runtime);
+    let headers = new GetMachineHeaders({ });
+    return await this.getMachineWithOptions(devId, headers, runtime);
   }
 
   async getMachineUserWithOptions(devId: string, request: GetMachineUserRequest, headers: GetMachineUserHeaders, runtime: $Util.RuntimeOptions): Promise<GetMachineUserResponse> {
     Util.validateModel(request);
-    devId = OpenApiUtil.getEncodeParam(devId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -5477,13 +5737,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetMachineUserResponse>(await this.doROARequest("GetMachineUser", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/machines/getUser/${devId}`, "json", req, runtime), new GetMachineUserResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetMachineUser",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/machines/getUser/${devId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetMachineUserResponse>(await this.execute(params, req, runtime), new GetMachineUserResponse({}));
   }
 
-  async getOvertimeSetting(request: GetOvertimeSettingRequest): Promise<GetOvertimeSettingResponse> {
+  async getMachineUser(devId: string, request: GetMachineUserRequest): Promise<GetMachineUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetOvertimeSettingHeaders({ });
-    return await this.getOvertimeSettingWithOptions(request, headers, runtime);
+    let headers = new GetMachineUserHeaders({ });
+    return await this.getMachineUserWithOptions(devId, request, headers, runtime);
   }
 
   async getOvertimeSettingWithOptions(request: GetOvertimeSettingRequest, headers: GetOvertimeSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetOvertimeSettingResponse> {
@@ -5506,13 +5777,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetOvertimeSettingResponse>(await this.doROARequest("GetOvertimeSetting", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/overtimeSettings/query`, "json", req, runtime), new GetOvertimeSettingResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetOvertimeSetting",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/overtimeSettings/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOvertimeSettingResponse>(await this.execute(params, req, runtime), new GetOvertimeSettingResponse({}));
   }
 
-  async getSimpleOvertimeSetting(request: GetSimpleOvertimeSettingRequest): Promise<GetSimpleOvertimeSettingResponse> {
+  async getOvertimeSetting(request: GetOvertimeSettingRequest): Promise<GetOvertimeSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSimpleOvertimeSettingHeaders({ });
-    return await this.getSimpleOvertimeSettingWithOptions(request, headers, runtime);
+    let headers = new GetOvertimeSettingHeaders({ });
+    return await this.getOvertimeSettingWithOptions(request, headers, runtime);
   }
 
   async getSimpleOvertimeSettingWithOptions(request: GetSimpleOvertimeSettingRequest, headers: GetSimpleOvertimeSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetSimpleOvertimeSettingResponse> {
@@ -5539,13 +5821,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetSimpleOvertimeSettingResponse>(await this.doROARequest("GetSimpleOvertimeSetting", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/overtimeSettings`, "json", req, runtime), new GetSimpleOvertimeSettingResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSimpleOvertimeSetting",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/overtimeSettings`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSimpleOvertimeSettingResponse>(await this.execute(params, req, runtime), new GetSimpleOvertimeSettingResponse({}));
   }
 
-  async getUserHolidays(request: GetUserHolidaysRequest): Promise<GetUserHolidaysResponse> {
+  async getSimpleOvertimeSetting(request: GetSimpleOvertimeSettingRequest): Promise<GetSimpleOvertimeSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserHolidaysHeaders({ });
-    return await this.getUserHolidaysWithOptions(request, headers, runtime);
+    let headers = new GetSimpleOvertimeSettingHeaders({ });
+    return await this.getSimpleOvertimeSettingWithOptions(request, headers, runtime);
   }
 
   async getUserHolidaysWithOptions(request: GetUserHolidaysRequest, headers: GetUserHolidaysHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserHolidaysResponse> {
@@ -5576,13 +5869,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetUserHolidaysResponse>(await this.doROARequest("GetUserHolidays", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/holidays`, "json", req, runtime), new GetUserHolidaysResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserHolidays",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/holidays`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserHolidaysResponse>(await this.execute(params, req, runtime), new GetUserHolidaysResponse({}));
   }
 
-  async groupAdd(request: GroupAddRequest): Promise<GroupAddResponse> {
+  async getUserHolidays(request: GetUserHolidaysRequest): Promise<GetUserHolidaysResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GroupAddHeaders({ });
-    return await this.groupAddWithOptions(request, headers, runtime);
+    let headers = new GetUserHolidaysHeaders({ });
+    return await this.getUserHolidaysWithOptions(request, headers, runtime);
   }
 
   async groupAddWithOptions(request: GroupAddRequest, headers: GroupAddHeaders, runtime: $Util.RuntimeOptions): Promise<GroupAddResponse> {
@@ -5775,13 +6079,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GroupAddResponse>(await this.doROARequest("GroupAdd", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/groups`, "json", req, runtime), new GroupAddResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GroupAdd",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/groups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GroupAddResponse>(await this.execute(params, req, runtime), new GroupAddResponse({}));
   }
 
-  async groupUpdate(request: GroupUpdateRequest): Promise<GroupUpdateResponse> {
+  async groupAdd(request: GroupAddRequest): Promise<GroupAddResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GroupUpdateHeaders({ });
-    return await this.groupUpdateWithOptions(request, headers, runtime);
+    let headers = new GroupAddHeaders({ });
+    return await this.groupAddWithOptions(request, headers, runtime);
   }
 
   async groupUpdateWithOptions(request: GroupUpdateRequest, headers: GroupUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<GroupUpdateResponse> {
@@ -5922,13 +6237,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GroupUpdateResponse>(await this.doROARequest("GroupUpdate", "attendance_1.0", "HTTP", "PUT", "AK", `/v1.0/attendance/groups`, "json", req, runtime), new GroupUpdateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GroupUpdate",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/groups`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GroupUpdateResponse>(await this.execute(params, req, runtime), new GroupUpdateResponse({}));
   }
 
-  async initAndGetLeaveALlocationQuotas(request: InitAndGetLeaveALlocationQuotasRequest): Promise<InitAndGetLeaveALlocationQuotasResponse> {
+  async groupUpdate(request: GroupUpdateRequest): Promise<GroupUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new InitAndGetLeaveALlocationQuotasHeaders({ });
-    return await this.initAndGetLeaveALlocationQuotasWithOptions(request, headers, runtime);
+    let headers = new GroupUpdateHeaders({ });
+    return await this.groupUpdateWithOptions(request, headers, runtime);
   }
 
   async initAndGetLeaveALlocationQuotasWithOptions(request: InitAndGetLeaveALlocationQuotasRequest, headers: InitAndGetLeaveALlocationQuotasHeaders, runtime: $Util.RuntimeOptions): Promise<InitAndGetLeaveALlocationQuotasResponse> {
@@ -5959,13 +6285,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<InitAndGetLeaveALlocationQuotasResponse>(await this.doROARequest("InitAndGetLeaveALlocationQuotas", "attendance_1.0", "HTTP", "GET", "AK", `/v1.0/attendance/leaves/initializations/balances`, "json", req, runtime), new InitAndGetLeaveALlocationQuotasResponse({}));
+    let params = new $OpenApi.Params({
+      action: "InitAndGetLeaveALlocationQuotas",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/leaves/initializations/balances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<InitAndGetLeaveALlocationQuotasResponse>(await this.execute(params, req, runtime), new InitAndGetLeaveALlocationQuotasResponse({}));
   }
 
-  async listApproveByUsers(request: ListApproveByUsersRequest): Promise<ListApproveByUsersResponse> {
+  async initAndGetLeaveALlocationQuotas(request: InitAndGetLeaveALlocationQuotasRequest): Promise<InitAndGetLeaveALlocationQuotasResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListApproveByUsersHeaders({ });
-    return await this.listApproveByUsersWithOptions(request, headers, runtime);
+    let headers = new InitAndGetLeaveALlocationQuotasHeaders({ });
+    return await this.initAndGetLeaveALlocationQuotasWithOptions(request, headers, runtime);
   }
 
   async listApproveByUsersWithOptions(request: ListApproveByUsersRequest, headers: ListApproveByUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListApproveByUsersResponse> {
@@ -6000,13 +6337,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ListApproveByUsersResponse>(await this.doROARequest("ListApproveByUsers", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/approvals/query`, "json", req, runtime), new ListApproveByUsersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListApproveByUsers",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/approvals/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListApproveByUsersResponse>(await this.execute(params, req, runtime), new ListApproveByUsersResponse({}));
   }
 
-  async modifyWaterMarkTemplate(request: ModifyWaterMarkTemplateRequest): Promise<ModifyWaterMarkTemplateResponse> {
+  async listApproveByUsers(request: ListApproveByUsersRequest): Promise<ListApproveByUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ModifyWaterMarkTemplateHeaders({ });
-    return await this.modifyWaterMarkTemplateWithOptions(request, headers, runtime);
+    let headers = new ListApproveByUsersHeaders({ });
+    return await this.listApproveByUsersWithOptions(request, headers, runtime);
   }
 
   async modifyWaterMarkTemplateWithOptions(request: ModifyWaterMarkTemplateRequest, headers: ModifyWaterMarkTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<ModifyWaterMarkTemplateResponse> {
@@ -6059,13 +6407,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ModifyWaterMarkTemplateResponse>(await this.doROARequest("ModifyWaterMarkTemplate", "attendance_1.0", "HTTP", "PUT", "AK", `/v1.0/attendance/watermarks/templates`, "json", req, runtime), new ModifyWaterMarkTemplateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ModifyWaterMarkTemplate",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/watermarks/templates`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ModifyWaterMarkTemplateResponse>(await this.execute(params, req, runtime), new ModifyWaterMarkTemplateResponse({}));
   }
 
-  async processApproveCreate(request: ProcessApproveCreateRequest): Promise<ProcessApproveCreateResponse> {
+  async modifyWaterMarkTemplate(request: ModifyWaterMarkTemplateRequest): Promise<ModifyWaterMarkTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ProcessApproveCreateHeaders({ });
-    return await this.processApproveCreateWithOptions(request, headers, runtime);
+    let headers = new ModifyWaterMarkTemplateHeaders({ });
+    return await this.modifyWaterMarkTemplateWithOptions(request, headers, runtime);
   }
 
   async processApproveCreateWithOptions(request: ProcessApproveCreateRequest, headers: ProcessApproveCreateHeaders, runtime: $Util.RuntimeOptions): Promise<ProcessApproveCreateResponse> {
@@ -6108,13 +6467,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ProcessApproveCreateResponse>(await this.doROARequest("ProcessApproveCreate", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/workflows/checkInForms`, "json", req, runtime), new ProcessApproveCreateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ProcessApproveCreate",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/workflows/checkInForms`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ProcessApproveCreateResponse>(await this.execute(params, req, runtime), new ProcessApproveCreateResponse({}));
   }
 
-  async saveCustomWaterMarkTemplate(request: SaveCustomWaterMarkTemplateRequest): Promise<SaveCustomWaterMarkTemplateResponse> {
+  async processApproveCreate(request: ProcessApproveCreateRequest): Promise<ProcessApproveCreateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SaveCustomWaterMarkTemplateHeaders({ });
-    return await this.saveCustomWaterMarkTemplateWithOptions(request, headers, runtime);
+    let headers = new ProcessApproveCreateHeaders({ });
+    return await this.processApproveCreateWithOptions(request, headers, runtime);
   }
 
   async saveCustomWaterMarkTemplateWithOptions(request: SaveCustomWaterMarkTemplateRequest, headers: SaveCustomWaterMarkTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<SaveCustomWaterMarkTemplateResponse> {
@@ -6167,13 +6537,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SaveCustomWaterMarkTemplateResponse>(await this.doROARequest("SaveCustomWaterMarkTemplate", "attendance_1.0", "HTTP", "POST", "AK", `/v1.0/attendance/watermarks/templates`, "json", req, runtime), new SaveCustomWaterMarkTemplateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SaveCustomWaterMarkTemplate",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/watermarks/templates`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveCustomWaterMarkTemplateResponse>(await this.execute(params, req, runtime), new SaveCustomWaterMarkTemplateResponse({}));
   }
 
-  async syncScheduleInfo(request: SyncScheduleInfoRequest): Promise<SyncScheduleInfoResponse> {
+  async saveCustomWaterMarkTemplate(request: SaveCustomWaterMarkTemplateRequest): Promise<SaveCustomWaterMarkTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SyncScheduleInfoHeaders({ });
-    return await this.syncScheduleInfoWithOptions(request, headers, runtime);
+    let headers = new SaveCustomWaterMarkTemplateHeaders({ });
+    return await this.saveCustomWaterMarkTemplateWithOptions(request, headers, runtime);
   }
 
   async syncScheduleInfoWithOptions(request: SyncScheduleInfoRequest, headers: SyncScheduleInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SyncScheduleInfoResponse> {
@@ -6200,13 +6581,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SyncScheduleInfoResponse>(await this.doROARequest("SyncScheduleInfo", "attendance_1.0", "HTTP", "PUT", "AK", `/v1.0/attendance/schedules/additionalInfo`, "none", req, runtime), new SyncScheduleInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SyncScheduleInfo",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/schedules/additionalInfo`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<SyncScheduleInfoResponse>(await this.execute(params, req, runtime), new SyncScheduleInfoResponse({}));
   }
 
-  async updateLeaveType(request: UpdateLeaveTypeRequest): Promise<UpdateLeaveTypeResponse> {
+  async syncScheduleInfo(request: SyncScheduleInfoRequest): Promise<SyncScheduleInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateLeaveTypeHeaders({ });
-    return await this.updateLeaveTypeWithOptions(request, headers, runtime);
+    let headers = new SyncScheduleInfoHeaders({ });
+    return await this.syncScheduleInfoWithOptions(request, headers, runtime);
   }
 
   async updateLeaveTypeWithOptions(request: UpdateLeaveTypeRequest, headers: UpdateLeaveTypeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateLeaveTypeResponse> {
@@ -6271,7 +6663,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateLeaveTypeResponse>(await this.doROARequest("UpdateLeaveType", "attendance_1.0", "HTTP", "PUT", "AK", `/v1.0/attendance/leaves/types`, "json", req, runtime), new UpdateLeaveTypeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateLeaveType",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/leaves/types`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateLeaveTypeResponse>(await this.execute(params, req, runtime), new UpdateLeaveTypeResponse({}));
+  }
+
+  async updateLeaveType(request: UpdateLeaveTypeRequest): Promise<UpdateLeaveTypeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateLeaveTypeHeaders({ });
+    return await this.updateLeaveTypeWithOptions(request, headers, runtime);
   }
 
 }

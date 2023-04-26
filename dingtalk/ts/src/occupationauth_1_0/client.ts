@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -69,10 +71,12 @@ export class CheckUserTaskStatusResponseBody extends $tea.Model {
 
 export class CheckUserTaskStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CheckUserTaskStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -80,6 +84,7 @@ export class CheckUserTaskStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CheckUserTaskStatusResponseBody,
     };
   }
@@ -151,10 +156,12 @@ export class CheckUserTasksStatusResponseBody extends $tea.Model {
 
 export class CheckUserTasksStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CheckUserTasksStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -162,6 +169,7 @@ export class CheckUserTasksStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CheckUserTasksStatusResponseBody,
     };
   }
@@ -173,9 +181,12 @@ export class CheckUserTasksStatusResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -183,12 +194,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async checkUserTaskStatus(request: CheckUserTaskStatusRequest): Promise<CheckUserTaskStatusResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CheckUserTaskStatusHeaders({ });
-    return await this.checkUserTaskStatusWithOptions(request, headers, runtime);
-  }
 
   async checkUserTaskStatusWithOptions(request: CheckUserTaskStatusRequest, headers: CheckUserTaskStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckUserTaskStatusResponse> {
     Util.validateModel(request);
@@ -210,13 +215,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CheckUserTaskStatusResponse>(await this.doROARequest("CheckUserTaskStatus", "occupationauth_1.0", "HTTP", "POST", "AK", `/v1.0/occupationauth/auths/userTasks`, "json", req, runtime), new CheckUserTaskStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CheckUserTaskStatus",
+      version: "occupationauth_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/occupationauth/auths/userTasks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CheckUserTaskStatusResponse>(await this.execute(params, req, runtime), new CheckUserTaskStatusResponse({}));
   }
 
-  async checkUserTasksStatus(request: CheckUserTasksStatusRequest): Promise<CheckUserTasksStatusResponse> {
+  async checkUserTaskStatus(request: CheckUserTaskStatusRequest): Promise<CheckUserTaskStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CheckUserTasksStatusHeaders({ });
-    return await this.checkUserTasksStatusWithOptions(request, headers, runtime);
+    let headers = new CheckUserTaskStatusHeaders({ });
+    return await this.checkUserTaskStatusWithOptions(request, headers, runtime);
   }
 
   async checkUserTasksStatusWithOptions(request: CheckUserTasksStatusRequest, headers: CheckUserTasksStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckUserTasksStatusResponse> {
@@ -239,7 +255,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CheckUserTasksStatusResponse>(await this.doROARequest("CheckUserTasksStatus", "occupationauth_1.0", "HTTP", "POST", "AK", `/v1.0/occupationauth/userTasks/check`, "json", req, runtime), new CheckUserTasksStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CheckUserTasksStatus",
+      version: "occupationauth_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/occupationauth/userTasks/check`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CheckUserTasksStatusResponse>(await this.execute(params, req, runtime), new CheckUserTasksStatusResponse({}));
+  }
+
+  async checkUserTasksStatus(request: CheckUserTasksStatusRequest): Promise<CheckUserTasksStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CheckUserTasksStatusHeaders({ });
+    return await this.checkUserTasksStatusWithOptions(request, headers, runtime);
   }
 
 }

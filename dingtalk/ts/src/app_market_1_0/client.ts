@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -75,10 +77,12 @@ export class CreateAppGoodsServiceConversationResponseBody extends $tea.Model {
 
 export class CreateAppGoodsServiceConversationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateAppGoodsServiceConversationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -86,6 +90,7 @@ export class CreateAppGoodsServiceConversationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateAppGoodsServiceConversationResponseBody,
     };
   }
@@ -163,10 +168,12 @@ export class GetCoolAppAccessStatusResponseBody extends $tea.Model {
 
 export class GetCoolAppAccessStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCoolAppAccessStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -174,6 +181,7 @@ export class GetCoolAppAccessStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCoolAppAccessStatusResponseBody,
     };
   }
@@ -245,10 +253,12 @@ export class GetPersonalExperienceInfoResponseBody extends $tea.Model {
 
 export class GetPersonalExperienceInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPersonalExperienceInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -256,6 +266,7 @@ export class GetPersonalExperienceInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPersonalExperienceInfoResponseBody,
     };
   }
@@ -347,10 +358,12 @@ export class QueryMarketOrderResponseBody extends $tea.Model {
 
 export class QueryMarketOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryMarketOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -358,6 +371,7 @@ export class QueryMarketOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryMarketOrderResponseBody,
     };
   }
@@ -419,10 +433,12 @@ export class UserTaskReportRequest extends $tea.Model {
 
 export class UserTaskReportResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: boolean;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -430,6 +446,7 @@ export class UserTaskReportResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: 'boolean',
     };
   }
@@ -460,9 +477,12 @@ export class GetPersonalExperienceInfoResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -470,12 +490,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async createAppGoodsServiceConversation(request: CreateAppGoodsServiceConversationRequest): Promise<CreateAppGoodsServiceConversationResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateAppGoodsServiceConversationHeaders({ });
-    return await this.createAppGoodsServiceConversationWithOptions(request, headers, runtime);
-  }
 
   async createAppGoodsServiceConversationWithOptions(request: CreateAppGoodsServiceConversationRequest, headers: CreateAppGoodsServiceConversationHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAppGoodsServiceConversationResponse> {
     Util.validateModel(request);
@@ -501,13 +515,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateAppGoodsServiceConversationResponse>(await this.doROARequest("CreateAppGoodsServiceConversation", "appMarket_1.0", "HTTP", "POST", "AK", `/v1.0/appMarket/orders/serviceGroups`, "json", req, runtime), new CreateAppGoodsServiceConversationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateAppGoodsServiceConversation",
+      version: "appMarket_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/appMarket/orders/serviceGroups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateAppGoodsServiceConversationResponse>(await this.execute(params, req, runtime), new CreateAppGoodsServiceConversationResponse({}));
   }
 
-  async getCoolAppAccessStatus(request: GetCoolAppAccessStatusRequest): Promise<GetCoolAppAccessStatusResponse> {
+  async createAppGoodsServiceConversation(request: CreateAppGoodsServiceConversationRequest): Promise<CreateAppGoodsServiceConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCoolAppAccessStatusHeaders({ });
-    return await this.getCoolAppAccessStatusWithOptions(request, headers, runtime);
+    let headers = new CreateAppGoodsServiceConversationHeaders({ });
+    return await this.createAppGoodsServiceConversationWithOptions(request, headers, runtime);
   }
 
   async getCoolAppAccessStatusWithOptions(request: GetCoolAppAccessStatusRequest, headers: GetCoolAppAccessStatusHeaders, runtime: $Util.RuntimeOptions): Promise<GetCoolAppAccessStatusResponse> {
@@ -538,13 +563,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetCoolAppAccessStatusResponse>(await this.doROARequest("GetCoolAppAccessStatus", "appMarket_1.0", "HTTP", "POST", "AK", `/v1.0/appMarket/coolApps/accessions/statuses/query`, "json", req, runtime), new GetCoolAppAccessStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCoolAppAccessStatus",
+      version: "appMarket_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/appMarket/coolApps/accessions/statuses/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCoolAppAccessStatusResponse>(await this.execute(params, req, runtime), new GetCoolAppAccessStatusResponse({}));
   }
 
-  async getPersonalExperienceInfo(request: GetPersonalExperienceInfoRequest): Promise<GetPersonalExperienceInfoResponse> {
+  async getCoolAppAccessStatus(request: GetCoolAppAccessStatusRequest): Promise<GetCoolAppAccessStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPersonalExperienceInfoHeaders({ });
-    return await this.getPersonalExperienceInfoWithOptions(request, headers, runtime);
+    let headers = new GetCoolAppAccessStatusHeaders({ });
+    return await this.getCoolAppAccessStatusWithOptions(request, headers, runtime);
   }
 
   async getPersonalExperienceInfoWithOptions(request: GetPersonalExperienceInfoRequest, headers: GetPersonalExperienceInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPersonalExperienceInfoResponse> {
@@ -567,17 +603,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetPersonalExperienceInfoResponse>(await this.doROARequest("GetPersonalExperienceInfo", "appMarket_1.0", "HTTP", "GET", "AK", `/v1.0/appMarket/personalExperiences`, "json", req, runtime), new GetPersonalExperienceInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPersonalExperienceInfo",
+      version: "appMarket_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/appMarket/personalExperiences`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPersonalExperienceInfoResponse>(await this.execute(params, req, runtime), new GetPersonalExperienceInfoResponse({}));
   }
 
-  async queryMarketOrder(orderId: string): Promise<QueryMarketOrderResponse> {
+  async getPersonalExperienceInfo(request: GetPersonalExperienceInfoRequest): Promise<GetPersonalExperienceInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryMarketOrderHeaders({ });
-    return await this.queryMarketOrderWithOptions(orderId, headers, runtime);
+    let headers = new GetPersonalExperienceInfoHeaders({ });
+    return await this.getPersonalExperienceInfoWithOptions(request, headers, runtime);
   }
 
   async queryMarketOrderWithOptions(orderId: string, headers: QueryMarketOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMarketOrderResponse> {
-    orderId = OpenApiUtil.getEncodeParam(orderId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -590,13 +636,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryMarketOrderResponse>(await this.doROARequest("QueryMarketOrder", "appMarket_1.0", "HTTP", "GET", "AK", `/v1.0/appMarket/orders/${orderId}`, "json", req, runtime), new QueryMarketOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryMarketOrder",
+      version: "appMarket_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/appMarket/orders/${orderId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMarketOrderResponse>(await this.execute(params, req, runtime), new QueryMarketOrderResponse({}));
   }
 
-  async userTaskReport(request: UserTaskReportRequest): Promise<UserTaskReportResponse> {
+  async queryMarketOrder(orderId: string): Promise<QueryMarketOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UserTaskReportHeaders({ });
-    return await this.userTaskReportWithOptions(request, headers, runtime);
+    let headers = new QueryMarketOrderHeaders({ });
+    return await this.queryMarketOrderWithOptions(orderId, headers, runtime);
   }
 
   async userTaskReportWithOptions(request: UserTaskReportRequest, headers: UserTaskReportHeaders, runtime: $Util.RuntimeOptions): Promise<UserTaskReportResponse> {
@@ -631,7 +688,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UserTaskReportResponse>(await this.doROARequest("UserTaskReport", "appMarket_1.0", "HTTP", "POST", "AK", `/v1.0/appMarket/tasks`, "boolean", req, runtime), new UserTaskReportResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UserTaskReport",
+      version: "appMarket_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/appMarket/tasks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "boolean",
+    });
+    return $tea.cast<UserTaskReportResponse>(await this.execute(params, req, runtime), new UserTaskReportResponse({}));
+  }
+
+  async userTaskReport(request: UserTaskReportRequest): Promise<UserTaskReportResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UserTaskReportHeaders({ });
+    return await this.userTaskReportWithOptions(request, headers, runtime);
   }
 
 }

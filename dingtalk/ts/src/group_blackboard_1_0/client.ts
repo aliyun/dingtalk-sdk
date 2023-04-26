@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -87,10 +89,12 @@ export class CreateGroupBlackboardResponseBody extends $tea.Model {
 
 export class CreateGroupBlackboardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateGroupBlackboardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -98,6 +102,7 @@ export class CreateGroupBlackboardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateGroupBlackboardResponseBody,
     };
   }
@@ -178,10 +183,12 @@ export class DeleteGroupBlackboardResponseBody extends $tea.Model {
 
 export class DeleteGroupBlackboardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteGroupBlackboardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -189,6 +196,7 @@ export class DeleteGroupBlackboardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteGroupBlackboardResponseBody,
     };
   }
@@ -200,9 +208,12 @@ export class DeleteGroupBlackboardResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -210,12 +221,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async createGroupBlackboard(request: CreateGroupBlackboardRequest): Promise<CreateGroupBlackboardResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateGroupBlackboardHeaders({ });
-    return await this.createGroupBlackboardWithOptions(request, headers, runtime);
-  }
 
   async createGroupBlackboardWithOptions(request: CreateGroupBlackboardRequest, headers: CreateGroupBlackboardHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupBlackboardResponse> {
     Util.validateModel(request);
@@ -257,13 +262,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateGroupBlackboardResponse>(await this.doROARequest("CreateGroupBlackboard", "groupBlackboard_1.0", "HTTP", "POST", "AK", `/v1.0/groupBlackboard/blackboards`, "json", req, runtime), new CreateGroupBlackboardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateGroupBlackboard",
+      version: "groupBlackboard_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/groupBlackboard/blackboards`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateGroupBlackboardResponse>(await this.execute(params, req, runtime), new CreateGroupBlackboardResponse({}));
   }
 
-  async deleteGroupBlackboard(request: DeleteGroupBlackboardRequest): Promise<DeleteGroupBlackboardResponse> {
+  async createGroupBlackboard(request: CreateGroupBlackboardRequest): Promise<CreateGroupBlackboardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteGroupBlackboardHeaders({ });
-    return await this.deleteGroupBlackboardWithOptions(request, headers, runtime);
+    let headers = new CreateGroupBlackboardHeaders({ });
+    return await this.createGroupBlackboardWithOptions(request, headers, runtime);
   }
 
   async deleteGroupBlackboardWithOptions(request: DeleteGroupBlackboardRequest, headers: DeleteGroupBlackboardHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteGroupBlackboardResponse> {
@@ -294,7 +310,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteGroupBlackboardResponse>(await this.doROARequest("DeleteGroupBlackboard", "groupBlackboard_1.0", "HTTP", "POST", "AK", `/v1.0/groupBlackboard/blackboards/remove`, "json", req, runtime), new DeleteGroupBlackboardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteGroupBlackboard",
+      version: "groupBlackboard_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/groupBlackboard/blackboards/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteGroupBlackboardResponse>(await this.execute(params, req, runtime), new DeleteGroupBlackboardResponse({}));
+  }
+
+  async deleteGroupBlackboard(request: DeleteGroupBlackboardRequest): Promise<DeleteGroupBlackboardResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteGroupBlackboardHeaders({ });
+    return await this.deleteGroupBlackboardWithOptions(request, headers, runtime);
   }
 
 }

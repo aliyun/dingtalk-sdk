@@ -3,9 +3,49 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
+
+export class UnionIdPrivateDataMapValue extends $tea.Model {
+  cardParamMap?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      cardParamMap: 'cardParamMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UserIdPrivateDataMapValue extends $tea.Model {
+  cardParamMap?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      cardParamMap: 'cardParamMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
 
 export class CloseTopboxHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
@@ -90,10 +130,12 @@ export class CloseTopboxResponseBody extends $tea.Model {
 
 export class CloseTopboxResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CloseTopboxResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -101,6 +143,7 @@ export class CloseTopboxResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CloseTopboxResponseBody,
     };
   }
@@ -223,10 +266,12 @@ export class CreateTopboxResponseBody extends $tea.Model {
 
 export class CreateTopboxResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateTopboxResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -234,45 +279,8 @@ export class CreateTopboxResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateTopboxResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UnionIdPrivateDataMapValue extends $tea.Model {
-  cardParamMap?: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      cardParamMap: 'cardParamMap',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class UserIdPrivateDataMapValue extends $tea.Model {
-  cardParamMap?: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      cardParamMap: 'cardParamMap',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -321,9 +329,12 @@ export class CreateTopboxRequestCardSettings extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -331,12 +342,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async closeTopbox(request: CloseTopboxRequest): Promise<CloseTopboxResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CloseTopboxHeaders({ });
-    return await this.closeTopboxWithOptions(request, headers, runtime);
-  }
 
   async closeTopboxWithOptions(request: CloseTopboxRequest, headers: CloseTopboxHeaders, runtime: $Util.RuntimeOptions): Promise<CloseTopboxResponse> {
     Util.validateModel(request);
@@ -386,13 +391,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CloseTopboxResponse>(await this.doROARequest("CloseTopbox", "im_2.0", "HTTP", "POST", "AK", `/v2.0/im/topBoxes/close`, "json", req, runtime), new CloseTopboxResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CloseTopbox",
+      version: "im_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/im/topBoxes/close`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CloseTopboxResponse>(await this.execute(params, req, runtime), new CloseTopboxResponse({}));
   }
 
-  async createTopbox(request: CreateTopboxRequest): Promise<CreateTopboxResponse> {
+  async closeTopbox(request: CloseTopboxRequest): Promise<CloseTopboxResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateTopboxHeaders({ });
-    return await this.createTopboxWithOptions(request, headers, runtime);
+    let headers = new CloseTopboxHeaders({ });
+    return await this.closeTopboxWithOptions(request, headers, runtime);
   }
 
   async createTopboxWithOptions(request: CreateTopboxRequest, headers: CreateTopboxHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTopboxResponse> {
@@ -483,7 +499,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateTopboxResponse>(await this.doROARequest("CreateTopbox", "im_2.0", "HTTP", "POST", "AK", `/v2.0/im/topBoxes`, "json", req, runtime), new CreateTopboxResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateTopbox",
+      version: "im_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/im/topBoxes`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateTopboxResponse>(await this.execute(params, req, runtime), new CreateTopboxResponse({}));
+  }
+
+  async createTopbox(request: CreateTopboxRequest): Promise<CreateTopboxResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateTopboxHeaders({ });
+    return await this.createTopboxWithOptions(request, headers, runtime);
   }
 
 }

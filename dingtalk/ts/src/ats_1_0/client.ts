@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -84,10 +86,12 @@ export class AddApplicationRegFormTemplateResponseBody extends $tea.Model {
 
 export class AddApplicationRegFormTemplateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddApplicationRegFormTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -95,6 +99,7 @@ export class AddApplicationRegFormTemplateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddApplicationRegFormTemplateResponseBody,
     };
   }
@@ -181,10 +186,12 @@ export class AddFileResponseBody extends $tea.Model {
 
 export class AddFileResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddFileResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -192,6 +199,7 @@ export class AddFileResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddFileResponseBody,
     };
   }
@@ -278,10 +286,12 @@ export class AddUserAccountResponseBody extends $tea.Model {
 
 export class AddUserAccountResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddUserAccountResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -289,6 +299,7 @@ export class AddUserAccountResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddUserAccountResponseBody,
     };
   }
@@ -381,10 +392,12 @@ export class CollectRecruitJobDetailResponseBody extends $tea.Model {
 
 export class CollectRecruitJobDetailResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollectRecruitJobDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -392,6 +405,7 @@ export class CollectRecruitJobDetailResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollectRecruitJobDetailResponseBody,
     };
   }
@@ -487,10 +501,12 @@ export class CollectResumeDetailResponseBody extends $tea.Model {
 
 export class CollectResumeDetailResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollectResumeDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -498,6 +514,7 @@ export class CollectResumeDetailResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollectResumeDetailResponseBody,
     };
   }
@@ -602,10 +619,12 @@ export class CollectResumeMailResponseBody extends $tea.Model {
 
 export class CollectResumeMailResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollectResumeMailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -613,6 +632,7 @@ export class CollectResumeMailResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollectResumeMailResponseBody,
     };
   }
@@ -684,10 +704,12 @@ export class ConfirmRightsResponseBody extends $tea.Model {
 
 export class ConfirmRightsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ConfirmRightsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -695,6 +717,7 @@ export class ConfirmRightsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ConfirmRightsResponseBody,
     };
   }
@@ -769,10 +792,12 @@ export class FinishBeginnerTaskResponseBody extends $tea.Model {
 
 export class FinishBeginnerTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: FinishBeginnerTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -780,6 +805,7 @@ export class FinishBeginnerTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: FinishBeginnerTaskResponseBody,
     };
   }
@@ -878,10 +904,12 @@ export class GetApplicationRegFormByFlowIdResponseBody extends $tea.Model {
 
 export class GetApplicationRegFormByFlowIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetApplicationRegFormByFlowIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -889,6 +917,7 @@ export class GetApplicationRegFormByFlowIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetApplicationRegFormByFlowIdResponseBody,
     };
   }
@@ -966,10 +995,12 @@ export class GetCandidateByPhoneNumberResponseBody extends $tea.Model {
 
 export class GetCandidateByPhoneNumberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCandidateByPhoneNumberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -977,6 +1008,7 @@ export class GetCandidateByPhoneNumberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCandidateByPhoneNumberResponseBody,
     };
   }
@@ -1078,10 +1110,12 @@ export class GetFileUploadInfoResponseBody extends $tea.Model {
 
 export class GetFileUploadInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFileUploadInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1089,6 +1123,7 @@ export class GetFileUploadInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFileUploadInfoResponseBody,
     };
   }
@@ -1166,10 +1201,12 @@ export class GetFlowIdByRelationEntityIdResponseBody extends $tea.Model {
 
 export class GetFlowIdByRelationEntityIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFlowIdByRelationEntityIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1177,6 +1214,7 @@ export class GetFlowIdByRelationEntityIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFlowIdByRelationEntityIdResponseBody,
     };
   }
@@ -1251,10 +1289,12 @@ export class GetJobAuthResponseBody extends $tea.Model {
 
 export class GetJobAuthResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetJobAuthResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1262,6 +1302,7 @@ export class GetJobAuthResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetJobAuthResponseBody,
     };
   }
@@ -1357,10 +1398,12 @@ export class QueryInterviewsResponseBody extends $tea.Model {
 
 export class QueryInterviewsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryInterviewsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1368,6 +1411,7 @@ export class QueryInterviewsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryInterviewsResponseBody,
     };
   }
@@ -1457,10 +1501,12 @@ export class ReportMessageStatusResponseBody extends $tea.Model {
 
 export class ReportMessageStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ReportMessageStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1468,6 +1514,7 @@ export class ReportMessageStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ReportMessageStatusResponseBody,
     };
   }
@@ -1557,10 +1604,12 @@ export class SyncChannelMessageResponseBody extends $tea.Model {
 
 export class SyncChannelMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SyncChannelMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1568,6 +1617,7 @@ export class SyncChannelMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SyncChannelMessageResponseBody,
     };
   }
@@ -1663,10 +1713,12 @@ export class UpdateApplicationRegFormResponseBody extends $tea.Model {
 
 export class UpdateApplicationRegFormResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateApplicationRegFormResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1674,6 +1726,7 @@ export class UpdateApplicationRegFormResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateApplicationRegFormResponseBody,
     };
   }
@@ -1729,15 +1782,18 @@ export class UpdateInterviewSignInInfoRequest extends $tea.Model {
 
 export class UpdateInterviewSignInInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -1832,10 +1888,12 @@ export class UpdateJobDeliverResponseBody extends $tea.Model {
 
 export class UpdateJobDeliverResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateJobDeliverResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1843,6 +1901,7 @@ export class UpdateJobDeliverResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateJobDeliverResponseBody,
     };
   }
@@ -2509,9 +2568,12 @@ export class UpdateApplicationRegFormRequestDingPanFile extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2519,12 +2581,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async addApplicationRegFormTemplate(request: AddApplicationRegFormTemplateRequest): Promise<AddApplicationRegFormTemplateResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddApplicationRegFormTemplateHeaders({ });
-    return await this.addApplicationRegFormTemplateWithOptions(request, headers, runtime);
-  }
 
   async addApplicationRegFormTemplateWithOptions(request: AddApplicationRegFormTemplateRequest, headers: AddApplicationRegFormTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<AddApplicationRegFormTemplateResponse> {
     Util.validateModel(request);
@@ -2564,13 +2620,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddApplicationRegFormTemplateResponse>(await this.doROARequest("AddApplicationRegFormTemplate", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/flows/applicationRegForms/templates`, "json", req, runtime), new AddApplicationRegFormTemplateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddApplicationRegFormTemplate",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/flows/applicationRegForms/templates`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AddApplicationRegFormTemplateResponse>(await this.execute(params, req, runtime), new AddApplicationRegFormTemplateResponse({}));
   }
 
-  async addFile(request: AddFileRequest): Promise<AddFileResponse> {
+  async addApplicationRegFormTemplate(request: AddApplicationRegFormTemplateRequest): Promise<AddApplicationRegFormTemplateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddFileHeaders({ });
-    return await this.addFileWithOptions(request, headers, runtime);
+    let headers = new AddApplicationRegFormTemplateHeaders({ });
+    return await this.addApplicationRegFormTemplateWithOptions(request, headers, runtime);
   }
 
   async addFileWithOptions(request: AddFileRequest, headers: AddFileHeaders, runtime: $Util.RuntimeOptions): Promise<AddFileResponse> {
@@ -2607,13 +2674,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddFileResponse>(await this.doROARequest("AddFile", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/files`, "json", req, runtime), new AddFileResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddFile",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/files`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AddFileResponse>(await this.execute(params, req, runtime), new AddFileResponse({}));
   }
 
-  async addUserAccount(request: AddUserAccountRequest): Promise<AddUserAccountResponse> {
+  async addFile(request: AddFileRequest): Promise<AddFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddUserAccountHeaders({ });
-    return await this.addUserAccountWithOptions(request, headers, runtime);
+    let headers = new AddFileHeaders({ });
+    return await this.addFileWithOptions(request, headers, runtime);
   }
 
   async addUserAccountWithOptions(request: AddUserAccountRequest, headers: AddUserAccountHeaders, runtime: $Util.RuntimeOptions): Promise<AddUserAccountResponse> {
@@ -2658,13 +2736,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddUserAccountResponse>(await this.doROARequest("AddUserAccount", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/channels/users/accounts`, "json", req, runtime), new AddUserAccountResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddUserAccount",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/channels/users/accounts`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddUserAccountResponse>(await this.execute(params, req, runtime), new AddUserAccountResponse({}));
   }
 
-  async collectRecruitJobDetail(request: CollectRecruitJobDetailRequest): Promise<CollectRecruitJobDetailResponse> {
+  async addUserAccount(request: AddUserAccountRequest): Promise<AddUserAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollectRecruitJobDetailHeaders({ });
-    return await this.collectRecruitJobDetailWithOptions(request, headers, runtime);
+    let headers = new AddUserAccountHeaders({ });
+    return await this.addUserAccountWithOptions(request, headers, runtime);
   }
 
   async collectRecruitJobDetailWithOptions(request: CollectRecruitJobDetailRequest, headers: CollectRecruitJobDetailHeaders, runtime: $Util.RuntimeOptions): Promise<CollectRecruitJobDetailResponse> {
@@ -2717,13 +2806,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CollectRecruitJobDetailResponse>(await this.doROARequest("CollectRecruitJobDetail", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/channels/jobs/import`, "json", req, runtime), new CollectRecruitJobDetailResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollectRecruitJobDetail",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/channels/jobs/import`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollectRecruitJobDetailResponse>(await this.execute(params, req, runtime), new CollectRecruitJobDetailResponse({}));
   }
 
-  async collectResumeDetail(request: CollectResumeDetailRequest): Promise<CollectResumeDetailResponse> {
+  async collectRecruitJobDetail(request: CollectRecruitJobDetailRequest): Promise<CollectRecruitJobDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollectResumeDetailHeaders({ });
-    return await this.collectResumeDetailWithOptions(request, headers, runtime);
+    let headers = new CollectRecruitJobDetailHeaders({ });
+    return await this.collectRecruitJobDetailWithOptions(request, headers, runtime);
   }
 
   async collectResumeDetailWithOptions(request: CollectResumeDetailRequest, headers: CollectResumeDetailHeaders, runtime: $Util.RuntimeOptions): Promise<CollectResumeDetailResponse> {
@@ -2780,13 +2880,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CollectResumeDetailResponse>(await this.doROARequest("CollectResumeDetail", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/resumes/details`, "json", req, runtime), new CollectResumeDetailResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollectResumeDetail",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/resumes/details`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollectResumeDetailResponse>(await this.execute(params, req, runtime), new CollectResumeDetailResponse({}));
   }
 
-  async collectResumeMail(request: CollectResumeMailRequest): Promise<CollectResumeMailResponse> {
+  async collectResumeDetail(request: CollectResumeDetailRequest): Promise<CollectResumeDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollectResumeMailHeaders({ });
-    return await this.collectResumeMailWithOptions(request, headers, runtime);
+    let headers = new CollectResumeDetailHeaders({ });
+    return await this.collectResumeDetailWithOptions(request, headers, runtime);
   }
 
   async collectResumeMailWithOptions(request: CollectResumeMailRequest, headers: CollectResumeMailHeaders, runtime: $Util.RuntimeOptions): Promise<CollectResumeMailResponse> {
@@ -2855,18 +2966,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CollectResumeMailResponse>(await this.doROARequest("CollectResumeMail", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/resumes/mails`, "json", req, runtime), new CollectResumeMailResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollectResumeMail",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/resumes/mails`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollectResumeMailResponse>(await this.execute(params, req, runtime), new CollectResumeMailResponse({}));
   }
 
-  async confirmRights(rightsCode: string, request: ConfirmRightsRequest): Promise<ConfirmRightsResponse> {
+  async collectResumeMail(request: CollectResumeMailRequest): Promise<CollectResumeMailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ConfirmRightsHeaders({ });
-    return await this.confirmRightsWithOptions(rightsCode, request, headers, runtime);
+    let headers = new CollectResumeMailHeaders({ });
+    return await this.collectResumeMailWithOptions(request, headers, runtime);
   }
 
   async confirmRightsWithOptions(rightsCode: string, request: ConfirmRightsRequest, headers: ConfirmRightsHeaders, runtime: $Util.RuntimeOptions): Promise<ConfirmRightsResponse> {
     Util.validateModel(request);
-    rightsCode = OpenApiUtil.getEncodeParam(rightsCode);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bizCode)) {
       query["bizCode"] = request.bizCode;
@@ -2885,18 +3006,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ConfirmRightsResponse>(await this.doROARequest("ConfirmRights", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/rights/${rightsCode}/confirm`, "json", req, runtime), new ConfirmRightsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ConfirmRights",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/rights/${rightsCode}/confirm`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ConfirmRightsResponse>(await this.execute(params, req, runtime), new ConfirmRightsResponse({}));
   }
 
-  async finishBeginnerTask(taskCode: string, request: FinishBeginnerTaskRequest): Promise<FinishBeginnerTaskResponse> {
+  async confirmRights(rightsCode: string, request: ConfirmRightsRequest): Promise<ConfirmRightsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new FinishBeginnerTaskHeaders({ });
-    return await this.finishBeginnerTaskWithOptions(taskCode, request, headers, runtime);
+    let headers = new ConfirmRightsHeaders({ });
+    return await this.confirmRightsWithOptions(rightsCode, request, headers, runtime);
   }
 
   async finishBeginnerTaskWithOptions(taskCode: string, request: FinishBeginnerTaskRequest, headers: FinishBeginnerTaskHeaders, runtime: $Util.RuntimeOptions): Promise<FinishBeginnerTaskResponse> {
     Util.validateModel(request);
-    taskCode = OpenApiUtil.getEncodeParam(taskCode);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.scope)) {
       query["scope"] = request.scope;
@@ -2919,18 +3050,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<FinishBeginnerTaskResponse>(await this.doROARequest("FinishBeginnerTask", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/beginnerTasks/${taskCode}/finish`, "json", req, runtime), new FinishBeginnerTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "FinishBeginnerTask",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/beginnerTasks/${taskCode}/finish`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<FinishBeginnerTaskResponse>(await this.execute(params, req, runtime), new FinishBeginnerTaskResponse({}));
   }
 
-  async getApplicationRegFormByFlowId(flowId: string, request: GetApplicationRegFormByFlowIdRequest): Promise<GetApplicationRegFormByFlowIdResponse> {
+  async finishBeginnerTask(taskCode: string, request: FinishBeginnerTaskRequest): Promise<FinishBeginnerTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetApplicationRegFormByFlowIdHeaders({ });
-    return await this.getApplicationRegFormByFlowIdWithOptions(flowId, request, headers, runtime);
+    let headers = new FinishBeginnerTaskHeaders({ });
+    return await this.finishBeginnerTaskWithOptions(taskCode, request, headers, runtime);
   }
 
   async getApplicationRegFormByFlowIdWithOptions(flowId: string, request: GetApplicationRegFormByFlowIdRequest, headers: GetApplicationRegFormByFlowIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetApplicationRegFormByFlowIdResponse> {
     Util.validateModel(request);
-    flowId = OpenApiUtil.getEncodeParam(flowId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bizCode)) {
       query["bizCode"] = request.bizCode;
@@ -2949,13 +3090,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetApplicationRegFormByFlowIdResponse>(await this.doROARequest("GetApplicationRegFormByFlowId", "ats_1.0", "HTTP", "GET", "AK", `/v1.0/ats/flows/${flowId}/applicationRegForms`, "json", req, runtime), new GetApplicationRegFormByFlowIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetApplicationRegFormByFlowId",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/flows/${flowId}/applicationRegForms`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetApplicationRegFormByFlowIdResponse>(await this.execute(params, req, runtime), new GetApplicationRegFormByFlowIdResponse({}));
   }
 
-  async getCandidateByPhoneNumber(request: GetCandidateByPhoneNumberRequest): Promise<GetCandidateByPhoneNumberResponse> {
+  async getApplicationRegFormByFlowId(flowId: string, request: GetApplicationRegFormByFlowIdRequest): Promise<GetApplicationRegFormByFlowIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCandidateByPhoneNumberHeaders({ });
-    return await this.getCandidateByPhoneNumberWithOptions(request, headers, runtime);
+    let headers = new GetApplicationRegFormByFlowIdHeaders({ });
+    return await this.getApplicationRegFormByFlowIdWithOptions(flowId, request, headers, runtime);
   }
 
   async getCandidateByPhoneNumberWithOptions(request: GetCandidateByPhoneNumberRequest, headers: GetCandidateByPhoneNumberHeaders, runtime: $Util.RuntimeOptions): Promise<GetCandidateByPhoneNumberResponse> {
@@ -2982,13 +3134,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetCandidateByPhoneNumberResponse>(await this.doROARequest("GetCandidateByPhoneNumber", "ats_1.0", "HTTP", "GET", "AK", `/v1.0/ats/candidates`, "json", req, runtime), new GetCandidateByPhoneNumberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCandidateByPhoneNumber",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/candidates`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCandidateByPhoneNumberResponse>(await this.execute(params, req, runtime), new GetCandidateByPhoneNumberResponse({}));
   }
 
-  async getFileUploadInfo(request: GetFileUploadInfoRequest): Promise<GetFileUploadInfoResponse> {
+  async getCandidateByPhoneNumber(request: GetCandidateByPhoneNumberRequest): Promise<GetCandidateByPhoneNumberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFileUploadInfoHeaders({ });
-    return await this.getFileUploadInfoWithOptions(request, headers, runtime);
+    let headers = new GetCandidateByPhoneNumberHeaders({ });
+    return await this.getCandidateByPhoneNumberWithOptions(request, headers, runtime);
   }
 
   async getFileUploadInfoWithOptions(request: GetFileUploadInfoRequest, headers: GetFileUploadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileUploadInfoResponse> {
@@ -3027,13 +3190,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetFileUploadInfoResponse>(await this.doROARequest("GetFileUploadInfo", "ats_1.0", "HTTP", "GET", "AK", `/v1.0/ats/files/uploadInfos`, "json", req, runtime), new GetFileUploadInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFileUploadInfo",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/files/uploadInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFileUploadInfoResponse>(await this.execute(params, req, runtime), new GetFileUploadInfoResponse({}));
   }
 
-  async getFlowIdByRelationEntityId(request: GetFlowIdByRelationEntityIdRequest): Promise<GetFlowIdByRelationEntityIdResponse> {
+  async getFileUploadInfo(request: GetFileUploadInfoRequest): Promise<GetFileUploadInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFlowIdByRelationEntityIdHeaders({ });
-    return await this.getFlowIdByRelationEntityIdWithOptions(request, headers, runtime);
+    let headers = new GetFileUploadInfoHeaders({ });
+    return await this.getFileUploadInfoWithOptions(request, headers, runtime);
   }
 
   async getFlowIdByRelationEntityIdWithOptions(request: GetFlowIdByRelationEntityIdRequest, headers: GetFlowIdByRelationEntityIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlowIdByRelationEntityIdResponse> {
@@ -3064,18 +3238,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetFlowIdByRelationEntityIdResponse>(await this.doROARequest("GetFlowIdByRelationEntityId", "ats_1.0", "HTTP", "GET", "AK", `/v1.0/ats/flows/ids`, "json", req, runtime), new GetFlowIdByRelationEntityIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFlowIdByRelationEntityId",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/flows/ids`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFlowIdByRelationEntityIdResponse>(await this.execute(params, req, runtime), new GetFlowIdByRelationEntityIdResponse({}));
   }
 
-  async getJobAuth(jobId: string, request: GetJobAuthRequest): Promise<GetJobAuthResponse> {
+  async getFlowIdByRelationEntityId(request: GetFlowIdByRelationEntityIdRequest): Promise<GetFlowIdByRelationEntityIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetJobAuthHeaders({ });
-    return await this.getJobAuthWithOptions(jobId, request, headers, runtime);
+    let headers = new GetFlowIdByRelationEntityIdHeaders({ });
+    return await this.getFlowIdByRelationEntityIdWithOptions(request, headers, runtime);
   }
 
   async getJobAuthWithOptions(jobId: string, request: GetJobAuthRequest, headers: GetJobAuthHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobAuthResponse> {
     Util.validateModel(request);
-    jobId = OpenApiUtil.getEncodeParam(jobId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUserId)) {
       query["opUserId"] = request.opUserId;
@@ -3094,13 +3278,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetJobAuthResponse>(await this.doROARequest("GetJobAuth", "ats_1.0", "HTTP", "GET", "AK", `/v1.0/ats/auths/jobs/${jobId}`, "json", req, runtime), new GetJobAuthResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetJobAuth",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/auths/jobs/${jobId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetJobAuthResponse>(await this.execute(params, req, runtime), new GetJobAuthResponse({}));
   }
 
-  async queryInterviews(request: QueryInterviewsRequest): Promise<QueryInterviewsResponse> {
+  async getJobAuth(jobId: string, request: GetJobAuthRequest): Promise<GetJobAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryInterviewsHeaders({ });
-    return await this.queryInterviewsWithOptions(request, headers, runtime);
+    let headers = new GetJobAuthHeaders({ });
+    return await this.getJobAuthWithOptions(jobId, request, headers, runtime);
   }
 
   async queryInterviewsWithOptions(request: QueryInterviewsRequest, headers: QueryInterviewsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryInterviewsResponse> {
@@ -3145,13 +3340,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryInterviewsResponse>(await this.doROARequest("QueryInterviews", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/interviews/query`, "json", req, runtime), new QueryInterviewsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryInterviews",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/interviews/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryInterviewsResponse>(await this.execute(params, req, runtime), new QueryInterviewsResponse({}));
   }
 
-  async reportMessageStatus(request: ReportMessageStatusRequest): Promise<ReportMessageStatusResponse> {
+  async queryInterviews(request: QueryInterviewsRequest): Promise<QueryInterviewsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ReportMessageStatusHeaders({ });
-    return await this.reportMessageStatusWithOptions(request, headers, runtime);
+    let headers = new QueryInterviewsHeaders({ });
+    return await this.queryInterviewsWithOptions(request, headers, runtime);
   }
 
   async reportMessageStatusWithOptions(request: ReportMessageStatusRequest, headers: ReportMessageStatusHeaders, runtime: $Util.RuntimeOptions): Promise<ReportMessageStatusResponse> {
@@ -3200,13 +3406,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ReportMessageStatusResponse>(await this.doROARequest("ReportMessageStatus", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/channels/messages/statuses/report`, "json", req, runtime), new ReportMessageStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ReportMessageStatus",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/channels/messages/statuses/report`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ReportMessageStatusResponse>(await this.execute(params, req, runtime), new ReportMessageStatusResponse({}));
   }
 
-  async syncChannelMessage(request: SyncChannelMessageRequest): Promise<SyncChannelMessageResponse> {
+  async reportMessageStatus(request: ReportMessageStatusRequest): Promise<ReportMessageStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SyncChannelMessageHeaders({ });
-    return await this.syncChannelMessageWithOptions(request, headers, runtime);
+    let headers = new ReportMessageStatusHeaders({ });
+    return await this.reportMessageStatusWithOptions(request, headers, runtime);
   }
 
   async syncChannelMessageWithOptions(request: SyncChannelMessageRequest, headers: SyncChannelMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SyncChannelMessageResponse> {
@@ -3255,18 +3472,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SyncChannelMessageResponse>(await this.doROARequest("SyncChannelMessage", "ats_1.0", "HTTP", "POST", "AK", `/v1.0/ats/channels/messages/sync`, "json", req, runtime), new SyncChannelMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SyncChannelMessage",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/channels/messages/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncChannelMessageResponse>(await this.execute(params, req, runtime), new SyncChannelMessageResponse({}));
   }
 
-  async updateApplicationRegForm(flowId: string, request: UpdateApplicationRegFormRequest): Promise<UpdateApplicationRegFormResponse> {
+  async syncChannelMessage(request: SyncChannelMessageRequest): Promise<SyncChannelMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateApplicationRegFormHeaders({ });
-    return await this.updateApplicationRegFormWithOptions(flowId, request, headers, runtime);
+    let headers = new SyncChannelMessageHeaders({ });
+    return await this.syncChannelMessageWithOptions(request, headers, runtime);
   }
 
   async updateApplicationRegFormWithOptions(flowId: string, request: UpdateApplicationRegFormRequest, headers: UpdateApplicationRegFormHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateApplicationRegFormResponse> {
     Util.validateModel(request);
-    flowId = OpenApiUtil.getEncodeParam(flowId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bizCode)) {
       query["bizCode"] = request.bizCode;
@@ -3295,18 +3522,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateApplicationRegFormResponse>(await this.doROARequest("UpdateApplicationRegForm", "ats_1.0", "HTTP", "PUT", "AK", `/v1.0/ats/flows/${flowId}/applicationRegForms`, "json", req, runtime), new UpdateApplicationRegFormResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateApplicationRegForm",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/flows/${flowId}/applicationRegForms`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateApplicationRegFormResponse>(await this.execute(params, req, runtime), new UpdateApplicationRegFormResponse({}));
   }
 
-  async updateInterviewSignInInfo(interviewId: string, request: UpdateInterviewSignInInfoRequest): Promise<UpdateInterviewSignInInfoResponse> {
+  async updateApplicationRegForm(flowId: string, request: UpdateApplicationRegFormRequest): Promise<UpdateApplicationRegFormResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateInterviewSignInInfoHeaders({ });
-    return await this.updateInterviewSignInInfoWithOptions(interviewId, request, headers, runtime);
+    let headers = new UpdateApplicationRegFormHeaders({ });
+    return await this.updateApplicationRegFormWithOptions(flowId, request, headers, runtime);
   }
 
   async updateInterviewSignInInfoWithOptions(interviewId: string, request: UpdateInterviewSignInInfoRequest, headers: UpdateInterviewSignInInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInterviewSignInInfoResponse> {
     Util.validateModel(request);
-    interviewId = OpenApiUtil.getEncodeParam(interviewId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bizCode)) {
       query["bizCode"] = request.bizCode;
@@ -3331,13 +3568,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateInterviewSignInInfoResponse>(await this.doROARequest("UpdateInterviewSignInInfo", "ats_1.0", "HTTP", "PUT", "AK", `/v1.0/ats/interviews/${interviewId}/signInInfos`, "none", req, runtime), new UpdateInterviewSignInInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateInterviewSignInInfo",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/interviews/${interviewId}/signInInfos`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateInterviewSignInInfoResponse>(await this.execute(params, req, runtime), new UpdateInterviewSignInInfoResponse({}));
   }
 
-  async updateJobDeliver(request: UpdateJobDeliverRequest): Promise<UpdateJobDeliverResponse> {
+  async updateInterviewSignInInfo(interviewId: string, request: UpdateInterviewSignInInfoRequest): Promise<UpdateInterviewSignInInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateJobDeliverHeaders({ });
-    return await this.updateJobDeliverWithOptions(request, headers, runtime);
+    let headers = new UpdateInterviewSignInInfoHeaders({ });
+    return await this.updateInterviewSignInInfoWithOptions(interviewId, request, headers, runtime);
   }
 
   async updateJobDeliverWithOptions(request: UpdateJobDeliverRequest, headers: UpdateJobDeliverHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateJobDeliverResponse> {
@@ -3394,7 +3642,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateJobDeliverResponse>(await this.doROARequest("UpdateJobDeliver", "ats_1.0", "HTTP", "PUT", "AK", `/v1.0/ats/jobs/deliveryStatus`, "json", req, runtime), new UpdateJobDeliverResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateJobDeliver",
+      version: "ats_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/ats/jobs/deliveryStatus`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateJobDeliverResponse>(await this.execute(params, req, runtime), new UpdateJobDeliverResponse({}));
+  }
+
+  async updateJobDeliver(request: UpdateJobDeliverRequest): Promise<UpdateJobDeliverResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateJobDeliverHeaders({ });
+    return await this.updateJobDeliverWithOptions(request, headers, runtime);
   }
 
 }

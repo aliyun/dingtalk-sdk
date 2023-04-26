@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -69,10 +71,12 @@ export class CloseHPackageResponseBody extends $tea.Model {
 
 export class CloseHPackageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CloseHPackageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -80,6 +84,7 @@ export class CloseHPackageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CloseHPackageResponseBody,
     };
   }
@@ -172,10 +177,12 @@ export class GetUploadTokenResponseBody extends $tea.Model {
 
 export class GetUploadTokenResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUploadTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -183,6 +190,7 @@ export class GetUploadTokenResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUploadTokenResponseBody,
     };
   }
@@ -263,10 +271,12 @@ export class HPackageListGetResponseBody extends $tea.Model {
 
 export class HPackageListGetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: HPackageListGetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -274,6 +284,7 @@ export class HPackageListGetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: HPackageListGetResponseBody,
     };
   }
@@ -348,10 +359,12 @@ export class HPublishPackageResponseBody extends $tea.Model {
 
 export class HPublishPackageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: HPublishPackageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -359,6 +372,7 @@ export class HPublishPackageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: HPublishPackageResponseBody,
     };
   }
@@ -433,10 +447,12 @@ export class HUploadPackageResponseBody extends $tea.Model {
 
 export class HUploadPackageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: HUploadPackageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -444,6 +460,7 @@ export class HUploadPackageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: HUploadPackageResponseBody,
     };
   }
@@ -533,10 +550,12 @@ export class HUploadPackageStatusResponseBody extends $tea.Model {
 
 export class HUploadPackageStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: HUploadPackageStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -544,6 +563,7 @@ export class HUploadPackageStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: HUploadPackageStatusResponseBody,
     };
   }
@@ -615,10 +635,12 @@ export class OpenMicroAppPackageResponseBody extends $tea.Model {
 
 export class OpenMicroAppPackageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: OpenMicroAppPackageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -626,6 +648,7 @@ export class OpenMicroAppPackageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: OpenMicroAppPackageResponseBody,
     };
   }
@@ -700,10 +723,12 @@ export class ReleaseGrayDeployResponseBody extends $tea.Model {
 
 export class ReleaseGrayDeployResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ReleaseGrayDeployResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -711,6 +736,7 @@ export class ReleaseGrayDeployResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ReleaseGrayDeployResponseBody,
     };
   }
@@ -785,10 +811,12 @@ export class ReleaseGrayExitResponseBody extends $tea.Model {
 
 export class ReleaseGrayExitResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ReleaseGrayExitResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -796,6 +824,7 @@ export class ReleaseGrayExitResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ReleaseGrayExitResponseBody,
     };
   }
@@ -870,10 +899,12 @@ export class ReleaseGrayOrgGetResponseBody extends $tea.Model {
 
 export class ReleaseGrayOrgGetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ReleaseGrayOrgGetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -881,6 +912,7 @@ export class ReleaseGrayOrgGetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ReleaseGrayOrgGetResponseBody,
     };
   }
@@ -958,10 +990,12 @@ export class ReleaseGrayOrgSetResponseBody extends $tea.Model {
 
 export class ReleaseGrayOrgSetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ReleaseGrayOrgSetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -969,6 +1003,7 @@ export class ReleaseGrayOrgSetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ReleaseGrayOrgSetResponseBody,
     };
   }
@@ -1043,10 +1078,12 @@ export class ReleaseGrayPercentGetResponseBody extends $tea.Model {
 
 export class ReleaseGrayPercentGetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ReleaseGrayPercentGetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1054,6 +1091,7 @@ export class ReleaseGrayPercentGetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ReleaseGrayPercentGetResponseBody,
     };
   }
@@ -1131,10 +1169,12 @@ export class ReleaseGrayPercentSetResponseBody extends $tea.Model {
 
 export class ReleaseGrayPercentSetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ReleaseGrayPercentSetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1142,6 +1182,7 @@ export class ReleaseGrayPercentSetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ReleaseGrayPercentSetResponseBody,
     };
   }
@@ -1216,10 +1257,12 @@ export class ReleaseGrayUserIdGetResponseBody extends $tea.Model {
 
 export class ReleaseGrayUserIdGetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ReleaseGrayUserIdGetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1227,6 +1270,7 @@ export class ReleaseGrayUserIdGetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ReleaseGrayUserIdGetResponseBody,
     };
   }
@@ -1278,9 +1322,12 @@ export class HPackageListGetResponseBodyList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1288,12 +1335,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async closeHPackage(request: CloseHPackageRequest): Promise<CloseHPackageResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CloseHPackageHeaders({ });
-    return await this.closeHPackageWithOptions(request, headers, runtime);
-  }
 
   async closeHPackageWithOptions(request: CloseHPackageRequest, headers: CloseHPackageHeaders, runtime: $Util.RuntimeOptions): Promise<CloseHPackageResponse> {
     Util.validateModel(request);
@@ -1315,13 +1356,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CloseHPackageResponse>(await this.doROARequest("CloseHPackage", "package_1.0", "HTTP", "POST", "AK", `/v1.0/package/h5/microApps/close`, "json", req, runtime), new CloseHPackageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CloseHPackage",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/h5/microApps/close`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CloseHPackageResponse>(await this.execute(params, req, runtime), new CloseHPackageResponse({}));
   }
 
-  async getUploadToken(request: GetUploadTokenRequest): Promise<GetUploadTokenResponse> {
+  async closeHPackage(request: CloseHPackageRequest): Promise<CloseHPackageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUploadTokenHeaders({ });
-    return await this.getUploadTokenWithOptions(request, headers, runtime);
+    let headers = new CloseHPackageHeaders({ });
+    return await this.closeHPackageWithOptions(request, headers, runtime);
   }
 
   async getUploadTokenWithOptions(request: GetUploadTokenRequest, headers: GetUploadTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetUploadTokenResponse> {
@@ -1344,13 +1396,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetUploadTokenResponse>(await this.doROARequest("GetUploadToken", "package_1.0", "HTTP", "GET", "AK", `/v1.0/package/uploadTokens`, "json", req, runtime), new GetUploadTokenResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUploadToken",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/uploadTokens`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUploadTokenResponse>(await this.execute(params, req, runtime), new GetUploadTokenResponse({}));
   }
 
-  async hPackageListGet(request: HPackageListGetRequest): Promise<HPackageListGetResponse> {
+  async getUploadToken(request: GetUploadTokenRequest): Promise<GetUploadTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new HPackageListGetHeaders({ });
-    return await this.hPackageListGetWithOptions(request, headers, runtime);
+    let headers = new GetUploadTokenHeaders({ });
+    return await this.getUploadTokenWithOptions(request, headers, runtime);
   }
 
   async hPackageListGetWithOptions(request: HPackageListGetRequest, headers: HPackageListGetHeaders, runtime: $Util.RuntimeOptions): Promise<HPackageListGetResponse> {
@@ -1381,13 +1444,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<HPackageListGetResponse>(await this.doROARequest("HPackageListGet", "package_1.0", "HTTP", "GET", "AK", `/v1.0/package/h5/versions`, "json", req, runtime), new HPackageListGetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "HPackageListGet",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/h5/versions`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HPackageListGetResponse>(await this.execute(params, req, runtime), new HPackageListGetResponse({}));
   }
 
-  async hPublishPackage(request: HPublishPackageRequest): Promise<HPublishPackageResponse> {
+  async hPackageListGet(request: HPackageListGetRequest): Promise<HPackageListGetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new HPublishPackageHeaders({ });
-    return await this.hPublishPackageWithOptions(request, headers, runtime);
+    let headers = new HPackageListGetHeaders({ });
+    return await this.hPackageListGetWithOptions(request, headers, runtime);
   }
 
   async hPublishPackageWithOptions(request: HPublishPackageRequest, headers: HPublishPackageHeaders, runtime: $Util.RuntimeOptions): Promise<HPublishPackageResponse> {
@@ -1414,13 +1488,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<HPublishPackageResponse>(await this.doROARequest("HPublishPackage", "package_1.0", "HTTP", "POST", "AK", `/v1.0/package/h5/publish`, "json", req, runtime), new HPublishPackageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "HPublishPackage",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/h5/publish`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HPublishPackageResponse>(await this.execute(params, req, runtime), new HPublishPackageResponse({}));
   }
 
-  async hUploadPackage(request: HUploadPackageRequest): Promise<HUploadPackageResponse> {
+  async hPublishPackage(request: HPublishPackageRequest): Promise<HPublishPackageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new HUploadPackageHeaders({ });
-    return await this.hUploadPackageWithOptions(request, headers, runtime);
+    let headers = new HPublishPackageHeaders({ });
+    return await this.hPublishPackageWithOptions(request, headers, runtime);
   }
 
   async hUploadPackageWithOptions(request: HUploadPackageRequest, headers: HUploadPackageHeaders, runtime: $Util.RuntimeOptions): Promise<HUploadPackageResponse> {
@@ -1447,13 +1532,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<HUploadPackageResponse>(await this.doROARequest("HUploadPackage", "package_1.0", "HTTP", "POST", "AK", `/v1.0/package/h5/asyncUpload`, "json", req, runtime), new HUploadPackageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "HUploadPackage",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/h5/asyncUpload`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HUploadPackageResponse>(await this.execute(params, req, runtime), new HUploadPackageResponse({}));
   }
 
-  async hUploadPackageStatus(request: HUploadPackageStatusRequest): Promise<HUploadPackageStatusResponse> {
+  async hUploadPackage(request: HUploadPackageRequest): Promise<HUploadPackageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new HUploadPackageStatusHeaders({ });
-    return await this.hUploadPackageStatusWithOptions(request, headers, runtime);
+    let headers = new HUploadPackageHeaders({ });
+    return await this.hUploadPackageWithOptions(request, headers, runtime);
   }
 
   async hUploadPackageStatusWithOptions(request: HUploadPackageStatusRequest, headers: HUploadPackageStatusHeaders, runtime: $Util.RuntimeOptions): Promise<HUploadPackageStatusResponse> {
@@ -1480,13 +1576,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<HUploadPackageStatusResponse>(await this.doROARequest("HUploadPackageStatus", "package_1.0", "HTTP", "GET", "AK", `/v1.0/package/h5/uploadStatus`, "json", req, runtime), new HUploadPackageStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "HUploadPackageStatus",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/h5/uploadStatus`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HUploadPackageStatusResponse>(await this.execute(params, req, runtime), new HUploadPackageStatusResponse({}));
   }
 
-  async openMicroAppPackage(request: OpenMicroAppPackageRequest): Promise<OpenMicroAppPackageResponse> {
+  async hUploadPackageStatus(request: HUploadPackageStatusRequest): Promise<HUploadPackageStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new OpenMicroAppPackageHeaders({ });
-    return await this.openMicroAppPackageWithOptions(request, headers, runtime);
+    let headers = new HUploadPackageStatusHeaders({ });
+    return await this.hUploadPackageStatusWithOptions(request, headers, runtime);
   }
 
   async openMicroAppPackageWithOptions(request: OpenMicroAppPackageRequest, headers: OpenMicroAppPackageHeaders, runtime: $Util.RuntimeOptions): Promise<OpenMicroAppPackageResponse> {
@@ -1509,13 +1616,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<OpenMicroAppPackageResponse>(await this.doROARequest("OpenMicroAppPackage", "package_1.0", "HTTP", "POST", "AK", `/v1.0/package/h5/microApps/open`, "json", req, runtime), new OpenMicroAppPackageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "OpenMicroAppPackage",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/h5/microApps/open`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OpenMicroAppPackageResponse>(await this.execute(params, req, runtime), new OpenMicroAppPackageResponse({}));
   }
 
-  async releaseGrayDeploy(request: ReleaseGrayDeployRequest): Promise<ReleaseGrayDeployResponse> {
+  async openMicroAppPackage(request: OpenMicroAppPackageRequest): Promise<OpenMicroAppPackageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ReleaseGrayDeployHeaders({ });
-    return await this.releaseGrayDeployWithOptions(request, headers, runtime);
+    let headers = new OpenMicroAppPackageHeaders({ });
+    return await this.openMicroAppPackageWithOptions(request, headers, runtime);
   }
 
   async releaseGrayDeployWithOptions(request: ReleaseGrayDeployRequest, headers: ReleaseGrayDeployHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayDeployResponse> {
@@ -1542,13 +1660,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ReleaseGrayDeployResponse>(await this.doROARequest("ReleaseGrayDeploy", "package_1.0", "HTTP", "POST", "AK", `/v1.0/package/greys/deploy`, "json", req, runtime), new ReleaseGrayDeployResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ReleaseGrayDeploy",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/greys/deploy`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ReleaseGrayDeployResponse>(await this.execute(params, req, runtime), new ReleaseGrayDeployResponse({}));
   }
 
-  async releaseGrayExit(request: ReleaseGrayExitRequest): Promise<ReleaseGrayExitResponse> {
+  async releaseGrayDeploy(request: ReleaseGrayDeployRequest): Promise<ReleaseGrayDeployResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ReleaseGrayExitHeaders({ });
-    return await this.releaseGrayExitWithOptions(request, headers, runtime);
+    let headers = new ReleaseGrayDeployHeaders({ });
+    return await this.releaseGrayDeployWithOptions(request, headers, runtime);
   }
 
   async releaseGrayExitWithOptions(request: ReleaseGrayExitRequest, headers: ReleaseGrayExitHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayExitResponse> {
@@ -1575,13 +1704,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ReleaseGrayExitResponse>(await this.doROARequest("ReleaseGrayExit", "package_1.0", "HTTP", "POST", "AK", `/v1.0/package/greys/exit`, "json", req, runtime), new ReleaseGrayExitResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ReleaseGrayExit",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/greys/exit`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ReleaseGrayExitResponse>(await this.execute(params, req, runtime), new ReleaseGrayExitResponse({}));
   }
 
-  async releaseGrayOrgGet(request: ReleaseGrayOrgGetRequest): Promise<ReleaseGrayOrgGetResponse> {
+  async releaseGrayExit(request: ReleaseGrayExitRequest): Promise<ReleaseGrayExitResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ReleaseGrayOrgGetHeaders({ });
-    return await this.releaseGrayOrgGetWithOptions(request, headers, runtime);
+    let headers = new ReleaseGrayExitHeaders({ });
+    return await this.releaseGrayExitWithOptions(request, headers, runtime);
   }
 
   async releaseGrayOrgGetWithOptions(request: ReleaseGrayOrgGetRequest, headers: ReleaseGrayOrgGetHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayOrgGetResponse> {
@@ -1608,13 +1748,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ReleaseGrayOrgGetResponse>(await this.doROARequest("ReleaseGrayOrgGet", "package_1.0", "HTTP", "GET", "AK", `/v1.0/package/greys/organizations`, "json", req, runtime), new ReleaseGrayOrgGetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ReleaseGrayOrgGet",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/greys/organizations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ReleaseGrayOrgGetResponse>(await this.execute(params, req, runtime), new ReleaseGrayOrgGetResponse({}));
   }
 
-  async releaseGrayOrgSet(request: ReleaseGrayOrgSetRequest): Promise<ReleaseGrayOrgSetResponse> {
+  async releaseGrayOrgGet(request: ReleaseGrayOrgGetRequest): Promise<ReleaseGrayOrgGetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ReleaseGrayOrgSetHeaders({ });
-    return await this.releaseGrayOrgSetWithOptions(request, headers, runtime);
+    let headers = new ReleaseGrayOrgGetHeaders({ });
+    return await this.releaseGrayOrgGetWithOptions(request, headers, runtime);
   }
 
   async releaseGrayOrgSetWithOptions(request: ReleaseGrayOrgSetRequest, headers: ReleaseGrayOrgSetHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayOrgSetResponse> {
@@ -1645,13 +1796,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ReleaseGrayOrgSetResponse>(await this.doROARequest("ReleaseGrayOrgSet", "package_1.0", "HTTP", "POST", "AK", `/v1.0/package/greys/organizations/release`, "json", req, runtime), new ReleaseGrayOrgSetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ReleaseGrayOrgSet",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/greys/organizations/release`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ReleaseGrayOrgSetResponse>(await this.execute(params, req, runtime), new ReleaseGrayOrgSetResponse({}));
   }
 
-  async releaseGrayPercentGet(request: ReleaseGrayPercentGetRequest): Promise<ReleaseGrayPercentGetResponse> {
+  async releaseGrayOrgSet(request: ReleaseGrayOrgSetRequest): Promise<ReleaseGrayOrgSetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ReleaseGrayPercentGetHeaders({ });
-    return await this.releaseGrayPercentGetWithOptions(request, headers, runtime);
+    let headers = new ReleaseGrayOrgSetHeaders({ });
+    return await this.releaseGrayOrgSetWithOptions(request, headers, runtime);
   }
 
   async releaseGrayPercentGetWithOptions(request: ReleaseGrayPercentGetRequest, headers: ReleaseGrayPercentGetHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayPercentGetResponse> {
@@ -1678,13 +1840,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ReleaseGrayPercentGetResponse>(await this.doROARequest("ReleaseGrayPercentGet", "package_1.0", "HTTP", "GET", "AK", `/v1.0/package/greys/users/percents`, "json", req, runtime), new ReleaseGrayPercentGetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ReleaseGrayPercentGet",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/greys/users/percents`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ReleaseGrayPercentGetResponse>(await this.execute(params, req, runtime), new ReleaseGrayPercentGetResponse({}));
   }
 
-  async releaseGrayPercentSet(request: ReleaseGrayPercentSetRequest): Promise<ReleaseGrayPercentSetResponse> {
+  async releaseGrayPercentGet(request: ReleaseGrayPercentGetRequest): Promise<ReleaseGrayPercentGetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ReleaseGrayPercentSetHeaders({ });
-    return await this.releaseGrayPercentSetWithOptions(request, headers, runtime);
+    let headers = new ReleaseGrayPercentGetHeaders({ });
+    return await this.releaseGrayPercentGetWithOptions(request, headers, runtime);
   }
 
   async releaseGrayPercentSetWithOptions(request: ReleaseGrayPercentSetRequest, headers: ReleaseGrayPercentSetHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayPercentSetResponse> {
@@ -1715,13 +1888,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ReleaseGrayPercentSetResponse>(await this.doROARequest("ReleaseGrayPercentSet", "package_1.0", "HTTP", "POST", "AK", `/v1.0/package/greys/users/percents/release`, "json", req, runtime), new ReleaseGrayPercentSetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ReleaseGrayPercentSet",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/greys/users/percents/release`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ReleaseGrayPercentSetResponse>(await this.execute(params, req, runtime), new ReleaseGrayPercentSetResponse({}));
   }
 
-  async releaseGrayUserIdGet(request: ReleaseGrayUserIdGetRequest): Promise<ReleaseGrayUserIdGetResponse> {
+  async releaseGrayPercentSet(request: ReleaseGrayPercentSetRequest): Promise<ReleaseGrayPercentSetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ReleaseGrayUserIdGetHeaders({ });
-    return await this.releaseGrayUserIdGetWithOptions(request, headers, runtime);
+    let headers = new ReleaseGrayPercentSetHeaders({ });
+    return await this.releaseGrayPercentSetWithOptions(request, headers, runtime);
   }
 
   async releaseGrayUserIdGetWithOptions(request: ReleaseGrayUserIdGetRequest, headers: ReleaseGrayUserIdGetHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseGrayUserIdGetResponse> {
@@ -1748,7 +1932,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ReleaseGrayUserIdGetResponse>(await this.doROARequest("ReleaseGrayUserIdGet", "package_1.0", "HTTP", "GET", "AK", `/v1.0/package/greys/users`, "json", req, runtime), new ReleaseGrayUserIdGetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ReleaseGrayUserIdGet",
+      version: "package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/package/greys/users`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ReleaseGrayUserIdGetResponse>(await this.execute(params, req, runtime), new ReleaseGrayUserIdGetResponse({}));
+  }
+
+  async releaseGrayUserIdGet(request: ReleaseGrayUserIdGetRequest): Promise<ReleaseGrayUserIdGetResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ReleaseGrayUserIdGetHeaders({ });
+    return await this.releaseGrayUserIdGetWithOptions(request, headers, runtime);
   }
 
 }

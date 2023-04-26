@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -75,10 +77,12 @@ export class GetCallBackFaileResultResponseBody extends $tea.Model {
 
 export class GetCallBackFaileResultResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCallBackFaileResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -86,6 +90,7 @@ export class GetCallBackFaileResultResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCallBackFaileResultResponseBody,
     };
   }
@@ -125,9 +130,12 @@ export class GetCallBackFaileResultResponseBodyFailedList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -135,12 +143,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async getCallBackFaileResult(request: GetCallBackFaileResultRequest): Promise<GetCallBackFaileResultResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCallBackFaileResultHeaders({ });
-    return await this.getCallBackFaileResultWithOptions(request, headers, runtime);
-  }
 
   async getCallBackFaileResultWithOptions(request: GetCallBackFaileResultRequest, headers: GetCallBackFaileResultHeaders, runtime: $Util.RuntimeOptions): Promise<GetCallBackFaileResultResponse> {
     Util.validateModel(request);
@@ -166,7 +168,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetCallBackFaileResultResponse>(await this.doROARequest("GetCallBackFaileResult", "event_1.0", "HTTP", "GET", "AK", `/v1.0/event/callbacks/failedResults`, "json", req, runtime), new GetCallBackFaileResultResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCallBackFaileResult",
+      version: "event_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/event/callbacks/failedResults`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCallBackFaileResultResponse>(await this.execute(params, req, runtime), new GetCallBackFaileResultResponse({}));
+  }
+
+  async getCallBackFaileResult(request: GetCallBackFaileResultRequest): Promise<GetCallBackFaileResultResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCallBackFaileResultHeaders({ });
+    return await this.getCallBackFaileResultWithOptions(request, headers, runtime);
   }
 
 }

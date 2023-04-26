@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -84,10 +86,12 @@ export class CountTodoTasksResponseBody extends $tea.Model {
 
 export class CountTodoTasksResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CountTodoTasksResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -95,6 +99,7 @@ export class CountTodoTasksResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CountTodoTasksResponseBody,
     };
   }
@@ -271,10 +276,12 @@ export class CreateTodoTaskResponseBody extends $tea.Model {
 
 export class CreateTodoTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateTodoTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -282,6 +289,7 @@ export class CreateTodoTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateTodoTaskResponseBody,
     };
   }
@@ -407,10 +415,12 @@ export class CreateTodoTypeConfigResponseBody extends $tea.Model {
 
 export class CreateTodoTypeConfigResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateTodoTypeConfigResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -418,6 +428,7 @@ export class CreateTodoTypeConfigResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateTodoTypeConfigResponseBody,
     };
   }
@@ -492,10 +503,12 @@ export class DeleteTodoTaskResponseBody extends $tea.Model {
 
 export class DeleteTodoTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteTodoTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -503,6 +516,7 @@ export class DeleteTodoTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteTodoTaskResponseBody,
     };
   }
@@ -621,10 +635,12 @@ export class GetTodoTaskResponseBody extends $tea.Model {
 
 export class GetTodoTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTodoTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -632,6 +648,7 @@ export class GetTodoTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTodoTaskResponseBody,
     };
   }
@@ -747,10 +764,12 @@ export class GetTodoTaskBySourceIdResponseBody extends $tea.Model {
 
 export class GetTodoTaskBySourceIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTodoTaskBySourceIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -758,6 +777,7 @@ export class GetTodoTaskBySourceIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTodoTaskBySourceIdResponseBody,
     };
   }
@@ -885,10 +905,12 @@ export class GetTodoTaskDetailResponseBody extends $tea.Model {
 
 export class GetTodoTaskDetailResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTodoTaskDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -896,6 +918,7 @@ export class GetTodoTaskDetailResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTodoTaskDetailResponseBody,
     };
   }
@@ -984,10 +1007,12 @@ export class GetTodoTypeConfigResponseBody extends $tea.Model {
 
 export class GetTodoTypeConfigResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTodoTypeConfigResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -995,6 +1020,7 @@ export class GetTodoTypeConfigResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTodoTypeConfigResponseBody,
     };
   }
@@ -1090,10 +1116,12 @@ export class QueryOrgTodoByUserResponseBody extends $tea.Model {
 
 export class QueryOrgTodoByUserResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryOrgTodoByUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1101,6 +1129,7 @@ export class QueryOrgTodoByUserResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryOrgTodoByUserResponseBody,
     };
   }
@@ -1178,10 +1207,12 @@ export class QueryOrgTodoTasksResponseBody extends $tea.Model {
 
 export class QueryOrgTodoTasksResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryOrgTodoTasksResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1189,6 +1220,7 @@ export class QueryOrgTodoTasksResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryOrgTodoTasksResponseBody,
     };
   }
@@ -1290,10 +1322,12 @@ export class QueryTodoTasksResponseBody extends $tea.Model {
 
 export class QueryTodoTasksResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryTodoTasksResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1301,6 +1335,7 @@ export class QueryTodoTasksResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryTodoTasksResponseBody,
     };
   }
@@ -1390,10 +1425,12 @@ export class UpdateTodoTaskResponseBody extends $tea.Model {
 
 export class UpdateTodoTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTodoTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1401,6 +1438,7 @@ export class UpdateTodoTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTodoTaskResponseBody,
     };
   }
@@ -1475,10 +1513,12 @@ export class UpdateTodoTaskExecutorStatusResponseBody extends $tea.Model {
 
 export class UpdateTodoTaskExecutorStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTodoTaskExecutorStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1486,6 +1526,7 @@ export class UpdateTodoTaskExecutorStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTodoTaskExecutorStatusResponseBody,
     };
   }
@@ -1575,10 +1616,12 @@ export class UpdateTodoTypeConfigResponseBody extends $tea.Model {
 
 export class UpdateTodoTypeConfigResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTodoTypeConfigResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1586,6 +1629,7 @@ export class UpdateTodoTypeConfigResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTodoTypeConfigResponseBody,
     };
   }
@@ -2525,9 +2569,12 @@ export class UpdateTodoTypeConfigRequestContentFieldList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2536,15 +2583,8 @@ export default class Client extends OpenApi {
   }
 
 
-  async countTodoTasks(unionId: string, request: CountTodoTasksRequest): Promise<CountTodoTasksResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CountTodoTasksHeaders({ });
-    return await this.countTodoTasksWithOptions(unionId, request, headers, runtime);
-  }
-
   async countTodoTasksWithOptions(unionId: string, request: CountTodoTasksRequest, headers: CountTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<CountTodoTasksResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.category)) {
       body["category"] = request.category;
@@ -2583,18 +2623,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CountTodoTasksResponse>(await this.doROARequest("CountTodoTasks", "todo_1.0", "HTTP", "POST", "AK", `/v1.0/todo/users/${unionId}/tasks/count`, "json", req, runtime), new CountTodoTasksResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CountTodoTasks",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/${unionId}/tasks/count`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CountTodoTasksResponse>(await this.execute(params, req, runtime), new CountTodoTasksResponse({}));
   }
 
-  async createTodoTask(unionId: string, request: CreateTodoTaskRequest): Promise<CreateTodoTaskResponse> {
+  async countTodoTasks(unionId: string, request: CountTodoTasksRequest): Promise<CountTodoTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateTodoTaskHeaders({ });
-    return await this.createTodoTaskWithOptions(unionId, request, headers, runtime);
+    let headers = new CountTodoTasksHeaders({ });
+    return await this.countTodoTasksWithOptions(unionId, request, headers, runtime);
   }
 
   async createTodoTaskWithOptions(unionId: string, request: CreateTodoTaskRequest, headers: CreateTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTodoTaskResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -2671,18 +2721,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateTodoTaskResponse>(await this.doROARequest("CreateTodoTask", "todo_1.0", "HTTP", "POST", "AK", `/v1.0/todo/users/${unionId}/tasks`, "json", req, runtime), new CreateTodoTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateTodoTask",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/${unionId}/tasks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateTodoTaskResponse>(await this.execute(params, req, runtime), new CreateTodoTaskResponse({}));
   }
 
-  async createTodoTypeConfig(unionId: string, request: CreateTodoTypeConfigRequest): Promise<CreateTodoTypeConfigResponse> {
+  async createTodoTask(unionId: string, request: CreateTodoTaskRequest): Promise<CreateTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateTodoTypeConfigHeaders({ });
-    return await this.createTodoTypeConfigWithOptions(unionId, request, headers, runtime);
+    let headers = new CreateTodoTaskHeaders({ });
+    return await this.createTodoTaskWithOptions(unionId, request, headers, runtime);
   }
 
   async createTodoTypeConfigWithOptions(unionId: string, request: CreateTodoTypeConfigRequest, headers: CreateTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTodoTypeConfigResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -2727,19 +2787,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateTodoTypeConfigResponse>(await this.doROARequest("CreateTodoTypeConfig", "todo_1.0", "HTTP", "POST", "AK", `/v1.0/todo/users/${unionId}/configs/types`, "json", req, runtime), new CreateTodoTypeConfigResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateTodoTypeConfig",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/${unionId}/configs/types`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateTodoTypeConfigResponse>(await this.execute(params, req, runtime), new CreateTodoTypeConfigResponse({}));
   }
 
-  async deleteTodoTask(unionId: string, taskId: string, request: DeleteTodoTaskRequest): Promise<DeleteTodoTaskResponse> {
+  async createTodoTypeConfig(unionId: string, request: CreateTodoTypeConfigRequest): Promise<CreateTodoTypeConfigResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteTodoTaskHeaders({ });
-    return await this.deleteTodoTaskWithOptions(unionId, taskId, request, headers, runtime);
+    let headers = new CreateTodoTypeConfigHeaders({ });
+    return await this.createTodoTypeConfigWithOptions(unionId, request, headers, runtime);
   }
 
   async deleteTodoTaskWithOptions(unionId: string, taskId: string, request: DeleteTodoTaskRequest, headers: DeleteTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTodoTaskResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -2758,7 +2827,51 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteTodoTaskResponse>(await this.doROARequest("DeleteTodoTask", "todo_1.0", "HTTP", "DELETE", "AK", `/v1.0/todo/users/${unionId}/tasks/${taskId}`, "json", req, runtime), new DeleteTodoTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteTodoTask",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/${unionId}/tasks/${taskId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteTodoTaskResponse>(await this.execute(params, req, runtime), new DeleteTodoTaskResponse({}));
+  }
+
+  async deleteTodoTask(unionId: string, taskId: string, request: DeleteTodoTaskRequest): Promise<DeleteTodoTaskResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteTodoTaskHeaders({ });
+    return await this.deleteTodoTaskWithOptions(unionId, taskId, request, headers, runtime);
+  }
+
+  async getTodoTaskWithOptions(unionId: string, taskId: string, headers: GetTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "GetTodoTask",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/${unionId}/tasks/${taskId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTodoTaskResponse>(await this.execute(params, req, runtime), new GetTodoTaskResponse({}));
   }
 
   async getTodoTask(unionId: string, taskId: string): Promise<GetTodoTaskResponse> {
@@ -2767,9 +2880,7 @@ export default class Client extends OpenApi {
     return await this.getTodoTaskWithOptions(unionId, taskId, headers, runtime);
   }
 
-  async getTodoTaskWithOptions(unionId: string, taskId: string, headers: GetTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskResponse> {
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
+  async getTodoTaskBySourceIdWithOptions(unionId: string, sourceId: string, headers: GetTodoTaskBySourceIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskBySourceIdResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2782,7 +2893,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetTodoTaskResponse>(await this.doROARequest("GetTodoTask", "todo_1.0", "HTTP", "GET", "AK", `/v1.0/todo/users/${unionId}/tasks/${taskId}`, "json", req, runtime), new GetTodoTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTodoTaskBySourceId",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/${unionId}/tasks/sources/${sourceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTodoTaskBySourceIdResponse>(await this.execute(params, req, runtime), new GetTodoTaskBySourceIdResponse({}));
   }
 
   async getTodoTaskBySourceId(unionId: string, sourceId: string): Promise<GetTodoTaskBySourceIdResponse> {
@@ -2791,9 +2913,7 @@ export default class Client extends OpenApi {
     return await this.getTodoTaskBySourceIdWithOptions(unionId, sourceId, headers, runtime);
   }
 
-  async getTodoTaskBySourceIdWithOptions(unionId: string, sourceId: string, headers: GetTodoTaskBySourceIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskBySourceIdResponse> {
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    sourceId = OpenApiUtil.getEncodeParam(sourceId);
+  async getTodoTaskDetailWithOptions(taskId: string, unionId: string, headers: GetTodoTaskDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskDetailResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2806,7 +2926,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetTodoTaskBySourceIdResponse>(await this.doROARequest("GetTodoTaskBySourceId", "todo_1.0", "HTTP", "GET", "AK", `/v1.0/todo/users/${unionId}/tasks/sources/${sourceId}`, "json", req, runtime), new GetTodoTaskBySourceIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTodoTaskDetail",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/exclusive/users/${unionId}/tasks/${taskId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTodoTaskDetailResponse>(await this.execute(params, req, runtime), new GetTodoTaskDetailResponse({}));
   }
 
   async getTodoTaskDetail(taskId: string, unionId: string): Promise<GetTodoTaskDetailResponse> {
@@ -2815,9 +2946,7 @@ export default class Client extends OpenApi {
     return await this.getTodoTaskDetailWithOptions(taskId, unionId, headers, runtime);
   }
 
-  async getTodoTaskDetailWithOptions(taskId: string, unionId: string, headers: GetTodoTaskDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTaskDetailResponse> {
-    taskId = OpenApiUtil.getEncodeParam(taskId);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
+  async getTodoTypeConfigWithOptions(unionId: string, cardTypeId: string, headers: GetTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTypeConfigResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2830,7 +2959,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetTodoTaskDetailResponse>(await this.doROARequest("GetTodoTaskDetail", "todo_1.0", "HTTP", "GET", "AK", `/v1.0/todo/exclusive/users/${unionId}/tasks/${taskId}`, "json", req, runtime), new GetTodoTaskDetailResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTodoTypeConfig",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/${unionId}/configs/types/${cardTypeId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTodoTypeConfigResponse>(await this.execute(params, req, runtime), new GetTodoTypeConfigResponse({}));
   }
 
   async getTodoTypeConfig(unionId: string, cardTypeId: string): Promise<GetTodoTypeConfigResponse> {
@@ -2839,33 +2979,8 @@ export default class Client extends OpenApi {
     return await this.getTodoTypeConfigWithOptions(unionId, cardTypeId, headers, runtime);
   }
 
-  async getTodoTypeConfigWithOptions(unionId: string, cardTypeId: string, headers: GetTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<GetTodoTypeConfigResponse> {
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    cardTypeId = OpenApiUtil.getEncodeParam(cardTypeId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetTodoTypeConfigResponse>(await this.doROARequest("GetTodoTypeConfig", "todo_1.0", "HTTP", "GET", "AK", `/v1.0/todo/users/${unionId}/configs/types/${cardTypeId}`, "json", req, runtime), new GetTodoTypeConfigResponse({}));
-  }
-
-  async queryOrgTodoByUser(unionId: string, request: QueryOrgTodoByUserRequest): Promise<QueryOrgTodoByUserResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryOrgTodoByUserHeaders({ });
-    return await this.queryOrgTodoByUserWithOptions(unionId, request, headers, runtime);
-  }
-
   async queryOrgTodoByUserWithOptions(unionId: string, request: QueryOrgTodoByUserRequest, headers: QueryOrgTodoByUserHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgTodoByUserResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.fromDueTime)) {
       body["fromDueTime"] = request.fromDueTime;
@@ -2908,18 +3023,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryOrgTodoByUserResponse>(await this.doROARequest("QueryOrgTodoByUser", "todo_1.0", "HTTP", "POST", "AK", `/v1.0/todo/users/${unionId}/organizations/tasks/query`, "json", req, runtime), new QueryOrgTodoByUserResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryOrgTodoByUser",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/${unionId}/organizations/tasks/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryOrgTodoByUserResponse>(await this.execute(params, req, runtime), new QueryOrgTodoByUserResponse({}));
   }
 
-  async queryOrgTodoTasks(unionId: string, request: QueryOrgTodoTasksRequest): Promise<QueryOrgTodoTasksResponse> {
+  async queryOrgTodoByUser(unionId: string, request: QueryOrgTodoByUserRequest): Promise<QueryOrgTodoByUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryOrgTodoTasksHeaders({ });
-    return await this.queryOrgTodoTasksWithOptions(unionId, request, headers, runtime);
+    let headers = new QueryOrgTodoByUserHeaders({ });
+    return await this.queryOrgTodoByUserWithOptions(unionId, request, headers, runtime);
   }
 
   async queryOrgTodoTasksWithOptions(unionId: string, request: QueryOrgTodoTasksRequest, headers: QueryOrgTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgTodoTasksResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.isDone)) {
       body["isDone"] = request.isDone;
@@ -2942,18 +3067,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryOrgTodoTasksResponse>(await this.doROARequest("QueryOrgTodoTasks", "todo_1.0", "HTTP", "POST", "AK", `/v1.0/todo/users/${unionId}/org/tasks/query`, "json", req, runtime), new QueryOrgTodoTasksResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryOrgTodoTasks",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/${unionId}/org/tasks/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryOrgTodoTasksResponse>(await this.execute(params, req, runtime), new QueryOrgTodoTasksResponse({}));
   }
 
-  async queryTodoTasks(unionId: string, request: QueryTodoTasksRequest): Promise<QueryTodoTasksResponse> {
+  async queryOrgTodoTasks(unionId: string, request: QueryOrgTodoTasksRequest): Promise<QueryOrgTodoTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryTodoTasksHeaders({ });
-    return await this.queryTodoTasksWithOptions(unionId, request, headers, runtime);
+    let headers = new QueryOrgTodoTasksHeaders({ });
+    return await this.queryOrgTodoTasksWithOptions(unionId, request, headers, runtime);
   }
 
   async queryTodoTasksWithOptions(unionId: string, request: QueryTodoTasksRequest, headers: QueryTodoTasksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTodoTasksResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.category)) {
       body["category"] = request.category;
@@ -3004,19 +3139,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryTodoTasksResponse>(await this.doROARequest("QueryTodoTasks", "todo_1.0", "HTTP", "POST", "AK", `/v1.0/todo/users/${unionId}/tasks/list`, "json", req, runtime), new QueryTodoTasksResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryTodoTasks",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/${unionId}/tasks/list`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryTodoTasksResponse>(await this.execute(params, req, runtime), new QueryTodoTasksResponse({}));
   }
 
-  async updateTodoTask(unionId: string, taskId: string, request: UpdateTodoTaskRequest): Promise<UpdateTodoTaskResponse> {
+  async queryTodoTasks(unionId: string, request: QueryTodoTasksRequest): Promise<QueryTodoTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTodoTaskHeaders({ });
-    return await this.updateTodoTaskWithOptions(unionId, taskId, request, headers, runtime);
+    let headers = new QueryTodoTasksHeaders({ });
+    return await this.queryTodoTasksWithOptions(unionId, request, headers, runtime);
   }
 
   async updateTodoTaskWithOptions(unionId: string, taskId: string, request: UpdateTodoTaskRequest, headers: UpdateTodoTaskHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTaskResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -3061,19 +3205,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTodoTaskResponse>(await this.doROARequest("UpdateTodoTask", "todo_1.0", "HTTP", "PUT", "AK", `/v1.0/todo/users/${unionId}/tasks/${taskId}`, "json", req, runtime), new UpdateTodoTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTodoTask",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/${unionId}/tasks/${taskId}`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTodoTaskResponse>(await this.execute(params, req, runtime), new UpdateTodoTaskResponse({}));
   }
 
-  async updateTodoTaskExecutorStatus(unionId: string, taskId: string, request: UpdateTodoTaskExecutorStatusRequest): Promise<UpdateTodoTaskExecutorStatusResponse> {
+  async updateTodoTask(unionId: string, taskId: string, request: UpdateTodoTaskRequest): Promise<UpdateTodoTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTodoTaskExecutorStatusHeaders({ });
-    return await this.updateTodoTaskExecutorStatusWithOptions(unionId, taskId, request, headers, runtime);
+    let headers = new UpdateTodoTaskHeaders({ });
+    return await this.updateTodoTaskWithOptions(unionId, taskId, request, headers, runtime);
   }
 
   async updateTodoTaskExecutorStatusWithOptions(unionId: string, taskId: string, request: UpdateTodoTaskExecutorStatusRequest, headers: UpdateTodoTaskExecutorStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTaskExecutorStatusResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -3098,19 +3251,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTodoTaskExecutorStatusResponse>(await this.doROARequest("UpdateTodoTaskExecutorStatus", "todo_1.0", "HTTP", "PUT", "AK", `/v1.0/todo/users/${unionId}/tasks/${taskId}/executorStatus`, "json", req, runtime), new UpdateTodoTaskExecutorStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTodoTaskExecutorStatus",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/${unionId}/tasks/${taskId}/executorStatus`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTodoTaskExecutorStatusResponse>(await this.execute(params, req, runtime), new UpdateTodoTaskExecutorStatusResponse({}));
   }
 
-  async updateTodoTypeConfig(unionId: string, cardTypeId: string, request: UpdateTodoTypeConfigRequest): Promise<UpdateTodoTypeConfigResponse> {
+  async updateTodoTaskExecutorStatus(unionId: string, taskId: string, request: UpdateTodoTaskExecutorStatusRequest): Promise<UpdateTodoTaskExecutorStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTodoTypeConfigHeaders({ });
-    return await this.updateTodoTypeConfigWithOptions(unionId, cardTypeId, request, headers, runtime);
+    let headers = new UpdateTodoTaskExecutorStatusHeaders({ });
+    return await this.updateTodoTaskExecutorStatusWithOptions(unionId, taskId, request, headers, runtime);
   }
 
   async updateTodoTypeConfigWithOptions(unionId: string, cardTypeId: string, request: UpdateTodoTypeConfigRequest, headers: UpdateTodoTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTodoTypeConfigResponse> {
     Util.validateModel(request);
-    unionId = OpenApiUtil.getEncodeParam(unionId);
-    cardTypeId = OpenApiUtil.getEncodeParam(cardTypeId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -3155,7 +3317,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTodoTypeConfigResponse>(await this.doROARequest("UpdateTodoTypeConfig", "todo_1.0", "HTTP", "PUT", "AK", `/v1.0/todo/users/${unionId}/configs/types/${cardTypeId}`, "json", req, runtime), new UpdateTodoTypeConfigResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTodoTypeConfig",
+      version: "todo_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/todo/users/${unionId}/configs/types/${cardTypeId}`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTodoTypeConfigResponse>(await this.execute(params, req, runtime), new UpdateTodoTypeConfigResponse({}));
+  }
+
+  async updateTodoTypeConfig(unionId: string, cardTypeId: string, request: UpdateTodoTypeConfigRequest): Promise<UpdateTodoTypeConfigResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateTodoTypeConfigHeaders({ });
+    return await this.updateTodoTypeConfigWithOptions(unionId, cardTypeId, request, headers, runtime);
   }
 
 }

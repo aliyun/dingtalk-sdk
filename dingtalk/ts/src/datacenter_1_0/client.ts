@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -78,10 +80,12 @@ export class GetAbnormalOperationResponseBody extends $tea.Model {
 
 export class GetAbnormalOperationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAbnormalOperationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -89,6 +93,7 @@ export class GetAbnormalOperationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAbnormalOperationResponseBody,
     };
   }
@@ -169,10 +174,12 @@ export class GetAdministrativeLicensingResponseBody extends $tea.Model {
 
 export class GetAdministrativeLicensingResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAdministrativeLicensingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -180,6 +187,7 @@ export class GetAdministrativeLicensingResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAdministrativeLicensingResponseBody,
     };
   }
@@ -260,10 +268,12 @@ export class GetAdministrativePenaltiesResponseBody extends $tea.Model {
 
 export class GetAdministrativePenaltiesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAdministrativePenaltiesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -271,6 +281,7 @@ export class GetAdministrativePenaltiesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAdministrativePenaltiesResponseBody,
     };
   }
@@ -351,10 +362,12 @@ export class GetBasicInfoResponseBody extends $tea.Model {
 
 export class GetBasicInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetBasicInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -362,6 +375,7 @@ export class GetBasicInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetBasicInfoResponseBody,
     };
   }
@@ -442,10 +456,12 @@ export class GetBiddingInfoResponseBody extends $tea.Model {
 
 export class GetBiddingInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetBiddingInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -453,6 +469,7 @@ export class GetBiddingInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetBiddingInfoResponseBody,
     };
   }
@@ -533,10 +550,12 @@ export class GetBranchInfoResponseBody extends $tea.Model {
 
 export class GetBranchInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetBranchInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -544,6 +563,7 @@ export class GetBranchInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetBranchInfoResponseBody,
     };
   }
@@ -624,10 +644,12 @@ export class GetChangeRecordResponseBody extends $tea.Model {
 
 export class GetChangeRecordResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetChangeRecordResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -635,6 +657,7 @@ export class GetChangeRecordResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetChangeRecordResponseBody,
     };
   }
@@ -715,10 +738,12 @@ export class GetDomainInfoResponseBody extends $tea.Model {
 
 export class GetDomainInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetDomainInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -726,6 +751,7 @@ export class GetDomainInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetDomainInfoResponseBody,
     };
   }
@@ -806,10 +832,12 @@ export class GetDoubleRandomResponseBody extends $tea.Model {
 
 export class GetDoubleRandomResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetDoubleRandomResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -817,6 +845,7 @@ export class GetDoubleRandomResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetDoubleRandomResponseBody,
     };
   }
@@ -897,10 +926,12 @@ export class GetEnvironmentalPenaltiesResponseBody extends $tea.Model {
 
 export class GetEnvironmentalPenaltiesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetEnvironmentalPenaltiesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -908,6 +939,7 @@ export class GetEnvironmentalPenaltiesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetEnvironmentalPenaltiesResponseBody,
     };
   }
@@ -988,10 +1020,12 @@ export class GetHolderInfoResponseBody extends $tea.Model {
 
 export class GetHolderInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetHolderInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -999,6 +1033,7 @@ export class GetHolderInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetHolderInfoResponseBody,
     };
   }
@@ -1079,10 +1114,12 @@ export class GetIntellectualPropertyResponseBody extends $tea.Model {
 
 export class GetIntellectualPropertyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetIntellectualPropertyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1090,6 +1127,7 @@ export class GetIntellectualPropertyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetIntellectualPropertyResponseBody,
     };
   }
@@ -1170,10 +1208,12 @@ export class GetInvestmentAbroadResponseBody extends $tea.Model {
 
 export class GetInvestmentAbroadResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetInvestmentAbroadResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1181,6 +1221,7 @@ export class GetInvestmentAbroadResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetInvestmentAbroadResponseBody,
     };
   }
@@ -1261,10 +1302,12 @@ export class GetJobInfoResponseBody extends $tea.Model {
 
 export class GetJobInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetJobInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1272,6 +1315,7 @@ export class GetJobInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetJobInfoResponseBody,
     };
   }
@@ -1352,10 +1396,12 @@ export class GetPatentInfoResponseBody extends $tea.Model {
 
 export class GetPatentInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPatentInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1363,6 +1409,7 @@ export class GetPatentInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPatentInfoResponseBody,
     };
   }
@@ -1443,10 +1490,12 @@ export class GetPrincipalEmployeeResponseBody extends $tea.Model {
 
 export class GetPrincipalEmployeeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPrincipalEmployeeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1454,6 +1503,7 @@ export class GetPrincipalEmployeeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPrincipalEmployeeResponseBody,
     };
   }
@@ -1534,10 +1584,12 @@ export class GetQeneralTaxpayerInfoResponseBody extends $tea.Model {
 
 export class GetQeneralTaxpayerInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetQeneralTaxpayerInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1545,6 +1597,7 @@ export class GetQeneralTaxpayerInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetQeneralTaxpayerInfoResponseBody,
     };
   }
@@ -1625,10 +1678,12 @@ export class GetQualificationCertResponseBody extends $tea.Model {
 
 export class GetQualificationCertResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetQualificationCertResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1636,6 +1691,7 @@ export class GetQualificationCertResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetQualificationCertResponseBody,
     };
   }
@@ -1716,10 +1772,12 @@ export class GetSeriousViolationResponseBody extends $tea.Model {
 
 export class GetSeriousViolationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSeriousViolationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1727,6 +1785,7 @@ export class GetSeriousViolationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSeriousViolationResponseBody,
     };
   }
@@ -1807,10 +1866,12 @@ export class GetSoftwareCopyrightResponseBody extends $tea.Model {
 
 export class GetSoftwareCopyrightResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSoftwareCopyrightResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1818,6 +1879,7 @@ export class GetSoftwareCopyrightResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSoftwareCopyrightResponseBody,
     };
   }
@@ -1898,10 +1960,12 @@ export class GetTrademarkInfoResponseBody extends $tea.Model {
 
 export class GetTrademarkInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTrademarkInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1909,6 +1973,7 @@ export class GetTrademarkInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTrademarkInfoResponseBody,
     };
   }
@@ -1989,10 +2054,12 @@ export class GetWorkCopyrightResponseBody extends $tea.Model {
 
 export class GetWorkCopyrightResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetWorkCopyrightResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2000,6 +2067,7 @@ export class GetWorkCopyrightResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetWorkCopyrightResponseBody,
     };
   }
@@ -2052,10 +2120,12 @@ export class PostCorpAuthInfoResponseBody extends $tea.Model {
 
 export class PostCorpAuthInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PostCorpAuthInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2063,6 +2133,7 @@ export class PostCorpAuthInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PostCorpAuthInfoResponseBody,
     };
   }
@@ -2137,10 +2208,12 @@ export class QueryActiveUserStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryActiveUserStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryActiveUserStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2148,6 +2221,7 @@ export class QueryActiveUserStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryActiveUserStatisticalDataResponseBody,
     };
   }
@@ -2228,10 +2302,12 @@ export class QueryAnhmdStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryAnhmdStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAnhmdStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2239,6 +2315,7 @@ export class QueryAnhmdStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAnhmdStatisticalDataResponseBody,
     };
   }
@@ -2313,10 +2390,12 @@ export class QueryApprovalStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryApprovalStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryApprovalStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2324,6 +2403,7 @@ export class QueryApprovalStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryApprovalStatisticalDataResponseBody,
     };
   }
@@ -2398,10 +2478,12 @@ export class QueryAttendanceStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryAttendanceStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAttendanceStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2409,6 +2491,7 @@ export class QueryAttendanceStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAttendanceStatisticalDataResponseBody,
     };
   }
@@ -2483,10 +2566,12 @@ export class QueryBlackboardStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryBlackboardStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryBlackboardStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2494,6 +2579,7 @@ export class QueryBlackboardStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryBlackboardStatisticalDataResponseBody,
     };
   }
@@ -2568,10 +2654,12 @@ export class QueryCalendarStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryCalendarStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryCalendarStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2579,6 +2667,7 @@ export class QueryCalendarStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryCalendarStatisticalDataResponseBody,
     };
   }
@@ -2653,10 +2742,12 @@ export class QueryCheckinStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryCheckinStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryCheckinStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2664,6 +2755,7 @@ export class QueryCheckinStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryCheckinStatisticalDataResponseBody,
     };
   }
@@ -2738,10 +2830,12 @@ export class QueryCircleStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryCircleStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryCircleStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2749,6 +2843,7 @@ export class QueryCircleStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryCircleStatisticalDataResponseBody,
     };
   }
@@ -2838,10 +2933,12 @@ export class QueryCompanyBasicInfoResponseBody extends $tea.Model {
 
 export class QueryCompanyBasicInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryCompanyBasicInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2849,6 +2946,7 @@ export class QueryCompanyBasicInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryCompanyBasicInfoResponseBody,
     };
   }
@@ -2926,10 +3024,12 @@ export class QueryDigitalDistrictOrgInfoResponseBody extends $tea.Model {
 
 export class QueryDigitalDistrictOrgInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryDigitalDistrictOrgInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2937,6 +3037,7 @@ export class QueryDigitalDistrictOrgInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryDigitalDistrictOrgInfoResponseBody,
     };
   }
@@ -3011,10 +3112,12 @@ export class QueryDingReciveStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryDingReciveStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryDingReciveStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3022,6 +3125,7 @@ export class QueryDingReciveStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryDingReciveStatisticalDataResponseBody,
     };
   }
@@ -3096,10 +3200,12 @@ export class QueryDingSendStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryDingSendStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryDingSendStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3107,6 +3213,7 @@ export class QueryDingSendStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryDingSendStatisticalDataResponseBody,
     };
   }
@@ -3181,10 +3288,12 @@ export class QueryDocumentStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryDocumentStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryDocumentStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3192,6 +3301,7 @@ export class QueryDocumentStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryDocumentStatisticalDataResponseBody,
     };
   }
@@ -3266,10 +3376,12 @@ export class QueryDriveStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryDriveStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryDriveStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3277,6 +3389,7 @@ export class QueryDriveStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryDriveStatisticalDataResponseBody,
     };
   }
@@ -3351,10 +3464,12 @@ export class QueryEmployeeTypeStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryEmployeeTypeStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryEmployeeTypeStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3362,6 +3477,7 @@ export class QueryEmployeeTypeStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryEmployeeTypeStatisticalDataResponseBody,
     };
   }
@@ -3454,10 +3570,12 @@ export class QueryGeneralDataServiceResponseBody extends $tea.Model {
 
 export class QueryGeneralDataServiceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryGeneralDataServiceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3465,6 +3583,7 @@ export class QueryGeneralDataServiceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryGeneralDataServiceResponseBody,
     };
   }
@@ -3539,10 +3658,12 @@ export class QueryGroupLiveStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryGroupLiveStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryGroupLiveStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3550,6 +3671,7 @@ export class QueryGroupLiveStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryGroupLiveStatisticalDataResponseBody,
     };
   }
@@ -3624,10 +3746,12 @@ export class QueryGroupMessageStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryGroupMessageStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryGroupMessageStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3635,6 +3759,7 @@ export class QueryGroupMessageStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryGroupMessageStatisticalDataResponseBody,
     };
   }
@@ -3709,10 +3834,12 @@ export class QueryHealthStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryHealthStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryHealthStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3720,6 +3847,7 @@ export class QueryHealthStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryHealthStatisticalDataResponseBody,
     };
   }
@@ -3794,10 +3922,12 @@ export class QueryMailStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryMailStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryMailStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3805,6 +3935,7 @@ export class QueryMailStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryMailStatisticalDataResponseBody,
     };
   }
@@ -3882,10 +4013,12 @@ export class QueryOfficialDataResponseBody extends $tea.Model {
 
 export class QueryOfficialDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryOfficialDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3893,6 +4026,7 @@ export class QueryOfficialDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryOfficialDataResponseBody,
     };
   }
@@ -3970,10 +4104,12 @@ export class QueryOfficialDatasetFieldsResponseBody extends $tea.Model {
 
 export class QueryOfficialDatasetFieldsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryOfficialDatasetFieldsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3981,6 +4117,7 @@ export class QueryOfficialDatasetFieldsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryOfficialDatasetFieldsResponseBody,
     };
   }
@@ -4061,10 +4198,12 @@ export class QueryOfficialDatasetListResponseBody extends $tea.Model {
 
 export class QueryOfficialDatasetListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryOfficialDatasetListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4072,6 +4211,7 @@ export class QueryOfficialDatasetListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryOfficialDatasetListResponseBody,
     };
   }
@@ -4146,10 +4286,12 @@ export class QueryOnlineUserStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryOnlineUserStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryOnlineUserStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4157,6 +4299,7 @@ export class QueryOnlineUserStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryOnlineUserStatisticalDataResponseBody,
     };
   }
@@ -4231,10 +4374,12 @@ export class QueryRedEnvelopeReciveStatisticalDataResponseBody extends $tea.Mode
 
 export class QueryRedEnvelopeReciveStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryRedEnvelopeReciveStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4242,6 +4387,7 @@ export class QueryRedEnvelopeReciveStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryRedEnvelopeReciveStatisticalDataResponseBody,
     };
   }
@@ -4316,10 +4462,12 @@ export class QueryRedEnvelopeSendStatisticalDataResponseBody extends $tea.Model 
 
 export class QueryRedEnvelopeSendStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryRedEnvelopeSendStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4327,6 +4475,7 @@ export class QueryRedEnvelopeSendStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryRedEnvelopeSendStatisticalDataResponseBody,
     };
   }
@@ -4401,10 +4550,12 @@ export class QueryReportStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryReportStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryReportStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4412,6 +4563,7 @@ export class QueryReportStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryReportStatisticalDataResponseBody,
     };
   }
@@ -4486,10 +4638,12 @@ export class QuerySingleMessageStatisticalDataResponseBody extends $tea.Model {
 
 export class QuerySingleMessageStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QuerySingleMessageStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4497,6 +4651,7 @@ export class QuerySingleMessageStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QuerySingleMessageStatisticalDataResponseBody,
     };
   }
@@ -4571,10 +4726,12 @@ export class QueryTelMeetingStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryTelMeetingStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryTelMeetingStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4582,6 +4739,7 @@ export class QueryTelMeetingStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryTelMeetingStatisticalDataResponseBody,
     };
   }
@@ -4656,10 +4814,12 @@ export class QueryTodoStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryTodoStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryTodoStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4667,6 +4827,7 @@ export class QueryTodoStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryTodoStatisticalDataResponseBody,
     };
   }
@@ -4741,10 +4902,12 @@ export class QueryVedioMeetingStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryVedioMeetingStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryVedioMeetingStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4752,6 +4915,7 @@ export class QueryVedioMeetingStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryVedioMeetingStatisticalDataResponseBody,
     };
   }
@@ -4826,10 +4990,12 @@ export class QueryYydActiveDayStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydActiveDayStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydActiveDayStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4837,6 +5003,7 @@ export class QueryYydActiveDayStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydActiveDayStatisticalDataResponseBody,
     };
   }
@@ -4911,10 +5078,12 @@ export class QueryYydActiveMonthStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydActiveMonthStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydActiveMonthStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4922,6 +5091,7 @@ export class QueryYydActiveMonthStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydActiveMonthStatisticalDataResponseBody,
     };
   }
@@ -4996,10 +5166,12 @@ export class QueryYydActiveWeekStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydActiveWeekStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydActiveWeekStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5007,6 +5179,7 @@ export class QueryYydActiveWeekStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydActiveWeekStatisticalDataResponseBody,
     };
   }
@@ -5081,10 +5254,12 @@ export class QueryYydAppDayStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydAppDayStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydAppDayStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5092,6 +5267,7 @@ export class QueryYydAppDayStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydAppDayStatisticalDataResponseBody,
     };
   }
@@ -5166,10 +5342,12 @@ export class QueryYydAppMonthStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydAppMonthStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydAppMonthStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5177,6 +5355,7 @@ export class QueryYydAppMonthStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydAppMonthStatisticalDataResponseBody,
     };
   }
@@ -5251,10 +5430,12 @@ export class QueryYydAppStdStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydAppStdStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydAppStdStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5262,6 +5443,7 @@ export class QueryYydAppStdStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydAppStdStatisticalDataResponseBody,
     };
   }
@@ -5336,10 +5518,12 @@ export class QueryYydAppWeekStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydAppWeekStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydAppWeekStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5347,6 +5531,7 @@ export class QueryYydAppWeekStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydAppWeekStatisticalDataResponseBody,
     };
   }
@@ -5421,10 +5606,12 @@ export class QueryYydCalendarDayStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydCalendarDayStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydCalendarDayStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5432,6 +5619,7 @@ export class QueryYydCalendarDayStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydCalendarDayStatisticalDataResponseBody,
     };
   }
@@ -5506,10 +5694,12 @@ export class QueryYydCalendarMonthStatisticalDataResponseBody extends $tea.Model
 
 export class QueryYydCalendarMonthStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydCalendarMonthStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5517,6 +5707,7 @@ export class QueryYydCalendarMonthStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydCalendarMonthStatisticalDataResponseBody,
     };
   }
@@ -5591,10 +5782,12 @@ export class QueryYydCalendarWeekStatisticalDataResponseBody extends $tea.Model 
 
 export class QueryYydCalendarWeekStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydCalendarWeekStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5602,6 +5795,7 @@ export class QueryYydCalendarWeekStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydCalendarWeekStatisticalDataResponseBody,
     };
   }
@@ -5676,10 +5870,12 @@ export class QueryYydDingMsgDayStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydDingMsgDayStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydDingMsgDayStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5687,6 +5883,7 @@ export class QueryYydDingMsgDayStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydDingMsgDayStatisticalDataResponseBody,
     };
   }
@@ -5761,10 +5958,12 @@ export class QueryYydDingMsgMonthStatisticalDataResponseBody extends $tea.Model 
 
 export class QueryYydDingMsgMonthStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydDingMsgMonthStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5772,6 +5971,7 @@ export class QueryYydDingMsgMonthStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydDingMsgMonthStatisticalDataResponseBody,
     };
   }
@@ -5846,10 +6046,12 @@ export class QueryYydDingMsgWeekStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydDingMsgWeekStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydDingMsgWeekStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5857,6 +6059,7 @@ export class QueryYydDingMsgWeekStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydDingMsgWeekStatisticalDataResponseBody,
     };
   }
@@ -5931,10 +6134,12 @@ export class QueryYydGroupMsgDayStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydGroupMsgDayStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydGroupMsgDayStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5942,6 +6147,7 @@ export class QueryYydGroupMsgDayStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydGroupMsgDayStatisticalDataResponseBody,
     };
   }
@@ -6016,10 +6222,12 @@ export class QueryYydGroupMsgMonthStatisticalDataResponseBody extends $tea.Model
 
 export class QueryYydGroupMsgMonthStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydGroupMsgMonthStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6027,6 +6235,7 @@ export class QueryYydGroupMsgMonthStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydGroupMsgMonthStatisticalDataResponseBody,
     };
   }
@@ -6101,10 +6310,12 @@ export class QueryYydGroupMsgWeekStatisticalDataResponseBody extends $tea.Model 
 
 export class QueryYydGroupMsgWeekStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydGroupMsgWeekStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6112,6 +6323,7 @@ export class QueryYydGroupMsgWeekStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydGroupMsgWeekStatisticalDataResponseBody,
     };
   }
@@ -6186,10 +6398,12 @@ export class QueryYydLogDayStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydLogDayStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydLogDayStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6197,6 +6411,7 @@ export class QueryYydLogDayStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydLogDayStatisticalDataResponseBody,
     };
   }
@@ -6271,10 +6486,12 @@ export class QueryYydLogMonthStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydLogMonthStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydLogMonthStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6282,6 +6499,7 @@ export class QueryYydLogMonthStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydLogMonthStatisticalDataResponseBody,
     };
   }
@@ -6356,10 +6574,12 @@ export class QueryYydLogWeekStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydLogWeekStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydLogWeekStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6367,6 +6587,7 @@ export class QueryYydLogWeekStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydLogWeekStatisticalDataResponseBody,
     };
   }
@@ -6441,10 +6662,12 @@ export class QueryYydMeetingDayStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydMeetingDayStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydMeetingDayStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6452,6 +6675,7 @@ export class QueryYydMeetingDayStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydMeetingDayStatisticalDataResponseBody,
     };
   }
@@ -6526,10 +6750,12 @@ export class QueryYydMeetingMonthStatisticalDataResponseBody extends $tea.Model 
 
 export class QueryYydMeetingMonthStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydMeetingMonthStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6537,6 +6763,7 @@ export class QueryYydMeetingMonthStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydMeetingMonthStatisticalDataResponseBody,
     };
   }
@@ -6611,10 +6838,12 @@ export class QueryYydMeetingWeekStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydMeetingWeekStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydMeetingWeekStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6622,6 +6851,7 @@ export class QueryYydMeetingWeekStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydMeetingWeekStatisticalDataResponseBody,
     };
   }
@@ -6696,10 +6926,12 @@ export class QueryYydNoticeDayStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydNoticeDayStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydNoticeDayStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6707,6 +6939,7 @@ export class QueryYydNoticeDayStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydNoticeDayStatisticalDataResponseBody,
     };
   }
@@ -6781,10 +7014,12 @@ export class QueryYydNoticeMonthStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydNoticeMonthStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydNoticeMonthStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6792,6 +7027,7 @@ export class QueryYydNoticeMonthStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydNoticeMonthStatisticalDataResponseBody,
     };
   }
@@ -6866,10 +7102,12 @@ export class QueryYydNoticeWeekStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydNoticeWeekStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydNoticeWeekStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6877,6 +7115,7 @@ export class QueryYydNoticeWeekStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydNoticeWeekStatisticalDataResponseBody,
     };
   }
@@ -6951,10 +7190,12 @@ export class QueryYydSingleMsgDayStatisticalDataResponseBody extends $tea.Model 
 
 export class QueryYydSingleMsgDayStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydSingleMsgDayStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6962,6 +7203,7 @@ export class QueryYydSingleMsgDayStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydSingleMsgDayStatisticalDataResponseBody,
     };
   }
@@ -7036,10 +7278,12 @@ export class QueryYydSingleMsgMonthStatisticalDataResponseBody extends $tea.Mode
 
 export class QueryYydSingleMsgMonthStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydSingleMsgMonthStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7047,6 +7291,7 @@ export class QueryYydSingleMsgMonthStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydSingleMsgMonthStatisticalDataResponseBody,
     };
   }
@@ -7121,10 +7366,12 @@ export class QueryYydSingleMsgWeekStatisticalDataResponseBody extends $tea.Model
 
 export class QueryYydSingleMsgWeekStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydSingleMsgWeekStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7132,6 +7379,7 @@ export class QueryYydSingleMsgWeekStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydSingleMsgWeekStatisticalDataResponseBody,
     };
   }
@@ -7206,10 +7454,12 @@ export class QueryYydToatlMsgDayStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydToatlMsgDayStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydToatlMsgDayStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7217,6 +7467,7 @@ export class QueryYydToatlMsgDayStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydToatlMsgDayStatisticalDataResponseBody,
     };
   }
@@ -7291,10 +7542,12 @@ export class QueryYydToatlMsgMonthStatisticalDataResponseBody extends $tea.Model
 
 export class QueryYydToatlMsgMonthStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydToatlMsgMonthStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7302,6 +7555,7 @@ export class QueryYydToatlMsgMonthStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydToatlMsgMonthStatisticalDataResponseBody,
     };
   }
@@ -7376,10 +7630,12 @@ export class QueryYydToatlMsgWeekStatisticalDataResponseBody extends $tea.Model 
 
 export class QueryYydToatlMsgWeekStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydToatlMsgWeekStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7387,6 +7643,7 @@ export class QueryYydToatlMsgWeekStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydToatlMsgWeekStatisticalDataResponseBody,
     };
   }
@@ -7461,10 +7718,12 @@ export class QueryYydTodoDayStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydTodoDayStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydTodoDayStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7472,6 +7731,7 @@ export class QueryYydTodoDayStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydTodoDayStatisticalDataResponseBody,
     };
   }
@@ -7546,10 +7806,12 @@ export class QueryYydTodoMonthStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydTodoMonthStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydTodoMonthStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7557,6 +7819,7 @@ export class QueryYydTodoMonthStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydTodoMonthStatisticalDataResponseBody,
     };
   }
@@ -7631,10 +7894,12 @@ export class QueryYydTodoWeekStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydTodoWeekStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydTodoWeekStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7642,6 +7907,7 @@ export class QueryYydTodoWeekStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydTodoWeekStatisticalDataResponseBody,
     };
   }
@@ -7716,10 +7982,12 @@ export class QueryYydTotalDayStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydTotalDayStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydTotalDayStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7727,6 +7995,7 @@ export class QueryYydTotalDayStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydTotalDayStatisticalDataResponseBody,
     };
   }
@@ -7801,10 +8070,12 @@ export class QueryYydTotalMonthStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydTotalMonthStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydTotalMonthStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7812,6 +8083,7 @@ export class QueryYydTotalMonthStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydTotalMonthStatisticalDataResponseBody,
     };
   }
@@ -7886,10 +8158,12 @@ export class QueryYydTotalStdStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydTotalStdStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydTotalStdStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7897,6 +8171,7 @@ export class QueryYydTotalStdStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydTotalStdStatisticalDataResponseBody,
     };
   }
@@ -7971,10 +8246,12 @@ export class QueryYydTotalWeekStatisticalDataResponseBody extends $tea.Model {
 
 export class QueryYydTotalWeekStatisticalDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryYydTotalWeekStatisticalDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7982,6 +8259,7 @@ export class QueryYydTotalWeekStatisticalDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryYydTotalWeekStatisticalDataResponseBody,
     };
   }
@@ -8062,10 +8340,12 @@ export class SearchCompanyResponseBody extends $tea.Model {
 
 export class SearchCompanyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchCompanyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8073,6 +8353,7 @@ export class SearchCompanyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchCompanyResponseBody,
     };
   }
@@ -10159,9 +10440,12 @@ export class QueryYydTotalWeekStatisticalDataResponseBodyMetaList extends $tea.M
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -10169,12 +10453,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async getAbnormalOperation(request: GetAbnormalOperationRequest): Promise<GetAbnormalOperationResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAbnormalOperationHeaders({ });
-    return await this.getAbnormalOperationWithOptions(request, headers, runtime);
-  }
 
   async getAbnormalOperationWithOptions(request: GetAbnormalOperationRequest, headers: GetAbnormalOperationHeaders, runtime: $Util.RuntimeOptions): Promise<GetAbnormalOperationResponse> {
     Util.validateModel(request);
@@ -10204,13 +10482,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetAbnormalOperationResponse>(await this.doROARequest("GetAbnormalOperation", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/abnormalOperations`, "json", req, runtime), new GetAbnormalOperationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAbnormalOperation",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/abnormalOperations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAbnormalOperationResponse>(await this.execute(params, req, runtime), new GetAbnormalOperationResponse({}));
   }
 
-  async getAdministrativeLicensing(request: GetAdministrativeLicensingRequest): Promise<GetAdministrativeLicensingResponse> {
+  async getAbnormalOperation(request: GetAbnormalOperationRequest): Promise<GetAbnormalOperationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAdministrativeLicensingHeaders({ });
-    return await this.getAdministrativeLicensingWithOptions(request, headers, runtime);
+    let headers = new GetAbnormalOperationHeaders({ });
+    return await this.getAbnormalOperationWithOptions(request, headers, runtime);
   }
 
   async getAdministrativeLicensingWithOptions(request: GetAdministrativeLicensingRequest, headers: GetAdministrativeLicensingHeaders, runtime: $Util.RuntimeOptions): Promise<GetAdministrativeLicensingResponse> {
@@ -10241,13 +10530,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetAdministrativeLicensingResponse>(await this.doROARequest("GetAdministrativeLicensing", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/administrativeLicenses`, "json", req, runtime), new GetAdministrativeLicensingResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAdministrativeLicensing",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/administrativeLicenses`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAdministrativeLicensingResponse>(await this.execute(params, req, runtime), new GetAdministrativeLicensingResponse({}));
   }
 
-  async getAdministrativePenalties(request: GetAdministrativePenaltiesRequest): Promise<GetAdministrativePenaltiesResponse> {
+  async getAdministrativeLicensing(request: GetAdministrativeLicensingRequest): Promise<GetAdministrativeLicensingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAdministrativePenaltiesHeaders({ });
-    return await this.getAdministrativePenaltiesWithOptions(request, headers, runtime);
+    let headers = new GetAdministrativeLicensingHeaders({ });
+    return await this.getAdministrativeLicensingWithOptions(request, headers, runtime);
   }
 
   async getAdministrativePenaltiesWithOptions(request: GetAdministrativePenaltiesRequest, headers: GetAdministrativePenaltiesHeaders, runtime: $Util.RuntimeOptions): Promise<GetAdministrativePenaltiesResponse> {
@@ -10278,13 +10578,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetAdministrativePenaltiesResponse>(await this.doROARequest("GetAdministrativePenalties", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/administrativePenalties`, "json", req, runtime), new GetAdministrativePenaltiesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAdministrativePenalties",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/administrativePenalties`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAdministrativePenaltiesResponse>(await this.execute(params, req, runtime), new GetAdministrativePenaltiesResponse({}));
   }
 
-  async getBasicInfo(request: GetBasicInfoRequest): Promise<GetBasicInfoResponse> {
+  async getAdministrativePenalties(request: GetAdministrativePenaltiesRequest): Promise<GetAdministrativePenaltiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetBasicInfoHeaders({ });
-    return await this.getBasicInfoWithOptions(request, headers, runtime);
+    let headers = new GetAdministrativePenaltiesHeaders({ });
+    return await this.getAdministrativePenaltiesWithOptions(request, headers, runtime);
   }
 
   async getBasicInfoWithOptions(request: GetBasicInfoRequest, headers: GetBasicInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetBasicInfoResponse> {
@@ -10315,13 +10626,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetBasicInfoResponse>(await this.doROARequest("GetBasicInfo", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/businessBasicInfos`, "json", req, runtime), new GetBasicInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetBasicInfo",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/businessBasicInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetBasicInfoResponse>(await this.execute(params, req, runtime), new GetBasicInfoResponse({}));
   }
 
-  async getBiddingInfo(request: GetBiddingInfoRequest): Promise<GetBiddingInfoResponse> {
+  async getBasicInfo(request: GetBasicInfoRequest): Promise<GetBasicInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetBiddingInfoHeaders({ });
-    return await this.getBiddingInfoWithOptions(request, headers, runtime);
+    let headers = new GetBasicInfoHeaders({ });
+    return await this.getBasicInfoWithOptions(request, headers, runtime);
   }
 
   async getBiddingInfoWithOptions(request: GetBiddingInfoRequest, headers: GetBiddingInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetBiddingInfoResponse> {
@@ -10352,13 +10674,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetBiddingInfoResponse>(await this.doROARequest("GetBiddingInfo", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/biddingInfos`, "json", req, runtime), new GetBiddingInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetBiddingInfo",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/biddingInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetBiddingInfoResponse>(await this.execute(params, req, runtime), new GetBiddingInfoResponse({}));
   }
 
-  async getBranchInfo(request: GetBranchInfoRequest): Promise<GetBranchInfoResponse> {
+  async getBiddingInfo(request: GetBiddingInfoRequest): Promise<GetBiddingInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetBranchInfoHeaders({ });
-    return await this.getBranchInfoWithOptions(request, headers, runtime);
+    let headers = new GetBiddingInfoHeaders({ });
+    return await this.getBiddingInfoWithOptions(request, headers, runtime);
   }
 
   async getBranchInfoWithOptions(request: GetBranchInfoRequest, headers: GetBranchInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetBranchInfoResponse> {
@@ -10389,13 +10722,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetBranchInfoResponse>(await this.doROARequest("GetBranchInfo", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/branchInfos`, "json", req, runtime), new GetBranchInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetBranchInfo",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/branchInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetBranchInfoResponse>(await this.execute(params, req, runtime), new GetBranchInfoResponse({}));
   }
 
-  async getChangeRecord(request: GetChangeRecordRequest): Promise<GetChangeRecordResponse> {
+  async getBranchInfo(request: GetBranchInfoRequest): Promise<GetBranchInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetChangeRecordHeaders({ });
-    return await this.getChangeRecordWithOptions(request, headers, runtime);
+    let headers = new GetBranchInfoHeaders({ });
+    return await this.getBranchInfoWithOptions(request, headers, runtime);
   }
 
   async getChangeRecordWithOptions(request: GetChangeRecordRequest, headers: GetChangeRecordHeaders, runtime: $Util.RuntimeOptions): Promise<GetChangeRecordResponse> {
@@ -10426,13 +10770,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetChangeRecordResponse>(await this.doROARequest("GetChangeRecord", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/changeRecords`, "json", req, runtime), new GetChangeRecordResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetChangeRecord",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/changeRecords`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetChangeRecordResponse>(await this.execute(params, req, runtime), new GetChangeRecordResponse({}));
   }
 
-  async getDomainInfo(request: GetDomainInfoRequest): Promise<GetDomainInfoResponse> {
+  async getChangeRecord(request: GetChangeRecordRequest): Promise<GetChangeRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetDomainInfoHeaders({ });
-    return await this.getDomainInfoWithOptions(request, headers, runtime);
+    let headers = new GetChangeRecordHeaders({ });
+    return await this.getChangeRecordWithOptions(request, headers, runtime);
   }
 
   async getDomainInfoWithOptions(request: GetDomainInfoRequest, headers: GetDomainInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetDomainInfoResponse> {
@@ -10463,13 +10818,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetDomainInfoResponse>(await this.doROARequest("GetDomainInfo", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/domainInfos`, "json", req, runtime), new GetDomainInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetDomainInfo",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/domainInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDomainInfoResponse>(await this.execute(params, req, runtime), new GetDomainInfoResponse({}));
   }
 
-  async getDoubleRandom(request: GetDoubleRandomRequest): Promise<GetDoubleRandomResponse> {
+  async getDomainInfo(request: GetDomainInfoRequest): Promise<GetDomainInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetDoubleRandomHeaders({ });
-    return await this.getDoubleRandomWithOptions(request, headers, runtime);
+    let headers = new GetDomainInfoHeaders({ });
+    return await this.getDomainInfoWithOptions(request, headers, runtime);
   }
 
   async getDoubleRandomWithOptions(request: GetDoubleRandomRequest, headers: GetDoubleRandomHeaders, runtime: $Util.RuntimeOptions): Promise<GetDoubleRandomResponse> {
@@ -10500,13 +10866,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetDoubleRandomResponse>(await this.doROARequest("GetDoubleRandom", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/doubleRandomness`, "json", req, runtime), new GetDoubleRandomResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetDoubleRandom",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/doubleRandomness`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDoubleRandomResponse>(await this.execute(params, req, runtime), new GetDoubleRandomResponse({}));
   }
 
-  async getEnvironmentalPenalties(request: GetEnvironmentalPenaltiesRequest): Promise<GetEnvironmentalPenaltiesResponse> {
+  async getDoubleRandom(request: GetDoubleRandomRequest): Promise<GetDoubleRandomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetEnvironmentalPenaltiesHeaders({ });
-    return await this.getEnvironmentalPenaltiesWithOptions(request, headers, runtime);
+    let headers = new GetDoubleRandomHeaders({ });
+    return await this.getDoubleRandomWithOptions(request, headers, runtime);
   }
 
   async getEnvironmentalPenaltiesWithOptions(request: GetEnvironmentalPenaltiesRequest, headers: GetEnvironmentalPenaltiesHeaders, runtime: $Util.RuntimeOptions): Promise<GetEnvironmentalPenaltiesResponse> {
@@ -10537,13 +10914,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetEnvironmentalPenaltiesResponse>(await this.doROARequest("GetEnvironmentalPenalties", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/environmentalPenalties`, "json", req, runtime), new GetEnvironmentalPenaltiesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetEnvironmentalPenalties",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/environmentalPenalties`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetEnvironmentalPenaltiesResponse>(await this.execute(params, req, runtime), new GetEnvironmentalPenaltiesResponse({}));
   }
 
-  async getHolderInfo(request: GetHolderInfoRequest): Promise<GetHolderInfoResponse> {
+  async getEnvironmentalPenalties(request: GetEnvironmentalPenaltiesRequest): Promise<GetEnvironmentalPenaltiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetHolderInfoHeaders({ });
-    return await this.getHolderInfoWithOptions(request, headers, runtime);
+    let headers = new GetEnvironmentalPenaltiesHeaders({ });
+    return await this.getEnvironmentalPenaltiesWithOptions(request, headers, runtime);
   }
 
   async getHolderInfoWithOptions(request: GetHolderInfoRequest, headers: GetHolderInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetHolderInfoResponse> {
@@ -10574,13 +10962,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetHolderInfoResponse>(await this.doROARequest("GetHolderInfo", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/shareholderInfos`, "json", req, runtime), new GetHolderInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetHolderInfo",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/shareholderInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetHolderInfoResponse>(await this.execute(params, req, runtime), new GetHolderInfoResponse({}));
   }
 
-  async getIntellectualProperty(request: GetIntellectualPropertyRequest): Promise<GetIntellectualPropertyResponse> {
+  async getHolderInfo(request: GetHolderInfoRequest): Promise<GetHolderInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetIntellectualPropertyHeaders({ });
-    return await this.getIntellectualPropertyWithOptions(request, headers, runtime);
+    let headers = new GetHolderInfoHeaders({ });
+    return await this.getHolderInfoWithOptions(request, headers, runtime);
   }
 
   async getIntellectualPropertyWithOptions(request: GetIntellectualPropertyRequest, headers: GetIntellectualPropertyHeaders, runtime: $Util.RuntimeOptions): Promise<GetIntellectualPropertyResponse> {
@@ -10611,13 +11010,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetIntellectualPropertyResponse>(await this.doROARequest("GetIntellectualProperty", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/intellectualProperties`, "json", req, runtime), new GetIntellectualPropertyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetIntellectualProperty",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/intellectualProperties`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetIntellectualPropertyResponse>(await this.execute(params, req, runtime), new GetIntellectualPropertyResponse({}));
   }
 
-  async getInvestmentAbroad(request: GetInvestmentAbroadRequest): Promise<GetInvestmentAbroadResponse> {
+  async getIntellectualProperty(request: GetIntellectualPropertyRequest): Promise<GetIntellectualPropertyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetInvestmentAbroadHeaders({ });
-    return await this.getInvestmentAbroadWithOptions(request, headers, runtime);
+    let headers = new GetIntellectualPropertyHeaders({ });
+    return await this.getIntellectualPropertyWithOptions(request, headers, runtime);
   }
 
   async getInvestmentAbroadWithOptions(request: GetInvestmentAbroadRequest, headers: GetInvestmentAbroadHeaders, runtime: $Util.RuntimeOptions): Promise<GetInvestmentAbroadResponse> {
@@ -10648,13 +11058,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetInvestmentAbroadResponse>(await this.doROARequest("GetInvestmentAbroad", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/abroadInvestments`, "json", req, runtime), new GetInvestmentAbroadResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetInvestmentAbroad",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/abroadInvestments`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetInvestmentAbroadResponse>(await this.execute(params, req, runtime), new GetInvestmentAbroadResponse({}));
   }
 
-  async getJobInfo(request: GetJobInfoRequest): Promise<GetJobInfoResponse> {
+  async getInvestmentAbroad(request: GetInvestmentAbroadRequest): Promise<GetInvestmentAbroadResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetJobInfoHeaders({ });
-    return await this.getJobInfoWithOptions(request, headers, runtime);
+    let headers = new GetInvestmentAbroadHeaders({ });
+    return await this.getInvestmentAbroadWithOptions(request, headers, runtime);
   }
 
   async getJobInfoWithOptions(request: GetJobInfoRequest, headers: GetJobInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetJobInfoResponse> {
@@ -10685,13 +11106,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetJobInfoResponse>(await this.doROARequest("GetJobInfo", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/jobInfos`, "json", req, runtime), new GetJobInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetJobInfo",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/jobInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetJobInfoResponse>(await this.execute(params, req, runtime), new GetJobInfoResponse({}));
   }
 
-  async getPatentInfo(request: GetPatentInfoRequest): Promise<GetPatentInfoResponse> {
+  async getJobInfo(request: GetJobInfoRequest): Promise<GetJobInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPatentInfoHeaders({ });
-    return await this.getPatentInfoWithOptions(request, headers, runtime);
+    let headers = new GetJobInfoHeaders({ });
+    return await this.getJobInfoWithOptions(request, headers, runtime);
   }
 
   async getPatentInfoWithOptions(request: GetPatentInfoRequest, headers: GetPatentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPatentInfoResponse> {
@@ -10722,13 +11154,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetPatentInfoResponse>(await this.doROARequest("GetPatentInfo", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/patentInfos`, "json", req, runtime), new GetPatentInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPatentInfo",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/patentInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPatentInfoResponse>(await this.execute(params, req, runtime), new GetPatentInfoResponse({}));
   }
 
-  async getPrincipalEmployee(request: GetPrincipalEmployeeRequest): Promise<GetPrincipalEmployeeResponse> {
+  async getPatentInfo(request: GetPatentInfoRequest): Promise<GetPatentInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPrincipalEmployeeHeaders({ });
-    return await this.getPrincipalEmployeeWithOptions(request, headers, runtime);
+    let headers = new GetPatentInfoHeaders({ });
+    return await this.getPatentInfoWithOptions(request, headers, runtime);
   }
 
   async getPrincipalEmployeeWithOptions(request: GetPrincipalEmployeeRequest, headers: GetPrincipalEmployeeHeaders, runtime: $Util.RuntimeOptions): Promise<GetPrincipalEmployeeResponse> {
@@ -10759,13 +11202,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetPrincipalEmployeeResponse>(await this.doROARequest("GetPrincipalEmployee", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/principalEmployees`, "json", req, runtime), new GetPrincipalEmployeeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPrincipalEmployee",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/principalEmployees`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPrincipalEmployeeResponse>(await this.execute(params, req, runtime), new GetPrincipalEmployeeResponse({}));
   }
 
-  async getQeneralTaxpayerInfo(request: GetQeneralTaxpayerInfoRequest): Promise<GetQeneralTaxpayerInfoResponse> {
+  async getPrincipalEmployee(request: GetPrincipalEmployeeRequest): Promise<GetPrincipalEmployeeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetQeneralTaxpayerInfoHeaders({ });
-    return await this.getQeneralTaxpayerInfoWithOptions(request, headers, runtime);
+    let headers = new GetPrincipalEmployeeHeaders({ });
+    return await this.getPrincipalEmployeeWithOptions(request, headers, runtime);
   }
 
   async getQeneralTaxpayerInfoWithOptions(request: GetQeneralTaxpayerInfoRequest, headers: GetQeneralTaxpayerInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetQeneralTaxpayerInfoResponse> {
@@ -10796,13 +11250,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetQeneralTaxpayerInfoResponse>(await this.doROARequest("GetQeneralTaxpayerInfo", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/generalTaxpayerInfos`, "json", req, runtime), new GetQeneralTaxpayerInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetQeneralTaxpayerInfo",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/generalTaxpayerInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetQeneralTaxpayerInfoResponse>(await this.execute(params, req, runtime), new GetQeneralTaxpayerInfoResponse({}));
   }
 
-  async getQualificationCert(request: GetQualificationCertRequest): Promise<GetQualificationCertResponse> {
+  async getQeneralTaxpayerInfo(request: GetQeneralTaxpayerInfoRequest): Promise<GetQeneralTaxpayerInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetQualificationCertHeaders({ });
-    return await this.getQualificationCertWithOptions(request, headers, runtime);
+    let headers = new GetQeneralTaxpayerInfoHeaders({ });
+    return await this.getQeneralTaxpayerInfoWithOptions(request, headers, runtime);
   }
 
   async getQualificationCertWithOptions(request: GetQualificationCertRequest, headers: GetQualificationCertHeaders, runtime: $Util.RuntimeOptions): Promise<GetQualificationCertResponse> {
@@ -10833,13 +11298,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetQualificationCertResponse>(await this.doROARequest("GetQualificationCert", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/qualificationCerts`, "json", req, runtime), new GetQualificationCertResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetQualificationCert",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/qualificationCerts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetQualificationCertResponse>(await this.execute(params, req, runtime), new GetQualificationCertResponse({}));
   }
 
-  async getSeriousViolation(request: GetSeriousViolationRequest): Promise<GetSeriousViolationResponse> {
+  async getQualificationCert(request: GetQualificationCertRequest): Promise<GetQualificationCertResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSeriousViolationHeaders({ });
-    return await this.getSeriousViolationWithOptions(request, headers, runtime);
+    let headers = new GetQualificationCertHeaders({ });
+    return await this.getQualificationCertWithOptions(request, headers, runtime);
   }
 
   async getSeriousViolationWithOptions(request: GetSeriousViolationRequest, headers: GetSeriousViolationHeaders, runtime: $Util.RuntimeOptions): Promise<GetSeriousViolationResponse> {
@@ -10870,13 +11346,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetSeriousViolationResponse>(await this.doROARequest("GetSeriousViolation", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/seriousViolations`, "json", req, runtime), new GetSeriousViolationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSeriousViolation",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/seriousViolations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSeriousViolationResponse>(await this.execute(params, req, runtime), new GetSeriousViolationResponse({}));
   }
 
-  async getSoftwareCopyright(request: GetSoftwareCopyrightRequest): Promise<GetSoftwareCopyrightResponse> {
+  async getSeriousViolation(request: GetSeriousViolationRequest): Promise<GetSeriousViolationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSoftwareCopyrightHeaders({ });
-    return await this.getSoftwareCopyrightWithOptions(request, headers, runtime);
+    let headers = new GetSeriousViolationHeaders({ });
+    return await this.getSeriousViolationWithOptions(request, headers, runtime);
   }
 
   async getSoftwareCopyrightWithOptions(request: GetSoftwareCopyrightRequest, headers: GetSoftwareCopyrightHeaders, runtime: $Util.RuntimeOptions): Promise<GetSoftwareCopyrightResponse> {
@@ -10907,13 +11394,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetSoftwareCopyrightResponse>(await this.doROARequest("GetSoftwareCopyright", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/softwareCopyrights`, "json", req, runtime), new GetSoftwareCopyrightResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSoftwareCopyright",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/softwareCopyrights`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSoftwareCopyrightResponse>(await this.execute(params, req, runtime), new GetSoftwareCopyrightResponse({}));
   }
 
-  async getTrademarkInfo(request: GetTrademarkInfoRequest): Promise<GetTrademarkInfoResponse> {
+  async getSoftwareCopyright(request: GetSoftwareCopyrightRequest): Promise<GetSoftwareCopyrightResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTrademarkInfoHeaders({ });
-    return await this.getTrademarkInfoWithOptions(request, headers, runtime);
+    let headers = new GetSoftwareCopyrightHeaders({ });
+    return await this.getSoftwareCopyrightWithOptions(request, headers, runtime);
   }
 
   async getTrademarkInfoWithOptions(request: GetTrademarkInfoRequest, headers: GetTrademarkInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetTrademarkInfoResponse> {
@@ -10944,13 +11442,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetTrademarkInfoResponse>(await this.doROARequest("GetTrademarkInfo", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/trademarkInfos`, "json", req, runtime), new GetTrademarkInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTrademarkInfo",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/trademarkInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTrademarkInfoResponse>(await this.execute(params, req, runtime), new GetTrademarkInfoResponse({}));
   }
 
-  async getWorkCopyright(request: GetWorkCopyrightRequest): Promise<GetWorkCopyrightResponse> {
+  async getTrademarkInfo(request: GetTrademarkInfoRequest): Promise<GetTrademarkInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetWorkCopyrightHeaders({ });
-    return await this.getWorkCopyrightWithOptions(request, headers, runtime);
+    let headers = new GetTrademarkInfoHeaders({ });
+    return await this.getTrademarkInfoWithOptions(request, headers, runtime);
   }
 
   async getWorkCopyrightWithOptions(request: GetWorkCopyrightRequest, headers: GetWorkCopyrightHeaders, runtime: $Util.RuntimeOptions): Promise<GetWorkCopyrightResponse> {
@@ -10981,13 +11490,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetWorkCopyrightResponse>(await this.doROARequest("GetWorkCopyright", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/workCopyrights`, "json", req, runtime), new GetWorkCopyrightResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetWorkCopyright",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/workCopyrights`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetWorkCopyrightResponse>(await this.execute(params, req, runtime), new GetWorkCopyrightResponse({}));
   }
 
-  async postCorpAuthInfo(): Promise<PostCorpAuthInfoResponse> {
+  async getWorkCopyright(request: GetWorkCopyrightRequest): Promise<GetWorkCopyrightResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PostCorpAuthInfoHeaders({ });
-    return await this.postCorpAuthInfoWithOptions(headers, runtime);
+    let headers = new GetWorkCopyrightHeaders({ });
+    return await this.getWorkCopyrightWithOptions(request, headers, runtime);
   }
 
   async postCorpAuthInfoWithOptions(headers: PostCorpAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<PostCorpAuthInfoResponse> {
@@ -11003,13 +11523,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<PostCorpAuthInfoResponse>(await this.doROARequest("PostCorpAuthInfo", "datacenter_1.0", "HTTP", "POST", "AK", `/v1.0/datacenter/corporations/authorize`, "json", req, runtime), new PostCorpAuthInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PostCorpAuthInfo",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/corporations/authorize`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PostCorpAuthInfoResponse>(await this.execute(params, req, runtime), new PostCorpAuthInfoResponse({}));
   }
 
-  async queryActiveUserStatisticalData(request: QueryActiveUserStatisticalDataRequest): Promise<QueryActiveUserStatisticalDataResponse> {
+  async postCorpAuthInfo(): Promise<PostCorpAuthInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryActiveUserStatisticalDataHeaders({ });
-    return await this.queryActiveUserStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new PostCorpAuthInfoHeaders({ });
+    return await this.postCorpAuthInfoWithOptions(headers, runtime);
   }
 
   async queryActiveUserStatisticalDataWithOptions(request: QueryActiveUserStatisticalDataRequest, headers: QueryActiveUserStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryActiveUserStatisticalDataResponse> {
@@ -11032,13 +11563,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryActiveUserStatisticalDataResponse>(await this.doROARequest("QueryActiveUserStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/activeUserData`, "json", req, runtime), new QueryActiveUserStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryActiveUserStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/activeUserData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryActiveUserStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryActiveUserStatisticalDataResponse({}));
   }
 
-  async queryAnhmdStatisticalData(request: QueryAnhmdStatisticalDataRequest): Promise<QueryAnhmdStatisticalDataResponse> {
+  async queryActiveUserStatisticalData(request: QueryActiveUserStatisticalDataRequest): Promise<QueryActiveUserStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAnhmdStatisticalDataHeaders({ });
-    return await this.queryAnhmdStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryActiveUserStatisticalDataHeaders({ });
+    return await this.queryActiveUserStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryAnhmdStatisticalDataWithOptions(request: QueryAnhmdStatisticalDataRequest, headers: QueryAnhmdStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAnhmdStatisticalDataResponse> {
@@ -11069,13 +11611,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryAnhmdStatisticalDataResponse>(await this.doROARequest("QueryAnhmdStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/statisticDatas/anHmd`, "json", req, runtime), new QueryAnhmdStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAnhmdStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/statisticDatas/anHmd`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAnhmdStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryAnhmdStatisticalDataResponse({}));
   }
 
-  async queryApprovalStatisticalData(request: QueryApprovalStatisticalDataRequest): Promise<QueryApprovalStatisticalDataResponse> {
+  async queryAnhmdStatisticalData(request: QueryAnhmdStatisticalDataRequest): Promise<QueryAnhmdStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryApprovalStatisticalDataHeaders({ });
-    return await this.queryApprovalStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryAnhmdStatisticalDataHeaders({ });
+    return await this.queryAnhmdStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryApprovalStatisticalDataWithOptions(request: QueryApprovalStatisticalDataRequest, headers: QueryApprovalStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryApprovalStatisticalDataResponse> {
@@ -11098,13 +11651,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryApprovalStatisticalDataResponse>(await this.doROARequest("QueryApprovalStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/approvalData`, "json", req, runtime), new QueryApprovalStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryApprovalStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/approvalData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryApprovalStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryApprovalStatisticalDataResponse({}));
   }
 
-  async queryAttendanceStatisticalData(request: QueryAttendanceStatisticalDataRequest): Promise<QueryAttendanceStatisticalDataResponse> {
+  async queryApprovalStatisticalData(request: QueryApprovalStatisticalDataRequest): Promise<QueryApprovalStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAttendanceStatisticalDataHeaders({ });
-    return await this.queryAttendanceStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryApprovalStatisticalDataHeaders({ });
+    return await this.queryApprovalStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryAttendanceStatisticalDataWithOptions(request: QueryAttendanceStatisticalDataRequest, headers: QueryAttendanceStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAttendanceStatisticalDataResponse> {
@@ -11127,13 +11691,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryAttendanceStatisticalDataResponse>(await this.doROARequest("QueryAttendanceStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/attendanceData`, "json", req, runtime), new QueryAttendanceStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAttendanceStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/attendanceData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAttendanceStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryAttendanceStatisticalDataResponse({}));
   }
 
-  async queryBlackboardStatisticalData(request: QueryBlackboardStatisticalDataRequest): Promise<QueryBlackboardStatisticalDataResponse> {
+  async queryAttendanceStatisticalData(request: QueryAttendanceStatisticalDataRequest): Promise<QueryAttendanceStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryBlackboardStatisticalDataHeaders({ });
-    return await this.queryBlackboardStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryAttendanceStatisticalDataHeaders({ });
+    return await this.queryAttendanceStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryBlackboardStatisticalDataWithOptions(request: QueryBlackboardStatisticalDataRequest, headers: QueryBlackboardStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBlackboardStatisticalDataResponse> {
@@ -11156,13 +11731,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryBlackboardStatisticalDataResponse>(await this.doROARequest("QueryBlackboardStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/blackboardData`, "json", req, runtime), new QueryBlackboardStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryBlackboardStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/blackboardData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryBlackboardStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryBlackboardStatisticalDataResponse({}));
   }
 
-  async queryCalendarStatisticalData(request: QueryCalendarStatisticalDataRequest): Promise<QueryCalendarStatisticalDataResponse> {
+  async queryBlackboardStatisticalData(request: QueryBlackboardStatisticalDataRequest): Promise<QueryBlackboardStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryCalendarStatisticalDataHeaders({ });
-    return await this.queryCalendarStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryBlackboardStatisticalDataHeaders({ });
+    return await this.queryBlackboardStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryCalendarStatisticalDataWithOptions(request: QueryCalendarStatisticalDataRequest, headers: QueryCalendarStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCalendarStatisticalDataResponse> {
@@ -11185,13 +11771,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryCalendarStatisticalDataResponse>(await this.doROARequest("QueryCalendarStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/calendarData`, "json", req, runtime), new QueryCalendarStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryCalendarStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/calendarData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCalendarStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryCalendarStatisticalDataResponse({}));
   }
 
-  async queryCheckinStatisticalData(request: QueryCheckinStatisticalDataRequest): Promise<QueryCheckinStatisticalDataResponse> {
+  async queryCalendarStatisticalData(request: QueryCalendarStatisticalDataRequest): Promise<QueryCalendarStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryCheckinStatisticalDataHeaders({ });
-    return await this.queryCheckinStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryCalendarStatisticalDataHeaders({ });
+    return await this.queryCalendarStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryCheckinStatisticalDataWithOptions(request: QueryCheckinStatisticalDataRequest, headers: QueryCheckinStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCheckinStatisticalDataResponse> {
@@ -11214,13 +11811,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryCheckinStatisticalDataResponse>(await this.doROARequest("QueryCheckinStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/checkinData`, "json", req, runtime), new QueryCheckinStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryCheckinStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/checkinData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCheckinStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryCheckinStatisticalDataResponse({}));
   }
 
-  async queryCircleStatisticalData(request: QueryCircleStatisticalDataRequest): Promise<QueryCircleStatisticalDataResponse> {
+  async queryCheckinStatisticalData(request: QueryCheckinStatisticalDataRequest): Promise<QueryCheckinStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryCircleStatisticalDataHeaders({ });
-    return await this.queryCircleStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryCheckinStatisticalDataHeaders({ });
+    return await this.queryCheckinStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryCircleStatisticalDataWithOptions(request: QueryCircleStatisticalDataRequest, headers: QueryCircleStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCircleStatisticalDataResponse> {
@@ -11243,13 +11851,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryCircleStatisticalDataResponse>(await this.doROARequest("QueryCircleStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/circleData`, "json", req, runtime), new QueryCircleStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryCircleStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/circleData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCircleStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryCircleStatisticalDataResponse({}));
   }
 
-  async queryCompanyBasicInfo(request: QueryCompanyBasicInfoRequest): Promise<QueryCompanyBasicInfoResponse> {
+  async queryCircleStatisticalData(request: QueryCircleStatisticalDataRequest): Promise<QueryCircleStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryCompanyBasicInfoHeaders({ });
-    return await this.queryCompanyBasicInfoWithOptions(request, headers, runtime);
+    let headers = new QueryCircleStatisticalDataHeaders({ });
+    return await this.queryCircleStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryCompanyBasicInfoWithOptions(request: QueryCompanyBasicInfoRequest, headers: QueryCompanyBasicInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCompanyBasicInfoResponse> {
@@ -11280,13 +11899,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryCompanyBasicInfoResponse>(await this.doROARequest("QueryCompanyBasicInfo", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/companies/basicInfo`, "json", req, runtime), new QueryCompanyBasicInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryCompanyBasicInfo",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/companies/basicInfo`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCompanyBasicInfoResponse>(await this.execute(params, req, runtime), new QueryCompanyBasicInfoResponse({}));
   }
 
-  async queryDigitalDistrictOrgInfo(request: QueryDigitalDistrictOrgInfoRequest): Promise<QueryDigitalDistrictOrgInfoResponse> {
+  async queryCompanyBasicInfo(request: QueryCompanyBasicInfoRequest): Promise<QueryCompanyBasicInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDigitalDistrictOrgInfoHeaders({ });
-    return await this.queryDigitalDistrictOrgInfoWithOptions(request, headers, runtime);
+    let headers = new QueryCompanyBasicInfoHeaders({ });
+    return await this.queryCompanyBasicInfoWithOptions(request, headers, runtime);
   }
 
   async queryDigitalDistrictOrgInfoWithOptions(request: QueryDigitalDistrictOrgInfoRequest, headers: QueryDigitalDistrictOrgInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDigitalDistrictOrgInfoResponse> {
@@ -11313,13 +11943,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryDigitalDistrictOrgInfoResponse>(await this.doROARequest("QueryDigitalDistrictOrgInfo", "datacenter_1.0", "HTTP", "POST", "AK", `/v1.0/datacenter/digitalCounty/orgInfos/query`, "json", req, runtime), new QueryDigitalDistrictOrgInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDigitalDistrictOrgInfo",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/digitalCounty/orgInfos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDigitalDistrictOrgInfoResponse>(await this.execute(params, req, runtime), new QueryDigitalDistrictOrgInfoResponse({}));
   }
 
-  async queryDingReciveStatisticalData(request: QueryDingReciveStatisticalDataRequest): Promise<QueryDingReciveStatisticalDataResponse> {
+  async queryDigitalDistrictOrgInfo(request: QueryDigitalDistrictOrgInfoRequest): Promise<QueryDigitalDistrictOrgInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDingReciveStatisticalDataHeaders({ });
-    return await this.queryDingReciveStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryDigitalDistrictOrgInfoHeaders({ });
+    return await this.queryDigitalDistrictOrgInfoWithOptions(request, headers, runtime);
   }
 
   async queryDingReciveStatisticalDataWithOptions(request: QueryDingReciveStatisticalDataRequest, headers: QueryDingReciveStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDingReciveStatisticalDataResponse> {
@@ -11342,13 +11983,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryDingReciveStatisticalDataResponse>(await this.doROARequest("QueryDingReciveStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/dingReciveData`, "json", req, runtime), new QueryDingReciveStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDingReciveStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/dingReciveData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDingReciveStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryDingReciveStatisticalDataResponse({}));
   }
 
-  async queryDingSendStatisticalData(request: QueryDingSendStatisticalDataRequest): Promise<QueryDingSendStatisticalDataResponse> {
+  async queryDingReciveStatisticalData(request: QueryDingReciveStatisticalDataRequest): Promise<QueryDingReciveStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDingSendStatisticalDataHeaders({ });
-    return await this.queryDingSendStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryDingReciveStatisticalDataHeaders({ });
+    return await this.queryDingReciveStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryDingSendStatisticalDataWithOptions(request: QueryDingSendStatisticalDataRequest, headers: QueryDingSendStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDingSendStatisticalDataResponse> {
@@ -11371,13 +12023,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryDingSendStatisticalDataResponse>(await this.doROARequest("QueryDingSendStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/dingSendData`, "json", req, runtime), new QueryDingSendStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDingSendStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/dingSendData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDingSendStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryDingSendStatisticalDataResponse({}));
   }
 
-  async queryDocumentStatisticalData(request: QueryDocumentStatisticalDataRequest): Promise<QueryDocumentStatisticalDataResponse> {
+  async queryDingSendStatisticalData(request: QueryDingSendStatisticalDataRequest): Promise<QueryDingSendStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDocumentStatisticalDataHeaders({ });
-    return await this.queryDocumentStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryDingSendStatisticalDataHeaders({ });
+    return await this.queryDingSendStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryDocumentStatisticalDataWithOptions(request: QueryDocumentStatisticalDataRequest, headers: QueryDocumentStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDocumentStatisticalDataResponse> {
@@ -11400,13 +12063,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryDocumentStatisticalDataResponse>(await this.doROARequest("QueryDocumentStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/documentData`, "json", req, runtime), new QueryDocumentStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDocumentStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/documentData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDocumentStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryDocumentStatisticalDataResponse({}));
   }
 
-  async queryDriveStatisticalData(request: QueryDriveStatisticalDataRequest): Promise<QueryDriveStatisticalDataResponse> {
+  async queryDocumentStatisticalData(request: QueryDocumentStatisticalDataRequest): Promise<QueryDocumentStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDriveStatisticalDataHeaders({ });
-    return await this.queryDriveStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryDocumentStatisticalDataHeaders({ });
+    return await this.queryDocumentStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryDriveStatisticalDataWithOptions(request: QueryDriveStatisticalDataRequest, headers: QueryDriveStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDriveStatisticalDataResponse> {
@@ -11429,13 +12103,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryDriveStatisticalDataResponse>(await this.doROARequest("QueryDriveStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/driveData`, "json", req, runtime), new QueryDriveStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDriveStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/driveData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDriveStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryDriveStatisticalDataResponse({}));
   }
 
-  async queryEmployeeTypeStatisticalData(request: QueryEmployeeTypeStatisticalDataRequest): Promise<QueryEmployeeTypeStatisticalDataResponse> {
+  async queryDriveStatisticalData(request: QueryDriveStatisticalDataRequest): Promise<QueryDriveStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryEmployeeTypeStatisticalDataHeaders({ });
-    return await this.queryEmployeeTypeStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryDriveStatisticalDataHeaders({ });
+    return await this.queryDriveStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryEmployeeTypeStatisticalDataWithOptions(request: QueryEmployeeTypeStatisticalDataRequest, headers: QueryEmployeeTypeStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryEmployeeTypeStatisticalDataResponse> {
@@ -11458,13 +12143,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryEmployeeTypeStatisticalDataResponse>(await this.doROARequest("QueryEmployeeTypeStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/employeeTypeData`, "json", req, runtime), new QueryEmployeeTypeStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryEmployeeTypeStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/employeeTypeData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryEmployeeTypeStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryEmployeeTypeStatisticalDataResponse({}));
   }
 
-  async queryGeneralDataService(request: QueryGeneralDataServiceRequest): Promise<QueryGeneralDataServiceResponse> {
+  async queryEmployeeTypeStatisticalData(request: QueryEmployeeTypeStatisticalDataRequest): Promise<QueryEmployeeTypeStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryGeneralDataServiceHeaders({ });
-    return await this.queryGeneralDataServiceWithOptions(request, headers, runtime);
+    let headers = new QueryEmployeeTypeStatisticalDataHeaders({ });
+    return await this.queryEmployeeTypeStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryGeneralDataServiceWithOptions(request: QueryGeneralDataServiceRequest, headers: QueryGeneralDataServiceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGeneralDataServiceResponse> {
@@ -11511,13 +12207,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryGeneralDataServiceResponse>(await this.doROARequest("QueryGeneralDataService", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/generalDataServices`, "json", req, runtime), new QueryGeneralDataServiceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryGeneralDataService",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/generalDataServices`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryGeneralDataServiceResponse>(await this.execute(params, req, runtime), new QueryGeneralDataServiceResponse({}));
   }
 
-  async queryGroupLiveStatisticalData(request: QueryGroupLiveStatisticalDataRequest): Promise<QueryGroupLiveStatisticalDataResponse> {
+  async queryGeneralDataService(request: QueryGeneralDataServiceRequest): Promise<QueryGeneralDataServiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryGroupLiveStatisticalDataHeaders({ });
-    return await this.queryGroupLiveStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryGeneralDataServiceHeaders({ });
+    return await this.queryGeneralDataServiceWithOptions(request, headers, runtime);
   }
 
   async queryGroupLiveStatisticalDataWithOptions(request: QueryGroupLiveStatisticalDataRequest, headers: QueryGroupLiveStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupLiveStatisticalDataResponse> {
@@ -11540,13 +12247,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryGroupLiveStatisticalDataResponse>(await this.doROARequest("QueryGroupLiveStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/groupLiveData`, "json", req, runtime), new QueryGroupLiveStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryGroupLiveStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/groupLiveData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryGroupLiveStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryGroupLiveStatisticalDataResponse({}));
   }
 
-  async queryGroupMessageStatisticalData(request: QueryGroupMessageStatisticalDataRequest): Promise<QueryGroupMessageStatisticalDataResponse> {
+  async queryGroupLiveStatisticalData(request: QueryGroupLiveStatisticalDataRequest): Promise<QueryGroupLiveStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryGroupMessageStatisticalDataHeaders({ });
-    return await this.queryGroupMessageStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryGroupLiveStatisticalDataHeaders({ });
+    return await this.queryGroupLiveStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryGroupMessageStatisticalDataWithOptions(request: QueryGroupMessageStatisticalDataRequest, headers: QueryGroupMessageStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupMessageStatisticalDataResponse> {
@@ -11569,13 +12287,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryGroupMessageStatisticalDataResponse>(await this.doROARequest("QueryGroupMessageStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/groupMessageData`, "json", req, runtime), new QueryGroupMessageStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryGroupMessageStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/groupMessageData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryGroupMessageStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryGroupMessageStatisticalDataResponse({}));
   }
 
-  async queryHealthStatisticalData(request: QueryHealthStatisticalDataRequest): Promise<QueryHealthStatisticalDataResponse> {
+  async queryGroupMessageStatisticalData(request: QueryGroupMessageStatisticalDataRequest): Promise<QueryGroupMessageStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryHealthStatisticalDataHeaders({ });
-    return await this.queryHealthStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryGroupMessageStatisticalDataHeaders({ });
+    return await this.queryGroupMessageStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryHealthStatisticalDataWithOptions(request: QueryHealthStatisticalDataRequest, headers: QueryHealthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHealthStatisticalDataResponse> {
@@ -11598,13 +12327,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryHealthStatisticalDataResponse>(await this.doROARequest("QueryHealthStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/healtheUserData`, "json", req, runtime), new QueryHealthStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryHealthStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/healtheUserData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryHealthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryHealthStatisticalDataResponse({}));
   }
 
-  async queryMailStatisticalData(request: QueryMailStatisticalDataRequest): Promise<QueryMailStatisticalDataResponse> {
+  async queryHealthStatisticalData(request: QueryHealthStatisticalDataRequest): Promise<QueryHealthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryMailStatisticalDataHeaders({ });
-    return await this.queryMailStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryHealthStatisticalDataHeaders({ });
+    return await this.queryHealthStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryMailStatisticalDataWithOptions(request: QueryMailStatisticalDataRequest, headers: QueryMailStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMailStatisticalDataResponse> {
@@ -11627,13 +12367,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryMailStatisticalDataResponse>(await this.doROARequest("QueryMailStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/mailData`, "json", req, runtime), new QueryMailStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryMailStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/mailData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMailStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryMailStatisticalDataResponse({}));
   }
 
-  async queryOfficialData(request: QueryOfficialDataRequest): Promise<QueryOfficialDataResponse> {
+  async queryMailStatisticalData(request: QueryMailStatisticalDataRequest): Promise<QueryMailStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryOfficialDataHeaders({ });
-    return await this.queryOfficialDataWithOptions(request, headers, runtime);
+    let headers = new QueryMailStatisticalDataHeaders({ });
+    return await this.queryMailStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryOfficialDataWithOptions(request: QueryOfficialDataRequest, headers: QueryOfficialDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialDataResponse> {
@@ -11660,13 +12411,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryOfficialDataResponse>(await this.doROARequest("QueryOfficialData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/datas`, "json", req, runtime), new QueryOfficialDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryOfficialData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/datas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryOfficialDataResponse>(await this.execute(params, req, runtime), new QueryOfficialDataResponse({}));
   }
 
-  async queryOfficialDatasetFields(request: QueryOfficialDatasetFieldsRequest): Promise<QueryOfficialDatasetFieldsResponse> {
+  async queryOfficialData(request: QueryOfficialDataRequest): Promise<QueryOfficialDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryOfficialDatasetFieldsHeaders({ });
-    return await this.queryOfficialDatasetFieldsWithOptions(request, headers, runtime);
+    let headers = new QueryOfficialDataHeaders({ });
+    return await this.queryOfficialDataWithOptions(request, headers, runtime);
   }
 
   async queryOfficialDatasetFieldsWithOptions(request: QueryOfficialDatasetFieldsRequest, headers: QueryOfficialDatasetFieldsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialDatasetFieldsResponse> {
@@ -11693,13 +12455,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryOfficialDatasetFieldsResponse>(await this.doROARequest("QueryOfficialDatasetFields", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/datasetFields`, "json", req, runtime), new QueryOfficialDatasetFieldsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryOfficialDatasetFields",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/datasetFields`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryOfficialDatasetFieldsResponse>(await this.execute(params, req, runtime), new QueryOfficialDatasetFieldsResponse({}));
   }
 
-  async queryOfficialDatasetList(request: QueryOfficialDatasetListRequest): Promise<QueryOfficialDatasetListResponse> {
+  async queryOfficialDatasetFields(request: QueryOfficialDatasetFieldsRequest): Promise<QueryOfficialDatasetFieldsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryOfficialDatasetListHeaders({ });
-    return await this.queryOfficialDatasetListWithOptions(request, headers, runtime);
+    let headers = new QueryOfficialDatasetFieldsHeaders({ });
+    return await this.queryOfficialDatasetFieldsWithOptions(request, headers, runtime);
   }
 
   async queryOfficialDatasetListWithOptions(request: QueryOfficialDatasetListRequest, headers: QueryOfficialDatasetListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialDatasetListResponse> {
@@ -11730,13 +12503,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryOfficialDatasetListResponse>(await this.doROARequest("QueryOfficialDatasetList", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/datasetLists`, "json", req, runtime), new QueryOfficialDatasetListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryOfficialDatasetList",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/datasetLists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryOfficialDatasetListResponse>(await this.execute(params, req, runtime), new QueryOfficialDatasetListResponse({}));
   }
 
-  async queryOnlineUserStatisticalData(request: QueryOnlineUserStatisticalDataRequest): Promise<QueryOnlineUserStatisticalDataResponse> {
+  async queryOfficialDatasetList(request: QueryOfficialDatasetListRequest): Promise<QueryOfficialDatasetListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryOnlineUserStatisticalDataHeaders({ });
-    return await this.queryOnlineUserStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryOfficialDatasetListHeaders({ });
+    return await this.queryOfficialDatasetListWithOptions(request, headers, runtime);
   }
 
   async queryOnlineUserStatisticalDataWithOptions(request: QueryOnlineUserStatisticalDataRequest, headers: QueryOnlineUserStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOnlineUserStatisticalDataResponse> {
@@ -11759,13 +12543,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryOnlineUserStatisticalDataResponse>(await this.doROARequest("QueryOnlineUserStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/onlineUserData`, "json", req, runtime), new QueryOnlineUserStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryOnlineUserStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/onlineUserData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryOnlineUserStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryOnlineUserStatisticalDataResponse({}));
   }
 
-  async queryRedEnvelopeReciveStatisticalData(request: QueryRedEnvelopeReciveStatisticalDataRequest): Promise<QueryRedEnvelopeReciveStatisticalDataResponse> {
+  async queryOnlineUserStatisticalData(request: QueryOnlineUserStatisticalDataRequest): Promise<QueryOnlineUserStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryRedEnvelopeReciveStatisticalDataHeaders({ });
-    return await this.queryRedEnvelopeReciveStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryOnlineUserStatisticalDataHeaders({ });
+    return await this.queryOnlineUserStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryRedEnvelopeReciveStatisticalDataWithOptions(request: QueryRedEnvelopeReciveStatisticalDataRequest, headers: QueryRedEnvelopeReciveStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRedEnvelopeReciveStatisticalDataResponse> {
@@ -11788,13 +12583,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryRedEnvelopeReciveStatisticalDataResponse>(await this.doROARequest("QueryRedEnvelopeReciveStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/redEnvelopeReciveData`, "json", req, runtime), new QueryRedEnvelopeReciveStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryRedEnvelopeReciveStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/redEnvelopeReciveData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryRedEnvelopeReciveStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryRedEnvelopeReciveStatisticalDataResponse({}));
   }
 
-  async queryRedEnvelopeSendStatisticalData(request: QueryRedEnvelopeSendStatisticalDataRequest): Promise<QueryRedEnvelopeSendStatisticalDataResponse> {
+  async queryRedEnvelopeReciveStatisticalData(request: QueryRedEnvelopeReciveStatisticalDataRequest): Promise<QueryRedEnvelopeReciveStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryRedEnvelopeSendStatisticalDataHeaders({ });
-    return await this.queryRedEnvelopeSendStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryRedEnvelopeReciveStatisticalDataHeaders({ });
+    return await this.queryRedEnvelopeReciveStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryRedEnvelopeSendStatisticalDataWithOptions(request: QueryRedEnvelopeSendStatisticalDataRequest, headers: QueryRedEnvelopeSendStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRedEnvelopeSendStatisticalDataResponse> {
@@ -11817,13 +12623,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryRedEnvelopeSendStatisticalDataResponse>(await this.doROARequest("QueryRedEnvelopeSendStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/redEnvelopeSendData`, "json", req, runtime), new QueryRedEnvelopeSendStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryRedEnvelopeSendStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/redEnvelopeSendData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryRedEnvelopeSendStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryRedEnvelopeSendStatisticalDataResponse({}));
   }
 
-  async queryReportStatisticalData(request: QueryReportStatisticalDataRequest): Promise<QueryReportStatisticalDataResponse> {
+  async queryRedEnvelopeSendStatisticalData(request: QueryRedEnvelopeSendStatisticalDataRequest): Promise<QueryRedEnvelopeSendStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryReportStatisticalDataHeaders({ });
-    return await this.queryReportStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryRedEnvelopeSendStatisticalDataHeaders({ });
+    return await this.queryRedEnvelopeSendStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryReportStatisticalDataWithOptions(request: QueryReportStatisticalDataRequest, headers: QueryReportStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryReportStatisticalDataResponse> {
@@ -11846,13 +12663,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryReportStatisticalDataResponse>(await this.doROARequest("QueryReportStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/reportData`, "json", req, runtime), new QueryReportStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryReportStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/reportData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryReportStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryReportStatisticalDataResponse({}));
   }
 
-  async querySingleMessageStatisticalData(request: QuerySingleMessageStatisticalDataRequest): Promise<QuerySingleMessageStatisticalDataResponse> {
+  async queryReportStatisticalData(request: QueryReportStatisticalDataRequest): Promise<QueryReportStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QuerySingleMessageStatisticalDataHeaders({ });
-    return await this.querySingleMessageStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryReportStatisticalDataHeaders({ });
+    return await this.queryReportStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async querySingleMessageStatisticalDataWithOptions(request: QuerySingleMessageStatisticalDataRequest, headers: QuerySingleMessageStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySingleMessageStatisticalDataResponse> {
@@ -11875,13 +12703,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QuerySingleMessageStatisticalDataResponse>(await this.doROARequest("QuerySingleMessageStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/singleMessagerData`, "json", req, runtime), new QuerySingleMessageStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QuerySingleMessageStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/singleMessagerData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QuerySingleMessageStatisticalDataResponse>(await this.execute(params, req, runtime), new QuerySingleMessageStatisticalDataResponse({}));
   }
 
-  async queryTelMeetingStatisticalData(request: QueryTelMeetingStatisticalDataRequest): Promise<QueryTelMeetingStatisticalDataResponse> {
+  async querySingleMessageStatisticalData(request: QuerySingleMessageStatisticalDataRequest): Promise<QuerySingleMessageStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryTelMeetingStatisticalDataHeaders({ });
-    return await this.queryTelMeetingStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QuerySingleMessageStatisticalDataHeaders({ });
+    return await this.querySingleMessageStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryTelMeetingStatisticalDataWithOptions(request: QueryTelMeetingStatisticalDataRequest, headers: QueryTelMeetingStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTelMeetingStatisticalDataResponse> {
@@ -11904,13 +12743,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryTelMeetingStatisticalDataResponse>(await this.doROARequest("QueryTelMeetingStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/telMeetingData`, "json", req, runtime), new QueryTelMeetingStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryTelMeetingStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/telMeetingData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryTelMeetingStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryTelMeetingStatisticalDataResponse({}));
   }
 
-  async queryTodoStatisticalData(request: QueryTodoStatisticalDataRequest): Promise<QueryTodoStatisticalDataResponse> {
+  async queryTelMeetingStatisticalData(request: QueryTelMeetingStatisticalDataRequest): Promise<QueryTelMeetingStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryTodoStatisticalDataHeaders({ });
-    return await this.queryTodoStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryTelMeetingStatisticalDataHeaders({ });
+    return await this.queryTelMeetingStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryTodoStatisticalDataWithOptions(request: QueryTodoStatisticalDataRequest, headers: QueryTodoStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTodoStatisticalDataResponse> {
@@ -11933,13 +12783,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryTodoStatisticalDataResponse>(await this.doROARequest("QueryTodoStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/todoUserData`, "json", req, runtime), new QueryTodoStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryTodoStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/todoUserData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryTodoStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryTodoStatisticalDataResponse({}));
   }
 
-  async queryVedioMeetingStatisticalData(request: QueryVedioMeetingStatisticalDataRequest): Promise<QueryVedioMeetingStatisticalDataResponse> {
+  async queryTodoStatisticalData(request: QueryTodoStatisticalDataRequest): Promise<QueryTodoStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryVedioMeetingStatisticalDataHeaders({ });
-    return await this.queryVedioMeetingStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryTodoStatisticalDataHeaders({ });
+    return await this.queryTodoStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryVedioMeetingStatisticalDataWithOptions(request: QueryVedioMeetingStatisticalDataRequest, headers: QueryVedioMeetingStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryVedioMeetingStatisticalDataResponse> {
@@ -11962,13 +12823,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryVedioMeetingStatisticalDataResponse>(await this.doROARequest("QueryVedioMeetingStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/vedioMeetingData`, "json", req, runtime), new QueryVedioMeetingStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryVedioMeetingStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/vedioMeetingData`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryVedioMeetingStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryVedioMeetingStatisticalDataResponse({}));
   }
 
-  async queryYydActiveDayStatisticalData(request: QueryYydActiveDayStatisticalDataRequest): Promise<QueryYydActiveDayStatisticalDataResponse> {
+  async queryVedioMeetingStatisticalData(request: QueryVedioMeetingStatisticalDataRequest): Promise<QueryVedioMeetingStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydActiveDayStatisticalDataHeaders({ });
-    return await this.queryYydActiveDayStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryVedioMeetingStatisticalDataHeaders({ });
+    return await this.queryVedioMeetingStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydActiveDayStatisticalDataWithOptions(request: QueryYydActiveDayStatisticalDataRequest, headers: QueryYydActiveDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydActiveDayStatisticalDataResponse> {
@@ -11991,13 +12863,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydActiveDayStatisticalDataResponse>(await this.doROARequest("QueryYydActiveDayStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydActiveDayDatas`, "json", req, runtime), new QueryYydActiveDayStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydActiveDayStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydActiveDayDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydActiveDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydActiveDayStatisticalDataResponse({}));
   }
 
-  async queryYydActiveMonthStatisticalData(request: QueryYydActiveMonthStatisticalDataRequest): Promise<QueryYydActiveMonthStatisticalDataResponse> {
+  async queryYydActiveDayStatisticalData(request: QueryYydActiveDayStatisticalDataRequest): Promise<QueryYydActiveDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydActiveMonthStatisticalDataHeaders({ });
-    return await this.queryYydActiveMonthStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydActiveDayStatisticalDataHeaders({ });
+    return await this.queryYydActiveDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydActiveMonthStatisticalDataWithOptions(request: QueryYydActiveMonthStatisticalDataRequest, headers: QueryYydActiveMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydActiveMonthStatisticalDataResponse> {
@@ -12020,13 +12903,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydActiveMonthStatisticalDataResponse>(await this.doROARequest("QueryYydActiveMonthStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydActiveMonthDatas`, "json", req, runtime), new QueryYydActiveMonthStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydActiveMonthStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydActiveMonthDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydActiveMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydActiveMonthStatisticalDataResponse({}));
   }
 
-  async queryYydActiveWeekStatisticalData(request: QueryYydActiveWeekStatisticalDataRequest): Promise<QueryYydActiveWeekStatisticalDataResponse> {
+  async queryYydActiveMonthStatisticalData(request: QueryYydActiveMonthStatisticalDataRequest): Promise<QueryYydActiveMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydActiveWeekStatisticalDataHeaders({ });
-    return await this.queryYydActiveWeekStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydActiveMonthStatisticalDataHeaders({ });
+    return await this.queryYydActiveMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydActiveWeekStatisticalDataWithOptions(request: QueryYydActiveWeekStatisticalDataRequest, headers: QueryYydActiveWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydActiveWeekStatisticalDataResponse> {
@@ -12049,13 +12943,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydActiveWeekStatisticalDataResponse>(await this.doROARequest("QueryYydActiveWeekStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydActiveWeekDatas`, "json", req, runtime), new QueryYydActiveWeekStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydActiveWeekStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydActiveWeekDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydActiveWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydActiveWeekStatisticalDataResponse({}));
   }
 
-  async queryYydAppDayStatisticalData(request: QueryYydAppDayStatisticalDataRequest): Promise<QueryYydAppDayStatisticalDataResponse> {
+  async queryYydActiveWeekStatisticalData(request: QueryYydActiveWeekStatisticalDataRequest): Promise<QueryYydActiveWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydAppDayStatisticalDataHeaders({ });
-    return await this.queryYydAppDayStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydActiveWeekStatisticalDataHeaders({ });
+    return await this.queryYydActiveWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydAppDayStatisticalDataWithOptions(request: QueryYydAppDayStatisticalDataRequest, headers: QueryYydAppDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydAppDayStatisticalDataResponse> {
@@ -12078,13 +12983,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydAppDayStatisticalDataResponse>(await this.doROARequest("QueryYydAppDayStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydAppDayDatas`, "json", req, runtime), new QueryYydAppDayStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydAppDayStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydAppDayDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydAppDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydAppDayStatisticalDataResponse({}));
   }
 
-  async queryYydAppMonthStatisticalData(request: QueryYydAppMonthStatisticalDataRequest): Promise<QueryYydAppMonthStatisticalDataResponse> {
+  async queryYydAppDayStatisticalData(request: QueryYydAppDayStatisticalDataRequest): Promise<QueryYydAppDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydAppMonthStatisticalDataHeaders({ });
-    return await this.queryYydAppMonthStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydAppDayStatisticalDataHeaders({ });
+    return await this.queryYydAppDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydAppMonthStatisticalDataWithOptions(request: QueryYydAppMonthStatisticalDataRequest, headers: QueryYydAppMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydAppMonthStatisticalDataResponse> {
@@ -12107,13 +13023,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydAppMonthStatisticalDataResponse>(await this.doROARequest("QueryYydAppMonthStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydAppMonthDatas`, "json", req, runtime), new QueryYydAppMonthStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydAppMonthStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydAppMonthDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydAppMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydAppMonthStatisticalDataResponse({}));
   }
 
-  async queryYydAppStdStatisticalData(request: QueryYydAppStdStatisticalDataRequest): Promise<QueryYydAppStdStatisticalDataResponse> {
+  async queryYydAppMonthStatisticalData(request: QueryYydAppMonthStatisticalDataRequest): Promise<QueryYydAppMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydAppStdStatisticalDataHeaders({ });
-    return await this.queryYydAppStdStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydAppMonthStatisticalDataHeaders({ });
+    return await this.queryYydAppMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydAppStdStatisticalDataWithOptions(request: QueryYydAppStdStatisticalDataRequest, headers: QueryYydAppStdStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydAppStdStatisticalDataResponse> {
@@ -12136,13 +13063,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydAppStdStatisticalDataResponse>(await this.doROARequest("QueryYydAppStdStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydAppStdDatas`, "json", req, runtime), new QueryYydAppStdStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydAppStdStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydAppStdDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydAppStdStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydAppStdStatisticalDataResponse({}));
   }
 
-  async queryYydAppWeekStatisticalData(request: QueryYydAppWeekStatisticalDataRequest): Promise<QueryYydAppWeekStatisticalDataResponse> {
+  async queryYydAppStdStatisticalData(request: QueryYydAppStdStatisticalDataRequest): Promise<QueryYydAppStdStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydAppWeekStatisticalDataHeaders({ });
-    return await this.queryYydAppWeekStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydAppStdStatisticalDataHeaders({ });
+    return await this.queryYydAppStdStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydAppWeekStatisticalDataWithOptions(request: QueryYydAppWeekStatisticalDataRequest, headers: QueryYydAppWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydAppWeekStatisticalDataResponse> {
@@ -12165,13 +13103,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydAppWeekStatisticalDataResponse>(await this.doROARequest("QueryYydAppWeekStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydAppWeekDatas`, "json", req, runtime), new QueryYydAppWeekStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydAppWeekStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydAppWeekDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydAppWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydAppWeekStatisticalDataResponse({}));
   }
 
-  async queryYydCalendarDayStatisticalData(request: QueryYydCalendarDayStatisticalDataRequest): Promise<QueryYydCalendarDayStatisticalDataResponse> {
+  async queryYydAppWeekStatisticalData(request: QueryYydAppWeekStatisticalDataRequest): Promise<QueryYydAppWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydCalendarDayStatisticalDataHeaders({ });
-    return await this.queryYydCalendarDayStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydAppWeekStatisticalDataHeaders({ });
+    return await this.queryYydAppWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydCalendarDayStatisticalDataWithOptions(request: QueryYydCalendarDayStatisticalDataRequest, headers: QueryYydCalendarDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydCalendarDayStatisticalDataResponse> {
@@ -12194,13 +13143,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydCalendarDayStatisticalDataResponse>(await this.doROARequest("QueryYydCalendarDayStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydCalendarDayDatas`, "json", req, runtime), new QueryYydCalendarDayStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydCalendarDayStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydCalendarDayDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydCalendarDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydCalendarDayStatisticalDataResponse({}));
   }
 
-  async queryYydCalendarMonthStatisticalData(request: QueryYydCalendarMonthStatisticalDataRequest): Promise<QueryYydCalendarMonthStatisticalDataResponse> {
+  async queryYydCalendarDayStatisticalData(request: QueryYydCalendarDayStatisticalDataRequest): Promise<QueryYydCalendarDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydCalendarMonthStatisticalDataHeaders({ });
-    return await this.queryYydCalendarMonthStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydCalendarDayStatisticalDataHeaders({ });
+    return await this.queryYydCalendarDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydCalendarMonthStatisticalDataWithOptions(request: QueryYydCalendarMonthStatisticalDataRequest, headers: QueryYydCalendarMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydCalendarMonthStatisticalDataResponse> {
@@ -12223,13 +13183,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydCalendarMonthStatisticalDataResponse>(await this.doROARequest("QueryYydCalendarMonthStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydCalendarMonthDatas`, "json", req, runtime), new QueryYydCalendarMonthStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydCalendarMonthStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydCalendarMonthDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydCalendarMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydCalendarMonthStatisticalDataResponse({}));
   }
 
-  async queryYydCalendarWeekStatisticalData(request: QueryYydCalendarWeekStatisticalDataRequest): Promise<QueryYydCalendarWeekStatisticalDataResponse> {
+  async queryYydCalendarMonthStatisticalData(request: QueryYydCalendarMonthStatisticalDataRequest): Promise<QueryYydCalendarMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydCalendarWeekStatisticalDataHeaders({ });
-    return await this.queryYydCalendarWeekStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydCalendarMonthStatisticalDataHeaders({ });
+    return await this.queryYydCalendarMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydCalendarWeekStatisticalDataWithOptions(request: QueryYydCalendarWeekStatisticalDataRequest, headers: QueryYydCalendarWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydCalendarWeekStatisticalDataResponse> {
@@ -12252,13 +13223,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydCalendarWeekStatisticalDataResponse>(await this.doROARequest("QueryYydCalendarWeekStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydCalendarWeekDatas`, "json", req, runtime), new QueryYydCalendarWeekStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydCalendarWeekStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydCalendarWeekDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydCalendarWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydCalendarWeekStatisticalDataResponse({}));
   }
 
-  async queryYydDingMsgDayStatisticalData(request: QueryYydDingMsgDayStatisticalDataRequest): Promise<QueryYydDingMsgDayStatisticalDataResponse> {
+  async queryYydCalendarWeekStatisticalData(request: QueryYydCalendarWeekStatisticalDataRequest): Promise<QueryYydCalendarWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydDingMsgDayStatisticalDataHeaders({ });
-    return await this.queryYydDingMsgDayStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydCalendarWeekStatisticalDataHeaders({ });
+    return await this.queryYydCalendarWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydDingMsgDayStatisticalDataWithOptions(request: QueryYydDingMsgDayStatisticalDataRequest, headers: QueryYydDingMsgDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydDingMsgDayStatisticalDataResponse> {
@@ -12281,13 +13263,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydDingMsgDayStatisticalDataResponse>(await this.doROARequest("QueryYydDingMsgDayStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydDingMsgDayDatas`, "json", req, runtime), new QueryYydDingMsgDayStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydDingMsgDayStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydDingMsgDayDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydDingMsgDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydDingMsgDayStatisticalDataResponse({}));
   }
 
-  async queryYydDingMsgMonthStatisticalData(request: QueryYydDingMsgMonthStatisticalDataRequest): Promise<QueryYydDingMsgMonthStatisticalDataResponse> {
+  async queryYydDingMsgDayStatisticalData(request: QueryYydDingMsgDayStatisticalDataRequest): Promise<QueryYydDingMsgDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydDingMsgMonthStatisticalDataHeaders({ });
-    return await this.queryYydDingMsgMonthStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydDingMsgDayStatisticalDataHeaders({ });
+    return await this.queryYydDingMsgDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydDingMsgMonthStatisticalDataWithOptions(request: QueryYydDingMsgMonthStatisticalDataRequest, headers: QueryYydDingMsgMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydDingMsgMonthStatisticalDataResponse> {
@@ -12310,13 +13303,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydDingMsgMonthStatisticalDataResponse>(await this.doROARequest("QueryYydDingMsgMonthStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydDingMsgMonthDatas`, "json", req, runtime), new QueryYydDingMsgMonthStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydDingMsgMonthStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydDingMsgMonthDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydDingMsgMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydDingMsgMonthStatisticalDataResponse({}));
   }
 
-  async queryYydDingMsgWeekStatisticalData(request: QueryYydDingMsgWeekStatisticalDataRequest): Promise<QueryYydDingMsgWeekStatisticalDataResponse> {
+  async queryYydDingMsgMonthStatisticalData(request: QueryYydDingMsgMonthStatisticalDataRequest): Promise<QueryYydDingMsgMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydDingMsgWeekStatisticalDataHeaders({ });
-    return await this.queryYydDingMsgWeekStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydDingMsgMonthStatisticalDataHeaders({ });
+    return await this.queryYydDingMsgMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydDingMsgWeekStatisticalDataWithOptions(request: QueryYydDingMsgWeekStatisticalDataRequest, headers: QueryYydDingMsgWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydDingMsgWeekStatisticalDataResponse> {
@@ -12339,13 +13343,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydDingMsgWeekStatisticalDataResponse>(await this.doROARequest("QueryYydDingMsgWeekStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydDingMsgWeekDatas`, "json", req, runtime), new QueryYydDingMsgWeekStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydDingMsgWeekStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydDingMsgWeekDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydDingMsgWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydDingMsgWeekStatisticalDataResponse({}));
   }
 
-  async queryYydGroupMsgDayStatisticalData(request: QueryYydGroupMsgDayStatisticalDataRequest): Promise<QueryYydGroupMsgDayStatisticalDataResponse> {
+  async queryYydDingMsgWeekStatisticalData(request: QueryYydDingMsgWeekStatisticalDataRequest): Promise<QueryYydDingMsgWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydGroupMsgDayStatisticalDataHeaders({ });
-    return await this.queryYydGroupMsgDayStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydDingMsgWeekStatisticalDataHeaders({ });
+    return await this.queryYydDingMsgWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydGroupMsgDayStatisticalDataWithOptions(request: QueryYydGroupMsgDayStatisticalDataRequest, headers: QueryYydGroupMsgDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydGroupMsgDayStatisticalDataResponse> {
@@ -12368,13 +13383,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydGroupMsgDayStatisticalDataResponse>(await this.doROARequest("QueryYydGroupMsgDayStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydGroupMsgDayDatas`, "json", req, runtime), new QueryYydGroupMsgDayStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydGroupMsgDayStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydGroupMsgDayDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydGroupMsgDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydGroupMsgDayStatisticalDataResponse({}));
   }
 
-  async queryYydGroupMsgMonthStatisticalData(request: QueryYydGroupMsgMonthStatisticalDataRequest): Promise<QueryYydGroupMsgMonthStatisticalDataResponse> {
+  async queryYydGroupMsgDayStatisticalData(request: QueryYydGroupMsgDayStatisticalDataRequest): Promise<QueryYydGroupMsgDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydGroupMsgMonthStatisticalDataHeaders({ });
-    return await this.queryYydGroupMsgMonthStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydGroupMsgDayStatisticalDataHeaders({ });
+    return await this.queryYydGroupMsgDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydGroupMsgMonthStatisticalDataWithOptions(request: QueryYydGroupMsgMonthStatisticalDataRequest, headers: QueryYydGroupMsgMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydGroupMsgMonthStatisticalDataResponse> {
@@ -12397,13 +13423,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydGroupMsgMonthStatisticalDataResponse>(await this.doROARequest("QueryYydGroupMsgMonthStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydGroupMsgMonthDatas`, "json", req, runtime), new QueryYydGroupMsgMonthStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydGroupMsgMonthStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydGroupMsgMonthDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydGroupMsgMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydGroupMsgMonthStatisticalDataResponse({}));
   }
 
-  async queryYydGroupMsgWeekStatisticalData(request: QueryYydGroupMsgWeekStatisticalDataRequest): Promise<QueryYydGroupMsgWeekStatisticalDataResponse> {
+  async queryYydGroupMsgMonthStatisticalData(request: QueryYydGroupMsgMonthStatisticalDataRequest): Promise<QueryYydGroupMsgMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydGroupMsgWeekStatisticalDataHeaders({ });
-    return await this.queryYydGroupMsgWeekStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydGroupMsgMonthStatisticalDataHeaders({ });
+    return await this.queryYydGroupMsgMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydGroupMsgWeekStatisticalDataWithOptions(request: QueryYydGroupMsgWeekStatisticalDataRequest, headers: QueryYydGroupMsgWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydGroupMsgWeekStatisticalDataResponse> {
@@ -12426,13 +13463,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydGroupMsgWeekStatisticalDataResponse>(await this.doROARequest("QueryYydGroupMsgWeekStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydGroupMsgWeekDatas`, "json", req, runtime), new QueryYydGroupMsgWeekStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydGroupMsgWeekStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydGroupMsgWeekDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydGroupMsgWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydGroupMsgWeekStatisticalDataResponse({}));
   }
 
-  async queryYydLogDayStatisticalData(request: QueryYydLogDayStatisticalDataRequest): Promise<QueryYydLogDayStatisticalDataResponse> {
+  async queryYydGroupMsgWeekStatisticalData(request: QueryYydGroupMsgWeekStatisticalDataRequest): Promise<QueryYydGroupMsgWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydLogDayStatisticalDataHeaders({ });
-    return await this.queryYydLogDayStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydGroupMsgWeekStatisticalDataHeaders({ });
+    return await this.queryYydGroupMsgWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydLogDayStatisticalDataWithOptions(request: QueryYydLogDayStatisticalDataRequest, headers: QueryYydLogDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydLogDayStatisticalDataResponse> {
@@ -12455,13 +13503,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydLogDayStatisticalDataResponse>(await this.doROARequest("QueryYydLogDayStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydLogDayDatas`, "json", req, runtime), new QueryYydLogDayStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydLogDayStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydLogDayDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydLogDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydLogDayStatisticalDataResponse({}));
   }
 
-  async queryYydLogMonthStatisticalData(request: QueryYydLogMonthStatisticalDataRequest): Promise<QueryYydLogMonthStatisticalDataResponse> {
+  async queryYydLogDayStatisticalData(request: QueryYydLogDayStatisticalDataRequest): Promise<QueryYydLogDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydLogMonthStatisticalDataHeaders({ });
-    return await this.queryYydLogMonthStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydLogDayStatisticalDataHeaders({ });
+    return await this.queryYydLogDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydLogMonthStatisticalDataWithOptions(request: QueryYydLogMonthStatisticalDataRequest, headers: QueryYydLogMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydLogMonthStatisticalDataResponse> {
@@ -12484,13 +13543,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydLogMonthStatisticalDataResponse>(await this.doROARequest("QueryYydLogMonthStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydLogMonthDatas`, "json", req, runtime), new QueryYydLogMonthStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydLogMonthStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydLogMonthDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydLogMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydLogMonthStatisticalDataResponse({}));
   }
 
-  async queryYydLogWeekStatisticalData(request: QueryYydLogWeekStatisticalDataRequest): Promise<QueryYydLogWeekStatisticalDataResponse> {
+  async queryYydLogMonthStatisticalData(request: QueryYydLogMonthStatisticalDataRequest): Promise<QueryYydLogMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydLogWeekStatisticalDataHeaders({ });
-    return await this.queryYydLogWeekStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydLogMonthStatisticalDataHeaders({ });
+    return await this.queryYydLogMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydLogWeekStatisticalDataWithOptions(request: QueryYydLogWeekStatisticalDataRequest, headers: QueryYydLogWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydLogWeekStatisticalDataResponse> {
@@ -12513,13 +13583,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydLogWeekStatisticalDataResponse>(await this.doROARequest("QueryYydLogWeekStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydLogWeekDatas`, "json", req, runtime), new QueryYydLogWeekStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydLogWeekStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydLogWeekDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydLogWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydLogWeekStatisticalDataResponse({}));
   }
 
-  async queryYydMeetingDayStatisticalData(request: QueryYydMeetingDayStatisticalDataRequest): Promise<QueryYydMeetingDayStatisticalDataResponse> {
+  async queryYydLogWeekStatisticalData(request: QueryYydLogWeekStatisticalDataRequest): Promise<QueryYydLogWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydMeetingDayStatisticalDataHeaders({ });
-    return await this.queryYydMeetingDayStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydLogWeekStatisticalDataHeaders({ });
+    return await this.queryYydLogWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydMeetingDayStatisticalDataWithOptions(request: QueryYydMeetingDayStatisticalDataRequest, headers: QueryYydMeetingDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydMeetingDayStatisticalDataResponse> {
@@ -12542,13 +13623,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydMeetingDayStatisticalDataResponse>(await this.doROARequest("QueryYydMeetingDayStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydMeetingDayDatas`, "json", req, runtime), new QueryYydMeetingDayStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydMeetingDayStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydMeetingDayDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydMeetingDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydMeetingDayStatisticalDataResponse({}));
   }
 
-  async queryYydMeetingMonthStatisticalData(request: QueryYydMeetingMonthStatisticalDataRequest): Promise<QueryYydMeetingMonthStatisticalDataResponse> {
+  async queryYydMeetingDayStatisticalData(request: QueryYydMeetingDayStatisticalDataRequest): Promise<QueryYydMeetingDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydMeetingMonthStatisticalDataHeaders({ });
-    return await this.queryYydMeetingMonthStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydMeetingDayStatisticalDataHeaders({ });
+    return await this.queryYydMeetingDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydMeetingMonthStatisticalDataWithOptions(request: QueryYydMeetingMonthStatisticalDataRequest, headers: QueryYydMeetingMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydMeetingMonthStatisticalDataResponse> {
@@ -12571,13 +13663,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydMeetingMonthStatisticalDataResponse>(await this.doROARequest("QueryYydMeetingMonthStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydMeetingMonthDatas`, "json", req, runtime), new QueryYydMeetingMonthStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydMeetingMonthStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydMeetingMonthDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydMeetingMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydMeetingMonthStatisticalDataResponse({}));
   }
 
-  async queryYydMeetingWeekStatisticalData(request: QueryYydMeetingWeekStatisticalDataRequest): Promise<QueryYydMeetingWeekStatisticalDataResponse> {
+  async queryYydMeetingMonthStatisticalData(request: QueryYydMeetingMonthStatisticalDataRequest): Promise<QueryYydMeetingMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydMeetingWeekStatisticalDataHeaders({ });
-    return await this.queryYydMeetingWeekStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydMeetingMonthStatisticalDataHeaders({ });
+    return await this.queryYydMeetingMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydMeetingWeekStatisticalDataWithOptions(request: QueryYydMeetingWeekStatisticalDataRequest, headers: QueryYydMeetingWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydMeetingWeekStatisticalDataResponse> {
@@ -12600,13 +13703,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydMeetingWeekStatisticalDataResponse>(await this.doROARequest("QueryYydMeetingWeekStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydMeetingWeekDatas`, "json", req, runtime), new QueryYydMeetingWeekStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydMeetingWeekStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydMeetingWeekDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydMeetingWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydMeetingWeekStatisticalDataResponse({}));
   }
 
-  async queryYydNoticeDayStatisticalData(request: QueryYydNoticeDayStatisticalDataRequest): Promise<QueryYydNoticeDayStatisticalDataResponse> {
+  async queryYydMeetingWeekStatisticalData(request: QueryYydMeetingWeekStatisticalDataRequest): Promise<QueryYydMeetingWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydNoticeDayStatisticalDataHeaders({ });
-    return await this.queryYydNoticeDayStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydMeetingWeekStatisticalDataHeaders({ });
+    return await this.queryYydMeetingWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydNoticeDayStatisticalDataWithOptions(request: QueryYydNoticeDayStatisticalDataRequest, headers: QueryYydNoticeDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydNoticeDayStatisticalDataResponse> {
@@ -12629,13 +13743,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydNoticeDayStatisticalDataResponse>(await this.doROARequest("QueryYydNoticeDayStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydNoticeDayDatas`, "json", req, runtime), new QueryYydNoticeDayStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydNoticeDayStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydNoticeDayDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydNoticeDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydNoticeDayStatisticalDataResponse({}));
   }
 
-  async queryYydNoticeMonthStatisticalData(request: QueryYydNoticeMonthStatisticalDataRequest): Promise<QueryYydNoticeMonthStatisticalDataResponse> {
+  async queryYydNoticeDayStatisticalData(request: QueryYydNoticeDayStatisticalDataRequest): Promise<QueryYydNoticeDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydNoticeMonthStatisticalDataHeaders({ });
-    return await this.queryYydNoticeMonthStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydNoticeDayStatisticalDataHeaders({ });
+    return await this.queryYydNoticeDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydNoticeMonthStatisticalDataWithOptions(request: QueryYydNoticeMonthStatisticalDataRequest, headers: QueryYydNoticeMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydNoticeMonthStatisticalDataResponse> {
@@ -12658,13 +13783,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydNoticeMonthStatisticalDataResponse>(await this.doROARequest("QueryYydNoticeMonthStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydNoticeMonthDatas`, "json", req, runtime), new QueryYydNoticeMonthStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydNoticeMonthStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydNoticeMonthDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydNoticeMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydNoticeMonthStatisticalDataResponse({}));
   }
 
-  async queryYydNoticeWeekStatisticalData(request: QueryYydNoticeWeekStatisticalDataRequest): Promise<QueryYydNoticeWeekStatisticalDataResponse> {
+  async queryYydNoticeMonthStatisticalData(request: QueryYydNoticeMonthStatisticalDataRequest): Promise<QueryYydNoticeMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydNoticeWeekStatisticalDataHeaders({ });
-    return await this.queryYydNoticeWeekStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydNoticeMonthStatisticalDataHeaders({ });
+    return await this.queryYydNoticeMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydNoticeWeekStatisticalDataWithOptions(request: QueryYydNoticeWeekStatisticalDataRequest, headers: QueryYydNoticeWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydNoticeWeekStatisticalDataResponse> {
@@ -12687,13 +13823,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydNoticeWeekStatisticalDataResponse>(await this.doROARequest("QueryYydNoticeWeekStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydNoticeWeekDatas`, "json", req, runtime), new QueryYydNoticeWeekStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydNoticeWeekStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydNoticeWeekDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydNoticeWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydNoticeWeekStatisticalDataResponse({}));
   }
 
-  async queryYydSingleMsgDayStatisticalData(request: QueryYydSingleMsgDayStatisticalDataRequest): Promise<QueryYydSingleMsgDayStatisticalDataResponse> {
+  async queryYydNoticeWeekStatisticalData(request: QueryYydNoticeWeekStatisticalDataRequest): Promise<QueryYydNoticeWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydSingleMsgDayStatisticalDataHeaders({ });
-    return await this.queryYydSingleMsgDayStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydNoticeWeekStatisticalDataHeaders({ });
+    return await this.queryYydNoticeWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydSingleMsgDayStatisticalDataWithOptions(request: QueryYydSingleMsgDayStatisticalDataRequest, headers: QueryYydSingleMsgDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydSingleMsgDayStatisticalDataResponse> {
@@ -12716,13 +13863,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydSingleMsgDayStatisticalDataResponse>(await this.doROARequest("QueryYydSingleMsgDayStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydSingleMsgDayDatas`, "json", req, runtime), new QueryYydSingleMsgDayStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydSingleMsgDayStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydSingleMsgDayDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydSingleMsgDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydSingleMsgDayStatisticalDataResponse({}));
   }
 
-  async queryYydSingleMsgMonthStatisticalData(request: QueryYydSingleMsgMonthStatisticalDataRequest): Promise<QueryYydSingleMsgMonthStatisticalDataResponse> {
+  async queryYydSingleMsgDayStatisticalData(request: QueryYydSingleMsgDayStatisticalDataRequest): Promise<QueryYydSingleMsgDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydSingleMsgMonthStatisticalDataHeaders({ });
-    return await this.queryYydSingleMsgMonthStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydSingleMsgDayStatisticalDataHeaders({ });
+    return await this.queryYydSingleMsgDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydSingleMsgMonthStatisticalDataWithOptions(request: QueryYydSingleMsgMonthStatisticalDataRequest, headers: QueryYydSingleMsgMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydSingleMsgMonthStatisticalDataResponse> {
@@ -12745,13 +13903,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydSingleMsgMonthStatisticalDataResponse>(await this.doROARequest("QueryYydSingleMsgMonthStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydSingleMsgMonthDatas`, "json", req, runtime), new QueryYydSingleMsgMonthStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydSingleMsgMonthStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydSingleMsgMonthDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydSingleMsgMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydSingleMsgMonthStatisticalDataResponse({}));
   }
 
-  async queryYydSingleMsgWeekStatisticalData(request: QueryYydSingleMsgWeekStatisticalDataRequest): Promise<QueryYydSingleMsgWeekStatisticalDataResponse> {
+  async queryYydSingleMsgMonthStatisticalData(request: QueryYydSingleMsgMonthStatisticalDataRequest): Promise<QueryYydSingleMsgMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydSingleMsgWeekStatisticalDataHeaders({ });
-    return await this.queryYydSingleMsgWeekStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydSingleMsgMonthStatisticalDataHeaders({ });
+    return await this.queryYydSingleMsgMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydSingleMsgWeekStatisticalDataWithOptions(request: QueryYydSingleMsgWeekStatisticalDataRequest, headers: QueryYydSingleMsgWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydSingleMsgWeekStatisticalDataResponse> {
@@ -12774,13 +13943,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydSingleMsgWeekStatisticalDataResponse>(await this.doROARequest("QueryYydSingleMsgWeekStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydSingleMsgWeekDatas`, "json", req, runtime), new QueryYydSingleMsgWeekStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydSingleMsgWeekStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydSingleMsgWeekDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydSingleMsgWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydSingleMsgWeekStatisticalDataResponse({}));
   }
 
-  async queryYydToatlMsgDayStatisticalData(request: QueryYydToatlMsgDayStatisticalDataRequest): Promise<QueryYydToatlMsgDayStatisticalDataResponse> {
+  async queryYydSingleMsgWeekStatisticalData(request: QueryYydSingleMsgWeekStatisticalDataRequest): Promise<QueryYydSingleMsgWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydToatlMsgDayStatisticalDataHeaders({ });
-    return await this.queryYydToatlMsgDayStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydSingleMsgWeekStatisticalDataHeaders({ });
+    return await this.queryYydSingleMsgWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydToatlMsgDayStatisticalDataWithOptions(request: QueryYydToatlMsgDayStatisticalDataRequest, headers: QueryYydToatlMsgDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydToatlMsgDayStatisticalDataResponse> {
@@ -12803,13 +13983,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydToatlMsgDayStatisticalDataResponse>(await this.doROARequest("QueryYydToatlMsgDayStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydToatlMsgDayDatas`, "json", req, runtime), new QueryYydToatlMsgDayStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydToatlMsgDayStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydToatlMsgDayDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydToatlMsgDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydToatlMsgDayStatisticalDataResponse({}));
   }
 
-  async queryYydToatlMsgMonthStatisticalData(request: QueryYydToatlMsgMonthStatisticalDataRequest): Promise<QueryYydToatlMsgMonthStatisticalDataResponse> {
+  async queryYydToatlMsgDayStatisticalData(request: QueryYydToatlMsgDayStatisticalDataRequest): Promise<QueryYydToatlMsgDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydToatlMsgMonthStatisticalDataHeaders({ });
-    return await this.queryYydToatlMsgMonthStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydToatlMsgDayStatisticalDataHeaders({ });
+    return await this.queryYydToatlMsgDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydToatlMsgMonthStatisticalDataWithOptions(request: QueryYydToatlMsgMonthStatisticalDataRequest, headers: QueryYydToatlMsgMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydToatlMsgMonthStatisticalDataResponse> {
@@ -12832,13 +14023,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydToatlMsgMonthStatisticalDataResponse>(await this.doROARequest("QueryYydToatlMsgMonthStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydToatlMsgMonthDatas`, "json", req, runtime), new QueryYydToatlMsgMonthStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydToatlMsgMonthStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydToatlMsgMonthDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydToatlMsgMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydToatlMsgMonthStatisticalDataResponse({}));
   }
 
-  async queryYydToatlMsgWeekStatisticalData(request: QueryYydToatlMsgWeekStatisticalDataRequest): Promise<QueryYydToatlMsgWeekStatisticalDataResponse> {
+  async queryYydToatlMsgMonthStatisticalData(request: QueryYydToatlMsgMonthStatisticalDataRequest): Promise<QueryYydToatlMsgMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydToatlMsgWeekStatisticalDataHeaders({ });
-    return await this.queryYydToatlMsgWeekStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydToatlMsgMonthStatisticalDataHeaders({ });
+    return await this.queryYydToatlMsgMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydToatlMsgWeekStatisticalDataWithOptions(request: QueryYydToatlMsgWeekStatisticalDataRequest, headers: QueryYydToatlMsgWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydToatlMsgWeekStatisticalDataResponse> {
@@ -12861,13 +14063,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydToatlMsgWeekStatisticalDataResponse>(await this.doROARequest("QueryYydToatlMsgWeekStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydToatlMsgWeekDatas`, "json", req, runtime), new QueryYydToatlMsgWeekStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydToatlMsgWeekStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydToatlMsgWeekDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydToatlMsgWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydToatlMsgWeekStatisticalDataResponse({}));
   }
 
-  async queryYydTodoDayStatisticalData(request: QueryYydTodoDayStatisticalDataRequest): Promise<QueryYydTodoDayStatisticalDataResponse> {
+  async queryYydToatlMsgWeekStatisticalData(request: QueryYydToatlMsgWeekStatisticalDataRequest): Promise<QueryYydToatlMsgWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydTodoDayStatisticalDataHeaders({ });
-    return await this.queryYydTodoDayStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydToatlMsgWeekStatisticalDataHeaders({ });
+    return await this.queryYydToatlMsgWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydTodoDayStatisticalDataWithOptions(request: QueryYydTodoDayStatisticalDataRequest, headers: QueryYydTodoDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTodoDayStatisticalDataResponse> {
@@ -12890,13 +14103,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydTodoDayStatisticalDataResponse>(await this.doROARequest("QueryYydTodoDayStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydTodoDayDatas`, "json", req, runtime), new QueryYydTodoDayStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydTodoDayStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydTodoDayDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydTodoDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTodoDayStatisticalDataResponse({}));
   }
 
-  async queryYydTodoMonthStatisticalData(request: QueryYydTodoMonthStatisticalDataRequest): Promise<QueryYydTodoMonthStatisticalDataResponse> {
+  async queryYydTodoDayStatisticalData(request: QueryYydTodoDayStatisticalDataRequest): Promise<QueryYydTodoDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydTodoMonthStatisticalDataHeaders({ });
-    return await this.queryYydTodoMonthStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydTodoDayStatisticalDataHeaders({ });
+    return await this.queryYydTodoDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydTodoMonthStatisticalDataWithOptions(request: QueryYydTodoMonthStatisticalDataRequest, headers: QueryYydTodoMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTodoMonthStatisticalDataResponse> {
@@ -12919,13 +14143,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydTodoMonthStatisticalDataResponse>(await this.doROARequest("QueryYydTodoMonthStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydTodoMonthDatas`, "json", req, runtime), new QueryYydTodoMonthStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydTodoMonthStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydTodoMonthDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydTodoMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTodoMonthStatisticalDataResponse({}));
   }
 
-  async queryYydTodoWeekStatisticalData(request: QueryYydTodoWeekStatisticalDataRequest): Promise<QueryYydTodoWeekStatisticalDataResponse> {
+  async queryYydTodoMonthStatisticalData(request: QueryYydTodoMonthStatisticalDataRequest): Promise<QueryYydTodoMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydTodoWeekStatisticalDataHeaders({ });
-    return await this.queryYydTodoWeekStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydTodoMonthStatisticalDataHeaders({ });
+    return await this.queryYydTodoMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydTodoWeekStatisticalDataWithOptions(request: QueryYydTodoWeekStatisticalDataRequest, headers: QueryYydTodoWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTodoWeekStatisticalDataResponse> {
@@ -12948,13 +14183,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydTodoWeekStatisticalDataResponse>(await this.doROARequest("QueryYydTodoWeekStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydTodoWeekDatas`, "json", req, runtime), new QueryYydTodoWeekStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydTodoWeekStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydTodoWeekDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydTodoWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTodoWeekStatisticalDataResponse({}));
   }
 
-  async queryYydTotalDayStatisticalData(request: QueryYydTotalDayStatisticalDataRequest): Promise<QueryYydTotalDayStatisticalDataResponse> {
+  async queryYydTodoWeekStatisticalData(request: QueryYydTodoWeekStatisticalDataRequest): Promise<QueryYydTodoWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydTotalDayStatisticalDataHeaders({ });
-    return await this.queryYydTotalDayStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydTodoWeekStatisticalDataHeaders({ });
+    return await this.queryYydTodoWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydTotalDayStatisticalDataWithOptions(request: QueryYydTotalDayStatisticalDataRequest, headers: QueryYydTotalDayStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTotalDayStatisticalDataResponse> {
@@ -12977,13 +14223,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydTotalDayStatisticalDataResponse>(await this.doROARequest("QueryYydTotalDayStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydTotalDayDatas`, "json", req, runtime), new QueryYydTotalDayStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydTotalDayStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydTotalDayDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydTotalDayStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTotalDayStatisticalDataResponse({}));
   }
 
-  async queryYydTotalMonthStatisticalData(request: QueryYydTotalMonthStatisticalDataRequest): Promise<QueryYydTotalMonthStatisticalDataResponse> {
+  async queryYydTotalDayStatisticalData(request: QueryYydTotalDayStatisticalDataRequest): Promise<QueryYydTotalDayStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydTotalMonthStatisticalDataHeaders({ });
-    return await this.queryYydTotalMonthStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydTotalDayStatisticalDataHeaders({ });
+    return await this.queryYydTotalDayStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydTotalMonthStatisticalDataWithOptions(request: QueryYydTotalMonthStatisticalDataRequest, headers: QueryYydTotalMonthStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTotalMonthStatisticalDataResponse> {
@@ -13006,13 +14263,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydTotalMonthStatisticalDataResponse>(await this.doROARequest("QueryYydTotalMonthStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydTotalMonthDatas`, "json", req, runtime), new QueryYydTotalMonthStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydTotalMonthStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydTotalMonthDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydTotalMonthStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTotalMonthStatisticalDataResponse({}));
   }
 
-  async queryYydTotalStdStatisticalData(request: QueryYydTotalStdStatisticalDataRequest): Promise<QueryYydTotalStdStatisticalDataResponse> {
+  async queryYydTotalMonthStatisticalData(request: QueryYydTotalMonthStatisticalDataRequest): Promise<QueryYydTotalMonthStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydTotalStdStatisticalDataHeaders({ });
-    return await this.queryYydTotalStdStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydTotalMonthStatisticalDataHeaders({ });
+    return await this.queryYydTotalMonthStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydTotalStdStatisticalDataWithOptions(request: QueryYydTotalStdStatisticalDataRequest, headers: QueryYydTotalStdStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTotalStdStatisticalDataResponse> {
@@ -13035,13 +14303,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydTotalStdStatisticalDataResponse>(await this.doROARequest("QueryYydTotalStdStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydTotalStdDatas`, "json", req, runtime), new QueryYydTotalStdStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydTotalStdStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydTotalStdDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydTotalStdStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTotalStdStatisticalDataResponse({}));
   }
 
-  async queryYydTotalWeekStatisticalData(request: QueryYydTotalWeekStatisticalDataRequest): Promise<QueryYydTotalWeekStatisticalDataResponse> {
+  async queryYydTotalStdStatisticalData(request: QueryYydTotalStdStatisticalDataRequest): Promise<QueryYydTotalStdStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryYydTotalWeekStatisticalDataHeaders({ });
-    return await this.queryYydTotalWeekStatisticalDataWithOptions(request, headers, runtime);
+    let headers = new QueryYydTotalStdStatisticalDataHeaders({ });
+    return await this.queryYydTotalStdStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async queryYydTotalWeekStatisticalDataWithOptions(request: QueryYydTotalWeekStatisticalDataRequest, headers: QueryYydTotalWeekStatisticalDataHeaders, runtime: $Util.RuntimeOptions): Promise<QueryYydTotalWeekStatisticalDataResponse> {
@@ -13064,13 +14343,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryYydTotalWeekStatisticalDataResponse>(await this.doROARequest("QueryYydTotalWeekStatisticalData", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/yydTotalWeekDatas`, "json", req, runtime), new QueryYydTotalWeekStatisticalDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryYydTotalWeekStatisticalData",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/yydTotalWeekDatas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryYydTotalWeekStatisticalDataResponse>(await this.execute(params, req, runtime), new QueryYydTotalWeekStatisticalDataResponse({}));
   }
 
-  async searchCompany(request: SearchCompanyRequest): Promise<SearchCompanyResponse> {
+  async queryYydTotalWeekStatisticalData(request: QueryYydTotalWeekStatisticalDataRequest): Promise<QueryYydTotalWeekStatisticalDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchCompanyHeaders({ });
-    return await this.searchCompanyWithOptions(request, headers, runtime);
+    let headers = new QueryYydTotalWeekStatisticalDataHeaders({ });
+    return await this.queryYydTotalWeekStatisticalDataWithOptions(request, headers, runtime);
   }
 
   async searchCompanyWithOptions(request: SearchCompanyRequest, headers: SearchCompanyHeaders, runtime: $Util.RuntimeOptions): Promise<SearchCompanyResponse> {
@@ -13101,7 +14391,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SearchCompanyResponse>(await this.doROARequest("SearchCompany", "datacenter_1.0", "HTTP", "GET", "AK", `/v1.0/datacenter/keywords/companies`, "json", req, runtime), new SearchCompanyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchCompany",
+      version: "datacenter_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/datacenter/keywords/companies`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchCompanyResponse>(await this.execute(params, req, runtime), new SearchCompanyResponse({}));
+  }
+
+  async searchCompany(request: SearchCompanyRequest): Promise<SearchCompanyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchCompanyHeaders({ });
+    return await this.searchCompanyWithOptions(request, headers, runtime);
   }
 
 }

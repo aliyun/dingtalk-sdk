@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -56,10 +58,12 @@ export class GetDingPortalDetailResponseBody extends $tea.Model {
 
 export class GetDingPortalDetailResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetDingPortalDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -67,6 +71,7 @@ export class GetDingPortalDetailResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetDingPortalDetailResponseBody,
     };
   }
@@ -138,10 +143,12 @@ export class GetPluginPermissionPointResponseBody extends $tea.Model {
 
 export class GetPluginPermissionPointResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPluginPermissionPointResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -149,6 +156,7 @@ export class GetPluginPermissionPointResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPluginPermissionPointResponseBody,
     };
   }
@@ -223,10 +231,12 @@ export class GetPluginRuleCheckInfoResponseBody extends $tea.Model {
 
 export class GetPluginRuleCheckInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPluginRuleCheckInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -234,6 +244,7 @@ export class GetPluginRuleCheckInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPluginRuleCheckInfoResponseBody,
     };
   }
@@ -311,10 +322,12 @@ export class ListWorkBenchGroupResponseBody extends $tea.Model {
 
 export class ListWorkBenchGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListWorkBenchGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -322,6 +335,7 @@ export class ListWorkBenchGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListWorkBenchGroupResponseBody,
     };
   }
@@ -377,10 +391,12 @@ export class QueryComponentScopesResponseBody extends $tea.Model {
 
 export class QueryComponentScopesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryComponentScopesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -388,6 +404,7 @@ export class QueryComponentScopesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryComponentScopesResponseBody,
     };
   }
@@ -443,10 +460,12 @@ export class QueryShortcutScopesResponseBody extends $tea.Model {
 
 export class QueryShortcutScopesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryShortcutScopesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -454,6 +473,7 @@ export class QueryShortcutScopesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryShortcutScopesResponseBody,
     };
   }
@@ -515,15 +535,18 @@ export class UpdateDingPortalPageScopeRequest extends $tea.Model {
 
 export class UpdateDingPortalPageScopeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -590,9 +613,12 @@ export class ListWorkBenchGroupResponseBodyGroupList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -601,14 +627,7 @@ export default class Client extends OpenApi {
   }
 
 
-  async getDingPortalDetail(appUuid: string): Promise<GetDingPortalDetailResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetDingPortalDetailHeaders({ });
-    return await this.getDingPortalDetailWithOptions(appUuid, headers, runtime);
-  }
-
   async getDingPortalDetailWithOptions(appUuid: string, headers: GetDingPortalDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetDingPortalDetailResponse> {
-    appUuid = OpenApiUtil.getEncodeParam(appUuid);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -621,13 +640,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetDingPortalDetailResponse>(await this.doROARequest("GetDingPortalDetail", "workbench_1.0", "HTTP", "GET", "AK", `/v1.0/workbench/dingPortals/${appUuid}`, "json", req, runtime), new GetDingPortalDetailResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetDingPortalDetail",
+      version: "workbench_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workbench/dingPortals/${appUuid}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDingPortalDetailResponse>(await this.execute(params, req, runtime), new GetDingPortalDetailResponse({}));
   }
 
-  async getPluginPermissionPoint(request: GetPluginPermissionPointRequest): Promise<GetPluginPermissionPointResponse> {
+  async getDingPortalDetail(appUuid: string): Promise<GetDingPortalDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPluginPermissionPointHeaders({ });
-    return await this.getPluginPermissionPointWithOptions(request, headers, runtime);
+    let headers = new GetDingPortalDetailHeaders({ });
+    return await this.getDingPortalDetailWithOptions(appUuid, headers, runtime);
   }
 
   async getPluginPermissionPointWithOptions(request: GetPluginPermissionPointRequest, headers: GetPluginPermissionPointHeaders, runtime: $Util.RuntimeOptions): Promise<GetPluginPermissionPointResponse> {
@@ -650,13 +680,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetPluginPermissionPointResponse>(await this.doROARequest("GetPluginPermissionPoint", "workbench_1.0", "HTTP", "GET", "AK", `/v1.0/workbench/plugins/permissions`, "json", req, runtime), new GetPluginPermissionPointResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPluginPermissionPoint",
+      version: "workbench_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workbench/plugins/permissions`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPluginPermissionPointResponse>(await this.execute(params, req, runtime), new GetPluginPermissionPointResponse({}));
   }
 
-  async getPluginRuleCheckInfo(request: GetPluginRuleCheckInfoRequest): Promise<GetPluginRuleCheckInfoResponse> {
+  async getPluginPermissionPoint(request: GetPluginPermissionPointRequest): Promise<GetPluginPermissionPointResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPluginRuleCheckInfoHeaders({ });
-    return await this.getPluginRuleCheckInfoWithOptions(request, headers, runtime);
+    let headers = new GetPluginPermissionPointHeaders({ });
+    return await this.getPluginPermissionPointWithOptions(request, headers, runtime);
   }
 
   async getPluginRuleCheckInfoWithOptions(request: GetPluginRuleCheckInfoRequest, headers: GetPluginRuleCheckInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPluginRuleCheckInfoResponse> {
@@ -679,13 +720,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetPluginRuleCheckInfoResponse>(await this.doROARequest("GetPluginRuleCheckInfo", "workbench_1.0", "HTTP", "GET", "AK", `/v1.0/workbench/plugins/validationRules`, "json", req, runtime), new GetPluginRuleCheckInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPluginRuleCheckInfo",
+      version: "workbench_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workbench/plugins/validationRules`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPluginRuleCheckInfoResponse>(await this.execute(params, req, runtime), new GetPluginRuleCheckInfoResponse({}));
   }
 
-  async listWorkBenchGroup(request: ListWorkBenchGroupRequest): Promise<ListWorkBenchGroupResponse> {
+  async getPluginRuleCheckInfo(request: GetPluginRuleCheckInfoRequest): Promise<GetPluginRuleCheckInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListWorkBenchGroupHeaders({ });
-    return await this.listWorkBenchGroupWithOptions(request, headers, runtime);
+    let headers = new GetPluginRuleCheckInfoHeaders({ });
+    return await this.getPluginRuleCheckInfoWithOptions(request, headers, runtime);
   }
 
   async listWorkBenchGroupWithOptions(request: ListWorkBenchGroupRequest, headers: ListWorkBenchGroupHeaders, runtime: $Util.RuntimeOptions): Promise<ListWorkBenchGroupResponse> {
@@ -716,7 +768,51 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListWorkBenchGroupResponse>(await this.doROARequest("ListWorkBenchGroup", "workbench_1.0", "HTTP", "GET", "AK", `/v1.0/workbench/groups`, "json", req, runtime), new ListWorkBenchGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListWorkBenchGroup",
+      version: "workbench_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workbench/groups`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListWorkBenchGroupResponse>(await this.execute(params, req, runtime), new ListWorkBenchGroupResponse({}));
+  }
+
+  async listWorkBenchGroup(request: ListWorkBenchGroupRequest): Promise<ListWorkBenchGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListWorkBenchGroupHeaders({ });
+    return await this.listWorkBenchGroupWithOptions(request, headers, runtime);
+  }
+
+  async queryComponentScopesWithOptions(componentId: string, headers: QueryComponentScopesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryComponentScopesResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryComponentScopes",
+      version: "workbench_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workbench/components/${componentId}/scopes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryComponentScopesResponse>(await this.execute(params, req, runtime), new QueryComponentScopesResponse({}));
   }
 
   async queryComponentScopes(componentId: string): Promise<QueryComponentScopesResponse> {
@@ -725,8 +821,7 @@ export default class Client extends OpenApi {
     return await this.queryComponentScopesWithOptions(componentId, headers, runtime);
   }
 
-  async queryComponentScopesWithOptions(componentId: string, headers: QueryComponentScopesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryComponentScopesResponse> {
-    componentId = OpenApiUtil.getEncodeParam(componentId);
+  async queryShortcutScopesWithOptions(shortcutKey: string, headers: QueryShortcutScopesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryShortcutScopesResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -739,7 +834,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryComponentScopesResponse>(await this.doROARequest("QueryComponentScopes", "workbench_1.0", "HTTP", "GET", "AK", `/v1.0/workbench/components/${componentId}/scopes`, "json", req, runtime), new QueryComponentScopesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryShortcutScopes",
+      version: "workbench_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workbench/shortcuts/${shortcutKey}/scopes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryShortcutScopesResponse>(await this.execute(params, req, runtime), new QueryShortcutScopesResponse({}));
   }
 
   async queryShortcutScopes(shortcutKey: string): Promise<QueryShortcutScopesResponse> {
@@ -748,33 +854,8 @@ export default class Client extends OpenApi {
     return await this.queryShortcutScopesWithOptions(shortcutKey, headers, runtime);
   }
 
-  async queryShortcutScopesWithOptions(shortcutKey: string, headers: QueryShortcutScopesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryShortcutScopesResponse> {
-    shortcutKey = OpenApiUtil.getEncodeParam(shortcutKey);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<QueryShortcutScopesResponse>(await this.doROARequest("QueryShortcutScopes", "workbench_1.0", "HTTP", "GET", "AK", `/v1.0/workbench/shortcuts/${shortcutKey}/scopes`, "json", req, runtime), new QueryShortcutScopesResponse({}));
-  }
-
-  async updateDingPortalPageScope(pageUuid: string, appUuid: string, request: UpdateDingPortalPageScopeRequest): Promise<UpdateDingPortalPageScopeResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateDingPortalPageScopeHeaders({ });
-    return await this.updateDingPortalPageScopeWithOptions(pageUuid, appUuid, request, headers, runtime);
-  }
-
   async updateDingPortalPageScopeWithOptions(pageUuid: string, appUuid: string, request: UpdateDingPortalPageScopeRequest, headers: UpdateDingPortalPageScopeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDingPortalPageScopeResponse> {
     Util.validateModel(request);
-    pageUuid = OpenApiUtil.getEncodeParam(pageUuid);
-    appUuid = OpenApiUtil.getEncodeParam(appUuid);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.allVisible)) {
       body["allVisible"] = request.allVisible;
@@ -805,7 +886,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateDingPortalPageScopeResponse>(await this.doROARequest("UpdateDingPortalPageScope", "workbench_1.0", "HTTP", "PUT", "AK", `/v1.0/workbench/dingPortals/${appUuid}/pageScopes/${pageUuid}`, "none", req, runtime), new UpdateDingPortalPageScopeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateDingPortalPageScope",
+      version: "workbench_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/workbench/dingPortals/${appUuid}/pageScopes/${pageUuid}`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateDingPortalPageScopeResponse>(await this.execute(params, req, runtime), new UpdateDingPortalPageScopeResponse({}));
+  }
+
+  async updateDingPortalPageScope(pageUuid: string, appUuid: string, request: UpdateDingPortalPageScopeRequest): Promise<UpdateDingPortalPageScopeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateDingPortalPageScopeHeaders({ });
+    return await this.updateDingPortalPageScopeWithOptions(pageUuid, appUuid, request, headers, runtime);
   }
 
 }

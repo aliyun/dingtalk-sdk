@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -84,10 +86,12 @@ export class BatchInsertBizObjectResponseBody extends $tea.Model {
 
 export class BatchInsertBizObjectResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchInsertBizObjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -95,6 +99,7 @@ export class BatchInsertBizObjectResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchInsertBizObjectResponseBody,
     };
   }
@@ -169,10 +174,12 @@ export class CancelProcessInstanceResponseBody extends $tea.Model {
 
 export class CancelProcessInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CancelProcessInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -180,6 +187,7 @@ export class CancelProcessInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CancelProcessInstanceResponseBody,
     };
   }
@@ -266,10 +274,12 @@ export class CreateBizObjectResponseBody extends $tea.Model {
 
 export class CreateBizObjectResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateBizObjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -277,6 +287,7 @@ export class CreateBizObjectResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateBizObjectResponseBody,
     };
   }
@@ -360,10 +371,12 @@ export class CreateProcessesInstanceResponseBody extends $tea.Model {
 
 export class CreateProcessesInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateProcessesInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -371,6 +384,7 @@ export class CreateProcessesInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateProcessesInstanceResponseBody,
     };
   }
@@ -448,10 +462,12 @@ export class DeleteBizObjectResponseBody extends $tea.Model {
 
 export class DeleteBizObjectResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteBizObjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -459,6 +475,7 @@ export class DeleteBizObjectResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteBizObjectResponseBody,
     };
   }
@@ -536,10 +553,12 @@ export class DeleteProcessesInstanceResponseBody extends $tea.Model {
 
 export class DeleteProcessesInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteProcessesInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -547,6 +566,7 @@ export class DeleteProcessesInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteProcessesInstanceResponseBody,
     };
   }
@@ -627,10 +647,12 @@ export class GetAppsResponseBody extends $tea.Model {
 
 export class GetAppsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAppsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -638,6 +660,7 @@ export class GetAppsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAppsResponseBody,
     };
   }
@@ -715,10 +738,12 @@ export class GetAttachmentTemporaryUrlResponseBody extends $tea.Model {
 
 export class GetAttachmentTemporaryUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAttachmentTemporaryUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -726,6 +751,7 @@ export class GetAttachmentTemporaryUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAttachmentTemporaryUrlResponseBody,
     };
   }
@@ -803,10 +829,12 @@ export class GetOrganizationsResponseBody extends $tea.Model {
 
 export class GetOrganizationsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetOrganizationsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -814,6 +842,7 @@ export class GetOrganizationsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetOrganizationsResponseBody,
     };
   }
@@ -891,10 +920,12 @@ export class GetRoleUsersResponseBody extends $tea.Model {
 
 export class GetRoleUsersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetRoleUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -902,6 +933,7 @@ export class GetRoleUsersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetRoleUsersResponseBody,
     };
   }
@@ -960,10 +992,12 @@ export class GetRolesResponseBody extends $tea.Model {
 
 export class GetRolesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetRolesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -971,6 +1005,7 @@ export class GetRolesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetRolesResponseBody,
     };
   }
@@ -1057,10 +1092,12 @@ export class GetUploadUrlResponseBody extends $tea.Model {
 
 export class GetUploadUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUploadUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1068,6 +1105,7 @@ export class GetUploadUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUploadUrlResponseBody,
     };
   }
@@ -1148,10 +1186,12 @@ export class GetUsersResponseBody extends $tea.Model {
 
 export class GetUsersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1159,6 +1199,7 @@ export class GetUsersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUsersResponseBody,
     };
   }
@@ -1236,10 +1277,12 @@ export class LoadBizFieldsResponseBody extends $tea.Model {
 
 export class LoadBizFieldsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: LoadBizFieldsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1247,6 +1290,7 @@ export class LoadBizFieldsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: LoadBizFieldsResponseBody,
     };
   }
@@ -1327,10 +1371,12 @@ export class LoadBizObjectResponseBody extends $tea.Model {
 
 export class LoadBizObjectResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: LoadBizObjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1338,6 +1384,7 @@ export class LoadBizObjectResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: LoadBizObjectResponseBody,
     };
   }
@@ -1430,10 +1477,12 @@ export class LoadBizObjectsResponseBody extends $tea.Model {
 
 export class LoadBizObjectsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: LoadBizObjectsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1441,6 +1490,7 @@ export class LoadBizObjectsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: LoadBizObjectsResponseBody,
     };
   }
@@ -1518,10 +1568,12 @@ export class QueryAppFunctionNodesResponseBody extends $tea.Model {
 
 export class QueryAppFunctionNodesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAppFunctionNodesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1529,6 +1581,7 @@ export class QueryAppFunctionNodesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAppFunctionNodesResponseBody,
     };
   }
@@ -1609,10 +1662,12 @@ export class QueryProcessesInstanceResponseBody extends $tea.Model {
 
 export class QueryProcessesInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryProcessesInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1620,6 +1675,7 @@ export class QueryProcessesInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryProcessesInstanceResponseBody,
     };
   }
@@ -1697,10 +1753,12 @@ export class QueryProcessesWorkItemsResponseBody extends $tea.Model {
 
 export class QueryProcessesWorkItemsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryProcessesWorkItemsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1708,6 +1766,7 @@ export class QueryProcessesWorkItemsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryProcessesWorkItemsResponseBody,
     };
   }
@@ -1788,10 +1847,12 @@ export class UpdateBizObjectResponseBody extends $tea.Model {
 
 export class UpdateBizObjectResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateBizObjectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1799,6 +1860,7 @@ export class UpdateBizObjectResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateBizObjectResponseBody,
     };
   }
@@ -2630,9 +2692,12 @@ export class QueryProcessesWorkItemsResponseBodyData extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2640,12 +2705,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async batchInsertBizObject(request: BatchInsertBizObjectRequest): Promise<BatchInsertBizObjectResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchInsertBizObjectHeaders({ });
-    return await this.batchInsertBizObjectWithOptions(request, headers, runtime);
-  }
 
   async batchInsertBizObjectWithOptions(request: BatchInsertBizObjectRequest, headers: BatchInsertBizObjectHeaders, runtime: $Util.RuntimeOptions): Promise<BatchInsertBizObjectResponse> {
     Util.validateModel(request);
@@ -2679,13 +2738,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchInsertBizObjectResponse>(await this.doROARequest("BatchInsertBizObject", "h3yun_1.0", "HTTP", "POST", "AK", `/v1.0/h3yun/forms/instances/batch`, "json", req, runtime), new BatchInsertBizObjectResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchInsertBizObject",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/forms/instances/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchInsertBizObjectResponse>(await this.execute(params, req, runtime), new BatchInsertBizObjectResponse({}));
   }
 
-  async cancelProcessInstance(request: CancelProcessInstanceRequest): Promise<CancelProcessInstanceResponse> {
+  async batchInsertBizObject(request: BatchInsertBizObjectRequest): Promise<BatchInsertBizObjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CancelProcessInstanceHeaders({ });
-    return await this.cancelProcessInstanceWithOptions(request, headers, runtime);
+    let headers = new BatchInsertBizObjectHeaders({ });
+    return await this.batchInsertBizObjectWithOptions(request, headers, runtime);
   }
 
   async cancelProcessInstanceWithOptions(request: CancelProcessInstanceRequest, headers: CancelProcessInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CancelProcessInstanceResponse> {
@@ -2708,13 +2778,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CancelProcessInstanceResponse>(await this.doROARequest("CancelProcessInstance", "h3yun_1.0", "HTTP", "POST", "AK", `/v1.0/h3yun/processes/instances/cancel`, "json", req, runtime), new CancelProcessInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CancelProcessInstance",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/processes/instances/cancel`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CancelProcessInstanceResponse>(await this.execute(params, req, runtime), new CancelProcessInstanceResponse({}));
   }
 
-  async createBizObject(request: CreateBizObjectRequest): Promise<CreateBizObjectResponse> {
+  async cancelProcessInstance(request: CancelProcessInstanceRequest): Promise<CancelProcessInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateBizObjectHeaders({ });
-    return await this.createBizObjectWithOptions(request, headers, runtime);
+    let headers = new CancelProcessInstanceHeaders({ });
+    return await this.cancelProcessInstanceWithOptions(request, headers, runtime);
   }
 
   async createBizObjectWithOptions(request: CreateBizObjectRequest, headers: CreateBizObjectHeaders, runtime: $Util.RuntimeOptions): Promise<CreateBizObjectResponse> {
@@ -2749,13 +2830,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateBizObjectResponse>(await this.doROARequest("CreateBizObject", "h3yun_1.0", "HTTP", "POST", "AK", `/v1.0/h3yun/forms/instances`, "json", req, runtime), new CreateBizObjectResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateBizObject",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/forms/instances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateBizObjectResponse>(await this.execute(params, req, runtime), new CreateBizObjectResponse({}));
   }
 
-  async createProcessesInstance(request: CreateProcessesInstanceRequest): Promise<CreateProcessesInstanceResponse> {
+  async createBizObject(request: CreateBizObjectRequest): Promise<CreateBizObjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateProcessesInstanceHeaders({ });
-    return await this.createProcessesInstanceWithOptions(request, headers, runtime);
+    let headers = new CreateBizObjectHeaders({ });
+    return await this.createBizObjectWithOptions(request, headers, runtime);
   }
 
   async createProcessesInstanceWithOptions(request: CreateProcessesInstanceRequest, headers: CreateProcessesInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProcessesInstanceResponse> {
@@ -2786,13 +2878,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateProcessesInstanceResponse>(await this.doROARequest("CreateProcessesInstance", "h3yun_1.0", "HTTP", "POST", "AK", `/v1.0/h3yun/processes/instances`, "json", req, runtime), new CreateProcessesInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateProcessesInstance",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/processes/instances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateProcessesInstanceResponse>(await this.execute(params, req, runtime), new CreateProcessesInstanceResponse({}));
   }
 
-  async deleteBizObject(request: DeleteBizObjectRequest): Promise<DeleteBizObjectResponse> {
+  async createProcessesInstance(request: CreateProcessesInstanceRequest): Promise<CreateProcessesInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteBizObjectHeaders({ });
-    return await this.deleteBizObjectWithOptions(request, headers, runtime);
+    let headers = new CreateProcessesInstanceHeaders({ });
+    return await this.createProcessesInstanceWithOptions(request, headers, runtime);
   }
 
   async deleteBizObjectWithOptions(request: DeleteBizObjectRequest, headers: DeleteBizObjectHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteBizObjectResponse> {
@@ -2819,13 +2922,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteBizObjectResponse>(await this.doROARequest("DeleteBizObject", "h3yun_1.0", "HTTP", "DELETE", "AK", `/v1.0/h3yun/forms/instances`, "json", req, runtime), new DeleteBizObjectResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteBizObject",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/forms/instances`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteBizObjectResponse>(await this.execute(params, req, runtime), new DeleteBizObjectResponse({}));
   }
 
-  async deleteProcessesInstance(request: DeleteProcessesInstanceRequest): Promise<DeleteProcessesInstanceResponse> {
+  async deleteBizObject(request: DeleteBizObjectRequest): Promise<DeleteBizObjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteProcessesInstanceHeaders({ });
-    return await this.deleteProcessesInstanceWithOptions(request, headers, runtime);
+    let headers = new DeleteBizObjectHeaders({ });
+    return await this.deleteBizObjectWithOptions(request, headers, runtime);
   }
 
   async deleteProcessesInstanceWithOptions(request: DeleteProcessesInstanceRequest, headers: DeleteProcessesInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteProcessesInstanceResponse> {
@@ -2852,13 +2966,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteProcessesInstanceResponse>(await this.doROARequest("DeleteProcessesInstance", "h3yun_1.0", "HTTP", "DELETE", "AK", `/v1.0/h3yun/processes/instances`, "json", req, runtime), new DeleteProcessesInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteProcessesInstance",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/processes/instances`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteProcessesInstanceResponse>(await this.execute(params, req, runtime), new DeleteProcessesInstanceResponse({}));
   }
 
-  async getApps(request: GetAppsRequest): Promise<GetAppsResponse> {
+  async deleteProcessesInstance(request: DeleteProcessesInstanceRequest): Promise<DeleteProcessesInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAppsHeaders({ });
-    return await this.getAppsWithOptions(request, headers, runtime);
+    let headers = new DeleteProcessesInstanceHeaders({ });
+    return await this.deleteProcessesInstanceWithOptions(request, headers, runtime);
   }
 
   async getAppsWithOptions(request: GetAppsRequest, headers: GetAppsHeaders, runtime: $Util.RuntimeOptions): Promise<GetAppsResponse> {
@@ -2885,13 +3010,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetAppsResponse>(await this.doROARequest("GetApps", "h3yun_1.0", "HTTP", "POST", "AK", `/v1.0/h3yun/apps/search`, "json", req, runtime), new GetAppsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetApps",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/apps/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAppsResponse>(await this.execute(params, req, runtime), new GetAppsResponse({}));
   }
 
-  async getAttachmentTemporaryUrl(request: GetAttachmentTemporaryUrlRequest): Promise<GetAttachmentTemporaryUrlResponse> {
+  async getApps(request: GetAppsRequest): Promise<GetAppsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAttachmentTemporaryUrlHeaders({ });
-    return await this.getAttachmentTemporaryUrlWithOptions(request, headers, runtime);
+    let headers = new GetAppsHeaders({ });
+    return await this.getAppsWithOptions(request, headers, runtime);
   }
 
   async getAttachmentTemporaryUrlWithOptions(request: GetAttachmentTemporaryUrlRequest, headers: GetAttachmentTemporaryUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetAttachmentTemporaryUrlResponse> {
@@ -2914,13 +3050,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetAttachmentTemporaryUrlResponse>(await this.doROARequest("GetAttachmentTemporaryUrl", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/attachments/temporaryUrls`, "json", req, runtime), new GetAttachmentTemporaryUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAttachmentTemporaryUrl",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/attachments/temporaryUrls`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAttachmentTemporaryUrlResponse>(await this.execute(params, req, runtime), new GetAttachmentTemporaryUrlResponse({}));
   }
 
-  async getOrganizations(request: GetOrganizationsRequest): Promise<GetOrganizationsResponse> {
+  async getAttachmentTemporaryUrl(request: GetAttachmentTemporaryUrlRequest): Promise<GetAttachmentTemporaryUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetOrganizationsHeaders({ });
-    return await this.getOrganizationsWithOptions(request, headers, runtime);
+    let headers = new GetAttachmentTemporaryUrlHeaders({ });
+    return await this.getAttachmentTemporaryUrlWithOptions(request, headers, runtime);
   }
 
   async getOrganizationsWithOptions(request: GetOrganizationsRequest, headers: GetOrganizationsHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrganizationsResponse> {
@@ -2943,13 +3090,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetOrganizationsResponse>(await this.doROARequest("GetOrganizations", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/departments`, "json", req, runtime), new GetOrganizationsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetOrganizations",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/departments`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOrganizationsResponse>(await this.execute(params, req, runtime), new GetOrganizationsResponse({}));
   }
 
-  async getRoleUsers(request: GetRoleUsersRequest): Promise<GetRoleUsersResponse> {
+  async getOrganizations(request: GetOrganizationsRequest): Promise<GetOrganizationsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetRoleUsersHeaders({ });
-    return await this.getRoleUsersWithOptions(request, headers, runtime);
+    let headers = new GetOrganizationsHeaders({ });
+    return await this.getOrganizationsWithOptions(request, headers, runtime);
   }
 
   async getRoleUsersWithOptions(request: GetRoleUsersRequest, headers: GetRoleUsersHeaders, runtime: $Util.RuntimeOptions): Promise<GetRoleUsersResponse> {
@@ -2972,13 +3130,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetRoleUsersResponse>(await this.doROARequest("GetRoleUsers", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/roles/roleUsers`, "json", req, runtime), new GetRoleUsersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetRoleUsers",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/roles/roleUsers`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRoleUsersResponse>(await this.execute(params, req, runtime), new GetRoleUsersResponse({}));
   }
 
-  async getRoles(): Promise<GetRolesResponse> {
+  async getRoleUsers(request: GetRoleUsersRequest): Promise<GetRoleUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetRolesHeaders({ });
-    return await this.getRolesWithOptions(headers, runtime);
+    let headers = new GetRoleUsersHeaders({ });
+    return await this.getRoleUsersWithOptions(request, headers, runtime);
   }
 
   async getRolesWithOptions(headers: GetRolesHeaders, runtime: $Util.RuntimeOptions): Promise<GetRolesResponse> {
@@ -2994,13 +3163,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetRolesResponse>(await this.doROARequest("GetRoles", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/roles`, "json", req, runtime), new GetRolesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetRoles",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/roles`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRolesResponse>(await this.execute(params, req, runtime), new GetRolesResponse({}));
   }
 
-  async getUploadUrl(request: GetUploadUrlRequest): Promise<GetUploadUrlResponse> {
+  async getRoles(): Promise<GetRolesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUploadUrlHeaders({ });
-    return await this.getUploadUrlWithOptions(request, headers, runtime);
+    let headers = new GetRolesHeaders({ });
+    return await this.getRolesWithOptions(headers, runtime);
   }
 
   async getUploadUrlWithOptions(request: GetUploadUrlRequest, headers: GetUploadUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetUploadUrlResponse> {
@@ -3035,13 +3215,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetUploadUrlResponse>(await this.doROARequest("GetUploadUrl", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/attachments/uploadUrls`, "json", req, runtime), new GetUploadUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUploadUrl",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/attachments/uploadUrls`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUploadUrlResponse>(await this.execute(params, req, runtime), new GetUploadUrlResponse({}));
   }
 
-  async getUsers(request: GetUsersRequest): Promise<GetUsersResponse> {
+  async getUploadUrl(request: GetUploadUrlRequest): Promise<GetUploadUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUsersHeaders({ });
-    return await this.getUsersWithOptions(request, headers, runtime);
+    let headers = new GetUploadUrlHeaders({ });
+    return await this.getUploadUrlWithOptions(request, headers, runtime);
   }
 
   async getUsersWithOptions(request: GetUsersRequest, headers: GetUsersHeaders, runtime: $Util.RuntimeOptions): Promise<GetUsersResponse> {
@@ -3068,13 +3259,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetUsersResponse>(await this.doROARequest("GetUsers", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/users`, "json", req, runtime), new GetUsersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUsers",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/users`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUsersResponse>(await this.execute(params, req, runtime), new GetUsersResponse({}));
   }
 
-  async loadBizFields(request: LoadBizFieldsRequest): Promise<LoadBizFieldsResponse> {
+  async getUsers(request: GetUsersRequest): Promise<GetUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new LoadBizFieldsHeaders({ });
-    return await this.loadBizFieldsWithOptions(request, headers, runtime);
+    let headers = new GetUsersHeaders({ });
+    return await this.getUsersWithOptions(request, headers, runtime);
   }
 
   async loadBizFieldsWithOptions(request: LoadBizFieldsRequest, headers: LoadBizFieldsHeaders, runtime: $Util.RuntimeOptions): Promise<LoadBizFieldsResponse> {
@@ -3097,13 +3299,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<LoadBizFieldsResponse>(await this.doROARequest("LoadBizFields", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/forms/loadBizFields`, "json", req, runtime), new LoadBizFieldsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "LoadBizFields",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/forms/loadBizFields`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<LoadBizFieldsResponse>(await this.execute(params, req, runtime), new LoadBizFieldsResponse({}));
   }
 
-  async loadBizObject(request: LoadBizObjectRequest): Promise<LoadBizObjectResponse> {
+  async loadBizFields(request: LoadBizFieldsRequest): Promise<LoadBizFieldsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new LoadBizObjectHeaders({ });
-    return await this.loadBizObjectWithOptions(request, headers, runtime);
+    let headers = new LoadBizFieldsHeaders({ });
+    return await this.loadBizFieldsWithOptions(request, headers, runtime);
   }
 
   async loadBizObjectWithOptions(request: LoadBizObjectRequest, headers: LoadBizObjectHeaders, runtime: $Util.RuntimeOptions): Promise<LoadBizObjectResponse> {
@@ -3130,13 +3343,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<LoadBizObjectResponse>(await this.doROARequest("LoadBizObject", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/forms/instances/loadInstances`, "json", req, runtime), new LoadBizObjectResponse({}));
+    let params = new $OpenApi.Params({
+      action: "LoadBizObject",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/forms/instances/loadInstances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<LoadBizObjectResponse>(await this.execute(params, req, runtime), new LoadBizObjectResponse({}));
   }
 
-  async loadBizObjects(request: LoadBizObjectsRequest): Promise<LoadBizObjectsResponse> {
+  async loadBizObject(request: LoadBizObjectRequest): Promise<LoadBizObjectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new LoadBizObjectsHeaders({ });
-    return await this.loadBizObjectsWithOptions(request, headers, runtime);
+    let headers = new LoadBizObjectHeaders({ });
+    return await this.loadBizObjectWithOptions(request, headers, runtime);
   }
 
   async loadBizObjectsWithOptions(request: LoadBizObjectsRequest, headers: LoadBizObjectsHeaders, runtime: $Util.RuntimeOptions): Promise<LoadBizObjectsResponse> {
@@ -3179,13 +3403,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<LoadBizObjectsResponse>(await this.doROARequest("LoadBizObjects", "h3yun_1.0", "HTTP", "POST", "AK", `/v1.0/h3yun/forms/instances/search`, "json", req, runtime), new LoadBizObjectsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "LoadBizObjects",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/forms/instances/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<LoadBizObjectsResponse>(await this.execute(params, req, runtime), new LoadBizObjectsResponse({}));
   }
 
-  async queryAppFunctionNodes(request: QueryAppFunctionNodesRequest): Promise<QueryAppFunctionNodesResponse> {
+  async loadBizObjects(request: LoadBizObjectsRequest): Promise<LoadBizObjectsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAppFunctionNodesHeaders({ });
-    return await this.queryAppFunctionNodesWithOptions(request, headers, runtime);
+    let headers = new LoadBizObjectsHeaders({ });
+    return await this.loadBizObjectsWithOptions(request, headers, runtime);
   }
 
   async queryAppFunctionNodesWithOptions(request: QueryAppFunctionNodesRequest, headers: QueryAppFunctionNodesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAppFunctionNodesResponse> {
@@ -3208,13 +3443,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryAppFunctionNodesResponse>(await this.doROARequest("QueryAppFunctionNodes", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/apps/functionNodes`, "json", req, runtime), new QueryAppFunctionNodesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAppFunctionNodes",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/apps/functionNodes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAppFunctionNodesResponse>(await this.execute(params, req, runtime), new QueryAppFunctionNodesResponse({}));
   }
 
-  async queryProcessesInstance(request: QueryProcessesInstanceRequest): Promise<QueryProcessesInstanceResponse> {
+  async queryAppFunctionNodes(request: QueryAppFunctionNodesRequest): Promise<QueryAppFunctionNodesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryProcessesInstanceHeaders({ });
-    return await this.queryProcessesInstanceWithOptions(request, headers, runtime);
+    let headers = new QueryAppFunctionNodesHeaders({ });
+    return await this.queryAppFunctionNodesWithOptions(request, headers, runtime);
   }
 
   async queryProcessesInstanceWithOptions(request: QueryProcessesInstanceRequest, headers: QueryProcessesInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProcessesInstanceResponse> {
@@ -3241,13 +3487,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryProcessesInstanceResponse>(await this.doROARequest("QueryProcessesInstance", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/processes/instances`, "json", req, runtime), new QueryProcessesInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryProcessesInstance",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/processes/instances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryProcessesInstanceResponse>(await this.execute(params, req, runtime), new QueryProcessesInstanceResponse({}));
   }
 
-  async queryProcessesWorkItems(request: QueryProcessesWorkItemsRequest): Promise<QueryProcessesWorkItemsResponse> {
+  async queryProcessesInstance(request: QueryProcessesInstanceRequest): Promise<QueryProcessesInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryProcessesWorkItemsHeaders({ });
-    return await this.queryProcessesWorkItemsWithOptions(request, headers, runtime);
+    let headers = new QueryProcessesInstanceHeaders({ });
+    return await this.queryProcessesInstanceWithOptions(request, headers, runtime);
   }
 
   async queryProcessesWorkItemsWithOptions(request: QueryProcessesWorkItemsRequest, headers: QueryProcessesWorkItemsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryProcessesWorkItemsResponse> {
@@ -3270,13 +3527,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryProcessesWorkItemsResponse>(await this.doROARequest("QueryProcessesWorkItems", "h3yun_1.0", "HTTP", "GET", "AK", `/v1.0/h3yun/processes/workItems`, "json", req, runtime), new QueryProcessesWorkItemsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryProcessesWorkItems",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/processes/workItems`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryProcessesWorkItemsResponse>(await this.execute(params, req, runtime), new QueryProcessesWorkItemsResponse({}));
   }
 
-  async updateBizObject(request: UpdateBizObjectRequest): Promise<UpdateBizObjectResponse> {
+  async queryProcessesWorkItems(request: QueryProcessesWorkItemsRequest): Promise<QueryProcessesWorkItemsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateBizObjectHeaders({ });
-    return await this.updateBizObjectWithOptions(request, headers, runtime);
+    let headers = new QueryProcessesWorkItemsHeaders({ });
+    return await this.queryProcessesWorkItemsWithOptions(request, headers, runtime);
   }
 
   async updateBizObjectWithOptions(request: UpdateBizObjectRequest, headers: UpdateBizObjectHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateBizObjectResponse> {
@@ -3307,7 +3575,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateBizObjectResponse>(await this.doROARequest("UpdateBizObject", "h3yun_1.0", "HTTP", "PUT", "AK", `/v1.0/h3yun/forms/instances`, "json", req, runtime), new UpdateBizObjectResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateBizObject",
+      version: "h3yun_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h3yun/forms/instances`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateBizObjectResponse>(await this.execute(params, req, runtime), new UpdateBizObjectResponse({}));
+  }
+
+  async updateBizObject(request: UpdateBizObjectRequest): Promise<UpdateBizObjectResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateBizObjectHeaders({ });
+    return await this.updateBizObjectWithOptions(request, headers, runtime);
   }
 
 }

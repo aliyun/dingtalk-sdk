@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -78,10 +80,12 @@ export class AddAppRolesToMemberResponseBody extends $tea.Model {
 
 export class AddAppRolesToMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddAppRolesToMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -89,6 +93,7 @@ export class AddAppRolesToMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddAppRolesToMemberResponseBody,
     };
   }
@@ -166,10 +171,12 @@ export class AddAppToWorkBenchGroupResponseBody extends $tea.Model {
 
 export class AddAppToWorkBenchGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddAppToWorkBenchGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -177,6 +184,7 @@ export class AddAppToWorkBenchGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddAppToWorkBenchGroupResponseBody,
     };
   }
@@ -257,10 +265,12 @@ export class AddMemberToAppRoleResponseBody extends $tea.Model {
 
 export class AddMemberToAppRoleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddMemberToAppRoleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -268,6 +278,7 @@ export class AddMemberToAppRoleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddMemberToAppRoleResponseBody,
     };
   }
@@ -375,10 +386,12 @@ export class CreateApaasAppResponseBody extends $tea.Model {
 
 export class CreateApaasAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateApaasAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -386,6 +399,7 @@ export class CreateApaasAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateApaasAppResponseBody,
     };
   }
@@ -490,10 +504,12 @@ export class CreateInnerAppResponseBody extends $tea.Model {
 
 export class CreateInnerAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateInnerAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -501,6 +517,7 @@ export class CreateInnerAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateInnerAppResponseBody,
     };
   }
@@ -572,10 +589,12 @@ export class DeleteAppRoleResponseBody extends $tea.Model {
 
 export class DeleteAppRoleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteAppRoleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -583,6 +602,7 @@ export class DeleteAppRoleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteAppRoleResponseBody,
     };
   }
@@ -654,10 +674,12 @@ export class DeleteInnerAppResponseBody extends $tea.Model {
 
 export class DeleteInnerAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteInnerAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -665,6 +687,7 @@ export class DeleteInnerAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteInnerAppResponseBody,
     };
   }
@@ -723,10 +746,12 @@ export class GetApaasAppResponseBody extends $tea.Model {
 
 export class GetApaasAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetApaasAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -734,6 +759,7 @@ export class GetApaasAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetApaasAppResponseBody,
     };
   }
@@ -804,10 +830,12 @@ export class GetAppRoleScopeByRoleIdResponseBody extends $tea.Model {
 
 export class GetAppRoleScopeByRoleIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAppRoleScopeByRoleIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -815,6 +843,7 @@ export class GetAppRoleScopeByRoleIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAppRoleScopeByRoleIdResponseBody,
     };
   }
@@ -916,10 +945,12 @@ export class GetInnerAppResponseBody extends $tea.Model {
 
 export class GetInnerAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetInnerAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -927,6 +958,7 @@ export class GetInnerAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetInnerAppResponseBody,
     };
   }
@@ -979,10 +1011,12 @@ export class GetMicroAppScopeResponseBody extends $tea.Model {
 
 export class GetMicroAppScopeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetMicroAppScopeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -990,6 +1024,7 @@ export class GetMicroAppScopeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetMicroAppScopeResponseBody,
     };
   }
@@ -1042,10 +1077,12 @@ export class GetMicroAppUserAccessResponseBody extends $tea.Model {
 
 export class GetMicroAppUserAccessResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetMicroAppUserAccessResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1053,6 +1090,7 @@ export class GetMicroAppUserAccessResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetMicroAppUserAccessResponseBody,
     };
   }
@@ -1105,10 +1143,12 @@ export class GetUserAppDevAccessResponseBody extends $tea.Model {
 
 export class GetUserAppDevAccessResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserAppDevAccessResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1116,6 +1156,7 @@ export class GetUserAppDevAccessResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserAppDevAccessResponseBody,
     };
   }
@@ -1168,10 +1209,12 @@ export class ListAllAppResponseBody extends $tea.Model {
 
 export class ListAllAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListAllAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1179,6 +1222,7 @@ export class ListAllAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListAllAppResponseBody,
     };
   }
@@ -1231,10 +1275,12 @@ export class ListAllInnerAppsResponseBody extends $tea.Model {
 
 export class ListAllInnerAppsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListAllInnerAppsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1242,6 +1288,7 @@ export class ListAllInnerAppsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListAllInnerAppsResponseBody,
     };
   }
@@ -1322,10 +1369,12 @@ export class ListAppRoleScopesResponseBody extends $tea.Model {
 
 export class ListAppRoleScopesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListAppRoleScopesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1333,6 +1382,7 @@ export class ListAppRoleScopesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListAppRoleScopesResponseBody,
     };
   }
@@ -1404,10 +1454,12 @@ export class ListInnerAppResponseBody extends $tea.Model {
 
 export class ListInnerAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListInnerAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1415,6 +1467,7 @@ export class ListInnerAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListInnerAppResponseBody,
     };
   }
@@ -1467,10 +1520,12 @@ export class ListInnerAppVersionResponseBody extends $tea.Model {
 
 export class ListInnerAppVersionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListInnerAppVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1478,6 +1533,7 @@ export class ListInnerAppVersionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListInnerAppVersionResponseBody,
     };
   }
@@ -1530,10 +1586,12 @@ export class ListRoleInfoByUserResponseBody extends $tea.Model {
 
 export class ListRoleInfoByUserResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListRoleInfoByUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1541,6 +1599,7 @@ export class ListRoleInfoByUserResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListRoleInfoByUserResponseBody,
     };
   }
@@ -1593,10 +1652,12 @@ export class ListUserVilebleAppResponseBody extends $tea.Model {
 
 export class ListUserVilebleAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListUserVilebleAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1604,6 +1665,7 @@ export class ListUserVilebleAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListUserVilebleAppResponseBody,
     };
   }
@@ -1681,10 +1743,12 @@ export class PageInnerAppHistoryVersionResponseBody extends $tea.Model {
 
 export class PageInnerAppHistoryVersionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PageInnerAppHistoryVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1692,6 +1756,7 @@ export class PageInnerAppHistoryVersionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PageInnerAppHistoryVersionResponseBody,
     };
   }
@@ -1772,10 +1837,12 @@ export class PublishInnerAppVersionResponseBody extends $tea.Model {
 
 export class PublishInnerAppVersionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PublishInnerAppVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1783,6 +1850,7 @@ export class PublishInnerAppVersionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PublishInnerAppVersionResponseBody,
     };
   }
@@ -1866,10 +1934,12 @@ export class RebuildRoleScopeForAppRoleResponseBody extends $tea.Model {
 
 export class RebuildRoleScopeForAppRoleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RebuildRoleScopeForAppRoleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1877,6 +1947,7 @@ export class RebuildRoleScopeForAppRoleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RebuildRoleScopeForAppRoleResponseBody,
     };
   }
@@ -1957,10 +2028,12 @@ export class RegisterCustomAppRoleResponseBody extends $tea.Model {
 
 export class RegisterCustomAppRoleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RegisterCustomAppRoleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1968,6 +2041,7 @@ export class RegisterCustomAppRoleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RegisterCustomAppRoleResponseBody,
     };
   }
@@ -2042,10 +2116,12 @@ export class RemoveApaasAppResponseBody extends $tea.Model {
 
 export class RemoveApaasAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RemoveApaasAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2053,6 +2129,7 @@ export class RemoveApaasAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RemoveApaasAppResponseBody,
     };
   }
@@ -2133,10 +2210,12 @@ export class RemoveMemberForAppRoleResponseBody extends $tea.Model {
 
 export class RemoveMemberForAppRoleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RemoveMemberForAppRoleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2144,6 +2223,7 @@ export class RemoveMemberForAppRoleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RemoveMemberForAppRoleResponseBody,
     };
   }
@@ -2218,10 +2298,12 @@ export class RollbackInnerAppVersionResponseBody extends $tea.Model {
 
 export class RollbackInnerAppVersionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RollbackInnerAppVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2229,6 +2311,7 @@ export class RollbackInnerAppVersionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RollbackInnerAppVersionResponseBody,
     };
   }
@@ -2318,10 +2401,12 @@ export class SetMicroAppScopeResponseBody extends $tea.Model {
 
 export class SetMicroAppScopeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SetMicroAppScopeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2329,6 +2414,7 @@ export class SetMicroAppScopeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SetMicroAppScopeResponseBody,
     };
   }
@@ -2415,10 +2501,12 @@ export class UpdateApaasAppResponseBody extends $tea.Model {
 
 export class UpdateApaasAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateApaasAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2426,6 +2514,7 @@ export class UpdateApaasAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateApaasAppResponseBody,
     };
   }
@@ -2503,10 +2592,12 @@ export class UpdateAppRoleInfoResponseBody extends $tea.Model {
 
 export class UpdateAppRoleInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateAppRoleInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2514,6 +2605,7 @@ export class UpdateAppRoleInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateAppRoleInfoResponseBody,
     };
   }
@@ -2606,10 +2698,12 @@ export class UpdateInnerAppResponseBody extends $tea.Model {
 
 export class UpdateInnerAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateInnerAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2617,6 +2711,7 @@ export class UpdateInnerAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateInnerAppResponseBody,
     };
   }
@@ -3020,9 +3115,12 @@ export class PageInnerAppHistoryVersionResponseBodyMiniAppVersionList extends $t
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -3031,15 +3129,8 @@ export default class Client extends OpenApi {
   }
 
 
-  async addAppRolesToMember(agentId: string, request: AddAppRolesToMemberRequest): Promise<AddAppRolesToMemberResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddAppRolesToMemberHeaders({ });
-    return await this.addAppRolesToMemberWithOptions(agentId, request, headers, runtime);
-  }
-
   async addAppRolesToMemberWithOptions(agentId: string, request: AddAppRolesToMemberRequest, headers: AddAppRolesToMemberHeaders, runtime: $Util.RuntimeOptions): Promise<AddAppRolesToMemberResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.memberId)) {
       body["memberId"] = request.memberId;
@@ -3070,18 +3161,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddAppRolesToMemberResponse>(await this.doROARequest("AddAppRolesToMember", "microApp_1.0", "HTTP", "PUT", "AK", `/v1.0/microApp/apps/${agentId}/members/roles`, "json", req, runtime), new AddAppRolesToMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddAppRolesToMember",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/members/roles`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AddAppRolesToMemberResponse>(await this.execute(params, req, runtime), new AddAppRolesToMemberResponse({}));
   }
 
-  async addAppToWorkBenchGroup(agentId: string, request: AddAppToWorkBenchGroupRequest): Promise<AddAppToWorkBenchGroupResponse> {
+  async addAppRolesToMember(agentId: string, request: AddAppRolesToMemberRequest): Promise<AddAppRolesToMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddAppToWorkBenchGroupHeaders({ });
-    return await this.addAppToWorkBenchGroupWithOptions(agentId, request, headers, runtime);
+    let headers = new AddAppRolesToMemberHeaders({ });
+    return await this.addAppRolesToMemberWithOptions(agentId, request, headers, runtime);
   }
 
   async addAppToWorkBenchGroupWithOptions(agentId: string, request: AddAppToWorkBenchGroupRequest, headers: AddAppToWorkBenchGroupHeaders, runtime: $Util.RuntimeOptions): Promise<AddAppToWorkBenchGroupResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.componentId)) {
       body["componentId"] = request.componentId;
@@ -3108,19 +3209,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddAppToWorkBenchGroupResponse>(await this.doROARequest("AddAppToWorkBenchGroup", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/apps/${agentId}/addToWorkBenchGroup`, "json", req, runtime), new AddAppToWorkBenchGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddAppToWorkBenchGroup",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/addToWorkBenchGroup`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddAppToWorkBenchGroupResponse>(await this.execute(params, req, runtime), new AddAppToWorkBenchGroupResponse({}));
   }
 
-  async addMemberToAppRole(agentId: string, roleId: string, request: AddMemberToAppRoleRequest): Promise<AddMemberToAppRoleResponse> {
+  async addAppToWorkBenchGroup(agentId: string, request: AddAppToWorkBenchGroupRequest): Promise<AddAppToWorkBenchGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddMemberToAppRoleHeaders({ });
-    return await this.addMemberToAppRoleWithOptions(agentId, roleId, request, headers, runtime);
+    let headers = new AddAppToWorkBenchGroupHeaders({ });
+    return await this.addAppToWorkBenchGroupWithOptions(agentId, request, headers, runtime);
   }
 
   async addMemberToAppRoleWithOptions(agentId: string, roleId: string, request: AddMemberToAppRoleRequest, headers: AddMemberToAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<AddMemberToAppRoleResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    roleId = OpenApiUtil.getEncodeParam(roleId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.deptIdList)) {
       body["deptIdList"] = request.deptIdList;
@@ -3151,13 +3261,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddMemberToAppRoleResponse>(await this.doROARequest("AddMemberToAppRole", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/apps/${agentId}/roles/${roleId}/members`, "json", req, runtime), new AddMemberToAppRoleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddMemberToAppRole",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/roles/${roleId}/members`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AddMemberToAppRoleResponse>(await this.execute(params, req, runtime), new AddMemberToAppRoleResponse({}));
   }
 
-  async createApaasApp(request: CreateApaasAppRequest): Promise<CreateApaasAppResponse> {
+  async addMemberToAppRole(agentId: string, roleId: string, request: AddMemberToAppRoleRequest): Promise<AddMemberToAppRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateApaasAppHeaders({ });
-    return await this.createApaasAppWithOptions(request, headers, runtime);
+    let headers = new AddMemberToAppRoleHeaders({ });
+    return await this.addMemberToAppRoleWithOptions(agentId, roleId, request, headers, runtime);
   }
 
   async createApaasAppWithOptions(request: CreateApaasAppRequest, headers: CreateApaasAppHeaders, runtime: $Util.RuntimeOptions): Promise<CreateApaasAppResponse> {
@@ -3224,13 +3345,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateApaasAppResponse>(await this.doROARequest("CreateApaasApp", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/apaasApps`, "json", req, runtime), new CreateApaasAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateApaasApp",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apaasApps`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateApaasAppResponse>(await this.execute(params, req, runtime), new CreateApaasAppResponse({}));
   }
 
-  async createInnerApp(request: CreateInnerAppRequest): Promise<CreateInnerAppResponse> {
+  async createApaasApp(request: CreateApaasAppRequest): Promise<CreateApaasAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateInnerAppHeaders({ });
-    return await this.createInnerAppWithOptions(request, headers, runtime);
+    let headers = new CreateApaasAppHeaders({ });
+    return await this.createApaasAppWithOptions(request, headers, runtime);
   }
 
   async createInnerAppWithOptions(request: CreateInnerAppRequest, headers: CreateInnerAppHeaders, runtime: $Util.RuntimeOptions): Promise<CreateInnerAppResponse> {
@@ -3289,19 +3421,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateInnerAppResponse>(await this.doROARequest("CreateInnerApp", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/apps`, "json", req, runtime), new CreateInnerAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateInnerApp",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateInnerAppResponse>(await this.execute(params, req, runtime), new CreateInnerAppResponse({}));
   }
 
-  async deleteAppRole(agentId: string, roleId: string, request: DeleteAppRoleRequest): Promise<DeleteAppRoleResponse> {
+  async createInnerApp(request: CreateInnerAppRequest): Promise<CreateInnerAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteAppRoleHeaders({ });
-    return await this.deleteAppRoleWithOptions(agentId, roleId, request, headers, runtime);
+    let headers = new CreateInnerAppHeaders({ });
+    return await this.createInnerAppWithOptions(request, headers, runtime);
   }
 
   async deleteAppRoleWithOptions(agentId: string, roleId: string, request: DeleteAppRoleRequest, headers: DeleteAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteAppRoleResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    roleId = OpenApiUtil.getEncodeParam(roleId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUserId)) {
       query["opUserId"] = request.opUserId;
@@ -3320,18 +3461,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteAppRoleResponse>(await this.doROARequest("DeleteAppRole", "microApp_1.0", "HTTP", "DELETE", "AK", `/v1.0/microApp/apps/${agentId}/roles/${roleId}`, "json", req, runtime), new DeleteAppRoleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteAppRole",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/roles/${roleId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteAppRoleResponse>(await this.execute(params, req, runtime), new DeleteAppRoleResponse({}));
   }
 
-  async deleteInnerApp(agentId: string, request: DeleteInnerAppRequest): Promise<DeleteInnerAppResponse> {
+  async deleteAppRole(agentId: string, roleId: string, request: DeleteAppRoleRequest): Promise<DeleteAppRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteInnerAppHeaders({ });
-    return await this.deleteInnerAppWithOptions(agentId, request, headers, runtime);
+    let headers = new DeleteAppRoleHeaders({ });
+    return await this.deleteAppRoleWithOptions(agentId, roleId, request, headers, runtime);
   }
 
   async deleteInnerAppWithOptions(agentId: string, request: DeleteInnerAppRequest, headers: DeleteInnerAppHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteInnerAppResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.opUnionId)) {
       query["opUnionId"] = request.opUnionId;
@@ -3350,7 +3501,51 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteInnerAppResponse>(await this.doROARequest("DeleteInnerApp", "microApp_1.0", "HTTP", "DELETE", "AK", `/v1.0/microApp/apps/${agentId}`, "json", req, runtime), new DeleteInnerAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteInnerApp",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteInnerAppResponse>(await this.execute(params, req, runtime), new DeleteInnerAppResponse({}));
+  }
+
+  async deleteInnerApp(agentId: string, request: DeleteInnerAppRequest): Promise<DeleteInnerAppResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteInnerAppHeaders({ });
+    return await this.deleteInnerAppWithOptions(agentId, request, headers, runtime);
+  }
+
+  async getApaasAppWithOptions(bizAppId: string, headers: GetApaasAppHeaders, runtime: $Util.RuntimeOptions): Promise<GetApaasAppResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "GetApaasApp",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apaasApps/${bizAppId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetApaasAppResponse>(await this.execute(params, req, runtime), new GetApaasAppResponse({}));
   }
 
   async getApaasApp(bizAppId: string): Promise<GetApaasAppResponse> {
@@ -3359,8 +3554,7 @@ export default class Client extends OpenApi {
     return await this.getApaasAppWithOptions(bizAppId, headers, runtime);
   }
 
-  async getApaasAppWithOptions(bizAppId: string, headers: GetApaasAppHeaders, runtime: $Util.RuntimeOptions): Promise<GetApaasAppResponse> {
-    bizAppId = OpenApiUtil.getEncodeParam(bizAppId);
+  async getAppRoleScopeByRoleIdWithOptions(agentId: string, roleId: string, headers: GetAppRoleScopeByRoleIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetAppRoleScopeByRoleIdResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3373,7 +3567,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetApaasAppResponse>(await this.doROARequest("GetApaasApp", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apaasApps/${bizAppId}`, "json", req, runtime), new GetApaasAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAppRoleScopeByRoleId",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/roles/${roleId}/scopes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAppRoleScopeByRoleIdResponse>(await this.execute(params, req, runtime), new GetAppRoleScopeByRoleIdResponse({}));
   }
 
   async getAppRoleScopeByRoleId(agentId: string, roleId: string): Promise<GetAppRoleScopeByRoleIdResponse> {
@@ -3382,33 +3587,8 @@ export default class Client extends OpenApi {
     return await this.getAppRoleScopeByRoleIdWithOptions(agentId, roleId, headers, runtime);
   }
 
-  async getAppRoleScopeByRoleIdWithOptions(agentId: string, roleId: string, headers: GetAppRoleScopeByRoleIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetAppRoleScopeByRoleIdResponse> {
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    roleId = OpenApiUtil.getEncodeParam(roleId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetAppRoleScopeByRoleIdResponse>(await this.doROARequest("GetAppRoleScopeByRoleId", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apps/${agentId}/roles/${roleId}/scopes`, "json", req, runtime), new GetAppRoleScopeByRoleIdResponse({}));
-  }
-
-  async getInnerApp(agentId: string, request: GetInnerAppRequest): Promise<GetInnerAppResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetInnerAppHeaders({ });
-    return await this.getInnerAppWithOptions(agentId, request, headers, runtime);
-  }
-
   async getInnerAppWithOptions(agentId: string, request: GetInnerAppRequest, headers: GetInnerAppHeaders, runtime: $Util.RuntimeOptions): Promise<GetInnerAppResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.ecologicalCorpId)) {
       query["ecologicalCorpId"] = request.ecologicalCorpId;
@@ -3431,7 +3611,51 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetInnerAppResponse>(await this.doROARequest("GetInnerApp", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apps/${agentId}`, "json", req, runtime), new GetInnerAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetInnerApp",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetInnerAppResponse>(await this.execute(params, req, runtime), new GetInnerAppResponse({}));
+  }
+
+  async getInnerApp(agentId: string, request: GetInnerAppRequest): Promise<GetInnerAppResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetInnerAppHeaders({ });
+    return await this.getInnerAppWithOptions(agentId, request, headers, runtime);
+  }
+
+  async getMicroAppScopeWithOptions(agentId: string, headers: GetMicroAppScopeHeaders, runtime: $Util.RuntimeOptions): Promise<GetMicroAppScopeResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "GetMicroAppScope",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/scopes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetMicroAppScopeResponse>(await this.execute(params, req, runtime), new GetMicroAppScopeResponse({}));
   }
 
   async getMicroAppScope(agentId: string): Promise<GetMicroAppScopeResponse> {
@@ -3440,8 +3664,7 @@ export default class Client extends OpenApi {
     return await this.getMicroAppScopeWithOptions(agentId, headers, runtime);
   }
 
-  async getMicroAppScopeWithOptions(agentId: string, headers: GetMicroAppScopeHeaders, runtime: $Util.RuntimeOptions): Promise<GetMicroAppScopeResponse> {
-    agentId = OpenApiUtil.getEncodeParam(agentId);
+  async getMicroAppUserAccessWithOptions(agentId: string, userId: string, headers: GetMicroAppUserAccessHeaders, runtime: $Util.RuntimeOptions): Promise<GetMicroAppUserAccessResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3454,7 +3677,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetMicroAppScopeResponse>(await this.doROARequest("GetMicroAppScope", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apps/${agentId}/scopes`, "json", req, runtime), new GetMicroAppScopeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetMicroAppUserAccess",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/users/${userId}/adminAccess`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetMicroAppUserAccessResponse>(await this.execute(params, req, runtime), new GetMicroAppUserAccessResponse({}));
   }
 
   async getMicroAppUserAccess(agentId: string, userId: string): Promise<GetMicroAppUserAccessResponse> {
@@ -3463,9 +3697,7 @@ export default class Client extends OpenApi {
     return await this.getMicroAppUserAccessWithOptions(agentId, userId, headers, runtime);
   }
 
-  async getMicroAppUserAccessWithOptions(agentId: string, userId: string, headers: GetMicroAppUserAccessHeaders, runtime: $Util.RuntimeOptions): Promise<GetMicroAppUserAccessResponse> {
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    userId = OpenApiUtil.getEncodeParam(userId);
+  async getUserAppDevAccessWithOptions(userId: string, headers: GetUserAppDevAccessHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserAppDevAccessResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3478,36 +3710,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetMicroAppUserAccessResponse>(await this.doROARequest("GetMicroAppUserAccess", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apps/${agentId}/users/${userId}/adminAccess`, "json", req, runtime), new GetMicroAppUserAccessResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserAppDevAccess",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/users/${userId}/devAccesses`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserAppDevAccessResponse>(await this.execute(params, req, runtime), new GetUserAppDevAccessResponse({}));
   }
 
   async getUserAppDevAccess(userId: string): Promise<GetUserAppDevAccessResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetUserAppDevAccessHeaders({ });
     return await this.getUserAppDevAccessWithOptions(userId, headers, runtime);
-  }
-
-  async getUserAppDevAccessWithOptions(userId: string, headers: GetUserAppDevAccessHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserAppDevAccessResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<GetUserAppDevAccessResponse>(await this.doROARequest("GetUserAppDevAccess", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/users/${userId}/devAccesses`, "json", req, runtime), new GetUserAppDevAccessResponse({}));
-  }
-
-  async listAllApp(): Promise<ListAllAppResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListAllAppHeaders({ });
-    return await this.listAllAppWithOptions(headers, runtime);
   }
 
   async listAllAppWithOptions(headers: ListAllAppHeaders, runtime: $Util.RuntimeOptions): Promise<ListAllAppResponse> {
@@ -3523,13 +3743,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<ListAllAppResponse>(await this.doROARequest("ListAllApp", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/allApps`, "json", req, runtime), new ListAllAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListAllApp",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/allApps`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAllAppResponse>(await this.execute(params, req, runtime), new ListAllAppResponse({}));
   }
 
-  async listAllInnerApps(): Promise<ListAllInnerAppsResponse> {
+  async listAllApp(): Promise<ListAllAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListAllInnerAppsHeaders({ });
-    return await this.listAllInnerAppsWithOptions(headers, runtime);
+    let headers = new ListAllAppHeaders({ });
+    return await this.listAllAppWithOptions(headers, runtime);
   }
 
   async listAllInnerAppsWithOptions(headers: ListAllInnerAppsHeaders, runtime: $Util.RuntimeOptions): Promise<ListAllInnerAppsResponse> {
@@ -3545,18 +3776,28 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<ListAllInnerAppsResponse>(await this.doROARequest("ListAllInnerApps", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/allInnerApps`, "json", req, runtime), new ListAllInnerAppsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListAllInnerApps",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/allInnerApps`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAllInnerAppsResponse>(await this.execute(params, req, runtime), new ListAllInnerAppsResponse({}));
   }
 
-  async listAppRoleScopes(agentId: string, request: ListAppRoleScopesRequest): Promise<ListAppRoleScopesResponse> {
+  async listAllInnerApps(): Promise<ListAllInnerAppsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListAppRoleScopesHeaders({ });
-    return await this.listAppRoleScopesWithOptions(agentId, request, headers, runtime);
+    let headers = new ListAllInnerAppsHeaders({ });
+    return await this.listAllInnerAppsWithOptions(headers, runtime);
   }
 
   async listAppRoleScopesWithOptions(agentId: string, request: ListAppRoleScopesRequest, headers: ListAppRoleScopesHeaders, runtime: $Util.RuntimeOptions): Promise<ListAppRoleScopesResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.nextToken)) {
       query["nextToken"] = request.nextToken;
@@ -3579,13 +3820,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListAppRoleScopesResponse>(await this.doROARequest("ListAppRoleScopes", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apps/${agentId}/roles`, "json", req, runtime), new ListAppRoleScopesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListAppRoleScopes",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/roles`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAppRoleScopesResponse>(await this.execute(params, req, runtime), new ListAppRoleScopesResponse({}));
   }
 
-  async listInnerApp(request: ListInnerAppRequest): Promise<ListInnerAppResponse> {
+  async listAppRoleScopes(agentId: string, request: ListAppRoleScopesRequest): Promise<ListAppRoleScopesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListInnerAppHeaders({ });
-    return await this.listInnerAppWithOptions(request, headers, runtime);
+    let headers = new ListAppRoleScopesHeaders({ });
+    return await this.listAppRoleScopesWithOptions(agentId, request, headers, runtime);
   }
 
   async listInnerAppWithOptions(request: ListInnerAppRequest, headers: ListInnerAppHeaders, runtime: $Util.RuntimeOptions): Promise<ListInnerAppResponse> {
@@ -3608,7 +3860,51 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListInnerAppResponse>(await this.doROARequest("ListInnerApp", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apps`, "json", req, runtime), new ListInnerAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListInnerApp",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListInnerAppResponse>(await this.execute(params, req, runtime), new ListInnerAppResponse({}));
+  }
+
+  async listInnerApp(request: ListInnerAppRequest): Promise<ListInnerAppResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListInnerAppHeaders({ });
+    return await this.listInnerAppWithOptions(request, headers, runtime);
+  }
+
+  async listInnerAppVersionWithOptions(agentId: string, headers: ListInnerAppVersionHeaders, runtime: $Util.RuntimeOptions): Promise<ListInnerAppVersionResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "ListInnerAppVersion",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/innerMiniApps/${agentId}/versions`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListInnerAppVersionResponse>(await this.execute(params, req, runtime), new ListInnerAppVersionResponse({}));
   }
 
   async listInnerAppVersion(agentId: string): Promise<ListInnerAppVersionResponse> {
@@ -3617,8 +3913,7 @@ export default class Client extends OpenApi {
     return await this.listInnerAppVersionWithOptions(agentId, headers, runtime);
   }
 
-  async listInnerAppVersionWithOptions(agentId: string, headers: ListInnerAppVersionHeaders, runtime: $Util.RuntimeOptions): Promise<ListInnerAppVersionResponse> {
-    agentId = OpenApiUtil.getEncodeParam(agentId);
+  async listRoleInfoByUserWithOptions(agentId: string, userId: string, headers: ListRoleInfoByUserHeaders, runtime: $Util.RuntimeOptions): Promise<ListRoleInfoByUserResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3631,7 +3926,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<ListInnerAppVersionResponse>(await this.doROARequest("ListInnerAppVersion", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/innerMiniApps/${agentId}/versions`, "json", req, runtime), new ListInnerAppVersionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListRoleInfoByUser",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/users/${userId}/roles`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ListRoleInfoByUserResponse>(await this.execute(params, req, runtime), new ListRoleInfoByUserResponse({}));
   }
 
   async listRoleInfoByUser(agentId: string, userId: string): Promise<ListRoleInfoByUserResponse> {
@@ -3640,9 +3946,7 @@ export default class Client extends OpenApi {
     return await this.listRoleInfoByUserWithOptions(agentId, userId, headers, runtime);
   }
 
-  async listRoleInfoByUserWithOptions(agentId: string, userId: string, headers: ListRoleInfoByUserHeaders, runtime: $Util.RuntimeOptions): Promise<ListRoleInfoByUserResponse> {
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    userId = OpenApiUtil.getEncodeParam(userId);
+  async listUserVilebleAppWithOptions(userId: string, headers: ListUserVilebleAppHeaders, runtime: $Util.RuntimeOptions): Promise<ListUserVilebleAppResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -3655,7 +3959,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<ListRoleInfoByUserResponse>(await this.doROARequest("ListRoleInfoByUser", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/apps/${agentId}/users/${userId}/roles`, "json", req, runtime), new ListRoleInfoByUserResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListUserVilebleApp",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/users/${userId}/apps`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListUserVilebleAppResponse>(await this.execute(params, req, runtime), new ListUserVilebleAppResponse({}));
   }
 
   async listUserVilebleApp(userId: string): Promise<ListUserVilebleAppResponse> {
@@ -3664,32 +3979,8 @@ export default class Client extends OpenApi {
     return await this.listUserVilebleAppWithOptions(userId, headers, runtime);
   }
 
-  async listUserVilebleAppWithOptions(userId: string, headers: ListUserVilebleAppHeaders, runtime: $Util.RuntimeOptions): Promise<ListUserVilebleAppResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<ListUserVilebleAppResponse>(await this.doROARequest("ListUserVilebleApp", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/users/${userId}/apps`, "json", req, runtime), new ListUserVilebleAppResponse({}));
-  }
-
-  async pageInnerAppHistoryVersion(agentId: string, request: PageInnerAppHistoryVersionRequest): Promise<PageInnerAppHistoryVersionResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PageInnerAppHistoryVersionHeaders({ });
-    return await this.pageInnerAppHistoryVersionWithOptions(agentId, request, headers, runtime);
-  }
-
   async pageInnerAppHistoryVersionWithOptions(agentId: string, request: PageInnerAppHistoryVersionRequest, headers: PageInnerAppHistoryVersionHeaders, runtime: $Util.RuntimeOptions): Promise<PageInnerAppHistoryVersionResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.pageNumber)) {
       query["pageNumber"] = request.pageNumber;
@@ -3712,18 +4003,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<PageInnerAppHistoryVersionResponse>(await this.doROARequest("PageInnerAppHistoryVersion", "microApp_1.0", "HTTP", "GET", "AK", `/v1.0/microApp/innerMiniApps/${agentId}/historyVersions`, "json", req, runtime), new PageInnerAppHistoryVersionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PageInnerAppHistoryVersion",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/innerMiniApps/${agentId}/historyVersions`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PageInnerAppHistoryVersionResponse>(await this.execute(params, req, runtime), new PageInnerAppHistoryVersionResponse({}));
   }
 
-  async publishInnerAppVersion(agentId: string, request: PublishInnerAppVersionRequest): Promise<PublishInnerAppVersionResponse> {
+  async pageInnerAppHistoryVersion(agentId: string, request: PageInnerAppHistoryVersionRequest): Promise<PageInnerAppHistoryVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PublishInnerAppVersionHeaders({ });
-    return await this.publishInnerAppVersionWithOptions(agentId, request, headers, runtime);
+    let headers = new PageInnerAppHistoryVersionHeaders({ });
+    return await this.pageInnerAppHistoryVersionWithOptions(agentId, request, headers, runtime);
   }
 
   async publishInnerAppVersionWithOptions(agentId: string, request: PublishInnerAppVersionRequest, headers: PublishInnerAppVersionHeaders, runtime: $Util.RuntimeOptions): Promise<PublishInnerAppVersionResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appVersionId)) {
       body["appVersionId"] = request.appVersionId;
@@ -3754,19 +4055,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PublishInnerAppVersionResponse>(await this.doROARequest("PublishInnerAppVersion", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/innerMiniApps/${agentId}/versions/publish`, "json", req, runtime), new PublishInnerAppVersionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PublishInnerAppVersion",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/innerMiniApps/${agentId}/versions/publish`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PublishInnerAppVersionResponse>(await this.execute(params, req, runtime), new PublishInnerAppVersionResponse({}));
   }
 
-  async rebuildRoleScopeForAppRole(agentId: string, roleId: string, request: RebuildRoleScopeForAppRoleRequest): Promise<RebuildRoleScopeForAppRoleResponse> {
+  async publishInnerAppVersion(agentId: string, request: PublishInnerAppVersionRequest): Promise<PublishInnerAppVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RebuildRoleScopeForAppRoleHeaders({ });
-    return await this.rebuildRoleScopeForAppRoleWithOptions(agentId, roleId, request, headers, runtime);
+    let headers = new PublishInnerAppVersionHeaders({ });
+    return await this.publishInnerAppVersionWithOptions(agentId, request, headers, runtime);
   }
 
   async rebuildRoleScopeForAppRoleWithOptions(agentId: string, roleId: string, request: RebuildRoleScopeForAppRoleRequest, headers: RebuildRoleScopeForAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<RebuildRoleScopeForAppRoleResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    roleId = OpenApiUtil.getEncodeParam(roleId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.deptIdList)) {
       body["deptIdList"] = request.deptIdList;
@@ -3801,18 +4111,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RebuildRoleScopeForAppRoleResponse>(await this.doROARequest("RebuildRoleScopeForAppRole", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/apps/${agentId}/roles/${roleId}/scopes/rebuild`, "json", req, runtime), new RebuildRoleScopeForAppRoleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RebuildRoleScopeForAppRole",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/roles/${roleId}/scopes/rebuild`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<RebuildRoleScopeForAppRoleResponse>(await this.execute(params, req, runtime), new RebuildRoleScopeForAppRoleResponse({}));
   }
 
-  async registerCustomAppRole(agentId: string, request: RegisterCustomAppRoleRequest): Promise<RegisterCustomAppRoleResponse> {
+  async rebuildRoleScopeForAppRole(agentId: string, roleId: string, request: RebuildRoleScopeForAppRoleRequest): Promise<RebuildRoleScopeForAppRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RegisterCustomAppRoleHeaders({ });
-    return await this.registerCustomAppRoleWithOptions(agentId, request, headers, runtime);
+    let headers = new RebuildRoleScopeForAppRoleHeaders({ });
+    return await this.rebuildRoleScopeForAppRoleWithOptions(agentId, roleId, request, headers, runtime);
   }
 
   async registerCustomAppRoleWithOptions(agentId: string, request: RegisterCustomAppRoleRequest, headers: RegisterCustomAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterCustomAppRoleResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.canManageRole)) {
       body["canManageRole"] = request.canManageRole;
@@ -3839,13 +4159,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RegisterCustomAppRoleResponse>(await this.doROARequest("RegisterCustomAppRole", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/apps/${agentId}/roles`, "json", req, runtime), new RegisterCustomAppRoleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RegisterCustomAppRole",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/roles`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<RegisterCustomAppRoleResponse>(await this.execute(params, req, runtime), new RegisterCustomAppRoleResponse({}));
   }
 
-  async removeApaasApp(request: RemoveApaasAppRequest): Promise<RemoveApaasAppResponse> {
+  async registerCustomAppRole(agentId: string, request: RegisterCustomAppRoleRequest): Promise<RegisterCustomAppRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RemoveApaasAppHeaders({ });
-    return await this.removeApaasAppWithOptions(request, headers, runtime);
+    let headers = new RegisterCustomAppRoleHeaders({ });
+    return await this.registerCustomAppRoleWithOptions(agentId, request, headers, runtime);
   }
 
   async removeApaasAppWithOptions(request: RemoveApaasAppRequest, headers: RemoveApaasAppHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveApaasAppResponse> {
@@ -3872,19 +4203,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RemoveApaasAppResponse>(await this.doROARequest("RemoveApaasApp", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/apaasApps/remove`, "json", req, runtime), new RemoveApaasAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RemoveApaasApp",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apaasApps/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RemoveApaasAppResponse>(await this.execute(params, req, runtime), new RemoveApaasAppResponse({}));
   }
 
-  async removeMemberForAppRole(agentId: string, roleId: string, request: RemoveMemberForAppRoleRequest): Promise<RemoveMemberForAppRoleResponse> {
+  async removeApaasApp(request: RemoveApaasAppRequest): Promise<RemoveApaasAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RemoveMemberForAppRoleHeaders({ });
-    return await this.removeMemberForAppRoleWithOptions(agentId, roleId, request, headers, runtime);
+    let headers = new RemoveApaasAppHeaders({ });
+    return await this.removeApaasAppWithOptions(request, headers, runtime);
   }
 
   async removeMemberForAppRoleWithOptions(agentId: string, roleId: string, request: RemoveMemberForAppRoleRequest, headers: RemoveMemberForAppRoleHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveMemberForAppRoleResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    roleId = OpenApiUtil.getEncodeParam(roleId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.deptIdList)) {
       body["deptIdList"] = request.deptIdList;
@@ -3915,18 +4255,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RemoveMemberForAppRoleResponse>(await this.doROARequest("RemoveMemberForAppRole", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/apps/${agentId}/roles/${roleId}/members/batchRemove`, "json", req, runtime), new RemoveMemberForAppRoleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RemoveMemberForAppRole",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/roles/${roleId}/members/batchRemove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<RemoveMemberForAppRoleResponse>(await this.execute(params, req, runtime), new RemoveMemberForAppRoleResponse({}));
   }
 
-  async rollbackInnerAppVersion(agentId: string, request: RollbackInnerAppVersionRequest): Promise<RollbackInnerAppVersionResponse> {
+  async removeMemberForAppRole(agentId: string, roleId: string, request: RemoveMemberForAppRoleRequest): Promise<RemoveMemberForAppRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RollbackInnerAppVersionHeaders({ });
-    return await this.rollbackInnerAppVersionWithOptions(agentId, request, headers, runtime);
+    let headers = new RemoveMemberForAppRoleHeaders({ });
+    return await this.removeMemberForAppRoleWithOptions(agentId, roleId, request, headers, runtime);
   }
 
   async rollbackInnerAppVersionWithOptions(agentId: string, request: RollbackInnerAppVersionRequest, headers: RollbackInnerAppVersionHeaders, runtime: $Util.RuntimeOptions): Promise<RollbackInnerAppVersionResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appVersionId)) {
       body["appVersionId"] = request.appVersionId;
@@ -3949,18 +4299,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RollbackInnerAppVersionResponse>(await this.doROARequest("RollbackInnerAppVersion", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/innerMiniApps/${agentId}/versions/rollback`, "json", req, runtime), new RollbackInnerAppVersionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RollbackInnerAppVersion",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/innerMiniApps/${agentId}/versions/rollback`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RollbackInnerAppVersionResponse>(await this.execute(params, req, runtime), new RollbackInnerAppVersionResponse({}));
   }
 
-  async setMicroAppScope(agentId: string, request: SetMicroAppScopeRequest): Promise<SetMicroAppScopeResponse> {
+  async rollbackInnerAppVersion(agentId: string, request: RollbackInnerAppVersionRequest): Promise<RollbackInnerAppVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SetMicroAppScopeHeaders({ });
-    return await this.setMicroAppScopeWithOptions(agentId, request, headers, runtime);
+    let headers = new RollbackInnerAppVersionHeaders({ });
+    return await this.rollbackInnerAppVersionWithOptions(agentId, request, headers, runtime);
   }
 
   async setMicroAppScopeWithOptions(agentId: string, request: SetMicroAppScopeRequest, headers: SetMicroAppScopeHeaders, runtime: $Util.RuntimeOptions): Promise<SetMicroAppScopeResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.addDeptIds)) {
       body["addDeptIds"] = request.addDeptIds;
@@ -4003,13 +4363,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SetMicroAppScopeResponse>(await this.doROARequest("SetMicroAppScope", "microApp_1.0", "HTTP", "POST", "AK", `/v1.0/microApp/apps/${agentId}/scopes`, "json", req, runtime), new SetMicroAppScopeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SetMicroAppScope",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/scopes`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SetMicroAppScopeResponse>(await this.execute(params, req, runtime), new SetMicroAppScopeResponse({}));
   }
 
-  async updateApaasApp(request: UpdateApaasAppRequest): Promise<UpdateApaasAppResponse> {
+  async setMicroAppScope(agentId: string, request: SetMicroAppScopeRequest): Promise<SetMicroAppScopeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateApaasAppHeaders({ });
-    return await this.updateApaasAppWithOptions(request, headers, runtime);
+    let headers = new SetMicroAppScopeHeaders({ });
+    return await this.setMicroAppScopeWithOptions(agentId, request, headers, runtime);
   }
 
   async updateApaasAppWithOptions(request: UpdateApaasAppRequest, headers: UpdateApaasAppHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateApaasAppResponse> {
@@ -4048,19 +4419,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateApaasAppResponse>(await this.doROARequest("UpdateApaasApp", "microApp_1.0", "HTTP", "PUT", "AK", `/v1.0/microApp/apaasApps`, "json", req, runtime), new UpdateApaasAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateApaasApp",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apaasApps`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateApaasAppResponse>(await this.execute(params, req, runtime), new UpdateApaasAppResponse({}));
   }
 
-  async updateAppRoleInfo(agentId: string, roleId: string, request: UpdateAppRoleInfoRequest): Promise<UpdateAppRoleInfoResponse> {
+  async updateApaasApp(request: UpdateApaasAppRequest): Promise<UpdateApaasAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateAppRoleInfoHeaders({ });
-    return await this.updateAppRoleInfoWithOptions(agentId, roleId, request, headers, runtime);
+    let headers = new UpdateApaasAppHeaders({ });
+    return await this.updateApaasAppWithOptions(request, headers, runtime);
   }
 
   async updateAppRoleInfoWithOptions(agentId: string, roleId: string, request: UpdateAppRoleInfoRequest, headers: UpdateAppRoleInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateAppRoleInfoResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
-    roleId = OpenApiUtil.getEncodeParam(roleId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.canManageRole)) {
       body["canManageRole"] = request.canManageRole;
@@ -4087,18 +4467,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateAppRoleInfoResponse>(await this.doROARequest("UpdateAppRoleInfo", "microApp_1.0", "HTTP", "PUT", "AK", `/v1.0/microApp/apps/${agentId}/roles/${roleId}`, "json", req, runtime), new UpdateAppRoleInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateAppRoleInfo",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}/roles/${roleId}`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateAppRoleInfoResponse>(await this.execute(params, req, runtime), new UpdateAppRoleInfoResponse({}));
   }
 
-  async updateInnerApp(agentId: string, request: UpdateInnerAppRequest): Promise<UpdateInnerAppResponse> {
+  async updateAppRoleInfo(agentId: string, roleId: string, request: UpdateAppRoleInfoRequest): Promise<UpdateAppRoleInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateInnerAppHeaders({ });
-    return await this.updateInnerAppWithOptions(agentId, request, headers, runtime);
+    let headers = new UpdateAppRoleInfoHeaders({ });
+    return await this.updateAppRoleInfoWithOptions(agentId, roleId, request, headers, runtime);
   }
 
   async updateInnerAppWithOptions(agentId: string, request: UpdateInnerAppRequest, headers: UpdateInnerAppHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInnerAppResponse> {
     Util.validateModel(request);
-    agentId = OpenApiUtil.getEncodeParam(agentId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.desc)) {
       body["desc"] = request.desc;
@@ -4145,7 +4535,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateInnerAppResponse>(await this.doROARequest("UpdateInnerApp", "microApp_1.0", "HTTP", "PUT", "AK", `/v1.0/microApp/apps/${agentId}`, "json", req, runtime), new UpdateInnerAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateInnerApp",
+      version: "microApp_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/microApp/apps/${agentId}`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateInnerAppResponse>(await this.execute(params, req, runtime), new UpdateInnerAppResponse({}));
+  }
+
+  async updateInnerApp(agentId: string, request: UpdateInnerAppRequest): Promise<UpdateInnerAppResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateInnerAppHeaders({ });
+    return await this.updateInnerAppWithOptions(agentId, request, headers, runtime);
   }
 
 }

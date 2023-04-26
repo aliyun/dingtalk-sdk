@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -114,10 +116,12 @@ export class AddCityCarApplyResponseBody extends $tea.Model {
 
 export class AddCityCarApplyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddCityCarApplyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -125,6 +129,7 @@ export class AddCityCarApplyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddCityCarApplyResponseBody,
     };
   }
@@ -211,10 +216,12 @@ export class ApproveCityCarApplyResponseBody extends $tea.Model {
 
 export class ApproveCityCarApplyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ApproveCityCarApplyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -222,6 +229,7 @@ export class ApproveCityCarApplyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ApproveCityCarApplyResponseBody,
     };
   }
@@ -317,10 +325,12 @@ export class BillSettementBtripTrainResponseBody extends $tea.Model {
 
 export class BillSettementBtripTrainResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BillSettementBtripTrainResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -328,6 +338,7 @@ export class BillSettementBtripTrainResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BillSettementBtripTrainResponseBody,
     };
   }
@@ -423,10 +434,12 @@ export class BillSettementCarResponseBody extends $tea.Model {
 
 export class BillSettementCarResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BillSettementCarResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -434,6 +447,7 @@ export class BillSettementCarResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BillSettementCarResponseBody,
     };
   }
@@ -529,10 +543,12 @@ export class BillSettementFlightResponseBody extends $tea.Model {
 
 export class BillSettementFlightResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BillSettementFlightResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -540,6 +556,7 @@ export class BillSettementFlightResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BillSettementFlightResponseBody,
     };
   }
@@ -635,10 +652,12 @@ export class BillSettementHotelResponseBody extends $tea.Model {
 
 export class BillSettementHotelResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BillSettementHotelResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -646,6 +665,7 @@ export class BillSettementHotelResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BillSettementHotelResponseBody,
     };
   }
@@ -750,10 +770,12 @@ export class GetFlightExceedApplyResponseBody extends $tea.Model {
 
 export class GetFlightExceedApplyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFlightExceedApplyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -761,6 +783,7 @@ export class GetFlightExceedApplyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFlightExceedApplyResponseBody,
     };
   }
@@ -865,10 +888,12 @@ export class GetHotelExceedApplyResponseBody extends $tea.Model {
 
 export class GetHotelExceedApplyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetHotelExceedApplyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -876,6 +901,7 @@ export class GetHotelExceedApplyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetHotelExceedApplyResponseBody,
     };
   }
@@ -980,10 +1006,12 @@ export class GetTrainExceedApplyResponseBody extends $tea.Model {
 
 export class GetTrainExceedApplyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTrainExceedApplyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -991,6 +1019,7 @@ export class GetTrainExceedApplyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTrainExceedApplyResponseBody,
     };
   }
@@ -1083,10 +1112,12 @@ export class QueryCityCarApplyResponseBody extends $tea.Model {
 
 export class QueryCityCarApplyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryCityCarApplyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1094,6 +1125,7 @@ export class QueryCityCarApplyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryCityCarApplyResponseBody,
     };
   }
@@ -1183,10 +1215,12 @@ export class QueryUnionOrderResponseBody extends $tea.Model {
 
 export class QueryUnionOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryUnionOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1194,6 +1228,7 @@ export class QueryUnionOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryUnionOrderResponseBody,
     };
   }
@@ -1280,10 +1315,12 @@ export class SyncExceedApplyResponseBody extends $tea.Model {
 
 export class SyncExceedApplyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SyncExceedApplyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1291,6 +1328,7 @@ export class SyncExceedApplyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SyncExceedApplyResponseBody,
     };
   }
@@ -2574,9 +2612,12 @@ export class QueryUnionOrderResponseBodyVehicleList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2584,12 +2625,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async addCityCarApply(request: AddCityCarApplyRequest): Promise<AddCityCarApplyResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddCityCarApplyHeaders({ });
-    return await this.addCityCarApplyWithOptions(request, headers, runtime);
-  }
 
   async addCityCarApplyWithOptions(request: AddCityCarApplyRequest, headers: AddCityCarApplyHeaders, runtime: $Util.RuntimeOptions): Promise<AddCityCarApplyResponse> {
     Util.validateModel(request);
@@ -2671,13 +2706,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddCityCarApplyResponse>(await this.doROARequest("AddCityCarApply", "alitrip_1.0", "HTTP", "POST", "AK", `/v1.0/alitrip/cityCarApprovals`, "json", req, runtime), new AddCityCarApplyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddCityCarApply",
+      version: "alitrip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/alitrip/cityCarApprovals`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AddCityCarApplyResponse>(await this.execute(params, req, runtime), new AddCityCarApplyResponse({}));
   }
 
-  async approveCityCarApply(request: ApproveCityCarApplyRequest): Promise<ApproveCityCarApplyResponse> {
+  async addCityCarApply(request: AddCityCarApplyRequest): Promise<AddCityCarApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ApproveCityCarApplyHeaders({ });
-    return await this.approveCityCarApplyWithOptions(request, headers, runtime);
+    let headers = new AddCityCarApplyHeaders({ });
+    return await this.addCityCarApplyWithOptions(request, headers, runtime);
   }
 
   async approveCityCarApplyWithOptions(request: ApproveCityCarApplyRequest, headers: ApproveCityCarApplyHeaders, runtime: $Util.RuntimeOptions): Promise<ApproveCityCarApplyResponse> {
@@ -2720,13 +2766,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ApproveCityCarApplyResponse>(await this.doROARequest("ApproveCityCarApply", "alitrip_1.0", "HTTP", "PUT", "AK", `/v1.0/alitrip/cityCarApprovals`, "json", req, runtime), new ApproveCityCarApplyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ApproveCityCarApply",
+      version: "alitrip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/alitrip/cityCarApprovals`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ApproveCityCarApplyResponse>(await this.execute(params, req, runtime), new ApproveCityCarApplyResponse({}));
   }
 
-  async billSettementBtripTrain(request: BillSettementBtripTrainRequest): Promise<BillSettementBtripTrainResponse> {
+  async approveCityCarApply(request: ApproveCityCarApplyRequest): Promise<ApproveCityCarApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BillSettementBtripTrainHeaders({ });
-    return await this.billSettementBtripTrainWithOptions(request, headers, runtime);
+    let headers = new ApproveCityCarApplyHeaders({ });
+    return await this.approveCityCarApplyWithOptions(request, headers, runtime);
   }
 
   async billSettementBtripTrainWithOptions(request: BillSettementBtripTrainRequest, headers: BillSettementBtripTrainHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementBtripTrainResponse> {
@@ -2769,13 +2826,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<BillSettementBtripTrainResponse>(await this.doROARequest("BillSettementBtripTrain", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/billSettlements/btripTrains`, "json", req, runtime), new BillSettementBtripTrainResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BillSettementBtripTrain",
+      version: "alitrip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/alitrip/billSettlements/btripTrains`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BillSettementBtripTrainResponse>(await this.execute(params, req, runtime), new BillSettementBtripTrainResponse({}));
   }
 
-  async billSettementCar(request: BillSettementCarRequest): Promise<BillSettementCarResponse> {
+  async billSettementBtripTrain(request: BillSettementBtripTrainRequest): Promise<BillSettementBtripTrainResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BillSettementCarHeaders({ });
-    return await this.billSettementCarWithOptions(request, headers, runtime);
+    let headers = new BillSettementBtripTrainHeaders({ });
+    return await this.billSettementBtripTrainWithOptions(request, headers, runtime);
   }
 
   async billSettementCarWithOptions(request: BillSettementCarRequest, headers: BillSettementCarHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementCarResponse> {
@@ -2818,13 +2886,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<BillSettementCarResponse>(await this.doROARequest("BillSettementCar", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/billSettlements/cars`, "json", req, runtime), new BillSettementCarResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BillSettementCar",
+      version: "alitrip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/alitrip/billSettlements/cars`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BillSettementCarResponse>(await this.execute(params, req, runtime), new BillSettementCarResponse({}));
   }
 
-  async billSettementFlight(request: BillSettementFlightRequest): Promise<BillSettementFlightResponse> {
+  async billSettementCar(request: BillSettementCarRequest): Promise<BillSettementCarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BillSettementFlightHeaders({ });
-    return await this.billSettementFlightWithOptions(request, headers, runtime);
+    let headers = new BillSettementCarHeaders({ });
+    return await this.billSettementCarWithOptions(request, headers, runtime);
   }
 
   async billSettementFlightWithOptions(request: BillSettementFlightRequest, headers: BillSettementFlightHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementFlightResponse> {
@@ -2867,13 +2946,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<BillSettementFlightResponse>(await this.doROARequest("BillSettementFlight", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/billSettlements/flights`, "json", req, runtime), new BillSettementFlightResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BillSettementFlight",
+      version: "alitrip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/alitrip/billSettlements/flights`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BillSettementFlightResponse>(await this.execute(params, req, runtime), new BillSettementFlightResponse({}));
   }
 
-  async billSettementHotel(request: BillSettementHotelRequest): Promise<BillSettementHotelResponse> {
+  async billSettementFlight(request: BillSettementFlightRequest): Promise<BillSettementFlightResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BillSettementHotelHeaders({ });
-    return await this.billSettementHotelWithOptions(request, headers, runtime);
+    let headers = new BillSettementFlightHeaders({ });
+    return await this.billSettementFlightWithOptions(request, headers, runtime);
   }
 
   async billSettementHotelWithOptions(request: BillSettementHotelRequest, headers: BillSettementHotelHeaders, runtime: $Util.RuntimeOptions): Promise<BillSettementHotelResponse> {
@@ -2916,13 +3006,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<BillSettementHotelResponse>(await this.doROARequest("BillSettementHotel", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/billSettlements/hotels`, "json", req, runtime), new BillSettementHotelResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BillSettementHotel",
+      version: "alitrip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/alitrip/billSettlements/hotels`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BillSettementHotelResponse>(await this.execute(params, req, runtime), new BillSettementHotelResponse({}));
   }
 
-  async getFlightExceedApply(request: GetFlightExceedApplyRequest): Promise<GetFlightExceedApplyResponse> {
+  async billSettementHotel(request: BillSettementHotelRequest): Promise<BillSettementHotelResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFlightExceedApplyHeaders({ });
-    return await this.getFlightExceedApplyWithOptions(request, headers, runtime);
+    let headers = new BillSettementHotelHeaders({ });
+    return await this.billSettementHotelWithOptions(request, headers, runtime);
   }
 
   async getFlightExceedApplyWithOptions(request: GetFlightExceedApplyRequest, headers: GetFlightExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlightExceedApplyResponse> {
@@ -2949,13 +3050,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetFlightExceedApplyResponse>(await this.doROARequest("GetFlightExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/exceedapply/getFlight`, "json", req, runtime), new GetFlightExceedApplyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFlightExceedApply",
+      version: "alitrip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/alitrip/exceedapply/getFlight`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFlightExceedApplyResponse>(await this.execute(params, req, runtime), new GetFlightExceedApplyResponse({}));
   }
 
-  async getHotelExceedApply(request: GetHotelExceedApplyRequest): Promise<GetHotelExceedApplyResponse> {
+  async getFlightExceedApply(request: GetFlightExceedApplyRequest): Promise<GetFlightExceedApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetHotelExceedApplyHeaders({ });
-    return await this.getHotelExceedApplyWithOptions(request, headers, runtime);
+    let headers = new GetFlightExceedApplyHeaders({ });
+    return await this.getFlightExceedApplyWithOptions(request, headers, runtime);
   }
 
   async getHotelExceedApplyWithOptions(request: GetHotelExceedApplyRequest, headers: GetHotelExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetHotelExceedApplyResponse> {
@@ -2982,13 +3094,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetHotelExceedApplyResponse>(await this.doROARequest("GetHotelExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/exceedapply/getHotel`, "json", req, runtime), new GetHotelExceedApplyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetHotelExceedApply",
+      version: "alitrip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/alitrip/exceedapply/getHotel`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetHotelExceedApplyResponse>(await this.execute(params, req, runtime), new GetHotelExceedApplyResponse({}));
   }
 
-  async getTrainExceedApply(request: GetTrainExceedApplyRequest): Promise<GetTrainExceedApplyResponse> {
+  async getHotelExceedApply(request: GetHotelExceedApplyRequest): Promise<GetHotelExceedApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTrainExceedApplyHeaders({ });
-    return await this.getTrainExceedApplyWithOptions(request, headers, runtime);
+    let headers = new GetHotelExceedApplyHeaders({ });
+    return await this.getHotelExceedApplyWithOptions(request, headers, runtime);
   }
 
   async getTrainExceedApplyWithOptions(request: GetTrainExceedApplyRequest, headers: GetTrainExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<GetTrainExceedApplyResponse> {
@@ -3015,13 +3138,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetTrainExceedApplyResponse>(await this.doROARequest("GetTrainExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/exceedapply/getTrain`, "json", req, runtime), new GetTrainExceedApplyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTrainExceedApply",
+      version: "alitrip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/alitrip/exceedapply/getTrain`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTrainExceedApplyResponse>(await this.execute(params, req, runtime), new GetTrainExceedApplyResponse({}));
   }
 
-  async queryCityCarApply(request: QueryCityCarApplyRequest): Promise<QueryCityCarApplyResponse> {
+  async getTrainExceedApply(request: GetTrainExceedApplyRequest): Promise<GetTrainExceedApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryCityCarApplyHeaders({ });
-    return await this.queryCityCarApplyWithOptions(request, headers, runtime);
+    let headers = new GetTrainExceedApplyHeaders({ });
+    return await this.getTrainExceedApplyWithOptions(request, headers, runtime);
   }
 
   async queryCityCarApplyWithOptions(request: QueryCityCarApplyRequest, headers: QueryCityCarApplyHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCityCarApplyResponse> {
@@ -3068,13 +3202,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryCityCarApplyResponse>(await this.doROARequest("QueryCityCarApply", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/cityCarApprovals`, "json", req, runtime), new QueryCityCarApplyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryCityCarApply",
+      version: "alitrip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/alitrip/cityCarApprovals`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCityCarApplyResponse>(await this.execute(params, req, runtime), new QueryCityCarApplyResponse({}));
   }
 
-  async queryUnionOrder(request: QueryUnionOrderRequest): Promise<QueryUnionOrderResponse> {
+  async queryCityCarApply(request: QueryCityCarApplyRequest): Promise<QueryCityCarApplyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUnionOrderHeaders({ });
-    return await this.queryUnionOrderWithOptions(request, headers, runtime);
+    let headers = new QueryCityCarApplyHeaders({ });
+    return await this.queryCityCarApplyWithOptions(request, headers, runtime);
   }
 
   async queryUnionOrderWithOptions(request: QueryUnionOrderRequest, headers: QueryUnionOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUnionOrderResponse> {
@@ -3105,13 +3250,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryUnionOrderResponse>(await this.doROARequest("QueryUnionOrder", "alitrip_1.0", "HTTP", "GET", "AK", `/v1.0/alitrip/unionOrders`, "json", req, runtime), new QueryUnionOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryUnionOrder",
+      version: "alitrip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/alitrip/unionOrders`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUnionOrderResponse>(await this.execute(params, req, runtime), new QueryUnionOrderResponse({}));
   }
 
-  async syncExceedApply(request: SyncExceedApplyRequest): Promise<SyncExceedApplyResponse> {
+  async queryUnionOrder(request: QueryUnionOrderRequest): Promise<QueryUnionOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SyncExceedApplyHeaders({ });
-    return await this.syncExceedApplyWithOptions(request, headers, runtime);
+    let headers = new QueryUnionOrderHeaders({ });
+    return await this.queryUnionOrderWithOptions(request, headers, runtime);
   }
 
   async syncExceedApplyWithOptions(request: SyncExceedApplyRequest, headers: SyncExceedApplyHeaders, runtime: $Util.RuntimeOptions): Promise<SyncExceedApplyResponse> {
@@ -3154,7 +3310,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SyncExceedApplyResponse>(await this.doROARequest("SyncExceedApply", "alitrip_1.0", "HTTP", "POST", "AK", `/v1.0/alitrip/exceedapply/sync`, "json", req, runtime), new SyncExceedApplyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SyncExceedApply",
+      version: "alitrip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/alitrip/exceedapply/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncExceedApplyResponse>(await this.execute(params, req, runtime), new SyncExceedApplyResponse({}));
+  }
+
+  async syncExceedApply(request: SyncExceedApplyRequest): Promise<SyncExceedApplyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncExceedApplyHeaders({ });
+    return await this.syncExceedApplyWithOptions(request, headers, runtime);
   }
 
 }

@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -87,10 +89,12 @@ export class AssignOrgHoldingToEmpHoldingBatchResponseBody extends $tea.Model {
 
 export class AssignOrgHoldingToEmpHoldingBatchResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AssignOrgHoldingToEmpHoldingBatchResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -98,6 +102,7 @@ export class AssignOrgHoldingToEmpHoldingBatchResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AssignOrgHoldingToEmpHoldingBatchResponseBody,
     };
   }
@@ -181,10 +186,12 @@ export class ConsumeUserPointsResponseBody extends $tea.Model {
 
 export class ConsumeUserPointsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ConsumeUserPointsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -192,6 +199,7 @@ export class ConsumeUserPointsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ConsumeUserPointsResponseBody,
     };
   }
@@ -281,10 +289,12 @@ export class CreateOrgHonorResponseBody extends $tea.Model {
 
 export class CreateOrgHonorResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateOrgHonorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -292,6 +302,7 @@ export class CreateOrgHonorResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateOrgHonorResponseBody,
     };
   }
@@ -378,10 +389,12 @@ export class DeductionPointBatchResponseBody extends $tea.Model {
 
 export class DeductionPointBatchResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeductionPointBatchResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -389,6 +402,7 @@ export class DeductionPointBatchResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeductionPointBatchResponseBody,
     };
   }
@@ -469,10 +483,12 @@ export class ExportPointOpenResponseBody extends $tea.Model {
 
 export class ExportPointOpenResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ExportPointOpenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -480,6 +496,7 @@ export class ExportPointOpenResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ExportPointOpenResponseBody,
     };
   }
@@ -575,10 +592,12 @@ export class GrantHonorResponseBody extends $tea.Model {
 
 export class GrantHonorResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GrantHonorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -586,6 +605,7 @@ export class GrantHonorResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GrantHonorResponseBody,
     };
   }
@@ -660,10 +680,12 @@ export class QueryCorpPointsResponseBody extends $tea.Model {
 
 export class QueryCorpPointsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryCorpPointsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -671,6 +693,7 @@ export class QueryCorpPointsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryCorpPointsResponseBody,
     };
   }
@@ -751,10 +774,12 @@ export class QueryEmpPointDetailsResponseBody extends $tea.Model {
 
 export class QueryEmpPointDetailsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryEmpPointDetailsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -762,6 +787,7 @@ export class QueryEmpPointDetailsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryEmpPointDetailsResponseBody,
     };
   }
@@ -839,10 +865,12 @@ export class QueryOrgHonorsResponseBody extends $tea.Model {
 
 export class QueryOrgHonorsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryOrgHonorsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -850,6 +878,7 @@ export class QueryOrgHonorsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryOrgHonorsResponseBody,
     };
   }
@@ -930,10 +959,12 @@ export class QueryOrgPointDetailsResponseBody extends $tea.Model {
 
 export class QueryOrgPointDetailsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryOrgPointDetailsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -941,6 +972,7 @@ export class QueryOrgPointDetailsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryOrgPointDetailsResponseBody,
     };
   }
@@ -996,10 +1028,12 @@ export class QueryPointActionAutoAssignRuleResponseBody extends $tea.Model {
 
 export class QueryPointActionAutoAssignRuleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryPointActionAutoAssignRuleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1007,6 +1041,7 @@ export class QueryPointActionAutoAssignRuleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryPointActionAutoAssignRuleResponseBody,
     };
   }
@@ -1062,10 +1097,12 @@ export class QueryPointAutoIssueSettingResponseBody extends $tea.Model {
 
 export class QueryPointAutoIssueSettingResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryPointAutoIssueSettingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1073,6 +1110,7 @@ export class QueryPointAutoIssueSettingResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryPointAutoIssueSettingResponseBody,
     };
   }
@@ -1150,10 +1188,12 @@ export class QueryUserHonorsResponseBody extends $tea.Model {
 
 export class QueryUserHonorsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryUserHonorsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1161,6 +1201,7 @@ export class QueryUserHonorsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryUserHonorsResponseBody,
     };
   }
@@ -1216,10 +1257,12 @@ export class QueryUserPointsResponseBody extends $tea.Model {
 
 export class QueryUserPointsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryUserPointsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1227,6 +1270,7 @@ export class QueryUserPointsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryUserPointsResponseBody,
     };
   }
@@ -1301,10 +1345,12 @@ export class RecallHonorResponseBody extends $tea.Model {
 
 export class RecallHonorResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RecallHonorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1312,6 +1358,7 @@ export class RecallHonorResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RecallHonorResponseBody,
     };
   }
@@ -1395,10 +1442,12 @@ export class UpdateAutoIssuePointResponseBody extends $tea.Model {
 
 export class UpdateAutoIssuePointResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateAutoIssuePointResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1406,6 +1455,7 @@ export class UpdateAutoIssuePointResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateAutoIssuePointResponseBody,
     };
   }
@@ -1480,10 +1530,12 @@ export class UpdatePointActionAutoAssignRuleResponseBody extends $tea.Model {
 
 export class UpdatePointActionAutoAssignRuleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdatePointActionAutoAssignRuleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1491,6 +1543,7 @@ export class UpdatePointActionAutoAssignRuleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdatePointActionAutoAssignRuleResponseBody,
     };
   }
@@ -1568,10 +1621,12 @@ export class WearOrgHonorResponseBody extends $tea.Model {
 
 export class WearOrgHonorResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: WearOrgHonorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1579,6 +1634,7 @@ export class WearOrgHonorResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: WearOrgHonorResponseBody,
     };
   }
@@ -2385,9 +2441,12 @@ export class WearOrgHonorResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2395,12 +2454,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async assignOrgHoldingToEmpHoldingBatch(request: AssignOrgHoldingToEmpHoldingBatchRequest): Promise<AssignOrgHoldingToEmpHoldingBatchResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AssignOrgHoldingToEmpHoldingBatchHeaders({ });
-    return await this.assignOrgHoldingToEmpHoldingBatchWithOptions(request, headers, runtime);
-  }
 
   async assignOrgHoldingToEmpHoldingBatchWithOptions(request: AssignOrgHoldingToEmpHoldingBatchRequest, headers: AssignOrgHoldingToEmpHoldingBatchHeaders, runtime: $Util.RuntimeOptions): Promise<AssignOrgHoldingToEmpHoldingBatchResponse> {
     Util.validateModel(request);
@@ -2442,18 +2495,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AssignOrgHoldingToEmpHoldingBatchResponse>(await this.doROARequest("AssignOrgHoldingToEmpHoldingBatch", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/organizations/points/assign`, "json", req, runtime), new AssignOrgHoldingToEmpHoldingBatchResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AssignOrgHoldingToEmpHoldingBatch",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/organizations/points/assign`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AssignOrgHoldingToEmpHoldingBatchResponse>(await this.execute(params, req, runtime), new AssignOrgHoldingToEmpHoldingBatchResponse({}));
   }
 
-  async consumeUserPoints(userId: string, request: ConsumeUserPointsRequest): Promise<ConsumeUserPointsResponse> {
+  async assignOrgHoldingToEmpHoldingBatch(request: AssignOrgHoldingToEmpHoldingBatchRequest): Promise<AssignOrgHoldingToEmpHoldingBatchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ConsumeUserPointsHeaders({ });
-    return await this.consumeUserPointsWithOptions(userId, request, headers, runtime);
+    let headers = new AssignOrgHoldingToEmpHoldingBatchHeaders({ });
+    return await this.assignOrgHoldingToEmpHoldingBatchWithOptions(request, headers, runtime);
   }
 
   async consumeUserPointsWithOptions(userId: string, request: ConsumeUserPointsRequest, headers: ConsumeUserPointsHeaders, runtime: $Util.RuntimeOptions): Promise<ConsumeUserPointsResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.amount)) {
       body["amount"] = request.amount;
@@ -2484,13 +2547,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ConsumeUserPointsResponse>(await this.doROARequest("ConsumeUserPoints", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/users/${userId}/points/deduct`, "json", req, runtime), new ConsumeUserPointsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ConsumeUserPoints",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/users/${userId}/points/deduct`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ConsumeUserPointsResponse>(await this.execute(params, req, runtime), new ConsumeUserPointsResponse({}));
   }
 
-  async createOrgHonor(request: CreateOrgHonorRequest): Promise<CreateOrgHonorResponse> {
+  async consumeUserPoints(userId: string, request: ConsumeUserPointsRequest): Promise<ConsumeUserPointsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateOrgHonorHeaders({ });
-    return await this.createOrgHonorWithOptions(request, headers, runtime);
+    let headers = new ConsumeUserPointsHeaders({ });
+    return await this.consumeUserPointsWithOptions(userId, request, headers, runtime);
   }
 
   async createOrgHonorWithOptions(request: CreateOrgHonorRequest, headers: CreateOrgHonorHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOrgHonorResponse> {
@@ -2533,13 +2607,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateOrgHonorResponse>(await this.doROARequest("CreateOrgHonor", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/honors/templates`, "json", req, runtime), new CreateOrgHonorResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateOrgHonor",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/honors/templates`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateOrgHonorResponse>(await this.execute(params, req, runtime), new CreateOrgHonorResponse({}));
   }
 
-  async deductionPointBatch(request: DeductionPointBatchRequest): Promise<DeductionPointBatchResponse> {
+  async createOrgHonor(request: CreateOrgHonorRequest): Promise<CreateOrgHonorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeductionPointBatchHeaders({ });
-    return await this.deductionPointBatchWithOptions(request, headers, runtime);
+    let headers = new CreateOrgHonorHeaders({ });
+    return await this.createOrgHonorWithOptions(request, headers, runtime);
   }
 
   async deductionPointBatchWithOptions(request: DeductionPointBatchRequest, headers: DeductionPointBatchHeaders, runtime: $Util.RuntimeOptions): Promise<DeductionPointBatchResponse> {
@@ -2578,13 +2663,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeductionPointBatchResponse>(await this.doROARequest("DeductionPointBatch", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/users/points/deduct`, "json", req, runtime), new DeductionPointBatchResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeductionPointBatch",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/users/points/deduct`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeductionPointBatchResponse>(await this.execute(params, req, runtime), new DeductionPointBatchResponse({}));
   }
 
-  async exportPointOpen(request: ExportPointOpenRequest): Promise<ExportPointOpenResponse> {
+  async deductionPointBatch(request: DeductionPointBatchRequest): Promise<DeductionPointBatchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ExportPointOpenHeaders({ });
-    return await this.exportPointOpenWithOptions(request, headers, runtime);
+    let headers = new DeductionPointBatchHeaders({ });
+    return await this.deductionPointBatchWithOptions(request, headers, runtime);
   }
 
   async exportPointOpenWithOptions(request: ExportPointOpenRequest, headers: ExportPointOpenHeaders, runtime: $Util.RuntimeOptions): Promise<ExportPointOpenResponse> {
@@ -2615,18 +2711,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ExportPointOpenResponse>(await this.doROARequest("ExportPointOpen", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/users/points/export`, "json", req, runtime), new ExportPointOpenResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ExportPointOpen",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/users/points/export`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ExportPointOpenResponse>(await this.execute(params, req, runtime), new ExportPointOpenResponse({}));
   }
 
-  async grantHonor(honorId: string, request: GrantHonorRequest): Promise<GrantHonorResponse> {
+  async exportPointOpen(request: ExportPointOpenRequest): Promise<ExportPointOpenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GrantHonorHeaders({ });
-    return await this.grantHonorWithOptions(honorId, request, headers, runtime);
+    let headers = new ExportPointOpenHeaders({ });
+    return await this.exportPointOpenWithOptions(request, headers, runtime);
   }
 
   async grantHonorWithOptions(honorId: string, request: GrantHonorRequest, headers: GrantHonorHeaders, runtime: $Util.RuntimeOptions): Promise<GrantHonorResponse> {
     Util.validateModel(request);
-    honorId = OpenApiUtil.getEncodeParam(honorId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.expirationTime)) {
       body["expirationTime"] = request.expirationTime;
@@ -2673,13 +2779,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GrantHonorResponse>(await this.doROARequest("GrantHonor", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/honors/${honorId}/grant`, "json", req, runtime), new GrantHonorResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GrantHonor",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/honors/${honorId}/grant`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GrantHonorResponse>(await this.execute(params, req, runtime), new GrantHonorResponse({}));
   }
 
-  async queryCorpPoints(request: QueryCorpPointsRequest): Promise<QueryCorpPointsResponse> {
+  async grantHonor(honorId: string, request: GrantHonorRequest): Promise<GrantHonorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryCorpPointsHeaders({ });
-    return await this.queryCorpPointsWithOptions(request, headers, runtime);
+    let headers = new GrantHonorHeaders({ });
+    return await this.grantHonorWithOptions(honorId, request, headers, runtime);
   }
 
   async queryCorpPointsWithOptions(request: QueryCorpPointsRequest, headers: QueryCorpPointsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCorpPointsResponse> {
@@ -2702,13 +2819,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryCorpPointsResponse>(await this.doROARequest("QueryCorpPoints", "orgCulture_1.0", "HTTP", "GET", "AK", `/v1.0/orgCulture/organizations/points`, "json", req, runtime), new QueryCorpPointsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryCorpPoints",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/organizations/points`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCorpPointsResponse>(await this.execute(params, req, runtime), new QueryCorpPointsResponse({}));
   }
 
-  async queryEmpPointDetails(request: QueryEmpPointDetailsRequest): Promise<QueryEmpPointDetailsResponse> {
+  async queryCorpPoints(request: QueryCorpPointsRequest): Promise<QueryCorpPointsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryEmpPointDetailsHeaders({ });
-    return await this.queryEmpPointDetailsWithOptions(request, headers, runtime);
+    let headers = new QueryCorpPointsHeaders({ });
+    return await this.queryCorpPointsWithOptions(request, headers, runtime);
   }
 
   async queryEmpPointDetailsWithOptions(request: QueryEmpPointDetailsRequest, headers: QueryEmpPointDetailsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryEmpPointDetailsResponse> {
@@ -2739,13 +2867,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryEmpPointDetailsResponse>(await this.doROARequest("QueryEmpPointDetails", "orgCulture_1.0", "HTTP", "GET", "AK", `/v1.0/orgCulture/points/empDetails`, "json", req, runtime), new QueryEmpPointDetailsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryEmpPointDetails",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/points/empDetails`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryEmpPointDetailsResponse>(await this.execute(params, req, runtime), new QueryEmpPointDetailsResponse({}));
   }
 
-  async queryOrgHonors(request: QueryOrgHonorsRequest): Promise<QueryOrgHonorsResponse> {
+  async queryEmpPointDetails(request: QueryEmpPointDetailsRequest): Promise<QueryEmpPointDetailsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryOrgHonorsHeaders({ });
-    return await this.queryOrgHonorsWithOptions(request, headers, runtime);
+    let headers = new QueryEmpPointDetailsHeaders({ });
+    return await this.queryEmpPointDetailsWithOptions(request, headers, runtime);
   }
 
   async queryOrgHonorsWithOptions(request: QueryOrgHonorsRequest, headers: QueryOrgHonorsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgHonorsResponse> {
@@ -2772,13 +2911,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryOrgHonorsResponse>(await this.doROARequest("QueryOrgHonors", "orgCulture_1.0", "HTTP", "GET", "AK", `/v1.0/orgCulture/organizations/honors`, "json", req, runtime), new QueryOrgHonorsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryOrgHonors",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/organizations/honors`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryOrgHonorsResponse>(await this.execute(params, req, runtime), new QueryOrgHonorsResponse({}));
   }
 
-  async queryOrgPointDetails(request: QueryOrgPointDetailsRequest): Promise<QueryOrgPointDetailsResponse> {
+  async queryOrgHonors(request: QueryOrgHonorsRequest): Promise<QueryOrgHonorsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryOrgPointDetailsHeaders({ });
-    return await this.queryOrgPointDetailsWithOptions(request, headers, runtime);
+    let headers = new QueryOrgHonorsHeaders({ });
+    return await this.queryOrgHonorsWithOptions(request, headers, runtime);
   }
 
   async queryOrgPointDetailsWithOptions(request: QueryOrgPointDetailsRequest, headers: QueryOrgPointDetailsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOrgPointDetailsResponse> {
@@ -2813,13 +2963,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryOrgPointDetailsResponse>(await this.doROARequest("QueryOrgPointDetails", "orgCulture_1.0", "HTTP", "GET", "AK", `/v1.0/orgCulture/points/orgDetails`, "json", req, runtime), new QueryOrgPointDetailsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryOrgPointDetails",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/points/orgDetails`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryOrgPointDetailsResponse>(await this.execute(params, req, runtime), new QueryOrgPointDetailsResponse({}));
   }
 
-  async queryPointActionAutoAssignRule(): Promise<QueryPointActionAutoAssignRuleResponse> {
+  async queryOrgPointDetails(request: QueryOrgPointDetailsRequest): Promise<QueryOrgPointDetailsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryPointActionAutoAssignRuleHeaders({ });
-    return await this.queryPointActionAutoAssignRuleWithOptions(headers, runtime);
+    let headers = new QueryOrgPointDetailsHeaders({ });
+    return await this.queryOrgPointDetailsWithOptions(request, headers, runtime);
   }
 
   async queryPointActionAutoAssignRuleWithOptions(headers: QueryPointActionAutoAssignRuleHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPointActionAutoAssignRuleResponse> {
@@ -2835,13 +2996,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryPointActionAutoAssignRuleResponse>(await this.doROARequest("QueryPointActionAutoAssignRule", "orgCulture_1.0", "HTTP", "GET", "AK", `/v1.0/orgCulture/users/points/actionRules`, "json", req, runtime), new QueryPointActionAutoAssignRuleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryPointActionAutoAssignRule",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/users/points/actionRules`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryPointActionAutoAssignRuleResponse>(await this.execute(params, req, runtime), new QueryPointActionAutoAssignRuleResponse({}));
   }
 
-  async queryPointAutoIssueSetting(): Promise<QueryPointAutoIssueSettingResponse> {
+  async queryPointActionAutoAssignRule(): Promise<QueryPointActionAutoAssignRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryPointAutoIssueSettingHeaders({ });
-    return await this.queryPointAutoIssueSettingWithOptions(headers, runtime);
+    let headers = new QueryPointActionAutoAssignRuleHeaders({ });
+    return await this.queryPointActionAutoAssignRuleWithOptions(headers, runtime);
   }
 
   async queryPointAutoIssueSettingWithOptions(headers: QueryPointAutoIssueSettingHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPointAutoIssueSettingResponse> {
@@ -2857,18 +3029,28 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryPointAutoIssueSettingResponse>(await this.doROARequest("QueryPointAutoIssueSetting", "orgCulture_1.0", "HTTP", "GET", "AK", `/v1.0/orgCulture/users/points`, "json", req, runtime), new QueryPointAutoIssueSettingResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryPointAutoIssueSetting",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/users/points`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryPointAutoIssueSettingResponse>(await this.execute(params, req, runtime), new QueryPointAutoIssueSettingResponse({}));
   }
 
-  async queryUserHonors(userId: string, request: QueryUserHonorsRequest): Promise<QueryUserHonorsResponse> {
+  async queryPointAutoIssueSetting(): Promise<QueryPointAutoIssueSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserHonorsHeaders({ });
-    return await this.queryUserHonorsWithOptions(userId, request, headers, runtime);
+    let headers = new QueryPointAutoIssueSettingHeaders({ });
+    return await this.queryPointAutoIssueSettingWithOptions(headers, runtime);
   }
 
   async queryUserHonorsWithOptions(userId: string, request: QueryUserHonorsRequest, headers: QueryUserHonorsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserHonorsResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -2891,17 +3073,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryUserHonorsResponse>(await this.doROARequest("QueryUserHonors", "orgCulture_1.0", "HTTP", "GET", "AK", `/v1.0/orgCulture/honors/users/${userId}`, "json", req, runtime), new QueryUserHonorsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryUserHonors",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/honors/users/${userId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUserHonorsResponse>(await this.execute(params, req, runtime), new QueryUserHonorsResponse({}));
   }
 
-  async queryUserPoints(userId: string): Promise<QueryUserPointsResponse> {
+  async queryUserHonors(userId: string, request: QueryUserHonorsRequest): Promise<QueryUserHonorsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserPointsHeaders({ });
-    return await this.queryUserPointsWithOptions(userId, headers, runtime);
+    let headers = new QueryUserHonorsHeaders({ });
+    return await this.queryUserHonorsWithOptions(userId, request, headers, runtime);
   }
 
   async queryUserPointsWithOptions(userId: string, headers: QueryUserPointsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserPointsResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2914,18 +3106,28 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryUserPointsResponse>(await this.doROARequest("QueryUserPoints", "orgCulture_1.0", "HTTP", "GET", "AK", `/v1.0/orgCulture/users/${userId}/points`, "json", req, runtime), new QueryUserPointsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryUserPoints",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/users/${userId}/points`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUserPointsResponse>(await this.execute(params, req, runtime), new QueryUserPointsResponse({}));
   }
 
-  async recallHonor(honorId: string, request: RecallHonorRequest): Promise<RecallHonorResponse> {
+  async queryUserPoints(userId: string): Promise<QueryUserPointsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RecallHonorHeaders({ });
-    return await this.recallHonorWithOptions(honorId, request, headers, runtime);
+    let headers = new QueryUserPointsHeaders({ });
+    return await this.queryUserPointsWithOptions(userId, headers, runtime);
   }
 
   async recallHonorWithOptions(honorId: string, request: RecallHonorRequest, headers: RecallHonorHeaders, runtime: $Util.RuntimeOptions): Promise<RecallHonorResponse> {
     Util.validateModel(request);
-    honorId = OpenApiUtil.getEncodeParam(honorId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;
@@ -2944,13 +3146,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RecallHonorResponse>(await this.doROARequest("RecallHonor", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/honors/${honorId}/recall`, "json", req, runtime), new RecallHonorResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RecallHonor",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/honors/${honorId}/recall`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RecallHonorResponse>(await this.execute(params, req, runtime), new RecallHonorResponse({}));
   }
 
-  async updateAutoIssuePoint(request: UpdateAutoIssuePointRequest): Promise<UpdateAutoIssuePointResponse> {
+  async recallHonor(honorId: string, request: RecallHonorRequest): Promise<RecallHonorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateAutoIssuePointHeaders({ });
-    return await this.updateAutoIssuePointWithOptions(request, headers, runtime);
+    let headers = new RecallHonorHeaders({ });
+    return await this.recallHonorWithOptions(honorId, request, headers, runtime);
   }
 
   async updateAutoIssuePointWithOptions(request: UpdateAutoIssuePointRequest, headers: UpdateAutoIssuePointHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateAutoIssuePointResponse> {
@@ -2985,13 +3198,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateAutoIssuePointResponse>(await this.doROARequest("UpdateAutoIssuePoint", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/users/points/set`, "json", req, runtime), new UpdateAutoIssuePointResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateAutoIssuePoint",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/users/points/set`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateAutoIssuePointResponse>(await this.execute(params, req, runtime), new UpdateAutoIssuePointResponse({}));
   }
 
-  async updatePointActionAutoAssignRule(request: UpdatePointActionAutoAssignRuleRequest): Promise<UpdatePointActionAutoAssignRuleResponse> {
+  async updateAutoIssuePoint(request: UpdateAutoIssuePointRequest): Promise<UpdateAutoIssuePointResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdatePointActionAutoAssignRuleHeaders({ });
-    return await this.updatePointActionAutoAssignRuleWithOptions(request, headers, runtime);
+    let headers = new UpdateAutoIssuePointHeaders({ });
+    return await this.updateAutoIssuePointWithOptions(request, headers, runtime);
   }
 
   async updatePointActionAutoAssignRuleWithOptions(request: UpdatePointActionAutoAssignRuleRequest, headers: UpdatePointActionAutoAssignRuleHeaders, runtime: $Util.RuntimeOptions): Promise<UpdatePointActionAutoAssignRuleResponse> {
@@ -3018,18 +3242,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdatePointActionAutoAssignRuleResponse>(await this.doROARequest("UpdatePointActionAutoAssignRule", "orgCulture_1.0", "HTTP", "PUT", "AK", `/v1.0/orgCulture/users/points/actionRules`, "json", req, runtime), new UpdatePointActionAutoAssignRuleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdatePointActionAutoAssignRule",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/users/points/actionRules`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdatePointActionAutoAssignRuleResponse>(await this.execute(params, req, runtime), new UpdatePointActionAutoAssignRuleResponse({}));
   }
 
-  async wearOrgHonor(honorId: string, request: WearOrgHonorRequest): Promise<WearOrgHonorResponse> {
+  async updatePointActionAutoAssignRule(request: UpdatePointActionAutoAssignRuleRequest): Promise<UpdatePointActionAutoAssignRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new WearOrgHonorHeaders({ });
-    return await this.wearOrgHonorWithOptions(honorId, request, headers, runtime);
+    let headers = new UpdatePointActionAutoAssignRuleHeaders({ });
+    return await this.updatePointActionAutoAssignRuleWithOptions(request, headers, runtime);
   }
 
   async wearOrgHonorWithOptions(honorId: string, request: WearOrgHonorRequest, headers: WearOrgHonorHeaders, runtime: $Util.RuntimeOptions): Promise<WearOrgHonorResponse> {
     Util.validateModel(request);
-    honorId = OpenApiUtil.getEncodeParam(honorId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;
@@ -3052,7 +3286,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<WearOrgHonorResponse>(await this.doROARequest("WearOrgHonor", "orgCulture_1.0", "HTTP", "POST", "AK", `/v1.0/orgCulture/honors/${honorId}/wear`, "json", req, runtime), new WearOrgHonorResponse({}));
+    let params = new $OpenApi.Params({
+      action: "WearOrgHonor",
+      version: "orgCulture_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/orgCulture/honors/${honorId}/wear`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<WearOrgHonorResponse>(await this.execute(params, req, runtime), new WearOrgHonorResponse({}));
+  }
+
+  async wearOrgHonor(honorId: string, request: WearOrgHonorRequest): Promise<WearOrgHonorResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new WearOrgHonorHeaders({ });
+    return await this.wearOrgHonorWithOptions(honorId, request, headers, runtime);
   }
 
 }

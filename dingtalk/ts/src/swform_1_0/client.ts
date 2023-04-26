@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -72,10 +74,12 @@ export class GetFormInstanceResponseBody extends $tea.Model {
 
 export class GetFormInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFormInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -83,6 +87,7 @@ export class GetFormInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFormInstanceResponseBody,
     };
   }
@@ -166,10 +171,12 @@ export class ListFormInstancesResponseBody extends $tea.Model {
 
 export class ListFormInstancesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListFormInstancesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -177,6 +184,7 @@ export class ListFormInstancesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListFormInstancesResponseBody,
     };
   }
@@ -260,10 +268,12 @@ export class ListFormSchemasByCreatorResponseBody extends $tea.Model {
 
 export class ListFormSchemasByCreatorResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListFormSchemasByCreatorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -271,6 +281,7 @@ export class ListFormSchemasByCreatorResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListFormSchemasByCreatorResponseBody,
     };
   }
@@ -536,9 +547,12 @@ export class ListFormSchemasByCreatorResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -547,15 +561,8 @@ export default class Client extends OpenApi {
   }
 
 
-  async getFormInstance(formInstanceId: string, request: GetFormInstanceRequest): Promise<GetFormInstanceResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFormInstanceHeaders({ });
-    return await this.getFormInstanceWithOptions(formInstanceId, request, headers, runtime);
-  }
-
   async getFormInstanceWithOptions(formInstanceId: string, request: GetFormInstanceRequest, headers: GetFormInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormInstanceResponse> {
     Util.validateModel(request);
-    formInstanceId = OpenApiUtil.getEncodeParam(formInstanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bizType)) {
       query["bizType"] = request.bizType;
@@ -574,18 +581,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetFormInstanceResponse>(await this.doROARequest("GetFormInstance", "swform_1.0", "HTTP", "GET", "AK", `/v1.0/swform/instances/${formInstanceId}`, "json", req, runtime), new GetFormInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFormInstance",
+      version: "swform_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/swform/instances/${formInstanceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFormInstanceResponse>(await this.execute(params, req, runtime), new GetFormInstanceResponse({}));
   }
 
-  async listFormInstances(formCode: string, request: ListFormInstancesRequest): Promise<ListFormInstancesResponse> {
+  async getFormInstance(formInstanceId: string, request: GetFormInstanceRequest): Promise<GetFormInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListFormInstancesHeaders({ });
-    return await this.listFormInstancesWithOptions(formCode, request, headers, runtime);
+    let headers = new GetFormInstanceHeaders({ });
+    return await this.getFormInstanceWithOptions(formInstanceId, request, headers, runtime);
   }
 
   async listFormInstancesWithOptions(formCode: string, request: ListFormInstancesRequest, headers: ListFormInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<ListFormInstancesResponse> {
     Util.validateModel(request);
-    formCode = OpenApiUtil.getEncodeParam(formCode);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.actionDate)) {
       query["actionDate"] = request.actionDate;
@@ -616,13 +633,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListFormInstancesResponse>(await this.doROARequest("ListFormInstances", "swform_1.0", "HTTP", "GET", "AK", `/v1.0/swform/forms/${formCode}/instances`, "json", req, runtime), new ListFormInstancesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListFormInstances",
+      version: "swform_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/swform/forms/${formCode}/instances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListFormInstancesResponse>(await this.execute(params, req, runtime), new ListFormInstancesResponse({}));
   }
 
-  async listFormSchemasByCreator(request: ListFormSchemasByCreatorRequest): Promise<ListFormSchemasByCreatorResponse> {
+  async listFormInstances(formCode: string, request: ListFormInstancesRequest): Promise<ListFormInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListFormSchemasByCreatorHeaders({ });
-    return await this.listFormSchemasByCreatorWithOptions(request, headers, runtime);
+    let headers = new ListFormInstancesHeaders({ });
+    return await this.listFormInstancesWithOptions(formCode, request, headers, runtime);
   }
 
   async listFormSchemasByCreatorWithOptions(request: ListFormSchemasByCreatorRequest, headers: ListFormSchemasByCreatorHeaders, runtime: $Util.RuntimeOptions): Promise<ListFormSchemasByCreatorResponse> {
@@ -657,7 +685,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListFormSchemasByCreatorResponse>(await this.doROARequest("ListFormSchemasByCreator", "swform_1.0", "HTTP", "GET", "AK", `/v1.0/swform/users/forms`, "json", req, runtime), new ListFormSchemasByCreatorResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListFormSchemasByCreator",
+      version: "swform_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/swform/users/forms`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListFormSchemasByCreatorResponse>(await this.execute(params, req, runtime), new ListFormSchemasByCreatorResponse({}));
+  }
+
+  async listFormSchemasByCreator(request: ListFormSchemasByCreatorRequest): Promise<ListFormSchemasByCreatorResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListFormSchemasByCreatorHeaders({ });
+    return await this.listFormSchemasByCreatorWithOptions(request, headers, runtime);
   }
 
 }

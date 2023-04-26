@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -122,10 +124,12 @@ export class IndustrializeManufactureJobBookResponseBody extends $tea.Model {
 
 export class IndustrializeManufactureJobBookResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustrializeManufactureJobBookResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -133,6 +137,7 @@ export class IndustrializeManufactureJobBookResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustrializeManufactureJobBookResponseBody,
     };
   }
@@ -249,10 +254,12 @@ export class IndustrializeManufactureQueryJobsResponseBody extends $tea.Model {
 
 export class IndustrializeManufactureQueryJobsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustrializeManufactureQueryJobsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -260,6 +267,7 @@ export class IndustrializeManufactureQueryJobsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustrializeManufactureQueryJobsResponseBody,
     };
   }
@@ -360,9 +368,13 @@ export class IndustrializeManufactureQueryJobsResponseBodyContent extends $tea.M
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
+    this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -371,15 +383,8 @@ export default class Client extends OpenApi {
   }
 
 
-  async industrializeManufactureJobBook(userId: string, request: IndustrializeManufactureJobBookRequest): Promise<IndustrializeManufactureJobBookResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers : {[key: string ]: string} = { };
-    return await this.industrializeManufactureJobBookWithOptions(userId, request, headers, runtime);
-  }
-
   async industrializeManufactureJobBookWithOptions(userId: string, request: IndustrializeManufactureJobBookRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<IndustrializeManufactureJobBookResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.corpId)) {
       body["corpId"] = request.corpId;
@@ -465,13 +470,24 @@ export default class Client extends OpenApi {
       headers: headers,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustrializeManufactureJobBookResponse>(await this.doROARequest("IndustrializeManufactureJobBook", "manufacturing_1.0", "HTTP", "POST", "AK", `/v1.0/manufacturing/users/${userId}/jobs`, "json", req, runtime), new IndustrializeManufactureJobBookResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustrializeManufactureJobBook",
+      version: "manufacturing_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/manufacturing/users/${userId}/jobs`,
+      method: "POST",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustrializeManufactureJobBookResponse>(await this.execute(params, req, runtime), new IndustrializeManufactureJobBookResponse({}));
   }
 
-  async industrializeManufactureQueryJobs(request: IndustrializeManufactureQueryJobsRequest): Promise<IndustrializeManufactureQueryJobsResponse> {
+  async industrializeManufactureJobBook(userId: string, request: IndustrializeManufactureJobBookRequest): Promise<IndustrializeManufactureJobBookResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustrializeManufactureQueryJobsHeaders({ });
-    return await this.industrializeManufactureQueryJobsWithOptions(request, headers, runtime);
+    let headers : {[key: string ]: string} = { };
+    return await this.industrializeManufactureJobBookWithOptions(userId, request, headers, runtime);
   }
 
   async industrializeManufactureQueryJobsWithOptions(request: IndustrializeManufactureQueryJobsRequest, headers: IndustrializeManufactureQueryJobsHeaders, runtime: $Util.RuntimeOptions): Promise<IndustrializeManufactureQueryJobsResponse> {
@@ -550,7 +566,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustrializeManufactureQueryJobsResponse>(await this.doROARequest("IndustrializeManufactureQueryJobs", "manufacturing_1.0", "HTTP", "POST", "AK", `/v1.0/manufacturing/users/jobs/query`, "json", req, runtime), new IndustrializeManufactureQueryJobsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustrializeManufactureQueryJobs",
+      version: "manufacturing_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/manufacturing/users/jobs/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustrializeManufactureQueryJobsResponse>(await this.execute(params, req, runtime), new IndustrializeManufactureQueryJobsResponse({}));
+  }
+
+  async industrializeManufactureQueryJobs(request: IndustrializeManufactureQueryJobsRequest): Promise<IndustrializeManufactureQueryJobsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new IndustrializeManufactureQueryJobsHeaders({ });
+    return await this.industrializeManufactureQueryJobsWithOptions(request, headers, runtime);
   }
 
 }

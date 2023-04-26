@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -93,10 +95,12 @@ export class CreateMeetingRoomResponseBody extends $tea.Model {
 
 export class CreateMeetingRoomResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateMeetingRoomResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -104,6 +108,7 @@ export class CreateMeetingRoomResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateMeetingRoomResponseBody,
     };
   }
@@ -181,10 +186,12 @@ export class CreateMeetingRoomGroupResponseBody extends $tea.Model {
 
 export class CreateMeetingRoomGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateMeetingRoomGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -192,6 +199,7 @@ export class CreateMeetingRoomGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateMeetingRoomGroupResponseBody,
     };
   }
@@ -263,10 +271,12 @@ export class DeleteMeetingRoomResponseBody extends $tea.Model {
 
 export class DeleteMeetingRoomResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteMeetingRoomResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -274,6 +284,7 @@ export class DeleteMeetingRoomResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteMeetingRoomResponseBody,
     };
   }
@@ -345,10 +356,12 @@ export class DeleteMeetingRoomGroupResponseBody extends $tea.Model {
 
 export class DeleteMeetingRoomGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteMeetingRoomGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -356,6 +369,7 @@ export class DeleteMeetingRoomGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteMeetingRoomGroupResponseBody,
     };
   }
@@ -430,10 +444,12 @@ export class QueryDeviceIpByCodeResponseBody extends $tea.Model {
 
 export class QueryDeviceIpByCodeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryDeviceIpByCodeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -441,6 +457,7 @@ export class QueryDeviceIpByCodeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryDeviceIpByCodeResponseBody,
     };
   }
@@ -521,10 +538,12 @@ export class QueryDevicePropertiesResponseBody extends $tea.Model {
 
 export class QueryDevicePropertiesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryDevicePropertiesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -532,6 +551,7 @@ export class QueryDevicePropertiesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryDevicePropertiesResponseBody,
     };
   }
@@ -603,10 +623,12 @@ export class QueryMeetingRoomResponseBody extends $tea.Model {
 
 export class QueryMeetingRoomResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryMeetingRoomResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -614,6 +636,7 @@ export class QueryMeetingRoomResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryMeetingRoomResponseBody,
     };
   }
@@ -691,10 +714,12 @@ export class QueryMeetingRoomDeviceResponseBody extends $tea.Model {
 
 export class QueryMeetingRoomDeviceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryMeetingRoomDeviceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -702,6 +727,7 @@ export class QueryMeetingRoomDeviceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryMeetingRoomDeviceResponseBody,
     };
   }
@@ -779,10 +805,12 @@ export class QueryMeetingRoomGroupResponseBody extends $tea.Model {
 
 export class QueryMeetingRoomGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryMeetingRoomGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -790,6 +818,7 @@ export class QueryMeetingRoomGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryMeetingRoomGroupResponseBody,
     };
   }
@@ -861,10 +890,12 @@ export class QueryMeetingRoomGroupListResponseBody extends $tea.Model {
 
 export class QueryMeetingRoomGroupListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryMeetingRoomGroupListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -872,6 +903,7 @@ export class QueryMeetingRoomGroupListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryMeetingRoomGroupListResponseBody,
     };
   }
@@ -955,10 +987,12 @@ export class QueryMeetingRoomListResponseBody extends $tea.Model {
 
 export class QueryMeetingRoomListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryMeetingRoomListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -966,6 +1000,7 @@ export class QueryMeetingRoomListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryMeetingRoomListResponseBody,
     };
   }
@@ -1064,10 +1099,12 @@ export class UpdateMeetingRoomResponseBody extends $tea.Model {
 
 export class UpdateMeetingRoomResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateMeetingRoomResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1075,6 +1112,7 @@ export class UpdateMeetingRoomResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateMeetingRoomResponseBody,
     };
   }
@@ -1152,10 +1190,12 @@ export class UpdateMeetingRoomGroupResponseBody extends $tea.Model {
 
 export class UpdateMeetingRoomGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateMeetingRoomGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1163,6 +1203,7 @@ export class UpdateMeetingRoomGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateMeetingRoomGroupResponseBody,
     };
   }
@@ -1627,9 +1668,12 @@ export class UpdateMeetingRoomRequestRoomLocation extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1637,12 +1681,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async createMeetingRoom(request: CreateMeetingRoomRequest): Promise<CreateMeetingRoomResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateMeetingRoomHeaders({ });
-    return await this.createMeetingRoomWithOptions(request, headers, runtime);
-  }
 
   async createMeetingRoomWithOptions(request: CreateMeetingRoomRequest, headers: CreateMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMeetingRoomResponse> {
     Util.validateModel(request);
@@ -1696,13 +1734,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateMeetingRoomResponse>(await this.doROARequest("CreateMeetingRoom", "rooms_1.0", "HTTP", "POST", "AK", `/v1.0/rooms/meetingrooms`, "json", req, runtime), new CreateMeetingRoomResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateMeetingRoom",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/meetingrooms`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateMeetingRoomResponse>(await this.execute(params, req, runtime), new CreateMeetingRoomResponse({}));
   }
 
-  async createMeetingRoomGroup(request: CreateMeetingRoomGroupRequest): Promise<CreateMeetingRoomGroupResponse> {
+  async createMeetingRoom(request: CreateMeetingRoomRequest): Promise<CreateMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateMeetingRoomGroupHeaders({ });
-    return await this.createMeetingRoomGroupWithOptions(request, headers, runtime);
+    let headers = new CreateMeetingRoomHeaders({ });
+    return await this.createMeetingRoomWithOptions(request, headers, runtime);
   }
 
   async createMeetingRoomGroupWithOptions(request: CreateMeetingRoomGroupRequest, headers: CreateMeetingRoomGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateMeetingRoomGroupResponse> {
@@ -1733,7 +1782,58 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateMeetingRoomGroupResponse>(await this.doROARequest("CreateMeetingRoomGroup", "rooms_1.0", "HTTP", "POST", "AK", `/v1.0/rooms/groups`, "json", req, runtime), new CreateMeetingRoomGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateMeetingRoomGroup",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/groups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateMeetingRoomGroupResponse>(await this.execute(params, req, runtime), new CreateMeetingRoomGroupResponse({}));
+  }
+
+  async createMeetingRoomGroup(request: CreateMeetingRoomGroupRequest): Promise<CreateMeetingRoomGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateMeetingRoomGroupHeaders({ });
+    return await this.createMeetingRoomGroupWithOptions(request, headers, runtime);
+  }
+
+  async deleteMeetingRoomWithOptions(roomId: string, request: DeleteMeetingRoomRequest, headers: DeleteMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteMeetingRoomResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteMeetingRoom",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/meetingRooms/${roomId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteMeetingRoomResponse>(await this.execute(params, req, runtime), new DeleteMeetingRoomResponse({}));
   }
 
   async deleteMeetingRoom(roomId: string, request: DeleteMeetingRoomRequest): Promise<DeleteMeetingRoomResponse> {
@@ -1742,9 +1842,8 @@ export default class Client extends OpenApi {
     return await this.deleteMeetingRoomWithOptions(roomId, request, headers, runtime);
   }
 
-  async deleteMeetingRoomWithOptions(roomId: string, request: DeleteMeetingRoomRequest, headers: DeleteMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteMeetingRoomResponse> {
+  async deleteMeetingRoomGroupWithOptions(groupId: string, request: DeleteMeetingRoomGroupRequest, headers: DeleteMeetingRoomGroupHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteMeetingRoomGroupResponse> {
     Util.validateModel(request);
-    roomId = OpenApiUtil.getEncodeParam(roomId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -1763,7 +1862,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteMeetingRoomResponse>(await this.doROARequest("DeleteMeetingRoom", "rooms_1.0", "HTTP", "DELETE", "AK", `/v1.0/rooms/meetingRooms/${roomId}`, "json", req, runtime), new DeleteMeetingRoomResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteMeetingRoomGroup",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/groups/${groupId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteMeetingRoomGroupResponse>(await this.execute(params, req, runtime), new DeleteMeetingRoomGroupResponse({}));
   }
 
   async deleteMeetingRoomGroup(groupId: string, request: DeleteMeetingRoomGroupRequest): Promise<DeleteMeetingRoomGroupResponse> {
@@ -1772,39 +1882,8 @@ export default class Client extends OpenApi {
     return await this.deleteMeetingRoomGroupWithOptions(groupId, request, headers, runtime);
   }
 
-  async deleteMeetingRoomGroupWithOptions(groupId: string, request: DeleteMeetingRoomGroupRequest, headers: DeleteMeetingRoomGroupHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteMeetingRoomGroupResponse> {
-    Util.validateModel(request);
-    groupId = OpenApiUtil.getEncodeParam(groupId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.unionId)) {
-      query["unionId"] = request.unionId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<DeleteMeetingRoomGroupResponse>(await this.doROARequest("DeleteMeetingRoomGroup", "rooms_1.0", "HTTP", "DELETE", "AK", `/v1.0/rooms/groups/${groupId}`, "json", req, runtime), new DeleteMeetingRoomGroupResponse({}));
-  }
-
-  async queryDeviceIpByCode(shareCode: string, request: QueryDeviceIpByCodeRequest): Promise<QueryDeviceIpByCodeResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDeviceIpByCodeHeaders({ });
-    return await this.queryDeviceIpByCodeWithOptions(shareCode, request, headers, runtime);
-  }
-
   async queryDeviceIpByCodeWithOptions(shareCode: string, request: QueryDeviceIpByCodeRequest, headers: QueryDeviceIpByCodeHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceIpByCodeResponse> {
     Util.validateModel(request);
-    shareCode = OpenApiUtil.getEncodeParam(shareCode);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.deviceSn)) {
       query["deviceSn"] = request.deviceSn;
@@ -1823,13 +1902,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryDeviceIpByCodeResponse>(await this.doROARequest("QueryDeviceIpByCode", "rooms_1.0", "HTTP", "GET", "AK", `/v1.0/rooms/devices/shareCodes/${shareCode}`, "json", req, runtime), new QueryDeviceIpByCodeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDeviceIpByCode",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/devices/shareCodes/${shareCode}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDeviceIpByCodeResponse>(await this.execute(params, req, runtime), new QueryDeviceIpByCodeResponse({}));
   }
 
-  async queryDeviceProperties(request: QueryDevicePropertiesRequest): Promise<QueryDevicePropertiesResponse> {
+  async queryDeviceIpByCode(shareCode: string, request: QueryDeviceIpByCodeRequest): Promise<QueryDeviceIpByCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDevicePropertiesHeaders({ });
-    return await this.queryDevicePropertiesWithOptions(request, headers, runtime);
+    let headers = new QueryDeviceIpByCodeHeaders({ });
+    return await this.queryDeviceIpByCodeWithOptions(shareCode, request, headers, runtime);
   }
 
   async queryDevicePropertiesWithOptions(request: QueryDevicePropertiesRequest, headers: QueryDevicePropertiesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDevicePropertiesResponse> {
@@ -1866,18 +1956,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryDevicePropertiesResponse>(await this.doROARequest("QueryDeviceProperties", "rooms_1.0", "HTTP", "POST", "AK", `/v1.0/rooms/devices/properties/query`, "json", req, runtime), new QueryDevicePropertiesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDeviceProperties",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/devices/properties/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDevicePropertiesResponse>(await this.execute(params, req, runtime), new QueryDevicePropertiesResponse({}));
   }
 
-  async queryMeetingRoom(roomId: string, request: QueryMeetingRoomRequest): Promise<QueryMeetingRoomResponse> {
+  async queryDeviceProperties(request: QueryDevicePropertiesRequest): Promise<QueryDevicePropertiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryMeetingRoomHeaders({ });
-    return await this.queryMeetingRoomWithOptions(roomId, request, headers, runtime);
+    let headers = new QueryDevicePropertiesHeaders({ });
+    return await this.queryDevicePropertiesWithOptions(request, headers, runtime);
   }
 
   async queryMeetingRoomWithOptions(roomId: string, request: QueryMeetingRoomRequest, headers: QueryMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomResponse> {
     Util.validateModel(request);
-    roomId = OpenApiUtil.getEncodeParam(roomId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -1896,13 +1996,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryMeetingRoomResponse>(await this.doROARequest("QueryMeetingRoom", "rooms_1.0", "HTTP", "GET", "AK", `/v1.0/rooms/meetingRooms/${roomId}`, "json", req, runtime), new QueryMeetingRoomResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryMeetingRoom",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/meetingRooms/${roomId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMeetingRoomResponse>(await this.execute(params, req, runtime), new QueryMeetingRoomResponse({}));
   }
 
-  async queryMeetingRoomDevice(request: QueryMeetingRoomDeviceRequest): Promise<QueryMeetingRoomDeviceResponse> {
+  async queryMeetingRoom(roomId: string, request: QueryMeetingRoomRequest): Promise<QueryMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryMeetingRoomDeviceHeaders({ });
-    return await this.queryMeetingRoomDeviceWithOptions(request, headers, runtime);
+    let headers = new QueryMeetingRoomHeaders({ });
+    return await this.queryMeetingRoomWithOptions(roomId, request, headers, runtime);
   }
 
   async queryMeetingRoomDeviceWithOptions(request: QueryMeetingRoomDeviceRequest, headers: QueryMeetingRoomDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomDeviceResponse> {
@@ -1933,18 +2044,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryMeetingRoomDeviceResponse>(await this.doROARequest("QueryMeetingRoomDevice", "rooms_1.0", "HTTP", "GET", "AK", `/v1.0/rooms/devices`, "json", req, runtime), new QueryMeetingRoomDeviceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryMeetingRoomDevice",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/devices`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMeetingRoomDeviceResponse>(await this.execute(params, req, runtime), new QueryMeetingRoomDeviceResponse({}));
   }
 
-  async queryMeetingRoomGroup(groupId: string, request: QueryMeetingRoomGroupRequest): Promise<QueryMeetingRoomGroupResponse> {
+  async queryMeetingRoomDevice(request: QueryMeetingRoomDeviceRequest): Promise<QueryMeetingRoomDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryMeetingRoomGroupHeaders({ });
-    return await this.queryMeetingRoomGroupWithOptions(groupId, request, headers, runtime);
+    let headers = new QueryMeetingRoomDeviceHeaders({ });
+    return await this.queryMeetingRoomDeviceWithOptions(request, headers, runtime);
   }
 
   async queryMeetingRoomGroupWithOptions(groupId: string, request: QueryMeetingRoomGroupRequest, headers: QueryMeetingRoomGroupHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomGroupResponse> {
     Util.validateModel(request);
-    groupId = OpenApiUtil.getEncodeParam(groupId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -1963,13 +2084,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryMeetingRoomGroupResponse>(await this.doROARequest("QueryMeetingRoomGroup", "rooms_1.0", "HTTP", "GET", "AK", `/v1.0/rooms/groups/${groupId}`, "json", req, runtime), new QueryMeetingRoomGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryMeetingRoomGroup",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/groups/${groupId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMeetingRoomGroupResponse>(await this.execute(params, req, runtime), new QueryMeetingRoomGroupResponse({}));
   }
 
-  async queryMeetingRoomGroupList(request: QueryMeetingRoomGroupListRequest): Promise<QueryMeetingRoomGroupListResponse> {
+  async queryMeetingRoomGroup(groupId: string, request: QueryMeetingRoomGroupRequest): Promise<QueryMeetingRoomGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryMeetingRoomGroupListHeaders({ });
-    return await this.queryMeetingRoomGroupListWithOptions(request, headers, runtime);
+    let headers = new QueryMeetingRoomGroupHeaders({ });
+    return await this.queryMeetingRoomGroupWithOptions(groupId, request, headers, runtime);
   }
 
   async queryMeetingRoomGroupListWithOptions(request: QueryMeetingRoomGroupListRequest, headers: QueryMeetingRoomGroupListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomGroupListResponse> {
@@ -1992,13 +2124,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryMeetingRoomGroupListResponse>(await this.doROARequest("QueryMeetingRoomGroupList", "rooms_1.0", "HTTP", "GET", "AK", `/v1.0/rooms/groupLists`, "json", req, runtime), new QueryMeetingRoomGroupListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryMeetingRoomGroupList",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/groupLists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMeetingRoomGroupListResponse>(await this.execute(params, req, runtime), new QueryMeetingRoomGroupListResponse({}));
   }
 
-  async queryMeetingRoomList(request: QueryMeetingRoomListRequest): Promise<QueryMeetingRoomListResponse> {
+  async queryMeetingRoomGroupList(request: QueryMeetingRoomGroupListRequest): Promise<QueryMeetingRoomGroupListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryMeetingRoomListHeaders({ });
-    return await this.queryMeetingRoomListWithOptions(request, headers, runtime);
+    let headers = new QueryMeetingRoomGroupListHeaders({ });
+    return await this.queryMeetingRoomGroupListWithOptions(request, headers, runtime);
   }
 
   async queryMeetingRoomListWithOptions(request: QueryMeetingRoomListRequest, headers: QueryMeetingRoomListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMeetingRoomListResponse> {
@@ -2029,13 +2172,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryMeetingRoomListResponse>(await this.doROARequest("QueryMeetingRoomList", "rooms_1.0", "HTTP", "GET", "AK", `/v1.0/rooms/meetingRoomLists`, "json", req, runtime), new QueryMeetingRoomListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryMeetingRoomList",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/meetingRoomLists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMeetingRoomListResponse>(await this.execute(params, req, runtime), new QueryMeetingRoomListResponse({}));
   }
 
-  async updateMeetingRoom(request: UpdateMeetingRoomRequest): Promise<UpdateMeetingRoomResponse> {
+  async queryMeetingRoomList(request: QueryMeetingRoomListRequest): Promise<QueryMeetingRoomListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateMeetingRoomHeaders({ });
-    return await this.updateMeetingRoomWithOptions(request, headers, runtime);
+    let headers = new QueryMeetingRoomListHeaders({ });
+    return await this.queryMeetingRoomListWithOptions(request, headers, runtime);
   }
 
   async updateMeetingRoomWithOptions(request: UpdateMeetingRoomRequest, headers: UpdateMeetingRoomHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMeetingRoomResponse> {
@@ -2094,13 +2248,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateMeetingRoomResponse>(await this.doROARequest("UpdateMeetingRoom", "rooms_1.0", "HTTP", "PUT", "AK", `/v1.0/rooms/meetingRooms`, "json", req, runtime), new UpdateMeetingRoomResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateMeetingRoom",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/meetingRooms`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateMeetingRoomResponse>(await this.execute(params, req, runtime), new UpdateMeetingRoomResponse({}));
   }
 
-  async updateMeetingRoomGroup(request: UpdateMeetingRoomGroupRequest): Promise<UpdateMeetingRoomGroupResponse> {
+  async updateMeetingRoom(request: UpdateMeetingRoomRequest): Promise<UpdateMeetingRoomResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateMeetingRoomGroupHeaders({ });
-    return await this.updateMeetingRoomGroupWithOptions(request, headers, runtime);
+    let headers = new UpdateMeetingRoomHeaders({ });
+    return await this.updateMeetingRoomWithOptions(request, headers, runtime);
   }
 
   async updateMeetingRoomGroupWithOptions(request: UpdateMeetingRoomGroupRequest, headers: UpdateMeetingRoomGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMeetingRoomGroupResponse> {
@@ -2131,7 +2296,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateMeetingRoomGroupResponse>(await this.doROARequest("UpdateMeetingRoomGroup", "rooms_1.0", "HTTP", "PUT", "AK", `/v1.0/rooms/groups`, "json", req, runtime), new UpdateMeetingRoomGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateMeetingRoomGroup",
+      version: "rooms_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/rooms/groups`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateMeetingRoomGroupResponse>(await this.execute(params, req, runtime), new UpdateMeetingRoomGroupResponse({}));
+  }
+
+  async updateMeetingRoomGroup(request: UpdateMeetingRoomGroupRequest): Promise<UpdateMeetingRoomGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateMeetingRoomGroupHeaders({ });
+    return await this.updateMeetingRoomGroupWithOptions(request, headers, runtime);
   }
 
 }

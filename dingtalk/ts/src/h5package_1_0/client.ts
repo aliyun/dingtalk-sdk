@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -78,10 +80,12 @@ export class CreatePackageResponseBody extends $tea.Model {
 
 export class CreatePackageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreatePackageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -89,6 +93,7 @@ export class CreatePackageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreatePackageResponseBody,
     };
   }
@@ -184,10 +189,12 @@ export class GetAccessTokenResponseBody extends $tea.Model {
 
 export class GetAccessTokenResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAccessTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -195,6 +202,7 @@ export class GetAccessTokenResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAccessTokenResponseBody,
     };
   }
@@ -281,10 +289,12 @@ export class GetCreateStatusResponseBody extends $tea.Model {
 
 export class GetCreateStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCreateStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -292,6 +302,7 @@ export class GetCreateStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCreateStatusResponseBody,
     };
   }
@@ -369,10 +380,12 @@ export class PublishPackageResponseBody extends $tea.Model {
 
 export class PublishPackageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PublishPackageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -380,6 +393,7 @@ export class PublishPackageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PublishPackageResponseBody,
     };
   }
@@ -391,9 +405,12 @@ export class PublishPackageResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -401,12 +418,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async createPackage(request: CreatePackageRequest): Promise<CreatePackageResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreatePackageHeaders({ });
-    return await this.createPackageWithOptions(request, headers, runtime);
-  }
 
   async createPackageWithOptions(request: CreatePackageRequest, headers: CreatePackageHeaders, runtime: $Util.RuntimeOptions): Promise<CreatePackageResponse> {
     Util.validateModel(request);
@@ -440,13 +451,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreatePackageResponse>(await this.doROARequest("CreatePackage", "h5package_1.0", "HTTP", "POST", "AK", `/v1.0/h5package/asyncUpload`, "json", req, runtime), new CreatePackageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreatePackage",
+      version: "h5package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h5package/asyncUpload`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreatePackageResponse>(await this.execute(params, req, runtime), new CreatePackageResponse({}));
   }
 
-  async getAccessToken(request: GetAccessTokenRequest): Promise<GetAccessTokenResponse> {
+  async createPackage(request: CreatePackageRequest): Promise<CreatePackageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAccessTokenHeaders({ });
-    return await this.getAccessTokenWithOptions(request, headers, runtime);
+    let headers = new CreatePackageHeaders({ });
+    return await this.createPackageWithOptions(request, headers, runtime);
   }
 
   async getAccessTokenWithOptions(request: GetAccessTokenRequest, headers: GetAccessTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetAccessTokenResponse> {
@@ -473,13 +495,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetAccessTokenResponse>(await this.doROARequest("GetAccessToken", "h5package_1.0", "HTTP", "GET", "AK", `/v1.0/h5package/uploadTokens`, "json", req, runtime), new GetAccessTokenResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAccessToken",
+      version: "h5package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h5package/uploadTokens`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAccessTokenResponse>(await this.execute(params, req, runtime), new GetAccessTokenResponse({}));
   }
 
-  async getCreateStatus(request: GetCreateStatusRequest): Promise<GetCreateStatusResponse> {
+  async getAccessToken(request: GetAccessTokenRequest): Promise<GetAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCreateStatusHeaders({ });
-    return await this.getCreateStatusWithOptions(request, headers, runtime);
+    let headers = new GetAccessTokenHeaders({ });
+    return await this.getAccessTokenWithOptions(request, headers, runtime);
   }
 
   async getCreateStatusWithOptions(request: GetCreateStatusRequest, headers: GetCreateStatusHeaders, runtime: $Util.RuntimeOptions): Promise<GetCreateStatusResponse> {
@@ -502,13 +535,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetCreateStatusResponse>(await this.doROARequest("GetCreateStatus", "h5package_1.0", "HTTP", "GET", "AK", `/v1.0/h5package/uploadStatus`, "json", req, runtime), new GetCreateStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCreateStatus",
+      version: "h5package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h5package/uploadStatus`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCreateStatusResponse>(await this.execute(params, req, runtime), new GetCreateStatusResponse({}));
   }
 
-  async publishPackage(request: PublishPackageRequest): Promise<PublishPackageResponse> {
+  async getCreateStatus(request: GetCreateStatusRequest): Promise<GetCreateStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PublishPackageHeaders({ });
-    return await this.publishPackageWithOptions(request, headers, runtime);
+    let headers = new GetCreateStatusHeaders({ });
+    return await this.getCreateStatusWithOptions(request, headers, runtime);
   }
 
   async publishPackageWithOptions(request: PublishPackageRequest, headers: PublishPackageHeaders, runtime: $Util.RuntimeOptions): Promise<PublishPackageResponse> {
@@ -539,7 +583,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PublishPackageResponse>(await this.doROARequest("PublishPackage", "h5package_1.0", "HTTP", "POST", "AK", `/v1.0/h5package/publish`, "json", req, runtime), new PublishPackageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PublishPackage",
+      version: "h5package_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/h5package/publish`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PublishPackageResponse>(await this.execute(params, req, runtime), new PublishPackageResponse({}));
+  }
+
+  async publishPackage(request: PublishPackageRequest): Promise<PublishPackageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PublishPackageHeaders({ });
+    return await this.publishPackageWithOptions(request, headers, runtime);
   }
 
 }

@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -56,10 +58,12 @@ export class GetTranscribeBriefResponseBody extends $tea.Model {
 
 export class GetTranscribeBriefResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTranscribeBriefResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -67,6 +71,7 @@ export class GetTranscribeBriefResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTranscribeBriefResponseBody,
     };
   }
@@ -153,10 +158,12 @@ export class RemovePermissionResponseBody extends $tea.Model {
 
 export class RemovePermissionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RemovePermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -164,6 +171,7 @@ export class RemovePermissionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RemovePermissionResponseBody,
     };
   }
@@ -244,10 +252,12 @@ export class UpdatePermissionForUsersResponseBody extends $tea.Model {
 
 export class UpdatePermissionForUsersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdatePermissionForUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -255,6 +265,7 @@ export class UpdatePermissionForUsersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdatePermissionForUsersResponseBody,
     };
   }
@@ -354,9 +365,12 @@ export class UpdatePermissionForUsersRequestMembers extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -365,14 +379,7 @@ export default class Client extends OpenApi {
   }
 
 
-  async getTranscribeBrief(taskUuid: string): Promise<GetTranscribeBriefResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTranscribeBriefHeaders({ });
-    return await this.getTranscribeBriefWithOptions(taskUuid, headers, runtime);
-  }
-
   async getTranscribeBriefWithOptions(taskUuid: string, headers: GetTranscribeBriefHeaders, runtime: $Util.RuntimeOptions): Promise<GetTranscribeBriefResponse> {
-    taskUuid = OpenApiUtil.getEncodeParam(taskUuid);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -385,18 +392,28 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetTranscribeBriefResponse>(await this.doROARequest("GetTranscribeBrief", "transcribe_1.0", "HTTP", "GET", "AK", `/v1.0/transcribe/tasks/${taskUuid}/briefInfos`, "json", req, runtime), new GetTranscribeBriefResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTranscribeBrief",
+      version: "transcribe_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/transcribe/tasks/${taskUuid}/briefInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTranscribeBriefResponse>(await this.execute(params, req, runtime), new GetTranscribeBriefResponse({}));
   }
 
-  async removePermission(taskUuid: string, request: RemovePermissionRequest): Promise<RemovePermissionResponse> {
+  async getTranscribeBrief(taskUuid: string): Promise<GetTranscribeBriefResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RemovePermissionHeaders({ });
-    return await this.removePermissionWithOptions(taskUuid, request, headers, runtime);
+    let headers = new GetTranscribeBriefHeaders({ });
+    return await this.getTranscribeBriefWithOptions(taskUuid, headers, runtime);
   }
 
   async removePermissionWithOptions(taskUuid: string, request: RemovePermissionRequest, headers: RemovePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<RemovePermissionResponse> {
     Util.validateModel(request);
-    taskUuid = OpenApiUtil.getEncodeParam(taskUuid);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.bizType)) {
       body["bizType"] = request.bizType;
@@ -427,18 +444,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RemovePermissionResponse>(await this.doROARequest("RemovePermission", "transcribe_1.0", "HTTP", "DELETE", "AK", `/v1.0/transcribe/tasks/${taskUuid}/permissions/remove`, "json", req, runtime), new RemovePermissionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RemovePermission",
+      version: "transcribe_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/transcribe/tasks/${taskUuid}/permissions/remove`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RemovePermissionResponse>(await this.execute(params, req, runtime), new RemovePermissionResponse({}));
   }
 
-  async updatePermissionForUsers(taskUuid: string, request: UpdatePermissionForUsersRequest): Promise<UpdatePermissionForUsersResponse> {
+  async removePermission(taskUuid: string, request: RemovePermissionRequest): Promise<RemovePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdatePermissionForUsersHeaders({ });
-    return await this.updatePermissionForUsersWithOptions(taskUuid, request, headers, runtime);
+    let headers = new RemovePermissionHeaders({ });
+    return await this.removePermissionWithOptions(taskUuid, request, headers, runtime);
   }
 
   async updatePermissionForUsersWithOptions(taskUuid: string, request: UpdatePermissionForUsersRequest, headers: UpdatePermissionForUsersHeaders, runtime: $Util.RuntimeOptions): Promise<UpdatePermissionForUsersResponse> {
     Util.validateModel(request);
-    taskUuid = OpenApiUtil.getEncodeParam(taskUuid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorUid)) {
       query["operatorUid"] = request.operatorUid;
@@ -471,7 +498,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdatePermissionForUsersResponse>(await this.doROARequest("UpdatePermissionForUsers", "transcribe_1.0", "HTTP", "PUT", "AK", `/v1.0/transcribe/tasks/${taskUuid}/permissions`, "json", req, runtime), new UpdatePermissionForUsersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdatePermissionForUsers",
+      version: "transcribe_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/transcribe/tasks/${taskUuid}/permissions`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdatePermissionForUsersResponse>(await this.execute(params, req, runtime), new UpdatePermissionForUsersResponse({}));
+  }
+
+  async updatePermissionForUsers(taskUuid: string, request: UpdatePermissionForUsersRequest): Promise<UpdatePermissionForUsersResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdatePermissionForUsersHeaders({ });
+    return await this.updatePermissionForUsersWithOptions(taskUuid, request, headers, runtime);
   }
 
 }

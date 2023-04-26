@@ -3,9 +3,33 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
+
+export class PrivateDataValue extends $tea.Model {
+  cardParamMap?: { [key: string]: string };
+  cardMediaIdParamMap?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      cardParamMap: 'cardParamMap',
+      cardMediaIdParamMap: 'cardMediaIdParamMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      cardMediaIdParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
 
 export class AddOrgTextEmotionHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
@@ -81,10 +105,12 @@ export class AddOrgTextEmotionResponseBody extends $tea.Model {
 
 export class AddOrgTextEmotionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddOrgTextEmotionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -92,6 +118,7 @@ export class AddOrgTextEmotionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddOrgTextEmotionResponseBody,
     };
   }
@@ -172,10 +199,12 @@ export class AddRobotToConversationResponseBody extends $tea.Model {
 
 export class AddRobotToConversationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddRobotToConversationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -183,6 +212,7 @@ export class AddRobotToConversationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddRobotToConversationResponseBody,
     };
   }
@@ -235,10 +265,12 @@ export class AutoOpenDingTalkConnectResponseBody extends $tea.Model {
 
 export class AutoOpenDingTalkConnectResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AutoOpenDingTalkConnectResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -246,6 +278,7 @@ export class AutoOpenDingTalkConnectResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AutoOpenDingTalkConnectResponseBody,
     };
   }
@@ -323,10 +356,12 @@ export class BatchQueryFamilySchoolMessageResponseBody extends $tea.Model {
 
 export class BatchQueryFamilySchoolMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchQueryFamilySchoolMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -334,6 +369,7 @@ export class BatchQueryFamilySchoolMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchQueryFamilySchoolMessageResponseBody,
     };
   }
@@ -423,10 +459,12 @@ export class BatchQueryGroupMemberResponseBody extends $tea.Model {
 
 export class BatchQueryGroupMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchQueryGroupMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -434,6 +472,7 @@ export class BatchQueryGroupMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchQueryGroupMemberResponseBody,
     };
   }
@@ -508,10 +547,12 @@ export class CardTemplateBuildActionResponseBody extends $tea.Model {
 
 export class CardTemplateBuildActionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CardTemplateBuildActionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -519,6 +560,7 @@ export class CardTemplateBuildActionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CardTemplateBuildActionResponseBody,
     };
   }
@@ -599,10 +641,12 @@ export class ChangeGroupOwnerResponseBody extends $tea.Model {
 
 export class ChangeGroupOwnerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ChangeGroupOwnerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -610,6 +654,7 @@ export class ChangeGroupOwnerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ChangeGroupOwnerResponseBody,
     };
   }
@@ -662,10 +707,12 @@ export class ChatIdToOpenConversationIdResponseBody extends $tea.Model {
 
 export class ChatIdToOpenConversationIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ChatIdToOpenConversationIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -673,6 +720,7 @@ export class ChatIdToOpenConversationIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ChatIdToOpenConversationIdResponseBody,
     };
   }
@@ -750,10 +798,12 @@ export class ChatSubAdminUpdateResponseBody extends $tea.Model {
 
 export class ChatSubAdminUpdateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ChatSubAdminUpdateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -761,6 +811,7 @@ export class ChatSubAdminUpdateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ChatSubAdminUpdateResponseBody,
     };
   }
@@ -835,10 +886,12 @@ export class CheckUserIsGroupMemberResponseBody extends $tea.Model {
 
 export class CheckUserIsGroupMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CheckUserIsGroupMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -846,6 +899,7 @@ export class CheckUserIsGroupMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CheckUserIsGroupMemberResponseBody,
     };
   }
@@ -935,10 +989,12 @@ export class CreateCoupleGroupConversationResponseBody extends $tea.Model {
 
 export class CreateCoupleGroupConversationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateCoupleGroupConversationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -946,6 +1002,7 @@ export class CreateCoupleGroupConversationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateCoupleGroupConversationResponseBody,
     };
   }
@@ -1047,10 +1104,12 @@ export class CreateGroupConversationResponseBody extends $tea.Model {
 
 export class CreateGroupConversationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateGroupConversationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1058,6 +1117,7 @@ export class CreateGroupConversationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateGroupConversationResponseBody,
     };
   }
@@ -1129,10 +1189,12 @@ export class CreateInterconnectionResponseBody extends $tea.Model {
 
 export class CreateInterconnectionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateInterconnectionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1140,6 +1202,7 @@ export class CreateInterconnectionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateInterconnectionResponseBody,
     };
   }
@@ -1232,10 +1295,12 @@ export class CreateSceneGroupConversationResponseBody extends $tea.Model {
 
 export class CreateSceneGroupConversationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateSceneGroupConversationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1243,6 +1308,7 @@ export class CreateSceneGroupConversationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateSceneGroupConversationResponseBody,
     };
   }
@@ -1335,10 +1401,12 @@ export class CreateStoreGroupConversationResponseBody extends $tea.Model {
 
 export class CreateStoreGroupConversationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateStoreGroupConversationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1346,6 +1414,7 @@ export class CreateStoreGroupConversationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateStoreGroupConversationResponseBody,
     };
   }
@@ -1420,10 +1489,12 @@ export class DeleteOrgTextEmotionResponseBody extends $tea.Model {
 
 export class DeleteOrgTextEmotionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteOrgTextEmotionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1431,6 +1502,7 @@ export class DeleteOrgTextEmotionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteOrgTextEmotionResponseBody,
     };
   }
@@ -1502,10 +1574,12 @@ export class DismissGroupConversationResponseBody extends $tea.Model {
 
 export class DismissGroupConversationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DismissGroupConversationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1513,6 +1587,7 @@ export class DismissGroupConversationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DismissGroupConversationResponseBody,
     };
   }
@@ -1593,10 +1668,12 @@ export class GetConversationUrlResponseBody extends $tea.Model {
 
 export class GetConversationUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetConversationUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1604,6 +1681,7 @@ export class GetConversationUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetConversationUrlResponseBody,
     };
   }
@@ -1699,10 +1777,12 @@ export class GetFamilySchoolConversationMsgResponseBody extends $tea.Model {
 
 export class GetFamilySchoolConversationMsgResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFamilySchoolConversationMsgResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1710,6 +1790,7 @@ export class GetFamilySchoolConversationMsgResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFamilySchoolConversationMsgResponseBody,
     };
   }
@@ -1793,10 +1874,12 @@ export class GetFamilySchoolConversationsResponseBody extends $tea.Model {
 
 export class GetFamilySchoolConversationsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFamilySchoolConversationsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1804,6 +1887,7 @@ export class GetFamilySchoolConversationsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFamilySchoolConversationsResponseBody,
     };
   }
@@ -1890,10 +1974,12 @@ export class GetInnerGroupMembersResponseBody extends $tea.Model {
 
 export class GetInnerGroupMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetInnerGroupMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1901,6 +1987,7 @@ export class GetInnerGroupMembersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetInnerGroupMembersResponseBody,
     };
   }
@@ -2002,10 +2089,12 @@ export class GetInterconnectionUrlResponseBody extends $tea.Model {
 
 export class GetInterconnectionUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetInterconnectionUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2013,6 +2102,7 @@ export class GetInterconnectionUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetInterconnectionUrlResponseBody,
     };
   }
@@ -2084,10 +2174,12 @@ export class GetNewestInnerGroupsResponseBody extends $tea.Model {
 
 export class GetNewestInnerGroupsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetNewestInnerGroupsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2095,6 +2187,7 @@ export class GetNewestInnerGroupsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetNewestInnerGroupsResponseBody,
     };
   }
@@ -2190,10 +2283,12 @@ export class GetSceneGroupInfoResponseBody extends $tea.Model {
 
 export class GetSceneGroupInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSceneGroupInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2201,6 +2296,7 @@ export class GetSceneGroupInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSceneGroupInfoResponseBody,
     };
   }
@@ -2290,10 +2386,12 @@ export class GetSceneGroupMembersResponseBody extends $tea.Model {
 
 export class GetSceneGroupMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSceneGroupMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2301,6 +2399,7 @@ export class GetSceneGroupMembersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSceneGroupMembersResponseBody,
     };
   }
@@ -2359,15 +2458,18 @@ export class GroupBanWordsRequest extends $tea.Model {
 
 export class GroupBanWordsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -2492,10 +2594,12 @@ export class GroupCapacityInquiryResponseBody extends $tea.Model {
 
 export class GroupCapacityInquiryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GroupCapacityInquiryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2503,6 +2607,7 @@ export class GroupCapacityInquiryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GroupCapacityInquiryResponseBody,
     };
   }
@@ -2577,10 +2682,12 @@ export class GroupCapacityOrderConfirmResponseBody extends $tea.Model {
 
 export class GroupCapacityOrderConfirmResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GroupCapacityOrderConfirmResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2588,6 +2695,7 @@ export class GroupCapacityOrderConfirmResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GroupCapacityOrderConfirmResponseBody,
     };
   }
@@ -2722,10 +2830,12 @@ export class GroupCapacityOrderPlaceResponseBody extends $tea.Model {
 
 export class GroupCapacityOrderPlaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GroupCapacityOrderPlaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2733,6 +2843,7 @@ export class GroupCapacityOrderPlaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GroupCapacityOrderPlaceResponseBody,
     };
   }
@@ -2837,10 +2948,12 @@ export class GroupManageQueryResponseBody extends $tea.Model {
 
 export class GroupManageQueryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GroupManageQueryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2848,6 +2961,7 @@ export class GroupManageQueryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GroupManageQueryResponseBody,
     };
   }
@@ -2906,15 +3020,18 @@ export class GroupManageReduceRequest extends $tea.Model {
 
 export class GroupManageReduceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -3006,10 +3123,12 @@ export class InstallRobotToOrgResponseBody extends $tea.Model {
 
 export class InstallRobotToOrgResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: InstallRobotToOrgResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3017,6 +3136,7 @@ export class InstallRobotToOrgResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: InstallRobotToOrgResponseBody,
     };
   }
@@ -3121,10 +3241,12 @@ export class InteractiveCardCreateInstanceResponseBody extends $tea.Model {
 
 export class InteractiveCardCreateInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: InteractiveCardCreateInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3132,6 +3254,7 @@ export class InteractiveCardCreateInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: InteractiveCardCreateInstanceResponseBody,
     };
   }
@@ -3187,10 +3310,12 @@ export class ListOrgTextEmotionResponseBody extends $tea.Model {
 
 export class ListOrgTextEmotionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListOrgTextEmotionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3198,6 +3323,7 @@ export class ListOrgTextEmotionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListOrgTextEmotionResponseBody,
     };
   }
@@ -3272,10 +3398,12 @@ export class QueryGroupInfoByMemberAuthResponseBody extends $tea.Model {
 
 export class QueryGroupInfoByMemberAuthResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryGroupInfoByMemberAuthResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3283,6 +3411,7 @@ export class QueryGroupInfoByMemberAuthResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryGroupInfoByMemberAuthResponseBody,
     };
   }
@@ -3357,10 +3486,12 @@ export class QueryGroupMemberResponseBody extends $tea.Model {
 
 export class QueryGroupMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryGroupMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3368,6 +3499,7 @@ export class QueryGroupMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryGroupMemberResponseBody,
     };
   }
@@ -3442,10 +3574,12 @@ export class QueryGroupMemberByMemberAuthResponseBody extends $tea.Model {
 
 export class QueryGroupMemberByMemberAuthResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryGroupMemberByMemberAuthResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3453,6 +3587,7 @@ export class QueryGroupMemberByMemberAuthResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryGroupMemberByMemberAuthResponseBody,
     };
   }
@@ -3530,10 +3665,12 @@ export class QueryGroupMuteStatusResponseBody extends $tea.Model {
 
 export class QueryGroupMuteStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryGroupMuteStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3541,6 +3678,7 @@ export class QueryGroupMuteStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryGroupMuteStatusResponseBody,
     };
   }
@@ -3618,10 +3756,12 @@ export class QueryMembersOfGroupRoleResponseBody extends $tea.Model {
 
 export class QueryMembersOfGroupRoleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryMembersOfGroupRoleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3629,6 +3769,7 @@ export class QueryMembersOfGroupRoleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryMembersOfGroupRoleResponseBody,
     };
   }
@@ -3706,10 +3847,12 @@ export class QuerySceneGroupTemplateRobotResponseBody extends $tea.Model {
 
 export class QuerySceneGroupTemplateRobotResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QuerySceneGroupTemplateRobotResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3717,6 +3860,7 @@ export class QuerySceneGroupTemplateRobotResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QuerySceneGroupTemplateRobotResponseBody,
     };
   }
@@ -3791,10 +3935,12 @@ export class QuerySingleGroupResponseBody extends $tea.Model {
 
 export class QuerySingleGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QuerySingleGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3802,6 +3948,7 @@ export class QuerySingleGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QuerySingleGroupResponseBody,
     };
   }
@@ -3879,10 +4026,12 @@ export class QueryUnReadMessageResponseBody extends $tea.Model {
 
 export class QueryUnReadMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryUnReadMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3890,6 +4039,7 @@ export class QueryUnReadMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryUnReadMessageResponseBody,
     };
   }
@@ -3964,10 +4114,12 @@ export class RemoveRobotFromConversationResponseBody extends $tea.Model {
 
 export class RemoveRobotFromConversationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RemoveRobotFromConversationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3975,6 +4127,7 @@ export class RemoveRobotFromConversationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RemoveRobotFromConversationResponseBody,
     };
   }
@@ -4052,10 +4205,12 @@ export class SearchInnerGroupsResponseBody extends $tea.Model {
 
 export class SearchInnerGroupsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchInnerGroupsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4063,6 +4218,7 @@ export class SearchInnerGroupsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchInnerGroupsResponseBody,
     };
   }
@@ -4176,10 +4332,12 @@ export class SendInteractiveCardResponseBody extends $tea.Model {
 
 export class SendInteractiveCardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendInteractiveCardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4187,6 +4345,7 @@ export class SendInteractiveCardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendInteractiveCardResponseBody,
     };
   }
@@ -4294,10 +4453,12 @@ export class SendOTOInteractiveCardResponseBody extends $tea.Model {
 
 export class SendOTOInteractiveCardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendOTOInteractiveCardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4305,6 +4466,7 @@ export class SendOTOInteractiveCardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendOTOInteractiveCardResponseBody,
     };
   }
@@ -4406,10 +4568,12 @@ export class SendRobotInteractiveCardResponseBody extends $tea.Model {
 
 export class SendRobotInteractiveCardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendRobotInteractiveCardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4417,6 +4581,7 @@ export class SendRobotInteractiveCardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendRobotInteractiveCardResponseBody,
     };
   }
@@ -4506,10 +4671,12 @@ export class SendRobotMessageResponseBody extends $tea.Model {
 
 export class SendRobotMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendRobotMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4517,6 +4684,7 @@ export class SendRobotMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendRobotMessageResponseBody,
     };
   }
@@ -4609,10 +4777,12 @@ export class SendTemplateInteractiveCardResponseBody extends $tea.Model {
 
 export class SendTemplateInteractiveCardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendTemplateInteractiveCardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4620,6 +4790,7 @@ export class SendTemplateInteractiveCardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendTemplateInteractiveCardResponseBody,
     };
   }
@@ -4706,10 +4877,12 @@ export class SetRightPanelResponseBody extends $tea.Model {
 
 export class SetRightPanelResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SetRightPanelResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4717,6 +4890,7 @@ export class SetRightPanelResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SetRightPanelResponseBody,
     };
   }
@@ -4784,15 +4958,18 @@ export class TopboxCloseRequest extends $tea.Model {
 
 export class TopboxCloseResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -4865,15 +5042,18 @@ export class TopboxOpenRequest extends $tea.Model {
 
 export class TopboxOpenResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -4947,10 +5127,12 @@ export class UpdateGroupAvatarResponseBody extends $tea.Model {
 
 export class UpdateGroupAvatarResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateGroupAvatarResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4958,6 +5140,7 @@ export class UpdateGroupAvatarResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateGroupAvatarResponseBody,
     };
   }
@@ -5032,10 +5215,12 @@ export class UpdateGroupNameResponseBody extends $tea.Model {
 
 export class UpdateGroupNameResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateGroupNameResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5043,6 +5228,7 @@ export class UpdateGroupNameResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateGroupNameResponseBody,
     };
   }
@@ -5120,10 +5306,12 @@ export class UpdateGroupPermissionResponseBody extends $tea.Model {
 
 export class UpdateGroupPermissionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateGroupPermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5131,6 +5319,7 @@ export class UpdateGroupPermissionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateGroupPermissionResponseBody,
     };
   }
@@ -5208,10 +5397,12 @@ export class UpdateGroupSubAdminResponseBody extends $tea.Model {
 
 export class UpdateGroupSubAdminResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateGroupSubAdminResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5219,6 +5410,7 @@ export class UpdateGroupSubAdminResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateGroupSubAdminResponseBody,
     };
   }
@@ -5302,10 +5494,12 @@ export class UpdateInteractiveCardResponseBody extends $tea.Model {
 
 export class UpdateInteractiveCardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateInteractiveCardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5313,6 +5507,7 @@ export class UpdateInteractiveCardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateInteractiveCardResponseBody,
     };
   }
@@ -5374,15 +5569,18 @@ export class UpdateMemberBanWordsRequest extends $tea.Model {
 
 export class UpdateMemberBanWordsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -5459,10 +5657,12 @@ export class UpdateMemberGroupNickResponseBody extends $tea.Model {
 
 export class UpdateMemberGroupNickResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateMemberGroupNickResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5470,6 +5670,7 @@ export class UpdateMemberGroupNickResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateMemberGroupNickResponseBody,
     };
   }
@@ -5562,10 +5763,12 @@ export class UpdateRobotInOrgResponseBody extends $tea.Model {
 
 export class UpdateRobotInOrgResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateRobotInOrgResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5573,6 +5776,7 @@ export class UpdateRobotInOrgResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateRobotInOrgResponseBody,
     };
   }
@@ -5656,10 +5860,12 @@ export class UpdateRobotInteractiveCardResponseBody extends $tea.Model {
 
 export class UpdateRobotInteractiveCardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateRobotInteractiveCardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5667,6 +5873,7 @@ export class UpdateRobotInteractiveCardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateRobotInteractiveCardResponseBody,
     };
   }
@@ -5744,10 +5951,12 @@ export class UpdateTheGroupRolesOfGroupMemberResponseBody extends $tea.Model {
 
 export class UpdateTheGroupRolesOfGroupMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTheGroupRolesOfGroupMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5755,6 +5964,7 @@ export class UpdateTheGroupRolesOfGroupMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTheGroupRolesOfGroupMemberResponseBody,
     };
   }
@@ -5838,10 +6048,12 @@ export class AddGroupMemberResponseBody extends $tea.Model {
 
 export class AddGroupMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddGroupMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5849,6 +6061,7 @@ export class AddGroupMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddGroupMemberResponseBody,
     };
   }
@@ -5929,10 +6142,12 @@ export class RemoveGroupMemberResponseBody extends $tea.Model {
 
 export class RemoveGroupMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RemoveGroupMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5940,6 +6155,7 @@ export class RemoveGroupMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RemoveGroupMemberResponseBody,
     };
   }
@@ -6026,10 +6242,12 @@ export class SendDingMessageResponseBody extends $tea.Model {
 
 export class SendDingMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendDingMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6037,6 +6255,7 @@ export class SendDingMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendDingMessageResponseBody,
     };
   }
@@ -6123,10 +6342,12 @@ export class SendMessageResponseBody extends $tea.Model {
 
 export class SendMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6134,29 +6355,8 @@ export class SendMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendMessageResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PrivateDataValue extends $tea.Model {
-  cardParamMap?: { [key: string]: string };
-  cardMediaIdParamMap?: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      cardParamMap: 'cardParamMap',
-      cardMediaIdParamMap: 'cardMediaIdParamMap',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
-      cardMediaIdParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -7053,9 +7253,12 @@ export class UpdateRobotInteractiveCardRequestUpdateOptions extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -7063,12 +7266,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async addOrgTextEmotion(request: AddOrgTextEmotionRequest): Promise<AddOrgTextEmotionResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddOrgTextEmotionHeaders({ });
-    return await this.addOrgTextEmotionWithOptions(request, headers, runtime);
-  }
 
   async addOrgTextEmotionWithOptions(request: AddOrgTextEmotionRequest, headers: AddOrgTextEmotionHeaders, runtime: $Util.RuntimeOptions): Promise<AddOrgTextEmotionResponse> {
     Util.validateModel(request);
@@ -7102,13 +7299,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddOrgTextEmotionResponse>(await this.doROARequest("AddOrgTextEmotion", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/organizations/textEmotions`, "json", req, runtime), new AddOrgTextEmotionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddOrgTextEmotion",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/organizations/textEmotions`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddOrgTextEmotionResponse>(await this.execute(params, req, runtime), new AddOrgTextEmotionResponse({}));
   }
 
-  async addRobotToConversation(request: AddRobotToConversationRequest): Promise<AddRobotToConversationResponse> {
+  async addOrgTextEmotion(request: AddOrgTextEmotionRequest): Promise<AddOrgTextEmotionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddRobotToConversationHeaders({ });
-    return await this.addRobotToConversationWithOptions(request, headers, runtime);
+    let headers = new AddOrgTextEmotionHeaders({ });
+    return await this.addOrgTextEmotionWithOptions(request, headers, runtime);
   }
 
   async addRobotToConversationWithOptions(request: AddRobotToConversationRequest, headers: AddRobotToConversationHeaders, runtime: $Util.RuntimeOptions): Promise<AddRobotToConversationResponse> {
@@ -7143,13 +7351,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddRobotToConversationResponse>(await this.doROARequest("AddRobotToConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/robots`, "json", req, runtime), new AddRobotToConversationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddRobotToConversation",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/conversations/robots`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddRobotToConversationResponse>(await this.execute(params, req, runtime), new AddRobotToConversationResponse({}));
   }
 
-  async autoOpenDingTalkConnect(): Promise<AutoOpenDingTalkConnectResponse> {
+  async addRobotToConversation(request: AddRobotToConversationRequest): Promise<AddRobotToConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AutoOpenDingTalkConnectHeaders({ });
-    return await this.autoOpenDingTalkConnectWithOptions(headers, runtime);
+    let headers = new AddRobotToConversationHeaders({ });
+    return await this.addRobotToConversationWithOptions(request, headers, runtime);
   }
 
   async autoOpenDingTalkConnectWithOptions(headers: AutoOpenDingTalkConnectHeaders, runtime: $Util.RuntimeOptions): Promise<AutoOpenDingTalkConnectResponse> {
@@ -7165,13 +7384,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<AutoOpenDingTalkConnectResponse>(await this.doROARequest("AutoOpenDingTalkConnect", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/apps/open`, "json", req, runtime), new AutoOpenDingTalkConnectResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AutoOpenDingTalkConnect",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/apps/open`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AutoOpenDingTalkConnectResponse>(await this.execute(params, req, runtime), new AutoOpenDingTalkConnectResponse({}));
   }
 
-  async batchQueryFamilySchoolMessage(request: BatchQueryFamilySchoolMessageRequest): Promise<BatchQueryFamilySchoolMessageResponse> {
+  async autoOpenDingTalkConnect(): Promise<AutoOpenDingTalkConnectResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchQueryFamilySchoolMessageHeaders({ });
-    return await this.batchQueryFamilySchoolMessageWithOptions(request, headers, runtime);
+    let headers = new AutoOpenDingTalkConnectHeaders({ });
+    return await this.autoOpenDingTalkConnectWithOptions(headers, runtime);
   }
 
   async batchQueryFamilySchoolMessageWithOptions(request: BatchQueryFamilySchoolMessageRequest, headers: BatchQueryFamilySchoolMessageHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryFamilySchoolMessageResponse> {
@@ -7202,13 +7432,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchQueryFamilySchoolMessageResponse>(await this.doROARequest("BatchQueryFamilySchoolMessage", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/familySchools/messages/batchQuery`, "json", req, runtime), new BatchQueryFamilySchoolMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchQueryFamilySchoolMessage",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/conversations/familySchools/messages/batchQuery`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchQueryFamilySchoolMessageResponse>(await this.execute(params, req, runtime), new BatchQueryFamilySchoolMessageResponse({}));
   }
 
-  async batchQueryGroupMember(request: BatchQueryGroupMemberRequest): Promise<BatchQueryGroupMemberResponse> {
+  async batchQueryFamilySchoolMessage(request: BatchQueryFamilySchoolMessageRequest): Promise<BatchQueryFamilySchoolMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchQueryGroupMemberHeaders({ });
-    return await this.batchQueryGroupMemberWithOptions(request, headers, runtime);
+    let headers = new BatchQueryFamilySchoolMessageHeaders({ });
+    return await this.batchQueryFamilySchoolMessageWithOptions(request, headers, runtime);
   }
 
   async batchQueryGroupMemberWithOptions(request: BatchQueryGroupMemberRequest, headers: BatchQueryGroupMemberHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryGroupMemberResponse> {
@@ -7243,13 +7484,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchQueryGroupMemberResponse>(await this.doROARequest("BatchQueryGroupMember", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/sceneGroups/members/batchQuery`, "json", req, runtime), new BatchQueryGroupMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchQueryGroupMember",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/sceneGroups/members/batchQuery`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchQueryGroupMemberResponse>(await this.execute(params, req, runtime), new BatchQueryGroupMemberResponse({}));
   }
 
-  async cardTemplateBuildAction(request: CardTemplateBuildActionRequest): Promise<CardTemplateBuildActionResponse> {
+  async batchQueryGroupMember(request: BatchQueryGroupMemberRequest): Promise<BatchQueryGroupMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CardTemplateBuildActionHeaders({ });
-    return await this.cardTemplateBuildActionWithOptions(request, headers, runtime);
+    let headers = new BatchQueryGroupMemberHeaders({ });
+    return await this.batchQueryGroupMemberWithOptions(request, headers, runtime);
   }
 
   async cardTemplateBuildActionWithOptions(request: CardTemplateBuildActionRequest, headers: CardTemplateBuildActionHeaders, runtime: $Util.RuntimeOptions): Promise<CardTemplateBuildActionResponse> {
@@ -7276,13 +7528,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CardTemplateBuildActionResponse>(await this.doROARequest("CardTemplateBuildAction", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interactiveCards/templates/buildAction`, "json", req, runtime), new CardTemplateBuildActionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CardTemplateBuildAction",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interactiveCards/templates/buildAction`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CardTemplateBuildActionResponse>(await this.execute(params, req, runtime), new CardTemplateBuildActionResponse({}));
   }
 
-  async changeGroupOwner(request: ChangeGroupOwnerRequest): Promise<ChangeGroupOwnerResponse> {
+  async cardTemplateBuildAction(request: CardTemplateBuildActionRequest): Promise<CardTemplateBuildActionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ChangeGroupOwnerHeaders({ });
-    return await this.changeGroupOwnerWithOptions(request, headers, runtime);
+    let headers = new CardTemplateBuildActionHeaders({ });
+    return await this.cardTemplateBuildActionWithOptions(request, headers, runtime);
   }
 
   async changeGroupOwnerWithOptions(request: ChangeGroupOwnerRequest, headers: ChangeGroupOwnerHeaders, runtime: $Util.RuntimeOptions): Promise<ChangeGroupOwnerResponse> {
@@ -7313,17 +7576,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ChangeGroupOwnerResponse>(await this.doROARequest("ChangeGroupOwner", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/interconnections/groups/owners`, "json", req, runtime), new ChangeGroupOwnerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ChangeGroupOwner",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/groups/owners`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChangeGroupOwnerResponse>(await this.execute(params, req, runtime), new ChangeGroupOwnerResponse({}));
   }
 
-  async chatIdToOpenConversationId(chatId: string): Promise<ChatIdToOpenConversationIdResponse> {
+  async changeGroupOwner(request: ChangeGroupOwnerRequest): Promise<ChangeGroupOwnerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ChatIdToOpenConversationIdHeaders({ });
-    return await this.chatIdToOpenConversationIdWithOptions(chatId, headers, runtime);
+    let headers = new ChangeGroupOwnerHeaders({ });
+    return await this.changeGroupOwnerWithOptions(request, headers, runtime);
   }
 
   async chatIdToOpenConversationIdWithOptions(chatId: string, headers: ChatIdToOpenConversationIdHeaders, runtime: $Util.RuntimeOptions): Promise<ChatIdToOpenConversationIdResponse> {
-    chatId = OpenApiUtil.getEncodeParam(chatId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -7336,13 +7609,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<ChatIdToOpenConversationIdResponse>(await this.doROARequest("ChatIdToOpenConversationId", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/chat/${chatId}/convertToOpenConversationId`, "json", req, runtime), new ChatIdToOpenConversationIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ChatIdToOpenConversationId",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/chat/${chatId}/convertToOpenConversationId`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatIdToOpenConversationIdResponse>(await this.execute(params, req, runtime), new ChatIdToOpenConversationIdResponse({}));
   }
 
-  async chatSubAdminUpdate(request: ChatSubAdminUpdateRequest): Promise<ChatSubAdminUpdateResponse> {
+  async chatIdToOpenConversationId(chatId: string): Promise<ChatIdToOpenConversationIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ChatSubAdminUpdateHeaders({ });
-    return await this.chatSubAdminUpdateWithOptions(request, headers, runtime);
+    let headers = new ChatIdToOpenConversationIdHeaders({ });
+    return await this.chatIdToOpenConversationIdWithOptions(chatId, headers, runtime);
   }
 
   async chatSubAdminUpdateWithOptions(request: ChatSubAdminUpdateRequest, headers: ChatSubAdminUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<ChatSubAdminUpdateResponse> {
@@ -7373,13 +7657,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ChatSubAdminUpdateResponse>(await this.doROARequest("ChatSubAdminUpdate", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/subAdministrators`, "json", req, runtime), new ChatSubAdminUpdateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ChatSubAdminUpdate",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/subAdministrators`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatSubAdminUpdateResponse>(await this.execute(params, req, runtime), new ChatSubAdminUpdateResponse({}));
   }
 
-  async checkUserIsGroupMember(request: CheckUserIsGroupMemberRequest): Promise<CheckUserIsGroupMemberResponse> {
+  async chatSubAdminUpdate(request: ChatSubAdminUpdateRequest): Promise<ChatSubAdminUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CheckUserIsGroupMemberHeaders({ });
-    return await this.checkUserIsGroupMemberWithOptions(request, headers, runtime);
+    let headers = new ChatSubAdminUpdateHeaders({ });
+    return await this.chatSubAdminUpdateWithOptions(request, headers, runtime);
   }
 
   async checkUserIsGroupMemberWithOptions(request: CheckUserIsGroupMemberRequest, headers: CheckUserIsGroupMemberHeaders, runtime: $Util.RuntimeOptions): Promise<CheckUserIsGroupMemberResponse> {
@@ -7406,13 +7701,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CheckUserIsGroupMemberResponse>(await this.doROARequest("CheckUserIsGroupMember", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/innerGroups/members/check`, "json", req, runtime), new CheckUserIsGroupMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CheckUserIsGroupMember",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/innerGroups/members/check`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CheckUserIsGroupMemberResponse>(await this.execute(params, req, runtime), new CheckUserIsGroupMemberResponse({}));
   }
 
-  async createCoupleGroupConversation(request: CreateCoupleGroupConversationRequest): Promise<CreateCoupleGroupConversationResponse> {
+  async checkUserIsGroupMember(request: CheckUserIsGroupMemberRequest): Promise<CheckUserIsGroupMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateCoupleGroupConversationHeaders({ });
-    return await this.createCoupleGroupConversationWithOptions(request, headers, runtime);
+    let headers = new CheckUserIsGroupMemberHeaders({ });
+    return await this.checkUserIsGroupMemberWithOptions(request, headers, runtime);
   }
 
   async createCoupleGroupConversationWithOptions(request: CreateCoupleGroupConversationRequest, headers: CreateCoupleGroupConversationHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCoupleGroupConversationResponse> {
@@ -7455,13 +7761,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateCoupleGroupConversationResponse>(await this.doROARequest("CreateCoupleGroupConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/coupleGroups`, "json", req, runtime), new CreateCoupleGroupConversationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateCoupleGroupConversation",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/coupleGroups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateCoupleGroupConversationResponse>(await this.execute(params, req, runtime), new CreateCoupleGroupConversationResponse({}));
   }
 
-  async createGroupConversation(request: CreateGroupConversationRequest): Promise<CreateGroupConversationResponse> {
+  async createCoupleGroupConversation(request: CreateCoupleGroupConversationRequest): Promise<CreateCoupleGroupConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateGroupConversationHeaders({ });
-    return await this.createGroupConversationWithOptions(request, headers, runtime);
+    let headers = new CreateCoupleGroupConversationHeaders({ });
+    return await this.createCoupleGroupConversationWithOptions(request, headers, runtime);
   }
 
   async createGroupConversationWithOptions(request: CreateGroupConversationRequest, headers: CreateGroupConversationHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupConversationResponse> {
@@ -7512,13 +7829,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateGroupConversationResponse>(await this.doROARequest("CreateGroupConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/groups`, "json", req, runtime), new CreateGroupConversationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateGroupConversation",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/groups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateGroupConversationResponse>(await this.execute(params, req, runtime), new CreateGroupConversationResponse({}));
   }
 
-  async createInterconnection(request: CreateInterconnectionRequest): Promise<CreateInterconnectionResponse> {
+  async createGroupConversation(request: CreateGroupConversationRequest): Promise<CreateGroupConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateInterconnectionHeaders({ });
-    return await this.createInterconnectionWithOptions(request, headers, runtime);
+    let headers = new CreateGroupConversationHeaders({ });
+    return await this.createGroupConversationWithOptions(request, headers, runtime);
   }
 
   async createInterconnectionWithOptions(request: CreateInterconnectionRequest, headers: CreateInterconnectionHeaders, runtime: $Util.RuntimeOptions): Promise<CreateInterconnectionResponse> {
@@ -7541,13 +7869,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateInterconnectionResponse>(await this.doROARequest("CreateInterconnection", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections`, "json", req, runtime), new CreateInterconnectionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateInterconnection",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateInterconnectionResponse>(await this.execute(params, req, runtime), new CreateInterconnectionResponse({}));
   }
 
-  async createSceneGroupConversation(request: CreateSceneGroupConversationRequest): Promise<CreateSceneGroupConversationResponse> {
+  async createInterconnection(request: CreateInterconnectionRequest): Promise<CreateInterconnectionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateSceneGroupConversationHeaders({ });
-    return await this.createSceneGroupConversationWithOptions(request, headers, runtime);
+    let headers = new CreateInterconnectionHeaders({ });
+    return await this.createInterconnectionWithOptions(request, headers, runtime);
   }
 
   async createSceneGroupConversationWithOptions(request: CreateSceneGroupConversationRequest, headers: CreateSceneGroupConversationHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSceneGroupConversationResponse> {
@@ -7598,13 +7937,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateSceneGroupConversationResponse>(await this.doROARequest("CreateSceneGroupConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/sceneGroups`, "json", req, runtime), new CreateSceneGroupConversationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateSceneGroupConversation",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/sceneGroups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateSceneGroupConversationResponse>(await this.execute(params, req, runtime), new CreateSceneGroupConversationResponse({}));
   }
 
-  async createStoreGroupConversation(request: CreateStoreGroupConversationRequest): Promise<CreateStoreGroupConversationResponse> {
+  async createSceneGroupConversation(request: CreateSceneGroupConversationRequest): Promise<CreateSceneGroupConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateStoreGroupConversationHeaders({ });
-    return await this.createStoreGroupConversationWithOptions(request, headers, runtime);
+    let headers = new CreateSceneGroupConversationHeaders({ });
+    return await this.createSceneGroupConversationWithOptions(request, headers, runtime);
   }
 
   async createStoreGroupConversationWithOptions(request: CreateStoreGroupConversationRequest, headers: CreateStoreGroupConversationHeaders, runtime: $Util.RuntimeOptions): Promise<CreateStoreGroupConversationResponse> {
@@ -7651,13 +8001,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateStoreGroupConversationResponse>(await this.doROARequest("CreateStoreGroupConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/storeGroups`, "json", req, runtime), new CreateStoreGroupConversationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateStoreGroupConversation",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/storeGroups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateStoreGroupConversationResponse>(await this.execute(params, req, runtime), new CreateStoreGroupConversationResponse({}));
   }
 
-  async deleteOrgTextEmotion(request: DeleteOrgTextEmotionRequest): Promise<DeleteOrgTextEmotionResponse> {
+  async createStoreGroupConversation(request: CreateStoreGroupConversationRequest): Promise<CreateStoreGroupConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteOrgTextEmotionHeaders({ });
-    return await this.deleteOrgTextEmotionWithOptions(request, headers, runtime);
+    let headers = new CreateStoreGroupConversationHeaders({ });
+    return await this.createStoreGroupConversationWithOptions(request, headers, runtime);
   }
 
   async deleteOrgTextEmotionWithOptions(request: DeleteOrgTextEmotionRequest, headers: DeleteOrgTextEmotionHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteOrgTextEmotionResponse> {
@@ -7684,13 +8045,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteOrgTextEmotionResponse>(await this.doROARequest("DeleteOrgTextEmotion", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/organizations/textEmotions/remove`, "json", req, runtime), new DeleteOrgTextEmotionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteOrgTextEmotion",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/organizations/textEmotions/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteOrgTextEmotionResponse>(await this.execute(params, req, runtime), new DeleteOrgTextEmotionResponse({}));
   }
 
-  async dismissGroupConversation(request: DismissGroupConversationRequest): Promise<DismissGroupConversationResponse> {
+  async deleteOrgTextEmotion(request: DeleteOrgTextEmotionRequest): Promise<DeleteOrgTextEmotionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DismissGroupConversationHeaders({ });
-    return await this.dismissGroupConversationWithOptions(request, headers, runtime);
+    let headers = new DeleteOrgTextEmotionHeaders({ });
+    return await this.deleteOrgTextEmotionWithOptions(request, headers, runtime);
   }
 
   async dismissGroupConversationWithOptions(request: DismissGroupConversationRequest, headers: DismissGroupConversationHeaders, runtime: $Util.RuntimeOptions): Promise<DismissGroupConversationResponse> {
@@ -7713,13 +8085,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DismissGroupConversationResponse>(await this.doROARequest("DismissGroupConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/groups/dismiss`, "json", req, runtime), new DismissGroupConversationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DismissGroupConversation",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/groups/dismiss`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DismissGroupConversationResponse>(await this.execute(params, req, runtime), new DismissGroupConversationResponse({}));
   }
 
-  async getConversationUrl(request: GetConversationUrlRequest): Promise<GetConversationUrlResponse> {
+  async dismissGroupConversation(request: DismissGroupConversationRequest): Promise<DismissGroupConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetConversationUrlHeaders({ });
-    return await this.getConversationUrlWithOptions(request, headers, runtime);
+    let headers = new DismissGroupConversationHeaders({ });
+    return await this.dismissGroupConversationWithOptions(request, headers, runtime);
   }
 
   async getConversationUrlWithOptions(request: GetConversationUrlRequest, headers: GetConversationUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetConversationUrlResponse> {
@@ -7754,13 +8137,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetConversationUrlResponse>(await this.doROARequest("GetConversationUrl", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/urls`, "json", req, runtime), new GetConversationUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetConversationUrl",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/conversations/urls`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetConversationUrlResponse>(await this.execute(params, req, runtime), new GetConversationUrlResponse({}));
   }
 
-  async getFamilySchoolConversationMsg(request: GetFamilySchoolConversationMsgRequest): Promise<GetFamilySchoolConversationMsgResponse> {
+  async getConversationUrl(request: GetConversationUrlRequest): Promise<GetConversationUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFamilySchoolConversationMsgHeaders({ });
-    return await this.getFamilySchoolConversationMsgWithOptions(request, headers, runtime);
+    let headers = new GetConversationUrlHeaders({ });
+    return await this.getConversationUrlWithOptions(request, headers, runtime);
   }
 
   async getFamilySchoolConversationMsgWithOptions(request: GetFamilySchoolConversationMsgRequest, headers: GetFamilySchoolConversationMsgHeaders, runtime: $Util.RuntimeOptions): Promise<GetFamilySchoolConversationMsgResponse> {
@@ -7799,13 +8193,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetFamilySchoolConversationMsgResponse>(await this.doROARequest("GetFamilySchoolConversationMsg", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/familySchools/messages/query`, "json", req, runtime), new GetFamilySchoolConversationMsgResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFamilySchoolConversationMsg",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/conversations/familySchools/messages/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFamilySchoolConversationMsgResponse>(await this.execute(params, req, runtime), new GetFamilySchoolConversationMsgResponse({}));
   }
 
-  async getFamilySchoolConversations(request: GetFamilySchoolConversationsRequest): Promise<GetFamilySchoolConversationsResponse> {
+  async getFamilySchoolConversationMsg(request: GetFamilySchoolConversationMsgRequest): Promise<GetFamilySchoolConversationMsgResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFamilySchoolConversationsHeaders({ });
-    return await this.getFamilySchoolConversationsWithOptions(request, headers, runtime);
+    let headers = new GetFamilySchoolConversationMsgHeaders({ });
+    return await this.getFamilySchoolConversationMsgWithOptions(request, headers, runtime);
   }
 
   async getFamilySchoolConversationsWithOptions(request: GetFamilySchoolConversationsRequest, headers: GetFamilySchoolConversationsHeaders, runtime: $Util.RuntimeOptions): Promise<GetFamilySchoolConversationsResponse> {
@@ -7836,13 +8241,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetFamilySchoolConversationsResponse>(await this.doROARequest("GetFamilySchoolConversations", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/familySchools/query`, "json", req, runtime), new GetFamilySchoolConversationsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFamilySchoolConversations",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/conversations/familySchools/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFamilySchoolConversationsResponse>(await this.execute(params, req, runtime), new GetFamilySchoolConversationsResponse({}));
   }
 
-  async getInnerGroupMembers(request: GetInnerGroupMembersRequest): Promise<GetInnerGroupMembersResponse> {
+  async getFamilySchoolConversations(request: GetFamilySchoolConversationsRequest): Promise<GetFamilySchoolConversationsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetInnerGroupMembersHeaders({ });
-    return await this.getInnerGroupMembersWithOptions(request, headers, runtime);
+    let headers = new GetFamilySchoolConversationsHeaders({ });
+    return await this.getFamilySchoolConversationsWithOptions(request, headers, runtime);
   }
 
   async getInnerGroupMembersWithOptions(request: GetInnerGroupMembersRequest, headers: GetInnerGroupMembersHeaders, runtime: $Util.RuntimeOptions): Promise<GetInnerGroupMembersResponse> {
@@ -7877,13 +8293,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetInnerGroupMembersResponse>(await this.doROARequest("GetInnerGroupMembers", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/innerGroups/members/query`, "json", req, runtime), new GetInnerGroupMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetInnerGroupMembers",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/innerGroups/members/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetInnerGroupMembersResponse>(await this.execute(params, req, runtime), new GetInnerGroupMembersResponse({}));
   }
 
-  async getInterconnectionUrl(request: GetInterconnectionUrlRequest): Promise<GetInterconnectionUrlResponse> {
+  async getInnerGroupMembers(request: GetInnerGroupMembersRequest): Promise<GetInnerGroupMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetInterconnectionUrlHeaders({ });
-    return await this.getInterconnectionUrlWithOptions(request, headers, runtime);
+    let headers = new GetInnerGroupMembersHeaders({ });
+    return await this.getInnerGroupMembersWithOptions(request, headers, runtime);
   }
 
   async getInterconnectionUrlWithOptions(request: GetInterconnectionUrlRequest, headers: GetInterconnectionUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetInterconnectionUrlResponse> {
@@ -7946,13 +8373,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetInterconnectionUrlResponse>(await this.doROARequest("GetInterconnectionUrl", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/sessions/urls`, "json", req, runtime), new GetInterconnectionUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetInterconnectionUrl",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/sessions/urls`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetInterconnectionUrlResponse>(await this.execute(params, req, runtime), new GetInterconnectionUrlResponse({}));
   }
 
-  async getNewestInnerGroups(request: GetNewestInnerGroupsRequest): Promise<GetNewestInnerGroupsResponse> {
+  async getInterconnectionUrl(request: GetInterconnectionUrlRequest): Promise<GetInterconnectionUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetNewestInnerGroupsHeaders({ });
-    return await this.getNewestInnerGroupsWithOptions(request, headers, runtime);
+    let headers = new GetInterconnectionUrlHeaders({ });
+    return await this.getInterconnectionUrlWithOptions(request, headers, runtime);
   }
 
   async getNewestInnerGroupsWithOptions(request: GetNewestInnerGroupsRequest, headers: GetNewestInnerGroupsHeaders, runtime: $Util.RuntimeOptions): Promise<GetNewestInnerGroupsResponse> {
@@ -7975,13 +8413,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetNewestInnerGroupsResponse>(await this.doROARequest("GetNewestInnerGroups", "im_1.0", "HTTP", "GET", "AK", `/v1.0/im/activities/innerGroups`, "json", req, runtime), new GetNewestInnerGroupsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetNewestInnerGroups",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/activities/innerGroups`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetNewestInnerGroupsResponse>(await this.execute(params, req, runtime), new GetNewestInnerGroupsResponse({}));
   }
 
-  async getSceneGroupInfo(request: GetSceneGroupInfoRequest): Promise<GetSceneGroupInfoResponse> {
+  async getNewestInnerGroups(request: GetNewestInnerGroupsRequest): Promise<GetNewestInnerGroupsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSceneGroupInfoHeaders({ });
-    return await this.getSceneGroupInfoWithOptions(request, headers, runtime);
+    let headers = new GetNewestInnerGroupsHeaders({ });
+    return await this.getNewestInnerGroupsWithOptions(request, headers, runtime);
   }
 
   async getSceneGroupInfoWithOptions(request: GetSceneGroupInfoRequest, headers: GetSceneGroupInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetSceneGroupInfoResponse> {
@@ -8008,13 +8457,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetSceneGroupInfoResponse>(await this.doROARequest("GetSceneGroupInfo", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/sceneGroups/query`, "json", req, runtime), new GetSceneGroupInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSceneGroupInfo",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/sceneGroups/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSceneGroupInfoResponse>(await this.execute(params, req, runtime), new GetSceneGroupInfoResponse({}));
   }
 
-  async getSceneGroupMembers(request: GetSceneGroupMembersRequest): Promise<GetSceneGroupMembersResponse> {
+  async getSceneGroupInfo(request: GetSceneGroupInfoRequest): Promise<GetSceneGroupInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSceneGroupMembersHeaders({ });
-    return await this.getSceneGroupMembersWithOptions(request, headers, runtime);
+    let headers = new GetSceneGroupInfoHeaders({ });
+    return await this.getSceneGroupInfoWithOptions(request, headers, runtime);
   }
 
   async getSceneGroupMembersWithOptions(request: GetSceneGroupMembersRequest, headers: GetSceneGroupMembersHeaders, runtime: $Util.RuntimeOptions): Promise<GetSceneGroupMembersResponse> {
@@ -8049,13 +8509,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetSceneGroupMembersResponse>(await this.doROARequest("GetSceneGroupMembers", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/sceneGroups/members/query`, "json", req, runtime), new GetSceneGroupMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSceneGroupMembers",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/sceneGroups/members/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSceneGroupMembersResponse>(await this.execute(params, req, runtime), new GetSceneGroupMembersResponse({}));
   }
 
-  async groupBanWords(request: GroupBanWordsRequest): Promise<GroupBanWordsResponse> {
+  async getSceneGroupMembers(request: GetSceneGroupMembersRequest): Promise<GetSceneGroupMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GroupBanWordsHeaders({ });
-    return await this.groupBanWordsWithOptions(request, headers, runtime);
+    let headers = new GetSceneGroupMembersHeaders({ });
+    return await this.getSceneGroupMembersWithOptions(request, headers, runtime);
   }
 
   async groupBanWordsWithOptions(request: GroupBanWordsRequest, headers: GroupBanWordsHeaders, runtime: $Util.RuntimeOptions): Promise<GroupBanWordsResponse> {
@@ -8086,13 +8557,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GroupBanWordsResponse>(await this.doROARequest("GroupBanWords", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/words/ban`, "none", req, runtime), new GroupBanWordsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GroupBanWords",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/groups/words/ban`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<GroupBanWordsResponse>(await this.execute(params, req, runtime), new GroupBanWordsResponse({}));
   }
 
-  async groupCapacityInquiry(request: GroupCapacityInquiryRequest): Promise<GroupCapacityInquiryResponse> {
+  async groupBanWords(request: GroupBanWordsRequest): Promise<GroupBanWordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GroupCapacityInquiryHeaders({ });
-    return await this.groupCapacityInquiryWithOptions(request, headers, runtime);
+    let headers = new GroupBanWordsHeaders({ });
+    return await this.groupBanWordsWithOptions(request, headers, runtime);
   }
 
   async groupCapacityInquiryWithOptions(request: GroupCapacityInquiryRequest, headers: GroupCapacityInquiryHeaders, runtime: $Util.RuntimeOptions): Promise<GroupCapacityInquiryResponse> {
@@ -8131,13 +8613,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GroupCapacityInquiryResponse>(await this.doROARequest("GroupCapacityInquiry", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/capacities/inquiries/query`, "json", req, runtime), new GroupCapacityInquiryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GroupCapacityInquiry",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/groups/capacities/inquiries/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GroupCapacityInquiryResponse>(await this.execute(params, req, runtime), new GroupCapacityInquiryResponse({}));
   }
 
-  async groupCapacityOrderConfirm(request: GroupCapacityOrderConfirmRequest): Promise<GroupCapacityOrderConfirmResponse> {
+  async groupCapacityInquiry(request: GroupCapacityInquiryRequest): Promise<GroupCapacityInquiryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GroupCapacityOrderConfirmHeaders({ });
-    return await this.groupCapacityOrderConfirmWithOptions(request, headers, runtime);
+    let headers = new GroupCapacityInquiryHeaders({ });
+    return await this.groupCapacityInquiryWithOptions(request, headers, runtime);
   }
 
   async groupCapacityOrderConfirmWithOptions(request: GroupCapacityOrderConfirmRequest, headers: GroupCapacityOrderConfirmHeaders, runtime: $Util.RuntimeOptions): Promise<GroupCapacityOrderConfirmResponse> {
@@ -8164,13 +8657,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GroupCapacityOrderConfirmResponse>(await this.doROARequest("GroupCapacityOrderConfirm", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/capacities/orders/confirm`, "json", req, runtime), new GroupCapacityOrderConfirmResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GroupCapacityOrderConfirm",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/groups/capacities/orders/confirm`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GroupCapacityOrderConfirmResponse>(await this.execute(params, req, runtime), new GroupCapacityOrderConfirmResponse({}));
   }
 
-  async groupCapacityOrderPlace(request: GroupCapacityOrderPlaceRequest): Promise<GroupCapacityOrderPlaceResponse> {
+  async groupCapacityOrderConfirm(request: GroupCapacityOrderConfirmRequest): Promise<GroupCapacityOrderConfirmResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GroupCapacityOrderPlaceHeaders({ });
-    return await this.groupCapacityOrderPlaceWithOptions(request, headers, runtime);
+    let headers = new GroupCapacityOrderConfirmHeaders({ });
+    return await this.groupCapacityOrderConfirmWithOptions(request, headers, runtime);
   }
 
   async groupCapacityOrderPlaceWithOptions(request: GroupCapacityOrderPlaceRequest, headers: GroupCapacityOrderPlaceHeaders, runtime: $Util.RuntimeOptions): Promise<GroupCapacityOrderPlaceResponse> {
@@ -8233,13 +8737,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GroupCapacityOrderPlaceResponse>(await this.doROARequest("GroupCapacityOrderPlace", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/capacities/orders/place`, "json", req, runtime), new GroupCapacityOrderPlaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GroupCapacityOrderPlace",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/groups/capacities/orders/place`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GroupCapacityOrderPlaceResponse>(await this.execute(params, req, runtime), new GroupCapacityOrderPlaceResponse({}));
   }
 
-  async groupManageQuery(request: GroupManageQueryRequest): Promise<GroupManageQueryResponse> {
+  async groupCapacityOrderPlace(request: GroupCapacityOrderPlaceRequest): Promise<GroupCapacityOrderPlaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GroupManageQueryHeaders({ });
-    return await this.groupManageQueryWithOptions(request, headers, runtime);
+    let headers = new GroupCapacityOrderPlaceHeaders({ });
+    return await this.groupCapacityOrderPlaceWithOptions(request, headers, runtime);
   }
 
   async groupManageQueryWithOptions(request: GroupManageQueryRequest, headers: GroupManageQueryHeaders, runtime: $Util.RuntimeOptions): Promise<GroupManageQueryResponse> {
@@ -8298,13 +8813,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GroupManageQueryResponse>(await this.doROARequest("GroupManageQuery", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/managements/query`, "json", req, runtime), new GroupManageQueryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GroupManageQuery",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/groups/managements/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GroupManageQueryResponse>(await this.execute(params, req, runtime), new GroupManageQueryResponse({}));
   }
 
-  async groupManageReduce(request: GroupManageReduceRequest): Promise<GroupManageReduceResponse> {
+  async groupManageQuery(request: GroupManageQueryRequest): Promise<GroupManageQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GroupManageReduceHeaders({ });
-    return await this.groupManageReduceWithOptions(request, headers, runtime);
+    let headers = new GroupManageQueryHeaders({ });
+    return await this.groupManageQueryWithOptions(request, headers, runtime);
   }
 
   async groupManageReduceWithOptions(request: GroupManageReduceRequest, headers: GroupManageReduceHeaders, runtime: $Util.RuntimeOptions): Promise<GroupManageReduceResponse> {
@@ -8335,13 +8861,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GroupManageReduceResponse>(await this.doROARequest("GroupManageReduce", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/groups/capacities/reduce`, "none", req, runtime), new GroupManageReduceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GroupManageReduce",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/groups/capacities/reduce`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<GroupManageReduceResponse>(await this.execute(params, req, runtime), new GroupManageReduceResponse({}));
   }
 
-  async installRobotToOrg(request: InstallRobotToOrgRequest): Promise<InstallRobotToOrgResponse> {
+  async groupManageReduce(request: GroupManageReduceRequest): Promise<GroupManageReduceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new InstallRobotToOrgHeaders({ });
-    return await this.installRobotToOrgWithOptions(request, headers, runtime);
+    let headers = new GroupManageReduceHeaders({ });
+    return await this.groupManageReduceWithOptions(request, headers, runtime);
   }
 
   async installRobotToOrgWithOptions(request: InstallRobotToOrgRequest, headers: InstallRobotToOrgHeaders, runtime: $Util.RuntimeOptions): Promise<InstallRobotToOrgResponse> {
@@ -8392,13 +8929,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<InstallRobotToOrgResponse>(await this.doROARequest("InstallRobotToOrg", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/organizations/robots/install`, "json", req, runtime), new InstallRobotToOrgResponse({}));
+    let params = new $OpenApi.Params({
+      action: "InstallRobotToOrg",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/organizations/robots/install`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<InstallRobotToOrgResponse>(await this.execute(params, req, runtime), new InstallRobotToOrgResponse({}));
   }
 
-  async interactiveCardCreateInstance(request: InteractiveCardCreateInstanceRequest): Promise<InteractiveCardCreateInstanceResponse> {
+  async installRobotToOrg(request: InstallRobotToOrgRequest): Promise<InstallRobotToOrgResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new InteractiveCardCreateInstanceHeaders({ });
-    return await this.interactiveCardCreateInstanceWithOptions(request, headers, runtime);
+    let headers = new InstallRobotToOrgHeaders({ });
+    return await this.installRobotToOrgWithOptions(request, headers, runtime);
   }
 
   async interactiveCardCreateInstanceWithOptions(request: InteractiveCardCreateInstanceRequest, headers: InteractiveCardCreateInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<InteractiveCardCreateInstanceResponse> {
@@ -8465,13 +9013,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<InteractiveCardCreateInstanceResponse>(await this.doROARequest("InteractiveCardCreateInstance", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interactiveCards/instances`, "json", req, runtime), new InteractiveCardCreateInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "InteractiveCardCreateInstance",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interactiveCards/instances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<InteractiveCardCreateInstanceResponse>(await this.execute(params, req, runtime), new InteractiveCardCreateInstanceResponse({}));
   }
 
-  async listOrgTextEmotion(): Promise<ListOrgTextEmotionResponse> {
+  async interactiveCardCreateInstance(request: InteractiveCardCreateInstanceRequest): Promise<InteractiveCardCreateInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListOrgTextEmotionHeaders({ });
-    return await this.listOrgTextEmotionWithOptions(headers, runtime);
+    let headers = new InteractiveCardCreateInstanceHeaders({ });
+    return await this.interactiveCardCreateInstanceWithOptions(request, headers, runtime);
   }
 
   async listOrgTextEmotionWithOptions(headers: ListOrgTextEmotionHeaders, runtime: $Util.RuntimeOptions): Promise<ListOrgTextEmotionResponse> {
@@ -8487,13 +9046,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<ListOrgTextEmotionResponse>(await this.doROARequest("ListOrgTextEmotion", "im_1.0", "HTTP", "GET", "AK", `/v1.0/im/organizations/textEmotions`, "json", req, runtime), new ListOrgTextEmotionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListOrgTextEmotion",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/organizations/textEmotions`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListOrgTextEmotionResponse>(await this.execute(params, req, runtime), new ListOrgTextEmotionResponse({}));
   }
 
-  async queryGroupInfoByMemberAuth(request: QueryGroupInfoByMemberAuthRequest): Promise<QueryGroupInfoByMemberAuthResponse> {
+  async listOrgTextEmotion(): Promise<ListOrgTextEmotionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryGroupInfoByMemberAuthHeaders({ });
-    return await this.queryGroupInfoByMemberAuthWithOptions(request, headers, runtime);
+    let headers = new ListOrgTextEmotionHeaders({ });
+    return await this.listOrgTextEmotionWithOptions(headers, runtime);
   }
 
   async queryGroupInfoByMemberAuthWithOptions(request: QueryGroupInfoByMemberAuthRequest, headers: QueryGroupInfoByMemberAuthHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupInfoByMemberAuthResponse> {
@@ -8520,13 +9090,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryGroupInfoByMemberAuthResponse>(await this.doROARequest("QueryGroupInfoByMemberAuth", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/memberAuthorizations/groups/query`, "json", req, runtime), new QueryGroupInfoByMemberAuthResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryGroupInfoByMemberAuth",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/memberAuthorizations/groups/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryGroupInfoByMemberAuthResponse>(await this.execute(params, req, runtime), new QueryGroupInfoByMemberAuthResponse({}));
   }
 
-  async queryGroupMember(request: QueryGroupMemberRequest): Promise<QueryGroupMemberResponse> {
+  async queryGroupInfoByMemberAuth(request: QueryGroupInfoByMemberAuthRequest): Promise<QueryGroupInfoByMemberAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryGroupMemberHeaders({ });
-    return await this.queryGroupMemberWithOptions(request, headers, runtime);
+    let headers = new QueryGroupInfoByMemberAuthHeaders({ });
+    return await this.queryGroupInfoByMemberAuthWithOptions(request, headers, runtime);
   }
 
   async queryGroupMemberWithOptions(request: QueryGroupMemberRequest, headers: QueryGroupMemberHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupMemberResponse> {
@@ -8549,13 +9130,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryGroupMemberResponse>(await this.doROARequest("QueryGroupMember", "im_1.0", "HTTP", "GET", "AK", `/v1.0/im/interconnections/conversations/members`, "json", req, runtime), new QueryGroupMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryGroupMember",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/conversations/members`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryGroupMemberResponse>(await this.execute(params, req, runtime), new QueryGroupMemberResponse({}));
   }
 
-  async queryGroupMemberByMemberAuth(request: QueryGroupMemberByMemberAuthRequest): Promise<QueryGroupMemberByMemberAuthResponse> {
+  async queryGroupMember(request: QueryGroupMemberRequest): Promise<QueryGroupMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryGroupMemberByMemberAuthHeaders({ });
-    return await this.queryGroupMemberByMemberAuthWithOptions(request, headers, runtime);
+    let headers = new QueryGroupMemberHeaders({ });
+    return await this.queryGroupMemberWithOptions(request, headers, runtime);
   }
 
   async queryGroupMemberByMemberAuthWithOptions(request: QueryGroupMemberByMemberAuthRequest, headers: QueryGroupMemberByMemberAuthHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupMemberByMemberAuthResponse> {
@@ -8582,13 +9174,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryGroupMemberByMemberAuthResponse>(await this.doROARequest("QueryGroupMemberByMemberAuth", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/memberAuthorizations/groups/members/query`, "json", req, runtime), new QueryGroupMemberByMemberAuthResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryGroupMemberByMemberAuth",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/memberAuthorizations/groups/members/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryGroupMemberByMemberAuthResponse>(await this.execute(params, req, runtime), new QueryGroupMemberByMemberAuthResponse({}));
   }
 
-  async queryGroupMuteStatus(request: QueryGroupMuteStatusRequest): Promise<QueryGroupMuteStatusResponse> {
+  async queryGroupMemberByMemberAuth(request: QueryGroupMemberByMemberAuthRequest): Promise<QueryGroupMemberByMemberAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryGroupMuteStatusHeaders({ });
-    return await this.queryGroupMuteStatusWithOptions(request, headers, runtime);
+    let headers = new QueryGroupMemberByMemberAuthHeaders({ });
+    return await this.queryGroupMemberByMemberAuthWithOptions(request, headers, runtime);
   }
 
   async queryGroupMuteStatusWithOptions(request: QueryGroupMuteStatusRequest, headers: QueryGroupMuteStatusHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupMuteStatusResponse> {
@@ -8615,13 +9218,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryGroupMuteStatusResponse>(await this.doROARequest("QueryGroupMuteStatus", "im_1.0", "HTTP", "GET", "AK", `/v1.0/im/sceneGroups/muteSettings`, "json", req, runtime), new QueryGroupMuteStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryGroupMuteStatus",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/sceneGroups/muteSettings`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryGroupMuteStatusResponse>(await this.execute(params, req, runtime), new QueryGroupMuteStatusResponse({}));
   }
 
-  async queryMembersOfGroupRole(request: QueryMembersOfGroupRoleRequest): Promise<QueryMembersOfGroupRoleResponse> {
+  async queryGroupMuteStatus(request: QueryGroupMuteStatusRequest): Promise<QueryGroupMuteStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryMembersOfGroupRoleHeaders({ });
-    return await this.queryMembersOfGroupRoleWithOptions(request, headers, runtime);
+    let headers = new QueryGroupMuteStatusHeaders({ });
+    return await this.queryGroupMuteStatusWithOptions(request, headers, runtime);
   }
 
   async queryMembersOfGroupRoleWithOptions(request: QueryMembersOfGroupRoleRequest, headers: QueryMembersOfGroupRoleHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMembersOfGroupRoleResponse> {
@@ -8652,13 +9266,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryMembersOfGroupRoleResponse>(await this.doROARequest("QueryMembersOfGroupRole", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/sceneGroups/roles/members/query`, "json", req, runtime), new QueryMembersOfGroupRoleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryMembersOfGroupRole",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/sceneGroups/roles/members/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMembersOfGroupRoleResponse>(await this.execute(params, req, runtime), new QueryMembersOfGroupRoleResponse({}));
   }
 
-  async querySceneGroupTemplateRobot(request: QuerySceneGroupTemplateRobotRequest): Promise<QuerySceneGroupTemplateRobotResponse> {
+  async queryMembersOfGroupRole(request: QueryMembersOfGroupRoleRequest): Promise<QueryMembersOfGroupRoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QuerySceneGroupTemplateRobotHeaders({ });
-    return await this.querySceneGroupTemplateRobotWithOptions(request, headers, runtime);
+    let headers = new QueryMembersOfGroupRoleHeaders({ });
+    return await this.queryMembersOfGroupRoleWithOptions(request, headers, runtime);
   }
 
   async querySceneGroupTemplateRobotWithOptions(request: QuerySceneGroupTemplateRobotRequest, headers: QuerySceneGroupTemplateRobotHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySceneGroupTemplateRobotResponse> {
@@ -8685,13 +9310,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QuerySceneGroupTemplateRobotResponse>(await this.doROARequest("QuerySceneGroupTemplateRobot", "im_1.0", "HTTP", "GET", "AK", `/v1.0/im/sceneGroups/templates/robots`, "json", req, runtime), new QuerySceneGroupTemplateRobotResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QuerySceneGroupTemplateRobot",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/sceneGroups/templates/robots`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QuerySceneGroupTemplateRobotResponse>(await this.execute(params, req, runtime), new QuerySceneGroupTemplateRobotResponse({}));
   }
 
-  async querySingleGroup(request: QuerySingleGroupRequest): Promise<QuerySingleGroupResponse> {
+  async querySceneGroupTemplateRobot(request: QuerySceneGroupTemplateRobotRequest): Promise<QuerySceneGroupTemplateRobotResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QuerySingleGroupHeaders({ });
-    return await this.querySingleGroupWithOptions(request, headers, runtime);
+    let headers = new QuerySceneGroupTemplateRobotHeaders({ });
+    return await this.querySceneGroupTemplateRobotWithOptions(request, headers, runtime);
   }
 
   async querySingleGroupWithOptions(request: QuerySingleGroupRequest, headers: QuerySingleGroupHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySingleGroupResponse> {
@@ -8718,13 +9354,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QuerySingleGroupResponse>(await this.doROARequest("QuerySingleGroup", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/doubleGroups/query`, "json", req, runtime), new QuerySingleGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QuerySingleGroup",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/doubleGroups/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QuerySingleGroupResponse>(await this.execute(params, req, runtime), new QuerySingleGroupResponse({}));
   }
 
-  async queryUnReadMessage(request: QueryUnReadMessageRequest): Promise<QueryUnReadMessageResponse> {
+  async querySingleGroup(request: QuerySingleGroupRequest): Promise<QuerySingleGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUnReadMessageHeaders({ });
-    return await this.queryUnReadMessageWithOptions(request, headers, runtime);
+    let headers = new QuerySingleGroupHeaders({ });
+    return await this.querySingleGroupWithOptions(request, headers, runtime);
   }
 
   async queryUnReadMessageWithOptions(request: QueryUnReadMessageRequest, headers: QueryUnReadMessageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUnReadMessageResponse> {
@@ -8751,13 +9398,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryUnReadMessageResponse>(await this.doROARequest("QueryUnReadMessage", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/unReadMsgs/query`, "json", req, runtime), new QueryUnReadMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryUnReadMessage",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/unReadMsgs/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUnReadMessageResponse>(await this.execute(params, req, runtime), new QueryUnReadMessageResponse({}));
   }
 
-  async removeRobotFromConversation(request: RemoveRobotFromConversationRequest): Promise<RemoveRobotFromConversationResponse> {
+  async queryUnReadMessage(request: QueryUnReadMessageRequest): Promise<QueryUnReadMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RemoveRobotFromConversationHeaders({ });
-    return await this.removeRobotFromConversationWithOptions(request, headers, runtime);
+    let headers = new QueryUnReadMessageHeaders({ });
+    return await this.queryUnReadMessageWithOptions(request, headers, runtime);
   }
 
   async removeRobotFromConversationWithOptions(request: RemoveRobotFromConversationRequest, headers: RemoveRobotFromConversationHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveRobotFromConversationResponse> {
@@ -8784,13 +9442,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RemoveRobotFromConversationResponse>(await this.doROARequest("RemoveRobotFromConversation", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/conversations/robots/remove`, "json", req, runtime), new RemoveRobotFromConversationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RemoveRobotFromConversation",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/conversations/robots/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RemoveRobotFromConversationResponse>(await this.execute(params, req, runtime), new RemoveRobotFromConversationResponse({}));
   }
 
-  async searchInnerGroups(request: SearchInnerGroupsRequest): Promise<SearchInnerGroupsResponse> {
+  async removeRobotFromConversation(request: RemoveRobotFromConversationRequest): Promise<RemoveRobotFromConversationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchInnerGroupsHeaders({ });
-    return await this.searchInnerGroupsWithOptions(request, headers, runtime);
+    let headers = new RemoveRobotFromConversationHeaders({ });
+    return await this.removeRobotFromConversationWithOptions(request, headers, runtime);
   }
 
   async searchInnerGroupsWithOptions(request: SearchInnerGroupsRequest, headers: SearchInnerGroupsHeaders, runtime: $Util.RuntimeOptions): Promise<SearchInnerGroupsResponse> {
@@ -8821,13 +9490,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SearchInnerGroupsResponse>(await this.doROARequest("SearchInnerGroups", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/innerGroups/search`, "json", req, runtime), new SearchInnerGroupsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchInnerGroups",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/innerGroups/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchInnerGroupsResponse>(await this.execute(params, req, runtime), new SearchInnerGroupsResponse({}));
   }
 
-  async sendInteractiveCard(request: SendInteractiveCardRequest): Promise<SendInteractiveCardResponse> {
+  async searchInnerGroups(request: SearchInnerGroupsRequest): Promise<SearchInnerGroupsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendInteractiveCardHeaders({ });
-    return await this.sendInteractiveCardWithOptions(request, headers, runtime);
+    let headers = new SearchInnerGroupsHeaders({ });
+    return await this.searchInnerGroupsWithOptions(request, headers, runtime);
   }
 
   async sendInteractiveCardWithOptions(request: SendInteractiveCardRequest, headers: SendInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendInteractiveCardResponse> {
@@ -8902,13 +9582,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendInteractiveCardResponse>(await this.doROARequest("SendInteractiveCard", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interactiveCards/send`, "json", req, runtime), new SendInteractiveCardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SendInteractiveCard",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interactiveCards/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendInteractiveCardResponse>(await this.execute(params, req, runtime), new SendInteractiveCardResponse({}));
   }
 
-  async sendOTOInteractiveCard(request: SendOTOInteractiveCardRequest): Promise<SendOTOInteractiveCardResponse> {
+  async sendInteractiveCard(request: SendInteractiveCardRequest): Promise<SendInteractiveCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendOTOInteractiveCardHeaders({ });
-    return await this.sendOTOInteractiveCardWithOptions(request, headers, runtime);
+    let headers = new SendInteractiveCardHeaders({ });
+    return await this.sendInteractiveCardWithOptions(request, headers, runtime);
   }
 
   async sendOTOInteractiveCardWithOptions(request: SendOTOInteractiveCardRequest, headers: SendOTOInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendOTOInteractiveCardResponse> {
@@ -8975,13 +9666,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendOTOInteractiveCardResponse>(await this.doROARequest("SendOTOInteractiveCard", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/privateChat/interactiveCards/send`, "json", req, runtime), new SendOTOInteractiveCardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SendOTOInteractiveCard",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/privateChat/interactiveCards/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendOTOInteractiveCardResponse>(await this.execute(params, req, runtime), new SendOTOInteractiveCardResponse({}));
   }
 
-  async sendRobotInteractiveCard(request: SendRobotInteractiveCardRequest): Promise<SendRobotInteractiveCardResponse> {
+  async sendOTOInteractiveCard(request: SendOTOInteractiveCardRequest): Promise<SendOTOInteractiveCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendRobotInteractiveCardHeaders({ });
-    return await this.sendRobotInteractiveCardWithOptions(request, headers, runtime);
+    let headers = new SendOTOInteractiveCardHeaders({ });
+    return await this.sendOTOInteractiveCardWithOptions(request, headers, runtime);
   }
 
   async sendRobotInteractiveCardWithOptions(request: SendRobotInteractiveCardRequest, headers: SendRobotInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotInteractiveCardResponse> {
@@ -9044,13 +9746,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendRobotInteractiveCardResponse>(await this.doROARequest("SendRobotInteractiveCard", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/v1.0/robot/interactiveCards/send`, "json", req, runtime), new SendRobotInteractiveCardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SendRobotInteractiveCard",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/v1.0/robot/interactiveCards/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendRobotInteractiveCardResponse>(await this.execute(params, req, runtime), new SendRobotInteractiveCardResponse({}));
   }
 
-  async sendRobotMessage(request: SendRobotMessageRequest): Promise<SendRobotMessageResponse> {
+  async sendRobotInteractiveCard(request: SendRobotInteractiveCardRequest): Promise<SendRobotInteractiveCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendRobotMessageHeaders({ });
-    return await this.sendRobotMessageWithOptions(request, headers, runtime);
+    let headers = new SendRobotInteractiveCardHeaders({ });
+    return await this.sendRobotInteractiveCardWithOptions(request, headers, runtime);
   }
 
   async sendRobotMessageWithOptions(request: SendRobotMessageRequest, headers: SendRobotMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotMessageResponse> {
@@ -9097,13 +9810,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendRobotMessageResponse>(await this.doROARequest("SendRobotMessage", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/robotMessages/send`, "json", req, runtime), new SendRobotMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SendRobotMessage",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/robotMessages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendRobotMessageResponse>(await this.execute(params, req, runtime), new SendRobotMessageResponse({}));
   }
 
-  async sendTemplateInteractiveCard(request: SendTemplateInteractiveCardRequest): Promise<SendTemplateInteractiveCardResponse> {
+  async sendRobotMessage(request: SendRobotMessageRequest): Promise<SendRobotMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendTemplateInteractiveCardHeaders({ });
-    return await this.sendTemplateInteractiveCardWithOptions(request, headers, runtime);
+    let headers = new SendRobotMessageHeaders({ });
+    return await this.sendRobotMessageWithOptions(request, headers, runtime);
   }
 
   async sendTemplateInteractiveCardWithOptions(request: SendTemplateInteractiveCardRequest, headers: SendTemplateInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<SendTemplateInteractiveCardResponse> {
@@ -9154,13 +9878,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendTemplateInteractiveCardResponse>(await this.doROARequest("SendTemplateInteractiveCard", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interactiveCards/templates/send`, "json", req, runtime), new SendTemplateInteractiveCardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SendTemplateInteractiveCard",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interactiveCards/templates/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendTemplateInteractiveCardResponse>(await this.execute(params, req, runtime), new SendTemplateInteractiveCardResponse({}));
   }
 
-  async setRightPanel(request: SetRightPanelRequest): Promise<SetRightPanelResponse> {
+  async sendTemplateInteractiveCard(request: SendTemplateInteractiveCardRequest): Promise<SendTemplateInteractiveCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SetRightPanelHeaders({ });
-    return await this.setRightPanelWithOptions(request, headers, runtime);
+    let headers = new SendTemplateInteractiveCardHeaders({ });
+    return await this.sendTemplateInteractiveCardWithOptions(request, headers, runtime);
   }
 
   async setRightPanelWithOptions(request: SetRightPanelRequest, headers: SetRightPanelHeaders, runtime: $Util.RuntimeOptions): Promise<SetRightPanelResponse> {
@@ -9203,13 +9938,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SetRightPanelResponse>(await this.doROARequest("SetRightPanel", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/rightPanels/set`, "json", req, runtime), new SetRightPanelResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SetRightPanel",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/rightPanels/set`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SetRightPanelResponse>(await this.execute(params, req, runtime), new SetRightPanelResponse({}));
   }
 
-  async topboxClose(request: TopboxCloseRequest): Promise<TopboxCloseResponse> {
+  async setRightPanel(request: SetRightPanelRequest): Promise<SetRightPanelResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new TopboxCloseHeaders({ });
-    return await this.topboxCloseWithOptions(request, headers, runtime);
+    let headers = new SetRightPanelHeaders({ });
+    return await this.setRightPanelWithOptions(request, headers, runtime);
   }
 
   async topboxCloseWithOptions(request: TopboxCloseRequest, headers: TopboxCloseHeaders, runtime: $Util.RuntimeOptions): Promise<TopboxCloseResponse> {
@@ -9252,13 +9998,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<TopboxCloseResponse>(await this.doROARequest("TopboxClose", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/topBoxes/close`, "none", req, runtime), new TopboxCloseResponse({}));
+    let params = new $OpenApi.Params({
+      action: "TopboxClose",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/topBoxes/close`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<TopboxCloseResponse>(await this.execute(params, req, runtime), new TopboxCloseResponse({}));
   }
 
-  async topboxOpen(request: TopboxOpenRequest): Promise<TopboxOpenResponse> {
+  async topboxClose(request: TopboxCloseRequest): Promise<TopboxCloseResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new TopboxOpenHeaders({ });
-    return await this.topboxOpenWithOptions(request, headers, runtime);
+    let headers = new TopboxCloseHeaders({ });
+    return await this.topboxCloseWithOptions(request, headers, runtime);
   }
 
   async topboxOpenWithOptions(request: TopboxOpenRequest, headers: TopboxOpenHeaders, runtime: $Util.RuntimeOptions): Promise<TopboxOpenResponse> {
@@ -9309,13 +10066,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<TopboxOpenResponse>(await this.doROARequest("TopboxOpen", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/topBoxes/open`, "none", req, runtime), new TopboxOpenResponse({}));
+    let params = new $OpenApi.Params({
+      action: "TopboxOpen",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/topBoxes/open`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<TopboxOpenResponse>(await this.execute(params, req, runtime), new TopboxOpenResponse({}));
   }
 
-  async updateGroupAvatar(request: UpdateGroupAvatarRequest): Promise<UpdateGroupAvatarResponse> {
+  async topboxOpen(request: TopboxOpenRequest): Promise<TopboxOpenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateGroupAvatarHeaders({ });
-    return await this.updateGroupAvatarWithOptions(request, headers, runtime);
+    let headers = new TopboxOpenHeaders({ });
+    return await this.topboxOpenWithOptions(request, headers, runtime);
   }
 
   async updateGroupAvatarWithOptions(request: UpdateGroupAvatarRequest, headers: UpdateGroupAvatarHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupAvatarResponse> {
@@ -9342,13 +10110,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateGroupAvatarResponse>(await this.doROARequest("UpdateGroupAvatar", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/interconnections/groups/avatars`, "json", req, runtime), new UpdateGroupAvatarResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateGroupAvatar",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/groups/avatars`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateGroupAvatarResponse>(await this.execute(params, req, runtime), new UpdateGroupAvatarResponse({}));
   }
 
-  async updateGroupName(request: UpdateGroupNameRequest): Promise<UpdateGroupNameResponse> {
+  async updateGroupAvatar(request: UpdateGroupAvatarRequest): Promise<UpdateGroupAvatarResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateGroupNameHeaders({ });
-    return await this.updateGroupNameWithOptions(request, headers, runtime);
+    let headers = new UpdateGroupAvatarHeaders({ });
+    return await this.updateGroupAvatarWithOptions(request, headers, runtime);
   }
 
   async updateGroupNameWithOptions(request: UpdateGroupNameRequest, headers: UpdateGroupNameHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupNameResponse> {
@@ -9375,13 +10154,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateGroupNameResponse>(await this.doROARequest("UpdateGroupName", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/interconnections/groups/names`, "json", req, runtime), new UpdateGroupNameResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateGroupName",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/groups/names`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateGroupNameResponse>(await this.execute(params, req, runtime), new UpdateGroupNameResponse({}));
   }
 
-  async updateGroupPermission(request: UpdateGroupPermissionRequest): Promise<UpdateGroupPermissionResponse> {
+  async updateGroupName(request: UpdateGroupNameRequest): Promise<UpdateGroupNameResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateGroupPermissionHeaders({ });
-    return await this.updateGroupPermissionWithOptions(request, headers, runtime);
+    let headers = new UpdateGroupNameHeaders({ });
+    return await this.updateGroupNameWithOptions(request, headers, runtime);
   }
 
   async updateGroupPermissionWithOptions(request: UpdateGroupPermissionRequest, headers: UpdateGroupPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupPermissionResponse> {
@@ -9412,13 +10202,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateGroupPermissionResponse>(await this.doROARequest("UpdateGroupPermission", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/sceneGroups/permissions`, "json", req, runtime), new UpdateGroupPermissionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateGroupPermission",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/sceneGroups/permissions`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateGroupPermissionResponse>(await this.execute(params, req, runtime), new UpdateGroupPermissionResponse({}));
   }
 
-  async updateGroupSubAdmin(request: UpdateGroupSubAdminRequest): Promise<UpdateGroupSubAdminResponse> {
+  async updateGroupPermission(request: UpdateGroupPermissionRequest): Promise<UpdateGroupPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateGroupSubAdminHeaders({ });
-    return await this.updateGroupSubAdminWithOptions(request, headers, runtime);
+    let headers = new UpdateGroupPermissionHeaders({ });
+    return await this.updateGroupPermissionWithOptions(request, headers, runtime);
   }
 
   async updateGroupSubAdminWithOptions(request: UpdateGroupSubAdminRequest, headers: UpdateGroupSubAdminHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupSubAdminResponse> {
@@ -9449,13 +10250,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateGroupSubAdminResponse>(await this.doROARequest("UpdateGroupSubAdmin", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/sceneGroups/subAdmins`, "json", req, runtime), new UpdateGroupSubAdminResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateGroupSubAdmin",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/sceneGroups/subAdmins`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateGroupSubAdminResponse>(await this.execute(params, req, runtime), new UpdateGroupSubAdminResponse({}));
   }
 
-  async updateInteractiveCard(request: UpdateInteractiveCardRequest): Promise<UpdateInteractiveCardResponse> {
+  async updateGroupSubAdmin(request: UpdateGroupSubAdminRequest): Promise<UpdateGroupSubAdminResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateInteractiveCardHeaders({ });
-    return await this.updateInteractiveCardWithOptions(request, headers, runtime);
+    let headers = new UpdateGroupSubAdminHeaders({ });
+    return await this.updateGroupSubAdminWithOptions(request, headers, runtime);
   }
 
   async updateInteractiveCardWithOptions(request: UpdateInteractiveCardRequest, headers: UpdateInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInteractiveCardResponse> {
@@ -9494,13 +10306,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateInteractiveCardResponse>(await this.doROARequest("UpdateInteractiveCard", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/interactiveCards`, "json", req, runtime), new UpdateInteractiveCardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateInteractiveCard",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interactiveCards`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateInteractiveCardResponse>(await this.execute(params, req, runtime), new UpdateInteractiveCardResponse({}));
   }
 
-  async updateMemberBanWords(request: UpdateMemberBanWordsRequest): Promise<UpdateMemberBanWordsResponse> {
+  async updateInteractiveCard(request: UpdateInteractiveCardRequest): Promise<UpdateInteractiveCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateMemberBanWordsHeaders({ });
-    return await this.updateMemberBanWordsWithOptions(request, headers, runtime);
+    let headers = new UpdateInteractiveCardHeaders({ });
+    return await this.updateInteractiveCardWithOptions(request, headers, runtime);
   }
 
   async updateMemberBanWordsWithOptions(request: UpdateMemberBanWordsRequest, headers: UpdateMemberBanWordsHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMemberBanWordsResponse> {
@@ -9535,13 +10358,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateMemberBanWordsResponse>(await this.doROARequest("UpdateMemberBanWords", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/sceneGroups/muteMembers/set`, "none", req, runtime), new UpdateMemberBanWordsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateMemberBanWords",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/sceneGroups/muteMembers/set`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<UpdateMemberBanWordsResponse>(await this.execute(params, req, runtime), new UpdateMemberBanWordsResponse({}));
   }
 
-  async updateMemberGroupNick(request: UpdateMemberGroupNickRequest): Promise<UpdateMemberGroupNickResponse> {
+  async updateMemberBanWords(request: UpdateMemberBanWordsRequest): Promise<UpdateMemberBanWordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateMemberGroupNickHeaders({ });
-    return await this.updateMemberGroupNickWithOptions(request, headers, runtime);
+    let headers = new UpdateMemberBanWordsHeaders({ });
+    return await this.updateMemberBanWordsWithOptions(request, headers, runtime);
   }
 
   async updateMemberGroupNickWithOptions(request: UpdateMemberGroupNickRequest, headers: UpdateMemberGroupNickHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateMemberGroupNickResponse> {
@@ -9572,13 +10406,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateMemberGroupNickResponse>(await this.doROARequest("UpdateMemberGroupNick", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/sceneGroups/members/groupNicks`, "json", req, runtime), new UpdateMemberGroupNickResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateMemberGroupNick",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/sceneGroups/members/groupNicks`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateMemberGroupNickResponse>(await this.execute(params, req, runtime), new UpdateMemberGroupNickResponse({}));
   }
 
-  async updateRobotInOrg(request: UpdateRobotInOrgRequest): Promise<UpdateRobotInOrgResponse> {
+  async updateMemberGroupNick(request: UpdateMemberGroupNickRequest): Promise<UpdateMemberGroupNickResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateRobotInOrgHeaders({ });
-    return await this.updateRobotInOrgWithOptions(request, headers, runtime);
+    let headers = new UpdateMemberGroupNickHeaders({ });
+    return await this.updateMemberGroupNickWithOptions(request, headers, runtime);
   }
 
   async updateRobotInOrgWithOptions(request: UpdateRobotInOrgRequest, headers: UpdateRobotInOrgHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRobotInOrgResponse> {
@@ -9629,13 +10474,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateRobotInOrgResponse>(await this.doROARequest("UpdateRobotInOrg", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/organizations/robots`, "json", req, runtime), new UpdateRobotInOrgResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateRobotInOrg",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/organizations/robots`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateRobotInOrgResponse>(await this.execute(params, req, runtime), new UpdateRobotInOrgResponse({}));
   }
 
-  async updateRobotInteractiveCard(request: UpdateRobotInteractiveCardRequest): Promise<UpdateRobotInteractiveCardResponse> {
+  async updateRobotInOrg(request: UpdateRobotInOrgRequest): Promise<UpdateRobotInOrgResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateRobotInteractiveCardHeaders({ });
-    return await this.updateRobotInteractiveCardWithOptions(request, headers, runtime);
+    let headers = new UpdateRobotInOrgHeaders({ });
+    return await this.updateRobotInOrgWithOptions(request, headers, runtime);
   }
 
   async updateRobotInteractiveCardWithOptions(request: UpdateRobotInteractiveCardRequest, headers: UpdateRobotInteractiveCardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRobotInteractiveCardResponse> {
@@ -9674,13 +10530,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateRobotInteractiveCardResponse>(await this.doROARequest("UpdateRobotInteractiveCard", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/robots/interactiveCards`, "json", req, runtime), new UpdateRobotInteractiveCardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateRobotInteractiveCard",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/robots/interactiveCards`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateRobotInteractiveCardResponse>(await this.execute(params, req, runtime), new UpdateRobotInteractiveCardResponse({}));
   }
 
-  async updateTheGroupRolesOfGroupMember(request: UpdateTheGroupRolesOfGroupMemberRequest): Promise<UpdateTheGroupRolesOfGroupMemberResponse> {
+  async updateRobotInteractiveCard(request: UpdateRobotInteractiveCardRequest): Promise<UpdateRobotInteractiveCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTheGroupRolesOfGroupMemberHeaders({ });
-    return await this.updateTheGroupRolesOfGroupMemberWithOptions(request, headers, runtime);
+    let headers = new UpdateRobotInteractiveCardHeaders({ });
+    return await this.updateRobotInteractiveCardWithOptions(request, headers, runtime);
   }
 
   async updateTheGroupRolesOfGroupMemberWithOptions(request: UpdateTheGroupRolesOfGroupMemberRequest, headers: UpdateTheGroupRolesOfGroupMemberHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTheGroupRolesOfGroupMemberResponse> {
@@ -9711,13 +10578,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTheGroupRolesOfGroupMemberResponse>(await this.doROARequest("UpdateTheGroupRolesOfGroupMember", "im_1.0", "HTTP", "PUT", "AK", `/v1.0/im/sceneGroups/members/groupRoles`, "json", req, runtime), new UpdateTheGroupRolesOfGroupMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTheGroupRolesOfGroupMember",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/sceneGroups/members/groupRoles`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTheGroupRolesOfGroupMemberResponse>(await this.execute(params, req, runtime), new UpdateTheGroupRolesOfGroupMemberResponse({}));
   }
 
-  async addGroupMember(request: AddGroupMemberRequest): Promise<AddGroupMemberResponse> {
+  async updateTheGroupRolesOfGroupMember(request: UpdateTheGroupRolesOfGroupMemberRequest): Promise<UpdateTheGroupRolesOfGroupMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddGroupMemberHeaders({ });
-    return await this.addGroupMemberWithOptions(request, headers, runtime);
+    let headers = new UpdateTheGroupRolesOfGroupMemberHeaders({ });
+    return await this.updateTheGroupRolesOfGroupMemberWithOptions(request, headers, runtime);
   }
 
   async addGroupMemberWithOptions(request: AddGroupMemberRequest, headers: AddGroupMemberHeaders, runtime: $Util.RuntimeOptions): Promise<AddGroupMemberResponse> {
@@ -9752,13 +10630,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddGroupMemberResponse>(await this.doROARequest("addGroupMember", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/groups/members`, "json", req, runtime), new AddGroupMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "addGroupMember",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/groups/members`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddGroupMemberResponse>(await this.execute(params, req, runtime), new AddGroupMemberResponse({}));
   }
 
-  async removeGroupMember(request: RemoveGroupMemberRequest): Promise<RemoveGroupMemberResponse> {
+  async addGroupMember(request: AddGroupMemberRequest): Promise<AddGroupMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RemoveGroupMemberHeaders({ });
-    return await this.removeGroupMemberWithOptions(request, headers, runtime);
+    let headers = new AddGroupMemberHeaders({ });
+    return await this.addGroupMemberWithOptions(request, headers, runtime);
   }
 
   async removeGroupMemberWithOptions(request: RemoveGroupMemberRequest, headers: RemoveGroupMemberHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveGroupMemberResponse> {
@@ -9793,13 +10682,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RemoveGroupMemberResponse>(await this.doROARequest("removeGroupMember", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/groups/members/remove`, "json", req, runtime), new RemoveGroupMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "removeGroupMember",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/groups/members/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RemoveGroupMemberResponse>(await this.execute(params, req, runtime), new RemoveGroupMemberResponse({}));
   }
 
-  async sendDingMessage(request: SendDingMessageRequest): Promise<SendDingMessageResponse> {
+  async removeGroupMember(request: RemoveGroupMemberRequest): Promise<RemoveGroupMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendDingMessageHeaders({ });
-    return await this.sendDingMessageWithOptions(request, headers, runtime);
+    let headers = new RemoveGroupMemberHeaders({ });
+    return await this.removeGroupMemberWithOptions(request, headers, runtime);
   }
 
   async sendDingMessageWithOptions(request: SendDingMessageRequest, headers: SendDingMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendDingMessageResponse> {
@@ -9842,13 +10742,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendDingMessageResponse>(await this.doROARequest("sendDingMessage", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/dingMessages/send`, "json", req, runtime), new SendDingMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "sendDingMessage",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/dingMessages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendDingMessageResponse>(await this.execute(params, req, runtime), new SendDingMessageResponse({}));
   }
 
-  async sendMessage(request: SendMessageRequest): Promise<SendMessageResponse> {
+  async sendDingMessage(request: SendDingMessageRequest): Promise<SendDingMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendMessageHeaders({ });
-    return await this.sendMessageWithOptions(request, headers, runtime);
+    let headers = new SendDingMessageHeaders({ });
+    return await this.sendDingMessageWithOptions(request, headers, runtime);
   }
 
   async sendMessageWithOptions(request: SendMessageRequest, headers: SendMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendMessageResponse> {
@@ -9891,7 +10802,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendMessageResponse>(await this.doROARequest("sendMessage", "im_1.0", "HTTP", "POST", "AK", `/v1.0/im/interconnections/messages/send`, "json", req, runtime), new SendMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "sendMessage",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/interconnections/messages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendMessageResponse>(await this.execute(params, req, runtime), new SendMessageResponse({}));
+  }
+
+  async sendMessage(request: SendMessageRequest): Promise<SendMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendMessageHeaders({ });
+    return await this.sendMessageWithOptions(request, headers, runtime);
   }
 
 }

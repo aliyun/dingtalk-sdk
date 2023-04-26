@@ -3,9 +3,86 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
+
+export class DentryAppPropertiesValue extends $tea.Model {
+  name?: string;
+  value?: string;
+  visibility?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      value: 'value',
+      visibility: 'visibility',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      value: 'string',
+      visibility: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ResultItemsDentryAppPropertiesValue extends $tea.Model {
+  name?: string;
+  value?: string;
+  visibility?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      value: 'value',
+      visibility: 'visibility',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      value: 'string',
+      visibility: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DentriesAppPropertiesValue extends $tea.Model {
+  name?: string;
+  value?: string;
+  visibility?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      value: 'value',
+      visibility: 'visibility',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      value: 'string',
+      visibility: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
 
 export class AddFolderHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
@@ -75,10 +152,12 @@ export class AddFolderResponseBody extends $tea.Model {
 
 export class AddFolderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddFolderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -86,6 +165,7 @@ export class AddFolderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddFolderResponseBody,
     };
   }
@@ -166,10 +246,12 @@ export class AddPermissionResponseBody extends $tea.Model {
 
 export class AddPermissionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddPermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -177,6 +259,7 @@ export class AddPermissionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddPermissionResponseBody,
     };
   }
@@ -251,10 +334,12 @@ export class AddSpaceResponseBody extends $tea.Model {
 
 export class AddSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -262,6 +347,7 @@ export class AddSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddSpaceResponseBody,
     };
   }
@@ -333,10 +419,12 @@ export class ClearRecycleBinResponseBody extends $tea.Model {
 
 export class ClearRecycleBinResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ClearRecycleBinResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -344,6 +432,7 @@ export class ClearRecycleBinResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ClearRecycleBinResponseBody,
     };
   }
@@ -427,10 +516,12 @@ export class CommitFileResponseBody extends $tea.Model {
 
 export class CommitFileResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CommitFileResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -438,6 +529,7 @@ export class CommitFileResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CommitFileResponseBody,
     };
   }
@@ -521,10 +613,12 @@ export class CopyDentriesResponseBody extends $tea.Model {
 
 export class CopyDentriesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CopyDentriesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -532,6 +626,7 @@ export class CopyDentriesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CopyDentriesResponseBody,
     };
   }
@@ -618,10 +713,12 @@ export class CopyDentryResponseBody extends $tea.Model {
 
 export class CopyDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CopyDentryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -629,6 +726,7 @@ export class CopyDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CopyDentryResponseBody,
     };
   }
@@ -706,10 +804,12 @@ export class DeleteDentriesResponseBody extends $tea.Model {
 
 export class DeleteDentriesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteDentriesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -717,6 +817,7 @@ export class DeleteDentriesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteDentriesResponseBody,
     };
   }
@@ -794,10 +895,12 @@ export class DeleteDentryResponseBody extends $tea.Model {
 
 export class DeleteDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteDentryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -805,6 +908,7 @@ export class DeleteDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteDentryResponseBody,
     };
   }
@@ -879,10 +983,12 @@ export class DeleteDentryAppPropertiesResponseBody extends $tea.Model {
 
 export class DeleteDentryAppPropertiesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteDentryAppPropertiesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -890,6 +996,7 @@ export class DeleteDentryAppPropertiesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteDentryAppPropertiesResponseBody,
     };
   }
@@ -967,10 +1074,12 @@ export class DeletePermissionResponseBody extends $tea.Model {
 
 export class DeletePermissionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeletePermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -978,6 +1087,7 @@ export class DeletePermissionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeletePermissionResponseBody,
     };
   }
@@ -1049,10 +1159,12 @@ export class DeleteRecycleItemResponseBody extends $tea.Model {
 
 export class DeleteRecycleItemResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteRecycleItemResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1060,6 +1172,7 @@ export class DeleteRecycleItemResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteRecycleItemResponseBody,
     };
   }
@@ -1134,10 +1247,12 @@ export class DeleteRecycleItemsResponseBody extends $tea.Model {
 
 export class DeleteRecycleItemsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteRecycleItemsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1145,6 +1260,7 @@ export class DeleteRecycleItemsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteRecycleItemsResponseBody,
     };
   }
@@ -1216,10 +1332,12 @@ export class GetCurrentAppResponseBody extends $tea.Model {
 
 export class GetCurrentAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCurrentAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1227,6 +1345,7 @@ export class GetCurrentAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCurrentAppResponseBody,
     };
   }
@@ -1304,10 +1423,12 @@ export class GetDentriesResponseBody extends $tea.Model {
 
 export class GetDentriesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetDentriesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1315,6 +1436,7 @@ export class GetDentriesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetDentriesResponseBody,
     };
   }
@@ -1389,10 +1511,12 @@ export class GetDentryResponseBody extends $tea.Model {
 
 export class GetDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetDentryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1400,6 +1524,7 @@ export class GetDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetDentryResponseBody,
     };
   }
@@ -1477,10 +1602,12 @@ export class GetDentryOpenInfoResponseBody extends $tea.Model {
 
 export class GetDentryOpenInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetDentryOpenInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1488,6 +1615,7 @@ export class GetDentryOpenInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetDentryOpenInfoResponseBody,
     };
   }
@@ -1562,10 +1690,12 @@ export class GetDentryThumbnailsResponseBody extends $tea.Model {
 
 export class GetDentryThumbnailsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetDentryThumbnailsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1573,6 +1703,7 @@ export class GetDentryThumbnailsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetDentryThumbnailsResponseBody,
     };
   }
@@ -1650,10 +1781,12 @@ export class GetFileDownloadInfoResponseBody extends $tea.Model {
 
 export class GetFileDownloadInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFileDownloadInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1661,6 +1794,7 @@ export class GetFileDownloadInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFileDownloadInfoResponseBody,
     };
   }
@@ -1750,10 +1884,12 @@ export class GetFileUploadInfoResponseBody extends $tea.Model {
 
 export class GetFileUploadInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFileUploadInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1761,6 +1897,7 @@ export class GetFileUploadInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFileUploadInfoResponseBody,
     };
   }
@@ -1841,10 +1978,12 @@ export class GetMultipartFileUploadInfosResponseBody extends $tea.Model {
 
 export class GetMultipartFileUploadInfosResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetMultipartFileUploadInfosResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1852,6 +1991,7 @@ export class GetMultipartFileUploadInfosResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetMultipartFileUploadInfosResponseBody,
     };
   }
@@ -1923,10 +2063,12 @@ export class GetOrgResponseBody extends $tea.Model {
 
 export class GetOrgResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetOrgResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1934,6 +2076,7 @@ export class GetOrgResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetOrgResponseBody,
     };
   }
@@ -2011,10 +2154,12 @@ export class GetRecycleBinResponseBody extends $tea.Model {
 
 export class GetRecycleBinResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetRecycleBinResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2022,6 +2167,7 @@ export class GetRecycleBinResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetRecycleBinResponseBody,
     };
   }
@@ -2093,10 +2239,12 @@ export class GetRecycleItemResponseBody extends $tea.Model {
 
 export class GetRecycleItemResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetRecycleItemResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2104,6 +2252,7 @@ export class GetRecycleItemResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetRecycleItemResponseBody,
     };
   }
@@ -2175,10 +2324,12 @@ export class GetSpaceResponseBody extends $tea.Model {
 
 export class GetSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2186,6 +2337,7 @@ export class GetSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSpaceResponseBody,
     };
   }
@@ -2257,10 +2409,12 @@ export class GetTaskResponseBody extends $tea.Model {
 
 export class GetTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2268,6 +2422,7 @@ export class GetTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTaskResponseBody,
     };
   }
@@ -2345,10 +2500,12 @@ export class InitMultipartFileUploadResponseBody extends $tea.Model {
 
 export class InitMultipartFileUploadResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: InitMultipartFileUploadResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2356,6 +2513,7 @@ export class InitMultipartFileUploadResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: InitMultipartFileUploadResponseBody,
     };
   }
@@ -2433,10 +2591,12 @@ export class ListAllDentriesResponseBody extends $tea.Model {
 
 export class ListAllDentriesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListAllDentriesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2444,6 +2604,7 @@ export class ListAllDentriesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListAllDentriesResponseBody,
     };
   }
@@ -2536,10 +2697,12 @@ export class ListDentriesResponseBody extends $tea.Model {
 
 export class ListDentriesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListDentriesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2547,6 +2710,7 @@ export class ListDentriesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListDentriesResponseBody,
     };
   }
@@ -2627,10 +2791,12 @@ export class ListDentryVersionsResponseBody extends $tea.Model {
 
 export class ListDentryVersionsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListDentryVersionsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2638,6 +2804,7 @@ export class ListDentryVersionsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListDentryVersionsResponseBody,
     };
   }
@@ -2715,10 +2882,12 @@ export class ListPermissionsResponseBody extends $tea.Model {
 
 export class ListPermissionsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListPermissionsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2726,6 +2895,7 @@ export class ListPermissionsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListPermissionsResponseBody,
     };
   }
@@ -2806,10 +2976,12 @@ export class ListRecycleItemsResponseBody extends $tea.Model {
 
 export class ListRecycleItemsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListRecycleItemsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2817,6 +2989,7 @@ export class ListRecycleItemsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListRecycleItemsResponseBody,
     };
   }
@@ -2900,10 +3073,12 @@ export class MoveDentriesResponseBody extends $tea.Model {
 
 export class MoveDentriesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: MoveDentriesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2911,6 +3086,7 @@ export class MoveDentriesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: MoveDentriesResponseBody,
     };
   }
@@ -2997,10 +3173,12 @@ export class MoveDentryResponseBody extends $tea.Model {
 
 export class MoveDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: MoveDentryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3008,6 +3186,7 @@ export class MoveDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: MoveDentryResponseBody,
     };
   }
@@ -3085,10 +3264,12 @@ export class RegisterOpenInfoResponseBody extends $tea.Model {
 
 export class RegisterOpenInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RegisterOpenInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3096,6 +3277,7 @@ export class RegisterOpenInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RegisterOpenInfoResponseBody,
     };
   }
@@ -3170,10 +3352,12 @@ export class RenameDentryResponseBody extends $tea.Model {
 
 export class RenameDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RenameDentryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3181,6 +3365,7 @@ export class RenameDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RenameDentryResponseBody,
     };
   }
@@ -3264,10 +3449,12 @@ export class RestoreRecycleItemResponseBody extends $tea.Model {
 
 export class RestoreRecycleItemResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RestoreRecycleItemResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3275,6 +3462,7 @@ export class RestoreRecycleItemResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RestoreRecycleItemResponseBody,
     };
   }
@@ -3352,10 +3540,12 @@ export class RestoreRecycleItemsResponseBody extends $tea.Model {
 
 export class RestoreRecycleItemsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RestoreRecycleItemsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3363,6 +3553,7 @@ export class RestoreRecycleItemsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RestoreRecycleItemsResponseBody,
     };
   }
@@ -3434,10 +3625,12 @@ export class RevertDentryVersionResponseBody extends $tea.Model {
 
 export class RevertDentryVersionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RevertDentryVersionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3445,6 +3638,7 @@ export class RevertDentryVersionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RevertDentryVersionResponseBody,
     };
   }
@@ -3522,10 +3716,12 @@ export class SubscribeEventResponseBody extends $tea.Model {
 
 export class SubscribeEventResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SubscribeEventResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3533,6 +3729,7 @@ export class SubscribeEventResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SubscribeEventResponseBody,
     };
   }
@@ -3610,10 +3807,12 @@ export class UnsubscribeEventResponseBody extends $tea.Model {
 
 export class UnsubscribeEventResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UnsubscribeEventResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3621,6 +3820,7 @@ export class UnsubscribeEventResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UnsubscribeEventResponseBody,
     };
   }
@@ -3695,10 +3895,12 @@ export class UpdateDentryAppPropertiesResponseBody extends $tea.Model {
 
 export class UpdateDentryAppPropertiesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateDentryAppPropertiesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3706,6 +3908,7 @@ export class UpdateDentryAppPropertiesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateDentryAppPropertiesResponseBody,
     };
   }
@@ -3786,10 +3989,12 @@ export class UpdatePermissionResponseBody extends $tea.Model {
 
 export class UpdatePermissionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdatePermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3797,82 +4002,8 @@ export class UpdatePermissionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdatePermissionResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class DentryAppPropertiesValue extends $tea.Model {
-  name?: string;
-  value?: string;
-  visibility?: string;
-  static names(): { [key: string]: string } {
-    return {
-      name: 'name',
-      value: 'value',
-      visibility: 'visibility',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      name: 'string',
-      value: 'string',
-      visibility: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class ResultItemsDentryAppPropertiesValue extends $tea.Model {
-  name?: string;
-  value?: string;
-  visibility?: string;
-  static names(): { [key: string]: string } {
-    return {
-      name: 'name',
-      value: 'value',
-      visibility: 'visibility',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      name: 'string',
-      value: 'string',
-      visibility: 'string',
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class DentriesAppPropertiesValue extends $tea.Model {
-  name?: string;
-  value?: string;
-  visibility?: string;
-  static names(): { [key: string]: string } {
-    return {
-      name: 'name',
-      value: 'value',
-      visibility: 'visibility',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      name: 'string',
-      value: 'string',
-      visibility: 'string',
     };
   }
 
@@ -6679,9 +6810,12 @@ export class UpdatePermissionRequestOption extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -6690,16 +6824,8 @@ export default class Client extends OpenApi {
   }
 
 
-  async addFolder(spaceId: string, parentId: string, request: AddFolderRequest): Promise<AddFolderResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddFolderHeaders({ });
-    return await this.addFolderWithOptions(spaceId, parentId, request, headers, runtime);
-  }
-
   async addFolderWithOptions(spaceId: string, parentId: string, request: AddFolderRequest, headers: AddFolderHeaders, runtime: $Util.RuntimeOptions): Promise<AddFolderResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    parentId = OpenApiUtil.getEncodeParam(parentId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -6728,19 +6854,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddFolderResponse>(await this.doROARequest("AddFolder", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${parentId}/folders`, "json", req, runtime), new AddFolderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddFolder",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${parentId}/folders`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddFolderResponse>(await this.execute(params, req, runtime), new AddFolderResponse({}));
   }
 
-  async addPermission(spaceId: string, dentryId: string, request: AddPermissionRequest): Promise<AddPermissionResponse> {
+  async addFolder(spaceId: string, parentId: string, request: AddFolderRequest): Promise<AddFolderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddPermissionHeaders({ });
-    return await this.addPermissionWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new AddFolderHeaders({ });
+    return await this.addFolderWithOptions(spaceId, parentId, request, headers, runtime);
   }
 
   async addPermissionWithOptions(spaceId: string, dentryId: string, request: AddPermissionRequest, headers: AddPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<AddPermissionResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -6773,13 +6908,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddPermissionResponse>(await this.doROARequest("AddPermission", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/permissions`, "json", req, runtime), new AddPermissionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddPermission",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/permissions`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddPermissionResponse>(await this.execute(params, req, runtime), new AddPermissionResponse({}));
   }
 
-  async addSpace(request: AddSpaceRequest): Promise<AddSpaceResponse> {
+  async addPermission(spaceId: string, dentryId: string, request: AddPermissionRequest): Promise<AddPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddSpaceHeaders({ });
-    return await this.addSpaceWithOptions(request, headers, runtime);
+    let headers = new AddPermissionHeaders({ });
+    return await this.addPermissionWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async addSpaceWithOptions(request: AddSpaceRequest, headers: AddSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<AddSpaceResponse> {
@@ -6808,18 +6954,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddSpaceResponse>(await this.doROARequest("AddSpace", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces`, "json", req, runtime), new AddSpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddSpace",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddSpaceResponse>(await this.execute(params, req, runtime), new AddSpaceResponse({}));
   }
 
-  async clearRecycleBin(recycleBinId: string, request: ClearRecycleBinRequest): Promise<ClearRecycleBinResponse> {
+  async addSpace(request: AddSpaceRequest): Promise<AddSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ClearRecycleBinHeaders({ });
-    return await this.clearRecycleBinWithOptions(recycleBinId, request, headers, runtime);
+    let headers = new AddSpaceHeaders({ });
+    return await this.addSpaceWithOptions(request, headers, runtime);
   }
 
   async clearRecycleBinWithOptions(recycleBinId: string, request: ClearRecycleBinRequest, headers: ClearRecycleBinHeaders, runtime: $Util.RuntimeOptions): Promise<ClearRecycleBinResponse> {
     Util.validateModel(request);
-    recycleBinId = OpenApiUtil.getEncodeParam(recycleBinId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -6838,18 +6994,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ClearRecycleBinResponse>(await this.doROARequest("ClearRecycleBin", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/recycleBins/${recycleBinId}/clear`, "json", req, runtime), new ClearRecycleBinResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ClearRecycleBin",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/recycleBins/${recycleBinId}/clear`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ClearRecycleBinResponse>(await this.execute(params, req, runtime), new ClearRecycleBinResponse({}));
   }
 
-  async commitFile(spaceId: string, request: CommitFileRequest): Promise<CommitFileResponse> {
+  async clearRecycleBin(recycleBinId: string, request: ClearRecycleBinRequest): Promise<ClearRecycleBinResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CommitFileHeaders({ });
-    return await this.commitFileWithOptions(spaceId, request, headers, runtime);
+    let headers = new ClearRecycleBinHeaders({ });
+    return await this.clearRecycleBinWithOptions(recycleBinId, request, headers, runtime);
   }
 
   async commitFileWithOptions(spaceId: string, request: CommitFileRequest, headers: CommitFileHeaders, runtime: $Util.RuntimeOptions): Promise<CommitFileResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -6886,7 +7052,76 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CommitFileResponse>(await this.doROARequest("CommitFile", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/files/commit`, "json", req, runtime), new CommitFileResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CommitFile",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/files/commit`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CommitFileResponse>(await this.execute(params, req, runtime), new CommitFileResponse({}));
+  }
+
+  async commitFile(spaceId: string, request: CommitFileRequest): Promise<CommitFileResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CommitFileHeaders({ });
+    return await this.commitFileWithOptions(spaceId, request, headers, runtime);
+  }
+
+  async copyDentriesWithOptions(spaceId: string, request: CopyDentriesRequest, headers: CopyDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<CopyDentriesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dentryIds)) {
+      body["dentryIds"] = request.dentryIds;
+    }
+
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
+    }
+
+    if (!Util.isUnset(request.targetFolderId)) {
+      body["targetFolderId"] = request.targetFolderId;
+    }
+
+    if (!Util.isUnset(request.targetSpaceId)) {
+      body["targetSpaceId"] = request.targetSpaceId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CopyDentries",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/batchCopy`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CopyDentriesResponse>(await this.execute(params, req, runtime), new CopyDentriesResponse({}));
   }
 
   async copyDentries(spaceId: string, request: CopyDentriesRequest): Promise<CopyDentriesResponse> {
@@ -6895,19 +7130,14 @@ export default class Client extends OpenApi {
     return await this.copyDentriesWithOptions(spaceId, request, headers, runtime);
   }
 
-  async copyDentriesWithOptions(spaceId: string, request: CopyDentriesRequest, headers: CopyDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<CopyDentriesResponse> {
+  async copyDentryWithOptions(spaceId: string, dentryId: string, request: CopyDentryRequest, headers: CopyDentryHeaders, runtime: $Util.RuntimeOptions): Promise<CopyDentryResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.dentryIds)) {
-      body["dentryIds"] = request.dentryIds;
-    }
-
     if (!Util.isUnset(request.option)) {
       body["option"] = request.option;
     }
@@ -6934,7 +7164,18 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CopyDentriesResponse>(await this.doROARequest("CopyDentries", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/batchCopy`, "json", req, runtime), new CopyDentriesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CopyDentry",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/copy`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CopyDentryResponse>(await this.execute(params, req, runtime), new CopyDentryResponse({}));
   }
 
   async copyDentry(spaceId: string, dentryId: string, request: CopyDentryRequest): Promise<CopyDentryResponse> {
@@ -6943,54 +7184,8 @@ export default class Client extends OpenApi {
     return await this.copyDentryWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
-  async copyDentryWithOptions(spaceId: string, dentryId: string, request: CopyDentryRequest, headers: CopyDentryHeaders, runtime: $Util.RuntimeOptions): Promise<CopyDentryResponse> {
-    Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.unionId)) {
-      query["unionId"] = request.unionId;
-    }
-
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.option)) {
-      body["option"] = request.option;
-    }
-
-    if (!Util.isUnset(request.targetFolderId)) {
-      body["targetFolderId"] = request.targetFolderId;
-    }
-
-    if (!Util.isUnset(request.targetSpaceId)) {
-      body["targetSpaceId"] = request.targetSpaceId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<CopyDentryResponse>(await this.doROARequest("CopyDentry", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/copy`, "json", req, runtime), new CopyDentryResponse({}));
-  }
-
-  async deleteDentries(spaceId: string, request: DeleteDentriesRequest): Promise<DeleteDentriesResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteDentriesHeaders({ });
-    return await this.deleteDentriesWithOptions(spaceId, request, headers, runtime);
-  }
-
   async deleteDentriesWithOptions(spaceId: string, request: DeleteDentriesRequest, headers: DeleteDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDentriesResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7019,19 +7214,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteDentriesResponse>(await this.doROARequest("DeleteDentries", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/batchRemove`, "json", req, runtime), new DeleteDentriesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteDentries",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/batchRemove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteDentriesResponse>(await this.execute(params, req, runtime), new DeleteDentriesResponse({}));
   }
 
-  async deleteDentry(spaceId: string, dentryId: string, request: DeleteDentryRequest): Promise<DeleteDentryResponse> {
+  async deleteDentries(spaceId: string, request: DeleteDentriesRequest): Promise<DeleteDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteDentryHeaders({ });
-    return await this.deleteDentryWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new DeleteDentriesHeaders({ });
+    return await this.deleteDentriesWithOptions(spaceId, request, headers, runtime);
   }
 
   async deleteDentryWithOptions(spaceId: string, dentryId: string, request: DeleteDentryRequest, headers: DeleteDentryHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDentryResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.toRecycleBin)) {
       query["toRecycleBin"] = request.toRecycleBin;
@@ -7054,19 +7258,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteDentryResponse>(await this.doROARequest("DeleteDentry", "storage_1.0", "HTTP", "DELETE", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}`, "json", req, runtime), new DeleteDentryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteDentry",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteDentryResponse>(await this.execute(params, req, runtime), new DeleteDentryResponse({}));
   }
 
-  async deleteDentryAppProperties(spaceId: string, dentryId: string, request: DeleteDentryAppPropertiesRequest): Promise<DeleteDentryAppPropertiesResponse> {
+  async deleteDentry(spaceId: string, dentryId: string, request: DeleteDentryRequest): Promise<DeleteDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteDentryAppPropertiesHeaders({ });
-    return await this.deleteDentryAppPropertiesWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new DeleteDentryHeaders({ });
+    return await this.deleteDentryWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async deleteDentryAppPropertiesWithOptions(spaceId: string, dentryId: string, request: DeleteDentryAppPropertiesRequest, headers: DeleteDentryAppPropertiesHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteDentryAppPropertiesResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7091,19 +7304,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteDentryAppPropertiesResponse>(await this.doROARequest("DeleteDentryAppProperties", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/appProperties/remove`, "json", req, runtime), new DeleteDentryAppPropertiesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteDentryAppProperties",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/appProperties/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteDentryAppPropertiesResponse>(await this.execute(params, req, runtime), new DeleteDentryAppPropertiesResponse({}));
   }
 
-  async deletePermission(spaceId: string, dentryId: string, request: DeletePermissionRequest): Promise<DeletePermissionResponse> {
+  async deleteDentryAppProperties(spaceId: string, dentryId: string, request: DeleteDentryAppPropertiesRequest): Promise<DeleteDentryAppPropertiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeletePermissionHeaders({ });
-    return await this.deletePermissionWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new DeleteDentryAppPropertiesHeaders({ });
+    return await this.deleteDentryAppPropertiesWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async deletePermissionWithOptions(spaceId: string, dentryId: string, request: DeletePermissionRequest, headers: DeletePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePermissionResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7132,19 +7354,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeletePermissionResponse>(await this.doROARequest("DeletePermission", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/permissions/remove`, "json", req, runtime), new DeletePermissionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeletePermission",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/permissions/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeletePermissionResponse>(await this.execute(params, req, runtime), new DeletePermissionResponse({}));
   }
 
-  async deleteRecycleItem(recycleBinId: string, recycleItemId: string, request: DeleteRecycleItemRequest): Promise<DeleteRecycleItemResponse> {
+  async deletePermission(spaceId: string, dentryId: string, request: DeletePermissionRequest): Promise<DeletePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteRecycleItemHeaders({ });
-    return await this.deleteRecycleItemWithOptions(recycleBinId, recycleItemId, request, headers, runtime);
+    let headers = new DeletePermissionHeaders({ });
+    return await this.deletePermissionWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async deleteRecycleItemWithOptions(recycleBinId: string, recycleItemId: string, request: DeleteRecycleItemRequest, headers: DeleteRecycleItemHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRecycleItemResponse> {
     Util.validateModel(request);
-    recycleBinId = OpenApiUtil.getEncodeParam(recycleBinId);
-    recycleItemId = OpenApiUtil.getEncodeParam(recycleItemId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7163,18 +7394,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteRecycleItemResponse>(await this.doROARequest("DeleteRecycleItem", "storage_1.0", "HTTP", "DELETE", "AK", `/v1.0/storage/recycleBins/${recycleBinId}/recycleItems/${recycleItemId}`, "json", req, runtime), new DeleteRecycleItemResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteRecycleItem",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/recycleBins/${recycleBinId}/recycleItems/${recycleItemId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteRecycleItemResponse>(await this.execute(params, req, runtime), new DeleteRecycleItemResponse({}));
   }
 
-  async deleteRecycleItems(recycleBinId: string, request: DeleteRecycleItemsRequest): Promise<DeleteRecycleItemsResponse> {
+  async deleteRecycleItem(recycleBinId: string, recycleItemId: string, request: DeleteRecycleItemRequest): Promise<DeleteRecycleItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteRecycleItemsHeaders({ });
-    return await this.deleteRecycleItemsWithOptions(recycleBinId, request, headers, runtime);
+    let headers = new DeleteRecycleItemHeaders({ });
+    return await this.deleteRecycleItemWithOptions(recycleBinId, recycleItemId, request, headers, runtime);
   }
 
   async deleteRecycleItemsWithOptions(recycleBinId: string, request: DeleteRecycleItemsRequest, headers: DeleteRecycleItemsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRecycleItemsResponse> {
     Util.validateModel(request);
-    recycleBinId = OpenApiUtil.getEncodeParam(recycleBinId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7199,13 +7440,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteRecycleItemsResponse>(await this.doROARequest("DeleteRecycleItems", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/recycleBins/${recycleBinId}/recycleItems/batchRemove`, "json", req, runtime), new DeleteRecycleItemsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteRecycleItems",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/recycleBins/${recycleBinId}/recycleItems/batchRemove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteRecycleItemsResponse>(await this.execute(params, req, runtime), new DeleteRecycleItemsResponse({}));
   }
 
-  async getCurrentApp(request: GetCurrentAppRequest): Promise<GetCurrentAppResponse> {
+  async deleteRecycleItems(recycleBinId: string, request: DeleteRecycleItemsRequest): Promise<DeleteRecycleItemsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCurrentAppHeaders({ });
-    return await this.getCurrentAppWithOptions(request, headers, runtime);
+    let headers = new DeleteRecycleItemsHeaders({ });
+    return await this.deleteRecycleItemsWithOptions(recycleBinId, request, headers, runtime);
   }
 
   async getCurrentAppWithOptions(request: GetCurrentAppRequest, headers: GetCurrentAppHeaders, runtime: $Util.RuntimeOptions): Promise<GetCurrentAppResponse> {
@@ -7228,7 +7480,68 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetCurrentAppResponse>(await this.doROARequest("GetCurrentApp", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/currentApps/query`, "json", req, runtime), new GetCurrentAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCurrentApp",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/currentApps/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCurrentAppResponse>(await this.execute(params, req, runtime), new GetCurrentAppResponse({}));
+  }
+
+  async getCurrentApp(request: GetCurrentAppRequest): Promise<GetCurrentAppResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCurrentAppHeaders({ });
+    return await this.getCurrentAppWithOptions(request, headers, runtime);
+  }
+
+  async getDentriesWithOptions(spaceId: string, request: GetDentriesRequest, headers: GetDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentriesResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.dentryIds)) {
+      body["dentryIds"] = request.dentryIds;
+    }
+
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetDentries",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDentriesResponse>(await this.execute(params, req, runtime), new GetDentriesResponse({}));
   }
 
   async getDentries(spaceId: string, request: GetDentriesRequest): Promise<GetDentriesResponse> {
@@ -7237,19 +7550,14 @@ export default class Client extends OpenApi {
     return await this.getDentriesWithOptions(spaceId, request, headers, runtime);
   }
 
-  async getDentriesWithOptions(spaceId: string, request: GetDentriesRequest, headers: GetDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentriesResponse> {
+  async getDentryWithOptions(spaceId: string, dentryId: string, request: GetDentryRequest, headers: GetDentryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentryResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
     }
 
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.dentryIds)) {
-      body["dentryIds"] = request.dentryIds;
-    }
-
     if (!Util.isUnset(request.option)) {
       body["option"] = request.option;
     }
@@ -7268,7 +7576,18 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetDentriesResponse>(await this.doROARequest("GetDentries", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/query`, "json", req, runtime), new GetDentriesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetDentry",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDentryResponse>(await this.execute(params, req, runtime), new GetDentryResponse({}));
   }
 
   async getDentry(spaceId: string, dentryId: string, request: GetDentryRequest): Promise<GetDentryResponse> {
@@ -7277,10 +7596,8 @@ export default class Client extends OpenApi {
     return await this.getDentryWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
-  async getDentryWithOptions(spaceId: string, dentryId: string, request: GetDentryRequest, headers: GetDentryHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentryResponse> {
+  async getDentryOpenInfoWithOptions(spaceId: string, dentryId: string, request: GetDentryOpenInfoRequest, headers: GetDentryOpenInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentryOpenInfoResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7305,7 +7622,18 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetDentryResponse>(await this.doROARequest("GetDentry", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/query`, "json", req, runtime), new GetDentryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetDentryOpenInfo",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/openInfos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDentryOpenInfoResponse>(await this.execute(params, req, runtime), new GetDentryOpenInfoResponse({}));
   }
 
   async getDentryOpenInfo(spaceId: string, dentryId: string, request: GetDentryOpenInfoRequest): Promise<GetDentryOpenInfoResponse> {
@@ -7314,46 +7642,8 @@ export default class Client extends OpenApi {
     return await this.getDentryOpenInfoWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
-  async getDentryOpenInfoWithOptions(spaceId: string, dentryId: string, request: GetDentryOpenInfoRequest, headers: GetDentryOpenInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentryOpenInfoResponse> {
-    Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.unionId)) {
-      query["unionId"] = request.unionId;
-    }
-
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.option)) {
-      body["option"] = request.option;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<GetDentryOpenInfoResponse>(await this.doROARequest("GetDentryOpenInfo", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/openInfos/query`, "json", req, runtime), new GetDentryOpenInfoResponse({}));
-  }
-
-  async getDentryThumbnails(spaceId: string, request: GetDentryThumbnailsRequest): Promise<GetDentryThumbnailsResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetDentryThumbnailsHeaders({ });
-    return await this.getDentryThumbnailsWithOptions(spaceId, request, headers, runtime);
-  }
-
   async getDentryThumbnailsWithOptions(spaceId: string, request: GetDentryThumbnailsRequest, headers: GetDentryThumbnailsHeaders, runtime: $Util.RuntimeOptions): Promise<GetDentryThumbnailsResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7378,19 +7668,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetDentryThumbnailsResponse>(await this.doROARequest("GetDentryThumbnails", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/thumbnails/query`, "json", req, runtime), new GetDentryThumbnailsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetDentryThumbnails",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/thumbnails/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDentryThumbnailsResponse>(await this.execute(params, req, runtime), new GetDentryThumbnailsResponse({}));
   }
 
-  async getFileDownloadInfo(spaceId: string, dentryId: string, request: GetFileDownloadInfoRequest): Promise<GetFileDownloadInfoResponse> {
+  async getDentryThumbnails(spaceId: string, request: GetDentryThumbnailsRequest): Promise<GetDentryThumbnailsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFileDownloadInfoHeaders({ });
-    return await this.getFileDownloadInfoWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new GetDentryThumbnailsHeaders({ });
+    return await this.getDentryThumbnailsWithOptions(spaceId, request, headers, runtime);
   }
 
   async getFileDownloadInfoWithOptions(spaceId: string, dentryId: string, request: GetFileDownloadInfoRequest, headers: GetFileDownloadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileDownloadInfoResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7415,18 +7714,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetFileDownloadInfoResponse>(await this.doROARequest("GetFileDownloadInfo", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/downloadInfos/query`, "json", req, runtime), new GetFileDownloadInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFileDownloadInfo",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/downloadInfos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFileDownloadInfoResponse>(await this.execute(params, req, runtime), new GetFileDownloadInfoResponse({}));
   }
 
-  async getFileUploadInfo(spaceId: string, request: GetFileUploadInfoRequest): Promise<GetFileUploadInfoResponse> {
+  async getFileDownloadInfo(spaceId: string, dentryId: string, request: GetFileDownloadInfoRequest): Promise<GetFileDownloadInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFileUploadInfoHeaders({ });
-    return await this.getFileUploadInfoWithOptions(spaceId, request, headers, runtime);
+    let headers = new GetFileDownloadInfoHeaders({ });
+    return await this.getFileDownloadInfoWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async getFileUploadInfoWithOptions(spaceId: string, request: GetFileUploadInfoRequest, headers: GetFileUploadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileUploadInfoResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7459,13 +7768,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetFileUploadInfoResponse>(await this.doROARequest("GetFileUploadInfo", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/files/uploadInfos/query`, "json", req, runtime), new GetFileUploadInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFileUploadInfo",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/files/uploadInfos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFileUploadInfoResponse>(await this.execute(params, req, runtime), new GetFileUploadInfoResponse({}));
   }
 
-  async getMultipartFileUploadInfos(request: GetMultipartFileUploadInfosRequest): Promise<GetMultipartFileUploadInfosResponse> {
+  async getFileUploadInfo(spaceId: string, request: GetFileUploadInfoRequest): Promise<GetFileUploadInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetMultipartFileUploadInfosHeaders({ });
-    return await this.getMultipartFileUploadInfosWithOptions(request, headers, runtime);
+    let headers = new GetFileUploadInfoHeaders({ });
+    return await this.getFileUploadInfoWithOptions(spaceId, request, headers, runtime);
   }
 
   async getMultipartFileUploadInfosWithOptions(request: GetMultipartFileUploadInfosRequest, headers: GetMultipartFileUploadInfosHeaders, runtime: $Util.RuntimeOptions): Promise<GetMultipartFileUploadInfosResponse> {
@@ -7502,18 +7822,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetMultipartFileUploadInfosResponse>(await this.doROARequest("GetMultipartFileUploadInfos", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/files/multiPartUploadInfos/query`, "json", req, runtime), new GetMultipartFileUploadInfosResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetMultipartFileUploadInfos",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/files/multiPartUploadInfos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetMultipartFileUploadInfosResponse>(await this.execute(params, req, runtime), new GetMultipartFileUploadInfosResponse({}));
   }
 
-  async getOrg(corpId: string, request: GetOrgRequest): Promise<GetOrgResponse> {
+  async getMultipartFileUploadInfos(request: GetMultipartFileUploadInfosRequest): Promise<GetMultipartFileUploadInfosResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetOrgHeaders({ });
-    return await this.getOrgWithOptions(corpId, request, headers, runtime);
+    let headers = new GetMultipartFileUploadInfosHeaders({ });
+    return await this.getMultipartFileUploadInfosWithOptions(request, headers, runtime);
   }
 
   async getOrgWithOptions(corpId: string, request: GetOrgRequest, headers: GetOrgHeaders, runtime: $Util.RuntimeOptions): Promise<GetOrgResponse> {
     Util.validateModel(request);
-    corpId = OpenApiUtil.getEncodeParam(corpId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7532,13 +7862,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetOrgResponse>(await this.doROARequest("GetOrg", "storage_1.0", "HTTP", "GET", "AK", `/v1.0/storage/orgs/${corpId}`, "json", req, runtime), new GetOrgResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetOrg",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/orgs/${corpId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOrgResponse>(await this.execute(params, req, runtime), new GetOrgResponse({}));
   }
 
-  async getRecycleBin(request: GetRecycleBinRequest): Promise<GetRecycleBinResponse> {
+  async getOrg(corpId: string, request: GetOrgRequest): Promise<GetOrgResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetRecycleBinHeaders({ });
-    return await this.getRecycleBinWithOptions(request, headers, runtime);
+    let headers = new GetOrgHeaders({ });
+    return await this.getOrgWithOptions(corpId, request, headers, runtime);
   }
 
   async getRecycleBinWithOptions(request: GetRecycleBinRequest, headers: GetRecycleBinHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecycleBinResponse> {
@@ -7569,7 +7910,58 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetRecycleBinResponse>(await this.doROARequest("GetRecycleBin", "storage_1.0", "HTTP", "GET", "AK", `/v1.0/storage/recycleBins`, "json", req, runtime), new GetRecycleBinResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetRecycleBin",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/recycleBins`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRecycleBinResponse>(await this.execute(params, req, runtime), new GetRecycleBinResponse({}));
+  }
+
+  async getRecycleBin(request: GetRecycleBinRequest): Promise<GetRecycleBinResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetRecycleBinHeaders({ });
+    return await this.getRecycleBinWithOptions(request, headers, runtime);
+  }
+
+  async getRecycleItemWithOptions(recycleBinId: string, recycleItemId: string, request: GetRecycleItemRequest, headers: GetRecycleItemHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecycleItemResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetRecycleItem",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/recycleBins/${recycleBinId}/recycleItems/${recycleItemId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRecycleItemResponse>(await this.execute(params, req, runtime), new GetRecycleItemResponse({}));
   }
 
   async getRecycleItem(recycleBinId: string, recycleItemId: string, request: GetRecycleItemRequest): Promise<GetRecycleItemResponse> {
@@ -7578,10 +7970,8 @@ export default class Client extends OpenApi {
     return await this.getRecycleItemWithOptions(recycleBinId, recycleItemId, request, headers, runtime);
   }
 
-  async getRecycleItemWithOptions(recycleBinId: string, recycleItemId: string, request: GetRecycleItemRequest, headers: GetRecycleItemHeaders, runtime: $Util.RuntimeOptions): Promise<GetRecycleItemResponse> {
+  async getSpaceWithOptions(spaceId: string, request: GetSpaceRequest, headers: GetSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceResponse> {
     Util.validateModel(request);
-    recycleBinId = OpenApiUtil.getEncodeParam(recycleBinId);
-    recycleItemId = OpenApiUtil.getEncodeParam(recycleItemId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7600,7 +7990,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetRecycleItemResponse>(await this.doROARequest("GetRecycleItem", "storage_1.0", "HTTP", "GET", "AK", `/v1.0/storage/recycleBins/${recycleBinId}/recycleItems/${recycleItemId}`, "json", req, runtime), new GetRecycleItemResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSpace",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSpaceResponse>(await this.execute(params, req, runtime), new GetSpaceResponse({}));
   }
 
   async getSpace(spaceId: string, request: GetSpaceRequest): Promise<GetSpaceResponse> {
@@ -7609,9 +8010,8 @@ export default class Client extends OpenApi {
     return await this.getSpaceWithOptions(spaceId, request, headers, runtime);
   }
 
-  async getSpaceWithOptions(spaceId: string, request: GetSpaceRequest, headers: GetSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceResponse> {
+  async getTaskWithOptions(taskId: string, request: GetTaskRequest, headers: GetTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7630,7 +8030,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetSpaceResponse>(await this.doROARequest("GetSpace", "storage_1.0", "HTTP", "GET", "AK", `/v1.0/storage/spaces/${spaceId}`, "json", req, runtime), new GetSpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTask",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/tasks/${taskId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTaskResponse>(await this.execute(params, req, runtime), new GetTaskResponse({}));
   }
 
   async getTask(taskId: string, request: GetTaskRequest): Promise<GetTaskResponse> {
@@ -7639,12 +8050,16 @@ export default class Client extends OpenApi {
     return await this.getTaskWithOptions(taskId, request, headers, runtime);
   }
 
-  async getTaskWithOptions(taskId: string, request: GetTaskRequest, headers: GetTaskHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskResponse> {
+  async initMultipartFileUploadWithOptions(spaceId: string, request: InitMultipartFileUploadRequest, headers: InitMultipartFileUploadHeaders, runtime: $Util.RuntimeOptions): Promise<InitMultipartFileUploadResponse> {
     Util.validateModel(request);
-    taskId = OpenApiUtil.getEncodeParam(taskId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.option)) {
+      body["option"] = request.option;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -7659,8 +8074,20 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
       query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetTaskResponse>(await this.doROARequest("GetTask", "storage_1.0", "HTTP", "GET", "AK", `/v1.0/storage/tasks/${taskId}`, "json", req, runtime), new GetTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "InitMultipartFileUpload",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/files/multiPartUploadInfos/init`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<InitMultipartFileUploadResponse>(await this.execute(params, req, runtime), new InitMultipartFileUploadResponse({}));
   }
 
   async initMultipartFileUpload(spaceId: string, request: InitMultipartFileUploadRequest): Promise<InitMultipartFileUploadResponse> {
@@ -7669,9 +8096,8 @@ export default class Client extends OpenApi {
     return await this.initMultipartFileUploadWithOptions(spaceId, request, headers, runtime);
   }
 
-  async initMultipartFileUploadWithOptions(spaceId: string, request: InitMultipartFileUploadRequest, headers: InitMultipartFileUploadHeaders, runtime: $Util.RuntimeOptions): Promise<InitMultipartFileUploadResponse> {
+  async listAllDentriesWithOptions(spaceId: string, request: ListAllDentriesRequest, headers: ListAllDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<ListAllDentriesResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7696,7 +8122,18 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<InitMultipartFileUploadResponse>(await this.doROARequest("InitMultipartFileUpload", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/files/multiPartUploadInfos/init`, "json", req, runtime), new InitMultipartFileUploadResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListAllDentries",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/listAll`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAllDentriesResponse>(await this.execute(params, req, runtime), new ListAllDentriesResponse({}));
   }
 
   async listAllDentries(spaceId: string, request: ListAllDentriesRequest): Promise<ListAllDentriesResponse> {
@@ -7705,45 +8142,8 @@ export default class Client extends OpenApi {
     return await this.listAllDentriesWithOptions(spaceId, request, headers, runtime);
   }
 
-  async listAllDentriesWithOptions(spaceId: string, request: ListAllDentriesRequest, headers: ListAllDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<ListAllDentriesResponse> {
-    Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.unionId)) {
-      query["unionId"] = request.unionId;
-    }
-
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.option)) {
-      body["option"] = request.option;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<ListAllDentriesResponse>(await this.doROARequest("ListAllDentries", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/listAll`, "json", req, runtime), new ListAllDentriesResponse({}));
-  }
-
-  async listDentries(spaceId: string, request: ListDentriesRequest): Promise<ListDentriesResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListDentriesHeaders({ });
-    return await this.listDentriesWithOptions(spaceId, request, headers, runtime);
-  }
-
   async listDentriesWithOptions(spaceId: string, request: ListDentriesRequest, headers: ListDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<ListDentriesResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -7786,19 +8186,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListDentriesResponse>(await this.doROARequest("ListDentries", "storage_1.0", "HTTP", "GET", "AK", `/v1.0/storage/spaces/${spaceId}/dentries`, "json", req, runtime), new ListDentriesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListDentries",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListDentriesResponse>(await this.execute(params, req, runtime), new ListDentriesResponse({}));
   }
 
-  async listDentryVersions(spaceId: string, dentryId: string, request: ListDentryVersionsRequest): Promise<ListDentryVersionsResponse> {
+  async listDentries(spaceId: string, request: ListDentriesRequest): Promise<ListDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListDentryVersionsHeaders({ });
-    return await this.listDentryVersionsWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new ListDentriesHeaders({ });
+    return await this.listDentriesWithOptions(spaceId, request, headers, runtime);
   }
 
   async listDentryVersionsWithOptions(spaceId: string, dentryId: string, request: ListDentryVersionsRequest, headers: ListDentryVersionsHeaders, runtime: $Util.RuntimeOptions): Promise<ListDentryVersionsResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -7825,19 +8234,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListDentryVersionsResponse>(await this.doROARequest("ListDentryVersions", "storage_1.0", "HTTP", "GET", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/versions`, "json", req, runtime), new ListDentryVersionsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListDentryVersions",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/versions`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListDentryVersionsResponse>(await this.execute(params, req, runtime), new ListDentryVersionsResponse({}));
   }
 
-  async listPermissions(spaceId: string, dentryId: string, request: ListPermissionsRequest): Promise<ListPermissionsResponse> {
+  async listDentryVersions(spaceId: string, dentryId: string, request: ListDentryVersionsRequest): Promise<ListDentryVersionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListPermissionsHeaders({ });
-    return await this.listPermissionsWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new ListDentryVersionsHeaders({ });
+    return await this.listDentryVersionsWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async listPermissionsWithOptions(spaceId: string, dentryId: string, request: ListPermissionsRequest, headers: ListPermissionsHeaders, runtime: $Util.RuntimeOptions): Promise<ListPermissionsResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7862,18 +8280,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ListPermissionsResponse>(await this.doROARequest("ListPermissions", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/permissions/query`, "json", req, runtime), new ListPermissionsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListPermissions",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/permissions/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListPermissionsResponse>(await this.execute(params, req, runtime), new ListPermissionsResponse({}));
   }
 
-  async listRecycleItems(recycleBinId: string, request: ListRecycleItemsRequest): Promise<ListRecycleItemsResponse> {
+  async listPermissions(spaceId: string, dentryId: string, request: ListPermissionsRequest): Promise<ListPermissionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListRecycleItemsHeaders({ });
-    return await this.listRecycleItemsWithOptions(recycleBinId, request, headers, runtime);
+    let headers = new ListPermissionsHeaders({ });
+    return await this.listPermissionsWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async listRecycleItemsWithOptions(recycleBinId: string, request: ListRecycleItemsRequest, headers: ListRecycleItemsHeaders, runtime: $Util.RuntimeOptions): Promise<ListRecycleItemsResponse> {
     Util.validateModel(request);
-    recycleBinId = OpenApiUtil.getEncodeParam(recycleBinId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -7900,18 +8328,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListRecycleItemsResponse>(await this.doROARequest("ListRecycleItems", "storage_1.0", "HTTP", "GET", "AK", `/v1.0/storage/recycleBins/${recycleBinId}/recycleItems`, "json", req, runtime), new ListRecycleItemsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListRecycleItems",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/recycleBins/${recycleBinId}/recycleItems`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListRecycleItemsResponse>(await this.execute(params, req, runtime), new ListRecycleItemsResponse({}));
   }
 
-  async moveDentries(spaceId: string, request: MoveDentriesRequest): Promise<MoveDentriesResponse> {
+  async listRecycleItems(recycleBinId: string, request: ListRecycleItemsRequest): Promise<ListRecycleItemsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new MoveDentriesHeaders({ });
-    return await this.moveDentriesWithOptions(spaceId, request, headers, runtime);
+    let headers = new ListRecycleItemsHeaders({ });
+    return await this.listRecycleItemsWithOptions(recycleBinId, request, headers, runtime);
   }
 
   async moveDentriesWithOptions(spaceId: string, request: MoveDentriesRequest, headers: MoveDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<MoveDentriesResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7948,19 +8386,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<MoveDentriesResponse>(await this.doROARequest("MoveDentries", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/batchMove`, "json", req, runtime), new MoveDentriesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "MoveDentries",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/batchMove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<MoveDentriesResponse>(await this.execute(params, req, runtime), new MoveDentriesResponse({}));
   }
 
-  async moveDentry(spaceId: string, dentryId: string, request: MoveDentryRequest): Promise<MoveDentryResponse> {
+  async moveDentries(spaceId: string, request: MoveDentriesRequest): Promise<MoveDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new MoveDentryHeaders({ });
-    return await this.moveDentryWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new MoveDentriesHeaders({ });
+    return await this.moveDentriesWithOptions(spaceId, request, headers, runtime);
   }
 
   async moveDentryWithOptions(spaceId: string, dentryId: string, request: MoveDentryRequest, headers: MoveDentryHeaders, runtime: $Util.RuntimeOptions): Promise<MoveDentryResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -7993,19 +8440,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<MoveDentryResponse>(await this.doROARequest("MoveDentry", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/move`, "json", req, runtime), new MoveDentryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "MoveDentry",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/move`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<MoveDentryResponse>(await this.execute(params, req, runtime), new MoveDentryResponse({}));
   }
 
-  async registerOpenInfo(spaceId: string, dentryId: string, request: RegisterOpenInfoRequest): Promise<RegisterOpenInfoResponse> {
+  async moveDentry(spaceId: string, dentryId: string, request: MoveDentryRequest): Promise<MoveDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RegisterOpenInfoHeaders({ });
-    return await this.registerOpenInfoWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new MoveDentryHeaders({ });
+    return await this.moveDentryWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async registerOpenInfoWithOptions(spaceId: string, dentryId: string, request: RegisterOpenInfoRequest, headers: RegisterOpenInfoHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterOpenInfoResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -8034,19 +8490,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RegisterOpenInfoResponse>(await this.doROARequest("RegisterOpenInfo", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/openInfos/register`, "json", req, runtime), new RegisterOpenInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RegisterOpenInfo",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/openInfos/register`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RegisterOpenInfoResponse>(await this.execute(params, req, runtime), new RegisterOpenInfoResponse({}));
   }
 
-  async renameDentry(spaceId: string, dentryId: string, request: RenameDentryRequest): Promise<RenameDentryResponse> {
+  async registerOpenInfo(spaceId: string, dentryId: string, request: RegisterOpenInfoRequest): Promise<RegisterOpenInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RenameDentryHeaders({ });
-    return await this.renameDentryWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new RegisterOpenInfoHeaders({ });
+    return await this.registerOpenInfoWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async renameDentryWithOptions(spaceId: string, dentryId: string, request: RenameDentryRequest, headers: RenameDentryHeaders, runtime: $Util.RuntimeOptions): Promise<RenameDentryResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -8071,19 +8536,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RenameDentryResponse>(await this.doROARequest("RenameDentry", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/rename`, "json", req, runtime), new RenameDentryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RenameDentry",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/rename`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RenameDentryResponse>(await this.execute(params, req, runtime), new RenameDentryResponse({}));
   }
 
-  async restoreRecycleItem(recycleBinId: string, recycleItemId: string, request: RestoreRecycleItemRequest): Promise<RestoreRecycleItemResponse> {
+  async renameDentry(spaceId: string, dentryId: string, request: RenameDentryRequest): Promise<RenameDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RestoreRecycleItemHeaders({ });
-    return await this.restoreRecycleItemWithOptions(recycleBinId, recycleItemId, request, headers, runtime);
+    let headers = new RenameDentryHeaders({ });
+    return await this.renameDentryWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async restoreRecycleItemWithOptions(recycleBinId: string, recycleItemId: string, request: RestoreRecycleItemRequest, headers: RestoreRecycleItemHeaders, runtime: $Util.RuntimeOptions): Promise<RestoreRecycleItemResponse> {
     Util.validateModel(request);
-    recycleBinId = OpenApiUtil.getEncodeParam(recycleBinId);
-    recycleItemId = OpenApiUtil.getEncodeParam(recycleItemId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -8108,18 +8582,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RestoreRecycleItemResponse>(await this.doROARequest("RestoreRecycleItem", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/recycleBins/${recycleBinId}/recycleItems/${recycleItemId}/restore`, "json", req, runtime), new RestoreRecycleItemResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RestoreRecycleItem",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/recycleBins/${recycleBinId}/recycleItems/${recycleItemId}/restore`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RestoreRecycleItemResponse>(await this.execute(params, req, runtime), new RestoreRecycleItemResponse({}));
   }
 
-  async restoreRecycleItems(recycleBinId: string, request: RestoreRecycleItemsRequest): Promise<RestoreRecycleItemsResponse> {
+  async restoreRecycleItem(recycleBinId: string, recycleItemId: string, request: RestoreRecycleItemRequest): Promise<RestoreRecycleItemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RestoreRecycleItemsHeaders({ });
-    return await this.restoreRecycleItemsWithOptions(recycleBinId, request, headers, runtime);
+    let headers = new RestoreRecycleItemHeaders({ });
+    return await this.restoreRecycleItemWithOptions(recycleBinId, recycleItemId, request, headers, runtime);
   }
 
   async restoreRecycleItemsWithOptions(recycleBinId: string, request: RestoreRecycleItemsRequest, headers: RestoreRecycleItemsHeaders, runtime: $Util.RuntimeOptions): Promise<RestoreRecycleItemsResponse> {
     Util.validateModel(request);
-    recycleBinId = OpenApiUtil.getEncodeParam(recycleBinId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -8148,20 +8632,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RestoreRecycleItemsResponse>(await this.doROARequest("RestoreRecycleItems", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/recycleBins/${recycleBinId}/recycleItems/batchRestore`, "json", req, runtime), new RestoreRecycleItemsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RestoreRecycleItems",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/recycleBins/${recycleBinId}/recycleItems/batchRestore`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RestoreRecycleItemsResponse>(await this.execute(params, req, runtime), new RestoreRecycleItemsResponse({}));
   }
 
-  async revertDentryVersion(spaceId: string, dentryId: string, version: string, request: RevertDentryVersionRequest): Promise<RevertDentryVersionResponse> {
+  async restoreRecycleItems(recycleBinId: string, request: RestoreRecycleItemsRequest): Promise<RestoreRecycleItemsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RevertDentryVersionHeaders({ });
-    return await this.revertDentryVersionWithOptions(spaceId, dentryId, version, request, headers, runtime);
+    let headers = new RestoreRecycleItemsHeaders({ });
+    return await this.restoreRecycleItemsWithOptions(recycleBinId, request, headers, runtime);
   }
 
   async revertDentryVersionWithOptions(spaceId: string, dentryId: string, version: string, request: RevertDentryVersionRequest, headers: RevertDentryVersionHeaders, runtime: $Util.RuntimeOptions): Promise<RevertDentryVersionResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
-    version = OpenApiUtil.getEncodeParam(version);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -8180,13 +8672,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<RevertDentryVersionResponse>(await this.doROARequest("RevertDentryVersion", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/versions/${version}/revert`, "json", req, runtime), new RevertDentryVersionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RevertDentryVersion",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/versions/${version}/revert`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RevertDentryVersionResponse>(await this.execute(params, req, runtime), new RevertDentryVersionResponse({}));
   }
 
-  async subscribeEvent(request: SubscribeEventRequest): Promise<SubscribeEventResponse> {
+  async revertDentryVersion(spaceId: string, dentryId: string, version: string, request: RevertDentryVersionRequest): Promise<RevertDentryVersionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SubscribeEventHeaders({ });
-    return await this.subscribeEventWithOptions(request, headers, runtime);
+    let headers = new RevertDentryVersionHeaders({ });
+    return await this.revertDentryVersionWithOptions(spaceId, dentryId, version, request, headers, runtime);
   }
 
   async subscribeEventWithOptions(request: SubscribeEventRequest, headers: SubscribeEventHeaders, runtime: $Util.RuntimeOptions): Promise<SubscribeEventResponse> {
@@ -8219,13 +8722,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SubscribeEventResponse>(await this.doROARequest("SubscribeEvent", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/events/subscribe`, "json", req, runtime), new SubscribeEventResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SubscribeEvent",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/events/subscribe`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SubscribeEventResponse>(await this.execute(params, req, runtime), new SubscribeEventResponse({}));
   }
 
-  async unsubscribeEvent(request: UnsubscribeEventRequest): Promise<UnsubscribeEventResponse> {
+  async subscribeEvent(request: SubscribeEventRequest): Promise<SubscribeEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UnsubscribeEventHeaders({ });
-    return await this.unsubscribeEventWithOptions(request, headers, runtime);
+    let headers = new SubscribeEventHeaders({ });
+    return await this.subscribeEventWithOptions(request, headers, runtime);
   }
 
   async unsubscribeEventWithOptions(request: UnsubscribeEventRequest, headers: UnsubscribeEventHeaders, runtime: $Util.RuntimeOptions): Promise<UnsubscribeEventResponse> {
@@ -8258,19 +8772,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UnsubscribeEventResponse>(await this.doROARequest("UnsubscribeEvent", "storage_1.0", "HTTP", "POST", "AK", `/v1.0/storage/events/unsubscribe`, "json", req, runtime), new UnsubscribeEventResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UnsubscribeEvent",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/events/unsubscribe`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UnsubscribeEventResponse>(await this.execute(params, req, runtime), new UnsubscribeEventResponse({}));
   }
 
-  async updateDentryAppProperties(spaceId: string, dentryId: string, request: UpdateDentryAppPropertiesRequest): Promise<UpdateDentryAppPropertiesResponse> {
+  async unsubscribeEvent(request: UnsubscribeEventRequest): Promise<UnsubscribeEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateDentryAppPropertiesHeaders({ });
-    return await this.updateDentryAppPropertiesWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new UnsubscribeEventHeaders({ });
+    return await this.unsubscribeEventWithOptions(request, headers, runtime);
   }
 
   async updateDentryAppPropertiesWithOptions(spaceId: string, dentryId: string, request: UpdateDentryAppPropertiesRequest, headers: UpdateDentryAppPropertiesHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateDentryAppPropertiesResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -8295,19 +8818,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateDentryAppPropertiesResponse>(await this.doROARequest("UpdateDentryAppProperties", "storage_1.0", "HTTP", "PUT", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/appProperties`, "json", req, runtime), new UpdateDentryAppPropertiesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateDentryAppProperties",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/appProperties`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateDentryAppPropertiesResponse>(await this.execute(params, req, runtime), new UpdateDentryAppPropertiesResponse({}));
   }
 
-  async updatePermission(spaceId: string, dentryId: string, request: UpdatePermissionRequest): Promise<UpdatePermissionResponse> {
+  async updateDentryAppProperties(spaceId: string, dentryId: string, request: UpdateDentryAppPropertiesRequest): Promise<UpdateDentryAppPropertiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdatePermissionHeaders({ });
-    return await this.updatePermissionWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new UpdateDentryAppPropertiesHeaders({ });
+    return await this.updateDentryAppPropertiesWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async updatePermissionWithOptions(spaceId: string, dentryId: string, request: UpdatePermissionRequest, headers: UpdatePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<UpdatePermissionResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -8340,7 +8872,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdatePermissionResponse>(await this.doROARequest("UpdatePermission", "storage_1.0", "HTTP", "PUT", "AK", `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/permissions`, "json", req, runtime), new UpdatePermissionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdatePermission",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/permissions`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdatePermissionResponse>(await this.execute(params, req, runtime), new UpdatePermissionResponse({}));
+  }
+
+  async updatePermission(spaceId: string, dentryId: string, request: UpdatePermissionRequest): Promise<UpdatePermissionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdatePermissionHeaders({ });
+    return await this.updatePermissionWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
 }

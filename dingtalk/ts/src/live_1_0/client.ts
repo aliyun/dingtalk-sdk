@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -78,10 +80,12 @@ export class AddShareCidListResponseBody extends $tea.Model {
 
 export class AddShareCidListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddShareCidListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -89,6 +93,7 @@ export class AddShareCidListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddShareCidListResponseBody,
     };
   }
@@ -175,10 +180,12 @@ export class CreateCloudFeedResponseBody extends $tea.Model {
 
 export class CreateCloudFeedResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateCloudFeedResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -186,6 +193,7 @@ export class CreateCloudFeedResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateCloudFeedResponseBody,
     };
   }
@@ -275,10 +283,12 @@ export class CreateLiveResponseBody extends $tea.Model {
 
 export class CreateLiveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateLiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -286,6 +296,7 @@ export class CreateLiveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateLiveResponseBody,
     };
   }
@@ -360,10 +371,12 @@ export class DeleteLiveResponseBody extends $tea.Model {
 
 export class DeleteLiveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteLiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -371,6 +384,7 @@ export class DeleteLiveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteLiveResponseBody,
     };
   }
@@ -442,10 +456,12 @@ export class DeleteLiveFeedResponseBody extends $tea.Model {
 
 export class DeleteLiveFeedResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteLiveFeedResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -453,6 +469,7 @@ export class DeleteLiveFeedResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteLiveFeedResponseBody,
     };
   }
@@ -530,10 +547,12 @@ export class EditFeedReplayResponseBody extends $tea.Model {
 
 export class EditFeedReplayResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditFeedReplayResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -541,6 +560,7 @@ export class EditFeedReplayResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditFeedReplayResponseBody,
     };
   }
@@ -630,10 +650,12 @@ export class GetUserAllLiveListResponseBody extends $tea.Model {
 
 export class GetUserAllLiveListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserAllLiveListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -641,6 +663,7 @@ export class GetUserAllLiveListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserAllLiveListResponseBody,
     };
   }
@@ -730,10 +753,12 @@ export class GetUserCreateLiveListResponseBody extends $tea.Model {
 
 export class GetUserCreateLiveListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserCreateLiveListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -741,6 +766,7 @@ export class GetUserCreateLiveListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserCreateLiveListResponseBody,
     };
   }
@@ -821,10 +847,12 @@ export class GetUserWatchLiveListResponseBody extends $tea.Model {
 
 export class GetUserWatchLiveListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserWatchLiveListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -832,6 +860,7 @@ export class GetUserWatchLiveListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserWatchLiveListResponseBody,
     };
   }
@@ -934,10 +963,12 @@ export class ModifyFeedWhiteListResponseBody extends $tea.Model {
 
 export class ModifyFeedWhiteListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ModifyFeedWhiteListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -945,6 +976,7 @@ export class ModifyFeedWhiteListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ModifyFeedWhiteListResponseBody,
     };
   }
@@ -1016,10 +1048,12 @@ export class QueryFeedWhiteListResponseBody extends $tea.Model {
 
 export class QueryFeedWhiteListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryFeedWhiteListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1027,6 +1061,7 @@ export class QueryFeedWhiteListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryFeedWhiteListResponseBody,
     };
   }
@@ -1101,10 +1136,12 @@ export class QueryLiveInfoResponseBody extends $tea.Model {
 
 export class QueryLiveInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryLiveInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1112,6 +1149,7 @@ export class QueryLiveInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryLiveInfoResponseBody,
     };
   }
@@ -1186,10 +1224,12 @@ export class QueryLiveWatchDetailResponseBody extends $tea.Model {
 
 export class QueryLiveWatchDetailResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryLiveWatchDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1197,6 +1237,7 @@ export class QueryLiveWatchDetailResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryLiveWatchDetailResponseBody,
     };
   }
@@ -1277,10 +1318,12 @@ export class QueryLiveWatchUserListResponseBody extends $tea.Model {
 
 export class QueryLiveWatchUserListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryLiveWatchUserListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1288,6 +1331,7 @@ export class QueryLiveWatchUserListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryLiveWatchUserListResponseBody,
     };
   }
@@ -1384,10 +1428,12 @@ export class QuerySubscribeStatusResponseBody extends $tea.Model {
 
 export class QuerySubscribeStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QuerySubscribeStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1395,6 +1441,7 @@ export class QuerySubscribeStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QuerySubscribeStatusResponseBody,
     };
   }
@@ -1466,10 +1513,12 @@ export class StartCloudFeedResponseBody extends $tea.Model {
 
 export class StartCloudFeedResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: StartCloudFeedResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1477,6 +1526,7 @@ export class StartCloudFeedResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: StartCloudFeedResponseBody,
     };
   }
@@ -1548,10 +1598,12 @@ export class StopCloudFeedResponseBody extends $tea.Model {
 
 export class StopCloudFeedResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: StopCloudFeedResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1559,6 +1611,7 @@ export class StopCloudFeedResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: StopCloudFeedResponseBody,
     };
   }
@@ -1636,10 +1689,12 @@ export class SubscribeLiveResponseBody extends $tea.Model {
 
 export class SubscribeLiveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SubscribeLiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1647,6 +1702,7 @@ export class SubscribeLiveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SubscribeLiveResponseBody,
     };
   }
@@ -1736,10 +1792,12 @@ export class UpdateLiveResponseBody extends $tea.Model {
 
 export class UpdateLiveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateLiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1747,6 +1805,7 @@ export class UpdateLiveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateLiveResponseBody,
     };
   }
@@ -1830,10 +1889,12 @@ export class UpdateLiveFeedResponseBody extends $tea.Model {
 
 export class UpdateLiveFeedResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateLiveFeedResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1841,6 +1902,7 @@ export class UpdateLiveFeedResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateLiveFeedResponseBody,
     };
   }
@@ -2564,9 +2626,12 @@ export class UpdateLiveResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2575,15 +2640,8 @@ export default class Client extends OpenApi {
   }
 
 
-  async addShareCidList(feedId: string, request: AddShareCidListRequest): Promise<AddShareCidListResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddShareCidListHeaders({ });
-    return await this.addShareCidListWithOptions(feedId, request, headers, runtime);
-  }
-
   async addShareCidListWithOptions(feedId: string, request: AddShareCidListRequest, headers: AddShareCidListHeaders, runtime: $Util.RuntimeOptions): Promise<AddShareCidListResponse> {
     Util.validateModel(request);
-    feedId = OpenApiUtil.getEncodeParam(feedId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.groupIdType)) {
       body["groupIdType"] = request.groupIdType;
@@ -2610,13 +2668,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddShareCidListResponse>(await this.doROARequest("AddShareCidList", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/cloudFeeds/${feedId}/share`, "json", req, runtime), new AddShareCidListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddShareCidList",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/cloudFeeds/${feedId}/share`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AddShareCidListResponse>(await this.execute(params, req, runtime), new AddShareCidListResponse({}));
   }
 
-  async createCloudFeed(request: CreateCloudFeedRequest): Promise<CreateCloudFeedResponse> {
+  async addShareCidList(feedId: string, request: AddShareCidListRequest): Promise<AddShareCidListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateCloudFeedHeaders({ });
-    return await this.createCloudFeedWithOptions(request, headers, runtime);
+    let headers = new AddShareCidListHeaders({ });
+    return await this.addShareCidListWithOptions(feedId, request, headers, runtime);
   }
 
   async createCloudFeedWithOptions(request: CreateCloudFeedRequest, headers: CreateCloudFeedHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCloudFeedResponse> {
@@ -2659,13 +2728,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateCloudFeedResponse>(await this.doROARequest("CreateCloudFeed", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/cloudFeeds`, "json", req, runtime), new CreateCloudFeedResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateCloudFeed",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/cloudFeeds`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateCloudFeedResponse>(await this.execute(params, req, runtime), new CreateCloudFeedResponse({}));
   }
 
-  async createLive(request: CreateLiveRequest): Promise<CreateLiveResponse> {
+  async createCloudFeed(request: CreateCloudFeedRequest): Promise<CreateCloudFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateLiveHeaders({ });
-    return await this.createLiveWithOptions(request, headers, runtime);
+    let headers = new CreateCloudFeedHeaders({ });
+    return await this.createCloudFeedWithOptions(request, headers, runtime);
   }
 
   async createLiveWithOptions(request: CreateLiveRequest, headers: CreateLiveHeaders, runtime: $Util.RuntimeOptions): Promise<CreateLiveResponse> {
@@ -2712,13 +2792,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateLiveResponse>(await this.doROARequest("CreateLive", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/lives`, "json", req, runtime), new CreateLiveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateLive",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/lives`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateLiveResponse>(await this.execute(params, req, runtime), new CreateLiveResponse({}));
   }
 
-  async deleteLive(request: DeleteLiveRequest): Promise<DeleteLiveResponse> {
+  async createLive(request: CreateLiveRequest): Promise<CreateLiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteLiveHeaders({ });
-    return await this.deleteLiveWithOptions(request, headers, runtime);
+    let headers = new CreateLiveHeaders({ });
+    return await this.createLiveWithOptions(request, headers, runtime);
   }
 
   async deleteLiveWithOptions(request: DeleteLiveRequest, headers: DeleteLiveHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteLiveResponse> {
@@ -2745,18 +2836,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteLiveResponse>(await this.doROARequest("DeleteLive", "live_1.0", "HTTP", "DELETE", "AK", `/v1.0/live/lives`, "json", req, runtime), new DeleteLiveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteLive",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/lives`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteLiveResponse>(await this.execute(params, req, runtime), new DeleteLiveResponse({}));
   }
 
-  async deleteLiveFeed(feedId: string, request: DeleteLiveFeedRequest): Promise<DeleteLiveFeedResponse> {
+  async deleteLive(request: DeleteLiveRequest): Promise<DeleteLiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteLiveFeedHeaders({ });
-    return await this.deleteLiveFeedWithOptions(feedId, request, headers, runtime);
+    let headers = new DeleteLiveHeaders({ });
+    return await this.deleteLiveWithOptions(request, headers, runtime);
   }
 
   async deleteLiveFeedWithOptions(feedId: string, request: DeleteLiveFeedRequest, headers: DeleteLiveFeedHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteLiveFeedResponse> {
     Util.validateModel(request);
-    feedId = OpenApiUtil.getEncodeParam(feedId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       query["userId"] = request.userId;
@@ -2775,18 +2876,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteLiveFeedResponse>(await this.doROARequest("DeleteLiveFeed", "live_1.0", "HTTP", "DELETE", "AK", `/v1.0/live/openFeeds/${feedId}`, "json", req, runtime), new DeleteLiveFeedResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteLiveFeed",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/openFeeds/${feedId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteLiveFeedResponse>(await this.execute(params, req, runtime), new DeleteLiveFeedResponse({}));
   }
 
-  async editFeedReplay(feedId: string, request: EditFeedReplayRequest): Promise<EditFeedReplayResponse> {
+  async deleteLiveFeed(feedId: string, request: DeleteLiveFeedRequest): Promise<DeleteLiveFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditFeedReplayHeaders({ });
-    return await this.editFeedReplayWithOptions(feedId, request, headers, runtime);
+    let headers = new DeleteLiveFeedHeaders({ });
+    return await this.deleteLiveFeedWithOptions(feedId, request, headers, runtime);
   }
 
   async editFeedReplayWithOptions(feedId: string, request: EditFeedReplayRequest, headers: EditFeedReplayHeaders, runtime: $Util.RuntimeOptions): Promise<EditFeedReplayResponse> {
     Util.validateModel(request);
-    feedId = OpenApiUtil.getEncodeParam(feedId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.editEndTime)) {
       body["editEndTime"] = request.editEndTime;
@@ -2813,13 +2924,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditFeedReplayResponse>(await this.doROARequest("EditFeedReplay", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/openFeeds/${feedId}/cutReplay`, "json", req, runtime), new EditFeedReplayResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditFeedReplay",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/openFeeds/${feedId}/cutReplay`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<EditFeedReplayResponse>(await this.execute(params, req, runtime), new EditFeedReplayResponse({}));
   }
 
-  async getUserAllLiveList(request: GetUserAllLiveListRequest): Promise<GetUserAllLiveListResponse> {
+  async editFeedReplay(feedId: string, request: EditFeedReplayRequest): Promise<EditFeedReplayResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserAllLiveListHeaders({ });
-    return await this.getUserAllLiveListWithOptions(request, headers, runtime);
+    let headers = new EditFeedReplayHeaders({ });
+    return await this.editFeedReplayWithOptions(feedId, request, headers, runtime);
   }
 
   async getUserAllLiveListWithOptions(request: GetUserAllLiveListRequest, headers: GetUserAllLiveListHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserAllLiveListResponse> {
@@ -2868,13 +2990,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetUserAllLiveListResponse>(await this.doROARequest("GetUserAllLiveList", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/users/allLiveInfos/query`, "json", req, runtime), new GetUserAllLiveListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserAllLiveList",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/users/allLiveInfos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserAllLiveListResponse>(await this.execute(params, req, runtime), new GetUserAllLiveListResponse({}));
   }
 
-  async getUserCreateLiveList(request: GetUserCreateLiveListRequest): Promise<GetUserCreateLiveListResponse> {
+  async getUserAllLiveList(request: GetUserAllLiveListRequest): Promise<GetUserAllLiveListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserCreateLiveListHeaders({ });
-    return await this.getUserCreateLiveListWithOptions(request, headers, runtime);
+    let headers = new GetUserAllLiveListHeaders({ });
+    return await this.getUserAllLiveListWithOptions(request, headers, runtime);
   }
 
   async getUserCreateLiveListWithOptions(request: GetUserCreateLiveListRequest, headers: GetUserCreateLiveListHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserCreateLiveListResponse> {
@@ -2923,13 +3056,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetUserCreateLiveListResponse>(await this.doROARequest("GetUserCreateLiveList", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/users/createLiveInfos/query`, "json", req, runtime), new GetUserCreateLiveListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserCreateLiveList",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/users/createLiveInfos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserCreateLiveListResponse>(await this.execute(params, req, runtime), new GetUserCreateLiveListResponse({}));
   }
 
-  async getUserWatchLiveList(request: GetUserWatchLiveListRequest): Promise<GetUserWatchLiveListResponse> {
+  async getUserCreateLiveList(request: GetUserCreateLiveListRequest): Promise<GetUserCreateLiveListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserWatchLiveListHeaders({ });
-    return await this.getUserWatchLiveListWithOptions(request, headers, runtime);
+    let headers = new GetUserCreateLiveListHeaders({ });
+    return await this.getUserCreateLiveListWithOptions(request, headers, runtime);
   }
 
   async getUserWatchLiveListWithOptions(request: GetUserWatchLiveListRequest, headers: GetUserWatchLiveListHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserWatchLiveListResponse> {
@@ -2964,18 +3108,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetUserWatchLiveListResponse>(await this.doROARequest("GetUserWatchLiveList", "live_1.0", "HTTP", "GET", "AK", `/v1.0/live/users/watchRecords`, "json", req, runtime), new GetUserWatchLiveListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserWatchLiveList",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/users/watchRecords`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserWatchLiveListResponse>(await this.execute(params, req, runtime), new GetUserWatchLiveListResponse({}));
   }
 
-  async modifyFeedWhiteList(feedId: string, request: ModifyFeedWhiteListRequest): Promise<ModifyFeedWhiteListResponse> {
+  async getUserWatchLiveList(request: GetUserWatchLiveListRequest): Promise<GetUserWatchLiveListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ModifyFeedWhiteListHeaders({ });
-    return await this.modifyFeedWhiteListWithOptions(feedId, request, headers, runtime);
+    let headers = new GetUserWatchLiveListHeaders({ });
+    return await this.getUserWatchLiveListWithOptions(request, headers, runtime);
   }
 
   async modifyFeedWhiteListWithOptions(feedId: string, tmpReq: ModifyFeedWhiteListRequest, headers: ModifyFeedWhiteListHeaders, runtime: $Util.RuntimeOptions): Promise<ModifyFeedWhiteListResponse> {
     Util.validateModel(tmpReq);
-    feedId = OpenApiUtil.getEncodeParam(feedId);
     let request = new ModifyFeedWhiteListShrinkRequest({ });
     OpenApiUtil.convert(tmpReq, request);
     if (!Util.isUnset(tmpReq.modifyUserList)) {
@@ -3008,18 +3162,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ModifyFeedWhiteListResponse>(await this.doROARequest("ModifyFeedWhiteList", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/openFeeds/${feedId}/whiteList`, "json", req, runtime), new ModifyFeedWhiteListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ModifyFeedWhiteList",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/openFeeds/${feedId}/whiteList`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ModifyFeedWhiteListResponse>(await this.execute(params, req, runtime), new ModifyFeedWhiteListResponse({}));
   }
 
-  async queryFeedWhiteList(feedId: string, request: QueryFeedWhiteListRequest): Promise<QueryFeedWhiteListResponse> {
+  async modifyFeedWhiteList(feedId: string, request: ModifyFeedWhiteListRequest): Promise<ModifyFeedWhiteListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryFeedWhiteListHeaders({ });
-    return await this.queryFeedWhiteListWithOptions(feedId, request, headers, runtime);
+    let headers = new ModifyFeedWhiteListHeaders({ });
+    return await this.modifyFeedWhiteListWithOptions(feedId, request, headers, runtime);
   }
 
   async queryFeedWhiteListWithOptions(feedId: string, request: QueryFeedWhiteListRequest, headers: QueryFeedWhiteListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryFeedWhiteListResponse> {
     Util.validateModel(request);
-    feedId = OpenApiUtil.getEncodeParam(feedId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       query["userId"] = request.userId;
@@ -3038,13 +3202,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryFeedWhiteListResponse>(await this.doROARequest("QueryFeedWhiteList", "live_1.0", "HTTP", "GET", "AK", `/v1.0/live/openFeeds/${feedId}/whiteList`, "json", req, runtime), new QueryFeedWhiteListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryFeedWhiteList",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/openFeeds/${feedId}/whiteList`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryFeedWhiteListResponse>(await this.execute(params, req, runtime), new QueryFeedWhiteListResponse({}));
   }
 
-  async queryLiveInfo(request: QueryLiveInfoRequest): Promise<QueryLiveInfoResponse> {
+  async queryFeedWhiteList(feedId: string, request: QueryFeedWhiteListRequest): Promise<QueryFeedWhiteListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryLiveInfoHeaders({ });
-    return await this.queryLiveInfoWithOptions(request, headers, runtime);
+    let headers = new QueryFeedWhiteListHeaders({ });
+    return await this.queryFeedWhiteListWithOptions(feedId, request, headers, runtime);
   }
 
   async queryLiveInfoWithOptions(request: QueryLiveInfoRequest, headers: QueryLiveInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryLiveInfoResponse> {
@@ -3071,13 +3246,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryLiveInfoResponse>(await this.doROARequest("QueryLiveInfo", "live_1.0", "HTTP", "GET", "AK", `/v1.0/live/lives`, "json", req, runtime), new QueryLiveInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryLiveInfo",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/lives`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryLiveInfoResponse>(await this.execute(params, req, runtime), new QueryLiveInfoResponse({}));
   }
 
-  async queryLiveWatchDetail(request: QueryLiveWatchDetailRequest): Promise<QueryLiveWatchDetailResponse> {
+  async queryLiveInfo(request: QueryLiveInfoRequest): Promise<QueryLiveInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryLiveWatchDetailHeaders({ });
-    return await this.queryLiveWatchDetailWithOptions(request, headers, runtime);
+    let headers = new QueryLiveInfoHeaders({ });
+    return await this.queryLiveInfoWithOptions(request, headers, runtime);
   }
 
   async queryLiveWatchDetailWithOptions(request: QueryLiveWatchDetailRequest, headers: QueryLiveWatchDetailHeaders, runtime: $Util.RuntimeOptions): Promise<QueryLiveWatchDetailResponse> {
@@ -3104,13 +3290,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryLiveWatchDetailResponse>(await this.doROARequest("QueryLiveWatchDetail", "live_1.0", "HTTP", "GET", "AK", `/v1.0/live/lives/watchDetails`, "json", req, runtime), new QueryLiveWatchDetailResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryLiveWatchDetail",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/lives/watchDetails`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryLiveWatchDetailResponse>(await this.execute(params, req, runtime), new QueryLiveWatchDetailResponse({}));
   }
 
-  async queryLiveWatchUserList(request: QueryLiveWatchUserListRequest): Promise<QueryLiveWatchUserListResponse> {
+  async queryLiveWatchDetail(request: QueryLiveWatchDetailRequest): Promise<QueryLiveWatchDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryLiveWatchUserListHeaders({ });
-    return await this.queryLiveWatchUserListWithOptions(request, headers, runtime);
+    let headers = new QueryLiveWatchDetailHeaders({ });
+    return await this.queryLiveWatchDetailWithOptions(request, headers, runtime);
   }
 
   async queryLiveWatchUserListWithOptions(request: QueryLiveWatchUserListRequest, headers: QueryLiveWatchUserListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryLiveWatchUserListResponse> {
@@ -3145,13 +3342,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryLiveWatchUserListResponse>(await this.doROARequest("QueryLiveWatchUserList", "live_1.0", "HTTP", "GET", "AK", `/v1.0/live/lives/watchUsers`, "json", req, runtime), new QueryLiveWatchUserListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryLiveWatchUserList",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/lives/watchUsers`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryLiveWatchUserListResponse>(await this.execute(params, req, runtime), new QueryLiveWatchUserListResponse({}));
   }
 
-  async querySubscribeStatus(request: QuerySubscribeStatusRequest): Promise<QuerySubscribeStatusResponse> {
+  async queryLiveWatchUserList(request: QueryLiveWatchUserListRequest): Promise<QueryLiveWatchUserListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QuerySubscribeStatusHeaders({ });
-    return await this.querySubscribeStatusWithOptions(request, headers, runtime);
+    let headers = new QueryLiveWatchUserListHeaders({ });
+    return await this.queryLiveWatchUserListWithOptions(request, headers, runtime);
   }
 
   async querySubscribeStatusWithOptions(tmpReq: QuerySubscribeStatusRequest, headers: QuerySubscribeStatusHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySubscribeStatusResponse> {
@@ -3184,7 +3392,58 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QuerySubscribeStatusResponse>(await this.doROARequest("QuerySubscribeStatus", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/subscribeStatuses/query`, "json", req, runtime), new QuerySubscribeStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QuerySubscribeStatus",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/subscribeStatuses/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QuerySubscribeStatusResponse>(await this.execute(params, req, runtime), new QuerySubscribeStatusResponse({}));
+  }
+
+  async querySubscribeStatus(request: QuerySubscribeStatusRequest): Promise<QuerySubscribeStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QuerySubscribeStatusHeaders({ });
+    return await this.querySubscribeStatusWithOptions(request, headers, runtime);
+  }
+
+  async startCloudFeedWithOptions(feedId: string, request: StartCloudFeedRequest, headers: StartCloudFeedHeaders, runtime: $Util.RuntimeOptions): Promise<StartCloudFeedResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "StartCloudFeed",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/cloudFeeds/${feedId}/start`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<StartCloudFeedResponse>(await this.execute(params, req, runtime), new StartCloudFeedResponse({}));
   }
 
   async startCloudFeed(feedId: string, request: StartCloudFeedRequest): Promise<StartCloudFeedResponse> {
@@ -3193,9 +3452,8 @@ export default class Client extends OpenApi {
     return await this.startCloudFeedWithOptions(feedId, request, headers, runtime);
   }
 
-  async startCloudFeedWithOptions(feedId: string, request: StartCloudFeedRequest, headers: StartCloudFeedHeaders, runtime: $Util.RuntimeOptions): Promise<StartCloudFeedResponse> {
+  async stopCloudFeedWithOptions(feedId: string, request: StopCloudFeedRequest, headers: StopCloudFeedHeaders, runtime: $Util.RuntimeOptions): Promise<StopCloudFeedResponse> {
     Util.validateModel(request);
-    feedId = OpenApiUtil.getEncodeParam(feedId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       body["userId"] = request.userId;
@@ -3214,43 +3472,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<StartCloudFeedResponse>(await this.doROARequest("StartCloudFeed", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/cloudFeeds/${feedId}/start`, "json", req, runtime), new StartCloudFeedResponse({}));
+    let params = new $OpenApi.Params({
+      action: "StopCloudFeed",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/cloudFeeds/${feedId}/stop`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<StopCloudFeedResponse>(await this.execute(params, req, runtime), new StopCloudFeedResponse({}));
   }
 
   async stopCloudFeed(feedId: string, request: StopCloudFeedRequest): Promise<StopCloudFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new StopCloudFeedHeaders({ });
     return await this.stopCloudFeedWithOptions(feedId, request, headers, runtime);
-  }
-
-  async stopCloudFeedWithOptions(feedId: string, request: StopCloudFeedRequest, headers: StopCloudFeedHeaders, runtime: $Util.RuntimeOptions): Promise<StopCloudFeedResponse> {
-    Util.validateModel(request);
-    feedId = OpenApiUtil.getEncodeParam(feedId);
-    let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.userId)) {
-      body["userId"] = request.userId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      body: OpenApiUtil.parseToMap(body),
-    });
-    return $tea.cast<StopCloudFeedResponse>(await this.doROARequest("StopCloudFeed", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/cloudFeeds/${feedId}/stop`, "json", req, runtime), new StopCloudFeedResponse({}));
-  }
-
-  async subscribeLive(request: SubscribeLiveRequest): Promise<SubscribeLiveResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SubscribeLiveHeaders({ });
-    return await this.subscribeLiveWithOptions(request, headers, runtime);
   }
 
   async subscribeLiveWithOptions(request: SubscribeLiveRequest, headers: SubscribeLiveHeaders, runtime: $Util.RuntimeOptions): Promise<SubscribeLiveResponse> {
@@ -3281,13 +3520,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SubscribeLiveResponse>(await this.doROARequest("SubscribeLive", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/lives/subscribe`, "json", req, runtime), new SubscribeLiveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SubscribeLive",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/lives/subscribe`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SubscribeLiveResponse>(await this.execute(params, req, runtime), new SubscribeLiveResponse({}));
   }
 
-  async updateLive(request: UpdateLiveRequest): Promise<UpdateLiveResponse> {
+  async subscribeLive(request: SubscribeLiveRequest): Promise<SubscribeLiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateLiveHeaders({ });
-    return await this.updateLiveWithOptions(request, headers, runtime);
+    let headers = new SubscribeLiveHeaders({ });
+    return await this.subscribeLiveWithOptions(request, headers, runtime);
   }
 
   async updateLiveWithOptions(request: UpdateLiveRequest, headers: UpdateLiveHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateLiveResponse> {
@@ -3334,18 +3584,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateLiveResponse>(await this.doROARequest("UpdateLive", "live_1.0", "HTTP", "PUT", "AK", `/v1.0/live/lives`, "json", req, runtime), new UpdateLiveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateLive",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/lives`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateLiveResponse>(await this.execute(params, req, runtime), new UpdateLiveResponse({}));
   }
 
-  async updateLiveFeed(feedId: string, request: UpdateLiveFeedRequest): Promise<UpdateLiveFeedResponse> {
+  async updateLive(request: UpdateLiveRequest): Promise<UpdateLiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateLiveFeedHeaders({ });
-    return await this.updateLiveFeedWithOptions(feedId, request, headers, runtime);
+    let headers = new UpdateLiveHeaders({ });
+    return await this.updateLiveWithOptions(request, headers, runtime);
   }
 
   async updateLiveFeedWithOptions(feedId: string, request: UpdateLiveFeedRequest, headers: UpdateLiveFeedHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateLiveFeedResponse> {
     Util.validateModel(request);
-    feedId = OpenApiUtil.getEncodeParam(feedId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.coverUrl)) {
       query["coverUrl"] = request.coverUrl;
@@ -3380,7 +3640,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<UpdateLiveFeedResponse>(await this.doROARequest("UpdateLiveFeed", "live_1.0", "HTTP", "POST", "AK", `/v1.0/live/openFeeds/${feedId}`, "json", req, runtime), new UpdateLiveFeedResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateLiveFeed",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/openFeeds/${feedId}`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateLiveFeedResponse>(await this.execute(params, req, runtime), new UpdateLiveFeedResponse({}));
+  }
+
+  async updateLiveFeed(feedId: string, request: UpdateLiveFeedRequest): Promise<UpdateLiveFeedResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateLiveFeedHeaders({ });
+    return await this.updateLiveFeedWithOptions(feedId, request, headers, runtime);
   }
 
 }

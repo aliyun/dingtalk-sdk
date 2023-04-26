@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -87,10 +89,12 @@ export class CampusAddRenterMemberResponseBody extends $tea.Model {
 
 export class CampusAddRenterMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusAddRenterMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -98,6 +102,7 @@ export class CampusAddRenterMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusAddRenterMemberResponseBody,
     };
   }
@@ -220,10 +225,12 @@ export class CampusCreateCampusResponseBody extends $tea.Model {
 
 export class CampusCreateCampusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusCreateCampusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -231,6 +238,7 @@ export class CampusCreateCampusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusCreateCampusResponseBody,
     };
   }
@@ -305,10 +313,12 @@ export class CampusCreateCampusGroupResponseBody extends $tea.Model {
 
 export class CampusCreateCampusGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusCreateCampusGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -316,6 +326,7 @@ export class CampusCreateCampusGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusCreateCampusGroupResponseBody,
     };
   }
@@ -402,10 +413,12 @@ export class CampusCreateRenterResponseBody extends $tea.Model {
 
 export class CampusCreateRenterResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusCreateRenterResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -413,6 +426,7 @@ export class CampusCreateRenterResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusCreateRenterResponseBody,
     };
   }
@@ -487,10 +501,12 @@ export class CampusDelRenterMemberResponseBody extends $tea.Model {
 
 export class CampusDelRenterMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusDelRenterMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -498,6 +514,7 @@ export class CampusDelRenterMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusDelRenterMemberResponseBody,
     };
   }
@@ -569,10 +586,12 @@ export class CampusDeleteCampusGroupResponseBody extends $tea.Model {
 
 export class CampusDeleteCampusGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusDeleteCampusGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -580,6 +599,7 @@ export class CampusDeleteCampusGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusDeleteCampusGroupResponseBody,
     };
   }
@@ -632,15 +652,18 @@ export class CampusDeleteRenterRequest extends $tea.Model {
 
 export class CampusDeleteRenterResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -762,10 +785,12 @@ export class CampusGetCampusResponseBody extends $tea.Model {
 
 export class CampusGetCampusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusGetCampusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -773,6 +798,7 @@ export class CampusGetCampusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusGetCampusResponseBody,
     };
   }
@@ -847,10 +873,12 @@ export class CampusGetCampusGroupResponseBody extends $tea.Model {
 
 export class CampusGetCampusGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusGetCampusGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -858,6 +886,7 @@ export class CampusGetCampusGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusGetCampusGroupResponseBody,
     };
   }
@@ -953,10 +982,12 @@ export class CampusGetRenterResponseBody extends $tea.Model {
 
 export class CampusGetRenterResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusGetRenterResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -964,6 +995,7 @@ export class CampusGetRenterResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusGetRenterResponseBody,
     };
   }
@@ -1053,10 +1085,12 @@ export class CampusGetRenterMemberResponseBody extends $tea.Model {
 
 export class CampusGetRenterMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusGetRenterMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1064,6 +1098,7 @@ export class CampusGetRenterMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusGetRenterMemberResponseBody,
     };
   }
@@ -1135,10 +1170,12 @@ export class CampusListCampusResponseBody extends $tea.Model {
 
 export class CampusListCampusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusListCampusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1146,6 +1183,7 @@ export class CampusListCampusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusListCampusResponseBody,
     };
   }
@@ -1198,10 +1236,12 @@ export class CampusListCampusGroupResponseBody extends $tea.Model {
 
 export class CampusListCampusGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusListCampusGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1209,6 +1249,7 @@ export class CampusListCampusGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusListCampusGroupResponseBody,
     };
   }
@@ -1261,10 +1302,12 @@ export class CampusListRenterResponseBody extends $tea.Model {
 
 export class CampusListRenterResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusListRenterResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1272,6 +1315,7 @@ export class CampusListRenterResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusListRenterResponseBody,
     };
   }
@@ -1343,10 +1387,12 @@ export class CampusListRenterMembersResponseBody extends $tea.Model {
 
 export class CampusListRenterMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusListRenterMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1354,6 +1400,7 @@ export class CampusListRenterMembersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusListRenterMembersResponseBody,
     };
   }
@@ -1470,10 +1517,12 @@ export class CampusUpdateCampusResponseBody extends $tea.Model {
 
 export class CampusUpdateCampusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusUpdateCampusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1481,6 +1530,7 @@ export class CampusUpdateCampusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusUpdateCampusResponseBody,
     };
   }
@@ -1558,10 +1608,12 @@ export class CampusUpdateCampusGroupResponseBody extends $tea.Model {
 
 export class CampusUpdateCampusGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusUpdateCampusGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1569,6 +1621,7 @@ export class CampusUpdateCampusGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusUpdateCampusGroupResponseBody,
     };
   }
@@ -1658,10 +1711,12 @@ export class CampusUpdateRenterResponseBody extends $tea.Model {
 
 export class CampusUpdateRenterResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusUpdateRenterResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1669,6 +1724,7 @@ export class CampusUpdateRenterResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusUpdateRenterResponseBody,
     };
   }
@@ -1752,10 +1808,12 @@ export class CampusUpdateRenterMemberResponseBody extends $tea.Model {
 
 export class CampusUpdateRenterMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CampusUpdateRenterMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1763,6 +1821,7 @@ export class CampusUpdateRenterMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CampusUpdateRenterMemberResponseBody,
     };
   }
@@ -1834,10 +1893,12 @@ export class CollegeActiveCollegeDeptGroupResponseBody extends $tea.Model {
 
 export class CollegeActiveCollegeDeptGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeActiveCollegeDeptGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1845,6 +1906,7 @@ export class CollegeActiveCollegeDeptGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeActiveCollegeDeptGroupResponseBody,
     };
   }
@@ -1925,10 +1987,12 @@ export class CollegeAddCollegeDeptResponseBody extends $tea.Model {
 
 export class CollegeAddCollegeDeptResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeAddCollegeDeptResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1936,6 +2000,7 @@ export class CollegeAddCollegeDeptResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeAddCollegeDeptResponseBody,
     };
   }
@@ -2010,10 +2075,12 @@ export class CollegeAddManagerResponseBody extends $tea.Model {
 
 export class CollegeAddManagerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeAddManagerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2021,6 +2088,7 @@ export class CollegeAddManagerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeAddManagerResponseBody,
     };
   }
@@ -2128,10 +2196,12 @@ export class CollegeAddStudentResponseBody extends $tea.Model {
 
 export class CollegeAddStudentResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeAddStudentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2139,6 +2209,7 @@ export class CollegeAddStudentResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeAddStudentResponseBody,
     };
   }
@@ -2216,10 +2287,12 @@ export class CollegeChangeStudentDeptResponseBody extends $tea.Model {
 
 export class CollegeChangeStudentDeptResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeChangeStudentDeptResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2227,6 +2300,7 @@ export class CollegeChangeStudentDeptResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeChangeStudentDeptResponseBody,
     };
   }
@@ -2298,10 +2372,12 @@ export class CollegeDeleteCollegeDeptResponseBody extends $tea.Model {
 
 export class CollegeDeleteCollegeDeptResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeDeleteCollegeDeptResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2309,6 +2385,7 @@ export class CollegeDeleteCollegeDeptResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeDeleteCollegeDeptResponseBody,
     };
   }
@@ -2380,10 +2457,12 @@ export class CollegeListCollegeSubDeptResponseBody extends $tea.Model {
 
 export class CollegeListCollegeSubDeptResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeListCollegeSubDeptResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2391,6 +2470,7 @@ export class CollegeListCollegeSubDeptResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeListCollegeSubDeptResponseBody,
     };
   }
@@ -2471,10 +2551,12 @@ export class CollegeListDeptManagerResponseBody extends $tea.Model {
 
 export class CollegeListDeptManagerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeListDeptManagerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2482,6 +2564,7 @@ export class CollegeListDeptManagerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeListDeptManagerResponseBody,
     };
   }
@@ -2565,10 +2648,12 @@ export class CollegeListStudentInfoResponseBody extends $tea.Model {
 
 export class CollegeListStudentInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeListStudentInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2576,6 +2661,7 @@ export class CollegeListStudentInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeListStudentInfoResponseBody,
     };
   }
@@ -2656,10 +2742,12 @@ export class CollegeListUncheckedStudentResponseBody extends $tea.Model {
 
 export class CollegeListUncheckedStudentResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeListUncheckedStudentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2667,6 +2755,7 @@ export class CollegeListUncheckedStudentResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeListUncheckedStudentResponseBody,
     };
   }
@@ -2741,10 +2830,12 @@ export class CollegeQueryCollegeDeptGroupInfoResponseBody extends $tea.Model {
 
 export class CollegeQueryCollegeDeptGroupInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeQueryCollegeDeptGroupInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2752,6 +2843,7 @@ export class CollegeQueryCollegeDeptGroupInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeQueryCollegeDeptGroupInfoResponseBody,
     };
   }
@@ -2835,10 +2927,12 @@ export class CollegeQueryCollegeDeptInfoResponseBody extends $tea.Model {
 
 export class CollegeQueryCollegeDeptInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeQueryCollegeDeptInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2846,6 +2940,7 @@ export class CollegeQueryCollegeDeptInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeQueryCollegeDeptInfoResponseBody,
     };
   }
@@ -2953,10 +3048,12 @@ export class CollegeQueryStudentInfoByDeptResponseBody extends $tea.Model {
 
 export class CollegeQueryStudentInfoByDeptResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeQueryStudentInfoByDeptResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2964,6 +3061,7 @@ export class CollegeQueryStudentInfoByDeptResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeQueryStudentInfoByDeptResponseBody,
     };
   }
@@ -3065,10 +3163,12 @@ export class CollegeQueryStudentInfoByMobileResponseBody extends $tea.Model {
 
 export class CollegeQueryStudentInfoByMobileResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeQueryStudentInfoByMobileResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3076,6 +3176,7 @@ export class CollegeQueryStudentInfoByMobileResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeQueryStudentInfoByMobileResponseBody,
     };
   }
@@ -3177,10 +3278,12 @@ export class CollegeQueryStudentInfoByStudentIdResponseBody extends $tea.Model {
 
 export class CollegeQueryStudentInfoByStudentIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeQueryStudentInfoByStudentIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3188,6 +3291,7 @@ export class CollegeQueryStudentInfoByStudentIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeQueryStudentInfoByStudentIdResponseBody,
     };
   }
@@ -3265,10 +3369,12 @@ export class CollegeRemoveManagerResponseBody extends $tea.Model {
 
 export class CollegeRemoveManagerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeRemoveManagerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3276,6 +3382,7 @@ export class CollegeRemoveManagerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeRemoveManagerResponseBody,
     };
   }
@@ -3350,10 +3457,12 @@ export class CollegeRemoveStudentResponseBody extends $tea.Model {
 
 export class CollegeRemoveStudentResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeRemoveStudentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3361,6 +3470,7 @@ export class CollegeRemoveStudentResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeRemoveStudentResponseBody,
     };
   }
@@ -3441,10 +3551,12 @@ export class CollegeUpdateCollegeDeptResponseBody extends $tea.Model {
 
 export class CollegeUpdateCollegeDeptResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeUpdateCollegeDeptResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3452,6 +3564,7 @@ export class CollegeUpdateCollegeDeptResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeUpdateCollegeDeptResponseBody,
     };
   }
@@ -3529,10 +3642,12 @@ export class CollegeUpdateStudentDeptInfoResponseBody extends $tea.Model {
 
 export class CollegeUpdateStudentDeptInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeUpdateStudentDeptInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3540,6 +3655,7 @@ export class CollegeUpdateStudentDeptInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeUpdateStudentDeptInfoResponseBody,
     };
   }
@@ -3626,10 +3742,12 @@ export class CollegeUpdateStudentInfoResponseBody extends $tea.Model {
 
 export class CollegeUpdateStudentInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeUpdateStudentInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3637,6 +3755,7 @@ export class CollegeUpdateStudentInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeUpdateStudentInfoResponseBody,
     };
   }
@@ -3714,10 +3833,12 @@ export class CollegeUpdateStudentMoblieResponseBody extends $tea.Model {
 
 export class CollegeUpdateStudentMoblieResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CollegeUpdateStudentMoblieResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3725,6 +3846,7 @@ export class CollegeUpdateStudentMoblieResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CollegeUpdateStudentMoblieResponseBody,
     };
   }
@@ -3802,10 +3924,12 @@ export class CustomizeContactCreateResponseBody extends $tea.Model {
 
 export class CustomizeContactCreateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CustomizeContactCreateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3813,6 +3937,7 @@ export class CustomizeContactCreateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CustomizeContactCreateResponseBody,
     };
   }
@@ -3884,10 +4009,12 @@ export class CustomizeContactDeleteResponseBody extends $tea.Model {
 
 export class CustomizeContactDeleteResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CustomizeContactDeleteResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3895,6 +4022,7 @@ export class CustomizeContactDeleteResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CustomizeContactDeleteResponseBody,
     };
   }
@@ -3984,10 +4112,12 @@ export class CustomizeContactDeptCreateResponseBody extends $tea.Model {
 
 export class CustomizeContactDeptCreateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CustomizeContactDeptCreateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3995,6 +4125,7 @@ export class CustomizeContactDeptCreateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CustomizeContactDeptCreateResponseBody,
     };
   }
@@ -4069,10 +4200,12 @@ export class CustomizeContactDeptDeleteResponseBody extends $tea.Model {
 
 export class CustomizeContactDeptDeleteResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CustomizeContactDeptDeleteResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4080,6 +4213,7 @@ export class CustomizeContactDeptDeleteResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CustomizeContactDeptDeleteResponseBody,
     };
   }
@@ -4154,10 +4288,12 @@ export class CustomizeContactDeptGroupCreateResponseBody extends $tea.Model {
 
 export class CustomizeContactDeptGroupCreateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CustomizeContactDeptGroupCreateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4165,6 +4301,7 @@ export class CustomizeContactDeptGroupCreateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CustomizeContactDeptGroupCreateResponseBody,
     };
   }
@@ -4239,10 +4376,12 @@ export class CustomizeContactDeptInfoResponseBody extends $tea.Model {
 
 export class CustomizeContactDeptInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CustomizeContactDeptInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4250,6 +4389,7 @@ export class CustomizeContactDeptInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CustomizeContactDeptInfoResponseBody,
     };
   }
@@ -4324,10 +4464,12 @@ export class CustomizeContactDeptListResponseBody extends $tea.Model {
 
 export class CustomizeContactDeptListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CustomizeContactDeptListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4335,6 +4477,7 @@ export class CustomizeContactDeptListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CustomizeContactDeptListResponseBody,
     };
   }
@@ -4421,10 +4564,12 @@ export class CustomizeContactDeptUpdateResponseBody extends $tea.Model {
 
 export class CustomizeContactDeptUpdateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CustomizeContactDeptUpdateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4432,6 +4577,7 @@ export class CustomizeContactDeptUpdateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CustomizeContactDeptUpdateResponseBody,
     };
   }
@@ -4509,10 +4655,12 @@ export class CustomizeContactEmpAddResponseBody extends $tea.Model {
 
 export class CustomizeContactEmpAddResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CustomizeContactEmpAddResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4520,6 +4668,7 @@ export class CustomizeContactEmpAddResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CustomizeContactEmpAddResponseBody,
     };
   }
@@ -4597,10 +4746,12 @@ export class CustomizeContactEmpDeleteResponseBody extends $tea.Model {
 
 export class CustomizeContactEmpDeleteResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CustomizeContactEmpDeleteResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4608,6 +4759,7 @@ export class CustomizeContactEmpDeleteResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CustomizeContactEmpDeleteResponseBody,
     };
   }
@@ -4679,10 +4831,12 @@ export class CustomizeContactEmpListResponseBody extends $tea.Model {
 
 export class CustomizeContactEmpListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CustomizeContactEmpListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4690,6 +4844,7 @@ export class CustomizeContactEmpListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CustomizeContactEmpListResponseBody,
     };
   }
@@ -4742,10 +4897,12 @@ export class CustomizeContactListResponseBody extends $tea.Model {
 
 export class CustomizeContactListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CustomizeContactListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4753,6 +4910,7 @@ export class CustomizeContactListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CustomizeContactListResponseBody,
     };
   }
@@ -4833,10 +4991,12 @@ export class CustomizeContactUpdateResponseBody extends $tea.Model {
 
 export class CustomizeContactUpdateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CustomizeContactUpdateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4844,7 +5004,112 @@ export class CustomizeContactUpdateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CustomizeContactUpdateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DIgitalStoreMessagePushHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DIgitalStoreMessagePushRequest extends $tea.Model {
+  messageDataList?: DIgitalStoreMessagePushRequestMessageDataList[];
+  static names(): { [key: string]: string } {
+    return {
+      messageDataList: 'messageDataList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      messageDataList: { 'type': 'array', 'itemType': DIgitalStoreMessagePushRequestMessageDataList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DIgitalStoreMessagePushShrinkRequest extends $tea.Model {
+  messageDataListShrink?: string;
+  static names(): { [key: string]: string } {
+    return {
+      messageDataListShrink: 'messageDataList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      messageDataListShrink: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DIgitalStoreMessagePushResponseBody extends $tea.Model {
+  content?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DIgitalStoreMessagePushResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DIgitalStoreMessagePushResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DIgitalStoreMessagePushResponseBody,
     };
   }
 
@@ -4905,10 +5170,12 @@ export class DigitalStoreContactInfoResponseBody extends $tea.Model {
 
 export class DigitalStoreContactInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DigitalStoreContactInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4916,7 +5183,96 @@ export class DigitalStoreContactInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DigitalStoreContactInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreConversationsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreConversationsRequest extends $tea.Model {
+  conversationTitle?: string;
+  conversationType?: string;
+  static names(): { [key: string]: string } {
+    return {
+      conversationTitle: 'conversationTitle',
+      conversationType: 'conversationType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conversationTitle: 'string',
+      conversationType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreConversationsResponseBody extends $tea.Model {
+  content?: DigitalStoreConversationsResponseBodyContent[];
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': DigitalStoreConversationsResponseBodyContent },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreConversationsResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DigitalStoreConversationsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DigitalStoreConversationsResponseBody,
     };
   }
 
@@ -4993,10 +5349,12 @@ export class DigitalStoreGroupInfoResponseBody extends $tea.Model {
 
 export class DigitalStoreGroupInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DigitalStoreGroupInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5004,6 +5362,7 @@ export class DigitalStoreGroupInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DigitalStoreGroupInfoResponseBody,
     };
   }
@@ -5056,10 +5415,12 @@ export class DigitalStoreGroupsResponseBody extends $tea.Model {
 
 export class DigitalStoreGroupsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DigitalStoreGroupsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5067,6 +5428,7 @@ export class DigitalStoreGroupsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DigitalStoreGroupsResponseBody,
     };
   }
@@ -5153,10 +5515,12 @@ export class DigitalStoreNodeInfoResponseBody extends $tea.Model {
 
 export class DigitalStoreNodeInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DigitalStoreNodeInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5164,6 +5528,7 @@ export class DigitalStoreNodeInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DigitalStoreNodeInfoResponseBody,
     };
   }
@@ -5228,10 +5593,12 @@ export class DigitalStoreRightsInfoResponseBody extends $tea.Model {
 
 export class DigitalStoreRightsInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DigitalStoreRightsInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5239,6 +5606,7 @@ export class DigitalStoreRightsInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DigitalStoreRightsInfoResponseBody,
     };
   }
@@ -5291,10 +5659,12 @@ export class DigitalStoreRolesResponseBody extends $tea.Model {
 
 export class DigitalStoreRolesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DigitalStoreRolesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5302,7 +5672,99 @@ export class DigitalStoreRolesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DigitalStoreRolesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreSceneScopeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreSceneScopeRequest extends $tea.Model {
+  openConversationId?: string;
+  sceneCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      sceneCode: 'sceneCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      sceneCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreSceneScopeResponseBody extends $tea.Model {
+  groupConversationType?: string;
+  scopeId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      groupConversationType: 'groupConversationType',
+      scopeId: 'scopeId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupConversationType: 'string',
+      scopeId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreSceneScopeResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: DigitalStoreSceneScopeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DigitalStoreSceneScopeResponseBody,
     };
   }
 
@@ -5415,10 +5877,12 @@ export class DigitalStoreStoreInfoResponseBody extends $tea.Model {
 
 export class DigitalStoreStoreInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DigitalStoreStoreInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5426,6 +5890,7 @@ export class DigitalStoreStoreInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DigitalStoreStoreInfoResponseBody,
     };
   }
@@ -5500,10 +5965,12 @@ export class DigitalStoreSubNodesResponseBody extends $tea.Model {
 
 export class DigitalStoreSubNodesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DigitalStoreSubNodesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5511,6 +5978,7 @@ export class DigitalStoreSubNodesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DigitalStoreSubNodesResponseBody,
     };
   }
@@ -5582,10 +6050,12 @@ export class DigitalStoreUpdateAuthInfoResponseBody extends $tea.Model {
 
 export class DigitalStoreUpdateAuthInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DigitalStoreUpdateAuthInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5593,6 +6063,7 @@ export class DigitalStoreUpdateAuthInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DigitalStoreUpdateAuthInfoResponseBody,
     };
   }
@@ -5679,10 +6150,12 @@ export class DigitalStoreUserInfoResponseBody extends $tea.Model {
 
 export class DigitalStoreUserInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DigitalStoreUserInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5690,6 +6163,7 @@ export class DigitalStoreUserInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DigitalStoreUserInfoResponseBody,
     };
   }
@@ -5764,10 +6238,12 @@ export class DigitalStoreUsersResponseBody extends $tea.Model {
 
 export class DigitalStoreUsersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DigitalStoreUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5775,6 +6251,7 @@ export class DigitalStoreUsersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DigitalStoreUsersResponseBody,
     };
   }
@@ -5846,10 +6323,12 @@ export class ExternalQueryExternalAppOrgsResponseBody extends $tea.Model {
 
 export class ExternalQueryExternalAppOrgsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ExternalQueryExternalAppOrgsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5857,6 +6336,7 @@ export class ExternalQueryExternalAppOrgsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ExternalQueryExternalAppOrgsResponseBody,
     };
   }
@@ -5931,10 +6411,12 @@ export class ExternalQueryExternalBelongMainOrgResponseBody extends $tea.Model {
 
 export class ExternalQueryExternalBelongMainOrgResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ExternalQueryExternalBelongMainOrgResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5942,6 +6424,7 @@ export class ExternalQueryExternalBelongMainOrgResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ExternalQueryExternalBelongMainOrgResponseBody,
     };
   }
@@ -6013,10 +6496,12 @@ export class ExternalQueryExternalOrgsResponseBody extends $tea.Model {
 
 export class ExternalQueryExternalOrgsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ExternalQueryExternalOrgsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6024,6 +6509,7 @@ export class ExternalQueryExternalOrgsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ExternalQueryExternalOrgsResponseBody,
     };
   }
@@ -6140,10 +6626,12 @@ export class HospitalDataCheckResponseBody extends $tea.Model {
 
 export class HospitalDataCheckResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: HospitalDataCheckResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6151,6 +6639,7 @@ export class HospitalDataCheckResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: HospitalDataCheckResponseBody,
     };
   }
@@ -6237,10 +6726,12 @@ export class IndustryManufactureCommonEventResponseBody extends $tea.Model {
 
 export class IndustryManufactureCommonEventResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryManufactureCommonEventResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6248,6 +6739,7 @@ export class IndustryManufactureCommonEventResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryManufactureCommonEventResponseBody,
     };
   }
@@ -6379,10 +6871,12 @@ export class IndustryManufactureCostRecordListGetResponseBody extends $tea.Model
 
 export class IndustryManufactureCostRecordListGetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryManufactureCostRecordListGetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6390,6 +6884,7 @@ export class IndustryManufactureCostRecordListGetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryManufactureCostRecordListGetResponseBody,
     };
   }
@@ -6518,10 +7013,12 @@ export class IndustryManufactureFeeListGetResponseBody extends $tea.Model {
 
 export class IndustryManufactureFeeListGetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryManufactureFeeListGetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6529,6 +7026,7 @@ export class IndustryManufactureFeeListGetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryManufactureFeeListGetResponseBody,
     };
   }
@@ -6654,10 +7152,12 @@ export class IndustryManufactureLabourCostResponseBody extends $tea.Model {
 
 export class IndustryManufactureLabourCostResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryManufactureLabourCostResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6665,6 +7165,7 @@ export class IndustryManufactureLabourCostResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryManufactureLabourCostResponseBody,
     };
   }
@@ -6790,10 +7291,12 @@ export class IndustryManufactureMaterialListResponseBody extends $tea.Model {
 
 export class IndustryManufactureMaterialListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryManufactureMaterialListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6801,6 +7304,7 @@ export class IndustryManufactureMaterialListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryManufactureMaterialListResponseBody,
     };
   }
@@ -6944,10 +7448,12 @@ export class IndustryManufactureMesDispatchTaskResponseBody extends $tea.Model {
 
 export class IndustryManufactureMesDispatchTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryManufactureMesDispatchTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6955,6 +7461,7 @@ export class IndustryManufactureMesDispatchTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryManufactureMesDispatchTaskResponseBody,
     };
   }
@@ -7056,10 +7563,12 @@ export class IndustryManufactureMesMaterialResponseBody extends $tea.Model {
 
 export class IndustryManufactureMesMaterialResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryManufactureMesMaterialResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7067,6 +7576,7 @@ export class IndustryManufactureMesMaterialResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryManufactureMesMaterialResponseBody,
     };
   }
@@ -7189,10 +7699,12 @@ export class IndustryManufactureMesOutPlanResponseBody extends $tea.Model {
 
 export class IndustryManufactureMesOutPlanResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryManufactureMesOutPlanResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7200,6 +7712,7 @@ export class IndustryManufactureMesOutPlanResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryManufactureMesOutPlanResponseBody,
     };
   }
@@ -7355,10 +7868,12 @@ export class IndustryManufactureMesOutputResponseBody extends $tea.Model {
 
 export class IndustryManufactureMesOutputResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryManufactureMesOutputResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7366,6 +7881,7 @@ export class IndustryManufactureMesOutputResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryManufactureMesOutputResponseBody,
     };
   }
@@ -7473,10 +7989,12 @@ export class IndustryManufactureMesProcessResponseBody extends $tea.Model {
 
 export class IndustryManufactureMesProcessResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryManufactureMesProcessResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7484,6 +8002,7 @@ export class IndustryManufactureMesProcessResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryManufactureMesProcessResponseBody,
     };
   }
@@ -7627,10 +8146,12 @@ export class IndustryManufactureMesProductionPlanResponseBody extends $tea.Model
 
 export class IndustryManufactureMesProductionPlanResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryManufactureMesProductionPlanResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7638,6 +8159,7 @@ export class IndustryManufactureMesProductionPlanResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryManufactureMesProductionPlanResponseBody,
     };
   }
@@ -7745,10 +8267,12 @@ export class IndustryManufactureMesSubCooperationTeamResponseBody extends $tea.M
 
 export class IndustryManufactureMesSubCooperationTeamResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryManufactureMesSubCooperationTeamResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7756,6 +8280,7 @@ export class IndustryManufactureMesSubCooperationTeamResponse extends $tea.Model
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryManufactureMesSubCooperationTeamResponseBody,
     };
   }
@@ -7875,10 +8400,12 @@ export class IndustryManufactureMesTeamMgmtResponseBody extends $tea.Model {
 
 export class IndustryManufactureMesTeamMgmtResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryManufactureMesTeamMgmtResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7886,6 +8413,7 @@ export class IndustryManufactureMesTeamMgmtResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryManufactureMesTeamMgmtResponseBody,
     };
   }
@@ -8011,10 +8539,12 @@ export class IndustryMmanufactureMaterialCostGetResponseBody extends $tea.Model 
 
 export class IndustryMmanufactureMaterialCostGetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: IndustryMmanufactureMaterialCostGetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8022,6 +8552,7 @@ export class IndustryMmanufactureMaterialCostGetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: IndustryMmanufactureMaterialCostGetResponseBody,
     };
   }
@@ -8120,10 +8651,12 @@ export class PushDingMessageResponseBody extends $tea.Model {
 
 export class PushDingMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PushDingMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8131,6 +8664,7 @@ export class PushDingMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PushDingMessageResponseBody,
     };
   }
@@ -8214,10 +8748,12 @@ export class QueryAllDepartmentResponseBody extends $tea.Model {
 
 export class QueryAllDepartmentResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAllDepartmentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8225,6 +8761,7 @@ export class QueryAllDepartmentResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAllDepartmentResponseBody,
     };
   }
@@ -8311,10 +8848,12 @@ export class QueryAllDoctorsResponseBody extends $tea.Model {
 
 export class QueryAllDoctorsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAllDoctorsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8322,6 +8861,7 @@ export class QueryAllDoctorsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAllDoctorsResponseBody,
     };
   }
@@ -8405,10 +8945,12 @@ export class QueryAllGroupResponseBody extends $tea.Model {
 
 export class QueryAllGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAllGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8416,6 +8958,7 @@ export class QueryAllGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAllGroupResponseBody,
     };
   }
@@ -8499,10 +9042,12 @@ export class QueryAllGroupsInDeptResponseBody extends $tea.Model {
 
 export class QueryAllGroupsInDeptResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAllGroupsInDeptResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8510,6 +9055,7 @@ export class QueryAllGroupsInDeptResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAllGroupsInDeptResponseBody,
     };
   }
@@ -8596,10 +9142,12 @@ export class QueryAllMemberByDeptResponseBody extends $tea.Model {
 
 export class QueryAllMemberByDeptResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAllMemberByDeptResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8607,6 +9155,7 @@ export class QueryAllMemberByDeptResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAllMemberByDeptResponseBody,
     };
   }
@@ -8693,10 +9242,12 @@ export class QueryAllMemberByGroupResponseBody extends $tea.Model {
 
 export class QueryAllMemberByGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAllMemberByGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8704,6 +9255,7 @@ export class QueryAllMemberByGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAllMemberByGroupResponseBody,
     };
   }
@@ -8781,10 +9333,12 @@ export class QueryBizOptLogResponseBody extends $tea.Model {
 
 export class QueryBizOptLogResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryBizOptLogResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8792,6 +9346,7 @@ export class QueryBizOptLogResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryBizOptLogResponseBody,
     };
   }
@@ -8866,10 +9421,12 @@ export class QueryDepartmentExtendInfoResponseBody extends $tea.Model {
 
 export class QueryDepartmentExtendInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryDepartmentExtendInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8877,6 +9434,7 @@ export class QueryDepartmentExtendInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryDepartmentExtendInfoResponseBody,
     };
   }
@@ -8929,10 +9487,12 @@ export class QueryDepartmentInfoResponseBody extends $tea.Model {
 
 export class QueryDepartmentInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryDepartmentInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8940,6 +9500,7 @@ export class QueryDepartmentInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryDepartmentInfoResponseBody,
     };
   }
@@ -9011,10 +9572,12 @@ export class QueryDoctorDetailsByJobNumberResponseBody extends $tea.Model {
 
 export class QueryDoctorDetailsByJobNumberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryDoctorDetailsByJobNumberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9022,6 +9585,7 @@ export class QueryDoctorDetailsByJobNumberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryDoctorDetailsByJobNumberResponseBody,
     };
   }
@@ -9074,10 +9638,12 @@ export class QueryGroupInfoResponseBody extends $tea.Model {
 
 export class QueryGroupInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryGroupInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9085,6 +9651,7 @@ export class QueryGroupInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryGroupInfoResponseBody,
     };
   }
@@ -9168,10 +9735,12 @@ export class QueryHospitalDistrictInfoResponseBody extends $tea.Model {
 
 export class QueryHospitalDistrictInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryHospitalDistrictInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9179,6 +9748,7 @@ export class QueryHospitalDistrictInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryHospitalDistrictInfoResponseBody,
     };
   }
@@ -9262,10 +9832,12 @@ export class QueryHospitalRoleUserInfoResponseBody extends $tea.Model {
 
 export class QueryHospitalRoleUserInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryHospitalRoleUserInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9273,6 +9845,7 @@ export class QueryHospitalRoleUserInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryHospitalRoleUserInfoResponseBody,
     };
   }
@@ -9325,10 +9898,12 @@ export class QueryHospitalRolesResponseBody extends $tea.Model {
 
 export class QueryHospitalRolesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryHospitalRolesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9336,6 +9911,7 @@ export class QueryHospitalRolesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryHospitalRolesResponseBody,
     };
   }
@@ -9388,10 +9964,12 @@ export class QueryJobCodeDictionaryResponseBody extends $tea.Model {
 
 export class QueryJobCodeDictionaryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryJobCodeDictionaryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9399,6 +9977,7 @@ export class QueryJobCodeDictionaryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryJobCodeDictionaryResponseBody,
     };
   }
@@ -9451,10 +10030,12 @@ export class QueryJobStatusCodeDictionaryResponseBody extends $tea.Model {
 
 export class QueryJobStatusCodeDictionaryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryJobStatusCodeDictionaryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9462,6 +10043,7 @@ export class QueryJobStatusCodeDictionaryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryJobStatusCodeDictionaryResponseBody,
     };
   }
@@ -9520,10 +10102,12 @@ export class QueryMedicalEventsResponseBody extends $tea.Model {
 
 export class QueryMedicalEventsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryMedicalEventsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9531,6 +10115,7 @@ export class QueryMedicalEventsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryMedicalEventsResponseBody,
     };
   }
@@ -9602,10 +10187,12 @@ export class QueryUserCredentialsResponseBody extends $tea.Model {
 
 export class QueryUserCredentialsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryUserCredentialsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9613,6 +10200,7 @@ export class QueryUserCredentialsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryUserCredentialsResponseBody,
     };
   }
@@ -9665,10 +10253,12 @@ export class QueryUserExtInfoResponseBody extends $tea.Model {
 
 export class QueryUserExtInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryUserExtInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9676,6 +10266,7 @@ export class QueryUserExtInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryUserExtInfoResponseBody,
     };
   }
@@ -9756,10 +10347,12 @@ export class QueryUserExtendValuesResponseBody extends $tea.Model {
 
 export class QueryUserExtendValuesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryUserExtendValuesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9767,6 +10360,7 @@ export class QueryUserExtendValuesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryUserExtendValuesResponseBody,
     };
   }
@@ -9838,10 +10432,12 @@ export class QueryUserInfoResponseBody extends $tea.Model {
 
 export class QueryUserInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryUserInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9849,6 +10445,7 @@ export class QueryUserInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryUserInfoResponseBody,
     };
   }
@@ -9901,10 +10498,12 @@ export class QueryUserProbCodeDictionaryResponseBody extends $tea.Model {
 
 export class QueryUserProbCodeDictionaryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryUserProbCodeDictionaryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9912,6 +10511,7 @@ export class QueryUserProbCodeDictionaryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryUserProbCodeDictionaryResponseBody,
     };
   }
@@ -9964,10 +10564,12 @@ export class QueryUserRolesResponseBody extends $tea.Model {
 
 export class QueryUserRolesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryUserRolesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -9975,6 +10577,7 @@ export class QueryUserRolesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryUserRolesResponseBody,
     };
   }
@@ -10052,10 +10655,12 @@ export class SaveUserExtendValuesResponseBody extends $tea.Model {
 
 export class SaveUserExtendValuesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SaveUserExtendValuesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -10063,6 +10668,7 @@ export class SaveUserExtendValuesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SaveUserExtendValuesResponseBody,
     };
   }
@@ -10143,10 +10749,12 @@ export class SupplyAddDeptResponseBody extends $tea.Model {
 
 export class SupplyAddDeptResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SupplyAddDeptResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -10154,6 +10762,7 @@ export class SupplyAddDeptResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SupplyAddDeptResponseBody,
     };
   }
@@ -10237,10 +10846,12 @@ export class SupplyAddMemberResponseBody extends $tea.Model {
 
 export class SupplyAddMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SupplyAddMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -10248,6 +10859,7 @@ export class SupplyAddMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SupplyAddMemberResponseBody,
     };
   }
@@ -10322,10 +10934,12 @@ export class SupplyGetMemberResponseBody extends $tea.Model {
 
 export class SupplyGetMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SupplyGetMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -10333,6 +10947,7 @@ export class SupplyGetMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SupplyGetMemberResponseBody,
     };
   }
@@ -10413,10 +11028,12 @@ export class SupplyListDeptMembersResponseBody extends $tea.Model {
 
 export class SupplyListDeptMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SupplyListDeptMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -10424,6 +11041,7 @@ export class SupplyListDeptMembersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SupplyListDeptMembersResponseBody,
     };
   }
@@ -10485,15 +11103,18 @@ export class UpdateUserExtendInfoRequest extends $tea.Model {
 
 export class UpdateUserExtendInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -10992,6 +11613,68 @@ export class CustomizeContactListResponseBodyContent extends $tea.Model {
       name: 'string',
       order: 'number',
       rootDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DIgitalStoreMessagePushRequestMessageDataList extends $tea.Model {
+  callbackKey?: string;
+  content?: string;
+  newCard?: boolean;
+  outTraceId?: string;
+  sceneCardCode?: string;
+  sceneScope?: number;
+  sendNow?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      callbackKey: 'callbackKey',
+      content: 'content',
+      newCard: 'newCard',
+      outTraceId: 'outTraceId',
+      sceneCardCode: 'sceneCardCode',
+      sceneScope: 'sceneScope',
+      sendNow: 'sendNow',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      callbackKey: 'string',
+      content: 'string',
+      newCard: 'boolean',
+      outTraceId: 'string',
+      sceneCardCode: 'string',
+      sceneScope: 'number',
+      sendNow: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DigitalStoreConversationsResponseBodyContent extends $tea.Model {
+  conversationTitle?: string;
+  conversationType?: string;
+  id?: number;
+  static names(): { [key: string]: string } {
+    return {
+      conversationTitle: 'conversationTitle',
+      conversationType: 'conversationType',
+      id: 'id',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      conversationTitle: 'string',
+      conversationType: 'string',
+      id: 'number',
     };
   }
 
@@ -13628,9 +14311,12 @@ export class SupplyListDeptMembersResponseBodyList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -13638,12 +14324,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async campusAddRenterMember(request: CampusAddRenterMemberRequest): Promise<CampusAddRenterMemberResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusAddRenterMemberHeaders({ });
-    return await this.campusAddRenterMemberWithOptions(request, headers, runtime);
-  }
 
   async campusAddRenterMemberWithOptions(request: CampusAddRenterMemberRequest, headers: CampusAddRenterMemberHeaders, runtime: $Util.RuntimeOptions): Promise<CampusAddRenterMemberResponse> {
     Util.validateModel(request);
@@ -13681,13 +14361,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CampusAddRenterMemberResponse>(await this.doROARequest("CampusAddRenterMember", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/campuses/renters/members`, "json", req, runtime), new CampusAddRenterMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusAddRenterMember",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/renters/members`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusAddRenterMemberResponse>(await this.execute(params, req, runtime), new CampusAddRenterMemberResponse({}));
   }
 
-  async campusCreateCampus(request: CampusCreateCampusRequest): Promise<CampusCreateCampusResponse> {
+  async campusAddRenterMember(request: CampusAddRenterMemberRequest): Promise<CampusAddRenterMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusCreateCampusHeaders({ });
-    return await this.campusCreateCampusWithOptions(request, headers, runtime);
+    let headers = new CampusAddRenterMemberHeaders({ });
+    return await this.campusAddRenterMemberWithOptions(request, headers, runtime);
   }
 
   async campusCreateCampusWithOptions(request: CampusCreateCampusRequest, headers: CampusCreateCampusHeaders, runtime: $Util.RuntimeOptions): Promise<CampusCreateCampusResponse> {
@@ -13774,13 +14465,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CampusCreateCampusResponse>(await this.doROARequest("CampusCreateCampus", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/campuses/projects`, "json", req, runtime), new CampusCreateCampusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusCreateCampus",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/projects`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusCreateCampusResponse>(await this.execute(params, req, runtime), new CampusCreateCampusResponse({}));
   }
 
-  async campusCreateCampusGroup(request: CampusCreateCampusGroupRequest): Promise<CampusCreateCampusGroupResponse> {
+  async campusCreateCampus(request: CampusCreateCampusRequest): Promise<CampusCreateCampusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusCreateCampusGroupHeaders({ });
-    return await this.campusCreateCampusGroupWithOptions(request, headers, runtime);
+    let headers = new CampusCreateCampusHeaders({ });
+    return await this.campusCreateCampusWithOptions(request, headers, runtime);
   }
 
   async campusCreateCampusGroupWithOptions(request: CampusCreateCampusGroupRequest, headers: CampusCreateCampusGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CampusCreateCampusGroupResponse> {
@@ -13807,13 +14509,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CampusCreateCampusGroupResponse>(await this.doROARequest("CampusCreateCampusGroup", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/campuses/projects/groups`, "json", req, runtime), new CampusCreateCampusGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusCreateCampusGroup",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/projects/groups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusCreateCampusGroupResponse>(await this.execute(params, req, runtime), new CampusCreateCampusGroupResponse({}));
   }
 
-  async campusCreateRenter(request: CampusCreateRenterRequest): Promise<CampusCreateRenterResponse> {
+  async campusCreateCampusGroup(request: CampusCreateCampusGroupRequest): Promise<CampusCreateCampusGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusCreateRenterHeaders({ });
-    return await this.campusCreateRenterWithOptions(request, headers, runtime);
+    let headers = new CampusCreateCampusGroupHeaders({ });
+    return await this.campusCreateCampusGroupWithOptions(request, headers, runtime);
   }
 
   async campusCreateRenterWithOptions(request: CampusCreateRenterRequest, headers: CampusCreateRenterHeaders, runtime: $Util.RuntimeOptions): Promise<CampusCreateRenterResponse> {
@@ -13856,13 +14569,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CampusCreateRenterResponse>(await this.doROARequest("CampusCreateRenter", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/campuses/renters`, "json", req, runtime), new CampusCreateRenterResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusCreateRenter",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/renters`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusCreateRenterResponse>(await this.execute(params, req, runtime), new CampusCreateRenterResponse({}));
   }
 
-  async campusDelRenterMember(request: CampusDelRenterMemberRequest): Promise<CampusDelRenterMemberResponse> {
+  async campusCreateRenter(request: CampusCreateRenterRequest): Promise<CampusCreateRenterResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusDelRenterMemberHeaders({ });
-    return await this.campusDelRenterMemberWithOptions(request, headers, runtime);
+    let headers = new CampusCreateRenterHeaders({ });
+    return await this.campusCreateRenterWithOptions(request, headers, runtime);
   }
 
   async campusDelRenterMemberWithOptions(request: CampusDelRenterMemberRequest, headers: CampusDelRenterMemberHeaders, runtime: $Util.RuntimeOptions): Promise<CampusDelRenterMemberResponse> {
@@ -13889,13 +14613,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CampusDelRenterMemberResponse>(await this.doROARequest("CampusDelRenterMember", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/campuses/renters/members`, "json", req, runtime), new CampusDelRenterMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusDelRenterMember",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/renters/members`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusDelRenterMemberResponse>(await this.execute(params, req, runtime), new CampusDelRenterMemberResponse({}));
   }
 
-  async campusDeleteCampusGroup(request: CampusDeleteCampusGroupRequest): Promise<CampusDeleteCampusGroupResponse> {
+  async campusDelRenterMember(request: CampusDelRenterMemberRequest): Promise<CampusDelRenterMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusDeleteCampusGroupHeaders({ });
-    return await this.campusDeleteCampusGroupWithOptions(request, headers, runtime);
+    let headers = new CampusDelRenterMemberHeaders({ });
+    return await this.campusDelRenterMemberWithOptions(request, headers, runtime);
   }
 
   async campusDeleteCampusGroupWithOptions(request: CampusDeleteCampusGroupRequest, headers: CampusDeleteCampusGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CampusDeleteCampusGroupResponse> {
@@ -13918,13 +14653,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CampusDeleteCampusGroupResponse>(await this.doROARequest("CampusDeleteCampusGroup", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/campuses/projects/groups`, "json", req, runtime), new CampusDeleteCampusGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusDeleteCampusGroup",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/projects/groups`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusDeleteCampusGroupResponse>(await this.execute(params, req, runtime), new CampusDeleteCampusGroupResponse({}));
   }
 
-  async campusDeleteRenter(request: CampusDeleteRenterRequest): Promise<CampusDeleteRenterResponse> {
+  async campusDeleteCampusGroup(request: CampusDeleteCampusGroupRequest): Promise<CampusDeleteCampusGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusDeleteRenterHeaders({ });
-    return await this.campusDeleteRenterWithOptions(request, headers, runtime);
+    let headers = new CampusDeleteCampusGroupHeaders({ });
+    return await this.campusDeleteCampusGroupWithOptions(request, headers, runtime);
   }
 
   async campusDeleteRenterWithOptions(request: CampusDeleteRenterRequest, headers: CampusDeleteRenterHeaders, runtime: $Util.RuntimeOptions): Promise<CampusDeleteRenterResponse> {
@@ -13947,13 +14693,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CampusDeleteRenterResponse>(await this.doROARequest("CampusDeleteRenter", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/campuses/renters`, "none", req, runtime), new CampusDeleteRenterResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusDeleteRenter",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/renters`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<CampusDeleteRenterResponse>(await this.execute(params, req, runtime), new CampusDeleteRenterResponse({}));
   }
 
-  async campusGetCampus(request: CampusGetCampusRequest): Promise<CampusGetCampusResponse> {
+  async campusDeleteRenter(request: CampusDeleteRenterRequest): Promise<CampusDeleteRenterResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusGetCampusHeaders({ });
-    return await this.campusGetCampusWithOptions(request, headers, runtime);
+    let headers = new CampusDeleteRenterHeaders({ });
+    return await this.campusDeleteRenterWithOptions(request, headers, runtime);
   }
 
   async campusGetCampusWithOptions(request: CampusGetCampusRequest, headers: CampusGetCampusHeaders, runtime: $Util.RuntimeOptions): Promise<CampusGetCampusResponse> {
@@ -13976,13 +14733,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CampusGetCampusResponse>(await this.doROARequest("CampusGetCampus", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/campuses/projectInfos`, "json", req, runtime), new CampusGetCampusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusGetCampus",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/projectInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusGetCampusResponse>(await this.execute(params, req, runtime), new CampusGetCampusResponse({}));
   }
 
-  async campusGetCampusGroup(request: CampusGetCampusGroupRequest): Promise<CampusGetCampusGroupResponse> {
+  async campusGetCampus(request: CampusGetCampusRequest): Promise<CampusGetCampusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusGetCampusGroupHeaders({ });
-    return await this.campusGetCampusGroupWithOptions(request, headers, runtime);
+    let headers = new CampusGetCampusHeaders({ });
+    return await this.campusGetCampusWithOptions(request, headers, runtime);
   }
 
   async campusGetCampusGroupWithOptions(request: CampusGetCampusGroupRequest, headers: CampusGetCampusGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CampusGetCampusGroupResponse> {
@@ -14005,13 +14773,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CampusGetCampusGroupResponse>(await this.doROARequest("CampusGetCampusGroup", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/campuses/projects/groupInfos`, "json", req, runtime), new CampusGetCampusGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusGetCampusGroup",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/projects/groupInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusGetCampusGroupResponse>(await this.execute(params, req, runtime), new CampusGetCampusGroupResponse({}));
   }
 
-  async campusGetRenter(request: CampusGetRenterRequest): Promise<CampusGetRenterResponse> {
+  async campusGetCampusGroup(request: CampusGetCampusGroupRequest): Promise<CampusGetCampusGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusGetRenterHeaders({ });
-    return await this.campusGetRenterWithOptions(request, headers, runtime);
+    let headers = new CampusGetCampusGroupHeaders({ });
+    return await this.campusGetCampusGroupWithOptions(request, headers, runtime);
   }
 
   async campusGetRenterWithOptions(request: CampusGetRenterRequest, headers: CampusGetRenterHeaders, runtime: $Util.RuntimeOptions): Promise<CampusGetRenterResponse> {
@@ -14034,13 +14813,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CampusGetRenterResponse>(await this.doROARequest("CampusGetRenter", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/campuses/renterInfos`, "json", req, runtime), new CampusGetRenterResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusGetRenter",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/renterInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusGetRenterResponse>(await this.execute(params, req, runtime), new CampusGetRenterResponse({}));
   }
 
-  async campusGetRenterMember(request: CampusGetRenterMemberRequest): Promise<CampusGetRenterMemberResponse> {
+  async campusGetRenter(request: CampusGetRenterRequest): Promise<CampusGetRenterResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusGetRenterMemberHeaders({ });
-    return await this.campusGetRenterMemberWithOptions(request, headers, runtime);
+    let headers = new CampusGetRenterHeaders({ });
+    return await this.campusGetRenterWithOptions(request, headers, runtime);
   }
 
   async campusGetRenterMemberWithOptions(request: CampusGetRenterMemberRequest, headers: CampusGetRenterMemberHeaders, runtime: $Util.RuntimeOptions): Promise<CampusGetRenterMemberResponse> {
@@ -14067,13 +14857,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CampusGetRenterMemberResponse>(await this.doROARequest("CampusGetRenterMember", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/campuses/renters/memberInfos`, "json", req, runtime), new CampusGetRenterMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusGetRenterMember",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/renters/memberInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusGetRenterMemberResponse>(await this.execute(params, req, runtime), new CampusGetRenterMemberResponse({}));
   }
 
-  async campusListCampus(request: CampusListCampusRequest): Promise<CampusListCampusResponse> {
+  async campusGetRenterMember(request: CampusGetRenterMemberRequest): Promise<CampusGetRenterMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusListCampusHeaders({ });
-    return await this.campusListCampusWithOptions(request, headers, runtime);
+    let headers = new CampusGetRenterMemberHeaders({ });
+    return await this.campusGetRenterMemberWithOptions(request, headers, runtime);
   }
 
   async campusListCampusWithOptions(request: CampusListCampusRequest, headers: CampusListCampusHeaders, runtime: $Util.RuntimeOptions): Promise<CampusListCampusResponse> {
@@ -14096,13 +14897,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CampusListCampusResponse>(await this.doROARequest("CampusListCampus", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/campuses/projects`, "json", req, runtime), new CampusListCampusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusListCampus",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/projects`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusListCampusResponse>(await this.execute(params, req, runtime), new CampusListCampusResponse({}));
   }
 
-  async campusListCampusGroup(): Promise<CampusListCampusGroupResponse> {
+  async campusListCampus(request: CampusListCampusRequest): Promise<CampusListCampusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusListCampusGroupHeaders({ });
-    return await this.campusListCampusGroupWithOptions(headers, runtime);
+    let headers = new CampusListCampusHeaders({ });
+    return await this.campusListCampusWithOptions(request, headers, runtime);
   }
 
   async campusListCampusGroupWithOptions(headers: CampusListCampusGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CampusListCampusGroupResponse> {
@@ -14118,13 +14930,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<CampusListCampusGroupResponse>(await this.doROARequest("CampusListCampusGroup", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/campuses/projects/groups`, "json", req, runtime), new CampusListCampusGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusListCampusGroup",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/projects/groups`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusListCampusGroupResponse>(await this.execute(params, req, runtime), new CampusListCampusGroupResponse({}));
   }
 
-  async campusListRenter(): Promise<CampusListRenterResponse> {
+  async campusListCampusGroup(): Promise<CampusListCampusGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusListRenterHeaders({ });
-    return await this.campusListRenterWithOptions(headers, runtime);
+    let headers = new CampusListCampusGroupHeaders({ });
+    return await this.campusListCampusGroupWithOptions(headers, runtime);
   }
 
   async campusListRenterWithOptions(headers: CampusListRenterHeaders, runtime: $Util.RuntimeOptions): Promise<CampusListRenterResponse> {
@@ -14140,13 +14963,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<CampusListRenterResponse>(await this.doROARequest("CampusListRenter", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/campuses/renters`, "json", req, runtime), new CampusListRenterResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusListRenter",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/renters`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusListRenterResponse>(await this.execute(params, req, runtime), new CampusListRenterResponse({}));
   }
 
-  async campusListRenterMembers(request: CampusListRenterMembersRequest): Promise<CampusListRenterMembersResponse> {
+  async campusListRenter(): Promise<CampusListRenterResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusListRenterMembersHeaders({ });
-    return await this.campusListRenterMembersWithOptions(request, headers, runtime);
+    let headers = new CampusListRenterHeaders({ });
+    return await this.campusListRenterWithOptions(headers, runtime);
   }
 
   async campusListRenterMembersWithOptions(request: CampusListRenterMembersRequest, headers: CampusListRenterMembersHeaders, runtime: $Util.RuntimeOptions): Promise<CampusListRenterMembersResponse> {
@@ -14169,13 +15003,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CampusListRenterMembersResponse>(await this.doROARequest("CampusListRenterMembers", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/campuses/renters/members`, "json", req, runtime), new CampusListRenterMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusListRenterMembers",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/renters/members`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusListRenterMembersResponse>(await this.execute(params, req, runtime), new CampusListRenterMembersResponse({}));
   }
 
-  async campusUpdateCampus(request: CampusUpdateCampusRequest): Promise<CampusUpdateCampusResponse> {
+  async campusListRenterMembers(request: CampusListRenterMembersRequest): Promise<CampusListRenterMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusUpdateCampusHeaders({ });
-    return await this.campusUpdateCampusWithOptions(request, headers, runtime);
+    let headers = new CampusListRenterMembersHeaders({ });
+    return await this.campusListRenterMembersWithOptions(request, headers, runtime);
   }
 
   async campusUpdateCampusWithOptions(request: CampusUpdateCampusRequest, headers: CampusUpdateCampusHeaders, runtime: $Util.RuntimeOptions): Promise<CampusUpdateCampusResponse> {
@@ -14258,13 +15103,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CampusUpdateCampusResponse>(await this.doROARequest("CampusUpdateCampus", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/campuses/projects`, "json", req, runtime), new CampusUpdateCampusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusUpdateCampus",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/projects`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusUpdateCampusResponse>(await this.execute(params, req, runtime), new CampusUpdateCampusResponse({}));
   }
 
-  async campusUpdateCampusGroup(request: CampusUpdateCampusGroupRequest): Promise<CampusUpdateCampusGroupResponse> {
+  async campusUpdateCampus(request: CampusUpdateCampusRequest): Promise<CampusUpdateCampusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusUpdateCampusGroupHeaders({ });
-    return await this.campusUpdateCampusGroupWithOptions(request, headers, runtime);
+    let headers = new CampusUpdateCampusHeaders({ });
+    return await this.campusUpdateCampusWithOptions(request, headers, runtime);
   }
 
   async campusUpdateCampusGroupWithOptions(request: CampusUpdateCampusGroupRequest, headers: CampusUpdateCampusGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CampusUpdateCampusGroupResponse> {
@@ -14295,13 +15151,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CampusUpdateCampusGroupResponse>(await this.doROARequest("CampusUpdateCampusGroup", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/campuses/projects/groups`, "json", req, runtime), new CampusUpdateCampusGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusUpdateCampusGroup",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/projects/groups`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusUpdateCampusGroupResponse>(await this.execute(params, req, runtime), new CampusUpdateCampusGroupResponse({}));
   }
 
-  async campusUpdateRenter(request: CampusUpdateRenterRequest): Promise<CampusUpdateRenterResponse> {
+  async campusUpdateCampusGroup(request: CampusUpdateCampusGroupRequest): Promise<CampusUpdateCampusGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusUpdateRenterHeaders({ });
-    return await this.campusUpdateRenterWithOptions(request, headers, runtime);
+    let headers = new CampusUpdateCampusGroupHeaders({ });
+    return await this.campusUpdateCampusGroupWithOptions(request, headers, runtime);
   }
 
   async campusUpdateRenterWithOptions(request: CampusUpdateRenterRequest, headers: CampusUpdateRenterHeaders, runtime: $Util.RuntimeOptions): Promise<CampusUpdateRenterResponse> {
@@ -14348,13 +15215,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CampusUpdateRenterResponse>(await this.doROARequest("CampusUpdateRenter", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/campuses/renters`, "json", req, runtime), new CampusUpdateRenterResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusUpdateRenter",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/renters`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusUpdateRenterResponse>(await this.execute(params, req, runtime), new CampusUpdateRenterResponse({}));
   }
 
-  async campusUpdateRenterMember(request: CampusUpdateRenterMemberRequest): Promise<CampusUpdateRenterMemberResponse> {
+  async campusUpdateRenter(request: CampusUpdateRenterRequest): Promise<CampusUpdateRenterResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CampusUpdateRenterMemberHeaders({ });
-    return await this.campusUpdateRenterMemberWithOptions(request, headers, runtime);
+    let headers = new CampusUpdateRenterHeaders({ });
+    return await this.campusUpdateRenterWithOptions(request, headers, runtime);
   }
 
   async campusUpdateRenterMemberWithOptions(request: CampusUpdateRenterMemberRequest, headers: CampusUpdateRenterMemberHeaders, runtime: $Util.RuntimeOptions): Promise<CampusUpdateRenterMemberResponse> {
@@ -14393,13 +15271,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CampusUpdateRenterMemberResponse>(await this.doROARequest("CampusUpdateRenterMember", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/campuses/renters/members`, "json", req, runtime), new CampusUpdateRenterMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CampusUpdateRenterMember",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/campuses/renters/members`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CampusUpdateRenterMemberResponse>(await this.execute(params, req, runtime), new CampusUpdateRenterMemberResponse({}));
   }
 
-  async collegeActiveCollegeDeptGroup(request: CollegeActiveCollegeDeptGroupRequest): Promise<CollegeActiveCollegeDeptGroupResponse> {
+  async campusUpdateRenterMember(request: CampusUpdateRenterMemberRequest): Promise<CampusUpdateRenterMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeActiveCollegeDeptGroupHeaders({ });
-    return await this.collegeActiveCollegeDeptGroupWithOptions(request, headers, runtime);
+    let headers = new CampusUpdateRenterMemberHeaders({ });
+    return await this.campusUpdateRenterMemberWithOptions(request, headers, runtime);
   }
 
   async collegeActiveCollegeDeptGroupWithOptions(request: CollegeActiveCollegeDeptGroupRequest, headers: CollegeActiveCollegeDeptGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeActiveCollegeDeptGroupResponse> {
@@ -14422,13 +15311,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeActiveCollegeDeptGroupResponse>(await this.doROARequest("CollegeActiveCollegeDeptGroup", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/colleges/depts/groups`, "json", req, runtime), new CollegeActiveCollegeDeptGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeActiveCollegeDeptGroup",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/depts/groups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeActiveCollegeDeptGroupResponse>(await this.execute(params, req, runtime), new CollegeActiveCollegeDeptGroupResponse({}));
   }
 
-  async collegeAddCollegeDept(request: CollegeAddCollegeDeptRequest): Promise<CollegeAddCollegeDeptResponse> {
+  async collegeActiveCollegeDeptGroup(request: CollegeActiveCollegeDeptGroupRequest): Promise<CollegeActiveCollegeDeptGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeAddCollegeDeptHeaders({ });
-    return await this.collegeAddCollegeDeptWithOptions(request, headers, runtime);
+    let headers = new CollegeActiveCollegeDeptGroupHeaders({ });
+    return await this.collegeActiveCollegeDeptGroupWithOptions(request, headers, runtime);
   }
 
   async collegeAddCollegeDeptWithOptions(request: CollegeAddCollegeDeptRequest, headers: CollegeAddCollegeDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeAddCollegeDeptResponse> {
@@ -14463,13 +15363,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeAddCollegeDeptResponse>(await this.doROARequest("CollegeAddCollegeDept", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/colleges/depts`, "json", req, runtime), new CollegeAddCollegeDeptResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeAddCollegeDept",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/depts`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeAddCollegeDeptResponse>(await this.execute(params, req, runtime), new CollegeAddCollegeDeptResponse({}));
   }
 
-  async collegeAddManager(request: CollegeAddManagerRequest): Promise<CollegeAddManagerResponse> {
+  async collegeAddCollegeDept(request: CollegeAddCollegeDeptRequest): Promise<CollegeAddCollegeDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeAddManagerHeaders({ });
-    return await this.collegeAddManagerWithOptions(request, headers, runtime);
+    let headers = new CollegeAddCollegeDeptHeaders({ });
+    return await this.collegeAddCollegeDeptWithOptions(request, headers, runtime);
   }
 
   async collegeAddManagerWithOptions(request: CollegeAddManagerRequest, headers: CollegeAddManagerHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeAddManagerResponse> {
@@ -14496,13 +15407,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeAddManagerResponse>(await this.doROARequest("CollegeAddManager", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/colleges/members/depts/managers`, "json", req, runtime), new CollegeAddManagerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeAddManager",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/depts/managers`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeAddManagerResponse>(await this.execute(params, req, runtime), new CollegeAddManagerResponse({}));
   }
 
-  async collegeAddStudent(request: CollegeAddStudentRequest): Promise<CollegeAddStudentResponse> {
+  async collegeAddManager(request: CollegeAddManagerRequest): Promise<CollegeAddManagerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeAddStudentHeaders({ });
-    return await this.collegeAddStudentWithOptions(request, headers, runtime);
+    let headers = new CollegeAddManagerHeaders({ });
+    return await this.collegeAddManagerWithOptions(request, headers, runtime);
   }
 
   async collegeAddStudentWithOptions(request: CollegeAddStudentRequest, headers: CollegeAddStudentHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeAddStudentResponse> {
@@ -14557,13 +15479,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CollegeAddStudentResponse>(await this.doROARequest("CollegeAddStudent", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/colleges/members/depts/students`, "json", req, runtime), new CollegeAddStudentResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeAddStudent",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/depts/students`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeAddStudentResponse>(await this.execute(params, req, runtime), new CollegeAddStudentResponse({}));
   }
 
-  async collegeChangeStudentDept(request: CollegeChangeStudentDeptRequest): Promise<CollegeChangeStudentDeptResponse> {
+  async collegeAddStudent(request: CollegeAddStudentRequest): Promise<CollegeAddStudentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeChangeStudentDeptHeaders({ });
-    return await this.collegeChangeStudentDeptWithOptions(request, headers, runtime);
+    let headers = new CollegeAddStudentHeaders({ });
+    return await this.collegeAddStudentWithOptions(request, headers, runtime);
   }
 
   async collegeChangeStudentDeptWithOptions(request: CollegeChangeStudentDeptRequest, headers: CollegeChangeStudentDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeChangeStudentDeptResponse> {
@@ -14594,13 +15527,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeChangeStudentDeptResponse>(await this.doROARequest("CollegeChangeStudentDept", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/colleges/members/depts/students/move`, "json", req, runtime), new CollegeChangeStudentDeptResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeChangeStudentDept",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/depts/students/move`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeChangeStudentDeptResponse>(await this.execute(params, req, runtime), new CollegeChangeStudentDeptResponse({}));
   }
 
-  async collegeDeleteCollegeDept(request: CollegeDeleteCollegeDeptRequest): Promise<CollegeDeleteCollegeDeptResponse> {
+  async collegeChangeStudentDept(request: CollegeChangeStudentDeptRequest): Promise<CollegeChangeStudentDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeDeleteCollegeDeptHeaders({ });
-    return await this.collegeDeleteCollegeDeptWithOptions(request, headers, runtime);
+    let headers = new CollegeChangeStudentDeptHeaders({ });
+    return await this.collegeChangeStudentDeptWithOptions(request, headers, runtime);
   }
 
   async collegeDeleteCollegeDeptWithOptions(request: CollegeDeleteCollegeDeptRequest, headers: CollegeDeleteCollegeDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeDeleteCollegeDeptResponse> {
@@ -14623,13 +15567,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeDeleteCollegeDeptResponse>(await this.doROARequest("CollegeDeleteCollegeDept", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/colleges/depts`, "json", req, runtime), new CollegeDeleteCollegeDeptResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeDeleteCollegeDept",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/depts`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeDeleteCollegeDeptResponse>(await this.execute(params, req, runtime), new CollegeDeleteCollegeDeptResponse({}));
   }
 
-  async collegeListCollegeSubDept(request: CollegeListCollegeSubDeptRequest): Promise<CollegeListCollegeSubDeptResponse> {
+  async collegeDeleteCollegeDept(request: CollegeDeleteCollegeDeptRequest): Promise<CollegeDeleteCollegeDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeListCollegeSubDeptHeaders({ });
-    return await this.collegeListCollegeSubDeptWithOptions(request, headers, runtime);
+    let headers = new CollegeDeleteCollegeDeptHeaders({ });
+    return await this.collegeDeleteCollegeDeptWithOptions(request, headers, runtime);
   }
 
   async collegeListCollegeSubDeptWithOptions(request: CollegeListCollegeSubDeptRequest, headers: CollegeListCollegeSubDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeListCollegeSubDeptResponse> {
@@ -14652,13 +15607,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeListCollegeSubDeptResponse>(await this.doROARequest("CollegeListCollegeSubDept", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/subDepts`, "json", req, runtime), new CollegeListCollegeSubDeptResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeListCollegeSubDept",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/subDepts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeListCollegeSubDeptResponse>(await this.execute(params, req, runtime), new CollegeListCollegeSubDeptResponse({}));
   }
 
-  async collegeListDeptManager(request: CollegeListDeptManagerRequest): Promise<CollegeListDeptManagerResponse> {
+  async collegeListCollegeSubDept(request: CollegeListCollegeSubDeptRequest): Promise<CollegeListCollegeSubDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeListDeptManagerHeaders({ });
-    return await this.collegeListDeptManagerWithOptions(request, headers, runtime);
+    let headers = new CollegeListCollegeSubDeptHeaders({ });
+    return await this.collegeListCollegeSubDeptWithOptions(request, headers, runtime);
   }
 
   async collegeListDeptManagerWithOptions(request: CollegeListDeptManagerRequest, headers: CollegeListDeptManagerHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeListDeptManagerResponse> {
@@ -14689,13 +15655,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeListDeptManagerResponse>(await this.doROARequest("CollegeListDeptManager", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/members/depts/managers`, "json", req, runtime), new CollegeListDeptManagerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeListDeptManager",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/depts/managers`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeListDeptManagerResponse>(await this.execute(params, req, runtime), new CollegeListDeptManagerResponse({}));
   }
 
-  async collegeListStudentInfo(request: CollegeListStudentInfoRequest): Promise<CollegeListStudentInfoResponse> {
+  async collegeListDeptManager(request: CollegeListDeptManagerRequest): Promise<CollegeListDeptManagerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeListStudentInfoHeaders({ });
-    return await this.collegeListStudentInfoWithOptions(request, headers, runtime);
+    let headers = new CollegeListDeptManagerHeaders({ });
+    return await this.collegeListDeptManagerWithOptions(request, headers, runtime);
   }
 
   async collegeListStudentInfoWithOptions(request: CollegeListStudentInfoRequest, headers: CollegeListStudentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeListStudentInfoResponse> {
@@ -14730,13 +15707,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeListStudentInfoResponse>(await this.doROARequest("CollegeListStudentInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/members/depts/students`, "json", req, runtime), new CollegeListStudentInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeListStudentInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/depts/students`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeListStudentInfoResponse>(await this.execute(params, req, runtime), new CollegeListStudentInfoResponse({}));
   }
 
-  async collegeListUncheckedStudent(request: CollegeListUncheckedStudentRequest): Promise<CollegeListUncheckedStudentResponse> {
+  async collegeListStudentInfo(request: CollegeListStudentInfoRequest): Promise<CollegeListStudentInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeListUncheckedStudentHeaders({ });
-    return await this.collegeListUncheckedStudentWithOptions(request, headers, runtime);
+    let headers = new CollegeListStudentInfoHeaders({ });
+    return await this.collegeListStudentInfoWithOptions(request, headers, runtime);
   }
 
   async collegeListUncheckedStudentWithOptions(request: CollegeListUncheckedStudentRequest, headers: CollegeListUncheckedStudentHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeListUncheckedStudentResponse> {
@@ -14767,13 +15755,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeListUncheckedStudentResponse>(await this.doROARequest("CollegeListUncheckedStudent", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/members/organizations/unjoinedStudents`, "json", req, runtime), new CollegeListUncheckedStudentResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeListUncheckedStudent",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/organizations/unjoinedStudents`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeListUncheckedStudentResponse>(await this.execute(params, req, runtime), new CollegeListUncheckedStudentResponse({}));
   }
 
-  async collegeQueryCollegeDeptGroupInfo(request: CollegeQueryCollegeDeptGroupInfoRequest): Promise<CollegeQueryCollegeDeptGroupInfoResponse> {
+  async collegeListUncheckedStudent(request: CollegeListUncheckedStudentRequest): Promise<CollegeListUncheckedStudentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeQueryCollegeDeptGroupInfoHeaders({ });
-    return await this.collegeQueryCollegeDeptGroupInfoWithOptions(request, headers, runtime);
+    let headers = new CollegeListUncheckedStudentHeaders({ });
+    return await this.collegeListUncheckedStudentWithOptions(request, headers, runtime);
   }
 
   async collegeQueryCollegeDeptGroupInfoWithOptions(request: CollegeQueryCollegeDeptGroupInfoRequest, headers: CollegeQueryCollegeDeptGroupInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeQueryCollegeDeptGroupInfoResponse> {
@@ -14796,13 +15795,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeQueryCollegeDeptGroupInfoResponse>(await this.doROARequest("CollegeQueryCollegeDeptGroupInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/depts/groupInfos`, "json", req, runtime), new CollegeQueryCollegeDeptGroupInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeQueryCollegeDeptGroupInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/depts/groupInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeQueryCollegeDeptGroupInfoResponse>(await this.execute(params, req, runtime), new CollegeQueryCollegeDeptGroupInfoResponse({}));
   }
 
-  async collegeQueryCollegeDeptInfo(request: CollegeQueryCollegeDeptInfoRequest): Promise<CollegeQueryCollegeDeptInfoResponse> {
+  async collegeQueryCollegeDeptGroupInfo(request: CollegeQueryCollegeDeptGroupInfoRequest): Promise<CollegeQueryCollegeDeptGroupInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeQueryCollegeDeptInfoHeaders({ });
-    return await this.collegeQueryCollegeDeptInfoWithOptions(request, headers, runtime);
+    let headers = new CollegeQueryCollegeDeptGroupInfoHeaders({ });
+    return await this.collegeQueryCollegeDeptGroupInfoWithOptions(request, headers, runtime);
   }
 
   async collegeQueryCollegeDeptInfoWithOptions(request: CollegeQueryCollegeDeptInfoRequest, headers: CollegeQueryCollegeDeptInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeQueryCollegeDeptInfoResponse> {
@@ -14825,13 +15835,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeQueryCollegeDeptInfoResponse>(await this.doROARequest("CollegeQueryCollegeDeptInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/deptInfos`, "json", req, runtime), new CollegeQueryCollegeDeptInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeQueryCollegeDeptInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/deptInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeQueryCollegeDeptInfoResponse>(await this.execute(params, req, runtime), new CollegeQueryCollegeDeptInfoResponse({}));
   }
 
-  async collegeQueryStudentInfoByDept(request: CollegeQueryStudentInfoByDeptRequest): Promise<CollegeQueryStudentInfoByDeptResponse> {
+  async collegeQueryCollegeDeptInfo(request: CollegeQueryCollegeDeptInfoRequest): Promise<CollegeQueryCollegeDeptInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeQueryStudentInfoByDeptHeaders({ });
-    return await this.collegeQueryStudentInfoByDeptWithOptions(request, headers, runtime);
+    let headers = new CollegeQueryCollegeDeptInfoHeaders({ });
+    return await this.collegeQueryCollegeDeptInfoWithOptions(request, headers, runtime);
   }
 
   async collegeQueryStudentInfoByDeptWithOptions(request: CollegeQueryStudentInfoByDeptRequest, headers: CollegeQueryStudentInfoByDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeQueryStudentInfoByDeptResponse> {
@@ -14858,13 +15879,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeQueryStudentInfoByDeptResponse>(await this.doROARequest("CollegeQueryStudentInfoByDept", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/members/depts/studentinfos`, "json", req, runtime), new CollegeQueryStudentInfoByDeptResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeQueryStudentInfoByDept",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/depts/studentinfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeQueryStudentInfoByDeptResponse>(await this.execute(params, req, runtime), new CollegeQueryStudentInfoByDeptResponse({}));
   }
 
-  async collegeQueryStudentInfoByMobile(request: CollegeQueryStudentInfoByMobileRequest): Promise<CollegeQueryStudentInfoByMobileResponse> {
+  async collegeQueryStudentInfoByDept(request: CollegeQueryStudentInfoByDeptRequest): Promise<CollegeQueryStudentInfoByDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeQueryStudentInfoByMobileHeaders({ });
-    return await this.collegeQueryStudentInfoByMobileWithOptions(request, headers, runtime);
+    let headers = new CollegeQueryStudentInfoByDeptHeaders({ });
+    return await this.collegeQueryStudentInfoByDeptWithOptions(request, headers, runtime);
   }
 
   async collegeQueryStudentInfoByMobileWithOptions(request: CollegeQueryStudentInfoByMobileRequest, headers: CollegeQueryStudentInfoByMobileHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeQueryStudentInfoByMobileResponse> {
@@ -14887,13 +15919,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeQueryStudentInfoByMobileResponse>(await this.doROARequest("CollegeQueryStudentInfoByMobile", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/members/students/mobiles`, "json", req, runtime), new CollegeQueryStudentInfoByMobileResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeQueryStudentInfoByMobile",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/students/mobiles`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeQueryStudentInfoByMobileResponse>(await this.execute(params, req, runtime), new CollegeQueryStudentInfoByMobileResponse({}));
   }
 
-  async collegeQueryStudentInfoByStudentId(request: CollegeQueryStudentInfoByStudentIdRequest): Promise<CollegeQueryStudentInfoByStudentIdResponse> {
+  async collegeQueryStudentInfoByMobile(request: CollegeQueryStudentInfoByMobileRequest): Promise<CollegeQueryStudentInfoByMobileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeQueryStudentInfoByStudentIdHeaders({ });
-    return await this.collegeQueryStudentInfoByStudentIdWithOptions(request, headers, runtime);
+    let headers = new CollegeQueryStudentInfoByMobileHeaders({ });
+    return await this.collegeQueryStudentInfoByMobileWithOptions(request, headers, runtime);
   }
 
   async collegeQueryStudentInfoByStudentIdWithOptions(request: CollegeQueryStudentInfoByStudentIdRequest, headers: CollegeQueryStudentInfoByStudentIdHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeQueryStudentInfoByStudentIdResponse> {
@@ -14916,13 +15959,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeQueryStudentInfoByStudentIdResponse>(await this.doROARequest("CollegeQueryStudentInfoByStudentId", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/colleges/members/students`, "json", req, runtime), new CollegeQueryStudentInfoByStudentIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeQueryStudentInfoByStudentId",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/students`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeQueryStudentInfoByStudentIdResponse>(await this.execute(params, req, runtime), new CollegeQueryStudentInfoByStudentIdResponse({}));
   }
 
-  async collegeRemoveManager(request: CollegeRemoveManagerRequest): Promise<CollegeRemoveManagerResponse> {
+  async collegeQueryStudentInfoByStudentId(request: CollegeQueryStudentInfoByStudentIdRequest): Promise<CollegeQueryStudentInfoByStudentIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeRemoveManagerHeaders({ });
-    return await this.collegeRemoveManagerWithOptions(request, headers, runtime);
+    let headers = new CollegeQueryStudentInfoByStudentIdHeaders({ });
+    return await this.collegeQueryStudentInfoByStudentIdWithOptions(request, headers, runtime);
   }
 
   async collegeRemoveManagerWithOptions(request: CollegeRemoveManagerRequest, headers: CollegeRemoveManagerHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeRemoveManagerResponse> {
@@ -14953,13 +16007,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeRemoveManagerResponse>(await this.doROARequest("CollegeRemoveManager", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/colleges/members/managers`, "json", req, runtime), new CollegeRemoveManagerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeRemoveManager",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/managers`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeRemoveManagerResponse>(await this.execute(params, req, runtime), new CollegeRemoveManagerResponse({}));
   }
 
-  async collegeRemoveStudent(request: CollegeRemoveStudentRequest): Promise<CollegeRemoveStudentResponse> {
+  async collegeRemoveManager(request: CollegeRemoveManagerRequest): Promise<CollegeRemoveManagerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeRemoveStudentHeaders({ });
-    return await this.collegeRemoveStudentWithOptions(request, headers, runtime);
+    let headers = new CollegeRemoveManagerHeaders({ });
+    return await this.collegeRemoveManagerWithOptions(request, headers, runtime);
   }
 
   async collegeRemoveStudentWithOptions(request: CollegeRemoveStudentRequest, headers: CollegeRemoveStudentHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeRemoveStudentResponse> {
@@ -14986,13 +16051,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeRemoveStudentResponse>(await this.doROARequest("CollegeRemoveStudent", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/colleges/members/depts/students`, "json", req, runtime), new CollegeRemoveStudentResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeRemoveStudent",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/depts/students`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeRemoveStudentResponse>(await this.execute(params, req, runtime), new CollegeRemoveStudentResponse({}));
   }
 
-  async collegeUpdateCollegeDept(request: CollegeUpdateCollegeDeptRequest): Promise<CollegeUpdateCollegeDeptResponse> {
+  async collegeRemoveStudent(request: CollegeRemoveStudentRequest): Promise<CollegeRemoveStudentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeUpdateCollegeDeptHeaders({ });
-    return await this.collegeUpdateCollegeDeptWithOptions(request, headers, runtime);
+    let headers = new CollegeRemoveStudentHeaders({ });
+    return await this.collegeRemoveStudentWithOptions(request, headers, runtime);
   }
 
   async collegeUpdateCollegeDeptWithOptions(request: CollegeUpdateCollegeDeptRequest, headers: CollegeUpdateCollegeDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeUpdateCollegeDeptResponse> {
@@ -15027,13 +16103,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeUpdateCollegeDeptResponse>(await this.doROARequest("CollegeUpdateCollegeDept", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/colleges/depts`, "json", req, runtime), new CollegeUpdateCollegeDeptResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeUpdateCollegeDept",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/depts`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeUpdateCollegeDeptResponse>(await this.execute(params, req, runtime), new CollegeUpdateCollegeDeptResponse({}));
   }
 
-  async collegeUpdateStudentDeptInfo(request: CollegeUpdateStudentDeptInfoRequest): Promise<CollegeUpdateStudentDeptInfoResponse> {
+  async collegeUpdateCollegeDept(request: CollegeUpdateCollegeDeptRequest): Promise<CollegeUpdateCollegeDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeUpdateStudentDeptInfoHeaders({ });
-    return await this.collegeUpdateStudentDeptInfoWithOptions(request, headers, runtime);
+    let headers = new CollegeUpdateCollegeDeptHeaders({ });
+    return await this.collegeUpdateCollegeDeptWithOptions(request, headers, runtime);
   }
 
   async collegeUpdateStudentDeptInfoWithOptions(request: CollegeUpdateStudentDeptInfoRequest, headers: CollegeUpdateStudentDeptInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeUpdateStudentDeptInfoResponse> {
@@ -15064,13 +16151,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeUpdateStudentDeptInfoResponse>(await this.doROARequest("CollegeUpdateStudentDeptInfo", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/colleges/members/deptInfos`, "json", req, runtime), new CollegeUpdateStudentDeptInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeUpdateStudentDeptInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/deptInfos`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeUpdateStudentDeptInfoResponse>(await this.execute(params, req, runtime), new CollegeUpdateStudentDeptInfoResponse({}));
   }
 
-  async collegeUpdateStudentInfo(request: CollegeUpdateStudentInfoRequest): Promise<CollegeUpdateStudentInfoResponse> {
+  async collegeUpdateStudentDeptInfo(request: CollegeUpdateStudentDeptInfoRequest): Promise<CollegeUpdateStudentDeptInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeUpdateStudentInfoHeaders({ });
-    return await this.collegeUpdateStudentInfoWithOptions(request, headers, runtime);
+    let headers = new CollegeUpdateStudentDeptInfoHeaders({ });
+    return await this.collegeUpdateStudentDeptInfoWithOptions(request, headers, runtime);
   }
 
   async collegeUpdateStudentInfoWithOptions(request: CollegeUpdateStudentInfoRequest, headers: CollegeUpdateStudentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeUpdateStudentInfoResponse> {
@@ -15113,13 +16211,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CollegeUpdateStudentInfoResponse>(await this.doROARequest("CollegeUpdateStudentInfo", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/colleges/members/depts/students`, "json", req, runtime), new CollegeUpdateStudentInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeUpdateStudentInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/depts/students`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeUpdateStudentInfoResponse>(await this.execute(params, req, runtime), new CollegeUpdateStudentInfoResponse({}));
   }
 
-  async collegeUpdateStudentMoblie(request: CollegeUpdateStudentMoblieRequest): Promise<CollegeUpdateStudentMoblieResponse> {
+  async collegeUpdateStudentInfo(request: CollegeUpdateStudentInfoRequest): Promise<CollegeUpdateStudentInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CollegeUpdateStudentMoblieHeaders({ });
-    return await this.collegeUpdateStudentMoblieWithOptions(request, headers, runtime);
+    let headers = new CollegeUpdateStudentInfoHeaders({ });
+    return await this.collegeUpdateStudentInfoWithOptions(request, headers, runtime);
   }
 
   async collegeUpdateStudentMoblieWithOptions(request: CollegeUpdateStudentMoblieRequest, headers: CollegeUpdateStudentMoblieHeaders, runtime: $Util.RuntimeOptions): Promise<CollegeUpdateStudentMoblieResponse> {
@@ -15150,13 +16259,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CollegeUpdateStudentMoblieResponse>(await this.doROARequest("CollegeUpdateStudentMoblie", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/colleges/members/students/mobiles`, "json", req, runtime), new CollegeUpdateStudentMoblieResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CollegeUpdateStudentMoblie",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/colleges/members/students/mobiles`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CollegeUpdateStudentMoblieResponse>(await this.execute(params, req, runtime), new CollegeUpdateStudentMoblieResponse({}));
   }
 
-  async customizeContactCreate(request: CustomizeContactCreateRequest): Promise<CustomizeContactCreateResponse> {
+  async collegeUpdateStudentMoblie(request: CollegeUpdateStudentMoblieRequest): Promise<CollegeUpdateStudentMoblieResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CustomizeContactCreateHeaders({ });
-    return await this.customizeContactCreateWithOptions(request, headers, runtime);
+    let headers = new CollegeUpdateStudentMoblieHeaders({ });
+    return await this.collegeUpdateStudentMoblieWithOptions(request, headers, runtime);
   }
 
   async customizeContactCreateWithOptions(request: CustomizeContactCreateRequest, headers: CustomizeContactCreateHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactCreateResponse> {
@@ -15187,13 +16307,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CustomizeContactCreateResponse>(await this.doROARequest("CustomizeContactCreate", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/customizations/contacts`, "json", req, runtime), new CustomizeContactCreateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CustomizeContactCreate",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/customizations/contacts`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CustomizeContactCreateResponse>(await this.execute(params, req, runtime), new CustomizeContactCreateResponse({}));
   }
 
-  async customizeContactDelete(request: CustomizeContactDeleteRequest): Promise<CustomizeContactDeleteResponse> {
+  async customizeContactCreate(request: CustomizeContactCreateRequest): Promise<CustomizeContactCreateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CustomizeContactDeleteHeaders({ });
-    return await this.customizeContactDeleteWithOptions(request, headers, runtime);
+    let headers = new CustomizeContactCreateHeaders({ });
+    return await this.customizeContactCreateWithOptions(request, headers, runtime);
   }
 
   async customizeContactDeleteWithOptions(request: CustomizeContactDeleteRequest, headers: CustomizeContactDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeleteResponse> {
@@ -15216,13 +16347,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CustomizeContactDeleteResponse>(await this.doROARequest("CustomizeContactDelete", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/customizations/contacts`, "json", req, runtime), new CustomizeContactDeleteResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CustomizeContactDelete",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/customizations/contacts`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CustomizeContactDeleteResponse>(await this.execute(params, req, runtime), new CustomizeContactDeleteResponse({}));
   }
 
-  async customizeContactDeptCreate(request: CustomizeContactDeptCreateRequest): Promise<CustomizeContactDeptCreateResponse> {
+  async customizeContactDelete(request: CustomizeContactDeleteRequest): Promise<CustomizeContactDeleteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CustomizeContactDeptCreateHeaders({ });
-    return await this.customizeContactDeptCreateWithOptions(request, headers, runtime);
+    let headers = new CustomizeContactDeleteHeaders({ });
+    return await this.customizeContactDeleteWithOptions(request, headers, runtime);
   }
 
   async customizeContactDeptCreateWithOptions(request: CustomizeContactDeptCreateRequest, headers: CustomizeContactDeptCreateHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeptCreateResponse> {
@@ -15269,13 +16411,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CustomizeContactDeptCreateResponse>(await this.doROARequest("CustomizeContactDeptCreate", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/customizations/departments`, "json", req, runtime), new CustomizeContactDeptCreateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CustomizeContactDeptCreate",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/customizations/departments`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CustomizeContactDeptCreateResponse>(await this.execute(params, req, runtime), new CustomizeContactDeptCreateResponse({}));
   }
 
-  async customizeContactDeptDelete(request: CustomizeContactDeptDeleteRequest): Promise<CustomizeContactDeptDeleteResponse> {
+  async customizeContactDeptCreate(request: CustomizeContactDeptCreateRequest): Promise<CustomizeContactDeptCreateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CustomizeContactDeptDeleteHeaders({ });
-    return await this.customizeContactDeptDeleteWithOptions(request, headers, runtime);
+    let headers = new CustomizeContactDeptCreateHeaders({ });
+    return await this.customizeContactDeptCreateWithOptions(request, headers, runtime);
   }
 
   async customizeContactDeptDeleteWithOptions(request: CustomizeContactDeptDeleteRequest, headers: CustomizeContactDeptDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeptDeleteResponse> {
@@ -15302,13 +16455,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CustomizeContactDeptDeleteResponse>(await this.doROARequest("CustomizeContactDeptDelete", "industry_1.0", "HTTP", "DELETE", "AK", `/v1.0/industry/customizations/departments`, "json", req, runtime), new CustomizeContactDeptDeleteResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CustomizeContactDeptDelete",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/customizations/departments`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CustomizeContactDeptDeleteResponse>(await this.execute(params, req, runtime), new CustomizeContactDeptDeleteResponse({}));
   }
 
-  async customizeContactDeptGroupCreate(request: CustomizeContactDeptGroupCreateRequest): Promise<CustomizeContactDeptGroupCreateResponse> {
+  async customizeContactDeptDelete(request: CustomizeContactDeptDeleteRequest): Promise<CustomizeContactDeptDeleteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CustomizeContactDeptGroupCreateHeaders({ });
-    return await this.customizeContactDeptGroupCreateWithOptions(request, headers, runtime);
+    let headers = new CustomizeContactDeptDeleteHeaders({ });
+    return await this.customizeContactDeptDeleteWithOptions(request, headers, runtime);
   }
 
   async customizeContactDeptGroupCreateWithOptions(request: CustomizeContactDeptGroupCreateRequest, headers: CustomizeContactDeptGroupCreateHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeptGroupCreateResponse> {
@@ -15335,13 +16499,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CustomizeContactDeptGroupCreateResponse>(await this.doROARequest("CustomizeContactDeptGroupCreate", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/customizations/departmentGroups`, "json", req, runtime), new CustomizeContactDeptGroupCreateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CustomizeContactDeptGroupCreate",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/customizations/departmentGroups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CustomizeContactDeptGroupCreateResponse>(await this.execute(params, req, runtime), new CustomizeContactDeptGroupCreateResponse({}));
   }
 
-  async customizeContactDeptInfo(request: CustomizeContactDeptInfoRequest): Promise<CustomizeContactDeptInfoResponse> {
+  async customizeContactDeptGroupCreate(request: CustomizeContactDeptGroupCreateRequest): Promise<CustomizeContactDeptGroupCreateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CustomizeContactDeptInfoHeaders({ });
-    return await this.customizeContactDeptInfoWithOptions(request, headers, runtime);
+    let headers = new CustomizeContactDeptGroupCreateHeaders({ });
+    return await this.customizeContactDeptGroupCreateWithOptions(request, headers, runtime);
   }
 
   async customizeContactDeptInfoWithOptions(request: CustomizeContactDeptInfoRequest, headers: CustomizeContactDeptInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeptInfoResponse> {
@@ -15368,13 +16543,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CustomizeContactDeptInfoResponse>(await this.doROARequest("CustomizeContactDeptInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/customizations/departments`, "json", req, runtime), new CustomizeContactDeptInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CustomizeContactDeptInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/customizations/departments`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CustomizeContactDeptInfoResponse>(await this.execute(params, req, runtime), new CustomizeContactDeptInfoResponse({}));
   }
 
-  async customizeContactDeptList(request: CustomizeContactDeptListRequest): Promise<CustomizeContactDeptListResponse> {
+  async customizeContactDeptInfo(request: CustomizeContactDeptInfoRequest): Promise<CustomizeContactDeptInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CustomizeContactDeptListHeaders({ });
-    return await this.customizeContactDeptListWithOptions(request, headers, runtime);
+    let headers = new CustomizeContactDeptInfoHeaders({ });
+    return await this.customizeContactDeptInfoWithOptions(request, headers, runtime);
   }
 
   async customizeContactDeptListWithOptions(request: CustomizeContactDeptListRequest, headers: CustomizeContactDeptListHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeptListResponse> {
@@ -15401,13 +16587,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CustomizeContactDeptListResponse>(await this.doROARequest("CustomizeContactDeptList", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/customizations/subsidiaryDepartments`, "json", req, runtime), new CustomizeContactDeptListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CustomizeContactDeptList",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/customizations/subsidiaryDepartments`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CustomizeContactDeptListResponse>(await this.execute(params, req, runtime), new CustomizeContactDeptListResponse({}));
   }
 
-  async customizeContactDeptUpdate(request: CustomizeContactDeptUpdateRequest): Promise<CustomizeContactDeptUpdateResponse> {
+  async customizeContactDeptList(request: CustomizeContactDeptListRequest): Promise<CustomizeContactDeptListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CustomizeContactDeptUpdateHeaders({ });
-    return await this.customizeContactDeptUpdateWithOptions(request, headers, runtime);
+    let headers = new CustomizeContactDeptListHeaders({ });
+    return await this.customizeContactDeptListWithOptions(request, headers, runtime);
   }
 
   async customizeContactDeptUpdateWithOptions(request: CustomizeContactDeptUpdateRequest, headers: CustomizeContactDeptUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactDeptUpdateResponse> {
@@ -15450,13 +16647,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CustomizeContactDeptUpdateResponse>(await this.doROARequest("CustomizeContactDeptUpdate", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/customizations/departments`, "json", req, runtime), new CustomizeContactDeptUpdateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CustomizeContactDeptUpdate",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/customizations/departments`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CustomizeContactDeptUpdateResponse>(await this.execute(params, req, runtime), new CustomizeContactDeptUpdateResponse({}));
   }
 
-  async customizeContactEmpAdd(request: CustomizeContactEmpAddRequest): Promise<CustomizeContactEmpAddResponse> {
+  async customizeContactDeptUpdate(request: CustomizeContactDeptUpdateRequest): Promise<CustomizeContactDeptUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CustomizeContactEmpAddHeaders({ });
-    return await this.customizeContactEmpAddWithOptions(request, headers, runtime);
+    let headers = new CustomizeContactDeptUpdateHeaders({ });
+    return await this.customizeContactDeptUpdateWithOptions(request, headers, runtime);
   }
 
   async customizeContactEmpAddWithOptions(request: CustomizeContactEmpAddRequest, headers: CustomizeContactEmpAddHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactEmpAddResponse> {
@@ -15487,13 +16695,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CustomizeContactEmpAddResponse>(await this.doROARequest("CustomizeContactEmpAdd", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/customizations/users`, "json", req, runtime), new CustomizeContactEmpAddResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CustomizeContactEmpAdd",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/customizations/users`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CustomizeContactEmpAddResponse>(await this.execute(params, req, runtime), new CustomizeContactEmpAddResponse({}));
   }
 
-  async customizeContactEmpDelete(request: CustomizeContactEmpDeleteRequest): Promise<CustomizeContactEmpDeleteResponse> {
+  async customizeContactEmpAdd(request: CustomizeContactEmpAddRequest): Promise<CustomizeContactEmpAddResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CustomizeContactEmpDeleteHeaders({ });
-    return await this.customizeContactEmpDeleteWithOptions(request, headers, runtime);
+    let headers = new CustomizeContactEmpAddHeaders({ });
+    return await this.customizeContactEmpAddWithOptions(request, headers, runtime);
   }
 
   async customizeContactEmpDeleteWithOptions(request: CustomizeContactEmpDeleteRequest, headers: CustomizeContactEmpDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactEmpDeleteResponse> {
@@ -15524,13 +16743,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CustomizeContactEmpDeleteResponse>(await this.doROARequest("CustomizeContactEmpDelete", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/customizations/users/remove`, "json", req, runtime), new CustomizeContactEmpDeleteResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CustomizeContactEmpDelete",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/customizations/users/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CustomizeContactEmpDeleteResponse>(await this.execute(params, req, runtime), new CustomizeContactEmpDeleteResponse({}));
   }
 
-  async customizeContactEmpList(request: CustomizeContactEmpListRequest): Promise<CustomizeContactEmpListResponse> {
+  async customizeContactEmpDelete(request: CustomizeContactEmpDeleteRequest): Promise<CustomizeContactEmpDeleteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CustomizeContactEmpListHeaders({ });
-    return await this.customizeContactEmpListWithOptions(request, headers, runtime);
+    let headers = new CustomizeContactEmpDeleteHeaders({ });
+    return await this.customizeContactEmpDeleteWithOptions(request, headers, runtime);
   }
 
   async customizeContactEmpListWithOptions(request: CustomizeContactEmpListRequest, headers: CustomizeContactEmpListHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactEmpListResponse> {
@@ -15553,13 +16783,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CustomizeContactEmpListResponse>(await this.doROARequest("CustomizeContactEmpList", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/customizations/users`, "json", req, runtime), new CustomizeContactEmpListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CustomizeContactEmpList",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/customizations/users`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CustomizeContactEmpListResponse>(await this.execute(params, req, runtime), new CustomizeContactEmpListResponse({}));
   }
 
-  async customizeContactList(): Promise<CustomizeContactListResponse> {
+  async customizeContactEmpList(request: CustomizeContactEmpListRequest): Promise<CustomizeContactEmpListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CustomizeContactListHeaders({ });
-    return await this.customizeContactListWithOptions(headers, runtime);
+    let headers = new CustomizeContactEmpListHeaders({ });
+    return await this.customizeContactEmpListWithOptions(request, headers, runtime);
   }
 
   async customizeContactListWithOptions(headers: CustomizeContactListHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactListResponse> {
@@ -15575,13 +16816,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<CustomizeContactListResponse>(await this.doROARequest("CustomizeContactList", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/customizations/contacts`, "json", req, runtime), new CustomizeContactListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CustomizeContactList",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/customizations/contacts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CustomizeContactListResponse>(await this.execute(params, req, runtime), new CustomizeContactListResponse({}));
   }
 
-  async customizeContactUpdate(request: CustomizeContactUpdateRequest): Promise<CustomizeContactUpdateResponse> {
+  async customizeContactList(): Promise<CustomizeContactListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CustomizeContactUpdateHeaders({ });
-    return await this.customizeContactUpdateWithOptions(request, headers, runtime);
+    let headers = new CustomizeContactListHeaders({ });
+    return await this.customizeContactListWithOptions(headers, runtime);
   }
 
   async customizeContactUpdateWithOptions(request: CustomizeContactUpdateRequest, headers: CustomizeContactUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<CustomizeContactUpdateResponse> {
@@ -15616,13 +16868,70 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CustomizeContactUpdateResponse>(await this.doROARequest("CustomizeContactUpdate", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/customizations/contacts`, "json", req, runtime), new CustomizeContactUpdateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CustomizeContactUpdate",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/customizations/contacts`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CustomizeContactUpdateResponse>(await this.execute(params, req, runtime), new CustomizeContactUpdateResponse({}));
   }
 
-  async digitalStoreContactInfo(): Promise<DigitalStoreContactInfoResponse> {
+  async customizeContactUpdate(request: CustomizeContactUpdateRequest): Promise<CustomizeContactUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DigitalStoreContactInfoHeaders({ });
-    return await this.digitalStoreContactInfoWithOptions(headers, runtime);
+    let headers = new CustomizeContactUpdateHeaders({ });
+    return await this.customizeContactUpdateWithOptions(request, headers, runtime);
+  }
+
+  async dIgitalStoreMessagePushWithOptions(tmpReq: DIgitalStoreMessagePushRequest, headers: DIgitalStoreMessagePushHeaders, runtime: $Util.RuntimeOptions): Promise<DIgitalStoreMessagePushResponse> {
+    Util.validateModel(tmpReq);
+    let request = new DIgitalStoreMessagePushShrinkRequest({ });
+    OpenApiUtil.convert(tmpReq, request);
+    if (!Util.isUnset(tmpReq.messageDataList)) {
+      request.messageDataListShrink = OpenApiUtil.arrayToStringWithSpecifiedStyle(tmpReq.messageDataList, "messageDataList", "json");
+    }
+
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.messageDataListShrink)) {
+      query["messageDataList"] = request.messageDataListShrink;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DIgitalStoreMessagePush",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/messages/push`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DIgitalStoreMessagePushResponse>(await this.execute(params, req, runtime), new DIgitalStoreMessagePushResponse({}));
+  }
+
+  async dIgitalStoreMessagePush(request: DIgitalStoreMessagePushRequest): Promise<DIgitalStoreMessagePushResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DIgitalStoreMessagePushHeaders({ });
+    return await this.dIgitalStoreMessagePushWithOptions(request, headers, runtime);
   }
 
   async digitalStoreContactInfoWithOptions(headers: DigitalStoreContactInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreContactInfoResponse> {
@@ -15638,13 +16947,68 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<DigitalStoreContactInfoResponse>(await this.doROARequest("DigitalStoreContactInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/contactInfos`, "json", req, runtime), new DigitalStoreContactInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreContactInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/contactInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreContactInfoResponse>(await this.execute(params, req, runtime), new DigitalStoreContactInfoResponse({}));
   }
 
-  async digitalStoreGroupInfo(request: DigitalStoreGroupInfoRequest): Promise<DigitalStoreGroupInfoResponse> {
+  async digitalStoreContactInfo(): Promise<DigitalStoreContactInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DigitalStoreGroupInfoHeaders({ });
-    return await this.digitalStoreGroupInfoWithOptions(request, headers, runtime);
+    let headers = new DigitalStoreContactInfoHeaders({ });
+    return await this.digitalStoreContactInfoWithOptions(headers, runtime);
+  }
+
+  async digitalStoreConversationsWithOptions(request: DigitalStoreConversationsRequest, headers: DigitalStoreConversationsHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreConversationsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.conversationTitle)) {
+      query["conversationTitle"] = request.conversationTitle;
+    }
+
+    if (!Util.isUnset(request.conversationType)) {
+      query["conversationType"] = request.conversationType;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreConversations",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/conversations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreConversationsResponse>(await this.execute(params, req, runtime), new DigitalStoreConversationsResponse({}));
+  }
+
+  async digitalStoreConversations(request: DigitalStoreConversationsRequest): Promise<DigitalStoreConversationsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreConversationsHeaders({ });
+    return await this.digitalStoreConversationsWithOptions(request, headers, runtime);
   }
 
   async digitalStoreGroupInfoWithOptions(request: DigitalStoreGroupInfoRequest, headers: DigitalStoreGroupInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreGroupInfoResponse> {
@@ -15667,13 +17031,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DigitalStoreGroupInfoResponse>(await this.doROARequest("DigitalStoreGroupInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/groupInfos`, "json", req, runtime), new DigitalStoreGroupInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreGroupInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/groupInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreGroupInfoResponse>(await this.execute(params, req, runtime), new DigitalStoreGroupInfoResponse({}));
   }
 
-  async digitalStoreGroups(): Promise<DigitalStoreGroupsResponse> {
+  async digitalStoreGroupInfo(request: DigitalStoreGroupInfoRequest): Promise<DigitalStoreGroupInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DigitalStoreGroupsHeaders({ });
-    return await this.digitalStoreGroupsWithOptions(headers, runtime);
+    let headers = new DigitalStoreGroupInfoHeaders({ });
+    return await this.digitalStoreGroupInfoWithOptions(request, headers, runtime);
   }
 
   async digitalStoreGroupsWithOptions(headers: DigitalStoreGroupsHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreGroupsResponse> {
@@ -15689,13 +17064,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<DigitalStoreGroupsResponse>(await this.doROARequest("DigitalStoreGroups", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/groups`, "json", req, runtime), new DigitalStoreGroupsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreGroups",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/groups`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreGroupsResponse>(await this.execute(params, req, runtime), new DigitalStoreGroupsResponse({}));
   }
 
-  async digitalStoreNodeInfo(request: DigitalStoreNodeInfoRequest): Promise<DigitalStoreNodeInfoResponse> {
+  async digitalStoreGroups(): Promise<DigitalStoreGroupsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DigitalStoreNodeInfoHeaders({ });
-    return await this.digitalStoreNodeInfoWithOptions(request, headers, runtime);
+    let headers = new DigitalStoreGroupsHeaders({ });
+    return await this.digitalStoreGroupsWithOptions(headers, runtime);
   }
 
   async digitalStoreNodeInfoWithOptions(request: DigitalStoreNodeInfoRequest, headers: DigitalStoreNodeInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreNodeInfoResponse> {
@@ -15722,13 +17108,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DigitalStoreNodeInfoResponse>(await this.doROARequest("DigitalStoreNodeInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/nodeInfos`, "json", req, runtime), new DigitalStoreNodeInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreNodeInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/nodeInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreNodeInfoResponse>(await this.execute(params, req, runtime), new DigitalStoreNodeInfoResponse({}));
   }
 
-  async digitalStoreRightsInfo(): Promise<DigitalStoreRightsInfoResponse> {
+  async digitalStoreNodeInfo(request: DigitalStoreNodeInfoRequest): Promise<DigitalStoreNodeInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DigitalStoreRightsInfoHeaders({ });
-    return await this.digitalStoreRightsInfoWithOptions(headers, runtime);
+    let headers = new DigitalStoreNodeInfoHeaders({ });
+    return await this.digitalStoreNodeInfoWithOptions(request, headers, runtime);
   }
 
   async digitalStoreRightsInfoWithOptions(headers: DigitalStoreRightsInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreRightsInfoResponse> {
@@ -15744,13 +17141,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<DigitalStoreRightsInfoResponse>(await this.doROARequest("DigitalStoreRightsInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/rightsInfos`, "json", req, runtime), new DigitalStoreRightsInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreRightsInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/rightsInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreRightsInfoResponse>(await this.execute(params, req, runtime), new DigitalStoreRightsInfoResponse({}));
   }
 
-  async digitalStoreRoles(): Promise<DigitalStoreRolesResponse> {
+  async digitalStoreRightsInfo(): Promise<DigitalStoreRightsInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DigitalStoreRolesHeaders({ });
-    return await this.digitalStoreRolesWithOptions(headers, runtime);
+    let headers = new DigitalStoreRightsInfoHeaders({ });
+    return await this.digitalStoreRightsInfoWithOptions(headers, runtime);
   }
 
   async digitalStoreRolesWithOptions(headers: DigitalStoreRolesHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreRolesResponse> {
@@ -15766,13 +17174,68 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<DigitalStoreRolesResponse>(await this.doROARequest("DigitalStoreRoles", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/roles`, "json", req, runtime), new DigitalStoreRolesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreRoles",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/roles`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreRolesResponse>(await this.execute(params, req, runtime), new DigitalStoreRolesResponse({}));
   }
 
-  async digitalStoreStoreInfo(request: DigitalStoreStoreInfoRequest): Promise<DigitalStoreStoreInfoResponse> {
+  async digitalStoreRoles(): Promise<DigitalStoreRolesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DigitalStoreStoreInfoHeaders({ });
-    return await this.digitalStoreStoreInfoWithOptions(request, headers, runtime);
+    let headers = new DigitalStoreRolesHeaders({ });
+    return await this.digitalStoreRolesWithOptions(headers, runtime);
+  }
+
+  async digitalStoreSceneScopeWithOptions(request: DigitalStoreSceneScopeRequest, headers: DigitalStoreSceneScopeHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreSceneScopeResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      query["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.sceneCode)) {
+      query["sceneCode"] = request.sceneCode;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreSceneScope",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/sceneScopes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreSceneScopeResponse>(await this.execute(params, req, runtime), new DigitalStoreSceneScopeResponse({}));
+  }
+
+  async digitalStoreSceneScope(request: DigitalStoreSceneScopeRequest): Promise<DigitalStoreSceneScopeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DigitalStoreSceneScopeHeaders({ });
+    return await this.digitalStoreSceneScopeWithOptions(request, headers, runtime);
   }
 
   async digitalStoreStoreInfoWithOptions(request: DigitalStoreStoreInfoRequest, headers: DigitalStoreStoreInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreStoreInfoResponse> {
@@ -15799,13 +17262,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DigitalStoreStoreInfoResponse>(await this.doROARequest("DigitalStoreStoreInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/storeInfos`, "json", req, runtime), new DigitalStoreStoreInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreStoreInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/storeInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreStoreInfoResponse>(await this.execute(params, req, runtime), new DigitalStoreStoreInfoResponse({}));
   }
 
-  async digitalStoreSubNodes(request: DigitalStoreSubNodesRequest): Promise<DigitalStoreSubNodesResponse> {
+  async digitalStoreStoreInfo(request: DigitalStoreStoreInfoRequest): Promise<DigitalStoreStoreInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DigitalStoreSubNodesHeaders({ });
-    return await this.digitalStoreSubNodesWithOptions(request, headers, runtime);
+    let headers = new DigitalStoreStoreInfoHeaders({ });
+    return await this.digitalStoreStoreInfoWithOptions(request, headers, runtime);
   }
 
   async digitalStoreSubNodesWithOptions(request: DigitalStoreSubNodesRequest, headers: DigitalStoreSubNodesHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreSubNodesResponse> {
@@ -15832,13 +17306,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DigitalStoreSubNodesResponse>(await this.doROARequest("DigitalStoreSubNodes", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/subsidiaryNodes`, "json", req, runtime), new DigitalStoreSubNodesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreSubNodes",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/subsidiaryNodes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreSubNodesResponse>(await this.execute(params, req, runtime), new DigitalStoreSubNodesResponse({}));
   }
 
-  async digitalStoreUpdateAuthInfo(request: DigitalStoreUpdateAuthInfoRequest): Promise<DigitalStoreUpdateAuthInfoResponse> {
+  async digitalStoreSubNodes(request: DigitalStoreSubNodesRequest): Promise<DigitalStoreSubNodesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DigitalStoreUpdateAuthInfoHeaders({ });
-    return await this.digitalStoreUpdateAuthInfoWithOptions(request, headers, runtime);
+    let headers = new DigitalStoreSubNodesHeaders({ });
+    return await this.digitalStoreSubNodesWithOptions(request, headers, runtime);
   }
 
   async digitalStoreUpdateAuthInfoWithOptions(request: DigitalStoreUpdateAuthInfoRequest, headers: DigitalStoreUpdateAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreUpdateAuthInfoResponse> {
@@ -15861,13 +17346,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DigitalStoreUpdateAuthInfoResponse>(await this.doROARequest("DigitalStoreUpdateAuthInfo", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/digitalStores/authInfos`, "json", req, runtime), new DigitalStoreUpdateAuthInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreUpdateAuthInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/authInfos`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreUpdateAuthInfoResponse>(await this.execute(params, req, runtime), new DigitalStoreUpdateAuthInfoResponse({}));
   }
 
-  async digitalStoreUserInfo(request: DigitalStoreUserInfoRequest): Promise<DigitalStoreUserInfoResponse> {
+  async digitalStoreUpdateAuthInfo(request: DigitalStoreUpdateAuthInfoRequest): Promise<DigitalStoreUpdateAuthInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DigitalStoreUserInfoHeaders({ });
-    return await this.digitalStoreUserInfoWithOptions(request, headers, runtime);
+    let headers = new DigitalStoreUpdateAuthInfoHeaders({ });
+    return await this.digitalStoreUpdateAuthInfoWithOptions(request, headers, runtime);
   }
 
   async digitalStoreUserInfoWithOptions(request: DigitalStoreUserInfoRequest, headers: DigitalStoreUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreUserInfoResponse> {
@@ -15894,13 +17390,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DigitalStoreUserInfoResponse>(await this.doROARequest("DigitalStoreUserInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/userInfos`, "json", req, runtime), new DigitalStoreUserInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreUserInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/userInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreUserInfoResponse>(await this.execute(params, req, runtime), new DigitalStoreUserInfoResponse({}));
   }
 
-  async digitalStoreUsers(request: DigitalStoreUsersRequest): Promise<DigitalStoreUsersResponse> {
+  async digitalStoreUserInfo(request: DigitalStoreUserInfoRequest): Promise<DigitalStoreUserInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DigitalStoreUsersHeaders({ });
-    return await this.digitalStoreUsersWithOptions(request, headers, runtime);
+    let headers = new DigitalStoreUserInfoHeaders({ });
+    return await this.digitalStoreUserInfoWithOptions(request, headers, runtime);
   }
 
   async digitalStoreUsersWithOptions(request: DigitalStoreUsersRequest, headers: DigitalStoreUsersHeaders, runtime: $Util.RuntimeOptions): Promise<DigitalStoreUsersResponse> {
@@ -15927,13 +17434,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DigitalStoreUsersResponse>(await this.doROARequest("DigitalStoreUsers", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/digitalStores/nodes/users`, "json", req, runtime), new DigitalStoreUsersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DigitalStoreUsers",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/digitalStores/nodes/users`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DigitalStoreUsersResponse>(await this.execute(params, req, runtime), new DigitalStoreUsersResponse({}));
   }
 
-  async externalQueryExternalAppOrgs(request: ExternalQueryExternalAppOrgsRequest): Promise<ExternalQueryExternalAppOrgsResponse> {
+  async digitalStoreUsers(request: DigitalStoreUsersRequest): Promise<DigitalStoreUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ExternalQueryExternalAppOrgsHeaders({ });
-    return await this.externalQueryExternalAppOrgsWithOptions(request, headers, runtime);
+    let headers = new DigitalStoreUsersHeaders({ });
+    return await this.digitalStoreUsersWithOptions(request, headers, runtime);
   }
 
   async externalQueryExternalAppOrgsWithOptions(request: ExternalQueryExternalAppOrgsRequest, headers: ExternalQueryExternalAppOrgsHeaders, runtime: $Util.RuntimeOptions): Promise<ExternalQueryExternalAppOrgsResponse> {
@@ -15956,13 +17474,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ExternalQueryExternalAppOrgsResponse>(await this.doROARequest("ExternalQueryExternalAppOrgs", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/externals/apps/organizations`, "json", req, runtime), new ExternalQueryExternalAppOrgsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ExternalQueryExternalAppOrgs",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/externals/apps/organizations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ExternalQueryExternalAppOrgsResponse>(await this.execute(params, req, runtime), new ExternalQueryExternalAppOrgsResponse({}));
   }
 
-  async externalQueryExternalBelongMainOrg(request: ExternalQueryExternalBelongMainOrgRequest): Promise<ExternalQueryExternalBelongMainOrgResponse> {
+  async externalQueryExternalAppOrgs(request: ExternalQueryExternalAppOrgsRequest): Promise<ExternalQueryExternalAppOrgsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ExternalQueryExternalBelongMainOrgHeaders({ });
-    return await this.externalQueryExternalBelongMainOrgWithOptions(request, headers, runtime);
+    let headers = new ExternalQueryExternalAppOrgsHeaders({ });
+    return await this.externalQueryExternalAppOrgsWithOptions(request, headers, runtime);
   }
 
   async externalQueryExternalBelongMainOrgWithOptions(request: ExternalQueryExternalBelongMainOrgRequest, headers: ExternalQueryExternalBelongMainOrgHeaders, runtime: $Util.RuntimeOptions): Promise<ExternalQueryExternalBelongMainOrgResponse> {
@@ -15985,13 +17514,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ExternalQueryExternalBelongMainOrgResponse>(await this.doROARequest("ExternalQueryExternalBelongMainOrg", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/externals/attributions/masterOrganizations`, "json", req, runtime), new ExternalQueryExternalBelongMainOrgResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ExternalQueryExternalBelongMainOrg",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/externals/attributions/masterOrganizations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ExternalQueryExternalBelongMainOrgResponse>(await this.execute(params, req, runtime), new ExternalQueryExternalBelongMainOrgResponse({}));
   }
 
-  async externalQueryExternalOrgs(request: ExternalQueryExternalOrgsRequest): Promise<ExternalQueryExternalOrgsResponse> {
+  async externalQueryExternalBelongMainOrg(request: ExternalQueryExternalBelongMainOrgRequest): Promise<ExternalQueryExternalBelongMainOrgResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ExternalQueryExternalOrgsHeaders({ });
-    return await this.externalQueryExternalOrgsWithOptions(request, headers, runtime);
+    let headers = new ExternalQueryExternalBelongMainOrgHeaders({ });
+    return await this.externalQueryExternalBelongMainOrgWithOptions(request, headers, runtime);
   }
 
   async externalQueryExternalOrgsWithOptions(request: ExternalQueryExternalOrgsRequest, headers: ExternalQueryExternalOrgsHeaders, runtime: $Util.RuntimeOptions): Promise<ExternalQueryExternalOrgsResponse> {
@@ -16014,13 +17554,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ExternalQueryExternalOrgsResponse>(await this.doROARequest("ExternalQueryExternalOrgs", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/externals/organizations`, "json", req, runtime), new ExternalQueryExternalOrgsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ExternalQueryExternalOrgs",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/externals/organizations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ExternalQueryExternalOrgsResponse>(await this.execute(params, req, runtime), new ExternalQueryExternalOrgsResponse({}));
   }
 
-  async hospitalDataCheck(request: HospitalDataCheckRequest): Promise<HospitalDataCheckResponse> {
+  async externalQueryExternalOrgs(request: ExternalQueryExternalOrgsRequest): Promise<ExternalQueryExternalOrgsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new HospitalDataCheckHeaders({ });
-    return await this.hospitalDataCheckWithOptions(request, headers, runtime);
+    let headers = new ExternalQueryExternalOrgsHeaders({ });
+    return await this.externalQueryExternalOrgsWithOptions(request, headers, runtime);
   }
 
   async hospitalDataCheckWithOptions(request: HospitalDataCheckRequest, headers: HospitalDataCheckHeaders, runtime: $Util.RuntimeOptions): Promise<HospitalDataCheckResponse> {
@@ -16071,13 +17622,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<HospitalDataCheckResponse>(await this.doROARequest("HospitalDataCheck", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/medicals/datas/check`, "json", req, runtime), new HospitalDataCheckResponse({}));
+    let params = new $OpenApi.Params({
+      action: "HospitalDataCheck",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/datas/check`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HospitalDataCheckResponse>(await this.execute(params, req, runtime), new HospitalDataCheckResponse({}));
   }
 
-  async industryManufactureCommonEvent(request: IndustryManufactureCommonEventRequest): Promise<IndustryManufactureCommonEventResponse> {
+  async hospitalDataCheck(request: HospitalDataCheckRequest): Promise<HospitalDataCheckResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureCommonEventHeaders({ });
-    return await this.industryManufactureCommonEventWithOptions(request, headers, runtime);
+    let headers = new HospitalDataCheckHeaders({ });
+    return await this.hospitalDataCheckWithOptions(request, headers, runtime);
   }
 
   async industryManufactureCommonEventWithOptions(request: IndustryManufactureCommonEventRequest, headers: IndustryManufactureCommonEventHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureCommonEventResponse> {
@@ -16112,13 +17674,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryManufactureCommonEventResponse>(await this.doROARequest("IndustryManufactureCommonEvent", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturing/bases/commons/events`, "json", req, runtime), new IndustryManufactureCommonEventResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryManufactureCommonEvent",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufacturing/bases/commons/events`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryManufactureCommonEventResponse>(await this.execute(params, req, runtime), new IndustryManufactureCommonEventResponse({}));
   }
 
-  async industryManufactureCostRecordListGet(request: IndustryManufactureCostRecordListGetRequest): Promise<IndustryManufactureCostRecordListGetResponse> {
+  async industryManufactureCommonEvent(request: IndustryManufactureCommonEventRequest): Promise<IndustryManufactureCommonEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureCostRecordListGetHeaders({ });
-    return await this.industryManufactureCostRecordListGetWithOptions(request, headers, runtime);
+    let headers = new IndustryManufactureCommonEventHeaders({ });
+    return await this.industryManufactureCommonEventWithOptions(request, headers, runtime);
   }
 
   async industryManufactureCostRecordListGetWithOptions(request: IndustryManufactureCostRecordListGetRequest, headers: IndustryManufactureCostRecordListGetHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureCostRecordListGetResponse> {
@@ -16209,13 +17782,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryManufactureCostRecordListGetResponse>(await this.doROARequest("IndustryManufactureCostRecordListGet", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufactures/materialCostRecords/query`, "json", req, runtime), new IndustryManufactureCostRecordListGetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryManufactureCostRecordListGet",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufactures/materialCostRecords/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryManufactureCostRecordListGetResponse>(await this.execute(params, req, runtime), new IndustryManufactureCostRecordListGetResponse({}));
   }
 
-  async industryManufactureFeeListGet(request: IndustryManufactureFeeListGetRequest): Promise<IndustryManufactureFeeListGetResponse> {
+  async industryManufactureCostRecordListGet(request: IndustryManufactureCostRecordListGetRequest): Promise<IndustryManufactureCostRecordListGetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureFeeListGetHeaders({ });
-    return await this.industryManufactureFeeListGetWithOptions(request, headers, runtime);
+    let headers = new IndustryManufactureCostRecordListGetHeaders({ });
+    return await this.industryManufactureCostRecordListGetWithOptions(request, headers, runtime);
   }
 
   async industryManufactureFeeListGetWithOptions(request: IndustryManufactureFeeListGetRequest, headers: IndustryManufactureFeeListGetHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureFeeListGetResponse> {
@@ -16302,13 +17886,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryManufactureFeeListGetResponse>(await this.doROARequest("IndustryManufactureFeeListGet", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufactures/fees/query`, "json", req, runtime), new IndustryManufactureFeeListGetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryManufactureFeeListGet",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufactures/fees/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryManufactureFeeListGetResponse>(await this.execute(params, req, runtime), new IndustryManufactureFeeListGetResponse({}));
   }
 
-  async industryManufactureLabourCost(request: IndustryManufactureLabourCostRequest): Promise<IndustryManufactureLabourCostResponse> {
+  async industryManufactureFeeListGet(request: IndustryManufactureFeeListGetRequest): Promise<IndustryManufactureFeeListGetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureLabourCostHeaders({ });
-    return await this.industryManufactureLabourCostWithOptions(request, headers, runtime);
+    let headers = new IndustryManufactureFeeListGetHeaders({ });
+    return await this.industryManufactureFeeListGetWithOptions(request, headers, runtime);
   }
 
   async industryManufactureLabourCostWithOptions(request: IndustryManufactureLabourCostRequest, headers: IndustryManufactureLabourCostHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureLabourCostResponse> {
@@ -16391,13 +17986,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryManufactureLabourCostResponse>(await this.doROARequest("IndustryManufactureLabourCost", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufactures/labourCosts/query`, "json", req, runtime), new IndustryManufactureLabourCostResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryManufactureLabourCost",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufactures/labourCosts/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryManufactureLabourCostResponse>(await this.execute(params, req, runtime), new IndustryManufactureLabourCostResponse({}));
   }
 
-  async industryManufactureMaterialList(request: IndustryManufactureMaterialListRequest): Promise<IndustryManufactureMaterialListResponse> {
+  async industryManufactureLabourCost(request: IndustryManufactureLabourCostRequest): Promise<IndustryManufactureLabourCostResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureMaterialListHeaders({ });
-    return await this.industryManufactureMaterialListWithOptions(request, headers, runtime);
+    let headers = new IndustryManufactureLabourCostHeaders({ });
+    return await this.industryManufactureLabourCostWithOptions(request, headers, runtime);
   }
 
   async industryManufactureMaterialListWithOptions(request: IndustryManufactureMaterialListRequest, headers: IndustryManufactureMaterialListHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMaterialListResponse> {
@@ -16480,13 +18086,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryManufactureMaterialListResponse>(await this.doROARequest("IndustryManufactureMaterialList", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufactures/materials/query`, "json", req, runtime), new IndustryManufactureMaterialListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryManufactureMaterialList",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufactures/materials/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryManufactureMaterialListResponse>(await this.execute(params, req, runtime), new IndustryManufactureMaterialListResponse({}));
   }
 
-  async industryManufactureMesDispatchTask(request: IndustryManufactureMesDispatchTaskRequest): Promise<IndustryManufactureMesDispatchTaskResponse> {
+  async industryManufactureMaterialList(request: IndustryManufactureMaterialListRequest): Promise<IndustryManufactureMaterialListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureMesDispatchTaskHeaders({ });
-    return await this.industryManufactureMesDispatchTaskWithOptions(request, headers, runtime);
+    let headers = new IndustryManufactureMaterialListHeaders({ });
+    return await this.industryManufactureMaterialListWithOptions(request, headers, runtime);
   }
 
   async industryManufactureMesDispatchTaskWithOptions(request: IndustryManufactureMesDispatchTaskRequest, headers: IndustryManufactureMesDispatchTaskHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesDispatchTaskResponse> {
@@ -16605,13 +18222,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryManufactureMesDispatchTaskResponse>(await this.doROARequest("IndustryManufactureMesDispatchTask", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/dispatchTasks/manage`, "json", req, runtime), new IndustryManufactureMesDispatchTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryManufactureMesDispatchTask",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufacturings/dispatchTasks/manage`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryManufactureMesDispatchTaskResponse>(await this.execute(params, req, runtime), new IndustryManufactureMesDispatchTaskResponse({}));
   }
 
-  async industryManufactureMesMaterial(request: IndustryManufactureMesMaterialRequest): Promise<IndustryManufactureMesMaterialResponse> {
+  async industryManufactureMesDispatchTask(request: IndustryManufactureMesDispatchTaskRequest): Promise<IndustryManufactureMesDispatchTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureMesMaterialHeaders({ });
-    return await this.industryManufactureMesMaterialWithOptions(request, headers, runtime);
+    let headers = new IndustryManufactureMesDispatchTaskHeaders({ });
+    return await this.industryManufactureMesDispatchTaskWithOptions(request, headers, runtime);
   }
 
   async industryManufactureMesMaterialWithOptions(request: IndustryManufactureMesMaterialRequest, headers: IndustryManufactureMesMaterialHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesMaterialResponse> {
@@ -16674,13 +18302,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryManufactureMesMaterialResponse>(await this.doROARequest("IndustryManufactureMesMaterial", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/materials/manage`, "json", req, runtime), new IndustryManufactureMesMaterialResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryManufactureMesMaterial",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufacturings/materials/manage`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryManufactureMesMaterialResponse>(await this.execute(params, req, runtime), new IndustryManufactureMesMaterialResponse({}));
   }
 
-  async industryManufactureMesOutPlan(request: IndustryManufactureMesOutPlanRequest): Promise<IndustryManufactureMesOutPlanResponse> {
+  async industryManufactureMesMaterial(request: IndustryManufactureMesMaterialRequest): Promise<IndustryManufactureMesMaterialResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureMesOutPlanHeaders({ });
-    return await this.industryManufactureMesOutPlanWithOptions(request, headers, runtime);
+    let headers = new IndustryManufactureMesMaterialHeaders({ });
+    return await this.industryManufactureMesMaterialWithOptions(request, headers, runtime);
   }
 
   async industryManufactureMesOutPlanWithOptions(request: IndustryManufactureMesOutPlanRequest, headers: IndustryManufactureMesOutPlanHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesOutPlanResponse> {
@@ -16771,13 +18410,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryManufactureMesOutPlanResponse>(await this.doROARequest("IndustryManufactureMesOutPlan", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/outPlans/manage`, "json", req, runtime), new IndustryManufactureMesOutPlanResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryManufactureMesOutPlan",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufacturings/outPlans/manage`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryManufactureMesOutPlanResponse>(await this.execute(params, req, runtime), new IndustryManufactureMesOutPlanResponse({}));
   }
 
-  async industryManufactureMesOutput(request: IndustryManufactureMesOutputRequest): Promise<IndustryManufactureMesOutputResponse> {
+  async industryManufactureMesOutPlan(request: IndustryManufactureMesOutPlanRequest): Promise<IndustryManufactureMesOutPlanResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureMesOutputHeaders({ });
-    return await this.industryManufactureMesOutputWithOptions(request, headers, runtime);
+    let headers = new IndustryManufactureMesOutPlanHeaders({ });
+    return await this.industryManufactureMesOutPlanWithOptions(request, headers, runtime);
   }
 
   async industryManufactureMesOutputWithOptions(request: IndustryManufactureMesOutputRequest, headers: IndustryManufactureMesOutputHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesOutputResponse> {
@@ -16912,13 +18562,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryManufactureMesOutputResponse>(await this.doROARequest("IndustryManufactureMesOutput", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/outputs/manage`, "json", req, runtime), new IndustryManufactureMesOutputResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryManufactureMesOutput",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufacturings/outputs/manage`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryManufactureMesOutputResponse>(await this.execute(params, req, runtime), new IndustryManufactureMesOutputResponse({}));
   }
 
-  async industryManufactureMesProcess(request: IndustryManufactureMesProcessRequest): Promise<IndustryManufactureMesProcessResponse> {
+  async industryManufactureMesOutput(request: IndustryManufactureMesOutputRequest): Promise<IndustryManufactureMesOutputResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureMesProcessHeaders({ });
-    return await this.industryManufactureMesProcessWithOptions(request, headers, runtime);
+    let headers = new IndustryManufactureMesOutputHeaders({ });
+    return await this.industryManufactureMesOutputWithOptions(request, headers, runtime);
   }
 
   async industryManufactureMesProcessWithOptions(request: IndustryManufactureMesProcessRequest, headers: IndustryManufactureMesProcessHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesProcessResponse> {
@@ -16989,13 +18650,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryManufactureMesProcessResponse>(await this.doROARequest("IndustryManufactureMesProcess", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/processes/manage`, "json", req, runtime), new IndustryManufactureMesProcessResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryManufactureMesProcess",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufacturings/processes/manage`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryManufactureMesProcessResponse>(await this.execute(params, req, runtime), new IndustryManufactureMesProcessResponse({}));
   }
 
-  async industryManufactureMesProductionPlan(request: IndustryManufactureMesProductionPlanRequest): Promise<IndustryManufactureMesProductionPlanResponse> {
+  async industryManufactureMesProcess(request: IndustryManufactureMesProcessRequest): Promise<IndustryManufactureMesProcessResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureMesProductionPlanHeaders({ });
-    return await this.industryManufactureMesProductionPlanWithOptions(request, headers, runtime);
+    let headers = new IndustryManufactureMesProcessHeaders({ });
+    return await this.industryManufactureMesProcessWithOptions(request, headers, runtime);
   }
 
   async industryManufactureMesProductionPlanWithOptions(request: IndustryManufactureMesProductionPlanRequest, headers: IndustryManufactureMesProductionPlanHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesProductionPlanResponse> {
@@ -17114,13 +18786,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryManufactureMesProductionPlanResponse>(await this.doROARequest("IndustryManufactureMesProductionPlan", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/productionPlans/manage`, "json", req, runtime), new IndustryManufactureMesProductionPlanResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryManufactureMesProductionPlan",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufacturings/productionPlans/manage`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryManufactureMesProductionPlanResponse>(await this.execute(params, req, runtime), new IndustryManufactureMesProductionPlanResponse({}));
   }
 
-  async industryManufactureMesSubCooperationTeam(request: IndustryManufactureMesSubCooperationTeamRequest): Promise<IndustryManufactureMesSubCooperationTeamResponse> {
+  async industryManufactureMesProductionPlan(request: IndustryManufactureMesProductionPlanRequest): Promise<IndustryManufactureMesProductionPlanResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureMesSubCooperationTeamHeaders({ });
-    return await this.industryManufactureMesSubCooperationTeamWithOptions(request, headers, runtime);
+    let headers = new IndustryManufactureMesProductionPlanHeaders({ });
+    return await this.industryManufactureMesProductionPlanWithOptions(request, headers, runtime);
   }
 
   async industryManufactureMesSubCooperationTeamWithOptions(request: IndustryManufactureMesSubCooperationTeamRequest, headers: IndustryManufactureMesSubCooperationTeamHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesSubCooperationTeamResponse> {
@@ -17191,13 +18874,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryManufactureMesSubCooperationTeamResponse>(await this.doROARequest("IndustryManufactureMesSubCooperationTeam", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturings/outTeams/manage`, "json", req, runtime), new IndustryManufactureMesSubCooperationTeamResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryManufactureMesSubCooperationTeam",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufacturings/outTeams/manage`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryManufactureMesSubCooperationTeamResponse>(await this.execute(params, req, runtime), new IndustryManufactureMesSubCooperationTeamResponse({}));
   }
 
-  async industryManufactureMesTeamMgmt(request: IndustryManufactureMesTeamMgmtRequest): Promise<IndustryManufactureMesTeamMgmtResponse> {
+  async industryManufactureMesSubCooperationTeam(request: IndustryManufactureMesSubCooperationTeamRequest): Promise<IndustryManufactureMesSubCooperationTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryManufactureMesTeamMgmtHeaders({ });
-    return await this.industryManufactureMesTeamMgmtWithOptions(request, headers, runtime);
+    let headers = new IndustryManufactureMesSubCooperationTeamHeaders({ });
+    return await this.industryManufactureMesSubCooperationTeamWithOptions(request, headers, runtime);
   }
 
   async industryManufactureMesTeamMgmtWithOptions(request: IndustryManufactureMesTeamMgmtRequest, headers: IndustryManufactureMesTeamMgmtHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryManufactureMesTeamMgmtResponse> {
@@ -17276,13 +18970,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryManufactureMesTeamMgmtResponse>(await this.doROARequest("IndustryManufactureMesTeamMgmt", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufacturing/base/data/team`, "json", req, runtime), new IndustryManufactureMesTeamMgmtResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryManufactureMesTeamMgmt",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufacturing/base/data/team`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryManufactureMesTeamMgmtResponse>(await this.execute(params, req, runtime), new IndustryManufactureMesTeamMgmtResponse({}));
   }
 
-  async industryMmanufactureMaterialCostGet(request: IndustryMmanufactureMaterialCostGetRequest): Promise<IndustryMmanufactureMaterialCostGetResponse> {
+  async industryManufactureMesTeamMgmt(request: IndustryManufactureMesTeamMgmtRequest): Promise<IndustryManufactureMesTeamMgmtResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new IndustryMmanufactureMaterialCostGetHeaders({ });
-    return await this.industryMmanufactureMaterialCostGetWithOptions(request, headers, runtime);
+    let headers = new IndustryManufactureMesTeamMgmtHeaders({ });
+    return await this.industryManufactureMesTeamMgmtWithOptions(request, headers, runtime);
   }
 
   async industryMmanufactureMaterialCostGetWithOptions(request: IndustryMmanufactureMaterialCostGetRequest, headers: IndustryMmanufactureMaterialCostGetHeaders, runtime: $Util.RuntimeOptions): Promise<IndustryMmanufactureMaterialCostGetResponse> {
@@ -17365,13 +19070,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<IndustryMmanufactureMaterialCostGetResponse>(await this.doROARequest("IndustryMmanufactureMaterialCostGet", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/manufactures/base/materialCosts/query`, "json", req, runtime), new IndustryMmanufactureMaterialCostGetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "IndustryMmanufactureMaterialCostGet",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/manufactures/base/materialCosts/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<IndustryMmanufactureMaterialCostGetResponse>(await this.execute(params, req, runtime), new IndustryMmanufactureMaterialCostGetResponse({}));
   }
 
-  async pushDingMessage(request: PushDingMessageRequest): Promise<PushDingMessageResponse> {
+  async industryMmanufactureMaterialCostGet(request: IndustryMmanufactureMaterialCostGetRequest): Promise<IndustryMmanufactureMaterialCostGetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PushDingMessageHeaders({ });
-    return await this.pushDingMessageWithOptions(request, headers, runtime);
+    let headers = new IndustryMmanufactureMaterialCostGetHeaders({ });
+    return await this.industryMmanufactureMaterialCostGetWithOptions(request, headers, runtime);
   }
 
   async pushDingMessageWithOptions(request: PushDingMessageRequest, headers: PushDingMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushDingMessageResponse> {
@@ -17426,13 +19142,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PushDingMessageResponse>(await this.doROARequest("PushDingMessage", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/works/notice`, "json", req, runtime), new PushDingMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PushDingMessage",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/works/notice`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PushDingMessageResponse>(await this.execute(params, req, runtime), new PushDingMessageResponse({}));
   }
 
-  async queryAllDepartment(request: QueryAllDepartmentRequest): Promise<QueryAllDepartmentResponse> {
+  async pushDingMessage(request: PushDingMessageRequest): Promise<PushDingMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAllDepartmentHeaders({ });
-    return await this.queryAllDepartmentWithOptions(request, headers, runtime);
+    let headers = new PushDingMessageHeaders({ });
+    return await this.pushDingMessageWithOptions(request, headers, runtime);
   }
 
   async queryAllDepartmentWithOptions(request: QueryAllDepartmentRequest, headers: QueryAllDepartmentHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllDepartmentResponse> {
@@ -17459,13 +19186,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryAllDepartmentResponse>(await this.doROARequest("QueryAllDepartment", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/departments`, "json", req, runtime), new QueryAllDepartmentResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAllDepartment",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/departments`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAllDepartmentResponse>(await this.execute(params, req, runtime), new QueryAllDepartmentResponse({}));
   }
 
-  async queryAllDoctors(request: QueryAllDoctorsRequest): Promise<QueryAllDoctorsResponse> {
+  async queryAllDepartment(request: QueryAllDepartmentRequest): Promise<QueryAllDepartmentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAllDoctorsHeaders({ });
-    return await this.queryAllDoctorsWithOptions(request, headers, runtime);
+    let headers = new QueryAllDepartmentHeaders({ });
+    return await this.queryAllDepartmentWithOptions(request, headers, runtime);
   }
 
   async queryAllDoctorsWithOptions(request: QueryAllDoctorsRequest, headers: QueryAllDoctorsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllDoctorsResponse> {
@@ -17496,13 +19234,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryAllDoctorsResponse>(await this.doROARequest("QueryAllDoctors", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/doctors`, "json", req, runtime), new QueryAllDoctorsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAllDoctors",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/doctors`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAllDoctorsResponse>(await this.execute(params, req, runtime), new QueryAllDoctorsResponse({}));
   }
 
-  async queryAllGroup(request: QueryAllGroupRequest): Promise<QueryAllGroupResponse> {
+  async queryAllDoctors(request: QueryAllDoctorsRequest): Promise<QueryAllDoctorsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAllGroupHeaders({ });
-    return await this.queryAllGroupWithOptions(request, headers, runtime);
+    let headers = new QueryAllDoctorsHeaders({ });
+    return await this.queryAllDoctorsWithOptions(request, headers, runtime);
   }
 
   async queryAllGroupWithOptions(request: QueryAllGroupRequest, headers: QueryAllGroupHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllGroupResponse> {
@@ -17529,7 +19278,62 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryAllGroupResponse>(await this.doROARequest("QueryAllGroup", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/groups`, "json", req, runtime), new QueryAllGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAllGroup",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/groups`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAllGroupResponse>(await this.execute(params, req, runtime), new QueryAllGroupResponse({}));
+  }
+
+  async queryAllGroup(request: QueryAllGroupRequest): Promise<QueryAllGroupResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryAllGroupHeaders({ });
+    return await this.queryAllGroupWithOptions(request, headers, runtime);
+  }
+
+  async queryAllGroupsInDeptWithOptions(deptId: string, request: QueryAllGroupsInDeptRequest, headers: QueryAllGroupsInDeptHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllGroupsInDeptResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryAllGroupsInDept",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/departments/${deptId}/groups`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAllGroupsInDeptResponse>(await this.execute(params, req, runtime), new QueryAllGroupsInDeptResponse({}));
   }
 
   async queryAllGroupsInDept(deptId: string, request: QueryAllGroupsInDeptRequest): Promise<QueryAllGroupsInDeptResponse> {
@@ -17538,10 +19342,13 @@ export default class Client extends OpenApi {
     return await this.queryAllGroupsInDeptWithOptions(deptId, request, headers, runtime);
   }
 
-  async queryAllGroupsInDeptWithOptions(deptId: string, request: QueryAllGroupsInDeptRequest, headers: QueryAllGroupsInDeptHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllGroupsInDeptResponse> {
+  async queryAllMemberByDeptWithOptions(deptId: string, request: QueryAllMemberByDeptRequest, headers: QueryAllMemberByDeptHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllMemberByDeptResponse> {
     Util.validateModel(request);
-    deptId = OpenApiUtil.getEncodeParam(deptId);
     let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.monthMark)) {
+      query["monthMark"] = request.monthMark;
+    }
+
     if (!Util.isUnset(request.pageNumber)) {
       query["pageNumber"] = request.pageNumber;
     }
@@ -17563,7 +19370,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryAllGroupsInDeptResponse>(await this.doROARequest("QueryAllGroupsInDept", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/departments/${deptId}/groups`, "json", req, runtime), new QueryAllGroupsInDeptResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAllMemberByDept",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/departments/${deptId}/members`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAllMemberByDeptResponse>(await this.execute(params, req, runtime), new QueryAllMemberByDeptResponse({}));
   }
 
   async queryAllMemberByDept(deptId: string, request: QueryAllMemberByDeptRequest): Promise<QueryAllMemberByDeptResponse> {
@@ -17572,9 +19390,8 @@ export default class Client extends OpenApi {
     return await this.queryAllMemberByDeptWithOptions(deptId, request, headers, runtime);
   }
 
-  async queryAllMemberByDeptWithOptions(deptId: string, request: QueryAllMemberByDeptRequest, headers: QueryAllMemberByDeptHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllMemberByDeptResponse> {
+  async queryAllMemberByGroupWithOptions(groupId: string, request: QueryAllMemberByGroupRequest, headers: QueryAllMemberByGroupHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllMemberByGroupResponse> {
     Util.validateModel(request);
-    deptId = OpenApiUtil.getEncodeParam(deptId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.monthMark)) {
       query["monthMark"] = request.monthMark;
@@ -17601,51 +19418,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryAllMemberByDeptResponse>(await this.doROARequest("QueryAllMemberByDept", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/departments/${deptId}/members`, "json", req, runtime), new QueryAllMemberByDeptResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAllMemberByGroup",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/groups/${groupId}/members`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAllMemberByGroupResponse>(await this.execute(params, req, runtime), new QueryAllMemberByGroupResponse({}));
   }
 
   async queryAllMemberByGroup(groupId: string, request: QueryAllMemberByGroupRequest): Promise<QueryAllMemberByGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryAllMemberByGroupHeaders({ });
     return await this.queryAllMemberByGroupWithOptions(groupId, request, headers, runtime);
-  }
-
-  async queryAllMemberByGroupWithOptions(groupId: string, request: QueryAllMemberByGroupRequest, headers: QueryAllMemberByGroupHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllMemberByGroupResponse> {
-    Util.validateModel(request);
-    groupId = OpenApiUtil.getEncodeParam(groupId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.monthMark)) {
-      query["monthMark"] = request.monthMark;
-    }
-
-    if (!Util.isUnset(request.pageNumber)) {
-      query["pageNumber"] = request.pageNumber;
-    }
-
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<QueryAllMemberByGroupResponse>(await this.doROARequest("QueryAllMemberByGroup", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/groups/${groupId}/members`, "json", req, runtime), new QueryAllMemberByGroupResponse({}));
-  }
-
-  async queryBizOptLog(request: QueryBizOptLogRequest): Promise<QueryBizOptLogResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryBizOptLogHeaders({ });
-    return await this.queryBizOptLogWithOptions(request, headers, runtime);
   }
 
   async queryBizOptLogWithOptions(request: QueryBizOptLogRequest, headers: QueryBizOptLogHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBizOptLogResponse> {
@@ -17672,13 +19462,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryBizOptLogResponse>(await this.doROARequest("QueryBizOptLog", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/bizOptLogs`, "json", req, runtime), new QueryBizOptLogResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryBizOptLog",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/bizOptLogs`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryBizOptLogResponse>(await this.execute(params, req, runtime), new QueryBizOptLogResponse({}));
   }
 
-  async queryDepartmentExtendInfo(request: QueryDepartmentExtendInfoRequest): Promise<QueryDepartmentExtendInfoResponse> {
+  async queryBizOptLog(request: QueryBizOptLogRequest): Promise<QueryBizOptLogResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDepartmentExtendInfoHeaders({ });
-    return await this.queryDepartmentExtendInfoWithOptions(request, headers, runtime);
+    let headers = new QueryBizOptLogHeaders({ });
+    return await this.queryBizOptLogWithOptions(request, headers, runtime);
   }
 
   async queryDepartmentExtendInfoWithOptions(request: QueryDepartmentExtendInfoRequest, headers: QueryDepartmentExtendInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDepartmentExtendInfoResponse> {
@@ -17705,17 +19506,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryDepartmentExtendInfoResponse>(await this.doROARequest("QueryDepartmentExtendInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/departments/extensions/infos`, "json", req, runtime), new QueryDepartmentExtendInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDepartmentExtendInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/departments/extensions/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDepartmentExtendInfoResponse>(await this.execute(params, req, runtime), new QueryDepartmentExtendInfoResponse({}));
   }
 
-  async queryDepartmentInfo(deptId: string): Promise<QueryDepartmentInfoResponse> {
+  async queryDepartmentExtendInfo(request: QueryDepartmentExtendInfoRequest): Promise<QueryDepartmentExtendInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDepartmentInfoHeaders({ });
-    return await this.queryDepartmentInfoWithOptions(deptId, headers, runtime);
+    let headers = new QueryDepartmentExtendInfoHeaders({ });
+    return await this.queryDepartmentExtendInfoWithOptions(request, headers, runtime);
   }
 
   async queryDepartmentInfoWithOptions(deptId: string, headers: QueryDepartmentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDepartmentInfoResponse> {
-    deptId = OpenApiUtil.getEncodeParam(deptId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -17728,18 +19539,28 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryDepartmentInfoResponse>(await this.doROARequest("QueryDepartmentInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/departments/${deptId}`, "json", req, runtime), new QueryDepartmentInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDepartmentInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/departments/${deptId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDepartmentInfoResponse>(await this.execute(params, req, runtime), new QueryDepartmentInfoResponse({}));
   }
 
-  async queryDoctorDetailsByJobNumber(jobNumber: string, request: QueryDoctorDetailsByJobNumberRequest): Promise<QueryDoctorDetailsByJobNumberResponse> {
+  async queryDepartmentInfo(deptId: string): Promise<QueryDepartmentInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDoctorDetailsByJobNumberHeaders({ });
-    return await this.queryDoctorDetailsByJobNumberWithOptions(jobNumber, request, headers, runtime);
+    let headers = new QueryDepartmentInfoHeaders({ });
+    return await this.queryDepartmentInfoWithOptions(deptId, headers, runtime);
   }
 
   async queryDoctorDetailsByJobNumberWithOptions(jobNumber: string, request: QueryDoctorDetailsByJobNumberRequest, headers: QueryDoctorDetailsByJobNumberHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDoctorDetailsByJobNumberResponse> {
     Util.validateModel(request);
-    jobNumber = OpenApiUtil.getEncodeParam(jobNumber);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.monthMark)) {
       query["monthMark"] = request.monthMark;
@@ -17758,17 +19579,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryDoctorDetailsByJobNumberResponse>(await this.doROARequest("QueryDoctorDetailsByJobNumber", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/doctors/${jobNumber}`, "json", req, runtime), new QueryDoctorDetailsByJobNumberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDoctorDetailsByJobNumber",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/doctors/${jobNumber}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDoctorDetailsByJobNumberResponse>(await this.execute(params, req, runtime), new QueryDoctorDetailsByJobNumberResponse({}));
   }
 
-  async queryGroupInfo(groupId: string): Promise<QueryGroupInfoResponse> {
+  async queryDoctorDetailsByJobNumber(jobNumber: string, request: QueryDoctorDetailsByJobNumberRequest): Promise<QueryDoctorDetailsByJobNumberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryGroupInfoHeaders({ });
-    return await this.queryGroupInfoWithOptions(groupId, headers, runtime);
+    let headers = new QueryDoctorDetailsByJobNumberHeaders({ });
+    return await this.queryDoctorDetailsByJobNumberWithOptions(jobNumber, request, headers, runtime);
   }
 
   async queryGroupInfoWithOptions(groupId: string, headers: QueryGroupInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryGroupInfoResponse> {
-    groupId = OpenApiUtil.getEncodeParam(groupId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -17781,13 +19612,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryGroupInfoResponse>(await this.doROARequest("QueryGroupInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/groups/${groupId}`, "json", req, runtime), new QueryGroupInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryGroupInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/groups/${groupId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryGroupInfoResponse>(await this.execute(params, req, runtime), new QueryGroupInfoResponse({}));
   }
 
-  async queryHospitalDistrictInfo(request: QueryHospitalDistrictInfoRequest): Promise<QueryHospitalDistrictInfoResponse> {
+  async queryGroupInfo(groupId: string): Promise<QueryGroupInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryHospitalDistrictInfoHeaders({ });
-    return await this.queryHospitalDistrictInfoWithOptions(request, headers, runtime);
+    let headers = new QueryGroupInfoHeaders({ });
+    return await this.queryGroupInfoWithOptions(groupId, headers, runtime);
   }
 
   async queryHospitalDistrictInfoWithOptions(request: QueryHospitalDistrictInfoRequest, headers: QueryHospitalDistrictInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHospitalDistrictInfoResponse> {
@@ -17814,13 +19656,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryHospitalDistrictInfoResponse>(await this.doROARequest("QueryHospitalDistrictInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/districts`, "json", req, runtime), new QueryHospitalDistrictInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryHospitalDistrictInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/districts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryHospitalDistrictInfoResponse>(await this.execute(params, req, runtime), new QueryHospitalDistrictInfoResponse({}));
   }
 
-  async queryHospitalRoleUserInfo(request: QueryHospitalRoleUserInfoRequest): Promise<QueryHospitalRoleUserInfoResponse> {
+  async queryHospitalDistrictInfo(request: QueryHospitalDistrictInfoRequest): Promise<QueryHospitalDistrictInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryHospitalRoleUserInfoHeaders({ });
-    return await this.queryHospitalRoleUserInfoWithOptions(request, headers, runtime);
+    let headers = new QueryHospitalDistrictInfoHeaders({ });
+    return await this.queryHospitalDistrictInfoWithOptions(request, headers, runtime);
   }
 
   async queryHospitalRoleUserInfoWithOptions(request: QueryHospitalRoleUserInfoRequest, headers: QueryHospitalRoleUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHospitalRoleUserInfoResponse> {
@@ -17847,13 +19700,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryHospitalRoleUserInfoResponse>(await this.doROARequest("QueryHospitalRoleUserInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/roles/userInfos`, "json", req, runtime), new QueryHospitalRoleUserInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryHospitalRoleUserInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/roles/userInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryHospitalRoleUserInfoResponse>(await this.execute(params, req, runtime), new QueryHospitalRoleUserInfoResponse({}));
   }
 
-  async queryHospitalRoles(): Promise<QueryHospitalRolesResponse> {
+  async queryHospitalRoleUserInfo(request: QueryHospitalRoleUserInfoRequest): Promise<QueryHospitalRoleUserInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryHospitalRolesHeaders({ });
-    return await this.queryHospitalRolesWithOptions(headers, runtime);
+    let headers = new QueryHospitalRoleUserInfoHeaders({ });
+    return await this.queryHospitalRoleUserInfoWithOptions(request, headers, runtime);
   }
 
   async queryHospitalRolesWithOptions(headers: QueryHospitalRolesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHospitalRolesResponse> {
@@ -17869,13 +19733,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryHospitalRolesResponse>(await this.doROARequest("QueryHospitalRoles", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/roles`, "json", req, runtime), new QueryHospitalRolesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryHospitalRoles",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/roles`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryHospitalRolesResponse>(await this.execute(params, req, runtime), new QueryHospitalRolesResponse({}));
   }
 
-  async queryJobCodeDictionary(): Promise<QueryJobCodeDictionaryResponse> {
+  async queryHospitalRoles(): Promise<QueryHospitalRolesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryJobCodeDictionaryHeaders({ });
-    return await this.queryJobCodeDictionaryWithOptions(headers, runtime);
+    let headers = new QueryHospitalRolesHeaders({ });
+    return await this.queryHospitalRolesWithOptions(headers, runtime);
   }
 
   async queryJobCodeDictionaryWithOptions(headers: QueryJobCodeDictionaryHeaders, runtime: $Util.RuntimeOptions): Promise<QueryJobCodeDictionaryResponse> {
@@ -17891,13 +19766,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryJobCodeDictionaryResponse>(await this.doROARequest("QueryJobCodeDictionary", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/jobCodes`, "json", req, runtime), new QueryJobCodeDictionaryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryJobCodeDictionary",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/jobCodes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryJobCodeDictionaryResponse>(await this.execute(params, req, runtime), new QueryJobCodeDictionaryResponse({}));
   }
 
-  async queryJobStatusCodeDictionary(): Promise<QueryJobStatusCodeDictionaryResponse> {
+  async queryJobCodeDictionary(): Promise<QueryJobCodeDictionaryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryJobStatusCodeDictionaryHeaders({ });
-    return await this.queryJobStatusCodeDictionaryWithOptions(headers, runtime);
+    let headers = new QueryJobCodeDictionaryHeaders({ });
+    return await this.queryJobCodeDictionaryWithOptions(headers, runtime);
   }
 
   async queryJobStatusCodeDictionaryWithOptions(headers: QueryJobStatusCodeDictionaryHeaders, runtime: $Util.RuntimeOptions): Promise<QueryJobStatusCodeDictionaryResponse> {
@@ -17913,13 +19799,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryJobStatusCodeDictionaryResponse>(await this.doROARequest("QueryJobStatusCodeDictionary", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/jobStatusCodes`, "json", req, runtime), new QueryJobStatusCodeDictionaryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryJobStatusCodeDictionary",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/jobStatusCodes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryJobStatusCodeDictionaryResponse>(await this.execute(params, req, runtime), new QueryJobStatusCodeDictionaryResponse({}));
   }
 
-  async queryMedicalEvents(): Promise<QueryMedicalEventsResponse> {
+  async queryJobStatusCodeDictionary(): Promise<QueryJobStatusCodeDictionaryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryMedicalEventsHeaders({ });
-    return await this.queryMedicalEventsWithOptions(headers, runtime);
+    let headers = new QueryJobStatusCodeDictionaryHeaders({ });
+    return await this.queryJobStatusCodeDictionaryWithOptions(headers, runtime);
   }
 
   async queryMedicalEventsWithOptions(headers: QueryMedicalEventsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMedicalEventsResponse> {
@@ -17935,13 +19832,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryMedicalEventsResponse>(await this.doROARequest("QueryMedicalEvents", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/events`, "json", req, runtime), new QueryMedicalEventsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryMedicalEvents",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/events`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMedicalEventsResponse>(await this.execute(params, req, runtime), new QueryMedicalEventsResponse({}));
   }
 
-  async queryUserCredentials(request: QueryUserCredentialsRequest): Promise<QueryUserCredentialsResponse> {
+  async queryMedicalEvents(): Promise<QueryMedicalEventsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserCredentialsHeaders({ });
-    return await this.queryUserCredentialsWithOptions(request, headers, runtime);
+    let headers = new QueryMedicalEventsHeaders({ });
+    return await this.queryMedicalEventsWithOptions(headers, runtime);
   }
 
   async queryUserCredentialsWithOptions(request: QueryUserCredentialsRequest, headers: QueryUserCredentialsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserCredentialsResponse> {
@@ -17964,17 +19872,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryUserCredentialsResponse>(await this.doROARequest("QueryUserCredentials", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/medicals/users/credentials/query`, "json", req, runtime), new QueryUserCredentialsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryUserCredentials",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/users/credentials/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUserCredentialsResponse>(await this.execute(params, req, runtime), new QueryUserCredentialsResponse({}));
   }
 
-  async queryUserExtInfo(userId: string): Promise<QueryUserExtInfoResponse> {
+  async queryUserCredentials(request: QueryUserCredentialsRequest): Promise<QueryUserCredentialsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserExtInfoHeaders({ });
-    return await this.queryUserExtInfoWithOptions(userId, headers, runtime);
+    let headers = new QueryUserCredentialsHeaders({ });
+    return await this.queryUserCredentialsWithOptions(request, headers, runtime);
   }
 
   async queryUserExtInfoWithOptions(userId: string, headers: QueryUserExtInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserExtInfoResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -17987,13 +19905,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryUserExtInfoResponse>(await this.doROARequest("QueryUserExtInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/users/${userId}/extInfos`, "json", req, runtime), new QueryUserExtInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryUserExtInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/users/${userId}/extInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUserExtInfoResponse>(await this.execute(params, req, runtime), new QueryUserExtInfoResponse({}));
   }
 
-  async queryUserExtendValues(request: QueryUserExtendValuesRequest): Promise<QueryUserExtendValuesResponse> {
+  async queryUserExtInfo(userId: string): Promise<QueryUserExtInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserExtendValuesHeaders({ });
-    return await this.queryUserExtendValuesWithOptions(request, headers, runtime);
+    let headers = new QueryUserExtInfoHeaders({ });
+    return await this.queryUserExtInfoWithOptions(userId, headers, runtime);
   }
 
   async queryUserExtendValuesWithOptions(request: QueryUserExtendValuesRequest, headers: QueryUserExtendValuesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserExtendValuesResponse> {
@@ -18020,18 +19949,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryUserExtendValuesResponse>(await this.doROARequest("QueryUserExtendValues", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/medicals/users/extends/query`, "json", req, runtime), new QueryUserExtendValuesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryUserExtendValues",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/users/extends/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUserExtendValuesResponse>(await this.execute(params, req, runtime), new QueryUserExtendValuesResponse({}));
   }
 
-  async queryUserInfo(userId: string, request: QueryUserInfoRequest): Promise<QueryUserInfoResponse> {
+  async queryUserExtendValues(request: QueryUserExtendValuesRequest): Promise<QueryUserExtendValuesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserInfoHeaders({ });
-    return await this.queryUserInfoWithOptions(userId, request, headers, runtime);
+    let headers = new QueryUserExtendValuesHeaders({ });
+    return await this.queryUserExtendValuesWithOptions(request, headers, runtime);
   }
 
   async queryUserInfoWithOptions(userId: string, request: QueryUserInfoRequest, headers: QueryUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserInfoResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.monthMark)) {
       query["monthMark"] = request.monthMark;
@@ -18050,13 +19989,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryUserInfoResponse>(await this.doROARequest("QueryUserInfo", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/users/${userId}`, "json", req, runtime), new QueryUserInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryUserInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/users/${userId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUserInfoResponse>(await this.execute(params, req, runtime), new QueryUserInfoResponse({}));
   }
 
-  async queryUserProbCodeDictionary(): Promise<QueryUserProbCodeDictionaryResponse> {
+  async queryUserInfo(userId: string, request: QueryUserInfoRequest): Promise<QueryUserInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserProbCodeDictionaryHeaders({ });
-    return await this.queryUserProbCodeDictionaryWithOptions(headers, runtime);
+    let headers = new QueryUserInfoHeaders({ });
+    return await this.queryUserInfoWithOptions(userId, request, headers, runtime);
   }
 
   async queryUserProbCodeDictionaryWithOptions(headers: QueryUserProbCodeDictionaryHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserProbCodeDictionaryResponse> {
@@ -18072,17 +20022,27 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryUserProbCodeDictionaryResponse>(await this.doROARequest("QueryUserProbCodeDictionary", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/userProbCodes`, "json", req, runtime), new QueryUserProbCodeDictionaryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryUserProbCodeDictionary",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/userProbCodes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUserProbCodeDictionaryResponse>(await this.execute(params, req, runtime), new QueryUserProbCodeDictionaryResponse({}));
   }
 
-  async queryUserRoles(userId: string): Promise<QueryUserRolesResponse> {
+  async queryUserProbCodeDictionary(): Promise<QueryUserProbCodeDictionaryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserRolesHeaders({ });
-    return await this.queryUserRolesWithOptions(userId, headers, runtime);
+    let headers = new QueryUserProbCodeDictionaryHeaders({ });
+    return await this.queryUserProbCodeDictionaryWithOptions(headers, runtime);
   }
 
   async queryUserRolesWithOptions(userId: string, headers: QueryUserRolesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserRolesResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -18095,18 +20055,28 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryUserRolesResponse>(await this.doROARequest("QueryUserRoles", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/medicals/users/${userId}/roles`, "json", req, runtime), new QueryUserRolesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryUserRoles",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/users/${userId}/roles`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUserRolesResponse>(await this.execute(params, req, runtime), new QueryUserRolesResponse({}));
   }
 
-  async saveUserExtendValues(userId: string, request: SaveUserExtendValuesRequest): Promise<SaveUserExtendValuesResponse> {
+  async queryUserRoles(userId: string): Promise<QueryUserRolesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SaveUserExtendValuesHeaders({ });
-    return await this.saveUserExtendValuesWithOptions(userId, request, headers, runtime);
+    let headers = new QueryUserRolesHeaders({ });
+    return await this.queryUserRolesWithOptions(userId, headers, runtime);
   }
 
   async saveUserExtendValuesWithOptions(userId: string, request: SaveUserExtendValuesRequest, headers: SaveUserExtendValuesHeaders, runtime: $Util.RuntimeOptions): Promise<SaveUserExtendValuesResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userDisplayName)) {
       query["userDisplayName"] = request.userDisplayName;
@@ -18133,13 +20103,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SaveUserExtendValuesResponse>(await this.doROARequest("SaveUserExtendValues", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/medicals/users/${userId}/extends`, "json", req, runtime), new SaveUserExtendValuesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SaveUserExtendValues",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/users/${userId}/extends`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveUserExtendValuesResponse>(await this.execute(params, req, runtime), new SaveUserExtendValuesResponse({}));
   }
 
-  async supplyAddDept(request: SupplyAddDeptRequest): Promise<SupplyAddDeptResponse> {
+  async saveUserExtendValues(userId: string, request: SaveUserExtendValuesRequest): Promise<SaveUserExtendValuesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SupplyAddDeptHeaders({ });
-    return await this.supplyAddDeptWithOptions(request, headers, runtime);
+    let headers = new SaveUserExtendValuesHeaders({ });
+    return await this.saveUserExtendValuesWithOptions(userId, request, headers, runtime);
   }
 
   async supplyAddDeptWithOptions(request: SupplyAddDeptRequest, headers: SupplyAddDeptHeaders, runtime: $Util.RuntimeOptions): Promise<SupplyAddDeptResponse> {
@@ -18174,13 +20155,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SupplyAddDeptResponse>(await this.doROARequest("SupplyAddDept", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/supplyChains/departments`, "json", req, runtime), new SupplyAddDeptResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SupplyAddDept",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/supplyChains/departments`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SupplyAddDeptResponse>(await this.execute(params, req, runtime), new SupplyAddDeptResponse({}));
   }
 
-  async supplyAddMember(request: SupplyAddMemberRequest): Promise<SupplyAddMemberResponse> {
+  async supplyAddDept(request: SupplyAddDeptRequest): Promise<SupplyAddDeptResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SupplyAddMemberHeaders({ });
-    return await this.supplyAddMemberWithOptions(request, headers, runtime);
+    let headers = new SupplyAddDeptHeaders({ });
+    return await this.supplyAddDeptWithOptions(request, headers, runtime);
   }
 
   async supplyAddMemberWithOptions(request: SupplyAddMemberRequest, headers: SupplyAddMemberHeaders, runtime: $Util.RuntimeOptions): Promise<SupplyAddMemberResponse> {
@@ -18219,13 +20211,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SupplyAddMemberResponse>(await this.doROARequest("SupplyAddMember", "industry_1.0", "HTTP", "POST", "AK", `/v1.0/industry/supplyChains/members`, "json", req, runtime), new SupplyAddMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SupplyAddMember",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/supplyChains/members`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SupplyAddMemberResponse>(await this.execute(params, req, runtime), new SupplyAddMemberResponse({}));
   }
 
-  async supplyGetMember(request: SupplyGetMemberRequest): Promise<SupplyGetMemberResponse> {
+  async supplyAddMember(request: SupplyAddMemberRequest): Promise<SupplyAddMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SupplyGetMemberHeaders({ });
-    return await this.supplyGetMemberWithOptions(request, headers, runtime);
+    let headers = new SupplyAddMemberHeaders({ });
+    return await this.supplyAddMemberWithOptions(request, headers, runtime);
   }
 
   async supplyGetMemberWithOptions(request: SupplyGetMemberRequest, headers: SupplyGetMemberHeaders, runtime: $Util.RuntimeOptions): Promise<SupplyGetMemberResponse> {
@@ -18252,13 +20255,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SupplyGetMemberResponse>(await this.doROARequest("SupplyGetMember", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/supplyChains/members`, "json", req, runtime), new SupplyGetMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SupplyGetMember",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/supplyChains/members`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SupplyGetMemberResponse>(await this.execute(params, req, runtime), new SupplyGetMemberResponse({}));
   }
 
-  async supplyListDeptMembers(request: SupplyListDeptMembersRequest): Promise<SupplyListDeptMembersResponse> {
+  async supplyGetMember(request: SupplyGetMemberRequest): Promise<SupplyGetMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SupplyListDeptMembersHeaders({ });
-    return await this.supplyListDeptMembersWithOptions(request, headers, runtime);
+    let headers = new SupplyGetMemberHeaders({ });
+    return await this.supplyGetMemberWithOptions(request, headers, runtime);
   }
 
   async supplyListDeptMembersWithOptions(request: SupplyListDeptMembersRequest, headers: SupplyListDeptMembersHeaders, runtime: $Util.RuntimeOptions): Promise<SupplyListDeptMembersResponse> {
@@ -18289,18 +20303,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SupplyListDeptMembersResponse>(await this.doROARequest("SupplyListDeptMembers", "industry_1.0", "HTTP", "GET", "AK", `/v1.0/industry/supplyChains/departments/members`, "json", req, runtime), new SupplyListDeptMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SupplyListDeptMembers",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/supplyChains/departments/members`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SupplyListDeptMembersResponse>(await this.execute(params, req, runtime), new SupplyListDeptMembersResponse({}));
   }
 
-  async updateUserExtendInfo(userId: string, request: UpdateUserExtendInfoRequest): Promise<UpdateUserExtendInfoResponse> {
+  async supplyListDeptMembers(request: SupplyListDeptMembersRequest): Promise<SupplyListDeptMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateUserExtendInfoHeaders({ });
-    return await this.updateUserExtendInfoWithOptions(userId, request, headers, runtime);
+    let headers = new SupplyListDeptMembersHeaders({ });
+    return await this.supplyListDeptMembersWithOptions(request, headers, runtime);
   }
 
   async updateUserExtendInfoWithOptions(userId: string, request: UpdateUserExtendInfoRequest, headers: UpdateUserExtendInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateUserExtendInfoResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.comments)) {
       body["comments"] = request.comments;
@@ -18331,7 +20355,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateUserExtendInfoResponse>(await this.doROARequest("UpdateUserExtendInfo", "industry_1.0", "HTTP", "PUT", "AK", `/v1.0/industry/medicals/users/${userId}/extInfos`, "none", req, runtime), new UpdateUserExtendInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateUserExtendInfo",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/medicals/users/${userId}/extInfos`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateUserExtendInfoResponse>(await this.execute(params, req, runtime), new UpdateUserExtendInfoResponse({}));
+  }
+
+  async updateUserExtendInfo(userId: string, request: UpdateUserExtendInfoRequest): Promise<UpdateUserExtendInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateUserExtendInfoHeaders({ });
+    return await this.updateUserExtendInfoWithOptions(userId, request, headers, runtime);
   }
 
 }

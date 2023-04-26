@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -81,10 +83,12 @@ export class EditContactResponseBody extends $tea.Model {
 
 export class EditContactResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditContactResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -92,6 +96,7 @@ export class EditContactResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditContactResponseBody,
     };
   }
@@ -175,10 +180,12 @@ export class EditCustomerResponseBody extends $tea.Model {
 
 export class EditCustomerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditCustomerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -186,6 +193,7 @@ export class EditCustomerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditCustomerResponseBody,
     };
   }
@@ -269,10 +277,12 @@ export class EditCustomerPoolResponseBody extends $tea.Model {
 
 export class EditCustomerPoolResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditCustomerPoolResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -280,6 +290,7 @@ export class EditCustomerPoolResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditCustomerPoolResponseBody,
     };
   }
@@ -363,10 +374,12 @@ export class EditExchangeResponseBody extends $tea.Model {
 
 export class EditExchangeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditExchangeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -374,6 +387,7 @@ export class EditExchangeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditExchangeResponseBody,
     };
   }
@@ -457,10 +471,12 @@ export class EditGoodsResponseBody extends $tea.Model {
 
 export class EditGoodsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditGoodsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -468,6 +484,7 @@ export class EditGoodsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditGoodsResponseBody,
     };
   }
@@ -551,10 +568,12 @@ export class EditIntostockResponseBody extends $tea.Model {
 
 export class EditIntostockResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditIntostockResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -562,6 +581,7 @@ export class EditIntostockResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditIntostockResponseBody,
     };
   }
@@ -645,10 +665,12 @@ export class EditInvoiceResponseBody extends $tea.Model {
 
 export class EditInvoiceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditInvoiceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -656,6 +678,7 @@ export class EditInvoiceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditInvoiceResponseBody,
     };
   }
@@ -739,10 +762,12 @@ export class EditOrderResponseBody extends $tea.Model {
 
 export class EditOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -750,6 +775,7 @@ export class EditOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditOrderResponseBody,
     };
   }
@@ -833,10 +859,12 @@ export class EditOutstockResponseBody extends $tea.Model {
 
 export class EditOutstockResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditOutstockResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -844,6 +872,7 @@ export class EditOutstockResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditOutstockResponseBody,
     };
   }
@@ -927,10 +956,12 @@ export class EditProductionResponseBody extends $tea.Model {
 
 export class EditProductionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditProductionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -938,6 +969,7 @@ export class EditProductionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditProductionResponseBody,
     };
   }
@@ -1021,10 +1053,12 @@ export class EditPurchaseResponseBody extends $tea.Model {
 
 export class EditPurchaseResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditPurchaseResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1032,6 +1066,7 @@ export class EditPurchaseResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditPurchaseResponseBody,
     };
   }
@@ -1115,10 +1150,12 @@ export class EditQuotationRecordResponseBody extends $tea.Model {
 
 export class EditQuotationRecordResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditQuotationRecordResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1126,6 +1163,7 @@ export class EditQuotationRecordResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditQuotationRecordResponseBody,
     };
   }
@@ -1209,10 +1247,12 @@ export class EditSalesResponseBody extends $tea.Model {
 
 export class EditSalesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: EditSalesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1220,6 +1260,7 @@ export class EditSalesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: EditSalesResponseBody,
     };
   }
@@ -1312,10 +1353,12 @@ export class GetDataListResponseBody extends $tea.Model {
 
 export class GetDataListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetDataListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1323,6 +1366,7 @@ export class GetDataListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetDataListResponseBody,
     };
   }
@@ -1403,10 +1447,12 @@ export class GetDataViewResponseBody extends $tea.Model {
 
 export class GetDataViewResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetDataViewResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1414,6 +1460,7 @@ export class GetDataViewResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetDataViewResponseBody,
     };
   }
@@ -2640,9 +2687,12 @@ export class GetDataViewResponseBodyData extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2650,12 +2700,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async editContact(request: EditContactRequest): Promise<EditContactResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditContactHeaders({ });
-    return await this.editContactWithOptions(request, headers, runtime);
-  }
 
   async editContactWithOptions(request: EditContactRequest, headers: EditContactHeaders, runtime: $Util.RuntimeOptions): Promise<EditContactResponse> {
     Util.validateModel(request);
@@ -2689,13 +2733,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditContactResponse>(await this.doROARequest("EditContact", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/contacts`, "json", req, runtime), new EditContactResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditContact",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/contacts`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EditContactResponse>(await this.execute(params, req, runtime), new EditContactResponse({}));
   }
 
-  async editCustomer(request: EditCustomerRequest): Promise<EditCustomerResponse> {
+  async editContact(request: EditContactRequest): Promise<EditContactResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditCustomerHeaders({ });
-    return await this.editCustomerWithOptions(request, headers, runtime);
+    let headers = new EditContactHeaders({ });
+    return await this.editContactWithOptions(request, headers, runtime);
   }
 
   async editCustomerWithOptions(request: EditCustomerRequest, headers: EditCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<EditCustomerResponse> {
@@ -2730,13 +2785,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditCustomerResponse>(await this.doROARequest("EditCustomer", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/customers`, "json", req, runtime), new EditCustomerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditCustomer",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/customers`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EditCustomerResponse>(await this.execute(params, req, runtime), new EditCustomerResponse({}));
   }
 
-  async editCustomerPool(request: EditCustomerPoolRequest): Promise<EditCustomerPoolResponse> {
+  async editCustomer(request: EditCustomerRequest): Promise<EditCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditCustomerPoolHeaders({ });
-    return await this.editCustomerPoolWithOptions(request, headers, runtime);
+    let headers = new EditCustomerHeaders({ });
+    return await this.editCustomerWithOptions(request, headers, runtime);
   }
 
   async editCustomerPoolWithOptions(request: EditCustomerPoolRequest, headers: EditCustomerPoolHeaders, runtime: $Util.RuntimeOptions): Promise<EditCustomerPoolResponse> {
@@ -2771,13 +2837,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditCustomerPoolResponse>(await this.doROARequest("EditCustomerPool", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/customerPools`, "json", req, runtime), new EditCustomerPoolResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditCustomerPool",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/customerPools`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EditCustomerPoolResponse>(await this.execute(params, req, runtime), new EditCustomerPoolResponse({}));
   }
 
-  async editExchange(request: EditExchangeRequest): Promise<EditExchangeResponse> {
+  async editCustomerPool(request: EditCustomerPoolRequest): Promise<EditCustomerPoolResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditExchangeHeaders({ });
-    return await this.editExchangeWithOptions(request, headers, runtime);
+    let headers = new EditCustomerPoolHeaders({ });
+    return await this.editCustomerPoolWithOptions(request, headers, runtime);
   }
 
   async editExchangeWithOptions(request: EditExchangeRequest, headers: EditExchangeHeaders, runtime: $Util.RuntimeOptions): Promise<EditExchangeResponse> {
@@ -2812,13 +2889,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditExchangeResponse>(await this.doROARequest("EditExchange", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/exchanges`, "json", req, runtime), new EditExchangeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditExchange",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/exchanges`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EditExchangeResponse>(await this.execute(params, req, runtime), new EditExchangeResponse({}));
   }
 
-  async editGoods(request: EditGoodsRequest): Promise<EditGoodsResponse> {
+  async editExchange(request: EditExchangeRequest): Promise<EditExchangeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditGoodsHeaders({ });
-    return await this.editGoodsWithOptions(request, headers, runtime);
+    let headers = new EditExchangeHeaders({ });
+    return await this.editExchangeWithOptions(request, headers, runtime);
   }
 
   async editGoodsWithOptions(request: EditGoodsRequest, headers: EditGoodsHeaders, runtime: $Util.RuntimeOptions): Promise<EditGoodsResponse> {
@@ -2853,13 +2941,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditGoodsResponse>(await this.doROARequest("EditGoods", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/goods`, "json", req, runtime), new EditGoodsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditGoods",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/goods`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EditGoodsResponse>(await this.execute(params, req, runtime), new EditGoodsResponse({}));
   }
 
-  async editIntostock(request: EditIntostockRequest): Promise<EditIntostockResponse> {
+  async editGoods(request: EditGoodsRequest): Promise<EditGoodsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditIntostockHeaders({ });
-    return await this.editIntostockWithOptions(request, headers, runtime);
+    let headers = new EditGoodsHeaders({ });
+    return await this.editGoodsWithOptions(request, headers, runtime);
   }
 
   async editIntostockWithOptions(request: EditIntostockRequest, headers: EditIntostockHeaders, runtime: $Util.RuntimeOptions): Promise<EditIntostockResponse> {
@@ -2894,13 +2993,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditIntostockResponse>(await this.doROARequest("EditIntostock", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/intostocks`, "json", req, runtime), new EditIntostockResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditIntostock",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/intostocks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EditIntostockResponse>(await this.execute(params, req, runtime), new EditIntostockResponse({}));
   }
 
-  async editInvoice(request: EditInvoiceRequest): Promise<EditInvoiceResponse> {
+  async editIntostock(request: EditIntostockRequest): Promise<EditIntostockResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditInvoiceHeaders({ });
-    return await this.editInvoiceWithOptions(request, headers, runtime);
+    let headers = new EditIntostockHeaders({ });
+    return await this.editIntostockWithOptions(request, headers, runtime);
   }
 
   async editInvoiceWithOptions(request: EditInvoiceRequest, headers: EditInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<EditInvoiceResponse> {
@@ -2935,13 +3045,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditInvoiceResponse>(await this.doROARequest("EditInvoice", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/invoices`, "json", req, runtime), new EditInvoiceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditInvoice",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/invoices`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EditInvoiceResponse>(await this.execute(params, req, runtime), new EditInvoiceResponse({}));
   }
 
-  async editOrder(request: EditOrderRequest): Promise<EditOrderResponse> {
+  async editInvoice(request: EditInvoiceRequest): Promise<EditInvoiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditOrderHeaders({ });
-    return await this.editOrderWithOptions(request, headers, runtime);
+    let headers = new EditInvoiceHeaders({ });
+    return await this.editInvoiceWithOptions(request, headers, runtime);
   }
 
   async editOrderWithOptions(request: EditOrderRequest, headers: EditOrderHeaders, runtime: $Util.RuntimeOptions): Promise<EditOrderResponse> {
@@ -2976,13 +3097,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditOrderResponse>(await this.doROARequest("EditOrder", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/orders`, "json", req, runtime), new EditOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditOrder",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/orders`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EditOrderResponse>(await this.execute(params, req, runtime), new EditOrderResponse({}));
   }
 
-  async editOutstock(request: EditOutstockRequest): Promise<EditOutstockResponse> {
+  async editOrder(request: EditOrderRequest): Promise<EditOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditOutstockHeaders({ });
-    return await this.editOutstockWithOptions(request, headers, runtime);
+    let headers = new EditOrderHeaders({ });
+    return await this.editOrderWithOptions(request, headers, runtime);
   }
 
   async editOutstockWithOptions(request: EditOutstockRequest, headers: EditOutstockHeaders, runtime: $Util.RuntimeOptions): Promise<EditOutstockResponse> {
@@ -3017,13 +3149,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditOutstockResponse>(await this.doROARequest("EditOutstock", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/outstocks`, "json", req, runtime), new EditOutstockResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditOutstock",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/outstocks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EditOutstockResponse>(await this.execute(params, req, runtime), new EditOutstockResponse({}));
   }
 
-  async editProduction(request: EditProductionRequest): Promise<EditProductionResponse> {
+  async editOutstock(request: EditOutstockRequest): Promise<EditOutstockResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditProductionHeaders({ });
-    return await this.editProductionWithOptions(request, headers, runtime);
+    let headers = new EditOutstockHeaders({ });
+    return await this.editOutstockWithOptions(request, headers, runtime);
   }
 
   async editProductionWithOptions(request: EditProductionRequest, headers: EditProductionHeaders, runtime: $Util.RuntimeOptions): Promise<EditProductionResponse> {
@@ -3058,13 +3201,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditProductionResponse>(await this.doROARequest("EditProduction", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/productions`, "json", req, runtime), new EditProductionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditProduction",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/productions`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EditProductionResponse>(await this.execute(params, req, runtime), new EditProductionResponse({}));
   }
 
-  async editPurchase(request: EditPurchaseRequest): Promise<EditPurchaseResponse> {
+  async editProduction(request: EditProductionRequest): Promise<EditProductionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditPurchaseHeaders({ });
-    return await this.editPurchaseWithOptions(request, headers, runtime);
+    let headers = new EditProductionHeaders({ });
+    return await this.editProductionWithOptions(request, headers, runtime);
   }
 
   async editPurchaseWithOptions(request: EditPurchaseRequest, headers: EditPurchaseHeaders, runtime: $Util.RuntimeOptions): Promise<EditPurchaseResponse> {
@@ -3099,13 +3253,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditPurchaseResponse>(await this.doROARequest("EditPurchase", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/purchases`, "json", req, runtime), new EditPurchaseResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditPurchase",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/purchases`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EditPurchaseResponse>(await this.execute(params, req, runtime), new EditPurchaseResponse({}));
   }
 
-  async editQuotationRecord(request: EditQuotationRecordRequest): Promise<EditQuotationRecordResponse> {
+  async editPurchase(request: EditPurchaseRequest): Promise<EditPurchaseResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditQuotationRecordHeaders({ });
-    return await this.editQuotationRecordWithOptions(request, headers, runtime);
+    let headers = new EditPurchaseHeaders({ });
+    return await this.editPurchaseWithOptions(request, headers, runtime);
   }
 
   async editQuotationRecordWithOptions(request: EditQuotationRecordRequest, headers: EditQuotationRecordHeaders, runtime: $Util.RuntimeOptions): Promise<EditQuotationRecordResponse> {
@@ -3140,13 +3305,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditQuotationRecordResponse>(await this.doROARequest("EditQuotationRecord", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/quotationRecords`, "json", req, runtime), new EditQuotationRecordResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditQuotationRecord",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/quotationRecords`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EditQuotationRecordResponse>(await this.execute(params, req, runtime), new EditQuotationRecordResponse({}));
   }
 
-  async editSales(request: EditSalesRequest): Promise<EditSalesResponse> {
+  async editQuotationRecord(request: EditQuotationRecordRequest): Promise<EditQuotationRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new EditSalesHeaders({ });
-    return await this.editSalesWithOptions(request, headers, runtime);
+    let headers = new EditQuotationRecordHeaders({ });
+    return await this.editQuotationRecordWithOptions(request, headers, runtime);
   }
 
   async editSalesWithOptions(request: EditSalesRequest, headers: EditSalesHeaders, runtime: $Util.RuntimeOptions): Promise<EditSalesResponse> {
@@ -3181,13 +3357,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<EditSalesResponse>(await this.doROARequest("EditSales", "jzcrm_1.0", "HTTP", "POST", "AK", `/v1.0/jzcrm/sales`, "json", req, runtime), new EditSalesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "EditSales",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/sales`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<EditSalesResponse>(await this.execute(params, req, runtime), new EditSalesResponse({}));
   }
 
-  async getDataList(request: GetDataListRequest): Promise<GetDataListResponse> {
+  async editSales(request: EditSalesRequest): Promise<EditSalesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetDataListHeaders({ });
-    return await this.getDataListWithOptions(request, headers, runtime);
+    let headers = new EditSalesHeaders({ });
+    return await this.editSalesWithOptions(request, headers, runtime);
   }
 
   async getDataListWithOptions(request: GetDataListRequest, headers: GetDataListHeaders, runtime: $Util.RuntimeOptions): Promise<GetDataListResponse> {
@@ -3218,13 +3405,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetDataListResponse>(await this.doROARequest("GetDataList", "jzcrm_1.0", "HTTP", "GET", "AK", `/v1.0/jzcrm/data`, "json", req, runtime), new GetDataListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetDataList",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/data`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDataListResponse>(await this.execute(params, req, runtime), new GetDataListResponse({}));
   }
 
-  async getDataView(request: GetDataViewRequest): Promise<GetDataViewResponse> {
+  async getDataList(request: GetDataListRequest): Promise<GetDataListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetDataViewHeaders({ });
-    return await this.getDataViewWithOptions(request, headers, runtime);
+    let headers = new GetDataListHeaders({ });
+    return await this.getDataListWithOptions(request, headers, runtime);
   }
 
   async getDataViewWithOptions(request: GetDataViewRequest, headers: GetDataViewHeaders, runtime: $Util.RuntimeOptions): Promise<GetDataViewResponse> {
@@ -3251,7 +3449,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetDataViewResponse>(await this.doROARequest("GetDataView", "jzcrm_1.0", "HTTP", "GET", "AK", `/v1.0/jzcrm/dataView`, "json", req, runtime), new GetDataViewResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetDataView",
+      version: "jzcrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/jzcrm/dataView`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDataViewResponse>(await this.execute(params, req, runtime), new GetDataViewResponse({}));
+  }
+
+  async getDataView(request: GetDataViewRequest): Promise<GetDataViewResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetDataViewHeaders({ });
+    return await this.getDataViewWithOptions(request, headers, runtime);
   }
 
 }

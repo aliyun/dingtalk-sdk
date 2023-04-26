@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -102,10 +104,12 @@ export class CreateBadgeCodeUserInstanceResponseBody extends $tea.Model {
 
 export class CreateBadgeCodeUserInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateBadgeCodeUserInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -113,6 +117,7 @@ export class CreateBadgeCodeUserInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateBadgeCodeUserInstanceResponseBody,
     };
   }
@@ -193,10 +198,12 @@ export class CreateBadgeNotifyResponseBody extends $tea.Model {
 
 export class CreateBadgeNotifyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateBadgeNotifyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -204,6 +211,7 @@ export class CreateBadgeNotifyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateBadgeNotifyResponseBody,
     };
   }
@@ -302,10 +310,12 @@ export class DecodeBadgeCodeResponseBody extends $tea.Model {
 
 export class DecodeBadgeCodeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DecodeBadgeCodeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -313,6 +323,7 @@ export class DecodeBadgeCodeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DecodeBadgeCodeResponseBody,
     };
   }
@@ -432,10 +443,12 @@ export class NotifyBadgeCodePayResultResponseBody extends $tea.Model {
 
 export class NotifyBadgeCodePayResultResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: NotifyBadgeCodePayResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -443,6 +456,7 @@ export class NotifyBadgeCodePayResultResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: NotifyBadgeCodePayResultResponseBody,
     };
   }
@@ -541,10 +555,12 @@ export class NotifyBadgeCodeRefundResultResponseBody extends $tea.Model {
 
 export class NotifyBadgeCodeRefundResultResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: NotifyBadgeCodeRefundResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -552,6 +568,7 @@ export class NotifyBadgeCodeRefundResultResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: NotifyBadgeCodeRefundResultResponseBody,
     };
   }
@@ -650,10 +667,12 @@ export class NotifyBadgeCodeVerifyResultResponseBody extends $tea.Model {
 
 export class NotifyBadgeCodeVerifyResultResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: NotifyBadgeCodeVerifyResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -661,6 +680,7 @@ export class NotifyBadgeCodeVerifyResultResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: NotifyBadgeCodeVerifyResultResponseBody,
     };
   }
@@ -750,10 +770,12 @@ export class SaveBadgeCodeCorpInstanceResponseBody extends $tea.Model {
 
 export class SaveBadgeCodeCorpInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SaveBadgeCodeCorpInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -761,6 +783,7 @@ export class SaveBadgeCodeCorpInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SaveBadgeCodeCorpInstanceResponseBody,
     };
   }
@@ -859,10 +882,12 @@ export class UpdateBadgeCodeUserInstanceResponseBody extends $tea.Model {
 
 export class UpdateBadgeCodeUserInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateBadgeCodeUserInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -870,6 +895,7 @@ export class UpdateBadgeCodeUserInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateBadgeCodeUserInstanceResponseBody,
     };
   }
@@ -1070,9 +1096,12 @@ export class UpdateBadgeCodeUserInstanceRequestAvailableTimes extends $tea.Model
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1080,12 +1109,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async createBadgeCodeUserInstance(request: CreateBadgeCodeUserInstanceRequest): Promise<CreateBadgeCodeUserInstanceResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateBadgeCodeUserInstanceHeaders({ });
-    return await this.createBadgeCodeUserInstanceWithOptions(request, headers, runtime);
-  }
 
   async createBadgeCodeUserInstanceWithOptions(request: CreateBadgeCodeUserInstanceRequest, headers: CreateBadgeCodeUserInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateBadgeCodeUserInstanceResponse> {
     Util.validateModel(request);
@@ -1147,13 +1170,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateBadgeCodeUserInstanceResponse>(await this.doROARequest("CreateBadgeCodeUserInstance", "badge_1.0", "HTTP", "POST", "AK", `/v1.0/badge/codes/userInstances`, "json", req, runtime), new CreateBadgeCodeUserInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateBadgeCodeUserInstance",
+      version: "badge_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/badge/codes/userInstances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateBadgeCodeUserInstanceResponse>(await this.execute(params, req, runtime), new CreateBadgeCodeUserInstanceResponse({}));
   }
 
-  async createBadgeNotify(request: CreateBadgeNotifyRequest): Promise<CreateBadgeNotifyResponse> {
+  async createBadgeCodeUserInstance(request: CreateBadgeCodeUserInstanceRequest): Promise<CreateBadgeCodeUserInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateBadgeNotifyHeaders({ });
-    return await this.createBadgeNotifyWithOptions(request, headers, runtime);
+    let headers = new CreateBadgeCodeUserInstanceHeaders({ });
+    return await this.createBadgeCodeUserInstanceWithOptions(request, headers, runtime);
   }
 
   async createBadgeNotifyWithOptions(request: CreateBadgeNotifyRequest, headers: CreateBadgeNotifyHeaders, runtime: $Util.RuntimeOptions): Promise<CreateBadgeNotifyResponse> {
@@ -1188,13 +1222,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateBadgeNotifyResponse>(await this.doROARequest("CreateBadgeNotify", "badge_1.0", "HTTP", "POST", "AK", `/v1.0/badge/notices`, "json", req, runtime), new CreateBadgeNotifyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateBadgeNotify",
+      version: "badge_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/badge/notices`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateBadgeNotifyResponse>(await this.execute(params, req, runtime), new CreateBadgeNotifyResponse({}));
   }
 
-  async decodeBadgeCode(request: DecodeBadgeCodeRequest): Promise<DecodeBadgeCodeResponse> {
+  async createBadgeNotify(request: CreateBadgeNotifyRequest): Promise<CreateBadgeNotifyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DecodeBadgeCodeHeaders({ });
-    return await this.decodeBadgeCodeWithOptions(request, headers, runtime);
+    let headers = new CreateBadgeNotifyHeaders({ });
+    return await this.createBadgeNotifyWithOptions(request, headers, runtime);
   }
 
   async decodeBadgeCodeWithOptions(request: DecodeBadgeCodeRequest, headers: DecodeBadgeCodeHeaders, runtime: $Util.RuntimeOptions): Promise<DecodeBadgeCodeResponse> {
@@ -1221,13 +1266,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DecodeBadgeCodeResponse>(await this.doROARequest("DecodeBadgeCode", "badge_1.0", "HTTP", "POST", "AK", `/v1.0/badge/codes/decode`, "json", req, runtime), new DecodeBadgeCodeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DecodeBadgeCode",
+      version: "badge_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/badge/codes/decode`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DecodeBadgeCodeResponse>(await this.execute(params, req, runtime), new DecodeBadgeCodeResponse({}));
   }
 
-  async notifyBadgeCodePayResult(request: NotifyBadgeCodePayResultRequest): Promise<NotifyBadgeCodePayResultResponse> {
+  async decodeBadgeCode(request: DecodeBadgeCodeRequest): Promise<DecodeBadgeCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new NotifyBadgeCodePayResultHeaders({ });
-    return await this.notifyBadgeCodePayResultWithOptions(request, headers, runtime);
+    let headers = new DecodeBadgeCodeHeaders({ });
+    return await this.decodeBadgeCodeWithOptions(request, headers, runtime);
   }
 
   async notifyBadgeCodePayResultWithOptions(request: NotifyBadgeCodePayResultRequest, headers: NotifyBadgeCodePayResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyBadgeCodePayResultResponse> {
@@ -1314,13 +1370,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<NotifyBadgeCodePayResultResponse>(await this.doROARequest("NotifyBadgeCodePayResult", "badge_1.0", "HTTP", "POST", "AK", `/v1.0/badge/codes/payResults`, "json", req, runtime), new NotifyBadgeCodePayResultResponse({}));
+    let params = new $OpenApi.Params({
+      action: "NotifyBadgeCodePayResult",
+      version: "badge_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/badge/codes/payResults`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<NotifyBadgeCodePayResultResponse>(await this.execute(params, req, runtime), new NotifyBadgeCodePayResultResponse({}));
   }
 
-  async notifyBadgeCodeRefundResult(request: NotifyBadgeCodeRefundResultRequest): Promise<NotifyBadgeCodeRefundResultResponse> {
+  async notifyBadgeCodePayResult(request: NotifyBadgeCodePayResultRequest): Promise<NotifyBadgeCodePayResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new NotifyBadgeCodeRefundResultHeaders({ });
-    return await this.notifyBadgeCodeRefundResultWithOptions(request, headers, runtime);
+    let headers = new NotifyBadgeCodePayResultHeaders({ });
+    return await this.notifyBadgeCodePayResultWithOptions(request, headers, runtime);
   }
 
   async notifyBadgeCodeRefundResultWithOptions(request: NotifyBadgeCodeRefundResultRequest, headers: NotifyBadgeCodeRefundResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyBadgeCodeRefundResultResponse> {
@@ -1379,13 +1446,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<NotifyBadgeCodeRefundResultResponse>(await this.doROARequest("NotifyBadgeCodeRefundResult", "badge_1.0", "HTTP", "POST", "AK", `/v1.0/badge/codes/refundResults`, "json", req, runtime), new NotifyBadgeCodeRefundResultResponse({}));
+    let params = new $OpenApi.Params({
+      action: "NotifyBadgeCodeRefundResult",
+      version: "badge_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/badge/codes/refundResults`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<NotifyBadgeCodeRefundResultResponse>(await this.execute(params, req, runtime), new NotifyBadgeCodeRefundResultResponse({}));
   }
 
-  async notifyBadgeCodeVerifyResult(request: NotifyBadgeCodeVerifyResultRequest): Promise<NotifyBadgeCodeVerifyResultResponse> {
+  async notifyBadgeCodeRefundResult(request: NotifyBadgeCodeRefundResultRequest): Promise<NotifyBadgeCodeRefundResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new NotifyBadgeCodeVerifyResultHeaders({ });
-    return await this.notifyBadgeCodeVerifyResultWithOptions(request, headers, runtime);
+    let headers = new NotifyBadgeCodeRefundResultHeaders({ });
+    return await this.notifyBadgeCodeRefundResultWithOptions(request, headers, runtime);
   }
 
   async notifyBadgeCodeVerifyResultWithOptions(request: NotifyBadgeCodeVerifyResultRequest, headers: NotifyBadgeCodeVerifyResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyBadgeCodeVerifyResultResponse> {
@@ -1444,13 +1522,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<NotifyBadgeCodeVerifyResultResponse>(await this.doROARequest("NotifyBadgeCodeVerifyResult", "badge_1.0", "HTTP", "POST", "AK", `/v1.0/badge/codes/verifyResults`, "json", req, runtime), new NotifyBadgeCodeVerifyResultResponse({}));
+    let params = new $OpenApi.Params({
+      action: "NotifyBadgeCodeVerifyResult",
+      version: "badge_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/badge/codes/verifyResults`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<NotifyBadgeCodeVerifyResultResponse>(await this.execute(params, req, runtime), new NotifyBadgeCodeVerifyResultResponse({}));
   }
 
-  async saveBadgeCodeCorpInstance(request: SaveBadgeCodeCorpInstanceRequest): Promise<SaveBadgeCodeCorpInstanceResponse> {
+  async notifyBadgeCodeVerifyResult(request: NotifyBadgeCodeVerifyResultRequest): Promise<NotifyBadgeCodeVerifyResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SaveBadgeCodeCorpInstanceHeaders({ });
-    return await this.saveBadgeCodeCorpInstanceWithOptions(request, headers, runtime);
+    let headers = new NotifyBadgeCodeVerifyResultHeaders({ });
+    return await this.notifyBadgeCodeVerifyResultWithOptions(request, headers, runtime);
   }
 
   async saveBadgeCodeCorpInstanceWithOptions(request: SaveBadgeCodeCorpInstanceRequest, headers: SaveBadgeCodeCorpInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<SaveBadgeCodeCorpInstanceResponse> {
@@ -1485,13 +1574,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SaveBadgeCodeCorpInstanceResponse>(await this.doROARequest("SaveBadgeCodeCorpInstance", "badge_1.0", "HTTP", "POST", "AK", `/v1.0/badge/codes/corpInstances`, "json", req, runtime), new SaveBadgeCodeCorpInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SaveBadgeCodeCorpInstance",
+      version: "badge_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/badge/codes/corpInstances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveBadgeCodeCorpInstanceResponse>(await this.execute(params, req, runtime), new SaveBadgeCodeCorpInstanceResponse({}));
   }
 
-  async updateBadgeCodeUserInstance(request: UpdateBadgeCodeUserInstanceRequest): Promise<UpdateBadgeCodeUserInstanceResponse> {
+  async saveBadgeCodeCorpInstance(request: SaveBadgeCodeCorpInstanceRequest): Promise<SaveBadgeCodeCorpInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateBadgeCodeUserInstanceHeaders({ });
-    return await this.updateBadgeCodeUserInstanceWithOptions(request, headers, runtime);
+    let headers = new SaveBadgeCodeCorpInstanceHeaders({ });
+    return await this.saveBadgeCodeCorpInstanceWithOptions(request, headers, runtime);
   }
 
   async updateBadgeCodeUserInstanceWithOptions(request: UpdateBadgeCodeUserInstanceRequest, headers: UpdateBadgeCodeUserInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateBadgeCodeUserInstanceResponse> {
@@ -1550,7 +1650,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateBadgeCodeUserInstanceResponse>(await this.doROARequest("UpdateBadgeCodeUserInstance", "badge_1.0", "HTTP", "PUT", "AK", `/v1.0/badge/codes/userInstances`, "json", req, runtime), new UpdateBadgeCodeUserInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateBadgeCodeUserInstance",
+      version: "badge_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/badge/codes/userInstances`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateBadgeCodeUserInstanceResponse>(await this.execute(params, req, runtime), new UpdateBadgeCodeUserInstanceResponse({}));
+  }
+
+  async updateBadgeCodeUserInstance(request: UpdateBadgeCodeUserInstanceRequest): Promise<UpdateBadgeCodeUserInstanceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateBadgeCodeUserInstanceHeaders({ });
+    return await this.updateBadgeCodeUserInstanceWithOptions(request, headers, runtime);
   }
 
 }

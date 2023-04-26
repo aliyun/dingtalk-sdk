@@ -3,9 +3,30 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
+
+export class PrivateDataValue extends $tea.Model {
+  cardParamMap?: { [key: string]: string };
+  static names(): { [key: string]: string } {
+    return {
+      cardParamMap: 'cardParamMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
 
 export class AppendSpaceHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
@@ -84,10 +105,12 @@ export class AppendSpaceResponseBody extends $tea.Model {
 
 export class AppendSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AppendSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -95,6 +118,7 @@ export class AppendSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AppendSpaceResponseBody,
     };
   }
@@ -220,10 +244,12 @@ export class CreateAndDeliverResponseBody extends $tea.Model {
 
 export class CreateAndDeliverResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateAndDeliverResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -231,6 +257,7 @@ export class CreateAndDeliverResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateAndDeliverResponseBody,
     };
   }
@@ -338,10 +365,12 @@ export class CreateCardResponseBody extends $tea.Model {
 
 export class CreateCardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateCardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -349,6 +378,7 @@ export class CreateCardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateCardResponseBody,
     };
   }
@@ -444,10 +474,12 @@ export class DeliverCardResponseBody extends $tea.Model {
 
 export class DeliverCardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeliverCardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -455,6 +487,7 @@ export class DeliverCardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeliverCardResponseBody,
     };
   }
@@ -538,10 +571,12 @@ export class RegisterCallbackResponseBody extends $tea.Model {
 
 export class RegisterCallbackResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RegisterCallbackResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -549,6 +584,7 @@ export class RegisterCallbackResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RegisterCallbackResponseBody,
     };
   }
@@ -635,10 +671,12 @@ export class UpdateCardResponseBody extends $tea.Model {
 
 export class UpdateCardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateCardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -646,26 +684,8 @@ export class UpdateCardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateCardResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class PrivateDataValue extends $tea.Model {
-  cardParamMap?: { [key: string]: string };
-  static names(): { [key: string]: string } {
-    return {
-      cardParamMap: 'cardParamMap',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
     };
   }
 
@@ -1777,9 +1797,12 @@ export class UpdateCardRequestCardUpdateOptions extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1787,12 +1810,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async appendSpace(request: AppendSpaceRequest): Promise<AppendSpaceResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AppendSpaceHeaders({ });
-    return await this.appendSpaceWithOptions(request, headers, runtime);
-  }
 
   async appendSpaceWithOptions(request: AppendSpaceRequest, headers: AppendSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<AppendSpaceResponse> {
     Util.validateModel(request);
@@ -1830,13 +1847,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AppendSpaceResponse>(await this.doROARequest("AppendSpace", "card_1.0", "HTTP", "PUT", "AK", `/v1.0/card/instances/spaces`, "json", req, runtime), new AppendSpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AppendSpace",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/instances/spaces`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AppendSpaceResponse>(await this.execute(params, req, runtime), new AppendSpaceResponse({}));
   }
 
-  async createAndDeliver(request: CreateAndDeliverRequest): Promise<CreateAndDeliverResponse> {
+  async appendSpace(request: AppendSpaceRequest): Promise<AppendSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateAndDeliverHeaders({ });
-    return await this.createAndDeliverWithOptions(request, headers, runtime);
+    let headers = new AppendSpaceHeaders({ });
+    return await this.appendSpaceWithOptions(request, headers, runtime);
   }
 
   async createAndDeliverWithOptions(request: CreateAndDeliverRequest, headers: CreateAndDeliverHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAndDeliverResponse> {
@@ -1927,13 +1955,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateAndDeliverResponse>(await this.doROARequest("CreateAndDeliver", "card_1.0", "HTTP", "POST", "AK", `/v1.0/card/instances/createAndDeliver`, "json", req, runtime), new CreateAndDeliverResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateAndDeliver",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/instances/createAndDeliver`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateAndDeliverResponse>(await this.execute(params, req, runtime), new CreateAndDeliverResponse({}));
   }
 
-  async createCard(request: CreateCardRequest): Promise<CreateCardResponse> {
+  async createAndDeliver(request: CreateAndDeliverRequest): Promise<CreateAndDeliverResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateCardHeaders({ });
-    return await this.createCardWithOptions(request, headers, runtime);
+    let headers = new CreateAndDeliverHeaders({ });
+    return await this.createAndDeliverWithOptions(request, headers, runtime);
   }
 
   async createCardWithOptions(request: CreateCardRequest, headers: CreateCardHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCardResponse> {
@@ -2000,13 +2039,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateCardResponse>(await this.doROARequest("CreateCard", "card_1.0", "HTTP", "POST", "AK", `/v1.0/card/instances`, "json", req, runtime), new CreateCardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateCard",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/instances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateCardResponse>(await this.execute(params, req, runtime), new CreateCardResponse({}));
   }
 
-  async deliverCard(request: DeliverCardRequest): Promise<DeliverCardResponse> {
+  async createCard(request: CreateCardRequest): Promise<CreateCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeliverCardHeaders({ });
-    return await this.deliverCardWithOptions(request, headers, runtime);
+    let headers = new CreateCardHeaders({ });
+    return await this.createCardWithOptions(request, headers, runtime);
   }
 
   async deliverCardWithOptions(request: DeliverCardRequest, headers: DeliverCardHeaders, runtime: $Util.RuntimeOptions): Promise<DeliverCardResponse> {
@@ -2057,13 +2107,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeliverCardResponse>(await this.doROARequest("DeliverCard", "card_1.0", "HTTP", "POST", "AK", `/v1.0/card/instances/deliver`, "json", req, runtime), new DeliverCardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeliverCard",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/instances/deliver`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeliverCardResponse>(await this.execute(params, req, runtime), new DeliverCardResponse({}));
   }
 
-  async registerCallback(request: RegisterCallbackRequest): Promise<RegisterCallbackResponse> {
+  async deliverCard(request: DeliverCardRequest): Promise<DeliverCardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RegisterCallbackHeaders({ });
-    return await this.registerCallbackWithOptions(request, headers, runtime);
+    let headers = new DeliverCardHeaders({ });
+    return await this.deliverCardWithOptions(request, headers, runtime);
   }
 
   async registerCallbackWithOptions(request: RegisterCallbackRequest, headers: RegisterCallbackHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterCallbackResponse> {
@@ -2098,13 +2159,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RegisterCallbackResponse>(await this.doROARequest("RegisterCallback", "card_1.0", "HTTP", "POST", "AK", `/v1.0/card/callbacks/register`, "json", req, runtime), new RegisterCallbackResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RegisterCallback",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/callbacks/register`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RegisterCallbackResponse>(await this.execute(params, req, runtime), new RegisterCallbackResponse({}));
   }
 
-  async updateCard(request: UpdateCardRequest): Promise<UpdateCardResponse> {
+  async registerCallback(request: RegisterCallbackRequest): Promise<RegisterCallbackResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateCardHeaders({ });
-    return await this.updateCardWithOptions(request, headers, runtime);
+    let headers = new RegisterCallbackHeaders({ });
+    return await this.registerCallbackWithOptions(request, headers, runtime);
   }
 
   async updateCardWithOptions(request: UpdateCardRequest, headers: UpdateCardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCardResponse> {
@@ -2143,7 +2215,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateCardResponse>(await this.doROARequest("UpdateCard", "card_1.0", "HTTP", "PUT", "AK", `/v1.0/card/instances`, "json", req, runtime), new UpdateCardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateCard",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/instances`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateCardResponse>(await this.execute(params, req, runtime), new UpdateCardResponse({}));
+  }
+
+  async updateCard(request: UpdateCardRequest): Promise<UpdateCardResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateCardHeaders({ });
+    return await this.updateCardWithOptions(request, headers, runtime);
   }
 
 }

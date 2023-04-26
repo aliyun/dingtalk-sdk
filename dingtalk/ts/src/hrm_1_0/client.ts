@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -84,10 +86,12 @@ export class AddHrmPreentryResponseBody extends $tea.Model {
 
 export class AddHrmPreentryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddHrmPreentryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -95,6 +99,7 @@ export class AddHrmPreentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddHrmPreentryResponseBody,
     };
   }
@@ -208,10 +213,12 @@ export class ECertQueryResponseBody extends $tea.Model {
 
 export class ECertQueryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ECertQueryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -219,6 +226,7 @@ export class ECertQueryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ECertQueryResponseBody,
     };
   }
@@ -299,10 +307,12 @@ export class HrmProcessRegularResponseBody extends $tea.Model {
 
 export class HrmProcessRegularResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: HrmProcessRegularResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -310,6 +320,7 @@ export class HrmProcessRegularResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: HrmProcessRegularResponseBody,
     };
   }
@@ -405,10 +416,12 @@ export class HrmProcessTransferResponseBody extends $tea.Model {
 
 export class HrmProcessTransferResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: HrmProcessTransferResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -416,6 +429,7 @@ export class HrmProcessTransferResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: HrmProcessTransferResponseBody,
     };
   }
@@ -493,10 +507,12 @@ export class HrmProcessUpdateTerminationInfoResponseBody extends $tea.Model {
 
 export class HrmProcessUpdateTerminationInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: HrmProcessUpdateTerminationInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -504,6 +520,7 @@ export class HrmProcessUpdateTerminationInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: HrmProcessUpdateTerminationInfoResponseBody,
     };
   }
@@ -611,10 +628,12 @@ export class MasterDataQueryResponseBody extends $tea.Model {
 
 export class MasterDataQueryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: MasterDataQueryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -622,6 +641,7 @@ export class MasterDataQueryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: MasterDataQueryResponseBody,
     };
   }
@@ -699,10 +719,12 @@ export class MasterDataSaveResponseBody extends $tea.Model {
 
 export class MasterDataSaveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: MasterDataSaveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -710,6 +732,7 @@ export class MasterDataSaveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: MasterDataSaveResponseBody,
     };
   }
@@ -784,10 +807,12 @@ export class MasterDataTenantQueyResponseBody extends $tea.Model {
 
 export class MasterDataTenantQueyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: MasterDataTenantQueyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -795,6 +820,7 @@ export class MasterDataTenantQueyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: MasterDataTenantQueyResponseBody,
     };
   }
@@ -878,10 +904,12 @@ export class QueryCustomEntryProcessesResponseBody extends $tea.Model {
 
 export class QueryCustomEntryProcessesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryCustomEntryProcessesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -889,6 +917,7 @@ export class QueryCustomEntryProcessesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryCustomEntryProcessesResponseBody,
     };
   }
@@ -969,10 +998,12 @@ export class QueryDismissionStaffIdListResponseBody extends $tea.Model {
 
 export class QueryDismissionStaffIdListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryDismissionStaffIdListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -980,6 +1011,7 @@ export class QueryDismissionStaffIdListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryDismissionStaffIdListResponseBody,
     };
   }
@@ -1070,10 +1102,12 @@ export class QueryHrmEmployeeDismissionInfoResponseBody extends $tea.Model {
 
 export class QueryHrmEmployeeDismissionInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryHrmEmployeeDismissionInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1081,6 +1115,7 @@ export class QueryHrmEmployeeDismissionInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryHrmEmployeeDismissionInfoResponseBody,
     };
   }
@@ -1170,10 +1205,12 @@ export class QueryJobRanksResponseBody extends $tea.Model {
 
 export class QueryJobRanksResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryJobRanksResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1181,6 +1218,7 @@ export class QueryJobRanksResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryJobRanksResponseBody,
     };
   }
@@ -1264,10 +1302,12 @@ export class QueryJobsResponseBody extends $tea.Model {
 
 export class QueryJobsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryJobsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1275,6 +1315,7 @@ export class QueryJobsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryJobsResponseBody,
     };
   }
@@ -1367,10 +1408,12 @@ export class QueryPositionsResponseBody extends $tea.Model {
 
 export class QueryPositionsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryPositionsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1378,6 +1421,7 @@ export class QueryPositionsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryPositionsResponseBody,
     };
   }
@@ -1449,10 +1493,12 @@ export class RosterMetaAvailableFieldListResponseBody extends $tea.Model {
 
 export class RosterMetaAvailableFieldListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RosterMetaAvailableFieldListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1460,6 +1506,7 @@ export class RosterMetaAvailableFieldListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RosterMetaAvailableFieldListResponseBody,
     };
   }
@@ -1543,10 +1590,12 @@ export class RosterMetaFieldOptionsUpdateResponseBody extends $tea.Model {
 
 export class RosterMetaFieldOptionsUpdateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RosterMetaFieldOptionsUpdateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1554,6 +1603,7 @@ export class RosterMetaFieldOptionsUpdateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RosterMetaFieldOptionsUpdateResponseBody,
     };
   }
@@ -1649,10 +1699,12 @@ export class SolutionTaskInitResponseBody extends $tea.Model {
 
 export class SolutionTaskInitResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SolutionTaskInitResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1660,6 +1712,7 @@ export class SolutionTaskInitResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SolutionTaskInitResponseBody,
     };
   }
@@ -1764,10 +1817,12 @@ export class SolutionTaskSaveResponseBody extends $tea.Model {
 
 export class SolutionTaskSaveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SolutionTaskSaveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1775,6 +1830,7 @@ export class SolutionTaskSaveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SolutionTaskSaveResponseBody,
     };
   }
@@ -1870,10 +1926,12 @@ export class SyncTaskTemplateResponseBody extends $tea.Model {
 
 export class SyncTaskTemplateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SyncTaskTemplateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1881,6 +1939,7 @@ export class SyncTaskTemplateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SyncTaskTemplateResponseBody,
     };
   }
@@ -2477,9 +2536,12 @@ export class SyncTaskTemplateRequestTaskScopeVO extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2487,12 +2549,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async addHrmPreentry(request: AddHrmPreentryRequest): Promise<AddHrmPreentryResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddHrmPreentryHeaders({ });
-    return await this.addHrmPreentryWithOptions(request, headers, runtime);
-  }
 
   async addHrmPreentryWithOptions(request: AddHrmPreentryRequest, headers: AddHrmPreentryHeaders, runtime: $Util.RuntimeOptions): Promise<AddHrmPreentryResponse> {
     Util.validateModel(request);
@@ -2534,13 +2590,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddHrmPreentryResponse>(await this.doROARequest("AddHrmPreentry", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/preentries`, "json", req, runtime), new AddHrmPreentryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddHrmPreentry",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/preentries`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddHrmPreentryResponse>(await this.execute(params, req, runtime), new AddHrmPreentryResponse({}));
   }
 
-  async eCertQuery(request: ECertQueryRequest): Promise<ECertQueryResponse> {
+  async addHrmPreentry(request: AddHrmPreentryRequest): Promise<AddHrmPreentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ECertQueryHeaders({ });
-    return await this.eCertQueryWithOptions(request, headers, runtime);
+    let headers = new AddHrmPreentryHeaders({ });
+    return await this.addHrmPreentryWithOptions(request, headers, runtime);
   }
 
   async eCertQueryWithOptions(request: ECertQueryRequest, headers: ECertQueryHeaders, runtime: $Util.RuntimeOptions): Promise<ECertQueryResponse> {
@@ -2563,13 +2630,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ECertQueryResponse>(await this.doROARequest("ECertQuery", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/eCerts`, "json", req, runtime), new ECertQueryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ECertQuery",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/eCerts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ECertQueryResponse>(await this.execute(params, req, runtime), new ECertQueryResponse({}));
   }
 
-  async hrmProcessRegular(request: HrmProcessRegularRequest): Promise<HrmProcessRegularResponse> {
+  async eCertQuery(request: ECertQueryRequest): Promise<ECertQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new HrmProcessRegularHeaders({ });
-    return await this.hrmProcessRegularWithOptions(request, headers, runtime);
+    let headers = new ECertQueryHeaders({ });
+    return await this.eCertQueryWithOptions(request, headers, runtime);
   }
 
   async hrmProcessRegularWithOptions(request: HrmProcessRegularRequest, headers: HrmProcessRegularHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessRegularResponse> {
@@ -2604,13 +2682,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<HrmProcessRegularResponse>(await this.doROARequest("HrmProcessRegular", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/processes/regulars/become`, "json", req, runtime), new HrmProcessRegularResponse({}));
+    let params = new $OpenApi.Params({
+      action: "HrmProcessRegular",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/processes/regulars/become`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HrmProcessRegularResponse>(await this.execute(params, req, runtime), new HrmProcessRegularResponse({}));
   }
 
-  async hrmProcessTransfer(request: HrmProcessTransferRequest): Promise<HrmProcessTransferResponse> {
+  async hrmProcessRegular(request: HrmProcessRegularRequest): Promise<HrmProcessRegularResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new HrmProcessTransferHeaders({ });
-    return await this.hrmProcessTransferWithOptions(request, headers, runtime);
+    let headers = new HrmProcessRegularHeaders({ });
+    return await this.hrmProcessRegularWithOptions(request, headers, runtime);
   }
 
   async hrmProcessTransferWithOptions(request: HrmProcessTransferRequest, headers: HrmProcessTransferHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessTransferResponse> {
@@ -2665,13 +2754,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<HrmProcessTransferResponse>(await this.doROARequest("HrmProcessTransfer", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/processes/transfer`, "json", req, runtime), new HrmProcessTransferResponse({}));
+    let params = new $OpenApi.Params({
+      action: "HrmProcessTransfer",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/processes/transfer`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HrmProcessTransferResponse>(await this.execute(params, req, runtime), new HrmProcessTransferResponse({}));
   }
 
-  async hrmProcessUpdateTerminationInfo(request: HrmProcessUpdateTerminationInfoRequest): Promise<HrmProcessUpdateTerminationInfoResponse> {
+  async hrmProcessTransfer(request: HrmProcessTransferRequest): Promise<HrmProcessTransferResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new HrmProcessUpdateTerminationInfoHeaders({ });
-    return await this.hrmProcessUpdateTerminationInfoWithOptions(request, headers, runtime);
+    let headers = new HrmProcessTransferHeaders({ });
+    return await this.hrmProcessTransferWithOptions(request, headers, runtime);
   }
 
   async hrmProcessUpdateTerminationInfoWithOptions(request: HrmProcessUpdateTerminationInfoRequest, headers: HrmProcessUpdateTerminationInfoHeaders, runtime: $Util.RuntimeOptions): Promise<HrmProcessUpdateTerminationInfoResponse> {
@@ -2702,13 +2802,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<HrmProcessUpdateTerminationInfoResponse>(await this.doROARequest("HrmProcessUpdateTerminationInfo", "hrm_1.0", "HTTP", "PUT", "AK", `/v1.0/hrm/processes/employees/terminations`, "json", req, runtime), new HrmProcessUpdateTerminationInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "HrmProcessUpdateTerminationInfo",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/processes/employees/terminations`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<HrmProcessUpdateTerminationInfoResponse>(await this.execute(params, req, runtime), new HrmProcessUpdateTerminationInfoResponse({}));
   }
 
-  async masterDataQuery(request: MasterDataQueryRequest): Promise<MasterDataQueryResponse> {
+  async hrmProcessUpdateTerminationInfo(request: HrmProcessUpdateTerminationInfoRequest): Promise<HrmProcessUpdateTerminationInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new MasterDataQueryHeaders({ });
-    return await this.masterDataQueryWithOptions(request, headers, runtime);
+    let headers = new HrmProcessUpdateTerminationInfoHeaders({ });
+    return await this.hrmProcessUpdateTerminationInfoWithOptions(request, headers, runtime);
   }
 
   async masterDataQueryWithOptions(request: MasterDataQueryRequest, headers: MasterDataQueryHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataQueryResponse> {
@@ -2763,13 +2874,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<MasterDataQueryResponse>(await this.doROARequest("MasterDataQuery", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/masters/datas/query`, "json", req, runtime), new MasterDataQueryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "MasterDataQuery",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masters/datas/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<MasterDataQueryResponse>(await this.execute(params, req, runtime), new MasterDataQueryResponse({}));
   }
 
-  async masterDataSave(request: MasterDataSaveRequest): Promise<MasterDataSaveResponse> {
+  async masterDataQuery(request: MasterDataQueryRequest): Promise<MasterDataQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new MasterDataSaveHeaders({ });
-    return await this.masterDataSaveWithOptions(request, headers, runtime);
+    let headers = new MasterDataQueryHeaders({ });
+    return await this.masterDataQueryWithOptions(request, headers, runtime);
   }
 
   async masterDataSaveWithOptions(request: MasterDataSaveRequest, headers: MasterDataSaveHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataSaveResponse> {
@@ -2793,13 +2915,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: Util.toArray(request.body),
     });
-    return $tea.cast<MasterDataSaveResponse>(await this.doROARequest("MasterDataSave", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/masters/datas/save`, "json", req, runtime), new MasterDataSaveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "MasterDataSave",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masters/datas/save`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<MasterDataSaveResponse>(await this.execute(params, req, runtime), new MasterDataSaveResponse({}));
   }
 
-  async masterDataTenantQuey(request: MasterDataTenantQueyRequest): Promise<MasterDataTenantQueyResponse> {
+  async masterDataSave(request: MasterDataSaveRequest): Promise<MasterDataSaveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new MasterDataTenantQueyHeaders({ });
-    return await this.masterDataTenantQueyWithOptions(request, headers, runtime);
+    let headers = new MasterDataSaveHeaders({ });
+    return await this.masterDataSaveWithOptions(request, headers, runtime);
   }
 
   async masterDataTenantQueyWithOptions(request: MasterDataTenantQueyRequest, headers: MasterDataTenantQueyHeaders, runtime: $Util.RuntimeOptions): Promise<MasterDataTenantQueyResponse> {
@@ -2826,13 +2959,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<MasterDataTenantQueyResponse>(await this.doROARequest("MasterDataTenantQuey", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/masters/tenants`, "json", req, runtime), new MasterDataTenantQueyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "MasterDataTenantQuey",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masters/tenants`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<MasterDataTenantQueyResponse>(await this.execute(params, req, runtime), new MasterDataTenantQueyResponse({}));
   }
 
-  async queryCustomEntryProcesses(request: QueryCustomEntryProcessesRequest): Promise<QueryCustomEntryProcessesResponse> {
+  async masterDataTenantQuey(request: MasterDataTenantQueyRequest): Promise<MasterDataTenantQueyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryCustomEntryProcessesHeaders({ });
-    return await this.queryCustomEntryProcessesWithOptions(request, headers, runtime);
+    let headers = new MasterDataTenantQueyHeaders({ });
+    return await this.masterDataTenantQueyWithOptions(request, headers, runtime);
   }
 
   async queryCustomEntryProcessesWithOptions(request: QueryCustomEntryProcessesRequest, headers: QueryCustomEntryProcessesHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCustomEntryProcessesResponse> {
@@ -2863,13 +3007,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryCustomEntryProcessesResponse>(await this.doROARequest("QueryCustomEntryProcesses", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/customEntryProcesses`, "json", req, runtime), new QueryCustomEntryProcessesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryCustomEntryProcesses",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/customEntryProcesses`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCustomEntryProcessesResponse>(await this.execute(params, req, runtime), new QueryCustomEntryProcessesResponse({}));
   }
 
-  async queryDismissionStaffIdList(request: QueryDismissionStaffIdListRequest): Promise<QueryDismissionStaffIdListResponse> {
+  async queryCustomEntryProcesses(request: QueryCustomEntryProcessesRequest): Promise<QueryCustomEntryProcessesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDismissionStaffIdListHeaders({ });
-    return await this.queryDismissionStaffIdListWithOptions(request, headers, runtime);
+    let headers = new QueryCustomEntryProcessesHeaders({ });
+    return await this.queryCustomEntryProcessesWithOptions(request, headers, runtime);
   }
 
   async queryDismissionStaffIdListWithOptions(request: QueryDismissionStaffIdListRequest, headers: QueryDismissionStaffIdListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDismissionStaffIdListResponse> {
@@ -2896,13 +3051,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryDismissionStaffIdListResponse>(await this.doROARequest("QueryDismissionStaffIdList", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/employees/dismissions`, "json", req, runtime), new QueryDismissionStaffIdListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDismissionStaffIdList",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/employees/dismissions`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDismissionStaffIdListResponse>(await this.execute(params, req, runtime), new QueryDismissionStaffIdListResponse({}));
   }
 
-  async queryHrmEmployeeDismissionInfo(request: QueryHrmEmployeeDismissionInfoRequest): Promise<QueryHrmEmployeeDismissionInfoResponse> {
+  async queryDismissionStaffIdList(request: QueryDismissionStaffIdListRequest): Promise<QueryDismissionStaffIdListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryHrmEmployeeDismissionInfoHeaders({ });
-    return await this.queryHrmEmployeeDismissionInfoWithOptions(request, headers, runtime);
+    let headers = new QueryDismissionStaffIdListHeaders({ });
+    return await this.queryDismissionStaffIdListWithOptions(request, headers, runtime);
   }
 
   async queryHrmEmployeeDismissionInfoWithOptions(tmpReq: QueryHrmEmployeeDismissionInfoRequest, headers: QueryHrmEmployeeDismissionInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryHrmEmployeeDismissionInfoResponse> {
@@ -2931,13 +3097,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryHrmEmployeeDismissionInfoResponse>(await this.doROARequest("QueryHrmEmployeeDismissionInfo", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/employees/dimissionInfos`, "json", req, runtime), new QueryHrmEmployeeDismissionInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryHrmEmployeeDismissionInfo",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/employees/dimissionInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryHrmEmployeeDismissionInfoResponse>(await this.execute(params, req, runtime), new QueryHrmEmployeeDismissionInfoResponse({}));
   }
 
-  async queryJobRanks(request: QueryJobRanksRequest): Promise<QueryJobRanksResponse> {
+  async queryHrmEmployeeDismissionInfo(request: QueryHrmEmployeeDismissionInfoRequest): Promise<QueryHrmEmployeeDismissionInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryJobRanksHeaders({ });
-    return await this.queryJobRanksWithOptions(request, headers, runtime);
+    let headers = new QueryHrmEmployeeDismissionInfoHeaders({ });
+    return await this.queryHrmEmployeeDismissionInfoWithOptions(request, headers, runtime);
   }
 
   async queryJobRanksWithOptions(request: QueryJobRanksRequest, headers: QueryJobRanksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryJobRanksResponse> {
@@ -2976,13 +3153,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryJobRanksResponse>(await this.doROARequest("QueryJobRanks", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/jobRanks`, "json", req, runtime), new QueryJobRanksResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryJobRanks",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/jobRanks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryJobRanksResponse>(await this.execute(params, req, runtime), new QueryJobRanksResponse({}));
   }
 
-  async queryJobs(request: QueryJobsRequest): Promise<QueryJobsResponse> {
+  async queryJobRanks(request: QueryJobRanksRequest): Promise<QueryJobRanksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryJobsHeaders({ });
-    return await this.queryJobsWithOptions(request, headers, runtime);
+    let headers = new QueryJobRanksHeaders({ });
+    return await this.queryJobRanksWithOptions(request, headers, runtime);
   }
 
   async queryJobsWithOptions(request: QueryJobsRequest, headers: QueryJobsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryJobsResponse> {
@@ -3013,13 +3201,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryJobsResponse>(await this.doROARequest("QueryJobs", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/jobs`, "json", req, runtime), new QueryJobsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryJobs",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/jobs`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryJobsResponse>(await this.execute(params, req, runtime), new QueryJobsResponse({}));
   }
 
-  async queryPositions(request: QueryPositionsRequest): Promise<QueryPositionsResponse> {
+  async queryJobs(request: QueryJobsRequest): Promise<QueryJobsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryPositionsHeaders({ });
-    return await this.queryPositionsWithOptions(request, headers, runtime);
+    let headers = new QueryJobsHeaders({ });
+    return await this.queryJobsWithOptions(request, headers, runtime);
   }
 
   async queryPositionsWithOptions(request: QueryPositionsRequest, headers: QueryPositionsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPositionsResponse> {
@@ -3064,13 +3263,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryPositionsResponse>(await this.doROARequest("QueryPositions", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/positions/query`, "json", req, runtime), new QueryPositionsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryPositions",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/positions/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryPositionsResponse>(await this.execute(params, req, runtime), new QueryPositionsResponse({}));
   }
 
-  async rosterMetaAvailableFieldList(request: RosterMetaAvailableFieldListRequest): Promise<RosterMetaAvailableFieldListResponse> {
+  async queryPositions(request: QueryPositionsRequest): Promise<QueryPositionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RosterMetaAvailableFieldListHeaders({ });
-    return await this.rosterMetaAvailableFieldListWithOptions(request, headers, runtime);
+    let headers = new QueryPositionsHeaders({ });
+    return await this.queryPositionsWithOptions(request, headers, runtime);
   }
 
   async rosterMetaAvailableFieldListWithOptions(request: RosterMetaAvailableFieldListRequest, headers: RosterMetaAvailableFieldListHeaders, runtime: $Util.RuntimeOptions): Promise<RosterMetaAvailableFieldListResponse> {
@@ -3093,13 +3303,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<RosterMetaAvailableFieldListResponse>(await this.doROARequest("RosterMetaAvailableFieldList", "hrm_1.0", "HTTP", "GET", "AK", `/v1.0/hrm/rosters/meta/authorities/fields`, "json", req, runtime), new RosterMetaAvailableFieldListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RosterMetaAvailableFieldList",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/rosters/meta/authorities/fields`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RosterMetaAvailableFieldListResponse>(await this.execute(params, req, runtime), new RosterMetaAvailableFieldListResponse({}));
   }
 
-  async rosterMetaFieldOptionsUpdate(request: RosterMetaFieldOptionsUpdateRequest): Promise<RosterMetaFieldOptionsUpdateResponse> {
+  async rosterMetaAvailableFieldList(request: RosterMetaAvailableFieldListRequest): Promise<RosterMetaAvailableFieldListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RosterMetaFieldOptionsUpdateHeaders({ });
-    return await this.rosterMetaFieldOptionsUpdateWithOptions(request, headers, runtime);
+    let headers = new RosterMetaAvailableFieldListHeaders({ });
+    return await this.rosterMetaAvailableFieldListWithOptions(request, headers, runtime);
   }
 
   async rosterMetaFieldOptionsUpdateWithOptions(request: RosterMetaFieldOptionsUpdateRequest, headers: RosterMetaFieldOptionsUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<RosterMetaFieldOptionsUpdateResponse> {
@@ -3140,13 +3361,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RosterMetaFieldOptionsUpdateResponse>(await this.doROARequest("RosterMetaFieldOptionsUpdate", "hrm_1.0", "HTTP", "PUT", "AK", `/v1.0/hrm/rosters/meta/fields/options`, "json", req, runtime), new RosterMetaFieldOptionsUpdateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RosterMetaFieldOptionsUpdate",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/rosters/meta/fields/options`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RosterMetaFieldOptionsUpdateResponse>(await this.execute(params, req, runtime), new RosterMetaFieldOptionsUpdateResponse({}));
   }
 
-  async solutionTaskInit(request: SolutionTaskInitRequest): Promise<SolutionTaskInitResponse> {
+  async rosterMetaFieldOptionsUpdate(request: RosterMetaFieldOptionsUpdateRequest): Promise<RosterMetaFieldOptionsUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SolutionTaskInitHeaders({ });
-    return await this.solutionTaskInitWithOptions(request, headers, runtime);
+    let headers = new RosterMetaFieldOptionsUpdateHeaders({ });
+    return await this.rosterMetaFieldOptionsUpdateWithOptions(request, headers, runtime);
   }
 
   async solutionTaskInitWithOptions(request: SolutionTaskInitRequest, headers: SolutionTaskInitHeaders, runtime: $Util.RuntimeOptions): Promise<SolutionTaskInitResponse> {
@@ -3203,13 +3435,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SolutionTaskInitResponse>(await this.doROARequest("SolutionTaskInit", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/solutions/tasks/init`, "json", req, runtime), new SolutionTaskInitResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SolutionTaskInit",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/solutions/tasks/init`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SolutionTaskInitResponse>(await this.execute(params, req, runtime), new SolutionTaskInitResponse({}));
   }
 
-  async solutionTaskSave(request: SolutionTaskSaveRequest): Promise<SolutionTaskSaveResponse> {
+  async solutionTaskInit(request: SolutionTaskInitRequest): Promise<SolutionTaskInitResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SolutionTaskSaveHeaders({ });
-    return await this.solutionTaskSaveWithOptions(request, headers, runtime);
+    let headers = new SolutionTaskInitHeaders({ });
+    return await this.solutionTaskInitWithOptions(request, headers, runtime);
   }
 
   async solutionTaskSaveWithOptions(request: SolutionTaskSaveRequest, headers: SolutionTaskSaveHeaders, runtime: $Util.RuntimeOptions): Promise<SolutionTaskSaveResponse> {
@@ -3278,13 +3521,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SolutionTaskSaveResponse>(await this.doROARequest("SolutionTaskSave", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/solutions/tasks/save`, "json", req, runtime), new SolutionTaskSaveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SolutionTaskSave",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/solutions/tasks/save`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SolutionTaskSaveResponse>(await this.execute(params, req, runtime), new SolutionTaskSaveResponse({}));
   }
 
-  async syncTaskTemplate(request: SyncTaskTemplateRequest): Promise<SyncTaskTemplateResponse> {
+  async solutionTaskSave(request: SolutionTaskSaveRequest): Promise<SolutionTaskSaveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SyncTaskTemplateHeaders({ });
-    return await this.syncTaskTemplateWithOptions(request, headers, runtime);
+    let headers = new SolutionTaskSaveHeaders({ });
+    return await this.solutionTaskSaveWithOptions(request, headers, runtime);
   }
 
   async syncTaskTemplateWithOptions(request: SyncTaskTemplateRequest, headers: SyncTaskTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<SyncTaskTemplateResponse> {
@@ -3341,7 +3595,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SyncTaskTemplateResponse>(await this.doROARequest("SyncTaskTemplate", "hrm_1.0", "HTTP", "POST", "AK", `/v1.0/hrm/solutions/tasks/templates/sync`, "json", req, runtime), new SyncTaskTemplateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SyncTaskTemplate",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/solutions/tasks/templates/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncTaskTemplateResponse>(await this.execute(params, req, runtime), new SyncTaskTemplateResponse({}));
+  }
+
+  async syncTaskTemplate(request: SyncTaskTemplateRequest): Promise<SyncTaskTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncTaskTemplateHeaders({ });
+    return await this.syncTaskTemplateWithOptions(request, headers, runtime);
   }
 
 }

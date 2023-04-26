@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -50,15 +52,18 @@ export class AddAttendeeRequest extends $tea.Model {
 
 export class AddAttendeeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -129,10 +134,12 @@ export class AddMeetingRoomsResponseBody extends $tea.Model {
 
 export class AddMeetingRoomsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddMeetingRoomsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -140,6 +147,7 @@ export class AddMeetingRoomsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddMeetingRoomsResponseBody,
     };
   }
@@ -192,10 +200,12 @@ export class CheckInResponseBody extends $tea.Model {
 
 export class CheckInResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CheckInResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -203,6 +213,7 @@ export class CheckInResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CheckInResponseBody,
     };
   }
@@ -274,10 +285,12 @@ export class ConvertLegacyEventIdResponseBody extends $tea.Model {
 
 export class ConvertLegacyEventIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ConvertLegacyEventIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -285,6 +298,7 @@ export class ConvertLegacyEventIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ConvertLegacyEventIdResponseBody,
     };
   }
@@ -368,10 +382,12 @@ export class CreateAclsResponseBody extends $tea.Model {
 
 export class CreateAclsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateAclsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -379,6 +395,7 @@ export class CreateAclsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateAclsResponseBody,
     };
   }
@@ -519,10 +536,12 @@ export class CreateEventResponseBody extends $tea.Model {
 
 export class CreateEventResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateEventResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -530,6 +549,7 @@ export class CreateEventResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateEventResponseBody,
     };
   }
@@ -610,10 +630,12 @@ export class CreateSubscribedCalendarResponseBody extends $tea.Model {
 
 export class CreateSubscribedCalendarResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateSubscribedCalendarResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -621,6 +643,7 @@ export class CreateSubscribedCalendarResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateSubscribedCalendarResponseBody,
     };
   }
@@ -654,15 +677,18 @@ export class DeleteAclHeaders extends $tea.Model {
 
 export class DeleteAclResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -695,15 +721,18 @@ export class DeleteEventHeaders extends $tea.Model {
 
 export class DeleteEventResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -755,10 +784,12 @@ export class DeleteSubscribedCalendarResponseBody extends $tea.Model {
 
 export class DeleteSubscribedCalendarResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteSubscribedCalendarResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -766,6 +797,7 @@ export class DeleteSubscribedCalendarResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteSubscribedCalendarResponseBody,
     };
   }
@@ -846,10 +878,12 @@ export class GenerateCaldavAccountResponseBody extends $tea.Model {
 
 export class GenerateCaldavAccountResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GenerateCaldavAccountResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -857,6 +891,7 @@ export class GenerateCaldavAccountResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GenerateCaldavAccountResponseBody,
     };
   }
@@ -985,10 +1020,12 @@ export class GetEventResponseBody extends $tea.Model {
 
 export class GetEventResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetEventResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -996,6 +1033,7 @@ export class GetEventResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetEventResponseBody,
     };
   }
@@ -1073,10 +1111,12 @@ export class GetMeetingRoomsScheduleResponseBody extends $tea.Model {
 
 export class GetMeetingRoomsScheduleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetMeetingRoomsScheduleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1084,6 +1124,7 @@ export class GetMeetingRoomsScheduleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetMeetingRoomsScheduleResponseBody,
     };
   }
@@ -1161,10 +1202,12 @@ export class GetScheduleResponseBody extends $tea.Model {
 
 export class GetScheduleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetScheduleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1172,6 +1215,7 @@ export class GetScheduleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetScheduleResponseBody,
     };
   }
@@ -1252,10 +1296,12 @@ export class GetSignInListResponseBody extends $tea.Model {
 
 export class GetSignInListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSignInListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1263,6 +1309,7 @@ export class GetSignInListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSignInListResponseBody,
     };
   }
@@ -1343,10 +1390,12 @@ export class GetSignOutListResponseBody extends $tea.Model {
 
 export class GetSignOutListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSignOutListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1354,6 +1403,7 @@ export class GetSignOutListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSignOutListResponseBody,
     };
   }
@@ -1421,10 +1471,12 @@ export class GetSubscribedCalendarResponseBody extends $tea.Model {
 
 export class GetSubscribedCalendarResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSubscribedCalendarResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1432,6 +1484,7 @@ export class GetSubscribedCalendarResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSubscribedCalendarResponseBody,
     };
   }
@@ -1484,10 +1537,12 @@ export class ListAclsResponseBody extends $tea.Model {
 
 export class ListAclsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListAclsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1495,6 +1550,7 @@ export class ListAclsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListAclsResponseBody,
     };
   }
@@ -1572,10 +1628,12 @@ export class ListAttendeesResponseBody extends $tea.Model {
 
 export class ListAttendeesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListAttendeesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1583,6 +1641,7 @@ export class ListAttendeesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListAttendeesResponseBody,
     };
   }
@@ -1635,10 +1694,12 @@ export class ListCalendarsResponseBody extends $tea.Model {
 
 export class ListCalendarsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListCalendarsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1646,6 +1707,7 @@ export class ListCalendarsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListCalendarsResponseBody,
     };
   }
@@ -1744,10 +1806,12 @@ export class ListEventsResponseBody extends $tea.Model {
 
 export class ListEventsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListEventsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1755,6 +1819,7 @@ export class ListEventsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListEventsResponseBody,
     };
   }
@@ -1835,10 +1900,12 @@ export class ListEventsInstancesResponseBody extends $tea.Model {
 
 export class ListEventsInstancesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListEventsInstancesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1846,6 +1913,7 @@ export class ListEventsInstancesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListEventsInstancesResponseBody,
     };
   }
@@ -1932,10 +2000,12 @@ export class ListEventsViewResponseBody extends $tea.Model {
 
 export class ListEventsViewResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListEventsViewResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1943,6 +2013,7 @@ export class ListEventsViewResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListEventsViewResponseBody,
     };
   }
@@ -2029,10 +2100,12 @@ export class ListInstancesResponseBody extends $tea.Model {
 
 export class ListInstancesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListInstancesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2040,6 +2113,7 @@ export class ListInstancesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListInstancesResponseBody,
     };
   }
@@ -2177,10 +2251,12 @@ export class PatchEventResponseBody extends $tea.Model {
 
 export class PatchEventResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PatchEventResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2188,6 +2264,7 @@ export class PatchEventResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PatchEventResponseBody,
     };
   }
@@ -2240,15 +2317,18 @@ export class RemoveAttendeeRequest extends $tea.Model {
 
 export class RemoveAttendeeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -2319,10 +2399,12 @@ export class RemoveMeetingRoomsResponseBody extends $tea.Model {
 
 export class RemoveMeetingRoomsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RemoveMeetingRoomsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2330,6 +2412,7 @@ export class RemoveMeetingRoomsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RemoveMeetingRoomsResponseBody,
     };
   }
@@ -2382,15 +2465,18 @@ export class RespondEventRequest extends $tea.Model {
 
 export class RespondEventResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -2442,10 +2528,12 @@ export class SignInResponseBody extends $tea.Model {
 
 export class SignInResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SignInResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2453,6 +2541,7 @@ export class SignInResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SignInResponseBody,
     };
   }
@@ -2505,10 +2594,12 @@ export class SignOutResponseBody extends $tea.Model {
 
 export class SignOutResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SignOutResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2516,6 +2607,7 @@ export class SignOutResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SignOutResponseBody,
     };
   }
@@ -2549,15 +2641,18 @@ export class SubscribeCalendarHeaders extends $tea.Model {
 
 export class SubscribeCalendarResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -2609,10 +2704,12 @@ export class UnsubscribeCalendarResponseBody extends $tea.Model {
 
 export class UnsubscribeCalendarResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UnsubscribeCalendarResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2620,6 +2717,7 @@ export class UnsubscribeCalendarResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UnsubscribeCalendarResponseBody,
     };
   }
@@ -2700,10 +2798,12 @@ export class UpdateSubscribedCalendarsResponseBody extends $tea.Model {
 
 export class UpdateSubscribedCalendarsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateSubscribedCalendarsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2711,6 +2811,7 @@ export class UpdateSubscribedCalendarsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateSubscribedCalendarsResponseBody,
     };
   }
@@ -6152,9 +6253,12 @@ export class UpdateSubscribedCalendarsRequestSubscribeScope extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -6163,17 +6267,8 @@ export default class Client extends OpenApi {
   }
 
 
-  async addAttendee(userId: string, calendarId: string, eventId: string, request: AddAttendeeRequest): Promise<AddAttendeeResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddAttendeeHeaders({ });
-    return await this.addAttendeeWithOptions(userId, calendarId, eventId, request, headers, runtime);
-  }
-
   async addAttendeeWithOptions(userId: string, calendarId: string, eventId: string, request: AddAttendeeRequest, headers: AddAttendeeHeaders, runtime: $Util.RuntimeOptions): Promise<AddAttendeeResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.attendeesToAdd)) {
       body["attendeesToAdd"] = request.attendeesToAdd;
@@ -6192,20 +6287,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddAttendeeResponse>(await this.doROARequest("AddAttendee", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/attendees`, "none", req, runtime), new AddAttendeeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddAttendee",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/attendees`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<AddAttendeeResponse>(await this.execute(params, req, runtime), new AddAttendeeResponse({}));
   }
 
-  async addMeetingRooms(userId: string, calendarId: string, eventId: string, request: AddMeetingRoomsRequest): Promise<AddMeetingRoomsResponse> {
+  async addAttendee(userId: string, calendarId: string, eventId: string, request: AddAttendeeRequest): Promise<AddAttendeeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddMeetingRoomsHeaders({ });
-    return await this.addMeetingRoomsWithOptions(userId, calendarId, eventId, request, headers, runtime);
+    let headers = new AddAttendeeHeaders({ });
+    return await this.addAttendeeWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
   async addMeetingRoomsWithOptions(userId: string, calendarId: string, eventId: string, request: AddMeetingRoomsRequest, headers: AddMeetingRoomsHeaders, runtime: $Util.RuntimeOptions): Promise<AddMeetingRoomsResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.meetingRoomsToAdd)) {
       body["meetingRoomsToAdd"] = request.meetingRoomsToAdd;
@@ -6224,19 +6327,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddMeetingRoomsResponse>(await this.doROARequest("AddMeetingRooms", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/meetingRooms`, "json", req, runtime), new AddMeetingRoomsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddMeetingRooms",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/meetingRooms`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddMeetingRoomsResponse>(await this.execute(params, req, runtime), new AddMeetingRoomsResponse({}));
   }
 
-  async checkIn(userId: string, calendarId: string, eventId: string): Promise<CheckInResponse> {
+  async addMeetingRooms(userId: string, calendarId: string, eventId: string, request: AddMeetingRoomsRequest): Promise<AddMeetingRoomsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CheckInHeaders({ });
-    return await this.checkInWithOptions(userId, calendarId, eventId, headers, runtime);
+    let headers = new AddMeetingRoomsHeaders({ });
+    return await this.addMeetingRoomsWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
   async checkInWithOptions(userId: string, calendarId: string, eventId: string, headers: CheckInHeaders, runtime: $Util.RuntimeOptions): Promise<CheckInResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -6249,18 +6360,28 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<CheckInResponse>(await this.doROARequest("CheckIn", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/checkIn`, "json", req, runtime), new CheckInResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CheckIn",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/checkIn`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CheckInResponse>(await this.execute(params, req, runtime), new CheckInResponse({}));
   }
 
-  async convertLegacyEventId(userId: string, request: ConvertLegacyEventIdRequest): Promise<ConvertLegacyEventIdResponse> {
+  async checkIn(userId: string, calendarId: string, eventId: string): Promise<CheckInResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ConvertLegacyEventIdHeaders({ });
-    return await this.convertLegacyEventIdWithOptions(userId, request, headers, runtime);
+    let headers = new CheckInHeaders({ });
+    return await this.checkInWithOptions(userId, calendarId, eventId, headers, runtime);
   }
 
   async convertLegacyEventIdWithOptions(userId: string, request: ConvertLegacyEventIdRequest, headers: ConvertLegacyEventIdHeaders, runtime: $Util.RuntimeOptions): Promise<ConvertLegacyEventIdResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.legacyEventIds)) {
       body["legacyEventIds"] = request.legacyEventIds;
@@ -6279,19 +6400,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ConvertLegacyEventIdResponse>(await this.doROARequest("ConvertLegacyEventId", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/legacyEventIds/convert`, "json", req, runtime), new ConvertLegacyEventIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ConvertLegacyEventId",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/legacyEventIds/convert`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ConvertLegacyEventIdResponse>(await this.execute(params, req, runtime), new ConvertLegacyEventIdResponse({}));
   }
 
-  async createAcls(userId: string, calendarId: string, request: CreateAclsRequest): Promise<CreateAclsResponse> {
+  async convertLegacyEventId(userId: string, request: ConvertLegacyEventIdRequest): Promise<ConvertLegacyEventIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateAclsHeaders({ });
-    return await this.createAclsWithOptions(userId, calendarId, request, headers, runtime);
+    let headers = new ConvertLegacyEventIdHeaders({ });
+    return await this.convertLegacyEventIdWithOptions(userId, request, headers, runtime);
   }
 
   async createAclsWithOptions(userId: string, calendarId: string, request: CreateAclsRequest, headers: CreateAclsHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAclsResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.privilege)) {
       body["privilege"] = request.privilege;
@@ -6318,19 +6448,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateAclsResponse>(await this.doROARequest("CreateAcls", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/acls`, "json", req, runtime), new CreateAclsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateAcls",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/acls`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateAclsResponse>(await this.execute(params, req, runtime), new CreateAclsResponse({}));
   }
 
-  async createEvent(userId: string, calendarId: string, request: CreateEventRequest): Promise<CreateEventResponse> {
+  async createAcls(userId: string, calendarId: string, request: CreateAclsRequest): Promise<CreateAclsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateEventHeaders({ });
-    return await this.createEventWithOptions(userId, calendarId, request, headers, runtime);
+    let headers = new CreateAclsHeaders({ });
+    return await this.createAclsWithOptions(userId, calendarId, request, headers, runtime);
   }
 
   async createEventWithOptions(userId: string, calendarId: string, request: CreateEventRequest, headers: CreateEventHeaders, runtime: $Util.RuntimeOptions): Promise<CreateEventResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.attendees)) {
       body["attendees"] = request.attendees;
@@ -6389,18 +6528,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateEventResponse>(await this.doROARequest("CreateEvent", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events`, "json", req, runtime), new CreateEventResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateEvent",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateEventResponse>(await this.execute(params, req, runtime), new CreateEventResponse({}));
   }
 
-  async createSubscribedCalendar(userId: string, request: CreateSubscribedCalendarRequest): Promise<CreateSubscribedCalendarResponse> {
+  async createEvent(userId: string, calendarId: string, request: CreateEventRequest): Promise<CreateEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateSubscribedCalendarHeaders({ });
-    return await this.createSubscribedCalendarWithOptions(userId, request, headers, runtime);
+    let headers = new CreateEventHeaders({ });
+    return await this.createEventWithOptions(userId, calendarId, request, headers, runtime);
   }
 
   async createSubscribedCalendarWithOptions(userId: string, request: CreateSubscribedCalendarRequest, headers: CreateSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSubscribedCalendarResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.description)) {
       body["description"] = request.description;
@@ -6431,7 +6580,51 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateSubscribedCalendarResponse>(await this.doROARequest("CreateSubscribedCalendar", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/subscribedCalendars`, "json", req, runtime), new CreateSubscribedCalendarResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateSubscribedCalendar",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/subscribedCalendars`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateSubscribedCalendarResponse>(await this.execute(params, req, runtime), new CreateSubscribedCalendarResponse({}));
+  }
+
+  async createSubscribedCalendar(userId: string, request: CreateSubscribedCalendarRequest): Promise<CreateSubscribedCalendarResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateSubscribedCalendarHeaders({ });
+    return await this.createSubscribedCalendarWithOptions(userId, request, headers, runtime);
+  }
+
+  async deleteAclWithOptions(userId: string, calendarId: string, aclId: string, headers: DeleteAclHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteAclResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteAcl",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/acls/${aclId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<DeleteAclResponse>(await this.execute(params, req, runtime), new DeleteAclResponse({}));
   }
 
   async deleteAcl(userId: string, calendarId: string, aclId: string): Promise<DeleteAclResponse> {
@@ -6440,10 +6633,7 @@ export default class Client extends OpenApi {
     return await this.deleteAclWithOptions(userId, calendarId, aclId, headers, runtime);
   }
 
-  async deleteAclWithOptions(userId: string, calendarId: string, aclId: string, headers: DeleteAclHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteAclResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    aclId = OpenApiUtil.getEncodeParam(aclId);
+  async deleteEventWithOptions(userId: string, calendarId: string, eventId: string, headers: DeleteEventHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteEventResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -6456,7 +6646,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<DeleteAclResponse>(await this.doROARequest("DeleteAcl", "calendar_1.0", "HTTP", "DELETE", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/acls/${aclId}`, "none", req, runtime), new DeleteAclResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteEvent",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<DeleteEventResponse>(await this.execute(params, req, runtime), new DeleteEventResponse({}));
   }
 
   async deleteEvent(userId: string, calendarId: string, eventId: string): Promise<DeleteEventResponse> {
@@ -6465,10 +6666,7 @@ export default class Client extends OpenApi {
     return await this.deleteEventWithOptions(userId, calendarId, eventId, headers, runtime);
   }
 
-  async deleteEventWithOptions(userId: string, calendarId: string, eventId: string, headers: DeleteEventHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteEventResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
+  async deleteSubscribedCalendarWithOptions(userId: string, calendarId: string, headers: DeleteSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSubscribedCalendarResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -6481,7 +6679,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<DeleteEventResponse>(await this.doROARequest("DeleteEvent", "calendar_1.0", "HTTP", "DELETE", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}`, "none", req, runtime), new DeleteEventResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteSubscribedCalendar",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/subscribedCalendars/${calendarId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteSubscribedCalendarResponse>(await this.execute(params, req, runtime), new DeleteSubscribedCalendarResponse({}));
   }
 
   async deleteSubscribedCalendar(userId: string, calendarId: string): Promise<DeleteSubscribedCalendarResponse> {
@@ -6490,33 +6699,8 @@ export default class Client extends OpenApi {
     return await this.deleteSubscribedCalendarWithOptions(userId, calendarId, headers, runtime);
   }
 
-  async deleteSubscribedCalendarWithOptions(userId: string, calendarId: string, headers: DeleteSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSubscribedCalendarResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<DeleteSubscribedCalendarResponse>(await this.doROARequest("DeleteSubscribedCalendar", "calendar_1.0", "HTTP", "DELETE", "AK", `/v1.0/calendar/users/${userId}/subscribedCalendars/${calendarId}`, "json", req, runtime), new DeleteSubscribedCalendarResponse({}));
-  }
-
-  async generateCaldavAccount(userId: string, request: GenerateCaldavAccountRequest): Promise<GenerateCaldavAccountResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GenerateCaldavAccountHeaders({ });
-    return await this.generateCaldavAccountWithOptions(userId, request, headers, runtime);
-  }
-
   async generateCaldavAccountWithOptions(userId: string, request: GenerateCaldavAccountRequest, headers: GenerateCaldavAccountHeaders, runtime: $Util.RuntimeOptions): Promise<GenerateCaldavAccountResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.device)) {
       body["device"] = request.device;
@@ -6539,20 +6723,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GenerateCaldavAccountResponse>(await this.doROARequest("GenerateCaldavAccount", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/caldavAccounts`, "json", req, runtime), new GenerateCaldavAccountResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GenerateCaldavAccount",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/caldavAccounts`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GenerateCaldavAccountResponse>(await this.execute(params, req, runtime), new GenerateCaldavAccountResponse({}));
   }
 
-  async getEvent(userId: string, calendarId: string, eventId: string, request: GetEventRequest): Promise<GetEventResponse> {
+  async generateCaldavAccount(userId: string, request: GenerateCaldavAccountRequest): Promise<GenerateCaldavAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetEventHeaders({ });
-    return await this.getEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
+    let headers = new GenerateCaldavAccountHeaders({ });
+    return await this.generateCaldavAccountWithOptions(userId, request, headers, runtime);
   }
 
   async getEventWithOptions(userId: string, calendarId: string, eventId: string, request: GetEventRequest, headers: GetEventHeaders, runtime: $Util.RuntimeOptions): Promise<GetEventResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxAttendees)) {
       query["maxAttendees"] = request.maxAttendees;
@@ -6571,18 +6763,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetEventResponse>(await this.doROARequest("GetEvent", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}`, "json", req, runtime), new GetEventResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetEvent",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetEventResponse>(await this.execute(params, req, runtime), new GetEventResponse({}));
   }
 
-  async getMeetingRoomsSchedule(userId: string, request: GetMeetingRoomsScheduleRequest): Promise<GetMeetingRoomsScheduleResponse> {
+  async getEvent(userId: string, calendarId: string, eventId: string, request: GetEventRequest): Promise<GetEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetMeetingRoomsScheduleHeaders({ });
-    return await this.getMeetingRoomsScheduleWithOptions(userId, request, headers, runtime);
+    let headers = new GetEventHeaders({ });
+    return await this.getEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
   async getMeetingRoomsScheduleWithOptions(userId: string, request: GetMeetingRoomsScheduleRequest, headers: GetMeetingRoomsScheduleHeaders, runtime: $Util.RuntimeOptions): Promise<GetMeetingRoomsScheduleResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.endTime)) {
       body["endTime"] = request.endTime;
@@ -6609,18 +6811,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetMeetingRoomsScheduleResponse>(await this.doROARequest("GetMeetingRoomsSchedule", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/meetingRooms/schedules/query`, "json", req, runtime), new GetMeetingRoomsScheduleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetMeetingRoomsSchedule",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/meetingRooms/schedules/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetMeetingRoomsScheduleResponse>(await this.execute(params, req, runtime), new GetMeetingRoomsScheduleResponse({}));
   }
 
-  async getSchedule(userId: string, request: GetScheduleRequest): Promise<GetScheduleResponse> {
+  async getMeetingRoomsSchedule(userId: string, request: GetMeetingRoomsScheduleRequest): Promise<GetMeetingRoomsScheduleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetScheduleHeaders({ });
-    return await this.getScheduleWithOptions(userId, request, headers, runtime);
+    let headers = new GetMeetingRoomsScheduleHeaders({ });
+    return await this.getMeetingRoomsScheduleWithOptions(userId, request, headers, runtime);
   }
 
   async getScheduleWithOptions(userId: string, request: GetScheduleRequest, headers: GetScheduleHeaders, runtime: $Util.RuntimeOptions): Promise<GetScheduleResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.endTime)) {
       body["endTime"] = request.endTime;
@@ -6647,7 +6859,66 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetScheduleResponse>(await this.doROARequest("GetSchedule", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/querySchedule`, "json", req, runtime), new GetScheduleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSchedule",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/querySchedule`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetScheduleResponse>(await this.execute(params, req, runtime), new GetScheduleResponse({}));
+  }
+
+  async getSchedule(userId: string, request: GetScheduleRequest): Promise<GetScheduleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetScheduleHeaders({ });
+    return await this.getScheduleWithOptions(userId, request, headers, runtime);
+  }
+
+  async getSignInListWithOptions(userId: string, calendarId: string, eventId: string, request: GetSignInListRequest, headers: GetSignInListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignInListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      query["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetSignInList",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signin`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSignInListResponse>(await this.execute(params, req, runtime), new GetSignInListResponse({}));
   }
 
   async getSignInList(userId: string, calendarId: string, eventId: string, request: GetSignInListRequest): Promise<GetSignInListResponse> {
@@ -6656,11 +6927,8 @@ export default class Client extends OpenApi {
     return await this.getSignInListWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
-  async getSignInListWithOptions(userId: string, calendarId: string, eventId: string, request: GetSignInListRequest, headers: GetSignInListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignInListResponse> {
+  async getSignOutListWithOptions(userId: string, calendarId: string, eventId: string, request: GetSignOutListRequest, headers: GetSignOutListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignOutListResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -6687,7 +6955,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetSignInListResponse>(await this.doROARequest("GetSignInList", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signin`, "json", req, runtime), new GetSignInListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSignOutList",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signOut`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSignOutListResponse>(await this.execute(params, req, runtime), new GetSignOutListResponse({}));
   }
 
   async getSignOutList(userId: string, calendarId: string, eventId: string, request: GetSignOutListRequest): Promise<GetSignOutListResponse> {
@@ -6696,24 +6975,7 @@ export default class Client extends OpenApi {
     return await this.getSignOutListWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
-  async getSignOutListWithOptions(userId: string, calendarId: string, eventId: string, request: GetSignOutListRequest, headers: GetSignOutListHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignOutListResponse> {
-    Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.maxResults)) {
-      query["maxResults"] = request.maxResults;
-    }
-
-    if (!Util.isUnset(request.nextToken)) {
-      query["nextToken"] = request.nextToken;
-    }
-
-    if (!Util.isUnset(request.type)) {
-      query["type"] = request.type;
-    }
-
+  async getSubscribedCalendarWithOptions(userId: string, calendarId: string, headers: GetSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<GetSubscribedCalendarResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -6725,9 +6987,19 @@ export default class Client extends OpenApi {
 
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
-      query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetSignOutListResponse>(await this.doROARequest("GetSignOutList", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signOut`, "json", req, runtime), new GetSignOutListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSubscribedCalendar",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/subscribedCalendars/${calendarId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSubscribedCalendarResponse>(await this.execute(params, req, runtime), new GetSubscribedCalendarResponse({}));
   }
 
   async getSubscribedCalendar(userId: string, calendarId: string): Promise<GetSubscribedCalendarResponse> {
@@ -6736,9 +7008,7 @@ export default class Client extends OpenApi {
     return await this.getSubscribedCalendarWithOptions(userId, calendarId, headers, runtime);
   }
 
-  async getSubscribedCalendarWithOptions(userId: string, calendarId: string, headers: GetSubscribedCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<GetSubscribedCalendarResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+  async listAclsWithOptions(userId: string, calendarId: string, headers: ListAclsHeaders, runtime: $Util.RuntimeOptions): Promise<ListAclsResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -6751,7 +7021,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetSubscribedCalendarResponse>(await this.doROARequest("GetSubscribedCalendar", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/subscribedCalendars/${calendarId}`, "json", req, runtime), new GetSubscribedCalendarResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListAcls",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/acls`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAclsResponse>(await this.execute(params, req, runtime), new ListAclsResponse({}));
   }
 
   async listAcls(userId: string, calendarId: string): Promise<ListAclsResponse> {
@@ -6760,35 +7041,8 @@ export default class Client extends OpenApi {
     return await this.listAclsWithOptions(userId, calendarId, headers, runtime);
   }
 
-  async listAclsWithOptions(userId: string, calendarId: string, headers: ListAclsHeaders, runtime: $Util.RuntimeOptions): Promise<ListAclsResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<ListAclsResponse>(await this.doROARequest("ListAcls", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/acls`, "json", req, runtime), new ListAclsResponse({}));
-  }
-
-  async listAttendees(userId: string, calendarId: string, eventId: string, request: ListAttendeesRequest): Promise<ListAttendeesResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListAttendeesHeaders({ });
-    return await this.listAttendeesWithOptions(userId, calendarId, eventId, request, headers, runtime);
-  }
-
   async listAttendeesWithOptions(userId: string, calendarId: string, eventId: string, request: ListAttendeesRequest, headers: ListAttendeesHeaders, runtime: $Util.RuntimeOptions): Promise<ListAttendeesResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxResults)) {
       query["maxResults"] = request.maxResults;
@@ -6811,17 +7065,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListAttendeesResponse>(await this.doROARequest("ListAttendees", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/attendees`, "json", req, runtime), new ListAttendeesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListAttendees",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/attendees`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAttendeesResponse>(await this.execute(params, req, runtime), new ListAttendeesResponse({}));
   }
 
-  async listCalendars(userId: string): Promise<ListCalendarsResponse> {
+  async listAttendees(userId: string, calendarId: string, eventId: string, request: ListAttendeesRequest): Promise<ListAttendeesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListCalendarsHeaders({ });
-    return await this.listCalendarsWithOptions(userId, headers, runtime);
+    let headers = new ListAttendeesHeaders({ });
+    return await this.listAttendeesWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
   async listCalendarsWithOptions(userId: string, headers: ListCalendarsHeaders, runtime: $Util.RuntimeOptions): Promise<ListCalendarsResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -6834,19 +7098,28 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<ListCalendarsResponse>(await this.doROARequest("ListCalendars", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars`, "json", req, runtime), new ListCalendarsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListCalendars",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListCalendarsResponse>(await this.execute(params, req, runtime), new ListCalendarsResponse({}));
   }
 
-  async listEvents(userId: string, calendarId: string, request: ListEventsRequest): Promise<ListEventsResponse> {
+  async listCalendars(userId: string): Promise<ListCalendarsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListEventsHeaders({ });
-    return await this.listEventsWithOptions(userId, calendarId, request, headers, runtime);
+    let headers = new ListCalendarsHeaders({ });
+    return await this.listCalendarsWithOptions(userId, headers, runtime);
   }
 
   async listEventsWithOptions(userId: string, calendarId: string, request: ListEventsRequest, headers: ListEventsHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxAttendees)) {
       query["maxAttendees"] = request.maxAttendees;
@@ -6893,19 +7166,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListEventsResponse>(await this.doROARequest("ListEvents", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events`, "json", req, runtime), new ListEventsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListEvents",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListEventsResponse>(await this.execute(params, req, runtime), new ListEventsResponse({}));
   }
 
-  async listEventsInstances(userId: string, calendarId: string, request: ListEventsInstancesRequest): Promise<ListEventsInstancesResponse> {
+  async listEvents(userId: string, calendarId: string, request: ListEventsRequest): Promise<ListEventsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListEventsInstancesHeaders({ });
-    return await this.listEventsInstancesWithOptions(userId, calendarId, request, headers, runtime);
+    let headers = new ListEventsHeaders({ });
+    return await this.listEventsWithOptions(userId, calendarId, request, headers, runtime);
   }
 
   async listEventsInstancesWithOptions(userId: string, calendarId: string, request: ListEventsInstancesRequest, headers: ListEventsInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsInstancesResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxAttendees)) {
       query["maxAttendees"] = request.maxAttendees;
@@ -6936,7 +7218,74 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListEventsInstancesResponse>(await this.doROARequest("ListEventsInstances", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/instances`, "json", req, runtime), new ListEventsInstancesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListEventsInstances",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/instances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListEventsInstancesResponse>(await this.execute(params, req, runtime), new ListEventsInstancesResponse({}));
+  }
+
+  async listEventsInstances(userId: string, calendarId: string, request: ListEventsInstancesRequest): Promise<ListEventsInstancesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListEventsInstancesHeaders({ });
+    return await this.listEventsInstancesWithOptions(userId, calendarId, request, headers, runtime);
+  }
+
+  async listEventsViewWithOptions(userId: string, calendarId: string, request: ListEventsViewRequest, headers: ListEventsViewHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsViewResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.maxAttendees)) {
+      query["maxAttendees"] = request.maxAttendees;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    if (!Util.isUnset(request.timeMax)) {
+      query["timeMax"] = request.timeMax;
+    }
+
+    if (!Util.isUnset(request.timeMin)) {
+      query["timeMin"] = request.timeMin;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListEventsView",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/eventsview`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListEventsViewResponse>(await this.execute(params, req, runtime), new ListEventsViewResponse({}));
   }
 
   async listEventsView(userId: string, calendarId: string, request: ListEventsViewRequest): Promise<ListEventsViewResponse> {
@@ -6945,10 +7294,8 @@ export default class Client extends OpenApi {
     return await this.listEventsViewWithOptions(userId, calendarId, request, headers, runtime);
   }
 
-  async listEventsViewWithOptions(userId: string, calendarId: string, request: ListEventsViewRequest, headers: ListEventsViewHeaders, runtime: $Util.RuntimeOptions): Promise<ListEventsViewResponse> {
+  async listInstancesWithOptions(userId: string, calendarId: string, eventId: string, request: ListInstancesRequest, headers: ListInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<ListInstancesResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.maxAttendees)) {
       query["maxAttendees"] = request.maxAttendees;
@@ -6983,7 +7330,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListEventsViewResponse>(await this.doROARequest("ListEventsView", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/eventsview`, "json", req, runtime), new ListEventsViewResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListInstances",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/instances`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListInstancesResponse>(await this.execute(params, req, runtime), new ListInstancesResponse({}));
   }
 
   async listInstances(userId: string, calendarId: string, eventId: string, request: ListInstancesRequest): Promise<ListInstancesResponse> {
@@ -6992,59 +7350,8 @@ export default class Client extends OpenApi {
     return await this.listInstancesWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
-  async listInstancesWithOptions(userId: string, calendarId: string, eventId: string, request: ListInstancesRequest, headers: ListInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<ListInstancesResponse> {
-    Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.maxAttendees)) {
-      query["maxAttendees"] = request.maxAttendees;
-    }
-
-    if (!Util.isUnset(request.maxResults)) {
-      query["maxResults"] = request.maxResults;
-    }
-
-    if (!Util.isUnset(request.nextToken)) {
-      query["nextToken"] = request.nextToken;
-    }
-
-    if (!Util.isUnset(request.timeMax)) {
-      query["timeMax"] = request.timeMax;
-    }
-
-    if (!Util.isUnset(request.timeMin)) {
-      query["timeMin"] = request.timeMin;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<ListInstancesResponse>(await this.doROARequest("ListInstances", "calendar_1.0", "HTTP", "GET", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/instances`, "json", req, runtime), new ListInstancesResponse({}));
-  }
-
-  async patchEvent(userId: string, calendarId: string, eventId: string, request: PatchEventRequest): Promise<PatchEventResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PatchEventHeaders({ });
-    return await this.patchEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
-  }
-
   async patchEventWithOptions(userId: string, calendarId: string, eventId: string, request: PatchEventRequest, headers: PatchEventHeaders, runtime: $Util.RuntimeOptions): Promise<PatchEventResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.attendees)) {
       body["attendees"] = request.attendees;
@@ -7103,20 +7410,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PatchEventResponse>(await this.doROARequest("PatchEvent", "calendar_1.0", "HTTP", "PUT", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}`, "json", req, runtime), new PatchEventResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PatchEvent",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PatchEventResponse>(await this.execute(params, req, runtime), new PatchEventResponse({}));
   }
 
-  async removeAttendee(userId: string, calendarId: string, eventId: string, request: RemoveAttendeeRequest): Promise<RemoveAttendeeResponse> {
+  async patchEvent(userId: string, calendarId: string, eventId: string, request: PatchEventRequest): Promise<PatchEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RemoveAttendeeHeaders({ });
-    return await this.removeAttendeeWithOptions(userId, calendarId, eventId, request, headers, runtime);
+    let headers = new PatchEventHeaders({ });
+    return await this.patchEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
   async removeAttendeeWithOptions(userId: string, calendarId: string, eventId: string, request: RemoveAttendeeRequest, headers: RemoveAttendeeHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveAttendeeResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.attendeesToRemove)) {
       body["attendeesToRemove"] = request.attendeesToRemove;
@@ -7135,20 +7450,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RemoveAttendeeResponse>(await this.doROARequest("RemoveAttendee", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/attendees/batchRemove`, "none", req, runtime), new RemoveAttendeeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RemoveAttendee",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/attendees/batchRemove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<RemoveAttendeeResponse>(await this.execute(params, req, runtime), new RemoveAttendeeResponse({}));
   }
 
-  async removeMeetingRooms(userId: string, calendarId: string, eventId: string, request: RemoveMeetingRoomsRequest): Promise<RemoveMeetingRoomsResponse> {
+  async removeAttendee(userId: string, calendarId: string, eventId: string, request: RemoveAttendeeRequest): Promise<RemoveAttendeeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RemoveMeetingRoomsHeaders({ });
-    return await this.removeMeetingRoomsWithOptions(userId, calendarId, eventId, request, headers, runtime);
+    let headers = new RemoveAttendeeHeaders({ });
+    return await this.removeAttendeeWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
   async removeMeetingRoomsWithOptions(userId: string, calendarId: string, eventId: string, request: RemoveMeetingRoomsRequest, headers: RemoveMeetingRoomsHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveMeetingRoomsResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.meetingRoomsToRemove)) {
       body["meetingRoomsToRemove"] = request.meetingRoomsToRemove;
@@ -7167,20 +7490,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RemoveMeetingRoomsResponse>(await this.doROARequest("RemoveMeetingRooms", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/meetingRooms/batchRemove`, "json", req, runtime), new RemoveMeetingRoomsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RemoveMeetingRooms",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/meetingRooms/batchRemove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RemoveMeetingRoomsResponse>(await this.execute(params, req, runtime), new RemoveMeetingRoomsResponse({}));
   }
 
-  async respondEvent(userId: string, calendarId: string, eventId: string, request: RespondEventRequest): Promise<RespondEventResponse> {
+  async removeMeetingRooms(userId: string, calendarId: string, eventId: string, request: RemoveMeetingRoomsRequest): Promise<RemoveMeetingRoomsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RespondEventHeaders({ });
-    return await this.respondEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
+    let headers = new RemoveMeetingRoomsHeaders({ });
+    return await this.removeMeetingRoomsWithOptions(userId, calendarId, eventId, request, headers, runtime);
   }
 
   async respondEventWithOptions(userId: string, calendarId: string, eventId: string, request: RespondEventRequest, headers: RespondEventHeaders, runtime: $Util.RuntimeOptions): Promise<RespondEventResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.responseStatus)) {
       body["responseStatus"] = request.responseStatus;
@@ -7199,7 +7530,51 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RespondEventResponse>(await this.doROARequest("RespondEvent", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/respond`, "none", req, runtime), new RespondEventResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RespondEvent",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/respond`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<RespondEventResponse>(await this.execute(params, req, runtime), new RespondEventResponse({}));
+  }
+
+  async respondEvent(userId: string, calendarId: string, eventId: string, request: RespondEventRequest): Promise<RespondEventResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RespondEventHeaders({ });
+    return await this.respondEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
+  }
+
+  async signInWithOptions(userId: string, calendarId: string, eventId: string, headers: SignInHeaders, runtime: $Util.RuntimeOptions): Promise<SignInResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "SignIn",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signin`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SignInResponse>(await this.execute(params, req, runtime), new SignInResponse({}));
   }
 
   async signIn(userId: string, calendarId: string, eventId: string): Promise<SignInResponse> {
@@ -7208,10 +7583,7 @@ export default class Client extends OpenApi {
     return await this.signInWithOptions(userId, calendarId, eventId, headers, runtime);
   }
 
-  async signInWithOptions(userId: string, calendarId: string, eventId: string, headers: SignInHeaders, runtime: $Util.RuntimeOptions): Promise<SignInResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
+  async signOutWithOptions(userId: string, calendarId: string, eventId: string, headers: SignOutHeaders, runtime: $Util.RuntimeOptions): Promise<SignOutResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -7224,7 +7596,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<SignInResponse>(await this.doROARequest("SignIn", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signin`, "json", req, runtime), new SignInResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SignOut",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signOut`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SignOutResponse>(await this.execute(params, req, runtime), new SignOutResponse({}));
   }
 
   async signOut(userId: string, calendarId: string, eventId: string): Promise<SignOutResponse> {
@@ -7233,10 +7616,7 @@ export default class Client extends OpenApi {
     return await this.signOutWithOptions(userId, calendarId, eventId, headers, runtime);
   }
 
-  async signOutWithOptions(userId: string, calendarId: string, eventId: string, headers: SignOutHeaders, runtime: $Util.RuntimeOptions): Promise<SignOutResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    eventId = OpenApiUtil.getEncodeParam(eventId);
+  async subscribeCalendarWithOptions(userId: string, calendarId: string, headers: SubscribeCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<SubscribeCalendarResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -7249,7 +7629,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<SignOutResponse>(await this.doROARequest("SignOut", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/events/${eventId}/signOut`, "json", req, runtime), new SignOutResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SubscribeCalendar",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/subscribe`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<SubscribeCalendarResponse>(await this.execute(params, req, runtime), new SubscribeCalendarResponse({}));
   }
 
   async subscribeCalendar(userId: string, calendarId: string): Promise<SubscribeCalendarResponse> {
@@ -7258,9 +7649,7 @@ export default class Client extends OpenApi {
     return await this.subscribeCalendarWithOptions(userId, calendarId, headers, runtime);
   }
 
-  async subscribeCalendarWithOptions(userId: string, calendarId: string, headers: SubscribeCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<SubscribeCalendarResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
+  async unsubscribeCalendarWithOptions(userId: string, calendarId: string, headers: UnsubscribeCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<UnsubscribeCalendarResponse> {
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -7273,7 +7662,18 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<SubscribeCalendarResponse>(await this.doROARequest("SubscribeCalendar", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/subscribe`, "none", req, runtime), new SubscribeCalendarResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UnsubscribeCalendar",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/calendars/${calendarId}/unsubscribe`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UnsubscribeCalendarResponse>(await this.execute(params, req, runtime), new UnsubscribeCalendarResponse({}));
   }
 
   async unsubscribeCalendar(userId: string, calendarId: string): Promise<UnsubscribeCalendarResponse> {
@@ -7282,34 +7682,8 @@ export default class Client extends OpenApi {
     return await this.unsubscribeCalendarWithOptions(userId, calendarId, headers, runtime);
   }
 
-  async unsubscribeCalendarWithOptions(userId: string, calendarId: string, headers: UnsubscribeCalendarHeaders, runtime: $Util.RuntimeOptions): Promise<UnsubscribeCalendarResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-    });
-    return $tea.cast<UnsubscribeCalendarResponse>(await this.doROARequest("UnsubscribeCalendar", "calendar_1.0", "HTTP", "POST", "AK", `/v1.0/calendar/users/${userId}/calendars/${calendarId}/unsubscribe`, "json", req, runtime), new UnsubscribeCalendarResponse({}));
-  }
-
-  async updateSubscribedCalendars(calendarId: string, userId: string, request: UpdateSubscribedCalendarsRequest): Promise<UpdateSubscribedCalendarsResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateSubscribedCalendarsHeaders({ });
-    return await this.updateSubscribedCalendarsWithOptions(calendarId, userId, request, headers, runtime);
-  }
-
   async updateSubscribedCalendarsWithOptions(calendarId: string, userId: string, request: UpdateSubscribedCalendarsRequest, headers: UpdateSubscribedCalendarsHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSubscribedCalendarsResponse> {
     Util.validateModel(request);
-    calendarId = OpenApiUtil.getEncodeParam(calendarId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.description)) {
       body["description"] = request.description;
@@ -7340,7 +7714,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateSubscribedCalendarsResponse>(await this.doROARequest("UpdateSubscribedCalendars", "calendar_1.0", "HTTP", "PUT", "AK", `/v1.0/calendar/users/${userId}/subscribedCalendars/${calendarId}`, "json", req, runtime), new UpdateSubscribedCalendarsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateSubscribedCalendars",
+      version: "calendar_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/calendar/users/${userId}/subscribedCalendars/${calendarId}`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateSubscribedCalendarsResponse>(await this.execute(params, req, runtime), new UpdateSubscribedCalendarsResponse({}));
+  }
+
+  async updateSubscribedCalendars(calendarId: string, userId: string, request: UpdateSubscribedCalendarsRequest): Promise<UpdateSubscribedCalendarsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateSubscribedCalendarsHeaders({ });
+    return await this.updateSubscribedCalendarsWithOptions(calendarId, userId, request, headers, runtime);
   }
 
 }

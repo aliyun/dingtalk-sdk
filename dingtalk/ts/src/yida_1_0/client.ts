@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -84,10 +86,12 @@ export class BatchGetFormDataByIdListResponseBody extends $tea.Model {
 
 export class BatchGetFormDataByIdListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchGetFormDataByIdListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -95,6 +99,7 @@ export class BatchGetFormDataByIdListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchGetFormDataByIdListResponseBody,
     };
   }
@@ -165,15 +170,18 @@ export class BatchRemovalByFormInstanceIdListRequest extends $tea.Model {
 
 export class BatchRemovalByFormInstanceIdListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -265,10 +273,12 @@ export class BatchSaveFormDataResponseBody extends $tea.Model {
 
 export class BatchSaveFormDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchSaveFormDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -276,6 +286,7 @@ export class BatchSaveFormDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchSaveFormDataResponseBody,
     };
   }
@@ -374,10 +385,12 @@ export class BatchUpdateFormDataByInstanceIdResponseBody extends $tea.Model {
 
 export class BatchUpdateFormDataByInstanceIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchUpdateFormDataByInstanceIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -385,6 +398,7 @@ export class BatchUpdateFormDataByInstanceIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchUpdateFormDataByInstanceIdResponseBody,
     };
   }
@@ -480,10 +494,12 @@ export class BatchUpdateFormDataByInstanceMapResponseBody extends $tea.Model {
 
 export class BatchUpdateFormDataByInstanceMapResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchUpdateFormDataByInstanceMapResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -491,6 +507,7 @@ export class BatchUpdateFormDataByInstanceMapResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchUpdateFormDataByInstanceMapResponseBody,
     };
   }
@@ -592,10 +609,12 @@ export class BuyAuthorizationOrderResponseBody extends $tea.Model {
 
 export class BuyAuthorizationOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BuyAuthorizationOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -603,6 +622,7 @@ export class BuyAuthorizationOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BuyAuthorizationOrderResponseBody,
     };
   }
@@ -704,10 +724,12 @@ export class BuyFreshOrderResponseBody extends $tea.Model {
 
 export class BuyFreshOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BuyFreshOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -715,6 +737,7 @@ export class BuyFreshOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BuyFreshOrderResponseBody,
     };
   }
@@ -786,10 +809,12 @@ export class CheckCloudAccountStatusResponseBody extends $tea.Model {
 
 export class CheckCloudAccountStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CheckCloudAccountStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -797,6 +822,7 @@ export class CheckCloudAccountStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CheckCloudAccountStatusResponseBody,
     };
   }
@@ -886,10 +912,12 @@ export class CreateOrUpdateFormDataResponseBody extends $tea.Model {
 
 export class CreateOrUpdateFormDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateOrUpdateFormDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -897,6 +925,7 @@ export class CreateOrUpdateFormDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateOrUpdateFormDataResponseBody,
     };
   }
@@ -961,15 +990,18 @@ export class DeleteFormDataRequest extends $tea.Model {
 
 export class DeleteFormDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -1033,15 +1065,18 @@ export class DeleteInstanceRequest extends $tea.Model {
 
 export class DeleteInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -1105,15 +1140,18 @@ export class DeleteSequenceRequest extends $tea.Model {
 
 export class DeleteSequenceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -1199,10 +1237,12 @@ export class DeployFunctionCallbackResponseBody extends $tea.Model {
 
 export class DeployFunctionCallbackResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeployFunctionCallbackResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1210,6 +1250,7 @@ export class DeployFunctionCallbackResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeployFunctionCallbackResponseBody,
     };
   }
@@ -1302,10 +1343,12 @@ export class ExecuteBatchTaskResponseBody extends $tea.Model {
 
 export class ExecuteBatchTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ExecuteBatchTaskResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1313,6 +1356,7 @@ export class ExecuteBatchTaskResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ExecuteBatchTaskResponseBody,
     };
   }
@@ -1399,10 +1443,12 @@ export class ExecuteCustomApiResponseBody extends $tea.Model {
 
 export class ExecuteCustomApiResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ExecuteCustomApiResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1410,6 +1456,7 @@ export class ExecuteCustomApiResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ExecuteCustomApiResponseBody,
     };
   }
@@ -1486,15 +1533,18 @@ export class ExecutePlatformTaskRequest extends $tea.Model {
 
 export class ExecutePlatformTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -1576,15 +1626,18 @@ export class ExecuteTaskRequest extends $tea.Model {
 
 export class ExecuteTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -1664,10 +1717,12 @@ export class ExpireCommodityResponseBody extends $tea.Model {
 
 export class ExpireCommodityResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ExpireCommodityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1675,6 +1730,7 @@ export class ExpireCommodityResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ExpireCommodityResponseBody,
     };
   }
@@ -1746,10 +1802,12 @@ export class GetActivationCodeByCallerUnionIdResponseBody extends $tea.Model {
 
 export class GetActivationCodeByCallerUnionIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetActivationCodeByCallerUnionIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1757,6 +1815,7 @@ export class GetActivationCodeByCallerUnionIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetActivationCodeByCallerUnionIdResponseBody,
     };
   }
@@ -1834,10 +1893,12 @@ export class GetActivityButtonListResponseBody extends $tea.Model {
 
 export class GetActivityButtonListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetActivityButtonListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1845,6 +1906,7 @@ export class GetActivityButtonListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetActivityButtonListResponseBody,
     };
   }
@@ -1928,10 +1990,12 @@ export class GetActivityListResponseBody extends $tea.Model {
 
 export class GetActivityListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetActivityListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1939,6 +2003,7 @@ export class GetActivityListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetActivityListResponseBody,
     };
   }
@@ -2040,10 +2105,12 @@ export class GetApplicationAuthorizationServicePlatformResourceResponseBody exte
 
 export class GetApplicationAuthorizationServicePlatformResourceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetApplicationAuthorizationServicePlatformResourceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2051,6 +2118,7 @@ export class GetApplicationAuthorizationServicePlatformResourceResponse extends 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetApplicationAuthorizationServicePlatformResourceResponseBody,
     };
   }
@@ -2152,10 +2220,12 @@ export class GetCorpAccomplishmentTasksResponseBody extends $tea.Model {
 
 export class GetCorpAccomplishmentTasksResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCorpAccomplishmentTasksResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2163,6 +2233,7 @@ export class GetCorpAccomplishmentTasksResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCorpAccomplishmentTasksResponseBody,
     };
   }
@@ -2234,10 +2305,12 @@ export class GetCorpLevelByAccountIdResponseBody extends $tea.Model {
 
 export class GetCorpLevelByAccountIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCorpLevelByAccountIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2245,6 +2318,7 @@ export class GetCorpLevelByAccountIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCorpLevelByAccountIdResponseBody,
     };
   }
@@ -2352,10 +2426,12 @@ export class GetCorpTasksResponseBody extends $tea.Model {
 
 export class GetCorpTasksResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCorpTasksResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2363,6 +2439,7 @@ export class GetCorpTasksResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCorpTasksResponseBody,
     };
   }
@@ -2446,10 +2523,12 @@ export class GetFieldDefByUuidResponseBody extends $tea.Model {
 
 export class GetFieldDefByUuidResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFieldDefByUuidResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2457,6 +2536,7 @@ export class GetFieldDefByUuidResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFieldDefByUuidResponseBody,
     };
   }
@@ -2537,10 +2617,12 @@ export class GetFormComponentDefinitionListResponseBody extends $tea.Model {
 
 export class GetFormComponentDefinitionListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFormComponentDefinitionListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2548,6 +2630,7 @@ export class GetFormComponentDefinitionListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFormComponentDefinitionListResponseBody,
     };
   }
@@ -2637,10 +2720,12 @@ export class GetFormDataByIDResponseBody extends $tea.Model {
 
 export class GetFormDataByIDResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFormDataByIDResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2648,6 +2733,7 @@ export class GetFormDataByIDResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFormDataByIDResponseBody,
     };
   }
@@ -2737,10 +2823,12 @@ export class GetFormListInAppResponseBody extends $tea.Model {
 
 export class GetFormListInAppResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFormListInAppResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2748,6 +2836,7 @@ export class GetFormListInAppResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFormListInAppResponseBody,
     };
   }
@@ -2861,10 +2950,12 @@ export class GetInstanceByIdResponseBody extends $tea.Model {
 
 export class GetInstanceByIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetInstanceByIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2872,6 +2963,7 @@ export class GetInstanceByIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetInstanceByIdResponseBody,
     };
   }
@@ -2994,10 +3086,12 @@ export class GetInstanceIdListResponseBody extends $tea.Model {
 
 export class GetInstanceIdListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetInstanceIdListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3005,6 +3099,7 @@ export class GetInstanceIdListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetInstanceIdListResponseBody,
     };
   }
@@ -3130,10 +3225,12 @@ export class GetInstancesResponseBody extends $tea.Model {
 
 export class GetInstancesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetInstancesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3141,6 +3238,7 @@ export class GetInstancesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetInstancesResponseBody,
     };
   }
@@ -3224,10 +3322,12 @@ export class GetInstancesByIdListResponseBody extends $tea.Model {
 
 export class GetInstancesByIdListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetInstancesByIdListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3235,6 +3335,7 @@ export class GetInstancesByIdListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetInstancesByIdListResponseBody,
     };
   }
@@ -3339,10 +3440,12 @@ export class GetMeCorpSubmissionResponseBody extends $tea.Model {
 
 export class GetMeCorpSubmissionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetMeCorpSubmissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3350,6 +3453,7 @@ export class GetMeCorpSubmissionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetMeCorpSubmissionResponseBody,
     };
   }
@@ -3460,10 +3564,12 @@ export class GetNotifyMeResponseBody extends $tea.Model {
 
 export class GetNotifyMeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetNotifyMeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3471,6 +3577,7 @@ export class GetNotifyMeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetNotifyMeResponseBody,
     };
   }
@@ -3554,10 +3661,12 @@ export class GetOpenUrlResponseBody extends $tea.Model {
 
 export class GetOpenUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetOpenUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3565,6 +3674,7 @@ export class GetOpenUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetOpenUrlResponseBody,
     };
   }
@@ -3648,10 +3758,12 @@ export class GetOperationRecordsResponseBody extends $tea.Model {
 
 export class GetOperationRecordsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetOperationRecordsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3659,6 +3771,7 @@ export class GetOperationRecordsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetOperationRecordsResponseBody,
     };
   }
@@ -3757,10 +3870,12 @@ export class GetPlatformResourceResponseBody extends $tea.Model {
 
 export class GetPlatformResourceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPlatformResourceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3768,6 +3883,7 @@ export class GetPlatformResourceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPlatformResourceResponseBody,
     };
   }
@@ -3842,10 +3958,12 @@ export class GetPrintAppInfoResponseBody extends $tea.Model {
 
 export class GetPrintAppInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPrintAppInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3853,6 +3971,7 @@ export class GetPrintAppInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPrintAppInfoResponseBody,
     };
   }
@@ -3933,10 +4052,12 @@ export class GetPrintDictionaryResponseBody extends $tea.Model {
 
 export class GetPrintDictionaryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPrintDictionaryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3944,6 +4065,7 @@ export class GetPrintDictionaryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPrintDictionaryResponseBody,
     };
   }
@@ -4066,10 +4188,12 @@ export class GetProcessDefinitionResponseBody extends $tea.Model {
 
 export class GetProcessDefinitionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetProcessDefinitionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4077,6 +4201,7 @@ export class GetProcessDefinitionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetProcessDefinitionResponseBody,
     };
   }
@@ -4160,10 +4285,12 @@ export class GetRunningTaskListResponseBody extends $tea.Model {
 
 export class GetRunningTaskListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetRunningTaskListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4171,6 +4298,7 @@ export class GetRunningTaskListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetRunningTaskListResponseBody,
     };
   }
@@ -4254,10 +4382,12 @@ export class GetRunningTasksResponseBody extends $tea.Model {
 
 export class GetRunningTasksResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetRunningTasksResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4265,6 +4395,7 @@ export class GetRunningTasksResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetRunningTasksResponseBody,
     };
   }
@@ -4351,10 +4482,12 @@ export class GetSaleUserInfoByUserIdResponseBody extends $tea.Model {
 
 export class GetSaleUserInfoByUserIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSaleUserInfoByUserIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4362,6 +4495,7 @@ export class GetSaleUserInfoByUserIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSaleUserInfoByUserIdResponseBody,
     };
   }
@@ -4466,10 +4600,12 @@ export class GetTaskCopiesResponseBody extends $tea.Model {
 
 export class GetTaskCopiesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTaskCopiesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4477,6 +4613,7 @@ export class GetTaskCopiesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTaskCopiesResponseBody,
     };
   }
@@ -4572,10 +4709,12 @@ export class ListApplicationResponseBody extends $tea.Model {
 
 export class ListApplicationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListApplicationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4583,6 +4722,7 @@ export class ListApplicationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListApplicationResponseBody,
     };
   }
@@ -4672,10 +4812,12 @@ export class ListApplicationAuthorizationServiceApplicationInformationResponseBo
 
 export class ListApplicationAuthorizationServiceApplicationInformationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListApplicationAuthorizationServiceApplicationInformationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4683,6 +4825,7 @@ export class ListApplicationAuthorizationServiceApplicationInformationResponse e
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListApplicationAuthorizationServiceApplicationInformationResponseBody,
     };
   }
@@ -4772,10 +4915,12 @@ export class ListApplicationAuthorizationServiceConnectorInformationResponseBody
 
 export class ListApplicationAuthorizationServiceConnectorInformationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListApplicationAuthorizationServiceConnectorInformationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4783,6 +4928,7 @@ export class ListApplicationAuthorizationServiceConnectorInformationResponse ext
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListApplicationAuthorizationServiceConnectorInformationResponseBody,
     };
   }
@@ -4872,10 +5018,12 @@ export class ListApplicationInformationResponseBody extends $tea.Model {
 
 export class ListApplicationInformationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListApplicationInformationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4883,6 +5031,7 @@ export class ListApplicationInformationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListApplicationInformationResponseBody,
     };
   }
@@ -4972,10 +5121,12 @@ export class ListCommodityResponseBody extends $tea.Model {
 
 export class ListCommodityResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListCommodityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4983,6 +5134,7 @@ export class ListCommodityResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListCommodityResponseBody,
     };
   }
@@ -5072,10 +5224,12 @@ export class ListConnectorInformationResponseBody extends $tea.Model {
 
 export class ListConnectorInformationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListConnectorInformationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5083,6 +5237,7 @@ export class ListConnectorInformationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListConnectorInformationResponseBody,
     };
   }
@@ -5166,10 +5321,12 @@ export class ListFormRemarksResponseBody extends $tea.Model {
 
 export class ListFormRemarksResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListFormRemarksResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5177,6 +5334,7 @@ export class ListFormRemarksResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListFormRemarksResponseBody,
     };
   }
@@ -5260,10 +5418,12 @@ export class ListNavigationByFormTypeResponseBody extends $tea.Model {
 
 export class ListNavigationByFormTypeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListNavigationByFormTypeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5271,6 +5431,7 @@ export class ListNavigationByFormTypeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListNavigationByFormTypeResponseBody,
     };
   }
@@ -5354,10 +5515,12 @@ export class ListOperationLogsResponseBody extends $tea.Model {
 
 export class ListOperationLogsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListOperationLogsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5365,6 +5528,7 @@ export class ListOperationLogsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListOperationLogsResponseBody,
     };
   }
@@ -5460,10 +5624,12 @@ export class ListTableDataByFormInstanceIdTableIdResponseBody extends $tea.Model
 
 export class ListTableDataByFormInstanceIdTableIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListTableDataByFormInstanceIdTableIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5471,6 +5637,7 @@ export class ListTableDataByFormInstanceIdTableIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListTableDataByFormInstanceIdTableIdResponseBody,
     };
   }
@@ -5542,10 +5709,12 @@ export class LoginCodeGenResponseBody extends $tea.Model {
 
 export class LoginCodeGenResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: LoginCodeGenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5553,6 +5722,7 @@ export class LoginCodeGenResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: LoginCodeGenResponseBody,
     };
   }
@@ -5654,10 +5824,12 @@ export class NotifyAuthorizationResultResponseBody extends $tea.Model {
 
 export class NotifyAuthorizationResultResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: NotifyAuthorizationResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5665,6 +5837,7 @@ export class NotifyAuthorizationResultResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: NotifyAuthorizationResultResponseBody,
     };
   }
@@ -5757,10 +5930,12 @@ export class PageFormBaseInfosResponseBody extends $tea.Model {
 
 export class PageFormBaseInfosResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PageFormBaseInfosResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5768,6 +5943,7 @@ export class PageFormBaseInfosResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PageFormBaseInfosResponseBody,
     };
   }
@@ -5884,10 +6060,12 @@ export class QueryServiceRecordResponseBody extends $tea.Model {
 
 export class QueryServiceRecordResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryServiceRecordResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -5895,6 +6073,7 @@ export class QueryServiceRecordResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryServiceRecordResponseBody,
     };
   }
@@ -5971,15 +6150,18 @@ export class RedirectTaskRequest extends $tea.Model {
 
 export class RedirectTaskResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -6059,10 +6241,12 @@ export class RefundCommodityResponseBody extends $tea.Model {
 
 export class RefundCommodityResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RefundCommodityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6070,6 +6254,7 @@ export class RefundCommodityResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RefundCommodityResponseBody,
     };
   }
@@ -6147,10 +6332,12 @@ export class RegisterAccountsResponseBody extends $tea.Model {
 
 export class RegisterAccountsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RegisterAccountsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6158,6 +6345,7 @@ export class RegisterAccountsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RegisterAccountsResponseBody,
     };
   }
@@ -6238,10 +6426,12 @@ export class ReleaseCommodityResponseBody extends $tea.Model {
 
 export class ReleaseCommodityResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ReleaseCommodityResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6249,6 +6439,7 @@ export class ReleaseCommodityResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ReleaseCommodityResponseBody,
     };
   }
@@ -6320,10 +6511,12 @@ export class RemoveTenantResourceResponseBody extends $tea.Model {
 
 export class RemoveTenantResourceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RemoveTenantResourceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6331,6 +6524,7 @@ export class RemoveTenantResourceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RemoveTenantResourceResponseBody,
     };
   }
@@ -6416,15 +6610,18 @@ export class RenderBatchCallbackRequest extends $tea.Model {
 
 export class RenderBatchCallbackResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -6504,10 +6701,12 @@ export class RenewApplicationAuthorizationServiceOrderResponseBody extends $tea.
 
 export class RenewApplicationAuthorizationServiceOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RenewApplicationAuthorizationServiceOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6515,6 +6714,7 @@ export class RenewApplicationAuthorizationServiceOrderResponse extends $tea.Mode
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RenewApplicationAuthorizationServiceOrderResponseBody,
     };
   }
@@ -6592,10 +6792,12 @@ export class RenewTenantOrderResponseBody extends $tea.Model {
 
 export class RenewTenantOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RenewTenantOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6603,6 +6805,7 @@ export class RenewTenantOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RenewTenantOrderResponseBody,
     };
   }
@@ -6689,10 +6892,12 @@ export class SaveFormDataResponseBody extends $tea.Model {
 
 export class SaveFormDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SaveFormDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6700,6 +6905,7 @@ export class SaveFormDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SaveFormDataResponseBody,
     };
   }
@@ -6792,10 +6998,12 @@ export class SaveFormRemarkResponseBody extends $tea.Model {
 
 export class SaveFormRemarkResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SaveFormRemarkResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6803,6 +7011,7 @@ export class SaveFormRemarkResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SaveFormRemarkResponseBody,
     };
   }
@@ -6901,10 +7110,12 @@ export class SavePrintTplDetailInfoResponseBody extends $tea.Model {
 
 export class SavePrintTplDetailInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SavePrintTplDetailInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -6912,6 +7123,7 @@ export class SavePrintTplDetailInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SavePrintTplDetailInfoResponseBody,
     };
   }
@@ -6998,10 +7210,12 @@ export class SearchActivationCodeResponseBody extends $tea.Model {
 
 export class SearchActivationCodeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchActivationCodeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7009,6 +7223,7 @@ export class SearchActivationCodeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchActivationCodeResponseBody,
     };
   }
@@ -7113,10 +7328,12 @@ export class SearchEmployeeFieldValuesResponseBody extends $tea.Model {
 
 export class SearchEmployeeFieldValuesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchEmployeeFieldValuesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7124,6 +7341,7 @@ export class SearchEmployeeFieldValuesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchEmployeeFieldValuesResponseBody,
     };
   }
@@ -7231,10 +7449,12 @@ export class SearchFormDataIdListResponseBody extends $tea.Model {
 
 export class SearchFormDataIdListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchFormDataIdListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7242,6 +7462,7 @@ export class SearchFormDataIdListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchFormDataIdListResponseBody,
     };
   }
@@ -7358,10 +7579,12 @@ export class SearchFormDataRemovalTableDataResponseBody extends $tea.Model {
 
 export class SearchFormDataRemovalTableDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchFormDataRemovalTableDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7369,6 +7592,7 @@ export class SearchFormDataRemovalTableDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchFormDataRemovalTableDataResponseBody,
     };
   }
@@ -7482,10 +7706,12 @@ export class SearchFormDataSecondGenerationResponseBody extends $tea.Model {
 
 export class SearchFormDataSecondGenerationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchFormDataSecondGenerationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7493,6 +7719,7 @@ export class SearchFormDataSecondGenerationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchFormDataSecondGenerationResponseBody,
     };
   }
@@ -7606,10 +7833,12 @@ export class SearchFormDataSecondGenerationNoTableFieldResponseBody extends $tea
 
 export class SearchFormDataSecondGenerationNoTableFieldResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchFormDataSecondGenerationNoTableFieldResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7617,6 +7846,7 @@ export class SearchFormDataSecondGenerationNoTableFieldResponse extends $tea.Mod
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchFormDataSecondGenerationNoTableFieldResponseBody,
     };
   }
@@ -7733,10 +7963,12 @@ export class SearchFormDatasResponseBody extends $tea.Model {
 
 export class SearchFormDatasResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchFormDatasResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7744,6 +7976,7 @@ export class SearchFormDatasResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchFormDatasResponseBody,
     };
   }
@@ -7836,10 +8069,12 @@ export class StartInstanceResponseBody extends $tea.Model {
 
 export class StartInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: StartInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7847,6 +8082,7 @@ export class StartInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: StartInstanceResponseBody,
     };
   }
@@ -7924,10 +8160,12 @@ export class TerminateCloudAuthorizationResponseBody extends $tea.Model {
 
 export class TerminateCloudAuthorizationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: TerminateCloudAuthorizationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -7935,6 +8173,7 @@ export class TerminateCloudAuthorizationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: TerminateCloudAuthorizationResponseBody,
     };
   }
@@ -7999,15 +8238,18 @@ export class TerminateInstanceRequest extends $tea.Model {
 
 export class TerminateInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -8087,10 +8329,12 @@ export class UpdateCloudAccountInformationResponseBody extends $tea.Model {
 
 export class UpdateCloudAccountInformationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateCloudAccountInformationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8098,6 +8342,7 @@ export class UpdateCloudAccountInformationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateCloudAccountInformationResponseBody,
     };
   }
@@ -8168,15 +8413,18 @@ export class UpdateFormDataRequest extends $tea.Model {
 
 export class UpdateFormDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -8243,15 +8491,18 @@ export class UpdateInstanceRequest extends $tea.Model {
 
 export class UpdateInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -8321,15 +8572,18 @@ export class UpdateStatusRequest extends $tea.Model {
 
 export class UpdateStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -8409,10 +8663,12 @@ export class UpgradeTenantInformationResponseBody extends $tea.Model {
 
 export class UpgradeTenantInformationResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpgradeTenantInformationResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8420,6 +8676,7 @@ export class UpgradeTenantInformationResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpgradeTenantInformationResponseBody,
     };
   }
@@ -8497,10 +8754,12 @@ export class ValidateApplicationAuthorizationOrderResponseBody extends $tea.Mode
 
 export class ValidateApplicationAuthorizationOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ValidateApplicationAuthorizationOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8508,6 +8767,7 @@ export class ValidateApplicationAuthorizationOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ValidateApplicationAuthorizationOrderResponseBody,
     };
   }
@@ -8582,10 +8842,12 @@ export class ValidateApplicationAuthorizationServiceOrderResponseBody extends $t
 
 export class ValidateApplicationAuthorizationServiceOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ValidateApplicationAuthorizationServiceOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8593,6 +8855,7 @@ export class ValidateApplicationAuthorizationServiceOrderResponse extends $tea.M
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ValidateApplicationAuthorizationServiceOrderResponseBody,
     };
   }
@@ -8667,10 +8930,12 @@ export class ValidateApplicationServiceOrderUpgradeResponseBody extends $tea.Mod
 
 export class ValidateApplicationServiceOrderUpgradeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ValidateApplicationServiceOrderUpgradeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8678,6 +8943,7 @@ export class ValidateApplicationServiceOrderUpgradeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ValidateApplicationServiceOrderUpgradeResponseBody,
     };
   }
@@ -8755,10 +9021,12 @@ export class ValidateOrderBuyResponseBody extends $tea.Model {
 
 export class ValidateOrderBuyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ValidateOrderBuyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8766,6 +9034,7 @@ export class ValidateOrderBuyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ValidateOrderBuyResponseBody,
     };
   }
@@ -8843,10 +9112,12 @@ export class ValidateOrderUpdateResponseBody extends $tea.Model {
 
 export class ValidateOrderUpdateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ValidateOrderUpdateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8854,6 +9125,7 @@ export class ValidateOrderUpdateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ValidateOrderUpdateResponseBody,
     };
   }
@@ -8934,10 +9206,12 @@ export class ValidateOrderUpgradeResponseBody extends $tea.Model {
 
 export class ValidateOrderUpgradeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ValidateOrderUpgradeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -8945,6 +9219,7 @@ export class ValidateOrderUpgradeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ValidateOrderUpgradeResponseBody,
     };
   }
@@ -11920,9 +12195,12 @@ export class SearchFormDatasResponseBodyData extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -11930,12 +12208,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async batchGetFormDataByIdList(request: BatchGetFormDataByIdListRequest): Promise<BatchGetFormDataByIdListResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchGetFormDataByIdListHeaders({ });
-    return await this.batchGetFormDataByIdListWithOptions(request, headers, runtime);
-  }
 
   async batchGetFormDataByIdListWithOptions(request: BatchGetFormDataByIdListRequest, headers: BatchGetFormDataByIdListHeaders, runtime: $Util.RuntimeOptions): Promise<BatchGetFormDataByIdListResponse> {
     Util.validateModel(request);
@@ -11977,13 +12249,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchGetFormDataByIdListResponse>(await this.doROARequest("BatchGetFormDataByIdList", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/ids/query`, "json", req, runtime), new BatchGetFormDataByIdListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchGetFormDataByIdList",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances/ids/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchGetFormDataByIdListResponse>(await this.execute(params, req, runtime), new BatchGetFormDataByIdListResponse({}));
   }
 
-  async batchRemovalByFormInstanceIdList(request: BatchRemovalByFormInstanceIdListRequest): Promise<BatchRemovalByFormInstanceIdListResponse> {
+  async batchGetFormDataByIdList(request: BatchGetFormDataByIdListRequest): Promise<BatchGetFormDataByIdListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchRemovalByFormInstanceIdListHeaders({ });
-    return await this.batchRemovalByFormInstanceIdListWithOptions(request, headers, runtime);
+    let headers = new BatchGetFormDataByIdListHeaders({ });
+    return await this.batchGetFormDataByIdListWithOptions(request, headers, runtime);
   }
 
   async batchRemovalByFormInstanceIdListWithOptions(request: BatchRemovalByFormInstanceIdListRequest, headers: BatchRemovalByFormInstanceIdListHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRemovalByFormInstanceIdListResponse> {
@@ -12030,13 +12313,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchRemovalByFormInstanceIdListResponse>(await this.doROARequest("BatchRemovalByFormInstanceIdList", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/batchRemove`, "none", req, runtime), new BatchRemovalByFormInstanceIdListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchRemovalByFormInstanceIdList",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances/batchRemove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<BatchRemovalByFormInstanceIdListResponse>(await this.execute(params, req, runtime), new BatchRemovalByFormInstanceIdListResponse({}));
   }
 
-  async batchSaveFormData(request: BatchSaveFormDataRequest): Promise<BatchSaveFormDataResponse> {
+  async batchRemovalByFormInstanceIdList(request: BatchRemovalByFormInstanceIdListRequest): Promise<BatchRemovalByFormInstanceIdListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchSaveFormDataHeaders({ });
-    return await this.batchSaveFormDataWithOptions(request, headers, runtime);
+    let headers = new BatchRemovalByFormInstanceIdListHeaders({ });
+    return await this.batchRemovalByFormInstanceIdListWithOptions(request, headers, runtime);
   }
 
   async batchSaveFormDataWithOptions(request: BatchSaveFormDataRequest, headers: BatchSaveFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSaveFormDataResponse> {
@@ -12087,13 +12381,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchSaveFormDataResponse>(await this.doROARequest("BatchSaveFormData", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/batchSave`, "json", req, runtime), new BatchSaveFormDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchSaveFormData",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances/batchSave`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchSaveFormDataResponse>(await this.execute(params, req, runtime), new BatchSaveFormDataResponse({}));
   }
 
-  async batchUpdateFormDataByInstanceId(request: BatchUpdateFormDataByInstanceIdRequest): Promise<BatchUpdateFormDataByInstanceIdResponse> {
+  async batchSaveFormData(request: BatchSaveFormDataRequest): Promise<BatchSaveFormDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchUpdateFormDataByInstanceIdHeaders({ });
-    return await this.batchUpdateFormDataByInstanceIdWithOptions(request, headers, runtime);
+    let headers = new BatchSaveFormDataHeaders({ });
+    return await this.batchSaveFormDataWithOptions(request, headers, runtime);
   }
 
   async batchUpdateFormDataByInstanceIdWithOptions(request: BatchUpdateFormDataByInstanceIdRequest, headers: BatchUpdateFormDataByInstanceIdHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateFormDataByInstanceIdResponse> {
@@ -12152,13 +12457,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchUpdateFormDataByInstanceIdResponse>(await this.doROARequest("BatchUpdateFormDataByInstanceId", "yida_1.0", "HTTP", "PUT", "AK", `/v1.0/yida/forms/instances/components`, "json", req, runtime), new BatchUpdateFormDataByInstanceIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchUpdateFormDataByInstanceId",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances/components`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchUpdateFormDataByInstanceIdResponse>(await this.execute(params, req, runtime), new BatchUpdateFormDataByInstanceIdResponse({}));
   }
 
-  async batchUpdateFormDataByInstanceMap(request: BatchUpdateFormDataByInstanceMapRequest): Promise<BatchUpdateFormDataByInstanceMapResponse> {
+  async batchUpdateFormDataByInstanceId(request: BatchUpdateFormDataByInstanceIdRequest): Promise<BatchUpdateFormDataByInstanceIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchUpdateFormDataByInstanceMapHeaders({ });
-    return await this.batchUpdateFormDataByInstanceMapWithOptions(request, headers, runtime);
+    let headers = new BatchUpdateFormDataByInstanceIdHeaders({ });
+    return await this.batchUpdateFormDataByInstanceIdWithOptions(request, headers, runtime);
   }
 
   async batchUpdateFormDataByInstanceMapWithOptions(request: BatchUpdateFormDataByInstanceMapRequest, headers: BatchUpdateFormDataByInstanceMapHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateFormDataByInstanceMapResponse> {
@@ -12213,13 +12529,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchUpdateFormDataByInstanceMapResponse>(await this.doROARequest("BatchUpdateFormDataByInstanceMap", "yida_1.0", "HTTP", "PUT", "AK", `/v1.0/yida/forms/instances/datas`, "json", req, runtime), new BatchUpdateFormDataByInstanceMapResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchUpdateFormDataByInstanceMap",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances/datas`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchUpdateFormDataByInstanceMapResponse>(await this.execute(params, req, runtime), new BatchUpdateFormDataByInstanceMapResponse({}));
   }
 
-  async buyAuthorizationOrder(request: BuyAuthorizationOrderRequest): Promise<BuyAuthorizationOrderResponse> {
+  async batchUpdateFormDataByInstanceMap(request: BatchUpdateFormDataByInstanceMapRequest): Promise<BatchUpdateFormDataByInstanceMapResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BuyAuthorizationOrderHeaders({ });
-    return await this.buyAuthorizationOrderWithOptions(request, headers, runtime);
+    let headers = new BatchUpdateFormDataByInstanceMapHeaders({ });
+    return await this.batchUpdateFormDataByInstanceMapWithOptions(request, headers, runtime);
   }
 
   async buyAuthorizationOrderWithOptions(request: BuyAuthorizationOrderRequest, headers: BuyAuthorizationOrderHeaders, runtime: $Util.RuntimeOptions): Promise<BuyAuthorizationOrderResponse> {
@@ -12282,13 +12609,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BuyAuthorizationOrderResponse>(await this.doROARequest("BuyAuthorizationOrder", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/appAuthorizations/order`, "json", req, runtime), new BuyAuthorizationOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BuyAuthorizationOrder",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/appAuthorizations/order`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<BuyAuthorizationOrderResponse>(await this.execute(params, req, runtime), new BuyAuthorizationOrderResponse({}));
   }
 
-  async buyFreshOrder(request: BuyFreshOrderRequest): Promise<BuyFreshOrderResponse> {
+  async buyAuthorizationOrder(request: BuyAuthorizationOrderRequest): Promise<BuyAuthorizationOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BuyFreshOrderHeaders({ });
-    return await this.buyFreshOrderWithOptions(request, headers, runtime);
+    let headers = new BuyAuthorizationOrderHeaders({ });
+    return await this.buyAuthorizationOrderWithOptions(request, headers, runtime);
   }
 
   async buyFreshOrderWithOptions(request: BuyFreshOrderRequest, headers: BuyFreshOrderHeaders, runtime: $Util.RuntimeOptions): Promise<BuyFreshOrderResponse> {
@@ -12351,18 +12689,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BuyFreshOrderResponse>(await this.doROARequest("BuyFreshOrder", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/apps/freshOrders`, "json", req, runtime), new BuyFreshOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BuyFreshOrder",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/freshOrders`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<BuyFreshOrderResponse>(await this.execute(params, req, runtime), new BuyFreshOrderResponse({}));
   }
 
-  async checkCloudAccountStatus(callerUid: string, request: CheckCloudAccountStatusRequest): Promise<CheckCloudAccountStatusResponse> {
+  async buyFreshOrder(request: BuyFreshOrderRequest): Promise<BuyFreshOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CheckCloudAccountStatusHeaders({ });
-    return await this.checkCloudAccountStatusWithOptions(callerUid, request, headers, runtime);
+    let headers = new BuyFreshOrderHeaders({ });
+    return await this.buyFreshOrderWithOptions(request, headers, runtime);
   }
 
   async checkCloudAccountStatusWithOptions(callerUid: string, request: CheckCloudAccountStatusRequest, headers: CheckCloudAccountStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CheckCloudAccountStatusResponse> {
     Util.validateModel(request);
-    callerUid = OpenApiUtil.getEncodeParam(callerUid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -12381,13 +12729,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CheckCloudAccountStatusResponse>(await this.doROARequest("CheckCloudAccountStatus", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/apps/cloudAccountStatus/${callerUid}`, "json", req, runtime), new CheckCloudAccountStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CheckCloudAccountStatus",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/cloudAccountStatus/${callerUid}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<CheckCloudAccountStatusResponse>(await this.execute(params, req, runtime), new CheckCloudAccountStatusResponse({}));
   }
 
-  async createOrUpdateFormData(request: CreateOrUpdateFormDataRequest): Promise<CreateOrUpdateFormDataResponse> {
+  async checkCloudAccountStatus(callerUid: string, request: CheckCloudAccountStatusRequest): Promise<CheckCloudAccountStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateOrUpdateFormDataHeaders({ });
-    return await this.createOrUpdateFormDataWithOptions(request, headers, runtime);
+    let headers = new CheckCloudAccountStatusHeaders({ });
+    return await this.checkCloudAccountStatusWithOptions(callerUid, request, headers, runtime);
   }
 
   async createOrUpdateFormDataWithOptions(request: CreateOrUpdateFormDataRequest, headers: CreateOrUpdateFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOrUpdateFormDataResponse> {
@@ -12434,13 +12793,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateOrUpdateFormDataResponse>(await this.doROARequest("CreateOrUpdateFormData", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/insertOrUpdate`, "json", req, runtime), new CreateOrUpdateFormDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateOrUpdateFormData",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances/insertOrUpdate`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateOrUpdateFormDataResponse>(await this.execute(params, req, runtime), new CreateOrUpdateFormDataResponse({}));
   }
 
-  async deleteFormData(request: DeleteFormDataRequest): Promise<DeleteFormDataResponse> {
+  async createOrUpdateFormData(request: CreateOrUpdateFormDataRequest): Promise<CreateOrUpdateFormDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteFormDataHeaders({ });
-    return await this.deleteFormDataWithOptions(request, headers, runtime);
+    let headers = new CreateOrUpdateFormDataHeaders({ });
+    return await this.createOrUpdateFormDataWithOptions(request, headers, runtime);
   }
 
   async deleteFormDataWithOptions(request: DeleteFormDataRequest, headers: DeleteFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteFormDataResponse> {
@@ -12479,13 +12849,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteFormDataResponse>(await this.doROARequest("DeleteFormData", "yida_1.0", "HTTP", "DELETE", "AK", `/v1.0/yida/forms/instances`, "none", req, runtime), new DeleteFormDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteFormData",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<DeleteFormDataResponse>(await this.execute(params, req, runtime), new DeleteFormDataResponse({}));
   }
 
-  async deleteInstance(request: DeleteInstanceRequest): Promise<DeleteInstanceResponse> {
+  async deleteFormData(request: DeleteFormDataRequest): Promise<DeleteFormDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteInstanceHeaders({ });
-    return await this.deleteInstanceWithOptions(request, headers, runtime);
+    let headers = new DeleteFormDataHeaders({ });
+    return await this.deleteFormDataWithOptions(request, headers, runtime);
   }
 
   async deleteInstanceWithOptions(request: DeleteInstanceRequest, headers: DeleteInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteInstanceResponse> {
@@ -12524,13 +12905,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteInstanceResponse>(await this.doROARequest("DeleteInstance", "yida_1.0", "HTTP", "DELETE", "AK", `/v1.0/yida/processes/instances`, "none", req, runtime), new DeleteInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteInstance",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/instances`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<DeleteInstanceResponse>(await this.execute(params, req, runtime), new DeleteInstanceResponse({}));
   }
 
-  async deleteSequence(request: DeleteSequenceRequest): Promise<DeleteSequenceResponse> {
+  async deleteInstance(request: DeleteInstanceRequest): Promise<DeleteInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteSequenceHeaders({ });
-    return await this.deleteSequenceWithOptions(request, headers, runtime);
+    let headers = new DeleteInstanceHeaders({ });
+    return await this.deleteInstanceWithOptions(request, headers, runtime);
   }
 
   async deleteSequenceWithOptions(request: DeleteSequenceRequest, headers: DeleteSequenceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSequenceResponse> {
@@ -12569,13 +12961,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteSequenceResponse>(await this.doROARequest("DeleteSequence", "yida_1.0", "HTTP", "DELETE", "AK", `/v1.0/yida/forms/deleteSequence`, "none", req, runtime), new DeleteSequenceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteSequence",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/deleteSequence`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteSequenceResponse>(await this.execute(params, req, runtime), new DeleteSequenceResponse({}));
   }
 
-  async deployFunctionCallback(request: DeployFunctionCallbackRequest): Promise<DeployFunctionCallbackResponse> {
+  async deleteSequence(request: DeleteSequenceRequest): Promise<DeleteSequenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeployFunctionCallbackHeaders({ });
-    return await this.deployFunctionCallbackWithOptions(request, headers, runtime);
+    let headers = new DeleteSequenceHeaders({ });
+    return await this.deleteSequenceWithOptions(request, headers, runtime);
   }
 
   async deployFunctionCallbackWithOptions(request: DeployFunctionCallbackRequest, headers: DeployFunctionCallbackHeaders, runtime: $Util.RuntimeOptions): Promise<DeployFunctionCallbackResponse> {
@@ -12618,13 +13021,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeployFunctionCallbackResponse>(await this.doROARequest("DeployFunctionCallback", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/functionComputeConnectors/completeDeployments/notify`, "json", req, runtime), new DeployFunctionCallbackResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeployFunctionCallback",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/functionComputeConnectors/completeDeployments/notify`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeployFunctionCallbackResponse>(await this.execute(params, req, runtime), new DeployFunctionCallbackResponse({}));
   }
 
-  async executeBatchTask(request: ExecuteBatchTaskRequest): Promise<ExecuteBatchTaskResponse> {
+  async deployFunctionCallback(request: DeployFunctionCallbackRequest): Promise<DeployFunctionCallbackResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ExecuteBatchTaskHeaders({ });
-    return await this.executeBatchTaskWithOptions(request, headers, runtime);
+    let headers = new DeployFunctionCallbackHeaders({ });
+    return await this.deployFunctionCallbackWithOptions(request, headers, runtime);
   }
 
   async executeBatchTaskWithOptions(request: ExecuteBatchTaskRequest, headers: ExecuteBatchTaskHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteBatchTaskResponse> {
@@ -12667,13 +13081,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ExecuteBatchTaskResponse>(await this.doROARequest("ExecuteBatchTask", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/tasks/batches/execute`, "json", req, runtime), new ExecuteBatchTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ExecuteBatchTask",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/tasks/batches/execute`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ExecuteBatchTaskResponse>(await this.execute(params, req, runtime), new ExecuteBatchTaskResponse({}));
   }
 
-  async executeCustomApi(request: ExecuteCustomApiRequest): Promise<ExecuteCustomApiResponse> {
+  async executeBatchTask(request: ExecuteBatchTaskRequest): Promise<ExecuteBatchTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ExecuteCustomApiHeaders({ });
-    return await this.executeCustomApiWithOptions(request, headers, runtime);
+    let headers = new ExecuteBatchTaskHeaders({ });
+    return await this.executeBatchTaskWithOptions(request, headers, runtime);
   }
 
   async executeCustomApiWithOptions(request: ExecuteCustomApiRequest, headers: ExecuteCustomApiHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteCustomApiResponse> {
@@ -12716,13 +13141,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ExecuteCustomApiResponse>(await this.doROARequest("ExecuteCustomApi", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/apps/customApi/execute`, "json", req, runtime), new ExecuteCustomApiResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ExecuteCustomApi",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/customApi/execute`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ExecuteCustomApiResponse>(await this.execute(params, req, runtime), new ExecuteCustomApiResponse({}));
   }
 
-  async executePlatformTask(request: ExecutePlatformTaskRequest): Promise<ExecutePlatformTaskResponse> {
+  async executeCustomApi(request: ExecuteCustomApiRequest): Promise<ExecuteCustomApiResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ExecutePlatformTaskHeaders({ });
-    return await this.executePlatformTaskWithOptions(request, headers, runtime);
+    let headers = new ExecuteCustomApiHeaders({ });
+    return await this.executeCustomApiWithOptions(request, headers, runtime);
   }
 
   async executePlatformTaskWithOptions(request: ExecutePlatformTaskRequest, headers: ExecutePlatformTaskHeaders, runtime: $Util.RuntimeOptions): Promise<ExecutePlatformTaskResponse> {
@@ -12777,13 +13213,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ExecutePlatformTaskResponse>(await this.doROARequest("ExecutePlatformTask", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/tasks/platformTasks/execute`, "none", req, runtime), new ExecutePlatformTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ExecutePlatformTask",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/tasks/platformTasks/execute`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<ExecutePlatformTaskResponse>(await this.execute(params, req, runtime), new ExecutePlatformTaskResponse({}));
   }
 
-  async executeTask(request: ExecuteTaskRequest): Promise<ExecuteTaskResponse> {
+  async executePlatformTask(request: ExecutePlatformTaskRequest): Promise<ExecutePlatformTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ExecuteTaskHeaders({ });
-    return await this.executeTaskWithOptions(request, headers, runtime);
+    let headers = new ExecutePlatformTaskHeaders({ });
+    return await this.executePlatformTaskWithOptions(request, headers, runtime);
   }
 
   async executeTaskWithOptions(request: ExecuteTaskRequest, headers: ExecuteTaskHeaders, runtime: $Util.RuntimeOptions): Promise<ExecuteTaskResponse> {
@@ -12846,13 +13293,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ExecuteTaskResponse>(await this.doROARequest("ExecuteTask", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/tasks/execute`, "none", req, runtime), new ExecuteTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ExecuteTask",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/tasks/execute`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<ExecuteTaskResponse>(await this.execute(params, req, runtime), new ExecuteTaskResponse({}));
   }
 
-  async expireCommodity(request: ExpireCommodityRequest): Promise<ExpireCommodityResponse> {
+  async executeTask(request: ExecuteTaskRequest): Promise<ExecuteTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ExpireCommodityHeaders({ });
-    return await this.expireCommodityWithOptions(request, headers, runtime);
+    let headers = new ExecuteTaskHeaders({ });
+    return await this.executeTaskWithOptions(request, headers, runtime);
   }
 
   async expireCommodityWithOptions(request: ExpireCommodityRequest, headers: ExpireCommodityHeaders, runtime: $Util.RuntimeOptions): Promise<ExpireCommodityResponse> {
@@ -12883,18 +13341,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ExpireCommodityResponse>(await this.doROARequest("ExpireCommodity", "yida_1.0", "HTTP", "PUT", "AK", `/v1.0/yida/appAuth/commodities/expire`, "json", req, runtime), new ExpireCommodityResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ExpireCommodity",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/appAuth/commodities/expire`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ExpireCommodityResponse>(await this.execute(params, req, runtime), new ExpireCommodityResponse({}));
   }
 
-  async getActivationCodeByCallerUnionId(callerUid: string, request: GetActivationCodeByCallerUnionIdRequest): Promise<GetActivationCodeByCallerUnionIdResponse> {
+  async expireCommodity(request: ExpireCommodityRequest): Promise<ExpireCommodityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetActivationCodeByCallerUnionIdHeaders({ });
-    return await this.getActivationCodeByCallerUnionIdWithOptions(callerUid, request, headers, runtime);
+    let headers = new ExpireCommodityHeaders({ });
+    return await this.expireCommodityWithOptions(request, headers, runtime);
   }
 
   async getActivationCodeByCallerUnionIdWithOptions(callerUid: string, request: GetActivationCodeByCallerUnionIdRequest, headers: GetActivationCodeByCallerUnionIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetActivationCodeByCallerUnionIdResponse> {
     Util.validateModel(request);
-    callerUid = OpenApiUtil.getEncodeParam(callerUid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -12913,20 +13381,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetActivationCodeByCallerUnionIdResponse>(await this.doROARequest("GetActivationCodeByCallerUnionId", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/applications/activationCodes/${callerUid}`, "json", req, runtime), new GetActivationCodeByCallerUnionIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetActivationCodeByCallerUnionId",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/applications/activationCodes/${callerUid}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<GetActivationCodeByCallerUnionIdResponse>(await this.execute(params, req, runtime), new GetActivationCodeByCallerUnionIdResponse({}));
   }
 
-  async getActivityButtonList(appType: string, processCode: string, activityId: string, request: GetActivityButtonListRequest): Promise<GetActivityButtonListResponse> {
+  async getActivationCodeByCallerUnionId(callerUid: string, request: GetActivationCodeByCallerUnionIdRequest): Promise<GetActivationCodeByCallerUnionIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetActivityButtonListHeaders({ });
-    return await this.getActivityButtonListWithOptions(appType, processCode, activityId, request, headers, runtime);
+    let headers = new GetActivationCodeByCallerUnionIdHeaders({ });
+    return await this.getActivationCodeByCallerUnionIdWithOptions(callerUid, request, headers, runtime);
   }
 
   async getActivityButtonListWithOptions(appType: string, processCode: string, activityId: string, request: GetActivityButtonListRequest, headers: GetActivityButtonListHeaders, runtime: $Util.RuntimeOptions): Promise<GetActivityButtonListResponse> {
     Util.validateModel(request);
-    appType = OpenApiUtil.getEncodeParam(appType);
-    processCode = OpenApiUtil.getEncodeParam(processCode);
-    activityId = OpenApiUtil.getEncodeParam(activityId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.language)) {
       query["language"] = request.language;
@@ -12953,13 +13429,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetActivityButtonListResponse>(await this.doROARequest("GetActivityButtonList", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/processDefinitions/buttons/${appType}/${processCode}/${activityId}`, "json", req, runtime), new GetActivityButtonListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetActivityButtonList",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processDefinitions/buttons/${appType}/${processCode}/${activityId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<GetActivityButtonListResponse>(await this.execute(params, req, runtime), new GetActivityButtonListResponse({}));
   }
 
-  async getActivityList(request: GetActivityListRequest): Promise<GetActivityListResponse> {
+  async getActivityButtonList(appType: string, processCode: string, activityId: string, request: GetActivityButtonListRequest): Promise<GetActivityButtonListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetActivityListHeaders({ });
-    return await this.getActivityListWithOptions(request, headers, runtime);
+    let headers = new GetActivityButtonListHeaders({ });
+    return await this.getActivityButtonListWithOptions(appType, processCode, activityId, request, headers, runtime);
   }
 
   async getActivityListWithOptions(request: GetActivityListRequest, headers: GetActivityListHeaders, runtime: $Util.RuntimeOptions): Promise<GetActivityListResponse> {
@@ -12998,13 +13485,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetActivityListResponse>(await this.doROARequest("GetActivityList", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/processes/activities`, "json", req, runtime), new GetActivityListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetActivityList",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/activities`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<GetActivityListResponse>(await this.execute(params, req, runtime), new GetActivityListResponse({}));
   }
 
-  async getApplicationAuthorizationServicePlatformResource(request: GetApplicationAuthorizationServicePlatformResourceRequest): Promise<GetApplicationAuthorizationServicePlatformResourceResponse> {
+  async getActivityList(request: GetActivityListRequest): Promise<GetActivityListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetApplicationAuthorizationServicePlatformResourceHeaders({ });
-    return await this.getApplicationAuthorizationServicePlatformResourceWithOptions(request, headers, runtime);
+    let headers = new GetActivityListHeaders({ });
+    return await this.getActivityListWithOptions(request, headers, runtime);
   }
 
   async getApplicationAuthorizationServicePlatformResourceWithOptions(request: GetApplicationAuthorizationServicePlatformResourceRequest, headers: GetApplicationAuthorizationServicePlatformResourceHeaders, runtime: $Util.RuntimeOptions): Promise<GetApplicationAuthorizationServicePlatformResourceResponse> {
@@ -13035,19 +13533,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetApplicationAuthorizationServicePlatformResourceResponse>(await this.doROARequest("GetApplicationAuthorizationServicePlatformResource", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/authorization/platformResources`, "json", req, runtime), new GetApplicationAuthorizationServicePlatformResourceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetApplicationAuthorizationServicePlatformResource",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/authorization/platformResources`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<GetApplicationAuthorizationServicePlatformResourceResponse>(await this.execute(params, req, runtime), new GetApplicationAuthorizationServicePlatformResourceResponse({}));
   }
 
-  async getCorpAccomplishmentTasks(corpId: string, userId: string, request: GetCorpAccomplishmentTasksRequest): Promise<GetCorpAccomplishmentTasksResponse> {
+  async getApplicationAuthorizationServicePlatformResource(request: GetApplicationAuthorizationServicePlatformResourceRequest): Promise<GetApplicationAuthorizationServicePlatformResourceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCorpAccomplishmentTasksHeaders({ });
-    return await this.getCorpAccomplishmentTasksWithOptions(corpId, userId, request, headers, runtime);
+    let headers = new GetApplicationAuthorizationServicePlatformResourceHeaders({ });
+    return await this.getApplicationAuthorizationServicePlatformResourceWithOptions(request, headers, runtime);
   }
 
   async getCorpAccomplishmentTasksWithOptions(corpId: string, userId: string, request: GetCorpAccomplishmentTasksRequest, headers: GetCorpAccomplishmentTasksHeaders, runtime: $Util.RuntimeOptions): Promise<GetCorpAccomplishmentTasksResponse> {
     Util.validateModel(request);
-    corpId = OpenApiUtil.getEncodeParam(corpId);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appTypes)) {
       query["appTypes"] = request.appTypes;
@@ -13098,13 +13605,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetCorpAccomplishmentTasksResponse>(await this.doROARequest("GetCorpAccomplishmentTasks", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/tasks/completedTasks/${corpId}/${userId}`, "json", req, runtime), new GetCorpAccomplishmentTasksResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCorpAccomplishmentTasks",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/tasks/completedTasks/${corpId}/${userId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCorpAccomplishmentTasksResponse>(await this.execute(params, req, runtime), new GetCorpAccomplishmentTasksResponse({}));
   }
 
-  async getCorpLevelByAccountId(request: GetCorpLevelByAccountIdRequest): Promise<GetCorpLevelByAccountIdResponse> {
+  async getCorpAccomplishmentTasks(corpId: string, userId: string, request: GetCorpAccomplishmentTasksRequest): Promise<GetCorpAccomplishmentTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCorpLevelByAccountIdHeaders({ });
-    return await this.getCorpLevelByAccountIdWithOptions(request, headers, runtime);
+    let headers = new GetCorpAccomplishmentTasksHeaders({ });
+    return await this.getCorpAccomplishmentTasksWithOptions(corpId, userId, request, headers, runtime);
   }
 
   async getCorpLevelByAccountIdWithOptions(request: GetCorpLevelByAccountIdRequest, headers: GetCorpLevelByAccountIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetCorpLevelByAccountIdResponse> {
@@ -13127,13 +13645,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetCorpLevelByAccountIdResponse>(await this.doROARequest("GetCorpLevelByAccountId", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/apps/corpLevel`, "json", req, runtime), new GetCorpLevelByAccountIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCorpLevelByAccountId",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/corpLevel`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCorpLevelByAccountIdResponse>(await this.execute(params, req, runtime), new GetCorpLevelByAccountIdResponse({}));
   }
 
-  async getCorpTasks(request: GetCorpTasksRequest): Promise<GetCorpTasksResponse> {
+  async getCorpLevelByAccountId(request: GetCorpLevelByAccountIdRequest): Promise<GetCorpLevelByAccountIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCorpTasksHeaders({ });
-    return await this.getCorpTasksWithOptions(request, headers, runtime);
+    let headers = new GetCorpLevelByAccountIdHeaders({ });
+    return await this.getCorpLevelByAccountIdWithOptions(request, headers, runtime);
   }
 
   async getCorpTasksWithOptions(request: GetCorpTasksRequest, headers: GetCorpTasksHeaders, runtime: $Util.RuntimeOptions): Promise<GetCorpTasksResponse> {
@@ -13196,13 +13725,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetCorpTasksResponse>(await this.doROARequest("GetCorpTasks", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/corpTasks`, "json", req, runtime), new GetCorpTasksResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCorpTasks",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/corpTasks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCorpTasksResponse>(await this.execute(params, req, runtime), new GetCorpTasksResponse({}));
   }
 
-  async getFieldDefByUuid(request: GetFieldDefByUuidRequest): Promise<GetFieldDefByUuidResponse> {
+  async getCorpTasks(request: GetCorpTasksRequest): Promise<GetCorpTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFieldDefByUuidHeaders({ });
-    return await this.getFieldDefByUuidWithOptions(request, headers, runtime);
+    let headers = new GetCorpTasksHeaders({ });
+    return await this.getCorpTasksWithOptions(request, headers, runtime);
   }
 
   async getFieldDefByUuidWithOptions(request: GetFieldDefByUuidRequest, headers: GetFieldDefByUuidHeaders, runtime: $Util.RuntimeOptions): Promise<GetFieldDefByUuidResponse> {
@@ -13237,19 +13777,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetFieldDefByUuidResponse>(await this.doROARequest("GetFieldDefByUuid", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/forms/formFields`, "json", req, runtime), new GetFieldDefByUuidResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFieldDefByUuid",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/formFields`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFieldDefByUuidResponse>(await this.execute(params, req, runtime), new GetFieldDefByUuidResponse({}));
   }
 
-  async getFormComponentDefinitionList(appType: string, formUuid: string, request: GetFormComponentDefinitionListRequest): Promise<GetFormComponentDefinitionListResponse> {
+  async getFieldDefByUuid(request: GetFieldDefByUuidRequest): Promise<GetFieldDefByUuidResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFormComponentDefinitionListHeaders({ });
-    return await this.getFormComponentDefinitionListWithOptions(appType, formUuid, request, headers, runtime);
+    let headers = new GetFieldDefByUuidHeaders({ });
+    return await this.getFieldDefByUuidWithOptions(request, headers, runtime);
   }
 
   async getFormComponentDefinitionListWithOptions(appType: string, formUuid: string, request: GetFormComponentDefinitionListRequest, headers: GetFormComponentDefinitionListHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormComponentDefinitionListResponse> {
     Util.validateModel(request);
-    appType = OpenApiUtil.getEncodeParam(appType);
-    formUuid = OpenApiUtil.getEncodeParam(formUuid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.language)) {
       query["language"] = request.language;
@@ -13280,18 +13829,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetFormComponentDefinitionListResponse>(await this.doROARequest("GetFormComponentDefinitionList", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/forms/definitions/${appType}/${formUuid}`, "json", req, runtime), new GetFormComponentDefinitionListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFormComponentDefinitionList",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/definitions/${appType}/${formUuid}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFormComponentDefinitionListResponse>(await this.execute(params, req, runtime), new GetFormComponentDefinitionListResponse({}));
   }
 
-  async getFormDataByID(id: string, request: GetFormDataByIDRequest): Promise<GetFormDataByIDResponse> {
+  async getFormComponentDefinitionList(appType: string, formUuid: string, request: GetFormComponentDefinitionListRequest): Promise<GetFormComponentDefinitionListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFormDataByIDHeaders({ });
-    return await this.getFormDataByIDWithOptions(id, request, headers, runtime);
+    let headers = new GetFormComponentDefinitionListHeaders({ });
+    return await this.getFormComponentDefinitionListWithOptions(appType, formUuid, request, headers, runtime);
   }
 
   async getFormDataByIDWithOptions(id: string, request: GetFormDataByIDRequest, headers: GetFormDataByIDHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormDataByIDResponse> {
     Util.validateModel(request);
-    id = OpenApiUtil.getEncodeParam(id);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appType)) {
       query["appType"] = request.appType;
@@ -13322,13 +13881,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetFormDataByIDResponse>(await this.doROARequest("GetFormDataByID", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/forms/instances/${id}`, "json", req, runtime), new GetFormDataByIDResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFormDataByID",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances/${id}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFormDataByIDResponse>(await this.execute(params, req, runtime), new GetFormDataByIDResponse({}));
   }
 
-  async getFormListInApp(request: GetFormListInAppRequest): Promise<GetFormListInAppResponse> {
+  async getFormDataByID(id: string, request: GetFormDataByIDRequest): Promise<GetFormDataByIDResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFormListInAppHeaders({ });
-    return await this.getFormListInAppWithOptions(request, headers, runtime);
+    let headers = new GetFormDataByIDHeaders({ });
+    return await this.getFormDataByIDWithOptions(id, request, headers, runtime);
   }
 
   async getFormListInAppWithOptions(request: GetFormListInAppRequest, headers: GetFormListInAppHeaders, runtime: $Util.RuntimeOptions): Promise<GetFormListInAppResponse> {
@@ -13371,18 +13941,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetFormListInAppResponse>(await this.doROARequest("GetFormListInApp", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/forms`, "json", req, runtime), new GetFormListInAppResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFormListInApp",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFormListInAppResponse>(await this.execute(params, req, runtime), new GetFormListInAppResponse({}));
   }
 
-  async getInstanceById(id: string, request: GetInstanceByIdRequest): Promise<GetInstanceByIdResponse> {
+  async getFormListInApp(request: GetFormListInAppRequest): Promise<GetFormListInAppResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetInstanceByIdHeaders({ });
-    return await this.getInstanceByIdWithOptions(id, request, headers, runtime);
+    let headers = new GetFormListInAppHeaders({ });
+    return await this.getFormListInAppWithOptions(request, headers, runtime);
   }
 
   async getInstanceByIdWithOptions(id: string, request: GetInstanceByIdRequest, headers: GetInstanceByIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetInstanceByIdResponse> {
     Util.validateModel(request);
-    id = OpenApiUtil.getEncodeParam(id);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appType)) {
       query["appType"] = request.appType;
@@ -13413,13 +13993,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetInstanceByIdResponse>(await this.doROARequest("GetInstanceById", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/processes/instancesInfos/${id}`, "json", req, runtime), new GetInstanceByIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetInstanceById",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/instancesInfos/${id}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetInstanceByIdResponse>(await this.execute(params, req, runtime), new GetInstanceByIdResponse({}));
   }
 
-  async getInstanceIdList(request: GetInstanceIdListRequest): Promise<GetInstanceIdListResponse> {
+  async getInstanceById(id: string, request: GetInstanceByIdRequest): Promise<GetInstanceByIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetInstanceIdListHeaders({ });
-    return await this.getInstanceIdListWithOptions(request, headers, runtime);
+    let headers = new GetInstanceByIdHeaders({ });
+    return await this.getInstanceByIdWithOptions(id, request, headers, runtime);
   }
 
   async getInstanceIdListWithOptions(request: GetInstanceIdListRequest, headers: GetInstanceIdListHeaders, runtime: $Util.RuntimeOptions): Promise<GetInstanceIdListResponse> {
@@ -13504,13 +14095,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetInstanceIdListResponse>(await this.doROARequest("GetInstanceIdList", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/processes/instanceIds`, "json", req, runtime), new GetInstanceIdListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetInstanceIdList",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/instanceIds`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetInstanceIdListResponse>(await this.execute(params, req, runtime), new GetInstanceIdListResponse({}));
   }
 
-  async getInstances(request: GetInstancesRequest): Promise<GetInstancesResponse> {
+  async getInstanceIdList(request: GetInstanceIdListRequest): Promise<GetInstanceIdListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetInstancesHeaders({ });
-    return await this.getInstancesWithOptions(request, headers, runtime);
+    let headers = new GetInstanceIdListHeaders({ });
+    return await this.getInstanceIdListWithOptions(request, headers, runtime);
   }
 
   async getInstancesWithOptions(request: GetInstancesRequest, headers: GetInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<GetInstancesResponse> {
@@ -13599,13 +14201,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetInstancesResponse>(await this.doROARequest("GetInstances", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/processes/instances`, "json", req, runtime), new GetInstancesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetInstances",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/instances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetInstancesResponse>(await this.execute(params, req, runtime), new GetInstancesResponse({}));
   }
 
-  async getInstancesByIdList(request: GetInstancesByIdListRequest): Promise<GetInstancesByIdListResponse> {
+  async getInstances(request: GetInstancesRequest): Promise<GetInstancesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetInstancesByIdListHeaders({ });
-    return await this.getInstancesByIdListWithOptions(request, headers, runtime);
+    let headers = new GetInstancesHeaders({ });
+    return await this.getInstancesWithOptions(request, headers, runtime);
   }
 
   async getInstancesByIdListWithOptions(request: GetInstancesByIdListRequest, headers: GetInstancesByIdListHeaders, runtime: $Util.RuntimeOptions): Promise<GetInstancesByIdListResponse> {
@@ -13644,18 +14257,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetInstancesByIdListResponse>(await this.doROARequest("GetInstancesByIdList", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/processes/instances/searchWithIds`, "json", req, runtime), new GetInstancesByIdListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetInstancesByIdList",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/instances/searchWithIds`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetInstancesByIdListResponse>(await this.execute(params, req, runtime), new GetInstancesByIdListResponse({}));
   }
 
-  async getMeCorpSubmission(userId: string, request: GetMeCorpSubmissionRequest): Promise<GetMeCorpSubmissionResponse> {
+  async getInstancesByIdList(request: GetInstancesByIdListRequest): Promise<GetInstancesByIdListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetMeCorpSubmissionHeaders({ });
-    return await this.getMeCorpSubmissionWithOptions(userId, request, headers, runtime);
+    let headers = new GetInstancesByIdListHeaders({ });
+    return await this.getInstancesByIdListWithOptions(request, headers, runtime);
   }
 
   async getMeCorpSubmissionWithOptions(userId: string, request: GetMeCorpSubmissionRequest, headers: GetMeCorpSubmissionHeaders, runtime: $Util.RuntimeOptions): Promise<GetMeCorpSubmissionResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appTypes)) {
       query["appTypes"] = request.appTypes;
@@ -13710,18 +14333,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetMeCorpSubmissionResponse>(await this.doROARequest("GetMeCorpSubmission", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/tasks/myCorpSubmission/${userId}`, "json", req, runtime), new GetMeCorpSubmissionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetMeCorpSubmission",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/tasks/myCorpSubmission/${userId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<GetMeCorpSubmissionResponse>(await this.execute(params, req, runtime), new GetMeCorpSubmissionResponse({}));
   }
 
-  async getNotifyMe(userId: string, request: GetNotifyMeRequest): Promise<GetNotifyMeResponse> {
+  async getMeCorpSubmission(userId: string, request: GetMeCorpSubmissionRequest): Promise<GetMeCorpSubmissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetNotifyMeHeaders({ });
-    return await this.getNotifyMeWithOptions(userId, request, headers, runtime);
+    let headers = new GetMeCorpSubmissionHeaders({ });
+    return await this.getMeCorpSubmissionWithOptions(userId, request, headers, runtime);
   }
 
   async getNotifyMeWithOptions(userId: string, request: GetNotifyMeRequest, headers: GetNotifyMeHeaders, runtime: $Util.RuntimeOptions): Promise<GetNotifyMeResponse> {
     Util.validateModel(request);
-    userId = OpenApiUtil.getEncodeParam(userId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appTypes)) {
       query["appTypes"] = request.appTypes;
@@ -13784,18 +14417,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetNotifyMeResponse>(await this.doROARequest("GetNotifyMe", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/corpNotifications/${userId}`, "json", req, runtime), new GetNotifyMeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetNotifyMe",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/corpNotifications/${userId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetNotifyMeResponse>(await this.execute(params, req, runtime), new GetNotifyMeResponse({}));
   }
 
-  async getOpenUrl(appType: string, request: GetOpenUrlRequest): Promise<GetOpenUrlResponse> {
+  async getNotifyMe(userId: string, request: GetNotifyMeRequest): Promise<GetNotifyMeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetOpenUrlHeaders({ });
-    return await this.getOpenUrlWithOptions(appType, request, headers, runtime);
+    let headers = new GetNotifyMeHeaders({ });
+    return await this.getNotifyMeWithOptions(userId, request, headers, runtime);
   }
 
   async getOpenUrlWithOptions(appType: string, request: GetOpenUrlRequest, headers: GetOpenUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetOpenUrlResponse> {
     Util.validateModel(request);
-    appType = OpenApiUtil.getEncodeParam(appType);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.fileUrl)) {
       query["fileUrl"] = request.fileUrl;
@@ -13830,13 +14473,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetOpenUrlResponse>(await this.doROARequest("GetOpenUrl", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/apps/temporaryUrls/${appType}`, "json", req, runtime), new GetOpenUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetOpenUrl",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/temporaryUrls/${appType}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOpenUrlResponse>(await this.execute(params, req, runtime), new GetOpenUrlResponse({}));
   }
 
-  async getOperationRecords(request: GetOperationRecordsRequest): Promise<GetOperationRecordsResponse> {
+  async getOpenUrl(appType: string, request: GetOpenUrlRequest): Promise<GetOpenUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetOperationRecordsHeaders({ });
-    return await this.getOperationRecordsWithOptions(request, headers, runtime);
+    let headers = new GetOpenUrlHeaders({ });
+    return await this.getOpenUrlWithOptions(appType, request, headers, runtime);
   }
 
   async getOperationRecordsWithOptions(request: GetOperationRecordsRequest, headers: GetOperationRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<GetOperationRecordsResponse> {
@@ -13875,13 +14529,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetOperationRecordsResponse>(await this.doROARequest("GetOperationRecords", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/processes/operationRecords`, "json", req, runtime), new GetOperationRecordsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetOperationRecords",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/operationRecords`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOperationRecordsResponse>(await this.execute(params, req, runtime), new GetOperationRecordsResponse({}));
   }
 
-  async getPlatformResource(request: GetPlatformResourceRequest): Promise<GetPlatformResourceResponse> {
+  async getOperationRecords(request: GetOperationRecordsRequest): Promise<GetOperationRecordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPlatformResourceHeaders({ });
-    return await this.getPlatformResourceWithOptions(request, headers, runtime);
+    let headers = new GetOperationRecordsHeaders({ });
+    return await this.getOperationRecordsWithOptions(request, headers, runtime);
   }
 
   async getPlatformResourceWithOptions(request: GetPlatformResourceRequest, headers: GetPlatformResourceHeaders, runtime: $Util.RuntimeOptions): Promise<GetPlatformResourceResponse> {
@@ -13912,13 +14577,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetPlatformResourceResponse>(await this.doROARequest("GetPlatformResource", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/apps/platformResources`, "json", req, runtime), new GetPlatformResourceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPlatformResource",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/platformResources`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPlatformResourceResponse>(await this.execute(params, req, runtime), new GetPlatformResourceResponse({}));
   }
 
-  async getPrintAppInfo(request: GetPrintAppInfoRequest): Promise<GetPrintAppInfoResponse> {
+  async getPlatformResource(request: GetPlatformResourceRequest): Promise<GetPlatformResourceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPrintAppInfoHeaders({ });
-    return await this.getPrintAppInfoWithOptions(request, headers, runtime);
+    let headers = new GetPlatformResourceHeaders({ });
+    return await this.getPlatformResourceWithOptions(request, headers, runtime);
   }
 
   async getPrintAppInfoWithOptions(request: GetPrintAppInfoRequest, headers: GetPrintAppInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPrintAppInfoResponse> {
@@ -13945,13 +14621,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetPrintAppInfoResponse>(await this.doROARequest("GetPrintAppInfo", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/printTemplates/printAppInfos`, "json", req, runtime), new GetPrintAppInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPrintAppInfo",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/printTemplates/printAppInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPrintAppInfoResponse>(await this.execute(params, req, runtime), new GetPrintAppInfoResponse({}));
   }
 
-  async getPrintDictionary(request: GetPrintDictionaryRequest): Promise<GetPrintDictionaryResponse> {
+  async getPrintAppInfo(request: GetPrintAppInfoRequest): Promise<GetPrintAppInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPrintDictionaryHeaders({ });
-    return await this.getPrintDictionaryWithOptions(request, headers, runtime);
+    let headers = new GetPrintAppInfoHeaders({ });
+    return await this.getPrintAppInfoWithOptions(request, headers, runtime);
   }
 
   async getPrintDictionaryWithOptions(request: GetPrintDictionaryRequest, headers: GetPrintDictionaryHeaders, runtime: $Util.RuntimeOptions): Promise<GetPrintDictionaryResponse> {
@@ -13986,18 +14673,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetPrintDictionaryResponse>(await this.doROARequest("GetPrintDictionary", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/printTemplates/printDictionaries`, "json", req, runtime), new GetPrintDictionaryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPrintDictionary",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/printTemplates/printDictionaries`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPrintDictionaryResponse>(await this.execute(params, req, runtime), new GetPrintDictionaryResponse({}));
   }
 
-  async getProcessDefinition(processInstanceId: string, request: GetProcessDefinitionRequest): Promise<GetProcessDefinitionResponse> {
+  async getPrintDictionary(request: GetPrintDictionaryRequest): Promise<GetPrintDictionaryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetProcessDefinitionHeaders({ });
-    return await this.getProcessDefinitionWithOptions(processInstanceId, request, headers, runtime);
+    let headers = new GetPrintDictionaryHeaders({ });
+    return await this.getPrintDictionaryWithOptions(request, headers, runtime);
   }
 
   async getProcessDefinitionWithOptions(processInstanceId: string, request: GetProcessDefinitionRequest, headers: GetProcessDefinitionHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessDefinitionResponse> {
     Util.validateModel(request);
-    processInstanceId = OpenApiUtil.getEncodeParam(processInstanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appType)) {
       query["appType"] = request.appType;
@@ -14048,13 +14745,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetProcessDefinitionResponse>(await this.doROARequest("GetProcessDefinition", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/processes/definitions/${processInstanceId}`, "json", req, runtime), new GetProcessDefinitionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetProcessDefinition",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/definitions/${processInstanceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetProcessDefinitionResponse>(await this.execute(params, req, runtime), new GetProcessDefinitionResponse({}));
   }
 
-  async getRunningTaskList(request: GetRunningTaskListRequest): Promise<GetRunningTaskListResponse> {
+  async getProcessDefinition(processInstanceId: string, request: GetProcessDefinitionRequest): Promise<GetProcessDefinitionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetRunningTaskListHeaders({ });
-    return await this.getRunningTaskListWithOptions(request, headers, runtime);
+    let headers = new GetProcessDefinitionHeaders({ });
+    return await this.getProcessDefinitionWithOptions(processInstanceId, request, headers, runtime);
   }
 
   async getRunningTaskListWithOptions(request: GetRunningTaskListRequest, headers: GetRunningTaskListHeaders, runtime: $Util.RuntimeOptions): Promise<GetRunningTaskListResponse> {
@@ -14093,13 +14801,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetRunningTaskListResponse>(await this.doROARequest("GetRunningTaskList", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/tasks/runningTasks/query`, "json", req, runtime), new GetRunningTaskListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetRunningTaskList",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/tasks/runningTasks/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRunningTaskListResponse>(await this.execute(params, req, runtime), new GetRunningTaskListResponse({}));
   }
 
-  async getRunningTasks(request: GetRunningTasksRequest): Promise<GetRunningTasksResponse> {
+  async getRunningTaskList(request: GetRunningTaskListRequest): Promise<GetRunningTaskListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetRunningTasksHeaders({ });
-    return await this.getRunningTasksWithOptions(request, headers, runtime);
+    let headers = new GetRunningTaskListHeaders({ });
+    return await this.getRunningTaskListWithOptions(request, headers, runtime);
   }
 
   async getRunningTasksWithOptions(request: GetRunningTasksRequest, headers: GetRunningTasksHeaders, runtime: $Util.RuntimeOptions): Promise<GetRunningTasksResponse> {
@@ -14138,13 +14857,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetRunningTasksResponse>(await this.doROARequest("GetRunningTasks", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/processes/tasks/getRunningTasks`, "json", req, runtime), new GetRunningTasksResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetRunningTasks",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/tasks/getRunningTasks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRunningTasksResponse>(await this.execute(params, req, runtime), new GetRunningTasksResponse({}));
   }
 
-  async getSaleUserInfoByUserId(request: GetSaleUserInfoByUserIdRequest): Promise<GetSaleUserInfoByUserIdResponse> {
+  async getRunningTasks(request: GetRunningTasksRequest): Promise<GetRunningTasksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSaleUserInfoByUserIdHeaders({ });
-    return await this.getSaleUserInfoByUserIdWithOptions(request, headers, runtime);
+    let headers = new GetRunningTasksHeaders({ });
+    return await this.getRunningTasksWithOptions(request, headers, runtime);
   }
 
   async getSaleUserInfoByUserIdWithOptions(request: GetSaleUserInfoByUserIdRequest, headers: GetSaleUserInfoByUserIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetSaleUserInfoByUserIdResponse> {
@@ -14175,13 +14905,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetSaleUserInfoByUserIdResponse>(await this.doROARequest("GetSaleUserInfoByUserId", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/apps/saleUserInfo`, "json", req, runtime), new GetSaleUserInfoByUserIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSaleUserInfoByUserId",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/saleUserInfo`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSaleUserInfoByUserIdResponse>(await this.execute(params, req, runtime), new GetSaleUserInfoByUserIdResponse({}));
   }
 
-  async getTaskCopies(request: GetTaskCopiesRequest): Promise<GetTaskCopiesResponse> {
+  async getSaleUserInfoByUserId(request: GetSaleUserInfoByUserIdRequest): Promise<GetSaleUserInfoByUserIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTaskCopiesHeaders({ });
-    return await this.getTaskCopiesWithOptions(request, headers, runtime);
+    let headers = new GetSaleUserInfoByUserIdHeaders({ });
+    return await this.getSaleUserInfoByUserIdWithOptions(request, headers, runtime);
   }
 
   async getTaskCopiesWithOptions(request: GetTaskCopiesRequest, headers: GetTaskCopiesHeaders, runtime: $Util.RuntimeOptions): Promise<GetTaskCopiesResponse> {
@@ -14240,13 +14981,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetTaskCopiesResponse>(await this.doROARequest("GetTaskCopies", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/tasks/taskCopies`, "json", req, runtime), new GetTaskCopiesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTaskCopies",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/tasks/taskCopies`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTaskCopiesResponse>(await this.execute(params, req, runtime), new GetTaskCopiesResponse({}));
   }
 
-  async listApplication(request: ListApplicationRequest): Promise<ListApplicationResponse> {
+  async getTaskCopies(request: GetTaskCopiesRequest): Promise<GetTaskCopiesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListApplicationHeaders({ });
-    return await this.listApplicationWithOptions(request, headers, runtime);
+    let headers = new GetTaskCopiesHeaders({ });
+    return await this.getTaskCopiesWithOptions(request, headers, runtime);
   }
 
   async listApplicationWithOptions(request: ListApplicationRequest, headers: ListApplicationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationResponse> {
@@ -14293,18 +15045,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListApplicationResponse>(await this.doROARequest("ListApplication", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/organizations/applications`, "json", req, runtime), new ListApplicationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListApplication",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/organizations/applications`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListApplicationResponse>(await this.execute(params, req, runtime), new ListApplicationResponse({}));
   }
 
-  async listApplicationAuthorizationServiceApplicationInformation(instanceId: string, request: ListApplicationAuthorizationServiceApplicationInformationRequest): Promise<ListApplicationAuthorizationServiceApplicationInformationResponse> {
+  async listApplication(request: ListApplicationRequest): Promise<ListApplicationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListApplicationAuthorizationServiceApplicationInformationHeaders({ });
-    return await this.listApplicationAuthorizationServiceApplicationInformationWithOptions(instanceId, request, headers, runtime);
+    let headers = new ListApplicationHeaders({ });
+    return await this.listApplicationWithOptions(request, headers, runtime);
   }
 
   async listApplicationAuthorizationServiceApplicationInformationWithOptions(instanceId: string, request: ListApplicationAuthorizationServiceApplicationInformationRequest, headers: ListApplicationAuthorizationServiceApplicationInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationAuthorizationServiceApplicationInformationResponse> {
     Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -14335,7 +15097,70 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListApplicationAuthorizationServiceApplicationInformationResponse>(await this.doROARequest("ListApplicationAuthorizationServiceApplicationInformation", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/authorizations/applicationInfos/${instanceId}`, "json", req, runtime), new ListApplicationAuthorizationServiceApplicationInformationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListApplicationAuthorizationServiceApplicationInformation",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/authorizations/applicationInfos/${instanceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<ListApplicationAuthorizationServiceApplicationInformationResponse>(await this.execute(params, req, runtime), new ListApplicationAuthorizationServiceApplicationInformationResponse({}));
+  }
+
+  async listApplicationAuthorizationServiceApplicationInformation(instanceId: string, request: ListApplicationAuthorizationServiceApplicationInformationRequest): Promise<ListApplicationAuthorizationServiceApplicationInformationResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListApplicationAuthorizationServiceApplicationInformationHeaders({ });
+    return await this.listApplicationAuthorizationServiceApplicationInformationWithOptions(instanceId, request, headers, runtime);
+  }
+
+  async listApplicationAuthorizationServiceConnectorInformationWithOptions(instanceId: string, request: ListApplicationAuthorizationServiceConnectorInformationRequest, headers: ListApplicationAuthorizationServiceConnectorInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationAuthorizationServiceConnectorInformationResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accessKey)) {
+      query["accessKey"] = request.accessKey;
+    }
+
+    if (!Util.isUnset(request.callerUid)) {
+      query["callerUid"] = request.callerUid;
+    }
+
+    if (!Util.isUnset(request.pageNumber)) {
+      query["pageNumber"] = request.pageNumber;
+    }
+
+    if (!Util.isUnset(request.pageSize)) {
+      query["pageSize"] = request.pageSize;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListApplicationAuthorizationServiceConnectorInformation",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/applicationAuthorizations/plugs/${instanceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<ListApplicationAuthorizationServiceConnectorInformationResponse>(await this.execute(params, req, runtime), new ListApplicationAuthorizationServiceConnectorInformationResponse({}));
   }
 
   async listApplicationAuthorizationServiceConnectorInformation(instanceId: string, request: ListApplicationAuthorizationServiceConnectorInformationRequest): Promise<ListApplicationAuthorizationServiceConnectorInformationResponse> {
@@ -14344,9 +15169,8 @@ export default class Client extends OpenApi {
     return await this.listApplicationAuthorizationServiceConnectorInformationWithOptions(instanceId, request, headers, runtime);
   }
 
-  async listApplicationAuthorizationServiceConnectorInformationWithOptions(instanceId: string, request: ListApplicationAuthorizationServiceConnectorInformationRequest, headers: ListApplicationAuthorizationServiceConnectorInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationAuthorizationServiceConnectorInformationResponse> {
+  async listApplicationInformationWithOptions(instanceId: string, request: ListApplicationInformationRequest, headers: ListApplicationInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationInformationResponse> {
     Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -14377,55 +15201,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListApplicationAuthorizationServiceConnectorInformationResponse>(await this.doROARequest("ListApplicationAuthorizationServiceConnectorInformation", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/applicationAuthorizations/plugs/${instanceId}`, "json", req, runtime), new ListApplicationAuthorizationServiceConnectorInformationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListApplicationInformation",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/infos/${instanceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<ListApplicationInformationResponse>(await this.execute(params, req, runtime), new ListApplicationInformationResponse({}));
   }
 
   async listApplicationInformation(instanceId: string, request: ListApplicationInformationRequest): Promise<ListApplicationInformationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ListApplicationInformationHeaders({ });
     return await this.listApplicationInformationWithOptions(instanceId, request, headers, runtime);
-  }
-
-  async listApplicationInformationWithOptions(instanceId: string, request: ListApplicationInformationRequest, headers: ListApplicationInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListApplicationInformationResponse> {
-    Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.accessKey)) {
-      query["accessKey"] = request.accessKey;
-    }
-
-    if (!Util.isUnset(request.callerUid)) {
-      query["callerUid"] = request.callerUid;
-    }
-
-    if (!Util.isUnset(request.pageNumber)) {
-      query["pageNumber"] = request.pageNumber;
-    }
-
-    if (!Util.isUnset(request.pageSize)) {
-      query["pageSize"] = request.pageSize;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<ListApplicationInformationResponse>(await this.doROARequest("ListApplicationInformation", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/apps/infos/${instanceId}`, "json", req, runtime), new ListApplicationInformationResponse({}));
-  }
-
-  async listCommodity(request: ListCommodityRequest): Promise<ListCommodityResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListCommodityHeaders({ });
-    return await this.listCommodityWithOptions(request, headers, runtime);
   }
 
   async listCommodityWithOptions(request: ListCommodityRequest, headers: ListCommodityHeaders, runtime: $Util.RuntimeOptions): Promise<ListCommodityResponse> {
@@ -14460,18 +15253,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListCommodityResponse>(await this.doROARequest("ListCommodity", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/appAuth/commodities`, "json", req, runtime), new ListCommodityResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListCommodity",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/appAuth/commodities`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<ListCommodityResponse>(await this.execute(params, req, runtime), new ListCommodityResponse({}));
   }
 
-  async listConnectorInformation(instanceId: string, request: ListConnectorInformationRequest): Promise<ListConnectorInformationResponse> {
+  async listCommodity(request: ListCommodityRequest): Promise<ListCommodityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListConnectorInformationHeaders({ });
-    return await this.listConnectorInformationWithOptions(instanceId, request, headers, runtime);
+    let headers = new ListCommodityHeaders({ });
+    return await this.listCommodityWithOptions(request, headers, runtime);
   }
 
   async listConnectorInformationWithOptions(instanceId: string, request: ListConnectorInformationRequest, headers: ListConnectorInformationHeaders, runtime: $Util.RuntimeOptions): Promise<ListConnectorInformationResponse> {
     Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -14502,13 +15305,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListConnectorInformationResponse>(await this.doROARequest("ListConnectorInformation", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/plugins/infos/${instanceId}`, "json", req, runtime), new ListConnectorInformationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListConnectorInformation",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/plugins/infos/${instanceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<ListConnectorInformationResponse>(await this.execute(params, req, runtime), new ListConnectorInformationResponse({}));
   }
 
-  async listFormRemarks(request: ListFormRemarksRequest): Promise<ListFormRemarksResponse> {
+  async listConnectorInformation(instanceId: string, request: ListConnectorInformationRequest): Promise<ListConnectorInformationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListFormRemarksHeaders({ });
-    return await this.listFormRemarksWithOptions(request, headers, runtime);
+    let headers = new ListConnectorInformationHeaders({ });
+    return await this.listConnectorInformationWithOptions(instanceId, request, headers, runtime);
   }
 
   async listFormRemarksWithOptions(request: ListFormRemarksRequest, headers: ListFormRemarksHeaders, runtime: $Util.RuntimeOptions): Promise<ListFormRemarksResponse> {
@@ -14547,13 +15361,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ListFormRemarksResponse>(await this.doROARequest("ListFormRemarks", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/remarks/query`, "json", req, runtime), new ListFormRemarksResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListFormRemarks",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/remarks/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListFormRemarksResponse>(await this.execute(params, req, runtime), new ListFormRemarksResponse({}));
   }
 
-  async listNavigationByFormType(request: ListNavigationByFormTypeRequest): Promise<ListNavigationByFormTypeResponse> {
+  async listFormRemarks(request: ListFormRemarksRequest): Promise<ListFormRemarksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListNavigationByFormTypeHeaders({ });
-    return await this.listNavigationByFormTypeWithOptions(request, headers, runtime);
+    let headers = new ListFormRemarksHeaders({ });
+    return await this.listFormRemarksWithOptions(request, headers, runtime);
   }
 
   async listNavigationByFormTypeWithOptions(request: ListNavigationByFormTypeRequest, headers: ListNavigationByFormTypeHeaders, runtime: $Util.RuntimeOptions): Promise<ListNavigationByFormTypeResponse> {
@@ -14592,13 +15417,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListNavigationByFormTypeResponse>(await this.doROARequest("ListNavigationByFormType", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/apps/navigations`, "json", req, runtime), new ListNavigationByFormTypeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListNavigationByFormType",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/navigations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<ListNavigationByFormTypeResponse>(await this.execute(params, req, runtime), new ListNavigationByFormTypeResponse({}));
   }
 
-  async listOperationLogs(request: ListOperationLogsRequest): Promise<ListOperationLogsResponse> {
+  async listNavigationByFormType(request: ListNavigationByFormTypeRequest): Promise<ListNavigationByFormTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListOperationLogsHeaders({ });
-    return await this.listOperationLogsWithOptions(request, headers, runtime);
+    let headers = new ListNavigationByFormTypeHeaders({ });
+    return await this.listNavigationByFormTypeWithOptions(request, headers, runtime);
   }
 
   async listOperationLogsWithOptions(request: ListOperationLogsRequest, headers: ListOperationLogsHeaders, runtime: $Util.RuntimeOptions): Promise<ListOperationLogsResponse> {
@@ -14637,18 +15473,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ListOperationLogsResponse>(await this.doROARequest("ListOperationLogs", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/operationsLogs/query`, "json", req, runtime), new ListOperationLogsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListOperationLogs",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/operationsLogs/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListOperationLogsResponse>(await this.execute(params, req, runtime), new ListOperationLogsResponse({}));
   }
 
-  async listTableDataByFormInstanceIdTableId(formInstanceId: string, request: ListTableDataByFormInstanceIdTableIdRequest): Promise<ListTableDataByFormInstanceIdTableIdResponse> {
+  async listOperationLogs(request: ListOperationLogsRequest): Promise<ListOperationLogsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListTableDataByFormInstanceIdTableIdHeaders({ });
-    return await this.listTableDataByFormInstanceIdTableIdWithOptions(formInstanceId, request, headers, runtime);
+    let headers = new ListOperationLogsHeaders({ });
+    return await this.listOperationLogsWithOptions(request, headers, runtime);
   }
 
   async listTableDataByFormInstanceIdTableIdWithOptions(formInstanceId: string, request: ListTableDataByFormInstanceIdTableIdRequest, headers: ListTableDataByFormInstanceIdTableIdHeaders, runtime: $Util.RuntimeOptions): Promise<ListTableDataByFormInstanceIdTableIdResponse> {
     Util.validateModel(request);
-    formInstanceId = OpenApiUtil.getEncodeParam(formInstanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appType)) {
       query["appType"] = request.appType;
@@ -14691,13 +15537,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListTableDataByFormInstanceIdTableIdResponse>(await this.doROARequest("ListTableDataByFormInstanceIdTableId", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/forms/innerTables/${formInstanceId}`, "json", req, runtime), new ListTableDataByFormInstanceIdTableIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListTableDataByFormInstanceIdTableId",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/innerTables/${formInstanceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListTableDataByFormInstanceIdTableIdResponse>(await this.execute(params, req, runtime), new ListTableDataByFormInstanceIdTableIdResponse({}));
   }
 
-  async loginCodeGen(request: LoginCodeGenRequest): Promise<LoginCodeGenResponse> {
+  async listTableDataByFormInstanceIdTableId(formInstanceId: string, request: ListTableDataByFormInstanceIdTableIdRequest): Promise<ListTableDataByFormInstanceIdTableIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new LoginCodeGenHeaders({ });
-    return await this.loginCodeGenWithOptions(request, headers, runtime);
+    let headers = new ListTableDataByFormInstanceIdTableIdHeaders({ });
+    return await this.listTableDataByFormInstanceIdTableIdWithOptions(formInstanceId, request, headers, runtime);
   }
 
   async loginCodeGenWithOptions(request: LoginCodeGenRequest, headers: LoginCodeGenHeaders, runtime: $Util.RuntimeOptions): Promise<LoginCodeGenResponse> {
@@ -14720,13 +15577,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<LoginCodeGenResponse>(await this.doROARequest("LoginCodeGen", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/authorizations/loginCodes`, "json", req, runtime), new LoginCodeGenResponse({}));
+    let params = new $OpenApi.Params({
+      action: "LoginCodeGen",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/authorizations/loginCodes`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<LoginCodeGenResponse>(await this.execute(params, req, runtime), new LoginCodeGenResponse({}));
   }
 
-  async notifyAuthorizationResult(request: NotifyAuthorizationResultRequest): Promise<NotifyAuthorizationResultResponse> {
+  async loginCodeGen(request: LoginCodeGenRequest): Promise<LoginCodeGenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new NotifyAuthorizationResultHeaders({ });
-    return await this.notifyAuthorizationResultWithOptions(request, headers, runtime);
+    let headers = new LoginCodeGenHeaders({ });
+    return await this.loginCodeGenWithOptions(request, headers, runtime);
   }
 
   async notifyAuthorizationResultWithOptions(request: NotifyAuthorizationResultRequest, headers: NotifyAuthorizationResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyAuthorizationResultResponse> {
@@ -14789,13 +15657,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<NotifyAuthorizationResultResponse>(await this.doROARequest("NotifyAuthorizationResult", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/apps/authorizationResults/notify`, "json", req, runtime), new NotifyAuthorizationResultResponse({}));
+    let params = new $OpenApi.Params({
+      action: "NotifyAuthorizationResult",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/authorizationResults/notify`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<NotifyAuthorizationResultResponse>(await this.execute(params, req, runtime), new NotifyAuthorizationResultResponse({}));
   }
 
-  async pageFormBaseInfos(request: PageFormBaseInfosRequest): Promise<PageFormBaseInfosResponse> {
+  async notifyAuthorizationResult(request: NotifyAuthorizationResultRequest): Promise<NotifyAuthorizationResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PageFormBaseInfosHeaders({ });
-    return await this.pageFormBaseInfosWithOptions(request, headers, runtime);
+    let headers = new NotifyAuthorizationResultHeaders({ });
+    return await this.notifyAuthorizationResultWithOptions(request, headers, runtime);
   }
 
   async pageFormBaseInfosWithOptions(request: PageFormBaseInfosRequest, headers: PageFormBaseInfosHeaders, runtime: $Util.RuntimeOptions): Promise<PageFormBaseInfosResponse> {
@@ -14842,13 +15721,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PageFormBaseInfosResponse>(await this.doROARequest("PageFormBaseInfos", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/apps/forms/query`, "json", req, runtime), new PageFormBaseInfosResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PageFormBaseInfos",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/forms/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PageFormBaseInfosResponse>(await this.execute(params, req, runtime), new PageFormBaseInfosResponse({}));
   }
 
-  async queryServiceRecord(request: QueryServiceRecordRequest): Promise<QueryServiceRecordResponse> {
+  async pageFormBaseInfos(request: PageFormBaseInfosRequest): Promise<PageFormBaseInfosResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryServiceRecordHeaders({ });
-    return await this.queryServiceRecordWithOptions(request, headers, runtime);
+    let headers = new PageFormBaseInfosHeaders({ });
+    return await this.pageFormBaseInfosWithOptions(request, headers, runtime);
   }
 
   async queryServiceRecordWithOptions(request: QueryServiceRecordRequest, headers: QueryServiceRecordHeaders, runtime: $Util.RuntimeOptions): Promise<QueryServiceRecordResponse> {
@@ -14927,13 +15817,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryServiceRecordResponse>(await this.doROARequest("QueryServiceRecord", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/services/invocationRecords`, "json", req, runtime), new QueryServiceRecordResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryServiceRecord",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/services/invocationRecords`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryServiceRecordResponse>(await this.execute(params, req, runtime), new QueryServiceRecordResponse({}));
   }
 
-  async redirectTask(request: RedirectTaskRequest): Promise<RedirectTaskResponse> {
+  async queryServiceRecord(request: QueryServiceRecordRequest): Promise<QueryServiceRecordResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RedirectTaskHeaders({ });
-    return await this.redirectTaskWithOptions(request, headers, runtime);
+    let headers = new QueryServiceRecordHeaders({ });
+    return await this.queryServiceRecordWithOptions(request, headers, runtime);
   }
 
   async redirectTaskWithOptions(request: RedirectTaskRequest, headers: RedirectTaskHeaders, runtime: $Util.RuntimeOptions): Promise<RedirectTaskResponse> {
@@ -14988,13 +15889,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RedirectTaskResponse>(await this.doROARequest("RedirectTask", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/tasks/redirect`, "none", req, runtime), new RedirectTaskResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RedirectTask",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/tasks/redirect`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<RedirectTaskResponse>(await this.execute(params, req, runtime), new RedirectTaskResponse({}));
   }
 
-  async refundCommodity(request: RefundCommodityRequest): Promise<RefundCommodityResponse> {
+  async redirectTask(request: RedirectTaskRequest): Promise<RedirectTaskResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RefundCommodityHeaders({ });
-    return await this.refundCommodityWithOptions(request, headers, runtime);
+    let headers = new RedirectTaskHeaders({ });
+    return await this.redirectTaskWithOptions(request, headers, runtime);
   }
 
   async refundCommodityWithOptions(request: RefundCommodityRequest, headers: RefundCommodityHeaders, runtime: $Util.RuntimeOptions): Promise<RefundCommodityResponse> {
@@ -15025,13 +15937,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<RefundCommodityResponse>(await this.doROARequest("RefundCommodity", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/appAuth/commodities/refund`, "json", req, runtime), new RefundCommodityResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RefundCommodity",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/appAuth/commodities/refund`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<RefundCommodityResponse>(await this.execute(params, req, runtime), new RefundCommodityResponse({}));
   }
 
-  async registerAccounts(request: RegisterAccountsRequest): Promise<RegisterAccountsResponse> {
+  async refundCommodity(request: RefundCommodityRequest): Promise<RefundCommodityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RegisterAccountsHeaders({ });
-    return await this.registerAccountsWithOptions(request, headers, runtime);
+    let headers = new RefundCommodityHeaders({ });
+    return await this.refundCommodityWithOptions(request, headers, runtime);
   }
 
   async registerAccountsWithOptions(request: RegisterAccountsRequest, headers: RegisterAccountsHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterAccountsResponse> {
@@ -15062,13 +15985,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RegisterAccountsResponse>(await this.doROARequest("RegisterAccounts", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/applicationAuthorizations/accounts/register`, "json", req, runtime), new RegisterAccountsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RegisterAccounts",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/applicationAuthorizations/accounts/register`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<RegisterAccountsResponse>(await this.execute(params, req, runtime), new RegisterAccountsResponse({}));
   }
 
-  async releaseCommodity(request: ReleaseCommodityRequest): Promise<ReleaseCommodityResponse> {
+  async registerAccounts(request: RegisterAccountsRequest): Promise<RegisterAccountsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ReleaseCommodityHeaders({ });
-    return await this.releaseCommodityWithOptions(request, headers, runtime);
+    let headers = new RegisterAccountsHeaders({ });
+    return await this.registerAccountsWithOptions(request, headers, runtime);
   }
 
   async releaseCommodityWithOptions(request: ReleaseCommodityRequest, headers: ReleaseCommodityHeaders, runtime: $Util.RuntimeOptions): Promise<ReleaseCommodityResponse> {
@@ -15099,18 +16033,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ReleaseCommodityResponse>(await this.doROARequest("ReleaseCommodity", "yida_1.0", "HTTP", "DELETE", "AK", `/v1.0/yida/appAuth/commodities/release`, "json", req, runtime), new ReleaseCommodityResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ReleaseCommodity",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/appAuth/commodities/release`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<ReleaseCommodityResponse>(await this.execute(params, req, runtime), new ReleaseCommodityResponse({}));
   }
 
-  async removeTenantResource(callerUid: string, request: RemoveTenantResourceRequest): Promise<RemoveTenantResourceResponse> {
+  async releaseCommodity(request: ReleaseCommodityRequest): Promise<ReleaseCommodityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RemoveTenantResourceHeaders({ });
-    return await this.removeTenantResourceWithOptions(callerUid, request, headers, runtime);
+    let headers = new ReleaseCommodityHeaders({ });
+    return await this.releaseCommodityWithOptions(request, headers, runtime);
   }
 
   async removeTenantResourceWithOptions(callerUid: string, request: RemoveTenantResourceRequest, headers: RemoveTenantResourceHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveTenantResourceResponse> {
     Util.validateModel(request);
-    callerUid = OpenApiUtil.getEncodeParam(callerUid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -15129,13 +16073,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<RemoveTenantResourceResponse>(await this.doROARequest("RemoveTenantResource", "yida_1.0", "HTTP", "DELETE", "AK", `/v1.0/yida/applications/tenantRelatedResources/${callerUid}`, "json", req, runtime), new RemoveTenantResourceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RemoveTenantResource",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/applications/tenantRelatedResources/${callerUid}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<RemoveTenantResourceResponse>(await this.execute(params, req, runtime), new RemoveTenantResourceResponse({}));
   }
 
-  async renderBatchCallback(request: RenderBatchCallbackRequest): Promise<RenderBatchCallbackResponse> {
+  async removeTenantResource(callerUid: string, request: RemoveTenantResourceRequest): Promise<RemoveTenantResourceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RenderBatchCallbackHeaders({ });
-    return await this.renderBatchCallbackWithOptions(request, headers, runtime);
+    let headers = new RemoveTenantResourceHeaders({ });
+    return await this.removeTenantResourceWithOptions(callerUid, request, headers, runtime);
   }
 
   async renderBatchCallbackWithOptions(request: RenderBatchCallbackRequest, headers: RenderBatchCallbackHeaders, runtime: $Util.RuntimeOptions): Promise<RenderBatchCallbackResponse> {
@@ -15202,13 +16157,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RenderBatchCallbackResponse>(await this.doROARequest("RenderBatchCallback", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/printings/callbacks/batch`, "none", req, runtime), new RenderBatchCallbackResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RenderBatchCallback",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/printings/callbacks/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<RenderBatchCallbackResponse>(await this.execute(params, req, runtime), new RenderBatchCallbackResponse({}));
   }
 
-  async renewApplicationAuthorizationServiceOrder(request: RenewApplicationAuthorizationServiceOrderRequest): Promise<RenewApplicationAuthorizationServiceOrderResponse> {
+  async renderBatchCallback(request: RenderBatchCallbackRequest): Promise<RenderBatchCallbackResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RenewApplicationAuthorizationServiceOrderHeaders({ });
-    return await this.renewApplicationAuthorizationServiceOrderWithOptions(request, headers, runtime);
+    let headers = new RenderBatchCallbackHeaders({ });
+    return await this.renderBatchCallbackWithOptions(request, headers, runtime);
   }
 
   async renewApplicationAuthorizationServiceOrderWithOptions(request: RenewApplicationAuthorizationServiceOrderRequest, headers: RenewApplicationAuthorizationServiceOrderHeaders, runtime: $Util.RuntimeOptions): Promise<RenewApplicationAuthorizationServiceOrderResponse> {
@@ -15243,13 +16209,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RenewApplicationAuthorizationServiceOrderResponse>(await this.doROARequest("RenewApplicationAuthorizationServiceOrder", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/applicationAuthorizations/orders/renew`, "json", req, runtime), new RenewApplicationAuthorizationServiceOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RenewApplicationAuthorizationServiceOrder",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/applicationAuthorizations/orders/renew`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<RenewApplicationAuthorizationServiceOrderResponse>(await this.execute(params, req, runtime), new RenewApplicationAuthorizationServiceOrderResponse({}));
   }
 
-  async renewTenantOrder(request: RenewTenantOrderRequest): Promise<RenewTenantOrderResponse> {
+  async renewApplicationAuthorizationServiceOrder(request: RenewApplicationAuthorizationServiceOrderRequest): Promise<RenewApplicationAuthorizationServiceOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RenewTenantOrderHeaders({ });
-    return await this.renewTenantOrderWithOptions(request, headers, runtime);
+    let headers = new RenewApplicationAuthorizationServiceOrderHeaders({ });
+    return await this.renewApplicationAuthorizationServiceOrderWithOptions(request, headers, runtime);
   }
 
   async renewTenantOrderWithOptions(request: RenewTenantOrderRequest, headers: RenewTenantOrderHeaders, runtime: $Util.RuntimeOptions): Promise<RenewTenantOrderResponse> {
@@ -15280,13 +16257,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RenewTenantOrderResponse>(await this.doROARequest("RenewTenantOrder", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/apps/tenants/reorder`, "json", req, runtime), new RenewTenantOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RenewTenantOrder",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/tenants/reorder`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<RenewTenantOrderResponse>(await this.execute(params, req, runtime), new RenewTenantOrderResponse({}));
   }
 
-  async saveFormData(request: SaveFormDataRequest): Promise<SaveFormDataResponse> {
+  async renewTenantOrder(request: RenewTenantOrderRequest): Promise<RenewTenantOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SaveFormDataHeaders({ });
-    return await this.saveFormDataWithOptions(request, headers, runtime);
+    let headers = new RenewTenantOrderHeaders({ });
+    return await this.renewTenantOrderWithOptions(request, headers, runtime);
   }
 
   async saveFormDataWithOptions(request: SaveFormDataRequest, headers: SaveFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<SaveFormDataResponse> {
@@ -15329,13 +16317,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SaveFormDataResponse>(await this.doROARequest("SaveFormData", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances`, "json", req, runtime), new SaveFormDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SaveFormData",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveFormDataResponse>(await this.execute(params, req, runtime), new SaveFormDataResponse({}));
   }
 
-  async saveFormRemark(request: SaveFormRemarkRequest): Promise<SaveFormRemarkResponse> {
+  async saveFormData(request: SaveFormDataRequest): Promise<SaveFormDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SaveFormRemarkHeaders({ });
-    return await this.saveFormRemarkWithOptions(request, headers, runtime);
+    let headers = new SaveFormDataHeaders({ });
+    return await this.saveFormDataWithOptions(request, headers, runtime);
   }
 
   async saveFormRemarkWithOptions(request: SaveFormRemarkRequest, headers: SaveFormRemarkHeaders, runtime: $Util.RuntimeOptions): Promise<SaveFormRemarkResponse> {
@@ -15386,13 +16385,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SaveFormRemarkResponse>(await this.doROARequest("SaveFormRemark", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/remarks`, "json", req, runtime), new SaveFormRemarkResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SaveFormRemark",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/remarks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveFormRemarkResponse>(await this.execute(params, req, runtime), new SaveFormRemarkResponse({}));
   }
 
-  async savePrintTplDetailInfo(request: SavePrintTplDetailInfoRequest): Promise<SavePrintTplDetailInfoResponse> {
+  async saveFormRemark(request: SaveFormRemarkRequest): Promise<SaveFormRemarkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SavePrintTplDetailInfoHeaders({ });
-    return await this.savePrintTplDetailInfoWithOptions(request, headers, runtime);
+    let headers = new SaveFormRemarkHeaders({ });
+    return await this.saveFormRemarkWithOptions(request, headers, runtime);
   }
 
   async savePrintTplDetailInfoWithOptions(request: SavePrintTplDetailInfoRequest, headers: SavePrintTplDetailInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SavePrintTplDetailInfoResponse> {
@@ -15451,13 +16461,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SavePrintTplDetailInfoResponse>(await this.doROARequest("SavePrintTplDetailInfo", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/printTemplates/printTplDetailInfos`, "json", req, runtime), new SavePrintTplDetailInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SavePrintTplDetailInfo",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/printTemplates/printTplDetailInfos`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<SavePrintTplDetailInfoResponse>(await this.execute(params, req, runtime), new SavePrintTplDetailInfoResponse({}));
   }
 
-  async searchActivationCode(request: SearchActivationCodeRequest): Promise<SearchActivationCodeResponse> {
+  async savePrintTplDetailInfo(request: SavePrintTplDetailInfoRequest): Promise<SavePrintTplDetailInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchActivationCodeHeaders({ });
-    return await this.searchActivationCodeWithOptions(request, headers, runtime);
+    let headers = new SavePrintTplDetailInfoHeaders({ });
+    return await this.savePrintTplDetailInfoWithOptions(request, headers, runtime);
   }
 
   async searchActivationCodeWithOptions(request: SearchActivationCodeRequest, headers: SearchActivationCodeHeaders, runtime: $Util.RuntimeOptions): Promise<SearchActivationCodeResponse> {
@@ -15484,13 +16505,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SearchActivationCodeResponse>(await this.doROARequest("SearchActivationCode", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/apps/activationCode/information`, "json", req, runtime), new SearchActivationCodeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchActivationCode",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/activationCode/information`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchActivationCodeResponse>(await this.execute(params, req, runtime), new SearchActivationCodeResponse({}));
   }
 
-  async searchEmployeeFieldValues(request: SearchEmployeeFieldValuesRequest): Promise<SearchEmployeeFieldValuesResponse> {
+  async searchActivationCode(request: SearchActivationCodeRequest): Promise<SearchActivationCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchEmployeeFieldValuesHeaders({ });
-    return await this.searchEmployeeFieldValuesWithOptions(request, headers, runtime);
+    let headers = new SearchActivationCodeHeaders({ });
+    return await this.searchActivationCodeWithOptions(request, headers, runtime);
   }
 
   async searchEmployeeFieldValuesWithOptions(request: SearchEmployeeFieldValuesRequest, headers: SearchEmployeeFieldValuesHeaders, runtime: $Util.RuntimeOptions): Promise<SearchEmployeeFieldValuesResponse> {
@@ -15557,19 +16589,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SearchEmployeeFieldValuesResponse>(await this.doROARequest("SearchEmployeeFieldValues", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/employeeFields`, "json", req, runtime), new SearchEmployeeFieldValuesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchEmployeeFieldValues",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/employeeFields`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchEmployeeFieldValuesResponse>(await this.execute(params, req, runtime), new SearchEmployeeFieldValuesResponse({}));
   }
 
-  async searchFormDataIdList(appType: string, formUuid: string, request: SearchFormDataIdListRequest): Promise<SearchFormDataIdListResponse> {
+  async searchEmployeeFieldValues(request: SearchEmployeeFieldValuesRequest): Promise<SearchEmployeeFieldValuesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchFormDataIdListHeaders({ });
-    return await this.searchFormDataIdListWithOptions(appType, formUuid, request, headers, runtime);
+    let headers = new SearchEmployeeFieldValuesHeaders({ });
+    return await this.searchEmployeeFieldValuesWithOptions(request, headers, runtime);
   }
 
   async searchFormDataIdListWithOptions(appType: string, formUuid: string, request: SearchFormDataIdListRequest, headers: SearchFormDataIdListHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDataIdListResponse> {
     Util.validateModel(request);
-    appType = OpenApiUtil.getEncodeParam(appType);
-    formUuid = OpenApiUtil.getEncodeParam(formUuid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.pageNumber)) {
       query["pageNumber"] = request.pageNumber;
@@ -15630,13 +16671,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SearchFormDataIdListResponse>(await this.doROARequest("SearchFormDataIdList", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/ids/${appType}/${formUuid}`, "json", req, runtime), new SearchFormDataIdListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchFormDataIdList",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances/ids/${appType}/${formUuid}`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchFormDataIdListResponse>(await this.execute(params, req, runtime), new SearchFormDataIdListResponse({}));
   }
 
-  async searchFormDataRemovalTableData(request: SearchFormDataRemovalTableDataRequest): Promise<SearchFormDataRemovalTableDataResponse> {
+  async searchFormDataIdList(appType: string, formUuid: string, request: SearchFormDataIdListRequest): Promise<SearchFormDataIdListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchFormDataRemovalTableDataHeaders({ });
-    return await this.searchFormDataRemovalTableDataWithOptions(request, headers, runtime);
+    let headers = new SearchFormDataIdListHeaders({ });
+    return await this.searchFormDataIdListWithOptions(appType, formUuid, request, headers, runtime);
   }
 
   async searchFormDataRemovalTableDataWithOptions(request: SearchFormDataRemovalTableDataRequest, headers: SearchFormDataRemovalTableDataHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDataRemovalTableDataResponse> {
@@ -15707,13 +16759,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SearchFormDataRemovalTableDataResponse>(await this.doROARequest("SearchFormDataRemovalTableData", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/query`, "json", req, runtime), new SearchFormDataRemovalTableDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchFormDataRemovalTableData",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchFormDataRemovalTableDataResponse>(await this.execute(params, req, runtime), new SearchFormDataRemovalTableDataResponse({}));
   }
 
-  async searchFormDataSecondGeneration(request: SearchFormDataSecondGenerationRequest): Promise<SearchFormDataSecondGenerationResponse> {
+  async searchFormDataRemovalTableData(request: SearchFormDataRemovalTableDataRequest): Promise<SearchFormDataRemovalTableDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchFormDataSecondGenerationHeaders({ });
-    return await this.searchFormDataSecondGenerationWithOptions(request, headers, runtime);
+    let headers = new SearchFormDataRemovalTableDataHeaders({ });
+    return await this.searchFormDataRemovalTableDataWithOptions(request, headers, runtime);
   }
 
   async searchFormDataSecondGenerationWithOptions(request: SearchFormDataSecondGenerationRequest, headers: SearchFormDataSecondGenerationHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDataSecondGenerationResponse> {
@@ -15784,13 +16847,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SearchFormDataSecondGenerationResponse>(await this.doROARequest("SearchFormDataSecondGeneration", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/advances/queryAll`, "json", req, runtime), new SearchFormDataSecondGenerationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchFormDataSecondGeneration",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances/advances/queryAll`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchFormDataSecondGenerationResponse>(await this.execute(params, req, runtime), new SearchFormDataSecondGenerationResponse({}));
   }
 
-  async searchFormDataSecondGenerationNoTableField(request: SearchFormDataSecondGenerationNoTableFieldRequest): Promise<SearchFormDataSecondGenerationNoTableFieldResponse> {
+  async searchFormDataSecondGeneration(request: SearchFormDataSecondGenerationRequest): Promise<SearchFormDataSecondGenerationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchFormDataSecondGenerationNoTableFieldHeaders({ });
-    return await this.searchFormDataSecondGenerationNoTableFieldWithOptions(request, headers, runtime);
+    let headers = new SearchFormDataSecondGenerationHeaders({ });
+    return await this.searchFormDataSecondGenerationWithOptions(request, headers, runtime);
   }
 
   async searchFormDataSecondGenerationNoTableFieldWithOptions(request: SearchFormDataSecondGenerationNoTableFieldRequest, headers: SearchFormDataSecondGenerationNoTableFieldHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDataSecondGenerationNoTableFieldResponse> {
@@ -15861,13 +16935,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SearchFormDataSecondGenerationNoTableFieldResponse>(await this.doROARequest("SearchFormDataSecondGenerationNoTableField", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/advances/query`, "json", req, runtime), new SearchFormDataSecondGenerationNoTableFieldResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchFormDataSecondGenerationNoTableField",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances/advances/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchFormDataSecondGenerationNoTableFieldResponse>(await this.execute(params, req, runtime), new SearchFormDataSecondGenerationNoTableFieldResponse({}));
   }
 
-  async searchFormDatas(request: SearchFormDatasRequest): Promise<SearchFormDatasResponse> {
+  async searchFormDataSecondGenerationNoTableField(request: SearchFormDataSecondGenerationNoTableFieldRequest): Promise<SearchFormDataSecondGenerationNoTableFieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchFormDatasHeaders({ });
-    return await this.searchFormDatasWithOptions(request, headers, runtime);
+    let headers = new SearchFormDataSecondGenerationNoTableFieldHeaders({ });
+    return await this.searchFormDataSecondGenerationNoTableFieldWithOptions(request, headers, runtime);
   }
 
   async searchFormDatasWithOptions(request: SearchFormDatasRequest, headers: SearchFormDatasHeaders, runtime: $Util.RuntimeOptions): Promise<SearchFormDatasResponse> {
@@ -15942,13 +17027,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SearchFormDatasResponse>(await this.doROARequest("SearchFormDatas", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/forms/instances/search`, "json", req, runtime), new SearchFormDatasResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchFormDatas",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchFormDatasResponse>(await this.execute(params, req, runtime), new SearchFormDatasResponse({}));
   }
 
-  async startInstance(request: StartInstanceRequest): Promise<StartInstanceResponse> {
+  async searchFormDatas(request: SearchFormDatasRequest): Promise<SearchFormDatasResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new StartInstanceHeaders({ });
-    return await this.startInstanceWithOptions(request, headers, runtime);
+    let headers = new SearchFormDatasHeaders({ });
+    return await this.searchFormDatasWithOptions(request, headers, runtime);
   }
 
   async startInstanceWithOptions(request: StartInstanceRequest, headers: StartInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<StartInstanceResponse> {
@@ -15999,13 +17095,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<StartInstanceResponse>(await this.doROARequest("StartInstance", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/processes/instances/start`, "json", req, runtime), new StartInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "StartInstance",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/instances/start`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<StartInstanceResponse>(await this.execute(params, req, runtime), new StartInstanceResponse({}));
   }
 
-  async terminateCloudAuthorization(request: TerminateCloudAuthorizationRequest): Promise<TerminateCloudAuthorizationResponse> {
+  async startInstance(request: StartInstanceRequest): Promise<StartInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new TerminateCloudAuthorizationHeaders({ });
-    return await this.terminateCloudAuthorizationWithOptions(request, headers, runtime);
+    let headers = new StartInstanceHeaders({ });
+    return await this.startInstanceWithOptions(request, headers, runtime);
   }
 
   async terminateCloudAuthorizationWithOptions(request: TerminateCloudAuthorizationRequest, headers: TerminateCloudAuthorizationHeaders, runtime: $Util.RuntimeOptions): Promise<TerminateCloudAuthorizationResponse> {
@@ -16036,13 +17143,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<TerminateCloudAuthorizationResponse>(await this.doROARequest("TerminateCloudAuthorization", "yida_1.0", "HTTP", "POST", "AK", `/v1.0/yida/apps/cloudAuthorizations/terminate`, "json", req, runtime), new TerminateCloudAuthorizationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "TerminateCloudAuthorization",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/cloudAuthorizations/terminate`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<TerminateCloudAuthorizationResponse>(await this.execute(params, req, runtime), new TerminateCloudAuthorizationResponse({}));
   }
 
-  async terminateInstance(request: TerminateInstanceRequest): Promise<TerminateInstanceResponse> {
+  async terminateCloudAuthorization(request: TerminateCloudAuthorizationRequest): Promise<TerminateCloudAuthorizationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new TerminateInstanceHeaders({ });
-    return await this.terminateInstanceWithOptions(request, headers, runtime);
+    let headers = new TerminateCloudAuthorizationHeaders({ });
+    return await this.terminateCloudAuthorizationWithOptions(request, headers, runtime);
   }
 
   async terminateInstanceWithOptions(request: TerminateInstanceRequest, headers: TerminateInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<TerminateInstanceResponse> {
@@ -16081,13 +17199,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<TerminateInstanceResponse>(await this.doROARequest("TerminateInstance", "yida_1.0", "HTTP", "PUT", "AK", `/v1.0/yida/processes/instances/terminate`, "none", req, runtime), new TerminateInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "TerminateInstance",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/instances/terminate`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<TerminateInstanceResponse>(await this.execute(params, req, runtime), new TerminateInstanceResponse({}));
   }
 
-  async updateCloudAccountInformation(request: UpdateCloudAccountInformationRequest): Promise<UpdateCloudAccountInformationResponse> {
+  async terminateInstance(request: TerminateInstanceRequest): Promise<TerminateInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateCloudAccountInformationHeaders({ });
-    return await this.updateCloudAccountInformationWithOptions(request, headers, runtime);
+    let headers = new TerminateInstanceHeaders({ });
+    return await this.terminateInstanceWithOptions(request, headers, runtime);
   }
 
   async updateCloudAccountInformationWithOptions(request: UpdateCloudAccountInformationRequest, headers: UpdateCloudAccountInformationHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCloudAccountInformationResponse> {
@@ -16122,13 +17251,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateCloudAccountInformationResponse>(await this.doROARequest("UpdateCloudAccountInformation", "yida_1.0", "HTTP", "PUT", "AK", `/v1.0/yida/apps/cloudAccountInfos`, "json", req, runtime), new UpdateCloudAccountInformationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateCloudAccountInformation",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/cloudAccountInfos`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateCloudAccountInformationResponse>(await this.execute(params, req, runtime), new UpdateCloudAccountInformationResponse({}));
   }
 
-  async updateFormData(request: UpdateFormDataRequest): Promise<UpdateFormDataResponse> {
+  async updateCloudAccountInformation(request: UpdateCloudAccountInformationRequest): Promise<UpdateCloudAccountInformationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateFormDataHeaders({ });
-    return await this.updateFormDataWithOptions(request, headers, runtime);
+    let headers = new UpdateCloudAccountInformationHeaders({ });
+    return await this.updateCloudAccountInformationWithOptions(request, headers, runtime);
   }
 
   async updateFormDataWithOptions(request: UpdateFormDataRequest, headers: UpdateFormDataHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateFormDataResponse> {
@@ -16175,13 +17315,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateFormDataResponse>(await this.doROARequest("UpdateFormData", "yida_1.0", "HTTP", "PUT", "AK", `/v1.0/yida/forms/instances`, "none", req, runtime), new UpdateFormDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateFormData",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/instances`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<UpdateFormDataResponse>(await this.execute(params, req, runtime), new UpdateFormDataResponse({}));
   }
 
-  async updateInstance(request: UpdateInstanceRequest): Promise<UpdateInstanceResponse> {
+  async updateFormData(request: UpdateFormDataRequest): Promise<UpdateFormDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateInstanceHeaders({ });
-    return await this.updateInstanceWithOptions(request, headers, runtime);
+    let headers = new UpdateFormDataHeaders({ });
+    return await this.updateFormDataWithOptions(request, headers, runtime);
   }
 
   async updateInstanceWithOptions(request: UpdateInstanceRequest, headers: UpdateInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInstanceResponse> {
@@ -16224,13 +17375,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateInstanceResponse>(await this.doROARequest("UpdateInstance", "yida_1.0", "HTTP", "PUT", "AK", `/v1.0/yida/processes/instances`, "none", req, runtime), new UpdateInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateInstance",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/processes/instances`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateInstanceResponse>(await this.execute(params, req, runtime), new UpdateInstanceResponse({}));
   }
 
-  async updateStatus(request: UpdateStatusRequest): Promise<UpdateStatusResponse> {
+  async updateInstance(request: UpdateInstanceRequest): Promise<UpdateInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateStatusHeaders({ });
-    return await this.updateStatusWithOptions(request, headers, runtime);
+    let headers = new UpdateInstanceHeaders({ });
+    return await this.updateInstanceWithOptions(request, headers, runtime);
   }
 
   async updateStatusWithOptions(request: UpdateStatusRequest, headers: UpdateStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateStatusResponse> {
@@ -16277,13 +17439,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateStatusResponse>(await this.doROARequest("UpdateStatus", "yida_1.0", "HTTP", "PUT", "AK", `/v1.0/yida/forms/status`, "none", req, runtime), new UpdateStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateStatus",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/forms/status`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateStatusResponse>(await this.execute(params, req, runtime), new UpdateStatusResponse({}));
   }
 
-  async upgradeTenantInformation(request: UpgradeTenantInformationRequest): Promise<UpgradeTenantInformationResponse> {
+  async updateStatus(request: UpdateStatusRequest): Promise<UpdateStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpgradeTenantInformationHeaders({ });
-    return await this.upgradeTenantInformationWithOptions(request, headers, runtime);
+    let headers = new UpdateStatusHeaders({ });
+    return await this.updateStatusWithOptions(request, headers, runtime);
   }
 
   async upgradeTenantInformationWithOptions(request: UpgradeTenantInformationRequest, headers: UpgradeTenantInformationHeaders, runtime: $Util.RuntimeOptions): Promise<UpgradeTenantInformationResponse> {
@@ -16318,18 +17491,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpgradeTenantInformationResponse>(await this.doROARequest("UpgradeTenantInformation", "yida_1.0", "HTTP", "PUT", "AK", `/v1.0/yida/apps/tenantInfos`, "json", req, runtime), new UpgradeTenantInformationResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpgradeTenantInformation",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/tenantInfos`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpgradeTenantInformationResponse>(await this.execute(params, req, runtime), new UpgradeTenantInformationResponse({}));
   }
 
-  async validateApplicationAuthorizationOrder(instanceId: string, request: ValidateApplicationAuthorizationOrderRequest): Promise<ValidateApplicationAuthorizationOrderResponse> {
+  async upgradeTenantInformation(request: UpgradeTenantInformationRequest): Promise<UpgradeTenantInformationResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ValidateApplicationAuthorizationOrderHeaders({ });
-    return await this.validateApplicationAuthorizationOrderWithOptions(instanceId, request, headers, runtime);
+    let headers = new UpgradeTenantInformationHeaders({ });
+    return await this.upgradeTenantInformationWithOptions(request, headers, runtime);
   }
 
   async validateApplicationAuthorizationOrderWithOptions(instanceId: string, request: ValidateApplicationAuthorizationOrderRequest, headers: ValidateApplicationAuthorizationOrderHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateApplicationAuthorizationOrderResponse> {
     Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -16352,7 +17535,58 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ValidateApplicationAuthorizationOrderResponse>(await this.doROARequest("ValidateApplicationAuthorizationOrder", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/applicationOrderUpdateAuthorizations/${instanceId}`, "json", req, runtime), new ValidateApplicationAuthorizationOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ValidateApplicationAuthorizationOrder",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/applicationOrderUpdateAuthorizations/${instanceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<ValidateApplicationAuthorizationOrderResponse>(await this.execute(params, req, runtime), new ValidateApplicationAuthorizationOrderResponse({}));
+  }
+
+  async validateApplicationAuthorizationOrder(instanceId: string, request: ValidateApplicationAuthorizationOrderRequest): Promise<ValidateApplicationAuthorizationOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ValidateApplicationAuthorizationOrderHeaders({ });
+    return await this.validateApplicationAuthorizationOrderWithOptions(instanceId, request, headers, runtime);
+  }
+
+  async validateApplicationAuthorizationServiceOrderWithOptions(callerUid: string, request: ValidateApplicationAuthorizationServiceOrderRequest, headers: ValidateApplicationAuthorizationServiceOrderHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateApplicationAuthorizationServiceOrderResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.accessKey)) {
+      query["accessKey"] = request.accessKey;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ValidateApplicationAuthorizationServiceOrder",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/appsAuthorizations/freshOrderInfoReviews/${callerUid}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<ValidateApplicationAuthorizationServiceOrderResponse>(await this.execute(params, req, runtime), new ValidateApplicationAuthorizationServiceOrderResponse({}));
   }
 
   async validateApplicationAuthorizationServiceOrder(callerUid: string, request: ValidateApplicationAuthorizationServiceOrderRequest): Promise<ValidateApplicationAuthorizationServiceOrderResponse> {
@@ -16361,9 +17595,8 @@ export default class Client extends OpenApi {
     return await this.validateApplicationAuthorizationServiceOrderWithOptions(callerUid, request, headers, runtime);
   }
 
-  async validateApplicationAuthorizationServiceOrderWithOptions(callerUid: string, request: ValidateApplicationAuthorizationServiceOrderRequest, headers: ValidateApplicationAuthorizationServiceOrderHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateApplicationAuthorizationServiceOrderResponse> {
+  async validateApplicationServiceOrderUpgradeWithOptions(callerUnionid: string, request: ValidateApplicationServiceOrderUpgradeRequest, headers: ValidateApplicationServiceOrderUpgradeHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateApplicationServiceOrderUpgradeResponse> {
     Util.validateModel(request);
-    callerUid = OpenApiUtil.getEncodeParam(callerUid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -16382,43 +17615,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ValidateApplicationAuthorizationServiceOrderResponse>(await this.doROARequest("ValidateApplicationAuthorizationServiceOrder", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/appsAuthorizations/freshOrderInfoReviews/${callerUid}`, "json", req, runtime), new ValidateApplicationAuthorizationServiceOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ValidateApplicationServiceOrderUpgrade",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/applications/orderValidations/${callerUnionid}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<ValidateApplicationServiceOrderUpgradeResponse>(await this.execute(params, req, runtime), new ValidateApplicationServiceOrderUpgradeResponse({}));
   }
 
   async validateApplicationServiceOrderUpgrade(callerUnionid: string, request: ValidateApplicationServiceOrderUpgradeRequest): Promise<ValidateApplicationServiceOrderUpgradeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new ValidateApplicationServiceOrderUpgradeHeaders({ });
     return await this.validateApplicationServiceOrderUpgradeWithOptions(callerUnionid, request, headers, runtime);
-  }
-
-  async validateApplicationServiceOrderUpgradeWithOptions(callerUnionid: string, request: ValidateApplicationServiceOrderUpgradeRequest, headers: ValidateApplicationServiceOrderUpgradeHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateApplicationServiceOrderUpgradeResponse> {
-    Util.validateModel(request);
-    callerUnionid = OpenApiUtil.getEncodeParam(callerUnionid);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.accessKey)) {
-      query["accessKey"] = request.accessKey;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<ValidateApplicationServiceOrderUpgradeResponse>(await this.doROARequest("ValidateApplicationServiceOrderUpgrade", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/applications/orderValidations/${callerUnionid}`, "json", req, runtime), new ValidateApplicationServiceOrderUpgradeResponse({}));
-  }
-
-  async validateOrderBuy(request: ValidateOrderBuyRequest): Promise<ValidateOrderBuyResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ValidateOrderBuyHeaders({ });
-    return await this.validateOrderBuyWithOptions(request, headers, runtime);
   }
 
   async validateOrderBuyWithOptions(request: ValidateOrderBuyRequest, headers: ValidateOrderBuyHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateOrderBuyResponse> {
@@ -16445,18 +17659,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ValidateOrderBuyResponse>(await this.doROARequest("ValidateOrderBuy", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/apps/orderBuy/validate`, "json", req, runtime), new ValidateOrderBuyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ValidateOrderBuy",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/orderBuy/validate`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<ValidateOrderBuyResponse>(await this.execute(params, req, runtime), new ValidateOrderBuyResponse({}));
   }
 
-  async validateOrderUpdate(instanceId: string, request: ValidateOrderUpdateRequest): Promise<ValidateOrderUpdateResponse> {
+  async validateOrderBuy(request: ValidateOrderBuyRequest): Promise<ValidateOrderBuyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ValidateOrderUpdateHeaders({ });
-    return await this.validateOrderUpdateWithOptions(instanceId, request, headers, runtime);
+    let headers = new ValidateOrderBuyHeaders({ });
+    return await this.validateOrderBuyWithOptions(request, headers, runtime);
   }
 
   async validateOrderUpdateWithOptions(instanceId: string, request: ValidateOrderUpdateRequest, headers: ValidateOrderUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateOrderUpdateResponse> {
     Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.accessKey)) {
       query["accessKey"] = request.accessKey;
@@ -16479,13 +17703,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ValidateOrderUpdateResponse>(await this.doROARequest("ValidateOrderUpdate", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/orders/renewalReviews/${instanceId}`, "json", req, runtime), new ValidateOrderUpdateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ValidateOrderUpdate",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/orders/renewalReviews/${instanceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<ValidateOrderUpdateResponse>(await this.execute(params, req, runtime), new ValidateOrderUpdateResponse({}));
   }
 
-  async validateOrderUpgrade(request: ValidateOrderUpgradeRequest): Promise<ValidateOrderUpgradeResponse> {
+  async validateOrderUpdate(instanceId: string, request: ValidateOrderUpdateRequest): Promise<ValidateOrderUpdateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ValidateOrderUpgradeHeaders({ });
-    return await this.validateOrderUpgradeWithOptions(request, headers, runtime);
+    let headers = new ValidateOrderUpdateHeaders({ });
+    return await this.validateOrderUpdateWithOptions(instanceId, request, headers, runtime);
   }
 
   async validateOrderUpgradeWithOptions(request: ValidateOrderUpgradeRequest, headers: ValidateOrderUpgradeHeaders, runtime: $Util.RuntimeOptions): Promise<ValidateOrderUpgradeResponse> {
@@ -16516,7 +17751,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ValidateOrderUpgradeResponse>(await this.doROARequest("ValidateOrderUpgrade", "yida_1.0", "HTTP", "GET", "AK", `/v1.0/yida/apps/orderUpgrade/validate`, "json", req, runtime), new ValidateOrderUpgradeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ValidateOrderUpgrade",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/apps/orderUpgrade/validate`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "formData",
+      bodyType: "json",
+    });
+    return $tea.cast<ValidateOrderUpgradeResponse>(await this.execute(params, req, runtime), new ValidateOrderUpgradeResponse({}));
+  }
+
+  async validateOrderUpgrade(request: ValidateOrderUpgradeRequest): Promise<ValidateOrderUpgradeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ValidateOrderUpgradeHeaders({ });
+    return await this.validateOrderUpgradeWithOptions(request, headers, runtime);
   }
 
 }

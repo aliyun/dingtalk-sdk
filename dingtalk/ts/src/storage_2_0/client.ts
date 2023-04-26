@@ -3,9 +3,36 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
+
+export class DentryAppPropertiesValue extends $tea.Model {
+  name?: string;
+  value?: string;
+  visibility?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      value: 'value',
+      visibility: 'visibility',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      value: 'string',
+      visibility: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
 
 export class CommitFileHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
@@ -78,10 +105,12 @@ export class CommitFileResponseBody extends $tea.Model {
 
 export class CommitFileResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CommitFileResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -89,6 +118,7 @@ export class CommitFileResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CommitFileResponseBody,
     };
   }
@@ -175,10 +205,12 @@ export class GetFileUploadInfoResponseBody extends $tea.Model {
 
 export class GetFileUploadInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFileUploadInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -186,32 +218,8 @@ export class GetFileUploadInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFileUploadInfoResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class DentryAppPropertiesValue extends $tea.Model {
-  name?: string;
-  value?: string;
-  visibility?: string;
-  static names(): { [key: string]: string } {
-    return {
-      name: 'name',
-      value: 'value',
-      visibility: 'visibility',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      name: 'string',
-      value: 'string',
-      visibility: 'string',
     };
   }
 
@@ -249,12 +257,14 @@ export class CommitFileRequestOption extends $tea.Model {
   appProperties?: CommitFileRequestOptionAppProperties[];
   conflictStrategy?: string;
   convertToOnlineDoc?: boolean;
+  convertToOnlineDocTargetDocumentType?: string;
   size?: number;
   static names(): { [key: string]: string } {
     return {
       appProperties: 'appProperties',
       conflictStrategy: 'conflictStrategy',
       convertToOnlineDoc: 'convertToOnlineDoc',
+      convertToOnlineDocTargetDocumentType: 'convertToOnlineDocTargetDocumentType',
       size: 'size',
     };
   }
@@ -264,6 +274,7 @@ export class CommitFileRequestOption extends $tea.Model {
       appProperties: { 'type': 'array', 'itemType': CommitFileRequestOptionAppProperties },
       conflictStrategy: 'string',
       convertToOnlineDoc: 'boolean',
+      convertToOnlineDocTargetDocumentType: 'string',
       size: 'number',
     };
   }
@@ -479,9 +490,12 @@ export class GetFileUploadInfoResponseBodyHeaderSignatureInfo extends $tea.Model
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -490,15 +504,8 @@ export default class Client extends OpenApi {
   }
 
 
-  async commitFile(parentDentryUuid: string, request: CommitFileRequest): Promise<CommitFileResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CommitFileHeaders({ });
-    return await this.commitFileWithOptions(parentDentryUuid, request, headers, runtime);
-  }
-
   async commitFileWithOptions(parentDentryUuid: string, request: CommitFileRequest, headers: CommitFileHeaders, runtime: $Util.RuntimeOptions): Promise<CommitFileResponse> {
     Util.validateModel(request);
-    parentDentryUuid = OpenApiUtil.getEncodeParam(parentDentryUuid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -531,18 +538,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CommitFileResponse>(await this.doROARequest("CommitFile", "storage_2.0", "HTTP", "POST", "AK", `/v2.0/storage/spaces/files/${parentDentryUuid}/commit`, "json", req, runtime), new CommitFileResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CommitFile",
+      version: "storage_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/storage/spaces/files/${parentDentryUuid}/commit`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CommitFileResponse>(await this.execute(params, req, runtime), new CommitFileResponse({}));
   }
 
-  async getFileUploadInfo(parentDentryUuid: string, request: GetFileUploadInfoRequest): Promise<GetFileUploadInfoResponse> {
+  async commitFile(parentDentryUuid: string, request: CommitFileRequest): Promise<CommitFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFileUploadInfoHeaders({ });
-    return await this.getFileUploadInfoWithOptions(parentDentryUuid, request, headers, runtime);
+    let headers = new CommitFileHeaders({ });
+    return await this.commitFileWithOptions(parentDentryUuid, request, headers, runtime);
   }
 
   async getFileUploadInfoWithOptions(parentDentryUuid: string, request: GetFileUploadInfoRequest, headers: GetFileUploadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileUploadInfoResponse> {
     Util.validateModel(request);
-    parentDentryUuid = OpenApiUtil.getEncodeParam(parentDentryUuid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.unionId)) {
       query["unionId"] = request.unionId;
@@ -571,7 +588,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetFileUploadInfoResponse>(await this.doROARequest("GetFileUploadInfo", "storage_2.0", "HTTP", "POST", "AK", `/v2.0/storage/spaces/files/${parentDentryUuid}/uploadInfos/query`, "json", req, runtime), new GetFileUploadInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFileUploadInfo",
+      version: "storage_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/storage/spaces/files/${parentDentryUuid}/uploadInfos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFileUploadInfoResponse>(await this.execute(params, req, runtime), new GetFileUploadInfoResponse({}));
+  }
+
+  async getFileUploadInfo(parentDentryUuid: string, request: GetFileUploadInfoRequest): Promise<GetFileUploadInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetFileUploadInfoHeaders({ });
+    return await this.getFileUploadInfoWithOptions(parentDentryUuid, request, headers, runtime);
   }
 
 }

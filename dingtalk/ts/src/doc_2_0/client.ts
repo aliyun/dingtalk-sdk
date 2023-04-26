@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -476,10 +478,12 @@ export class BatchDeleteRecentsResponseBody extends $tea.Model {
 
 export class BatchDeleteRecentsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchDeleteRecentsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -487,6 +491,7 @@ export class BatchDeleteRecentsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchDeleteRecentsResponseBody,
     };
   }
@@ -554,10 +559,12 @@ export class CopyDentryRequest extends $tea.Model {
 
 export class CopyDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DentryVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -565,6 +572,7 @@ export class CopyDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DentryVO,
     };
   }
@@ -629,10 +637,12 @@ export class CreateDentryRequest extends $tea.Model {
 
 export class CreateDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DentryVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -640,6 +650,7 @@ export class CreateDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DentryVO,
     };
   }
@@ -710,10 +721,12 @@ export class CreateSpaceRequest extends $tea.Model {
 
 export class CreateSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SpaceVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -721,6 +734,7 @@ export class CreateSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SpaceVO,
     };
   }
@@ -791,10 +805,12 @@ export class CreateTeamRequest extends $tea.Model {
 
 export class CreateTeamResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: TeamVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -802,6 +818,7 @@ export class CreateTeamResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: TeamVO,
     };
   }
@@ -854,10 +871,12 @@ export class DeleteTeamRequest extends $tea.Model {
 
 export class DeleteTeamResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: TeamVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -865,6 +884,7 @@ export class DeleteTeamResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: TeamVO,
     };
   }
@@ -939,10 +959,12 @@ export class GetSchemaResponseBody extends $tea.Model {
 
 export class GetSchemaResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSchemaResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -950,6 +972,7 @@ export class GetSchemaResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSchemaResponseBody,
     };
   }
@@ -1036,10 +1059,12 @@ export class GetSpaceDirectoriesResponseBody extends $tea.Model {
 
 export class GetSpaceDirectoriesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSpaceDirectoriesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1047,6 +1072,7 @@ export class GetSpaceDirectoriesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSpaceDirectoriesResponseBody,
     };
   }
@@ -1118,10 +1144,12 @@ export class GetStarInfoResponseBody extends $tea.Model {
 
 export class GetStarInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetStarInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1129,6 +1157,7 @@ export class GetStarInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetStarInfoResponseBody,
     };
   }
@@ -1181,10 +1210,12 @@ export class GetTeamRequest extends $tea.Model {
 
 export class GetTeamResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: TeamVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1192,6 +1223,7 @@ export class GetTeamResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: TeamVO,
     };
   }
@@ -1269,10 +1301,12 @@ export class GetTotalNumberOfDentriesResponseBody extends $tea.Model {
 
 export class GetTotalNumberOfDentriesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTotalNumberOfDentriesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1280,6 +1314,7 @@ export class GetTotalNumberOfDentriesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTotalNumberOfDentriesResponseBody,
     };
   }
@@ -1351,10 +1386,12 @@ export class GetTotalNumberOfSpacesResponseBody extends $tea.Model {
 
 export class GetTotalNumberOfSpacesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetTotalNumberOfSpacesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1362,6 +1399,7 @@ export class GetTotalNumberOfSpacesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetTotalNumberOfSpacesResponseBody,
     };
   }
@@ -1439,10 +1477,12 @@ export class GetUserInfoByOpenTokenResponseBody extends $tea.Model {
 
 export class GetUserInfoByOpenTokenResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserInfoByOpenTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1450,6 +1490,7 @@ export class GetUserInfoByOpenTokenResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserInfoByOpenTokenResponseBody,
     };
   }
@@ -1536,10 +1577,12 @@ export class ListFeedsResponseBody extends $tea.Model {
 
 export class ListFeedsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListFeedsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1547,6 +1590,7 @@ export class ListFeedsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListFeedsResponseBody,
     };
   }
@@ -1618,10 +1662,12 @@ export class ListHotDocsResponseBody extends $tea.Model {
 
 export class ListHotDocsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListHotDocsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1629,6 +1675,7 @@ export class ListHotDocsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListHotDocsResponseBody,
     };
   }
@@ -1706,10 +1753,12 @@ export class ListPinSpacesResponseBody extends $tea.Model {
 
 export class ListPinSpacesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListPinSpacesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1717,6 +1766,7 @@ export class ListPinSpacesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListPinSpacesResponseBody,
     };
   }
@@ -1791,10 +1841,12 @@ export class ListRelatedSpaceTeamsResponseBody extends $tea.Model {
 
 export class ListRelatedSpaceTeamsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListRelatedSpaceTeamsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1802,6 +1854,7 @@ export class ListRelatedSpaceTeamsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListRelatedSpaceTeamsResponseBody,
     };
   }
@@ -1888,10 +1941,12 @@ export class ListRelatedTeamsResponseBody extends $tea.Model {
 
 export class ListRelatedTeamsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListRelatedTeamsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1899,6 +1954,7 @@ export class ListRelatedTeamsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListRelatedTeamsResponseBody,
     };
   }
@@ -1970,10 +2026,12 @@ export class ListSpaceSectionsResponseBody extends $tea.Model {
 
 export class ListSpaceSectionsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListSpaceSectionsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1981,6 +2039,7 @@ export class ListSpaceSectionsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListSpaceSectionsResponseBody,
     };
   }
@@ -2058,10 +2117,12 @@ export class ListStarsResponseBody extends $tea.Model {
 
 export class ListStarsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListStarsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2069,6 +2130,7 @@ export class ListStarsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListStarsResponseBody,
     };
   }
@@ -2143,10 +2205,12 @@ export class ListTeamMembersResponseBody extends $tea.Model {
 
 export class ListTeamMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListTeamMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2154,6 +2218,7 @@ export class ListTeamMembersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListTeamMembersResponseBody,
     };
   }
@@ -2225,10 +2290,12 @@ export class MarkStarResponseBody extends $tea.Model {
 
 export class MarkStarResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: MarkStarResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2236,6 +2303,7 @@ export class MarkStarResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: MarkStarResponseBody,
     };
   }
@@ -2300,10 +2368,12 @@ export class MoveDentryRequest extends $tea.Model {
 
 export class MoveDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DentryVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2311,6 +2381,7 @@ export class MoveDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DentryVO,
     };
   }
@@ -2382,10 +2453,12 @@ export class PinSpaceResponseBody extends $tea.Model {
 
 export class PinSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PinSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2393,6 +2466,7 @@ export class PinSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PinSpaceResponseBody,
     };
   }
@@ -2448,10 +2522,12 @@ export class QueryDentryRequest extends $tea.Model {
 
 export class QueryDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DentryVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2459,6 +2535,7 @@ export class QueryDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DentryVO,
     };
   }
@@ -2545,10 +2622,12 @@ export class QueryItemByUrlResponseBody extends $tea.Model {
 
 export class QueryItemByUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryItemByUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2556,6 +2635,7 @@ export class QueryItemByUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryItemByUrlResponseBody,
     };
   }
@@ -2589,10 +2669,12 @@ export class QueryMineSpaceHeaders extends $tea.Model {
 
 export class QueryMineSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SpaceVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2600,6 +2682,7 @@ export class QueryMineSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SpaceVO,
     };
   }
@@ -2692,10 +2775,12 @@ export class QueryRecentListResponseBody extends $tea.Model {
 
 export class QueryRecentListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryRecentListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2703,6 +2788,7 @@ export class QueryRecentListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryRecentListResponseBody,
     };
   }
@@ -2755,10 +2841,12 @@ export class QuerySpaceRequest extends $tea.Model {
 
 export class QuerySpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SpaceVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2766,6 +2854,7 @@ export class QuerySpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SpaceVO,
     };
   }
@@ -2852,10 +2941,12 @@ export class RelatedSpacesResponseBody extends $tea.Model {
 
 export class RelatedSpacesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RelatedSpacesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2863,6 +2954,7 @@ export class RelatedSpacesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RelatedSpacesResponseBody,
     };
   }
@@ -2943,10 +3035,12 @@ export class RemoveTeamMembersResponseBody extends $tea.Model {
 
 export class RemoveTeamMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RemoveTeamMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2954,6 +3048,7 @@ export class RemoveTeamMembersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RemoveTeamMembersResponseBody,
     };
   }
@@ -3009,10 +3104,12 @@ export class RenameDentryRequest extends $tea.Model {
 
 export class RenameDentryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DentryVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3020,6 +3117,7 @@ export class RenameDentryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DentryVO,
     };
   }
@@ -3100,10 +3198,12 @@ export class SaveTeamMembersResponseBody extends $tea.Model {
 
 export class SaveTeamMembersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SaveTeamMembersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3111,6 +3211,7 @@ export class SaveTeamMembersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SaveTeamMembersResponseBody,
     };
   }
@@ -3194,10 +3295,12 @@ export class SearchResponseBody extends $tea.Model {
 
 export class SearchResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3205,6 +3308,7 @@ export class SearchResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchResponseBody,
     };
   }
@@ -3276,10 +3380,12 @@ export class UnmarkStarResponseBody extends $tea.Model {
 
 export class UnmarkStarResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UnmarkStarResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3287,6 +3393,7 @@ export class UnmarkStarResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UnmarkStarResponseBody,
     };
   }
@@ -3358,10 +3465,12 @@ export class UnpinSpaceResponseBody extends $tea.Model {
 
 export class UnpinSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UnpinSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3369,6 +3478,7 @@ export class UnpinSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UnpinSpaceResponseBody,
     };
   }
@@ -3427,10 +3537,12 @@ export class UpdateTeamRequest extends $tea.Model {
 
 export class UpdateTeamResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: TeamVO;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3438,6 +3550,7 @@ export class UpdateTeamResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: TeamVO,
     };
   }
@@ -5179,9 +5292,12 @@ export class SearchResponseBodySpaceResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -5189,12 +5305,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async batchDeleteRecents(request: BatchDeleteRecentsRequest): Promise<BatchDeleteRecentsResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchDeleteRecentsHeaders({ });
-    return await this.batchDeleteRecentsWithOptions(request, headers, runtime);
-  }
 
   async batchDeleteRecentsWithOptions(request: BatchDeleteRecentsRequest, headers: BatchDeleteRecentsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchDeleteRecentsResponse> {
     Util.validateModel(request);
@@ -5222,19 +5332,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchDeleteRecentsResponse>(await this.doROARequest("BatchDeleteRecents", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/dentries/recentRecords/batchRemove`, "json", req, runtime), new BatchDeleteRecentsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchDeleteRecents",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/dentries/recentRecords/batchRemove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchDeleteRecentsResponse>(await this.execute(params, req, runtime), new BatchDeleteRecentsResponse({}));
   }
 
-  async copyDentry(spaceId: string, dentryId: string, request: CopyDentryRequest): Promise<CopyDentryResponse> {
+  async batchDeleteRecents(request: BatchDeleteRecentsRequest): Promise<BatchDeleteRecentsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CopyDentryHeaders({ });
-    return await this.copyDentryWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new BatchDeleteRecentsHeaders({ });
+    return await this.batchDeleteRecentsWithOptions(request, headers, runtime);
   }
 
   async copyDentryWithOptions(spaceId: string, dentryId: string, request: CopyDentryRequest, headers: CopyDentryHeaders, runtime: $Util.RuntimeOptions): Promise<CopyDentryResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
@@ -5273,18 +5392,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CopyDentryResponse>(await this.doROARequest("CopyDentry", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/spaces/${spaceId}/dentries/${dentryId}/copy`, "json", req, runtime), new CopyDentryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CopyDentry",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/${spaceId}/dentries/${dentryId}/copy`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CopyDentryResponse>(await this.execute(params, req, runtime), new CopyDentryResponse({}));
   }
 
-  async createDentry(spaceId: string, request: CreateDentryRequest): Promise<CreateDentryResponse> {
+  async copyDentry(spaceId: string, dentryId: string, request: CopyDentryRequest): Promise<CopyDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateDentryHeaders({ });
-    return await this.createDentryWithOptions(spaceId, request, headers, runtime);
+    let headers = new CopyDentryHeaders({ });
+    return await this.copyDentryWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async createDentryWithOptions(spaceId: string, request: CreateDentryRequest, headers: CreateDentryHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDentryResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.dentryType)) {
       body["dentryType"] = request.dentryType;
@@ -5319,13 +5448,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateDentryResponse>(await this.doROARequest("CreateDentry", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/spaces/${spaceId}/dentries`, "json", req, runtime), new CreateDentryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateDentry",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/${spaceId}/dentries`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateDentryResponse>(await this.execute(params, req, runtime), new CreateDentryResponse({}));
   }
 
-  async createSpace(request: CreateSpaceRequest): Promise<CreateSpaceResponse> {
+  async createDentry(spaceId: string, request: CreateDentryRequest): Promise<CreateDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateSpaceHeaders({ });
-    return await this.createSpaceWithOptions(request, headers, runtime);
+    let headers = new CreateDentryHeaders({ });
+    return await this.createDentryWithOptions(spaceId, request, headers, runtime);
   }
 
   async createSpaceWithOptions(request: CreateSpaceRequest, headers: CreateSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSpaceResponse> {
@@ -5372,13 +5512,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateSpaceResponse>(await this.doROARequest("CreateSpace", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/spaces`, "json", req, runtime), new CreateSpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateSpace",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateSpaceResponse>(await this.execute(params, req, runtime), new CreateSpaceResponse({}));
   }
 
-  async createTeam(request: CreateTeamRequest): Promise<CreateTeamResponse> {
+  async createSpace(request: CreateSpaceRequest): Promise<CreateSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateTeamHeaders({ });
-    return await this.createTeamWithOptions(request, headers, runtime);
+    let headers = new CreateSpaceHeaders({ });
+    return await this.createSpaceWithOptions(request, headers, runtime);
   }
 
   async createTeamWithOptions(request: CreateTeamRequest, headers: CreateTeamHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTeamResponse> {
@@ -5425,7 +5576,58 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateTeamResponse>(await this.doROARequest("CreateTeam", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/teams`, "json", req, runtime), new CreateTeamResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateTeam",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateTeamResponse>(await this.execute(params, req, runtime), new CreateTeamResponse({}));
+  }
+
+  async createTeam(request: CreateTeamRequest): Promise<CreateTeamResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateTeamHeaders({ });
+    return await this.createTeamWithOptions(request, headers, runtime);
+  }
+
+  async deleteTeamWithOptions(teamId: string, request: DeleteTeamRequest, headers: DeleteTeamHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTeamResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteTeam",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams/${teamId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteTeamResponse>(await this.execute(params, req, runtime), new DeleteTeamResponse({}));
   }
 
   async deleteTeam(teamId: string, request: DeleteTeamRequest): Promise<DeleteTeamResponse> {
@@ -5434,9 +5636,8 @@ export default class Client extends OpenApi {
     return await this.deleteTeamWithOptions(teamId, request, headers, runtime);
   }
 
-  async deleteTeamWithOptions(teamId: string, request: DeleteTeamRequest, headers: DeleteTeamHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTeamResponse> {
+  async getSchemaWithOptions(teamId: string, request: GetSchemaRequest, headers: GetSchemaHeaders, runtime: $Util.RuntimeOptions): Promise<GetSchemaResponse> {
     Util.validateModel(request);
-    teamId = OpenApiUtil.getEncodeParam(teamId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5455,7 +5656,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteTeamResponse>(await this.doROARequest("DeleteTeam", "doc_2.0", "HTTP", "DELETE", "AK", `/v2.0/doc/teams/${teamId}`, "json", req, runtime), new DeleteTeamResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSchema",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams/${teamId}/schemas`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSchemaResponse>(await this.execute(params, req, runtime), new GetSchemaResponse({}));
   }
 
   async getSchema(teamId: string, request: GetSchemaRequest): Promise<GetSchemaResponse> {
@@ -5464,39 +5676,8 @@ export default class Client extends OpenApi {
     return await this.getSchemaWithOptions(teamId, request, headers, runtime);
   }
 
-  async getSchemaWithOptions(teamId: string, request: GetSchemaRequest, headers: GetSchemaHeaders, runtime: $Util.RuntimeOptions): Promise<GetSchemaResponse> {
-    Util.validateModel(request);
-    teamId = OpenApiUtil.getEncodeParam(teamId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.operatorId)) {
-      query["operatorId"] = request.operatorId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<GetSchemaResponse>(await this.doROARequest("GetSchema", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/teams/${teamId}/schemas`, "json", req, runtime), new GetSchemaResponse({}));
-  }
-
-  async getSpaceDirectories(spaceId: string, request: GetSpaceDirectoriesRequest): Promise<GetSpaceDirectoriesResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSpaceDirectoriesHeaders({ });
-    return await this.getSpaceDirectoriesWithOptions(spaceId, request, headers, runtime);
-  }
-
   async getSpaceDirectoriesWithOptions(spaceId: string, request: GetSpaceDirectoriesRequest, headers: GetSpaceDirectoriesHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceDirectoriesResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.dentryId)) {
       query["dentryId"] = request.dentryId;
@@ -5527,7 +5708,58 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetSpaceDirectoriesResponse>(await this.doROARequest("GetSpaceDirectories", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/spaces/${spaceId}/directories`, "json", req, runtime), new GetSpaceDirectoriesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSpaceDirectories",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/${spaceId}/directories`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSpaceDirectoriesResponse>(await this.execute(params, req, runtime), new GetSpaceDirectoriesResponse({}));
+  }
+
+  async getSpaceDirectories(spaceId: string, request: GetSpaceDirectoriesRequest): Promise<GetSpaceDirectoriesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSpaceDirectoriesHeaders({ });
+    return await this.getSpaceDirectoriesWithOptions(spaceId, request, headers, runtime);
+  }
+
+  async getStarInfoWithOptions(dentryUuid: string, request: GetStarInfoRequest, headers: GetStarInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetStarInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetStarInfo",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/dentries/${dentryUuid}/starInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetStarInfoResponse>(await this.execute(params, req, runtime), new GetStarInfoResponse({}));
   }
 
   async getStarInfo(dentryUuid: string, request: GetStarInfoRequest): Promise<GetStarInfoResponse> {
@@ -5536,9 +5768,8 @@ export default class Client extends OpenApi {
     return await this.getStarInfoWithOptions(dentryUuid, request, headers, runtime);
   }
 
-  async getStarInfoWithOptions(dentryUuid: string, request: GetStarInfoRequest, headers: GetStarInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetStarInfoResponse> {
+  async getTeamWithOptions(teamId: string, request: GetTeamRequest, headers: GetTeamHeaders, runtime: $Util.RuntimeOptions): Promise<GetTeamResponse> {
     Util.validateModel(request);
-    dentryUuid = OpenApiUtil.getEncodeParam(dentryUuid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5557,43 +5788,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetStarInfoResponse>(await this.doROARequest("GetStarInfo", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/dentries/${dentryUuid}/starInfos`, "json", req, runtime), new GetStarInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTeam",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams/${teamId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTeamResponse>(await this.execute(params, req, runtime), new GetTeamResponse({}));
   }
 
   async getTeam(teamId: string, request: GetTeamRequest): Promise<GetTeamResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetTeamHeaders({ });
     return await this.getTeamWithOptions(teamId, request, headers, runtime);
-  }
-
-  async getTeamWithOptions(teamId: string, request: GetTeamRequest, headers: GetTeamHeaders, runtime: $Util.RuntimeOptions): Promise<GetTeamResponse> {
-    Util.validateModel(request);
-    teamId = OpenApiUtil.getEncodeParam(teamId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.operatorId)) {
-      query["operatorId"] = request.operatorId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<GetTeamResponse>(await this.doROARequest("GetTeam", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/teams/${teamId}`, "json", req, runtime), new GetTeamResponse({}));
-  }
-
-  async getTotalNumberOfDentries(request: GetTotalNumberOfDentriesRequest): Promise<GetTotalNumberOfDentriesResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTotalNumberOfDentriesHeaders({ });
-    return await this.getTotalNumberOfDentriesWithOptions(request, headers, runtime);
   }
 
   async getTotalNumberOfDentriesWithOptions(request: GetTotalNumberOfDentriesRequest, headers: GetTotalNumberOfDentriesHeaders, runtime: $Util.RuntimeOptions): Promise<GetTotalNumberOfDentriesResponse> {
@@ -5624,13 +5836,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetTotalNumberOfDentriesResponse>(await this.doROARequest("GetTotalNumberOfDentries", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/spaces/statistics/dentryCounts`, "json", req, runtime), new GetTotalNumberOfDentriesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTotalNumberOfDentries",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/statistics/dentryCounts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTotalNumberOfDentriesResponse>(await this.execute(params, req, runtime), new GetTotalNumberOfDentriesResponse({}));
   }
 
-  async getTotalNumberOfSpaces(request: GetTotalNumberOfSpacesRequest): Promise<GetTotalNumberOfSpacesResponse> {
+  async getTotalNumberOfDentries(request: GetTotalNumberOfDentriesRequest): Promise<GetTotalNumberOfDentriesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetTotalNumberOfSpacesHeaders({ });
-    return await this.getTotalNumberOfSpacesWithOptions(request, headers, runtime);
+    let headers = new GetTotalNumberOfDentriesHeaders({ });
+    return await this.getTotalNumberOfDentriesWithOptions(request, headers, runtime);
   }
 
   async getTotalNumberOfSpacesWithOptions(request: GetTotalNumberOfSpacesRequest, headers: GetTotalNumberOfSpacesHeaders, runtime: $Util.RuntimeOptions): Promise<GetTotalNumberOfSpacesResponse> {
@@ -5653,13 +5876,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetTotalNumberOfSpacesResponse>(await this.doROARequest("GetTotalNumberOfSpaces", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/spaces/statistics/spaceCounts`, "json", req, runtime), new GetTotalNumberOfSpacesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetTotalNumberOfSpaces",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/statistics/spaceCounts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTotalNumberOfSpacesResponse>(await this.execute(params, req, runtime), new GetTotalNumberOfSpacesResponse({}));
   }
 
-  async getUserInfoByOpenToken(request: GetUserInfoByOpenTokenRequest): Promise<GetUserInfoByOpenTokenResponse> {
+  async getTotalNumberOfSpaces(request: GetTotalNumberOfSpacesRequest): Promise<GetTotalNumberOfSpacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserInfoByOpenTokenHeaders({ });
-    return await this.getUserInfoByOpenTokenWithOptions(request, headers, runtime);
+    let headers = new GetTotalNumberOfSpacesHeaders({ });
+    return await this.getTotalNumberOfSpacesWithOptions(request, headers, runtime);
   }
 
   async getUserInfoByOpenTokenWithOptions(request: GetUserInfoByOpenTokenRequest, headers: GetUserInfoByOpenTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserInfoByOpenTokenResponse> {
@@ -5686,18 +5920,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetUserInfoByOpenTokenResponse>(await this.doROARequest("GetUserInfoByOpenToken", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/userInfos`, "json", req, runtime), new GetUserInfoByOpenTokenResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserInfoByOpenToken",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/userInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserInfoByOpenTokenResponse>(await this.execute(params, req, runtime), new GetUserInfoByOpenTokenResponse({}));
   }
 
-  async listFeeds(teamId: string, request: ListFeedsRequest): Promise<ListFeedsResponse> {
+  async getUserInfoByOpenToken(request: GetUserInfoByOpenTokenRequest): Promise<GetUserInfoByOpenTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListFeedsHeaders({ });
-    return await this.listFeedsWithOptions(teamId, request, headers, runtime);
+    let headers = new GetUserInfoByOpenTokenHeaders({ });
+    return await this.getUserInfoByOpenTokenWithOptions(request, headers, runtime);
   }
 
   async listFeedsWithOptions(teamId: string, request: ListFeedsRequest, headers: ListFeedsHeaders, runtime: $Util.RuntimeOptions): Promise<ListFeedsResponse> {
     Util.validateModel(request);
-    teamId = OpenApiUtil.getEncodeParam(teamId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.excludeFile)) {
       query["excludeFile"] = request.excludeFile;
@@ -5728,18 +5972,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListFeedsResponse>(await this.doROARequest("ListFeeds", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/teams/${teamId}/feeds`, "json", req, runtime), new ListFeedsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListFeeds",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams/${teamId}/feeds`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListFeedsResponse>(await this.execute(params, req, runtime), new ListFeedsResponse({}));
   }
 
-  async listHotDocs(teamId: string, request: ListHotDocsRequest): Promise<ListHotDocsResponse> {
+  async listFeeds(teamId: string, request: ListFeedsRequest): Promise<ListFeedsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListHotDocsHeaders({ });
-    return await this.listHotDocsWithOptions(teamId, request, headers, runtime);
+    let headers = new ListFeedsHeaders({ });
+    return await this.listFeedsWithOptions(teamId, request, headers, runtime);
   }
 
   async listHotDocsWithOptions(teamId: string, request: ListHotDocsRequest, headers: ListHotDocsHeaders, runtime: $Util.RuntimeOptions): Promise<ListHotDocsResponse> {
     Util.validateModel(request);
-    teamId = OpenApiUtil.getEncodeParam(teamId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5758,13 +6012,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListHotDocsResponse>(await this.doROARequest("ListHotDocs", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/teams/${teamId}/hotDocs`, "json", req, runtime), new ListHotDocsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListHotDocs",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams/${teamId}/hotDocs`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListHotDocsResponse>(await this.execute(params, req, runtime), new ListHotDocsResponse({}));
   }
 
-  async listPinSpaces(request: ListPinSpacesRequest): Promise<ListPinSpacesResponse> {
+  async listHotDocs(teamId: string, request: ListHotDocsRequest): Promise<ListHotDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListPinSpacesHeaders({ });
-    return await this.listPinSpacesWithOptions(request, headers, runtime);
+    let headers = new ListHotDocsHeaders({ });
+    return await this.listHotDocsWithOptions(teamId, request, headers, runtime);
   }
 
   async listPinSpacesWithOptions(request: ListPinSpacesRequest, headers: ListPinSpacesHeaders, runtime: $Util.RuntimeOptions): Promise<ListPinSpacesResponse> {
@@ -5793,13 +6058,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ListPinSpacesResponse>(await this.doROARequest("ListPinSpaces", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/spaces/pinLists/query`, "json", req, runtime), new ListPinSpacesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListPinSpaces",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/pinLists/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListPinSpacesResponse>(await this.execute(params, req, runtime), new ListPinSpacesResponse({}));
   }
 
-  async listRelatedSpaceTeams(request: ListRelatedSpaceTeamsRequest): Promise<ListRelatedSpaceTeamsResponse> {
+  async listPinSpaces(request: ListPinSpacesRequest): Promise<ListPinSpacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListRelatedSpaceTeamsHeaders({ });
-    return await this.listRelatedSpaceTeamsWithOptions(request, headers, runtime);
+    let headers = new ListPinSpacesHeaders({ });
+    return await this.listPinSpacesWithOptions(request, headers, runtime);
   }
 
   async listRelatedSpaceTeamsWithOptions(request: ListRelatedSpaceTeamsRequest, headers: ListRelatedSpaceTeamsHeaders, runtime: $Util.RuntimeOptions): Promise<ListRelatedSpaceTeamsResponse> {
@@ -5826,13 +6102,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListRelatedSpaceTeamsResponse>(await this.doROARequest("ListRelatedSpaceTeams", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/teams/relations/spaceTeams`, "json", req, runtime), new ListRelatedSpaceTeamsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListRelatedSpaceTeams",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams/relations/spaceTeams`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListRelatedSpaceTeamsResponse>(await this.execute(params, req, runtime), new ListRelatedSpaceTeamsResponse({}));
   }
 
-  async listRelatedTeams(request: ListRelatedTeamsRequest): Promise<ListRelatedTeamsResponse> {
+  async listRelatedSpaceTeams(request: ListRelatedSpaceTeamsRequest): Promise<ListRelatedSpaceTeamsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListRelatedTeamsHeaders({ });
-    return await this.listRelatedTeamsWithOptions(request, headers, runtime);
+    let headers = new ListRelatedSpaceTeamsHeaders({ });
+    return await this.listRelatedSpaceTeamsWithOptions(request, headers, runtime);
   }
 
   async listRelatedTeamsWithOptions(request: ListRelatedTeamsRequest, headers: ListRelatedTeamsHeaders, runtime: $Util.RuntimeOptions): Promise<ListRelatedTeamsResponse> {
@@ -5867,18 +6154,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListRelatedTeamsResponse>(await this.doROARequest("ListRelatedTeams", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/teams`, "json", req, runtime), new ListRelatedTeamsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListRelatedTeams",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListRelatedTeamsResponse>(await this.execute(params, req, runtime), new ListRelatedTeamsResponse({}));
   }
 
-  async listSpaceSections(teamId: string, request: ListSpaceSectionsRequest): Promise<ListSpaceSectionsResponse> {
+  async listRelatedTeams(request: ListRelatedTeamsRequest): Promise<ListRelatedTeamsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListSpaceSectionsHeaders({ });
-    return await this.listSpaceSectionsWithOptions(teamId, request, headers, runtime);
+    let headers = new ListRelatedTeamsHeaders({ });
+    return await this.listRelatedTeamsWithOptions(request, headers, runtime);
   }
 
   async listSpaceSectionsWithOptions(teamId: string, request: ListSpaceSectionsRequest, headers: ListSpaceSectionsHeaders, runtime: $Util.RuntimeOptions): Promise<ListSpaceSectionsResponse> {
     Util.validateModel(request);
-    teamId = OpenApiUtil.getEncodeParam(teamId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5897,13 +6194,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListSpaceSectionsResponse>(await this.doROARequest("ListSpaceSections", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/teams/${teamId}/spaceSections`, "json", req, runtime), new ListSpaceSectionsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListSpaceSections",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams/${teamId}/spaceSections`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListSpaceSectionsResponse>(await this.execute(params, req, runtime), new ListSpaceSectionsResponse({}));
   }
 
-  async listStars(request: ListStarsRequest): Promise<ListStarsResponse> {
+  async listSpaceSections(teamId: string, request: ListSpaceSectionsRequest): Promise<ListSpaceSectionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListStarsHeaders({ });
-    return await this.listStarsWithOptions(request, headers, runtime);
+    let headers = new ListSpaceSectionsHeaders({ });
+    return await this.listSpaceSectionsWithOptions(teamId, request, headers, runtime);
   }
 
   async listStarsWithOptions(request: ListStarsRequest, headers: ListStarsHeaders, runtime: $Util.RuntimeOptions): Promise<ListStarsResponse> {
@@ -5932,7 +6240,58 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ListStarsResponse>(await this.doROARequest("ListStars", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/dentries/starLists/query`, "json", req, runtime), new ListStarsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListStars",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/dentries/starLists/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListStarsResponse>(await this.execute(params, req, runtime), new ListStarsResponse({}));
+  }
+
+  async listStars(request: ListStarsRequest): Promise<ListStarsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListStarsHeaders({ });
+    return await this.listStarsWithOptions(request, headers, runtime);
+  }
+
+  async listTeamMembersWithOptions(teamId: string, request: ListTeamMembersRequest, headers: ListTeamMembersHeaders, runtime: $Util.RuntimeOptions): Promise<ListTeamMembersResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListTeamMembers",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams/${teamId}/members`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListTeamMembersResponse>(await this.execute(params, req, runtime), new ListTeamMembersResponse({}));
   }
 
   async listTeamMembers(teamId: string, request: ListTeamMembersRequest): Promise<ListTeamMembersResponse> {
@@ -5941,9 +6300,8 @@ export default class Client extends OpenApi {
     return await this.listTeamMembersWithOptions(teamId, request, headers, runtime);
   }
 
-  async listTeamMembersWithOptions(teamId: string, request: ListTeamMembersRequest, headers: ListTeamMembersHeaders, runtime: $Util.RuntimeOptions): Promise<ListTeamMembersResponse> {
+  async markStarWithOptions(dentryUuid: string, request: MarkStarRequest, headers: MarkStarHeaders, runtime: $Util.RuntimeOptions): Promise<MarkStarResponse> {
     Util.validateModel(request);
-    teamId = OpenApiUtil.getEncodeParam(teamId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -5962,7 +6320,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListTeamMembersResponse>(await this.doROARequest("ListTeamMembers", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/teams/${teamId}/members`, "json", req, runtime), new ListTeamMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "MarkStar",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/dentries/${dentryUuid}/stars/mark`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<MarkStarResponse>(await this.execute(params, req, runtime), new MarkStarResponse({}));
   }
 
   async markStar(dentryUuid: string, request: MarkStarRequest): Promise<MarkStarResponse> {
@@ -5971,40 +6340,8 @@ export default class Client extends OpenApi {
     return await this.markStarWithOptions(dentryUuid, request, headers, runtime);
   }
 
-  async markStarWithOptions(dentryUuid: string, request: MarkStarRequest, headers: MarkStarHeaders, runtime: $Util.RuntimeOptions): Promise<MarkStarResponse> {
-    Util.validateModel(request);
-    dentryUuid = OpenApiUtil.getEncodeParam(dentryUuid);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.operatorId)) {
-      query["operatorId"] = request.operatorId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<MarkStarResponse>(await this.doROARequest("MarkStar", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/dentries/${dentryUuid}/stars/mark`, "json", req, runtime), new MarkStarResponse({}));
-  }
-
-  async moveDentry(spaceId: string, dentryId: string, request: MoveDentryRequest): Promise<MoveDentryResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new MoveDentryHeaders({ });
-    return await this.moveDentryWithOptions(spaceId, dentryId, request, headers, runtime);
-  }
-
   async moveDentryWithOptions(spaceId: string, dentryId: string, request: MoveDentryRequest, headers: MoveDentryHeaders, runtime: $Util.RuntimeOptions): Promise<MoveDentryResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       body["operatorId"] = request.operatorId;
@@ -6039,18 +6376,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<MoveDentryResponse>(await this.doROARequest("MoveDentry", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/spaces/${spaceId}/dentries/${dentryId}/move`, "json", req, runtime), new MoveDentryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "MoveDentry",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/${spaceId}/dentries/${dentryId}/move`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<MoveDentryResponse>(await this.execute(params, req, runtime), new MoveDentryResponse({}));
   }
 
-  async pinSpace(spaceId: string, request: PinSpaceRequest): Promise<PinSpaceResponse> {
+  async moveDentry(spaceId: string, dentryId: string, request: MoveDentryRequest): Promise<MoveDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PinSpaceHeaders({ });
-    return await this.pinSpaceWithOptions(spaceId, request, headers, runtime);
+    let headers = new MoveDentryHeaders({ });
+    return await this.moveDentryWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async pinSpaceWithOptions(spaceId: string, request: PinSpaceRequest, headers: PinSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<PinSpaceResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6069,19 +6416,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<PinSpaceResponse>(await this.doROARequest("PinSpace", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/spaces/${spaceId}/pin`, "json", req, runtime), new PinSpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PinSpace",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/${spaceId}/pin`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PinSpaceResponse>(await this.execute(params, req, runtime), new PinSpaceResponse({}));
   }
 
-  async queryDentry(spaceId: string, dentryId: string, request: QueryDentryRequest): Promise<QueryDentryResponse> {
+  async pinSpace(spaceId: string, request: PinSpaceRequest): Promise<PinSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDentryHeaders({ });
-    return await this.queryDentryWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new PinSpaceHeaders({ });
+    return await this.pinSpaceWithOptions(spaceId, request, headers, runtime);
   }
 
   async queryDentryWithOptions(spaceId: string, dentryId: string, request: QueryDentryRequest, headers: QueryDentryHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDentryResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.includeSpace)) {
       query["includeSpace"] = request.includeSpace;
@@ -6104,13 +6460,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryDentryResponse>(await this.doROARequest("QueryDentry", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/spaces/${spaceId}/dentries/${dentryId}`, "json", req, runtime), new QueryDentryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDentry",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/${spaceId}/dentries/${dentryId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDentryResponse>(await this.execute(params, req, runtime), new QueryDentryResponse({}));
   }
 
-  async queryItemByUrl(request: QueryItemByUrlRequest): Promise<QueryItemByUrlResponse> {
+  async queryDentry(spaceId: string, dentryId: string, request: QueryDentryRequest): Promise<QueryDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryItemByUrlHeaders({ });
-    return await this.queryItemByUrlWithOptions(request, headers, runtime);
+    let headers = new QueryDentryHeaders({ });
+    return await this.queryDentryWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async queryItemByUrlWithOptions(request: QueryItemByUrlRequest, headers: QueryItemByUrlHeaders, runtime: $Util.RuntimeOptions): Promise<QueryItemByUrlResponse> {
@@ -6141,17 +6508,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryItemByUrlResponse>(await this.doROARequest("QueryItemByUrl", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/items`, "json", req, runtime), new QueryItemByUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryItemByUrl",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/items`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryItemByUrlResponse>(await this.execute(params, req, runtime), new QueryItemByUrlResponse({}));
   }
 
-  async queryMineSpace(unionId: string): Promise<QueryMineSpaceResponse> {
+  async queryItemByUrl(request: QueryItemByUrlRequest): Promise<QueryItemByUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryMineSpaceHeaders({ });
-    return await this.queryMineSpaceWithOptions(unionId, headers, runtime);
+    let headers = new QueryItemByUrlHeaders({ });
+    return await this.queryItemByUrlWithOptions(request, headers, runtime);
   }
 
   async queryMineSpaceWithOptions(unionId: string, headers: QueryMineSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryMineSpaceResponse> {
-    unionId = OpenApiUtil.getEncodeParam(unionId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -6164,13 +6541,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryMineSpaceResponse>(await this.doROARequest("QueryMineSpace", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/spaces/users/${unionId}/mine`, "json", req, runtime), new QueryMineSpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryMineSpace",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/users/${unionId}/mine`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryMineSpaceResponse>(await this.execute(params, req, runtime), new QueryMineSpaceResponse({}));
   }
 
-  async queryRecentList(request: QueryRecentListRequest): Promise<QueryRecentListResponse> {
+  async queryMineSpace(unionId: string): Promise<QueryMineSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryRecentListHeaders({ });
-    return await this.queryRecentListWithOptions(request, headers, runtime);
+    let headers = new QueryMineSpaceHeaders({ });
+    return await this.queryMineSpaceWithOptions(unionId, headers, runtime);
   }
 
   async queryRecentListWithOptions(request: QueryRecentListRequest, headers: QueryRecentListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRecentListResponse> {
@@ -6213,18 +6601,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryRecentListResponse>(await this.doROARequest("QueryRecentList", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/spaces/docs/recent`, "json", req, runtime), new QueryRecentListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryRecentList",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/docs/recent`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryRecentListResponse>(await this.execute(params, req, runtime), new QueryRecentListResponse({}));
   }
 
-  async querySpace(spaceId: string, request: QuerySpaceRequest): Promise<QuerySpaceResponse> {
+  async queryRecentList(request: QueryRecentListRequest): Promise<QueryRecentListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QuerySpaceHeaders({ });
-    return await this.querySpaceWithOptions(spaceId, request, headers, runtime);
+    let headers = new QueryRecentListHeaders({ });
+    return await this.queryRecentListWithOptions(request, headers, runtime);
   }
 
   async querySpaceWithOptions(spaceId: string, request: QuerySpaceRequest, headers: QuerySpaceHeaders, runtime: $Util.RuntimeOptions): Promise<QuerySpaceResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6243,13 +6641,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QuerySpaceResponse>(await this.doROARequest("QuerySpace", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/spaces/${spaceId}`, "json", req, runtime), new QuerySpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QuerySpace",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/${spaceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QuerySpaceResponse>(await this.execute(params, req, runtime), new QuerySpaceResponse({}));
   }
 
-  async relatedSpaces(request: RelatedSpacesRequest): Promise<RelatedSpacesResponse> {
+  async querySpace(spaceId: string, request: QuerySpaceRequest): Promise<QuerySpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RelatedSpacesHeaders({ });
-    return await this.relatedSpacesWithOptions(request, headers, runtime);
+    let headers = new QuerySpaceHeaders({ });
+    return await this.querySpaceWithOptions(spaceId, request, headers, runtime);
   }
 
   async relatedSpacesWithOptions(request: RelatedSpacesRequest, headers: RelatedSpacesHeaders, runtime: $Util.RuntimeOptions): Promise<RelatedSpacesResponse> {
@@ -6284,18 +6693,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<RelatedSpacesResponse>(await this.doROARequest("RelatedSpaces", "doc_2.0", "HTTP", "GET", "AK", `/v2.0/doc/relations/spaces`, "json", req, runtime), new RelatedSpacesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RelatedSpaces",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/relations/spaces`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RelatedSpacesResponse>(await this.execute(params, req, runtime), new RelatedSpacesResponse({}));
   }
 
-  async removeTeamMembers(teamId: string, request: RemoveTeamMembersRequest): Promise<RemoveTeamMembersResponse> {
+  async relatedSpaces(request: RelatedSpacesRequest): Promise<RelatedSpacesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RemoveTeamMembersHeaders({ });
-    return await this.removeTeamMembersWithOptions(teamId, request, headers, runtime);
+    let headers = new RelatedSpacesHeaders({ });
+    return await this.relatedSpacesWithOptions(request, headers, runtime);
   }
 
   async removeTeamMembersWithOptions(teamId: string, request: RemoveTeamMembersRequest, headers: RemoveTeamMembersHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveTeamMembersResponse> {
     Util.validateModel(request);
-    teamId = OpenApiUtil.getEncodeParam(teamId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.members)) {
       body["members"] = request.members;
@@ -6322,19 +6741,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RemoveTeamMembersResponse>(await this.doROARequest("RemoveTeamMembers", "doc_2.0", "HTTP", "PUT", "AK", `/v2.0/doc/teams/${teamId}/members/remove`, "json", req, runtime), new RemoveTeamMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RemoveTeamMembers",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams/${teamId}/members/remove`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RemoveTeamMembersResponse>(await this.execute(params, req, runtime), new RemoveTeamMembersResponse({}));
   }
 
-  async renameDentry(spaceId: string, dentryId: string, request: RenameDentryRequest): Promise<RenameDentryResponse> {
+  async removeTeamMembers(teamId: string, request: RemoveTeamMembersRequest): Promise<RemoveTeamMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RenameDentryHeaders({ });
-    return await this.renameDentryWithOptions(spaceId, dentryId, request, headers, runtime);
+    let headers = new RemoveTeamMembersHeaders({ });
+    return await this.removeTeamMembersWithOptions(teamId, request, headers, runtime);
   }
 
   async renameDentryWithOptions(spaceId: string, dentryId: string, request: RenameDentryRequest, headers: RenameDentryHeaders, runtime: $Util.RuntimeOptions): Promise<RenameDentryResponse> {
     Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    dentryId = OpenApiUtil.getEncodeParam(dentryId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.name)) {
       query["name"] = request.name;
@@ -6357,18 +6785,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<RenameDentryResponse>(await this.doROARequest("RenameDentry", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/spaces/${spaceId}/dentries/${dentryId}/rename`, "json", req, runtime), new RenameDentryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RenameDentry",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/${spaceId}/dentries/${dentryId}/rename`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RenameDentryResponse>(await this.execute(params, req, runtime), new RenameDentryResponse({}));
   }
 
-  async saveTeamMembers(teamId: string, request: SaveTeamMembersRequest): Promise<SaveTeamMembersResponse> {
+  async renameDentry(spaceId: string, dentryId: string, request: RenameDentryRequest): Promise<RenameDentryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SaveTeamMembersHeaders({ });
-    return await this.saveTeamMembersWithOptions(teamId, request, headers, runtime);
+    let headers = new RenameDentryHeaders({ });
+    return await this.renameDentryWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   async saveTeamMembersWithOptions(teamId: string, request: SaveTeamMembersRequest, headers: SaveTeamMembersHeaders, runtime: $Util.RuntimeOptions): Promise<SaveTeamMembersResponse> {
     Util.validateModel(request);
-    teamId = OpenApiUtil.getEncodeParam(teamId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.members)) {
       body["members"] = request.members;
@@ -6395,13 +6833,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SaveTeamMembersResponse>(await this.doROARequest("SaveTeamMembers", "doc_2.0", "HTTP", "PUT", "AK", `/v2.0/doc/teams/${teamId}/members`, "json", req, runtime), new SaveTeamMembersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SaveTeamMembers",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams/${teamId}/members`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveTeamMembersResponse>(await this.execute(params, req, runtime), new SaveTeamMembersResponse({}));
   }
 
-  async search(request: SearchRequest): Promise<SearchResponse> {
+  async saveTeamMembers(teamId: string, request: SaveTeamMembersRequest): Promise<SaveTeamMembersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchHeaders({ });
-    return await this.searchWithOptions(request, headers, runtime);
+    let headers = new SaveTeamMembersHeaders({ });
+    return await this.saveTeamMembersWithOptions(teamId, request, headers, runtime);
   }
 
   async searchWithOptions(request: SearchRequest, headers: SearchHeaders, runtime: $Util.RuntimeOptions): Promise<SearchResponse> {
@@ -6436,7 +6885,58 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SearchResponse>(await this.doROARequest("Search", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/search`, "json", req, runtime), new SearchResponse({}));
+    let params = new $OpenApi.Params({
+      action: "Search",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchResponse>(await this.execute(params, req, runtime), new SearchResponse({}));
+  }
+
+  async search(request: SearchRequest): Promise<SearchResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SearchHeaders({ });
+    return await this.searchWithOptions(request, headers, runtime);
+  }
+
+  async unmarkStarWithOptions(dentryUuid: string, request: UnmarkStarRequest, headers: UnmarkStarHeaders, runtime: $Util.RuntimeOptions): Promise<UnmarkStarResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "UnmarkStar",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/dentries/${dentryUuid}/stars/unmark`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UnmarkStarResponse>(await this.execute(params, req, runtime), new UnmarkStarResponse({}));
   }
 
   async unmarkStar(dentryUuid: string, request: UnmarkStarRequest): Promise<UnmarkStarResponse> {
@@ -6445,9 +6945,8 @@ export default class Client extends OpenApi {
     return await this.unmarkStarWithOptions(dentryUuid, request, headers, runtime);
   }
 
-  async unmarkStarWithOptions(dentryUuid: string, request: UnmarkStarRequest, headers: UnmarkStarHeaders, runtime: $Util.RuntimeOptions): Promise<UnmarkStarResponse> {
+  async unpinSpaceWithOptions(spaceId: string, request: UnpinSpaceRequest, headers: UnpinSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<UnpinSpaceResponse> {
     Util.validateModel(request);
-    dentryUuid = OpenApiUtil.getEncodeParam(dentryUuid);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.operatorId)) {
       query["operatorId"] = request.operatorId;
@@ -6466,7 +6965,18 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<UnmarkStarResponse>(await this.doROARequest("UnmarkStar", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/dentries/${dentryUuid}/stars/unmark`, "json", req, runtime), new UnmarkStarResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UnpinSpace",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/spaces/${spaceId}/unpin`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UnpinSpaceResponse>(await this.execute(params, req, runtime), new UnpinSpaceResponse({}));
   }
 
   async unpinSpace(spaceId: string, request: UnpinSpaceRequest): Promise<UnpinSpaceResponse> {
@@ -6475,39 +6985,8 @@ export default class Client extends OpenApi {
     return await this.unpinSpaceWithOptions(spaceId, request, headers, runtime);
   }
 
-  async unpinSpaceWithOptions(spaceId: string, request: UnpinSpaceRequest, headers: UnpinSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<UnpinSpaceResponse> {
-    Util.validateModel(request);
-    spaceId = OpenApiUtil.getEncodeParam(spaceId);
-    let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.operatorId)) {
-      query["operatorId"] = request.operatorId;
-    }
-
-    let realHeaders : {[key: string ]: string} = { };
-    if (!Util.isUnset(headers.commonHeaders)) {
-      realHeaders = headers.commonHeaders;
-    }
-
-    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
-      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
-    }
-
-    let req = new $OpenApi.OpenApiRequest({
-      headers: realHeaders,
-      query: OpenApiUtil.query(query),
-    });
-    return $tea.cast<UnpinSpaceResponse>(await this.doROARequest("UnpinSpace", "doc_2.0", "HTTP", "POST", "AK", `/v2.0/doc/spaces/${spaceId}/unpin`, "json", req, runtime), new UnpinSpaceResponse({}));
-  }
-
-  async updateTeam(teamId: string, request: UpdateTeamRequest): Promise<UpdateTeamResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTeamHeaders({ });
-    return await this.updateTeamWithOptions(teamId, request, headers, runtime);
-  }
-
   async updateTeamWithOptions(teamId: string, request: UpdateTeamRequest, headers: UpdateTeamHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTeamResponse> {
     Util.validateModel(request);
-    teamId = OpenApiUtil.getEncodeParam(teamId);
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.description)) {
       body["description"] = request.description;
@@ -6534,7 +7013,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTeamResponse>(await this.doROARequest("UpdateTeam", "doc_2.0", "HTTP", "PUT", "AK", `/v2.0/doc/teams/${teamId}`, "json", req, runtime), new UpdateTeamResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTeam",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/teams/${teamId}`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTeamResponse>(await this.execute(params, req, runtime), new UpdateTeamResponse({}));
+  }
+
+  async updateTeam(teamId: string, request: UpdateTeamRequest): Promise<UpdateTeamResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateTeamHeaders({ });
+    return await this.updateTeamWithOptions(teamId, request, headers, runtime);
   }
 
 }

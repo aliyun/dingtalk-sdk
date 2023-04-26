@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -93,10 +95,12 @@ export class ApplyBatchPayResponseBody extends $tea.Model {
 
 export class ApplyBatchPayResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ApplyBatchPayResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -104,6 +108,7 @@ export class ApplyBatchPayResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ApplyBatchPayResponseBody,
     };
   }
@@ -178,10 +183,12 @@ export class CloseLoanEntranceResponseBody extends $tea.Model {
 
 export class CloseLoanEntranceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CloseLoanEntranceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -189,6 +196,7 @@ export class CloseLoanEntranceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CloseLoanEntranceResponseBody,
     };
   }
@@ -308,10 +316,12 @@ export class ConsultCreateSubInstitutionResponseBody extends $tea.Model {
 
 export class ConsultCreateSubInstitutionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ConsultCreateSubInstitutionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -319,6 +329,7 @@ export class ConsultCreateSubInstitutionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ConsultCreateSubInstitutionResponseBody,
     };
   }
@@ -450,10 +461,12 @@ export class CreatWithholdingOrderAndPayResponseBody extends $tea.Model {
 
 export class CreatWithholdingOrderAndPayResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreatWithholdingOrderAndPayResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -461,6 +474,7 @@ export class CreatWithholdingOrderAndPayResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreatWithholdingOrderAndPayResponseBody,
     };
   }
@@ -562,10 +576,12 @@ export class CreateAcquireRefundOrderResponseBody extends $tea.Model {
 
 export class CreateAcquireRefundOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateAcquireRefundOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -573,6 +589,7 @@ export class CreateAcquireRefundOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateAcquireRefundOrderResponseBody,
     };
   }
@@ -674,10 +691,12 @@ export class CreateBatchTradeOrderResponseBody extends $tea.Model {
 
 export class CreateBatchTradeOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateBatchTradeOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -685,6 +704,7 @@ export class CreateBatchTradeOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateBatchTradeOrderResponseBody,
     };
   }
@@ -804,10 +824,12 @@ export class CreateSubInstitutionResponseBody extends $tea.Model {
 
 export class CreateSubInstitutionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateSubInstitutionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -815,6 +837,7 @@ export class CreateSubInstitutionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateSubInstitutionResponseBody,
     };
   }
@@ -919,10 +942,12 @@ export class CreateUserCodeInstanceResponseBody extends $tea.Model {
 
 export class CreateUserCodeInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateUserCodeInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -930,6 +955,7 @@ export class CreateUserCodeInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateUserCodeInstanceResponseBody,
     };
   }
@@ -1031,10 +1057,12 @@ export class DecodePayCodeResponseBody extends $tea.Model {
 
 export class DecodePayCodeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DecodePayCodeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1042,6 +1070,7 @@ export class DecodePayCodeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DecodePayCodeResponseBody,
     };
   }
@@ -1158,10 +1187,12 @@ export class ModifySubInstitutionResponseBody extends $tea.Model {
 
 export class ModifySubInstitutionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ModifySubInstitutionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1169,6 +1200,7 @@ export class ModifySubInstitutionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ModifySubInstitutionResponseBody,
     };
   }
@@ -1288,10 +1320,12 @@ export class NotifyPayCodePayResultResponseBody extends $tea.Model {
 
 export class NotifyPayCodePayResultResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: NotifyPayCodePayResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1299,6 +1333,7 @@ export class NotifyPayCodePayResultResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: NotifyPayCodePayResultResponseBody,
     };
   }
@@ -1397,10 +1432,12 @@ export class NotifyPayCodeRefundResultResponseBody extends $tea.Model {
 
 export class NotifyPayCodeRefundResultResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: NotifyPayCodeRefundResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1408,6 +1445,7 @@ export class NotifyPayCodeRefundResultResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: NotifyPayCodeRefundResultResponseBody,
     };
   }
@@ -1506,10 +1544,12 @@ export class NotifyVerifyResultResponseBody extends $tea.Model {
 
 export class NotifyVerifyResultResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: NotifyVerifyResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1517,6 +1557,7 @@ export class NotifyVerifyResultResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: NotifyVerifyResultResponseBody,
     };
   }
@@ -1627,10 +1668,12 @@ export class QueryAcquireRefundOrderResponseBody extends $tea.Model {
 
 export class QueryAcquireRefundOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAcquireRefundOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1638,6 +1681,7 @@ export class QueryAcquireRefundOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAcquireRefundOrderResponseBody,
     };
   }
@@ -1727,10 +1771,12 @@ export class QueryBatchTradeDetailListResponseBody extends $tea.Model {
 
 export class QueryBatchTradeDetailListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryBatchTradeDetailListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1738,6 +1784,7 @@ export class QueryBatchTradeDetailListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryBatchTradeDetailListResponseBody,
     };
   }
@@ -1809,10 +1856,12 @@ export class QueryBatchTradeOrderResponseBody extends $tea.Model {
 
 export class QueryBatchTradeOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryBatchTradeOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1820,6 +1869,7 @@ export class QueryBatchTradeOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryBatchTradeOrderResponseBody,
     };
   }
@@ -1872,10 +1922,12 @@ export class QueryPayAccountListResponseBody extends $tea.Model {
 
 export class QueryPayAccountListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryPayAccountListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1883,6 +1935,7 @@ export class QueryPayAccountListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryPayAccountListResponseBody,
     };
   }
@@ -1984,10 +2037,12 @@ export class QueryRegisterOrderResponseBody extends $tea.Model {
 
 export class QueryRegisterOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryRegisterOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1995,6 +2050,7 @@ export class QueryRegisterOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryRegisterOrderResponseBody,
     };
   }
@@ -2111,10 +2167,12 @@ export class QueryUserAgreementResponseBody extends $tea.Model {
 
 export class QueryUserAgreementResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryUserAgreementResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2122,6 +2180,7 @@ export class QueryUserAgreementResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryUserAgreementResponseBody,
     };
   }
@@ -2174,10 +2233,12 @@ export class QueryUserAlipayAccountResponseBody extends $tea.Model {
 
 export class QueryUserAlipayAccountResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryUserAlipayAccountResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2185,6 +2246,7 @@ export class QueryUserAlipayAccountResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryUserAlipayAccountResponseBody,
     };
   }
@@ -2292,10 +2354,12 @@ export class QueryWithholdingOrderResponseBody extends $tea.Model {
 
 export class QueryWithholdingOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryWithholdingOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2303,6 +2367,7 @@ export class QueryWithholdingOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryWithholdingOrderResponseBody,
     };
   }
@@ -2392,10 +2457,12 @@ export class SaveCorpPayCodeResponseBody extends $tea.Model {
 
 export class SaveCorpPayCodeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SaveCorpPayCodeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2403,6 +2470,7 @@ export class SaveCorpPayCodeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SaveCorpPayCodeResponseBody,
     };
   }
@@ -2470,15 +2538,18 @@ export class UnsignUserAgreementRequest extends $tea.Model {
 
 export class UnsignUserAgreementResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -2576,10 +2647,12 @@ export class UpateUserCodeInstanceResponseBody extends $tea.Model {
 
 export class UpateUserCodeInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpateUserCodeInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2587,6 +2660,7 @@ export class UpateUserCodeInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpateUserCodeInstanceResponseBody,
     };
   }
@@ -2691,10 +2765,12 @@ export class UpdateInvoiceVerifyStatusResponseBody extends $tea.Model {
 
 export class UpdateInvoiceVerifyStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateInvoiceVerifyStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2702,6 +2778,7 @@ export class UpdateInvoiceVerifyStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateInvoiceVerifyStatusResponseBody,
     };
   }
@@ -2779,10 +2856,12 @@ export class UploadInvoiceResponseBody extends $tea.Model {
 
 export class UploadInvoiceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UploadInvoiceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2790,6 +2869,7 @@ export class UploadInvoiceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UploadInvoiceResponseBody,
     };
   }
@@ -2864,10 +2944,12 @@ export class UploadInvoiceByAuthResponseBody extends $tea.Model {
 
 export class UploadInvoiceByAuthResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UploadInvoiceByAuthResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2875,6 +2957,7 @@ export class UploadInvoiceByAuthResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UploadInvoiceByAuthResponseBody,
     };
   }
@@ -2952,10 +3035,12 @@ export class UploadInvoiceByMobileResponseBody extends $tea.Model {
 
 export class UploadInvoiceByMobileResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UploadInvoiceByMobileResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2963,6 +3048,7 @@ export class UploadInvoiceByMobileResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UploadInvoiceByMobileResponseBody,
     };
   }
@@ -3046,10 +3132,12 @@ export class UploadRegisterImageResponseBody extends $tea.Model {
 
 export class UploadRegisterImageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UploadRegisterImageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3057,6 +3145,7 @@ export class UploadRegisterImageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UploadRegisterImageResponseBody,
     };
   }
@@ -3161,10 +3250,12 @@ export class UserAgreementPageSignResponseBody extends $tea.Model {
 
 export class UserAgreementPageSignResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UserAgreementPageSignResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3172,6 +3263,7 @@ export class UserAgreementPageSignResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UserAgreementPageSignResponseBody,
     };
   }
@@ -5078,9 +5170,12 @@ export class UploadInvoiceByMobileResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -5088,12 +5183,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async applyBatchPay(request: ApplyBatchPayRequest): Promise<ApplyBatchPayResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ApplyBatchPayHeaders({ });
-    return await this.applyBatchPayWithOptions(request, headers, runtime);
-  }
 
   async applyBatchPayWithOptions(request: ApplyBatchPayRequest, headers: ApplyBatchPayHeaders, runtime: $Util.RuntimeOptions): Promise<ApplyBatchPayResponse> {
     Util.validateModel(request);
@@ -5143,13 +5232,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ApplyBatchPayResponse>(await this.doROARequest("ApplyBatchPay", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/batchTrades/orders/pay`, "json", req, runtime), new ApplyBatchPayResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ApplyBatchPay",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/batchTrades/orders/pay`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ApplyBatchPayResponse>(await this.execute(params, req, runtime), new ApplyBatchPayResponse({}));
   }
 
-  async closeLoanEntrance(request: CloseLoanEntranceRequest): Promise<CloseLoanEntranceResponse> {
+  async applyBatchPay(request: ApplyBatchPayRequest): Promise<ApplyBatchPayResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CloseLoanEntranceHeaders({ });
-    return await this.closeLoanEntranceWithOptions(request, headers, runtime);
+    let headers = new ApplyBatchPayHeaders({ });
+    return await this.applyBatchPayWithOptions(request, headers, runtime);
   }
 
   async closeLoanEntranceWithOptions(request: CloseLoanEntranceRequest, headers: CloseLoanEntranceHeaders, runtime: $Util.RuntimeOptions): Promise<CloseLoanEntranceResponse> {
@@ -5172,13 +5272,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CloseLoanEntranceResponse>(await this.doROARequest("CloseLoanEntrance", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/loans/entrances/close`, "json", req, runtime), new CloseLoanEntranceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CloseLoanEntrance",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/loans/entrances/close`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CloseLoanEntranceResponse>(await this.execute(params, req, runtime), new CloseLoanEntranceResponse({}));
   }
 
-  async consultCreateSubInstitution(request: ConsultCreateSubInstitutionRequest): Promise<ConsultCreateSubInstitutionResponse> {
+  async closeLoanEntrance(request: CloseLoanEntranceRequest): Promise<CloseLoanEntranceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ConsultCreateSubInstitutionHeaders({ });
-    return await this.consultCreateSubInstitutionWithOptions(request, headers, runtime);
+    let headers = new CloseLoanEntranceHeaders({ });
+    return await this.closeLoanEntranceWithOptions(request, headers, runtime);
   }
 
   async consultCreateSubInstitutionWithOptions(request: ConsultCreateSubInstitutionRequest, headers: ConsultCreateSubInstitutionHeaders, runtime: $Util.RuntimeOptions): Promise<ConsultCreateSubInstitutionResponse> {
@@ -5265,13 +5376,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ConsultCreateSubInstitutionResponse>(await this.doROARequest("ConsultCreateSubInstitution", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/institutions/subInstitutions/consult`, "json", req, runtime), new ConsultCreateSubInstitutionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ConsultCreateSubInstitution",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/institutions/subInstitutions/consult`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ConsultCreateSubInstitutionResponse>(await this.execute(params, req, runtime), new ConsultCreateSubInstitutionResponse({}));
   }
 
-  async creatWithholdingOrderAndPay(request: CreatWithholdingOrderAndPayRequest): Promise<CreatWithholdingOrderAndPayResponse> {
+  async consultCreateSubInstitution(request: ConsultCreateSubInstitutionRequest): Promise<ConsultCreateSubInstitutionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreatWithholdingOrderAndPayHeaders({ });
-    return await this.creatWithholdingOrderAndPayWithOptions(request, headers, runtime);
+    let headers = new ConsultCreateSubInstitutionHeaders({ });
+    return await this.consultCreateSubInstitutionWithOptions(request, headers, runtime);
   }
 
   async creatWithholdingOrderAndPayWithOptions(request: CreatWithholdingOrderAndPayRequest, headers: CreatWithholdingOrderAndPayHeaders, runtime: $Util.RuntimeOptions): Promise<CreatWithholdingOrderAndPayResponse> {
@@ -5330,13 +5452,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreatWithholdingOrderAndPayResponse>(await this.doROARequest("CreatWithholdingOrderAndPay", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/withholdingOrders`, "json", req, runtime), new CreatWithholdingOrderAndPayResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreatWithholdingOrderAndPay",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/withholdingOrders`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreatWithholdingOrderAndPayResponse>(await this.execute(params, req, runtime), new CreatWithholdingOrderAndPayResponse({}));
   }
 
-  async createAcquireRefundOrder(request: CreateAcquireRefundOrderRequest): Promise<CreateAcquireRefundOrderResponse> {
+  async creatWithholdingOrderAndPay(request: CreatWithholdingOrderAndPayRequest): Promise<CreatWithholdingOrderAndPayResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateAcquireRefundOrderHeaders({ });
-    return await this.createAcquireRefundOrderWithOptions(request, headers, runtime);
+    let headers = new CreatWithholdingOrderAndPayHeaders({ });
+    return await this.creatWithholdingOrderAndPayWithOptions(request, headers, runtime);
   }
 
   async createAcquireRefundOrderWithOptions(request: CreateAcquireRefundOrderRequest, headers: CreateAcquireRefundOrderHeaders, runtime: $Util.RuntimeOptions): Promise<CreateAcquireRefundOrderResponse> {
@@ -5391,13 +5524,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateAcquireRefundOrderResponse>(await this.doROARequest("CreateAcquireRefundOrder", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/acquireOrders/refund`, "json", req, runtime), new CreateAcquireRefundOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateAcquireRefundOrder",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/acquireOrders/refund`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateAcquireRefundOrderResponse>(await this.execute(params, req, runtime), new CreateAcquireRefundOrderResponse({}));
   }
 
-  async createBatchTradeOrder(request: CreateBatchTradeOrderRequest): Promise<CreateBatchTradeOrderResponse> {
+  async createAcquireRefundOrder(request: CreateAcquireRefundOrderRequest): Promise<CreateAcquireRefundOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateBatchTradeOrderHeaders({ });
-    return await this.createBatchTradeOrderWithOptions(request, headers, runtime);
+    let headers = new CreateAcquireRefundOrderHeaders({ });
+    return await this.createAcquireRefundOrderWithOptions(request, headers, runtime);
   }
 
   async createBatchTradeOrderWithOptions(request: CreateBatchTradeOrderRequest, headers: CreateBatchTradeOrderHeaders, runtime: $Util.RuntimeOptions): Promise<CreateBatchTradeOrderResponse> {
@@ -5452,13 +5596,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateBatchTradeOrderResponse>(await this.doROARequest("CreateBatchTradeOrder", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/batchTrades/orders`, "json", req, runtime), new CreateBatchTradeOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateBatchTradeOrder",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/batchTrades/orders`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateBatchTradeOrderResponse>(await this.execute(params, req, runtime), new CreateBatchTradeOrderResponse({}));
   }
 
-  async createSubInstitution(request: CreateSubInstitutionRequest): Promise<CreateSubInstitutionResponse> {
+  async createBatchTradeOrder(request: CreateBatchTradeOrderRequest): Promise<CreateBatchTradeOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateSubInstitutionHeaders({ });
-    return await this.createSubInstitutionWithOptions(request, headers, runtime);
+    let headers = new CreateBatchTradeOrderHeaders({ });
+    return await this.createBatchTradeOrderWithOptions(request, headers, runtime);
   }
 
   async createSubInstitutionWithOptions(request: CreateSubInstitutionRequest, headers: CreateSubInstitutionHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSubInstitutionResponse> {
@@ -5545,13 +5700,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateSubInstitutionResponse>(await this.doROARequest("CreateSubInstitution", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/institutions/subInstitutions`, "json", req, runtime), new CreateSubInstitutionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateSubInstitution",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/institutions/subInstitutions`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateSubInstitutionResponse>(await this.execute(params, req, runtime), new CreateSubInstitutionResponse({}));
   }
 
-  async createUserCodeInstance(request: CreateUserCodeInstanceRequest): Promise<CreateUserCodeInstanceResponse> {
+  async createSubInstitution(request: CreateSubInstitutionRequest): Promise<CreateSubInstitutionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateUserCodeInstanceHeaders({ });
-    return await this.createUserCodeInstanceWithOptions(request, headers, runtime);
+    let headers = new CreateSubInstitutionHeaders({ });
+    return await this.createSubInstitutionWithOptions(request, headers, runtime);
   }
 
   async createUserCodeInstanceWithOptions(request: CreateUserCodeInstanceRequest, headers: CreateUserCodeInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateUserCodeInstanceResponse> {
@@ -5614,13 +5780,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateUserCodeInstanceResponse>(await this.doROARequest("CreateUserCodeInstance", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/userInstances`, "json", req, runtime), new CreateUserCodeInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateUserCodeInstance",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/payCodes/userInstances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateUserCodeInstanceResponse>(await this.execute(params, req, runtime), new CreateUserCodeInstanceResponse({}));
   }
 
-  async decodePayCode(request: DecodePayCodeRequest): Promise<DecodePayCodeResponse> {
+  async createUserCodeInstance(request: CreateUserCodeInstanceRequest): Promise<CreateUserCodeInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DecodePayCodeHeaders({ });
-    return await this.decodePayCodeWithOptions(request, headers, runtime);
+    let headers = new CreateUserCodeInstanceHeaders({ });
+    return await this.createUserCodeInstanceWithOptions(request, headers, runtime);
   }
 
   async decodePayCodeWithOptions(request: DecodePayCodeRequest, headers: DecodePayCodeHeaders, runtime: $Util.RuntimeOptions): Promise<DecodePayCodeResponse> {
@@ -5647,13 +5824,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DecodePayCodeResponse>(await this.doROARequest("DecodePayCode", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/decode`, "json", req, runtime), new DecodePayCodeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DecodePayCode",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/payCodes/decode`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DecodePayCodeResponse>(await this.execute(params, req, runtime), new DecodePayCodeResponse({}));
   }
 
-  async modifySubInstitution(request: ModifySubInstitutionRequest): Promise<ModifySubInstitutionResponse> {
+  async decodePayCode(request: DecodePayCodeRequest): Promise<DecodePayCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ModifySubInstitutionHeaders({ });
-    return await this.modifySubInstitutionWithOptions(request, headers, runtime);
+    let headers = new DecodePayCodeHeaders({ });
+    return await this.decodePayCodeWithOptions(request, headers, runtime);
   }
 
   async modifySubInstitutionWithOptions(request: ModifySubInstitutionRequest, headers: ModifySubInstitutionHeaders, runtime: $Util.RuntimeOptions): Promise<ModifySubInstitutionResponse> {
@@ -5736,13 +5924,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ModifySubInstitutionResponse>(await this.doROARequest("ModifySubInstitution", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/institutions/subInstitutions/modify`, "json", req, runtime), new ModifySubInstitutionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ModifySubInstitution",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/institutions/subInstitutions/modify`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ModifySubInstitutionResponse>(await this.execute(params, req, runtime), new ModifySubInstitutionResponse({}));
   }
 
-  async notifyPayCodePayResult(request: NotifyPayCodePayResultRequest): Promise<NotifyPayCodePayResultResponse> {
+  async modifySubInstitution(request: ModifySubInstitutionRequest): Promise<ModifySubInstitutionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new NotifyPayCodePayResultHeaders({ });
-    return await this.notifyPayCodePayResultWithOptions(request, headers, runtime);
+    let headers = new ModifySubInstitutionHeaders({ });
+    return await this.modifySubInstitutionWithOptions(request, headers, runtime);
   }
 
   async notifyPayCodePayResultWithOptions(request: NotifyPayCodePayResultRequest, headers: NotifyPayCodePayResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyPayCodePayResultResponse> {
@@ -5829,13 +6028,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<NotifyPayCodePayResultResponse>(await this.doROARequest("NotifyPayCodePayResult", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/payResults/notify`, "json", req, runtime), new NotifyPayCodePayResultResponse({}));
+    let params = new $OpenApi.Params({
+      action: "NotifyPayCodePayResult",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/payCodes/payResults/notify`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<NotifyPayCodePayResultResponse>(await this.execute(params, req, runtime), new NotifyPayCodePayResultResponse({}));
   }
 
-  async notifyPayCodeRefundResult(request: NotifyPayCodeRefundResultRequest): Promise<NotifyPayCodeRefundResultResponse> {
+  async notifyPayCodePayResult(request: NotifyPayCodePayResultRequest): Promise<NotifyPayCodePayResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new NotifyPayCodeRefundResultHeaders({ });
-    return await this.notifyPayCodeRefundResultWithOptions(request, headers, runtime);
+    let headers = new NotifyPayCodePayResultHeaders({ });
+    return await this.notifyPayCodePayResultWithOptions(request, headers, runtime);
   }
 
   async notifyPayCodeRefundResultWithOptions(request: NotifyPayCodeRefundResultRequest, headers: NotifyPayCodeRefundResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyPayCodeRefundResultResponse> {
@@ -5894,13 +6104,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<NotifyPayCodeRefundResultResponse>(await this.doROARequest("NotifyPayCodeRefundResult", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/refundResults/notify`, "json", req, runtime), new NotifyPayCodeRefundResultResponse({}));
+    let params = new $OpenApi.Params({
+      action: "NotifyPayCodeRefundResult",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/payCodes/refundResults/notify`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<NotifyPayCodeRefundResultResponse>(await this.execute(params, req, runtime), new NotifyPayCodeRefundResultResponse({}));
   }
 
-  async notifyVerifyResult(request: NotifyVerifyResultRequest): Promise<NotifyVerifyResultResponse> {
+  async notifyPayCodeRefundResult(request: NotifyPayCodeRefundResultRequest): Promise<NotifyPayCodeRefundResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new NotifyVerifyResultHeaders({ });
-    return await this.notifyVerifyResultWithOptions(request, headers, runtime);
+    let headers = new NotifyPayCodeRefundResultHeaders({ });
+    return await this.notifyPayCodeRefundResultWithOptions(request, headers, runtime);
   }
 
   async notifyVerifyResultWithOptions(request: NotifyVerifyResultRequest, headers: NotifyVerifyResultHeaders, runtime: $Util.RuntimeOptions): Promise<NotifyVerifyResultResponse> {
@@ -5959,13 +6180,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<NotifyVerifyResultResponse>(await this.doROARequest("NotifyVerifyResult", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/verifyResults/notify`, "json", req, runtime), new NotifyVerifyResultResponse({}));
+    let params = new $OpenApi.Params({
+      action: "NotifyVerifyResult",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/payCodes/verifyResults/notify`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<NotifyVerifyResultResponse>(await this.execute(params, req, runtime), new NotifyVerifyResultResponse({}));
   }
 
-  async queryAcquireRefundOrder(request: QueryAcquireRefundOrderRequest): Promise<QueryAcquireRefundOrderResponse> {
+  async notifyVerifyResult(request: NotifyVerifyResultRequest): Promise<NotifyVerifyResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAcquireRefundOrderHeaders({ });
-    return await this.queryAcquireRefundOrderWithOptions(request, headers, runtime);
+    let headers = new NotifyVerifyResultHeaders({ });
+    return await this.notifyVerifyResultWithOptions(request, headers, runtime);
   }
 
   async queryAcquireRefundOrderWithOptions(request: QueryAcquireRefundOrderRequest, headers: QueryAcquireRefundOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAcquireRefundOrderResponse> {
@@ -5988,13 +6220,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryAcquireRefundOrderResponse>(await this.doROARequest("QueryAcquireRefundOrder", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/acquireOrders/refunds`, "json", req, runtime), new QueryAcquireRefundOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAcquireRefundOrder",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/acquireOrders/refunds`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAcquireRefundOrderResponse>(await this.execute(params, req, runtime), new QueryAcquireRefundOrderResponse({}));
   }
 
-  async queryBatchTradeDetailList(request: QueryBatchTradeDetailListRequest): Promise<QueryBatchTradeDetailListResponse> {
+  async queryAcquireRefundOrder(request: QueryAcquireRefundOrderRequest): Promise<QueryAcquireRefundOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryBatchTradeDetailListHeaders({ });
-    return await this.queryBatchTradeDetailListWithOptions(request, headers, runtime);
+    let headers = new QueryAcquireRefundOrderHeaders({ });
+    return await this.queryAcquireRefundOrderWithOptions(request, headers, runtime);
   }
 
   async queryBatchTradeDetailListWithOptions(request: QueryBatchTradeDetailListRequest, headers: QueryBatchTradeDetailListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBatchTradeDetailListResponse> {
@@ -6025,13 +6268,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryBatchTradeDetailListResponse>(await this.doROARequest("QueryBatchTradeDetailList", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/batchTrades/details`, "json", req, runtime), new QueryBatchTradeDetailListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryBatchTradeDetailList",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/batchTrades/details`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryBatchTradeDetailListResponse>(await this.execute(params, req, runtime), new QueryBatchTradeDetailListResponse({}));
   }
 
-  async queryBatchTradeOrder(request: QueryBatchTradeOrderRequest): Promise<QueryBatchTradeOrderResponse> {
+  async queryBatchTradeDetailList(request: QueryBatchTradeDetailListRequest): Promise<QueryBatchTradeDetailListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryBatchTradeOrderHeaders({ });
-    return await this.queryBatchTradeOrderWithOptions(request, headers, runtime);
+    let headers = new QueryBatchTradeDetailListHeaders({ });
+    return await this.queryBatchTradeDetailListWithOptions(request, headers, runtime);
   }
 
   async queryBatchTradeOrderWithOptions(request: QueryBatchTradeOrderRequest, headers: QueryBatchTradeOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBatchTradeOrderResponse> {
@@ -6054,13 +6308,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryBatchTradeOrderResponse>(await this.doROARequest("QueryBatchTradeOrder", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/batchTrades/orders/query`, "json", req, runtime), new QueryBatchTradeOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryBatchTradeOrder",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/batchTrades/orders/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryBatchTradeOrderResponse>(await this.execute(params, req, runtime), new QueryBatchTradeOrderResponse({}));
   }
 
-  async queryPayAccountList(): Promise<QueryPayAccountListResponse> {
+  async queryBatchTradeOrder(request: QueryBatchTradeOrderRequest): Promise<QueryBatchTradeOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryPayAccountListHeaders({ });
-    return await this.queryPayAccountListWithOptions(headers, runtime);
+    let headers = new QueryBatchTradeOrderHeaders({ });
+    return await this.queryBatchTradeOrderWithOptions(request, headers, runtime);
   }
 
   async queryPayAccountListWithOptions(headers: QueryPayAccountListHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPayAccountListResponse> {
@@ -6076,13 +6341,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryPayAccountListResponse>(await this.doROARequest("QueryPayAccountList", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/payAccounts`, "json", req, runtime), new QueryPayAccountListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryPayAccountList",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/payAccounts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryPayAccountListResponse>(await this.execute(params, req, runtime), new QueryPayAccountListResponse({}));
   }
 
-  async queryRegisterOrder(request: QueryRegisterOrderRequest): Promise<QueryRegisterOrderResponse> {
+  async queryPayAccountList(): Promise<QueryPayAccountListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryRegisterOrderHeaders({ });
-    return await this.queryRegisterOrderWithOptions(request, headers, runtime);
+    let headers = new QueryPayAccountListHeaders({ });
+    return await this.queryPayAccountListWithOptions(headers, runtime);
   }
 
   async queryRegisterOrderWithOptions(request: QueryRegisterOrderRequest, headers: QueryRegisterOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRegisterOrderResponse> {
@@ -6117,13 +6393,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryRegisterOrderResponse>(await this.doROARequest("QueryRegisterOrder", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/institutions/subInstitutions/orders`, "json", req, runtime), new QueryRegisterOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryRegisterOrder",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/institutions/subInstitutions/orders`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryRegisterOrderResponse>(await this.execute(params, req, runtime), new QueryRegisterOrderResponse({}));
   }
 
-  async queryUserAgreement(request: QueryUserAgreementRequest): Promise<QueryUserAgreementResponse> {
+  async queryRegisterOrder(request: QueryRegisterOrderRequest): Promise<QueryRegisterOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserAgreementHeaders({ });
-    return await this.queryUserAgreementWithOptions(request, headers, runtime);
+    let headers = new QueryRegisterOrderHeaders({ });
+    return await this.queryRegisterOrderWithOptions(request, headers, runtime);
   }
 
   async queryUserAgreementWithOptions(request: QueryUserAgreementRequest, headers: QueryUserAgreementHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserAgreementResponse> {
@@ -6162,13 +6449,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryUserAgreementResponse>(await this.doROARequest("QueryUserAgreement", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/userAgreements`, "json", req, runtime), new QueryUserAgreementResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryUserAgreement",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/userAgreements`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUserAgreementResponse>(await this.execute(params, req, runtime), new QueryUserAgreementResponse({}));
   }
 
-  async queryUserAlipayAccount(): Promise<QueryUserAlipayAccountResponse> {
+  async queryUserAgreement(request: QueryUserAgreementRequest): Promise<QueryUserAgreementResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserAlipayAccountHeaders({ });
-    return await this.queryUserAlipayAccountWithOptions(headers, runtime);
+    let headers = new QueryUserAgreementHeaders({ });
+    return await this.queryUserAgreementWithOptions(request, headers, runtime);
   }
 
   async queryUserAlipayAccountWithOptions(headers: QueryUserAlipayAccountHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserAlipayAccountResponse> {
@@ -6184,13 +6482,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<QueryUserAlipayAccountResponse>(await this.doROARequest("QueryUserAlipayAccount", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/userAlipayAccounts`, "json", req, runtime), new QueryUserAlipayAccountResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryUserAlipayAccount",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/userAlipayAccounts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUserAlipayAccountResponse>(await this.execute(params, req, runtime), new QueryUserAlipayAccountResponse({}));
   }
 
-  async queryWithholdingOrder(request: QueryWithholdingOrderRequest): Promise<QueryWithholdingOrderResponse> {
+  async queryUserAlipayAccount(): Promise<QueryUserAlipayAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryWithholdingOrderHeaders({ });
-    return await this.queryWithholdingOrderWithOptions(request, headers, runtime);
+    let headers = new QueryUserAlipayAccountHeaders({ });
+    return await this.queryUserAlipayAccountWithOptions(headers, runtime);
   }
 
   async queryWithholdingOrderWithOptions(request: QueryWithholdingOrderRequest, headers: QueryWithholdingOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryWithholdingOrderResponse> {
@@ -6213,13 +6522,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryWithholdingOrderResponse>(await this.doROARequest("QueryWithholdingOrder", "finance_1.0", "HTTP", "GET", "AK", `/v1.0/finance/withholdingOrders`, "json", req, runtime), new QueryWithholdingOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryWithholdingOrder",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/withholdingOrders`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryWithholdingOrderResponse>(await this.execute(params, req, runtime), new QueryWithholdingOrderResponse({}));
   }
 
-  async saveCorpPayCode(request: SaveCorpPayCodeRequest): Promise<SaveCorpPayCodeResponse> {
+  async queryWithholdingOrder(request: QueryWithholdingOrderRequest): Promise<QueryWithholdingOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SaveCorpPayCodeHeaders({ });
-    return await this.saveCorpPayCodeWithOptions(request, headers, runtime);
+    let headers = new QueryWithholdingOrderHeaders({ });
+    return await this.queryWithholdingOrderWithOptions(request, headers, runtime);
   }
 
   async saveCorpPayCodeWithOptions(request: SaveCorpPayCodeRequest, headers: SaveCorpPayCodeHeaders, runtime: $Util.RuntimeOptions): Promise<SaveCorpPayCodeResponse> {
@@ -6254,13 +6574,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SaveCorpPayCodeResponse>(await this.doROARequest("SaveCorpPayCode", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/payCodes/corpSettings`, "json", req, runtime), new SaveCorpPayCodeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SaveCorpPayCode",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/payCodes/corpSettings`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveCorpPayCodeResponse>(await this.execute(params, req, runtime), new SaveCorpPayCodeResponse({}));
   }
 
-  async unsignUserAgreement(request: UnsignUserAgreementRequest): Promise<UnsignUserAgreementResponse> {
+  async saveCorpPayCode(request: SaveCorpPayCodeRequest): Promise<SaveCorpPayCodeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UnsignUserAgreementHeaders({ });
-    return await this.unsignUserAgreementWithOptions(request, headers, runtime);
+    let headers = new SaveCorpPayCodeHeaders({ });
+    return await this.saveCorpPayCodeWithOptions(request, headers, runtime);
   }
 
   async unsignUserAgreementWithOptions(request: UnsignUserAgreementRequest, headers: UnsignUserAgreementHeaders, runtime: $Util.RuntimeOptions): Promise<UnsignUserAgreementResponse> {
@@ -6303,13 +6634,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UnsignUserAgreementResponse>(await this.doROARequest("UnsignUserAgreement", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/userAgreements/unsign`, "none", req, runtime), new UnsignUserAgreementResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UnsignUserAgreement",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/userAgreements/unsign`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "none",
+    });
+    return $tea.cast<UnsignUserAgreementResponse>(await this.execute(params, req, runtime), new UnsignUserAgreementResponse({}));
   }
 
-  async upateUserCodeInstance(request: UpateUserCodeInstanceRequest): Promise<UpateUserCodeInstanceResponse> {
+  async unsignUserAgreement(request: UnsignUserAgreementRequest): Promise<UnsignUserAgreementResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpateUserCodeInstanceHeaders({ });
-    return await this.upateUserCodeInstanceWithOptions(request, headers, runtime);
+    let headers = new UnsignUserAgreementHeaders({ });
+    return await this.unsignUserAgreementWithOptions(request, headers, runtime);
   }
 
   async upateUserCodeInstanceWithOptions(request: UpateUserCodeInstanceRequest, headers: UpateUserCodeInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<UpateUserCodeInstanceResponse> {
@@ -6368,13 +6710,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpateUserCodeInstanceResponse>(await this.doROARequest("UpateUserCodeInstance", "finance_1.0", "HTTP", "PUT", "AK", `/v1.0/finance/payCodes/userInstances`, "json", req, runtime), new UpateUserCodeInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpateUserCodeInstance",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/payCodes/userInstances`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpateUserCodeInstanceResponse>(await this.execute(params, req, runtime), new UpateUserCodeInstanceResponse({}));
   }
 
-  async updateInvoiceVerifyStatus(request: UpdateInvoiceVerifyStatusRequest): Promise<UpdateInvoiceVerifyStatusResponse> {
+  async upateUserCodeInstance(request: UpateUserCodeInstanceRequest): Promise<UpateUserCodeInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateInvoiceVerifyStatusHeaders({ });
-    return await this.updateInvoiceVerifyStatusWithOptions(request, headers, runtime);
+    let headers = new UpateUserCodeInstanceHeaders({ });
+    return await this.upateUserCodeInstanceWithOptions(request, headers, runtime);
   }
 
   async updateInvoiceVerifyStatusWithOptions(request: UpdateInvoiceVerifyStatusRequest, headers: UpdateInvoiceVerifyStatusHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInvoiceVerifyStatusResponse> {
@@ -6441,13 +6794,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateInvoiceVerifyStatusResponse>(await this.doROARequest("UpdateInvoiceVerifyStatus", "finance_1.0", "HTTP", "PUT", "AK", `/v1.0/finance/invoices/verifyStatus`, "json", req, runtime), new UpdateInvoiceVerifyStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateInvoiceVerifyStatus",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/invoices/verifyStatus`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateInvoiceVerifyStatusResponse>(await this.execute(params, req, runtime), new UpdateInvoiceVerifyStatusResponse({}));
   }
 
-  async uploadInvoice(request: UploadInvoiceRequest): Promise<UploadInvoiceResponse> {
+  async updateInvoiceVerifyStatus(request: UpdateInvoiceVerifyStatusRequest): Promise<UpdateInvoiceVerifyStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UploadInvoiceHeaders({ });
-    return await this.uploadInvoiceWithOptions(request, headers, runtime);
+    let headers = new UpdateInvoiceVerifyStatusHeaders({ });
+    return await this.updateInvoiceVerifyStatusWithOptions(request, headers, runtime);
   }
 
   async uploadInvoiceWithOptions(request: UploadInvoiceRequest, headers: UploadInvoiceHeaders, runtime: $Util.RuntimeOptions): Promise<UploadInvoiceResponse> {
@@ -6478,13 +6842,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UploadInvoiceResponse>(await this.doROARequest("UploadInvoice", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/invoices/upload`, "json", req, runtime), new UploadInvoiceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UploadInvoice",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/invoices/upload`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UploadInvoiceResponse>(await this.execute(params, req, runtime), new UploadInvoiceResponse({}));
   }
 
-  async uploadInvoiceByAuth(request: UploadInvoiceByAuthRequest): Promise<UploadInvoiceByAuthResponse> {
+  async uploadInvoice(request: UploadInvoiceRequest): Promise<UploadInvoiceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UploadInvoiceByAuthHeaders({ });
-    return await this.uploadInvoiceByAuthWithOptions(request, headers, runtime);
+    let headers = new UploadInvoiceHeaders({ });
+    return await this.uploadInvoiceWithOptions(request, headers, runtime);
   }
 
   async uploadInvoiceByAuthWithOptions(request: UploadInvoiceByAuthRequest, headers: UploadInvoiceByAuthHeaders, runtime: $Util.RuntimeOptions): Promise<UploadInvoiceByAuthResponse> {
@@ -6511,13 +6886,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UploadInvoiceByAuthResponse>(await this.doROARequest("UploadInvoiceByAuth", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/invoices/authorizations/upload`, "json", req, runtime), new UploadInvoiceByAuthResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UploadInvoiceByAuth",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/invoices/authorizations/upload`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UploadInvoiceByAuthResponse>(await this.execute(params, req, runtime), new UploadInvoiceByAuthResponse({}));
   }
 
-  async uploadInvoiceByMobile(request: UploadInvoiceByMobileRequest): Promise<UploadInvoiceByMobileResponse> {
+  async uploadInvoiceByAuth(request: UploadInvoiceByAuthRequest): Promise<UploadInvoiceByAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UploadInvoiceByMobileHeaders({ });
-    return await this.uploadInvoiceByMobileWithOptions(request, headers, runtime);
+    let headers = new UploadInvoiceByAuthHeaders({ });
+    return await this.uploadInvoiceByAuthWithOptions(request, headers, runtime);
   }
 
   async uploadInvoiceByMobileWithOptions(request: UploadInvoiceByMobileRequest, headers: UploadInvoiceByMobileHeaders, runtime: $Util.RuntimeOptions): Promise<UploadInvoiceByMobileResponse> {
@@ -6548,13 +6934,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UploadInvoiceByMobileResponse>(await this.doROARequest("UploadInvoiceByMobile", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/invoices/mobiles/upload`, "json", req, runtime), new UploadInvoiceByMobileResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UploadInvoiceByMobile",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/invoices/mobiles/upload`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UploadInvoiceByMobileResponse>(await this.execute(params, req, runtime), new UploadInvoiceByMobileResponse({}));
   }
 
-  async uploadRegisterImage(request: UploadRegisterImageRequest): Promise<UploadRegisterImageResponse> {
+  async uploadInvoiceByMobile(request: UploadInvoiceByMobileRequest): Promise<UploadInvoiceByMobileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UploadRegisterImageHeaders({ });
-    return await this.uploadRegisterImageWithOptions(request, headers, runtime);
+    let headers = new UploadInvoiceByMobileHeaders({ });
+    return await this.uploadInvoiceByMobileWithOptions(request, headers, runtime);
   }
 
   async uploadRegisterImageWithOptions(request: UploadRegisterImageRequest, headers: UploadRegisterImageHeaders, runtime: $Util.RuntimeOptions): Promise<UploadRegisterImageResponse> {
@@ -6593,13 +6990,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UploadRegisterImageResponse>(await this.doROARequest("UploadRegisterImage", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/institutions/images`, "json", req, runtime), new UploadRegisterImageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UploadRegisterImage",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/institutions/images`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UploadRegisterImageResponse>(await this.execute(params, req, runtime), new UploadRegisterImageResponse({}));
   }
 
-  async userAgreementPageSign(request: UserAgreementPageSignRequest): Promise<UserAgreementPageSignResponse> {
+  async uploadRegisterImage(request: UploadRegisterImageRequest): Promise<UploadRegisterImageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UserAgreementPageSignHeaders({ });
-    return await this.userAgreementPageSignWithOptions(request, headers, runtime);
+    let headers = new UploadRegisterImageHeaders({ });
+    return await this.uploadRegisterImageWithOptions(request, headers, runtime);
   }
 
   async userAgreementPageSignWithOptions(request: UserAgreementPageSignRequest, headers: UserAgreementPageSignHeaders, runtime: $Util.RuntimeOptions): Promise<UserAgreementPageSignResponse> {
@@ -6666,7 +7074,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UserAgreementPageSignResponse>(await this.doROARequest("UserAgreementPageSign", "finance_1.0", "HTTP", "POST", "AK", `/v1.0/finance/userAgreements`, "json", req, runtime), new UserAgreementPageSignResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UserAgreementPageSign",
+      version: "finance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/finance/userAgreements`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UserAgreementPageSignResponse>(await this.execute(params, req, runtime), new UserAgreementPageSignResponse({}));
+  }
+
+  async userAgreementPageSign(request: UserAgreementPageSignRequest): Promise<UserAgreementPageSignResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UserAgreementPageSignHeaders({ });
+    return await this.userAgreementPageSignWithOptions(request, headers, runtime);
   }
 
 }

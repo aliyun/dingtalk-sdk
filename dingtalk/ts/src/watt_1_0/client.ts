@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -56,10 +58,12 @@ export class CheckInCrowdsByMobileResponseBody extends $tea.Model {
 
 export class CheckInCrowdsByMobileResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CheckInCrowdsByMobileResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -67,6 +71,7 @@ export class CheckInCrowdsByMobileResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CheckInCrowdsByMobileResponseBody,
     };
   }
@@ -78,9 +83,13 @@ export class CheckInCrowdsByMobileResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
+    this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -88,12 +97,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async checkInCrowdsByMobile(request: CheckInCrowdsByMobileRequest): Promise<CheckInCrowdsByMobileResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers : {[key: string ]: string} = { };
-    return await this.checkInCrowdsByMobileWithOptions(request, headers, runtime);
-  }
 
   async checkInCrowdsByMobileWithOptions(request: CheckInCrowdsByMobileRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<CheckInCrowdsByMobileResponse> {
     Util.validateModel(request);
@@ -110,7 +113,24 @@ export default class Client extends OpenApi {
       headers: headers,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CheckInCrowdsByMobileResponse>(await this.doROARequest("CheckInCrowdsByMobile", "watt_1.0", "HTTP", "POST", "AK", `/v1.0/watt/crowdIdentifications/query`, "json", req, runtime), new CheckInCrowdsByMobileResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CheckInCrowdsByMobile",
+      version: "watt_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/watt/crowdIdentifications/query`,
+      method: "POST",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CheckInCrowdsByMobileResponse>(await this.execute(params, req, runtime), new CheckInCrowdsByMobileResponse({}));
+  }
+
+  async checkInCrowdsByMobile(request: CheckInCrowdsByMobileRequest): Promise<CheckInCrowdsByMobileResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.checkInCrowdsByMobileWithOptions(request, headers, runtime);
   }
 
 }

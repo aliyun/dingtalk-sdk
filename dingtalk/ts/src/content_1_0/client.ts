@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -75,10 +77,12 @@ export class CreateFeedResponseBody extends $tea.Model {
 
 export class CreateFeedResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateFeedResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -86,6 +90,7 @@ export class CreateFeedResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateFeedResponseBody,
     };
   }
@@ -160,10 +165,12 @@ export class GetFeedResponseBody extends $tea.Model {
 
 export class GetFeedResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFeedResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -171,6 +178,7 @@ export class GetFeedResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFeedResponseBody,
     };
   }
@@ -281,10 +289,12 @@ export class GetMediaCerficateResponseBody extends $tea.Model {
 
 export class GetMediaCerficateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetMediaCerficateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -292,6 +302,7 @@ export class GetMediaCerficateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetMediaCerficateResponseBody,
     };
   }
@@ -363,10 +374,12 @@ export class ListItemUserDataResponseBody extends $tea.Model {
 
 export class ListItemUserDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListItemUserDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -374,6 +387,7 @@ export class ListItemUserDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListItemUserDataResponseBody,
     };
   }
@@ -460,10 +474,12 @@ export class PageFeedResponseBody extends $tea.Model {
 
 export class PageFeedResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PageFeedResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -471,6 +487,7 @@ export class PageFeedResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PageFeedResponseBody,
     };
   }
@@ -799,9 +816,12 @@ export class PageFeedResponseBodyFeedList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -809,12 +829,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async createFeed(request: CreateFeedRequest): Promise<CreateFeedResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateFeedHeaders({ });
-    return await this.createFeedWithOptions(request, headers, runtime);
-  }
 
   async createFeedWithOptions(request: CreateFeedRequest, headers: CreateFeedHeaders, runtime: $Util.RuntimeOptions): Promise<CreateFeedResponse> {
     Util.validateModel(request);
@@ -844,18 +858,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateFeedResponse>(await this.doROARequest("CreateFeed", "content_1.0", "HTTP", "POST", "AK", `/v1.0/content/feeds`, "json", req, runtime), new CreateFeedResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateFeed",
+      version: "content_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/content/feeds`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateFeedResponse>(await this.execute(params, req, runtime), new CreateFeedResponse({}));
   }
 
-  async getFeed(feedId: string, request: GetFeedRequest): Promise<GetFeedResponse> {
+  async createFeed(request: CreateFeedRequest): Promise<CreateFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFeedHeaders({ });
-    return await this.getFeedWithOptions(feedId, request, headers, runtime);
+    let headers = new CreateFeedHeaders({ });
+    return await this.createFeedWithOptions(request, headers, runtime);
   }
 
   async getFeedWithOptions(feedId: string, request: GetFeedRequest, headers: GetFeedHeaders, runtime: $Util.RuntimeOptions): Promise<GetFeedResponse> {
     Util.validateModel(request);
-    feedId = OpenApiUtil.getEncodeParam(feedId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.mcnId)) {
       query["mcnId"] = request.mcnId;
@@ -874,13 +898,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetFeedResponse>(await this.doROARequest("GetFeed", "content_1.0", "HTTP", "GET", "AK", `/v1.0/content/feeds/${feedId}`, "json", req, runtime), new GetFeedResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFeed",
+      version: "content_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/content/feeds/${feedId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFeedResponse>(await this.execute(params, req, runtime), new GetFeedResponse({}));
   }
 
-  async getMediaCerficate(request: GetMediaCerficateRequest): Promise<GetMediaCerficateResponse> {
+  async getFeed(feedId: string, request: GetFeedRequest): Promise<GetFeedResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetMediaCerficateHeaders({ });
-    return await this.getMediaCerficateWithOptions(request, headers, runtime);
+    let headers = new GetFeedHeaders({ });
+    return await this.getFeedWithOptions(feedId, request, headers, runtime);
   }
 
   async getMediaCerficateWithOptions(request: GetMediaCerficateRequest, headers: GetMediaCerficateHeaders, runtime: $Util.RuntimeOptions): Promise<GetMediaCerficateResponse> {
@@ -927,18 +962,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetMediaCerficateResponse>(await this.doROARequest("GetMediaCerficate", "content_1.0", "HTTP", "GET", "AK", `/v1.0/content/media/cerficates`, "json", req, runtime), new GetMediaCerficateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetMediaCerficate",
+      version: "content_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/content/media/cerficates`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetMediaCerficateResponse>(await this.execute(params, req, runtime), new GetMediaCerficateResponse({}));
   }
 
-  async listItemUserData(itemId: string, request: ListItemUserDataRequest): Promise<ListItemUserDataResponse> {
+  async getMediaCerficate(request: GetMediaCerficateRequest): Promise<GetMediaCerficateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListItemUserDataHeaders({ });
-    return await this.listItemUserDataWithOptions(itemId, request, headers, runtime);
+    let headers = new GetMediaCerficateHeaders({ });
+    return await this.getMediaCerficateWithOptions(request, headers, runtime);
   }
 
   async listItemUserDataWithOptions(itemId: string, request: ListItemUserDataRequest, headers: ListItemUserDataHeaders, runtime: $Util.RuntimeOptions): Promise<ListItemUserDataResponse> {
     Util.validateModel(request);
-    itemId = OpenApiUtil.getEncodeParam(itemId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -952,13 +997,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: request.body,
     });
-    return $tea.cast<ListItemUserDataResponse>(await this.doROARequest("ListItemUserData", "content_1.0", "HTTP", "POST", "AK", `/v1.0/content/feeds/items/${itemId}/userStatistics/query`, "json", req, runtime), new ListItemUserDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListItemUserData",
+      version: "content_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/content/feeds/items/${itemId}/userStatistics/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ListItemUserDataResponse>(await this.execute(params, req, runtime), new ListItemUserDataResponse({}));
   }
 
-  async pageFeed(request: PageFeedRequest): Promise<PageFeedResponse> {
+  async listItemUserData(itemId: string, request: ListItemUserDataRequest): Promise<ListItemUserDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PageFeedHeaders({ });
-    return await this.pageFeedWithOptions(request, headers, runtime);
+    let headers = new ListItemUserDataHeaders({ });
+    return await this.listItemUserDataWithOptions(itemId, request, headers, runtime);
   }
 
   async pageFeedWithOptions(request: PageFeedRequest, headers: PageFeedHeaders, runtime: $Util.RuntimeOptions): Promise<PageFeedResponse> {
@@ -990,7 +1046,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: request.body,
     });
-    return $tea.cast<PageFeedResponse>(await this.doROARequest("PageFeed", "content_1.0", "HTTP", "POST", "AK", `/v1.0/content/feeds/query`, "json", req, runtime), new PageFeedResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PageFeed",
+      version: "content_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/content/feeds/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<PageFeedResponse>(await this.execute(params, req, runtime), new PageFeedResponse({}));
+  }
+
+  async pageFeed(request: PageFeedRequest): Promise<PageFeedResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PageFeedHeaders({ });
+    return await this.pageFeedWithOptions(request, headers, runtime);
   }
 
 }

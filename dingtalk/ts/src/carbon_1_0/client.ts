@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -75,10 +77,12 @@ export class GetPersonalCarbonInfoResponseBody extends $tea.Model {
 
 export class GetPersonalCarbonInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPersonalCarbonInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -86,6 +90,7 @@ export class GetPersonalCarbonInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPersonalCarbonInfoResponseBody,
     };
   }
@@ -160,10 +165,12 @@ export class WriteAlibabaOrgCarbonResponseBody extends $tea.Model {
 
 export class WriteAlibabaOrgCarbonResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: WriteAlibabaOrgCarbonResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -171,6 +178,7 @@ export class WriteAlibabaOrgCarbonResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: WriteAlibabaOrgCarbonResponseBody,
     };
   }
@@ -245,10 +253,12 @@ export class WriteAlibabaUserCarbonResponseBody extends $tea.Model {
 
 export class WriteAlibabaUserCarbonResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: WriteAlibabaUserCarbonResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -256,6 +266,7 @@ export class WriteAlibabaUserCarbonResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: WriteAlibabaUserCarbonResponseBody,
     };
   }
@@ -330,10 +341,12 @@ export class WriteIsvStateResponseBody extends $tea.Model {
 
 export class WriteIsvStateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: WriteIsvStateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -341,6 +354,7 @@ export class WriteIsvStateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: WriteIsvStateResponseBody,
     };
   }
@@ -415,10 +429,12 @@ export class WriteOrgCarbonResponseBody extends $tea.Model {
 
 export class WriteOrgCarbonResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: WriteOrgCarbonResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -426,6 +442,7 @@ export class WriteOrgCarbonResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: WriteOrgCarbonResponseBody,
     };
   }
@@ -500,10 +517,12 @@ export class WriteUserCarbonResponseBody extends $tea.Model {
 
 export class WriteUserCarbonResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: WriteUserCarbonResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -511,6 +530,7 @@ export class WriteUserCarbonResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: WriteUserCarbonResponseBody,
     };
   }
@@ -585,10 +605,12 @@ export class WriteUserCarbonEnergyResponseBody extends $tea.Model {
 
 export class WriteUserCarbonEnergyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: WriteUserCarbonEnergyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -596,6 +618,7 @@ export class WriteUserCarbonEnergyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: WriteUserCarbonEnergyResponseBody,
     };
   }
@@ -810,9 +833,12 @@ export class WriteUserCarbonEnergyRequestUserDetailsList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -820,12 +846,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async getPersonalCarbonInfo(request: GetPersonalCarbonInfoRequest): Promise<GetPersonalCarbonInfoResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPersonalCarbonInfoHeaders({ });
-    return await this.getPersonalCarbonInfoWithOptions(request, headers, runtime);
-  }
 
   async getPersonalCarbonInfoWithOptions(request: GetPersonalCarbonInfoRequest, headers: GetPersonalCarbonInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPersonalCarbonInfoResponse> {
     Util.validateModel(request);
@@ -851,13 +871,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetPersonalCarbonInfoResponse>(await this.doROARequest("GetPersonalCarbonInfo", "carbon_1.0", "HTTP", "GET", "AK", `/v1.0/carbon/personals/infos`, "json", req, runtime), new GetPersonalCarbonInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPersonalCarbonInfo",
+      version: "carbon_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/carbon/personals/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPersonalCarbonInfoResponse>(await this.execute(params, req, runtime), new GetPersonalCarbonInfoResponse({}));
   }
 
-  async writeAlibabaOrgCarbon(request: WriteAlibabaOrgCarbonRequest): Promise<WriteAlibabaOrgCarbonResponse> {
+  async getPersonalCarbonInfo(request: GetPersonalCarbonInfoRequest): Promise<GetPersonalCarbonInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new WriteAlibabaOrgCarbonHeaders({ });
-    return await this.writeAlibabaOrgCarbonWithOptions(request, headers, runtime);
+    let headers = new GetPersonalCarbonInfoHeaders({ });
+    return await this.getPersonalCarbonInfoWithOptions(request, headers, runtime);
   }
 
   async writeAlibabaOrgCarbonWithOptions(request: WriteAlibabaOrgCarbonRequest, headers: WriteAlibabaOrgCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteAlibabaOrgCarbonResponse> {
@@ -880,13 +911,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<WriteAlibabaOrgCarbonResponse>(await this.doROARequest("WriteAlibabaOrgCarbon", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/alibabaOrgDetails/write`, "json", req, runtime), new WriteAlibabaOrgCarbonResponse({}));
+    let params = new $OpenApi.Params({
+      action: "WriteAlibabaOrgCarbon",
+      version: "carbon_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/carbon/alibabaOrgDetails/write`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<WriteAlibabaOrgCarbonResponse>(await this.execute(params, req, runtime), new WriteAlibabaOrgCarbonResponse({}));
   }
 
-  async writeAlibabaUserCarbon(request: WriteAlibabaUserCarbonRequest): Promise<WriteAlibabaUserCarbonResponse> {
+  async writeAlibabaOrgCarbon(request: WriteAlibabaOrgCarbonRequest): Promise<WriteAlibabaOrgCarbonResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new WriteAlibabaUserCarbonHeaders({ });
-    return await this.writeAlibabaUserCarbonWithOptions(request, headers, runtime);
+    let headers = new WriteAlibabaOrgCarbonHeaders({ });
+    return await this.writeAlibabaOrgCarbonWithOptions(request, headers, runtime);
   }
 
   async writeAlibabaUserCarbonWithOptions(request: WriteAlibabaUserCarbonRequest, headers: WriteAlibabaUserCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteAlibabaUserCarbonResponse> {
@@ -909,13 +951,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<WriteAlibabaUserCarbonResponse>(await this.doROARequest("WriteAlibabaUserCarbon", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/alibabaUserDetails/write`, "json", req, runtime), new WriteAlibabaUserCarbonResponse({}));
+    let params = new $OpenApi.Params({
+      action: "WriteAlibabaUserCarbon",
+      version: "carbon_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/carbon/alibabaUserDetails/write`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<WriteAlibabaUserCarbonResponse>(await this.execute(params, req, runtime), new WriteAlibabaUserCarbonResponse({}));
   }
 
-  async writeIsvState(request: WriteIsvStateRequest): Promise<WriteIsvStateResponse> {
+  async writeAlibabaUserCarbon(request: WriteAlibabaUserCarbonRequest): Promise<WriteAlibabaUserCarbonResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new WriteIsvStateHeaders({ });
-    return await this.writeIsvStateWithOptions(request, headers, runtime);
+    let headers = new WriteAlibabaUserCarbonHeaders({ });
+    return await this.writeAlibabaUserCarbonWithOptions(request, headers, runtime);
   }
 
   async writeIsvStateWithOptions(request: WriteIsvStateRequest, headers: WriteIsvStateHeaders, runtime: $Util.RuntimeOptions): Promise<WriteIsvStateResponse> {
@@ -942,13 +995,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<WriteIsvStateResponse>(await this.doROARequest("WriteIsvState", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/datas/states/write`, "json", req, runtime), new WriteIsvStateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "WriteIsvState",
+      version: "carbon_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/carbon/datas/states/write`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<WriteIsvStateResponse>(await this.execute(params, req, runtime), new WriteIsvStateResponse({}));
   }
 
-  async writeOrgCarbon(request: WriteOrgCarbonRequest): Promise<WriteOrgCarbonResponse> {
+  async writeIsvState(request: WriteIsvStateRequest): Promise<WriteIsvStateResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new WriteOrgCarbonHeaders({ });
-    return await this.writeOrgCarbonWithOptions(request, headers, runtime);
+    let headers = new WriteIsvStateHeaders({ });
+    return await this.writeIsvStateWithOptions(request, headers, runtime);
   }
 
   async writeOrgCarbonWithOptions(request: WriteOrgCarbonRequest, headers: WriteOrgCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteOrgCarbonResponse> {
@@ -971,13 +1035,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<WriteOrgCarbonResponse>(await this.doROARequest("WriteOrgCarbon", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/orgDetails/write`, "json", req, runtime), new WriteOrgCarbonResponse({}));
+    let params = new $OpenApi.Params({
+      action: "WriteOrgCarbon",
+      version: "carbon_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/carbon/orgDetails/write`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<WriteOrgCarbonResponse>(await this.execute(params, req, runtime), new WriteOrgCarbonResponse({}));
   }
 
-  async writeUserCarbon(request: WriteUserCarbonRequest): Promise<WriteUserCarbonResponse> {
+  async writeOrgCarbon(request: WriteOrgCarbonRequest): Promise<WriteOrgCarbonResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new WriteUserCarbonHeaders({ });
-    return await this.writeUserCarbonWithOptions(request, headers, runtime);
+    let headers = new WriteOrgCarbonHeaders({ });
+    return await this.writeOrgCarbonWithOptions(request, headers, runtime);
   }
 
   async writeUserCarbonWithOptions(request: WriteUserCarbonRequest, headers: WriteUserCarbonHeaders, runtime: $Util.RuntimeOptions): Promise<WriteUserCarbonResponse> {
@@ -1000,13 +1075,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<WriteUserCarbonResponse>(await this.doROARequest("WriteUserCarbon", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/userDetails/write`, "json", req, runtime), new WriteUserCarbonResponse({}));
+    let params = new $OpenApi.Params({
+      action: "WriteUserCarbon",
+      version: "carbon_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/carbon/userDetails/write`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<WriteUserCarbonResponse>(await this.execute(params, req, runtime), new WriteUserCarbonResponse({}));
   }
 
-  async writeUserCarbonEnergy(request: WriteUserCarbonEnergyRequest): Promise<WriteUserCarbonEnergyResponse> {
+  async writeUserCarbon(request: WriteUserCarbonRequest): Promise<WriteUserCarbonResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new WriteUserCarbonEnergyHeaders({ });
-    return await this.writeUserCarbonEnergyWithOptions(request, headers, runtime);
+    let headers = new WriteUserCarbonHeaders({ });
+    return await this.writeUserCarbonWithOptions(request, headers, runtime);
   }
 
   async writeUserCarbonEnergyWithOptions(request: WriteUserCarbonEnergyRequest, headers: WriteUserCarbonEnergyHeaders, runtime: $Util.RuntimeOptions): Promise<WriteUserCarbonEnergyResponse> {
@@ -1029,7 +1115,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<WriteUserCarbonEnergyResponse>(await this.doROARequest("WriteUserCarbonEnergy", "carbon_1.0", "HTTP", "POST", "AK", `/v1.0/carbon/userDetails/energies/write`, "json", req, runtime), new WriteUserCarbonEnergyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "WriteUserCarbonEnergy",
+      version: "carbon_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/carbon/userDetails/energies/write`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<WriteUserCarbonEnergyResponse>(await this.execute(params, req, runtime), new WriteUserCarbonEnergyResponse({}));
+  }
+
+  async writeUserCarbonEnergy(request: WriteUserCarbonEnergyRequest): Promise<WriteUserCarbonEnergyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new WriteUserCarbonEnergyHeaders({ });
+    return await this.writeUserCarbonEnergyWithOptions(request, headers, runtime);
   }
 
 }

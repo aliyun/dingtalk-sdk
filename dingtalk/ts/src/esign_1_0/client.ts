@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -75,10 +77,12 @@ export class AuthUrlResponseBody extends $tea.Model {
 
 export class AuthUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AuthUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -86,6 +90,7 @@ export class AuthUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AuthUrlResponseBody,
     };
   }
@@ -144,10 +149,12 @@ export class CancelCorpAuthResponseBody extends $tea.Model {
 
 export class CancelCorpAuthResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CancelCorpAuthResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -155,6 +162,7 @@ export class CancelCorpAuthResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CancelCorpAuthResponseBody,
     };
   }
@@ -247,10 +255,12 @@ export class ChannelOrderResponseBody extends $tea.Model {
 
 export class ChannelOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ChannelOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -258,6 +268,7 @@ export class ChannelOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ChannelOrderResponseBody,
     };
   }
@@ -316,10 +327,12 @@ export class ContractMarginResponseBody extends $tea.Model {
 
 export class ContractMarginResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ContractMarginResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -327,6 +340,7 @@ export class ContractMarginResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ContractMarginResponseBody,
     };
   }
@@ -385,10 +399,12 @@ export class CorpConsoleResponseBody extends $tea.Model {
 
 export class CorpConsoleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CorpConsoleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -396,6 +412,7 @@ export class CorpConsoleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CorpConsoleResponseBody,
     };
   }
@@ -454,10 +471,12 @@ export class CorpInfoResponseBody extends $tea.Model {
 
 export class CorpInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CorpInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -465,6 +484,7 @@ export class CorpInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CorpInfoResponseBody,
     };
   }
@@ -542,10 +562,12 @@ export class CreateDeveloperResponseBody extends $tea.Model {
 
 export class CreateDeveloperResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateDeveloperResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -553,6 +575,7 @@ export class CreateDeveloperResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateDeveloperResponseBody,
     };
   }
@@ -630,10 +653,12 @@ export class GetCorpRealnameUrlResponseBody extends $tea.Model {
 
 export class GetCorpRealnameUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCorpRealnameUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -641,6 +666,7 @@ export class GetCorpRealnameUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCorpRealnameUrlResponseBody,
     };
   }
@@ -699,10 +725,12 @@ export class GetCropStatusResponseBody extends $tea.Model {
 
 export class GetCropStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCropStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -710,6 +738,7 @@ export class GetCropStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCropStatusResponseBody,
     };
   }
@@ -768,10 +797,12 @@ export class GetFileResponseBody extends $tea.Model {
 
 export class GetFileResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFileResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -779,6 +810,7 @@ export class GetFileResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFileResponseBody,
     };
   }
@@ -856,10 +888,12 @@ export class GetFlowDetailResponseBody extends $tea.Model {
 
 export class GetFlowDetailResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFlowDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -867,6 +901,7 @@ export class GetFlowDetailResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFlowDetailResponseBody,
     };
   }
@@ -944,10 +979,12 @@ export class GetFlowSignDetailResponseBody extends $tea.Model {
 
 export class GetFlowSignDetailResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFlowSignDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -955,6 +992,7 @@ export class GetFlowSignDetailResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFlowSignDetailResponseBody,
     };
   }
@@ -1050,10 +1088,12 @@ export class GetProcessStartUrlResponseBody extends $tea.Model {
 
 export class GetProcessStartUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetProcessStartUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1061,6 +1101,7 @@ export class GetProcessStartUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetProcessStartUrlResponseBody,
     };
   }
@@ -1138,10 +1179,12 @@ export class GetSignNoticeUrlResponseBody extends $tea.Model {
 
 export class GetSignNoticeUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSignNoticeUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1149,6 +1192,7 @@ export class GetSignNoticeUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSignNoticeUrlResponseBody,
     };
   }
@@ -1238,10 +1282,12 @@ export class GetUploadUrlResponseBody extends $tea.Model {
 
 export class GetUploadUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUploadUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1249,6 +1295,7 @@ export class GetUploadUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUploadUrlResponseBody,
     };
   }
@@ -1307,10 +1354,12 @@ export class GetUserInfoResponseBody extends $tea.Model {
 
 export class GetUserInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1318,6 +1367,7 @@ export class GetUserInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserInfoResponseBody,
     };
   }
@@ -1398,10 +1448,12 @@ export class GetUserRealnameUrlResponseBody extends $tea.Model {
 
 export class GetUserRealnameUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserRealnameUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1409,6 +1461,7 @@ export class GetUserRealnameUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserRealnameUrlResponseBody,
     };
   }
@@ -1486,10 +1539,12 @@ export class ListFlowDocsResponseBody extends $tea.Model {
 
 export class ListFlowDocsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListFlowDocsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1497,6 +1552,7 @@ export class ListFlowDocsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListFlowDocsResponseBody,
     };
   }
@@ -1574,10 +1630,12 @@ export class ListSealApprovalResponseBody extends $tea.Model {
 
 export class ListSealApprovalResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListSealApprovalResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1585,6 +1643,7 @@ export class ListSealApprovalResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListSealApprovalResponseBody,
     };
   }
@@ -1674,10 +1733,12 @@ export class OrderResaleResponseBody extends $tea.Model {
 
 export class OrderResaleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: OrderResaleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1685,6 +1746,7 @@ export class OrderResaleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: OrderResaleResponseBody,
     };
   }
@@ -2346,9 +2408,12 @@ export class OrderResaleResponseBodyData extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2356,12 +2421,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async authUrl(request: AuthUrlRequest): Promise<AuthUrlResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AuthUrlHeaders({ });
-    return await this.authUrlWithOptions(request, headers, runtime);
-  }
 
   async authUrlWithOptions(request: AuthUrlRequest, headers: AuthUrlHeaders, runtime: $Util.RuntimeOptions): Promise<AuthUrlResponse> {
     Util.validateModel(request);
@@ -2383,13 +2442,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AuthUrlResponse>(await this.doROARequest("AuthUrl", "esign_1.0", "HTTP", "POST", "AK", `/v1.0/esign/auths/url`, "json", req, runtime), new AuthUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AuthUrl",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/auths/url`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AuthUrlResponse>(await this.execute(params, req, runtime), new AuthUrlResponse({}));
   }
 
-  async cancelCorpAuth(): Promise<CancelCorpAuthResponse> {
+  async authUrl(request: AuthUrlRequest): Promise<AuthUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CancelCorpAuthHeaders({ });
-    return await this.cancelCorpAuthWithOptions(headers, runtime);
+    let headers = new AuthUrlHeaders({ });
+    return await this.authUrlWithOptions(request, headers, runtime);
   }
 
   async cancelCorpAuthWithOptions(headers: CancelCorpAuthHeaders, runtime: $Util.RuntimeOptions): Promise<CancelCorpAuthResponse> {
@@ -2405,13 +2475,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<CancelCorpAuthResponse>(await this.doROARequest("CancelCorpAuth", "esign_1.0", "HTTP", "GET", "AK", `/v1.0/esign/corps/auth/cancel`, "json", req, runtime), new CancelCorpAuthResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CancelCorpAuth",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/corps/auth/cancel`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CancelCorpAuthResponse>(await this.execute(params, req, runtime), new CancelCorpAuthResponse({}));
   }
 
-  async channelOrder(request: ChannelOrderRequest): Promise<ChannelOrderResponse> {
+  async cancelCorpAuth(): Promise<CancelCorpAuthResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ChannelOrderHeaders({ });
-    return await this.channelOrderWithOptions(request, headers, runtime);
+    let headers = new CancelCorpAuthHeaders({ });
+    return await this.cancelCorpAuthWithOptions(headers, runtime);
   }
 
   async channelOrderWithOptions(request: ChannelOrderRequest, headers: ChannelOrderHeaders, runtime: $Util.RuntimeOptions): Promise<ChannelOrderResponse> {
@@ -2454,13 +2535,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ChannelOrderResponse>(await this.doROARequest("ChannelOrder", "esign_1.0", "HTTP", "POST", "AK", `/v1.0/esign/orders/channel`, "json", req, runtime), new ChannelOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ChannelOrder",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/orders/channel`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ChannelOrderResponse>(await this.execute(params, req, runtime), new ChannelOrderResponse({}));
   }
 
-  async contractMargin(): Promise<ContractMarginResponse> {
+  async channelOrder(request: ChannelOrderRequest): Promise<ChannelOrderResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ContractMarginHeaders({ });
-    return await this.contractMarginWithOptions(headers, runtime);
+    let headers = new ChannelOrderHeaders({ });
+    return await this.channelOrderWithOptions(request, headers, runtime);
   }
 
   async contractMarginWithOptions(headers: ContractMarginHeaders, runtime: $Util.RuntimeOptions): Promise<ContractMarginResponse> {
@@ -2476,13 +2568,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<ContractMarginResponse>(await this.doROARequest("ContractMargin", "esign_1.0", "HTTP", "GET", "AK", `/v1.0/esign/contracts/margin`, "json", req, runtime), new ContractMarginResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ContractMargin",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/contracts/margin`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ContractMarginResponse>(await this.execute(params, req, runtime), new ContractMarginResponse({}));
   }
 
-  async corpConsole(): Promise<CorpConsoleResponse> {
+  async contractMargin(): Promise<ContractMarginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CorpConsoleHeaders({ });
-    return await this.corpConsoleWithOptions(headers, runtime);
+    let headers = new ContractMarginHeaders({ });
+    return await this.contractMarginWithOptions(headers, runtime);
   }
 
   async corpConsoleWithOptions(headers: CorpConsoleHeaders, runtime: $Util.RuntimeOptions): Promise<CorpConsoleResponse> {
@@ -2498,13 +2601,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<CorpConsoleResponse>(await this.doROARequest("CorpConsole", "esign_1.0", "HTTP", "GET", "AK", `/v1.0/esign/corps/console`, "json", req, runtime), new CorpConsoleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CorpConsole",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/corps/console`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CorpConsoleResponse>(await this.execute(params, req, runtime), new CorpConsoleResponse({}));
   }
 
-  async corpInfo(): Promise<CorpInfoResponse> {
+  async corpConsole(): Promise<CorpConsoleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CorpInfoHeaders({ });
-    return await this.corpInfoWithOptions(headers, runtime);
+    let headers = new CorpConsoleHeaders({ });
+    return await this.corpConsoleWithOptions(headers, runtime);
   }
 
   async corpInfoWithOptions(headers: CorpInfoHeaders, runtime: $Util.RuntimeOptions): Promise<CorpInfoResponse> {
@@ -2520,13 +2634,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<CorpInfoResponse>(await this.doROARequest("CorpInfo", "esign_1.0", "HTTP", "GET", "AK", `/v1.0/esign/corps/info`, "json", req, runtime), new CorpInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CorpInfo",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/corps/info`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CorpInfoResponse>(await this.execute(params, req, runtime), new CorpInfoResponse({}));
   }
 
-  async createDeveloper(request: CreateDeveloperRequest): Promise<CreateDeveloperResponse> {
+  async corpInfo(): Promise<CorpInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateDeveloperHeaders({ });
-    return await this.createDeveloperWithOptions(request, headers, runtime);
+    let headers = new CorpInfoHeaders({ });
+    return await this.corpInfoWithOptions(headers, runtime);
   }
 
   async createDeveloperWithOptions(request: CreateDeveloperRequest, headers: CreateDeveloperHeaders, runtime: $Util.RuntimeOptions): Promise<CreateDeveloperResponse> {
@@ -2549,13 +2674,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateDeveloperResponse>(await this.doROARequest("CreateDeveloper", "esign_1.0", "HTTP", "GET", "AK", `/v1.0/esign/developers/create`, "json", req, runtime), new CreateDeveloperResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateDeveloper",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/developers/create`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateDeveloperResponse>(await this.execute(params, req, runtime), new CreateDeveloperResponse({}));
   }
 
-  async getCorpRealnameUrl(request: GetCorpRealnameUrlRequest): Promise<GetCorpRealnameUrlResponse> {
+  async createDeveloper(request: CreateDeveloperRequest): Promise<CreateDeveloperResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCorpRealnameUrlHeaders({ });
-    return await this.getCorpRealnameUrlWithOptions(request, headers, runtime);
+    let headers = new CreateDeveloperHeaders({ });
+    return await this.createDeveloperWithOptions(request, headers, runtime);
   }
 
   async getCorpRealnameUrlWithOptions(request: GetCorpRealnameUrlRequest, headers: GetCorpRealnameUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetCorpRealnameUrlResponse> {
@@ -2578,13 +2714,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetCorpRealnameUrlResponse>(await this.doROARequest("GetCorpRealnameUrl", "esign_1.0", "HTTP", "POST", "AK", `/v1.0/esign/corps/realname`, "json", req, runtime), new GetCorpRealnameUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCorpRealnameUrl",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/corps/realname`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCorpRealnameUrlResponse>(await this.execute(params, req, runtime), new GetCorpRealnameUrlResponse({}));
   }
 
-  async getCropStatus(): Promise<GetCropStatusResponse> {
+  async getCorpRealnameUrl(request: GetCorpRealnameUrlRequest): Promise<GetCorpRealnameUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCropStatusHeaders({ });
-    return await this.getCropStatusWithOptions(headers, runtime);
+    let headers = new GetCorpRealnameUrlHeaders({ });
+    return await this.getCorpRealnameUrlWithOptions(request, headers, runtime);
   }
 
   async getCropStatusWithOptions(headers: GetCropStatusHeaders, runtime: $Util.RuntimeOptions): Promise<GetCropStatusResponse> {
@@ -2600,17 +2747,27 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetCropStatusResponse>(await this.doROARequest("GetCropStatus", "esign_1.0", "HTTP", "GET", "AK", `/v1.0/esign/corps/statuses`, "json", req, runtime), new GetCropStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCropStatus",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/corps/statuses`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCropStatusResponse>(await this.execute(params, req, runtime), new GetCropStatusResponse({}));
   }
 
-  async getFile(fileId: string): Promise<GetFileResponse> {
+  async getCropStatus(): Promise<GetCropStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFileHeaders({ });
-    return await this.getFileWithOptions(fileId, headers, runtime);
+    let headers = new GetCropStatusHeaders({ });
+    return await this.getCropStatusWithOptions(headers, runtime);
   }
 
   async getFileWithOptions(fileId: string, headers: GetFileHeaders, runtime: $Util.RuntimeOptions): Promise<GetFileResponse> {
-    fileId = OpenApiUtil.getEncodeParam(fileId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2623,13 +2780,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetFileResponse>(await this.doROARequest("GetFile", "esign_1.0", "HTTP", "GET", "AK", `/v1.0/esign/files/${fileId}`, "json", req, runtime), new GetFileResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFile",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/files/${fileId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFileResponse>(await this.execute(params, req, runtime), new GetFileResponse({}));
   }
 
-  async getFlowDetail(request: GetFlowDetailRequest): Promise<GetFlowDetailResponse> {
+  async getFile(fileId: string): Promise<GetFileResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFlowDetailHeaders({ });
-    return await this.getFlowDetailWithOptions(request, headers, runtime);
+    let headers = new GetFileHeaders({ });
+    return await this.getFileWithOptions(fileId, headers, runtime);
   }
 
   async getFlowDetailWithOptions(request: GetFlowDetailRequest, headers: GetFlowDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlowDetailResponse> {
@@ -2652,13 +2820,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetFlowDetailResponse>(await this.doROARequest("GetFlowDetail", "esign_1.0", "HTTP", "GET", "AK", `/v1.0/esign/flows/detail`, "json", req, runtime), new GetFlowDetailResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFlowDetail",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/flows/detail`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFlowDetailResponse>(await this.execute(params, req, runtime), new GetFlowDetailResponse({}));
   }
 
-  async getFlowSignDetail(request: GetFlowSignDetailRequest): Promise<GetFlowSignDetailResponse> {
+  async getFlowDetail(request: GetFlowDetailRequest): Promise<GetFlowDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFlowSignDetailHeaders({ });
-    return await this.getFlowSignDetailWithOptions(request, headers, runtime);
+    let headers = new GetFlowDetailHeaders({ });
+    return await this.getFlowDetailWithOptions(request, headers, runtime);
   }
 
   async getFlowSignDetailWithOptions(request: GetFlowSignDetailRequest, headers: GetFlowSignDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetFlowSignDetailResponse> {
@@ -2681,13 +2860,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetFlowSignDetailResponse>(await this.doROARequest("GetFlowSignDetail", "esign_1.0", "HTTP", "GET", "AK", `/v1.0/esign/flows/sign/detail`, "json", req, runtime), new GetFlowSignDetailResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFlowSignDetail",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/flows/sign/detail`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFlowSignDetailResponse>(await this.execute(params, req, runtime), new GetFlowSignDetailResponse({}));
   }
 
-  async getProcessStartUrl(request: GetProcessStartUrlRequest): Promise<GetProcessStartUrlResponse> {
+  async getFlowSignDetail(request: GetFlowSignDetailRequest): Promise<GetFlowSignDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetProcessStartUrlHeaders({ });
-    return await this.getProcessStartUrlWithOptions(request, headers, runtime);
+    let headers = new GetFlowSignDetailHeaders({ });
+    return await this.getFlowSignDetailWithOptions(request, headers, runtime);
   }
 
   async getProcessStartUrlWithOptions(request: GetProcessStartUrlRequest, headers: GetProcessStartUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetProcessStartUrlResponse> {
@@ -2734,13 +2924,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetProcessStartUrlResponse>(await this.doROARequest("GetProcessStartUrl", "esign_1.0", "HTTP", "POST", "AK", `/v1.0/esign/process/start`, "json", req, runtime), new GetProcessStartUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetProcessStartUrl",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/process/start`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetProcessStartUrlResponse>(await this.execute(params, req, runtime), new GetProcessStartUrlResponse({}));
   }
 
-  async getSignNoticeUrl(request: GetSignNoticeUrlRequest): Promise<GetSignNoticeUrlResponse> {
+  async getProcessStartUrl(request: GetProcessStartUrlRequest): Promise<GetProcessStartUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSignNoticeUrlHeaders({ });
-    return await this.getSignNoticeUrlWithOptions(request, headers, runtime);
+    let headers = new GetProcessStartUrlHeaders({ });
+    return await this.getProcessStartUrlWithOptions(request, headers, runtime);
   }
 
   async getSignNoticeUrlWithOptions(request: GetSignNoticeUrlRequest, headers: GetSignNoticeUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignNoticeUrlResponse> {
@@ -2763,13 +2964,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetSignNoticeUrlResponse>(await this.doROARequest("GetSignNoticeUrl", "esign_1.0", "HTTP", "POST", "AK", `/v1.0/esign/signs/notice/url`, "json", req, runtime), new GetSignNoticeUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSignNoticeUrl",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/signs/notice/url`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSignNoticeUrlResponse>(await this.execute(params, req, runtime), new GetSignNoticeUrlResponse({}));
   }
 
-  async getUploadUrl(request: GetUploadUrlRequest): Promise<GetUploadUrlResponse> {
+  async getSignNoticeUrl(request: GetSignNoticeUrlRequest): Promise<GetSignNoticeUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUploadUrlHeaders({ });
-    return await this.getUploadUrlWithOptions(request, headers, runtime);
+    let headers = new GetSignNoticeUrlHeaders({ });
+    return await this.getSignNoticeUrlWithOptions(request, headers, runtime);
   }
 
   async getUploadUrlWithOptions(request: GetUploadUrlRequest, headers: GetUploadUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetUploadUrlResponse> {
@@ -2808,17 +3020,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetUploadUrlResponse>(await this.doROARequest("GetUploadUrl", "esign_1.0", "HTTP", "POST", "AK", `/v1.0/esign/files/getUploadUrl`, "json", req, runtime), new GetUploadUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUploadUrl",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/files/getUploadUrl`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUploadUrlResponse>(await this.execute(params, req, runtime), new GetUploadUrlResponse({}));
   }
 
-  async getUserInfo(userId: string): Promise<GetUserInfoResponse> {
+  async getUploadUrl(request: GetUploadUrlRequest): Promise<GetUploadUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserInfoHeaders({ });
-    return await this.getUserInfoWithOptions(userId, headers, runtime);
+    let headers = new GetUploadUrlHeaders({ });
+    return await this.getUploadUrlWithOptions(request, headers, runtime);
   }
 
   async getUserInfoWithOptions(userId: string, headers: GetUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserInfoResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -2831,13 +3053,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetUserInfoResponse>(await this.doROARequest("GetUserInfo", "esign_1.0", "HTTP", "GET", "AK", `/v1.0/esign/users/${userId}`, "json", req, runtime), new GetUserInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserInfo",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/users/${userId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserInfoResponse>(await this.execute(params, req, runtime), new GetUserInfoResponse({}));
   }
 
-  async getUserRealnameUrl(request: GetUserRealnameUrlRequest): Promise<GetUserRealnameUrlResponse> {
+  async getUserInfo(userId: string): Promise<GetUserInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserRealnameUrlHeaders({ });
-    return await this.getUserRealnameUrlWithOptions(request, headers, runtime);
+    let headers = new GetUserInfoHeaders({ });
+    return await this.getUserInfoWithOptions(userId, headers, runtime);
   }
 
   async getUserRealnameUrlWithOptions(request: GetUserRealnameUrlRequest, headers: GetUserRealnameUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserRealnameUrlResponse> {
@@ -2864,13 +3097,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetUserRealnameUrlResponse>(await this.doROARequest("GetUserRealnameUrl", "esign_1.0", "HTTP", "POST", "AK", `/v1.0/esign/users/realname`, "json", req, runtime), new GetUserRealnameUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserRealnameUrl",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/users/realname`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserRealnameUrlResponse>(await this.execute(params, req, runtime), new GetUserRealnameUrlResponse({}));
   }
 
-  async listFlowDocs(request: ListFlowDocsRequest): Promise<ListFlowDocsResponse> {
+  async getUserRealnameUrl(request: GetUserRealnameUrlRequest): Promise<GetUserRealnameUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListFlowDocsHeaders({ });
-    return await this.listFlowDocsWithOptions(request, headers, runtime);
+    let headers = new GetUserRealnameUrlHeaders({ });
+    return await this.getUserRealnameUrlWithOptions(request, headers, runtime);
   }
 
   async listFlowDocsWithOptions(request: ListFlowDocsRequest, headers: ListFlowDocsHeaders, runtime: $Util.RuntimeOptions): Promise<ListFlowDocsResponse> {
@@ -2893,13 +3137,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListFlowDocsResponse>(await this.doROARequest("ListFlowDocs", "esign_1.0", "HTTP", "GET", "AK", `/v1.0/esign/flows/docs`, "json", req, runtime), new ListFlowDocsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListFlowDocs",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/flows/docs`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ListFlowDocsResponse>(await this.execute(params, req, runtime), new ListFlowDocsResponse({}));
   }
 
-  async listSealApproval(request: ListSealApprovalRequest): Promise<ListSealApprovalResponse> {
+  async listFlowDocs(request: ListFlowDocsRequest): Promise<ListFlowDocsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListSealApprovalHeaders({ });
-    return await this.listSealApprovalWithOptions(request, headers, runtime);
+    let headers = new ListFlowDocsHeaders({ });
+    return await this.listFlowDocsWithOptions(request, headers, runtime);
   }
 
   async listSealApprovalWithOptions(request: ListSealApprovalRequest, headers: ListSealApprovalHeaders, runtime: $Util.RuntimeOptions): Promise<ListSealApprovalResponse> {
@@ -2922,13 +3177,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListSealApprovalResponse>(await this.doROARequest("ListSealApproval", "esign_1.0", "HTTP", "GET", "AK", `/v1.0/esign/seals/approval/list`, "json", req, runtime), new ListSealApprovalResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListSealApproval",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/seals/approval/list`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ListSealApprovalResponse>(await this.execute(params, req, runtime), new ListSealApprovalResponse({}));
   }
 
-  async orderResale(request: OrderResaleRequest): Promise<OrderResaleResponse> {
+  async listSealApproval(request: ListSealApprovalRequest): Promise<ListSealApprovalResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new OrderResaleHeaders({ });
-    return await this.orderResaleWithOptions(request, headers, runtime);
+    let headers = new ListSealApprovalHeaders({ });
+    return await this.listSealApprovalWithOptions(request, headers, runtime);
   }
 
   async orderResaleWithOptions(request: OrderResaleRequest, headers: OrderResaleHeaders, runtime: $Util.RuntimeOptions): Promise<OrderResaleResponse> {
@@ -2967,7 +3233,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<OrderResaleResponse>(await this.doROARequest("OrderResale", "esign_1.0", "HTTP", "POST", "AK", `/v1.0/esign/orders/resale`, "json", req, runtime), new OrderResaleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "OrderResale",
+      version: "esign_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/esign/orders/resale`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<OrderResaleResponse>(await this.execute(params, req, runtime), new OrderResaleResponse({}));
+  }
+
+  async orderResale(request: OrderResaleRequest): Promise<OrderResaleResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OrderResaleHeaders({ });
+    return await this.orderResaleWithOptions(request, headers, runtime);
   }
 
 }

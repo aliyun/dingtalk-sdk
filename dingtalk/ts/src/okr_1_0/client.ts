@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import { Readable } from 'stream';
@@ -79,10 +81,12 @@ export class AlignObjectiveResponseBody extends $tea.Model {
 
 export class AlignObjectiveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AlignObjectiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -90,6 +94,7 @@ export class AlignObjectiveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AlignObjectiveResponseBody,
     };
   }
@@ -173,10 +178,12 @@ export class BatchAddPermissionResponseBody extends $tea.Model {
 
 export class BatchAddPermissionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchAddPermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -184,6 +191,7 @@ export class BatchAddPermissionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchAddPermissionResponseBody,
     };
   }
@@ -273,10 +281,12 @@ export class BatchQueryObjectiveResponseBody extends $tea.Model {
 
 export class BatchQueryObjectiveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchQueryObjectiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -284,6 +294,7 @@ export class BatchQueryObjectiveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchQueryObjectiveResponseBody,
     };
   }
@@ -361,10 +372,12 @@ export class BatchQueryUserResponseBody extends $tea.Model {
 
 export class BatchQueryUserResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchQueryUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -372,6 +385,7 @@ export class BatchQueryUserResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchQueryUserResponseBody,
     };
   }
@@ -461,10 +475,12 @@ export class CreateKeyResultResponseBody extends $tea.Model {
 
 export class CreateKeyResultResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateKeyResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -472,6 +488,7 @@ export class CreateKeyResultResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateKeyResultResponseBody,
     };
   }
@@ -555,10 +572,12 @@ export class CreateObjectiveResponseBody extends $tea.Model {
 
 export class CreateObjectiveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateObjectiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -566,6 +585,7 @@ export class CreateObjectiveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateObjectiveResponseBody,
     };
   }
@@ -643,10 +663,12 @@ export class DeleteKeyResultResponseBody extends $tea.Model {
 
 export class DeleteKeyResultResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteKeyResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -654,6 +676,7 @@ export class DeleteKeyResultResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteKeyResultResponseBody,
     };
   }
@@ -728,10 +751,12 @@ export class DeleteObjectiveResponseBody extends $tea.Model {
 
 export class DeleteObjectiveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteObjectiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -739,6 +764,7 @@ export class DeleteObjectiveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteObjectiveResponseBody,
     };
   }
@@ -828,10 +854,12 @@ export class DeletePermissionResponseBody extends $tea.Model {
 
 export class DeletePermissionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeletePermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -839,6 +867,7 @@ export class DeletePermissionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeletePermissionResponseBody,
     };
   }
@@ -894,10 +923,12 @@ export class GetPeriodListResponseBody extends $tea.Model {
 
 export class GetPeriodListResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPeriodListResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -905,6 +936,7 @@ export class GetPeriodListResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPeriodListResponseBody,
     };
   }
@@ -991,10 +1023,12 @@ export class GetPermissionResponseBody extends $tea.Model {
 
 export class GetPermissionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1002,6 +1036,7 @@ export class GetPermissionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPermissionResponseBody,
     };
   }
@@ -1085,10 +1120,12 @@ export class GetUserOkrResponseBody extends $tea.Model {
 
 export class GetUserOkrResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserOkrResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1096,6 +1133,7 @@ export class GetUserOkrResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserOkrResponseBody,
     };
   }
@@ -1176,10 +1214,12 @@ export class UnAlignObjectiveResponseBody extends $tea.Model {
 
 export class UnAlignObjectiveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UnAlignObjectiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1187,6 +1227,7 @@ export class UnAlignObjectiveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UnAlignObjectiveResponseBody,
     };
   }
@@ -1270,10 +1311,12 @@ export class UpdateKROfContentResponseBody extends $tea.Model {
 
 export class UpdateKROfContentResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateKROfContentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1281,6 +1324,7 @@ export class UpdateKROfContentResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateKROfContentResponseBody,
     };
   }
@@ -1361,10 +1405,12 @@ export class UpdateKROfScoreResponseBody extends $tea.Model {
 
 export class UpdateKROfScoreResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateKROfScoreResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1372,6 +1418,7 @@ export class UpdateKROfScoreResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateKROfScoreResponseBody,
     };
   }
@@ -1452,10 +1499,12 @@ export class UpdateKROfWeightResponseBody extends $tea.Model {
 
 export class UpdateKROfWeightResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateKROfWeightResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1463,6 +1512,7 @@ export class UpdateKROfWeightResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateKROfWeightResponseBody,
     };
   }
@@ -1540,10 +1590,12 @@ export class UpdateObjectiveResponseBody extends $tea.Model {
 
 export class UpdateObjectiveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateObjectiveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1551,6 +1603,7 @@ export class UpdateObjectiveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateObjectiveResponseBody,
     };
   }
@@ -1634,10 +1687,12 @@ export class UpdatePrivacyResponseBody extends $tea.Model {
 
 export class UpdatePrivacyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdatePrivacyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1645,6 +1700,7 @@ export class UpdatePrivacyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdatePrivacyResponseBody,
     };
   }
@@ -2711,9 +2767,12 @@ export class UpdatePrivacyResponseBodyData extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2722,15 +2781,8 @@ export default class Client extends OpenApi {
   }
 
 
-  async alignObjective(objectiveId: string, request: AlignObjectiveRequest): Promise<AlignObjectiveResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AlignObjectiveHeaders({ });
-    return await this.alignObjectiveWithOptions(objectiveId, request, headers, runtime);
-  }
-
   async alignObjectiveWithOptions(objectiveId: string, request: AlignObjectiveRequest, headers: AlignObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<AlignObjectiveResponse> {
     Util.validateModel(request);
-    objectiveId = OpenApiUtil.getEncodeParam(objectiveId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       query["userId"] = request.userId;
@@ -2759,13 +2811,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AlignObjectiveResponse>(await this.doROARequest("AlignObjective", "okr_1.0", "HTTP", "POST", "AK", `/v1.0/okr/objectives/${objectiveId}/alignments`, "json", req, runtime), new AlignObjectiveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AlignObjective",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/objectives/${objectiveId}/alignments`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AlignObjectiveResponse>(await this.execute(params, req, runtime), new AlignObjectiveResponse({}));
   }
 
-  async batchAddPermission(request: BatchAddPermissionRequest): Promise<BatchAddPermissionResponse> {
+  async alignObjective(objectiveId: string, request: AlignObjectiveRequest): Promise<AlignObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchAddPermissionHeaders({ });
-    return await this.batchAddPermissionWithOptions(request, headers, runtime);
+    let headers = new AlignObjectiveHeaders({ });
+    return await this.alignObjectiveWithOptions(objectiveId, request, headers, runtime);
   }
 
   async batchAddPermissionWithOptions(request: BatchAddPermissionRequest, headers: BatchAddPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<BatchAddPermissionResponse> {
@@ -2802,13 +2865,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchAddPermissionResponse>(await this.doROARequest("BatchAddPermission", "okr_1.0", "HTTP", "POST", "AK", `/v1.0/okr/permissions/batch`, "json", req, runtime), new BatchAddPermissionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchAddPermission",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/permissions/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchAddPermissionResponse>(await this.execute(params, req, runtime), new BatchAddPermissionResponse({}));
   }
 
-  async batchQueryObjective(request: BatchQueryObjectiveRequest): Promise<BatchQueryObjectiveResponse> {
+  async batchAddPermission(request: BatchAddPermissionRequest): Promise<BatchAddPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchQueryObjectiveHeaders({ });
-    return await this.batchQueryObjectiveWithOptions(request, headers, runtime);
+    let headers = new BatchAddPermissionHeaders({ });
+    return await this.batchAddPermissionWithOptions(request, headers, runtime);
   }
 
   async batchQueryObjectiveWithOptions(request: BatchQueryObjectiveRequest, headers: BatchQueryObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryObjectiveResponse> {
@@ -2853,13 +2927,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchQueryObjectiveResponse>(await this.doROARequest("BatchQueryObjective", "okr_1.0", "HTTP", "POST", "AK", `/v1.0/okr/objectives/query`, "json", req, runtime), new BatchQueryObjectiveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchQueryObjective",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/objectives/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchQueryObjectiveResponse>(await this.execute(params, req, runtime), new BatchQueryObjectiveResponse({}));
   }
 
-  async batchQueryUser(request: BatchQueryUserRequest): Promise<BatchQueryUserResponse> {
+  async batchQueryObjective(request: BatchQueryObjectiveRequest): Promise<BatchQueryObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchQueryUserHeaders({ });
-    return await this.batchQueryUserWithOptions(request, headers, runtime);
+    let headers = new BatchQueryObjectiveHeaders({ });
+    return await this.batchQueryObjectiveWithOptions(request, headers, runtime);
   }
 
   async batchQueryUserWithOptions(request: BatchQueryUserRequest, headers: BatchQueryUserHeaders, runtime: $Util.RuntimeOptions): Promise<BatchQueryUserResponse> {
@@ -2886,13 +2971,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchQueryUserResponse>(await this.doROARequest("BatchQueryUser", "okr_1.0", "HTTP", "POST", "AK", `/v1.0/okr/users/query`, "json", req, runtime), new BatchQueryUserResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchQueryUser",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/users/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchQueryUserResponse>(await this.execute(params, req, runtime), new BatchQueryUserResponse({}));
   }
 
-  async createKeyResult(request: CreateKeyResultRequest): Promise<CreateKeyResultResponse> {
+  async batchQueryUser(request: BatchQueryUserRequest): Promise<BatchQueryUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateKeyResultHeaders({ });
-    return await this.createKeyResultWithOptions(request, headers, runtime);
+    let headers = new BatchQueryUserHeaders({ });
+    return await this.batchQueryUserWithOptions(request, headers, runtime);
   }
 
   async createKeyResultWithOptions(request: CreateKeyResultRequest, headers: CreateKeyResultHeaders, runtime: $Util.RuntimeOptions): Promise<CreateKeyResultResponse> {
@@ -2937,13 +3033,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateKeyResultResponse>(await this.doROARequest("CreateKeyResult", "okr_1.0", "HTTP", "POST", "AK", `/v1.0/okr/keyResults`, "json", req, runtime), new CreateKeyResultResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateKeyResult",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/keyResults`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateKeyResultResponse>(await this.execute(params, req, runtime), new CreateKeyResultResponse({}));
   }
 
-  async createObjective(request: CreateObjectiveRequest): Promise<CreateObjectiveResponse> {
+  async createKeyResult(request: CreateKeyResultRequest): Promise<CreateKeyResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateObjectiveHeaders({ });
-    return await this.createObjectiveWithOptions(request, headers, runtime);
+    let headers = new CreateKeyResultHeaders({ });
+    return await this.createKeyResultWithOptions(request, headers, runtime);
   }
 
   async createObjectiveWithOptions(request: CreateObjectiveRequest, headers: CreateObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<CreateObjectiveResponse> {
@@ -2980,13 +3087,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateObjectiveResponse>(await this.doROARequest("CreateObjective", "okr_1.0", "HTTP", "POST", "AK", `/v1.0/okr/objectives`, "json", req, runtime), new CreateObjectiveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateObjective",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/objectives`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateObjectiveResponse>(await this.execute(params, req, runtime), new CreateObjectiveResponse({}));
   }
 
-  async deleteKeyResult(request: DeleteKeyResultRequest): Promise<DeleteKeyResultResponse> {
+  async createObjective(request: CreateObjectiveRequest): Promise<CreateObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteKeyResultHeaders({ });
-    return await this.deleteKeyResultWithOptions(request, headers, runtime);
+    let headers = new CreateObjectiveHeaders({ });
+    return await this.createObjectiveWithOptions(request, headers, runtime);
   }
 
   async deleteKeyResultWithOptions(request: DeleteKeyResultRequest, headers: DeleteKeyResultHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteKeyResultResponse> {
@@ -3013,18 +3131,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteKeyResultResponse>(await this.doROARequest("DeleteKeyResult", "okr_1.0", "HTTP", "DELETE", "AK", `/v1.0/okr/keyResults`, "json", req, runtime), new DeleteKeyResultResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteKeyResult",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/keyResults`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteKeyResultResponse>(await this.execute(params, req, runtime), new DeleteKeyResultResponse({}));
   }
 
-  async deleteObjective(objectiveId: string, request: DeleteObjectiveRequest): Promise<DeleteObjectiveResponse> {
+  async deleteKeyResult(request: DeleteKeyResultRequest): Promise<DeleteKeyResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteObjectiveHeaders({ });
-    return await this.deleteObjectiveWithOptions(objectiveId, request, headers, runtime);
+    let headers = new DeleteKeyResultHeaders({ });
+    return await this.deleteKeyResultWithOptions(request, headers, runtime);
   }
 
   async deleteObjectiveWithOptions(objectiveId: string, request: DeleteObjectiveRequest, headers: DeleteObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteObjectiveResponse> {
     Util.validateModel(request);
-    objectiveId = OpenApiUtil.getEncodeParam(objectiveId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       query["userId"] = request.userId;
@@ -3043,13 +3171,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteObjectiveResponse>(await this.doROARequest("DeleteObjective", "okr_1.0", "HTTP", "DELETE", "AK", `/v1.0/okr/objectives/${objectiveId}`, "json", req, runtime), new DeleteObjectiveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteObjective",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/objectives/${objectiveId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteObjectiveResponse>(await this.execute(params, req, runtime), new DeleteObjectiveResponse({}));
   }
 
-  async deletePermission(request: DeletePermissionRequest): Promise<DeletePermissionResponse> {
+  async deleteObjective(objectiveId: string, request: DeleteObjectiveRequest): Promise<DeleteObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeletePermissionHeaders({ });
-    return await this.deletePermissionWithOptions(request, headers, runtime);
+    let headers = new DeleteObjectiveHeaders({ });
+    return await this.deleteObjectiveWithOptions(objectiveId, request, headers, runtime);
   }
 
   async deletePermissionWithOptions(request: DeletePermissionRequest, headers: DeletePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<DeletePermissionResponse> {
@@ -3092,13 +3231,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeletePermissionResponse>(await this.doROARequest("DeletePermission", "okr_1.0", "HTTP", "DELETE", "AK", `/v1.0/okr/permissions/delete`, "json", req, runtime), new DeletePermissionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeletePermission",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/permissions/delete`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeletePermissionResponse>(await this.execute(params, req, runtime), new DeletePermissionResponse({}));
   }
 
-  async getPeriodList(): Promise<GetPeriodListResponse> {
+  async deletePermission(request: DeletePermissionRequest): Promise<DeletePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPeriodListHeaders({ });
-    return await this.getPeriodListWithOptions(headers, runtime);
+    let headers = new DeletePermissionHeaders({ });
+    return await this.deletePermissionWithOptions(request, headers, runtime);
   }
 
   async getPeriodListWithOptions(headers: GetPeriodListHeaders, runtime: $Util.RuntimeOptions): Promise<GetPeriodListResponse> {
@@ -3114,13 +3264,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetPeriodListResponse>(await this.doROARequest("GetPeriodList", "okr_1.0", "HTTP", "GET", "AK", `/v1.0/okr/periods`, "json", req, runtime), new GetPeriodListResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPeriodList",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/periods`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPeriodListResponse>(await this.execute(params, req, runtime), new GetPeriodListResponse({}));
   }
 
-  async getPermission(request: GetPermissionRequest): Promise<GetPermissionResponse> {
+  async getPeriodList(): Promise<GetPeriodListResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPermissionHeaders({ });
-    return await this.getPermissionWithOptions(request, headers, runtime);
+    let headers = new GetPeriodListHeaders({ });
+    return await this.getPeriodListWithOptions(headers, runtime);
   }
 
   async getPermissionWithOptions(request: GetPermissionRequest, headers: GetPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<GetPermissionResponse> {
@@ -3159,13 +3320,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetPermissionResponse>(await this.doROARequest("GetPermission", "okr_1.0", "HTTP", "GET", "AK", `/v1.0/okr/permissions`, "json", req, runtime), new GetPermissionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPermission",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/permissions`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPermissionResponse>(await this.execute(params, req, runtime), new GetPermissionResponse({}));
   }
 
-  async getUserOkr(request: GetUserOkrRequest): Promise<GetUserOkrResponse> {
+  async getPermission(request: GetPermissionRequest): Promise<GetPermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserOkrHeaders({ });
-    return await this.getUserOkrWithOptions(request, headers, runtime);
+    let headers = new GetPermissionHeaders({ });
+    return await this.getPermissionWithOptions(request, headers, runtime);
   }
 
   async getUserOkrWithOptions(request: GetUserOkrRequest, headers: GetUserOkrHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserOkrResponse> {
@@ -3200,18 +3372,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetUserOkrResponse>(await this.doROARequest("GetUserOkr", "okr_1.0", "HTTP", "GET", "AK", `/v1.0/okr/users/okrs`, "json", req, runtime), new GetUserOkrResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserOkr",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/users/okrs`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserOkrResponse>(await this.execute(params, req, runtime), new GetUserOkrResponse({}));
   }
 
-  async unAlignObjective(objectiveId: string, request: UnAlignObjectiveRequest): Promise<UnAlignObjectiveResponse> {
+  async getUserOkr(request: GetUserOkrRequest): Promise<GetUserOkrResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UnAlignObjectiveHeaders({ });
-    return await this.unAlignObjectiveWithOptions(objectiveId, request, headers, runtime);
+    let headers = new GetUserOkrHeaders({ });
+    return await this.getUserOkrWithOptions(request, headers, runtime);
   }
 
   async unAlignObjectiveWithOptions(objectiveId: string, request: UnAlignObjectiveRequest, headers: UnAlignObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<UnAlignObjectiveResponse> {
     Util.validateModel(request);
-    objectiveId = OpenApiUtil.getEncodeParam(objectiveId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       query["userId"] = request.userId;
@@ -3240,13 +3422,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UnAlignObjectiveResponse>(await this.doROARequest("UnAlignObjective", "okr_1.0", "HTTP", "POST", "AK", `/v1.0/okr/objectives/${objectiveId}/alignments/cancel`, "json", req, runtime), new UnAlignObjectiveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UnAlignObjective",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/objectives/${objectiveId}/alignments/cancel`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UnAlignObjectiveResponse>(await this.execute(params, req, runtime), new UnAlignObjectiveResponse({}));
   }
 
-  async updateKROfContent(request: UpdateKROfContentRequest): Promise<UpdateKROfContentResponse> {
+  async unAlignObjective(objectiveId: string, request: UnAlignObjectiveRequest): Promise<UnAlignObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateKROfContentHeaders({ });
-    return await this.updateKROfContentWithOptions(request, headers, runtime);
+    let headers = new UnAlignObjectiveHeaders({ });
+    return await this.unAlignObjectiveWithOptions(objectiveId, request, headers, runtime);
   }
 
   async updateKROfContentWithOptions(request: UpdateKROfContentRequest, headers: UpdateKROfContentHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateKROfContentResponse> {
@@ -3283,13 +3476,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateKROfContentResponse>(await this.doROARequest("UpdateKROfContent", "okr_1.0", "HTTP", "PUT", "AK", `/v1.0/okr/keyResults/contents`, "json", req, runtime), new UpdateKROfContentResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateKROfContent",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/keyResults/contents`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateKROfContentResponse>(await this.execute(params, req, runtime), new UpdateKROfContentResponse({}));
   }
 
-  async updateKROfScore(request: UpdateKROfScoreRequest): Promise<UpdateKROfScoreResponse> {
+  async updateKROfContent(request: UpdateKROfContentRequest): Promise<UpdateKROfContentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateKROfScoreHeaders({ });
-    return await this.updateKROfScoreWithOptions(request, headers, runtime);
+    let headers = new UpdateKROfContentHeaders({ });
+    return await this.updateKROfContentWithOptions(request, headers, runtime);
   }
 
   async updateKROfScoreWithOptions(request: UpdateKROfScoreRequest, headers: UpdateKROfScoreHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateKROfScoreResponse> {
@@ -3322,13 +3526,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateKROfScoreResponse>(await this.doROARequest("UpdateKROfScore", "okr_1.0", "HTTP", "PUT", "AK", `/v1.0/okr/keyResults/scores`, "json", req, runtime), new UpdateKROfScoreResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateKROfScore",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/keyResults/scores`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateKROfScoreResponse>(await this.execute(params, req, runtime), new UpdateKROfScoreResponse({}));
   }
 
-  async updateKROfWeight(request: UpdateKROfWeightRequest): Promise<UpdateKROfWeightResponse> {
+  async updateKROfScore(request: UpdateKROfScoreRequest): Promise<UpdateKROfScoreResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateKROfWeightHeaders({ });
-    return await this.updateKROfWeightWithOptions(request, headers, runtime);
+    let headers = new UpdateKROfScoreHeaders({ });
+    return await this.updateKROfScoreWithOptions(request, headers, runtime);
   }
 
   async updateKROfWeightWithOptions(request: UpdateKROfWeightRequest, headers: UpdateKROfWeightHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateKROfWeightResponse> {
@@ -3361,18 +3576,28 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateKROfWeightResponse>(await this.doROARequest("UpdateKROfWeight", "okr_1.0", "HTTP", "PUT", "AK", `/v1.0/okr/keyResults/weights`, "json", req, runtime), new UpdateKROfWeightResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateKROfWeight",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/keyResults/weights`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateKROfWeightResponse>(await this.execute(params, req, runtime), new UpdateKROfWeightResponse({}));
   }
 
-  async updateObjective(objectiveId: string, request: UpdateObjectiveRequest): Promise<UpdateObjectiveResponse> {
+  async updateKROfWeight(request: UpdateKROfWeightRequest): Promise<UpdateKROfWeightResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateObjectiveHeaders({ });
-    return await this.updateObjectiveWithOptions(objectiveId, request, headers, runtime);
+    let headers = new UpdateKROfWeightHeaders({ });
+    return await this.updateKROfWeightWithOptions(request, headers, runtime);
   }
 
   async updateObjectiveWithOptions(objectiveId: string, request: UpdateObjectiveRequest, headers: UpdateObjectiveHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateObjectiveResponse> {
     Util.validateModel(request);
-    objectiveId = OpenApiUtil.getEncodeParam(objectiveId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.userId)) {
       query["userId"] = request.userId;
@@ -3397,13 +3622,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateObjectiveResponse>(await this.doROARequest("UpdateObjective", "okr_1.0", "HTTP", "PUT", "AK", `/v1.0/okr/objectives/${objectiveId}`, "json", req, runtime), new UpdateObjectiveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateObjective",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/objectives/${objectiveId}`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateObjectiveResponse>(await this.execute(params, req, runtime), new UpdateObjectiveResponse({}));
   }
 
-  async updatePrivacy(request: UpdatePrivacyRequest): Promise<UpdatePrivacyResponse> {
+  async updateObjective(objectiveId: string, request: UpdateObjectiveRequest): Promise<UpdateObjectiveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdatePrivacyHeaders({ });
-    return await this.updatePrivacyWithOptions(request, headers, runtime);
+    let headers = new UpdateObjectiveHeaders({ });
+    return await this.updateObjectiveWithOptions(objectiveId, request, headers, runtime);
   }
 
   async updatePrivacyWithOptions(request: UpdatePrivacyRequest, headers: UpdatePrivacyHeaders, runtime: $Util.RuntimeOptions): Promise<UpdatePrivacyResponse> {
@@ -3440,7 +3676,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdatePrivacyResponse>(await this.doROARequest("UpdatePrivacy", "okr_1.0", "HTTP", "PUT", "AK", `/v1.0/okr/permissions/privacies`, "json", req, runtime), new UpdatePrivacyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdatePrivacy",
+      version: "okr_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/okr/permissions/privacies`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdatePrivacyResponse>(await this.execute(params, req, runtime), new UpdatePrivacyResponse({}));
+  }
+
+  async updatePrivacy(request: UpdatePrivacyRequest): Promise<UpdatePrivacyResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdatePrivacyHeaders({ });
+    return await this.updatePrivacyWithOptions(request, headers, runtime);
   }
 
 }

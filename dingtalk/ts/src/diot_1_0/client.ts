@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -72,10 +74,12 @@ export class BatchDeleteDeviceResponseBody extends $tea.Model {
 
 export class BatchDeleteDeviceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchDeleteDeviceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -83,6 +87,7 @@ export class BatchDeleteDeviceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchDeleteDeviceResponseBody,
     };
   }
@@ -157,10 +162,12 @@ export class BatchRegisterDeviceResponseBody extends $tea.Model {
 
 export class BatchRegisterDeviceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchRegisterDeviceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -168,6 +175,7 @@ export class BatchRegisterDeviceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchRegisterDeviceResponseBody,
     };
   }
@@ -242,10 +250,12 @@ export class BatchRegisterEventTypeResponseBody extends $tea.Model {
 
 export class BatchRegisterEventTypeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchRegisterEventTypeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -253,6 +263,7 @@ export class BatchRegisterEventTypeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchRegisterEventTypeResponseBody,
     };
   }
@@ -327,10 +338,12 @@ export class BatchUpdateDeviceResponseBody extends $tea.Model {
 
 export class BatchUpdateDeviceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchUpdateDeviceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -338,6 +351,7 @@ export class BatchUpdateDeviceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchUpdateDeviceResponseBody,
     };
   }
@@ -424,10 +438,12 @@ export class BindSystemResponseBody extends $tea.Model {
 
 export class BindSystemResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BindSystemResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -435,6 +451,7 @@ export class BindSystemResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BindSystemResponseBody,
     };
   }
@@ -515,10 +532,12 @@ export class DeviceConferenceResponseBody extends $tea.Model {
 
 export class DeviceConferenceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeviceConferenceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -526,6 +545,7 @@ export class DeviceConferenceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeviceConferenceResponseBody,
     };
   }
@@ -624,10 +644,12 @@ export class PushEventResponseBody extends $tea.Model {
 
 export class PushEventResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PushEventResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -635,6 +657,7 @@ export class PushEventResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PushEventResponseBody,
     };
   }
@@ -721,10 +744,12 @@ export class QueryDeviceResponseBody extends $tea.Model {
 
 export class QueryDeviceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryDeviceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -732,6 +757,7 @@ export class QueryDeviceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryDeviceResponseBody,
     };
   }
@@ -836,10 +862,12 @@ export class QueryEventResponseBody extends $tea.Model {
 
 export class QueryEventResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryEventResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -847,6 +875,7 @@ export class QueryEventResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryEventResponseBody,
     };
   }
@@ -948,10 +977,12 @@ export class RegisterDeviceResponseBody extends $tea.Model {
 
 export class RegisterDeviceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RegisterDeviceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -959,6 +990,7 @@ export class RegisterDeviceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RegisterDeviceResponseBody,
     };
   }
@@ -1252,9 +1284,12 @@ export class RegisterDeviceRequestLiveUrls extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1262,12 +1297,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async batchDeleteDevice(request: BatchDeleteDeviceRequest): Promise<BatchDeleteDeviceResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchDeleteDeviceHeaders({ });
-    return await this.batchDeleteDeviceWithOptions(request, headers, runtime);
-  }
 
   async batchDeleteDeviceWithOptions(request: BatchDeleteDeviceRequest, headers: BatchDeleteDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchDeleteDeviceResponse> {
     Util.validateModel(request);
@@ -1293,13 +1322,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchDeleteDeviceResponse>(await this.doROARequest("BatchDeleteDevice", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/devices/remove`, "json", req, runtime), new BatchDeleteDeviceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchDeleteDevice",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/devices/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchDeleteDeviceResponse>(await this.execute(params, req, runtime), new BatchDeleteDeviceResponse({}));
   }
 
-  async batchRegisterDevice(request: BatchRegisterDeviceRequest): Promise<BatchRegisterDeviceResponse> {
+  async batchDeleteDevice(request: BatchDeleteDeviceRequest): Promise<BatchDeleteDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchRegisterDeviceHeaders({ });
-    return await this.batchRegisterDeviceWithOptions(request, headers, runtime);
+    let headers = new BatchDeleteDeviceHeaders({ });
+    return await this.batchDeleteDeviceWithOptions(request, headers, runtime);
   }
 
   async batchRegisterDeviceWithOptions(request: BatchRegisterDeviceRequest, headers: BatchRegisterDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRegisterDeviceResponse> {
@@ -1326,13 +1366,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchRegisterDeviceResponse>(await this.doROARequest("BatchRegisterDevice", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/devices/registrations/batch`, "json", req, runtime), new BatchRegisterDeviceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchRegisterDevice",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/devices/registrations/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchRegisterDeviceResponse>(await this.execute(params, req, runtime), new BatchRegisterDeviceResponse({}));
   }
 
-  async batchRegisterEventType(request: BatchRegisterEventTypeRequest): Promise<BatchRegisterEventTypeResponse> {
+  async batchRegisterDevice(request: BatchRegisterDeviceRequest): Promise<BatchRegisterDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchRegisterEventTypeHeaders({ });
-    return await this.batchRegisterEventTypeWithOptions(request, headers, runtime);
+    let headers = new BatchRegisterDeviceHeaders({ });
+    return await this.batchRegisterDeviceWithOptions(request, headers, runtime);
   }
 
   async batchRegisterEventTypeWithOptions(request: BatchRegisterEventTypeRequest, headers: BatchRegisterEventTypeHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRegisterEventTypeResponse> {
@@ -1359,13 +1410,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchRegisterEventTypeResponse>(await this.doROARequest("BatchRegisterEventType", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/eventTypes/registrations/batch`, "json", req, runtime), new BatchRegisterEventTypeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchRegisterEventType",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/eventTypes/registrations/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchRegisterEventTypeResponse>(await this.execute(params, req, runtime), new BatchRegisterEventTypeResponse({}));
   }
 
-  async batchUpdateDevice(request: BatchUpdateDeviceRequest): Promise<BatchUpdateDeviceResponse> {
+  async batchRegisterEventType(request: BatchRegisterEventTypeRequest): Promise<BatchRegisterEventTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchUpdateDeviceHeaders({ });
-    return await this.batchUpdateDeviceWithOptions(request, headers, runtime);
+    let headers = new BatchRegisterEventTypeHeaders({ });
+    return await this.batchRegisterEventTypeWithOptions(request, headers, runtime);
   }
 
   async batchUpdateDeviceWithOptions(request: BatchUpdateDeviceRequest, headers: BatchUpdateDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateDeviceResponse> {
@@ -1392,13 +1454,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchUpdateDeviceResponse>(await this.doROARequest("BatchUpdateDevice", "diot_1.0", "HTTP", "PUT", "AK", `/v1.0/diot/devices/batch`, "json", req, runtime), new BatchUpdateDeviceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchUpdateDevice",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/devices/batch`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchUpdateDeviceResponse>(await this.execute(params, req, runtime), new BatchUpdateDeviceResponse({}));
   }
 
-  async bindSystem(request: BindSystemRequest): Promise<BindSystemResponse> {
+  async batchUpdateDevice(request: BatchUpdateDeviceRequest): Promise<BatchUpdateDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BindSystemHeaders({ });
-    return await this.bindSystemWithOptions(request, headers, runtime);
+    let headers = new BatchUpdateDeviceHeaders({ });
+    return await this.batchUpdateDeviceWithOptions(request, headers, runtime);
   }
 
   async bindSystemWithOptions(request: BindSystemRequest, headers: BindSystemHeaders, runtime: $Util.RuntimeOptions): Promise<BindSystemResponse> {
@@ -1437,13 +1510,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BindSystemResponse>(await this.doROARequest("BindSystem", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/systems/bind`, "json", req, runtime), new BindSystemResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BindSystem",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/systems/bind`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BindSystemResponse>(await this.execute(params, req, runtime), new BindSystemResponse({}));
   }
 
-  async deviceConference(request: DeviceConferenceRequest): Promise<DeviceConferenceResponse> {
+  async bindSystem(request: BindSystemRequest): Promise<BindSystemResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeviceConferenceHeaders({ });
-    return await this.deviceConferenceWithOptions(request, headers, runtime);
+    let headers = new BindSystemHeaders({ });
+    return await this.bindSystemWithOptions(request, headers, runtime);
   }
 
   async deviceConferenceWithOptions(request: DeviceConferenceRequest, headers: DeviceConferenceHeaders, runtime: $Util.RuntimeOptions): Promise<DeviceConferenceResponse> {
@@ -1478,13 +1562,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeviceConferenceResponse>(await this.doROARequest("DeviceConference", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/deviceConferences/initiate`, "json", req, runtime), new DeviceConferenceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeviceConference",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/deviceConferences/initiate`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeviceConferenceResponse>(await this.execute(params, req, runtime), new DeviceConferenceResponse({}));
   }
 
-  async pushEvent(request: PushEventRequest): Promise<PushEventResponse> {
+  async deviceConference(request: DeviceConferenceRequest): Promise<DeviceConferenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PushEventHeaders({ });
-    return await this.pushEventWithOptions(request, headers, runtime);
+    let headers = new DeviceConferenceHeaders({ });
+    return await this.deviceConferenceWithOptions(request, headers, runtime);
   }
 
   async pushEventWithOptions(request: PushEventRequest, headers: PushEventHeaders, runtime: $Util.RuntimeOptions): Promise<PushEventResponse> {
@@ -1543,13 +1638,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PushEventResponse>(await this.doROARequest("PushEvent", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/events/push`, "json", req, runtime), new PushEventResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PushEvent",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/events/push`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PushEventResponse>(await this.execute(params, req, runtime), new PushEventResponse({}));
   }
 
-  async queryDevice(request: QueryDeviceRequest): Promise<QueryDeviceResponse> {
+  async pushEvent(request: PushEventRequest): Promise<PushEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryDeviceHeaders({ });
-    return await this.queryDeviceWithOptions(request, headers, runtime);
+    let headers = new PushEventHeaders({ });
+    return await this.pushEventWithOptions(request, headers, runtime);
   }
 
   async queryDeviceWithOptions(request: QueryDeviceRequest, headers: QueryDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryDeviceResponse> {
@@ -1580,13 +1686,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryDeviceResponse>(await this.doROARequest("QueryDevice", "diot_1.0", "HTTP", "GET", "AK", `/v1.0/diot/devices`, "json", req, runtime), new QueryDeviceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryDevice",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/devices`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryDeviceResponse>(await this.execute(params, req, runtime), new QueryDeviceResponse({}));
   }
 
-  async queryEvent(request: QueryEventRequest): Promise<QueryEventResponse> {
+  async queryDevice(request: QueryDeviceRequest): Promise<QueryDeviceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryEventHeaders({ });
-    return await this.queryEventWithOptions(request, headers, runtime);
+    let headers = new QueryDeviceHeaders({ });
+    return await this.queryDeviceWithOptions(request, headers, runtime);
   }
 
   async queryEventWithOptions(request: QueryEventRequest, headers: QueryEventHeaders, runtime: $Util.RuntimeOptions): Promise<QueryEventResponse> {
@@ -1641,13 +1758,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryEventResponse>(await this.doROARequest("QueryEvent", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/events/query`, "json", req, runtime), new QueryEventResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryEvent",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/events/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryEventResponse>(await this.execute(params, req, runtime), new QueryEventResponse({}));
   }
 
-  async registerDevice(request: RegisterDeviceRequest): Promise<RegisterDeviceResponse> {
+  async queryEvent(request: QueryEventRequest): Promise<QueryEventResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RegisterDeviceHeaders({ });
-    return await this.registerDeviceWithOptions(request, headers, runtime);
+    let headers = new QueryEventHeaders({ });
+    return await this.queryEventWithOptions(request, headers, runtime);
   }
 
   async registerDeviceWithOptions(request: RegisterDeviceRequest, headers: RegisterDeviceHeaders, runtime: $Util.RuntimeOptions): Promise<RegisterDeviceResponse> {
@@ -1710,7 +1838,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RegisterDeviceResponse>(await this.doROARequest("RegisterDevice", "diot_1.0", "HTTP", "POST", "AK", `/v1.0/diot/devices/register`, "json", req, runtime), new RegisterDeviceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RegisterDevice",
+      version: "diot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/diot/devices/register`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RegisterDeviceResponse>(await this.execute(params, req, runtime), new RegisterDeviceResponse({}));
+  }
+
+  async registerDevice(request: RegisterDeviceRequest): Promise<RegisterDeviceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RegisterDeviceHeaders({ });
+    return await this.registerDeviceWithOptions(request, headers, runtime);
   }
 
 }

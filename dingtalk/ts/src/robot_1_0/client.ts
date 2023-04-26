@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -75,10 +77,12 @@ export class BatchOTOQueryResponseBody extends $tea.Model {
 
 export class BatchOTOQueryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchOTOQueryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -86,6 +90,7 @@ export class BatchOTOQueryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchOTOQueryResponseBody,
     };
   }
@@ -166,10 +171,12 @@ export class BatchRecallGroupResponseBody extends $tea.Model {
 
 export class BatchRecallGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchRecallGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -177,6 +184,7 @@ export class BatchRecallGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchRecallGroupResponseBody,
     };
   }
@@ -254,10 +262,12 @@ export class BatchRecallOTOResponseBody extends $tea.Model {
 
 export class BatchRecallOTOResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchRecallOTOResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -265,6 +275,7 @@ export class BatchRecallOTOResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchRecallOTOResponseBody,
     };
   }
@@ -345,10 +356,12 @@ export class BatchRecallPrivateChatResponseBody extends $tea.Model {
 
 export class BatchRecallPrivateChatResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchRecallPrivateChatResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -356,6 +369,7 @@ export class BatchRecallPrivateChatResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchRecallPrivateChatResponseBody,
     };
   }
@@ -442,10 +456,12 @@ export class BatchSendOTOResponseBody extends $tea.Model {
 
 export class BatchSendOTOResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchSendOTOResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -453,6 +469,7 @@ export class BatchSendOTOResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchSendOTOResponseBody,
     };
   }
@@ -524,10 +541,12 @@ export class ClearRobotPluginResponseBody extends $tea.Model {
 
 export class ClearRobotPluginResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ClearRobotPluginResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -535,6 +554,7 @@ export class ClearRobotPluginResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ClearRobotPluginResponseBody,
     };
   }
@@ -606,10 +626,12 @@ export class GetBotListInGroupResponseBody extends $tea.Model {
 
 export class GetBotListInGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetBotListInGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -617,6 +639,7 @@ export class GetBotListInGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetBotListInGroupResponseBody,
     };
   }
@@ -691,10 +714,12 @@ export class ManageSingleChatRobotStatusResponseBody extends $tea.Model {
 
 export class ManageSingleChatRobotStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ManageSingleChatRobotStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -702,6 +727,7 @@ export class ManageSingleChatRobotStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ManageSingleChatRobotStatusResponseBody,
     };
   }
@@ -797,10 +823,12 @@ export class OrgGroupQueryResponseBody extends $tea.Model {
 
 export class OrgGroupQueryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: OrgGroupQueryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -808,6 +836,7 @@ export class OrgGroupQueryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: OrgGroupQueryResponseBody,
     };
   }
@@ -888,10 +917,12 @@ export class OrgGroupRecallResponseBody extends $tea.Model {
 
 export class OrgGroupRecallResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: OrgGroupRecallResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -899,6 +930,7 @@ export class OrgGroupRecallResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: OrgGroupRecallResponseBody,
     };
   }
@@ -985,10 +1017,12 @@ export class OrgGroupSendResponseBody extends $tea.Model {
 
 export class OrgGroupSendResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: OrgGroupSendResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -996,6 +1030,7 @@ export class OrgGroupSendResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: OrgGroupSendResponseBody,
     };
   }
@@ -1088,10 +1123,12 @@ export class PrivateChatQueryResponseBody extends $tea.Model {
 
 export class PrivateChatQueryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PrivateChatQueryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1099,6 +1136,7 @@ export class PrivateChatQueryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PrivateChatQueryResponseBody,
     };
   }
@@ -1182,10 +1220,12 @@ export class PrivateChatSendResponseBody extends $tea.Model {
 
 export class PrivateChatSendResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PrivateChatSendResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1193,6 +1233,7 @@ export class PrivateChatSendResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PrivateChatSendResponseBody,
     };
   }
@@ -1273,10 +1314,12 @@ export class QueryBotInstanceInGroupInfoResponseBody extends $tea.Model {
 
 export class QueryBotInstanceInGroupInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryBotInstanceInGroupInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1284,6 +1327,7 @@ export class QueryBotInstanceInGroupInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryBotInstanceInGroupInfoResponseBody,
     };
   }
@@ -1355,10 +1399,12 @@ export class QueryRobotPluginResponseBody extends $tea.Model {
 
 export class QueryRobotPluginResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryRobotPluginResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1366,6 +1412,7 @@ export class QueryRobotPluginResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryRobotPluginResponseBody,
     };
   }
@@ -1440,10 +1487,12 @@ export class RobotMessageFileDownloadResponseBody extends $tea.Model {
 
 export class RobotMessageFileDownloadResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RobotMessageFileDownloadResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1451,6 +1500,7 @@ export class RobotMessageFileDownloadResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RobotMessageFileDownloadResponseBody,
     };
   }
@@ -1534,10 +1584,12 @@ export class SendRobotDingMessageResponseBody extends $tea.Model {
 
 export class SendRobotDingMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendRobotDingMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1545,6 +1597,7 @@ export class SendRobotDingMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendRobotDingMessageResponseBody,
     };
   }
@@ -1619,10 +1672,12 @@ export class SetRobotPluginResponseBody extends $tea.Model {
 
 export class SetRobotPluginResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SetRobotPluginResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1630,6 +1685,7 @@ export class SetRobotPluginResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SetRobotPluginResponseBody,
     };
   }
@@ -1716,10 +1772,12 @@ export class UpdateInstalledRobotResponseBody extends $tea.Model {
 
 export class UpdateInstalledRobotResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateInstalledRobotResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1727,6 +1785,7 @@ export class UpdateInstalledRobotResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateInstalledRobotResponseBody,
     };
   }
@@ -1850,9 +1909,12 @@ export class SetRobotPluginRequestPluginInfoList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1860,12 +1922,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async batchOTOQuery(request: BatchOTOQueryRequest): Promise<BatchOTOQueryResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchOTOQueryHeaders({ });
-    return await this.batchOTOQueryWithOptions(request, headers, runtime);
-  }
 
   async batchOTOQueryWithOptions(request: BatchOTOQueryRequest, headers: BatchOTOQueryHeaders, runtime: $Util.RuntimeOptions): Promise<BatchOTOQueryResponse> {
     Util.validateModel(request);
@@ -1891,13 +1947,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<BatchOTOQueryResponse>(await this.doROARequest("BatchOTOQuery", "robot_1.0", "HTTP", "GET", "AK", `/v1.0/robot/oToMessages/readStatus`, "json", req, runtime), new BatchOTOQueryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchOTOQuery",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/oToMessages/readStatus`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchOTOQueryResponse>(await this.execute(params, req, runtime), new BatchOTOQueryResponse({}));
   }
 
-  async batchRecallGroup(request: BatchRecallGroupRequest): Promise<BatchRecallGroupResponse> {
+  async batchOTOQuery(request: BatchOTOQueryRequest): Promise<BatchOTOQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchRecallGroupHeaders({ });
-    return await this.batchRecallGroupWithOptions(request, headers, runtime);
+    let headers = new BatchOTOQueryHeaders({ });
+    return await this.batchOTOQueryWithOptions(request, headers, runtime);
   }
 
   async batchRecallGroupWithOptions(request: BatchRecallGroupRequest, headers: BatchRecallGroupHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallGroupResponse> {
@@ -1928,13 +1995,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchRecallGroupResponse>(await this.doROARequest("BatchRecallGroup", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groupMessages/batchRecall`, "json", req, runtime), new BatchRecallGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchRecallGroup",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/groupMessages/batchRecall`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchRecallGroupResponse>(await this.execute(params, req, runtime), new BatchRecallGroupResponse({}));
   }
 
-  async batchRecallOTO(request: BatchRecallOTORequest): Promise<BatchRecallOTOResponse> {
+  async batchRecallGroup(request: BatchRecallGroupRequest): Promise<BatchRecallGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchRecallOTOHeaders({ });
-    return await this.batchRecallOTOWithOptions(request, headers, runtime);
+    let headers = new BatchRecallGroupHeaders({ });
+    return await this.batchRecallGroupWithOptions(request, headers, runtime);
   }
 
   async batchRecallOTOWithOptions(request: BatchRecallOTORequest, headers: BatchRecallOTOHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallOTOResponse> {
@@ -1961,13 +2039,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchRecallOTOResponse>(await this.doROARequest("BatchRecallOTO", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/otoMessages/batchRecall`, "json", req, runtime), new BatchRecallOTOResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchRecallOTO",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/otoMessages/batchRecall`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchRecallOTOResponse>(await this.execute(params, req, runtime), new BatchRecallOTOResponse({}));
   }
 
-  async batchRecallPrivateChat(request: BatchRecallPrivateChatRequest): Promise<BatchRecallPrivateChatResponse> {
+  async batchRecallOTO(request: BatchRecallOTORequest): Promise<BatchRecallOTOResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchRecallPrivateChatHeaders({ });
-    return await this.batchRecallPrivateChatWithOptions(request, headers, runtime);
+    let headers = new BatchRecallOTOHeaders({ });
+    return await this.batchRecallOTOWithOptions(request, headers, runtime);
   }
 
   async batchRecallPrivateChatWithOptions(request: BatchRecallPrivateChatRequest, headers: BatchRecallPrivateChatHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRecallPrivateChatResponse> {
@@ -1998,13 +2087,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchRecallPrivateChatResponse>(await this.doROARequest("BatchRecallPrivateChat", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/privateChatMessages/batchRecall`, "json", req, runtime), new BatchRecallPrivateChatResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchRecallPrivateChat",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/privateChatMessages/batchRecall`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchRecallPrivateChatResponse>(await this.execute(params, req, runtime), new BatchRecallPrivateChatResponse({}));
   }
 
-  async batchSendOTO(request: BatchSendOTORequest): Promise<BatchSendOTOResponse> {
+  async batchRecallPrivateChat(request: BatchRecallPrivateChatRequest): Promise<BatchRecallPrivateChatResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchSendOTOHeaders({ });
-    return await this.batchSendOTOWithOptions(request, headers, runtime);
+    let headers = new BatchRecallPrivateChatHeaders({ });
+    return await this.batchRecallPrivateChatWithOptions(request, headers, runtime);
   }
 
   async batchSendOTOWithOptions(request: BatchSendOTORequest, headers: BatchSendOTOHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSendOTOResponse> {
@@ -2039,13 +2139,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchSendOTOResponse>(await this.doROARequest("BatchSendOTO", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/oToMessages/batchSend`, "json", req, runtime), new BatchSendOTOResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchSendOTO",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/oToMessages/batchSend`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchSendOTOResponse>(await this.execute(params, req, runtime), new BatchSendOTOResponse({}));
   }
 
-  async clearRobotPlugin(request: ClearRobotPluginRequest): Promise<ClearRobotPluginResponse> {
+  async batchSendOTO(request: BatchSendOTORequest): Promise<BatchSendOTOResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ClearRobotPluginHeaders({ });
-    return await this.clearRobotPluginWithOptions(request, headers, runtime);
+    let headers = new BatchSendOTOHeaders({ });
+    return await this.batchSendOTOWithOptions(request, headers, runtime);
   }
 
   async clearRobotPluginWithOptions(request: ClearRobotPluginRequest, headers: ClearRobotPluginHeaders, runtime: $Util.RuntimeOptions): Promise<ClearRobotPluginResponse> {
@@ -2068,13 +2179,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ClearRobotPluginResponse>(await this.doROARequest("ClearRobotPlugin", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/plugins/clear`, "json", req, runtime), new ClearRobotPluginResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ClearRobotPlugin",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/plugins/clear`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ClearRobotPluginResponse>(await this.execute(params, req, runtime), new ClearRobotPluginResponse({}));
   }
 
-  async getBotListInGroup(request: GetBotListInGroupRequest): Promise<GetBotListInGroupResponse> {
+  async clearRobotPlugin(request: ClearRobotPluginRequest): Promise<ClearRobotPluginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetBotListInGroupHeaders({ });
-    return await this.getBotListInGroupWithOptions(request, headers, runtime);
+    let headers = new ClearRobotPluginHeaders({ });
+    return await this.clearRobotPluginWithOptions(request, headers, runtime);
   }
 
   async getBotListInGroupWithOptions(request: GetBotListInGroupRequest, headers: GetBotListInGroupHeaders, runtime: $Util.RuntimeOptions): Promise<GetBotListInGroupResponse> {
@@ -2097,13 +2219,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetBotListInGroupResponse>(await this.doROARequest("GetBotListInGroup", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groups/robots/query`, "json", req, runtime), new GetBotListInGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetBotListInGroup",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/groups/robots/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetBotListInGroupResponse>(await this.execute(params, req, runtime), new GetBotListInGroupResponse({}));
   }
 
-  async manageSingleChatRobotStatus(request: ManageSingleChatRobotStatusRequest): Promise<ManageSingleChatRobotStatusResponse> {
+  async getBotListInGroup(request: GetBotListInGroupRequest): Promise<GetBotListInGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ManageSingleChatRobotStatusHeaders({ });
-    return await this.manageSingleChatRobotStatusWithOptions(request, headers, runtime);
+    let headers = new GetBotListInGroupHeaders({ });
+    return await this.getBotListInGroupWithOptions(request, headers, runtime);
   }
 
   async manageSingleChatRobotStatusWithOptions(request: ManageSingleChatRobotStatusRequest, headers: ManageSingleChatRobotStatusHeaders, runtime: $Util.RuntimeOptions): Promise<ManageSingleChatRobotStatusResponse> {
@@ -2130,13 +2263,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ManageSingleChatRobotStatusResponse>(await this.doROARequest("ManageSingleChatRobotStatus", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/statuses/manage`, "json", req, runtime), new ManageSingleChatRobotStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ManageSingleChatRobotStatus",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/statuses/manage`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ManageSingleChatRobotStatusResponse>(await this.execute(params, req, runtime), new ManageSingleChatRobotStatusResponse({}));
   }
 
-  async orgGroupQuery(request: OrgGroupQueryRequest): Promise<OrgGroupQueryResponse> {
+  async manageSingleChatRobotStatus(request: ManageSingleChatRobotStatusRequest): Promise<ManageSingleChatRobotStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new OrgGroupQueryHeaders({ });
-    return await this.orgGroupQueryWithOptions(request, headers, runtime);
+    let headers = new ManageSingleChatRobotStatusHeaders({ });
+    return await this.manageSingleChatRobotStatusWithOptions(request, headers, runtime);
   }
 
   async orgGroupQueryWithOptions(request: OrgGroupQueryRequest, headers: OrgGroupQueryHeaders, runtime: $Util.RuntimeOptions): Promise<OrgGroupQueryResponse> {
@@ -2179,13 +2323,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<OrgGroupQueryResponse>(await this.doROARequest("OrgGroupQuery", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groupMessages/query`, "json", req, runtime), new OrgGroupQueryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "OrgGroupQuery",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/groupMessages/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OrgGroupQueryResponse>(await this.execute(params, req, runtime), new OrgGroupQueryResponse({}));
   }
 
-  async orgGroupRecall(request: OrgGroupRecallRequest): Promise<OrgGroupRecallResponse> {
+  async orgGroupQuery(request: OrgGroupQueryRequest): Promise<OrgGroupQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new OrgGroupRecallHeaders({ });
-    return await this.orgGroupRecallWithOptions(request, headers, runtime);
+    let headers = new OrgGroupQueryHeaders({ });
+    return await this.orgGroupQueryWithOptions(request, headers, runtime);
   }
 
   async orgGroupRecallWithOptions(request: OrgGroupRecallRequest, headers: OrgGroupRecallHeaders, runtime: $Util.RuntimeOptions): Promise<OrgGroupRecallResponse> {
@@ -2216,13 +2371,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<OrgGroupRecallResponse>(await this.doROARequest("OrgGroupRecall", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groupMessages/recall`, "json", req, runtime), new OrgGroupRecallResponse({}));
+    let params = new $OpenApi.Params({
+      action: "OrgGroupRecall",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/groupMessages/recall`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OrgGroupRecallResponse>(await this.execute(params, req, runtime), new OrgGroupRecallResponse({}));
   }
 
-  async orgGroupSend(request: OrgGroupSendRequest): Promise<OrgGroupSendResponse> {
+  async orgGroupRecall(request: OrgGroupRecallRequest): Promise<OrgGroupRecallResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new OrgGroupSendHeaders({ });
-    return await this.orgGroupSendWithOptions(request, headers, runtime);
+    let headers = new OrgGroupRecallHeaders({ });
+    return await this.orgGroupRecallWithOptions(request, headers, runtime);
   }
 
   async orgGroupSendWithOptions(request: OrgGroupSendRequest, headers: OrgGroupSendHeaders, runtime: $Util.RuntimeOptions): Promise<OrgGroupSendResponse> {
@@ -2265,13 +2431,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<OrgGroupSendResponse>(await this.doROARequest("OrgGroupSend", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groupMessages/send`, "json", req, runtime), new OrgGroupSendResponse({}));
+    let params = new $OpenApi.Params({
+      action: "OrgGroupSend",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/groupMessages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OrgGroupSendResponse>(await this.execute(params, req, runtime), new OrgGroupSendResponse({}));
   }
 
-  async privateChatQuery(request: PrivateChatQueryRequest): Promise<PrivateChatQueryResponse> {
+  async orgGroupSend(request: OrgGroupSendRequest): Promise<OrgGroupSendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PrivateChatQueryHeaders({ });
-    return await this.privateChatQueryWithOptions(request, headers, runtime);
+    let headers = new OrgGroupSendHeaders({ });
+    return await this.orgGroupSendWithOptions(request, headers, runtime);
   }
 
   async privateChatQueryWithOptions(request: PrivateChatQueryRequest, headers: PrivateChatQueryHeaders, runtime: $Util.RuntimeOptions): Promise<PrivateChatQueryResponse> {
@@ -2310,13 +2487,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PrivateChatQueryResponse>(await this.doROARequest("PrivateChatQuery", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/privateChatMessages/query`, "json", req, runtime), new PrivateChatQueryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PrivateChatQuery",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/privateChatMessages/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PrivateChatQueryResponse>(await this.execute(params, req, runtime), new PrivateChatQueryResponse({}));
   }
 
-  async privateChatSend(request: PrivateChatSendRequest): Promise<PrivateChatSendResponse> {
+  async privateChatQuery(request: PrivateChatQueryRequest): Promise<PrivateChatQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PrivateChatSendHeaders({ });
-    return await this.privateChatSendWithOptions(request, headers, runtime);
+    let headers = new PrivateChatQueryHeaders({ });
+    return await this.privateChatQueryWithOptions(request, headers, runtime);
   }
 
   async privateChatSendWithOptions(request: PrivateChatSendRequest, headers: PrivateChatSendHeaders, runtime: $Util.RuntimeOptions): Promise<PrivateChatSendResponse> {
@@ -2355,13 +2543,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PrivateChatSendResponse>(await this.doROARequest("PrivateChatSend", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/privateChatMessages/send`, "json", req, runtime), new PrivateChatSendResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PrivateChatSend",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/privateChatMessages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PrivateChatSendResponse>(await this.execute(params, req, runtime), new PrivateChatSendResponse({}));
   }
 
-  async queryBotInstanceInGroupInfo(request: QueryBotInstanceInGroupInfoRequest): Promise<QueryBotInstanceInGroupInfoResponse> {
+  async privateChatSend(request: PrivateChatSendRequest): Promise<PrivateChatSendResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryBotInstanceInGroupInfoHeaders({ });
-    return await this.queryBotInstanceInGroupInfoWithOptions(request, headers, runtime);
+    let headers = new PrivateChatSendHeaders({ });
+    return await this.privateChatSendWithOptions(request, headers, runtime);
   }
 
   async queryBotInstanceInGroupInfoWithOptions(request: QueryBotInstanceInGroupInfoRequest, headers: QueryBotInstanceInGroupInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBotInstanceInGroupInfoResponse> {
@@ -2392,13 +2591,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryBotInstanceInGroupInfoResponse>(await this.doROARequest("QueryBotInstanceInGroupInfo", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/groups/query`, "json", req, runtime), new QueryBotInstanceInGroupInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryBotInstanceInGroupInfo",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/groups/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryBotInstanceInGroupInfoResponse>(await this.execute(params, req, runtime), new QueryBotInstanceInGroupInfoResponse({}));
   }
 
-  async queryRobotPlugin(request: QueryRobotPluginRequest): Promise<QueryRobotPluginResponse> {
+  async queryBotInstanceInGroupInfo(request: QueryBotInstanceInGroupInfoRequest): Promise<QueryBotInstanceInGroupInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryRobotPluginHeaders({ });
-    return await this.queryRobotPluginWithOptions(request, headers, runtime);
+    let headers = new QueryBotInstanceInGroupInfoHeaders({ });
+    return await this.queryBotInstanceInGroupInfoWithOptions(request, headers, runtime);
   }
 
   async queryRobotPluginWithOptions(request: QueryRobotPluginRequest, headers: QueryRobotPluginHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRobotPluginResponse> {
@@ -2421,13 +2631,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryRobotPluginResponse>(await this.doROARequest("QueryRobotPlugin", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/plugins/query`, "json", req, runtime), new QueryRobotPluginResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryRobotPlugin",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/plugins/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryRobotPluginResponse>(await this.execute(params, req, runtime), new QueryRobotPluginResponse({}));
   }
 
-  async robotMessageFileDownload(request: RobotMessageFileDownloadRequest): Promise<RobotMessageFileDownloadResponse> {
+  async queryRobotPlugin(request: QueryRobotPluginRequest): Promise<QueryRobotPluginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RobotMessageFileDownloadHeaders({ });
-    return await this.robotMessageFileDownloadWithOptions(request, headers, runtime);
+    let headers = new QueryRobotPluginHeaders({ });
+    return await this.queryRobotPluginWithOptions(request, headers, runtime);
   }
 
   async robotMessageFileDownloadWithOptions(request: RobotMessageFileDownloadRequest, headers: RobotMessageFileDownloadHeaders, runtime: $Util.RuntimeOptions): Promise<RobotMessageFileDownloadResponse> {
@@ -2454,13 +2675,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RobotMessageFileDownloadResponse>(await this.doROARequest("RobotMessageFileDownload", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/messageFiles/download`, "json", req, runtime), new RobotMessageFileDownloadResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RobotMessageFileDownload",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/messageFiles/download`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RobotMessageFileDownloadResponse>(await this.execute(params, req, runtime), new RobotMessageFileDownloadResponse({}));
   }
 
-  async sendRobotDingMessage(request: SendRobotDingMessageRequest): Promise<SendRobotDingMessageResponse> {
+  async robotMessageFileDownload(request: RobotMessageFileDownloadRequest): Promise<RobotMessageFileDownloadResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendRobotDingMessageHeaders({ });
-    return await this.sendRobotDingMessageWithOptions(request, headers, runtime);
+    let headers = new RobotMessageFileDownloadHeaders({ });
+    return await this.robotMessageFileDownloadWithOptions(request, headers, runtime);
   }
 
   async sendRobotDingMessageWithOptions(request: SendRobotDingMessageRequest, headers: SendRobotDingMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendRobotDingMessageResponse> {
@@ -2499,13 +2731,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendRobotDingMessageResponse>(await this.doROARequest("SendRobotDingMessage", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/dingMessages/send`, "json", req, runtime), new SendRobotDingMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SendRobotDingMessage",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/dingMessages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<SendRobotDingMessageResponse>(await this.execute(params, req, runtime), new SendRobotDingMessageResponse({}));
   }
 
-  async setRobotPlugin(request: SetRobotPluginRequest): Promise<SetRobotPluginResponse> {
+  async sendRobotDingMessage(request: SendRobotDingMessageRequest): Promise<SendRobotDingMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SetRobotPluginHeaders({ });
-    return await this.setRobotPluginWithOptions(request, headers, runtime);
+    let headers = new SendRobotDingMessageHeaders({ });
+    return await this.sendRobotDingMessageWithOptions(request, headers, runtime);
   }
 
   async setRobotPluginWithOptions(request: SetRobotPluginRequest, headers: SetRobotPluginHeaders, runtime: $Util.RuntimeOptions): Promise<SetRobotPluginResponse> {
@@ -2532,13 +2775,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SetRobotPluginResponse>(await this.doROARequest("SetRobotPlugin", "robot_1.0", "HTTP", "POST", "AK", `/v1.0/robot/plugins/set`, "json", req, runtime), new SetRobotPluginResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SetRobotPlugin",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/plugins/set`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SetRobotPluginResponse>(await this.execute(params, req, runtime), new SetRobotPluginResponse({}));
   }
 
-  async updateInstalledRobot(request: UpdateInstalledRobotRequest): Promise<UpdateInstalledRobotResponse> {
+  async setRobotPlugin(request: SetRobotPluginRequest): Promise<SetRobotPluginResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateInstalledRobotHeaders({ });
-    return await this.updateInstalledRobotWithOptions(request, headers, runtime);
+    let headers = new SetRobotPluginHeaders({ });
+    return await this.setRobotPluginWithOptions(request, headers, runtime);
   }
 
   async updateInstalledRobotWithOptions(request: UpdateInstalledRobotRequest, headers: UpdateInstalledRobotHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInstalledRobotResponse> {
@@ -2581,7 +2835,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateInstalledRobotResponse>(await this.doROARequest("UpdateInstalledRobot", "robot_1.0", "HTTP", "PUT", "AK", `/v1.0/robot/managements/infos`, "json", req, runtime), new UpdateInstalledRobotResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateInstalledRobot",
+      version: "robot_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/robot/managements/infos`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateInstalledRobotResponse>(await this.execute(params, req, runtime), new UpdateInstalledRobotResponse({}));
+  }
+
+  async updateInstalledRobot(request: UpdateInstalledRobotRequest): Promise<UpdateInstalledRobotResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateInstalledRobotHeaders({ });
+    return await this.updateInstalledRobotWithOptions(request, headers, runtime);
   }
 
 }

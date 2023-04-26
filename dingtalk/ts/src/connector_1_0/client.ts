@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -72,10 +74,12 @@ export class CreateActionResponseBody extends $tea.Model {
 
 export class CreateActionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateActionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -83,6 +87,7 @@ export class CreateActionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateActionResponseBody,
     };
   }
@@ -157,10 +162,12 @@ export class CreateConnectorResponseBody extends $tea.Model {
 
 export class CreateConnectorResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateConnectorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -168,6 +175,7 @@ export class CreateConnectorResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateConnectorResponseBody,
     };
   }
@@ -245,10 +253,12 @@ export class CreateInvocableInstanceResponseBody extends $tea.Model {
 
 export class CreateInvocableInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateInvocableInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -256,6 +266,7 @@ export class CreateInvocableInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateInvocableInstanceResponseBody,
     };
   }
@@ -330,10 +341,12 @@ export class CreateTriggerResponseBody extends $tea.Model {
 
 export class CreateTriggerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateTriggerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -341,6 +354,7 @@ export class CreateTriggerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateTriggerResponseBody,
     };
   }
@@ -433,10 +447,12 @@ export class GetActionDetailResponseBody extends $tea.Model {
 
 export class GetActionDetailResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetActionDetailResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -444,6 +460,7 @@ export class GetActionDetailResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetActionDetailResponseBody,
     };
   }
@@ -533,10 +550,12 @@ export class InvokeInstanceResponseBody extends $tea.Model {
 
 export class InvokeInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: InvokeInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -544,6 +563,7 @@ export class InvokeInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: InvokeInstanceResponseBody,
     };
   }
@@ -639,10 +659,12 @@ export class PullDataByPageResponseBody extends $tea.Model {
 
 export class PullDataByPageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PullDataByPageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -650,6 +672,7 @@ export class PullDataByPageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PullDataByPageResponseBody,
     };
   }
@@ -742,10 +765,12 @@ export class PullDataByPkResponseBody extends $tea.Model {
 
 export class PullDataByPkResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PullDataByPkResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -753,6 +778,7 @@ export class PullDataByPkResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PullDataByPkResponseBody,
     };
   }
@@ -845,10 +871,12 @@ export class SearchActionsResponseBody extends $tea.Model {
 
 export class SearchActionsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchActionsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -856,6 +884,7 @@ export class SearchActionsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchActionsResponseBody,
     };
   }
@@ -942,10 +971,12 @@ export class SearchConnectorsResponseBody extends $tea.Model {
 
 export class SearchConnectorsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchConnectorsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -953,6 +984,7 @@ export class SearchConnectorsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchConnectorsResponseBody,
     };
   }
@@ -1027,10 +1059,12 @@ export class SyncDataResponseBody extends $tea.Model {
 
 export class SyncDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SyncDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1038,6 +1072,7 @@ export class SyncDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SyncDataResponseBody,
     };
   }
@@ -1112,10 +1147,12 @@ export class UpdateActionResponseBody extends $tea.Model {
 
 export class UpdateActionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateActionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1123,6 +1160,7 @@ export class UpdateActionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateActionResponseBody,
     };
   }
@@ -1197,10 +1235,12 @@ export class UpdateConnectorResponseBody extends $tea.Model {
 
 export class UpdateConnectorResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateConnectorResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1208,6 +1248,7 @@ export class UpdateConnectorResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateConnectorResponseBody,
     };
   }
@@ -1282,10 +1323,12 @@ export class UpdateTriggerResponseBody extends $tea.Model {
 
 export class UpdateTriggerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateTriggerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1293,6 +1336,7 @@ export class UpdateTriggerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateTriggerResponseBody,
     };
   }
@@ -2164,9 +2208,12 @@ export class UpdateTriggerResponseBodyItem extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2174,12 +2221,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async createAction(request: CreateActionRequest): Promise<CreateActionResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateActionHeaders({ });
-    return await this.createActionWithOptions(request, headers, runtime);
-  }
 
   async createActionWithOptions(request: CreateActionRequest, headers: CreateActionHeaders, runtime: $Util.RuntimeOptions): Promise<CreateActionResponse> {
     Util.validateModel(request);
@@ -2205,13 +2246,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateActionResponse>(await this.doROARequest("CreateAction", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/actions`, "json", req, runtime), new CreateActionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateAction",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/actions`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateActionResponse>(await this.execute(params, req, runtime), new CreateActionResponse({}));
   }
 
-  async createConnector(request: CreateConnectorRequest): Promise<CreateConnectorResponse> {
+  async createAction(request: CreateActionRequest): Promise<CreateActionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateConnectorHeaders({ });
-    return await this.createConnectorWithOptions(request, headers, runtime);
+    let headers = new CreateActionHeaders({ });
+    return await this.createActionWithOptions(request, headers, runtime);
   }
 
   async createConnectorWithOptions(request: CreateConnectorRequest, headers: CreateConnectorHeaders, runtime: $Util.RuntimeOptions): Promise<CreateConnectorResponse> {
@@ -2238,13 +2290,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateConnectorResponse>(await this.doROARequest("CreateConnector", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/connectors`, "json", req, runtime), new CreateConnectorResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateConnector",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/connectors`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateConnectorResponse>(await this.execute(params, req, runtime), new CreateConnectorResponse({}));
   }
 
-  async createInvocableInstance(request: CreateInvocableInstanceRequest): Promise<CreateInvocableInstanceResponse> {
+  async createConnector(request: CreateConnectorRequest): Promise<CreateConnectorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateInvocableInstanceHeaders({ });
-    return await this.createInvocableInstanceWithOptions(request, headers, runtime);
+    let headers = new CreateConnectorHeaders({ });
+    return await this.createConnectorWithOptions(request, headers, runtime);
   }
 
   async createInvocableInstanceWithOptions(request: CreateInvocableInstanceRequest, headers: CreateInvocableInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateInvocableInstanceResponse> {
@@ -2271,13 +2334,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateInvocableInstanceResponse>(await this.doROARequest("CreateInvocableInstance", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/instances`, "json", req, runtime), new CreateInvocableInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateInvocableInstance",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/instances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateInvocableInstanceResponse>(await this.execute(params, req, runtime), new CreateInvocableInstanceResponse({}));
   }
 
-  async createTrigger(request: CreateTriggerRequest): Promise<CreateTriggerResponse> {
+  async createInvocableInstance(request: CreateInvocableInstanceRequest): Promise<CreateInvocableInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateTriggerHeaders({ });
-    return await this.createTriggerWithOptions(request, headers, runtime);
+    let headers = new CreateInvocableInstanceHeaders({ });
+    return await this.createInvocableInstanceWithOptions(request, headers, runtime);
   }
 
   async createTriggerWithOptions(request: CreateTriggerRequest, headers: CreateTriggerHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTriggerResponse> {
@@ -2304,13 +2378,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateTriggerResponse>(await this.doROARequest("CreateTrigger", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/triggers`, "json", req, runtime), new CreateTriggerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateTrigger",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/triggers`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateTriggerResponse>(await this.execute(params, req, runtime), new CreateTriggerResponse({}));
   }
 
-  async getActionDetail(request: GetActionDetailRequest): Promise<GetActionDetailResponse> {
+  async createTrigger(request: CreateTriggerRequest): Promise<CreateTriggerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetActionDetailHeaders({ });
-    return await this.getActionDetailWithOptions(request, headers, runtime);
+    let headers = new CreateTriggerHeaders({ });
+    return await this.createTriggerWithOptions(request, headers, runtime);
   }
 
   async getActionDetailWithOptions(request: GetActionDetailRequest, headers: GetActionDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetActionDetailResponse> {
@@ -2333,13 +2418,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetActionDetailResponse>(await this.doROARequest("GetActionDetail", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/assets/actions/details/query`, "json", req, runtime), new GetActionDetailResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetActionDetail",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/assets/actions/details/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetActionDetailResponse>(await this.execute(params, req, runtime), new GetActionDetailResponse({}));
   }
 
-  async invokeInstance(request: InvokeInstanceRequest): Promise<InvokeInstanceResponse> {
+  async getActionDetail(request: GetActionDetailRequest): Promise<GetActionDetailResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new InvokeInstanceHeaders({ });
-    return await this.invokeInstanceWithOptions(request, headers, runtime);
+    let headers = new GetActionDetailHeaders({ });
+    return await this.getActionDetailWithOptions(request, headers, runtime);
   }
 
   async invokeInstanceWithOptions(request: InvokeInstanceRequest, headers: InvokeInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<InvokeInstanceResponse> {
@@ -2370,13 +2466,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<InvokeInstanceResponse>(await this.doROARequest("InvokeInstance", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/instances/invoke`, "json", req, runtime), new InvokeInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "InvokeInstance",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/instances/invoke`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<InvokeInstanceResponse>(await this.execute(params, req, runtime), new InvokeInstanceResponse({}));
   }
 
-  async pullDataByPage(request: PullDataByPageRequest): Promise<PullDataByPageResponse> {
+  async invokeInstance(request: InvokeInstanceRequest): Promise<InvokeInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PullDataByPageHeaders({ });
-    return await this.pullDataByPageWithOptions(request, headers, runtime);
+    let headers = new InvokeInstanceHeaders({ });
+    return await this.invokeInstanceWithOptions(request, headers, runtime);
   }
 
   async pullDataByPageWithOptions(request: PullDataByPageRequest, headers: PullDataByPageHeaders, runtime: $Util.RuntimeOptions): Promise<PullDataByPageResponse> {
@@ -2423,18 +2530,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<PullDataByPageResponse>(await this.doROARequest("PullDataByPage", "connector_1.0", "HTTP", "GET", "AK", `/v1.0/connector/data`, "json", req, runtime), new PullDataByPageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PullDataByPage",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/data`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PullDataByPageResponse>(await this.execute(params, req, runtime), new PullDataByPageResponse({}));
   }
 
-  async pullDataByPk(dataModelId: string, request: PullDataByPkRequest): Promise<PullDataByPkResponse> {
+  async pullDataByPage(request: PullDataByPageRequest): Promise<PullDataByPageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PullDataByPkHeaders({ });
-    return await this.pullDataByPkWithOptions(dataModelId, request, headers, runtime);
+    let headers = new PullDataByPageHeaders({ });
+    return await this.pullDataByPageWithOptions(request, headers, runtime);
   }
 
   async pullDataByPkWithOptions(dataModelId: string, request: PullDataByPkRequest, headers: PullDataByPkHeaders, runtime: $Util.RuntimeOptions): Promise<PullDataByPkResponse> {
     Util.validateModel(request);
-    dataModelId = OpenApiUtil.getEncodeParam(dataModelId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.appId)) {
       query["appId"] = request.appId;
@@ -2457,13 +2574,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<PullDataByPkResponse>(await this.doROARequest("PullDataByPk", "connector_1.0", "HTTP", "GET", "AK", `/v1.0/connector/data/${dataModelId}`, "json", req, runtime), new PullDataByPkResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PullDataByPk",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/data/${dataModelId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PullDataByPkResponse>(await this.execute(params, req, runtime), new PullDataByPkResponse({}));
   }
 
-  async searchActions(request: SearchActionsRequest): Promise<SearchActionsResponse> {
+  async pullDataByPk(dataModelId: string, request: PullDataByPkRequest): Promise<PullDataByPkResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchActionsHeaders({ });
-    return await this.searchActionsWithOptions(request, headers, runtime);
+    let headers = new PullDataByPkHeaders({ });
+    return await this.pullDataByPkWithOptions(dataModelId, request, headers, runtime);
   }
 
   async searchActionsWithOptions(request: SearchActionsRequest, headers: SearchActionsHeaders, runtime: $Util.RuntimeOptions): Promise<SearchActionsResponse> {
@@ -2502,13 +2630,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SearchActionsResponse>(await this.doROARequest("SearchActions", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/assets/actions/search`, "json", req, runtime), new SearchActionsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchActions",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/assets/actions/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchActionsResponse>(await this.execute(params, req, runtime), new SearchActionsResponse({}));
   }
 
-  async searchConnectors(request: SearchConnectorsRequest): Promise<SearchConnectorsResponse> {
+  async searchActions(request: SearchActionsRequest): Promise<SearchActionsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchConnectorsHeaders({ });
-    return await this.searchConnectorsWithOptions(request, headers, runtime);
+    let headers = new SearchActionsHeaders({ });
+    return await this.searchActionsWithOptions(request, headers, runtime);
   }
 
   async searchConnectorsWithOptions(request: SearchConnectorsRequest, headers: SearchConnectorsHeaders, runtime: $Util.RuntimeOptions): Promise<SearchConnectorsResponse> {
@@ -2539,13 +2678,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SearchConnectorsResponse>(await this.doROARequest("SearchConnectors", "connector_1.0", "HTTP", "GET", "AK", `/v1.0/connector/assets/connectors`, "json", req, runtime), new SearchConnectorsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchConnectors",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/assets/connectors`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchConnectorsResponse>(await this.execute(params, req, runtime), new SearchConnectorsResponse({}));
   }
 
-  async syncData(request: SyncDataRequest): Promise<SyncDataResponse> {
+  async searchConnectors(request: SearchConnectorsRequest): Promise<SearchConnectorsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SyncDataHeaders({ });
-    return await this.syncDataWithOptions(request, headers, runtime);
+    let headers = new SearchConnectorsHeaders({ });
+    return await this.searchConnectorsWithOptions(request, headers, runtime);
   }
 
   async syncDataWithOptions(request: SyncDataRequest, headers: SyncDataHeaders, runtime: $Util.RuntimeOptions): Promise<SyncDataResponse> {
@@ -2572,13 +2722,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SyncDataResponse>(await this.doROARequest("SyncData", "connector_1.0", "HTTP", "POST", "AK", `/v1.0/connector/triggers/data/sync`, "json", req, runtime), new SyncDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SyncData",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/triggers/data/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncDataResponse>(await this.execute(params, req, runtime), new SyncDataResponse({}));
   }
 
-  async updateAction(request: UpdateActionRequest): Promise<UpdateActionResponse> {
+  async syncData(request: SyncDataRequest): Promise<SyncDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateActionHeaders({ });
-    return await this.updateActionWithOptions(request, headers, runtime);
+    let headers = new SyncDataHeaders({ });
+    return await this.syncDataWithOptions(request, headers, runtime);
   }
 
   async updateActionWithOptions(request: UpdateActionRequest, headers: UpdateActionHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateActionResponse> {
@@ -2605,13 +2766,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateActionResponse>(await this.doROARequest("UpdateAction", "connector_1.0", "HTTP", "PUT", "AK", `/v1.0/connector/actions`, "json", req, runtime), new UpdateActionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateAction",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/actions`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateActionResponse>(await this.execute(params, req, runtime), new UpdateActionResponse({}));
   }
 
-  async updateConnector(request: UpdateConnectorRequest): Promise<UpdateConnectorResponse> {
+  async updateAction(request: UpdateActionRequest): Promise<UpdateActionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateConnectorHeaders({ });
-    return await this.updateConnectorWithOptions(request, headers, runtime);
+    let headers = new UpdateActionHeaders({ });
+    return await this.updateActionWithOptions(request, headers, runtime);
   }
 
   async updateConnectorWithOptions(request: UpdateConnectorRequest, headers: UpdateConnectorHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateConnectorResponse> {
@@ -2638,13 +2810,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateConnectorResponse>(await this.doROARequest("UpdateConnector", "connector_1.0", "HTTP", "PUT", "AK", `/v1.0/connector/connectors`, "json", req, runtime), new UpdateConnectorResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateConnector",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/connectors`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateConnectorResponse>(await this.execute(params, req, runtime), new UpdateConnectorResponse({}));
   }
 
-  async updateTrigger(request: UpdateTriggerRequest): Promise<UpdateTriggerResponse> {
+  async updateConnector(request: UpdateConnectorRequest): Promise<UpdateConnectorResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateTriggerHeaders({ });
-    return await this.updateTriggerWithOptions(request, headers, runtime);
+    let headers = new UpdateConnectorHeaders({ });
+    return await this.updateConnectorWithOptions(request, headers, runtime);
   }
 
   async updateTriggerWithOptions(request: UpdateTriggerRequest, headers: UpdateTriggerHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTriggerResponse> {
@@ -2671,7 +2854,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateTriggerResponse>(await this.doROARequest("UpdateTrigger", "connector_1.0", "HTTP", "PUT", "AK", `/v1.0/connector/triggers`, "json", req, runtime), new UpdateTriggerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateTrigger",
+      version: "connector_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/connector/triggers`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateTriggerResponse>(await this.execute(params, req, runtime), new UpdateTriggerResponse({}));
+  }
+
+  async updateTrigger(request: UpdateTriggerRequest): Promise<UpdateTriggerResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateTriggerHeaders({ });
+    return await this.updateTriggerWithOptions(request, headers, runtime);
   }
 
 }

@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -69,10 +71,12 @@ export class QueryBlackboardSpaceResponseBody extends $tea.Model {
 
 export class QueryBlackboardSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryBlackboardSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -80,6 +84,7 @@ export class QueryBlackboardSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryBlackboardSpaceResponseBody,
     };
   }
@@ -91,9 +96,12 @@ export class QueryBlackboardSpaceResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -101,12 +109,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async queryBlackboardSpace(request: QueryBlackboardSpaceRequest): Promise<QueryBlackboardSpaceResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryBlackboardSpaceHeaders({ });
-    return await this.queryBlackboardSpaceWithOptions(request, headers, runtime);
-  }
 
   async queryBlackboardSpaceWithOptions(request: QueryBlackboardSpaceRequest, headers: QueryBlackboardSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<QueryBlackboardSpaceResponse> {
     Util.validateModel(request);
@@ -128,7 +130,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryBlackboardSpaceResponse>(await this.doROARequest("QueryBlackboardSpace", "blackboard_1.0", "HTTP", "GET", "AK", `/v1.0/blackboard/spaces`, "json", req, runtime), new QueryBlackboardSpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryBlackboardSpace",
+      version: "blackboard_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/blackboard/spaces`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryBlackboardSpaceResponse>(await this.execute(params, req, runtime), new QueryBlackboardSpaceResponse({}));
+  }
+
+  async queryBlackboardSpace(request: QueryBlackboardSpaceRequest): Promise<QueryBlackboardSpaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryBlackboardSpaceHeaders({ });
+    return await this.queryBlackboardSpaceWithOptions(request, headers, runtime);
   }
 
 }

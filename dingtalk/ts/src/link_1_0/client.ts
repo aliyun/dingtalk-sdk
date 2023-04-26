@@ -3,9 +3,33 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
+
+export class DetailUserIdPrivateDataMapValue extends $tea.Model {
+  cardParamMap?: { [key: string]: any };
+  cardMediaIdParamMap?: { [key: string]: any };
+  static names(): { [key: string]: string } {
+    return {
+      cardParamMap: 'cardParamMap',
+      cardMediaIdParamMap: 'cardMediaIdParamMap',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+      cardMediaIdParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
 
 export class ApplyFollowerAuthInfoHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
@@ -78,10 +102,12 @@ export class ApplyFollowerAuthInfoResponseBody extends $tea.Model {
 
 export class ApplyFollowerAuthInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ApplyFollowerAuthInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -89,6 +115,7 @@ export class ApplyFollowerAuthInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ApplyFollowerAuthInfoResponseBody,
     };
   }
@@ -169,10 +196,12 @@ export class CallbackRegiesterResponseBody extends $tea.Model {
 
 export class CallbackRegiesterResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CallbackRegiesterResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -180,6 +209,7 @@ export class CallbackRegiesterResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CallbackRegiesterResponseBody,
     };
   }
@@ -254,10 +284,12 @@ export class CloseTopBoxInteractiveOTOMessageResponseBody extends $tea.Model {
 
 export class CloseTopBoxInteractiveOTOMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CloseTopBoxInteractiveOTOMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -265,6 +297,7 @@ export class CloseTopBoxInteractiveOTOMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CloseTopBoxInteractiveOTOMessageResponseBody,
     };
   }
@@ -339,10 +372,12 @@ export class GetFollowerAuthInfoResponseBody extends $tea.Model {
 
 export class GetFollowerAuthInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFollowerAuthInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -350,6 +385,7 @@ export class GetFollowerAuthInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFollowerAuthInfoResponseBody,
     };
   }
@@ -430,10 +466,12 @@ export class GetFollowerInfoResponseBody extends $tea.Model {
 
 export class GetFollowerInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetFollowerInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -441,6 +479,7 @@ export class GetFollowerInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetFollowerInfoResponseBody,
     };
   }
@@ -518,10 +557,12 @@ export class GetPictureDownloadUrlResponseBody extends $tea.Model {
 
 export class GetPictureDownloadUrlResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPictureDownloadUrlResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -529,6 +570,7 @@ export class GetPictureDownloadUrlResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPictureDownloadUrlResponseBody,
     };
   }
@@ -606,10 +648,12 @@ export class GetUserFollowStatusResponseBody extends $tea.Model {
 
 export class GetUserFollowStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserFollowStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -617,6 +661,7 @@ export class GetUserFollowStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserFollowStatusResponseBody,
     };
   }
@@ -669,10 +714,12 @@ export class ListAccountResponseBody extends $tea.Model {
 
 export class ListAccountResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListAccountResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -680,6 +727,7 @@ export class ListAccountResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListAccountResponseBody,
     };
   }
@@ -732,10 +780,12 @@ export class ListAccountInfoResponseBody extends $tea.Model {
 
 export class ListAccountInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListAccountInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -743,6 +793,7 @@ export class ListAccountInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListAccountInfoResponseBody,
     };
   }
@@ -823,10 +874,12 @@ export class ListFollowerResponseBody extends $tea.Model {
 
 export class ListFollowerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListFollowerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -834,6 +887,7 @@ export class ListFollowerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListFollowerResponseBody,
     };
   }
@@ -908,10 +962,12 @@ export class QueryUserFollowStatusResponseBody extends $tea.Model {
 
 export class QueryUserFollowStatusResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryUserFollowStatusResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -919,6 +975,7 @@ export class QueryUserFollowStatusResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryUserFollowStatusResponseBody,
     };
   }
@@ -993,10 +1050,12 @@ export class SendAgentOTOMessageResponseBody extends $tea.Model {
 
 export class SendAgentOTOMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendAgentOTOMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1004,6 +1063,7 @@ export class SendAgentOTOMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendAgentOTOMessageResponseBody,
     };
   }
@@ -1078,10 +1138,12 @@ export class SendInteractiveOTOMessageResponseBody extends $tea.Model {
 
 export class SendInteractiveOTOMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendInteractiveOTOMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1089,6 +1151,7 @@ export class SendInteractiveOTOMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendInteractiveOTOMessageResponseBody,
     };
   }
@@ -1163,10 +1226,12 @@ export class SendTopBoxInteractiveOTOMessageResponseBody extends $tea.Model {
 
 export class SendTopBoxInteractiveOTOMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendTopBoxInteractiveOTOMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1174,6 +1239,7 @@ export class SendTopBoxInteractiveOTOMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendTopBoxInteractiveOTOMessageResponseBody,
     };
   }
@@ -1248,10 +1314,12 @@ export class UpdateInteractiveOTOMessageResponseBody extends $tea.Model {
 
 export class UpdateInteractiveOTOMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateInteractiveOTOMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1259,6 +1327,7 @@ export class UpdateInteractiveOTOMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateInteractiveOTOMessageResponseBody,
     };
   }
@@ -1336,10 +1405,12 @@ export class UpdateShortcutsResponseBody extends $tea.Model {
 
 export class UpdateShortcutsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateShortcutsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1347,29 +1418,8 @@ export class UpdateShortcutsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateShortcutsResponseBody,
-    };
-  }
-
-  constructor(map?: { [key: string]: any }) {
-    super(map);
-  }
-}
-
-export class DetailUserIdPrivateDataMapValue extends $tea.Model {
-  cardParamMap?: { [key: string]: any };
-  cardMediaIdParamMap?: { [key: string]: any };
-  static names(): { [key: string]: string } {
-    return {
-      cardParamMap: 'cardParamMap',
-      cardMediaIdParamMap: 'cardMediaIdParamMap',
-    };
-  }
-
-  static types(): { [key: string]: any } {
-    return {
-      cardParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
-      cardMediaIdParamMap: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
     };
   }
 
@@ -2200,9 +2250,12 @@ export class UpdateShortcutsRequestDetails extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -2210,12 +2263,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async applyFollowerAuthInfo(request: ApplyFollowerAuthInfoRequest): Promise<ApplyFollowerAuthInfoResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ApplyFollowerAuthInfoHeaders({ });
-    return await this.applyFollowerAuthInfoWithOptions(request, headers, runtime);
-  }
 
   async applyFollowerAuthInfoWithOptions(request: ApplyFollowerAuthInfoRequest, headers: ApplyFollowerAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<ApplyFollowerAuthInfoResponse> {
     Util.validateModel(request);
@@ -2249,13 +2296,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ApplyFollowerAuthInfoResponse>(await this.doROARequest("ApplyFollowerAuthInfo", "link_1.0", "HTTP", "POST", "AK", `/v1.0/link/followers/authInfos/apply`, "json", req, runtime), new ApplyFollowerAuthInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ApplyFollowerAuthInfo",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/followers/authInfos/apply`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ApplyFollowerAuthInfoResponse>(await this.execute(params, req, runtime), new ApplyFollowerAuthInfoResponse({}));
   }
 
-  async callbackRegiester(request: CallbackRegiesterRequest): Promise<CallbackRegiesterResponse> {
+  async applyFollowerAuthInfo(request: ApplyFollowerAuthInfoRequest): Promise<ApplyFollowerAuthInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CallbackRegiesterHeaders({ });
-    return await this.callbackRegiesterWithOptions(request, headers, runtime);
+    let headers = new ApplyFollowerAuthInfoHeaders({ });
+    return await this.applyFollowerAuthInfoWithOptions(request, headers, runtime);
   }
 
   async callbackRegiesterWithOptions(request: CallbackRegiesterRequest, headers: CallbackRegiesterHeaders, runtime: $Util.RuntimeOptions): Promise<CallbackRegiesterResponse> {
@@ -2290,13 +2348,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CallbackRegiesterResponse>(await this.doROARequest("CallbackRegiester", "link_1.0", "HTTP", "POST", "AK", `/v1.0/link/callbacks/regiester`, "json", req, runtime), new CallbackRegiesterResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CallbackRegiester",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/callbacks/regiester`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CallbackRegiesterResponse>(await this.execute(params, req, runtime), new CallbackRegiesterResponse({}));
   }
 
-  async closeTopBoxInteractiveOTOMessage(request: CloseTopBoxInteractiveOTOMessageRequest): Promise<CloseTopBoxInteractiveOTOMessageResponse> {
+  async callbackRegiester(request: CallbackRegiesterRequest): Promise<CallbackRegiesterResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CloseTopBoxInteractiveOTOMessageHeaders({ });
-    return await this.closeTopBoxInteractiveOTOMessageWithOptions(request, headers, runtime);
+    let headers = new CallbackRegiesterHeaders({ });
+    return await this.callbackRegiesterWithOptions(request, headers, runtime);
   }
 
   async closeTopBoxInteractiveOTOMessageWithOptions(request: CloseTopBoxInteractiveOTOMessageRequest, headers: CloseTopBoxInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<CloseTopBoxInteractiveOTOMessageResponse> {
@@ -2319,13 +2388,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CloseTopBoxInteractiveOTOMessageResponse>(await this.doROARequest("CloseTopBoxInteractiveOTOMessage", "link_1.0", "HTTP", "POST", "AK", `/v1.0/link/oToMessages/topBoxes/close`, "json", req, runtime), new CloseTopBoxInteractiveOTOMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CloseTopBoxInteractiveOTOMessage",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/oToMessages/topBoxes/close`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CloseTopBoxInteractiveOTOMessageResponse>(await this.execute(params, req, runtime), new CloseTopBoxInteractiveOTOMessageResponse({}));
   }
 
-  async getFollowerAuthInfo(request: GetFollowerAuthInfoRequest): Promise<GetFollowerAuthInfoResponse> {
+  async closeTopBoxInteractiveOTOMessage(request: CloseTopBoxInteractiveOTOMessageRequest): Promise<CloseTopBoxInteractiveOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFollowerAuthInfoHeaders({ });
-    return await this.getFollowerAuthInfoWithOptions(request, headers, runtime);
+    let headers = new CloseTopBoxInteractiveOTOMessageHeaders({ });
+    return await this.closeTopBoxInteractiveOTOMessageWithOptions(request, headers, runtime);
   }
 
   async getFollowerAuthInfoWithOptions(request: GetFollowerAuthInfoRequest, headers: GetFollowerAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFollowerAuthInfoResponse> {
@@ -2352,13 +2432,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetFollowerAuthInfoResponse>(await this.doROARequest("GetFollowerAuthInfo", "link_1.0", "HTTP", "GET", "AK", `/v1.0/link/followers/authInfos`, "json", req, runtime), new GetFollowerAuthInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFollowerAuthInfo",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/followers/authInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFollowerAuthInfoResponse>(await this.execute(params, req, runtime), new GetFollowerAuthInfoResponse({}));
   }
 
-  async getFollowerInfo(request: GetFollowerInfoRequest): Promise<GetFollowerInfoResponse> {
+  async getFollowerAuthInfo(request: GetFollowerAuthInfoRequest): Promise<GetFollowerAuthInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetFollowerInfoHeaders({ });
-    return await this.getFollowerInfoWithOptions(request, headers, runtime);
+    let headers = new GetFollowerAuthInfoHeaders({ });
+    return await this.getFollowerAuthInfoWithOptions(request, headers, runtime);
   }
 
   async getFollowerInfoWithOptions(request: GetFollowerInfoRequest, headers: GetFollowerInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetFollowerInfoResponse> {
@@ -2389,13 +2480,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetFollowerInfoResponse>(await this.doROARequest("GetFollowerInfo", "link_1.0", "HTTP", "GET", "AK", `/v1.0/link/followers/infos`, "json", req, runtime), new GetFollowerInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetFollowerInfo",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/followers/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetFollowerInfoResponse>(await this.execute(params, req, runtime), new GetFollowerInfoResponse({}));
   }
 
-  async getPictureDownloadUrl(request: GetPictureDownloadUrlRequest): Promise<GetPictureDownloadUrlResponse> {
+  async getFollowerInfo(request: GetFollowerInfoRequest): Promise<GetFollowerInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPictureDownloadUrlHeaders({ });
-    return await this.getPictureDownloadUrlWithOptions(request, headers, runtime);
+    let headers = new GetFollowerInfoHeaders({ });
+    return await this.getFollowerInfoWithOptions(request, headers, runtime);
   }
 
   async getPictureDownloadUrlWithOptions(request: GetPictureDownloadUrlRequest, headers: GetPictureDownloadUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetPictureDownloadUrlResponse> {
@@ -2422,13 +2524,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetPictureDownloadUrlResponse>(await this.doROARequest("GetPictureDownloadUrl", "link_1.0", "HTTP", "GET", "AK", `/v1.0/link/oToMessages/pictures/downloadUrls`, "json", req, runtime), new GetPictureDownloadUrlResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPictureDownloadUrl",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/oToMessages/pictures/downloadUrls`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPictureDownloadUrlResponse>(await this.execute(params, req, runtime), new GetPictureDownloadUrlResponse({}));
   }
 
-  async getUserFollowStatus(request: GetUserFollowStatusRequest): Promise<GetUserFollowStatusResponse> {
+  async getPictureDownloadUrl(request: GetPictureDownloadUrlRequest): Promise<GetPictureDownloadUrlResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetUserFollowStatusHeaders({ });
-    return await this.getUserFollowStatusWithOptions(request, headers, runtime);
+    let headers = new GetPictureDownloadUrlHeaders({ });
+    return await this.getPictureDownloadUrlWithOptions(request, headers, runtime);
   }
 
   async getUserFollowStatusWithOptions(request: GetUserFollowStatusRequest, headers: GetUserFollowStatusHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserFollowStatusResponse> {
@@ -2459,13 +2572,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetUserFollowStatusResponse>(await this.doROARequest("GetUserFollowStatus", "link_1.0", "HTTP", "GET", "AK", `/v1.0/link/followers/statuses`, "json", req, runtime), new GetUserFollowStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserFollowStatus",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/followers/statuses`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserFollowStatusResponse>(await this.execute(params, req, runtime), new GetUserFollowStatusResponse({}));
   }
 
-  async listAccount(): Promise<ListAccountResponse> {
+  async getUserFollowStatus(request: GetUserFollowStatusRequest): Promise<GetUserFollowStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListAccountHeaders({ });
-    return await this.listAccountWithOptions(headers, runtime);
+    let headers = new GetUserFollowStatusHeaders({ });
+    return await this.getUserFollowStatusWithOptions(request, headers, runtime);
   }
 
   async listAccountWithOptions(headers: ListAccountHeaders, runtime: $Util.RuntimeOptions): Promise<ListAccountResponse> {
@@ -2481,13 +2605,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<ListAccountResponse>(await this.doROARequest("ListAccount", "link_1.0", "HTTP", "GET", "AK", `/v1.0/link/accounts`, "json", req, runtime), new ListAccountResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListAccount",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/accounts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAccountResponse>(await this.execute(params, req, runtime), new ListAccountResponse({}));
   }
 
-  async listAccountInfo(): Promise<ListAccountInfoResponse> {
+  async listAccount(): Promise<ListAccountResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListAccountInfoHeaders({ });
-    return await this.listAccountInfoWithOptions(headers, runtime);
+    let headers = new ListAccountHeaders({ });
+    return await this.listAccountWithOptions(headers, runtime);
   }
 
   async listAccountInfoWithOptions(headers: ListAccountInfoHeaders, runtime: $Util.RuntimeOptions): Promise<ListAccountInfoResponse> {
@@ -2503,13 +2638,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<ListAccountInfoResponse>(await this.doROARequest("ListAccountInfo", "link_1.0", "HTTP", "GET", "AK", `/v1.0/link/isv/accounts`, "json", req, runtime), new ListAccountInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListAccountInfo",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/isv/accounts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListAccountInfoResponse>(await this.execute(params, req, runtime), new ListAccountInfoResponse({}));
   }
 
-  async listFollower(request: ListFollowerRequest): Promise<ListFollowerResponse> {
+  async listAccountInfo(): Promise<ListAccountInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListFollowerHeaders({ });
-    return await this.listFollowerWithOptions(request, headers, runtime);
+    let headers = new ListAccountInfoHeaders({ });
+    return await this.listAccountInfoWithOptions(headers, runtime);
   }
 
   async listFollowerWithOptions(request: ListFollowerRequest, headers: ListFollowerHeaders, runtime: $Util.RuntimeOptions): Promise<ListFollowerResponse> {
@@ -2540,13 +2686,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListFollowerResponse>(await this.doROARequest("ListFollower", "link_1.0", "HTTP", "GET", "AK", `/v1.0/link/followers`, "json", req, runtime), new ListFollowerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListFollower",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/followers`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListFollowerResponse>(await this.execute(params, req, runtime), new ListFollowerResponse({}));
   }
 
-  async queryUserFollowStatus(request: QueryUserFollowStatusRequest): Promise<QueryUserFollowStatusResponse> {
+  async listFollower(request: ListFollowerRequest): Promise<ListFollowerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryUserFollowStatusHeaders({ });
-    return await this.queryUserFollowStatusWithOptions(request, headers, runtime);
+    let headers = new ListFollowerHeaders({ });
+    return await this.listFollowerWithOptions(request, headers, runtime);
   }
 
   async queryUserFollowStatusWithOptions(request: QueryUserFollowStatusRequest, headers: QueryUserFollowStatusHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUserFollowStatusResponse> {
@@ -2573,13 +2730,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryUserFollowStatusResponse>(await this.doROARequest("QueryUserFollowStatus", "link_1.0", "HTTP", "GET", "AK", `/v1.0/link/isv/followers/statuses`, "json", req, runtime), new QueryUserFollowStatusResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryUserFollowStatus",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/isv/followers/statuses`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUserFollowStatusResponse>(await this.execute(params, req, runtime), new QueryUserFollowStatusResponse({}));
   }
 
-  async sendAgentOTOMessage(request: SendAgentOTOMessageRequest): Promise<SendAgentOTOMessageResponse> {
+  async queryUserFollowStatus(request: QueryUserFollowStatusRequest): Promise<QueryUserFollowStatusResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendAgentOTOMessageHeaders({ });
-    return await this.sendAgentOTOMessageWithOptions(request, headers, runtime);
+    let headers = new QueryUserFollowStatusHeaders({ });
+    return await this.queryUserFollowStatusWithOptions(request, headers, runtime);
   }
 
   async sendAgentOTOMessageWithOptions(request: SendAgentOTOMessageRequest, headers: SendAgentOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendAgentOTOMessageResponse> {
@@ -2602,13 +2770,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendAgentOTOMessageResponse>(await this.doROARequest("SendAgentOTOMessage", "link_1.0", "HTTP", "POST", "AK", `/v1.0/link/oToMessages/agentMessages`, "json", req, runtime), new SendAgentOTOMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SendAgentOTOMessage",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/oToMessages/agentMessages`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendAgentOTOMessageResponse>(await this.execute(params, req, runtime), new SendAgentOTOMessageResponse({}));
   }
 
-  async sendInteractiveOTOMessage(request: SendInteractiveOTOMessageRequest): Promise<SendInteractiveOTOMessageResponse> {
+  async sendAgentOTOMessage(request: SendAgentOTOMessageRequest): Promise<SendAgentOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendInteractiveOTOMessageHeaders({ });
-    return await this.sendInteractiveOTOMessageWithOptions(request, headers, runtime);
+    let headers = new SendAgentOTOMessageHeaders({ });
+    return await this.sendAgentOTOMessageWithOptions(request, headers, runtime);
   }
 
   async sendInteractiveOTOMessageWithOptions(request: SendInteractiveOTOMessageRequest, headers: SendInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendInteractiveOTOMessageResponse> {
@@ -2631,13 +2810,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendInteractiveOTOMessageResponse>(await this.doROARequest("SendInteractiveOTOMessage", "link_1.0", "HTTP", "POST", "AK", `/v1.0/link/oToMessages/interactiveMessages`, "json", req, runtime), new SendInteractiveOTOMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SendInteractiveOTOMessage",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/oToMessages/interactiveMessages`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendInteractiveOTOMessageResponse>(await this.execute(params, req, runtime), new SendInteractiveOTOMessageResponse({}));
   }
 
-  async sendTopBoxInteractiveOTOMessage(request: SendTopBoxInteractiveOTOMessageRequest): Promise<SendTopBoxInteractiveOTOMessageResponse> {
+  async sendInteractiveOTOMessage(request: SendInteractiveOTOMessageRequest): Promise<SendInteractiveOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendTopBoxInteractiveOTOMessageHeaders({ });
-    return await this.sendTopBoxInteractiveOTOMessageWithOptions(request, headers, runtime);
+    let headers = new SendInteractiveOTOMessageHeaders({ });
+    return await this.sendInteractiveOTOMessageWithOptions(request, headers, runtime);
   }
 
   async sendTopBoxInteractiveOTOMessageWithOptions(request: SendTopBoxInteractiveOTOMessageRequest, headers: SendTopBoxInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendTopBoxInteractiveOTOMessageResponse> {
@@ -2660,13 +2850,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendTopBoxInteractiveOTOMessageResponse>(await this.doROARequest("SendTopBoxInteractiveOTOMessage", "link_1.0", "HTTP", "POST", "AK", `/v1.0/link/oToMessages/topBoxes/send`, "json", req, runtime), new SendTopBoxInteractiveOTOMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SendTopBoxInteractiveOTOMessage",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/oToMessages/topBoxes/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendTopBoxInteractiveOTOMessageResponse>(await this.execute(params, req, runtime), new SendTopBoxInteractiveOTOMessageResponse({}));
   }
 
-  async updateInteractiveOTOMessage(request: UpdateInteractiveOTOMessageRequest): Promise<UpdateInteractiveOTOMessageResponse> {
+  async sendTopBoxInteractiveOTOMessage(request: SendTopBoxInteractiveOTOMessageRequest): Promise<SendTopBoxInteractiveOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateInteractiveOTOMessageHeaders({ });
-    return await this.updateInteractiveOTOMessageWithOptions(request, headers, runtime);
+    let headers = new SendTopBoxInteractiveOTOMessageHeaders({ });
+    return await this.sendTopBoxInteractiveOTOMessageWithOptions(request, headers, runtime);
   }
 
   async updateInteractiveOTOMessageWithOptions(request: UpdateInteractiveOTOMessageRequest, headers: UpdateInteractiveOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateInteractiveOTOMessageResponse> {
@@ -2689,13 +2890,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateInteractiveOTOMessageResponse>(await this.doROARequest("UpdateInteractiveOTOMessage", "link_1.0", "HTTP", "PUT", "AK", `/v1.0/link/oToMessages/interactiveMessages`, "json", req, runtime), new UpdateInteractiveOTOMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateInteractiveOTOMessage",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/oToMessages/interactiveMessages`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateInteractiveOTOMessageResponse>(await this.execute(params, req, runtime), new UpdateInteractiveOTOMessageResponse({}));
   }
 
-  async updateShortcuts(request: UpdateShortcutsRequest): Promise<UpdateShortcutsResponse> {
+  async updateInteractiveOTOMessage(request: UpdateInteractiveOTOMessageRequest): Promise<UpdateInteractiveOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateShortcutsHeaders({ });
-    return await this.updateShortcutsWithOptions(request, headers, runtime);
+    let headers = new UpdateInteractiveOTOMessageHeaders({ });
+    return await this.updateInteractiveOTOMessageWithOptions(request, headers, runtime);
   }
 
   async updateShortcutsWithOptions(request: UpdateShortcutsRequest, headers: UpdateShortcutsHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateShortcutsResponse> {
@@ -2726,7 +2938,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateShortcutsResponse>(await this.doROARequest("UpdateShortcuts", "link_1.0", "HTTP", "POST", "AK", `/v1.0/link/shortcuts`, "json", req, runtime), new UpdateShortcutsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateShortcuts",
+      version: "link_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/link/shortcuts`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateShortcutsResponse>(await this.execute(params, req, runtime), new UpdateShortcutsResponse({}));
+  }
+
+  async updateShortcuts(request: UpdateShortcutsRequest): Promise<UpdateShortcutsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateShortcutsHeaders({ });
+    return await this.updateShortcutsWithOptions(request, headers, runtime);
   }
 
 }

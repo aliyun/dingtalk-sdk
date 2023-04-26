@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -53,10 +55,12 @@ export class CreateJsapiTicketResponseBody extends $tea.Model {
 
 export class CreateJsapiTicketResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateJsapiTicketResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -64,6 +68,7 @@ export class CreateJsapiTicketResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateJsapiTicketResponseBody,
     };
   }
@@ -119,10 +124,12 @@ export class GetAccessTokenResponseBody extends $tea.Model {
 
 export class GetAccessTokenResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAccessTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -130,6 +137,7 @@ export class GetAccessTokenResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAccessTokenResponseBody,
     };
   }
@@ -207,10 +215,12 @@ export class GetAuthInfoResponseBody extends $tea.Model {
 
 export class GetAuthInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAuthInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -218,6 +228,7 @@ export class GetAuthInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAuthInfoResponseBody,
     };
   }
@@ -279,10 +290,12 @@ export class GetCorpAccessTokenResponseBody extends $tea.Model {
 
 export class GetCorpAccessTokenResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCorpAccessTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -290,6 +303,7 @@ export class GetCorpAccessTokenResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCorpAccessTokenResponseBody,
     };
   }
@@ -342,10 +356,12 @@ export class GetPersonalAuthRuleResponseBody extends $tea.Model {
 
 export class GetPersonalAuthRuleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPersonalAuthRuleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -353,6 +369,7 @@ export class GetPersonalAuthRuleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPersonalAuthRuleResponseBody,
     };
   }
@@ -408,10 +425,12 @@ export class GetSsoAccessTokenResponseBody extends $tea.Model {
 
 export class GetSsoAccessTokenResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSsoAccessTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -419,6 +438,7 @@ export class GetSsoAccessTokenResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSsoAccessTokenResponseBody,
     };
   }
@@ -508,10 +528,12 @@ export class GetSsoUserInfoResponseBody extends $tea.Model {
 
 export class GetSsoUserInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSsoUserInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -519,6 +541,7 @@ export class GetSsoUserInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSsoUserInfoResponseBody,
     };
   }
@@ -577,10 +600,12 @@ export class GetSuiteAccessTokenResponseBody extends $tea.Model {
 
 export class GetSuiteAccessTokenResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSuiteAccessTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -588,6 +613,7 @@ export class GetSuiteAccessTokenResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSuiteAccessTokenResponseBody,
     };
   }
@@ -658,10 +684,12 @@ export class GetUserTokenResponseBody extends $tea.Model {
 
 export class GetUserTokenResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetUserTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -669,6 +697,7 @@ export class GetUserTokenResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetUserTokenResponseBody,
     };
   }
@@ -811,9 +840,13 @@ export class GetPersonalAuthRuleResponseBodyResult extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
+    this._signatureAlgorithm = "v2";
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -821,12 +854,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async createJsapiTicket(): Promise<CreateJsapiTicketResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateJsapiTicketHeaders({ });
-    return await this.createJsapiTicketWithOptions(headers, runtime);
-  }
 
   async createJsapiTicketWithOptions(headers: CreateJsapiTicketHeaders, runtime: $Util.RuntimeOptions): Promise<CreateJsapiTicketResponse> {
     let realHeaders : {[key: string ]: string} = { };
@@ -841,13 +868,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<CreateJsapiTicketResponse>(await this.doROARequest("CreateJsapiTicket", "oauth2_1.0", "HTTP", "POST", "AK", `/v1.0/oauth2/jsapiTickets`, "json", req, runtime), new CreateJsapiTicketResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateJsapiTicket",
+      version: "oauth2_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/oauth2/jsapiTickets`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateJsapiTicketResponse>(await this.execute(params, req, runtime), new CreateJsapiTicketResponse({}));
   }
 
-  async getAccessToken(request: GetAccessTokenRequest): Promise<GetAccessTokenResponse> {
+  async createJsapiTicket(): Promise<CreateJsapiTicketResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers : {[key: string ]: string} = { };
-    return await this.getAccessTokenWithOptions(request, headers, runtime);
+    let headers = new CreateJsapiTicketHeaders({ });
+    return await this.createJsapiTicketWithOptions(headers, runtime);
   }
 
   async getAccessTokenWithOptions(request: GetAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetAccessTokenResponse> {
@@ -865,13 +903,24 @@ export default class Client extends OpenApi {
       headers: headers,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetAccessTokenResponse>(await this.doROARequest("GetAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", `/v1.0/oauth2/accessToken`, "json", req, runtime), new GetAccessTokenResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAccessToken",
+      version: "oauth2_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/oauth2/accessToken`,
+      method: "POST",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAccessTokenResponse>(await this.execute(params, req, runtime), new GetAccessTokenResponse({}));
   }
 
-  async getAuthInfo(request: GetAuthInfoRequest): Promise<GetAuthInfoResponse> {
+  async getAccessToken(request: GetAccessTokenRequest): Promise<GetAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAuthInfoHeaders({ });
-    return await this.getAuthInfoWithOptions(request, headers, runtime);
+    let headers : {[key: string ]: string} = { };
+    return await this.getAccessTokenWithOptions(request, headers, runtime);
   }
 
   async getAuthInfoWithOptions(request: GetAuthInfoRequest, headers: GetAuthInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetAuthInfoResponse> {
@@ -894,13 +943,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetAuthInfoResponse>(await this.doROARequest("GetAuthInfo", "oauth2_1.0", "HTTP", "GET", "AK", `/v1.0/oauth2/apps/authInfo`, "json", req, runtime), new GetAuthInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAuthInfo",
+      version: "oauth2_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/oauth2/apps/authInfo`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAuthInfoResponse>(await this.execute(params, req, runtime), new GetAuthInfoResponse({}));
   }
 
-  async getCorpAccessToken(request: GetCorpAccessTokenRequest): Promise<GetCorpAccessTokenResponse> {
+  async getAuthInfo(request: GetAuthInfoRequest): Promise<GetAuthInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers : {[key: string ]: string} = { };
-    return await this.getCorpAccessTokenWithOptions(request, headers, runtime);
+    let headers = new GetAuthInfoHeaders({ });
+    return await this.getAuthInfoWithOptions(request, headers, runtime);
   }
 
   async getCorpAccessTokenWithOptions(request: GetCorpAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetCorpAccessTokenResponse> {
@@ -926,13 +986,24 @@ export default class Client extends OpenApi {
       headers: headers,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetCorpAccessTokenResponse>(await this.doROARequest("GetCorpAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", `/v1.0/oauth2/corpAccessToken`, "json", req, runtime), new GetCorpAccessTokenResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCorpAccessToken",
+      version: "oauth2_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/oauth2/corpAccessToken`,
+      method: "POST",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCorpAccessTokenResponse>(await this.execute(params, req, runtime), new GetCorpAccessTokenResponse({}));
   }
 
-  async getPersonalAuthRule(): Promise<GetPersonalAuthRuleResponse> {
+  async getCorpAccessToken(request: GetCorpAccessTokenRequest): Promise<GetCorpAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPersonalAuthRuleHeaders({ });
-    return await this.getPersonalAuthRuleWithOptions(headers, runtime);
+    let headers : {[key: string ]: string} = { };
+    return await this.getCorpAccessTokenWithOptions(request, headers, runtime);
   }
 
   async getPersonalAuthRuleWithOptions(headers: GetPersonalAuthRuleHeaders, runtime: $Util.RuntimeOptions): Promise<GetPersonalAuthRuleResponse> {
@@ -948,13 +1019,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetPersonalAuthRuleResponse>(await this.doROARequest("GetPersonalAuthRule", "oauth2_1.0", "HTTP", "GET", "AK", `/v1.0/oauth2/authRules/user`, "json", req, runtime), new GetPersonalAuthRuleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPersonalAuthRule",
+      version: "oauth2_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/oauth2/authRules/user`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPersonalAuthRuleResponse>(await this.execute(params, req, runtime), new GetPersonalAuthRuleResponse({}));
   }
 
-  async getSsoAccessToken(request: GetSsoAccessTokenRequest): Promise<GetSsoAccessTokenResponse> {
+  async getPersonalAuthRule(): Promise<GetPersonalAuthRuleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers : {[key: string ]: string} = { };
-    return await this.getSsoAccessTokenWithOptions(request, headers, runtime);
+    let headers = new GetPersonalAuthRuleHeaders({ });
+    return await this.getPersonalAuthRuleWithOptions(headers, runtime);
   }
 
   async getSsoAccessTokenWithOptions(request: GetSsoAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetSsoAccessTokenResponse> {
@@ -972,13 +1054,24 @@ export default class Client extends OpenApi {
       headers: headers,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetSsoAccessTokenResponse>(await this.doROARequest("GetSsoAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", `/v1.0/oauth2/ssoAccessToken`, "json", req, runtime), new GetSsoAccessTokenResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSsoAccessToken",
+      version: "oauth2_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/oauth2/ssoAccessToken`,
+      method: "POST",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSsoAccessTokenResponse>(await this.execute(params, req, runtime), new GetSsoAccessTokenResponse({}));
   }
 
-  async getSsoUserInfo(request: GetSsoUserInfoRequest): Promise<GetSsoUserInfoResponse> {
+  async getSsoAccessToken(request: GetSsoAccessTokenRequest): Promise<GetSsoAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSsoUserInfoHeaders({ });
-    return await this.getSsoUserInfoWithOptions(request, headers, runtime);
+    let headers : {[key: string ]: string} = { };
+    return await this.getSsoAccessTokenWithOptions(request, headers, runtime);
   }
 
   async getSsoUserInfoWithOptions(request: GetSsoUserInfoRequest, headers: GetSsoUserInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetSsoUserInfoResponse> {
@@ -1001,13 +1094,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetSsoUserInfoResponse>(await this.doROARequest("GetSsoUserInfo", "oauth2_1.0", "HTTP", "GET", "AK", `/v1.0/oauth2/ssoUserInfo`, "json", req, runtime), new GetSsoUserInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSsoUserInfo",
+      version: "oauth2_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/oauth2/ssoUserInfo`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSsoUserInfoResponse>(await this.execute(params, req, runtime), new GetSsoUserInfoResponse({}));
   }
 
-  async getSuiteAccessToken(request: GetSuiteAccessTokenRequest): Promise<GetSuiteAccessTokenResponse> {
+  async getSsoUserInfo(request: GetSsoUserInfoRequest): Promise<GetSsoUserInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers : {[key: string ]: string} = { };
-    return await this.getSuiteAccessTokenWithOptions(request, headers, runtime);
+    let headers = new GetSsoUserInfoHeaders({ });
+    return await this.getSsoUserInfoWithOptions(request, headers, runtime);
   }
 
   async getSuiteAccessTokenWithOptions(request: GetSuiteAccessTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetSuiteAccessTokenResponse> {
@@ -1029,13 +1133,24 @@ export default class Client extends OpenApi {
       headers: headers,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetSuiteAccessTokenResponse>(await this.doROARequest("GetSuiteAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", `/v1.0/oauth2/suiteAccessToken`, "json", req, runtime), new GetSuiteAccessTokenResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSuiteAccessToken",
+      version: "oauth2_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/oauth2/suiteAccessToken`,
+      method: "POST",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSuiteAccessTokenResponse>(await this.execute(params, req, runtime), new GetSuiteAccessTokenResponse({}));
   }
 
-  async getUserToken(request: GetUserTokenRequest): Promise<GetUserTokenResponse> {
+  async getSuiteAccessToken(request: GetSuiteAccessTokenRequest): Promise<GetSuiteAccessTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
     let headers : {[key: string ]: string} = { };
-    return await this.getUserTokenWithOptions(request, headers, runtime);
+    return await this.getSuiteAccessTokenWithOptions(request, headers, runtime);
   }
 
   async getUserTokenWithOptions(request: GetUserTokenRequest, headers: {[key: string ]: string}, runtime: $Util.RuntimeOptions): Promise<GetUserTokenResponse> {
@@ -1065,7 +1180,24 @@ export default class Client extends OpenApi {
       headers: headers,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetUserTokenResponse>(await this.doROARequest("GetUserToken", "oauth2_1.0", "HTTP", "POST", "AK", `/v1.0/oauth2/userAccessToken`, "json", req, runtime), new GetUserTokenResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetUserToken",
+      version: "oauth2_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/oauth2/userAccessToken`,
+      method: "POST",
+      authType: "Anonymous",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetUserTokenResponse>(await this.execute(params, req, runtime), new GetUserTokenResponse({}));
+  }
+
+  async getUserToken(request: GetUserTokenRequest): Promise<GetUserTokenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers : {[key: string ]: string} = { };
+    return await this.getUserTokenWithOptions(request, headers, runtime);
   }
 
 }

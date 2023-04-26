@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -78,10 +80,12 @@ export class AbandonCustomerResponseBody extends $tea.Model {
 
 export class AbandonCustomerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AbandonCustomerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -89,6 +93,7 @@ export class AbandonCustomerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AbandonCustomerResponseBody,
     };
   }
@@ -181,10 +186,12 @@ export class AddCrmPersonalCustomerResponseBody extends $tea.Model {
 
 export class AddCrmPersonalCustomerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddCrmPersonalCustomerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -192,6 +199,7 @@ export class AddCrmPersonalCustomerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddCrmPersonalCustomerResponseBody,
     };
   }
@@ -287,10 +295,12 @@ export class AddCustomerTrackResponseBody extends $tea.Model {
 
 export class AddCustomerTrackResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddCustomerTrackResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -298,6 +308,7 @@ export class AddCustomerTrackResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddCustomerTrackResponseBody,
     };
   }
@@ -381,10 +392,12 @@ export class AddLeadsResponseBody extends $tea.Model {
 
 export class AddLeadsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddLeadsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -392,6 +405,7 @@ export class AddLeadsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddLeadsResponseBody,
     };
   }
@@ -472,10 +486,12 @@ export class AddRelationMetaFieldResponseBody extends $tea.Model {
 
 export class AddRelationMetaFieldResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddRelationMetaFieldResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -483,6 +499,7 @@ export class AddRelationMetaFieldResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddRelationMetaFieldResponseBody,
     };
   }
@@ -557,10 +574,12 @@ export class BatchAddContactsResponseBody extends $tea.Model {
 
 export class BatchAddContactsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchAddContactsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -568,6 +587,7 @@ export class BatchAddContactsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchAddContactsResponseBody,
     };
   }
@@ -642,10 +662,12 @@ export class BatchAddFollowRecordsResponseBody extends $tea.Model {
 
 export class BatchAddFollowRecordsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchAddFollowRecordsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -653,6 +675,7 @@ export class BatchAddFollowRecordsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchAddFollowRecordsResponseBody,
     };
   }
@@ -733,10 +756,12 @@ export class BatchAddRelationDatasResponseBody extends $tea.Model {
 
 export class BatchAddRelationDatasResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchAddRelationDatasResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -744,6 +769,7 @@ export class BatchAddRelationDatasResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchAddRelationDatasResponseBody,
     };
   }
@@ -818,10 +844,12 @@ export class BatchRemoveFollowRecordsResponseBody extends $tea.Model {
 
 export class BatchRemoveFollowRecordsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchRemoveFollowRecordsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -829,6 +857,7 @@ export class BatchRemoveFollowRecordsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchRemoveFollowRecordsResponseBody,
     };
   }
@@ -909,10 +938,12 @@ export class BatchSendOfficialAccountOTOMessageResponseBody extends $tea.Model {
 
 export class BatchSendOfficialAccountOTOMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchSendOfficialAccountOTOMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -920,6 +951,7 @@ export class BatchSendOfficialAccountOTOMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchSendOfficialAccountOTOMessageResponseBody,
     };
   }
@@ -994,10 +1026,12 @@ export class BatchUpdateContactsResponseBody extends $tea.Model {
 
 export class BatchUpdateContactsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchUpdateContactsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1005,6 +1039,7 @@ export class BatchUpdateContactsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchUpdateContactsResponseBody,
     };
   }
@@ -1079,10 +1114,12 @@ export class BatchUpdateFollowRecordsResponseBody extends $tea.Model {
 
 export class BatchUpdateFollowRecordsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchUpdateFollowRecordsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1090,6 +1127,7 @@ export class BatchUpdateFollowRecordsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchUpdateFollowRecordsResponseBody,
     };
   }
@@ -1170,10 +1208,12 @@ export class BatchUpdateRelationDatasResponseBody extends $tea.Model {
 
 export class BatchUpdateRelationDatasResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: BatchUpdateRelationDatasResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1181,6 +1221,7 @@ export class BatchUpdateRelationDatasResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: BatchUpdateRelationDatasResponseBody,
     };
   }
@@ -1279,10 +1320,12 @@ export class CreateCustomerResponseBody extends $tea.Model {
 
 export class CreateCustomerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateCustomerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1290,6 +1333,7 @@ export class CreateCustomerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateCustomerResponseBody,
     };
   }
@@ -1370,10 +1414,12 @@ export class CreateGroupResponseBody extends $tea.Model {
 
 export class CreateGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1381,6 +1427,7 @@ export class CreateGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateGroupResponseBody,
     };
   }
@@ -1524,10 +1571,12 @@ export class CreateGroupSetResponseBody extends $tea.Model {
 
 export class CreateGroupSetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateGroupSetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1535,6 +1584,7 @@ export class CreateGroupSetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateGroupSetResponseBody,
     };
   }
@@ -1612,10 +1662,12 @@ export class CreateRelationMetaResponseBody extends $tea.Model {
 
 export class CreateRelationMetaResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateRelationMetaResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1623,6 +1675,7 @@ export class CreateRelationMetaResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateRelationMetaResponseBody,
     };
   }
@@ -1694,10 +1747,12 @@ export class DeleteCrmCustomObjectDataResponseBody extends $tea.Model {
 
 export class DeleteCrmCustomObjectDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteCrmCustomObjectDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1705,6 +1760,7 @@ export class DeleteCrmCustomObjectDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteCrmCustomObjectDataResponseBody,
     };
   }
@@ -1779,10 +1835,12 @@ export class DeleteCrmFormInstanceResponseBody extends $tea.Model {
 
 export class DeleteCrmFormInstanceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteCrmFormInstanceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1790,6 +1848,7 @@ export class DeleteCrmFormInstanceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteCrmFormInstanceResponseBody,
     };
   }
@@ -1864,10 +1923,12 @@ export class DeleteCrmPersonalCustomerResponseBody extends $tea.Model {
 
 export class DeleteCrmPersonalCustomerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteCrmPersonalCustomerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1875,6 +1936,7 @@ export class DeleteCrmPersonalCustomerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteCrmPersonalCustomerResponseBody,
     };
   }
@@ -1946,10 +2008,12 @@ export class DeleteLeadsResponseBody extends $tea.Model {
 
 export class DeleteLeadsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteLeadsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1957,6 +2021,7 @@ export class DeleteLeadsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteLeadsResponseBody,
     };
   }
@@ -2037,10 +2102,12 @@ export class DeleteRelationMetaFieldResponseBody extends $tea.Model {
 
 export class DeleteRelationMetaFieldResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteRelationMetaFieldResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2048,6 +2115,7 @@ export class DeleteRelationMetaFieldResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteRelationMetaFieldResponseBody,
     };
   }
@@ -2131,10 +2199,12 @@ export class DescribeCrmPersonalCustomerObjectMetaResponseBody extends $tea.Mode
 
 export class DescribeCrmPersonalCustomerObjectMetaResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DescribeCrmPersonalCustomerObjectMetaResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2142,6 +2212,7 @@ export class DescribeCrmPersonalCustomerObjectMetaResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DescribeCrmPersonalCustomerObjectMetaResponseBody,
     };
   }
@@ -2219,10 +2290,12 @@ export class DescribeRelationMetaResponseBody extends $tea.Model {
 
 export class DescribeRelationMetaResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DescribeRelationMetaResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2230,6 +2303,7 @@ export class DescribeRelationMetaResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DescribeRelationMetaResponseBody,
     };
   }
@@ -2310,10 +2384,12 @@ export class GetAllCustomerRecyclesResponseBody extends $tea.Model {
 
 export class GetAllCustomerRecyclesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetAllCustomerRecyclesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2321,6 +2397,7 @@ export class GetAllCustomerRecyclesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetAllCustomerRecyclesResponseBody,
     };
   }
@@ -2397,10 +2474,12 @@ export class GetCrmGroupChatResponseBody extends $tea.Model {
 
 export class GetCrmGroupChatResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCrmGroupChatResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2408,6 +2487,7 @@ export class GetCrmGroupChatResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCrmGroupChatResponseBody,
     };
   }
@@ -2479,10 +2559,12 @@ export class GetCrmGroupChatMultiResponseBody extends $tea.Model {
 
 export class GetCrmGroupChatMultiResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCrmGroupChatMultiResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2490,6 +2572,7 @@ export class GetCrmGroupChatMultiResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCrmGroupChatMultiResponseBody,
     };
   }
@@ -2582,10 +2665,12 @@ export class GetCrmGroupChatSingleResponseBody extends $tea.Model {
 
 export class GetCrmGroupChatSingleResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCrmGroupChatSingleResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2593,6 +2678,7 @@ export class GetCrmGroupChatSingleResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCrmGroupChatSingleResponseBody,
     };
   }
@@ -2667,10 +2753,12 @@ export class GetCrmRolePermissionResponseBody extends $tea.Model {
 
 export class GetCrmRolePermissionResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCrmRolePermissionResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2678,6 +2766,7 @@ export class GetCrmRolePermissionResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCrmRolePermissionResponseBody,
     };
   }
@@ -2764,10 +2853,12 @@ export class GetCustomerTracksByRelationIdResponseBody extends $tea.Model {
 
 export class GetCustomerTracksByRelationIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetCustomerTracksByRelationIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2775,6 +2866,7 @@ export class GetCustomerTracksByRelationIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetCustomerTracksByRelationIdResponseBody,
     };
   }
@@ -2894,10 +2986,12 @@ export class GetGroupSetResponseBody extends $tea.Model {
 
 export class GetGroupSetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetGroupSetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2905,6 +2999,7 @@ export class GetGroupSetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetGroupSetResponseBody,
     };
   }
@@ -2972,10 +3067,12 @@ export class GetOfficialAccountContactInfoResponseBody extends $tea.Model {
 
 export class GetOfficialAccountContactInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetOfficialAccountContactInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2983,6 +3080,7 @@ export class GetOfficialAccountContactInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetOfficialAccountContactInfoResponseBody,
     };
   }
@@ -3063,10 +3161,12 @@ export class GetOfficialAccountContactsResponseBody extends $tea.Model {
 
 export class GetOfficialAccountContactsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetOfficialAccountContactsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3074,6 +3174,7 @@ export class GetOfficialAccountContactsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetOfficialAccountContactsResponseBody,
     };
   }
@@ -3151,10 +3252,12 @@ export class GetOfficialAccountOTOMessageResultResponseBody extends $tea.Model {
 
 export class GetOfficialAccountOTOMessageResultResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetOfficialAccountOTOMessageResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3162,6 +3265,7 @@ export class GetOfficialAccountOTOMessageResultResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetOfficialAccountOTOMessageResultResponseBody,
     };
   }
@@ -3233,10 +3337,12 @@ export class GetRelationUkSettingResponseBody extends $tea.Model {
 
 export class GetRelationUkSettingResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetRelationUkSettingResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3244,6 +3350,7 @@ export class GetRelationUkSettingResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetRelationUkSettingResponseBody,
     };
   }
@@ -3327,10 +3434,12 @@ export class JoinGroupSetResponseBody extends $tea.Model {
 
 export class JoinGroupSetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: JoinGroupSetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3338,6 +3447,7 @@ export class JoinGroupSetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: JoinGroupSetResponseBody,
     };
   }
@@ -3415,10 +3525,12 @@ export class ListCrmPersonalCustomersResponseBody extends $tea.Model {
 
 export class ListCrmPersonalCustomersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListCrmPersonalCustomersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3426,6 +3538,7 @@ export class ListCrmPersonalCustomersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListCrmPersonalCustomersResponseBody,
     };
   }
@@ -3515,10 +3628,12 @@ export class ListGroupSetResponseBody extends $tea.Model {
 
 export class ListGroupSetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListGroupSetResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3526,6 +3641,7 @@ export class ListGroupSetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListGroupSetResponseBody,
     };
   }
@@ -3606,10 +3722,12 @@ export class QueryAllCustomerResponseBody extends $tea.Model {
 
 export class QueryAllCustomerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAllCustomerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3617,6 +3735,7 @@ export class QueryAllCustomerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAllCustomerResponseBody,
     };
   }
@@ -3703,10 +3822,12 @@ export class QueryAllTracksResponseBody extends $tea.Model {
 
 export class QueryAllTracksResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryAllTracksResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3714,6 +3835,7 @@ export class QueryAllTracksResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryAllTracksResponseBody,
     };
   }
@@ -3803,10 +3925,12 @@ export class QueryCrmGroupChatsResponseBody extends $tea.Model {
 
 export class QueryCrmGroupChatsResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryCrmGroupChatsResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3814,6 +3938,7 @@ export class QueryCrmGroupChatsResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryCrmGroupChatsResponseBody,
     };
   }
@@ -3909,10 +4034,12 @@ export class QueryCrmPersonalCustomerResponseBody extends $tea.Model {
 
 export class QueryCrmPersonalCustomerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryCrmPersonalCustomerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -3920,6 +4047,7 @@ export class QueryCrmPersonalCustomerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryCrmPersonalCustomerResponseBody,
     };
   }
@@ -3997,10 +4125,12 @@ export class QueryOfficialAccountUserBasicInfoResponseBody extends $tea.Model {
 
 export class QueryOfficialAccountUserBasicInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryOfficialAccountUserBasicInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4008,6 +4138,7 @@ export class QueryOfficialAccountUserBasicInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryOfficialAccountUserBasicInfoResponseBody,
     };
   }
@@ -4079,10 +4210,12 @@ export class QueryRelationDatasByTargetIdResponseBody extends $tea.Model {
 
 export class QueryRelationDatasByTargetIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryRelationDatasByTargetIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4090,6 +4223,7 @@ export class QueryRelationDatasByTargetIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryRelationDatasByTargetIdResponseBody,
     };
   }
@@ -4164,10 +4298,12 @@ export class RecallOfficialAccountOTOMessageResponseBody extends $tea.Model {
 
 export class RecallOfficialAccountOTOMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RecallOfficialAccountOTOMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4175,6 +4311,7 @@ export class RecallOfficialAccountOTOMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RecallOfficialAccountOTOMessageResponseBody,
     };
   }
@@ -4255,10 +4392,12 @@ export class SendOfficialAccountOTOMessageResponseBody extends $tea.Model {
 
 export class SendOfficialAccountOTOMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendOfficialAccountOTOMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4266,6 +4405,7 @@ export class SendOfficialAccountOTOMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendOfficialAccountOTOMessageResponseBody,
     };
   }
@@ -4346,10 +4486,12 @@ export class SendOfficialAccountSNSMessageResponseBody extends $tea.Model {
 
 export class SendOfficialAccountSNSMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SendOfficialAccountSNSMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4357,6 +4499,7 @@ export class SendOfficialAccountSNSMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SendOfficialAccountSNSMessageResponseBody,
     };
   }
@@ -4434,10 +4577,12 @@ export class ServiceWindowMessageBatchPushResponseBody extends $tea.Model {
 
 export class ServiceWindowMessageBatchPushResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ServiceWindowMessageBatchPushResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4445,6 +4590,7 @@ export class ServiceWindowMessageBatchPushResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ServiceWindowMessageBatchPushResponseBody,
     };
   }
@@ -4540,10 +4686,12 @@ export class UpdateCrmPersonalCustomerResponseBody extends $tea.Model {
 
 export class UpdateCrmPersonalCustomerResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateCrmPersonalCustomerResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4551,6 +4699,7 @@ export class UpdateCrmPersonalCustomerResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateCrmPersonalCustomerResponseBody,
     };
   }
@@ -4627,10 +4776,12 @@ export class UpdateGroupSetRequest extends $tea.Model {
 
 export class UpdateGroupSetResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: boolean;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4638,6 +4789,7 @@ export class UpdateGroupSetResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: 'boolean',
     };
   }
@@ -4718,10 +4870,12 @@ export class UpdateRelationMetaFieldResponseBody extends $tea.Model {
 
 export class UpdateRelationMetaFieldResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateRelationMetaFieldResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -4729,6 +4883,7 @@ export class UpdateRelationMetaFieldResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateRelationMetaFieldResponseBody,
     };
   }
@@ -9624,9 +9779,12 @@ export class UpdateRelationMetaFieldRequestFieldDTOList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -9634,12 +9792,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async abandonCustomer(request: AbandonCustomerRequest): Promise<AbandonCustomerResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AbandonCustomerHeaders({ });
-    return await this.abandonCustomerWithOptions(request, headers, runtime);
-  }
 
   async abandonCustomerWithOptions(request: AbandonCustomerRequest, headers: AbandonCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<AbandonCustomerResponse> {
     Util.validateModel(request);
@@ -9673,13 +9825,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AbandonCustomerResponse>(await this.doROARequest("AbandonCustomer", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/customers/abandon`, "json", req, runtime), new AbandonCustomerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AbandonCustomer",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/customers/abandon`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AbandonCustomerResponse>(await this.execute(params, req, runtime), new AbandonCustomerResponse({}));
   }
 
-  async addCrmPersonalCustomer(request: AddCrmPersonalCustomerRequest): Promise<AddCrmPersonalCustomerResponse> {
+  async abandonCustomer(request: AbandonCustomerRequest): Promise<AbandonCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddCrmPersonalCustomerHeaders({ });
-    return await this.addCrmPersonalCustomerWithOptions(request, headers, runtime);
+    let headers = new AbandonCustomerHeaders({ });
+    return await this.abandonCustomerWithOptions(request, headers, runtime);
   }
 
   async addCrmPersonalCustomerWithOptions(request: AddCrmPersonalCustomerRequest, headers: AddCrmPersonalCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<AddCrmPersonalCustomerResponse> {
@@ -9730,13 +9893,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddCrmPersonalCustomerResponse>(await this.doROARequest("AddCrmPersonalCustomer", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/personalCustomers`, "json", req, runtime), new AddCrmPersonalCustomerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddCrmPersonalCustomer",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/personalCustomers`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddCrmPersonalCustomerResponse>(await this.execute(params, req, runtime), new AddCrmPersonalCustomerResponse({}));
   }
 
-  async addCustomerTrack(request: AddCustomerTrackRequest): Promise<AddCustomerTrackResponse> {
+  async addCrmPersonalCustomer(request: AddCrmPersonalCustomerRequest): Promise<AddCrmPersonalCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddCustomerTrackHeaders({ });
-    return await this.addCustomerTrackWithOptions(request, headers, runtime);
+    let headers = new AddCrmPersonalCustomerHeaders({ });
+    return await this.addCrmPersonalCustomerWithOptions(request, headers, runtime);
   }
 
   async addCustomerTrackWithOptions(request: AddCustomerTrackRequest, headers: AddCustomerTrackHeaders, runtime: $Util.RuntimeOptions): Promise<AddCustomerTrackResponse> {
@@ -9791,13 +9965,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddCustomerTrackResponse>(await this.doROARequest("AddCustomerTrack", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/customerTracks`, "json", req, runtime), new AddCustomerTrackResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddCustomerTrack",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/customerTracks`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddCustomerTrackResponse>(await this.execute(params, req, runtime), new AddCustomerTrackResponse({}));
   }
 
-  async addLeads(request: AddLeadsRequest): Promise<AddLeadsResponse> {
+  async addCustomerTrack(request: AddCustomerTrackRequest): Promise<AddCustomerTrackResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddLeadsHeaders({ });
-    return await this.addLeadsWithOptions(request, headers, runtime);
+    let headers = new AddCustomerTrackHeaders({ });
+    return await this.addCustomerTrackWithOptions(request, headers, runtime);
   }
 
   async addLeadsWithOptions(request: AddLeadsRequest, headers: AddLeadsHeaders, runtime: $Util.RuntimeOptions): Promise<AddLeadsResponse> {
@@ -9836,13 +10021,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddLeadsResponse>(await this.doROARequest("AddLeads", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/leads`, "json", req, runtime), new AddLeadsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddLeads",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/leads`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddLeadsResponse>(await this.execute(params, req, runtime), new AddLeadsResponse({}));
   }
 
-  async addRelationMetaField(request: AddRelationMetaFieldRequest): Promise<AddRelationMetaFieldResponse> {
+  async addLeads(request: AddLeadsRequest): Promise<AddLeadsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddRelationMetaFieldHeaders({ });
-    return await this.addRelationMetaFieldWithOptions(request, headers, runtime);
+    let headers = new AddLeadsHeaders({ });
+    return await this.addLeadsWithOptions(request, headers, runtime);
   }
 
   async addRelationMetaFieldWithOptions(request: AddRelationMetaFieldRequest, headers: AddRelationMetaFieldHeaders, runtime: $Util.RuntimeOptions): Promise<AddRelationMetaFieldResponse> {
@@ -9877,13 +10073,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddRelationMetaFieldResponse>(await this.doROARequest("AddRelationMetaField", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/relations/metas/fields`, "json", req, runtime), new AddRelationMetaFieldResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddRelationMetaField",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/relations/metas/fields`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddRelationMetaFieldResponse>(await this.execute(params, req, runtime), new AddRelationMetaFieldResponse({}));
   }
 
-  async batchAddContacts(request: BatchAddContactsRequest): Promise<BatchAddContactsResponse> {
+  async addRelationMetaField(request: AddRelationMetaFieldRequest): Promise<AddRelationMetaFieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchAddContactsHeaders({ });
-    return await this.batchAddContactsWithOptions(request, headers, runtime);
+    let headers = new AddRelationMetaFieldHeaders({ });
+    return await this.addRelationMetaFieldWithOptions(request, headers, runtime);
   }
 
   async batchAddContactsWithOptions(request: BatchAddContactsRequest, headers: BatchAddContactsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchAddContactsResponse> {
@@ -9910,13 +10117,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchAddContactsResponse>(await this.doROARequest("BatchAddContacts", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/contacts/batch`, "json", req, runtime), new BatchAddContactsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchAddContacts",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/contacts/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchAddContactsResponse>(await this.execute(params, req, runtime), new BatchAddContactsResponse({}));
   }
 
-  async batchAddFollowRecords(request: BatchAddFollowRecordsRequest): Promise<BatchAddFollowRecordsResponse> {
+  async batchAddContacts(request: BatchAddContactsRequest): Promise<BatchAddContactsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchAddFollowRecordsHeaders({ });
-    return await this.batchAddFollowRecordsWithOptions(request, headers, runtime);
+    let headers = new BatchAddContactsHeaders({ });
+    return await this.batchAddContactsWithOptions(request, headers, runtime);
   }
 
   async batchAddFollowRecordsWithOptions(request: BatchAddFollowRecordsRequest, headers: BatchAddFollowRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchAddFollowRecordsResponse> {
@@ -9943,13 +10161,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchAddFollowRecordsResponse>(await this.doROARequest("BatchAddFollowRecords", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/followRecords/batch`, "json", req, runtime), new BatchAddFollowRecordsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchAddFollowRecords",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/followRecords/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchAddFollowRecordsResponse>(await this.execute(params, req, runtime), new BatchAddFollowRecordsResponse({}));
   }
 
-  async batchAddRelationDatas(request: BatchAddRelationDatasRequest): Promise<BatchAddRelationDatasResponse> {
+  async batchAddFollowRecords(request: BatchAddFollowRecordsRequest): Promise<BatchAddFollowRecordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchAddRelationDatasHeaders({ });
-    return await this.batchAddRelationDatasWithOptions(request, headers, runtime);
+    let headers = new BatchAddFollowRecordsHeaders({ });
+    return await this.batchAddFollowRecordsWithOptions(request, headers, runtime);
   }
 
   async batchAddRelationDatasWithOptions(request: BatchAddRelationDatasRequest, headers: BatchAddRelationDatasHeaders, runtime: $Util.RuntimeOptions): Promise<BatchAddRelationDatasResponse> {
@@ -9984,13 +10213,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchAddRelationDatasResponse>(await this.doROARequest("BatchAddRelationDatas", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/relationDatas/batch`, "json", req, runtime), new BatchAddRelationDatasResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchAddRelationDatas",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/relationDatas/batch`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchAddRelationDatasResponse>(await this.execute(params, req, runtime), new BatchAddRelationDatasResponse({}));
   }
 
-  async batchRemoveFollowRecords(request: BatchRemoveFollowRecordsRequest): Promise<BatchRemoveFollowRecordsResponse> {
+  async batchAddRelationDatas(request: BatchAddRelationDatasRequest): Promise<BatchAddRelationDatasResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchRemoveFollowRecordsHeaders({ });
-    return await this.batchRemoveFollowRecordsWithOptions(request, headers, runtime);
+    let headers = new BatchAddRelationDatasHeaders({ });
+    return await this.batchAddRelationDatasWithOptions(request, headers, runtime);
   }
 
   async batchRemoveFollowRecordsWithOptions(request: BatchRemoveFollowRecordsRequest, headers: BatchRemoveFollowRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchRemoveFollowRecordsResponse> {
@@ -10017,13 +10257,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchRemoveFollowRecordsResponse>(await this.doROARequest("BatchRemoveFollowRecords", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/followRecords/batchRemove`, "json", req, runtime), new BatchRemoveFollowRecordsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchRemoveFollowRecords",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/followRecords/batchRemove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchRemoveFollowRecordsResponse>(await this.execute(params, req, runtime), new BatchRemoveFollowRecordsResponse({}));
   }
 
-  async batchSendOfficialAccountOTOMessage(request: BatchSendOfficialAccountOTOMessageRequest): Promise<BatchSendOfficialAccountOTOMessageResponse> {
+  async batchRemoveFollowRecords(request: BatchRemoveFollowRecordsRequest): Promise<BatchRemoveFollowRecordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchSendOfficialAccountOTOMessageHeaders({ });
-    return await this.batchSendOfficialAccountOTOMessageWithOptions(request, headers, runtime);
+    let headers = new BatchRemoveFollowRecordsHeaders({ });
+    return await this.batchRemoveFollowRecordsWithOptions(request, headers, runtime);
   }
 
   async batchSendOfficialAccountOTOMessageWithOptions(request: BatchSendOfficialAccountOTOMessageRequest, headers: BatchSendOfficialAccountOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<BatchSendOfficialAccountOTOMessageResponse> {
@@ -10054,13 +10305,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchSendOfficialAccountOTOMessageResponse>(await this.doROARequest("BatchSendOfficialAccountOTOMessage", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/officialAccounts/oToMessages/batchSend`, "json", req, runtime), new BatchSendOfficialAccountOTOMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchSendOfficialAccountOTOMessage",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/officialAccounts/oToMessages/batchSend`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchSendOfficialAccountOTOMessageResponse>(await this.execute(params, req, runtime), new BatchSendOfficialAccountOTOMessageResponse({}));
   }
 
-  async batchUpdateContacts(request: BatchUpdateContactsRequest): Promise<BatchUpdateContactsResponse> {
+  async batchSendOfficialAccountOTOMessage(request: BatchSendOfficialAccountOTOMessageRequest): Promise<BatchSendOfficialAccountOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchUpdateContactsHeaders({ });
-    return await this.batchUpdateContactsWithOptions(request, headers, runtime);
+    let headers = new BatchSendOfficialAccountOTOMessageHeaders({ });
+    return await this.batchSendOfficialAccountOTOMessageWithOptions(request, headers, runtime);
   }
 
   async batchUpdateContactsWithOptions(request: BatchUpdateContactsRequest, headers: BatchUpdateContactsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateContactsResponse> {
@@ -10087,13 +10349,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchUpdateContactsResponse>(await this.doROARequest("BatchUpdateContacts", "crm_1.0", "HTTP", "PUT", "AK", `/v1.0/crm/contacts/batch`, "json", req, runtime), new BatchUpdateContactsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchUpdateContacts",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/contacts/batch`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchUpdateContactsResponse>(await this.execute(params, req, runtime), new BatchUpdateContactsResponse({}));
   }
 
-  async batchUpdateFollowRecords(request: BatchUpdateFollowRecordsRequest): Promise<BatchUpdateFollowRecordsResponse> {
+  async batchUpdateContacts(request: BatchUpdateContactsRequest): Promise<BatchUpdateContactsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchUpdateFollowRecordsHeaders({ });
-    return await this.batchUpdateFollowRecordsWithOptions(request, headers, runtime);
+    let headers = new BatchUpdateContactsHeaders({ });
+    return await this.batchUpdateContactsWithOptions(request, headers, runtime);
   }
 
   async batchUpdateFollowRecordsWithOptions(request: BatchUpdateFollowRecordsRequest, headers: BatchUpdateFollowRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateFollowRecordsResponse> {
@@ -10120,13 +10393,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchUpdateFollowRecordsResponse>(await this.doROARequest("BatchUpdateFollowRecords", "crm_1.0", "HTTP", "PUT", "AK", `/v1.0/crm/followRecords/batch`, "json", req, runtime), new BatchUpdateFollowRecordsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchUpdateFollowRecords",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/followRecords/batch`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchUpdateFollowRecordsResponse>(await this.execute(params, req, runtime), new BatchUpdateFollowRecordsResponse({}));
   }
 
-  async batchUpdateRelationDatas(request: BatchUpdateRelationDatasRequest): Promise<BatchUpdateRelationDatasResponse> {
+  async batchUpdateFollowRecords(request: BatchUpdateFollowRecordsRequest): Promise<BatchUpdateFollowRecordsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new BatchUpdateRelationDatasHeaders({ });
-    return await this.batchUpdateRelationDatasWithOptions(request, headers, runtime);
+    let headers = new BatchUpdateFollowRecordsHeaders({ });
+    return await this.batchUpdateFollowRecordsWithOptions(request, headers, runtime);
   }
 
   async batchUpdateRelationDatasWithOptions(request: BatchUpdateRelationDatasRequest, headers: BatchUpdateRelationDatasHeaders, runtime: $Util.RuntimeOptions): Promise<BatchUpdateRelationDatasResponse> {
@@ -10161,13 +10445,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<BatchUpdateRelationDatasResponse>(await this.doROARequest("BatchUpdateRelationDatas", "crm_1.0", "HTTP", "PUT", "AK", `/v1.0/crm/relationDatas/batch`, "json", req, runtime), new BatchUpdateRelationDatasResponse({}));
+    let params = new $OpenApi.Params({
+      action: "BatchUpdateRelationDatas",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/relationDatas/batch`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<BatchUpdateRelationDatasResponse>(await this.execute(params, req, runtime), new BatchUpdateRelationDatasResponse({}));
   }
 
-  async createCustomer(request: CreateCustomerRequest): Promise<CreateCustomerResponse> {
+  async batchUpdateRelationDatas(request: BatchUpdateRelationDatasRequest): Promise<BatchUpdateRelationDatasResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateCustomerHeaders({ });
-    return await this.createCustomerWithOptions(request, headers, runtime);
+    let headers = new BatchUpdateRelationDatasHeaders({ });
+    return await this.batchUpdateRelationDatasWithOptions(request, headers, runtime);
   }
 
   async createCustomerWithOptions(request: CreateCustomerRequest, headers: CreateCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCustomerResponse> {
@@ -10218,13 +10513,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateCustomerResponse>(await this.doROARequest("CreateCustomer", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/customers`, "json", req, runtime), new CreateCustomerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateCustomer",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/customers`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateCustomerResponse>(await this.execute(params, req, runtime), new CreateCustomerResponse({}));
   }
 
-  async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
+  async createCustomer(request: CreateCustomerRequest): Promise<CreateCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateGroupHeaders({ });
-    return await this.createGroupWithOptions(request, headers, runtime);
+    let headers = new CreateCustomerHeaders({ });
+    return await this.createCustomerWithOptions(request, headers, runtime);
   }
 
   async createGroupWithOptions(request: CreateGroupRequest, headers: CreateGroupHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupResponse> {
@@ -10259,13 +10565,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateGroupResponse>(await this.doROARequest("CreateGroup", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/groups`, "json", req, runtime), new CreateGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateGroup",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/groups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateGroupResponse>(await this.execute(params, req, runtime), new CreateGroupResponse({}));
   }
 
-  async createGroupSet(request: CreateGroupSetRequest): Promise<CreateGroupSetResponse> {
+  async createGroup(request: CreateGroupRequest): Promise<CreateGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateGroupSetHeaders({ });
-    return await this.createGroupSetWithOptions(request, headers, runtime);
+    let headers = new CreateGroupHeaders({ });
+    return await this.createGroupWithOptions(request, headers, runtime);
   }
 
   async createGroupSetWithOptions(request: CreateGroupSetRequest, headers: CreateGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<CreateGroupSetResponse> {
@@ -10324,13 +10641,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateGroupSetResponse>(await this.doROARequest("CreateGroupSet", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/groupSets`, "json", req, runtime), new CreateGroupSetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateGroupSet",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/groupSets`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateGroupSetResponse>(await this.execute(params, req, runtime), new CreateGroupSetResponse({}));
   }
 
-  async createRelationMeta(request: CreateRelationMetaRequest): Promise<CreateRelationMetaResponse> {
+  async createGroupSet(request: CreateGroupSetRequest): Promise<CreateGroupSetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateRelationMetaHeaders({ });
-    return await this.createRelationMetaWithOptions(request, headers, runtime);
+    let headers = new CreateGroupSetHeaders({ });
+    return await this.createGroupSetWithOptions(request, headers, runtime);
   }
 
   async createRelationMetaWithOptions(request: CreateRelationMetaRequest, headers: CreateRelationMetaHeaders, runtime: $Util.RuntimeOptions): Promise<CreateRelationMetaResponse> {
@@ -10361,18 +10689,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateRelationMetaResponse>(await this.doROARequest("CreateRelationMeta", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/relations/metas/create`, "json", req, runtime), new CreateRelationMetaResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateRelationMeta",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/relations/metas/create`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateRelationMetaResponse>(await this.execute(params, req, runtime), new CreateRelationMetaResponse({}));
   }
 
-  async deleteCrmCustomObjectData(instanceId: string, request: DeleteCrmCustomObjectDataRequest): Promise<DeleteCrmCustomObjectDataResponse> {
+  async createRelationMeta(request: CreateRelationMetaRequest): Promise<CreateRelationMetaResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteCrmCustomObjectDataHeaders({ });
-    return await this.deleteCrmCustomObjectDataWithOptions(instanceId, request, headers, runtime);
+    let headers = new CreateRelationMetaHeaders({ });
+    return await this.createRelationMetaWithOptions(request, headers, runtime);
   }
 
   async deleteCrmCustomObjectDataWithOptions(instanceId: string, request: DeleteCrmCustomObjectDataRequest, headers: DeleteCrmCustomObjectDataHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteCrmCustomObjectDataResponse> {
     Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.formCode)) {
       query["formCode"] = request.formCode;
@@ -10391,18 +10729,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteCrmCustomObjectDataResponse>(await this.doROARequest("DeleteCrmCustomObjectData", "crm_1.0", "HTTP", "DELETE", "AK", `/v1.0/crm/customObjectDatas/instances/${instanceId}`, "json", req, runtime), new DeleteCrmCustomObjectDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteCrmCustomObjectData",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/customObjectDatas/instances/${instanceId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteCrmCustomObjectDataResponse>(await this.execute(params, req, runtime), new DeleteCrmCustomObjectDataResponse({}));
   }
 
-  async deleteCrmFormInstance(instanceId: string, request: DeleteCrmFormInstanceRequest): Promise<DeleteCrmFormInstanceResponse> {
+  async deleteCrmCustomObjectData(instanceId: string, request: DeleteCrmCustomObjectDataRequest): Promise<DeleteCrmCustomObjectDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteCrmFormInstanceHeaders({ });
-    return await this.deleteCrmFormInstanceWithOptions(instanceId, request, headers, runtime);
+    let headers = new DeleteCrmCustomObjectDataHeaders({ });
+    return await this.deleteCrmCustomObjectDataWithOptions(instanceId, request, headers, runtime);
   }
 
   async deleteCrmFormInstanceWithOptions(instanceId: string, request: DeleteCrmFormInstanceRequest, headers: DeleteCrmFormInstanceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteCrmFormInstanceResponse> {
     Util.validateModel(request);
-    instanceId = OpenApiUtil.getEncodeParam(instanceId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.currentOperatorUserId)) {
       query["currentOperatorUserId"] = request.currentOperatorUserId;
@@ -10425,18 +10773,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteCrmFormInstanceResponse>(await this.doROARequest("DeleteCrmFormInstance", "crm_1.0", "HTTP", "DELETE", "AK", `/v1.0/crm/formInstances/${instanceId}`, "json", req, runtime), new DeleteCrmFormInstanceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteCrmFormInstance",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/formInstances/${instanceId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteCrmFormInstanceResponse>(await this.execute(params, req, runtime), new DeleteCrmFormInstanceResponse({}));
   }
 
-  async deleteCrmPersonalCustomer(dataId: string, request: DeleteCrmPersonalCustomerRequest): Promise<DeleteCrmPersonalCustomerResponse> {
+  async deleteCrmFormInstance(instanceId: string, request: DeleteCrmFormInstanceRequest): Promise<DeleteCrmFormInstanceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteCrmPersonalCustomerHeaders({ });
-    return await this.deleteCrmPersonalCustomerWithOptions(dataId, request, headers, runtime);
+    let headers = new DeleteCrmFormInstanceHeaders({ });
+    return await this.deleteCrmFormInstanceWithOptions(instanceId, request, headers, runtime);
   }
 
   async deleteCrmPersonalCustomerWithOptions(dataId: string, request: DeleteCrmPersonalCustomerRequest, headers: DeleteCrmPersonalCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteCrmPersonalCustomerResponse> {
     Util.validateModel(request);
-    dataId = OpenApiUtil.getEncodeParam(dataId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.currentOperatorUserId)) {
       query["currentOperatorUserId"] = request.currentOperatorUserId;
@@ -10459,13 +10817,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteCrmPersonalCustomerResponse>(await this.doROARequest("DeleteCrmPersonalCustomer", "crm_1.0", "HTTP", "DELETE", "AK", `/v1.0/crm/personalCustomers/${dataId}`, "json", req, runtime), new DeleteCrmPersonalCustomerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteCrmPersonalCustomer",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/personalCustomers/${dataId}`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteCrmPersonalCustomerResponse>(await this.execute(params, req, runtime), new DeleteCrmPersonalCustomerResponse({}));
   }
 
-  async deleteLeads(request: DeleteLeadsRequest): Promise<DeleteLeadsResponse> {
+  async deleteCrmPersonalCustomer(dataId: string, request: DeleteCrmPersonalCustomerRequest): Promise<DeleteCrmPersonalCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteLeadsHeaders({ });
-    return await this.deleteLeadsWithOptions(request, headers, runtime);
+    let headers = new DeleteCrmPersonalCustomerHeaders({ });
+    return await this.deleteCrmPersonalCustomerWithOptions(dataId, request, headers, runtime);
   }
 
   async deleteLeadsWithOptions(request: DeleteLeadsRequest, headers: DeleteLeadsHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteLeadsResponse> {
@@ -10488,13 +10857,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteLeadsResponse>(await this.doROARequest("DeleteLeads", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/leads/remove`, "json", req, runtime), new DeleteLeadsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteLeads",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/leads/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteLeadsResponse>(await this.execute(params, req, runtime), new DeleteLeadsResponse({}));
   }
 
-  async deleteRelationMetaField(request: DeleteRelationMetaFieldRequest): Promise<DeleteRelationMetaFieldResponse> {
+  async deleteLeads(request: DeleteLeadsRequest): Promise<DeleteLeadsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteRelationMetaFieldHeaders({ });
-    return await this.deleteRelationMetaFieldWithOptions(request, headers, runtime);
+    let headers = new DeleteLeadsHeaders({ });
+    return await this.deleteLeadsWithOptions(request, headers, runtime);
   }
 
   async deleteRelationMetaFieldWithOptions(request: DeleteRelationMetaFieldRequest, headers: DeleteRelationMetaFieldHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteRelationMetaFieldResponse> {
@@ -10529,13 +10909,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteRelationMetaFieldResponse>(await this.doROARequest("DeleteRelationMetaField", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/relations/metas/fields/remove`, "json", req, runtime), new DeleteRelationMetaFieldResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteRelationMetaField",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/relations/metas/fields/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteRelationMetaFieldResponse>(await this.execute(params, req, runtime), new DeleteRelationMetaFieldResponse({}));
   }
 
-  async describeCrmPersonalCustomerObjectMeta(request: DescribeCrmPersonalCustomerObjectMetaRequest): Promise<DescribeCrmPersonalCustomerObjectMetaResponse> {
+  async deleteRelationMetaField(request: DeleteRelationMetaFieldRequest): Promise<DeleteRelationMetaFieldResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DescribeCrmPersonalCustomerObjectMetaHeaders({ });
-    return await this.describeCrmPersonalCustomerObjectMetaWithOptions(request, headers, runtime);
+    let headers = new DeleteRelationMetaFieldHeaders({ });
+    return await this.deleteRelationMetaFieldWithOptions(request, headers, runtime);
   }
 
   async describeCrmPersonalCustomerObjectMetaWithOptions(request: DescribeCrmPersonalCustomerObjectMetaRequest, headers: DescribeCrmPersonalCustomerObjectMetaHeaders, runtime: $Util.RuntimeOptions): Promise<DescribeCrmPersonalCustomerObjectMetaResponse> {
@@ -10558,13 +10949,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DescribeCrmPersonalCustomerObjectMetaResponse>(await this.doROARequest("DescribeCrmPersonalCustomerObjectMeta", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/personalCustomers/objectMeta`, "json", req, runtime), new DescribeCrmPersonalCustomerObjectMetaResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DescribeCrmPersonalCustomerObjectMeta",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/personalCustomers/objectMeta`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DescribeCrmPersonalCustomerObjectMetaResponse>(await this.execute(params, req, runtime), new DescribeCrmPersonalCustomerObjectMetaResponse({}));
   }
 
-  async describeRelationMeta(request: DescribeRelationMetaRequest): Promise<DescribeRelationMetaResponse> {
+  async describeCrmPersonalCustomerObjectMeta(request: DescribeCrmPersonalCustomerObjectMetaRequest): Promise<DescribeCrmPersonalCustomerObjectMetaResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DescribeRelationMetaHeaders({ });
-    return await this.describeRelationMetaWithOptions(request, headers, runtime);
+    let headers = new DescribeCrmPersonalCustomerObjectMetaHeaders({ });
+    return await this.describeCrmPersonalCustomerObjectMetaWithOptions(request, headers, runtime);
   }
 
   async describeRelationMetaWithOptions(request: DescribeRelationMetaRequest, headers: DescribeRelationMetaHeaders, runtime: $Util.RuntimeOptions): Promise<DescribeRelationMetaResponse> {
@@ -10595,13 +10997,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DescribeRelationMetaResponse>(await this.doROARequest("DescribeRelationMeta", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/relations/metas/query`, "json", req, runtime), new DescribeRelationMetaResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DescribeRelationMeta",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/relations/metas/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DescribeRelationMetaResponse>(await this.execute(params, req, runtime), new DescribeRelationMetaResponse({}));
   }
 
-  async getAllCustomerRecycles(request: GetAllCustomerRecyclesRequest): Promise<GetAllCustomerRecyclesResponse> {
+  async describeRelationMeta(request: DescribeRelationMetaRequest): Promise<DescribeRelationMetaResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetAllCustomerRecyclesHeaders({ });
-    return await this.getAllCustomerRecyclesWithOptions(request, headers, runtime);
+    let headers = new DescribeRelationMetaHeaders({ });
+    return await this.describeRelationMetaWithOptions(request, headers, runtime);
   }
 
   async getAllCustomerRecyclesWithOptions(request: GetAllCustomerRecyclesRequest, headers: GetAllCustomerRecyclesHeaders, runtime: $Util.RuntimeOptions): Promise<GetAllCustomerRecyclesResponse> {
@@ -10628,17 +11041,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetAllCustomerRecyclesResponse>(await this.doROARequest("GetAllCustomerRecycles", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/customerRecycles`, "json", req, runtime), new GetAllCustomerRecyclesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetAllCustomerRecycles",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/customerRecycles`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetAllCustomerRecyclesResponse>(await this.execute(params, req, runtime), new GetAllCustomerRecyclesResponse({}));
   }
 
-  async getCrmGroupChat(openConversationId: string): Promise<GetCrmGroupChatResponse> {
+  async getAllCustomerRecycles(request: GetAllCustomerRecyclesRequest): Promise<GetAllCustomerRecyclesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCrmGroupChatHeaders({ });
-    return await this.getCrmGroupChatWithOptions(openConversationId, headers, runtime);
+    let headers = new GetAllCustomerRecyclesHeaders({ });
+    return await this.getAllCustomerRecyclesWithOptions(request, headers, runtime);
   }
 
   async getCrmGroupChatWithOptions(openConversationId: string, headers: GetCrmGroupChatHeaders, runtime: $Util.RuntimeOptions): Promise<GetCrmGroupChatResponse> {
-    openConversationId = OpenApiUtil.getEncodeParam(openConversationId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -10651,13 +11074,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetCrmGroupChatResponse>(await this.doROARequest("GetCrmGroupChat", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/crmGroupChats/${openConversationId}`, "json", req, runtime), new GetCrmGroupChatResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCrmGroupChat",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/crmGroupChats/${openConversationId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCrmGroupChatResponse>(await this.execute(params, req, runtime), new GetCrmGroupChatResponse({}));
   }
 
-  async getCrmGroupChatMulti(request: GetCrmGroupChatMultiRequest): Promise<GetCrmGroupChatMultiResponse> {
+  async getCrmGroupChat(openConversationId: string): Promise<GetCrmGroupChatResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCrmGroupChatMultiHeaders({ });
-    return await this.getCrmGroupChatMultiWithOptions(request, headers, runtime);
+    let headers = new GetCrmGroupChatHeaders({ });
+    return await this.getCrmGroupChatWithOptions(openConversationId, headers, runtime);
   }
 
   async getCrmGroupChatMultiWithOptions(request: GetCrmGroupChatMultiRequest, headers: GetCrmGroupChatMultiHeaders, runtime: $Util.RuntimeOptions): Promise<GetCrmGroupChatMultiResponse> {
@@ -10680,13 +11114,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetCrmGroupChatMultiResponse>(await this.doROARequest("GetCrmGroupChatMulti", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/crmGroupChats/batchQuery`, "json", req, runtime), new GetCrmGroupChatMultiResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCrmGroupChatMulti",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/crmGroupChats/batchQuery`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCrmGroupChatMultiResponse>(await this.execute(params, req, runtime), new GetCrmGroupChatMultiResponse({}));
   }
 
-  async getCrmGroupChatSingle(request: GetCrmGroupChatSingleRequest): Promise<GetCrmGroupChatSingleResponse> {
+  async getCrmGroupChatMulti(request: GetCrmGroupChatMultiRequest): Promise<GetCrmGroupChatMultiResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCrmGroupChatSingleHeaders({ });
-    return await this.getCrmGroupChatSingleWithOptions(request, headers, runtime);
+    let headers = new GetCrmGroupChatMultiHeaders({ });
+    return await this.getCrmGroupChatMultiWithOptions(request, headers, runtime);
   }
 
   async getCrmGroupChatSingleWithOptions(request: GetCrmGroupChatSingleRequest, headers: GetCrmGroupChatSingleHeaders, runtime: $Util.RuntimeOptions): Promise<GetCrmGroupChatSingleResponse> {
@@ -10709,13 +11154,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetCrmGroupChatSingleResponse>(await this.doROARequest("GetCrmGroupChatSingle", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/crmGroupChats/query`, "json", req, runtime), new GetCrmGroupChatSingleResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCrmGroupChatSingle",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/crmGroupChats/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCrmGroupChatSingleResponse>(await this.execute(params, req, runtime), new GetCrmGroupChatSingleResponse({}));
   }
 
-  async getCrmRolePermission(request: GetCrmRolePermissionRequest): Promise<GetCrmRolePermissionResponse> {
+  async getCrmGroupChatSingle(request: GetCrmGroupChatSingleRequest): Promise<GetCrmGroupChatSingleResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCrmRolePermissionHeaders({ });
-    return await this.getCrmRolePermissionWithOptions(request, headers, runtime);
+    let headers = new GetCrmGroupChatSingleHeaders({ });
+    return await this.getCrmGroupChatSingleWithOptions(request, headers, runtime);
   }
 
   async getCrmRolePermissionWithOptions(request: GetCrmRolePermissionRequest, headers: GetCrmRolePermissionHeaders, runtime: $Util.RuntimeOptions): Promise<GetCrmRolePermissionResponse> {
@@ -10742,13 +11198,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetCrmRolePermissionResponse>(await this.doROARequest("GetCrmRolePermission", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/permissions`, "json", req, runtime), new GetCrmRolePermissionResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCrmRolePermission",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/permissions`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCrmRolePermissionResponse>(await this.execute(params, req, runtime), new GetCrmRolePermissionResponse({}));
   }
 
-  async getCustomerTracksByRelationId(request: GetCustomerTracksByRelationIdRequest): Promise<GetCustomerTracksByRelationIdResponse> {
+  async getCrmRolePermission(request: GetCrmRolePermissionRequest): Promise<GetCrmRolePermissionResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetCustomerTracksByRelationIdHeaders({ });
-    return await this.getCustomerTracksByRelationIdWithOptions(request, headers, runtime);
+    let headers = new GetCrmRolePermissionHeaders({ });
+    return await this.getCrmRolePermissionWithOptions(request, headers, runtime);
   }
 
   async getCustomerTracksByRelationIdWithOptions(request: GetCustomerTracksByRelationIdRequest, headers: GetCustomerTracksByRelationIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetCustomerTracksByRelationIdResponse> {
@@ -10783,13 +11250,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetCustomerTracksByRelationIdResponse>(await this.doROARequest("GetCustomerTracksByRelationId", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/customerTracks`, "json", req, runtime), new GetCustomerTracksByRelationIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetCustomerTracksByRelationId",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/customerTracks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCustomerTracksByRelationIdResponse>(await this.execute(params, req, runtime), new GetCustomerTracksByRelationIdResponse({}));
   }
 
-  async getGroupSet(request: GetGroupSetRequest): Promise<GetGroupSetResponse> {
+  async getCustomerTracksByRelationId(request: GetCustomerTracksByRelationIdRequest): Promise<GetCustomerTracksByRelationIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetGroupSetHeaders({ });
-    return await this.getGroupSetWithOptions(request, headers, runtime);
+    let headers = new GetCustomerTracksByRelationIdHeaders({ });
+    return await this.getCustomerTracksByRelationIdWithOptions(request, headers, runtime);
   }
 
   async getGroupSetWithOptions(request: GetGroupSetRequest, headers: GetGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<GetGroupSetResponse> {
@@ -10812,17 +11290,27 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetGroupSetResponse>(await this.doROARequest("GetGroupSet", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/groupSets`, "json", req, runtime), new GetGroupSetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetGroupSet",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/groupSets`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetGroupSetResponse>(await this.execute(params, req, runtime), new GetGroupSetResponse({}));
   }
 
-  async getOfficialAccountContactInfo(userId: string): Promise<GetOfficialAccountContactInfoResponse> {
+  async getGroupSet(request: GetGroupSetRequest): Promise<GetGroupSetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetOfficialAccountContactInfoHeaders({ });
-    return await this.getOfficialAccountContactInfoWithOptions(userId, headers, runtime);
+    let headers = new GetGroupSetHeaders({ });
+    return await this.getGroupSetWithOptions(request, headers, runtime);
   }
 
   async getOfficialAccountContactInfoWithOptions(userId: string, headers: GetOfficialAccountContactInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOfficialAccountContactInfoResponse> {
-    userId = OpenApiUtil.getEncodeParam(userId);
     let realHeaders : {[key: string ]: string} = { };
     if (!Util.isUnset(headers.commonHeaders)) {
       realHeaders = headers.commonHeaders;
@@ -10835,13 +11323,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetOfficialAccountContactInfoResponse>(await this.doROARequest("GetOfficialAccountContactInfo", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/officialAccounts/contacts/${userId}`, "json", req, runtime), new GetOfficialAccountContactInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetOfficialAccountContactInfo",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/officialAccounts/contacts/${userId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOfficialAccountContactInfoResponse>(await this.execute(params, req, runtime), new GetOfficialAccountContactInfoResponse({}));
   }
 
-  async getOfficialAccountContacts(request: GetOfficialAccountContactsRequest): Promise<GetOfficialAccountContactsResponse> {
+  async getOfficialAccountContactInfo(userId: string): Promise<GetOfficialAccountContactInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetOfficialAccountContactsHeaders({ });
-    return await this.getOfficialAccountContactsWithOptions(request, headers, runtime);
+    let headers = new GetOfficialAccountContactInfoHeaders({ });
+    return await this.getOfficialAccountContactInfoWithOptions(userId, headers, runtime);
   }
 
   async getOfficialAccountContactsWithOptions(request: GetOfficialAccountContactsRequest, headers: GetOfficialAccountContactsHeaders, runtime: $Util.RuntimeOptions): Promise<GetOfficialAccountContactsResponse> {
@@ -10868,13 +11367,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetOfficialAccountContactsResponse>(await this.doROARequest("GetOfficialAccountContacts", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/officialAccounts/contacts`, "json", req, runtime), new GetOfficialAccountContactsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetOfficialAccountContacts",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/officialAccounts/contacts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOfficialAccountContactsResponse>(await this.execute(params, req, runtime), new GetOfficialAccountContactsResponse({}));
   }
 
-  async getOfficialAccountOTOMessageResult(request: GetOfficialAccountOTOMessageResultRequest): Promise<GetOfficialAccountOTOMessageResultResponse> {
+  async getOfficialAccountContacts(request: GetOfficialAccountContactsRequest): Promise<GetOfficialAccountContactsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetOfficialAccountOTOMessageResultHeaders({ });
-    return await this.getOfficialAccountOTOMessageResultWithOptions(request, headers, runtime);
+    let headers = new GetOfficialAccountContactsHeaders({ });
+    return await this.getOfficialAccountContactsWithOptions(request, headers, runtime);
   }
 
   async getOfficialAccountOTOMessageResultWithOptions(request: GetOfficialAccountOTOMessageResultRequest, headers: GetOfficialAccountOTOMessageResultHeaders, runtime: $Util.RuntimeOptions): Promise<GetOfficialAccountOTOMessageResultResponse> {
@@ -10901,13 +11411,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetOfficialAccountOTOMessageResultResponse>(await this.doROARequest("GetOfficialAccountOTOMessageResult", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/officialAccounts/oToMessages/sendResults`, "json", req, runtime), new GetOfficialAccountOTOMessageResultResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetOfficialAccountOTOMessageResult",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/officialAccounts/oToMessages/sendResults`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOfficialAccountOTOMessageResultResponse>(await this.execute(params, req, runtime), new GetOfficialAccountOTOMessageResultResponse({}));
   }
 
-  async getRelationUkSetting(request: GetRelationUkSettingRequest): Promise<GetRelationUkSettingResponse> {
+  async getOfficialAccountOTOMessageResult(request: GetOfficialAccountOTOMessageResultRequest): Promise<GetOfficialAccountOTOMessageResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetRelationUkSettingHeaders({ });
-    return await this.getRelationUkSettingWithOptions(request, headers, runtime);
+    let headers = new GetOfficialAccountOTOMessageResultHeaders({ });
+    return await this.getOfficialAccountOTOMessageResultWithOptions(request, headers, runtime);
   }
 
   async getRelationUkSettingWithOptions(request: GetRelationUkSettingRequest, headers: GetRelationUkSettingHeaders, runtime: $Util.RuntimeOptions): Promise<GetRelationUkSettingResponse> {
@@ -10930,13 +11451,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetRelationUkSettingResponse>(await this.doROARequest("GetRelationUkSetting", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/relationUkSettings`, "json", req, runtime), new GetRelationUkSettingResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetRelationUkSetting",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/relationUkSettings`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetRelationUkSettingResponse>(await this.execute(params, req, runtime), new GetRelationUkSettingResponse({}));
   }
 
-  async joinGroupSet(request: JoinGroupSetRequest): Promise<JoinGroupSetResponse> {
+  async getRelationUkSetting(request: GetRelationUkSettingRequest): Promise<GetRelationUkSettingResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new JoinGroupSetHeaders({ });
-    return await this.joinGroupSetWithOptions(request, headers, runtime);
+    let headers = new GetRelationUkSettingHeaders({ });
+    return await this.getRelationUkSettingWithOptions(request, headers, runtime);
   }
 
   async joinGroupSetWithOptions(request: JoinGroupSetRequest, headers: JoinGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<JoinGroupSetResponse> {
@@ -10971,13 +11503,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<JoinGroupSetResponse>(await this.doROARequest("JoinGroupSet", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/groupSets/join`, "json", req, runtime), new JoinGroupSetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "JoinGroupSet",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/groupSets/join`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<JoinGroupSetResponse>(await this.execute(params, req, runtime), new JoinGroupSetResponse({}));
   }
 
-  async listCrmPersonalCustomers(request: ListCrmPersonalCustomersRequest): Promise<ListCrmPersonalCustomersResponse> {
+  async joinGroupSet(request: JoinGroupSetRequest): Promise<JoinGroupSetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListCrmPersonalCustomersHeaders({ });
-    return await this.listCrmPersonalCustomersWithOptions(request, headers, runtime);
+    let headers = new JoinGroupSetHeaders({ });
+    return await this.joinGroupSetWithOptions(request, headers, runtime);
   }
 
   async listCrmPersonalCustomersWithOptions(request: ListCrmPersonalCustomersRequest, headers: ListCrmPersonalCustomersHeaders, runtime: $Util.RuntimeOptions): Promise<ListCrmPersonalCustomersResponse> {
@@ -11005,13 +11548,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: request.body,
     });
-    return $tea.cast<ListCrmPersonalCustomersResponse>(await this.doROARequest("ListCrmPersonalCustomers", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/personalCustomers/batchQuery`, "json", req, runtime), new ListCrmPersonalCustomersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListCrmPersonalCustomers",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/personalCustomers/batchQuery`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListCrmPersonalCustomersResponse>(await this.execute(params, req, runtime), new ListCrmPersonalCustomersResponse({}));
   }
 
-  async listGroupSet(request: ListGroupSetRequest): Promise<ListGroupSetResponse> {
+  async listCrmPersonalCustomers(request: ListCrmPersonalCustomersRequest): Promise<ListCrmPersonalCustomersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListGroupSetHeaders({ });
-    return await this.listGroupSetWithOptions(request, headers, runtime);
+    let headers = new ListCrmPersonalCustomersHeaders({ });
+    return await this.listCrmPersonalCustomersWithOptions(request, headers, runtime);
   }
 
   async listGroupSetWithOptions(request: ListGroupSetRequest, headers: ListGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<ListGroupSetResponse> {
@@ -11046,13 +11600,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListGroupSetResponse>(await this.doROARequest("ListGroupSet", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/groupSets/lists`, "json", req, runtime), new ListGroupSetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListGroupSet",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/groupSets/lists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListGroupSetResponse>(await this.execute(params, req, runtime), new ListGroupSetResponse({}));
   }
 
-  async queryAllCustomer(request: QueryAllCustomerRequest): Promise<QueryAllCustomerResponse> {
+  async listGroupSet(request: ListGroupSetRequest): Promise<ListGroupSetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAllCustomerHeaders({ });
-    return await this.queryAllCustomerWithOptions(request, headers, runtime);
+    let headers = new ListGroupSetHeaders({ });
+    return await this.listGroupSetWithOptions(request, headers, runtime);
   }
 
   async queryAllCustomerWithOptions(request: QueryAllCustomerRequest, headers: QueryAllCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllCustomerResponse> {
@@ -11087,13 +11652,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryAllCustomerResponse>(await this.doROARequest("QueryAllCustomer", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/customerInstances`, "json", req, runtime), new QueryAllCustomerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAllCustomer",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/customerInstances`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAllCustomerResponse>(await this.execute(params, req, runtime), new QueryAllCustomerResponse({}));
   }
 
-  async queryAllTracks(request: QueryAllTracksRequest): Promise<QueryAllTracksResponse> {
+  async queryAllCustomer(request: QueryAllCustomerRequest): Promise<QueryAllCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryAllTracksHeaders({ });
-    return await this.queryAllTracksWithOptions(request, headers, runtime);
+    let headers = new QueryAllCustomerHeaders({ });
+    return await this.queryAllCustomerWithOptions(request, headers, runtime);
   }
 
   async queryAllTracksWithOptions(request: QueryAllTracksRequest, headers: QueryAllTracksHeaders, runtime: $Util.RuntimeOptions): Promise<QueryAllTracksResponse> {
@@ -11124,13 +11700,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryAllTracksResponse>(await this.doROARequest("QueryAllTracks", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/customers/tracks`, "json", req, runtime), new QueryAllTracksResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryAllTracks",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/customers/tracks`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryAllTracksResponse>(await this.execute(params, req, runtime), new QueryAllTracksResponse({}));
   }
 
-  async queryCrmGroupChats(request: QueryCrmGroupChatsRequest): Promise<QueryCrmGroupChatsResponse> {
+  async queryAllTracks(request: QueryAllTracksRequest): Promise<QueryAllTracksResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryCrmGroupChatsHeaders({ });
-    return await this.queryCrmGroupChatsWithOptions(request, headers, runtime);
+    let headers = new QueryAllTracksHeaders({ });
+    return await this.queryAllTracksWithOptions(request, headers, runtime);
   }
 
   async queryCrmGroupChatsWithOptions(request: QueryCrmGroupChatsRequest, headers: QueryCrmGroupChatsHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCrmGroupChatsResponse> {
@@ -11165,13 +11752,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryCrmGroupChatsResponse>(await this.doROARequest("QueryCrmGroupChats", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/crmGroupChats`, "json", req, runtime), new QueryCrmGroupChatsResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryCrmGroupChats",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/crmGroupChats`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCrmGroupChatsResponse>(await this.execute(params, req, runtime), new QueryCrmGroupChatsResponse({}));
   }
 
-  async queryCrmPersonalCustomer(request: QueryCrmPersonalCustomerRequest): Promise<QueryCrmPersonalCustomerResponse> {
+  async queryCrmGroupChats(request: QueryCrmGroupChatsRequest): Promise<QueryCrmGroupChatsResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryCrmPersonalCustomerHeaders({ });
-    return await this.queryCrmPersonalCustomerWithOptions(request, headers, runtime);
+    let headers = new QueryCrmGroupChatsHeaders({ });
+    return await this.queryCrmGroupChatsWithOptions(request, headers, runtime);
   }
 
   async queryCrmPersonalCustomerWithOptions(request: QueryCrmPersonalCustomerRequest, headers: QueryCrmPersonalCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCrmPersonalCustomerResponse> {
@@ -11210,13 +11808,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryCrmPersonalCustomerResponse>(await this.doROARequest("QueryCrmPersonalCustomer", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/personalCustomers`, "json", req, runtime), new QueryCrmPersonalCustomerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryCrmPersonalCustomer",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/personalCustomers`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCrmPersonalCustomerResponse>(await this.execute(params, req, runtime), new QueryCrmPersonalCustomerResponse({}));
   }
 
-  async queryOfficialAccountUserBasicInfo(request: QueryOfficialAccountUserBasicInfoRequest): Promise<QueryOfficialAccountUserBasicInfoResponse> {
+  async queryCrmPersonalCustomer(request: QueryCrmPersonalCustomerRequest): Promise<QueryCrmPersonalCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryOfficialAccountUserBasicInfoHeaders({ });
-    return await this.queryOfficialAccountUserBasicInfoWithOptions(request, headers, runtime);
+    let headers = new QueryCrmPersonalCustomerHeaders({ });
+    return await this.queryCrmPersonalCustomerWithOptions(request, headers, runtime);
   }
 
   async queryOfficialAccountUserBasicInfoWithOptions(request: QueryOfficialAccountUserBasicInfoRequest, headers: QueryOfficialAccountUserBasicInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryOfficialAccountUserBasicInfoResponse> {
@@ -11243,18 +11852,28 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryOfficialAccountUserBasicInfoResponse>(await this.doROARequest("QueryOfficialAccountUserBasicInfo", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/officialAccounts/basics/users`, "json", req, runtime), new QueryOfficialAccountUserBasicInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryOfficialAccountUserBasicInfo",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/officialAccounts/basics/users`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryOfficialAccountUserBasicInfoResponse>(await this.execute(params, req, runtime), new QueryOfficialAccountUserBasicInfoResponse({}));
   }
 
-  async queryRelationDatasByTargetId(targetId: string, request: QueryRelationDatasByTargetIdRequest): Promise<QueryRelationDatasByTargetIdResponse> {
+  async queryOfficialAccountUserBasicInfo(request: QueryOfficialAccountUserBasicInfoRequest): Promise<QueryOfficialAccountUserBasicInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryRelationDatasByTargetIdHeaders({ });
-    return await this.queryRelationDatasByTargetIdWithOptions(targetId, request, headers, runtime);
+    let headers = new QueryOfficialAccountUserBasicInfoHeaders({ });
+    return await this.queryOfficialAccountUserBasicInfoWithOptions(request, headers, runtime);
   }
 
   async queryRelationDatasByTargetIdWithOptions(targetId: string, request: QueryRelationDatasByTargetIdRequest, headers: QueryRelationDatasByTargetIdHeaders, runtime: $Util.RuntimeOptions): Promise<QueryRelationDatasByTargetIdResponse> {
     Util.validateModel(request);
-    targetId = OpenApiUtil.getEncodeParam(targetId);
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.relationType)) {
       query["relationType"] = request.relationType;
@@ -11273,13 +11892,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<QueryRelationDatasByTargetIdResponse>(await this.doROARequest("QueryRelationDatasByTargetId", "crm_1.0", "HTTP", "GET", "AK", `/v1.0/crm/relations/datas/targets/${targetId}`, "json", req, runtime), new QueryRelationDatasByTargetIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryRelationDatasByTargetId",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/relations/datas/targets/${targetId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryRelationDatasByTargetIdResponse>(await this.execute(params, req, runtime), new QueryRelationDatasByTargetIdResponse({}));
   }
 
-  async recallOfficialAccountOTOMessage(request: RecallOfficialAccountOTOMessageRequest): Promise<RecallOfficialAccountOTOMessageResponse> {
+  async queryRelationDatasByTargetId(targetId: string, request: QueryRelationDatasByTargetIdRequest): Promise<QueryRelationDatasByTargetIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RecallOfficialAccountOTOMessageHeaders({ });
-    return await this.recallOfficialAccountOTOMessageWithOptions(request, headers, runtime);
+    let headers = new QueryRelationDatasByTargetIdHeaders({ });
+    return await this.queryRelationDatasByTargetIdWithOptions(targetId, request, headers, runtime);
   }
 
   async recallOfficialAccountOTOMessageWithOptions(request: RecallOfficialAccountOTOMessageRequest, headers: RecallOfficialAccountOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<RecallOfficialAccountOTOMessageResponse> {
@@ -11306,13 +11936,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RecallOfficialAccountOTOMessageResponse>(await this.doROARequest("RecallOfficialAccountOTOMessage", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/officialAccounts/oToMessages/recall`, "json", req, runtime), new RecallOfficialAccountOTOMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RecallOfficialAccountOTOMessage",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/officialAccounts/oToMessages/recall`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RecallOfficialAccountOTOMessageResponse>(await this.execute(params, req, runtime), new RecallOfficialAccountOTOMessageResponse({}));
   }
 
-  async sendOfficialAccountOTOMessage(request: SendOfficialAccountOTOMessageRequest): Promise<SendOfficialAccountOTOMessageResponse> {
+  async recallOfficialAccountOTOMessage(request: RecallOfficialAccountOTOMessageRequest): Promise<RecallOfficialAccountOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendOfficialAccountOTOMessageHeaders({ });
-    return await this.sendOfficialAccountOTOMessageWithOptions(request, headers, runtime);
+    let headers = new RecallOfficialAccountOTOMessageHeaders({ });
+    return await this.recallOfficialAccountOTOMessageWithOptions(request, headers, runtime);
   }
 
   async sendOfficialAccountOTOMessageWithOptions(request: SendOfficialAccountOTOMessageRequest, headers: SendOfficialAccountOTOMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendOfficialAccountOTOMessageResponse> {
@@ -11343,13 +11984,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendOfficialAccountOTOMessageResponse>(await this.doROARequest("SendOfficialAccountOTOMessage", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/officialAccounts/oToMessages/send`, "json", req, runtime), new SendOfficialAccountOTOMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SendOfficialAccountOTOMessage",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/officialAccounts/oToMessages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendOfficialAccountOTOMessageResponse>(await this.execute(params, req, runtime), new SendOfficialAccountOTOMessageResponse({}));
   }
 
-  async sendOfficialAccountSNSMessage(request: SendOfficialAccountSNSMessageRequest): Promise<SendOfficialAccountSNSMessageResponse> {
+  async sendOfficialAccountOTOMessage(request: SendOfficialAccountOTOMessageRequest): Promise<SendOfficialAccountOTOMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SendOfficialAccountSNSMessageHeaders({ });
-    return await this.sendOfficialAccountSNSMessageWithOptions(request, headers, runtime);
+    let headers = new SendOfficialAccountOTOMessageHeaders({ });
+    return await this.sendOfficialAccountOTOMessageWithOptions(request, headers, runtime);
   }
 
   async sendOfficialAccountSNSMessageWithOptions(request: SendOfficialAccountSNSMessageRequest, headers: SendOfficialAccountSNSMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendOfficialAccountSNSMessageResponse> {
@@ -11380,13 +12032,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SendOfficialAccountSNSMessageResponse>(await this.doROARequest("SendOfficialAccountSNSMessage", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/officialAccounts/snsMessages/send`, "json", req, runtime), new SendOfficialAccountSNSMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SendOfficialAccountSNSMessage",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/officialAccounts/snsMessages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendOfficialAccountSNSMessageResponse>(await this.execute(params, req, runtime), new SendOfficialAccountSNSMessageResponse({}));
   }
 
-  async serviceWindowMessageBatchPush(request: ServiceWindowMessageBatchPushRequest): Promise<ServiceWindowMessageBatchPushResponse> {
+  async sendOfficialAccountSNSMessage(request: SendOfficialAccountSNSMessageRequest): Promise<SendOfficialAccountSNSMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ServiceWindowMessageBatchPushHeaders({ });
-    return await this.serviceWindowMessageBatchPushWithOptions(request, headers, runtime);
+    let headers = new SendOfficialAccountSNSMessageHeaders({ });
+    return await this.sendOfficialAccountSNSMessageWithOptions(request, headers, runtime);
   }
 
   async serviceWindowMessageBatchPushWithOptions(request: ServiceWindowMessageBatchPushRequest, headers: ServiceWindowMessageBatchPushHeaders, runtime: $Util.RuntimeOptions): Promise<ServiceWindowMessageBatchPushResponse> {
@@ -11413,13 +12076,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ServiceWindowMessageBatchPushResponse>(await this.doROARequest("ServiceWindowMessageBatchPush", "crm_1.0", "HTTP", "POST", "AK", `/v1.0/crm/messages/batchSend`, "json", req, runtime), new ServiceWindowMessageBatchPushResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ServiceWindowMessageBatchPush",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/messages/batchSend`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ServiceWindowMessageBatchPushResponse>(await this.execute(params, req, runtime), new ServiceWindowMessageBatchPushResponse({}));
   }
 
-  async updateCrmPersonalCustomer(request: UpdateCrmPersonalCustomerRequest): Promise<UpdateCrmPersonalCustomerResponse> {
+  async serviceWindowMessageBatchPush(request: ServiceWindowMessageBatchPushRequest): Promise<ServiceWindowMessageBatchPushResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateCrmPersonalCustomerHeaders({ });
-    return await this.updateCrmPersonalCustomerWithOptions(request, headers, runtime);
+    let headers = new ServiceWindowMessageBatchPushHeaders({ });
+    return await this.serviceWindowMessageBatchPushWithOptions(request, headers, runtime);
   }
 
   async updateCrmPersonalCustomerWithOptions(request: UpdateCrmPersonalCustomerRequest, headers: UpdateCrmPersonalCustomerHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCrmPersonalCustomerResponse> {
@@ -11474,13 +12148,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateCrmPersonalCustomerResponse>(await this.doROARequest("UpdateCrmPersonalCustomer", "crm_1.0", "HTTP", "PUT", "AK", `/v1.0/crm/personalCustomers`, "json", req, runtime), new UpdateCrmPersonalCustomerResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateCrmPersonalCustomer",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/personalCustomers`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateCrmPersonalCustomerResponse>(await this.execute(params, req, runtime), new UpdateCrmPersonalCustomerResponse({}));
   }
 
-  async updateGroupSet(request: UpdateGroupSetRequest): Promise<UpdateGroupSetResponse> {
+  async updateCrmPersonalCustomer(request: UpdateCrmPersonalCustomerRequest): Promise<UpdateCrmPersonalCustomerResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateGroupSetHeaders({ });
-    return await this.updateGroupSetWithOptions(request, headers, runtime);
+    let headers = new UpdateCrmPersonalCustomerHeaders({ });
+    return await this.updateCrmPersonalCustomerWithOptions(request, headers, runtime);
   }
 
   async updateGroupSetWithOptions(request: UpdateGroupSetRequest, headers: UpdateGroupSetHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateGroupSetResponse> {
@@ -11535,13 +12220,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateGroupSetResponse>(await this.doROARequest("UpdateGroupSet", "crm_1.0", "HTTP", "PUT", "AK", `/v1.0/crm/groupSets/set`, "boolean", req, runtime), new UpdateGroupSetResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateGroupSet",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/groupSets/set`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "boolean",
+    });
+    return $tea.cast<UpdateGroupSetResponse>(await this.execute(params, req, runtime), new UpdateGroupSetResponse({}));
   }
 
-  async updateRelationMetaField(request: UpdateRelationMetaFieldRequest): Promise<UpdateRelationMetaFieldResponse> {
+  async updateGroupSet(request: UpdateGroupSetRequest): Promise<UpdateGroupSetResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateRelationMetaFieldHeaders({ });
-    return await this.updateRelationMetaFieldWithOptions(request, headers, runtime);
+    let headers = new UpdateGroupSetHeaders({ });
+    return await this.updateGroupSetWithOptions(request, headers, runtime);
   }
 
   async updateRelationMetaFieldWithOptions(request: UpdateRelationMetaFieldRequest, headers: UpdateRelationMetaFieldHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateRelationMetaFieldResponse> {
@@ -11576,7 +12272,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateRelationMetaFieldResponse>(await this.doROARequest("UpdateRelationMetaField", "crm_1.0", "HTTP", "PUT", "AK", `/v1.0/crm/relations/metas/fields`, "json", req, runtime), new UpdateRelationMetaFieldResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateRelationMetaField",
+      version: "crm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/crm/relations/metas/fields`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateRelationMetaFieldResponse>(await this.execute(params, req, runtime), new UpdateRelationMetaFieldResponse({}));
+  }
+
+  async updateRelationMetaField(request: UpdateRelationMetaFieldRequest): Promise<UpdateRelationMetaFieldResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateRelationMetaFieldHeaders({ });
+    return await this.updateRelationMetaFieldWithOptions(request, headers, runtime);
   }
 
 }

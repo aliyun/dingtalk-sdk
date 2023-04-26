@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -96,10 +98,12 @@ export class PediaWordsAddResponseBody extends $tea.Model {
 
 export class PediaWordsAddResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PediaWordsAddResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -107,6 +111,7 @@ export class PediaWordsAddResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PediaWordsAddResponseBody,
     };
   }
@@ -193,10 +198,12 @@ export class PediaWordsApproveResponseBody extends $tea.Model {
 
 export class PediaWordsApproveResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PediaWordsApproveResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -204,6 +211,7 @@ export class PediaWordsApproveResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PediaWordsApproveResponseBody,
     };
   }
@@ -281,10 +289,12 @@ export class PediaWordsDeleteResponseBody extends $tea.Model {
 
 export class PediaWordsDeleteResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PediaWordsDeleteResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -292,6 +302,7 @@ export class PediaWordsDeleteResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PediaWordsDeleteResponseBody,
     };
   }
@@ -369,10 +380,12 @@ export class PediaWordsQueryResponseBody extends $tea.Model {
 
 export class PediaWordsQueryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PediaWordsQueryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -380,6 +393,7 @@ export class PediaWordsQueryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PediaWordsQueryResponseBody,
     };
   }
@@ -466,10 +480,12 @@ export class PediaWordsSearchResponseBody extends $tea.Model {
 
 export class PediaWordsSearchResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PediaWordsSearchResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -477,6 +493,7 @@ export class PediaWordsSearchResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PediaWordsSearchResponseBody,
     };
   }
@@ -581,10 +598,12 @@ export class PediaWordsUpdateResponseBody extends $tea.Model {
 
 export class PediaWordsUpdateResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PediaWordsUpdateResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -592,6 +611,7 @@ export class PediaWordsUpdateResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PediaWordsUpdateResponseBody,
     };
   }
@@ -1218,9 +1238,12 @@ export class PediaWordsUpdateRequestRelatedLink extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1228,12 +1251,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async pediaWordsAdd(request: PediaWordsAddRequest): Promise<PediaWordsAddResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PediaWordsAddHeaders({ });
-    return await this.pediaWordsAddWithOptions(request, headers, runtime);
-  }
 
   async pediaWordsAddWithOptions(request: PediaWordsAddRequest, headers: PediaWordsAddHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsAddResponse> {
     Util.validateModel(request);
@@ -1287,13 +1304,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PediaWordsAddResponse>(await this.doROARequest("PediaWordsAdd", "pedia_1.0", "HTTP", "POST", "AK", `/v1.0/pedia/words`, "json", req, runtime), new PediaWordsAddResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PediaWordsAdd",
+      version: "pedia_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/pedia/words`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PediaWordsAddResponse>(await this.execute(params, req, runtime), new PediaWordsAddResponse({}));
   }
 
-  async pediaWordsApprove(request: PediaWordsApproveRequest): Promise<PediaWordsApproveResponse> {
+  async pediaWordsAdd(request: PediaWordsAddRequest): Promise<PediaWordsAddResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PediaWordsApproveHeaders({ });
-    return await this.pediaWordsApproveWithOptions(request, headers, runtime);
+    let headers = new PediaWordsAddHeaders({ });
+    return await this.pediaWordsAddWithOptions(request, headers, runtime);
   }
 
   async pediaWordsApproveWithOptions(request: PediaWordsApproveRequest, headers: PediaWordsApproveHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsApproveResponse> {
@@ -1336,13 +1364,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PediaWordsApproveResponse>(await this.doROARequest("PediaWordsApprove", "pedia_1.0", "HTTP", "POST", "AK", `/v1.0/pedia/words/approve`, "json", req, runtime), new PediaWordsApproveResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PediaWordsApprove",
+      version: "pedia_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/pedia/words/approve`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PediaWordsApproveResponse>(await this.execute(params, req, runtime), new PediaWordsApproveResponse({}));
   }
 
-  async pediaWordsDelete(request: PediaWordsDeleteRequest): Promise<PediaWordsDeleteResponse> {
+  async pediaWordsApprove(request: PediaWordsApproveRequest): Promise<PediaWordsApproveResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PediaWordsDeleteHeaders({ });
-    return await this.pediaWordsDeleteWithOptions(request, headers, runtime);
+    let headers = new PediaWordsApproveHeaders({ });
+    return await this.pediaWordsApproveWithOptions(request, headers, runtime);
   }
 
   async pediaWordsDeleteWithOptions(request: PediaWordsDeleteRequest, headers: PediaWordsDeleteHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsDeleteResponse> {
@@ -1369,13 +1408,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<PediaWordsDeleteResponse>(await this.doROARequest("PediaWordsDelete", "pedia_1.0", "HTTP", "DELETE", "AK", `/v1.0/pedia/words`, "json", req, runtime), new PediaWordsDeleteResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PediaWordsDelete",
+      version: "pedia_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/pedia/words`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PediaWordsDeleteResponse>(await this.execute(params, req, runtime), new PediaWordsDeleteResponse({}));
   }
 
-  async pediaWordsQuery(request: PediaWordsQueryRequest): Promise<PediaWordsQueryResponse> {
+  async pediaWordsDelete(request: PediaWordsDeleteRequest): Promise<PediaWordsDeleteResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PediaWordsQueryHeaders({ });
-    return await this.pediaWordsQueryWithOptions(request, headers, runtime);
+    let headers = new PediaWordsDeleteHeaders({ });
+    return await this.pediaWordsDeleteWithOptions(request, headers, runtime);
   }
 
   async pediaWordsQueryWithOptions(request: PediaWordsQueryRequest, headers: PediaWordsQueryHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsQueryResponse> {
@@ -1402,13 +1452,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<PediaWordsQueryResponse>(await this.doROARequest("PediaWordsQuery", "pedia_1.0", "HTTP", "POST", "AK", `/v1.0/pedia/words/query`, "json", req, runtime), new PediaWordsQueryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PediaWordsQuery",
+      version: "pedia_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/pedia/words/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PediaWordsQueryResponse>(await this.execute(params, req, runtime), new PediaWordsQueryResponse({}));
   }
 
-  async pediaWordsSearch(request: PediaWordsSearchRequest): Promise<PediaWordsSearchResponse> {
+  async pediaWordsQuery(request: PediaWordsQueryRequest): Promise<PediaWordsQueryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PediaWordsSearchHeaders({ });
-    return await this.pediaWordsSearchWithOptions(request, headers, runtime);
+    let headers = new PediaWordsQueryHeaders({ });
+    return await this.pediaWordsQueryWithOptions(request, headers, runtime);
   }
 
   async pediaWordsSearchWithOptions(request: PediaWordsSearchRequest, headers: PediaWordsSearchHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsSearchResponse> {
@@ -1447,13 +1508,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PediaWordsSearchResponse>(await this.doROARequest("PediaWordsSearch", "pedia_1.0", "HTTP", "POST", "AK", `/v1.0/pedia/words/search`, "json", req, runtime), new PediaWordsSearchResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PediaWordsSearch",
+      version: "pedia_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/pedia/words/search`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PediaWordsSearchResponse>(await this.execute(params, req, runtime), new PediaWordsSearchResponse({}));
   }
 
-  async pediaWordsUpdate(request: PediaWordsUpdateRequest): Promise<PediaWordsUpdateResponse> {
+  async pediaWordsSearch(request: PediaWordsSearchRequest): Promise<PediaWordsSearchResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PediaWordsUpdateHeaders({ });
-    return await this.pediaWordsUpdateWithOptions(request, headers, runtime);
+    let headers = new PediaWordsSearchHeaders({ });
+    return await this.pediaWordsSearchWithOptions(request, headers, runtime);
   }
 
   async pediaWordsUpdateWithOptions(request: PediaWordsUpdateRequest, headers: PediaWordsUpdateHeaders, runtime: $Util.RuntimeOptions): Promise<PediaWordsUpdateResponse> {
@@ -1516,7 +1588,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PediaWordsUpdateResponse>(await this.doROARequest("PediaWordsUpdate", "pedia_1.0", "HTTP", "PUT", "AK", `/v1.0/pedia/words`, "json", req, runtime), new PediaWordsUpdateResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PediaWordsUpdate",
+      version: "pedia_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/pedia/words`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PediaWordsUpdateResponse>(await this.execute(params, req, runtime), new PediaWordsUpdateResponse({}));
+  }
+
+  async pediaWordsUpdate(request: PediaWordsUpdateRequest): Promise<PediaWordsUpdateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PediaWordsUpdateHeaders({ });
+    return await this.pediaWordsUpdateWithOptions(request, headers, runtime);
   }
 
 }

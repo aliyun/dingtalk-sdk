@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -81,10 +83,12 @@ export class CheckOpportunityResultResponseBody extends $tea.Model {
 
 export class CheckOpportunityResultResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CheckOpportunityResultResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -92,6 +96,7 @@ export class CheckOpportunityResultResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CheckOpportunityResultResponseBody,
     };
   }
@@ -156,15 +161,18 @@ export class CreateOpportunityRequest extends $tea.Model {
 
 export class CreateOpportunityResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -280,10 +288,12 @@ export class QueryTradeOrderResponseBody extends $tea.Model {
 
 export class QueryTradeOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: QueryTradeOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -291,6 +301,7 @@ export class QueryTradeOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: QueryTradeOrderResponseBody,
     };
   }
@@ -302,9 +313,12 @@ export class QueryTradeOrderResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -312,12 +326,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async checkOpportunityResult(request: CheckOpportunityResultRequest): Promise<CheckOpportunityResultResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CheckOpportunityResultHeaders({ });
-    return await this.checkOpportunityResultWithOptions(request, headers, runtime);
-  }
 
   async checkOpportunityResultWithOptions(request: CheckOpportunityResultRequest, headers: CheckOpportunityResultHeaders, runtime: $Util.RuntimeOptions): Promise<CheckOpportunityResultResponse> {
     Util.validateModel(request);
@@ -355,13 +363,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<CheckOpportunityResultResponse>(await this.doROARequest("CheckOpportunityResult", "trade_1.0", "HTTP", "GET", "AK", `/v1.0/trade/opportunity/check`, "json", req, runtime), new CheckOpportunityResultResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CheckOpportunityResult",
+      version: "trade_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trade/opportunity/check`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CheckOpportunityResultResponse>(await this.execute(params, req, runtime), new CheckOpportunityResultResponse({}));
   }
 
-  async createOpportunity(request: CreateOpportunityRequest): Promise<CreateOpportunityResponse> {
+  async checkOpportunityResult(request: CheckOpportunityResultRequest): Promise<CheckOpportunityResultResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateOpportunityHeaders({ });
-    return await this.createOpportunityWithOptions(request, headers, runtime);
+    let headers = new CheckOpportunityResultHeaders({ });
+    return await this.checkOpportunityResultWithOptions(request, headers, runtime);
   }
 
   async createOpportunityWithOptions(request: CreateOpportunityRequest, headers: CreateOpportunityHeaders, runtime: $Util.RuntimeOptions): Promise<CreateOpportunityResponse> {
@@ -400,13 +419,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateOpportunityResponse>(await this.doROARequest("CreateOpportunity", "trade_1.0", "HTTP", "POST", "AK", `/v1.0/trade/opportunities`, "none", req, runtime), new CreateOpportunityResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateOpportunity",
+      version: "trade_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trade/opportunities`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateOpportunityResponse>(await this.execute(params, req, runtime), new CreateOpportunityResponse({}));
   }
 
-  async queryTradeOrder(request: QueryTradeOrderRequest): Promise<QueryTradeOrderResponse> {
+  async createOpportunity(request: CreateOpportunityRequest): Promise<CreateOpportunityResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new QueryTradeOrderHeaders({ });
-    return await this.queryTradeOrderWithOptions(request, headers, runtime);
+    let headers = new CreateOpportunityHeaders({ });
+    return await this.createOpportunityWithOptions(request, headers, runtime);
   }
 
   async queryTradeOrderWithOptions(request: QueryTradeOrderRequest, headers: QueryTradeOrderHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTradeOrderResponse> {
@@ -433,7 +463,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<QueryTradeOrderResponse>(await this.doROARequest("QueryTradeOrder", "trade_1.0", "HTTP", "POST", "AK", `/v1.0/trade/orders/query`, "json", req, runtime), new QueryTradeOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "QueryTradeOrder",
+      version: "trade_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trade/orders/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryTradeOrderResponse>(await this.execute(params, req, runtime), new QueryTradeOrderResponse({}));
+  }
+
+  async queryTradeOrder(request: QueryTradeOrderRequest): Promise<QueryTradeOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryTradeOrderHeaders({ });
+    return await this.queryTradeOrderWithOptions(request, headers, runtime);
   }
 
 }

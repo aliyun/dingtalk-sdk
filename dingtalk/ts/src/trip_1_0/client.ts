@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -87,10 +89,12 @@ export class SyncBusinessSignInfoResponseBody extends $tea.Model {
 
 export class SyncBusinessSignInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SyncBusinessSignInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -98,6 +102,7 @@ export class SyncBusinessSignInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SyncBusinessSignInfoResponseBody,
     };
   }
@@ -187,10 +192,12 @@ export class SyncSecretKeyResponseBody extends $tea.Model {
 
 export class SyncSecretKeyResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SyncSecretKeyResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -198,6 +205,7 @@ export class SyncSecretKeyResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SyncSecretKeyResponseBody,
     };
   }
@@ -332,10 +340,12 @@ export class SyncTripOrderResponseBody extends $tea.Model {
 
 export class SyncTripOrderResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SyncTripOrderResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -343,6 +353,7 @@ export class SyncTripOrderResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SyncTripOrderResponseBody,
     };
   }
@@ -532,9 +543,12 @@ export class SyncTripOrderRequestOrderDetails extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -542,12 +556,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async syncBusinessSignInfo(request: SyncBusinessSignInfoRequest): Promise<SyncBusinessSignInfoResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SyncBusinessSignInfoHeaders({ });
-    return await this.syncBusinessSignInfoWithOptions(request, headers, runtime);
-  }
 
   async syncBusinessSignInfoWithOptions(request: SyncBusinessSignInfoRequest, headers: SyncBusinessSignInfoHeaders, runtime: $Util.RuntimeOptions): Promise<SyncBusinessSignInfoResponse> {
     Util.validateModel(request);
@@ -589,13 +597,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SyncBusinessSignInfoResponse>(await this.doROARequest("SyncBusinessSignInfo", "trip_1.0", "HTTP", "POST", "AK", `/v1.0/trip/businessSignInfos/sync`, "json", req, runtime), new SyncBusinessSignInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SyncBusinessSignInfo",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/businessSignInfos/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncBusinessSignInfoResponse>(await this.execute(params, req, runtime), new SyncBusinessSignInfoResponse({}));
   }
 
-  async syncSecretKey(request: SyncSecretKeyRequest): Promise<SyncSecretKeyResponse> {
+  async syncBusinessSignInfo(request: SyncBusinessSignInfoRequest): Promise<SyncBusinessSignInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SyncSecretKeyHeaders({ });
-    return await this.syncSecretKeyWithOptions(request, headers, runtime);
+    let headers = new SyncBusinessSignInfoHeaders({ });
+    return await this.syncBusinessSignInfoWithOptions(request, headers, runtime);
   }
 
   async syncSecretKeyWithOptions(request: SyncSecretKeyRequest, headers: SyncSecretKeyHeaders, runtime: $Util.RuntimeOptions): Promise<SyncSecretKeyResponse> {
@@ -638,13 +657,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SyncSecretKeyResponse>(await this.doROARequest("SyncSecretKey", "trip_1.0", "HTTP", "POST", "AK", `/v1.0/trip/secretKeys/sync`, "json", req, runtime), new SyncSecretKeyResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SyncSecretKey",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/secretKeys/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncSecretKeyResponse>(await this.execute(params, req, runtime), new SyncSecretKeyResponse({}));
   }
 
-  async syncTripOrder(request: SyncTripOrderRequest): Promise<SyncTripOrderResponse> {
+  async syncSecretKey(request: SyncSecretKeyRequest): Promise<SyncSecretKeyResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SyncTripOrderHeaders({ });
-    return await this.syncTripOrderWithOptions(request, headers, runtime);
+    let headers = new SyncSecretKeyHeaders({ });
+    return await this.syncSecretKeyWithOptions(request, headers, runtime);
   }
 
   async syncTripOrderWithOptions(request: SyncTripOrderRequest, headers: SyncTripOrderHeaders, runtime: $Util.RuntimeOptions): Promise<SyncTripOrderResponse> {
@@ -747,7 +777,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<SyncTripOrderResponse>(await this.doROARequest("SyncTripOrder", "trip_1.0", "HTTP", "POST", "AK", `/v1.0/trip/tripOrders/sync`, "json", req, runtime), new SyncTripOrderResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SyncTripOrder",
+      version: "trip_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/trip/tripOrders/sync`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SyncTripOrderResponse>(await this.execute(params, req, runtime), new SyncTripOrderResponse({}));
+  }
+
+  async syncTripOrder(request: SyncTripOrderRequest): Promise<SyncTripOrderResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SyncTripOrderHeaders({ });
+    return await this.syncTripOrderWithOptions(request, headers, runtime);
   }
 
 }

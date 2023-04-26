@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -68,15 +70,18 @@ export class AddPointRequest extends $tea.Model {
 
 export class AddPointResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
     };
   }
 
@@ -153,10 +158,12 @@ export class AddResidentDepartmentResponseBody extends $tea.Model {
 
 export class AddResidentDepartmentResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddResidentDepartmentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -164,6 +171,7 @@ export class AddResidentDepartmentResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddResidentDepartmentResponseBody,
     };
   }
@@ -241,10 +249,12 @@ export class AddResidentMemberResponseBody extends $tea.Model {
 
 export class AddResidentMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddResidentMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -252,6 +262,7 @@ export class AddResidentMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddResidentMemberResponseBody,
     };
   }
@@ -341,10 +352,12 @@ export class AddResidentUsersResponseBody extends $tea.Model {
 
 export class AddResidentUsersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddResidentUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -352,6 +365,7 @@ export class AddResidentUsersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddResidentUsersResponseBody,
     };
   }
@@ -432,10 +446,12 @@ export class CreateResidentBlackBoardResponseBody extends $tea.Model {
 
 export class CreateResidentBlackBoardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateResidentBlackBoardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -443,6 +459,7 @@ export class CreateResidentBlackBoardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateResidentBlackBoardResponseBody,
     };
   }
@@ -535,10 +552,12 @@ export class CreateSpaceResponseBody extends $tea.Model {
 
 export class CreateSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: CreateSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -546,6 +565,7 @@ export class CreateSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: CreateSpaceResponseBody,
     };
   }
@@ -617,10 +637,12 @@ export class DeleteResidentBlackBoardResponseBody extends $tea.Model {
 
 export class DeleteResidentBlackBoardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteResidentBlackBoardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -628,6 +650,7 @@ export class DeleteResidentBlackBoardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteResidentBlackBoardResponseBody,
     };
   }
@@ -699,10 +722,12 @@ export class DeleteResidentDepartmentResponseBody extends $tea.Model {
 
 export class DeleteResidentDepartmentResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteResidentDepartmentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -710,6 +735,7 @@ export class DeleteResidentDepartmentResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteResidentDepartmentResponseBody,
     };
   }
@@ -784,10 +810,12 @@ export class DeleteSpaceResponseBody extends $tea.Model {
 
 export class DeleteSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: DeleteSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -795,6 +823,7 @@ export class DeleteSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: DeleteSpaceResponseBody,
     };
   }
@@ -866,10 +895,12 @@ export class GetConversationIdResponseBody extends $tea.Model {
 
 export class GetConversationIdResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetConversationIdResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -877,6 +908,7 @@ export class GetConversationIdResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetConversationIdResponseBody,
     };
   }
@@ -929,10 +961,12 @@ export class GetIndustryTypeResponseBody extends $tea.Model {
 
 export class GetIndustryTypeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetIndustryTypeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -940,6 +974,7 @@ export class GetIndustryTypeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetIndustryTypeResponseBody,
     };
   }
@@ -1023,10 +1058,12 @@ export class GetPropertyInfoResponseBody extends $tea.Model {
 
 export class GetPropertyInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetPropertyInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1034,6 +1071,7 @@ export class GetPropertyInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetPropertyInfoResponseBody,
     };
   }
@@ -1165,10 +1203,12 @@ export class GetResidentInfoResponseBody extends $tea.Model {
 
 export class GetResidentInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetResidentInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1176,6 +1216,7 @@ export class GetResidentInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetResidentInfoResponseBody,
     };
   }
@@ -1250,10 +1291,12 @@ export class GetResidentMembersInfoResponseBody extends $tea.Model {
 
 export class GetResidentMembersInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetResidentMembersInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1261,6 +1304,7 @@ export class GetResidentMembersInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetResidentMembersInfoResponseBody,
     };
   }
@@ -1332,10 +1376,12 @@ export class GetSpaceIdByTypeResponseBody extends $tea.Model {
 
 export class GetSpaceIdByTypeResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSpaceIdByTypeResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1343,6 +1389,7 @@ export class GetSpaceIdByTypeResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSpaceIdByTypeResponseBody,
     };
   }
@@ -1417,10 +1464,12 @@ export class GetSpacesInfoResponseBody extends $tea.Model {
 
 export class GetSpacesInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetSpacesInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1428,6 +1477,7 @@ export class GetSpacesInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetSpacesInfoResponseBody,
     };
   }
@@ -1499,10 +1549,12 @@ export class ListIndustryRoleUsersResponseBody extends $tea.Model {
 
 export class ListIndustryRoleUsersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListIndustryRoleUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1510,6 +1562,7 @@ export class ListIndustryRoleUsersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListIndustryRoleUsersResponseBody,
     };
   }
@@ -1581,10 +1634,12 @@ export class ListPointRulesResponseBody extends $tea.Model {
 
 export class ListPointRulesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListPointRulesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1592,6 +1647,7 @@ export class ListPointRulesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListPointRulesResponseBody,
     };
   }
@@ -1666,10 +1722,12 @@ export class ListSubSpaceResponseBody extends $tea.Model {
 
 export class ListSubSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListSubSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1677,6 +1735,7 @@ export class ListSubSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListSubSpaceResponseBody,
     };
   }
@@ -1763,10 +1822,12 @@ export class ListUncheckUsersResponseBody extends $tea.Model {
 
 export class ListUncheckUsersResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListUncheckUsersResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1774,6 +1835,7 @@ export class ListUncheckUsersResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListUncheckUsersResponseBody,
     };
   }
@@ -1845,10 +1907,12 @@ export class ListUserIndustryRolesResponseBody extends $tea.Model {
 
 export class ListUserIndustryRolesResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ListUserIndustryRolesResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1856,6 +1920,7 @@ export class ListUserIndustryRolesResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ListUserIndustryRolesResponseBody,
     };
   }
@@ -1951,10 +2016,12 @@ export class PagePointHistoryResponseBody extends $tea.Model {
 
 export class PagePointHistoryResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PagePointHistoryResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1962,6 +2029,7 @@ export class PagePointHistoryResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PagePointHistoryResponseBody,
     };
   }
@@ -2039,10 +2107,12 @@ export class RemoveResidentMemberResponseBody extends $tea.Model {
 
 export class RemoveResidentMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RemoveResidentMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2050,6 +2120,7 @@ export class RemoveResidentMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RemoveResidentMemberResponseBody,
     };
   }
@@ -2124,10 +2195,12 @@ export class RemoveResidentUserResponseBody extends $tea.Model {
 
 export class RemoveResidentUserResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: RemoveResidentUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2135,6 +2208,7 @@ export class RemoveResidentUserResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: RemoveResidentUserResponseBody,
     };
   }
@@ -2209,10 +2283,12 @@ export class SearchResidentResponseBody extends $tea.Model {
 
 export class SearchResidentResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: SearchResidentResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2220,6 +2296,7 @@ export class SearchResidentResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: SearchResidentResponseBody,
     };
   }
@@ -2297,10 +2374,12 @@ export class UpdateResideceGroupResponseBody extends $tea.Model {
 
 export class UpdateResideceGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateResideceGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2308,6 +2387,7 @@ export class UpdateResideceGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateResideceGroupResponseBody,
     };
   }
@@ -2397,10 +2477,12 @@ export class UpdateResidenceResponseBody extends $tea.Model {
 
 export class UpdateResidenceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateResidenceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2408,6 +2490,7 @@ export class UpdateResidenceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateResidenceResponseBody,
     };
   }
@@ -2488,10 +2571,12 @@ export class UpdateResidentBlackBoardResponseBody extends $tea.Model {
 
 export class UpdateResidentBlackBoardResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateResidentBlackBoardResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2499,6 +2584,7 @@ export class UpdateResidentBlackBoardResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateResidentBlackBoardResponseBody,
     };
   }
@@ -2597,10 +2683,12 @@ export class UpdateResidentInfoResponseBody extends $tea.Model {
 
 export class UpdateResidentInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateResidentInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2608,6 +2696,7 @@ export class UpdateResidentInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateResidentInfoResponseBody,
     };
   }
@@ -2682,10 +2771,12 @@ export class UpdateResidentMemberResponseBody extends $tea.Model {
 
 export class UpdateResidentMemberResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateResidentMemberResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2693,6 +2784,7 @@ export class UpdateResidentMemberResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateResidentMemberResponseBody,
     };
   }
@@ -2788,10 +2880,12 @@ export class UpdateResidentUserResponseBody extends $tea.Model {
 
 export class UpdateResidentUserResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateResidentUserResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2799,6 +2893,7 @@ export class UpdateResidentUserResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateResidentUserResponseBody,
     };
   }
@@ -2870,10 +2965,12 @@ export class UpdateSpaceResponseBody extends $tea.Model {
 
 export class UpdateSpaceResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateSpaceResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -2881,6 +2978,7 @@ export class UpdateSpaceResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateSpaceResponseBody,
     };
   }
@@ -3390,9 +3488,12 @@ export class UpdateSpaceRequestSpaceInfoVOList extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -3400,12 +3501,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async addPoint(request: AddPointRequest): Promise<AddPointResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddPointHeaders({ });
-    return await this.addPointWithOptions(request, headers, runtime);
-  }
 
   async addPointWithOptions(request: AddPointRequest, headers: AddPointHeaders, runtime: $Util.RuntimeOptions): Promise<AddPointResponse> {
     Util.validateModel(request);
@@ -3451,13 +3546,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<AddPointResponse>(await this.doROARequest("AddPoint", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/points`, "none", req, runtime), new AddPointResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddPoint",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/points`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AddPointResponse>(await this.execute(params, req, runtime), new AddPointResponse({}));
   }
 
-  async addResidentDepartment(request: AddResidentDepartmentRequest): Promise<AddResidentDepartmentResponse> {
+  async addPoint(request: AddPointRequest): Promise<AddPointResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddResidentDepartmentHeaders({ });
-    return await this.addResidentDepartmentWithOptions(request, headers, runtime);
+    let headers = new AddPointHeaders({ });
+    return await this.addPointWithOptions(request, headers, runtime);
   }
 
   async addResidentDepartmentWithOptions(request: AddResidentDepartmentRequest, headers: AddResidentDepartmentHeaders, runtime: $Util.RuntimeOptions): Promise<AddResidentDepartmentResponse> {
@@ -3488,13 +3594,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<AddResidentDepartmentResponse>(await this.doROARequest("AddResidentDepartment", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/departments`, "json", req, runtime), new AddResidentDepartmentResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddResidentDepartment",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/departments`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AddResidentDepartmentResponse>(await this.execute(params, req, runtime), new AddResidentDepartmentResponse({}));
   }
 
-  async addResidentMember(request: AddResidentMemberRequest): Promise<AddResidentMemberResponse> {
+  async addResidentDepartment(request: AddResidentDepartmentRequest): Promise<AddResidentDepartmentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddResidentMemberHeaders({ });
-    return await this.addResidentMemberWithOptions(request, headers, runtime);
+    let headers = new AddResidentDepartmentHeaders({ });
+    return await this.addResidentDepartmentWithOptions(request, headers, runtime);
   }
 
   async addResidentMemberWithOptions(request: AddResidentMemberRequest, headers: AddResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<AddResidentMemberResponse> {
@@ -3517,13 +3634,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddResidentMemberResponse>(await this.doROARequest("AddResidentMember", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/members`, "json", req, runtime), new AddResidentMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddResidentMember",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/members`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddResidentMemberResponse>(await this.execute(params, req, runtime), new AddResidentMemberResponse({}));
   }
 
-  async addResidentUsers(request: AddResidentUsersRequest): Promise<AddResidentUsersResponse> {
+  async addResidentMember(request: AddResidentMemberRequest): Promise<AddResidentMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddResidentUsersHeaders({ });
-    return await this.addResidentUsersWithOptions(request, headers, runtime);
+    let headers = new AddResidentMemberHeaders({ });
+    return await this.addResidentMemberWithOptions(request, headers, runtime);
   }
 
   async addResidentUsersWithOptions(request: AddResidentUsersRequest, headers: AddResidentUsersHeaders, runtime: $Util.RuntimeOptions): Promise<AddResidentUsersResponse> {
@@ -3570,13 +3698,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<AddResidentUsersResponse>(await this.doROARequest("AddResidentUsers", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/users`, "json", req, runtime), new AddResidentUsersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddResidentUsers",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/users`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AddResidentUsersResponse>(await this.execute(params, req, runtime), new AddResidentUsersResponse({}));
   }
 
-  async createResidentBlackBoard(request: CreateResidentBlackBoardRequest): Promise<CreateResidentBlackBoardResponse> {
+  async addResidentUsers(request: AddResidentUsersRequest): Promise<AddResidentUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateResidentBlackBoardHeaders({ });
-    return await this.createResidentBlackBoardWithOptions(request, headers, runtime);
+    let headers = new AddResidentUsersHeaders({ });
+    return await this.addResidentUsersWithOptions(request, headers, runtime);
   }
 
   async createResidentBlackBoardWithOptions(request: CreateResidentBlackBoardRequest, headers: CreateResidentBlackBoardHeaders, runtime: $Util.RuntimeOptions): Promise<CreateResidentBlackBoardResponse> {
@@ -3611,13 +3750,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateResidentBlackBoardResponse>(await this.doROARequest("CreateResidentBlackBoard", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/blackboards`, "json", req, runtime), new CreateResidentBlackBoardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateResidentBlackBoard",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/blackboards`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateResidentBlackBoardResponse>(await this.execute(params, req, runtime), new CreateResidentBlackBoardResponse({}));
   }
 
-  async createSpace(request: CreateSpaceRequest): Promise<CreateSpaceResponse> {
+  async createResidentBlackBoard(request: CreateResidentBlackBoardRequest): Promise<CreateResidentBlackBoardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new CreateSpaceHeaders({ });
-    return await this.createSpaceWithOptions(request, headers, runtime);
+    let headers = new CreateResidentBlackBoardHeaders({ });
+    return await this.createResidentBlackBoardWithOptions(request, headers, runtime);
   }
 
   async createSpaceWithOptions(request: CreateSpaceRequest, headers: CreateSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<CreateSpaceResponse> {
@@ -3668,13 +3818,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<CreateSpaceResponse>(await this.doROARequest("CreateSpace", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/spaces`, "json", req, runtime), new CreateSpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "CreateSpace",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/spaces`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateSpaceResponse>(await this.execute(params, req, runtime), new CreateSpaceResponse({}));
   }
 
-  async deleteResidentBlackBoard(request: DeleteResidentBlackBoardRequest): Promise<DeleteResidentBlackBoardResponse> {
+  async createSpace(request: CreateSpaceRequest): Promise<CreateSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteResidentBlackBoardHeaders({ });
-    return await this.deleteResidentBlackBoardWithOptions(request, headers, runtime);
+    let headers = new CreateSpaceHeaders({ });
+    return await this.createSpaceWithOptions(request, headers, runtime);
   }
 
   async deleteResidentBlackBoardWithOptions(request: DeleteResidentBlackBoardRequest, headers: DeleteResidentBlackBoardHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteResidentBlackBoardResponse> {
@@ -3697,13 +3858,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteResidentBlackBoardResponse>(await this.doROARequest("DeleteResidentBlackBoard", "resident_1.0", "HTTP", "DELETE", "AK", `/v1.0/resident/blackboards`, "json", req, runtime), new DeleteResidentBlackBoardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteResidentBlackBoard",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/blackboards`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteResidentBlackBoardResponse>(await this.execute(params, req, runtime), new DeleteResidentBlackBoardResponse({}));
   }
 
-  async deleteResidentDepartment(request: DeleteResidentDepartmentRequest): Promise<DeleteResidentDepartmentResponse> {
+  async deleteResidentBlackBoard(request: DeleteResidentBlackBoardRequest): Promise<DeleteResidentBlackBoardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteResidentDepartmentHeaders({ });
-    return await this.deleteResidentDepartmentWithOptions(request, headers, runtime);
+    let headers = new DeleteResidentBlackBoardHeaders({ });
+    return await this.deleteResidentBlackBoardWithOptions(request, headers, runtime);
   }
 
   async deleteResidentDepartmentWithOptions(request: DeleteResidentDepartmentRequest, headers: DeleteResidentDepartmentHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteResidentDepartmentResponse> {
@@ -3726,13 +3898,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<DeleteResidentDepartmentResponse>(await this.doROARequest("DeleteResidentDepartment", "resident_1.0", "HTTP", "DELETE", "AK", `/v1.0/resident/departments`, "json", req, runtime), new DeleteResidentDepartmentResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteResidentDepartment",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/departments`,
+      method: "DELETE",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteResidentDepartmentResponse>(await this.execute(params, req, runtime), new DeleteResidentDepartmentResponse({}));
   }
 
-  async deleteSpace(request: DeleteSpaceRequest): Promise<DeleteSpaceResponse> {
+  async deleteResidentDepartment(request: DeleteResidentDepartmentRequest): Promise<DeleteResidentDepartmentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new DeleteSpaceHeaders({ });
-    return await this.deleteSpaceWithOptions(request, headers, runtime);
+    let headers = new DeleteResidentDepartmentHeaders({ });
+    return await this.deleteResidentDepartmentWithOptions(request, headers, runtime);
   }
 
   async deleteSpaceWithOptions(request: DeleteSpaceRequest, headers: DeleteSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteSpaceResponse> {
@@ -3755,13 +3938,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<DeleteSpaceResponse>(await this.doROARequest("DeleteSpace", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/spaces/remove`, "json", req, runtime), new DeleteSpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "DeleteSpace",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/spaces/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteSpaceResponse>(await this.execute(params, req, runtime), new DeleteSpaceResponse({}));
   }
 
-  async getConversationId(request: GetConversationIdRequest): Promise<GetConversationIdResponse> {
+  async deleteSpace(request: DeleteSpaceRequest): Promise<DeleteSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetConversationIdHeaders({ });
-    return await this.getConversationIdWithOptions(request, headers, runtime);
+    let headers = new DeleteSpaceHeaders({ });
+    return await this.deleteSpaceWithOptions(request, headers, runtime);
   }
 
   async getConversationIdWithOptions(request: GetConversationIdRequest, headers: GetConversationIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetConversationIdResponse> {
@@ -3784,13 +3978,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetConversationIdResponse>(await this.doROARequest("GetConversationId", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/conversations`, "json", req, runtime), new GetConversationIdResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetConversationId",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/conversations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetConversationIdResponse>(await this.execute(params, req, runtime), new GetConversationIdResponse({}));
   }
 
-  async getIndustryType(): Promise<GetIndustryTypeResponse> {
+  async getConversationId(request: GetConversationIdRequest): Promise<GetConversationIdResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetIndustryTypeHeaders({ });
-    return await this.getIndustryTypeWithOptions(headers, runtime);
+    let headers = new GetConversationIdHeaders({ });
+    return await this.getConversationIdWithOptions(request, headers, runtime);
   }
 
   async getIndustryTypeWithOptions(headers: GetIndustryTypeHeaders, runtime: $Util.RuntimeOptions): Promise<GetIndustryTypeResponse> {
@@ -3806,13 +4011,24 @@ export default class Client extends OpenApi {
     let req = new $OpenApi.OpenApiRequest({
       headers: realHeaders,
     });
-    return $tea.cast<GetIndustryTypeResponse>(await this.doROARequest("GetIndustryType", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/organizations/industryTypes`, "json", req, runtime), new GetIndustryTypeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetIndustryType",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/organizations/industryTypes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetIndustryTypeResponse>(await this.execute(params, req, runtime), new GetIndustryTypeResponse({}));
   }
 
-  async getPropertyInfo(request: GetPropertyInfoRequest): Promise<GetPropertyInfoResponse> {
+  async getIndustryType(): Promise<GetIndustryTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetPropertyInfoHeaders({ });
-    return await this.getPropertyInfoWithOptions(request, headers, runtime);
+    let headers = new GetIndustryTypeHeaders({ });
+    return await this.getIndustryTypeWithOptions(headers, runtime);
   }
 
   async getPropertyInfoWithOptions(request: GetPropertyInfoRequest, headers: GetPropertyInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetPropertyInfoResponse> {
@@ -3835,13 +4051,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetPropertyInfoResponse>(await this.doROARequest("GetPropertyInfo", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/propertyInfos`, "json", req, runtime), new GetPropertyInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetPropertyInfo",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/propertyInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetPropertyInfoResponse>(await this.execute(params, req, runtime), new GetPropertyInfoResponse({}));
   }
 
-  async getResidentInfo(request: GetResidentInfoRequest): Promise<GetResidentInfoResponse> {
+  async getPropertyInfo(request: GetPropertyInfoRequest): Promise<GetPropertyInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetResidentInfoHeaders({ });
-    return await this.getResidentInfoWithOptions(request, headers, runtime);
+    let headers = new GetPropertyInfoHeaders({ });
+    return await this.getPropertyInfoWithOptions(request, headers, runtime);
   }
 
   async getResidentInfoWithOptions(request: GetResidentInfoRequest, headers: GetResidentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentInfoResponse> {
@@ -3864,13 +4091,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetResidentInfoResponse>(await this.doROARequest("GetResidentInfo", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/residentInfos`, "json", req, runtime), new GetResidentInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetResidentInfo",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/residentInfos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetResidentInfoResponse>(await this.execute(params, req, runtime), new GetResidentInfoResponse({}));
   }
 
-  async getResidentMembersInfo(request: GetResidentMembersInfoRequest): Promise<GetResidentMembersInfoResponse> {
+  async getResidentInfo(request: GetResidentInfoRequest): Promise<GetResidentInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetResidentMembersInfoHeaders({ });
-    return await this.getResidentMembersInfoWithOptions(request, headers, runtime);
+    let headers = new GetResidentInfoHeaders({ });
+    return await this.getResidentInfoWithOptions(request, headers, runtime);
   }
 
   async getResidentMembersInfoWithOptions(request: GetResidentMembersInfoRequest, headers: GetResidentMembersInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetResidentMembersInfoResponse> {
@@ -3897,13 +4135,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetResidentMembersInfoResponse>(await this.doROARequest("GetResidentMembersInfo", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/residences/query`, "json", req, runtime), new GetResidentMembersInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetResidentMembersInfo",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/residences/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetResidentMembersInfoResponse>(await this.execute(params, req, runtime), new GetResidentMembersInfoResponse({}));
   }
 
-  async getSpaceIdByType(request: GetSpaceIdByTypeRequest): Promise<GetSpaceIdByTypeResponse> {
+  async getResidentMembersInfo(request: GetResidentMembersInfoRequest): Promise<GetResidentMembersInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSpaceIdByTypeHeaders({ });
-    return await this.getSpaceIdByTypeWithOptions(request, headers, runtime);
+    let headers = new GetResidentMembersInfoHeaders({ });
+    return await this.getResidentMembersInfoWithOptions(request, headers, runtime);
   }
 
   async getSpaceIdByTypeWithOptions(request: GetSpaceIdByTypeRequest, headers: GetSpaceIdByTypeHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpaceIdByTypeResponse> {
@@ -3926,13 +4175,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetSpaceIdByTypeResponse>(await this.doROARequest("GetSpaceIdByType", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/spaces/types`, "json", req, runtime), new GetSpaceIdByTypeResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSpaceIdByType",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/spaces/types`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSpaceIdByTypeResponse>(await this.execute(params, req, runtime), new GetSpaceIdByTypeResponse({}));
   }
 
-  async getSpacesInfo(request: GetSpacesInfoRequest): Promise<GetSpacesInfoResponse> {
+  async getSpaceIdByType(request: GetSpaceIdByTypeRequest): Promise<GetSpaceIdByTypeResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetSpacesInfoHeaders({ });
-    return await this.getSpacesInfoWithOptions(request, headers, runtime);
+    let headers = new GetSpaceIdByTypeHeaders({ });
+    return await this.getSpaceIdByTypeWithOptions(request, headers, runtime);
   }
 
   async getSpacesInfoWithOptions(request: GetSpacesInfoRequest, headers: GetSpacesInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetSpacesInfoResponse> {
@@ -3959,13 +4219,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetSpacesInfoResponse>(await this.doROARequest("GetSpacesInfo", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/spaces/query`, "json", req, runtime), new GetSpacesInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetSpacesInfo",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/spaces/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSpacesInfoResponse>(await this.execute(params, req, runtime), new GetSpacesInfoResponse({}));
   }
 
-  async listIndustryRoleUsers(request: ListIndustryRoleUsersRequest): Promise<ListIndustryRoleUsersResponse> {
+  async getSpacesInfo(request: GetSpacesInfoRequest): Promise<GetSpacesInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListIndustryRoleUsersHeaders({ });
-    return await this.listIndustryRoleUsersWithOptions(request, headers, runtime);
+    let headers = new GetSpacesInfoHeaders({ });
+    return await this.getSpacesInfoWithOptions(request, headers, runtime);
   }
 
   async listIndustryRoleUsersWithOptions(request: ListIndustryRoleUsersRequest, headers: ListIndustryRoleUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListIndustryRoleUsersResponse> {
@@ -3988,13 +4259,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListIndustryRoleUsersResponse>(await this.doROARequest("ListIndustryRoleUsers", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/industryRoles/users`, "json", req, runtime), new ListIndustryRoleUsersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListIndustryRoleUsers",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/industryRoles/users`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListIndustryRoleUsersResponse>(await this.execute(params, req, runtime), new ListIndustryRoleUsersResponse({}));
   }
 
-  async listPointRules(request: ListPointRulesRequest): Promise<ListPointRulesResponse> {
+  async listIndustryRoleUsers(request: ListIndustryRoleUsersRequest): Promise<ListIndustryRoleUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListPointRulesHeaders({ });
-    return await this.listPointRulesWithOptions(request, headers, runtime);
+    let headers = new ListIndustryRoleUsersHeaders({ });
+    return await this.listIndustryRoleUsersWithOptions(request, headers, runtime);
   }
 
   async listPointRulesWithOptions(request: ListPointRulesRequest, headers: ListPointRulesHeaders, runtime: $Util.RuntimeOptions): Promise<ListPointRulesResponse> {
@@ -4017,13 +4299,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListPointRulesResponse>(await this.doROARequest("ListPointRules", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/points/rules`, "json", req, runtime), new ListPointRulesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListPointRules",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/points/rules`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListPointRulesResponse>(await this.execute(params, req, runtime), new ListPointRulesResponse({}));
   }
 
-  async listSubSpace(request: ListSubSpaceRequest): Promise<ListSubSpaceResponse> {
+  async listPointRules(request: ListPointRulesRequest): Promise<ListPointRulesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListSubSpaceHeaders({ });
-    return await this.listSubSpaceWithOptions(request, headers, runtime);
+    let headers = new ListPointRulesHeaders({ });
+    return await this.listPointRulesWithOptions(request, headers, runtime);
   }
 
   async listSubSpaceWithOptions(request: ListSubSpaceRequest, headers: ListSubSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<ListSubSpaceResponse> {
@@ -4050,13 +4343,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListSubSpaceResponse>(await this.doROARequest("ListSubSpace", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/spaces/subSpaces`, "json", req, runtime), new ListSubSpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListSubSpace",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/spaces/subSpaces`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListSubSpaceResponse>(await this.execute(params, req, runtime), new ListSubSpaceResponse({}));
   }
 
-  async listUncheckUsers(request: ListUncheckUsersRequest): Promise<ListUncheckUsersResponse> {
+  async listSubSpace(request: ListSubSpaceRequest): Promise<ListSubSpaceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListUncheckUsersHeaders({ });
-    return await this.listUncheckUsersWithOptions(request, headers, runtime);
+    let headers = new ListSubSpaceHeaders({ });
+    return await this.listSubSpaceWithOptions(request, headers, runtime);
   }
 
   async listUncheckUsersWithOptions(request: ListUncheckUsersRequest, headers: ListUncheckUsersHeaders, runtime: $Util.RuntimeOptions): Promise<ListUncheckUsersResponse> {
@@ -4091,13 +4395,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListUncheckUsersResponse>(await this.doROARequest("ListUncheckUsers", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/organizations/noJoinUsers`, "json", req, runtime), new ListUncheckUsersResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListUncheckUsers",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/organizations/noJoinUsers`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListUncheckUsersResponse>(await this.execute(params, req, runtime), new ListUncheckUsersResponse({}));
   }
 
-  async listUserIndustryRoles(request: ListUserIndustryRolesRequest): Promise<ListUserIndustryRolesResponse> {
+  async listUncheckUsers(request: ListUncheckUsersRequest): Promise<ListUncheckUsersResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ListUserIndustryRolesHeaders({ });
-    return await this.listUserIndustryRolesWithOptions(request, headers, runtime);
+    let headers = new ListUncheckUsersHeaders({ });
+    return await this.listUncheckUsersWithOptions(request, headers, runtime);
   }
 
   async listUserIndustryRolesWithOptions(request: ListUserIndustryRolesRequest, headers: ListUserIndustryRolesHeaders, runtime: $Util.RuntimeOptions): Promise<ListUserIndustryRolesResponse> {
@@ -4120,13 +4435,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<ListUserIndustryRolesResponse>(await this.doROARequest("ListUserIndustryRoles", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/users/industryRoles`, "json", req, runtime), new ListUserIndustryRolesResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ListUserIndustryRoles",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/users/industryRoles`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListUserIndustryRolesResponse>(await this.execute(params, req, runtime), new ListUserIndustryRolesResponse({}));
   }
 
-  async pagePointHistory(request: PagePointHistoryRequest): Promise<PagePointHistoryResponse> {
+  async listUserIndustryRoles(request: ListUserIndustryRolesRequest): Promise<ListUserIndustryRolesResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PagePointHistoryHeaders({ });
-    return await this.pagePointHistoryWithOptions(request, headers, runtime);
+    let headers = new ListUserIndustryRolesHeaders({ });
+    return await this.listUserIndustryRolesWithOptions(request, headers, runtime);
   }
 
   async pagePointHistoryWithOptions(request: PagePointHistoryRequest, headers: PagePointHistoryHeaders, runtime: $Util.RuntimeOptions): Promise<PagePointHistoryResponse> {
@@ -4169,13 +4495,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<PagePointHistoryResponse>(await this.doROARequest("PagePointHistory", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/points/records`, "json", req, runtime), new PagePointHistoryResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PagePointHistory",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/points/records`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PagePointHistoryResponse>(await this.execute(params, req, runtime), new PagePointHistoryResponse({}));
   }
 
-  async removeResidentMember(request: RemoveResidentMemberRequest): Promise<RemoveResidentMemberResponse> {
+  async pagePointHistory(request: PagePointHistoryRequest): Promise<PagePointHistoryResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RemoveResidentMemberHeaders({ });
-    return await this.removeResidentMemberWithOptions(request, headers, runtime);
+    let headers = new PagePointHistoryHeaders({ });
+    return await this.pagePointHistoryWithOptions(request, headers, runtime);
   }
 
   async removeResidentMemberWithOptions(request: RemoveResidentMemberRequest, headers: RemoveResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveResidentMemberResponse> {
@@ -4206,13 +4543,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<RemoveResidentMemberResponse>(await this.doROARequest("RemoveResidentMember", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/members/remove`, "json", req, runtime), new RemoveResidentMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RemoveResidentMember",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/members/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RemoveResidentMemberResponse>(await this.execute(params, req, runtime), new RemoveResidentMemberResponse({}));
   }
 
-  async removeResidentUser(request: RemoveResidentUserRequest): Promise<RemoveResidentUserResponse> {
+  async removeResidentMember(request: RemoveResidentMemberRequest): Promise<RemoveResidentMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new RemoveResidentUserHeaders({ });
-    return await this.removeResidentUserWithOptions(request, headers, runtime);
+    let headers = new RemoveResidentMemberHeaders({ });
+    return await this.removeResidentMemberWithOptions(request, headers, runtime);
   }
 
   async removeResidentUserWithOptions(request: RemoveResidentUserRequest, headers: RemoveResidentUserHeaders, runtime: $Util.RuntimeOptions): Promise<RemoveResidentUserResponse> {
@@ -4239,13 +4587,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<RemoveResidentUserResponse>(await this.doROARequest("RemoveResidentUser", "resident_1.0", "HTTP", "POST", "AK", `/v1.0/resident/users/remove`, "json", req, runtime), new RemoveResidentUserResponse({}));
+    let params = new $OpenApi.Params({
+      action: "RemoveResidentUser",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/users/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<RemoveResidentUserResponse>(await this.execute(params, req, runtime), new RemoveResidentUserResponse({}));
   }
 
-  async searchResident(request: SearchResidentRequest): Promise<SearchResidentResponse> {
+  async removeResidentUser(request: RemoveResidentUserRequest): Promise<RemoveResidentUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new SearchResidentHeaders({ });
-    return await this.searchResidentWithOptions(request, headers, runtime);
+    let headers = new RemoveResidentUserHeaders({ });
+    return await this.removeResidentUserWithOptions(request, headers, runtime);
   }
 
   async searchResidentWithOptions(request: SearchResidentRequest, headers: SearchResidentHeaders, runtime: $Util.RuntimeOptions): Promise<SearchResidentResponse> {
@@ -4272,13 +4631,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<SearchResidentResponse>(await this.doROARequest("SearchResident", "resident_1.0", "HTTP", "GET", "AK", `/v1.0/resident/residences`, "json", req, runtime), new SearchResidentResponse({}));
+    let params = new $OpenApi.Params({
+      action: "SearchResident",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/residences`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SearchResidentResponse>(await this.execute(params, req, runtime), new SearchResidentResponse({}));
   }
 
-  async updateResideceGroup(request: UpdateResideceGroupRequest): Promise<UpdateResideceGroupResponse> {
+  async searchResident(request: SearchResidentRequest): Promise<SearchResidentResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateResideceGroupHeaders({ });
-    return await this.updateResideceGroupWithOptions(request, headers, runtime);
+    let headers = new SearchResidentHeaders({ });
+    return await this.searchResidentWithOptions(request, headers, runtime);
   }
 
   async updateResideceGroupWithOptions(request: UpdateResideceGroupRequest, headers: UpdateResideceGroupHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResideceGroupResponse> {
@@ -4309,13 +4679,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<UpdateResideceGroupResponse>(await this.doROARequest("UpdateResideceGroup", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/departments/updateResideceGroup`, "json", req, runtime), new UpdateResideceGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateResideceGroup",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/departments/updateResideceGroup`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateResideceGroupResponse>(await this.execute(params, req, runtime), new UpdateResideceGroupResponse({}));
   }
 
-  async updateResidence(request: UpdateResidenceRequest): Promise<UpdateResidenceResponse> {
+  async updateResideceGroup(request: UpdateResideceGroupRequest): Promise<UpdateResideceGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateResidenceHeaders({ });
-    return await this.updateResidenceWithOptions(request, headers, runtime);
+    let headers = new UpdateResideceGroupHeaders({ });
+    return await this.updateResideceGroupWithOptions(request, headers, runtime);
   }
 
   async updateResidenceWithOptions(request: UpdateResidenceRequest, headers: UpdateResidenceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidenceResponse> {
@@ -4362,13 +4743,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<UpdateResidenceResponse>(await this.doROARequest("UpdateResidence", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/departments/updateResidece`, "json", req, runtime), new UpdateResidenceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateResidence",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/departments/updateResidece`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateResidenceResponse>(await this.execute(params, req, runtime), new UpdateResidenceResponse({}));
   }
 
-  async updateResidentBlackBoard(request: UpdateResidentBlackBoardRequest): Promise<UpdateResidentBlackBoardResponse> {
+  async updateResidence(request: UpdateResidenceRequest): Promise<UpdateResidenceResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateResidentBlackBoardHeaders({ });
-    return await this.updateResidentBlackBoardWithOptions(request, headers, runtime);
+    let headers = new UpdateResidenceHeaders({ });
+    return await this.updateResidenceWithOptions(request, headers, runtime);
   }
 
   async updateResidentBlackBoardWithOptions(request: UpdateResidentBlackBoardRequest, headers: UpdateResidentBlackBoardHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentBlackBoardResponse> {
@@ -4403,13 +4795,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateResidentBlackBoardResponse>(await this.doROARequest("UpdateResidentBlackBoard", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/blackboards`, "json", req, runtime), new UpdateResidentBlackBoardResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateResidentBlackBoard",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/blackboards`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateResidentBlackBoardResponse>(await this.execute(params, req, runtime), new UpdateResidentBlackBoardResponse({}));
   }
 
-  async updateResidentInfo(request: UpdateResidentInfoRequest): Promise<UpdateResidentInfoResponse> {
+  async updateResidentBlackBoard(request: UpdateResidentBlackBoardRequest): Promise<UpdateResidentBlackBoardResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateResidentInfoHeaders({ });
-    return await this.updateResidentInfoWithOptions(request, headers, runtime);
+    let headers = new UpdateResidentBlackBoardHeaders({ });
+    return await this.updateResidentBlackBoardWithOptions(request, headers, runtime);
   }
 
   async updateResidentInfoWithOptions(request: UpdateResidentInfoRequest, headers: UpdateResidentInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentInfoResponse> {
@@ -4468,13 +4871,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateResidentInfoResponse>(await this.doROARequest("UpdateResidentInfo", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/residences`, "json", req, runtime), new UpdateResidentInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateResidentInfo",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/residences`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateResidentInfoResponse>(await this.execute(params, req, runtime), new UpdateResidentInfoResponse({}));
   }
 
-  async updateResidentMember(request: UpdateResidentMemberRequest): Promise<UpdateResidentMemberResponse> {
+  async updateResidentInfo(request: UpdateResidentInfoRequest): Promise<UpdateResidentInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateResidentMemberHeaders({ });
-    return await this.updateResidentMemberWithOptions(request, headers, runtime);
+    let headers = new UpdateResidentInfoHeaders({ });
+    return await this.updateResidentInfoWithOptions(request, headers, runtime);
   }
 
   async updateResidentMemberWithOptions(request: UpdateResidentMemberRequest, headers: UpdateResidentMemberHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentMemberResponse> {
@@ -4501,13 +4915,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateResidentMemberResponse>(await this.doROARequest("UpdateResidentMember", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/members`, "json", req, runtime), new UpdateResidentMemberResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateResidentMember",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/members`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateResidentMemberResponse>(await this.execute(params, req, runtime), new UpdateResidentMemberResponse({}));
   }
 
-  async updateResidentUser(request: UpdateResidentUserRequest): Promise<UpdateResidentUserResponse> {
+  async updateResidentMember(request: UpdateResidentMemberRequest): Promise<UpdateResidentMemberResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateResidentUserHeaders({ });
-    return await this.updateResidentUserWithOptions(request, headers, runtime);
+    let headers = new UpdateResidentMemberHeaders({ });
+    return await this.updateResidentMemberWithOptions(request, headers, runtime);
   }
 
   async updateResidentUserWithOptions(request: UpdateResidentUserRequest, headers: UpdateResidentUserHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateResidentUserResponse> {
@@ -4562,13 +4987,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<UpdateResidentUserResponse>(await this.doROARequest("UpdateResidentUser", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/users`, "json", req, runtime), new UpdateResidentUserResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateResidentUser",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/users`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateResidentUserResponse>(await this.execute(params, req, runtime), new UpdateResidentUserResponse({}));
   }
 
-  async updateSpace(request: UpdateSpaceRequest): Promise<UpdateSpaceResponse> {
+  async updateResidentUser(request: UpdateResidentUserRequest): Promise<UpdateResidentUserResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateSpaceHeaders({ });
-    return await this.updateSpaceWithOptions(request, headers, runtime);
+    let headers = new UpdateResidentUserHeaders({ });
+    return await this.updateResidentUserWithOptions(request, headers, runtime);
   }
 
   async updateSpaceWithOptions(request: UpdateSpaceRequest, headers: UpdateSpaceHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateSpaceResponse> {
@@ -4591,7 +5027,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateSpaceResponse>(await this.doROARequest("UpdateSpace", "resident_1.0", "HTTP", "PUT", "AK", `/v1.0/resident/spaces`, "json", req, runtime), new UpdateSpaceResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateSpace",
+      version: "resident_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/resident/spaces`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateSpaceResponse>(await this.execute(params, req, runtime), new UpdateSpaceResponse({}));
+  }
+
+  async updateSpace(request: UpdateSpaceRequest): Promise<UpdateSpaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateSpaceHeaders({ });
+    return await this.updateSpaceWithOptions(request, headers, runtime);
   }
 
 }

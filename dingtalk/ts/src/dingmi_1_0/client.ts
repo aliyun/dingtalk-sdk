@@ -3,6 +3,8 @@
  *
  */
 import Util, * as $Util from '@alicloud/tea-util';
+import SPI from '@alicloud/gateway-spi';
+import GatewayClient from '@alicloud/gateway-dingtalk';
 import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
@@ -72,10 +74,12 @@ export class AddRobotInstanceToGroupResponseBody extends $tea.Model {
 
 export class AddRobotInstanceToGroupResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AddRobotInstanceToGroupResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -83,6 +87,7 @@ export class AddRobotInstanceToGroupResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AddRobotInstanceToGroupResponseBody,
     };
   }
@@ -163,10 +168,12 @@ export class AskRobotResponseBody extends $tea.Model {
 
 export class AskRobotResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: AskRobotResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -174,6 +181,7 @@ export class AskRobotResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: AskRobotResponseBody,
     };
   }
@@ -263,10 +271,12 @@ export class GetDingMeBaseDataResponseBody extends $tea.Model {
 
 export class GetDingMeBaseDataResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetDingMeBaseDataResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -274,6 +284,7 @@ export class GetDingMeBaseDataResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetDingMeBaseDataResponseBody,
     };
   }
@@ -345,10 +356,12 @@ export class GetIntelligentRobotInfoResponseBody extends $tea.Model {
 
 export class GetIntelligentRobotInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetIntelligentRobotInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -356,6 +369,7 @@ export class GetIntelligentRobotInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetIntelligentRobotInfoResponseBody,
     };
   }
@@ -442,10 +456,12 @@ export class GetOfficialAccountRobotInfoResponseBody extends $tea.Model {
 
 export class GetOfficialAccountRobotInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetOfficialAccountRobotInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -453,6 +469,7 @@ export class GetOfficialAccountRobotInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetOfficialAccountRobotInfoResponseBody,
     };
   }
@@ -530,10 +547,12 @@ export class GetWebChannelUserTokenResponseBody extends $tea.Model {
 
 export class GetWebChannelUserTokenResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: GetWebChannelUserTokenResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -541,6 +560,7 @@ export class GetWebChannelUserTokenResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: GetWebChannelUserTokenResponseBody,
     };
   }
@@ -618,10 +638,12 @@ export class PushCustomerGroupMessageResponseBody extends $tea.Model {
 
 export class PushCustomerGroupMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PushCustomerGroupMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -629,6 +651,7 @@ export class PushCustomerGroupMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PushCustomerGroupMessageResponseBody,
     };
   }
@@ -709,10 +732,12 @@ export class PushIntelligentRobotGroupMessageResponseBody extends $tea.Model {
 
 export class PushIntelligentRobotGroupMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PushIntelligentRobotGroupMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -720,6 +745,7 @@ export class PushIntelligentRobotGroupMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PushIntelligentRobotGroupMessageResponseBody,
     };
   }
@@ -800,10 +826,12 @@ export class PushIntelligentRobotMessageResponseBody extends $tea.Model {
 
 export class PushIntelligentRobotMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PushIntelligentRobotMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -811,6 +839,7 @@ export class PushIntelligentRobotMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PushIntelligentRobotMessageResponseBody,
     };
   }
@@ -888,10 +917,12 @@ export class PushOfficialAccountMessageResponseBody extends $tea.Model {
 
 export class PushOfficialAccountMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PushOfficialAccountMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -899,6 +930,7 @@ export class PushOfficialAccountMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PushOfficialAccountMessageResponseBody,
     };
   }
@@ -979,10 +1011,12 @@ export class PushRobotMessageResponseBody extends $tea.Model {
 
 export class PushRobotMessageResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: PushRobotMessageResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -990,6 +1024,7 @@ export class PushRobotMessageResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: PushRobotMessageResponseBody,
     };
   }
@@ -1061,10 +1096,12 @@ export class ReplyRobotResponseBody extends $tea.Model {
 
 export class ReplyRobotResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: ReplyRobotResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1072,6 +1109,7 @@ export class ReplyRobotResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: ReplyRobotResponseBody,
     };
   }
@@ -1158,10 +1196,12 @@ export class UpdateOfficialAccountRobotInfoResponseBody extends $tea.Model {
 
 export class UpdateOfficialAccountRobotInfoResponse extends $tea.Model {
   headers: { [key: string]: string };
+  statusCode: number;
   body: UpdateOfficialAccountRobotInfoResponseBody;
   static names(): { [key: string]: string } {
     return {
       headers: 'headers',
+      statusCode: 'statusCode',
       body: 'body',
     };
   }
@@ -1169,6 +1209,7 @@ export class UpdateOfficialAccountRobotInfoResponse extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
       body: UpdateOfficialAccountRobotInfoResponseBody,
     };
   }
@@ -1180,9 +1221,12 @@ export class UpdateOfficialAccountRobotInfoResponse extends $tea.Model {
 
 
 export default class Client extends OpenApi {
+  _client: SPI;
 
   constructor(config: $OpenApi.Config) {
     super(config);
+    this._client = new GatewayClient();
+    this._spi = this._client;
     this._endpointRule = "";
     if (Util.empty(this._endpoint)) {
       this._endpoint = "api.dingtalk.com";
@@ -1190,12 +1234,6 @@ export default class Client extends OpenApi {
 
   }
 
-
-  async addRobotInstanceToGroup(request: AddRobotInstanceToGroupRequest): Promise<AddRobotInstanceToGroupResponse> {
-    let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AddRobotInstanceToGroupHeaders({ });
-    return await this.addRobotInstanceToGroupWithOptions(request, headers, runtime);
-  }
 
   async addRobotInstanceToGroupWithOptions(request: AddRobotInstanceToGroupRequest, headers: AddRobotInstanceToGroupHeaders, runtime: $Util.RuntimeOptions): Promise<AddRobotInstanceToGroupResponse> {
     Util.validateModel(request);
@@ -1221,13 +1259,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AddRobotInstanceToGroupResponse>(await this.doROARequest("AddRobotInstanceToGroup", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/intelligentRobots/groups`, "json", req, runtime), new AddRobotInstanceToGroupResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AddRobotInstanceToGroup",
+      version: "dingmi_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/dingmi/intelligentRobots/groups`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<AddRobotInstanceToGroupResponse>(await this.execute(params, req, runtime), new AddRobotInstanceToGroupResponse({}));
   }
 
-  async askRobot(request: AskRobotRequest): Promise<AskRobotResponse> {
+  async addRobotInstanceToGroup(request: AddRobotInstanceToGroupRequest): Promise<AddRobotInstanceToGroupResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new AskRobotHeaders({ });
-    return await this.askRobotWithOptions(request, headers, runtime);
+    let headers = new AddRobotInstanceToGroupHeaders({ });
+    return await this.addRobotInstanceToGroupWithOptions(request, headers, runtime);
   }
 
   async askRobotWithOptions(request: AskRobotRequest, headers: AskRobotHeaders, runtime: $Util.RuntimeOptions): Promise<AskRobotResponse> {
@@ -1262,13 +1311,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<AskRobotResponse>(await this.doROARequest("AskRobot", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/robots/ask`, "json", req, runtime), new AskRobotResponse({}));
+    let params = new $OpenApi.Params({
+      action: "AskRobot",
+      version: "dingmi_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/dingmi/robots/ask`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AskRobotResponse>(await this.execute(params, req, runtime), new AskRobotResponse({}));
   }
 
-  async getDingMeBaseData(request: GetDingMeBaseDataRequest): Promise<GetDingMeBaseDataResponse> {
+  async askRobot(request: AskRobotRequest): Promise<AskRobotResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetDingMeBaseDataHeaders({ });
-    return await this.getDingMeBaseDataWithOptions(request, headers, runtime);
+    let headers = new AskRobotHeaders({ });
+    return await this.askRobotWithOptions(request, headers, runtime);
   }
 
   async getDingMeBaseDataWithOptions(request: GetDingMeBaseDataRequest, headers: GetDingMeBaseDataHeaders, runtime: $Util.RuntimeOptions): Promise<GetDingMeBaseDataResponse> {
@@ -1303,13 +1363,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetDingMeBaseDataResponse>(await this.doROARequest("GetDingMeBaseData", "dingmi_1.0", "HTTP", "GET", "AK", `/v1.0/dingmi/robots/data`, "json", req, runtime), new GetDingMeBaseDataResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetDingMeBaseData",
+      version: "dingmi_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/dingmi/robots/data`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetDingMeBaseDataResponse>(await this.execute(params, req, runtime), new GetDingMeBaseDataResponse({}));
   }
 
-  async getIntelligentRobotInfo(request: GetIntelligentRobotInfoRequest): Promise<GetIntelligentRobotInfoResponse> {
+  async getDingMeBaseData(request: GetDingMeBaseDataRequest): Promise<GetDingMeBaseDataResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetIntelligentRobotInfoHeaders({ });
-    return await this.getIntelligentRobotInfoWithOptions(request, headers, runtime);
+    let headers = new GetDingMeBaseDataHeaders({ });
+    return await this.getDingMeBaseDataWithOptions(request, headers, runtime);
   }
 
   async getIntelligentRobotInfoWithOptions(request: GetIntelligentRobotInfoRequest, headers: GetIntelligentRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetIntelligentRobotInfoResponse> {
@@ -1332,13 +1403,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetIntelligentRobotInfoResponse>(await this.doROARequest("GetIntelligentRobotInfo", "dingmi_1.0", "HTTP", "GET", "AK", `/v1.0/dingmi/intelligentRobots/infos`, "json", req, runtime), new GetIntelligentRobotInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetIntelligentRobotInfo",
+      version: "dingmi_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/dingmi/intelligentRobots/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<GetIntelligentRobotInfoResponse>(await this.execute(params, req, runtime), new GetIntelligentRobotInfoResponse({}));
   }
 
-  async getOfficialAccountRobotInfo(request: GetOfficialAccountRobotInfoRequest): Promise<GetOfficialAccountRobotInfoResponse> {
+  async getIntelligentRobotInfo(request: GetIntelligentRobotInfoRequest): Promise<GetIntelligentRobotInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetOfficialAccountRobotInfoHeaders({ });
-    return await this.getOfficialAccountRobotInfoWithOptions(request, headers, runtime);
+    let headers = new GetIntelligentRobotInfoHeaders({ });
+    return await this.getIntelligentRobotInfoWithOptions(request, headers, runtime);
   }
 
   async getOfficialAccountRobotInfoWithOptions(request: GetOfficialAccountRobotInfoRequest, headers: GetOfficialAccountRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOfficialAccountRobotInfoResponse> {
@@ -1361,13 +1443,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       query: OpenApiUtil.query(query),
     });
-    return $tea.cast<GetOfficialAccountRobotInfoResponse>(await this.doROARequest("GetOfficialAccountRobotInfo", "dingmi_1.0", "HTTP", "GET", "AK", `/v1.0/dingmi/officialAccounts/robots`, "json", req, runtime), new GetOfficialAccountRobotInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetOfficialAccountRobotInfo",
+      version: "dingmi_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/dingmi/officialAccounts/robots`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOfficialAccountRobotInfoResponse>(await this.execute(params, req, runtime), new GetOfficialAccountRobotInfoResponse({}));
   }
 
-  async getWebChannelUserToken(request: GetWebChannelUserTokenRequest): Promise<GetWebChannelUserTokenResponse> {
+  async getOfficialAccountRobotInfo(request: GetOfficialAccountRobotInfoRequest): Promise<GetOfficialAccountRobotInfoResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new GetWebChannelUserTokenHeaders({ });
-    return await this.getWebChannelUserTokenWithOptions(request, headers, runtime);
+    let headers = new GetOfficialAccountRobotInfoHeaders({ });
+    return await this.getOfficialAccountRobotInfoWithOptions(request, headers, runtime);
   }
 
   async getWebChannelUserTokenWithOptions(request: GetWebChannelUserTokenRequest, headers: GetWebChannelUserTokenHeaders, runtime: $Util.RuntimeOptions): Promise<GetWebChannelUserTokenResponse> {
@@ -1398,13 +1491,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<GetWebChannelUserTokenResponse>(await this.doROARequest("GetWebChannelUserToken", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/webChannels/userTokens`, "json", req, runtime), new GetWebChannelUserTokenResponse({}));
+    let params = new $OpenApi.Params({
+      action: "GetWebChannelUserToken",
+      version: "dingmi_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/dingmi/webChannels/userTokens`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetWebChannelUserTokenResponse>(await this.execute(params, req, runtime), new GetWebChannelUserTokenResponse({}));
   }
 
-  async pushCustomerGroupMessage(request: PushCustomerGroupMessageRequest): Promise<PushCustomerGroupMessageResponse> {
+  async getWebChannelUserToken(request: GetWebChannelUserTokenRequest): Promise<GetWebChannelUserTokenResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PushCustomerGroupMessageHeaders({ });
-    return await this.pushCustomerGroupMessageWithOptions(request, headers, runtime);
+    let headers = new GetWebChannelUserTokenHeaders({ });
+    return await this.getWebChannelUserTokenWithOptions(request, headers, runtime);
   }
 
   async pushCustomerGroupMessageWithOptions(request: PushCustomerGroupMessageRequest, headers: PushCustomerGroupMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushCustomerGroupMessageResponse> {
@@ -1435,13 +1539,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PushCustomerGroupMessageResponse>(await this.doROARequest("PushCustomerGroupMessage", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/officialAccounts/robots/groupMessages/send`, "json", req, runtime), new PushCustomerGroupMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PushCustomerGroupMessage",
+      version: "dingmi_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/dingmi/officialAccounts/robots/groupMessages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PushCustomerGroupMessageResponse>(await this.execute(params, req, runtime), new PushCustomerGroupMessageResponse({}));
   }
 
-  async pushIntelligentRobotGroupMessage(request: PushIntelligentRobotGroupMessageRequest): Promise<PushIntelligentRobotGroupMessageResponse> {
+  async pushCustomerGroupMessage(request: PushCustomerGroupMessageRequest): Promise<PushCustomerGroupMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PushIntelligentRobotGroupMessageHeaders({ });
-    return await this.pushIntelligentRobotGroupMessageWithOptions(request, headers, runtime);
+    let headers = new PushCustomerGroupMessageHeaders({ });
+    return await this.pushCustomerGroupMessageWithOptions(request, headers, runtime);
   }
 
   async pushIntelligentRobotGroupMessageWithOptions(request: PushIntelligentRobotGroupMessageRequest, headers: PushIntelligentRobotGroupMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushIntelligentRobotGroupMessageResponse> {
@@ -1476,13 +1591,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PushIntelligentRobotGroupMessageResponse>(await this.doROARequest("PushIntelligentRobotGroupMessage", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/intelligentRobots/groupMessages/send`, "json", req, runtime), new PushIntelligentRobotGroupMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PushIntelligentRobotGroupMessage",
+      version: "dingmi_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/dingmi/intelligentRobots/groupMessages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PushIntelligentRobotGroupMessageResponse>(await this.execute(params, req, runtime), new PushIntelligentRobotGroupMessageResponse({}));
   }
 
-  async pushIntelligentRobotMessage(request: PushIntelligentRobotMessageRequest): Promise<PushIntelligentRobotMessageResponse> {
+  async pushIntelligentRobotGroupMessage(request: PushIntelligentRobotGroupMessageRequest): Promise<PushIntelligentRobotGroupMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PushIntelligentRobotMessageHeaders({ });
-    return await this.pushIntelligentRobotMessageWithOptions(request, headers, runtime);
+    let headers = new PushIntelligentRobotGroupMessageHeaders({ });
+    return await this.pushIntelligentRobotGroupMessageWithOptions(request, headers, runtime);
   }
 
   async pushIntelligentRobotMessageWithOptions(request: PushIntelligentRobotMessageRequest, headers: PushIntelligentRobotMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushIntelligentRobotMessageResponse> {
@@ -1517,13 +1643,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PushIntelligentRobotMessageResponse>(await this.doROARequest("PushIntelligentRobotMessage", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/intelligentRobots/oToMessages/send`, "json", req, runtime), new PushIntelligentRobotMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PushIntelligentRobotMessage",
+      version: "dingmi_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/dingmi/intelligentRobots/oToMessages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PushIntelligentRobotMessageResponse>(await this.execute(params, req, runtime), new PushIntelligentRobotMessageResponse({}));
   }
 
-  async pushOfficialAccountMessage(request: PushOfficialAccountMessageRequest): Promise<PushOfficialAccountMessageResponse> {
+  async pushIntelligentRobotMessage(request: PushIntelligentRobotMessageRequest): Promise<PushIntelligentRobotMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PushOfficialAccountMessageHeaders({ });
-    return await this.pushOfficialAccountMessageWithOptions(request, headers, runtime);
+    let headers = new PushIntelligentRobotMessageHeaders({ });
+    return await this.pushIntelligentRobotMessageWithOptions(request, headers, runtime);
   }
 
   async pushOfficialAccountMessageWithOptions(request: PushOfficialAccountMessageRequest, headers: PushOfficialAccountMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushOfficialAccountMessageResponse> {
@@ -1554,13 +1691,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PushOfficialAccountMessageResponse>(await this.doROARequest("PushOfficialAccountMessage", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/officialAccounts/robots/oToMessages/send`, "json", req, runtime), new PushOfficialAccountMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PushOfficialAccountMessage",
+      version: "dingmi_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/dingmi/officialAccounts/robots/oToMessages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PushOfficialAccountMessageResponse>(await this.execute(params, req, runtime), new PushOfficialAccountMessageResponse({}));
   }
 
-  async pushRobotMessage(request: PushRobotMessageRequest): Promise<PushRobotMessageResponse> {
+  async pushOfficialAccountMessage(request: PushOfficialAccountMessageRequest): Promise<PushOfficialAccountMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new PushRobotMessageHeaders({ });
-    return await this.pushRobotMessageWithOptions(request, headers, runtime);
+    let headers = new PushOfficialAccountMessageHeaders({ });
+    return await this.pushOfficialAccountMessageWithOptions(request, headers, runtime);
   }
 
   async pushRobotMessageWithOptions(request: PushRobotMessageRequest, headers: PushRobotMessageHeaders, runtime: $Util.RuntimeOptions): Promise<PushRobotMessageResponse> {
@@ -1595,13 +1743,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<PushRobotMessageResponse>(await this.doROARequest("PushRobotMessage", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/robots/oToMessages/send`, "json", req, runtime), new PushRobotMessageResponse({}));
+    let params = new $OpenApi.Params({
+      action: "PushRobotMessage",
+      version: "dingmi_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/dingmi/robots/oToMessages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PushRobotMessageResponse>(await this.execute(params, req, runtime), new PushRobotMessageResponse({}));
   }
 
-  async replyRobot(request: ReplyRobotRequest): Promise<ReplyRobotResponse> {
+  async pushRobotMessage(request: PushRobotMessageRequest): Promise<PushRobotMessageResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new ReplyRobotHeaders({ });
-    return await this.replyRobotWithOptions(request, headers, runtime);
+    let headers = new PushRobotMessageHeaders({ });
+    return await this.pushRobotMessageWithOptions(request, headers, runtime);
   }
 
   async replyRobotWithOptions(request: ReplyRobotRequest, headers: ReplyRobotHeaders, runtime: $Util.RuntimeOptions): Promise<ReplyRobotResponse> {
@@ -1624,13 +1783,24 @@ export default class Client extends OpenApi {
       headers: realHeaders,
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<ReplyRobotResponse>(await this.doROARequest("ReplyRobot", "dingmi_1.0", "HTTP", "POST", "AK", `/v1.0/dingmi/robots/reply`, "json", req, runtime), new ReplyRobotResponse({}));
+    let params = new $OpenApi.Params({
+      action: "ReplyRobot",
+      version: "dingmi_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/dingmi/robots/reply`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "json",
+      bodyType: "json",
+    });
+    return $tea.cast<ReplyRobotResponse>(await this.execute(params, req, runtime), new ReplyRobotResponse({}));
   }
 
-  async updateOfficialAccountRobotInfo(request: UpdateOfficialAccountRobotInfoRequest): Promise<UpdateOfficialAccountRobotInfoResponse> {
+  async replyRobot(request: ReplyRobotRequest): Promise<ReplyRobotResponse> {
     let runtime = new $Util.RuntimeOptions({ });
-    let headers = new UpdateOfficialAccountRobotInfoHeaders({ });
-    return await this.updateOfficialAccountRobotInfoWithOptions(request, headers, runtime);
+    let headers = new ReplyRobotHeaders({ });
+    return await this.replyRobotWithOptions(request, headers, runtime);
   }
 
   async updateOfficialAccountRobotInfoWithOptions(request: UpdateOfficialAccountRobotInfoRequest, headers: UpdateOfficialAccountRobotInfoHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateOfficialAccountRobotInfoResponse> {
@@ -1675,7 +1845,24 @@ export default class Client extends OpenApi {
       query: OpenApiUtil.query(query),
       body: OpenApiUtil.parseToMap(body),
     });
-    return $tea.cast<UpdateOfficialAccountRobotInfoResponse>(await this.doROARequest("UpdateOfficialAccountRobotInfo", "dingmi_1.0", "HTTP", "PUT", "AK", `/v1.0/dingmi/officialAccounts/robots`, "json", req, runtime), new UpdateOfficialAccountRobotInfoResponse({}));
+    let params = new $OpenApi.Params({
+      action: "UpdateOfficialAccountRobotInfo",
+      version: "dingmi_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/dingmi/officialAccounts/robots`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateOfficialAccountRobotInfoResponse>(await this.execute(params, req, runtime), new UpdateOfficialAccountRobotInfoResponse({}));
+  }
+
+  async updateOfficialAccountRobotInfo(request: UpdateOfficialAccountRobotInfoRequest): Promise<UpdateOfficialAccountRobotInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateOfficialAccountRobotInfoHeaders({ });
+    return await this.updateOfficialAccountRobotInfoWithOptions(request, headers, runtime);
   }
 
 }
