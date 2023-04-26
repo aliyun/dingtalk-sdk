@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class DeleteTodoTaskResponseBody extends Model
 {
     /**
-     * @description requestId
-     *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description 删除结果
-     *
      * @var bool
      */
     public $result;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class PageQueryDevicesRequest extends Model
 {
     /**
-     * @description 分页参数-当页最大返回记录数
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页参数-页码 起始值:1
+     * @example 1
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 设备类型
+     * @example VIDEO_CALL
      *
      * @var string
      */

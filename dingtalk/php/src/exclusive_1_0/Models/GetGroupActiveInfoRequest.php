@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class GetGroupActiveInfoRequest extends Model
 {
     /**
-     * @description 钉钉群组id
+     * @example cidV3xxxrSuxxxxxxnB8o8gJw==
      *
      * @var string
      */
     public $dingGroupId;
 
     /**
-     * @description 群类型：1-全员群，2-部门群，3-（其他）内部群，4-场景群
+     * @example 1
      *
      * @var int
      */
     public $groupType;
 
     /**
-     * @description 分页起始页
+     * @example 0
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 统计日期
+     * @example 20200305
      *
      * @var string
      */

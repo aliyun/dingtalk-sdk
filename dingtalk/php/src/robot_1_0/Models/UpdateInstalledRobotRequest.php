@@ -9,43 +9,43 @@ use AlibabaCloud\Tea\Model;
 class UpdateInstalledRobotRequest extends Model
 {
     /**
-     * @description 机器人的简要描述。
+     * @example 钉钉的助手机器人
      *
      * @var string
      */
     public $brief;
 
     /**
-     * @description 机器人的详细描述。
+     * @example 钉钉的助手机器人的详细描述
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 机器人图标的mediaId。
+     * @example @IAfnkdsanfnkljn
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 机器人的名称。
+     * @example 钉钉助手
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 机器人的robotCode。
+     * @example dingXXXXXXXXXX
      *
      * @var string
      */
     public $robotCode;
 
     /**
-     * @description 更新名字或头像时是否更新群里已添加机器人的名字或头像。
-     * 1-更新群里机器人名字或头像
+     * @example 1
+     *
      * @var int
      */
     public $updateType;

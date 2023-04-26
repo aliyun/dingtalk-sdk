@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class CreateWorkspaceRequest extends Model
 {
     /**
-     * @description 知识库描述。
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 知识库名称。
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 用户id。
-     *
      * @var string
      */
     public $operatorId;

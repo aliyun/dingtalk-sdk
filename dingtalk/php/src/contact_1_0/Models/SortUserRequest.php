@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class SortUserRequest extends Model
 {
     /**
-     * @description 0 根据姓名拼音升序排列 1 根据姓名拼音降序排列
+     * @example 0
      *
      * @var int
      */
     public $sortType;
 
     /**
-     * @description 用户id列表
-     *
      * @var string[]
      */
     public $userIdList;

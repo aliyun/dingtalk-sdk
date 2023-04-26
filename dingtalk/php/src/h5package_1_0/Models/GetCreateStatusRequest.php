@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetCreateStatusRequest extends Model
 {
     /**
-     * @description 创建离线包接口返回的taskId
+     * @example 1663748308644pjpF
      *
      * @var string
      */

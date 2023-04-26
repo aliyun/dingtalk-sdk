@@ -9,63 +9,61 @@ use AlibabaCloud\Tea\Model;
 class HrmProcessTransferRequest extends Model
 {
     /**
-     * @description 员工调岗后的部门id列表
-     *
      * @var int[]
      */
     public $deptIdsAfterTransfer;
 
     /**
-     * @description 员工调岗后的职务id
+     * @example aefadfadaewedad
      *
      * @var string
      */
     public $jobIdAfterTransfer;
 
     /**
-     * @description 员工调岗后的人事主部门id
+     * @example 123L
      *
      * @var int
      */
     public $mainDeptIdAfterTransfer;
 
     /**
-     * @description 操作人
+     * @example 232312312
      *
      * @var string
      */
     public $operateUserId;
 
     /**
-     * @description 员工调岗后的职位id，参数同时有职位名称以及id，以id为准
+     * @example fasdfaddsadfa
      *
      * @var string
      */
     public $positionIdAfterTransfer;
 
     /**
-     * @description 员工调岗后的职级名称，长度不超过64，参数同时有职级名称以及id，以id为准
+     * @example L1
      *
      * @var string
      */
     public $positionLevelAfterTransfer;
 
     /**
-     * @description 员工调岗后的职位名称，长度不超过124，参数同时有职位名称以及id，以id为准
+     * @example 经理
      *
      * @var string
      */
     public $positionNameAfterTransfer;
 
     /**
-     * @description 员工调岗后的职级id，参数同时有职级名称以及id，以id为准
+     * @example fasdfaddsadfa
      *
      * @var string
      */
     public $rankIdAfterTransfer;
 
     /**
-     * @description 被调岗员工userId
+     * @example 2332
      *
      * @var string
      */

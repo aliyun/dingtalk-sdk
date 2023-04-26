@@ -10,189 +10,181 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 任务完成时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $accomplished;
 
     /**
-     * @description 父任务id列表。
-     *
      * @var string[]
      */
     public $ancestorIds;
 
     /**
-     * @description 任务标题。
+     * @example 标题2
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 创建时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 创建者id。
+     * @example 62c25e3bba7ce40xxx
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 自定义字段id列表。
-     *
      * @var customfields[]
      */
     public $customfields;
 
     /**
-     * @description 任务截止时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $dueDate;
 
     /**
-     * @description 执行者id。
+     * @example 62cxxxxxxx
      *
      * @var string
      */
     public $executorId;
 
     /**
-     * @description 参与者列表。
-     *
      * @var string[]
      */
     public $involveMembers;
 
     /**
-     * @description 是否归档。
+     * @example true
      *
      * @var bool
      */
     public $isArchived;
 
     /**
-     * @description 是否已删除。
+     * @example true
      *
      * @var bool
      */
     public $isDeleted;
 
     /**
-     * @description 任务是否已完成。
+     * @example true
      *
      * @var bool
      */
     public $isDone;
 
     /**
-     * @description 任务标签集合。
-     *
      * @var string[]
      */
     public $labels;
 
     /**
-     * @description 备注。
+     * @example 备注
      *
      * @var string
      */
     public $note;
 
     /**
-     * @description 任务优先级。
+     * @example 0
      *
      * @var int
      */
     public $priority;
 
     /**
-     * @description 任务进度。
+     * @example 0
      *
      * @var int
      */
     public $progress;
 
     /**
-     * @description 项目id。
+     * @example 62c25e3bbaxxxxx
      *
      * @var string
      */
     public $projectId;
 
     /**
-     * @description 任务类型id。
+     * @example 62c25e3bbxx0xxx
      *
      * @var string
      */
     public $scenariofieldconfigId;
 
     /**
-     * @description 任务迭代id。
+     * @example 62c25e3bbxx0xxx
      *
      * @var string
      */
     public $sprintId;
 
     /**
-     * @description 任务列表Id。
+     * @example 62c25e3bbxx0xxx
      *
      * @var string
      */
     public $stageId;
 
     /**
-     * @description 任务开始时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $startDate;
 
     /**
-     * @description 故事点数。
+     * @example 2
      *
      * @var int
      */
     public $storyPoint;
 
     /**
-     * @description 标签id集合。
+     * @example 62c25e3bbxx0xxx
      *
      * @var string[]
      */
     public $tagIds;
 
     /**
-     * @description 任务id。
+     * @example 62c25e3bbaxxx
      *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description 任务状态id。
+     * @example 62c25e3bbxx0xxx
      *
      * @var string
      */
     public $taskflowstatusId;
 
     /**
-     * @description 更新时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $updated;
 
     /**
-     * @description 任务的可见性规则 involves | members。
+     * @example member
      *
      * @var string
      */

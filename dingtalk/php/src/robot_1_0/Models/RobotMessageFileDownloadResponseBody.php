@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class RobotMessageFileDownloadResponseBody extends Model
 {
     /**
-     * @description 文件的临时下载链接。
-     *
      * @var string
      */
     public $downloadUrl;

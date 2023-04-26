@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class link extends Model
 {
     /**
-     * @description 消息点击链接地址，当发送消息为小程序时支持小程序跳转链接。
+     * @example https://www.yourdomain.com
      *
      * @var string
      */
     public $messageUrl;
 
     /**
-     * @description 图片地址
+     * @example @1234-456
      *
      * @var string
      */
     public $picUrl;
 
     /**
-     * @description 消息描述，建议500字符以内。
+     * @example 欢迎使用
      *
      * @var string
      */
     public $text;
 
     /**
-     * @description 消息标题，建议100字符以内。
+     * @example 点击查看
      *
      * @var string
      */

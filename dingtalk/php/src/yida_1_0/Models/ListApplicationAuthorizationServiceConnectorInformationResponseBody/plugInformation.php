@@ -10,57 +10,41 @@ use AlibabaCloud\Tea\Model;
 class plugInformation extends Model
 {
     /**
-     * @description apps
-     *
      * @var applications[]
      */
     public $applications;
 
     /**
-     * @description iconUrl
-     *
      * @var string
      */
     public $iconUrl;
 
     /**
-     * @description pluginName
-     *
      * @var string
      */
     public $plugName;
 
     /**
-     * @description pluginPayType
-     *
      * @var int
      */
     public $plugPayType;
 
     /**
-     * @description pluginStatus
-     *
      * @var int
      */
     public $plugStatus;
 
     /**
-     * @description pluginTotalAmount
-     *
      * @var int
      */
     public $plugTotalAmount;
 
     /**
-     * @description pluginUsageAmount
-     *
      * @var int
      */
     public $plugUsageAmount;
 
     /**
-     * @description pluginUuid
-     *
      * @var string
      */
     public $plugUuid;

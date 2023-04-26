@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CloseVideoConferenceRequest extends Model
 {
     /**
-     * @description 员工在当前开发者企业账号范围内的唯一标识
+     * @example 27SaQ3iiHLN0uwqcPisedfreNwiEiE
      *
      * @var string
      */

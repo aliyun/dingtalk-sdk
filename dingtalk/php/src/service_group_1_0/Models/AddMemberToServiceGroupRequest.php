@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class AddMemberToServiceGroupRequest extends Model
 {
     /**
-     * @description 钉群ID
+     * @example cidxxxxxx==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 服务群团队ID
+     * @example Jciwnfw
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 员工在钉钉组织内的工号
-     *
      * @var string[]
      */
     public $userIds;

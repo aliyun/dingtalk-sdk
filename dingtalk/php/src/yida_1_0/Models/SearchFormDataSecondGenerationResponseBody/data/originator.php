@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class originator extends Model
 {
     /**
-     * @description 名称
-     *
      * @var name
      */
     public $name;
 
     /**
-     * @description 钉钉userId
+     * @example ding173982232112232
      *
      * @var string
      */

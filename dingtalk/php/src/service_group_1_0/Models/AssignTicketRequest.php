@@ -16,22 +16,20 @@ class AssignTicketRequest extends Model
     public $notify;
 
     /**
-     * @description 开放团队ID
+     * @example eKWh3GBwsKEiE
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 工单开放ID
+     * @example hNiPO2OVktNMiE
      *
      * @var string
      */
     public $openTicketId;
 
     /**
-     * @description 操作人unionId（管理员）
-     *
      * @var string
      */
     public $operatorUnionId;
@@ -42,8 +40,6 @@ class AssignTicketRequest extends Model
     public $processorUnionIds;
 
     /**
-     * @description 备注
-     *
      * @var ticketMemo
      */
     public $ticketMemo;

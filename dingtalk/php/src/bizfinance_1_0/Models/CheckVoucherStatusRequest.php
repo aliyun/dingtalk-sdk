@@ -9,63 +9,63 @@ use AlibabaCloud\Tea\Model;
 class CheckVoucherStatusRequest extends Model
 {
     /**
-     * @description 结束时间
+     * @example 1631526550994
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 进项发票/销项发票
+     * @example VAT_IN
      *
      * @var string
      */
     public $financeType;
 
     /**
-     * @description 发票编码
+     * @example 3121234560
      *
      * @var string
      */
     public $invoiceCode;
 
     /**
-     * @description 发票号码
+     * @example 1234567890
      *
      * @var string
      */
     public $invoiceNo;
 
     /**
-     * @description 页号
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 当前页大小
+     * @example 100
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 开始时间
+     * @example 1631526550994
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 税号
+     * @example 12345678901
      *
      * @var string
      */
     public $taxNo;
 
     /**
-     * @description 发票认证状态
+     * @example VERIFIED
      *
      * @var string
      */

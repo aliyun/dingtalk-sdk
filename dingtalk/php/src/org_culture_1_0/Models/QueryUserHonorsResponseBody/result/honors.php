@@ -10,36 +10,26 @@ use AlibabaCloud\Tea\Model;
 class honors extends Model
 {
     /**
-     * @description 有效期截止时间点，没有该属性则为永久生效
-     *
      * @var int
      */
     public $expirationTime;
 
     /**
-     * @description 授予历史记录 包含用户及授予时间
-     *
      * @var grantHistory[]
      */
     public $grantHistory;
 
     /**
-     * @description 荣誉含义
-     *
      * @var string
      */
     public $honorDesc;
 
     /**
-     * @description 必须。荣誉id
-     *
      * @var string
      */
     public $honorId;
 
     /**
-     * @description 必须。荣誉名字
-     *
      * @var string
      */
     public $honorName;

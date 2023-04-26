@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListAclsResponseBody extends Model
 {
     /**
-     * @description 访问控制列表
-     *
      * @var acls[]
      */
     public $acls;

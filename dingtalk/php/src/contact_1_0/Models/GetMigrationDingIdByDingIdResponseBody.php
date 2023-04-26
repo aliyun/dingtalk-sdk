@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetMigrationDingIdByDingIdResponseBody extends Model
 {
     /**
-     * @description migrationDingIdList
-     *
      * @var mixed[]
      */
     public $migrationDingIdList;

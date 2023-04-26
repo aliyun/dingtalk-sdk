@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 平均观看时长
+     * @example 3560
      *
      * @var int
      */
     public $avgWatchTime;
 
     /**
-     * @description 观看直播人数
+     * @example 55
      *
      * @var int
      */
     public $liveUv;
 
     /**
-     * @description 消息数
+     * @example 252
      *
      * @var int
      */
     public $msgCount;
 
     /**
-     * @description 观看回放人数
+     * @example 72
      *
      * @var int
      */
     public $playbackUv;
 
     /**
-     * @description 点赞数
+     * @example 500
      *
      * @var int
      */
     public $praiseCount;
 
     /**
-     * @description 观看次数
+     * @example 120
      *
      * @var int
      */
     public $pv;
 
     /**
-     * @description 观看总时长
+     * @example 1903640
      *
      * @var int
      */
     public $totalWatchTime;
 
     /**
-     * @description 观看人数
+     * @example 90
      *
      * @var int
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class FileStorageActiveStorageRequest extends Model
 {
     /**
-     * @description 密匙id
+     * @example sampleKeyId1234
      *
      * @var string
      */
     public $accessKeyId;
 
     /**
-     * @description 密匙密码
+     * @example sampleSecretId1234
      *
      * @var string
      */
     public $accessKeySecret;
 
     /**
-     * @description 带bucket的oss域名
+     * @example https://oss.aliyuncs.com/bucket-name/
      *
      * @var string
      */
     public $oss;
 
     /**
-     * @description 企业id
+     * @example dingxxxxxxxxxxxx
      *
      * @var string
      */

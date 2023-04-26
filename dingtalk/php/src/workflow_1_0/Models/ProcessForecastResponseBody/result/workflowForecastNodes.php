@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class workflowForecastNodes extends Model
 {
     /**
-     * @description 节点 id
+     * @example 1cc3_959a
      *
      * @var string
      */
     public $activityId;
 
     /**
-     * @description 节点出线 id
+     * @example line-random-1cc3_959a-831a_607b
      *
      * @var string
      */

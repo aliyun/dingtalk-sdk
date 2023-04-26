@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class courseGroupInfo extends Model
 {
     /**
-     * @description 课程组编码
+     * @example GS10001
      *
      * @var string
      */

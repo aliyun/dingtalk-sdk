@@ -9,21 +9,17 @@ use AlibabaCloud\Tea\Model;
 class GetVillageOrgInfoResponseBody extends Model
 {
     /**
-     * @description 行政区ID
-     *
      * @var string
      */
     public $regionId;
 
     /**
-     * @description 具体的企业区域位置信息
-     *
      * @var string
      */
     public $regionLocation;
 
     /**
-     * @description 区域类型
+     * @example 省份：PROVINCE;城市：CITY;县区：COUNTRY;乡镇：TOWN;村：VILLAGE
      *
      * @var string
      */

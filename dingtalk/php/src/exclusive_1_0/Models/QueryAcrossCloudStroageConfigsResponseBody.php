@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class QueryAcrossCloudStroageConfigsResponseBody extends Model
 {
     /**
-     * @description 密匙id
+     * @example sampleKeyId1234
      *
      * @var string
      */
     public $accessKeyId;
 
     /**
-     * @description 密匙密码
+     * @example sampleSecretId1234
      *
      * @var string
      */
     public $accessKeySecret;
 
     /**
-     * @description bucket名称
+     * @example xxxxbucket
      *
      * @var string
      */
     public $bucketName;
 
     /**
-     * @description 云厂商类型
+     * @example 1
      *
      * @var int
      */
     public $cloudType;
 
     /**
-     * @description 存储域名地址
+     * @example https://oss-cn-test.aliyuncs.com
      *
      * @var string
      */

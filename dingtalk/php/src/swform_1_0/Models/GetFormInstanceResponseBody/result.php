@@ -10,42 +10,40 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 创建时间。iso8601格式。
+     * @example 2022-07-27T18:53Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 创建者userid
+     * @example manager4220
      *
      * @var string
      */
     public $creator;
 
     /**
-     * @description 填表code，用此code可调接口获取填表实例列表。
+     * @example PROC-E5BD2166-B6F4-xxxx
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 表单内容列表。
-     *
      * @var forms[]
      */
     public $forms;
 
     /**
-     * @description 更新时间。iso8601格式。
+     * @example 2022-07-27T18:53Z
      *
      * @var string
      */
     public $modifyTime;
 
     /**
-     * @description 填表名称。
+     * @example 智能填表测试
      *
      * @var string
      */

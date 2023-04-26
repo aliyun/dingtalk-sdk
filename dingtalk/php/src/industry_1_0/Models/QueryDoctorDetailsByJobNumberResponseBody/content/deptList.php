@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class deptList extends Model
 {
     /**
-     * @description 科室大类名称
-     *
      * @var string
      */
     public $categoryName;
 
     /**
-     * @description 科室id
-     *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 科室名称
-     *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 创建时间
-     *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间
-     *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 人科关系关联id
-     *
      * @var int
      */
     public $relationId;

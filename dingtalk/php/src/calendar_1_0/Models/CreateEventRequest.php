@@ -21,29 +21,21 @@ class CreateEventRequest extends Model
     public $attendees;
 
     /**
-     * @description 日程描述
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 日程结束时间
-     *
      * @var end
      */
     public $end;
 
     /**
-     * @description 扩展信息
-     *
      * @var string[]
      */
     public $extra;
 
     /**
-     * @description 是否为全天日程
-     *
      * @var bool
      */
     public $isAllDay;
@@ -59,8 +51,6 @@ class CreateEventRequest extends Model
     public $onlineMeetingInfo;
 
     /**
-     * @description 日程循环规则
-     *
      * @var recurrence
      */
     public $recurrence;
@@ -71,15 +61,11 @@ class CreateEventRequest extends Model
     public $reminders;
 
     /**
-     * @description 日程开始时间
-     *
      * @var start
      */
     public $start;
 
     /**
-     * @description 日程标题
-     *
      * @var string
      */
     public $summary;

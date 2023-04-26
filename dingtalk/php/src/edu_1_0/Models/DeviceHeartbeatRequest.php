@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeviceHeartbeatRequest extends Model
 {
     /**
-     * @description 设备序列号
+     * @example sn123
      *
      * @var string
      */

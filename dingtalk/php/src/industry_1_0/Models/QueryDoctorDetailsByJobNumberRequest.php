@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryDoctorDetailsByJobNumberRequest extends Model
 {
     /**
-     * @description 按月安排
+     * @example 0
      *
      * @var string
      */

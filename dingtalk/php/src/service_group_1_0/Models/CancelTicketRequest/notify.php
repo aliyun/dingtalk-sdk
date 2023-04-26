@@ -14,7 +14,7 @@ class notify extends Model
     public $groupNoticeReceiverUnionIds;
 
     /**
-     * @description 是否向群内推送一个全员可见工单通知卡片
+     * @example true
      *
      * @var bool
      */

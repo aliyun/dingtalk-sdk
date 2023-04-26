@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 查重字段的bizAlias
+     * @example customer_name
      *
      * @var string
      */
     public $bizAlias;
 
     /**
-     * @description 查重字段的字段id
+     * @example TextField_U2K5A122
      *
      * @var string
      */

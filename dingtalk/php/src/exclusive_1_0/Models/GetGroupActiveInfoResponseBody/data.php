@@ -9,78 +9,56 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 群组id
-     *
      * @var string
      */
     public $dingGroupId;
 
     /**
-     * @description 群组创建时间
-     *
      * @var string
      */
     public $groupCreateTime;
 
     /**
-     * @description 群组创建用户id
-     *
      * @var string
      */
     public $groupCreateUserId;
 
     /**
-     * @description 群组创建用户姓名
-     *
      * @var string
      */
     public $groupCreateUserName;
 
     /**
-     * @description 群名称
-     *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 群类型：1-全员群，2-部门群，3-（其他）内部群，4-场景群
-     *
      * @var int
      */
     public $groupType;
 
     /**
-     * @description 最近1天群人数
-     *
      * @var int
      */
     public $groupUserCnt1d;
 
     /**
-     * @description 最近1天打开群人数
-     *
      * @var int
      */
     public $openConvUv1d;
 
     /**
-     * @description 最近1天发消息次数
-     *
      * @var int
      */
     public $sendMessageCnt1d;
 
     /**
-     * @description 最近1天发消息人数
-     *
      * @var int
      */
     public $sendMessageUserCnt1d;
 
     /**
-     * @description 统计时间
-     *
      * @var string
      */
     public $statDate;

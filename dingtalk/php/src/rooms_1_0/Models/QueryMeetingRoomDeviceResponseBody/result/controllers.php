@@ -9,84 +9,84 @@ use AlibabaCloud\Tea\Model;
 class controllers extends Model
 {
     /**
-     * @description 企业corpId
+     * @example "ding994a046bca84545935c2f4657eb6378f"
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 控制器设备id
+     * @example 2345
      *
      * @var string
      */
     public $deviceId;
 
     /**
-     * @description 控制器mac地址
+     * @example "d8:2f:e6:d9:ab:5b"
      *
      * @var string
      */
     public $deviceMac;
 
     /**
-     * @description 控制器型号
+     * @example "AILABS_S3_T1"
      *
      * @var string
      */
     public $deviceModel;
 
     /**
-     * @description 控制器名称
+     * @example 会控平板_xxxx
      *
      * @var string
      */
     public $deviceName;
 
     /**
-     * @description 控制器注册serviceId
+     * @example 1190
      *
      * @var int
      */
     public $deviceServiceId;
 
     /**
-     * @description 控制器sn
+     * @example "02caa8169c80f74a2d375093a6107017"
      *
      * @var string
      */
     public $deviceSn;
 
     /**
-     * @description 控制器状态
+     * @example 空闲：idle  投屏中：projection   会议响铃中：conf_incoming   会议中：conf_running   使用白板中：white_board   离线: offline
      *
      * @var string
      */
     public $deviceStatus;
 
     /**
-     * @description 设备类型
+     * @example 视频会议设备:"touyingyi"   设备控制器:"meetingaccessory"
      *
      * @var string
      */
     public $deviceType;
 
     /**
-     * @description 控制器unionId
+     * @example "lmvUrRkpboRrSMtgsiS9V4AiEiE"
      *
      * @var string
      */
     public $deviceUnionId;
 
     /**
-     * @description 控制器绑定会议室id
+     * @example "7263defed6b361fedf0fe6a3b578b96e808b09d6ca6282ed"
      *
      * @var string
      */
     public $openRoomId;
 
     /**
-     * @description 控制器投屏码
+     * @example 234567
      *
      * @var string
      */

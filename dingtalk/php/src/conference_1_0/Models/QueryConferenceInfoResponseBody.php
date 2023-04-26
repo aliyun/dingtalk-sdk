@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryConferenceInfoResponseBody extends Model
 {
     /**
-     * @description 会议信息结构体
-     *
      * @var confInfo
      */
     public $confInfo;

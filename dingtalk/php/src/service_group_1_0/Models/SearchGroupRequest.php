@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class SearchGroupRequest extends Model
 {
     /**
-     * @description 群名称
+     * @example 钉钉专属服务群
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 本次读取的最大数据记录数量，此参数为可选参数，用户传入为空时，应该有默认值。应设置最大值限制，最大不超过100
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 用来标记当前开始读取的位置，置空表示从头开始。
+     * @example CXiw
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 开放群ID
+     * @example cidxxxx==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开群组ID
+     * @example sjfuwid
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 开放团队ID
+     * @example jfuwida
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 搜索类型
+     * @example 目前支持PAGE 和 SCROLL，默认PAGE类型
      *
      * @var string
      */

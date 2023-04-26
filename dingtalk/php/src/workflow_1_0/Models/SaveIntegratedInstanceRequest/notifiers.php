@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class notifiers extends Model
 {
     /**
-     * @description 抄送位置，可以值有：
-     * start_finish - 审批发起时和审批通过后，都通知抄送人
+     * @example start
+     *
      * @var string
      */
     public $position;
 
     /**
-     * @description 抄送接收人用户ID
+     * @example manager001
      *
      * @var string
      */

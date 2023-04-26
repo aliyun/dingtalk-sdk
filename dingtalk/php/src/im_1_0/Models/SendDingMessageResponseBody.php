@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class SendDingMessageResponseBody extends Model
 {
     /**
-     * @description 发送消息请求Id。
-     *
      * @var string
      */
     public $requestId;

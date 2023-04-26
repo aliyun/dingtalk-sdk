@@ -15,29 +15,29 @@ class features extends Model
     public $callback;
 
     /**
-     * @description 手机端链接
+     * @example www.dingtalk.com
      *
      * @var string
      */
     public $mobileUrl;
 
     /**
-     * @description 名称
+     * @example abc
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description pc端链接
+     * @example www.dingtalk.com
      *
      * @var string
      */
     public $pcUrl;
 
     /**
-     * @description 运行方式：
-     * REDIRECT：外部跳转运行，需要跳转到三方地址运行对应功能
+     * @example ORIGIN
+     *
      * @var string
      */
     public $runType;

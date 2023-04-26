@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class QueryOfficialDatasetListRequest extends Model
 {
     /**
-     * @description 关键词搜索
-     *
      * @var string
      */
     public $keyword;
 
     /**
-     * @description 起始页，从1开始
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 单页大小，最大100
+     * @example 10
      *
      * @var int
      */

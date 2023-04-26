@@ -9,71 +9,57 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 规则是否生效
+     * @example true
      *
      * @var bool
      */
     public $active;
 
     /**
-     * @description 设置描述
+     * @example 影藏对deptA但是user1可见。
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 白名单部门列表
-     *
      * @var int[]
      */
     public $excludeDeptIds;
 
     /**
-     * @description 白名单用户列表
-     *
      * @var string[]
      */
     public $excludeStaffIds;
 
     /**
-     * @description 白名单角色列表
-     *
      * @var int[]
      */
     public $excludeTagIds;
 
     /**
-     * @description settingId
-     *
      * @var int
      */
     public $id;
 
     /**
-     * @description 设置名称
+     * @example 测试规则
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 要隐藏的部门列表
-     *
      * @var int[]
      */
     public $objectDeptIds;
 
     /**
-     * @description 要隐藏的员工列表
-     *
      * @var string[]
      */
     public $objectStaffIds;
 
     /**
-     * @description 要影藏的角色列表
-     *
      * @var int[]
      */
     public $objectTagIds;

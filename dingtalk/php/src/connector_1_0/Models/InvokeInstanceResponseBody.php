@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class InvokeInstanceResponseBody extends Model
 {
     /**
-     * @description 本次执行耗时
+     * @example 13
      *
      * @var int
      */
     public $cost;
 
     /**
-     * @description 连接器错误码
+     * @example 0
      *
      * @var string
      */
     public $errorCode;
 
     /**
-     * @description 连接器错误信息
+     * @example success
      *
      * @var string
      */
     public $errorMessage;
 
     /**
-     * @description 调用记录的ID
+     * @example 43b28ecffae-f-t_
      *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description Id of the request
+     * @example {}
      *
      * @var string
      */

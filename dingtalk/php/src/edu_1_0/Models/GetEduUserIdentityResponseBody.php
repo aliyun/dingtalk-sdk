@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetEduUserIdentityResponseBody extends Model
 {
     /**
-     * @description 返回数据
-     *
      * @var data
      */
     public $data;
 
     /**
-     * @description 是否查询成功
-     *
      * @var bool
      */
     public $success;

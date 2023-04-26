@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CampusDeleteCampusGroupRequest extends Model
 {
     /**
-     * @description 园区项目组ID
+     * @example 12345
      *
      * @var int
      */

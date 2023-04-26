@@ -9,78 +9,56 @@ use AlibabaCloud\Tea\Model;
 class GetInterconnectionUrlRequest extends Model
 {
     /**
-     * @description appUserAvatar
-     *
      * @var string
      */
     public $appUserAvatar;
 
     /**
-     * @description appUserAvatarType
-     *
      * @var int
      */
     public $appUserAvatarType;
 
     /**
-     * @description appUserId
-     *
      * @var string
      */
     public $appUserId;
 
     /**
-     * @description appUserMobileNumber
-     *
      * @var string
      */
     public $appUserMobileNumber;
 
     /**
-     * @description appUserName
-     *
      * @var string
      */
     public $appUserName;
 
     /**
-     * @description msgPageType
-     *
      * @var int
      */
     public $msgPageType;
 
     /**
-     * @description qrCode
-     *
      * @var string
      */
     public $qrCode;
 
     /**
-     * @description signature
-     *
      * @var string
      */
     public $signature;
 
     /**
-     * @description sourceCode
-     *
      * @var string
      */
     public $sourceCode;
 
     /**
-     * @description sourceType
-     *
      * @var int
      */
     public $sourceType;
 
     /**
-     * @description userId
-     *
      * @var string
      */
     public $userId;

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 保存或更新的表单code
+     * @example PROC-abcdef-example
      *
      * @var string
      */

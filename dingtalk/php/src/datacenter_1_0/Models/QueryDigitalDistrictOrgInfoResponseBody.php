@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryDigitalDistrictOrgInfoResponseBody extends Model
 {
     /**
-     * @description arguments
-     *
      * @var string[]
      */
     public $arguments;
 
     /**
-     * @description result
-     *
      * @var string
      */
     public $result;

@@ -9,63 +9,63 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 审批单自定义id
+     * @example 4850378c0ee83
      *
      * @var string
      */
     public $approveId;
 
     /**
-     * @description 审批单开始时间原始格式
+     * @example 2023-03-15 AM
      *
      * @var string
      */
     public $beginTime;
 
     /**
-     * @description 审批单类型：
-     * ● 5：外勤审批
+     * @example 1
+     *
      * @var int
      */
     public $bizType;
 
     /**
-     * @description 计算方法：
-     * ● 1：按工作日计算
+     * @example 1
+     *
      * @var int
      */
     public $calculateModel;
 
     /**
-     * @description 时长单位，支持格式如下：
-     * ● 2019-08-15 12:43对应hour
+     * @example hour
+     *
      * @var string
      */
     public $durationUnit;
 
     /**
-     * @description 审批单结束时间原始格式
+     * @example 2023-03-15 AM
      *
      * @var string
      */
     public $endTime;
 
     /**
-     * @description 子类型名称，最大长度20个字符
+     * @example 年假
      *
      * @var string
      */
     public $subType;
 
     /**
-     * @description 审批单类型名称，最大长度20个字符
+     * @example 请假
      *
      * @var string
      */
     public $tagName;
 
     /**
-     * @description 用户userid
+     * @example user1
      *
      * @var string
      */

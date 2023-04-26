@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 每个人发放的结果
-     *
      * @var openPointInvokeResultDTOS[]
      */
     public $openPointInvokeResultDTOS;

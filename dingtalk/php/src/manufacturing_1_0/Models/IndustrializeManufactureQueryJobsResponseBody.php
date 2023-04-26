@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class IndustrializeManufactureQueryJobsResponseBody extends Model
 {
     /**
-     * @description 查询的数据结果
-     *
      * @var content
      */
     public $content;
 
     /**
-     * @description httpCode
+     * @example 200
      *
      * @var string
      */

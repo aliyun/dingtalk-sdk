@@ -10,22 +10,20 @@ use AlibabaCloud\Tea\Model;
 class GetOfficialAccountContactsResponseBody extends Model
 {
     /**
-     * @description 分页大小
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 下一页的游标，为null则表示无数据
+     * @example 10010
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 客户数据节点
-     *
      * @var values[]
      */
     public $values;

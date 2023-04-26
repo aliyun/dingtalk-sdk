@@ -9,91 +9,89 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 表单类型，0为流程表单，1为数据表单
+     * @example 应用类型
      *
      * @var int
      */
     public $appType;
 
     /**
-     * @description 应用搭建id
+     * @example SWAPP-abcdef-example
      *
      * @var string
      */
     public $appUuid;
 
     /**
-     * @description 业务标识
+     * @example 表单业务标识
      *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 表单控件描述
-     *
      * @var string
      */
     public $content;
 
     /**
-     * @description 创建时间
+     * @example 1635151039000
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 创建人
+     * @example 02501234567890
      *
      * @var string
      */
     public $creator;
 
     /**
-     * @description 模板code
+     * @example PROC-abcdef-example
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 表单uuid
+     * @example FORM-example
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 模板描述
+     * @example 用于收集休假信息
      *
      * @var string
      */
     public $memo;
 
     /**
-     * @description 修改时间
+     * @example 1635151039000
      *
      * @var int
      */
     public $modifedTime;
 
     /**
-     * @description 模板名称
+     * @example 休假申请
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 数据归属id
+     * @example 02501234567890
      *
      * @var string
      */
     public $ownerId;
 
     /**
-     * @description 模板状态
+     * @example PUBLISHED(启用), INVALID(停用), SAVED(草稿)
      *
      * @var string
      */

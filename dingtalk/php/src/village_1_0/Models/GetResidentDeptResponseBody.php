@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class GetResidentDeptResponseBody extends Model
 {
     /**
-     * @description 通讯录架构类型
-     *
      * @var string
      */
     public $contactType;
 
     /**
-     * @description 下属组织的部门ID
-     *
      * @var int
      */
     public $departmentId;
 
     /**
-     * @description 部门名称
-     *
      * @var string
      */
     public $departmentName;
 
     /**
-     * @description 部门类型
-     *
      * @var string
      */
     public $deptType;
 
     /**
-     * @description 部门属性
-     *
      * @var string
      */
     public $feature;

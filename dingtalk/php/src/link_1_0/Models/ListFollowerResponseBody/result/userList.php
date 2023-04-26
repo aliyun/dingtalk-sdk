@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class userList extends Model
 {
     /**
-     * @description 关注者昵称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 关注时间
-     *
      * @var int
      */
     public $timestamp;
 
     /**
-     * @description 关注者userId，可用于消息推送等场景。
-     *
      * @var string
      */
     public $userId;

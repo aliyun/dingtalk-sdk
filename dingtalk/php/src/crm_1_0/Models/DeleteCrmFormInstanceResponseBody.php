@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteCrmFormInstanceResponseBody extends Model
 {
     /**
-     * @description 被删除的实例id
+     * @example intanceId1
      *
      * @var string
      */

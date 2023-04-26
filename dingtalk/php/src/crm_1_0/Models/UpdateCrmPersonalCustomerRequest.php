@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateCrmPersonalCustomerRequest extends Model
 {
     /**
-     * @description 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
-     *
      * @var string
      */
     public $action;
@@ -52,7 +50,7 @@ class UpdateCrmPersonalCustomerRequest extends Model
     public $relationType;
 
     /**
-     * @description 跳过uk查重
+     * @example false
      *
      * @var bool
      */

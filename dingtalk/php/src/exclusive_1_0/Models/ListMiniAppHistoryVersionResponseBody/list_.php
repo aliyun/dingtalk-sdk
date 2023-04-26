@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 构建状态
+     * @example 0-打包中 ，1-成功，2-失败
      *
      * @var int
      */
     public $buildStatus;
 
     /**
-     * @description h5Bundle地址
+     * @example https://xxx.con/download/id
      *
      * @var string
      */
     public $h5Bundle;
 
     /**
-     * @description 包大小
+     * @example 5000
      *
      * @var string
      */
     public $packageSize;
 
     /**
-     * @description 包url
+     * @example https://xxx.con/download/id
      *
      * @var string
      */
     public $packageUrl;
 
     /**
-     * @description 版本
+     * @example 0.0.5
      *
      * @var string
      */

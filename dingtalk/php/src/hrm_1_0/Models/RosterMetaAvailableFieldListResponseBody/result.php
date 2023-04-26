@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 字段标识
+     * @example sys01-employeeType
      *
      * @var string
      */
     public $fieldCode;
 
     /**
-     * @description 字段名称
+     * @example 员工类型
      *
      * @var string
      */
     public $fieldName;
 
     /**
-     * @description 字段类型
+     * @example DDSelectField
      *
      * @var string
      */

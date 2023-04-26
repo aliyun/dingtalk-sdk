@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdatePartnerVisibilityRequest extends Model
 {
     /**
-     * @description 可见的部门id
+     * @example 0.0.5
      *
      * @var int[]
      */
     public $deptIds;
 
     /**
-     * @description 标签id
+     * @example 1312312
      *
      * @var int
      */
     public $labelId;
 
     /**
-     * @description 可见的员工id
+     * @example 500000003
      *
      * @var string[]
      */

@@ -10,43 +10,41 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 高级字段类型名(冗余)。
+     * @example lookup2
      *
      * @var string
      */
     public $advCfObjectType;
 
     /**
-     * @description 自定义字段ID。
+     * @example 63a5301e420637003f5dxxxx
      *
      * @var string
      */
     public $customfieldId;
 
     /**
-     * @description 字段名称。
+     * @example 项目进度
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 如果是企业字段，返回企业字段ID。
+     * @example 62a5301e420637003f5dxxxx
      *
      * @var string
      */
     public $originalId;
 
     /**
-     * @description 字段类型。
+     * @example number
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 字段值集合。
-     *
      * @var value[]
      */
     public $value;

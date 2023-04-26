@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class RobotMessageRecallResponseBody extends Model
 {
     /**
-     * @description 撤回成功的消息ID，失败时为空
-     *
      * @var string
      */
     public $result;

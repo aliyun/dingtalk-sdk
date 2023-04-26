@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class option extends Model
 {
     /**
-     * @description 优先使用内网传输
-     * true
+     * @example true
+     *
      * @var bool
      */
     public $preferIntranet;
 
     /**
-     * @description 历史版本号
+     * @example 1
      *
      * @var int
      */

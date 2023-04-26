@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryPayAccountListResponseBody extends Model
 {
     /**
-     * @description 账号列表
-     *
      * @var payAccountVOList[]
      */
     public $payAccountVOList;

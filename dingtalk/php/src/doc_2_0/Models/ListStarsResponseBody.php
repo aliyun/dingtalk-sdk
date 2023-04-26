@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class ListStarsResponseBody extends Model
 {
     /**
-     * @description 分页游标
-     * 不为空表示有更多数据
+     * @example next_token
+     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 星标数据集合
-     * 20
      * @var starList[]
      */
     public $starList;

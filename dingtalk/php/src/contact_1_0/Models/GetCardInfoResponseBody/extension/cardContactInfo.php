@@ -14,29 +14,21 @@ use AlibabaCloud\Tea\Model;
 class cardContactInfo extends Model
 {
     /**
-     * @description 地址
-     *
      * @var address[]
      */
     public $address;
 
     /**
-     * @description 邮箱
-     *
      * @var email[]
      */
     public $email;
 
     /**
-     * @description 微信
-     *
      * @var link[]
      */
     public $link;
 
     /**
-     * @description 电话
-     *
      * @var telephone[]
      */
     public $telephone;

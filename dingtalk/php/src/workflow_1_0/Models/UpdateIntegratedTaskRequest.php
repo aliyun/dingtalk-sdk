@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateIntegratedTaskRequest extends Model
 {
     /**
-     * @description OA审批流程实例ID，过创建实例接口获取
+     * @example tPr_FB_mT_xxxxxxxxx2hQ05201655306463
      *
      * @var string
      */

@@ -9,372 +9,266 @@ use AlibabaCloud\Tea\Model;
 class dataList extends Model
 {
     /**
-     * @description 交易流水号
-     *
      * @var string
      */
     public $alipayTradeNo;
 
     /**
-     * @description 审批单号
-     *
      * @var string
      */
     public $applyId;
 
     /**
-     * @description 入账时间
-     *
      * @var string
      */
     public $billRecordTime;
 
     /**
-     * @description 预定时间
-     *
      * @var string
      */
     public $bookTime;
 
     /**
-     * @description 预定人use id
-     *
      * @var string
      */
     public $bookerId;
 
     /**
-     * @description 预订人工号
-     *
      * @var string
      */
     public $bookerJobNo;
 
     /**
-     * @description 预订人名称
-     *
      * @var string
      */
     public $bookerName;
 
     /**
-     * @description 资金方向
-     *
      * @var string
      */
     public $capitalDirection;
 
     /**
-     * @description 级联部门
-     *
      * @var string
      */
     public $cascadeDepartment;
 
     /**
-     * @description 入住时间
-     *
      * @var string
      */
     public $checkInDate;
 
     /**
-     * @description 离店时间
-     *
      * @var string
      */
     public $checkoutDate;
 
     /**
-     * @description 入住城市
-     *
      * @var string
      */
     public $city;
 
     /**
-     * @description 城市编码
-     *
      * @var string
      */
     public $cityCode;
 
     /**
-     * @description 企业退款金额
-     *
      * @var float
      */
     public $corpRefundFee;
 
     /**
-     * @description 企业支付金额
-     *
      * @var float
      */
     public $corpTotalFee;
 
     /**
-     * @description 成本中心名称
-     *
      * @var string
      */
     public $costCenter;
 
     /**
-     * @description 成本中心编码
-     *
      * @var string
      */
     public $costCenterNumber;
 
     /**
-     * @description 末级部门
-     *
      * @var string
      */
     public $department;
 
     /**
-     * @description 部门id
-     *
      * @var string
      */
     public $departmentId;
 
     /**
-     * @description 费用类型
-     *
      * @var string
      */
     public $feeType;
 
     /**
-     * @description 杂费
-     *
      * @var float
      */
     public $fees;
 
     /**
-     * @description 福豆支付
-     *
      * @var float
      */
     public $fuPointFee;
 
     /**
-     * @description 酒店名称
-     *
      * @var string
      */
     public $hotelName;
 
     /**
-     * @description 序号
-     *
      * @var string
      */
     public $index;
 
     /**
-     * @description 发票抬头
-     *
      * @var string
      */
     public $invoiceTitle;
 
     /**
-     * @description 是否协议价
-     *
      * @var bool
      */
     public $isNegotiation;
 
     /**
-     * @description 是否合住
-     *
      * @var string
      */
     public $isShareStr;
 
     /**
-     * @description 入住天数
-     *
      * @var int
      */
     public $nights;
 
     /**
-     * @description 订单号
-     *
      * @var string
      */
     public $orderId;
 
     /**
-     * @description 订单金额
-     *
      * @var float
      */
     public $orderPrice;
 
     /**
-     * @description 订单类型
-     *
      * @var string
      */
     public $orderType;
 
     /**
-     * @description 超标审批单号
-     *
      * @var string
      */
     public $overApplyId;
 
     /**
-     * @description 个人退款金额
-     *
      * @var float
      */
     public $personRefundFee;
 
     /**
-     * @description 个人支付金额
-     *
      * @var float
      */
     public $personSettlePrice;
 
     /**
-     * @description 主键id
-     *
      * @var int
      */
     public $primaryId;
 
     /**
-     * @description 项目编码
-     *
      * @var string
      */
     public $projectCode;
 
     /**
-     * @description 项目名称
-     *
      * @var string
      */
     public $projectName;
 
     /**
-     * @description 优惠券
-     *
      * @var float
      */
     public $promotionFee;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 房间数
-     *
      * @var int
      */
     public $roomNumber;
 
     /**
-     * @description 房价
-     *
      * @var float
      */
     public $roomPrice;
 
     /**
-     * @description 房间类型
-     *
      * @var string
      */
     public $roomType;
 
     /**
-     * @description 服务费,仅在 feeType 20111、20112中展示
-     *
      * @var float
      */
     public $serviceFee;
 
     /**
-     * @description 结算金额
-     *
      * @var float
      */
     public $settlementFee;
 
     /**
-     * @description 预存赠送金额消费
-     *
      * @var float
      */
     public $settlementGrantFee;
 
     /**
-     * @description 结算时间
-     *
      * @var string
      */
     public $settlementTime;
 
     /**
-     * @description 结算类型
-     *
      * @var string
      */
     public $settlementType;
 
     /**
-     * @description 入账状态
-     *
      * @var int
      */
     public $status;
 
     /**
-     * @description 总间夜数
-     *
      * @var int
      */
     public $totalNights;
 
     /**
-     * @description 出行人use id
-     *
      * @var string
      */
     public $travelerId;
 
     /**
-     * @description 出行人工号
-     *
      * @var string
      */
     public $travelerJobNo;
 
     /**
-     * @description 出行人名称
-     *
      * @var string
      */
     public $travelerName;
 
     /**
-     * @description 发票类型
-     *
      * @var int
      */
     public $voucherType;

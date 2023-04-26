@@ -9,84 +9,82 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 用户编码
+     * @example zhangsan
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 所属部门id
+     * @example 18f923a7-5a5e-426d-94ae-a55ad1a4b240
      *
      * @var string
      */
     public $departmentId;
 
     /**
-     * @description 所属部门名称
+     * @example 研发中心
      *
      * @var string
      */
     public $departmentName;
 
     /**
-     * @description 描述
+     * @example Null
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 所属范围。Internal=内部，External=外部
+     * @example Internal
      *
      * @var string
      */
     public $domainType;
 
     /**
-     * @description 邮箱
+     * @example zhangsan@example.com
      *
      * @var string
      */
     public $email;
 
     /**
-     * @description 手机号码
+     * @example 156*******
      *
      * @var string
      */
     public $mobile;
 
     /**
-     * @description 用户名称
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 兼职部门id集合（含主部门id）
-     *
      * @var string[]
      */
     public $partDepartmentIds;
 
     /**
-     * @description 性别.None=未指定，Man=男性，Female=女性
+     * @example Man
      *
      * @var string
      */
     public $sex;
 
     /**
-     * @description 排序值
+     * @example 176294501822126512
      *
      * @var int
      */
     public $sortKey;
 
     /**
-     * @description 用户id
+     * @example 018bbb56-a9dd-49a1-8495-129c6b0d95c5
      *
      * @var string
      */

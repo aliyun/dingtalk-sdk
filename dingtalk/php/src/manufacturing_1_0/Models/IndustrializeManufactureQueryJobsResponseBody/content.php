@@ -9,120 +9,88 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 组织id
+     * @example dingdb6elngd253073ad370d8dc3ec89bb366ab
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 创建时间
-     *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间
-     *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 数据库id
-     *
      * @var int
      */
     public $id;
 
     /**
-     * @description 工单id
-     *
      * @var string
      */
     public $instNo;
 
     /**
-     * @description 是否是批量报工，即一次报工由多个工人一起分担，取值[n,y],y表示是批量，批量时多个人名以英文逗号分隔
-     *
      * @var string
      */
     public $isBatchJob;
 
     /**
-     * @description 生产日期时间(到时分秒),格式:2021-07-05 08:00:21
-     *
      * @var string
      */
     public $manufactureDate;
 
     /**
-     * @description 生产日期(到天)
-     *
      * @var string
      */
     public $manufactureDay;
 
     /**
-     * @description 分配给mes系统的appkey
-     *
      * @var string
      */
     public $mesAppKey;
 
     /**
-     * @description 工序名称
-     *
      * @var string
      */
     public $processName;
 
     /**
-     * @description 合格数
-     *
      * @var string
      */
     public $qualifiedQuantity;
 
     /**
-     * @description 不合格数
-     *
      * @var string
      */
     public $scrappedQuantity;
 
     /**
-     * @description 计件单价，单位：分
-     *
      * @var string
      */
     public $unitPrice;
 
     /**
-     * @description 工人工号(isBatchJob=='n'时)
-     *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 批量报工时多个人钉钉工号以英文逗号分隔
-     *
      * @var string
      */
     public $userIdList;
 
     /**
-     * @description 批量报工时多个人名以英文逗号分隔
-     *
      * @var string
      */
     public $userNameList;
 
     /**
-     * @description 报工记录的唯一标识
-     *
      * @var string
      */
     public $uuid;

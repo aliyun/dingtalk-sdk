@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CopyDentriesResponseBody extends Model
 {
     /**
-     * @description 批量复制文件(夹)结果列表
-     * 30
      * @var resultItems[]
      */
     public $resultItems;

@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class queryPointRuleResponseDTOS extends Model
 {
     /**
-     * @description 奖励积分
+     * @example 10
      *
      * @var int
      */
     public $awardScore;
 
     /**
-     * @description 行为名称
+     * @example DAILY_VISIT
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 单日计次上限
+     * @example 1
      *
      * @var int
      */
     public $dayLimitTimes;
 
     /**
-     * @description 行为描述
+     * @example 每日访问
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 生效状态：0无效，1有效
+     * @example 1
      *
      * @var int
      */

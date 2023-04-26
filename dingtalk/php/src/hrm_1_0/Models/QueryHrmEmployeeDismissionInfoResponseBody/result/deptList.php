@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class deptList extends Model
 {
     /**
-     * @description 部门id
-     *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 部门路径
-     *
      * @var string
      */
     public $deptPath;

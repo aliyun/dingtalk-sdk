@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class GroupStatisticsResponseBody extends Model
 {
     /**
-     * @description (本期)群总数
+     * @example 10
      *
      * @var int
      */
     public $groupCount;
 
     /**
-     * @description 群趋势
-     *
      * @var groupTrend[]
      */
     public $groupTrend;
 
     /**
-     * @description 较上期增长数
+     * @example 1
      *
      * @var int
      */
     public $increaseGroupCount;
 
     /**
-     * @description 较上期增长率(已乘以100）
+     * @example 0.1
      *
      * @var string
      */

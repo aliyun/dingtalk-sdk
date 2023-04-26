@@ -9,64 +9,46 @@ use AlibabaCloud\Tea\Model;
 class GetUploadInfoRequest extends Model
 {
     /**
-     * @description 文件名称冲突策略
-     *
      * @var string
      */
     public $addConflictPolicy;
 
     /**
-     * @description 调用方所处区域
-     *
      * @var string
      */
     public $callerRegion;
 
     /**
-     * @description 文件名
-     *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 文件大小
-     *
      * @var int
      */
     public $fileSize;
 
     /**
-     * @description 文件md5
-     *
      * @var string
      */
     public $md5;
 
     /**
-     * @description mediaId
-     *
      * @var string
      */
     public $mediaId;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 是否返回OSS内网访问域名
-     *
      * @var bool
      */
     public $withInternalEndPoint;
 
     /**
-     * @description 是否返回区域
-     *
      * @var bool
      */
     public $withRegion;

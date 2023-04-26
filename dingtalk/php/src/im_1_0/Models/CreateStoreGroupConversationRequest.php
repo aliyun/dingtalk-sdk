@@ -9,50 +9,48 @@ use AlibabaCloud\Tea\Model;
 class CreateStoreGroupConversationRequest extends Model
 {
     /**
-     * @description 钉外账号在业务系统内的唯一标识。
+     * @example 1107****2120
      *
      * @var string
      */
     public $appUserId;
 
     /**
-     * @description 外部业务唯一标识（店铺唯一标识）。
+     * @example store1
      *
      * @var string
      */
     public $businessUniqueKey;
 
     /**
-     * @description 群头像地址。
+     * @example http://***.png
      *
      * @var string
      */
     public $groupAvatar;
 
     /**
-     * @description 群名称。
+     * @example 客户群
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 群模板Id。
+     * @example 8d42****nkld
      *
      * @var string
      */
     public $groupTemplateId;
 
     /**
-     * @description 操作者在业务系统内的唯一标识。
+     * @example 1107****2120
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 钉内成员列表。
-     *
      * @var string[]
      */
     public $userIds;

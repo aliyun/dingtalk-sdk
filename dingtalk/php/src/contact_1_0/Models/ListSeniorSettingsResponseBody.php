@@ -15,8 +15,6 @@ class ListSeniorSettingsResponseBody extends Model
     public $protectScenes;
 
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $seniorStaffId;

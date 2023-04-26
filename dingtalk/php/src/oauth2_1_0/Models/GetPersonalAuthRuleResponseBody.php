@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetPersonalAuthRuleResponseBody extends Model
 {
     /**
-     * @description list
-     *
      * @var result[]
      */
     public $result;

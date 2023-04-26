@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class DeleteProcessesInstanceRequest extends Model
 {
     /**
-     * @description 删除成功后，是否需要更新业务表单关联的流程实例id
+     * @example true
      *
      * @var bool
      */
     public $isAutoUpdateBizObject;
 
     /**
-     * @description 流程实例id
+     * @example 3d0ad4a4-d7d5-4196-9f2c-3ed246f2b713
      *
      * @var string
      */

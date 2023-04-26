@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 推送ID
-     *
      * @var string
      */
     public $openPushId;

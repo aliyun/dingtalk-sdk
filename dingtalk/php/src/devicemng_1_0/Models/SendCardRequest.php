@@ -9,70 +9,64 @@ use AlibabaCloud\Tea\Model;
 class SendCardRequest extends Model
 {
     /**
-     * @description 卡片实例唯一标识
+     * @example biz-xxxxx
      *
      * @var string
      */
     public $bizId;
 
     /**
-     * @description 卡片变量赋值，json结构
+     * @example {"var1":"xxx","var2":"xxx"}
      *
      * @var string
      */
     public $cardData;
 
     /**
-     * @description 设备业务标识
+     * @example xxxxceshi_1
      *
      * @var string
      */
     public $deviceCode;
 
     /**
-     * @description 设备uuid，唯一标识
+     * @example Device-3bb10262-31f9-494f-9fde-0a910b8exxxx
      *
      * @var string
      */
     public $deviceUuid;
 
     /**
-     * @description 群id，群的唯一标识
+     * @example cide+m5TmAcxA3OU6Un59xxxx==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 卡片是否群内部分人员可见
-     *
      * @var bool
      */
     public $partVisible;
 
     /**
-     * @description 群内指定人员可见
-     *
      * @var string[]
      */
     public $receivers;
 
     /**
-     * @description 卡片模板唯一标识，开放平台获取
+     * @example abcxxxxxxxx
      *
      * @var string
      */
     public $templateId;
 
     /**
-     * @description 是否为吊顶卡片
-     *
      * @var bool
      */
     public $topbox;
 
     /**
-     * @description 用户通讯录唯一标识
+     * @example 0123459456
      *
      * @var string
      */

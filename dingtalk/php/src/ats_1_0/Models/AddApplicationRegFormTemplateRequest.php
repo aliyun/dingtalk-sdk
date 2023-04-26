@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class AddApplicationRegFormTemplateRequest extends Model
 {
     /**
-     * @description 业务标识
+     * @example ddats
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 模板内容
+     * @example {"key":"value"}
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 模板名称
+     * @example 应聘登记表
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 外部唯一标识
+     * @example xxx
      *
      * @var string
      */
     public $outerId;
 
     /**
-     * @description 操作人员工标识
+     * @example xxx
      *
      * @var string
      */

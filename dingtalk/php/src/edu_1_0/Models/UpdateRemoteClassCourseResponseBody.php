@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateRemoteClassCourseResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var string
      */
     public $result;
 
     /**
-     * @description success
-     *
      * @var bool
      */
     public $success;

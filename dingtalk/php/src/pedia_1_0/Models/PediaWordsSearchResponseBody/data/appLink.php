@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class appLink extends Model
 {
     /**
-     * @description 应用名称
+     * @example 应用名
      *
      * @var string
      */
     public $appName;
 
     /**
-     * @description 应用图标
+     * @example https://123434.com
      *
      * @var string
      */
     public $iconLink;
 
     /**
-     * @description PC端链接地址
+     * @example http://123.com
      *
      * @var string
      */
     public $pcLink;
 
     /**
-     * @description 手机端地址
+     * @example http://1244.com
      *
      * @var string
      */

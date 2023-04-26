@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class QueryPageTraceDataResponseBody extends Model
 {
     /**
-     * @description 是否结束
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 轨迹点列表
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 下一个开始位置
+     * @example 100
      *
      * @var int
      */

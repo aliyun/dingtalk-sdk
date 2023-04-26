@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class residentAddInfo extends Model
 {
     /**
-     * @description 部门id
+     * @example 11112
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 是否是产权人
+     * @example true
      *
      * @var bool
      */
     public $isPropertyOwner;
 
     /**
-     * @description 人员扩展信息，目前只有租客的起止时间
+     * @example {"startTime":1652358627106,"endTime":1652445027106}
      *
      * @var mixed[]
      */
     public $memberDeptExtension;
 
     /**
-     * @description 手机号
+     * @example 148********
      *
      * @var string
      */
     public $mobile;
 
     /**
-     * @description 姓名
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 身份，1：业主，2：租客，3：亲友
+     * @example 1
      *
      * @var string
      */

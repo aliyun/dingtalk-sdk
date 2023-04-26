@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryStatusResponseBody extends Model
 {
     /**
-     * @description disable
+     * @example false/true
      *
      * @var bool
      */

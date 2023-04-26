@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetStaffInfoByWorkNoResponseBody extends Model
 {
     /**
-     * @description 员工详情
-     *
      * @var content
      */
     public $content;
 
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $requestId;

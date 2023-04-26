@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class darkWatermarkVOList extends Model
 {
     /**
-     * @description 暗水印链接
+     * @example https://down-cdn.dingtalk.com/ddmedia/iAEKAqRmaWxlAwYEzh55BdsFzlFx040G2gAhhAGkC1HdIgKqLZPt3bUH2pAeUAPPAAABgRPQ5KgEzTBIBwAIAA.file
      *
      * @var string
      */
     public $darkWatermark;
 
     /**
-     * @description 员工工号
+     * @example 0138350100401024915916
      *
      * @var string
      */

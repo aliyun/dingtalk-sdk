@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class extendData extends Model
 {
     /**
-     * @description 字段唯一标识
+     * @example school
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 字段中文描述
+     * @example 学校
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 字段的取值
+     * @example 北大
      *
      * @var string
      */
     public $value;
 
     /**
-     * @description 字段的类型(string,number,boolean)
+     * @example string
      *
      * @var string
      */

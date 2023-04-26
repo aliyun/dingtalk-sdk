@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class DeleteKnowledgeRequest extends Model
 {
     /**
-     * @description 知识库的唯一标识 比如:天工知识库ID
+     * @example xuvw1245
      *
      * @var string
      */
     public $libraryKey;
 
     /**
-     * @description 开放团队ID
+     * @example Js1i0w3k
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 知识点来源 CCM:天工知识库
+     * @example CCM
      *
      * @var string
      */
     public $source;
 
     /**
-     * @description 知识点唯一标识
+     * @example CCM-123
      *
      * @var string
      */

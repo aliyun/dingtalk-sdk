@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 人员状态，已进组织 或 待接收邀请
+     * @example NORMAL
      *
      * @var string
      */
     public $dingMemberStatus;
 
     /**
-     * @description 是否激活
+     * @example true
      *
      * @var bool
      */
     public $isActive;
 
     /**
-     * @description 名字
+     * @example 李白
      *
      * @var string
      */
     public $memberName;
 
     /**
-     * @description 人员在上下游中的工号
+     * @example 123
      *
      * @var string
      */
     public $memberWorkNumber;
 
     /**
-     * @description 应用层面的唯一id
+     * @example 123abc
      *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 人员组织内id
+     * @example 123344
      *
      * @var string
      */

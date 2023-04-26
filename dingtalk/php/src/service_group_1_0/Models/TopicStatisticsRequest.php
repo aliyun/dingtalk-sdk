@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class TopicStatisticsRequest extends Model
 {
     /**
-     * @description 截止日期
+     * @example 20220101
      *
      * @var string
      */
     public $maxDt;
 
     /**
-     * @description 起始日期
+     * @example 20220101
      *
      * @var string
      */
     public $minDt;
 
     /**
-     * @description 开放群ID列表（多个用逗号拼接）
+     * @example cidXX,cidYY
      *
      * @var string
      */
     public $openConversationIds;
 
     /**
-     * @description 开放团队ID
+     * @example KxisoOk
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 搜索内容
+     * @example 工单
      *
      * @var string
      */

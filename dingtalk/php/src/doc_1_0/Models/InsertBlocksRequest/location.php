@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class location extends Model
 {
     /**
-     * @description 头部插入
-     *
      * @var bool
      */
     public $head;

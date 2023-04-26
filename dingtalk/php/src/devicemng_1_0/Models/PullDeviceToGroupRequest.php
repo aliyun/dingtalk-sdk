@@ -9,28 +9,24 @@ use AlibabaCloud\Tea\Model;
 class PullDeviceToGroupRequest extends Model
 {
     /**
-     * @description 设备业务标识
-     *
      * @var string[]
      */
     public $deviceCodes;
 
     /**
-     * @description 设备uuid，系统唯一标识
-     *
      * @var string[]
      */
     public $deviceUuids;
 
     /**
-     * @description 群id，群的唯一标识
+     * @example cide+m5TmAcxA3OU6Un59xxxx==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 操作人userId
+     * @example manager1111
      *
      * @var string
      */

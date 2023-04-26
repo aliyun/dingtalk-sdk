@@ -14,14 +14,14 @@ class CampusUpdateCampusGroupRequest extends Model
     public $campusProjectGroupId;
 
     /**
-     * @description 扩展信息
+     * @example 扩展信息
      *
      * @var string
      */
     public $extend;
 
     /**
-     * @description 项目组名
+     * @example 绿城未来park
      *
      * @var string
      */

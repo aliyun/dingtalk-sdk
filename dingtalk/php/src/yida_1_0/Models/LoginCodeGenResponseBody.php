@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class LoginCodeGenResponseBody extends Model
 {
     /**
-     * @description result
+     * @example cdxxxx
      *
      * @var string
      */

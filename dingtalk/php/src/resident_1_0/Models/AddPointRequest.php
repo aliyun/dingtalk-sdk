@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class AddPointRequest extends Model
 {
     /**
-     * @description 增加积分的时间戳毫秒数，如果为空使用系统当前毫秒数
+     * @example 1634630147
      *
      * @var int
      */
     public $actionTime;
 
     /**
-     * @description 是否查询全员圈积分
+     * @example false
      *
      * @var bool
      */
     public $isCircle;
 
     /**
-     * @description 规则代码（可空）,如果不为空的话，score值使用ruleCode对应的score增加分数
+     * @example rule_1
      *
      * @var string
      */
     public $ruleCode;
 
     /**
-     * @description 规则名字
+     * @example 发动态
      *
      * @var string
      */
     public $ruleName;
 
     /**
-     * @description 本次增加积分：正数表示增加/负数表示扣减
+     * @example 3
      *
      * @var int
      */
     public $score;
 
     /**
-     * @description 成员id
+     * @example 123
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 加积分的唯一幂等标志
+     * @example 7645
      *
      * @var string
      */

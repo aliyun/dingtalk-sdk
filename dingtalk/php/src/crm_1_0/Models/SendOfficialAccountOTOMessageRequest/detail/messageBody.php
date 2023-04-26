@@ -14,36 +14,26 @@ use AlibabaCloud\Tea\Model;
 class messageBody extends Model
 {
     /**
-     * @description 卡片消息
-     *
      * @var actionCard
      */
     public $actionCard;
 
     /**
-     * @description 图片消息类型时，此参数必填。 设置此参数时，msgType必须为image类型
-     *
      * @var image
      */
     public $image;
 
     /**
-     * @description 链接消息类型
-     *
      * @var link
      */
     public $link;
 
     /**
-     * @description markdown消息，仅对消息类型为markdown时有效
-     *
      * @var markdown
      */
     public $markdown;
 
     /**
-     * @description 文本消息体  对于文本类型消息时必填
-     *
      * @var text
      */
     public $text;

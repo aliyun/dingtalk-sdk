@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupMemberRequest extends Model
 {
     /**
-     * @description 群开放ID
+     * @example cidxxxxxx==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开放团队ID
+     * @example KxisoOk
      *
      * @var string
      */

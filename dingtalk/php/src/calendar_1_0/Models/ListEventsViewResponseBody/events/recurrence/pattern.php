@@ -29,8 +29,6 @@ class pattern extends Model
     public $interval;
 
     /**
-     * @description 循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)
-     *
      * @var string
      */
     public $type;

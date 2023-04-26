@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class shiftVOList extends Model
 {
     /**
-     * @description 班次ID，可通过获取班次摘要信息接口获取。
+     * @example 123
      *
      * @var int
      */

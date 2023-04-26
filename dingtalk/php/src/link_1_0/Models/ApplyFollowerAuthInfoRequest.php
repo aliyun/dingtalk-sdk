@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class ApplyFollowerAuthInfoRequest extends Model
 {
     /**
-     * @description 应用授权Key,可通过服务窗开放互联功能获取。此参数与fieldScope参数二选一。
-     *
      * @var string
      */
     public $appAuthKey;
 
     /**
-     * @description 申请的授权数据，多个数据时使用,分隔。此参数与appAuthKey参数二选一。
-     * 暂时仅支持申请手机号码授权：Contact.User.mobile
+     * @example Contact.User.mobile
+     *
      * @var string
      */
     public $fieldScope;
 
     /**
-     * @description 服务窗机器人消息sessionId。
-     * 开发者需要接入服务窗自建机器人后通过回调消息获取到的sessionId。
+     * @example sid22b31b4bf59ef2c783f7
+     *
      * @var string
      */
     public $sessionId;
 
     /**
-     * @description 服务窗关注用户userId。
+     * @example idzb26bxl64vqx2keyi
      *
      * @var string
      */

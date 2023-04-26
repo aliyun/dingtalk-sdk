@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class spaceInfoVOList extends Model
 {
     /**
-     * @description 计费面积
+     * @example 123.4
      *
      * @var float
      */
     public $billingArea;
 
     /**
-     * @description 建筑面积
+     * @example 123.4
      *
      * @var float
      */
     public $buildingArea;
 
     /**
-     * @description 楼栋类型
+     * @example 当tagcode为Building的时候必填
      *
      * @var int
      */
     public $buildingType;
 
     /**
-     * @description 修改的空间的唯一标识
+     * @example 10005
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 房屋所在楼层，当tagCode为House时选填
+     * @example 12
      *
      * @var string
      */
     public $floor;
 
     /**
-     * @description 房屋状态，tagcode为house时选填，0空置/1未领/2入住/3空关/4装修
+     * @example 1
      *
      * @var int
      */
     public $houseState;
 
     /**
-     * @description 房屋类型，当tagcode为House时必填
+     * @example 1
      *
      * @var int
      */
     public $houseType;
 
     /**
-     * @description 修改后名称
+     * @example 二单元
      *
      * @var string
      */
@@ -70,7 +70,7 @@ class spaceInfoVOList extends Model
     public $parentDeptId;
 
     /**
-     * @description 空间类型
+     * @example 空间类型标签code，House/Unit/Building/Partition
      *
      * @var string
      */

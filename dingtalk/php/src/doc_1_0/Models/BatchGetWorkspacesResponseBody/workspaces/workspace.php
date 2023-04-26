@@ -10,43 +10,31 @@ use AlibabaCloud\Tea\Model;
 class workspace extends Model
 {
     /**
-     * @description 知识库创建时间。
-     *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 知识库名称。
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 是否全员公开
-     *
      * @var bool
      */
     public $orgPublished;
 
     /**
-     * @description 最近访问列表
-     *
      * @var recentList[]
      */
     public $recentList;
 
     /**
-     * @description 知识库打开url。
-     *
      * @var string
      */
     public $url;
 
     /**
-     * @description 知识库id。
-     *
      * @var string
      */
     public $workspaceId;

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class SetDisableRequest extends Model
 {
     /**
-     * @description reason
+     * @example reasonYYY
      *
      * @var string
      */
     public $reason;
 
     /**
-     * @description userId
+     * @example userIdXXX
      *
      * @var string
      */

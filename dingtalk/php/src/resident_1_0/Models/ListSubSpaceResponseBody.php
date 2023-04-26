@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListSubSpaceResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var spaceList[]
      */
     public $spaceList;

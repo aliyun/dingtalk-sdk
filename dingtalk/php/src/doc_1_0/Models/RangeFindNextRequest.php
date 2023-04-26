@@ -10,22 +10,18 @@ use AlibabaCloud\Tea\Model;
 class RangeFindNextRequest extends Model
 {
     /**
-     * @description 查找选项
-     *
      * @var findOptions
      */
     public $findOptions;
 
     /**
-     * @description 要查找的文本
+     * @example DingTalk
      *
      * @var string
      */
     public $text;
 
     /**
-     * @description 操作人unionId
-     *
      * @var string
      */
     public $operatorId;

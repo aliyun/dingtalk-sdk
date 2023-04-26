@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ValidateOrderUpdateResponseBody extends Model
 {
     /**
-     * @description message
-     *
      * @var string
      */
     public $message;
 
     /**
-     * @description status
-     *
      * @var int
      */
     public $status;

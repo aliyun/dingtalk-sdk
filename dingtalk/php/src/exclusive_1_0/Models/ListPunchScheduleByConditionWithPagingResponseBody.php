@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class ListPunchScheduleByConditionWithPagingResponseBody extends Model
 {
     /**
-     * @description 是否有更多
+     * @example false
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 返回列表
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 下一次游标位置
+     * @example 10000
      *
      * @var int
      */

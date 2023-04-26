@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class openInfos extends Model
 {
     /**
-     * @description 打开方式
-     * EDIT: 编辑
+     * @example PREVIEW
+     *
      * @var string
      */
     public $openType;
 
     /**
-     * @description 注册链接
+     * @example url
      *
      * @var string
      */

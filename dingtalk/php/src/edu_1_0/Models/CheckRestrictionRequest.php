@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class CheckRestrictionRequest extends Model
 {
     /**
-     * @description 实付金额，单位分
+     * @example 1
      *
      * @var int
      */
     public $actualAmount;
 
     /**
-     * @description 人脸id
+     * @example 123
      *
      * @var string
      */
     public $faceId;
 
     /**
-     * @description 场景
+     * @example 1
      *
      * @var int
      */
     public $scene;
 
     /**
-     * @description 设备号
+     * @example 123
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 员工id
+     * @example 123
      *
      * @var string
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CountWorkRecordResponseBody extends Model
 {
     /**
-     * @description undoCount
+     * @example 10
      *
      * @var int
      */

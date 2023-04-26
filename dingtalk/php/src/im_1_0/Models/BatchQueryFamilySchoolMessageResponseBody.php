@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class BatchQueryFamilySchoolMessageResponseBody extends Model
 {
     /**
-     * @description 消息数据
-     *
      * @var messages[]
      */
     public $messages;

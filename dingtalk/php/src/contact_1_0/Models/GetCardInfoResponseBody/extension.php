@@ -10,78 +10,56 @@ use AlibabaCloud\Tea\Model;
 class extension extends Model
 {
     /**
-     * @description 联系信息
-     *
      * @var cardContactInfo
      */
     public $cardContactInfo;
 
     /**
-     * @description 企业corpId
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 拍名片部门
-     *
      * @var string
      */
     public $department;
 
     /**
-     * @description 企业是否认证
-     *
      * @var bool
      */
     public $orgAuthed;
 
     /**
-     * @description 企业LOGO
-     *
      * @var string
      */
     public $orgLogo;
 
     /**
-     * @description 拍名片图片链接
-     *
      * @var string
      */
     public $originCardUrl;
 
     /**
-     * @description 分享文案
-     *
      * @var string
      */
     public $shareContent;
 
     /**
-     * @description 视频缩略图
-     *
      * @var string
      */
     public $thumbnailUrl;
 
     /**
-     * @description 视频文件名称
-     *
      * @var string
      */
     public $videoFileName;
 
     /**
-     * @description 视频标题
-     *
      * @var string
      */
     public $videoTitle;
 
     /**
-     * @description 视频链接
-     *
      * @var string
      */
     public $videoUrl;

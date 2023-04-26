@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetUploadTokenRequest extends Model
 {
     /**
-     * @description 离线包ID
+     * @example 5000000002761167
      *
      * @var string
      */

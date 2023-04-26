@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class WriteOrgCarbonResponseBody extends Model
 {
     /**
-     * @description 请求成功返回的个数
-     *
      * @var int
      */
     public $result;
 
     /**
-     * @description 请求是否成功
-     *
      * @var bool
      */
     public $success;

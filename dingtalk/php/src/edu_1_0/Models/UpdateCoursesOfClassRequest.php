@@ -16,14 +16,12 @@ class UpdateCoursesOfClassRequest extends Model
     public $courses;
 
     /**
-     * @description 节次设置
-     *
      * @var sectionConfig
      */
     public $sectionConfig;
 
     /**
-     * @description 操作者id
+     * @example 234536346
      *
      * @var string
      */

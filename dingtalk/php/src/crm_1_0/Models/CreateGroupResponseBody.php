@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupResponseBody extends Model
 {
     /**
-     * @description 群id
-     *
      * @var string
      */
     public $openConversationId;

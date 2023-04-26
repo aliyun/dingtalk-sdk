@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactDeptGroupCreateRequest extends Model
 {
     /**
-     * @description 自定义通讯录Code
+     * @example alt-contact:Mzc0ODAwMQ==
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 部门Id
+     * @example 65725421
      *
      * @var int
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupConversationResponseBody extends Model
 {
     /**
-     * @description dingOpenErrcode
+     * @example 500
      *
      * @var int
      */
     public $dingOpenErrcode;
 
     /**
-     * @description errorMsg
+     * @example SYSTEM_ERROR
      *
      * @var string
      */
     public $errorMsg;
 
     /**
-     * @description 执行是否成功
+     * @example true
      *
      * @var string
      */
     public $result;
 
     /**
-     * @description 回调是否成功
+     * @example true
      *
      * @var bool
      */

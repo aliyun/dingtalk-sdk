@@ -10,16 +10,11 @@ use AlibabaCloud\Tea\Model;
 class freeCheckSetting extends Model
 {
     /**
-     * @description 自由工时考勤组考勤开始时间与当天0点偏移分钟数。
-     *
-     * 例如：540表示9:00
      * @var int
      */
     public $delimitOffsetMinutesBetweenDays;
 
     /**
-     * @description 休息日打卡间隔设置。
-     *
      * @var freeCheckGap
      */
     public $freeCheckGap;

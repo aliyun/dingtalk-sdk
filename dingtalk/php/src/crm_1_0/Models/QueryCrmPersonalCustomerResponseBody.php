@@ -15,7 +15,7 @@ class QueryCrmPersonalCustomerResponseBody extends Model
     public $hasMore;
 
     /**
-     * @description 当前分页条数
+     * @example 10
      *
      * @var int
      */
@@ -27,7 +27,7 @@ class QueryCrmPersonalCustomerResponseBody extends Model
     public $nextToken;
 
     /**
-     * @description 总条数
+     * @example 1000
      *
      * @var int
      */

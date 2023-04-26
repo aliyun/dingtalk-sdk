@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class RemoveUserFromGroupRequest extends Model
 {
     /**
-     * @description 开放群唯一标识
+     * @example xxxx
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 用户唯一标识列表
-     *
      * @var string[]
      */
     public $userIds;

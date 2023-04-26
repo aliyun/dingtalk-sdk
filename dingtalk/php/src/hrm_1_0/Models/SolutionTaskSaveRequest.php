@@ -9,34 +9,36 @@ use AlibabaCloud\Tea\Model;
 class SolutionTaskSaveRequest extends Model
 {
     /**
-     * @description 任务要求的截止时间
+     * @example 时间戳
      *
      * @var int
      */
     public $claimTime;
 
     /**
-     * @description 任务描述
+     * @example 这是一个新人培训任务
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 任务完成时间
+     * @example 时间戳
      *
      * @var int
      */
     public $finishTime;
 
     /**
-     * @description 外部的任务唯一标识
+     * @example fdagshfjhajl
      *
      * @var string
      */
     public $outerId;
 
     /**
+     * @example qweqweqwe
+     *
      * @var string
      */
     public $solutionInstanceId;
@@ -47,40 +49,42 @@ class SolutionTaskSaveRequest extends Model
     public $startTime;
 
     /**
-     * @description 任务状态，如running,finished
+     * @example running
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 任务业务模块，如training, performance等
+     * @example PERFORMANCE_TASK、TRAIN_TASK
      *
      * @var string
      */
     public $taskType;
 
     /**
+     * @example sdfasd2323sdaf
+     *
      * @var string
      */
     public $templateOuterId;
 
     /**
-     * @description 任务名称
+     * @example 新人学习任务
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 任务执行人userId
+     * @example 123456
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 解决方案类型
+     * @example onboarding
      *
      * @var string
      */

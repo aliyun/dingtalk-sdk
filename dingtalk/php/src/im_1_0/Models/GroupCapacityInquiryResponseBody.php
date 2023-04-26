@@ -9,105 +9,103 @@ use AlibabaCloud\Tea\Model;
 class GroupCapacityInquiryResponseBody extends Model
 {
     /**
-     * @description 实际价格
+     * @example 85000
      *
      * @var int
      */
     public $actualPrice;
 
     /**
-     * @description 群创建时间
+     * @example 1652183395772
      *
      * @var int
      */
     public $createdAt;
 
     /**
-     * @description 当前容量
+     * @example 500
      *
      * @var int
      */
     public $currentCapacity;
 
     /**
-     * @description 当前容量生效至何时
+     * @example 1652183395772
      *
      * @var int
      */
     public $currentEffectUntil;
 
     /**
-     * @description 折扣
+     * @example 85
      *
      * @var int
      */
     public $discount;
 
     /**
-     * @description 扩展信息
-     *
      * @var mixed[]
      */
     public $extInfo;
 
     /**
-     * @description 群主userId
+     * @example 678912390478123
      *
      * @var string
      */
     public $groupOwner;
 
     /**
-     * @description 群标题
+     * @example 今天吃肘子群
      *
      * @var string
      */
     public $groupTitle;
 
     /**
-     * @description 标价
+     * @example 10000
      *
      * @var int
      */
     public $markedPrice;
 
     /**
-     * @description 群人数
+     * @example 500
      *
      * @var int
      */
     public $memberCount;
 
     /**
-     * @description 开放的群id
+     * @example cidoondswfakscdviouhao==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 当前操作人工号
+     * @example 32453245234523425
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 目标容量
+     * @example 10000
      *
      * @var int
      */
     public $targetCapacity;
 
     /**
-     * @description 目标容量生效至何时
+     * @example 1652183395772
      *
      * @var int
      */
     public $targetEffectUntil;
 
     /**
-     * @description 校验令牌
+     * @example jklasdhjfasdjkfkh421jk5bb243b523
      *
      * @var string
      */

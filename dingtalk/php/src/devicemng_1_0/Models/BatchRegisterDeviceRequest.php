@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class BatchRegisterDeviceRequest extends Model
 {
     /**
-     * @description 设备列表
-     *
      * @var deviceList[]
      */
     public $deviceList;
 
     /**
-     * @description 创建者userId
+     * @example manager10
      *
      * @var string
      */

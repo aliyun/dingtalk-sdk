@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateVideoConferenceSettingResponseBody extends Model
 {
     /**
-     * @description 结果详情
-     *
      * @var string
      */
     public $case;
 
     /**
-     * @description 返回编码
-     *
      * @var string
      */
     public $code;

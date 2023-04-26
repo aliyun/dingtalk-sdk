@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class ApplyBatchPayRequest extends Model
 {
     /**
-     * @description 支付账号唯一id
+     * @example 2021070712440326300185114
      *
      * @var string
      */
     public $accountId;
 
     /**
-     * @description 钉钉订单号(和商户批次号一一对应)
+     * @example 20210909153300000002734753314700
      *
      * @var string
      */
     public $orderNo;
 
     /**
-     * @description 公用回传参数，如果请求时传递了该参数，则异步通知商户时会回传该参数
+     * @example map
      *
      * @var mixed[]
      */
     public $passBackParams;
 
     /**
-     * @description 支付终端
+     * @example PC
      *
      * @var string
      */
     public $payTerminal;
 
     /**
-     * @description 回调url
+     * @example http://xx
      *
      * @var string
      */
     public $returnUrl;
 
     /**
-     * @description 支付发起人staffId
+     * @example 8754214873
      *
      * @var string
      */
     public $staffId;
 
     /**
-     * @description 订单总金额（必填）, 单位为：元
+     * @example 10.00
      *
      * @var string
      */
     public $transAmount;
 
     /**
-     * @description 转账过期时间
+     * @example yyyy-MM-dd HH:mm:ss
      *
      * @var string
      */

@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class ListEventsRequest extends Model
 {
     /**
-     * @description 每个日程的参与者查询个数，默认100，最大100
+     * @example 100
      *
      * @var int
      */
     public $maxAttendees;
 
     /**
-     * @description 返回的最大日程数，最大100个，默认100个
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 查询翻页token
-     *
      * @var string
      */
     public $nextToken;
@@ -35,29 +31,21 @@ class ListEventsRequest extends Model
     public $seriesMasterId;
 
     /**
-     * @description 是否返回删除事件
-     *
      * @var bool
      */
     public $showDeleted;
 
     /**
-     * @description 增量查询token
-     *
      * @var string
      */
     public $syncToken;
 
     /**
-     * @description 查询截止时间
-     *
      * @var string
      */
     public $timeMax;
 
     /**
-     * @description 查询开始时间
-     *
      * @var string
      */
     public $timeMin;

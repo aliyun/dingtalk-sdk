@@ -9,43 +9,35 @@ use AlibabaCloud\Tea\Model;
 class TopboxCloseRequest extends Model
 {
     /**
-     * @description 发送的会话类型：单聊-0, 群聊-1
-     *
      * @var int
      */
     public $conversationType;
 
     /**
-     * @description 酷应用编码
-     *
      * @var string
      */
     public $coolAppCode;
 
     /**
-     * @description 接收卡片的群的openConversationId
+     * @example xxxx
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）
+     * @example xxxx
      *
      * @var string
      */
     public $outTrackId;
 
     /**
-     * @description 接收人的员工号列表
-     *
      * @var string[]
      */
     public $receiverUserIdList;
 
     /**
-     * @description 机器人编码
-     *
      * @var string
      */
     public $robotCode;

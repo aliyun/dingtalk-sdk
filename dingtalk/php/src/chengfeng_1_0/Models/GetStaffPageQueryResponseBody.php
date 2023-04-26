@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetStaffPageQueryResponseBody extends Model
 {
     /**
-     * @description 查询数据返回
-     *
      * @var content
      */
     public $content;
 
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $requestId;

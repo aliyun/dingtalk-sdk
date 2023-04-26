@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CloseTopboxResponseBody extends Model
 {
     /**
-     * @description 请求是否成功。
-     *
      * @var bool
      */
     public $success;

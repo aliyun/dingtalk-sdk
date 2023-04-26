@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class DetailUserIdPrivateDataMapValue extends Model
 {
     /**
-     * @description 卡片模板的文本内容参数。
-     *
      * @var mixed[]
      */
     public $cardParamMap;
 
     /**
-     * @description 卡片模板的图片内容参数。
-     *
      * @var mixed[]
      */
     public $cardMediaIdParamMap;

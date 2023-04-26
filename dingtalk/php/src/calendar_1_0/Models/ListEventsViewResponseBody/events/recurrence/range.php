@@ -19,8 +19,6 @@ class range extends Model
     public $numberOfOccurrences;
 
     /**
-     * @description 范围类型(endDate, noEnd, numbered)
-     *
      * @var string
      */
     public $type;

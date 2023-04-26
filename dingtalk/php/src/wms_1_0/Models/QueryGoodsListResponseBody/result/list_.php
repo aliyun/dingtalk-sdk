@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 物料名称
+     * @example 衣服
      *
      * @var string
      */
     public $goodsName;
 
     /**
-     * @description 物料编号
+     * @example 0001
      *
      * @var string
      */
     public $goodsNo;
 
     /**
-     * @description 物料ID
+     * @example abcdse-dse-example
      *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description 规格
+     * @example XXL
      *
      * @var string
      */
     public $productSpecs;
 
     /**
-     * @description 计量单位
+     * @example 件
      *
      * @var string
      */

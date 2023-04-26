@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class agentList extends Model
 {
     /**
-     * @description 对此微应用有管理权限的管理员列表
-     *
      * @var string[]
      */
     public $adminList;
 
     /**
-     * @description 应用id
+     * @example 835880322
      *
      * @var int
      */
     public $agentId;
 
     /**
-     * @description 应用名称
+     * @example 小程序DEMO
      *
      * @var string
      */
     public $agentName;
 
     /**
-     * @description 三方应用id
+     * @example 111
      *
      * @var int
      */

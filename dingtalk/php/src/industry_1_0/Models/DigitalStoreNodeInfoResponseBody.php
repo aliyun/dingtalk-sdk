@@ -9,33 +9,35 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreNodeInfoResponseBody extends Model
 {
     /**
+     * @example 76644111
+     *
      * @var int
      */
     public $dingDeptId;
 
     /**
-     * @description 节点Id
+     * @example 6756433
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 门店名称
+     * @example 华夏之心店
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 上级节点id
+     * @example 873366531
      *
      * @var int
      */
     public $parentId;
 
     /**
-     * @description 节点类型
+     * @example 1
      *
      * @var int
      */

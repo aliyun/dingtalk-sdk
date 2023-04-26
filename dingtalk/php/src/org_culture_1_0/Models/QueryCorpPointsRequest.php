@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryCorpPointsRequest extends Model
 {
     /**
-     * @description 操作用户ID
+     * @example 042216842933
      *
      * @var string
      */

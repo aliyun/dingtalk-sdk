@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class IntentionCategoryStatisticsResponseBody extends Model
 {
     /**
-     * @description 统计明细
-     *
      * @var intentionCategoryRecords[]
      */
     public $intentionCategoryRecords;

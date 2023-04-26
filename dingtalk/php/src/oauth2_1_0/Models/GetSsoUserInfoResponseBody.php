@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class GetSsoUserInfoResponseBody extends Model
 {
     /**
-     * @description 用户头像链接
-     *
      * @var string
      */
     public $avatar;
 
     /**
-     * @description 微应用免登用户所在企业id
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 微应用免登用户所在企业名称
-     *
      * @var string
      */
     public $corpName;
 
     /**
-     * @description 用户邮箱
-     *
      * @var string
      */
     public $email;
 
     /**
-     * @description 是否为企业管理员
-     *
      * @var bool
      */
     public $isAdmin;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 用户名称
-     *
      * @var string
      */
     public $userName;

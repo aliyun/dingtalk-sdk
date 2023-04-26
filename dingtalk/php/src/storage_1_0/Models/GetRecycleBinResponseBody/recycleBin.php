@@ -9,22 +9,22 @@ use AlibabaCloud\Tea\Model;
 class recycleBin extends Model
 {
     /**
-     * @description 回收站id
+     * @example recyclebin_id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 回收站范围类型
-     * SPACE: 空间
+     * @example SPACE
+     *
      * @var string
      */
     public $scope;
 
     /**
-     * @description 回收站范围id
-     * 根据recycleBinScope传入对应的企业、应用、空间ID
+     * @example scope_id
+     *
      * @var string
      */
     public $scopeId;

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class contactInfo extends Model
 {
     /**
-     * @description 联系人姓名
+     * @example 李某某
      *
      * @var string
      */
     public $contactName;
 
     /**
-     * @description 联系人手机号
+     * @example 13900000000
      *
      * @var string
      */

@@ -9,49 +9,47 @@ use AlibabaCloud\Tea\Model;
 class AddLibraryRequest extends Model
 {
     /**
-     * @description 知识库描述
+     * @example 测试库描述
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 团队id列表
-     *
      * @var string[]
      */
     public $openTeamIds;
 
     /**
-     * @description 知识来源
+     * @example CCM
      *
      * @var string
      */
     public $source;
 
     /**
-     * @description 知识库的唯一性标识
+     * @example CCM-123
      *
      * @var string
      */
     public $sourcePrimaryKey;
 
     /**
-     * @description 知识库名称
+     * @example 测试库
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 知识库类型 INTERNAL:内部知识库 EXTERNAL:外部知识库
+     * @example EXTERNAL
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 员工ID
+     * @example manager123
      *
      * @var string
      */

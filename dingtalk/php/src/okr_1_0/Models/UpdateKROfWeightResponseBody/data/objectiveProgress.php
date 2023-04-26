@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class objectiveProgress extends Model
 {
     /**
-     * @description 目标百分比。
+     * @example 0
      *
      * @var int
      */

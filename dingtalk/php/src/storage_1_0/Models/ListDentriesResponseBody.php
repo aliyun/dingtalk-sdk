@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class ListDentriesResponseBody extends Model
 {
     /**
-     * @description 文件列表
-     * 50
      * @var dentries[]
      */
     public $dentries;
 
     /**
-     * @description 分页游标
-     * 不为空表示有更多数据
+     * @example next_token
+     *
      * @var string
      */
     public $nextToken;

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CampusGetRenterMemberRequest extends Model
 {
     /**
-     * @description 租客id
+     * @example 1987215
      *
      * @var int
      */
     public $renterId;
 
     /**
-     * @description 用户ID
+     * @example 1iasndkjas8
      *
      * @var string
      */

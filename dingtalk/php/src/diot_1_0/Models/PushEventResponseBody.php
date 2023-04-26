@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class PushEventResponseBody extends Model
 {
     /**
-     * @description 事件ID。
-     *
      * @var string
      */
     public $eventId;

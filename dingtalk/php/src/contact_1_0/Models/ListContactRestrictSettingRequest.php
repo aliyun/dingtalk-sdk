@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ListContactRestrictSettingRequest extends Model
 {
     /**
-     * @description 最大返回结果数
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页token
-     *
      * @var int
      */
     public $nextToken;

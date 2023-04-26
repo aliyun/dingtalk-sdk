@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class QueryJobsResponseBody extends Model
 {
     /**
-     * @description 是否有更多数据
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 职务列表
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 下次获取数据的起始游标
-     *
      * @var int
      */
     public $nextToken;

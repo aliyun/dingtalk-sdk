@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class ManageSingleChatRobotStatusRequest extends Model
 {
     /**
-     * @description 钉钉开放平台后台机器人的robotCode
+     * @example dingykcdkjnwpcll27gm
      *
      * @var string
      */
     public $robotCode;
 
     /**
-     * @description 机器人的可用状态，enable-启用、disable-停用
+     * @example enable
      *
      * @var string
      */

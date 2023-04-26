@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class ListUncheckUsersRequest extends Model
 {
     /**
-     * @description 条目数
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 开始位置
+     * @example 0
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 起始时间
+     * @example 1652698991669
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 状态
+     * @example 1
      *
      * @var int
      */

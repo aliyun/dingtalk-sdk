@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class MoveDentriesResponseBody extends Model
 {
     /**
-     * @description 批量移动文件(夹)结果列表
-     * 30
      * @var resultItems[]
      */
     public $resultItems;

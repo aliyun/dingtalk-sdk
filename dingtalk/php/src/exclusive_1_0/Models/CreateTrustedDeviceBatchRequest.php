@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class CreateTrustedDeviceBatchRequest extends Model
 {
     /**
-     * @description mac地址列表
-     *
      * @var string[]
      */
     public $macAddressList;
 
     /**
-     * @description 平台
+     * @example Win
      *
      * @var string
      */
     public $platform;
 
     /**
-     * @description 员工id
+     * @example 123
      *
      * @var string
      */

@@ -9,29 +9,27 @@ use AlibabaCloud\Tea\Model;
 class space extends Model
 {
     /**
-     * @description 空间归属企业的id
+     * @example corp_id
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 创建时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 修改时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $modifiedTime;
 
     /**
-     * @description 空间id
-     *
      * @var string
      */
     public $spaceId;

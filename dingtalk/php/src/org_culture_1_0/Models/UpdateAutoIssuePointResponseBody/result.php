@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 下次自动发放时间
+     * @example 1655450856000
      *
      * @var int
      */

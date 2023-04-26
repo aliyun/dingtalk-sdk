@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class BillSettementCarResponseBody extends Model
 {
     /**
-     * @description module
-     *
      * @var module
      */
     public $module;
 
     /**
-     * @description 结果code
-     *
      * @var int
      */
     public $resultCode;
 
     /**
-     * @description 结果msg
-     *
      * @var string
      */
     public $resultMsg;
 
     /**
-     * @description 是否成功
-     *
      * @var bool
      */
     public $success;

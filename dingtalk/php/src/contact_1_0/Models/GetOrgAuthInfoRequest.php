@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetOrgAuthInfoRequest extends Model
 {
     /**
-     * @description 需要获取的企业认证信息的企业corpId
+     * @example dingxxxxxxx
      *
      * @var string
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class linkedData extends Model
 {
     /**
-     * @description 关联对象描述
+     * @example 我是内容
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 关联对象头像url
+     * @example https://abc.com/url
      *
      * @var string
      */
     public $thumbnailUrl;
 
     /**
-     * @description 关联对象标题
+     * @example 我是标题
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 关联对象链接url
+     * @example https://abcd.com/url
      *
      * @var string
      */

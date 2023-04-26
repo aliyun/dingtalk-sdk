@@ -11,29 +11,21 @@ use AlibabaCloud\Tea\Model;
 class recentList extends Model
 {
     /**
-     * @description 是否被删除。
-     *
      * @var bool
      */
     public $deleted;
 
     /**
-     * @description 节点信息。
-     *
      * @var DentryModel
      */
     public $dentry;
 
     /**
-     * @description 如果查询的是访问，那么这里是访问时间；否则就是编辑时间。
-     *
      * @var int
      */
     public $recentTime;
 
     /**
-     * @description 小组信息
-     *
      * @var team
      */
     public $team;

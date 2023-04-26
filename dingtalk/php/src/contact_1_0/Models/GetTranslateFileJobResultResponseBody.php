@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetTranslateFileJobResultResponseBody extends Model
 {
     /**
-     * @description 0 任务进行中 1 任务处理成功 2 任务处理失败
+     * @example 1
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 文件内容转译成功后的url，需要用户通过oauth2授权登录在用户侧打开
+     * @example xxxx
      *
      * @var string
      */

@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class AddSpaceRequest extends Model
 {
     /**
-     * @description 可选参数
-     *
      * @var option
      */
     public $option;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

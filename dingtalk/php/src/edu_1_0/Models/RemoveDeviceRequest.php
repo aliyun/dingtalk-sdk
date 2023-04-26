@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class RemoveDeviceRequest extends Model
 {
     /**
-     * @description 商户id
+     * @example 123
      *
      * @var string
      */
     public $merchantId;
 
     /**
-     * @description 设备sn
+     * @example SN123
      *
      * @var string
      */

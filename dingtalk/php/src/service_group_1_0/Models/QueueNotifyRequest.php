@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class QueueNotifyRequest extends Model
 {
     /**
-     * @description 预计等待时间，单位：分钟
+     * @example 5
      *
      * @var int
      */
     public $estimateWaitMin;
 
     /**
-     * @description 开放团队ID
+     * @example eWaJSqDcLsoiE
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 当前排队次序
+     * @example 11
      *
      * @var int
      */
     public $queuePlace;
 
     /**
-     * @description 会话id
+     * @example 3333333333
      *
      * @var string
      */
     public $serviceToken;
 
     /**
-     * @description 渠道类型
+     * @example SourceTypeEnum
      *
      * @var string
      */
     public $targetChannel;
 
     /**
-     * @description 展示文案
+     * @example 你好，欢迎来到这里
      *
      * @var string
      */
     public $tips;
 
     /**
-     * @description DT端定义的访客token
+     * @example eeeeeeeeerrrrr
      *
      * @var string
      */

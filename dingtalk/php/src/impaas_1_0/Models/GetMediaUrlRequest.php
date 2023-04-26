@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetMediaUrlRequest extends Model
 {
     /**
-     * @description 多媒体id
+     * @example @wesfsdfsfwe
      *
      * @var string
      */
     public $mediaId;
 
     /**
-     * @description 过期时间
+     * @example 86399
      *
      * @var int
      */

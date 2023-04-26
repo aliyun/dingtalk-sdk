@@ -15,8 +15,6 @@ class RegisterAndActivateDeviceResponseBody extends Model
     public $result;
 
     /**
-     * @description Id of the request
-     *
      * @var bool
      */
     public $success;

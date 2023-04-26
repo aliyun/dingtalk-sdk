@@ -9,64 +9,54 @@ use AlibabaCloud\Tea\Model;
 class RedirectTaskRequest extends Model
 {
     /**
-     * @description 应用ID
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 是否应用管理员进行转交; ●
-     * n, userId必须传任务的当前执行人
+     * @example y
+     *
      * @var string
      */
     public $byManager;
 
     /**
-     * @description 语言环境; 可选值：zh_CN/en_US
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 新的任务处理人工号
-     *
      * @var string
      */
     public $nowActionExecutorId;
 
     /**
-     * @description 实例ID
-     *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 转交备注
-     *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 验权token; 在应用数据中获取。
-     *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 任务ID
+     * @example task-123
      *
      * @var int
      */
     public $taskId;
 
     /**
-     * @description 钉钉的userId
-     *
      * @var string
      */
     public $userId;

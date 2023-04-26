@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class CreateObjectiveRequest extends Model
 {
     /**
-     * @description 创建Objective 的内容
+     * @example 我是内容
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 当前周期 ID。
+     * @example 1006
      *
      * @var string
      */
     public $periodId;
 
     /**
-     * @description 上一个 Objective 的位置。
+     * @example 1334543
      *
      * @var string
      */
     public $prevPosition;
 
     /**
-     * @description 当前用户的 userId。
+     * @example 06186238011033616
      *
      * @var string
      */

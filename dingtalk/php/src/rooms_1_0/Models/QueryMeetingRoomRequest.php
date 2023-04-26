@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryMeetingRoomRequest extends Model
 {
     /**
-     * @description 操作人unionId
+     * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string
      */

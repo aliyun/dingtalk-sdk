@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class GetLatestDingIndexResponseBody extends Model
 {
     /**
-     * @description 绿色指数
+     * @example 50
      *
      * @var float
      */
     public $idxCarbon;
 
     /**
-     * @description 效率指数
+     * @example 50
      *
      * @var float
      */
     public $idxEfficiency;
 
     /**
-     * @description 钉钉指数月均分
+     * @example 888
      *
      * @var float
      */
     public $idxMonthlyAvg;
 
     /**
-     * @description 钉钉指数
+     * @example 888
      *
      * @var float
      */
     public $idxTotal;
 
     /**
-     * @description 日期
+     * @example 20210412
      *
      * @var string
      */

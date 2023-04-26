@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class BatchDeleteDeviceResponseBody extends Model
 {
     /**
-     * @description 成功删除设备ID列表。
-     *
      * @var string[]
      */
     public $deviceIds;

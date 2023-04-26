@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class RecallOfficialAccountOTOMessageRequest extends Model
 {
     /**
-     * @description 帐号ID 可空
+     * @example ding123
      *
      * @var string
      */
     public $accountId;
 
     /**
-     * @description 消息推送时返回的ID
+     * @example SWXXX
      *
      * @var string
      */

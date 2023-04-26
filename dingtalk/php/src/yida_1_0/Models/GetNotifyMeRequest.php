@@ -9,84 +9,84 @@ use AlibabaCloud\Tea\Model;
 class GetNotifyMeRequest extends Model
 {
     /**
-     * @description 应用标识列表
+     * @example ["APP_xxx","APP_xxx"]
      *
      * @var string
      */
     public $appTypes;
 
     /**
-     * @description 企业ID
+     * @example 未知
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 抄送到达时间开始
+     * @example 未知
      *
      * @var int
      */
     public $createFromTimeGMT;
 
     /**
-     * @description 抄送到达时间结束
+     * @example 未知
      *
      * @var int
      */
     public $createToTimeGMT;
 
     /**
-     * @description 数据提交时间开始
+     * @example 未知
      *
      * @var int
      */
     public $instanceCreateFromTimeGMT;
 
     /**
-     * @description 数据提交时间结束
+     * @example 未知
      *
      * @var int
      */
     public $instanceCreateToTimeGMT;
 
     /**
-     * @description 表单中组件数据模糊搜
+     * @example 未知
      *
      * @var string
      */
     public $keyword;
 
     /**
-     * @description 语言环境
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 当前页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页记录数
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 流程code列表
+     * @example ["xx","xxx"]
      *
      * @var string
      */
     public $processCodes;
 
     /**
-     * @description 验权token
+     * @example 未知
      *
      * @var string
      */

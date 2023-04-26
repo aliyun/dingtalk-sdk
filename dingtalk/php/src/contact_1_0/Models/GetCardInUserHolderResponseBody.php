@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetCardInUserHolderResponseBody extends Model
 {
     /**
-     * @description 头像
-     *
      * @var string
      */
     public $avatarUrl;
 
     /**
-     * @description 名片收下状态
-     *
      * @var int
      */
     public $cardAcceptStatus;
@@ -28,64 +24,48 @@ class GetCardInUserHolderResponseBody extends Model
     public $cardAcceptTimeLong;
 
     /**
-     * @description 名片ID
-     *
      * @var string
      */
     public $cardId;
 
     /**
-     * @description 名片来源
+     * @example 0
      *
      * @var int
      */
     public $cardSource;
 
     /**
-     * @description 扩展信息
-     *
      * @var mixed[]
      */
     public $extension;
 
     /**
-     * @description 行业
-     *
      * @var string
      */
     public $industryName;
 
     /**
-     * @description 简介
-     *
      * @var string
      */
     public $introduce;
 
     /**
-     * @description 名字
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 组织名称
-     *
      * @var string
      */
     public $orgName;
 
     /**
-     * @description 模板ID
-     *
      * @var string
      */
     public $templateId;
 
     /**
-     * @description 职位
-     *
      * @var string
      */
     public $title;

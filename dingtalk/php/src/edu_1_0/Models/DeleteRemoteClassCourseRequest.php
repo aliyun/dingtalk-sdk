@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteRemoteClassCourseRequest extends Model
 {
     /**
-     * @description 免登码
+     * @example bab02f63c1e030fbbxxxx
      *
      * @var string
      */

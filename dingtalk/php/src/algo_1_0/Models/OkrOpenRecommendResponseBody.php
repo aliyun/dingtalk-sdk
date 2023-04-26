@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class OkrOpenRecommendResponseBody extends Model
 {
     /**
-     * @description okrRecommendItems
-     *
      * @var okrRecommendItems[]
      */
     public $okrRecommendItems;
 
     /**
-     * @description requestId
-     *
      * @var string
      */
     public $requestId;

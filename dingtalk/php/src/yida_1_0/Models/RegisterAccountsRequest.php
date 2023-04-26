@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class RegisterAccountsRequest extends Model
 {
     /**
-     * @description 访问秘钥
+     * @example hexaaaa
      *
      * @var string
      */
     public $accessKey;
 
     /**
-     * @description 激活码
+     * @example acc-1732245789
      *
      * @var string
      */
     public $activeCode;
 
     /**
-     * @description 组织id
+     * @example ding123
      *
      * @var string
      */

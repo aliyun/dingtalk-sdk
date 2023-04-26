@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class MasterDataSaveResponseBody extends Model
 {
     /**
-     * @description 是否全部保存成功
+     * @example true
      *
      * @var bool
      */
     public $allSuccess;
 
     /**
-     * @description 保存失败的结果，全部保存成功时为空
-     *
      * @var failResult[]
      */
     public $failResult;

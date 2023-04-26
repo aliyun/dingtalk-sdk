@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetTemplateByIdRequest extends Model
 {
     /**
-     * @description 模版归属
-     * user_template //个人模板
      * @var string
      */
     public $belong;
 
     /**
-     * @description 操作用户unionId
-     *
      * @var string
      */
     public $operatorId;

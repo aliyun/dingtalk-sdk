@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class sendConfig extends Model
 {
     /**
-     * @description 是否链接追踪
-     *
      * @var bool
      */
     public $needUrlTrack;
 
     /**
-     * @description 执行时间（sendType=TIMING时传入）
-     *
      * @var string
      */
     public $sendTime;
 
     /**
-     * @description 发送类型      * TIMING=定时执行      * INSTANT=立即执行
-     *
      * @var string
      */
     public $sendType;
 
     /**
-     * @description 链接跟踪配置
-     *
      * @var urlTrackConfig[]
      */
     public $urlTrackConfig;

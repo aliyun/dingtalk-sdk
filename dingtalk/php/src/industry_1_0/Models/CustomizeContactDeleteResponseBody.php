@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactDeleteResponseBody extends Model
 {
     /**
-     * @description 是否操作成功
-     *
      * @var bool
      */
     public $content;

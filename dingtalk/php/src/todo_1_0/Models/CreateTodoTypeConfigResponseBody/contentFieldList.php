@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class contentFieldList extends Model
 {
     /**
-     * @description 字段唯一标识
-     *
      * @var string
      */
     public $fieldKey;
 
     /**
-     * @description 字段类型（取值为：text-文本，url-链接）
-     *
      * @var string
      */
     public $fieldType;
 
     /**
-     * @description 字段的显示名称（支持国际化）
-     *
      * @var mixed[]
      */
     public $nameI18n;

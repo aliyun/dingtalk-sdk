@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class recentList extends Model
 {
     /**
-     * @description 文档信息
-     *
      * @var nodeBO
      */
     public $nodeBO;
 
     /**
-     * @description 知识库信息。
-     *
      * @var workspaceBO
      */
     public $workspaceBO;

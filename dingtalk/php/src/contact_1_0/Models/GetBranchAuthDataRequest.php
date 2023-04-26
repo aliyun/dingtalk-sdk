@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class GetBranchAuthDataRequest extends Model
 {
     /**
-     * @description 查询条件
-     *
      * @var string[]
      */
     public $body;
 
     /**
-     * @description 分支组织corpId
+     * @example dinglkj123hj25jk54j2
      *
      * @var string
      */
     public $branchCorpId;
 
     /**
-     * @description 数据编码
+     * @example eduStuCnt
      *
      * @var string
      */

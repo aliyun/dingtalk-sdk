@@ -9,70 +9,70 @@ use AlibabaCloud\Tea\Model;
 class tasks extends Model
 {
     /**
-     * @description 任务节点ID。
+     * @example 111
      *
      * @var string
      */
     public $activityId;
 
     /**
-     * @description 开始时间。
+     * @example 2022-08-31T11:52Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 结束时间。
+     * @example 2022-08-31T11:52Z
      *
      * @var string
      */
     public $finishTime;
 
     /**
-     * @description 移动端任务URL。
+     * @example https://www.xxxx.com
      *
      * @var string
      */
     public $mobileUrl;
 
     /**
-     * @description PC端任务URL。
+     * @example https://www.xxxx.com
      *
      * @var string
      */
     public $pcUrl;
 
     /**
-     * @description 实例ID。
+     * @example 111
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 结果：  AGREE：同意  REFUSE：拒绝  REDIRECTED：转交
+     * @example REDIRECTED
      *
      * @var string
      */
     public $result;
 
     /**
-     * @description 任务状态：  NEW：未启动  RUNNING：处理中  PAUSED：暂停  CANCELED：取消  COMPLETED：完成  TERMINATED：终止
+     * @example NEW
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 任务ID。
+     * @example 111
      *
      * @var int
      */
     public $taskId;
 
     /**
-     * @description 任务处理人。
+     * @example manager1
      *
      * @var string
      */

@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class GetRealPeopleRecordsResponseBody extends Model
 {
     /**
-     * @description data
-     *
      * @var data[]
      */
     public $data;
 
     /**
-     * @description 下一次拉取启始值
+     * @example 1
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 总数据数
+     * @example 20
      *
      * @var int
      */

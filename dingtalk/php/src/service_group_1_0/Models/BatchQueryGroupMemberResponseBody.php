@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class BatchQueryGroupMemberResponseBody extends Model
 {
     /**
-     * @description 是否还存在数据
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下一次游标
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 会话ID
-     *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 成员数据列表
-     *
      * @var records[]
      */
     public $records;

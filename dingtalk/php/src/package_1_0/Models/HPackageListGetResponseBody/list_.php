@@ -9,56 +9,52 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 版本是否可用
+     * @example 1
      *
      * @var int
      */
     public $avaliable;
 
     /**
-     * @description 上传者
-     *
      * @var string
      */
     public $creator;
 
     /**
-     * @description 上传是否已完成
-     *
      * @var bool
      */
     public $finished;
 
     /**
-     * @description 上传时间
+     * @example 1669261911344
      *
      * @var int
      */
     public $operationTime;
 
     /**
-     * @description 离线包大小，单位byte
+     * @example 100
      *
      * @var int
      */
     public $packageSize;
 
     /**
-     * @description 版本状态
+     * @example 1
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 上传任务ID
+     * @example 00000000Azksf
      *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description 版本号
+     * @example 0.0.1
      *
      * @var string
      */

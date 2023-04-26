@@ -9,203 +9,203 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureMesOutputRequest extends Model
 {
     /**
-     * @description 本次操作的行为
+     * @example add
      *
      * @var string
      */
     public $action;
 
     /**
-     * @description 生态唯一标识, 需要注册
+     * @example opsoft
      *
      * @var string
      */
     public $appKey;
 
     /**
-     * @description 审批状态
+     * @example AGREE
      *
      * @var string
      */
     public $approveStatus;
 
     /**
-     * @description 主数据名称
+     * @example output
      *
      * @var string
      */
     public $baseDataName;
 
     /**
-     * @description 不良品总数(多次报工)
+     * @example 3
      *
      * @var string
      */
     public $defectsAmount;
 
     /**
-     * @description 不良品原因
+     * @example [{"count":10,"reason":"工废"},{"count":20,"reason":"料废"}]
      *
      * @var string
      */
     public $defectsReason;
 
     /**
-     * @description 良品总数(多次报工)
+     * @example 20
      *
      * @var string
      */
     public $fineAmount;
 
     /**
-     * @description 是否已质检
+     * @example y
      *
      * @var string
      */
     public $hasQualityTest;
 
     /**
-     * @description 任务逾期
+     * @example 1
      *
      * @var int
      */
     public $overdue;
 
     /**
-     * @description 派工(总)数
+     * @example 321
      *
      * @var int
      */
     public $planQuantity;
 
     /**
-     * @description 是否加急
+     * @example 1
      *
      * @var int
      */
     public $priority;
 
     /**
-     * @description 工序名称
+     * @example 打磨
      *
      * @var string
      */
     public $processName;
 
     /**
-     * @description 工序业务唯一标识
+     * @example fsdfs3fsd2234wds
      *
      * @var string
      */
     public $processUuid;
 
     /**
-     * @description 产品编号(物料编号)
+     * @example dingfsdfs3fsd2234wds
      *
      * @var string
      */
     public $productCode;
 
     /**
-     * @description 产品名称
+     * @example 毛坯KM50二级盖
      *
      * @var string
      */
     public $productName;
 
     /**
-     * @description 产品(物料)规格
+     * @example 20*20*3
      *
      * @var string
      */
     public $productSpecification;
 
     /**
-     * @description 工单编号(生产任务单)
+     * @example dingfsdfs3fsd2234wds
      *
      * @var string
      */
     public $projectCode;
 
     /**
-     * @description 工单(生产计划单)
+     * @example 0220423001
      *
      * @var string
      */
     public $projectId;
 
     /**
-     * @description 工单状态
+     * @example WORKING
      *
      * @var string
      */
     public $projectStatus;
 
     /**
-     * @description 检验状态
+     * @example VERIFIED
      *
      * @var string
      */
     public $qualityTestStatus;
 
     /**
-     * @description 任务计划结束(完成)时间
+     * @example 2021-03-12 23:59:59
      *
      * @var string
      */
     public $taskPlanEndTime;
 
     /**
-     * @description 任务计划开始时间
+     * @example 2021-03-12 23:59:59
      *
      * @var string
      */
     public $taskPlanStartTime;
 
     /**
-     * @description 派工任务状态
+     * @example WORKING
      *
      * @var string
      */
     public $taskStatus;
 
     /**
-     * @description 报工类型(正常,委外)
+     * @example NORMAL
      *
      * @var string
      */
     public $taskType;
 
     /**
-     * @description 派工任务唯一标识
+     * @example C1E213-86B2-706B-9615-5B957DF8C15D
      *
      * @var string
      */
     public $taskUuid;
 
     /**
-     * @description 负责班组id
+     * @example dfsdfs3fsd2234wds
      *
      * @var string
      */
     public $teamId;
 
     /**
-     * @description 报工人staffNo(生产人员)
+     * @example 170000000332
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 派工人名称
+     * @example 张三
      *
      * @var string
      */
     public $userName;
 
     /**
-     * @description 本次记录唯一标识
+     * @example fsdfs3fsd2234wds
      *
      * @var string
      */

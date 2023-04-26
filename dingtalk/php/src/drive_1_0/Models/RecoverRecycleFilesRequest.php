@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class RecoverRecycleFilesRequest extends Model
 {
     /**
-     * @description 回收站item id列表
-     *
      * @var int[]
      */
     public $recycleItemIdList;
 
     /**
-     * @description 回收站类型
-     *
      * @var string
      */
     public $recycleType;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

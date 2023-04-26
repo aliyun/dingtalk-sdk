@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class PageQueryDevicesResponseBody extends Model
 {
     /**
-     * @description 当前页的记录列表
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 下一个页码
+     * @example 2
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 总记录数
+     * @example 1300
      *
      * @var int
      */

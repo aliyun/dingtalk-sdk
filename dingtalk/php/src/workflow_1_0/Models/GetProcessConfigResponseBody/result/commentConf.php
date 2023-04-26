@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class commentConf extends Model
 {
     /**
-     * @description 提示内容
+     * @example 评论描述
      *
      * @var string
      */
     public $commentDescription;
 
     /**
-     * @description 评论对发起人不可见
-     *
      * @var bool
      */
     public $commentHiddenForProposer;
 
     /**
-     * @description 评论必填
-     *
      * @var bool
      */
     public $commentRequired;

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryHospitalDistrictInfoRequest extends Model
 {
     /**
-     * @description 分页查询页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页查询分页大小
+     * @example 100
      *
      * @var int
      */

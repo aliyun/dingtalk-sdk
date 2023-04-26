@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ReplyRobotRequest extends Model
 {
     /**
-     * @description 回复消息内容的json string
+     * @example {"bizParamMap":{"proxySessionId":"DINGTALK_RYnVfayNAe_4000006001201145"},"msgType":"text","text":"测试回复机器人消息"}
      *
      * @var string
      */

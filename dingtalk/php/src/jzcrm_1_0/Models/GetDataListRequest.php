@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetDataListRequest extends Model
 {
     /**
-     * @description 数据类型，参考数据类型ID对照表
+     * @example 150
      *
      * @var string
      */
     public $datatype;
 
     /**
-     * @description 页码
+     * @example 1
      *
      * @var int
      */
     public $page;
 
     /**
-     * @description 分页条数
+     * @example 10
      *
      * @var int
      */

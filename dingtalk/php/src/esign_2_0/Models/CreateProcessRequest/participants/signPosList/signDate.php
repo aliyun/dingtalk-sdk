@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class signDate extends Model
 {
     /**
-     * @description 签署区时间格式， 支持yyyy/MM/dd, yyyy-MM-dd, yyyy年MM月dd日
-     *
      * @var string
      */
     public $format;

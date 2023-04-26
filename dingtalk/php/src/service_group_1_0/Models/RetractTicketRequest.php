@@ -16,20 +16,20 @@ class RetractTicketRequest extends Model
     public $notify;
 
     /**
+     * @example eKWh3GBwsKEiE
+     *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 工单开放ID
+     * @example a8iS4X94TgtgiE
      *
      * @var string
      */
     public $openTicketId;
 
     /**
-     * @description 操作人ID
-     *
      * @var string
      */
     public $operatorUnionId;

@@ -9,91 +9,91 @@ use AlibabaCloud\Tea\Model;
 class SearchFormDataSecondGenerationRequest extends Model
 {
     /**
-     * @description 宜搭应用编码
+     * @example APP_XCE0EVXS6DYG3YDYC5RD
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 创建时间起始值
+     * @example 2021-05-01
      *
      * @var string
      */
     public $createFromTimeGMT;
 
     /**
-     * @description 创建时间终止值
+     * @example 2021-05-01
      *
      * @var string
      */
     public $createToTimeGMT;
 
     /**
-     * @description 表单编码
+     * @example FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 修改时间起始值
+     * @example 2021-05-01
      *
      * @var string
      */
     public $modifiedFromTimeGMT;
 
     /**
-     * @description 修改时间终止值
+     * @example 2021-09-10
      *
      * @var string
      */
     public $modifiedToTimeGMT;
 
     /**
-     * @description 排序规则
+     * @example 例如按照创建时间升序按照文本组件值升序排序则填{\"gmt_create\":\"+\",\"textField_1234\":\"+\"}。详情参考 https://www.yuque.com/yida/support/agb8im#CQro8
      *
      * @var string
      */
     public $orderConfigJson;
 
     /**
-     * @description 表单提交人的钉钉userId
+     * @example manager123
      *
      * @var string
      */
     public $originatorId;
 
     /**
-     * @description 当前第几页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 100
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 用于检索表单实例数据的检索条件
+     * @example [{"key":"currentNodeName","value":"当前审批节点名称","type":"TEXT","operator":"like","componentName":"TextField"}]。详情参考 https://www.yuque.com/yida/support/agb8im#F4S8e
      *
      * @var string
      */
     public $searchCondition;
 
     /**
-     * @description 宜搭应用秘钥
+     * @example 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉userId
+     * @example ding173982232112232
      *
      * @var string
      */

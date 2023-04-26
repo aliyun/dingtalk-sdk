@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class contacts extends Model
 {
     /**
-     * @description 联系人表单数据
-     *
      * @var mixed[]
      */
     public $data;
 
     /**
-     * @description 联系人扩展数据
-     *
      * @var mixed[]
      */
     public $extendData;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class itemList extends Model
 {
     /**
-     * @description 部门名称
+     * @example 财务部
      *
      * @var int
      */
     public $deptName;
 
     /**
-     * @description 员工名称
+     * @example 小张
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 工号
+     * @example 123***
      *
      * @var string
      */

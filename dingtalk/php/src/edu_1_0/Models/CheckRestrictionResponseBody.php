@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CheckRestrictionResponseBody extends Model
 {
     /**
-     * @description 返回结果
+     * @example true
      *
      * @var bool
      */

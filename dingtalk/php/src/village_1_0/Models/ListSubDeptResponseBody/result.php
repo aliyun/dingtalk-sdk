@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 下属组织的部门ID
-     *
      * @var int
      */
     public $departmentId;
 
     /**
-     * @description 部门名称
-     *
      * @var string
      */
     public $name;

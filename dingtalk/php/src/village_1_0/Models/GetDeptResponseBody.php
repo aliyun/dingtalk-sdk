@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class GetDeptResponseBody extends Model
 {
     /**
-     * @description 下属组织的部门ID
-     *
      * @var int
      */
     public $departmentId;
 
     /**
-     * @description 部门名称
-     *
      * @var string
      */
     public $departmentName;
 
     /**
-     * @description 部门是否来自关联组织
-     *
      * @var bool
      */
     public $fromUnionOrg;
 
     /**
-     * @description 在父部门中的次序值
-     *
      * @var int
      */
     public $order;
 
     /**
-     * @description 父部门id
-     *
      * @var int
      */
     public $parentDepartmentId;

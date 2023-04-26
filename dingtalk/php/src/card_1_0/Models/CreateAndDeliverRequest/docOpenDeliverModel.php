@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class docOpenDeliverModel extends Model
 {
     /**
-     * @description 【必填】员工id
+     * @example xxx_biz_tag
      *
      * @var string
      */

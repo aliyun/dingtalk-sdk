@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateReceiptResponseBody extends Model
 {
     /**
-     * @description 结果列表
-     *
      * @var results[]
      */
     public $results;

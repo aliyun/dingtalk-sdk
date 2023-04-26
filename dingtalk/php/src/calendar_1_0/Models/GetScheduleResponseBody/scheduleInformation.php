@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class scheduleInformation extends Model
 {
     /**
-     * @description 异常描述
-     *
      * @var string
      */
     public $error;
@@ -22,8 +20,6 @@ class scheduleInformation extends Model
     public $scheduleItems;
 
     /**
-     * @description 用户userId
-     *
      * @var string
      */
     public $userId;

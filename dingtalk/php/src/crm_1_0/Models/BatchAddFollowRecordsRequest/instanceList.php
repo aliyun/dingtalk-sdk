@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class instanceList extends Model
 {
     /**
-     * @description 关系模型数据。
-     *
      * @var dataArray[]
      */
     public $dataArray;

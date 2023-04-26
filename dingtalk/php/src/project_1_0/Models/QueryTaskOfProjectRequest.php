@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryTaskOfProjectRequest extends Model
 {
     /**
-     * @description 每页返回最大数量。默认10，最大500。
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 供分页使用，下一页token，从当前页结果中获取。
+     * @example f279e812-e431-428d-846d-cxxxxxx
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 查询条件。如：“content ~ 标题1” 表示查询任务标题包含“标题1”的任务；“executor=05178xxxxx” 表示执行者是05178xxxx的任务；”involveMembers NOT IN["061xx","06112xx"] AND executorId=0673xxx AND content~标题2“ 表示查询参与者不是”061xx“和”06112xx“ 并且 执行者是0673xxx 并且 标题类似 ”标题2“的所有任务。
+     * @example involveMembers NOT IN ["0612xx"] AND executorId="057xxx" AND content~标题2
      *
      * @var string
      */

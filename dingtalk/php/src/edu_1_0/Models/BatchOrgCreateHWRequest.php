@@ -10,134 +10,98 @@ use AlibabaCloud\Tea\Model;
 class BatchOrgCreateHWRequest extends Model
 {
     /**
-     * @description 扩展属性
-     *
      * @var string
      */
     public $attributes;
 
     /**
-     * @description 业务编码
-     *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 作业课程名称
-     *
      * @var string
      */
     public $courseName;
 
     /**
-     * @description 作业内容
-     *
      * @var string
      */
     public $hwContent;
 
     /**
-     * @description 截止时间
-     *
      * @var int
      */
     public $hwDeadline;
 
     /**
-     * @description 截止时间开启
+     * @example Y
      *
      * @var string
      */
     public $hwDeadlineOpen;
 
     /**
-     * @description 作业视频
-     *
      * @var string
      */
     public $hwMedia;
 
     /**
-     * @description 作业图片
-     *
      * @var string
      */
     public $hwPhoto;
 
     /**
-     * @description 作业标题
-     *
      * @var string
      */
     public $hwTitle;
 
     /**
-     * @description 作业类型
-     *
      * @var string
      */
     public $hwType;
 
     /**
-     * @description 作业音视频
-     *
      * @var string
      */
     public $hwVideo;
 
     /**
-     * @description 幂等ID字段
-     *
      * @var string
      */
     public $identifier;
 
     /**
-     * @description 选择跨组织班级
-     *
      * @var openSelectItemList[]
      */
     public $openSelectItemList;
 
     /**
-     * @description 定时调度
-     *
      * @var string
      */
     public $scheduledRelease;
 
     /**
-     * @description 定时调度时间
-     *
      * @var string
      */
     public $scheduledTime;
 
     /**
-     * @description 状态
-     *
      * @var string
      */
     public $status;
 
     /**
-     * @description 发送对象
-     *
      * @var string
      */
     public $targetRole;
 
     /**
-     * @description 老师名称
-     *
      * @var string
      */
     public $teacherName;
 
     /**
-     * @description 老师userid
-     *
      * @var string
      */
     public $teacherUserId;

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class RegisterAccountsResponseBody extends Model
 {
     /**
-     * @description 实例id
+     * @example 12
      *
      * @var string
      */

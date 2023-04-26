@@ -10,84 +10,80 @@ use AlibabaCloud\Tea\Model;
 class values extends Model
 {
     /**
-     * @description 应用搭建id
+     * @example SWAPP-abcd-example
      *
      * @var string
      */
     public $appUuid;
 
     /**
-     * @description 扩展信息
-     *
      * @var mixed[]
      */
     public $attributes;
 
     /**
-     * @description 创建时间
+     * @example 1635151039000
      *
      * @var int
      */
     public $createTimestamp;
 
     /**
-     * @description 创建人
+     * @example 30314512
      *
      * @var string
      */
     public $creator;
 
     /**
-     * @description 表单模板code
+     * @example PROC-abcd-example
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 表单实例数据
-     *
      * @var formInstDataList[]
      */
     public $formInstDataList;
 
     /**
-     * @description 表单实例id
+     * @example abcd-eaf-acde12f
      *
      * @var string
      */
     public $formInstanceId;
 
     /**
-     * @description 修改人
+     * @example 032142312
      *
      * @var string
      */
     public $modifier;
 
     /**
-     * @description 修改时间
+     * @example 1635151039000
      *
      * @var int
      */
     public $modifyTimestamp;
 
     /**
-     * @description 外部业务编码
+     * @example abcd
      *
      * @var string
      */
     public $outBizCode;
 
     /**
-     * @description 外部实例编码
+     * @example 323
      *
      * @var string
      */
     public $outInstanceId;
 
     /**
-     * @description 标题
+     * @example xxx提交的数据
      *
      * @var string
      */

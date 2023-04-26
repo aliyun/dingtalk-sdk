@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class ListObjectiveByUserRequest extends Model
 {
     /**
-     * @description 页数
-     *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 页大小
-     *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 钉钉userId
-     *
      * @var string
      */
     public $userId;

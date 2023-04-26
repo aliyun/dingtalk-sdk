@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class SubscribeEventRequest extends Model
 {
     /**
-     * @description 订阅范围
-     * SPACE: 空间
+     * @example SPACE
+     *
      * @var string
      */
     public $scope;
 
     /**
-     * @description 订阅范围对应的id
-     * SPACE: 空间
+     * @example scope_id
+     *
      * @var string
      */
     public $scopeId;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

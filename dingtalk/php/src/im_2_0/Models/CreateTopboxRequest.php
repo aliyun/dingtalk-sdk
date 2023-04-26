@@ -11,127 +11,115 @@ use AlibabaCloud\Tea\Model;
 class CreateTopboxRequest extends Model
 {
     /**
-     * @description 可控制卡片回调时的路由Key，用于指定特定的callbackUrl。
+     * @example abcxxx
      *
      * @var string
      */
     public $callbackRouteKey;
 
     /**
-     * @description 卡片数据。
-     *
      * @var cardData
      */
     public $cardData;
 
     /**
-     * @description 卡片设置项。
-     *
      * @var cardSettings
      */
     public $cardSettings;
 
     /**
-     * @description 互动卡片的消息模板ID
+     * @example 56xxx-xxx
      *
      * @var string
      */
     public $cardTemplateId;
 
     /**
-     * @description 会话类型。
+     * @example 1
      *
      * @var int
      */
     public $conversationType;
 
     /**
-     * @description 酷应用编码。
+     * @example COOLAPP-x-xxx
      *
      * @var string
      */
     public $coolAppCode;
 
     /**
-     * @description 吊顶的过期时间，绝对时间。
+     * @example 1850042969000
      *
      * @var int
      */
     public $expiredTime;
 
     /**
-     * @description 群模板id。
+     * @example xxx-xxx-xxx
      *
      * @var string
      */
     public $groupTemplateId;
 
     /**
-     * @description 会话id。
+     * @example cidxxxxx==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 唯一标识一张卡片的外部ID。
+     * @example 123xxx
      *
      * @var string
      */
     public $outTrackId;
 
     /**
-     * @description 期望吊顶的端，如果有多个用“｜”分隔。 例如：ios|mac|android|win表示iOS、MAC、安卓和windows端。
+     * @example ios|win
      *
      * @var string
      */
     public $platforms;
 
     /**
-     * @description 吊顶可见者unionId，最多可传100个unionId。
-     *
      * @var string[]
      */
     public $receiverUnionIdList;
 
     /**
-     * @description 吊顶可见者userId，最多可传100个userId。
-     *
      * @var string[]
      */
     public $receiverUserIdList;
 
     /**
-     * @description 单聊助手会话，机器人编码。
+     * @example dingxxx
      *
      * @var string
      */
     public $robotCode;
 
     /**
-     * @description 卡片模板unionId差异用户参数。
-     *
      * @var UnionIdPrivateDataMapValue[]
      */
     public $unionIdPrivateDataMap;
 
     /**
-     * @description 单聊助手会话，用户unionId。
+     * @example jHsR7xxx
      *
      * @var string
      */
     public $unoinId;
 
     /**
-     * @description 单聊助手会话，用户userId。
+     * @example 011xxx
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 卡片模板userId差异用户参数。
-     *
      * @var UserIdPrivateDataMapValue[]
      */
     public $userIdPrivateDataMap;

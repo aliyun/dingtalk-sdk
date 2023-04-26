@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class SendCardResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var string
      */
     public $result;
 
     /**
-     * @description success
-     *
      * @var bool
      */
     public $success;

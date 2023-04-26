@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class body extends Model
 {
     /**
-     * @description 工时所属日期
+     * @example 2022-09-05T00:00:00.000Z
      *
      * @var string
      */
     public $date;
 
     /**
-     * @description 工时关联的数据 ID
+     * @example 63186e54e07f18003fea6b90
      *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description 实际工时
+     * @example 3600000
      *
      * @var int
      */

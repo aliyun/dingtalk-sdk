@@ -9,29 +9,27 @@ use AlibabaCloud\Tea\Model;
 class groupInfoList extends Model
 {
     /**
-     * @description 禁言模式
+     * @example 0
      *
      * @var int
      */
     public $banWordsMode;
 
     /**
-     * @description 群容量
+     * @example 1000
      *
      * @var int
      */
     public $capacity;
 
     /**
-     * @description 群创建时间
+     * @example 1652183395772
      *
      * @var int
      */
     public $createdAt;
 
     /**
-     * @description 扩展信息
-     *
      * @var mixed[]
      */
     public $extInfo;
@@ -42,35 +40,35 @@ class groupInfoList extends Model
     public $groupAdminList;
 
     /**
-     * @description 群主userid
+     * @example 574892167781263748
      *
      * @var string
      */
     public $groupOwner;
 
     /**
-     * @description 群标题
+     * @example 今天吃肘子群
      *
      * @var string
      */
     public $groupTitle;
 
     /**
-     * @description 当前群人数
+     * @example 500
      *
      * @var int
      */
     public $memberCount;
 
     /**
-     * @description 开放的群id
+     * @example cidnvcxzklxv23jhkg412hj==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 群类型
+     * @example INNER
      *
      * @var string
      */

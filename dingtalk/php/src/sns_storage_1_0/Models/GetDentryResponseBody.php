@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetDentryResponseBody extends Model
 {
     /**
-     * @description 文件(夹)信息
-     *
      * @var dentry
      */
     public $dentry;

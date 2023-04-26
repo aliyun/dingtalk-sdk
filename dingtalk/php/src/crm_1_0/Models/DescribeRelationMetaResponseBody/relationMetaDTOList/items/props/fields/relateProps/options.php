@@ -15,15 +15,11 @@ class options extends Model
     public $extension;
 
     /**
-     * @description 选项数据主键
-     *
      * @var string
      */
     public $key;
 
     /**
-     * @description 选项显示内容
-     *
      * @var string
      */
     public $value;

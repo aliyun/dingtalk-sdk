@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 企业员工可用于兑换积分总额
+     * @example 1000
      *
      * @var int
      */

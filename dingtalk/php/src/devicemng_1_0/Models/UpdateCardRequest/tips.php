@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class tips extends Model
 {
     /**
-     * @description 系统通知的群组
-     *
      * @var string
      */
     public $cids;
 
     /**
-     * @description 系统通知内容
-     *
      * @var string
      */
     public $content;
 
     /**
-     * @description 发送人
-     *
      * @var string
      */
     public $sender;

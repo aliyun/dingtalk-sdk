@@ -10,35 +10,33 @@ use AlibabaCloud\Tea\Model;
 class LinkSourceInfo extends Model
 {
     /**
-     * @description 快捷方式关联的源文件后缀。
+     * @example docx
      *
      * @var string
      */
     public $extension;
 
     /**
-     * @description 非通用快捷方式的图标信息。
-     *
      * @var iconUrl
      */
     public $iconUrl;
 
     /**
-     * @description 快捷方式关联的源文件ID（空间内唯一）。
+     * @example abc
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 快捷方式类型。0-通用快捷方式；1-闪会快捷方式；2-日志快捷方式；3-闪会2.0快捷方式。
+     * @example 0
      *
      * @var int
      */
     public $linkType;
 
     /**
-     * @description 快捷方式关联的源文件所属空间id。
+     * @example def
      *
      * @var string
      */

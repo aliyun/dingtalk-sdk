@@ -11,105 +11,101 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 创建时间
+     * @example 2021-05-01
      *
      * @var string
      */
     public $createTimeGMT;
 
     /**
-     * @description 创建者的userId
+     * @example ding12345
      *
      * @var string
      */
     public $creatorUserId;
 
     /**
-     * @description 表单实例数据。结构说明参考  https://www.yuque.com/yida/support/agb8im#jksEx
+     * @example {"countrySelectField_l0c1cwiu":[{"value":"US"}]}
      *
      * @var mixed[]
      */
     public $formData;
 
     /**
-     * @description 表单实例id
+     * @example FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24
      *
      * @var string
      */
     public $formInstanceId;
 
     /**
-     * @description 表单编码
+     * @example FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 数据库表记录的主键id
+     * @example 12345
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 实例数据
+     * @example 符合宜搭表单实例格式的json数据
      *
      * @var string
      */
     public $instanceValue;
 
     /**
-     * @description 修改时间
+     * @example 2021-05-01
      *
      * @var string
      */
     public $modifiedTimeGMT;
 
     /**
-     * @description 修改者的钉钉userId
+     * @example manager123
      *
      * @var string
      */
     public $modifier;
 
     /**
-     * @description 修改者
-     *
      * @var modifyUser
      */
     public $modifyUser;
 
     /**
-     * @description 发起人
-     *
      * @var originator
      */
     public $originator;
 
     /**
-     * @description 一次批量导入对应的批次号
+     * @example IMPORT-388664B1BAUVB3AYZE1RIUE88TDM1QI9WIOWK2
      *
      * @var string
      */
     public $sequence;
 
     /**
-     * @description 流水号
+     * @example YIDA909202202250027
      *
      * @var string
      */
     public $serialNumber;
 
     /**
-     * @description 标题
+     * @example 李四发起的请购单
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 该实例对应的表单schema版本
+     * @example 1.0
      *
      * @var int
      */

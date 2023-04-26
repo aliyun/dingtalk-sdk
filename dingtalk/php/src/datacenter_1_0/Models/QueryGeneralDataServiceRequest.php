@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class QueryGeneralDataServiceRequest extends Model
 {
     /**
-     * @description 部门ID
+     * @example 123
      *
      * @var string
      */
     public $deptId;
 
     /**
-     * @description 结束日期
+     * @example 20220803
      *
      * @var string
      */
     public $endDate;
 
     /**
-     * @description 分页页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页大小
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 服务编码
+     * @example API-7fa754fd-f53e-46ee-9b77-898aa6eb590c
      *
      * @var string
      */
     public $serviceId;
 
     /**
-     * @description statDate
+     * @example 20220801
      *
      * @var string
      */
     public $startDate;
 
     /**
-     * @description 员工ID
+     * @example 0234412313
      *
      * @var string
      */

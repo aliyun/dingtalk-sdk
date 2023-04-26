@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class CloseTopboxRequest extends Model
 {
     /**
-     * @description 会话类型。
+     * @example 1
      *
      * @var int
      */
     public $conversationType;
 
     /**
-     * @description 酷应用编码。
+     * @example COOLAPP-x-xxx
      *
      * @var string
      */
     public $coolAppCode;
 
     /**
-     * @description 群模板id。
+     * @example 6dx-xxx-xxx
      *
      * @var string
      */
     public $groupTemplateId;
 
     /**
-     * @description 会话id。
+     * @example cidxxxxx==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 唯一标识一张卡片的外部ID。
+     * @example 123xxx
      *
      * @var string
      */
     public $outTrackId;
 
     /**
-     * @description 单聊助手会话，机器人编码。
+     * @example dingxxx
      *
      * @var string
      */
     public $robotCode;
 
     /**
-     * @description 单聊助手会话，用户unionId。
+     * @example jHsR7xxx
      *
      * @var string
      */
     public $unoinId;
 
     /**
-     * @description 单聊助手会话，用户userId。
+     * @example 011xxx
      *
      * @var string
      */

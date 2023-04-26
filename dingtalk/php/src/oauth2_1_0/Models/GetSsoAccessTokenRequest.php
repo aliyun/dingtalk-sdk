@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetSsoAccessTokenRequest extends Model
 {
     /**
-     * @description 企业id
+     * @example corpxxxx
      *
      * @var string
      */
     public $corpid;
 
     /**
-     * @description sso密码
+     * @example xxxx
      *
      * @var string
      */

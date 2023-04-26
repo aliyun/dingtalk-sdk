@@ -15,247 +15,225 @@ use AlibabaCloud\Tea\Model;
 class GroupAddRequest extends Model
 {
     /**
-     * @description 补卡规则settingId。
+     * @example 123L
      *
      * @var int
      */
     public $adjustmentSettingId;
 
     /**
-     * @description 蓝牙打卡相关配置信息。
-     *
      * @var bleDeviceList[]
      */
     public $bleDeviceList;
 
     /**
-     * @description 打卡是否需要健康码：
+     * @example true
      *
-     * false：关闭（默认值）
      * @var bool
      */
     public $checkNeedHealthyCode;
 
     /**
-     * @description 默认班次ID。
+     * @example 1234
      *
-     * 说明 固定班制必填，可通过获取班次摘要信息接口获取
      * @var int
      */
     public $defaultClassId;
 
     /**
-     * @description 休息日打卡是否需审批：
+     * @example true
      *
-     * false：不需要
      * @var bool
      */
     public $disableCheckWhenRest;
 
     /**
-     * @description 未排班时是否禁止员工打卡。
+     * @example true
      *
      * @var bool
      */
     public $disableCheckWithoutSchedule;
 
     /**
-     * @description 是否开启拍照打卡。
+     * @example true
      *
-     * false：关闭（默认值）
      * @var bool
      */
     public $enableCameraCheck;
 
     /**
-     * @description 未排班时是否允许员工选择班次打卡。
+     * @example true
      *
      * @var bool
      */
     public $enableEmpSelectClass;
 
     /**
-     * @description 是否开启人脸检测。
+     * @example true
      *
-     * false：关闭（默认值）
      * @var bool
      */
     public $enableFaceCheck;
 
     /**
-     * @description 是否开启真人验证。
+     * @example true
      *
      * @var bool
      */
     public $enableFaceStrictMode;
 
     /**
-     * @description 是否第二天生效。
-     * false：否
+     * @example true
+     *
      * @var bool
      */
     public $enableNextDay;
 
     /**
-     * @description 是否允许外勤卡更新内勤卡。
+     * @example true
      *
      * @var bool
      */
     public $enableOutSideUpdateNormalCheck;
 
     /**
-     * @description 外勤打卡是否需要审批。
+     * @example true
      *
      * @var bool
      */
     public $enableOutsideApply;
 
     /**
-     * @description 是否开启外勤打卡必须拍照。
+     * @example true
      *
-     * false：关闭（默认值）
      * @var bool
      */
     public $enableOutsideCameraCheck;
 
     /**
-     * @description 是否可以外勤打卡。
+     * @example true
      *
-     * false：不允许
      * @var bool
      */
     public $enableOutsideCheck;
 
     /**
-     * @description 外勤打卡是否需要拍照备注。
+     * @example true
      *
      * @var bool
      */
     public $enableOutsideRemark;
 
     /**
-     * @description 是否启用蓝牙定位。
+     * @example true
      *
      * @var bool
      */
     public $enablePositionBle;
 
     /**
-     * @description 是否允许地点微调距离。
-     *
      * @var bool
      */
     public $enableTrimDistance;
 
     /**
-     * @description 是否禁止员工隐藏详细地址。
+     * @example true
      *
      * @var bool
      */
     public $forbidHideOutSideAddress;
 
     /**
-     * @description 休息日打卡规则。
-     *
      * @var freeCheckSetting
      */
     public $freeCheckSetting;
 
     /**
-     * @description 休息日打卡方式。
-     * 1标准打卡模式
+     * @example 0
+     *
      * @var int
      */
     public $freeCheckTypeId;
 
     /**
-     * @description 自由工时考勤组考勤开始时间与当天0点偏移分钟数。
+     * @example 240
      *
-     * 例如：540表示9:00
      * @var int
      */
     public $freecheckDayStartMinOffset;
 
     /**
-     * @description 自由工时考勤组工作日。
-     * 数组内的值，从左到右依次代表周日到周六，每日的排班情况。
      * @var int[]
      */
     public $freecheckWorkDays;
 
     /**
-     * @description 考勤组ID。
+     * @example 123
      *
      * @var int
      */
     public $groupId;
 
     /**
-     * @description 考勤组名。
+     * @example 白班考勤
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 考勤组子管理员userid列表。
-     *
      * @var string[]
      */
     public $managerList;
 
     /**
-     * @description 考勤组成员相关设置信息。
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 是否有修改考勤组成员相关信息。
+     * @example true
      *
      * @var bool
      */
     public $modifyMember;
 
     /**
-     * @description 考勤范围。
+     * @example 500
      *
      * @var int
      */
     public $offset;
 
     /**
-     * @description 是否开启人脸打卡。
+     * @example true
      *
      * @var bool
      */
     public $openFaceCheck;
 
     /**
-     * @description 外勤打卡审批模式-1无需审批，0先审批后打卡是1先打卡后审批
+     * @example -1
      *
      * @var int
      */
     public $outsideCheckApproveModeId;
 
     /**
-     * @description 加班规则settingId。
+     * @example 123L
      *
      * @var int
      */
     public $overtimeSettingId;
 
     /**
-     * @description 考勤组负责人。
+     * @example 123dfdf
      *
      * @var string
      */
     public $owner;
 
     /**
-     * @description 考勤地点相关设置信息。
-     *
      * @var positions[]
      */
     public $positions;
@@ -266,58 +244,50 @@ class GroupAddRequest extends Model
     public $resourcePermissionMap;
 
     /**
-     * @description 班次相关配置信息。
-     *
      * @var shiftVOList[]
      */
     public $shiftVOList;
 
     /**
-     * @description 是否跳过节假日。
+     * @example true
      *
-     * false：不跳过
      * @var bool
      */
     public $skipHolidays;
 
     /**
-     * @description 特殊日期配置。
+     * @example {"onDuty":{1400000:123,1400001:123},"offDuty":[1400000,1400001]}
      *
      * @var string
      */
     public $specialDays;
 
     /**
-     * @description 地点微调范围（单位米）。
+     * @example 100
      *
      * @var int
      */
     public $trimDistance;
 
     /**
-     * @description 考勤组类型：
+     * @example TURN
      *
-     * NONE：自由工时考勤组
      * @var string
      */
     public $type;
 
     /**
-     * @description 考勤wifi打卡相关配置信息。
-     *
      * @var wifis[]
      */
     public $wifis;
 
     /**
-     * @description 周班次列表。
-     * 数组内的值，从左到右依次代表周日到周六，每日的排班情况。
      * @var int[]
      */
     public $workdayClassList;
 
     /**
-     * @description 操作人的userid。
+     * @example 123dfd
      *
      * @var string
      */

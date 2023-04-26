@@ -9,49 +9,45 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 创建时间
+     * @example 1628650483
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description mac地址
+     * @example 88:92:5a:1f:e8:24
      *
      * @var string
      */
     public $macAddress;
 
     /**
-     * @description 版本信息：Android端: Android,10，IOS端：iOS,12.0.1
-     *
      * @var string
      */
     public $model;
 
     /**
-     * @description 平台类型
+     * @example Mac
      *
      * @var string
      */
     public $platform;
 
     /**
-     * @description 设备状态
+     * @example 2
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 设备名称
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 员工Id
+     * @example 65224157501039784
      *
      * @var string
      */

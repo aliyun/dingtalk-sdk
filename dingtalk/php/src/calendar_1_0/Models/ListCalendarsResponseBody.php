@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListCalendarsResponseBody extends Model
 {
     /**
-     * @description 日历信息
-     *
      * @var response
      */
     public $response;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class RobotMessageRecallRequest extends Model
 {
     /**
-     * @description 开放群id
+     * @example cidXXX
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开放消息ID
+     * @example msgU87r5gnMP43JTDAZg/ETyQ==
      *
      * @var string
      */
     public $openMsgId;
 
     /**
-     * @description 开发团队ID
+     * @example iSoqrhLQDtK
      *
      * @var string
      */

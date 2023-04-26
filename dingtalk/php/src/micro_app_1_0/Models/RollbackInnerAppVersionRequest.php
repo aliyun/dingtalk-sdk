@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class RollbackInnerAppVersionRequest extends Model
 {
     /**
-     * @description 小程序版本id，用于唯一标识小程序版本信息。
+     * @example 1
      *
      * @var int
      */
     public $appVersionId;
 
     /**
-     * @description 操作人unionId
+     * @example xxx
      *
      * @var string
      */

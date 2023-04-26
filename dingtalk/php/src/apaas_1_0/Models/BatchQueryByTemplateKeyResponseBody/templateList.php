@@ -14,11 +14,15 @@ class templateList extends Model
     public $adaptEnv;
 
     /**
+     * @example 测试用
+     *
      * @var string
      */
     public $appDesc;
 
     /**
+     * @example @lALPDe7s2JOuoyjNBaDNCgA
+     *
      * @var string
      */
     public $appIcon;
@@ -29,6 +33,8 @@ class templateList extends Model
     public $caseVideoList;
 
     /**
+     * @example template_category
+     *
      * @var string
      */
     public $category;
@@ -39,6 +45,8 @@ class templateList extends Model
     public $coverImgList;
 
     /**
+     * @example http://www.baidu.com
+     *
      * @var string
      */
     public $expUrl;
@@ -49,6 +57,8 @@ class templateList extends Model
     public $industryLabelList;
 
     /**
+     * @example 100
+     *
      * @var float
      */
     public $installTimes;
@@ -59,6 +69,8 @@ class templateList extends Model
     public $mobilePreviewMediaList;
 
     /**
+     * @example 测试用
+     *
      * @var string
      */
     public $name;
@@ -69,6 +81,8 @@ class templateList extends Model
     public $previewMediaList;
 
     /**
+     * @example 小明
+     *
      * @var string
      */
     public $providerName;
@@ -79,11 +93,15 @@ class templateList extends Model
     public $roleLabelList;
 
     /**
+     * @example 测试用
+     *
      * @var string
      */
     public $simpleDesc;
 
     /**
+     * @example template_key
+     *
      * @var string
      */
     public $templateKey;

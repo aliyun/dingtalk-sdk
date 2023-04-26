@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class InitAndGetLeaveALlocationQuotasRequest extends Model
 {
     /**
-     * @description 假期类型的标识。
+     * @example f84a2829-xxxx0653
      *
      * @var string
      */
     public $leaveCode;
 
     /**
-     * @description 操作者的userId。
+     * @example manager1
      *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 用户id。
+     * @example manager211
      *
      * @var string
      */

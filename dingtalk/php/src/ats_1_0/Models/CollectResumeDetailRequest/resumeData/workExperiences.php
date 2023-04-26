@@ -9,53 +9,57 @@ use AlibabaCloud\Tea\Model;
 class workExperiences extends Model
 {
     /**
-     * @description 公司名称
+     * @example 钉钉（中国）信息技术有限公司
      *
      * @var string
      */
     public $companyName;
 
     /**
-     * @description 部门
+     * @example 智能人事
      *
      * @var string
      */
     public $department;
 
     /**
-     * @description 工作详情描述
+     * @example 工作期间负责......取得了......成果
      *
      * @var string
      */
     public $description;
 
     /**
+     * @example yyyy-MM-dd
+     *
      * @var string
      */
     public $endDate;
 
     /**
-     * @description 职位名称
+     * @example Java开发工程师
      *
      * @var string
      */
     public $jobTitle;
 
     /**
-     * @description 工作地点
+     * @example 杭州
      *
      * @var string
      */
     public $location;
 
     /**
-     * @description 工作职责
+     * @example 负责......
      *
      * @var string
      */
     public $responsibility;
 
     /**
+     * @example yyyy-MM-dd
+     *
      * @var string
      */
     public $startDate;

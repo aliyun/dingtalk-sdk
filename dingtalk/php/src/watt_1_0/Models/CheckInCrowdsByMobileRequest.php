@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CheckInCrowdsByMobileRequest extends Model
 {
     /**
-     * @description 人群id
+     * @example 12520
      *
      * @var int[]
      */
     public $crowdIds;
 
     /**
-     * @description 要校验的用户手机号，AES256+Base64方式加密
+     * @example N5u3hS6KJeoUdopXW4GzFg==
      *
      * @var string
      */

@@ -9,42 +9,38 @@ use AlibabaCloud\Tea\Model;
 class PediaWordsApproveRequest extends Model
 {
     /**
-     * @description 拒绝的原因，可选
+     * @example 拒绝
      *
      * @var string
      */
     public $approveReason;
 
     /**
-     * @description 审核的结果，1通过0代表拒绝
+     * @example 1
      *
      * @var string
      */
     public $approveStatus;
 
     /**
-     * @description 当前内部群是否高亮
-     *
      * @var bool
      */
     public $imHighLight;
 
     /**
-     * @description 服务群是否高亮
-     *
      * @var bool
      */
     public $simHighLight;
 
     /**
-     * @description 操作人的组织员工编号，开放平台员工信息接口获取userId
+     * @example 232432
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 当前审核的词条的主键编号
+     * @example 1213132
      *
      * @var int
      */

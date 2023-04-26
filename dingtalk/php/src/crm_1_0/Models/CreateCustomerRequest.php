@@ -12,57 +12,47 @@ use AlibabaCloud\Tea\Model;
 class CreateCustomerRequest extends Model
 {
     /**
-     * @description 关联联系人数据
-     *
      * @var contacts[]
      */
     public $contacts;
 
     /**
-     * @description 创建人的userId
+     * @example manager123
      *
      * @var string
      */
     public $creatorUserId;
 
     /**
-     * @description 客户实例数据（表单数据）
-     *
      * @var mixed[]
      */
     public $data;
 
     /**
-     * @description 客户实例扩展数据
-     *
      * @var mixed[]
      */
     public $extendData;
 
     /**
-     * @description 已存在客户时，添加联系人，可以传入客户的instanceId用作关联绑定
+     * @example xxxx-xxxx-xxxx-xxxx
      *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description 写入客户类型：个人客户crm_customer_personal; 企业客户crm_customer
+     * @example crm_customer
      *
      * @var string
      */
     public $objectType;
 
     /**
-     * @description 权限
-     *
      * @var permission
      */
     public $permission;
 
     /**
-     * @description 保存配置项
-     *
      * @var saveOption
      */
     public $saveOption;

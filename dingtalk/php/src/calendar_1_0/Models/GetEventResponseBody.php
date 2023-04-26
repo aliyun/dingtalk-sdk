@@ -31,22 +31,16 @@ class GetEventResponseBody extends Model
     public $categories;
 
     /**
-     * @description 创建时间
-     *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 日程描述
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 日程结束时间
-     *
      * @var end
      */
     public $end;
@@ -62,8 +56,6 @@ class GetEventResponseBody extends Model
     public $id;
 
     /**
-     * @description 是否为全天日程
-     *
      * @var bool
      */
     public $isAllDay;
@@ -104,36 +96,28 @@ class GetEventResponseBody extends Model
     public $reminders;
 
     /**
-     * @description 重复日程的主日程id，非重复日程为空
-     *
      * @var string
      */
     public $seriesMasterId;
 
     /**
-     * @description 日程开始时间
-     *
      * @var start
      */
     public $start;
 
     /**
-     * @description 日程状态
+     * @example 已取消、删除的日程是cancelled
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 日程标题
-     *
      * @var string
      */
     public $summary;
 
     /**
-     * @description 更新时间
-     *
      * @var string
      */
     public $updateTime;

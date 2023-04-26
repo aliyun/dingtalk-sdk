@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class csUserInfo extends Model
 {
     /**
-     * @description 客服头像链接
+     * @example https://static.dingtalk.com/media/lA****************p_169_169.png_60x60q90.jpg?bizType=avatar
      *
      * @var string
      */
     public $avatar;
 
     /**
-     * @description 客服用户名称
+     * @example 用户名
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 客服用户Id
+     * @example 16621*******284773
      *
      * @var string
      */

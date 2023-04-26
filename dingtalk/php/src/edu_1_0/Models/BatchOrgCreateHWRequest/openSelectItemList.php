@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class openSelectItemList extends Model
 {
     /**
-     * @description 班级列表
-     *
      * @var classList[]
      */
     public $classList;
 
     /**
-     * @description 组织corpId
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 选择内容
-     *
      * @var string
      */
     public $selectedClassesDesc;

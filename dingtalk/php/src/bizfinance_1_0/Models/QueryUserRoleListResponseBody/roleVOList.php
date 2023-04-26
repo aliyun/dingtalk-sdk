@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class roleVOList extends Model
 {
     /**
-     * @description 角色Code
+     * @example applicationManager
      *
      * @var string
      */
     public $roleCode;
 
     /**
-     * @description 角色名字
+     * @example 应用管理员
      *
      * @var string
      */

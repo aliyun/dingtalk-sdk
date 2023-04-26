@@ -9,29 +9,29 @@ use AlibabaCloud\Tea\Model;
 class ListRelatedTeamsRequest extends Model
 {
     /**
-     * @description 每页最大条目数，最大值50。
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标，第一页可不传。
+     * @example ajYkbc7
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 操作用户unionId。
+     * @example YEp3JcM******UIbhwiE
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 小组类型。
-     * 0-默认；1-部门；2-项目组；3-兴趣小组。
+     * @example 0
+     *
      * @var int
      */
     public $type;

@@ -10,43 +10,31 @@ use AlibabaCloud\Tea\Model;
 class GetSubscribedCalendarResponseBody extends Model
 {
     /**
-     * @description 日历作者
-     *
      * @var string
      */
     public $author;
 
     /**
-     * @description 订阅日历id
-     *
      * @var string
      */
     public $calendarId;
 
     /**
-     * @description 日历描述
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 可管理人群
-     *
      * @var string[]
      */
     public $managers;
 
     /**
-     * @description 日历名
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 可订阅范围
-     *
      * @var subscribeScope
      */
     public $subscribeScope;

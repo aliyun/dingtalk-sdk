@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ChangeGroupOwnerRequest extends Model
 {
     /**
-     * @description 群主在业务系统内的唯一标识
+     * @example 14da****2760
      *
      * @var string
      */
     public $groupOwnerId;
 
     /**
-     * @description 群主类型<2.钉内用户类型 3.钉外用户类型>
+     * @example 3
      *
      * @var int
      */
     public $groupOwnerType;
 
     /**
-     * @description 群会话Id。
+     * @example 14da****2760
      *
      * @var string
      */

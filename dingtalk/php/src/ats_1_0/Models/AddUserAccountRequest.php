@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class AddUserAccountRequest extends Model
 {
     /**
-     * @description 业务标识
+     * @example ddats
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 渠道账号名
+     * @example 示例昵称xxx
      *
      * @var string
      */
     public $channelAccountName;
 
     /**
-     * @description 渠道用户标识
+     * @example 6FSe51616SOdd394d6
      *
      * @var string
      */
     public $channelUserIdentify;
 
     /**
-     * @description 手机号
+     * @example 16600010001
      *
      * @var string
      */
     public $phoneNumber;
 
     /**
-     * @description 企业标识
+     * @example ding123456789
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 用户标识
+     * @example 1676451039
      *
      * @var string
      */

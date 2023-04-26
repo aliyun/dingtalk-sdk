@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 创建时间
+     * @example 2021-12-22 15:30:31
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间
+     * @example 2021-12-22 15:30:31
      *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 状态：0-有效，1-无效
+     * @example 0
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 用户标识
+     * @example 10320266246
      *
      * @var string
      */
     public $userCode;
 
     /**
-     * @description 扩展属性描述
+     * @example 扩展属性描述
      *
      * @var string
      */
     public $userExtendDisplayName;
 
     /**
-     * @description 扩展属性Key
+     * @example 扩展属性Key
      *
      * @var string
      */
     public $userExtendKey;
 
     /**
-     * @description 扩展属性值
+     * @example 扩展属性值
      *
      * @var string
      */

@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class ListOrgTextEmotionResponseBody extends Model
 {
     /**
-     * @description 拉取企业文字表情结果
-     *
      * @var result
      */
     public $result;
 
     /**
-     * @description 返回结果
-     *
      * @var bool
      */
     public $success;

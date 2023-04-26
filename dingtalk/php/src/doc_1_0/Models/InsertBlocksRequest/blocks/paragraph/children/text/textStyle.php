@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class textStyle extends Model
 {
     /**
-     * @description 是否加粗
-     *
      * @var bool
      */
     public $bold;
 
     /**
-     * @description 数据类型
-     *
      * @var string
      */
     public $dataType;
 
     /**
-     * @description 字体大小
-     *
      * @var int
      */
     public $fontSize;
 
     /**
-     * @description 字体大小单位
-     *
      * @var string
      */
     public $sizeUnit;

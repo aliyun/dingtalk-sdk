@@ -10,63 +10,61 @@ use AlibabaCloud\Tea\Model;
 class UpdateResidentUserRequest extends Model
 {
     /**
-     * @description 家庭住址
+     * @example 美好社区创景街道万通公寓
      *
      * @var string
      */
     public $address;
 
     /**
-     * @description 所在新的户/租户部门id
+     * @example 12345
      *
      * @var int
      */
     public $departmentId;
 
     /**
-     * @description 扩展字段（包括身份证/性别/民族）
-     *
      * @var extField[]
      */
     public $extField;
 
     /**
-     * @description 是否保留原部门
+     * @example false
      *
      * @var bool
      */
     public $isRetainOldDept;
 
     /**
-     * @description 手机号码
+     * @example 15612345678
      *
      * @var string
      */
     public $mobile;
 
     /**
-     * @description 原所在部门id
+     * @example 12345
      *
      * @var int
      */
     public $oldDepartmentId;
 
     /**
-     * @description 与户主的关系
+     * @example SELF
      *
      * @var string
      */
     public $relateType;
 
     /**
-     * @description 人员userId
+     * @example 12345
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 居民名字
+     * @example 王建国
      *
      * @var string
      */

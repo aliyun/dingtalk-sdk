@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetTranslateFileJobResultRequest extends Model
 {
     /**
-     * @description 异步转译任务id
+     * @example fXrgPrvsNiZNa8RWis9Nk1SY
      *
      * @var string
      */

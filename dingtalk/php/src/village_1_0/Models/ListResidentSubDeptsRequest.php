@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class ListResidentSubDeptsRequest extends Model
 {
     /**
-     * @description 游标，不传默认1
+     * @example 1
      *
      * @var int
      */
     public $cursor;
 
     /**
-     * @description 大小
-     *
      * @var int
      */
     public $size;
 
     /**
-     * @description 下属组织的组织ID，比如下属镇、村的corpId
-     *
      * @var string
      */
     public $subCorpId;

@@ -9,498 +9,356 @@ use AlibabaCloud\Tea\Model;
 class dataList extends Model
 {
     /**
-     * @description 提前预定天数
-     *
      * @var int
      */
     public $advanceDay;
 
     /**
-     * @description 航司三字码
-     *
      * @var string
      */
     public $airlineCorpCode;
 
     /**
-     * @description 航司名称
-     *
      * @var string
      */
     public $airlineCorpName;
 
     /**
-     * @description 交易流水号
-     *
      * @var string
      */
     public $alipayTradeNo;
 
     /**
-     * @description 审批单号
-     *
      * @var string
      */
     public $applyId;
 
     /**
-     * @description 到达机场二字码
-     *
      * @var string
      */
     public $arrAirportCode;
 
     /**
-     * @description 到达城市
-     *
      * @var string
      */
     public $arrCity;
 
     /**
-     * @description 到达日期
-     *
      * @var string
      */
     public $arrDate;
 
     /**
-     * @description 到达机场
-     *
      * @var string
      */
     public $arrStation;
 
     /**
-     * @description 到达时间
-     *
      * @var string
      */
     public $arrTime;
 
     /**
-     * @description 入账时间
-     *
      * @var string
      */
     public $billRecordTime;
 
     /**
-     * @description 预定时间
-     *
      * @var string
      */
     public $bookTime;
 
     /**
-     * @description 预订人use id
-     *
      * @var string
      */
     public $bookerId;
 
     /**
-     * @description 预订人工号
-     *
      * @var string
      */
     public $bookerJobNo;
 
     /**
-     * @description 预订人名称
-     *
      * @var string
      */
     public $bookerName;
 
     /**
-     * @description 商旅优惠金额
-     *
      * @var float
      */
     public $btripCouponFee;
 
     /**
-     * @description 基建费
-     *
      * @var float
      */
     public $buildFee;
 
     /**
-     * @description 舱位
-     *
      * @var string
      */
     public $cabin;
 
     /**
-     * @description 舱位码
-     *
      * @var string
      */
     public $cabinClass;
 
     /**
-     * @description 资金方向
-     *
      * @var string
      */
     public $capitalDirection;
 
     /**
-     * @description 级联部门
-     *
      * @var string
      */
     public $cascadeDepartment;
 
     /**
-     * @description 改签费用
-     *
      * @var float
      */
     public $changeFee;
 
     /**
-     * @description 订单金额
-     *
      * @var float
      */
     public $corpPayOrderFee;
 
     /**
-     * @description 成本中心名称
-     *
      * @var string
      */
     public $costCenter;
 
     /**
-     * @description 成本中心编号
-     *
      * @var string
      */
     public $costCenterNumber;
 
     /**
-     * @description 优惠券
-     *
      * @var float
      */
     public $coupon;
 
     /**
-     * @description 起飞机场二字码
-     *
      * @var string
      */
     public $depAirportCode;
 
     /**
-     * @description 末级部门
-     *
      * @var string
      */
     public $department;
 
     /**
-     * @description 部门id
-     *
      * @var string
      */
     public $departmentId;
 
     /**
-     * @description 起飞城市
-     *
      * @var string
      */
     public $deptCity;
 
     /**
-     * @description 起飞日期
-     *
      * @var string
      */
     public $deptDate;
 
     /**
-     * @description 起飞机场
-     *
      * @var string
      */
     public $deptStation;
 
     /**
-     * @description 起飞时间
-     *
      * @var string
      */
     public $deptTime;
 
     /**
-     * @description 折扣率
-     *
      * @var string
      */
     public $discount;
 
     /**
-     * @description 费用类型
-     *
      * @var string
      */
     public $feeType;
 
     /**
-     * @description 航班号
-     *
      * @var string
      */
     public $flightNo;
 
     /**
-     * @description 序号
-     *
      * @var string
      */
     public $index;
 
     /**
-     * @description 保险费
-     *
      * @var float
      */
     public $insuranceFee;
 
     /**
-     * @description 发票抬头
-     *
      * @var string
      */
     public $invoiceTitle;
 
     /**
-     * @description 行程单打印序号
-     *
      * @var string
      */
     public $itineraryNum;
 
     /**
-     * @description 行程单金额
-     *
      * @var float
      */
     public $itineraryPrice;
 
     /**
-     * @description 低价提醒（起飞时间）
-     *
      * @var string
      */
     public $mostDifferenceDeptTime;
 
     /**
-     * @description 低价提醒（折扣）
-     *
      * @var string
      */
     public $mostDifferenceDiscount;
 
     /**
-     * @description 低价提醒(航班号)
-     *
      * @var string
      */
     public $mostDifferenceFlightNo;
 
     /**
-     * @description 低价提醒(与最低价差额)
-     *
      * @var float
      */
     public $mostDifferencePrice;
 
     /**
-     * @description 不选低价原因
-     *
      * @var string
      */
     public $mostDifferenceReason;
 
     /**
-     * @description 低价航班价格
-     *
      * @var float
      */
     public $mostPrice;
 
     /**
-     * @description 协议价优惠金额
-     *
      * @var float
      */
     public $negotiationCouponFee;
 
     /**
-     * @description 燃油费
-     *
      * @var float
      */
     public $oilFee;
 
     /**
-     * @description 订单号
-     *
      * @var string
      */
     public $orderId;
 
     /**
-     * @description 超标审批单号
-     *
      * @var string
      */
     public $overApplyId;
 
     /**
-     * @description 主键id
-     *
      * @var int
      */
     public $primaryId;
 
     /**
-     * @description 项目代码
-     *
      * @var string
      */
     public $projectCode;
 
     /**
-     * @description 项目名称
-     *
      * @var string
      */
     public $projectName;
 
     /**
-     * @description 退款手续费
-     *
      * @var float
      */
     public $refundFee;
 
     /**
-     * @description 改签退票手续费
-     *
      * @var float
      */
     public $refundUpgradeCost;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 是否重复退
-     *
      * @var string
      */
     public $repeatRefund;
 
     /**
-     * @description 销售价
-     *
      * @var float
      */
     public $sealPrice;
 
     /**
-     * @description 服务费，仅在feeType  11001、11002中展示
-     *
      * @var float
      */
     public $serviceFee;
 
     /**
-     * @description 结算金额
-     *
      * @var float
      */
     public $settlementFee;
 
     /**
-     * @description 预存赠送金额消费
-     *
      * @var float
      */
     public $settlementGrantFee;
 
     /**
-     * @description 结算时间
-     *
      * @var string
      */
     public $settlementTime;
 
     /**
-     * @description 结算类型
-     *
      * @var string
      */
     public $settlementType;
 
     /**
-     * @description 入账状态
-     *
      * @var int
      */
     public $status;
 
     /**
-     * @description 行程单号
-     *
      * @var string
      */
     public $ticketId;
 
     /**
-     * @description 出行人use id
-     *
      * @var string
      */
     public $travelerId;
 
     /**
-     * @description 出行人工号
-     *
      * @var string
      */
     public $travelerJobNo;
 
     /**
-     * @description 出行人名称
-     *
      * @var string
      */
     public $travelerName;
 
     /**
-     * @description 改签差价
-     *
      * @var float
      */
     public $upgradeCost;
 
     /**
-     * @description 发票类型
-     *
      * @var int
      */
     public $voucherType;

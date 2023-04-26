@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class workspaces extends Model
 {
     /**
-     * @description 知识库创建时间。
-     *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 知识库是否被删除。
-     *
      * @var bool
      */
     public $deleted;
 
     /**
-     * @description 知识库名称。
-     *
      * @var string
      */
     public $name;
@@ -36,29 +30,23 @@ class workspaces extends Model
     public $owner;
 
     /**
-     * @description 知识库最近访问文档列表。
-     *
      * @var recentList[]
      */
     public $recentList;
 
     /**
-     * @description 用户的角色
+     * @example OWNER：所有者；MANAGER：管理者；EDITOR：可编辑；VIEWER：可查询\下载；ONLY_VIEWER：尽可查看
      *
      * @var string
      */
     public $role;
 
     /**
-     * @description 知识库打开url。
-     *
      * @var string
      */
     public $url;
 
     /**
-     * @description 知识库id。
-     *
      * @var string
      */
     public $workspaceId;

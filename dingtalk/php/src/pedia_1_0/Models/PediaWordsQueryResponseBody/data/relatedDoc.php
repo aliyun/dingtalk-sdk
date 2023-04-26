@@ -9,19 +9,21 @@ use AlibabaCloud\Tea\Model;
 class relatedDoc extends Model
 {
     /**
+     * @example http://123456.com
+     *
      * @var string
      */
     public $link;
 
     /**
-     * @description 文档名称
+     * @example 相关文档
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 文档类型，分别为adoc或者asheet
+     * @example adoc
      *
      * @var string
      */

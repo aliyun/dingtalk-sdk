@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetDentryOpenInfoResponseBody extends Model
 {
     /**
-     * @description 是否支持水印
+     * @example true
      *
      * @var bool
      */
     public $hasWaterMark;
 
     /**
-     * @description 链接, 用于编辑或预览
+     * @example url
      *
      * @var string
      */

@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class GetMaxVersionRequest extends Model
 {
     /**
-     * @description bundleId
-     *
      * @var string
      */
     public $bundleId;
 
     /**
-     * @description miniAppId
-     *
      * @var string
      */
     public $miniAppId;
 
     /**
-     * @description version
-     *
      * @var string
      */
     public $version;

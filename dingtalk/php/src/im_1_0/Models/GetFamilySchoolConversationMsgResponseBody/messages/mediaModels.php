@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class mediaModels extends Model
 {
     /**
-     * @description 消息mediaId文件名称
+     * @example aa.png
      *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 消息mediaId文件类型
+     * @example png
      *
      * @var string
      */
     public $fileType;
 
     /**
-     * @description 消息mediaId
+     * @example @12xxx34
      *
      * @var string
      */
     public $mediaId;
 
     /**
-     * @description 消息mediaId文件大小
+     * @example 1234
      *
      * @var string
      */
     public $size;
 
     /**
-     * @description 消息mediaId对应的下载地址
+     * @example https://wukong-xxxx
      *
      * @var string
      */
     public $url;
 
     /**
-     * @description 视频文件缩略图mediaId
+     * @example @12xx34
      *
      * @var string
      */

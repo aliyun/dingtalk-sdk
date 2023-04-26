@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class PageFeedResponseBody extends Model
 {
     /**
-     * @description 课程列表
-     *
      * @var feedList[]
      */
     public $feedList;
 
     /**
-     * @description 分页参数：是否还有下一页，false表示没有下一页
+     * @example true
      *
      * @var bool
      */
     public $hasNext;
 
     /**
-     * @description 分页参数：下一页的起始位置
+     * @example 20
      *
      * @var int
      */

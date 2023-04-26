@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetDeptsByOrgIdResponseBody extends Model
 {
     /**
-     * @description deptList
-     *
      * @var deptList[]
      */
     public $deptList;
 
     /**
-     * @description hasMore
-     *
      * @var bool
      */
     public $hasMore;
@@ -29,8 +25,6 @@ class GetDeptsByOrgIdResponseBody extends Model
     public $maxResults;
 
     /**
-     * @description nextCursor
-     *
      * @var int
      */
     public $nextToken;

@@ -14,14 +14,14 @@ class QueryAllDoctorsRequest extends Model
     public $monthMark;
 
     /**
-     * @description 分页查询页码
+     * @example 1
      *
      * @var int
      */
     public $pageNum;
 
     /**
-     * @description 分页查询页容量
+     * @example 200
      *
      * @var int
      */

@@ -10,22 +10,17 @@ use AlibabaCloud\Tea\Model;
 class InstallAppRequest extends Model
 {
     /**
-     * @description 业务分组
-     *
      * @var string
      */
     public $bizGroup;
 
     /**
-     * @description 安装选项
-     *
-     *
      * @var installOption
      */
     public $installOption;
 
     /**
-     * @description 安装的目录名称
+     * @example finance
      *
      * @var string
      */

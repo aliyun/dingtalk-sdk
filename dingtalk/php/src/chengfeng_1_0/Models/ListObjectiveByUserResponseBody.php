@@ -10,21 +10,17 @@ use AlibabaCloud\Tea\Model;
 class ListObjectiveByUserResponseBody extends Model
 {
     /**
-     * @description 请求返回数据对象
-     *
      * @var content
      */
     public $content;
 
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description 接口请求是否成功
+     * @example true
      *
      * @var bool
      */

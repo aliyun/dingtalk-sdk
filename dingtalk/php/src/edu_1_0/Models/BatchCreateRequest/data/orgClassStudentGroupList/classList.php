@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class classList extends Model
 {
     /**
-     * @description 班级id
-     *
      * @var int
      */
     public $classId;
 
     /**
-     * @description 班级名称
-     *
      * @var string
      */
     public $className;
 
     /**
-     * @description 班级学生
-     *
      * @var students[]
      */
     public $students;

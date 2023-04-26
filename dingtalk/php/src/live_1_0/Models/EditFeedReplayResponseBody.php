@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class EditFeedReplayResponseBody extends Model
 {
     /**
-     * @description 剪辑后的视频地址（含authkey）
-     *
      * @var string
      */
     public $result;

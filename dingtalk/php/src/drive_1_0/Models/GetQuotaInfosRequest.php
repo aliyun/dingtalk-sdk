@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class GetQuotaInfosRequest extends Model
 {
     /**
-     * @description 容量标识符列表
-     *
      * @var string[]
      */
     public $identifiers;
 
     /**
-     * @description 容量类型
-     *
      * @var string
      */
     public $type;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

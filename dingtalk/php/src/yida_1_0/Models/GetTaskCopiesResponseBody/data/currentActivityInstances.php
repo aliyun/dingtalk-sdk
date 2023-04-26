@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class currentActivityInstances extends Model
 {
     /**
-     * @description 节点id
+     * @example act-xxaanfaf
      *
      * @var string
      */
     public $activityId;
 
     /**
-     * @description 节点实例状态
+     * @example running
      *
      * @var string
      */
     public $activityInstanceStatus;
 
     /**
-     * @description 节点名称
+     * @example activity-124
      *
      * @var string
      */
     public $activityName;
 
     /**
-     * @description 节点英文名称
+     * @example redirect task
      *
      * @var string
      */
     public $activityNameInEnglish;
 
     /**
-     * @description 数据id
+     * @example 12345
      *
      * @var int
      */

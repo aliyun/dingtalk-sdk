@@ -9,43 +9,41 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 客户Code
+     * @example CUS_XXX
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 创建时间(单位MS)
+     * @example 1634786828686
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 客户描述
+     * @example 重要客户
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 客户名称
+     * @example XX有限公司
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 状态：启用(valid), 停用(invalid), 删除(deleted)
+     * @example valid
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 用户自定义code
-     *
      * @var string
      */
     public $userDefineCode;

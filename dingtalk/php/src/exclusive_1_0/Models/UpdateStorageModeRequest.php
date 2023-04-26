@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class UpdateStorageModeRequest extends Model
 {
     /**
-     * @description 专属文件跨云存储类型 0：公有模式，1：私有模式，注意，如不更新，则不填写这个字段，字段一旦有值，都会触发原有配置的删除
+     * @example 0
      *
      * @var string
      */
     public $fileStorageMode;
 
     /**
-     * @description 企业id
+     * @example dingxxxxxxxxxxxx
      *
      * @var string
      */

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetCrmGroupChatMultiRequest extends Model
 {
     /**
-     * @description 群openConversationId列表。
-     *
      * @var string[]
      */
     public $openConversationIds;

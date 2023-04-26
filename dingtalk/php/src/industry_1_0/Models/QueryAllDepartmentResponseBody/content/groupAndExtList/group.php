@@ -10,63 +10,61 @@ use AlibabaCloud\Tea\Model;
 class group extends Model
 {
     /**
-     * @description 科室ID，同parentDeptCode，这里保留是做兼容，原来定义成Long不太好改成了String了
+     * @example 13000
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 部门状态：0-正常，1-删除
+     * @example 1
      *
      * @var int
      */
     public $deptStatus;
 
     /**
-     * @description 创建时间
+     * @example 2021-08-24 20:30:31
      *
      * @var string
      */
     public $gmtCreateStr;
 
     /**
-     * @description 修改时间
+     * @example 2021-08-24 20:30:31
      *
      * @var string
      */
     public $gmtModifiedStr;
 
     /**
-     * @description 医疗组ID
+     * @example 13001
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 医疗组组长信息
-     *
      * @var leader
      */
     public $leader;
 
     /**
-     * @description 医疗组名称
+     * @example 张三组
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 父级组织id，这里医疗组的父级就是科室
+     * @example 13000
      *
      * @var string
      */
     public $parentDeptCode;
 
     /**
-     * @description 备注
+     * @example 备注
      *
      * @var string
      */

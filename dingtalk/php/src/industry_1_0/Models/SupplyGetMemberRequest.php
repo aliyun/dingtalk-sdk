@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class SupplyGetMemberRequest extends Model
 {
     /**
-     * @description isv下钉钉唯一账号ID
-     *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 组织内钉钉员工ID
-     *
      * @var string
      */
     public $userId;

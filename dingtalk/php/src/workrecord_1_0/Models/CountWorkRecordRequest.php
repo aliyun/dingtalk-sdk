@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CountWorkRecordRequest extends Model
 {
     /**
-     * @description userId
-     *
      * @var string
      */
     public $userId;

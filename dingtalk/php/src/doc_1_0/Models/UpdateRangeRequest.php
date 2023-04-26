@@ -9,35 +9,29 @@ use AlibabaCloud\Tea\Model;
 class UpdateRangeRequest extends Model
 {
     /**
-     * @description 背景色
-     * 1000
      * @var string[][]
      */
     public $backgroundColors;
 
     /**
-     * @description 超链接
-     * 1000
      * @var undefined[][]
      */
     public $hyperlinks;
 
     /**
-     * @description 数字格式
+     * @example number_format
      *
      * @var string
      */
     public $numberFormat;
 
     /**
-     * @description 值
-     * 1000
      * @var string[][]
      */
     public $values;
 
     /**
-     * @description 操作人id
+     * @example union_id
      *
      * @var string
      */

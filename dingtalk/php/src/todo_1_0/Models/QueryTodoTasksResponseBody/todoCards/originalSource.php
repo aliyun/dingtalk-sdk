@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class originalSource extends Model
 {
     /**
-     * @description 业务来源展示名称
-     *
      * @var string
      */
     public $sourceTitle;

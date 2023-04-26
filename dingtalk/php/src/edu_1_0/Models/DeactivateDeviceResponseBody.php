@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeactivateDeviceResponseBody extends Model
 {
     /**
-     * @description 授权码已激活的次数
+     * @example 2
      *
      * @var int
      */

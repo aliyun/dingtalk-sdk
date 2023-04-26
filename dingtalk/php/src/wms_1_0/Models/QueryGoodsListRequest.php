@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class QueryGoodsListRequest extends Model
 {
     /**
-     * @description 结束时间
+     * @example 1631289600000
      *
      * @var int
      */
     public $endTimeInMills;
 
     /**
-     * @description 分页大小
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页起始值
+     * @example 1
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 开始时间
+     * @example 1631289600000
      *
      * @var int
      */

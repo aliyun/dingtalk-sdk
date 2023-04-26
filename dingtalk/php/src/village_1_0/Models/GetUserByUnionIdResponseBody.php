@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetUserByUnionIdResponseBody extends Model
 {
     /**
-     * @description 联系类型，0表示企业内部员工，1表示企业外部联系人
-     *
      * @var int
      */
     public $contactType;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $userId;

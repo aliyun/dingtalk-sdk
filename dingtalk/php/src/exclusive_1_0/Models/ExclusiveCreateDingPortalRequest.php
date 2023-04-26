@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class ExclusiveCreateDingPortalRequest extends Model
 {
     /**
-     * @description 工作台名称。
+     * @example XX工作台
      *
      * @var string
      */
     public $dingPortalName;
 
     /**
-     * @description 被操纵企业ID。
+     * @example dingxxxxxxxxxxxx
      *
      * @var string
      */
     public $targetCorpId;
 
     /**
-     * @description 模版id。
+     * @example TPL_APP-C97B75277B144ED7AEFE7XXXXXXXX6BA
      *
      * @var string
      */
     public $templateAppUuid;
 
     /**
-     * @description 模版所属的组织id。
+     * @example dingxxxxxxxxxxxx
      *
      * @var string
      */

@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class QueryVedioMeetingStatisticalDataResponseBody extends Model
 {
     /**
-     * @description 指标数据
-     *
      * @var mixed[][]
      */
     public $dataList;
 
     /**
-     * @description 指标元数据
-     *
      * @var metaList[]
      */
     public $metaList;

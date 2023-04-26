@@ -10,28 +10,22 @@ use AlibabaCloud\Tea\Model;
 class SearchConnectorsResponseBody extends Model
 {
     /**
-     * @description 是否有更多记录
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 连接器信息列表
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 下一页记录的查询位置
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 总记录数
+     * @example 1
      *
      * @var string
      */

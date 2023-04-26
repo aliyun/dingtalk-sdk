@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class GetFormInstanceResponseBody extends Model
 {
     /**
-     * @description 返回结果对象。
-     *
      * @var result
      */
     public $result;
 
     /**
-     * @description 是否成功。
+     * @example true
      *
      * @var bool
      */

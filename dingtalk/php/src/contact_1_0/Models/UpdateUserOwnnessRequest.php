@@ -9,36 +9,32 @@ use AlibabaCloud\Tea\Model;
 class UpdateUserOwnnessRequest extends Model
 {
     /**
-     * @description 删除标记
+     * @example 1-删除，0-正常
      *
      * @var int
      */
     public $deletedFlag;
 
     /**
-     * @description 结束时间戳（毫秒）
-     *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 业务标志id
+     * @example 123456
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 状态类型
+     * @example 1-请假，3-出差
      *
      * @var int
      */
     public $ownenssType;
 
     /**
-     * @description 开始时间戳（毫秒）
-     *
      * @var int
      */
     public $startTime;

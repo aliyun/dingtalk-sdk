@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetEmpsByOrgIdResponseBody extends Model
 {
     /**
-     * @description empList
-     *
      * @var empList[]
      */
     public $empList;
 
     /**
-     * @description hasMore
-     *
      * @var bool
      */
     public $hasMore;

@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class krResultRelatedResults extends Model
 {
     /**
-     * @description krId
-     *
      * @var string
      */
     public $krId;
 
     /**
-     * @description semanticLevel
+     * @example 3
      *
      * @var int
      */
     public $semanticLevel;
 
     /**
-     * @description words
-     *
      * @var string[]
      */
     public $words;

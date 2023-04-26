@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class children extends Model
 {
     /**
-     * @description 控件类型
+     * @example TextField
      *
      * @var string
      */
     public $componentName;
 
     /**
-     * @description 子控件属性
-     *
      * @var props
      */
     public $props;

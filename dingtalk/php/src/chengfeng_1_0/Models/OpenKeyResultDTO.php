@@ -9,42 +9,40 @@ use AlibabaCloud\Tea\Model;
 class OpenKeyResultDTO extends Model
 {
     /**
-     * @description 主键
+     * @example 1
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description KR进度
+     * @example 33
      *
      * @var int
      */
     public $progress;
 
     /**
-     * @description KR的状态:1:正常 3:风险
+     * @example 1
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 标题
+     * @example 完成数据迁移
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description “@”对象列表
-     *
      * @var TitleMention[]
      */
     public $titleMentions;
 
     /**
-     * @description KR类型
+     * @example 1
      *
      * @var int
      */

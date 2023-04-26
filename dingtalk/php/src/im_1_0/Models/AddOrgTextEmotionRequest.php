@@ -9,31 +9,28 @@ use AlibabaCloud\Tea\Model;
 class AddOrgTextEmotionRequest extends Model
 {
     /**
-     * @description 展示在消息气泡上的表情的mediaId，mediaId可以通过使用文件上传接口上传表情图片得到，图片上限为500KB。
+     * @example @123xxx
      *
-     * 请严格按照表情设计规范设计表情，服务端会检查图片的大小、宽度、高度是否符合规范。
      * @var string
      */
     public $backgroundMediaId;
 
     /**
-     * @description 展示在消息长按菜单的表情的mediaId，mediaId可以通过使用文件上传接口上传表情图片得到，图片上限为500KB。
+     * @example @345xxx
      *
-     * 请严格按照表情设计规范设计表情，服务端会检查图片的大小、宽度、高度是否符合规范。
      * @var string
      */
     public $backgroundMediaIdForPanel;
 
     /**
-     * @description 部门Id，设置规则：
+     * @example -1
      *
-     * 一级部门Id：当添加一级部门层面的文字表情时使用一级部门Id，此时表情对该一级部门及该一级部门下的所有子部门的员工可见
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 表情名称，对用户不可见
+     * @example 企业表情1
      *
      * @var string
      */

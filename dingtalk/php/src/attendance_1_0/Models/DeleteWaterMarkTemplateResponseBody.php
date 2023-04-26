@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteWaterMarkTemplateResponseBody extends Model
 {
     /**
-     * @description 模板的表单Code。
+     * @example PROC-292988B1-5064-4A42-9389-A76B97xxxxx
      *
      * @var string
      */

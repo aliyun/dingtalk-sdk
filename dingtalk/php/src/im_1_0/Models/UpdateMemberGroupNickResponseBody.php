@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateMemberGroupNickResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var bool
      */
     public $success;

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreateInstanceResponseBody extends Model
 {
     /**
-     * @description 数据实例ID
+     * @example 8888***
      *
      * @var string
      */

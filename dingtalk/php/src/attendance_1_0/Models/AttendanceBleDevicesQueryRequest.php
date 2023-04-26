@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class AttendanceBleDevicesQueryRequest extends Model
 {
     /**
-     * @description 考勤组Id
+     * @example 62001E1C5B9XXXX369D316DED25FXXXX
      *
      * @var string
      */
     public $groupKey;
 
     /**
-     * @description 操作人Id
+     * @example userId001
      *
      * @var string
      */

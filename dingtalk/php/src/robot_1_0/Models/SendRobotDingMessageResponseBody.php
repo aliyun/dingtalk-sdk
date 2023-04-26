@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class SendRobotDingMessageResponseBody extends Model
 {
     /**
-     * @description 返回的ding消息id
-     *
      * @var string
      */
     public $dingSendResultId;

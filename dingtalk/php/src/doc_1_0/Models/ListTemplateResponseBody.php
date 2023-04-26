@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class ListTemplateResponseBody extends Model
 {
     /**
-     * @description 是否还有更多模版
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 后续结果的偏移
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 模版信息列表
-     *
      * @var templateList[]
      */
     public $templateList;

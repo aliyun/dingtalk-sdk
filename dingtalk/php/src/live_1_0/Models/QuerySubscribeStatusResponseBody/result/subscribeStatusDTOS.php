@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class subscribeStatusDTOS extends Model
 {
     /**
-     * @description 直播uuid
-     *
      * @var string
      */
     public $liveId;
 
     /**
-     * @description 是否订阅 true:订阅 false:非订阅
-     *
      * @var bool
      */
     public $subscribe;

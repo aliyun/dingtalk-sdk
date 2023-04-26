@@ -14,35 +14,31 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 金额
+     * @example 5000
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 创建时间
+     * @example 1600000
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 创建人
-     *
      * @var creator
      */
     public $creator;
 
     /**
-     * @description 客户
-     *
      * @var customer
      */
     public $customer;
 
     /**
-     * @description 主数据modelId
+     * @example EM-xxxxx
      *
      * @var string
      */
@@ -59,35 +55,35 @@ class list_ extends Model
     public $project;
 
     /**
-     * @description 单据ID
+     * @example abc
      *
      * @var string
      */
     public $receiptId;
 
     /**
-     * @description 记录时间，默认为审批通过时间
+     * @example 16000000
      *
      * @var string
      */
     public $recordTime;
 
     /**
-     * @description 备注
+     * @example 备注信息
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 来源
+     * @example approval
      *
      * @var string
      */
     public $source;
 
     /**
-     * @description 状态 agree running
+     * @example agree
      *
      * @var string
      */
@@ -99,7 +95,7 @@ class list_ extends Model
     public $supplier;
 
     /**
-     * @description 单据标题
+     * @example 张三提交的开票申请单
      *
      * @var string
      */

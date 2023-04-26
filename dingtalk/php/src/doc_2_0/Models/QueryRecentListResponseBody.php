@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class QueryRecentListResponseBody extends Model
 {
     /**
-     * @description 是否还有更多数据。
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 分页游标。
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 子节点列表。
-     *
      * @var recentList[]
      */
     public $recentList;

@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class CreateLiveRequest extends Model
 {
     /**
-     * @description 直播封面
+     * @example https://gw.alicdn.com/tfs/TB1thlYyAT2gK0jSZPcXXcKkpXa-1125-633.png
      *
      * @var string
      */
     public $coverUrl;
 
     /**
-     * @description 简介
+     * @example 测试直播简介
      *
      * @var string
      */
     public $introduction;
 
     /**
-     * @description 预计结束时间
+     * @example 1659653648000
      *
      * @var int
      */
     public $preEndTime;
 
     /**
-     * @description 预计开播时间
+     * @example 1659613648000
      *
      * @var int
      */
     public $preStartTime;
 
     /**
-     * @description 直播分享范围 0:不公开 1:全面公开 2:组织内公开
+     * @example 2
      *
      * @var int
      */
     public $publicType;
 
     /**
-     * @description 标题
+     * @example 测试直播
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 用户id（主播id）
+     * @example DC7wZGOSueEEIGOf3WKwWgiEiE
      *
      * @var string
      */

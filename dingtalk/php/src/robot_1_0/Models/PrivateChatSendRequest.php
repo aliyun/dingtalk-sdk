@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class PrivateChatSendRequest extends Model
 {
     /**
-     * @description 酷应用的code
+     * @example COOLAPP-1-10182EEDD1AC0BA600D9000J
      *
      * @var string
      */
     public $coolAppCode;
 
     /**
-     * @description 消息类型的key
+     * @example sampleText
      *
      * @var string
      */
     public $msgKey;
 
     /**
-     * @description 消息体
+     * @example {"content":"今天吃肘子"}
      *
      * @var string
      */
     public $msgParam;
 
     /**
-     * @description 开放会话ID
+     * @example cid6KeBBLoveMJOGXoYKF5x7EeiodoA==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 机器人robotCode
+     * @example dingue4kfzdxbyn0pjqd
      *
      * @var string
      */

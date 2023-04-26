@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class recommends extends Model
 {
     /**
-     * @description 推荐物品的id，可以时feedId或者是微应用Id
+     * @example c497****-8a89-****-bc9b-*****48610d3
      *
      * @var string
      */
     public $objectId;
 
     /**
-     * @description 推荐物品的类别,0:课程,1:微应用
+     * @example 0
      *
      * @var int
      */

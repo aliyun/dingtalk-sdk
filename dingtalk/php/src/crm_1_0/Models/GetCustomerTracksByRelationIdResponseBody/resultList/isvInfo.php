@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class isvInfo extends Model
 {
     /**
-     * @description 写入动态的三方应用所属应用名。
-     *
      * @var string
      */
     public $appName;
 
     /**
-     * @description 写入动态的三方应用所属组织名。
-     *
      * @var string
      */
     public $orgName;

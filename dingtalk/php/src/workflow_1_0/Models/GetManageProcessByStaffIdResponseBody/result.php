@@ -9,50 +9,49 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 关联考勤类型，取值。
+     * @example 0
      *
-     * 2：请假
      * @var int
      */
     public $attendanceType;
 
     /**
-     * @description 模版名称。
+     * @example 通用审批
      *
      * @var string
      */
     public $flowTitle;
 
     /**
-     * @description 修改时间。
+     * @example 2020-07-14 14:24:59
      *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 模板图标名。
+     * @example common
      *
      * @var string
      */
     public $iconName;
 
     /**
-     * @description 图标URL地址。
+     * @example https://gw.alicdn.com/tfs/xxxx-112-112.png
      *
      * @var string
      */
     public $iconUrl;
 
     /**
-     * @description 是否新模版。
+     * @example true
      *
      * @var bool
      */
     public $newProcess;
 
     /**
-     * @description 模版code。
+     * @example PROC-44E84FC1-16E2-4A69-BB3C-xxxx
      *
      * @var string
      */

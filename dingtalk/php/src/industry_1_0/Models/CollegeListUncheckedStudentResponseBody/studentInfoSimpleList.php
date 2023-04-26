@@ -9,42 +9,40 @@ use AlibabaCloud\Tea\Model;
 class studentInfoSimpleList extends Model
 {
     /**
-     * @description 人员在组织的状态
+     * @example NORMAL
      *
      * @var string
      */
     public $dingMemberStatus;
 
     /**
-     * @description 账号是否激活
-     *
      * @var bool
      */
     public $isActive;
 
     /**
-     * @description 学生id
+     * @example 1111111
      *
      * @var int
      */
     public $studentId;
 
     /**
-     * @description 学生姓名
+     * @example 张三
      *
      * @var string
      */
     public $studentName;
 
     /**
-     * @description unionId
+     * @example 11111111
      *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description userId
+     * @example 0324124
      *
      * @var string
      */

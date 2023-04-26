@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class educationExperiences extends Model
 {
     /**
-     * @description 学历
+     * @example 1
      *
      * @var int
      */
     public $degree;
 
     /**
-     * @description 院系
+     * @example 计算机学院
      *
      * @var string
      */
     public $department;
 
     /**
-     * @description 详细描述
+     * @example 在校期间.......
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 结束时间
+     * @example yyyy-MM-dd
      *
      * @var string
      */
     public $endDate;
 
     /**
-     * @description 专业
+     * @example 计算机科学与技术
      *
      * @var string
      */
     public $major;
 
     /**
-     * @description 学校名称
+     * @example 清华大学
      *
      * @var string
      */
     public $schoolName;
 
     /**
-     * @description 开始时间
+     * @example yyyy-MM-dd
      *
      * @var string
      */

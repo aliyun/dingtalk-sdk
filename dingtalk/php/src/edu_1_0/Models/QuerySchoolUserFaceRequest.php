@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class QuerySchoolUserFaceRequest extends Model
 {
     /**
-     * @description 页码
+     * @example 从0开始
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 大于0小于200
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 设备序列号
+     * @example sn123
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 类型
+     * @example 1全量模式，2增量模式
      *
      * @var int
      */

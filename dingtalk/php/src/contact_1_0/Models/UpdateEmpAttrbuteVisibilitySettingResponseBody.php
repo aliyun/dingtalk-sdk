@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateEmpAttrbuteVisibilitySettingResponseBody extends Model
 {
     /**
-     * @description settingId
-     *
      * @var int
      */
     public $result;

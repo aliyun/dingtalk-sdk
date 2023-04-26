@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class NotifyPayCodeRefundResultResponseBody extends Model
 {
     /**
-     * @description 处理结果
+     * @example SUCCESS
      *
      * @var string
      */

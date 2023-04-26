@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class StopStreamOutRequest extends Model
 {
     /**
-     * @description 是否停止所有流，为true时，则不理会streamId字段
+     * @example true
      *
      * @var bool
      */
     public $stopAllStream;
 
     /**
-     * @description 流id
+     * @example 27SaQ3iiHLN0uwqcPisedfreNwiEiE
      *
      * @var string
      */
     public $streamId;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

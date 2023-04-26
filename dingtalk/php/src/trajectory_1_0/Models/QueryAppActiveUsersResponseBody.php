@@ -10,28 +10,24 @@ use AlibabaCloud\Tea\Model;
 class QueryAppActiveUsersResponseBody extends Model
 {
     /**
-     * @description 是否存在更多数据需要获取
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 数据集合
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 下一次获取开始位置
-     *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 总数
+     * @example 23153
      *
      * @var int
      */

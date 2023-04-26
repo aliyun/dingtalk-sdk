@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetAttachmentSpaceRequest extends Model
 {
     /**
-     * @description 应用的agentid。
+     * @example 8345000
      *
      * @var int
      */
     public $agentId;
 
     /**
-     * @description 用户的userid
+     * @example user123
      *
      * @var string
      */

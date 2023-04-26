@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class teamVO extends Model
 {
     /**
-     * @description 知识小组id
-     *
      * @var string
      */
     public $id;
 
     /**
-     * @description 知识小组名称
-     *
      * @var string
      */
     public $name;

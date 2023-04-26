@@ -58,18 +58,79 @@ use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\WearOrgHonorRequest;
 use AlibabaCloud\SDK\Dingtalk\Vorg_culture_1_0\Models\WearOrgHonorResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AssignOrgHoldingToEmpHoldingBatchRequest $request
+     * @param AssignOrgHoldingToEmpHoldingBatchHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return AssignOrgHoldingToEmpHoldingBatchResponse
+     */
+    public function assignOrgHoldingToEmpHoldingBatchWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->sendOrgCultureInform)) {
+            $body['sendOrgCultureInform'] = $request->sendOrgCultureInform;
+        }
+        if (!Utils::isUnset($request->singleAmount)) {
+            $body['singleAmount'] = $request->singleAmount;
+        }
+        if (!Utils::isUnset($request->sourceUsage)) {
+            $body['sourceUsage'] = $request->sourceUsage;
+        }
+        if (!Utils::isUnset($request->targetUsage)) {
+            $body['targetUsage'] = $request->targetUsage;
+        }
+        if (!Utils::isUnset($request->targetUserList)) {
+            $body['targetUserList'] = $request->targetUserList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AssignOrgHoldingToEmpHoldingBatch',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/organizations/points/assign',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AssignOrgHoldingToEmpHoldingBatchResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -86,47 +147,53 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AssignOrgHoldingToEmpHoldingBatchRequest $request
-     * @param AssignOrgHoldingToEmpHoldingBatchHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @param string                   $userId
+     * @param ConsumeUserPointsRequest $request
+     * @param ConsumeUserPointsHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return AssignOrgHoldingToEmpHoldingBatchResponse
+     * @return ConsumeUserPointsResponse
      */
-    public function assignOrgHoldingToEmpHoldingBatchWithOptions($request, $headers, $runtime)
+    public function consumeUserPointsWithOptions($userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->amount)) {
+            $body['amount'] = $request->amount;
+        }
+        if (!Utils::isUnset($request->outId)) {
+            $body['outId'] = $request->outId;
+        }
         if (!Utils::isUnset($request->remark)) {
-            @$body['remark'] = $request->remark;
+            $body['remark'] = $request->remark;
         }
-        if (!Utils::isUnset($request->sendOrgCultureInform)) {
-            @$body['sendOrgCultureInform'] = $request->sendOrgCultureInform;
-        }
-        if (!Utils::isUnset($request->singleAmount)) {
-            @$body['singleAmount'] = $request->singleAmount;
-        }
-        if (!Utils::isUnset($request->sourceUsage)) {
-            @$body['sourceUsage'] = $request->sourceUsage;
-        }
-        if (!Utils::isUnset($request->targetUsage)) {
-            @$body['targetUsage'] = $request->targetUsage;
-        }
-        if (!Utils::isUnset($request->targetUserList)) {
-            @$body['targetUserList'] = $request->targetUserList;
+        if (!Utils::isUnset($request->usage)) {
+            $body['usage'] = $request->usage;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'ConsumeUserPoints',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/users/' . $userId . '/points/deduct',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return AssignOrgHoldingToEmpHoldingBatchResponse::fromMap($this->doROARequest('AssignOrgHoldingToEmpHoldingBatch', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/organizations/points/assign', 'json', $req, $runtime));
+        return ConsumeUserPointsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -144,43 +211,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                   $userId
-     * @param ConsumeUserPointsRequest $request
-     * @param ConsumeUserPointsHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param CreateOrgHonorRequest $request
+     * @param CreateOrgHonorHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return ConsumeUserPointsResponse
+     * @return CreateOrgHonorResponse
      */
-    public function consumeUserPointsWithOptions($userId, $request, $headers, $runtime)
+    public function createOrgHonorWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $userId = OpenApiUtilClient::getEncodeParam($userId);
-        $body   = [];
-        if (!Utils::isUnset($request->amount)) {
-            @$body['amount'] = $request->amount;
+        $body = [];
+        if (!Utils::isUnset($request->avatarFrameMediaId)) {
+            $body['avatarFrameMediaId'] = $request->avatarFrameMediaId;
         }
-        if (!Utils::isUnset($request->outId)) {
-            @$body['outId'] = $request->outId;
+        if (!Utils::isUnset($request->defaultBgColor)) {
+            $body['defaultBgColor'] = $request->defaultBgColor;
         }
-        if (!Utils::isUnset($request->remark)) {
-            @$body['remark'] = $request->remark;
+        if (!Utils::isUnset($request->medalDesc)) {
+            $body['medalDesc'] = $request->medalDesc;
         }
-        if (!Utils::isUnset($request->usage)) {
-            @$body['usage'] = $request->usage;
+        if (!Utils::isUnset($request->medalMediaId)) {
+            $body['medalMediaId'] = $request->medalMediaId;
+        }
+        if (!Utils::isUnset($request->medalName)) {
+            $body['medalName'] = $request->medalName;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateOrgHonor',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/honors/templates',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return ConsumeUserPointsResponse::fromMap($this->doROARequest('ConsumeUserPoints', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/users/' . $userId . '/points/deduct', 'json', $req, $runtime));
+        return CreateOrgHonorResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -197,47 +279,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateOrgHonorRequest $request
-     * @param CreateOrgHonorHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param DeductionPointBatchRequest $request
+     * @param DeductionPointBatchHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return CreateOrgHonorResponse
+     * @return DeductionPointBatchResponse
      */
-    public function createOrgHonorWithOptions($request, $headers, $runtime)
+    public function deductionPointBatchWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->avatarFrameMediaId)) {
-            @$body['avatarFrameMediaId'] = $request->avatarFrameMediaId;
+        if (!Utils::isUnset($request->deductionAmount)) {
+            $body['deductionAmount'] = $request->deductionAmount;
         }
-        if (!Utils::isUnset($request->defaultBgColor)) {
-            @$body['defaultBgColor'] = $request->defaultBgColor;
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
         }
-        if (!Utils::isUnset($request->medalDesc)) {
-            @$body['medalDesc'] = $request->medalDesc;
+        if (!Utils::isUnset($request->sendOrgCultureInform)) {
+            $body['sendOrgCultureInform'] = $request->sendOrgCultureInform;
         }
-        if (!Utils::isUnset($request->medalMediaId)) {
-            @$body['medalMediaId'] = $request->medalMediaId;
-        }
-        if (!Utils::isUnset($request->medalName)) {
-            @$body['medalName'] = $request->medalName;
+        if (!Utils::isUnset($request->targetUserList)) {
+            $body['targetUserList'] = $request->targetUserList;
         }
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'DeductionPointBatch',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/users/points/deduct',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateOrgHonorResponse::fromMap($this->doROARequest('CreateOrgHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/honors/templates', 'json', $req, $runtime));
+        return DeductionPointBatchResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -254,44 +344,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeductionPointBatchRequest $request
-     * @param DeductionPointBatchHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param ExportPointOpenRequest $request
+     * @param ExportPointOpenHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return DeductionPointBatchResponse
+     * @return ExportPointOpenResponse
      */
-    public function deductionPointBatchWithOptions($request, $headers, $runtime)
+    public function exportPointOpenWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->deductionAmount)) {
-            @$body['deductionAmount'] = $request->deductionAmount;
+        if (!Utils::isUnset($request->exportDate)) {
+            $body['exportDate'] = $request->exportDate;
         }
-        if (!Utils::isUnset($request->remark)) {
-            @$body['remark'] = $request->remark;
-        }
-        if (!Utils::isUnset($request->sendOrgCultureInform)) {
-            @$body['sendOrgCultureInform'] = $request->sendOrgCultureInform;
-        }
-        if (!Utils::isUnset($request->targetUserList)) {
-            @$body['targetUserList'] = $request->targetUserList;
+        if (!Utils::isUnset($request->exportType)) {
+            $body['exportType'] = $request->exportType;
         }
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'ExportPointOpen',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/users/points/export',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeductionPointBatchResponse::fromMap($this->doROARequest('DeductionPointBatch', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/users/points/deduct', 'json', $req, $runtime));
+        return ExportPointOpenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -308,38 +403,65 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ExportPointOpenRequest $request
-     * @param ExportPointOpenHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param string            $honorId
+     * @param GrantHonorRequest $request
+     * @param GrantHonorHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return ExportPointOpenResponse
+     * @return GrantHonorResponse
      */
-    public function exportPointOpenWithOptions($request, $headers, $runtime)
+    public function grantHonorWithOptions($honorId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->exportDate)) {
-            @$body['exportDate'] = $request->exportDate;
+        if (!Utils::isUnset($request->expirationTime)) {
+            $body['expirationTime'] = $request->expirationTime;
         }
-        if (!Utils::isUnset($request->exportType)) {
-            @$body['exportType'] = $request->exportType;
+        if (!Utils::isUnset($request->grantReason)) {
+            $body['grantReason'] = $request->grantReason;
         }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->granterName)) {
+            $body['granterName'] = $request->granterName;
+        }
+        if (!Utils::isUnset($request->noticeAnnouncer)) {
+            $body['noticeAnnouncer'] = $request->noticeAnnouncer;
+        }
+        if (!Utils::isUnset($request->noticeSingle)) {
+            $body['noticeSingle'] = $request->noticeSingle;
+        }
+        if (!Utils::isUnset($request->openConversationIds)) {
+            $body['openConversationIds'] = $request->openConversationIds;
+        }
+        if (!Utils::isUnset($request->receiverUserIds)) {
+            $body['receiverUserIds'] = $request->receiverUserIds;
+        }
+        if (!Utils::isUnset($request->senderUserId)) {
+            $body['senderUserId'] = $request->senderUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'GrantHonor',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/honors/' . $honorId . '/grant',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return ExportPointOpenResponse::fromMap($this->doROARequest('ExportPointOpen', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/users/points/export', 'json', $req, $runtime));
+        return GrantHonorResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -357,55 +479,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string            $honorId
-     * @param GrantHonorRequest $request
-     * @param GrantHonorHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param QueryCorpPointsRequest $request
+     * @param QueryCorpPointsHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return GrantHonorResponse
+     * @return QueryCorpPointsResponse
      */
-    public function grantHonorWithOptions($honorId, $request, $headers, $runtime)
+    public function queryCorpPointsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $honorId = OpenApiUtilClient::getEncodeParam($honorId);
-        $body    = [];
-        if (!Utils::isUnset($request->expirationTime)) {
-            @$body['expirationTime'] = $request->expirationTime;
-        }
-        if (!Utils::isUnset($request->grantReason)) {
-            @$body['grantReason'] = $request->grantReason;
-        }
-        if (!Utils::isUnset($request->granterName)) {
-            @$body['granterName'] = $request->granterName;
-        }
-        if (!Utils::isUnset($request->noticeAnnouncer)) {
-            @$body['noticeAnnouncer'] = $request->noticeAnnouncer;
-        }
-        if (!Utils::isUnset($request->noticeSingle)) {
-            @$body['noticeSingle'] = $request->noticeSingle;
-        }
-        if (!Utils::isUnset($request->openConversationIds)) {
-            @$body['openConversationIds'] = $request->openConversationIds;
-        }
-        if (!Utils::isUnset($request->receiverUserIds)) {
-            @$body['receiverUserIds'] = $request->receiverUserIds;
-        }
-        if (!Utils::isUnset($request->senderUserId)) {
-            @$body['senderUserId'] = $request->senderUserId;
+        $query = [];
+        if (!Utils::isUnset($request->optUserId)) {
+            $query['optUserId'] = $request->optUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryCorpPoints',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/organizations/points',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GrantHonorResponse::fromMap($this->doROARequest('GrantHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/honors/' . $honorId . '/grant', 'json', $req, $runtime));
+        return QueryCorpPointsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -422,32 +532,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCorpPointsRequest $request
-     * @param QueryCorpPointsHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param QueryEmpPointDetailsRequest $request
+     * @param QueryEmpPointDetailsHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return QueryCorpPointsResponse
+     * @return QueryEmpPointDetailsResponse
      */
-    public function queryCorpPointsWithOptions($request, $headers, $runtime)
+    public function queryEmpPointDetailsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->optUserId)) {
-            @$query['optUserId'] = $request->optUserId;
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryEmpPointDetails',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/points/empDetails',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryCorpPointsResponse::fromMap($this->doROARequest('QueryCorpPoints', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/organizations/points', 'json', $req, $runtime));
+        return QueryEmpPointDetailsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -464,38 +591,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryEmpPointDetailsRequest $request
-     * @param QueryEmpPointDetailsHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param QueryOrgHonorsRequest $request
+     * @param QueryOrgHonorsHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return QueryEmpPointDetailsResponse
+     * @return QueryOrgHonorsResponse
      */
-    public function queryEmpPointDetailsWithOptions($request, $headers, $runtime)
+    public function queryOrgHonorsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
         }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryOrgHonors',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/organizations/honors',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryEmpPointDetailsResponse::fromMap($this->doROARequest('QueryEmpPointDetails', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/points/empDetails', 'json', $req, $runtime));
+        return QueryOrgHonorsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -512,35 +647,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOrgHonorsRequest $request
-     * @param QueryOrgHonorsHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param QueryOrgPointDetailsRequest $request
+     * @param QueryOrgPointDetailsHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return QueryOrgHonorsResponse
+     * @return QueryOrgPointDetailsResponse
      */
-    public function queryOrgHonorsWithOptions($request, $headers, $runtime)
+    public function queryOrgPointDetailsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
+        if (!Utils::isUnset($request->accountType)) {
+            $query['accountType'] = $request->accountType;
         }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryOrgPointDetails',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/points/orgDetails',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryOrgHonorsResponse::fromMap($this->doROARequest('QueryOrgHonors', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/organizations/honors', 'json', $req, $runtime));
+        return QueryOrgPointDetailsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -557,55 +709,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOrgPointDetailsRequest $request
-     * @param QueryOrgPointDetailsHeaders $headers
-     * @param RuntimeOptions              $runtime
-     *
-     * @return QueryOrgPointDetailsResponse
-     */
-    public function queryOrgPointDetailsWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->accountType)) {
-            @$query['accountType'] = $request->accountType;
-        }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryOrgPointDetailsResponse::fromMap($this->doROARequest('QueryOrgPointDetails', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/points/orgDetails', 'json', $req, $runtime));
-    }
-
-    /**
-     * @return QueryPointActionAutoAssignRuleResponse
-     */
-    public function queryPointActionAutoAssignRule()
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryPointActionAutoAssignRuleHeaders([]);
-
-        return $this->queryPointActionAutoAssignRuleWithOptions($headers, $runtime);
-    }
-
-    /**
      * @param QueryPointActionAutoAssignRuleHeaders $headers
      * @param RuntimeOptions                        $runtime
      *
@@ -618,24 +721,35 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'QueryPointActionAutoAssignRule',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/users/points/actionRules',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryPointActionAutoAssignRuleResponse::fromMap($this->doROARequest('QueryPointActionAutoAssignRule', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/users/points/actionRules', 'json', $req, $runtime));
+        return QueryPointActionAutoAssignRuleResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
-     * @return QueryPointAutoIssueSettingResponse
+     * @return QueryPointActionAutoAssignRuleResponse
      */
-    public function queryPointAutoIssueSetting()
+    public function queryPointActionAutoAssignRule()
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryPointAutoIssueSettingHeaders([]);
+        $headers = new QueryPointActionAutoAssignRuleHeaders([]);
 
-        return $this->queryPointAutoIssueSettingWithOptions($headers, $runtime);
+        return $this->queryPointActionAutoAssignRuleWithOptions($headers, $runtime);
     }
 
     /**
@@ -651,13 +765,79 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'QueryPointAutoIssueSetting',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/users/points',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryPointAutoIssueSettingResponse::fromMap($this->doROARequest('QueryPointAutoIssueSetting', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/users/points', 'json', $req, $runtime));
+        return QueryPointAutoIssueSettingResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return QueryPointAutoIssueSettingResponse
+     */
+    public function queryPointAutoIssueSetting()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPointAutoIssueSettingHeaders([]);
+
+        return $this->queryPointAutoIssueSettingWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param string                 $userId
+     * @param QueryUserHonorsRequest $request
+     * @param QueryUserHonorsHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return QueryUserHonorsResponse
+     */
+    public function queryUserHonorsWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryUserHonors',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/honors/users/' . $userId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryUserHonorsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -676,36 +856,36 @@ class Dingtalk extends OpenApiClient
 
     /**
      * @param string                 $userId
-     * @param QueryUserHonorsRequest $request
-     * @param QueryUserHonorsHeaders $headers
+     * @param QueryUserPointsHeaders $headers
      * @param RuntimeOptions         $runtime
      *
-     * @return QueryUserHonorsResponse
+     * @return QueryUserPointsResponse
      */
-    public function queryUserHonorsWithOptions($userId, $request, $headers, $runtime)
+    public function queryUserPointsWithOptions($userId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $userId = OpenApiUtilClient::getEncodeParam($userId);
-        $query  = [];
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryUserPoints',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/users/' . $userId . '/points',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryUserHonorsResponse::fromMap($this->doROARequest('QueryUserHonors', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/honors/users/' . $userId . '', 'json', $req, $runtime));
+        return QueryUserPointsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -722,27 +902,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                 $userId
-     * @param QueryUserPointsHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param string             $honorId
+     * @param RecallHonorRequest $request
+     * @param RecallHonorHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return QueryUserPointsResponse
+     * @return RecallHonorResponse
      */
-    public function queryUserPointsWithOptions($userId, $headers, $runtime)
+    public function recallHonorWithOptions($honorId, $request, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RecallHonor',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/honors/' . $honorId . '/recall',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryUserPointsResponse::fromMap($this->doROARequest('QueryUserPoints', 'orgCulture_1.0', 'HTTP', 'GET', 'AK', '/v1.0/orgCulture/users/' . $userId . '/points', 'json', $req, $runtime));
+        return RecallHonorResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -760,34 +957,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string             $honorId
-     * @param RecallHonorRequest $request
-     * @param RecallHonorHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param UpdateAutoIssuePointRequest $request
+     * @param UpdateAutoIssuePointHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return RecallHonorResponse
+     * @return UpdateAutoIssuePointResponse
      */
-    public function recallHonorWithOptions($honorId, $request, $headers, $runtime)
+    public function updateAutoIssuePointWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $honorId = OpenApiUtilClient::getEncodeParam($honorId);
-        $body    = [];
+        $body = [];
+        if (!Utils::isUnset($request->pointAutoNum)) {
+            $body['pointAutoNum'] = $request->pointAutoNum;
+        }
+        if (!Utils::isUnset($request->pointAutoState)) {
+            $body['pointAutoState'] = $request->pointAutoState;
+        }
+        if (!Utils::isUnset($request->pointAutoTime)) {
+            $body['pointAutoTime'] = $request->pointAutoTime;
+        }
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateAutoIssuePoint',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/users/points/set',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return RecallHonorResponse::fromMap($this->doROARequest('RecallHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/honors/' . $honorId . '/recall', 'json', $req, $runtime));
+        return UpdateAutoIssuePointResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -804,41 +1019,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateAutoIssuePointRequest $request
-     * @param UpdateAutoIssuePointHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param UpdatePointActionAutoAssignRuleRequest $request
+     * @param UpdatePointActionAutoAssignRuleHeaders $headers
+     * @param RuntimeOptions                         $runtime
      *
-     * @return UpdateAutoIssuePointResponse
+     * @return UpdatePointActionAutoAssignRuleResponse
      */
-    public function updateAutoIssuePointWithOptions($request, $headers, $runtime)
+    public function updatePointActionAutoAssignRuleWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->pointAutoNum)) {
-            @$body['pointAutoNum'] = $request->pointAutoNum;
-        }
-        if (!Utils::isUnset($request->pointAutoState)) {
-            @$body['pointAutoState'] = $request->pointAutoState;
-        }
-        if (!Utils::isUnset($request->pointAutoTime)) {
-            @$body['pointAutoTime'] = $request->pointAutoTime;
+        if (!Utils::isUnset($request->updatePointRuleRequestDTOList)) {
+            $body['updatePointRuleRequestDTOList'] = $request->updatePointRuleRequestDTOList;
         }
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdatePointActionAutoAssignRule',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/users/points/actionRules',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return UpdateAutoIssuePointResponse::fromMap($this->doROARequest('UpdateAutoIssuePoint', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/users/points/set', 'json', $req, $runtime));
+        return UpdatePointActionAutoAssignRuleResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -855,35 +1075,47 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdatePointActionAutoAssignRuleRequest $request
-     * @param UpdatePointActionAutoAssignRuleHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @param string              $honorId
+     * @param WearOrgHonorRequest $request
+     * @param WearOrgHonorHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return UpdatePointActionAutoAssignRuleResponse
+     * @return WearOrgHonorResponse
      */
-    public function updatePointActionAutoAssignRuleWithOptions($request, $headers, $runtime)
+    public function wearOrgHonorWithOptions($honorId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->updatePointRuleRequestDTOList)) {
-            @$body['updatePointRuleRequestDTOList'] = $request->updatePointRuleRequestDTOList;
-        }
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->wear)) {
+            $body['wear'] = $request->wear;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'WearOrgHonor',
+            'version'     => 'orgCulture_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/orgCulture/honors/' . $honorId . '/wear',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return UpdatePointActionAutoAssignRuleResponse::fromMap($this->doROARequest('UpdatePointActionAutoAssignRule', 'orgCulture_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/orgCulture/users/points/actionRules', 'json', $req, $runtime));
+        return WearOrgHonorResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -898,39 +1130,5 @@ class Dingtalk extends OpenApiClient
         $headers = new WearOrgHonorHeaders([]);
 
         return $this->wearOrgHonorWithOptions($honorId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string              $honorId
-     * @param WearOrgHonorRequest $request
-     * @param WearOrgHonorHeaders $headers
-     * @param RuntimeOptions      $runtime
-     *
-     * @return WearOrgHonorResponse
-     */
-    public function wearOrgHonorWithOptions($honorId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $honorId = OpenApiUtilClient::getEncodeParam($honorId);
-        $body    = [];
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->wear)) {
-            @$body['wear'] = $request->wear;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return WearOrgHonorResponse::fromMap($this->doROARequest('WearOrgHonor', 'orgCulture_1.0', 'HTTP', 'POST', 'AK', '/v1.0/orgCulture/honors/' . $honorId . '/wear', 'json', $req, $runtime));
     }
 }

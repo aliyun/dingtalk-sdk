@@ -16,18 +16,70 @@ use AlibabaCloud\SDK\Dingtalk\Vtrajectory_1_0\Models\QueryPageTraceDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrajectory_1_0\Models\QueryPageTraceDataResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param QueryAppActiveUsersRequest $request
+     * @param QueryAppActiveUsersHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return QueryAppActiveUsersResponse
+     */
+    public function queryAppActiveUsersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->needPositionInfo)) {
+            $query['needPositionInfo'] = $request->needPositionInfo;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryAppActiveUsers',
+            'version'     => 'trajectory_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/trajectory/activeUsers',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryAppActiveUsersResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -44,38 +96,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAppActiveUsersRequest $request
-     * @param QueryAppActiveUsersHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param QueryCollectingTraceTaskRequest $request
+     * @param QueryCollectingTraceTaskHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return QueryAppActiveUsersResponse
+     * @return QueryCollectingTraceTaskResponse
      */
-    public function queryAppActiveUsersWithOptions($request, $headers, $runtime)
+    public function queryCollectingTraceTaskWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->needPositionInfo)) {
-            @$query['needPositionInfo'] = $request->needPositionInfo;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
+        $body = [];
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryCollectingTraceTask',
+            'version'     => 'trajectory_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/trajectory/currentTasks/queryByUserIds',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryAppActiveUsersResponse::fromMap($this->doROARequest('QueryAppActiveUsers', 'trajectory_1.0', 'HTTP', 'GET', 'AK', '/v1.0/trajectory/activeUsers', 'json', $req, $runtime));
+        return QueryCollectingTraceTaskResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -92,32 +149,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCollectingTraceTaskRequest $request
-     * @param QueryCollectingTraceTaskHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param QueryPageTraceDataRequest $request
+     * @param QueryPageTraceDataHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return QueryCollectingTraceTaskResponse
+     * @return QueryPageTraceDataResponse
      */
-    public function queryCollectingTraceTaskWithOptions($request, $headers, $runtime)
+    public function queryPageTraceDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->userIds)) {
-            @$body['userIds'] = $request->userIds;
+        $query = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->staffId)) {
+            $query['staffId'] = $request->staffId;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->traceId)) {
+            $query['traceId'] = $request->traceId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryPageTraceData',
+            'version'     => 'trajectory_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/trajectory/data',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryCollectingTraceTaskResponse::fromMap($this->doROARequest('QueryCollectingTraceTask', 'trajectory_1.0', 'HTTP', 'POST', 'AK', '/v1.0/trajectory/currentTasks/queryByUserIds', 'json', $req, $runtime));
+        return QueryPageTraceDataResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -131,49 +214,5 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryPageTraceDataHeaders([]);
 
         return $this->queryPageTraceDataWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryPageTraceDataRequest $request
-     * @param QueryPageTraceDataHeaders $headers
-     * @param RuntimeOptions            $runtime
-     *
-     * @return QueryPageTraceDataResponse
-     */
-    public function queryPageTraceDataWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->endTime)) {
-            @$query['endTime'] = $request->endTime;
-        }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->staffId)) {
-            @$query['staffId'] = $request->staffId;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$query['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->traceId)) {
-            @$query['traceId'] = $request->traceId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryPageTraceDataResponse::fromMap($this->doROARequest('QueryPageTraceData', 'trajectory_1.0', 'HTTP', 'GET', 'AK', '/v1.0/trajectory/data', 'json', $req, $runtime));
     }
 }

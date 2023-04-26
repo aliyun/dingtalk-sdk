@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class leads extends Model
 {
     /**
-     * @description 线索名称。
+     * @example XX公司
      *
      * @var string
      */
     public $leadsName;
 
     /**
-     * @description 线索id。
+     * @example fasd123125
      *
      * @var string
      */

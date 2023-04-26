@@ -10,22 +10,21 @@ use AlibabaCloud\Tea\Model;
 class details extends Model
 {
     /**
-     * @description 积分数量 发放时为负。 扣减时为正
+     * @example 10
      *
      * @var int
      */
     public $amount;
 
     /**
-     * @description 创建时间
+     * @example 1655450856000
      *
      * @var int
      */
     public $gmtCreate;
 
     /**
-     * @description 积分交易单号
-     *
+     * @example 324324353535
      *
      * @var string
      */
@@ -37,8 +36,8 @@ class details extends Model
     public $pointOperateFeatureResponseDTO;
 
     /**
-     * @description 源账户积分bizCode.
-     * 额度:credit
+     * @example personal
+     *
      * @var string
      */
     public $sourceBizCode;

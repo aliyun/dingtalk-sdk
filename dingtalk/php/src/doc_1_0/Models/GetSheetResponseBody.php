@@ -9,50 +9,50 @@ use AlibabaCloud\Tea\Model;
 class GetSheetResponseBody extends Model
 {
     /**
-     * @description 工作表列数。
+     * @example column_count
      *
      * @var int
      */
     public $columnCount;
 
     /**
-     * @description 工作表id
+     * @example sheet_id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 最后一列非空列的位置，从0开始，表为空时返回-1。
+     * @example last_non_empty_column
      *
      * @var int
      */
     public $lastNonEmptyColumn;
 
     /**
-     * @description 最后一行非空行的位置，从0开始，表为空时返回-1。
+     * @example last_non_empty_row
      *
      * @var int
      */
     public $lastNonEmptyRow;
 
     /**
-     * @description 工作表名称
+     * @example sheet_name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 工作表行数。
+     * @example row_count
      *
      * @var int
      */
     public $rowCount;
 
     /**
-     * @description 工作表可见性
-     * hidden: 隐藏
+     * @example visible
+     *
      * @var string
      */
     public $visibility;

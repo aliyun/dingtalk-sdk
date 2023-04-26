@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class GetAllJobPostResponseBody extends Model
 {
     /**
-     * @description 返回数据
-     *
      * @var CfJobPostResp[]
      */
     public $content;
 
     /**
-     * @description Id of the request
+     * @example 1
      *
      * @var string
      */

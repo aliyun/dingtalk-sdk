@@ -12,8 +12,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 是否默认
-     *
      * @var bool
      */
     public $default;
@@ -24,43 +22,31 @@ class result extends Model
     public $durationSettings;
 
     /**
-     * @description 历史加班规则设置id
-     *
      * @var int
      */
     public $id;
 
     /**
-     * @description 规则名称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 时间分割规则
-     *
      * @var overtimeDivisions[]
      */
     public $overtimeDivisions;
 
     /**
-     * @description 设置id
-     *
      * @var int
      */
     public $settingId;
 
     /**
-     * @description 加班时长单位
-     *
      * @var int
      */
     public $stepType;
 
     /**
-     * @description 加班时长是否取整 单位 小时
-     *
      * @var float
      */
     public $stepValue;
@@ -71,8 +57,6 @@ class result extends Model
     public $warningSettings;
 
     /**
-     * @description 日折算时长 单位：分钟
-     *
      * @var int
      */
     public $workMinutesPerDay;

@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetUserCardHolderListRequest extends Model
 {
     /**
-     * @description 每页返回个数
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 标记当前开始读取的位置，置空表示从头开始
-     *
      * @var int
      */
     public $nextToken;

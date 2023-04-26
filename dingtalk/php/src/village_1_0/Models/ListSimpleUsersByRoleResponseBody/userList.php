@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class userList extends Model
 {
     /**
-     * @description 工号
-     *
      * @var string
      */
     public $jobNumber;
 
     /**
-     * @description 姓名
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description unionId
-     *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 用户ID
-     *
      * @var string
      */
     public $userId;

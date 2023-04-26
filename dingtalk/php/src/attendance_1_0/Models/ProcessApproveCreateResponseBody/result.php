@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 钉钉侧生成的审批单id
+     * @example 3534654765756234
      *
      * @var string
      */

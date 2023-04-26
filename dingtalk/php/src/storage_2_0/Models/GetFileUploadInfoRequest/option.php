@@ -10,29 +10,27 @@ use AlibabaCloud\Tea\Model;
 class option extends Model
 {
     /**
-     * @description 预检查的字段。可实现对文件名称，文件完整性，容量的校验
-     *
      * @var preCheckParam
      */
     public $preCheckParam;
 
     /**
-     * @description 优先使用内网传输
-     * true
+     * @example true
+     *
      * @var bool
      */
     public $preferIntranet;
 
     /**
-     * @description 优先地域, 倾向于将资源存到哪个地域，可实现就近上传等功能
-     * UNKNOWN: 未知
+     * @example ZHANGJIAKOU
+     *
      * @var string
      */
     public $preferRegion;
 
     /**
-     * @description 文件存储驱动类型, 当前只支持DINGTALK
-     * DINGTALK
+     * @example DINGTALK
+     *
      * @var string
      */
     public $storageDriver;

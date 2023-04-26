@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class PageFormBaseInfosResponseBody extends Model
 {
     /**
-     * @description 结果集
-     *
      * @var result
      */
     public $result;
 
     /**
-     * @description 是否成功
-     *
      * @var bool
      */
     public $success;

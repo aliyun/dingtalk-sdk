@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 是否有更多数据
+     * @example true
      *
      * @var bool
      */
@@ -22,14 +22,14 @@ class result extends Model
     public $list;
 
     /**
-     * @description 总数
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 下次获取数据的游标
+     * @example 10
      *
      * @var string
      */

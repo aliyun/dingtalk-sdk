@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class ListEventsResponseBody extends Model
 {
     /**
-     * @description 日程
-     *
      * @var events[]
      */
     public $events;
 
     /**
-     * @description 翻页token
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 增量同步token
-     *
      * @var string
      */
     public $syncToken;

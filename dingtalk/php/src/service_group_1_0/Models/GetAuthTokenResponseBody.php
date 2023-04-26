@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class GetAuthTokenResponseBody extends Model
 {
     /**
-     * @description 错误码
-     *
      * @var int
      */
     public $dingOpenErrcode;
 
     /**
-     * @description errorMsg
-     *
      * @var string
      */
     public $errorMsg;
 
     /**
-     * @description 返回的对象
-     *
      * @var result
      */
     public $result;
 
     /**
-     * @description 是否成功
-     *
      * @var bool
      */
     public $success;

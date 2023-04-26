@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class pushModel extends Model
 {
     /**
-     * @description 参与学校的名称列表
-     *
      * @var string[]
      */
     public $pushOrgNameList;
 
     /**
-     * @description 参与角色的名称列表
-     *
      * @var string[]
      */
     public $pushRoleNameList;

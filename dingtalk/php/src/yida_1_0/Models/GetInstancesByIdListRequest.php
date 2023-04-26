@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class GetInstancesByIdListRequest extends Model
 {
     /**
-     * @description 应用ID
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 语言
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 流程实例ID列表，多个用,分割
+     * @example f30233fb-72e1-4af4-8cb8-c7e0ea9ee530,d230233fb-72e1-4af4-8cb8-c7e0ea9ee530
      *
      * @var string
      */
     public $processInstanceIds;
 
     /**
-     * @description 应用秘钥
+     * @example hexxyy
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉的userId
+     * @example 未知
      *
      * @var string
      */

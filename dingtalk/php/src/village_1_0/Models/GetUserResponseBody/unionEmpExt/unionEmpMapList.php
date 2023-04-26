@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class unionEmpMapList extends Model
 {
     /**
-     * @description 企业 id
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 员工 id
-     *
      * @var string
      */
     public $staffId;

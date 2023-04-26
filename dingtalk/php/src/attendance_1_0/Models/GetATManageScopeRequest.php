@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetATManageScopeRequest extends Model
 {
     /**
-     * @description 单次查询条数，最大200。
+     * @example 50
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标。
+     * @example 0
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 查询用户userId。
+     * @example user01
      *
      * @var string
      */

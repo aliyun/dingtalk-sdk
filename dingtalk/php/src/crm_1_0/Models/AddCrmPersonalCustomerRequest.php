@@ -10,56 +10,46 @@ use AlibabaCloud\Tea\Model;
 class AddCrmPersonalCustomerRequest extends Model
 {
     /**
-     * @description 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
+     * @example publicDraw
      *
      * @var string
      */
     public $action;
 
     /**
-     * @description 记录创建人的昵称
-     *
      * @var string
      */
     public $creatorNick;
 
     /**
-     * @description 记录创建人的用户ID
-     *
      * @var string
      */
     public $creatorUserId;
 
     /**
-     * @description 数据内容
-     *
      * @var mixed[]
      */
     public $data;
 
     /**
-     * @description 扩展数据内容
-     *
      * @var mixed[]
      */
     public $extendData;
 
     /**
-     * @description 权限
-     *
      * @var permission
      */
     public $permission;
 
     /**
-     * @description 关系类型
+     * @example crm_customer_personal
      *
      * @var string
      */
     public $relationType;
 
     /**
-     * @description 跳过uk查重
+     * @example false
      *
      * @var bool
      */

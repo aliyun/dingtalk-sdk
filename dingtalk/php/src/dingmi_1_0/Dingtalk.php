@@ -46,18 +46,67 @@ use AlibabaCloud\SDK\Dingtalk\Vdingmi_1_0\Models\UpdateOfficialAccountRobotInfoR
 use AlibabaCloud\SDK\Dingtalk\Vdingmi_1_0\Models\UpdateOfficialAccountRobotInfoResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AddRobotInstanceToGroupRequest $request
+     * @param AddRobotInstanceToGroupHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return AddRobotInstanceToGroupResponse
+     */
+    public function addRobotInstanceToGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->chatbotId)) {
+            $body['chatbotId'] = $request->chatbotId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddRobotInstanceToGroup',
+            'version'     => 'dingmi_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/dingmi/intelligentRobots/groups',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddRobotInstanceToGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -74,35 +123,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddRobotInstanceToGroupRequest $request
-     * @param AddRobotInstanceToGroupHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param AskRobotRequest $request
+     * @param AskRobotHeaders $headers
+     * @param RuntimeOptions  $runtime
      *
-     * @return AddRobotInstanceToGroupResponse
+     * @return AskRobotResponse
      */
-    public function addRobotInstanceToGroupWithOptions($request, $headers, $runtime)
+    public function askRobotWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->chatbotId)) {
-            @$body['chatbotId'] = $request->chatbotId;
+        if (!Utils::isUnset($request->dingUserId)) {
+            $body['dingUserId'] = $request->dingUserId;
         }
-        if (!Utils::isUnset($request->openConversationId)) {
-            @$body['openConversationId'] = $request->openConversationId;
+        if (!Utils::isUnset($request->question)) {
+            $body['question'] = $request->question;
+        }
+        if (!Utils::isUnset($request->robotAppKey)) {
+            $body['robotAppKey'] = $request->robotAppKey;
+        }
+        if (!Utils::isUnset($request->sessionUuid)) {
+            $body['sessionUuid'] = $request->sessionUuid;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'AskRobot',
+            'version'     => 'dingmi_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/dingmi/robots/ask',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddRobotInstanceToGroupResponse::fromMap($this->doROARequest('AddRobotInstanceToGroup', 'dingmi_1.0', 'HTTP', 'POST', 'AK', '/v1.0/dingmi/intelligentRobots/groups', 'json', $req, $runtime));
+        return AskRobotResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -119,41 +185,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AskRobotRequest $request
-     * @param AskRobotHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @param GetDingMeBaseDataRequest $request
+     * @param GetDingMeBaseDataHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return AskRobotResponse
+     * @return GetDingMeBaseDataResponse
      */
-    public function askRobotWithOptions($request, $headers, $runtime)
+    public function getDingMeBaseDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->dingUserId)) {
-            @$body['dingUserId'] = $request->dingUserId;
+        $query = [];
+        if (!Utils::isUnset($request->appKey)) {
+            $query['appKey'] = $request->appKey;
         }
-        if (!Utils::isUnset($request->question)) {
-            @$body['question'] = $request->question;
+        if (!Utils::isUnset($request->byDay)) {
+            $query['byDay'] = $request->byDay;
         }
-        if (!Utils::isUnset($request->robotAppKey)) {
-            @$body['robotAppKey'] = $request->robotAppKey;
+        if (!Utils::isUnset($request->endDay)) {
+            $query['endDay'] = $request->endDay;
         }
-        if (!Utils::isUnset($request->sessionUuid)) {
-            @$body['sessionUuid'] = $request->sessionUuid;
+        if (!Utils::isUnset($request->startDay)) {
+            $query['startDay'] = $request->startDay;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetDingMeBaseData',
+            'version'     => 'dingmi_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/dingmi/robots/data',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return AskRobotResponse::fromMap($this->doROARequest('AskRobot', 'dingmi_1.0', 'HTTP', 'POST', 'AK', '/v1.0/dingmi/robots/ask', 'json', $req, $runtime));
+        return GetDingMeBaseDataResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -170,41 +247,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDingMeBaseDataRequest $request
-     * @param GetDingMeBaseDataHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param GetIntelligentRobotInfoRequest $request
+     * @param GetIntelligentRobotInfoHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return GetDingMeBaseDataResponse
+     * @return GetIntelligentRobotInfoResponse
      */
-    public function getDingMeBaseDataWithOptions($request, $headers, $runtime)
+    public function getIntelligentRobotInfoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->appKey)) {
-            @$query['appKey'] = $request->appKey;
-        }
-        if (!Utils::isUnset($request->byDay)) {
-            @$query['byDay'] = $request->byDay;
-        }
-        if (!Utils::isUnset($request->endDay)) {
-            @$query['endDay'] = $request->endDay;
-        }
-        if (!Utils::isUnset($request->startDay)) {
-            @$query['startDay'] = $request->startDay;
+        if (!Utils::isUnset($request->robotAppKey)) {
+            $query['robotAppKey'] = $request->robotAppKey;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetIntelligentRobotInfo',
+            'version'     => 'dingmi_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/dingmi/intelligentRobots/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetDingMeBaseDataResponse::fromMap($this->doROARequest('GetDingMeBaseData', 'dingmi_1.0', 'HTTP', 'GET', 'AK', '/v1.0/dingmi/robots/data', 'json', $req, $runtime));
+        return GetIntelligentRobotInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -221,32 +300,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetIntelligentRobotInfoRequest $request
-     * @param GetIntelligentRobotInfoHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param GetOfficialAccountRobotInfoRequest $request
+     * @param GetOfficialAccountRobotInfoHeaders $headers
+     * @param RuntimeOptions                     $runtime
      *
-     * @return GetIntelligentRobotInfoResponse
+     * @return GetOfficialAccountRobotInfoResponse
      */
-    public function getIntelligentRobotInfoWithOptions($request, $headers, $runtime)
+    public function getOfficialAccountRobotInfoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->robotAppKey)) {
-            @$query['robotAppKey'] = $request->robotAppKey;
+        if (!Utils::isUnset($request->type)) {
+            $query['type'] = $request->type;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetOfficialAccountRobotInfo',
+            'version'     => 'dingmi_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/dingmi/officialAccounts/robots',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetIntelligentRobotInfoResponse::fromMap($this->doROARequest('GetIntelligentRobotInfo', 'dingmi_1.0', 'HTTP', 'GET', 'AK', '/v1.0/dingmi/intelligentRobots/infos', 'json', $req, $runtime));
+        return GetOfficialAccountRobotInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -263,32 +353,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOfficialAccountRobotInfoRequest $request
-     * @param GetOfficialAccountRobotInfoHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param GetWebChannelUserTokenRequest $request
+     * @param GetWebChannelUserTokenHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return GetOfficialAccountRobotInfoResponse
+     * @return GetWebChannelUserTokenResponse
      */
-    public function getOfficialAccountRobotInfoWithOptions($request, $headers, $runtime)
+    public function getWebChannelUserTokenWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->type)) {
-            @$query['type'] = $request->type;
+        $body = [];
+        if (!Utils::isUnset($request->foreignId)) {
+            $body['foreignId'] = $request->foreignId;
+        }
+        if (!Utils::isUnset($request->nick)) {
+            $body['nick'] = $request->nick;
+        }
+        if (!Utils::isUnset($request->source)) {
+            $body['source'] = $request->source;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetWebChannelUserToken',
+            'version'     => 'dingmi_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/dingmi/webChannels/userTokens',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetOfficialAccountRobotInfoResponse::fromMap($this->doROARequest('GetOfficialAccountRobotInfo', 'dingmi_1.0', 'HTTP', 'GET', 'AK', '/v1.0/dingmi/officialAccounts/robots', 'json', $req, $runtime));
+        return GetWebChannelUserTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -305,38 +412,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetWebChannelUserTokenRequest $request
-     * @param GetWebChannelUserTokenHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param PushCustomerGroupMessageRequest $request
+     * @param PushCustomerGroupMessageHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return GetWebChannelUserTokenResponse
+     * @return PushCustomerGroupMessageResponse
      */
-    public function getWebChannelUserTokenWithOptions($request, $headers, $runtime)
+    public function pushCustomerGroupMessageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->foreignId)) {
-            @$body['foreignId'] = $request->foreignId;
+        if (!Utils::isUnset($request->conversationId)) {
+            $body['conversationId'] = $request->conversationId;
         }
-        if (!Utils::isUnset($request->nick)) {
-            @$body['nick'] = $request->nick;
+        if (!Utils::isUnset($request->msgKey)) {
+            $body['msgKey'] = $request->msgKey;
         }
-        if (!Utils::isUnset($request->source)) {
-            @$body['source'] = $request->source;
+        if (!Utils::isUnset($request->msgParam)) {
+            $body['msgParam'] = $request->msgParam;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'PushCustomerGroupMessage',
+            'version'     => 'dingmi_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/dingmi/officialAccounts/robots/groupMessages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetWebChannelUserTokenResponse::fromMap($this->doROARequest('GetWebChannelUserToken', 'dingmi_1.0', 'HTTP', 'POST', 'AK', '/v1.0/dingmi/webChannels/userTokens', 'json', $req, $runtime));
+        return PushCustomerGroupMessageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -353,38 +471,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PushCustomerGroupMessageRequest $request
-     * @param PushCustomerGroupMessageHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param PushIntelligentRobotGroupMessageRequest $request
+     * @param PushIntelligentRobotGroupMessageHeaders $headers
+     * @param RuntimeOptions                          $runtime
      *
-     * @return PushCustomerGroupMessageResponse
+     * @return PushIntelligentRobotGroupMessageResponse
      */
-    public function pushCustomerGroupMessageWithOptions($request, $headers, $runtime)
+    public function pushIntelligentRobotGroupMessageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->conversationId)) {
-            @$body['conversationId'] = $request->conversationId;
+        if (!Utils::isUnset($request->chatbotId)) {
+            $body['chatbotId'] = $request->chatbotId;
         }
         if (!Utils::isUnset($request->msgKey)) {
-            @$body['msgKey'] = $request->msgKey;
+            $body['msgKey'] = $request->msgKey;
         }
         if (!Utils::isUnset($request->msgParam)) {
-            @$body['msgParam'] = $request->msgParam;
+            $body['msgParam'] = $request->msgParam;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'PushIntelligentRobotGroupMessage',
+            'version'     => 'dingmi_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/dingmi/intelligentRobots/groupMessages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return PushCustomerGroupMessageResponse::fromMap($this->doROARequest('PushCustomerGroupMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', '/v1.0/dingmi/officialAccounts/robots/groupMessages/send', 'json', $req, $runtime));
+        return PushIntelligentRobotGroupMessageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -401,41 +533,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PushIntelligentRobotGroupMessageRequest $request
-     * @param PushIntelligentRobotGroupMessageHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @param PushIntelligentRobotMessageRequest $request
+     * @param PushIntelligentRobotMessageHeaders $headers
+     * @param RuntimeOptions                     $runtime
      *
-     * @return PushIntelligentRobotGroupMessageResponse
+     * @return PushIntelligentRobotMessageResponse
      */
-    public function pushIntelligentRobotGroupMessageWithOptions($request, $headers, $runtime)
+    public function pushIntelligentRobotMessageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->chatbotId)) {
-            @$body['chatbotId'] = $request->chatbotId;
+            $body['chatbotId'] = $request->chatbotId;
         }
         if (!Utils::isUnset($request->msgKey)) {
-            @$body['msgKey'] = $request->msgKey;
+            $body['msgKey'] = $request->msgKey;
         }
         if (!Utils::isUnset($request->msgParam)) {
-            @$body['msgParam'] = $request->msgParam;
+            $body['msgParam'] = $request->msgParam;
         }
-        if (!Utils::isUnset($request->openConversationId)) {
-            @$body['openConversationId'] = $request->openConversationId;
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'PushIntelligentRobotMessage',
+            'version'     => 'dingmi_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/dingmi/intelligentRobots/oToMessages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return PushIntelligentRobotGroupMessageResponse::fromMap($this->doROARequest('PushIntelligentRobotGroupMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', '/v1.0/dingmi/intelligentRobots/groupMessages/send', 'json', $req, $runtime));
+        return PushIntelligentRobotMessageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -452,41 +595,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PushIntelligentRobotMessageRequest $request
-     * @param PushIntelligentRobotMessageHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param PushOfficialAccountMessageRequest $request
+     * @param PushOfficialAccountMessageHeaders $headers
+     * @param RuntimeOptions                    $runtime
      *
-     * @return PushIntelligentRobotMessageResponse
+     * @return PushOfficialAccountMessageResponse
      */
-    public function pushIntelligentRobotMessageWithOptions($request, $headers, $runtime)
+    public function pushOfficialAccountMessageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->chatbotId)) {
-            @$body['chatbotId'] = $request->chatbotId;
-        }
         if (!Utils::isUnset($request->msgKey)) {
-            @$body['msgKey'] = $request->msgKey;
+            $body['msgKey'] = $request->msgKey;
         }
         if (!Utils::isUnset($request->msgParam)) {
-            @$body['msgParam'] = $request->msgParam;
+            $body['msgParam'] = $request->msgParam;
         }
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'PushOfficialAccountMessage',
+            'version'     => 'dingmi_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/dingmi/officialAccounts/robots/oToMessages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return PushIntelligentRobotMessageResponse::fromMap($this->doROARequest('PushIntelligentRobotMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', '/v1.0/dingmi/intelligentRobots/oToMessages/send', 'json', $req, $runtime));
+        return PushOfficialAccountMessageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -503,38 +654,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PushOfficialAccountMessageRequest $request
-     * @param PushOfficialAccountMessageHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @param PushRobotMessageRequest $request
+     * @param PushRobotMessageHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return PushOfficialAccountMessageResponse
+     * @return PushRobotMessageResponse
      */
-    public function pushOfficialAccountMessageWithOptions($request, $headers, $runtime)
+    public function pushRobotMessageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->chatbotId)) {
+            $body['chatbotId'] = $request->chatbotId;
+        }
         if (!Utils::isUnset($request->msgKey)) {
-            @$body['msgKey'] = $request->msgKey;
+            $body['msgKey'] = $request->msgKey;
         }
         if (!Utils::isUnset($request->msgParam)) {
-            @$body['msgParam'] = $request->msgParam;
+            $body['msgParam'] = $request->msgParam;
         }
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'PushRobotMessage',
+            'version'     => 'dingmi_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/dingmi/robots/oToMessages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return PushOfficialAccountMessageResponse::fromMap($this->doROARequest('PushOfficialAccountMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', '/v1.0/dingmi/officialAccounts/robots/oToMessages/send', 'json', $req, $runtime));
+        return PushRobotMessageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -551,41 +716,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PushRobotMessageRequest $request
-     * @param PushRobotMessageHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param ReplyRobotRequest $request
+     * @param ReplyRobotHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return PushRobotMessageResponse
+     * @return ReplyRobotResponse
      */
-    public function pushRobotMessageWithOptions($request, $headers, $runtime)
+    public function replyRobotWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->chatbotId)) {
-            @$body['chatbotId'] = $request->chatbotId;
-        }
-        if (!Utils::isUnset($request->msgKey)) {
-            @$body['msgKey'] = $request->msgKey;
-        }
-        if (!Utils::isUnset($request->msgParam)) {
-            @$body['msgParam'] = $request->msgParam;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->proxyMessageStr)) {
+            $body['proxyMessageStr'] = $request->proxyMessageStr;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'ReplyRobot',
+            'version'     => 'dingmi_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/dingmi/robots/reply',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return PushRobotMessageResponse::fromMap($this->doROARequest('PushRobotMessage', 'dingmi_1.0', 'HTTP', 'POST', 'AK', '/v1.0/dingmi/robots/oToMessages/send', 'json', $req, $runtime));
+        return ReplyRobotResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -602,32 +769,60 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReplyRobotRequest $request
-     * @param ReplyRobotHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param UpdateOfficialAccountRobotInfoRequest $request
+     * @param UpdateOfficialAccountRobotInfoHeaders $headers
+     * @param RuntimeOptions                        $runtime
      *
-     * @return ReplyRobotResponse
+     * @return UpdateOfficialAccountRobotInfoResponse
      */
-    public function replyRobotWithOptions($request, $headers, $runtime)
+    public function updateOfficialAccountRobotInfoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->type)) {
+            $query['type'] = $request->type;
+        }
         $body = [];
-        if (!Utils::isUnset($request->proxyMessageStr)) {
-            @$body['proxyMessageStr'] = $request->proxyMessageStr;
+        if (!Utils::isUnset($request->avatar)) {
+            $body['avatar'] = $request->avatar;
+        }
+        if (!Utils::isUnset($request->brief)) {
+            $body['brief'] = $request->brief;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->previewMediaUrl)) {
+            $body['previewMediaUrl'] = $request->previewMediaUrl;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateOfficialAccountRobotInfo',
+            'version'     => 'dingmi_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/dingmi/officialAccounts/robots',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return ReplyRobotResponse::fromMap($this->doROARequest('ReplyRobot', 'dingmi_1.0', 'HTTP', 'POST', 'AK', '/v1.0/dingmi/robots/reply', 'json', $req, $runtime));
+        return UpdateOfficialAccountRobotInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -641,51 +836,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateOfficialAccountRobotInfoHeaders([]);
 
         return $this->updateOfficialAccountRobotInfoWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param UpdateOfficialAccountRobotInfoRequest $request
-     * @param UpdateOfficialAccountRobotInfoHeaders $headers
-     * @param RuntimeOptions                        $runtime
-     *
-     * @return UpdateOfficialAccountRobotInfoResponse
-     */
-    public function updateOfficialAccountRobotInfoWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->type)) {
-            @$query['type'] = $request->type;
-        }
-        $body = [];
-        if (!Utils::isUnset($request->avatar)) {
-            @$body['avatar'] = $request->avatar;
-        }
-        if (!Utils::isUnset($request->brief)) {
-            @$body['brief'] = $request->brief;
-        }
-        if (!Utils::isUnset($request->description)) {
-            @$body['description'] = $request->description;
-        }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
-        }
-        if (!Utils::isUnset($request->previewMediaUrl)) {
-            @$body['previewMediaUrl'] = $request->previewMediaUrl;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateOfficialAccountRobotInfoResponse::fromMap($this->doROARequest('UpdateOfficialAccountRobotInfo', 'dingmi_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/dingmi/officialAccounts/robots', 'json', $req, $runtime));
     }
 }

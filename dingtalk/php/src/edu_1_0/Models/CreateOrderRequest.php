@@ -10,84 +10,82 @@ use AlibabaCloud\Tea\Model;
 class CreateOrderRequest extends Model
 {
     /**
-     * @description 实付金额，单位分（优惠计算后）
+     * @example 100
      *
      * @var int
      */
     public $actualAmount;
 
     /**
-     * @description 开单时间
+     * @example 1644413947909
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 订单明细信息
-     *
      * @var detailList[]
      */
     public $detailList;
 
     /**
-     * @description 人脸id
+     * @example 123123
      *
      * @var string
      */
     public $faceId;
 
     /**
-     * @description 刷脸token
+     * @example FACE_010100b0555Xczd4ePVLaB5V3cCzrONYpHWOENzRxDDqcnVjYXLso0U_1642665071746
      *
      * @var string
      */
     public $ftoken;
 
     /**
-     * @description 签名
+     * @example KSwZiSL1O7DiUNwjV168j3cP9ktp4bJTi5OQxAXre26KyBXza7+gCl/g1d0K3n3+9JhMqc2fUjBiENcAELw3Jb5xO/zslOeV4qFoMQfzW51+sdL/SSZCYvXEMhu9P6FAPhGZQ3vu6gr3oxUAXPIpWNb+sIfzR9epumoOXYeofH8=
      *
      * @var string
      */
     public $signature;
 
     /**
-     * @description 设备号
+     * @example QA62021121908E
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 交易加签
+     * @example {\"terminalType\":\"IOT\"}
      *
      * @var string
      */
     public $terminalParams;
 
     /**
-     * @description utc时间戳
+     * @example 1644413947909
      *
      * @var int
      */
     public $timestamp;
 
     /**
-     * @description 应付价格，单位分
+     * @example 100
      *
      * @var int
      */
     public $totalAmount;
 
     /**
-     * @description 员工id
+     * @example 1643334234626
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 版本号
+     * @example 1.0
      *
      * @var string
      */

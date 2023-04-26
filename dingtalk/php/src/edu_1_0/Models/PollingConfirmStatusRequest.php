@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class PollingConfirmStatusRequest extends Model
 {
     /**
-     * @description courseCode
+     * @example testCourseCode
      *
      * @var string
      */
     public $courseCode;
 
     /**
-     * @description ext
+     * @example testExt
      *
      * @var string
      */
     public $ext;
 
     /**
-     * @description isvCode
+     * @example DDIsv
      *
      * @var string
      */
     public $isvCode;
 
     /**
-     * @description opUserId
+     * @example 1
      *
      * @var string
      */

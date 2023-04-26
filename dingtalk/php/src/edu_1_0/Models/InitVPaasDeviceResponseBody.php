@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class InitVPaasDeviceResponseBody extends Model
 {
     /**
-     * @description pspk
+     * @example fewupiehwioghj
      *
      * @var string
      */

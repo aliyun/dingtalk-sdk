@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class orgUsesList extends Model
 {
     /**
-     * @description 部门名称
+     * @example xxx.设计部
      *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 姓名
+     * @example 李四
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 用户id
+     * @example DC7wZGOSueEEIGOf3WKwWgiEiE
      *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 员工id
+     * @example 214675
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 观看直播时长
+     * @example 189930
      *
      * @var int
      */
     public $watchLiveTime;
 
     /**
-     * @description 观看回放时长
+     * @example 23667
      *
      * @var int
      */
     public $watchPlaybackTime;
 
     /**
-     * @description 回放观看进度
+     * @example 2330
      *
      * @var int
      */

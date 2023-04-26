@@ -15,7 +15,7 @@ class data extends Model
     public $objectiveProgress;
 
     /**
-     * @description 目标分数。
+     * @example 0
      *
      * @var int
      */

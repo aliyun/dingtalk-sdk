@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description componentName
-     *
      * @var string
      */
     public $componentName;
 
     /**
-     * @description key
-     *
      * @var string
      */
     public $fieldId;
 
     /**
-     * @description label
-     *
      * @var string
      */
     public $label;
 
     /**
-     * @description parentId
-     *
      * @var string
      */
     public $parentId;

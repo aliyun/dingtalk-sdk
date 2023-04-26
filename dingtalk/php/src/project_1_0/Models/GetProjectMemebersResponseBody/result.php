@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 项目成员ID。
+     * @example 62c25e3b376ec29c45xxxxx
+     *
+     * @deprecated
      *
      * @var string
      */
     public $memberId;
 
     /**
-     * @description 项目角色，0=成员；1=管理员；2=拥有者。
+     * @example 0
      *
      * @var int
      */
     public $role;
 
     /**
-     * @description 项目角色ID列表。
-     *
      * @var string[]
      */
     public $roleIds;
 
     /**
-     * @description 用户ID。
+     * @example 0715153011125xxxx
      *
      * @var string
      */

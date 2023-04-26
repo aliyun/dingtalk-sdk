@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetAccessTokenRequest extends Model
 {
     /**
-     * @description 应用id
-     *
      * @var string
      */
     public $appKey;
 
     /**
-     * @description 应用密码
-     *
      * @var string
      */
     public $appSecret;

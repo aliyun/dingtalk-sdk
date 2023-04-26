@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class notifyConfigs extends Model
 {
     /**
-     * @description ding通知配置：value:"channel"（1钉弹框通知，2钉短信通知，3钉电话通知）
-     *
      * @var string
      */
     public $dingNotify;

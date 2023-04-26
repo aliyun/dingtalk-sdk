@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class AddAppRolesToMemberRequest extends Model
 {
     /**
-     * @description 人员id
-     *
      * @var string
      */
     public $memberId;
 
     /**
-     * @description 人员类型，“DEPT”表示部门，“USER”表示员工
-     *
      * @var string
      */
     public $memberType;
 
     /**
-     * @description 执行用户userId
-     *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 角色Id列表
-     *
      * @var roleList[]
      */
     public $roleList;

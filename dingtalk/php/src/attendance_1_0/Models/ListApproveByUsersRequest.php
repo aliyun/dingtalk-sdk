@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class ListApproveByUsersRequest extends Model
 {
     /**
-     * @description 传入需要查询的审批单类型：
-     * ● 5：外勤审批
      * @var int[]
      */
     public $bizTypes;
 
     /**
-     * @description 起始日期，Unix时间戳，单位毫秒。（不支持180天前）
+     * @example 1678636800000
      *
      * @var int
      */
     public $fromDateTime;
 
     /**
-     * @description 结束日期，Unix时间戳，单位毫秒。（不支持180天前，开始和结束不能超过30天）
+     * @example 1678636800000
      *
      * @var int
      */
     public $toDateTime;
 
     /**
-     * @description 要查询的人员userId列表，多个userId用逗号分隔，一次最多可传50个
+     * @example user1,user2
      *
      * @var string
      */

@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 班级id
+     * @example 333333
      *
      * @var int
      */
     public $classId;
 
     /**
-     * @description 学校corpId
+     * @example dingding142523424
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 学段code
+     * @example kindergarten
      *
      * @var string
      */
     public $periodCode;
 
     /**
-     * @description 学科code
+     * @example cn_yuwen
      *
      * @var string
      */
     public $subjectCode;
 
     /**
-     * @description 学科名称
+     * @example 语文
      *
      * @var string
      */
     public $subjectName;
 
     /**
-     * @description 老师名称
+     * @example 李老师
      *
      * @var string
      */
     public $teacherName;
 
     /**
-     * @description 老师Userid
+     * @example 50142345134
      *
      * @var string
      */

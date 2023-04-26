@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetBookkeepingUserListResponseBody extends Model
 {
     /**
-     * @description staffId列表
-     *
      * @var string[]
      */
     public $result;

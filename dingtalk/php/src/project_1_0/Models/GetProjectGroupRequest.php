@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetProjectGroupRequest extends Model
 {
     /**
-     * @description 分页大小，最小1，默认10，最大1000
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 查看者ID
+     * @example 01525006000512579xxx
      *
      * @var string
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class props extends Model
 {
     /**
-     * @description 配置的KEY值
+     * @example SAMPLE_KEY
      *
      * @var string
      */
     public $key;
 
     /**
-     * @description 配置的属性值
+     * @example VALUE
      *
      * @var string
      */

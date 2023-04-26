@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CheckInResponseBody extends Model
 {
     /**
-     * @description 签到时间戳
-     *
      * @var int
      */
     public $checkInTime;

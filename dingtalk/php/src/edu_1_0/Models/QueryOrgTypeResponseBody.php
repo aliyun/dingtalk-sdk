@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryOrgTypeResponseBody extends Model
 {
     /**
-     * @description 组织类型
+     * @example 1, "省级教育厅";2, "市级教育局";3, "区县教育局";4, "中心校";5, "普通学校"
      *
      * @var int
      */

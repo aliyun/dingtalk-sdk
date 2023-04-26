@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateOrganizationTaskNoteRequest extends Model
 {
     /**
-     * @description 是否禁用动态
+     * @example true
      *
      * @var bool
      */
     public $disableActivity;
 
     /**
-     * @description 是否禁用通知
+     * @example true
      *
      * @var bool
      */
     public $disableNotification;
 
     /**
-     * @description 任务备注
+     * @example 我是一条备注哦
      *
      * @var string
      */

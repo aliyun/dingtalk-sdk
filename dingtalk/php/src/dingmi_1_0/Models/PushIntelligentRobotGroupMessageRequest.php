@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class PushIntelligentRobotGroupMessageRequest extends Model
 {
     /**
-     * @description 机器人id
+     * @example abcd1234
      *
      * @var string
      */
     public $chatbotId;
 
     /**
-     * @description 消息类型
+     * @example sampleText
      *
      * @var string
      */
     public $msgKey;
 
     /**
-     * @description 消息模板替换参数
+     * @example eyJjb250ZW50IjogIua1i+ivleWGheWuuSJ9(即{"content": "测试内容"}的base64编码值)
      *
      * @var string
      */
     public $msgParam;
 
     /**
-     * @description 群对话id
+     * @example cidxxxx
      *
      * @var string
      */

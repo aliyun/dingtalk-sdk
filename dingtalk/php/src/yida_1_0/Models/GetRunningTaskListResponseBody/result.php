@@ -9,140 +9,118 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 激活时间
+     * @example 2021-02-01
      *
      * @var string
      */
     public $activeTimeGMT;
 
     /**
-     * @description 实际执行人id
+     * @example manager123
      *
      * @var string
      */
     public $actualActionExecutorId;
 
     /**
-     * @description appType
-     *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 创建时间
+     * @example 2021-01-01
      *
      * @var string
      */
     public $createTimeGMT;
 
     /**
-     * @description 结束时间
+     * @example 2021-01-01
      *
      * @var string
      */
     public $finishTimeGMT;
 
     /**
-     * @description originatorEmail
-     *
      * @var string
      */
     public $originatorEmail;
 
     /**
-     * @description originatorId
-     *
      * @var string
      */
     public $originatorId;
 
     /**
-     * @description originatorName
-     *
      * @var string
      */
     public $originatorName;
 
     /**
-     * @description originatorNameEn
-     *
      * @var string
      */
     public $originatorNameInEnglish;
 
     /**
-     * @description originatorNickName
-     *
      * @var string
      */
     public $originatorNickName;
 
     /**
-     * @description originatorNickNameEn
-     *
      * @var string
      */
     public $originatorNickNameInEnglish;
 
     /**
-     * @description originatorPhoto
-     *
      * @var string
      */
     public $originatorPhoto;
 
     /**
-     * @description outResult
-     *
      * @var string
      */
     public $outResult;
 
     /**
-     * @description outResultName
-     *
      * @var string
      */
     public $outResultName;
 
     /**
-     * @description processInstanceId
-     *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 状态
+     * @example running
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 任务id
+     * @example task-123
      *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description 任务类型
+     * @example append task
      *
      * @var string
      */
     public $taskType;
 
     /**
-     * @description 标题
+     * @example 李四发起的请购单
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 标题英文
+     * @example title A
      *
      * @var string
      */

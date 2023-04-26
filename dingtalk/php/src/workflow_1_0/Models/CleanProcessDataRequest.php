@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CleanProcessDataRequest extends Model
 {
     /**
-     * @description 企业的corpId。
+     * @example ding1234
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 模板唯一码。
+     * @example PROC-EF6YJL35
      *
      * @var string
      */

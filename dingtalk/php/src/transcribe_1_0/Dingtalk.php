@@ -15,18 +15,58 @@ use AlibabaCloud\SDK\Dingtalk\Vtranscribe_1_0\Models\UpdatePermissionForUsersReq
 use AlibabaCloud\SDK\Dingtalk\Vtranscribe_1_0\Models\UpdatePermissionForUsersResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param string                    $taskUuid
+     * @param GetTranscribeBriefHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return GetTranscribeBriefResponse
+     */
+    public function getTranscribeBriefWithOptions($taskUuid, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'GetTranscribeBrief',
+            'version'     => 'transcribe_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/transcribe/tasks/' . $taskUuid . '/briefInfos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetTranscribeBriefResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -43,27 +83,53 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                    $taskUuid
-     * @param GetTranscribeBriefHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param string                  $taskUuid
+     * @param RemovePermissionRequest $request
+     * @param RemovePermissionHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return GetTranscribeBriefResponse
+     * @return RemovePermissionResponse
      */
-    public function getTranscribeBriefWithOptions($taskUuid, $headers, $runtime)
+    public function removePermissionWithOptions($taskUuid, $request, $headers, $runtime)
     {
-        $taskUuid    = OpenApiUtilClient::getEncodeParam($taskUuid);
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizType)) {
+            $body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->members)) {
+            $body['members'] = $request->members;
+        }
+        if (!Utils::isUnset($request->taskCreator)) {
+            $body['taskCreator'] = $request->taskCreator;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RemovePermission',
+            'version'     => 'transcribe_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/transcribe/tasks/' . $taskUuid . '/permissions/remove',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetTranscribeBriefResponse::fromMap($this->doROARequest('GetTranscribeBrief', 'transcribe_1.0', 'HTTP', 'GET', 'AK', '/v1.0/transcribe/tasks/' . $taskUuid . '/briefInfos', 'json', $req, $runtime));
+        return RemovePermissionResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -81,43 +147,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                  $taskUuid
-     * @param RemovePermissionRequest $request
-     * @param RemovePermissionHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param string                          $taskUuid
+     * @param UpdatePermissionForUsersRequest $request
+     * @param UpdatePermissionForUsersHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return RemovePermissionResponse
+     * @return UpdatePermissionForUsersResponse
      */
-    public function removePermissionWithOptions($taskUuid, $request, $headers, $runtime)
+    public function updatePermissionForUsersWithOptions($taskUuid, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $taskUuid = OpenApiUtilClient::getEncodeParam($taskUuid);
-        $body     = [];
+        $query = [];
+        if (!Utils::isUnset($request->operatorUid)) {
+            $query['operatorUid'] = $request->operatorUid;
+        }
+        $body = [];
         if (!Utils::isUnset($request->bizType)) {
-            @$body['bizType'] = $request->bizType;
+            $body['bizType'] = $request->bizType;
         }
         if (!Utils::isUnset($request->members)) {
-            @$body['members'] = $request->members;
+            $body['members'] = $request->members;
         }
         if (!Utils::isUnset($request->taskCreator)) {
-            @$body['taskCreator'] = $request->taskCreator;
-        }
-        if (!Utils::isUnset($request->taskId)) {
-            @$body['taskId'] = $request->taskId;
+            $body['taskCreator'] = $request->taskCreator;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdatePermissionForUsers',
+            'version'     => 'transcribe_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/transcribe/tasks/' . $taskUuid . '/permissions',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return RemovePermissionResponse::fromMap($this->doROARequest('RemovePermission', 'transcribe_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/transcribe/tasks/' . $taskUuid . '/permissions/remove', 'json', $req, $runtime));
+        return UpdatePermissionForUsersResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -132,47 +210,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdatePermissionForUsersHeaders([]);
 
         return $this->updatePermissionForUsersWithOptions($taskUuid, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                          $taskUuid
-     * @param UpdatePermissionForUsersRequest $request
-     * @param UpdatePermissionForUsersHeaders $headers
-     * @param RuntimeOptions                  $runtime
-     *
-     * @return UpdatePermissionForUsersResponse
-     */
-    public function updatePermissionForUsersWithOptions($taskUuid, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $taskUuid = OpenApiUtilClient::getEncodeParam($taskUuid);
-        $query    = [];
-        if (!Utils::isUnset($request->operatorUid)) {
-            @$query['operatorUid'] = $request->operatorUid;
-        }
-        $body = [];
-        if (!Utils::isUnset($request->bizType)) {
-            @$body['bizType'] = $request->bizType;
-        }
-        if (!Utils::isUnset($request->members)) {
-            @$body['members'] = $request->members;
-        }
-        if (!Utils::isUnset($request->taskCreator)) {
-            @$body['taskCreator'] = $request->taskCreator;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdatePermissionForUsersResponse::fromMap($this->doROARequest('UpdatePermissionForUsers', 'transcribe_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/transcribe/tasks/' . $taskUuid . '/permissions', 'json', $req, $runtime));
     }
 }

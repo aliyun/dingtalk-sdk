@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CategoryStatisticsRequest extends Model
 {
     /**
-     * @description 截止日期
+     * @example 20220101
      *
      * @var string
      */
     public $maxDt;
 
     /**
-     * @description 起始日期
+     * @example 20220101
      *
      * @var string
      */
     public $minDt;
 
     /**
-     * @description 开放团队ID
+     * @example KxisoOk
      *
      * @var string
      */

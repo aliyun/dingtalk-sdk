@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class AddResidentMemberResponseBody extends Model
 {
     /**
-     * @description 用户状态
-     *
      * @var int
      */
     public $status;
 
     /**
-     * @description 用户ID
+     * @example 10005
      *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 用户员工ID
-     *
      * @var string
      */
     public $userId;

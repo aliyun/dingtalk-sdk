@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class RecallHonorRequest extends Model
 {
     /**
-     * @description 要取消荣誉的员工userid 必填
+     * @example suyfsdjfu
      *
      * @var string
      */

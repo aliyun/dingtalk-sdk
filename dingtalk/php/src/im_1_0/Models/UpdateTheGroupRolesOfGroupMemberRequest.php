@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class UpdateTheGroupRolesOfGroupMemberRequest extends Model
 {
     /**
-     * @description 开放群ID
+     * @example cidXXXXXXX
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 群角色列表
-     *
      * @var string[]
      */
     public $openRoleIds;
 
     /**
-     * @description 用户ID
-     *
      * @var string
      */
     public $userId;

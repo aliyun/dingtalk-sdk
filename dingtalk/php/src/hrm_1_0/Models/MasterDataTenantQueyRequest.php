@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class MasterDataTenantQueyRequest extends Model
 {
     /**
-     * @description 实体 code
-     *
      * @var string
      */
     public $entityCode;
 
     /**
-     * @description isv的业务领域
-     *
      * @var string
      */
     public $scopeCode;

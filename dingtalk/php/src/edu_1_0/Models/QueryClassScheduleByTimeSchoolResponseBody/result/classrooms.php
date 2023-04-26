@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class classrooms extends Model
 {
     /**
-     * @description 交互信息
-     *
      * @var string
      */
     public $interactInfo;
 
     /**
-     * @description 课堂唯一标识
-     *
      * @var string
      */
     public $targetId;

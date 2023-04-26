@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class UpdateBizObjectResponseBody extends Model
 {
     /**
-     * @description 状态码
+     * @example success
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 提示信息
+     * @example OK
      *
      * @var string
      */

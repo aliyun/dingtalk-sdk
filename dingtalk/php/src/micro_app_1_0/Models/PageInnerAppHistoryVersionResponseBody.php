@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class PageInnerAppHistoryVersionResponseBody extends Model
 {
     /**
-     * @description 企业内部小程序版本号列表
-     *
      * @var miniAppVersionList[]
      */
     public $miniAppVersionList;
 
     /**
-     * @description 当前小程序历史版本的总数量
+     * @example 1
      *
      * @var int
      */

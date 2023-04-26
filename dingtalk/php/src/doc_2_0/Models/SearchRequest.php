@@ -11,29 +11,23 @@ use AlibabaCloud\Tea\Model;
 class SearchRequest extends Model
 {
     /**
-     * @description 节点搜索请求，和空间搜索请求二选一必填。
-     *
      * @var dentryRequest
      */
     public $dentryRequest;
 
     /**
-     * @description  搜索关键词。
+     * @example 测试搜索关键词
      *
      * @var string
      */
     public $keyword;
 
     /**
-     * @description 操作人unionId。
-     *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 空间搜索请求，和节点搜索请求二选一必填。
-     *
      * @var spaceRequest
      */
     public $spaceRequest;

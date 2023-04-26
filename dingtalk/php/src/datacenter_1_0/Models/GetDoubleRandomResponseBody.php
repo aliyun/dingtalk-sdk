@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetDoubleRandomResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * InspectResult:检查结果
+     * @example [     {       "InspectPlanId": "44030020191021",       "InspectTypeName": "定向",       "InspectPlanName": "2019能效标识生产企业计量监督抽查1",       "InspectItem": "",       "InspectResult": "",       "InspectDepartment": "深圳市市场监督管理局龙岗局",       "InspectDate": "2019-10-14",       "InspectTaskId": "44030020191021",       "InspectTaskName": "2019能效标识生产企业计量监督抽查1"     }   ]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

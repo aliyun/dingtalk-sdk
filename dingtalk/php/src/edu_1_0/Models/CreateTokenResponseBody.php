@@ -34,8 +34,6 @@ class CreateTokenResponseBody extends Model
     public $securityToken;
 
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $status;

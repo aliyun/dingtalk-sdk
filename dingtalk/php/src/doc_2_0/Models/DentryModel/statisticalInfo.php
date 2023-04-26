@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class statisticalInfo extends Model
 {
     /**
-     * @description 字数
-     *
      * @var int
      */
     public $wordCount;

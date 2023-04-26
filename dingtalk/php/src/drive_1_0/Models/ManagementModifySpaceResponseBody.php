@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ManagementModifySpaceResponseBody extends Model
 {
     /**
-     * @description 空间列表
-     *
      * @var spaces[]
      */
     public $spaces;

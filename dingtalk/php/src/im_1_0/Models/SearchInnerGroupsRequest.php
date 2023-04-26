@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class SearchInnerGroupsRequest extends Model
 {
     /**
-     * @description 查询最大数量。
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 关键词。
+     * @example 测试关键词
      *
      * @var string
      */
     public $searchKey;
 
     /**
-     * @description 用户userId。
+     * @example 015*****
      *
      * @var string
      */

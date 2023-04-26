@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class subInstBasicInfo extends Model
 {
     /**
-     * @description 别名
+     * @example 一食堂
      *
      * @var string
      */
     public $aliasName;
 
     /**
-     * @description 机构识别码
+     * @example 5812
      *
      * @var string
      */
     public $mcc;
 
     /**
-     * @description 名称
+     * @example 食堂
      *
      * @var string
      */
     public $subInstName;
 
     /**
-     * @description 类型
+     * @example 01
      *
      * @var string
      */

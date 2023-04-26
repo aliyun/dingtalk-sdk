@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class sortByFields extends Model
 {
     /**
-     * @description 排序方向。Ascending=升序，Descending=降序
+     * @example Ascending
      *
      * @var string
      */
     public $direction;
 
     /**
-     * @description 排序字段名
+     * @example Age
      *
      * @var string
      */

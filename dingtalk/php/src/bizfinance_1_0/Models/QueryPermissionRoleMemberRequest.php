@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryPermissionRoleMemberRequest extends Model
 {
     /**
-     * @description 角色的唯一标识列表
-     *
      * @var string[]
      */
     public $roleCodeList;

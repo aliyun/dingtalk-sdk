@@ -9,49 +9,47 @@ use AlibabaCloud\Tea\Model;
 class ListTableDataByFormInstanceIdTableIdRequest extends Model
 {
     /**
-     * @description 应用编码
-     *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 表单ID
+     * @example FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 当前页
+     * @example 10
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页记录数
+     * @example 50
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 应用秘钥
+     * @example hexxxx
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 需要查找的子表单组件的唯一标识
+     * @example tableField_ksyaujq1
      *
      * @var string
      */
     public $tableFieldId;
 
     /**
-     * @description 钉钉的userId
+     * @example 未知
      *
      * @var string
      */

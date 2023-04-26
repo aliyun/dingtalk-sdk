@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class emotionStatisticsRecords extends Model
 {
     /**
-     * @description 心声数量
+     * @example 10
      *
      * @var int
      */
     public $count;
 
     /**
-     * @description 日期
+     * @example 20220101
      *
      * @var string
      */
     public $dt;
 
     /**
-     * @description 负面情绪值（0-1,越大越负面)
+     * @example 0.3
      *
      * @var float
      */

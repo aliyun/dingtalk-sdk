@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class RebuildRoleScopeForAppRoleRequest extends Model
 {
     /**
-     * @description 部门id列表
-     *
      * @var int[]
      */
     public $deptIdList;
 
     /**
-     * @description 执行用户userId
-     *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 角色范围类型，“ALL_VISIBLE”表示全员，“PART_VISIBLE”表示部分
-     *
      * @var string
      */
     public $scopeType;
 
     /**
-     * @description 角色范围最新版本号
-     *
      * @var int
      */
     public $scopeVersion;
 
     /**
-     * @description 员工userId列表
-     *
      * @var string[]
      */
     public $userIdList;

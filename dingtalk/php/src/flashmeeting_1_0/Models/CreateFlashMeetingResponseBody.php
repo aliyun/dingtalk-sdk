@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class CreateFlashMeetingResponseBody extends Model
 {
     /**
-     * @description 闪会结束时间
-     *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 闪会的key
-     *
      * @var string
      */
     public $flashMeetingKey;
 
     /**
-     * @description 闪会开始时间
-     *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 闪会标题
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 闪会url
-     *
      * @var string
      */
     public $url;

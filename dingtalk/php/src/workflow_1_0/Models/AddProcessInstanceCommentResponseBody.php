@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class AddProcessInstanceCommentResponseBody extends Model
 {
     /**
-     * @description 评论是否成功。
+     * @example true
      *
      * @var bool
      */
     public $result;
 
     /**
-     * @description 接口调用是否成功。
+     * @example true
      *
      * @var bool
      */

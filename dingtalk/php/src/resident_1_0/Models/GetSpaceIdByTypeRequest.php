@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetSpaceIdByTypeRequest extends Model
 {
     /**
-     * @description 部门类型
+     * @example PROPERTY_STAFF_DEPT
      *
      * @var string
      */

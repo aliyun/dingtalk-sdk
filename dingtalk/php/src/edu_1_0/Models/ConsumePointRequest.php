@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class ConsumePointRequest extends Model
 {
     /**
-     * @description 扣减积分
+     * @example 1
      *
      * @var int
      */
     public $amount;
 
     /**
-     * @description 业务id
+     * @example 123
      *
      * @var string
      */
     public $bizId;
 
     /**
-     * @description 扣减描述
+     * @example point_exchange
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 产品编码
+     * @example FAMILY_GIFT_MALL
      *
      * @var string
      */

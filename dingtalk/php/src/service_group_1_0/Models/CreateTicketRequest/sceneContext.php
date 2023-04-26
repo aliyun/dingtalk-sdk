@@ -10,28 +10,24 @@ use AlibabaCloud\Tea\Model;
 class sceneContext extends Model
 {
     /**
-     * @description 工单相关的群消息列表
-     *
      * @var groupMsgs[]
      */
     public $groupMsgs;
 
     /**
-     * @description 服务群openConversationId
+     * @example cidZBSNlUi/Jq9x76PAXUCrAA==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 工单相关人UnionId列表
-     *
      * @var string[]
      */
     public $relevantorUnionIds;
 
     /**
-     * @description VOC类型工单，对应话题ID
+     * @example a0ba57d5d29a48b51d0eca48da6b1d09
      *
      * @var string
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class CancelSnsOrderResponseBody extends Model
 {
     /**
-     * @description 支付宝应用id。
+     * @example 123400
      *
      * @var string
      */
     public $alipayAppId;
 
     /**
-     * @description 商户id。
+     * @example 10000
      *
      * @var string
      */
     public $merchantId;
 
     /**
-     * @description 商户订单号。
+     * @example M000001
      *
      * @var string
      */
     public $merchantOrderNo;
 
     /**
-     * @description 订单号。
+     * @example CM0001234
      *
      * @var string
      */

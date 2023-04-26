@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class AddKnowledgeResponseBody extends Model
 {
     /**
-     * @description 开放知识点ID
+     * @example J23suw1irs
      *
      * @var string
      */

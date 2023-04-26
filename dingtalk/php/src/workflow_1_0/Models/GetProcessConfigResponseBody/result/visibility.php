@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class visibility extends Model
 {
     /**
-     * @description 类型
+     * @example 1
      *
      * @var int
      */
     public $type;
 
     /**
-     * @description 员工staffId/部门id
+     * @example manager345
      *
      * @var string
      */

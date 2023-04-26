@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetOperationRecordsResponseBody extends Model
 {
     /**
-     * @description 流程实例操作记录数组
-     *
      * @var result[]
      */
     public $result;

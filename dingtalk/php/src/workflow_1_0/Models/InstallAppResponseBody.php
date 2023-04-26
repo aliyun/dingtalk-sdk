@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class InstallAppResponseBody extends Model
 {
     /**
-     * @description 返回对象列表
-     *
      * @var result[]
      */
     public $result;

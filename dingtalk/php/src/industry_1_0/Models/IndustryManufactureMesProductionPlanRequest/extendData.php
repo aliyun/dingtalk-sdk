@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class extendData extends Model
 {
     /**
-     * @description 字段唯一标识(英文)
+     * @example staffName
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 字段中文描述
+     * @example 生产人员
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 当时取值(活的)
+     * @example 张三
      *
      * @var string
      */
     public $value;
 
     /**
-     * @description 字段类型
+     * @example string
      *
      * @var string
      */

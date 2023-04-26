@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ECertQueryRequest extends Model
 {
     /**
-     * @description 用户ID
+     * @example manager231
      *
      * @var string
      */

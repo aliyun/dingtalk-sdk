@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class ManagementBuyQuotaRequest extends Model
 {
     /**
-     * @description 订单
-     *
      * @var order
      */
     public $order;
 
     /**
-     * @description token
-     *
      * @var string
      */
     public $token;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

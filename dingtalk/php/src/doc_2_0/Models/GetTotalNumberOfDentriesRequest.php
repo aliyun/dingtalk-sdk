@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class GetTotalNumberOfDentriesRequest extends Model
 {
     /**
-     * @description 是否包含文件夹。默认包含。
-     *
      * @var bool
      */
     public $includeFolder;
 
     /**
-     * @description 操作用户unionId。
+     * @example abcd
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 统计指定的知识库类型。0-我的文档；1-知识库。如果不传，则会统计全部数据。
-     *
      * @var string
      */
     public $spaceTypes;

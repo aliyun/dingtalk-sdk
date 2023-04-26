@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class ListExpiredResponseBody extends Model
 {
     /**
-     * @description 过期文件列表
-     * 50
      * @var files[]
      */
     public $files;
 
     /**
-     * @description 分页游标
-     * 不为空表示有更多数据
+     * @example next_token
+     *
      * @var string
      */
     public $nextToken;

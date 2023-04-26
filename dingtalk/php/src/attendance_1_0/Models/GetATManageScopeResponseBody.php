@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetATManageScopeResponseBody extends Model
 {
     /**
-     * @description 管理范围。
-     *
      * @var result[]
      */
     public $result;

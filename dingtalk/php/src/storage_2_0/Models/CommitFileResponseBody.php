@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CommitFileResponseBody extends Model
 {
     /**
-     * @description 文件信息
-     *
      * @var dentry
      */
     public $dentry;

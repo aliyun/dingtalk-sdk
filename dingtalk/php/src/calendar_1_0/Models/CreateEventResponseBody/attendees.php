@@ -24,8 +24,6 @@ class attendees extends Model
     public $isOptional;
 
     /**
-     * @description 回复状态
-     *
      * @var string
      */
     public $responseStatus;

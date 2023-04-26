@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class BatchCreateResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var result
      */
     public $result;

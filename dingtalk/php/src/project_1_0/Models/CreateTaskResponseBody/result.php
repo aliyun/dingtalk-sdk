@@ -10,84 +10,80 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 任务标题
+     * @example 任务标题
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 创建时间
+     * @example 2021-08-13T07:36:50.318Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 任务创建者userId
+     * @example 173xxxxx
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 自定义字段列表
-     *
      * @var customfields[]
      */
     public $customfields;
 
     /**
-     * @description 任务截止时间
+     * @example 2022-08-13T07:36:50.318Z
      *
      * @var string
      */
     public $dueDate;
 
     /**
-     * @description 任务执行者userId
+     * @example 173xxxx
      *
      * @var string
      */
     public $executorId;
 
     /**
-     * @description 任务参与者列表
-     *
      * @var string[]
      */
     public $involveMembers;
 
     /**
-     * @description 任务备注
+     * @example 我是一条备注
      *
      * @var string
      */
     public $note;
 
     /**
-     * @description 任务优先级
+     * @example -10
      *
      * @var int
      */
     public $priority;
 
     /**
-     * @description 项目id
+     * @example 62c25e3b376ecxxxxxx
      *
      * @var string
      */
     public $projectId;
 
     /**
-     * @description 任务id
+     * @example 62a697c053c2ef5xxxxxx
      *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description 更新时间
+     * @example 2021-08-13T07:36:50.318Z
      *
      * @var string
      */

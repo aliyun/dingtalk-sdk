@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class file extends Model
 {
     /**
-     * @description 附件列表。
-     *
      * @var attachments[]
      */
     public $attachments;
 
     /**
-     * @description 图片URL地址。
-     *
      * @var string[]
      */
     public $photos;

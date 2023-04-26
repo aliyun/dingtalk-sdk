@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class GetDentryThumbnailsRequest extends Model
 {
     /**
-     * @description 文件id列表
-     * 30
      * @var string[]
      */
     public $dentryIds;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

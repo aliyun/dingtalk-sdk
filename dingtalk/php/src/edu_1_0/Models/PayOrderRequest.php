@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class PayOrderRequest extends Model
 {
     /**
-     * @description 人脸id
+     * @example 123
      *
      * @var string
      */
     public $faceId;
 
     /**
-     * @description 订单号
+     * @example sn123
      *
      * @var string
      */
     public $orderNo;
 
     /**
-     * @description 签名
+     * @example KSwZiSL1O7DiUNwjV168j3cP9ktp4bJTi5OQxAXre26KyBXza7+gCl/g1d0K3n3+9JhMqc2fUjBiENcAELw3Jb5xO/zslOeV4qFoMQfzW51+sdL/SSZCYvXEMhu9P6FAPhGZQ3vu6gr3oxUAXPIpWNb+sIfzR9epumoOXYeofH8=
      *
      * @var string
      */
     public $signature;
 
     /**
-     * @description 设备序列号
+     * @example sn123
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description utc时间戳
+     * @example 1644413947909
      *
      * @var int
      */
     public $timestamp;
 
     /**
-     * @description 员工id
+     * @example 123
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 版本号
+     * @example 1.0
      *
      * @var string
      */

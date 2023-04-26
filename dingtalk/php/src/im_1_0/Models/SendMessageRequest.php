@@ -9,42 +9,40 @@ use AlibabaCloud\Tea\Model;
 class SendMessageRequest extends Model
 {
     /**
-     * @description 消息内容。
+     * @example {"msg_type":"text","text":"hello world"}
      *
      * @var string
      */
     public $message;
 
     /**
-     * @description 消息类型。
+     * @example text
      *
      * @var string
      */
     public $messageType;
 
     /**
-     * @description 群会话Id。
-     *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 钉内账号userId。
+     * @example 1745****8777
      *
      * @var string
      */
     public $receiverId;
 
     /**
-     * @description 钉外账号在业务系统内的唯一标志。
+     * @example 1107****2120
      *
      * @var string
      */
     public $senderId;
 
     /**
-     * @description 渠道按钮跳转信息。
+     * @example {     "9d801647a64******59c9da0207":"[{\"action_url\":\"http://www.baidu.com\",\"title\":\"一个按钮\"},{\"action_url\":\"http://www.baidu.com\",\"title\":\"两个按钮\"}]",     "9d801647a6******59c9da020342":"[{\"action_url\":\"http://www.baidu.com\",\"title\":\"一个按钮\"},{\"action_url\":\"http://www.baidu.com\",\"title\":\"两个按钮\"}]" }
      *
      * @var mixed[]
      */

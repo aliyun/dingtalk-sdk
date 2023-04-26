@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class interconnections extends Model
 {
     /**
-     * @description 钉外账号头像链接。
+     * @example http://***.png
      *
      * @var string
      */
     public $appUserAvatar;
 
     /**
-     * @description 钉外账号头像类型，取值：
-     * 1（http类型）
+     * @example 1
+     *
      * @var int
      */
     public $appUserAvatarMediaType;
 
     /**
-     * @description 钉外账号用户动态，例如：认真工作，快乐生活。
+     * @example 认真工作,快乐生活
      *
      * @var string
      */
     public $appUserDynamics;
 
     /**
-     * @description 钉外账号在业务系统内的唯一标识。
+     * @example 1107****2120
      *
      * @var string
      */
     public $appUserId;
 
     /**
-     * @description 钉外账号手机号，例如：188****8655。
+     * @example 188****8655
      *
      * @var string
      */
     public $appUserMobile;
 
     /**
-     * @description 钉外账号名称。
+     * @example Foo
      *
      * @var string
      */
     public $appUserName;
 
     /**
-     * @description 渠道code。
+     * @example 1
      *
      * @var string
      */
     public $channelCode;
 
     /**
-     * @description 钉内账号userId。
+     * @example 1745****8777
      *
      * @var string
      */

@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class mobile extends Model
 {
     /**
-     * @description 用户是否授权手机号码信息。
-     * 当且仅当此值为true时返回手机号码信息。
      * @var bool
      */
     public $authorized;
 
     /**
-     * @description 手机号码
-     *
      * @var string
      */
     public $mobile;
 
     /**
-     * @description 地区码
-     *
      * @var string
      */
     public $stateCode;

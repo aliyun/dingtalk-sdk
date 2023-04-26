@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetPrintAppInfoRequest extends Model
 {
     /**
-     * @description 搜索关键字
+     * @example abc
      *
      * @var string
      */
     public $nameLike;
 
     /**
-     * @description 用户id
+     * @example 123456
      *
      * @var string
      */

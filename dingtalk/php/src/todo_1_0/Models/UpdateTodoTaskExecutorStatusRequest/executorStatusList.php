@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class executorStatusList extends Model
 {
     /**
-     * @description 执行者id，需传用户的unionId
-     *
      * @var string
      */
     public $id;
 
     /**
-     * @description 执行者完成状态
-     *
      * @var bool
      */
     public $isDone;

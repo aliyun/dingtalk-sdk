@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class creator extends Model
 {
     /**
-     * @description 创建人头像
+     * @example https://xxxx
      *
      * @var string
      */
     public $avatarUrl;
 
     /**
-     * @description 创建人昵称
+     * @example 测试名字
      *
      * @var string
      */
     public $nick;
 
     /**
-     * @description 创建人工号
+     * @example 1231
      *
      * @var string
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactListResponseBody extends Model
 {
     /**
-     * @description content
-     *
      * @var content[]
      */
     public $content;

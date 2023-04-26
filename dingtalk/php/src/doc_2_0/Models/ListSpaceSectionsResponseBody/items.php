@@ -10,36 +10,34 @@ use AlibabaCloud\Tea\Model;
 class items extends Model
 {
     /**
-     * @description 展示类型。
+     * @example base
      *
      * @var string
      */
     public $displayType;
 
     /**
-     * @description 分组id。
+     * @example abc
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 分组名称。
+     * @example 测试分组
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 知识库数量。
+     * @example 1
      *
      * @var int
      */
     public $spaceNum;
 
     /**
-     * @description 知识库列表
-     *
      * @var SpaceModel[]
      */
     public $spaces;

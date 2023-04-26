@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateGroupTagRequest extends Model
 {
     /**
-     * @description 群会话ID集合
-     *
      * @var string[]
      */
     public $openConversationIds;
@@ -21,8 +19,6 @@ class UpdateGroupTagRequest extends Model
     public $tagNames;
 
     /**
-     * @description 更新类型，APPEND、NOTAPPEND、DELETE三种类型
-     *
      * @var string
      */
     public $updateType;

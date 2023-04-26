@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetCandidateByPhoneNumberResponseBody extends Model
 {
     /**
-     * @description 候选人标识
+     * @example xxx
      *
      * @var string
      */
     public $candidateId;
 
     /**
-     * @description 候选人姓名
+     * @example 张三
      *
      * @var string
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreGroupInfoRequest extends Model
 {
     /**
-     * @description 门店分组Id
+     * @example 1
      *
      * @var int
      */

@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class user extends Model
 {
     /**
+     * @example 小钉
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @example 1661918406748
+     *
      * @var string
      */
     public $timestamp;
 
     /**
+     * @example userId
+     *
      * @var string
      */
     public $userId;

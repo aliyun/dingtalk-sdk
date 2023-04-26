@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class ReleaseGrayOrgGetRequest extends Model
 {
     /**
-     * @description 离线包ID
+     * @example 5000000000000000
      *
      * @var string
      */
     public $miniAppId;
 
     /**
-     * @description 离线包版本号
+     * @example 0.0.1
      *
      * @var string
      */

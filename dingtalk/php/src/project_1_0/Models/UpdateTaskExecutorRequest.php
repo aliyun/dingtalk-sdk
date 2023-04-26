@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateTaskExecutorRequest extends Model
 {
     /**
-     * @description 执行者用户ID。
+     * @example 0517xxxxxxx
      *
      * @var string
      */

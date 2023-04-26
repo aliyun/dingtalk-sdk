@@ -9,42 +9,38 @@ use AlibabaCloud\Tea\Model;
 class GetFormListInAppRequest extends Model
 {
     /**
-     * @description 应用编码。应用唯一标识。如：APP_XXX
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 支持两种表单类型。
-     * 不传时默认单据和流程均返回。
+     * @example receipt,process
+     *
      * @var string
      */
     public $formTypes;
 
     /**
-     * @description 页码，不填默认为1。
-     *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 单页返回的条目数，最大值100。
-     * 不填默认为100。
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 应用秘钥。在应用设置-部署运维-应用密钥中获取。
+     * @example FO866D71GM94CE3KBMAFL4Q6WDG93MG6MLJ8L64
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 操作人userId。
+     * @example 5014533041684350
      *
      * @var string
      */

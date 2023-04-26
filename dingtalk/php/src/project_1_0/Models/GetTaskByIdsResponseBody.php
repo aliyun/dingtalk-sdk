@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetTaskByIdsResponseBody extends Model
 {
     /**
-     * @description 任务详情集合。
-     *
      * @var result[]
      */
     public $result;

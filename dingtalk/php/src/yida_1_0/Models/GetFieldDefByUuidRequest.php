@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class GetFieldDefByUuidRequest extends Model
 {
     /**
-     * @description 应用编码。应用唯一标识。如：APP_XXX
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 表单唯一标识
+     * @example FORM-J7966ZA1XN940B88DYNMNABXUXNU3F3FMLJ8L5
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 应用秘钥。在应用设置-部署运维-应用密钥中获取。
+     * @example FO866D71GM94CE3KBMAFL4Q6WDG93MG6MLJ8L64
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 操作人userId
+     * @example 5014533041684350
      *
      * @var string
      */

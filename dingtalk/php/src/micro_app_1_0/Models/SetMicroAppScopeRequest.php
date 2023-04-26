@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class SetMicroAppScopeRequest extends Model
 {
     /**
-     * @description 增加的可见部门
-     *
      * @var int[]
      */
     public $addDeptIds;
 
     /**
-     * @description 增加的可见角色
-     *
      * @var int[]
      */
     public $addRoleIds;
 
     /**
-     * @description 增加的可见用户
-     *
      * @var string[]
      */
     public $addUserIds;
 
     /**
-     * @description 删除的可见部门
-     *
      * @var int[]
      */
     public $delDeptIds;
 
     /**
-     * @description 删除的可见角色
-     *
      * @var int[]
      */
     public $delRoleIds;
 
     /**
-     * @description 删除的可见用户
-     *
      * @var string[]
      */
     public $delUserIds;
 
     /**
-     * @description 是否管理员可见
-     *
      * @var bool
      */
     public $onlyAdminVisible;

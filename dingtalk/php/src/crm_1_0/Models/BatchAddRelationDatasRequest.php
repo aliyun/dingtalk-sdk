@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class BatchAddRelationDatasRequest extends Model
 {
     /**
-     * @description 操作人userId
+     * @example manager021a
      *
      * @var string
      */
     public $operatorUserId;
 
     /**
-     * @description 关系数据列表。
-     *
      * @var relationList[]
      */
     public $relationList;
 
     /**
-     * @description 关系类型。
+     * @example crm_customer
      *
      * @var string
      */
     public $relationType;
 
     /**
-     * @description 是否跳过查重，默认不跳过。
+     * @example false
      *
      * @var bool
      */

@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class userProbList extends Model
 {
     /**
-     * @description 身份属性编码
-     *
      * @var string
      */
     public $code;
 
     /**
-     * @description 身份属性名称
-     *
      * @var string
      */
     public $userPropertyName;

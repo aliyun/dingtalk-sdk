@@ -10,43 +10,41 @@ use AlibabaCloud\Tea\Model;
 class AssignOrgHoldingToEmpHoldingBatchRequest extends Model
 {
     /**
-     * @description 备注信息 长度小于40
+     * @example 表现优秀，特此奖励
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 是否发送组织文化通知
+     * @example true
      *
      * @var bool
      */
     public $sendOrgCultureInform;
 
     /**
-     * @description 发放积分或额度数量 1～100000
+     * @example 10000
      *
      * @var int
      */
     public $singleAmount;
 
     /**
-     * @description 发放人sourceUsage  发放人与接受人usage应一一对应
-     * 行为规则发积分 sourceUsage：OPEN_ACTION_RULE_PERSONAL_ASSIGN 对应的 targetUsage为OPEN_ACTION_RULE_PERSONAL_RECEIVE
+     * @example OPEN_ORG_POINT_PERSONAL_ASSIGN
+     *
      * @var string
      */
     public $sourceUsage;
 
     /**
-     * @description 接受人targetUsage  发放人与接受人usage应一一对应
+     * @example OPEN_EMP_POINT_PERSONAL_RECEIVE
      *
      * @var string
      */
     public $targetUsage;
 
     /**
-     * @description 发放目标用户
-     *
      * @var targetUserList[]
      */
     public $targetUserList;

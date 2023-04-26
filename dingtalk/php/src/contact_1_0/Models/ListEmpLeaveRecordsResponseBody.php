@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class ListEmpLeaveRecordsResponseBody extends Model
 {
     /**
-     * @description 分页token
+     * @example DCCD7A656FFA6F07
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 离职记录列表
-     *
      * @var records[]
      */
     public $records;

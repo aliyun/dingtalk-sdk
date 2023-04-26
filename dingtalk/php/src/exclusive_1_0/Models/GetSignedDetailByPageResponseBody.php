@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class GetSignedDetailByPageResponseBody extends Model
 {
     /**
-     * @description 员工信息
-     *
      * @var auditSignedDetailDTOList[]
      */
     public $auditSignedDetailDTOList;
 
     /**
-     * @description 当前页
+     * @example 1
      *
      * @var int
      */
     public $currentPage;
 
     /**
-     * @description 一页数据量
+     * @example 50
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 总数据量
+     * @example 1000
      *
      * @var int
      */

@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class GroupManageReduceRequest extends Model
 {
     /**
-     * @description 群容量限定值
+     * @example 200
      *
      * @var int
      */
     public $capacityLimit;
 
     /**
-     * @description 开放群id
+     * @example cidnvcxzklxv
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 扩展参数
-     *
      * @var mixed[]
      */
     public $options;

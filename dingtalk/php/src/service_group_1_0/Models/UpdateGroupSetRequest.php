@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateGroupSetRequest extends Model
 {
     /**
-     * @description 开放群ID
+     * @example cidkeQXxEC9VaGQ2M6nTlhNWQ==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开放群组ID
+     * @example iPnLAZk8oV4AiE
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 开放团队ID
+     * @example u9iSGISL3bqIiE
      *
      * @var string
      */

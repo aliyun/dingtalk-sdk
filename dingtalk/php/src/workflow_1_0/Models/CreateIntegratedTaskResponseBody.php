@@ -15,8 +15,6 @@ class CreateIntegratedTaskResponseBody extends Model
     public $result;
 
     /**
-     * @description 是否创建成功
-     *
      * @var bool
      */
     public $success;

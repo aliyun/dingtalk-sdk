@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class SearchActivationCodeRequest extends Model
 {
     /**
-     * @description 访问key
-     *
      * @var string
      */
     public $accessKey;
 
     /**
-     * @description 用户的uid
-     *
      * @var string
      */
     public $callerUid;

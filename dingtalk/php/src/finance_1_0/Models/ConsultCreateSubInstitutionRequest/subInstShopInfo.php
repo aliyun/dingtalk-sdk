@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class subInstShopInfo extends Model
 {
     /**
-     * @description 内景照
-     *
      * @var string[]
      */
     public $inDoorImages;
 
     /**
-     * @description 外景照
-     *
      * @var string[]
      */
     public $outDoorImages;

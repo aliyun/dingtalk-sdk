@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class CreateSnsAppOrderResponseBody extends Model
 {
     /**
-     * @description 实际金额，单位分。
+     * @example 1
      *
      * @var int
      */
     public $actualAmount;
 
     /**
-     * @description 支付宝应用id。
+     * @example 1234
      *
      * @var string
      */
     public $alipayAppId;
 
     /**
-     * @description 订单信息。
+     * @example alipay_sdk=alipay-sdk-java-dynamicVersionNo&version=1.0
      *
      * @var string
      */
     public $body;
 
     /**
-     * @description 商户id。
+     * @example 10000
      *
      * @var string
      */
     public $merchantId;
 
     /**
-     * @description 商户订单号。
+     * @example M00001
      *
      * @var string
      */
     public $merchantOrderNo;
 
     /**
-     * @description 订单号。
+     * @example CM0001
      *
      * @var string
      */

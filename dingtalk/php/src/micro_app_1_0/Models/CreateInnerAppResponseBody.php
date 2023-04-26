@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreateInnerAppResponseBody extends Model
 {
     /**
-     * @description 应用id
+     * @example 111
      *
      * @var int
      */

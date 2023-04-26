@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class subscriptions extends Model
 {
     /**
-     * @description 订阅的TOPIC
+     * @example /card
      *
      * @var string
      */
     public $topic;
 
     /**
-     * @description 订阅类型
+     * @example EVENT
      *
      * @var string
      */

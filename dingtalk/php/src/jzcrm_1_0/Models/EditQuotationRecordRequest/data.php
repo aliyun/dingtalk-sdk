@@ -9,140 +9,104 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 报价人
-     *
      * @var string
      */
     public $bjBjren;
 
     /**
-     * @description 包装运输
-     *
      * @var string
      */
     public $bjBzremark;
 
     /**
-     * @description 对应客户
-     *
      * @var string
      */
     public $bjCustomerid;
 
     /**
-     * @description 报价日期
-     *
      * @var string
      */
     public $bjDate;
 
     /**
-     * @description 附加费用金额
-     *
      * @var string
      */
     public $bjFjmoney;
 
     /**
-     * @description 附加费用分类
-     *
      * @var string
      */
     public $bjFjmoneylx;
 
     /**
-     * @description 付款说明
-     *
      * @var string
      */
     public $bjFkremark;
 
     /**
-     * @description 交付说明
-     *
      * @var string
      */
     public $bjJfremark;
 
     /**
-     * @description 接收人
-     *
      * @var string
      */
     public $bjJshren;
 
     /**
-     * @description 优惠抹零金额
-     *
      * @var string
      */
     public $bjKjmoney;
 
     /**
-     * @description 联系方式
-     *
      * @var string
      */
     public $bjLianxi;
 
     /**
-     * @description 优惠折扣率
-     *
      * @var string
      */
     public $bjMoneyzhekou;
 
     /**
-     * @description 报价单号
-     *
      * @var string
      */
     public $bjNumber;
 
     /**
-     * @description 报价(总)
-     *
      * @var string
      */
     public $bjPrice;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $bjRemark;
 
     /**
-     * @description 转成订单
-     *
      * @var string
      */
     public $bjState;
 
     /**
-     * @description 主题
-     *
      * @var string
      */
     public $bjTitle;
 
     /**
-     * @description 对应机会
-     *
      * @var string
      */
     public $bjXshid;
 
     /**
-     * @description 产品明细，json格式
+     * @example "child_mx":[{"产品ID":"1","数量":"10","单价":"58.5","总价":"585","明细备注":"包含的测试产品"}]
      *
      * @var string
      */
     public $childMx;
 
     /**
-     * @description 创建人
+     * @example 张三
      *
      * @var string
      */

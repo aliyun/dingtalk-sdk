@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class resultList extends Model
 {
     /**
-     * @description 创建时间(时间戳)
+     * @example 1640239655539
      *
      * @var int
      */
     public $gmtCreate;
 
     /**
-     * @description 客户群成员数
+     * @example 100
      *
      * @var int
      */
     public $memberCount;
 
     /**
-     * @description 客户群名
+     * @example 营销1群
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 客户群openConversationId
+     * @example afsad21
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 群组openGroupSetId
+     * @example afsdba23
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 群主userId
+     * @example afds12
      *
      * @var string
      */
     public $ownerUserId;
 
     /**
-     * @description 群主userName
+     * @example XX
      *
      * @var string
      */

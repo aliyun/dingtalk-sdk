@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetProcessCodeByNameResponseBody extends Model
 {
     /**
-     * @description 表单模板信息
-     *
      * @var result
      */
     public $result;

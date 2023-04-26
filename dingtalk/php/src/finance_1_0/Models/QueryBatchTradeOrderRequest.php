@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryBatchTradeOrderRequest extends Model
 {
     /**
-     * @description 外部商户批次号列表
-     *
      * @var string[]
      */
     public $outBatchNos;

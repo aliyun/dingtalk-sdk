@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class GetFileUploadInfoResponseBody extends Model
 {
     /**
-     * @description OSS上传所需信息：accessKeyId
+     * @example xxx
      *
      * @var string
      */
     public $accessKeyId;
 
     /**
-     * @description OSS上传所需信息：accessKeySecret
+     * @example xxx
      *
      * @var string
      */
     public $accessKeySecret;
 
     /**
-     * @description OSS上传所需信息：accessToken
+     * @example xxx
      *
      * @var string
      */
     public $accessToken;
 
     /**
-     * @description accessToken有效期截止时间（单位：毫秒），需要在此时间之前完成文件上传
+     * @example 1626923829000
      *
      * @var int
      */
     public $accessTokenExpirationMillis;
 
     /**
-     * @description OSS上传所需信息：bucket
+     * @example lippi-space-zjk
      *
      * @var string
      */
     public $bucket;
 
     /**
-     * @description OSS上传所需信息：endPoint
+     * @example oss-cn-zhangjiakou.aliyuncs.com
      *
      * @var string
      */
     public $endPoint;
 
     /**
-     * @description 文件mediaId
+     * @example xxx
      *
      * @var string
      */

@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class UpdateAppRoleInfoRequest extends Model
 {
     /**
-     * @description 变更角色管理权限，可不传，不传则不变
-     *
      * @var bool
      */
     public $canManageRole;
 
     /**
-     * @description 变更角色名称，可不传，不传则不变
-     *
      * @var string
      */
     public $newRoleName;
 
     /**
-     * @description 执行用户userId
-     *
      * @var string
      */
     public $opUserId;

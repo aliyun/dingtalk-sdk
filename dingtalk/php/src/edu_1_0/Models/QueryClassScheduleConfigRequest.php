@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class QueryClassScheduleConfigRequest extends Model
 {
     /**
-     * @description 课程id列表
-     *
      * @var int[]
      */
     public $classIds;
 
     /**
-     * @description 操作者的UserID
+     * @example 2534522534
      *
      * @var string
      */

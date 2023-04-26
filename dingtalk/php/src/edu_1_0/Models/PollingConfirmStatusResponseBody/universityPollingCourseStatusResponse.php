@@ -10,14 +10,14 @@ use AlibabaCloud\Tea\Model;
 class universityPollingCourseStatusResponse extends Model
 {
     /**
-     * @description 确认状态
+     * @example true
      *
      * @var bool
      */
     public $confirmStatus;
 
     /**
-     * @description 课程编码
+     * @example testCourseCode
      *
      * @var string
      */

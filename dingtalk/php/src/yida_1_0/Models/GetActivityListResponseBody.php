@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetActivityListResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
      * @var result[]
      */
     public $result;

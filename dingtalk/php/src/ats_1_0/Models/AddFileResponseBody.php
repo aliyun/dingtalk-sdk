@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class AddFileResponseBody extends Model
 {
     /**
-     * @description 文件标识
+     * @example 111111
      *
      * @var string
      */
     public $fileId;
 
     /**
-     * @description 文件名
+     * @example 张三的简历
      *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 空间标识
+     * @example 123456
      *
      * @var int
      */

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class onlineMeetingInfo extends Model
 {
     /**
-     * @description 会议ID
+     * @example 5c4df21dxxxx-a6db402b9f3a"
      *
      * @var string
      */
     public $conferenceId;
 
     /**
-     * @description 线上会议类型，目前支持：  dingtalk：钉钉视频会议
+     * @example dingtalk
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 会议url
+     * @example dingtalk://dingtalkclient/page/videoCoxxxxndar?confId=5c4df21dxxxx2b9f3a&calendarId=92xxxx36
      *
      * @var string
      */

@@ -19,21 +19,19 @@ use AlibabaCloud\Tea\Model;
 class ConsultCreateSubInstitutionRequest extends Model
 {
     /**
-     * @description 签约支付宝账户，用于协议确认
+     * @example asdf@163.com
      *
      * @var string
      */
     public $bindingAlipayLogonId;
 
     /**
-     * @description 联系人
-     *
      * @var contactInfo
      */
     public $contactInfo;
 
     /**
-     * @description 主机构编号
+     * @example 202111090001
      *
      * @var string
      */
@@ -45,92 +43,74 @@ class ConsultCreateSubInstitutionRequest extends Model
     public $legalPersonCertInfo;
 
     /**
-     * @description 进件创建外部流水号
+     * @example 2021000001
      *
      * @var string
      */
     public $outTradeNo;
 
     /**
-     * @description 进件渠道
+     * @example ALIPAY
      *
      * @var string
      */
     public $payChannel;
 
     /**
-     * @description 资质信息
-     *
      * @var qualificationInfos[]
      */
     public $qualificationInfos;
 
     /**
-     * @description 开通的服务类型
-     *
      * @var string[]
      */
     public $services;
 
     /**
-     * @description 资金账户信息
-     *
      * @var settleInfo
      */
     public $settleInfo;
 
     /**
-     * @description 解决方案，包含清算、费率规则
+     * @example S001
      *
      * @var string
      */
     public $solution;
 
     /**
-     * @description 子机构地址信息
-     *
      * @var subInstAddressInfo
      */
     public $subInstAddressInfo;
 
     /**
-     * @description 授权信息
-     *
      * @var subInstAuthInfo
      */
     public $subInstAuthInfo;
 
     /**
-     * @description 子机构基本信息
-     *
      * @var subInstBasicInfo
      */
     public $subInstBasicInfo;
 
     /**
-     * @description 子机构认证信息
-     *
      * @var subInstCertifyInfo
      */
     public $subInstCertifyInfo;
 
     /**
-     * @description 子机构编号
+     * @example 1001
      *
      * @var string
      */
     public $subInstId;
 
     /**
-     * @description 开票信息
-     *
      * @var subInstInvoiceInfo
      */
     public $subInstInvoiceInfo;
 
     /**
-     * @description 子机构门店信息
-     *
      * @var subInstShopInfo
      */
     public $subInstShopInfo;

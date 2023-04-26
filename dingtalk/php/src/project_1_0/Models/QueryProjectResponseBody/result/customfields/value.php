@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class value extends Model
 {
     /**
-     * @description 自定义字段值ID。
+     * @example 64ba333e4206372f3f5cxxxx
      *
      * @var string
      */
     public $fieldvalueId;
 
     /**
-     * @description 自定义字段值元属性。
+     * @example 3
      *
      * @var string
      */
     public $metaString;
 
     /**
-     * @description 自定义字段值内容。
+     * @example 自定义字段1
      *
      * @var string
      */

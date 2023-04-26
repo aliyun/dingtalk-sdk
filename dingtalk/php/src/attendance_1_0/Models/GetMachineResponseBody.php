@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetMachineResponseBody extends Model
 {
     /**
-     * @description 查询结果
-     *
      * @var result
      */
     public $result;

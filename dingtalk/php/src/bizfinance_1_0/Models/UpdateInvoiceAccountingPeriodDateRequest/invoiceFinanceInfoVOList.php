@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class invoiceFinanceInfoVOList extends Model
 {
     /**
-     * @description 入账日期
+     * @example 2022-02-03
      *
      * @var string
      */
     public $accountingPeriodData;
 
     /**
-     * @description 发票代码
+     * @example 2202020
      *
      * @var string
      */
     public $invoiceCode;
 
     /**
-     * @description 发票号码
+     * @example 220200200
      *
      * @var string
      */
     public $invoiceNo;
 
     /**
-     * @description 发票类型
+     * @example VAT_DIGITAL_NORMAL
      *
      * @var string
      */

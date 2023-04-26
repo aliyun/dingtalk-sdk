@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ListGroupSetRequest extends Model
 {
     /**
-     * @description 每页返回的结果集个数
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 第一页不传，下一页传入上一页返回的nextToken
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 查询DSL
-     *
      * @var string
      */
     public $queryDsl;
 
     /**
-     * @description 关系类型
-     *
      * @var string
      */
     public $relationType;

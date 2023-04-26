@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CheckUserIsGroupMemberRequest extends Model
 {
     /**
-     * @description 会话id。
+     * @example cidD2y*****==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 用户userId。
+     * @example 015*****
      *
      * @var string
      */

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class outputDataRules extends Model
 {
     /**
-     * @description 规则的预期值。
+     * @example 1
      *
      * @var string
      */
     public $expectValue;
 
     /**
-     * @description 操作类型。
+     * @example EQ
      *
      * @var string
      */
     public $operate;
 
     /**
-     * @description 规则的属性路径。
+     * @example a/b/c
      *
      * @var string
      */

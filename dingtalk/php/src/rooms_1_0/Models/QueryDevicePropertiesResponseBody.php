@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryDevicePropertiesResponseBody extends Model
 {
     /**
-     * @description 响应结果
-     *
      * @var result[]
      */
     public $result;

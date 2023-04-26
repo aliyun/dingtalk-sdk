@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class StopCloudRecordRequest extends Model
 {
     /**
-     * @description 主持人uid
-     *
      * @var string
      */
     public $unionId;

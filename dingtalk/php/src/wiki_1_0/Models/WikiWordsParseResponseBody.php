@@ -20,8 +20,6 @@ class WikiWordsParseResponseBody extends Model
     public $errMsg;
 
     /**
-     * @description Id of the request
-     *
      * @var bool
      */
     public $success;

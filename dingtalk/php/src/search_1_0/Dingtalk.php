@@ -32,18 +32,65 @@ use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\UpdateSearchTabRequest;
 use AlibabaCloud\SDK\Dingtalk\Vsearch_1_0\Models\UpdateSearchTabResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param string                       $tabId
+     * @param BatchInsertSearchItemRequest $request
+     * @param BatchInsertSearchItemHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return BatchInsertSearchItemResponse
+     */
+    public function batchInsertSearchItemWithOptions($tabId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->searchItemModels)) {
+            $body['searchItemModels'] = $request->searchItemModels;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchInsertSearchItem',
+            'version'     => 'search_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/search/tabs/' . $tabId . '/items/batch',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'none',
+        ]);
+
+        return BatchInsertSearchItemResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -61,34 +108,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                       $tabId
-     * @param BatchInsertSearchItemRequest $request
-     * @param BatchInsertSearchItemHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param CreateSearchTabRequest $request
+     * @param CreateSearchTabHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return BatchInsertSearchItemResponse
+     * @return CreateSearchTabResponse
      */
-    public function batchInsertSearchItemWithOptions($tabId, $request, $headers, $runtime)
+    public function createSearchTabWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $tabId = OpenApiUtilClient::getEncodeParam($tabId);
-        $body  = [];
-        if (!Utils::isUnset($request->searchItemModels)) {
-            @$body['searchItemModels'] = $request->searchItemModels;
+        $body = [];
+        if (!Utils::isUnset($request->darkIcon)) {
+            $body['darkIcon'] = $request->darkIcon;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->priority)) {
+            $body['priority'] = $request->priority;
+        }
+        if (!Utils::isUnset($request->source)) {
+            $body['source'] = $request->source;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateSearchTab',
+            'version'     => 'search_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/search/tabs',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchInsertSearchItemResponse::fromMap($this->doROARequest('BatchInsertSearchItem', 'search_1.0', 'HTTP', 'POST', 'AK', '/v1.0/search/tabs/' . $tabId . '/items/batch', 'none', $req, $runtime));
+        return CreateSearchTabResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -105,47 +176,38 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateSearchTabRequest $request
-     * @param CreateSearchTabHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param string                  $tabId
+     * @param string                  $itemId
+     * @param DeleteSearchItemHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return CreateSearchTabResponse
+     * @return DeleteSearchItemResponse
      */
-    public function createSearchTabWithOptions($request, $headers, $runtime)
+    public function deleteSearchItemWithOptions($tabId, $itemId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->darkIcon)) {
-            @$body['darkIcon'] = $request->darkIcon;
-        }
-        if (!Utils::isUnset($request->icon)) {
-            @$body['icon'] = $request->icon;
-        }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
-        }
-        if (!Utils::isUnset($request->priority)) {
-            @$body['priority'] = $request->priority;
-        }
-        if (!Utils::isUnset($request->source)) {
-            @$body['source'] = $request->source;
-        }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteSearchItem',
+            'version'     => 'search_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/search/tabs/' . $tabId . '/items/' . $itemId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return CreateSearchTabResponse::fromMap($this->doROARequest('CreateSearchTab', 'search_1.0', 'HTTP', 'POST', 'AK', '/v1.0/search/tabs', 'json', $req, $runtime));
+        return DeleteSearchItemResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -163,29 +225,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                  $tabId
-     * @param string                  $itemId
-     * @param DeleteSearchItemHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param string                 $tabId
+     * @param DeleteSearchTabHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return DeleteSearchItemResponse
+     * @return DeleteSearchTabResponse
      */
-    public function deleteSearchItemWithOptions($tabId, $itemId, $headers, $runtime)
+    public function deleteSearchTabWithOptions($tabId, $headers, $runtime)
     {
-        $tabId       = OpenApiUtilClient::getEncodeParam($tabId);
-        $itemId      = OpenApiUtilClient::getEncodeParam($itemId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'DeleteSearchTab',
+            'version'     => 'search_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/search/tabs/' . $tabId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteSearchItemResponse::fromMap($this->doROARequest('DeleteSearchItem', 'search_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/search/tabs/' . $tabId . '/items/' . $itemId . '', 'none', $req, $runtime));
+        return DeleteSearchTabResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -202,27 +272,38 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                 $tabId
-     * @param DeleteSearchTabHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param string               $tabId
+     * @param string               $itemId
+     * @param GetSearchItemHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return DeleteSearchTabResponse
+     * @return GetSearchItemResponse
      */
-    public function deleteSearchTabWithOptions($tabId, $headers, $runtime)
+    public function getSearchItemWithOptions($tabId, $itemId, $headers, $runtime)
     {
-        $tabId       = OpenApiUtilClient::getEncodeParam($tabId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetSearchItem',
+            'version'     => 'search_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/search/tabs/' . $tabId . '/items/' . $itemId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteSearchTabResponse::fromMap($this->doROARequest('DeleteSearchTab', 'search_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/search/tabs/' . $tabId . '', 'none', $req, $runtime));
+        return GetSearchItemResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -240,29 +321,50 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string               $tabId
-     * @param string               $itemId
-     * @param GetSearchItemHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param string                         $tabId
+     * @param GetSearchItemsByKeyWordRequest $request
+     * @param GetSearchItemsByKeyWordHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return GetSearchItemResponse
+     * @return GetSearchItemsByKeyWordResponse
      */
-    public function getSearchItemWithOptions($tabId, $itemId, $headers, $runtime)
+    public function getSearchItemsByKeyWordWithOptions($tabId, $request, $headers, $runtime)
     {
-        $tabId       = OpenApiUtilClient::getEncodeParam($tabId);
-        $itemId      = OpenApiUtilClient::getEncodeParam($itemId);
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->keyWord)) {
+            $query['keyWord'] = $request->keyWord;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetSearchItemsByKeyWord',
+            'version'     => 'search_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/search/tabs/' . $tabId . '/items',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetSearchItemResponse::fromMap($this->doROARequest('GetSearchItem', 'search_1.0', 'HTTP', 'GET', 'AK', '/v1.0/search/tabs/' . $tabId . '/items/' . $itemId . '', 'json', $req, $runtime));
+        return GetSearchItemsByKeyWordResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -280,40 +382,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                         $tabId
-     * @param GetSearchItemsByKeyWordRequest $request
-     * @param GetSearchItemsByKeyWordHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param string              $tabId
+     * @param GetSearchTabHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return GetSearchItemsByKeyWordResponse
+     * @return GetSearchTabResponse
      */
-    public function getSearchItemsByKeyWordWithOptions($tabId, $request, $headers, $runtime)
+    public function getSearchTabWithOptions($tabId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $tabId = OpenApiUtilClient::getEncodeParam($tabId);
-        $query = [];
-        if (!Utils::isUnset($request->keyWord)) {
-            @$query['keyWord'] = $request->keyWord;
-        }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetSearchTab',
+            'version'     => 'search_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/search/tabs/' . $tabId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetSearchItemsByKeyWordResponse::fromMap($this->doROARequest('GetSearchItemsByKeyWord', 'search_1.0', 'HTTP', 'GET', 'AK', '/v1.0/search/tabs/' . $tabId . '/items', 'json', $req, $runtime));
+        return GetSearchTabResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -330,27 +429,65 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string              $tabId
-     * @param GetSearchTabHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param string                  $tabId
+     * @param InsertSearchItemRequest $request
+     * @param InsertSearchItemHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return GetSearchTabResponse
+     * @return InsertSearchItemResponse
      */
-    public function getSearchTabWithOptions($tabId, $headers, $runtime)
+    public function insertSearchItemWithOptions($tabId, $request, $headers, $runtime)
     {
-        $tabId       = OpenApiUtilClient::getEncodeParam($tabId);
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->footer)) {
+            $body['footer'] = $request->footer;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->itemId)) {
+            $body['itemId'] = $request->itemId;
+        }
+        if (!Utils::isUnset($request->mobileUrl)) {
+            $body['mobileUrl'] = $request->mobileUrl;
+        }
+        if (!Utils::isUnset($request->pcUrl)) {
+            $body['pcUrl'] = $request->pcUrl;
+        }
+        if (!Utils::isUnset($request->summary)) {
+            $body['summary'] = $request->summary;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->url)) {
+            $body['url'] = $request->url;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'InsertSearchItem',
+            'version'     => 'search_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/search/tabs/' . $tabId . '/items',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'none',
         ]);
 
-        return GetSearchTabResponse::fromMap($this->doROARequest('GetSearchTab', 'search_1.0', 'HTTP', 'GET', 'AK', '/v1.0/search/tabs/' . $tabId . '', 'json', $req, $runtime));
+        return InsertSearchItemResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -368,55 +505,36 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                  $tabId
-     * @param InsertSearchItemRequest $request
-     * @param InsertSearchItemHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param ListSearchTabsByOrgIdHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return InsertSearchItemResponse
+     * @return ListSearchTabsByOrgIdResponse
      */
-    public function insertSearchItemWithOptions($tabId, $request, $headers, $runtime)
+    public function listSearchTabsByOrgIdWithOptions($headers, $runtime)
     {
-        Utils::validateModel($request);
-        $tabId = OpenApiUtilClient::getEncodeParam($tabId);
-        $body  = [];
-        if (!Utils::isUnset($request->footer)) {
-            @$body['footer'] = $request->footer;
-        }
-        if (!Utils::isUnset($request->icon)) {
-            @$body['icon'] = $request->icon;
-        }
-        if (!Utils::isUnset($request->itemId)) {
-            @$body['itemId'] = $request->itemId;
-        }
-        if (!Utils::isUnset($request->mobileUrl)) {
-            @$body['mobileUrl'] = $request->mobileUrl;
-        }
-        if (!Utils::isUnset($request->pcUrl)) {
-            @$body['pcUrl'] = $request->pcUrl;
-        }
-        if (!Utils::isUnset($request->summary)) {
-            @$body['summary'] = $request->summary;
-        }
-        if (!Utils::isUnset($request->title)) {
-            @$body['title'] = $request->title;
-        }
-        if (!Utils::isUnset($request->url)) {
-            @$body['url'] = $request->url;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ListSearchTabsByOrgId',
+            'version'     => 'search_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/search/tabs',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return InsertSearchItemResponse::fromMap($this->doROARequest('InsertSearchItem', 'search_1.0', 'HTTP', 'POST', 'AK', '/v1.0/search/tabs/' . $tabId . '/items', 'none', $req, $runtime));
+        return ListSearchTabsByOrgIdResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -431,25 +549,59 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListSearchTabsByOrgIdHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param string                 $tabId
+     * @param UpdateSearchTabRequest $request
+     * @param UpdateSearchTabHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return ListSearchTabsByOrgIdResponse
+     * @return UpdateSearchTabResponse
      */
-    public function listSearchTabsByOrgIdWithOptions($headers, $runtime)
+    public function updateSearchTabWithOptions($tabId, $request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->darkIcon)) {
+            $body['darkIcon'] = $request->darkIcon;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->priority)) {
+            $body['priority'] = $request->priority;
+        }
+        if (!Utils::isUnset($request->source)) {
+            $body['source'] = $request->source;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateSearchTab',
+            'version'     => 'search_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/search/tabs/' . $tabId . '',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'none',
         ]);
 
-        return ListSearchTabsByOrgIdResponse::fromMap($this->doROARequest('ListSearchTabsByOrgId', 'search_1.0', 'HTTP', 'GET', 'AK', '/v1.0/search/tabs', 'json', $req, $runtime));
+        return UpdateSearchTabResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -464,51 +616,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateSearchTabHeaders([]);
 
         return $this->updateSearchTabWithOptions($tabId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                 $tabId
-     * @param UpdateSearchTabRequest $request
-     * @param UpdateSearchTabHeaders $headers
-     * @param RuntimeOptions         $runtime
-     *
-     * @return UpdateSearchTabResponse
-     */
-    public function updateSearchTabWithOptions($tabId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $tabId = OpenApiUtilClient::getEncodeParam($tabId);
-        $body  = [];
-        if (!Utils::isUnset($request->darkIcon)) {
-            @$body['darkIcon'] = $request->darkIcon;
-        }
-        if (!Utils::isUnset($request->icon)) {
-            @$body['icon'] = $request->icon;
-        }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
-        }
-        if (!Utils::isUnset($request->priority)) {
-            @$body['priority'] = $request->priority;
-        }
-        if (!Utils::isUnset($request->source)) {
-            @$body['source'] = $request->source;
-        }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateSearchTabResponse::fromMap($this->doROARequest('UpdateSearchTab', 'search_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/search/tabs/' . $tabId . '', 'none', $req, $runtime));
     }
 }

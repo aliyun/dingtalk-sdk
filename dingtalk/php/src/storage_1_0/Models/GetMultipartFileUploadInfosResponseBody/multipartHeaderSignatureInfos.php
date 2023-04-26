@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class multipartHeaderSignatureInfos extends Model
 {
     /**
-     * @description header信息
-     *
      * @var headerSignatureInfo
      */
     public $headerSignatureInfo;
 
     /**
-     * @description 分片number
-     *
      * @var int
      */
     public $partNumber;

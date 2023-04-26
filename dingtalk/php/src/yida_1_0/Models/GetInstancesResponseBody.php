@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class GetInstancesResponseBody extends Model
 {
     /**
-     * @description data
-     *
      * @var data[]
      */
     public $data;
 
     /**
-     * @description 当前第几页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 总数量
+     * @example 100
      *
      * @var int
      */

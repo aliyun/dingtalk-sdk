@@ -9,22 +9,21 @@ use AlibabaCloud\Tea\Model;
 class relatedDoc extends Model
 {
     /**
-     * @description 当前在线文档链接地址
+     * @example https://12324.com
      *
      * @var string
      */
     public $link;
 
     /**
-     * @description 在线文档的名称
+     * @example 文档名
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 在线文档的类型，分别为adoc和asheet两个值获取文档图标
-     *
+     * @example adoc
      *
      * @var string
      */

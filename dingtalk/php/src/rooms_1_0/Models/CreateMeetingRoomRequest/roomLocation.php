@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class roomLocation extends Model
 {
     /**
-     * @description 位置详细信息
+     * @example xx市xx区xx路xx号
      *
      * @var string
      */
     public $desc;
 
     /**
-     * @description 位置标题
+     * @example xxx公司
      *
      * @var string
      */

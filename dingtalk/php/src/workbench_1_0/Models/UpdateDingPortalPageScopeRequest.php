@@ -9,29 +9,23 @@ use AlibabaCloud\Tea\Model;
 class UpdateDingPortalPageScopeRequest extends Model
 {
     /**
-     * @description 是否全员可见
+     * @example false
      *
      * @var bool
      */
     public $allVisible;
 
     /**
-     * @description 可见部门列表
-     *
      * @var int[]
      */
     public $deptIds;
 
     /**
-     * @description 可见角色列表
-     *
      * @var int[]
      */
     public $roleIds;
 
     /**
-     * @description 可见用户列表
-     *
      * @var string[]
      */
     public $userids;

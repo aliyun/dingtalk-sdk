@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryPermissionByUserIdRequest extends Model
 {
     /**
-     * @description 用户ID
-     *
      * @var string
      */
     public $userId;

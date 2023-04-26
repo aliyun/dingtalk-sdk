@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class GetUserCardHolderListResponseBody extends Model
 {
     /**
-     * @description 是否还有数据
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 名片夹列表
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 表示当前调用返回读取到的位置，空代表数据已经读取完毕
-     *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description TotalCount本次请求条件下的数据总量，此参数为可选参数，默认可不返回
-     *
      * @var int
      */
     public $totalCount;

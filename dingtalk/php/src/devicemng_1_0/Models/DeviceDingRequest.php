@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class DeviceDingRequest extends Model
 {
     /**
-     * @description 设备标识
+     * @example xxxx
      *
      * @var string
      */
     public $deviceKey;
 
     /**
-     * @description 消息体动态参数
+     * @example json字符串
      *
      * @var string
      */
     public $paramsJson;
 
     /**
-     * @description staffId列表
-     *
      * @var string[]
      */
     public $receiverUserIdList;

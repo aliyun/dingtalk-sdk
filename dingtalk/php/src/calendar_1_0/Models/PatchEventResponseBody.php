@@ -21,8 +21,6 @@ class PatchEventResponseBody extends Model
     public $attendees;
 
     /**
-     * @description 创建时间
-     *
      * @var string
      */
     public $createTime;
@@ -68,8 +66,6 @@ class PatchEventResponseBody extends Model
     public $reminders;
 
     /**
-     * @description 日程开始时间
-     *
      * @var start
      */
     public $start;
@@ -80,8 +76,6 @@ class PatchEventResponseBody extends Model
     public $summary;
 
     /**
-     * @description 更新时间
-     *
      * @var string
      */
     public $updateTime;

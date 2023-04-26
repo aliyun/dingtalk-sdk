@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 类别code
+     * @example INCOME_XXX
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 是否为目录
+     * @example false
      *
      * @var bool
      */
     public $isDir;
 
     /**
-     * @description 名字
+     * @example 汽车
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 父类别code
+     * @example INCOM_XXX
      *
      * @var string
      */
     public $parentCode;
 
     /**
-     * @description 状态:valid,invalid,deleted
+     * @example valid
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 类型:income收入，expense支出
+     * @example income
      *
      * @var string
      */

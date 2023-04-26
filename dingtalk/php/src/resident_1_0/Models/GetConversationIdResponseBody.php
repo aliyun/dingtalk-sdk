@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetConversationIdResponseBody extends Model
 {
     /**
+     * @example cidAX+2NwjqR3Y81Sxic5jtag==
+     *
      * @var string
      */
     public $openConversationId;

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupMemberByMemberAuthResponseBody extends Model
 {
     /**
-     * @description 群成员列表
-     *
      * @var groupMemberList[]
      */
     public $groupMemberList;

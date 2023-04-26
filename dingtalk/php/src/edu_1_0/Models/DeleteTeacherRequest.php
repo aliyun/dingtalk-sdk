@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class DeleteTeacherRequest extends Model
 {
     /**
-     * @description 是否班主任；1:班主任；0:非班主任
+     * @example 1
      *
      * @var int
      */
     public $adviser;
 
     /**
-     * @description 钉钉企业管理员员工ID
+     * @example 1235
      *
      * @var string
      */

@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CreateWorkspaceDocResponseBody extends Model
 {
     /**
-     * @description 文档docKey
-     *
      * @var string
      */
     public $docKey;
 
     /**
-     * @description 文档Id
-     *
      * @var string
      */
     public $nodeId;
 
     /**
-     * @description 文档打开url
-     *
      * @var string
      */
     public $url;
 
     /**
-     * @description 知识库id。
-     *
      * @var string
      */
     public $workspaceId;

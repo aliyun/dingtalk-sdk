@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class EditDeviceAdminRequest extends Model
 {
     /**
-     * @description 需要处理的设备编号。客户侧生成的设备标识，能够唯一标识一个设备，该字段与uuid字段需要二选一，并且不能都填充。
+     * @example xxxxxx
      *
      * @var string
      */
     public $deviceCode;
 
     /**
-     * @description 角色唯一标识
+     * @example xxxxx
      *
      * @var string
      */
     public $roleUuid;
 
     /**
-     * @description 需要编辑的角色唯一标识，非必填，不传默认为管理员。
-     *
      * @var string[]
      */
     public $userIds;
 
     /**
-     * @description 设备唯一标识，钉钉侧生成的设备标识，能够唯一标识一个设备，该字段与deviceCode字段需要二选一，并且不能都填充。
+     * @example xxxxxx
      *
      * @var string
      */

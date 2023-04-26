@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class dentryResult extends Model
 {
     /**
-     * @description 是否还有更多数据。
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 搜索命中的节点列表。
-     *
      * @var items[]
      */
     public $items;
 
     /**
-     * @description 分页游标。
-     *
      * @var string
      */
     public $nextToken;

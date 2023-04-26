@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class DeleteRangeProtectionRequest extends Model
 {
     /**
-     * @description 操作人unionId
-     *
      * @var string
      */
     public $operatorId;

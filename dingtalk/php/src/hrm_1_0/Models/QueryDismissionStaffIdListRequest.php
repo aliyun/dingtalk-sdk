@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryDismissionStaffIdListRequest extends Model
 {
     /**
-     * @description 单页查询最大条目数， 最大50
+     * @example 30
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页查询的游标， 首次查询时传入0， 后续查询使用上一次接口返回的nextToken
+     * @example 0
      *
      * @var int
      */

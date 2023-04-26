@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class QueryPositionsResponseBody extends Model
 {
     /**
-     * @description 是否有更多数据
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 职位列表
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 表示当前调用返回读取到的位置，空代表数据已经读取完毕
-     *
      * @var int
      */
     public $nextToken;

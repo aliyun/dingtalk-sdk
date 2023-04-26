@@ -9,344 +9,246 @@ use AlibabaCloud\Tea\Model;
 class dataList extends Model
 {
     /**
-     * @description 交易流水号
-     *
      * @var string
      */
     public $alipayTradeNo;
 
     /**
-     * @description 审批单号
-     *
      * @var string
      */
     public $applyId;
 
     /**
-     * @description 到达日期
-     *
      * @var string
      */
     public $arrDate;
 
     /**
-     * @description 到达站点
-     *
      * @var string
      */
     public $arrStation;
 
     /**
-     * @description 到达时间
-     *
      * @var string
      */
     public $arrTime;
 
     /**
-     * @description 入账时间
-     *
      * @var string
      */
     public $billRecordTime;
 
     /**
-     * @description 预定时间
-     *
      * @var string
      */
     public $bookTime;
 
     /**
-     * @description 预定人use id
-     *
      * @var string
      */
     public $bookerId;
 
     /**
-     * @description 预订人工号
-     *
      * @var string
      */
     public $bookerJobNo;
 
     /**
-     * @description 预订人名称
-     *
      * @var string
      */
     public $bookerName;
 
     /**
-     * @description 资金方向
-     *
      * @var string
      */
     public $capitalDirection;
 
     /**
-     * @description 级联部门
-     *
      * @var string
      */
     public $cascadeDepartment;
 
     /**
-     * @description 改签手续费
-     *
      * @var float
      */
     public $changeFee;
 
     /**
-     * @description 成本中心名称
-     *
      * @var string
      */
     public $costCenter;
 
     /**
-     * @description 成本中心编码
-     *
      * @var string
      */
     public $costCenterNumber;
 
     /**
-     * @description 折扣率
-     *
      * @var float
      */
     public $coupon;
 
     /**
-     * @description 末级部门
-     *
      * @var string
      */
     public $department;
 
     /**
-     * @description 部门id
-     *
      * @var string
      */
     public $departmentId;
 
     /**
-     * @description 出发日期
-     *
      * @var string
      */
     public $deptDate;
 
     /**
-     * @description 出发站
-     *
      * @var string
      */
     public $deptStation;
 
     /**
-     * @description 出发时间
-     *
      * @var string
      */
     public $deptTime;
 
     /**
-     * @description 费用类型
-     *
      * @var string
      */
     public $feeType;
 
     /**
-     * @description 序号
-     *
      * @var string
      */
     public $index;
 
     /**
-     * @description 发票抬头
-     *
      * @var string
      */
     public $invoiceTitle;
 
     /**
-     * @description 订单号
-     *
      * @var string
      */
     public $orderId;
 
     /**
-     * @description 订单金额
-     *
      * @var float
      */
     public $orderPrice;
 
     /**
-     * @description 超标审批单号
-     *
      * @var string
      */
     public $overApplyId;
 
     /**
-     * @description 主键id
-     *
      * @var int
      */
     public $primaryId;
 
     /**
-     * @description 项目编号
-     *
      * @var string
      */
     public $projectCode;
 
     /**
-     * @description 项目名称
-     *
      * @var string
      */
     public $projectName;
 
     /**
-     * @description 退款手续费
-     *
      * @var float
      */
     public $refundFee;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 运行时长
-     *
      * @var string
      */
     public $runTime;
 
     /**
-     * @description 座位号
-     *
      * @var string
      */
     public $seatNo;
 
     /**
-     * @description 坐席
-     *
      * @var string
      */
     public $seatType;
 
     /**
-     * @description 服务费，仅在feeType 6007、6008中展示
-     *
      * @var float
      */
     public $serviceFee;
 
     /**
-     * @description 结算金额
-     *
      * @var float
      */
     public $settlementFee;
 
     /**
-     * @description 预存赠送金额消费
-     *
      * @var float
      */
     public $settlementGrantFee;
 
     /**
-     * @description 结算时间
-     *
      * @var string
      */
     public $settlementTime;
 
     /**
-     * @description 结算类型
-     *
      * @var string
      */
     public $settlementType;
 
     /**
-     * @description 入账状态
-     *
      * @var int
      */
     public $status;
 
     /**
-     * @description 票面票号
-     *
      * @var string
      */
     public $ticketNo;
 
     /**
-     * @description 票价
-     *
      * @var float
      */
     public $ticketPrice;
 
     /**
-     * @description 车次号
-     *
      * @var string
      */
     public $trainNo;
 
     /**
-     * @description 车次类型
-     *
      * @var string
      */
     public $trainType;
 
     /**
-     * @description 出行人useId
-     *
      * @var string
      */
     public $travelerId;
 
     /**
-     * @description 出行人工号
-     *
      * @var string
      */
     public $travelerJobNo;
 
     /**
-     * @description 出行人名称
-     *
      * @var string
      */
     public $travelerName;
 
     /**
-     * @description 发票类型
-     *
      * @var int
      */
     public $voucherType;

@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class QueryAllMemberByDeptRequest extends Model
 {
     /**
-     * @description 按月查询标识
-     *
      * @var string
      */
     public $monthMark;
 
     /**
-     * @description 分页查询页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页查询页容量
+     * @example 200
      *
      * @var int
      */

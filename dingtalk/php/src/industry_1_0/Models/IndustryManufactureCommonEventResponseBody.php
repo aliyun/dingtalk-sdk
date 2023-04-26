@@ -15,8 +15,6 @@ class IndustryManufactureCommonEventResponseBody extends Model
     public $errorMsg;
 
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $requestId;

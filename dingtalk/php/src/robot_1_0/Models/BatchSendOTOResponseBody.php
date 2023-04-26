@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class BatchSendOTOResponseBody extends Model
 {
     /**
-     * @description 推送频繁，被限流的用户userId列表
-     *
      * @var string[]
      */
     public $flowControlledStaffIdList;
 
     /**
-     * @description 无效的用户userId列表
-     *
      * @var string[]
      */
     public $invalidStaffIdList;
 
     /**
-     * @description 消息id
-     *
      * @var string
      */
     public $processQueryKey;

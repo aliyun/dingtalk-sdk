@@ -24,8 +24,6 @@ class spaceList extends Model
     public $floor;
 
     /**
-     * @description 房屋状态：0空置/1未领/2入住/3空关/4装修
-     *
      * @var int
      */
     public $houseState;
@@ -56,8 +54,6 @@ class spaceList extends Model
     public $tagCode;
 
     /**
-     * @description 空间类型为楼时，1高层/2低层/3别墅/4其他，空间类型为房屋是，1住宅/2公寓/3排屋/4洋房/5叠墅/6别墅/7商铺/8办公用房/9经营用房/10其他
-     *
      * @var string
      */
     public $type;

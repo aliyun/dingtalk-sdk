@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetCalenderSummaryResponseBody extends Model
 {
     /**
-     * @description 最近1天创建日程人数
+     * @example 20
      *
      * @var string
      */
     public $calendarCreateUserCnt;
 
     /**
-     * @description 最近1天接收日程人数
+     * @example 20
      *
      * @var string
      */
     public $recvCalendarUserCnt1d;
 
     /**
-     * @description 最近1天使用日程人数
+     * @example 20
      *
      * @var string
      */

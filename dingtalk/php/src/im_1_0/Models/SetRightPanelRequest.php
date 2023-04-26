@@ -10,42 +10,38 @@ use AlibabaCloud\Tea\Model;
 class SetRightPanelRequest extends Model
 {
     /**
-     * @description 场景群的openConversationId
+     * @example ciddjxhgdDXSAAXXXXX
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 是否允许群成员关闭侧边栏 true-允许 false-不允许
-     *
      * @var bool
      */
     public $rightPanelClosePermitted;
 
     /**
-     * @description 侧边栏打开状态 1-开启 0-关闭
+     * @example 1
      *
      * @var int
      */
     public $rightPanelOpenStatus;
 
     /**
-     * @description 标题栏文案
+     * @example 侧边栏标题
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 网页侧边栏属性配置
-     *
      * @var webWndParams
      */
     public $webWndParams;
 
     /**
-     * @description 侧边栏
+     * @example 500
      *
      * @var int
      */

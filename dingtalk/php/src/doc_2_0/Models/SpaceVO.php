@@ -12,64 +12,54 @@ use AlibabaCloud\Tea\Model;
 class SpaceVO extends Model
 {
     /**
-     * @description 封面
-     *
      * @var string
      */
     public $cover;
 
     /**
-     * @description 访问者对当前知识库的权限等信息
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 知识库图标
-     *
      * @var iconVO
      */
     public $iconVO;
 
     /**
-     * @description 知识库id。
+     * @example abc
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 知识库名称。
+     * @example hello
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 知识库所有者。
-     *
      * @var owner
      */
     public $owner;
 
     /**
-     * @description 知识库类型。
+     * @example 1
      *
      * @var int
      */
     public $type;
 
     /**
-     * @description 知识库访问url。
+     * @example https://xx.yy
      *
      * @var string
      */
     public $url;
 
     /**
-     * @description 访问者对当前知识库的权限等信息。
-     *
      * @var visitorInfo
      */
     public $visitorInfo;

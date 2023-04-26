@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class receipts extends Model
 {
     /**
-     * @description 单据唯一编号
+     * @example abcd_efgh
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 修改者工号
+     * @example emp_xxx
      *
      * @var string
      */
     public $deleteUserId;
 
     /**
-     * @description 单据类型：1付款单，2收款单
+     * @example 1
      *
      * @var int
      */

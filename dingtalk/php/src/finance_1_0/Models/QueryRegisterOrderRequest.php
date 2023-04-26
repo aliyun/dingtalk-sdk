@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class QueryRegisterOrderRequest extends Model
 {
     /**
-     * @description 主机构编号
+     * @example 202111090001
      *
      * @var string
      */
     public $instId;
 
     /**
-     * @description 申请单号，和外部流水号至少一个必填
+     * @example 20211222000000001
      *
      * @var string
      */
     public $orderId;
 
     /**
-     * @description 外部流水号，和申请单编号至少一个必填
+     * @example 202112220001
      *
      * @var string
      */
     public $outTradeNo;
 
     /**
-     * @description 子机构编号
+     * @example 3
      *
      * @var string
      */

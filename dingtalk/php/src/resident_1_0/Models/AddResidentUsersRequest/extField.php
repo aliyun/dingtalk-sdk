@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class extField extends Model
 {
     /**
-     * @description 扩展字段名字
+     * @example 性别
      *
      * @var string
      */
     public $itemName;
 
     /**
-     * @description 扩展字段值
+     * @example 女
      *
      * @var string
      */

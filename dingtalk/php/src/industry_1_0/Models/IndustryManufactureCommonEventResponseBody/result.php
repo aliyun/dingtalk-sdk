@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 返回内容
-     *
      * @var string
      */
     public $content;
 
     /**
-     * @description 状态码
-     *
      * @var string
      */
     public $httpCode;

@@ -15,21 +15,19 @@ class data extends Model
     public $id;
 
     /**
-     * @description 权限列表
-     *
      * @var policyList[]
      */
     public $policyList;
 
     /**
-     * @description 是否可见的标识。
+     * @example public
      *
      * @var string
      */
     public $privacy;
 
     /**
-     * @description 哪种类型的权限。
+     * @example period
      *
      * @var string
      */

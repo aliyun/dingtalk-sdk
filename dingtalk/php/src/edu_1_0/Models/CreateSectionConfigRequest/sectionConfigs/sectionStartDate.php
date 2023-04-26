@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class sectionStartDate extends Model
 {
     /**
-     * @description 每个月的第几天。
+     * @example 9
      *
      * @var int
      */
     public $dayOfMonth;
 
     /**
-     * @description 月份。
+     * @example 11
      *
      * @var int
      */
     public $month;
 
     /**
-     * @description 年份。
+     * @example 2021
      *
      * @var int
      */

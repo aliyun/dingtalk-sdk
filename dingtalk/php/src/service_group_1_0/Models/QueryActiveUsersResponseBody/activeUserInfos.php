@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class activeUserInfos extends Model
 {
     /**
-     * @description 最近二周的行为指数
-     *
      * @var float
      */
     public $actionIndexL14d;
 
     /**
-     * @description 最近一个月的行为指数
-     *
      * @var float
      */
     public $actionIndexL30d;
 
     /**
-     * @description 最近一周的行为指数
-     *
      * @var float
      */
     public $actionIndexL7d;
 
     /**
-     * @description 活跃度
-     *
      * @var float
      */
     public $activeScore;
 
     /**
-     * @description 昵称
-     *
      * @var string
      */
     public $nickName;
 
     /**
-     * @description 排名
-     *
      * @var int
      */
     public $ranking;
 
     /**
-     * @description 钉钉用户unionId
-     *
      * @var string
      */
     public $unionId;

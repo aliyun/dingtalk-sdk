@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ChangeMainAdminRequest extends Model
 {
     /**
-     * @description effectCorpId
+     * @example corpIdCCC
      *
      * @var string
      */
     public $effectCorpId;
 
     /**
-     * @description sourceUserId
+     * @example userIdAA
      *
      * @var string
      */
     public $sourceUserId;
 
     /**
-     * @description targetUserId
+     * @example userIdBB
      *
      * @var string
      */

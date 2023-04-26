@@ -11,22 +11,16 @@ use AlibabaCloud\Tea\Model;
 class QueryPartnerInfoResponseBody extends Model
 {
     /**
-     * @description 部门列表
-     *
      * @var partnerDeptList[]
      */
     public $partnerDeptList;
 
     /**
-     * @description 伙伴标签
-     *
      * @var partnerLabelList[]
      */
     public $partnerLabelList;
 
     /**
-     * @description 员工id
-     *
      * @var string
      */
     public $userId;

@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class member extends Model
 {
     /**
-     * @description 企业corpId
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 成员id
-     *
      * @var string
      */
     public $memberId;
 
     /**
-     * @description 成员名称
-     *
      * @var string
      */
     public $memberName;
 
     /**
-     * @description 成员类型
-     *
      * @var string
      */
     public $memberType;

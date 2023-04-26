@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class fieldDataVO extends Model
 {
     /**
-     * @description 字段值的key
+     * @example 100
      *
      * @var string
      */
     public $key;
 
     /**
-     * @description 字段值的文本
+     * @example 100
      *
      * @var string
      */

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateOrganizationTaskStatusRequest extends Model
 {
     /**
-     * @description 是否禁用动态
+     * @example false
      *
      * @var bool
      */
     public $disableActivity;
 
     /**
-     * @description 是否禁用通知
+     * @example false
      *
      * @var bool
      */
     public $disableNotification;
 
     /**
-     * @description true改成完成，false 改成未完成
+     * @example true
      *
      * @var bool
      */

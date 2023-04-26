@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class departmentOrderSet extends Model
 {
     /**
-     * @description 下属组织的部门ID
-     *
      * @var int
      */
     public $departmentId;
 
     /**
-     * @description 员工在部门中的排序。
-     *
      * @var int
      */
     public $order;

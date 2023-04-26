@@ -9,92 +9,74 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 是否生效
+     * @example true
      *
      * @var bool
      */
     public $active;
 
     /**
-     * @description 规则描述
+     * @example description
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 白名单用户deptId列表
-     *
      * @var int[]
      */
     public $excludeDeptIds;
 
     /**
-     * @description 白名单用户tagId列表
-     *
      * @var int[]
      */
     public $excludeTagIds;
 
     /**
-     * @description 白名单用户userId列表
-     *
      * @var string[]
      */
     public $excludeUserIds;
 
     /**
-     * @description 设置id
+     * @example 1001
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 规则名称
+     * @example contact restrict name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 是否同时限制搜索
-     *
      * @var bool
      */
     public $restrictInSearch;
 
     /**
-     * @description 是否同时限制查看个人资料页
-     *
      * @var bool
      */
     public $restrictInUserProfile;
 
     /**
-     * @description 主体用户deptId列表
-     *
      * @var int[]
      */
     public $subjectDeptIds;
 
     /**
-     * @description 主体用户tagId列表
-     *
      * @var int[]
      */
     public $subjectTagIds;
 
     /**
-     * @description 主体用户userId列表
-     *
      * @var string[]
      */
     public $subjectUserIds;
 
     /**
-     * @description 限制类型
-     *
      * @var string
      */
     public $type;

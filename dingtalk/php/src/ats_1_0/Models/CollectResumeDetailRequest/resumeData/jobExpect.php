@@ -9,35 +9,33 @@ use AlibabaCloud\Tea\Model;
 class jobExpect extends Model
 {
     /**
-     * @description 期望职位名称
+     * @example Java开发工程师
      *
      * @var string
      */
     public $jobName;
 
     /**
-     * @description 期望工作地
-     *
      * @var string[]
      */
     public $locations;
 
     /**
-     * @description 最高期望工资
+     * @example 8000
      *
      * @var string
      */
     public $maxSalary;
 
     /**
-     * @description 最低期望工资
+     * @example 3000
      *
      * @var string
      */
     public $minSalary;
 
     /**
-     * @description 期望入职时间
+     * @example yyyy-MM-dd
      *
      * @var string
      */

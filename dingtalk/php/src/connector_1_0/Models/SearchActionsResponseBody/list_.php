@@ -9,70 +9,68 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 授权页地址
+     * @example dingtalk://dingtalkclient/page/link?pc_slide=true&url=https%3A%2F%2Fn.dingtalk.com%2Fdingding%2Fh5-common-authority%2Fconnector%2Findex.html%3FcorpId%3Dding32fff839a3e0105d%26accessorUuid%3DAPP-505001%26oPaths%3D%252Fding5b2a0b7e9677128935c2f4657eb6378f%252Fconnector%252FG-CONN-1017AF27C1B20B0FFD490005
      *
      * @var string
      */
     public $authorityUrl;
 
     /**
-     * @description 是否已授权
-     *
      * @var bool
      */
     public $authorized;
 
     /**
-     * @description 连接资产唯一标识
+     * @example dca://ding32fff839a3e0105d.connect.dingtalk.com/ding32fff839a3e0105d/action/G-ACT-101FDEBD3C6E213DB474000P
      *
      * @var string
      */
     public $connectAssetUri;
 
     /**
-     * @description 执行动作所属连接器ID
+     * @example G-CONN-XXCONNECTOR
      *
      * @var string
      */
     public $connectorId;
 
     /**
-     * @description 描述
+     * @example 示例描述
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 图标
+     * @example http://example.com/icon.jpg
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 执行动作的ID
+     * @example G-ACT-XXXACTION
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 集成类型
+     * @example basic
      *
      * @var string
      */
     public $integrationType;
 
     /**
-     * @description 名称
+     * @example 示例连接器
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 提供组织
+     * @example ding32fff839a3e0105d
      *
      * @var string
      */

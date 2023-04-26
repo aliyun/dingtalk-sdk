@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class users extends Model
 {
     /**
-     * @description 签到时间
-     *
      * @var int
      */
     public $checkInTime;
 
     /**
-     * @description 用户名
-     *
      * @var string
      */
     public $displayName;

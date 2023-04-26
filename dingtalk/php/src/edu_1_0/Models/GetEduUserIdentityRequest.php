@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetEduUserIdentityRequest extends Model
 {
     /**
-     * @description 用户unionId
+     * @example VYn5fYjORJMi
      *
      * @var string
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteLiveFeedRequest extends Model
 {
     /**
-     * @description 用户id（操作者的组织内id）
+     * @example 1206186351746728
      *
      * @var string
      */

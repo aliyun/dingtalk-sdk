@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryFormByBizTypeResponseBody extends Model
 {
     /**
-     * @description 模板列表
-     *
      * @var result[]
      */
     public $result;

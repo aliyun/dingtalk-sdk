@@ -10,50 +10,48 @@ use AlibabaCloud\Tea\Model;
 class CreateTeamRequest extends Model
 {
     /**
-     * @description 小组封面。
+     * @example https://img.alicdn.com/imgextra/i1/O1***.png
      *
      * @var string
      */
     public $cover;
 
     /**
-     * @description 小组介绍。
+     * @example 这是小组的介绍
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 小组图标。
+     * @example https://img.alicdn.com/imgextra/i1/O1***.png
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 小组成员列表。
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 小组名称。
+     * @example 测试小组名称
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 操作人unionId。
+     * @example YEp3JcM******UIbhwiE
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 小组类型。
-     * 3-兴趣小组。
+     * @example 0
+     *
      * @var int
      */
     public $teamType;

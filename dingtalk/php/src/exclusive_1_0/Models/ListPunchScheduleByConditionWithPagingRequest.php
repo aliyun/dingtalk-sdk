@@ -9,43 +9,39 @@ use AlibabaCloud\Tea\Model;
 class ListPunchScheduleByConditionWithPagingRequest extends Model
 {
     /**
-     * @description 业务实例id，在该接口中表示打卡机实例id
+     * @example 2aa6736c715944329xxxxxxxxd38be41
      *
      * @var string
      */
     public $bizInstanceId;
 
     /**
-     * @description 分页大小
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 游标位置
-     *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 查询日期结束时间（yyyy-MM-dd)
+     * @example 2022-03-13
      *
      * @var string
      */
     public $scheduleDateEnd;
 
     /**
-     * @description 查询日期开始时间（yyyy-MM-dd)）
+     * @example 2022-03-13
      *
      * @var string
      */
     public $scheduleDateStart;
 
     /**
-     * @description 用户id列表
-     *
      * @var string[]
      */
     public $userIdList;

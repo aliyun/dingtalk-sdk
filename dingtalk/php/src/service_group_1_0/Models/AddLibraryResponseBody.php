@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class AddLibraryResponseBody extends Model
 {
     /**
-     * @description success
-     *
      * @var bool
      */
     public $success;

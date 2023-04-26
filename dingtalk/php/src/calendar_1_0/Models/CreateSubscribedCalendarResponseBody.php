@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CreateSubscribedCalendarResponseBody extends Model
 {
     /**
-     * @description 日历id
-     *
      * @var string
      */
     public $calendarId;

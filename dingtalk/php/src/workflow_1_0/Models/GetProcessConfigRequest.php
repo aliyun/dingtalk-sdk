@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetProcessConfigRequest extends Model
 {
     /**
-     * @description 模板code
+     * @example PROC-BEFC22B7-EA64-4336-86EB-AB773AA2EB12
      *
      * @var string
      */

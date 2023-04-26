@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class AddProcessInstanceCommentRequest extends Model
 {
     /**
-     * @description 评论人的userid。
+     * @example user123
      *
      * @var string
      */
     public $commentUserId;
 
     /**
-     * @description 文件。
-     *
      * @var file
      */
     public $file;
 
     /**
-     * @description 审批实例ID，可通过调用获取审批实例ID列表接口获取。
+     * @example a171de6c-8bxxxx
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 评论的内容。
+     * @example 同意。
      *
      * @var string
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CollegeListCollegeSubDeptResponseBody extends Model
 {
     /**
-     * @description 部门信息列表
-     *
      * @var collegeDeptInfoSimpleList[]
      */
     public $collegeDeptInfoSimpleList;

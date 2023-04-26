@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class SelectOption extends Model
 {
     /**
-     * @description 每一个选项的唯一键
+     * @example finance
      *
      * @var string
      */
     public $key;
 
     /**
-     * @description 每一个选项的值
+     * @example 财务
      *
      * @var string
      */

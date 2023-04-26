@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class GetFileUploadInfoRequest extends Model
 {
     /**
-     * @description 已废弃
+     * @example true
      *
      * @var bool
      */
     public $multipart;
 
     /**
-     * @description 可选参数
-     *
      * @var option
      */
     public $option;
 
     /**
-     * @description 通过指定上传协议返回不同协议上传所需要的信息
-     * HEADER_SIGNATURE: Header加签
+     * @example HEADER_SIGNATURE
+     *
      * @var string
      */
     public $protocol;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

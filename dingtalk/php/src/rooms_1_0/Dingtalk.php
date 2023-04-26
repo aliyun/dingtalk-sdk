@@ -46,18 +46,88 @@ use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\UpdateMeetingRoomRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\UpdateMeetingRoomResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CreateMeetingRoomRequest $request
+     * @param CreateMeetingRoomHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return CreateMeetingRoomResponse
+     */
+    public function createMeetingRoomWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupId)) {
+            $body['groupId'] = $request->groupId;
+        }
+        if (!Utils::isUnset($request->isvRoomId)) {
+            $body['isvRoomId'] = $request->isvRoomId;
+        }
+        if (!Utils::isUnset($request->roomCapacity)) {
+            $body['roomCapacity'] = $request->roomCapacity;
+        }
+        if (!Utils::isUnset($request->roomLabelIds)) {
+            $body['roomLabelIds'] = $request->roomLabelIds;
+        }
+        if (!Utils::isUnset($request->roomLocation)) {
+            $body['roomLocation'] = $request->roomLocation;
+        }
+        if (!Utils::isUnset($request->roomName)) {
+            $body['roomName'] = $request->roomName;
+        }
+        if (!Utils::isUnset($request->roomPicture)) {
+            $body['roomPicture'] = $request->roomPicture;
+        }
+        if (!Utils::isUnset($request->roomStatus)) {
+            $body['roomStatus'] = $request->roomStatus;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateMeetingRoom',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/meetingrooms',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateMeetingRoomResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -74,56 +144,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateMeetingRoomRequest $request
-     * @param CreateMeetingRoomHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param CreateMeetingRoomGroupRequest $request
+     * @param CreateMeetingRoomGroupHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return CreateMeetingRoomResponse
+     * @return CreateMeetingRoomGroupResponse
      */
-    public function createMeetingRoomWithOptions($request, $headers, $runtime)
+    public function createMeetingRoomGroupWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->groupId)) {
-            @$body['groupId'] = $request->groupId;
+        if (!Utils::isUnset($request->groupName)) {
+            $body['groupName'] = $request->groupName;
         }
-        if (!Utils::isUnset($request->isvRoomId)) {
-            @$body['isvRoomId'] = $request->isvRoomId;
-        }
-        if (!Utils::isUnset($request->roomCapacity)) {
-            @$body['roomCapacity'] = $request->roomCapacity;
-        }
-        if (!Utils::isUnset($request->roomLabelIds)) {
-            @$body['roomLabelIds'] = $request->roomLabelIds;
-        }
-        if (!Utils::isUnset($request->roomLocation)) {
-            @$body['roomLocation'] = $request->roomLocation;
-        }
-        if (!Utils::isUnset($request->roomName)) {
-            @$body['roomName'] = $request->roomName;
-        }
-        if (!Utils::isUnset($request->roomPicture)) {
-            @$body['roomPicture'] = $request->roomPicture;
-        }
-        if (!Utils::isUnset($request->roomStatus)) {
-            @$body['roomStatus'] = $request->roomStatus;
+        if (!Utils::isUnset($request->parentGroupId)) {
+            $body['parentGroupId'] = $request->parentGroupId;
         }
         if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
+            $body['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateMeetingRoomGroup',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/groups',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateMeetingRoomResponse::fromMap($this->doROARequest('CreateMeetingRoom', 'rooms_1.0', 'HTTP', 'POST', 'AK', '/v1.0/rooms/meetingrooms', 'json', $req, $runtime));
+        return CreateMeetingRoomGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -140,38 +203,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateMeetingRoomGroupRequest $request
-     * @param CreateMeetingRoomGroupHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param string                   $roomId
+     * @param DeleteMeetingRoomRequest $request
+     * @param DeleteMeetingRoomHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return CreateMeetingRoomGroupResponse
+     * @return DeleteMeetingRoomResponse
      */
-    public function createMeetingRoomGroupWithOptions($request, $headers, $runtime)
+    public function deleteMeetingRoomWithOptions($roomId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->groupName)) {
-            @$body['groupName'] = $request->groupName;
-        }
-        if (!Utils::isUnset($request->parentGroupId)) {
-            @$body['parentGroupId'] = $request->parentGroupId;
-        }
+        $query = [];
         if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteMeetingRoom',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/meetingRooms/' . $roomId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return CreateMeetingRoomGroupResponse::fromMap($this->doROARequest('CreateMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'POST', 'AK', '/v1.0/rooms/groups', 'json', $req, $runtime));
+        return DeleteMeetingRoomResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -189,34 +258,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                   $roomId
-     * @param DeleteMeetingRoomRequest $request
-     * @param DeleteMeetingRoomHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param string                        $groupId
+     * @param DeleteMeetingRoomGroupRequest $request
+     * @param DeleteMeetingRoomGroupHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return DeleteMeetingRoomResponse
+     * @return DeleteMeetingRoomGroupResponse
      */
-    public function deleteMeetingRoomWithOptions($roomId, $request, $headers, $runtime)
+    public function deleteMeetingRoomGroupWithOptions($groupId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $roomId = OpenApiUtilClient::getEncodeParam($roomId);
-        $query  = [];
+        $query = [];
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteMeetingRoomGroup',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/groups/' . $groupId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteMeetingRoomResponse::fromMap($this->doROARequest('DeleteMeetingRoom', 'rooms_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/rooms/meetingRooms/' . $roomId . '', 'json', $req, $runtime));
+        return DeleteMeetingRoomGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -234,34 +313,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                        $groupId
-     * @param DeleteMeetingRoomGroupRequest $request
-     * @param DeleteMeetingRoomGroupHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param string                     $shareCode
+     * @param QueryDeviceIpByCodeRequest $request
+     * @param QueryDeviceIpByCodeHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return DeleteMeetingRoomGroupResponse
+     * @return QueryDeviceIpByCodeResponse
      */
-    public function deleteMeetingRoomGroupWithOptions($groupId, $request, $headers, $runtime)
+    public function queryDeviceIpByCodeWithOptions($shareCode, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $groupId = OpenApiUtilClient::getEncodeParam($groupId);
-        $query   = [];
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+        $query = [];
+        if (!Utils::isUnset($request->deviceSn)) {
+            $query['deviceSn'] = $request->deviceSn;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryDeviceIpByCode',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/devices/shareCodes/' . $shareCode . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteMeetingRoomGroupResponse::fromMap($this->doROARequest('DeleteMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/rooms/groups/' . $groupId . '', 'json', $req, $runtime));
+        return QueryDeviceIpByCodeResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -279,34 +368,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                     $shareCode
-     * @param QueryDeviceIpByCodeRequest $request
-     * @param QueryDeviceIpByCodeHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param QueryDevicePropertiesRequest $request
+     * @param QueryDevicePropertiesHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return QueryDeviceIpByCodeResponse
+     * @return QueryDevicePropertiesResponse
      */
-    public function queryDeviceIpByCodeWithOptions($shareCode, $request, $headers, $runtime)
+    public function queryDevicePropertiesWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $shareCode = OpenApiUtilClient::getEncodeParam($shareCode);
-        $query     = [];
-        if (!Utils::isUnset($request->deviceSn)) {
-            @$query['deviceSn'] = $request->deviceSn;
+        $query = [];
+        if (!Utils::isUnset($request->deviceId)) {
+            $query['deviceId'] = $request->deviceId;
+        }
+        if (!Utils::isUnset($request->deviceUnionId)) {
+            $query['deviceUnionId'] = $request->deviceUnionId;
+        }
+        if (!Utils::isUnset($request->operatorUnionId)) {
+            $query['operatorUnionId'] = $request->operatorUnionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->propertyNames)) {
+            $body['propertyNames'] = $request->propertyNames;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryDeviceProperties',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/devices/properties/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryDeviceIpByCodeResponse::fromMap($this->doROARequest('QueryDeviceIpByCode', 'rooms_1.0', 'HTTP', 'GET', 'AK', '/v1.0/rooms/devices/shareCodes/' . $shareCode . '', 'json', $req, $runtime));
+        return QueryDevicePropertiesResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -323,43 +432,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDevicePropertiesRequest $request
-     * @param QueryDevicePropertiesHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param string                  $roomId
+     * @param QueryMeetingRoomRequest $request
+     * @param QueryMeetingRoomHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return QueryDevicePropertiesResponse
+     * @return QueryMeetingRoomResponse
      */
-    public function queryDevicePropertiesWithOptions($request, $headers, $runtime)
+    public function queryMeetingRoomWithOptions($roomId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->deviceId)) {
-            @$query['deviceId'] = $request->deviceId;
-        }
-        if (!Utils::isUnset($request->deviceUnionId)) {
-            @$query['deviceUnionId'] = $request->deviceUnionId;
-        }
-        if (!Utils::isUnset($request->operatorUnionId)) {
-            @$query['operatorUnionId'] = $request->operatorUnionId;
-        }
-        $body = [];
-        if (!Utils::isUnset($request->propertyNames)) {
-            @$body['propertyNames'] = $request->propertyNames;
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryMeetingRoom',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/meetingRooms/' . $roomId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryDevicePropertiesResponse::fromMap($this->doROARequest('QueryDeviceProperties', 'rooms_1.0', 'HTTP', 'POST', 'AK', '/v1.0/rooms/devices/properties/query', 'json', $req, $runtime));
+        return QueryMeetingRoomResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -377,34 +487,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                  $roomId
-     * @param QueryMeetingRoomRequest $request
-     * @param QueryMeetingRoomHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param QueryMeetingRoomDeviceRequest $request
+     * @param QueryMeetingRoomDeviceHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return QueryMeetingRoomResponse
+     * @return QueryMeetingRoomDeviceResponse
      */
-    public function queryMeetingRoomWithOptions($roomId, $request, $headers, $runtime)
+    public function queryMeetingRoomDeviceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $roomId = OpenApiUtilClient::getEncodeParam($roomId);
-        $query  = [];
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+        $query = [];
+        if (!Utils::isUnset($request->deviceId)) {
+            $query['deviceId'] = $request->deviceId;
+        }
+        if (!Utils::isUnset($request->deviceUnionId)) {
+            $query['deviceUnionId'] = $request->deviceUnionId;
+        }
+        if (!Utils::isUnset($request->operatorUnionId)) {
+            $query['operatorUnionId'] = $request->operatorUnionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryMeetingRoomDevice',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/devices',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryMeetingRoomResponse::fromMap($this->doROARequest('QueryMeetingRoom', 'rooms_1.0', 'HTTP', 'GET', 'AK', '/v1.0/rooms/meetingRooms/' . $roomId . '', 'json', $req, $runtime));
+        return QueryMeetingRoomDeviceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -421,38 +546,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMeetingRoomDeviceRequest $request
-     * @param QueryMeetingRoomDeviceHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param string                       $groupId
+     * @param QueryMeetingRoomGroupRequest $request
+     * @param QueryMeetingRoomGroupHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return QueryMeetingRoomDeviceResponse
+     * @return QueryMeetingRoomGroupResponse
      */
-    public function queryMeetingRoomDeviceWithOptions($request, $headers, $runtime)
+    public function queryMeetingRoomGroupWithOptions($groupId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->deviceId)) {
-            @$query['deviceId'] = $request->deviceId;
-        }
-        if (!Utils::isUnset($request->deviceUnionId)) {
-            @$query['deviceUnionId'] = $request->deviceUnionId;
-        }
-        if (!Utils::isUnset($request->operatorUnionId)) {
-            @$query['operatorUnionId'] = $request->operatorUnionId;
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryMeetingRoomGroup',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/groups/' . $groupId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryMeetingRoomDeviceResponse::fromMap($this->doROARequest('QueryMeetingRoomDevice', 'rooms_1.0', 'HTTP', 'GET', 'AK', '/v1.0/rooms/devices', 'json', $req, $runtime));
+        return QueryMeetingRoomGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -470,34 +601,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                       $groupId
-     * @param QueryMeetingRoomGroupRequest $request
-     * @param QueryMeetingRoomGroupHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param QueryMeetingRoomGroupListRequest $request
+     * @param QueryMeetingRoomGroupListHeaders $headers
+     * @param RuntimeOptions                   $runtime
      *
-     * @return QueryMeetingRoomGroupResponse
+     * @return QueryMeetingRoomGroupListResponse
      */
-    public function queryMeetingRoomGroupWithOptions($groupId, $request, $headers, $runtime)
+    public function queryMeetingRoomGroupListWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $groupId = OpenApiUtilClient::getEncodeParam($groupId);
-        $query   = [];
+        $query = [];
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryMeetingRoomGroupList',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/groupLists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryMeetingRoomGroupResponse::fromMap($this->doROARequest('QueryMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'GET', 'AK', '/v1.0/rooms/groups/' . $groupId . '', 'json', $req, $runtime));
+        return QueryMeetingRoomGroupListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -514,32 +654,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMeetingRoomGroupListRequest $request
-     * @param QueryMeetingRoomGroupListHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param QueryMeetingRoomListRequest $request
+     * @param QueryMeetingRoomListHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return QueryMeetingRoomGroupListResponse
+     * @return QueryMeetingRoomListResponse
      */
-    public function queryMeetingRoomGroupListWithOptions($request, $headers, $runtime)
+    public function queryMeetingRoomListWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryMeetingRoomList',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/meetingRoomLists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryMeetingRoomGroupListResponse::fromMap($this->doROARequest('QueryMeetingRoomGroupList', 'rooms_1.0', 'HTTP', 'GET', 'AK', '/v1.0/rooms/groupLists', 'json', $req, $runtime));
+        return QueryMeetingRoomListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -556,38 +713,70 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryMeetingRoomListRequest $request
-     * @param QueryMeetingRoomListHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param UpdateMeetingRoomRequest $request
+     * @param UpdateMeetingRoomHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return QueryMeetingRoomListResponse
+     * @return UpdateMeetingRoomResponse
      */
-    public function queryMeetingRoomListWithOptions($request, $headers, $runtime)
+    public function updateMeetingRoomWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
+        $body = [];
+        if (!Utils::isUnset($request->groupId)) {
+            $body['groupId'] = $request->groupId;
         }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
+        if (!Utils::isUnset($request->isvRoomId)) {
+            $body['isvRoomId'] = $request->isvRoomId;
+        }
+        if (!Utils::isUnset($request->roomCapacity)) {
+            $body['roomCapacity'] = $request->roomCapacity;
+        }
+        if (!Utils::isUnset($request->roomId)) {
+            $body['roomId'] = $request->roomId;
+        }
+        if (!Utils::isUnset($request->roomLabelIds)) {
+            $body['roomLabelIds'] = $request->roomLabelIds;
+        }
+        if (!Utils::isUnset($request->roomLocation)) {
+            $body['roomLocation'] = $request->roomLocation;
+        }
+        if (!Utils::isUnset($request->roomName)) {
+            $body['roomName'] = $request->roomName;
+        }
+        if (!Utils::isUnset($request->roomPicture)) {
+            $body['roomPicture'] = $request->roomPicture;
+        }
+        if (!Utils::isUnset($request->roomStatus)) {
+            $body['roomStatus'] = $request->roomStatus;
         }
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+            $body['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateMeetingRoom',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/meetingRooms',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryMeetingRoomListResponse::fromMap($this->doROARequest('QueryMeetingRoomList', 'rooms_1.0', 'HTTP', 'GET', 'AK', '/v1.0/rooms/meetingRoomLists', 'json', $req, $runtime));
+        return UpdateMeetingRoomResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -604,59 +793,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateMeetingRoomRequest $request
-     * @param UpdateMeetingRoomHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param UpdateMeetingRoomGroupRequest $request
+     * @param UpdateMeetingRoomGroupHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return UpdateMeetingRoomResponse
+     * @return UpdateMeetingRoomGroupResponse
      */
-    public function updateMeetingRoomWithOptions($request, $headers, $runtime)
+    public function updateMeetingRoomGroupWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->groupId)) {
-            @$body['groupId'] = $request->groupId;
+            $body['groupId'] = $request->groupId;
         }
-        if (!Utils::isUnset($request->isvRoomId)) {
-            @$body['isvRoomId'] = $request->isvRoomId;
-        }
-        if (!Utils::isUnset($request->roomCapacity)) {
-            @$body['roomCapacity'] = $request->roomCapacity;
-        }
-        if (!Utils::isUnset($request->roomId)) {
-            @$body['roomId'] = $request->roomId;
-        }
-        if (!Utils::isUnset($request->roomLabelIds)) {
-            @$body['roomLabelIds'] = $request->roomLabelIds;
-        }
-        if (!Utils::isUnset($request->roomLocation)) {
-            @$body['roomLocation'] = $request->roomLocation;
-        }
-        if (!Utils::isUnset($request->roomName)) {
-            @$body['roomName'] = $request->roomName;
-        }
-        if (!Utils::isUnset($request->roomPicture)) {
-            @$body['roomPicture'] = $request->roomPicture;
-        }
-        if (!Utils::isUnset($request->roomStatus)) {
-            @$body['roomStatus'] = $request->roomStatus;
+        if (!Utils::isUnset($request->groupName)) {
+            $body['groupName'] = $request->groupName;
         }
         if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
+            $body['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateMeetingRoomGroup',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/groups',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return UpdateMeetingRoomResponse::fromMap($this->doROARequest('UpdateMeetingRoom', 'rooms_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/rooms/meetingRooms', 'json', $req, $runtime));
+        return UpdateMeetingRoomGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -670,40 +849,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateMeetingRoomGroupHeaders([]);
 
         return $this->updateMeetingRoomGroupWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param UpdateMeetingRoomGroupRequest $request
-     * @param UpdateMeetingRoomGroupHeaders $headers
-     * @param RuntimeOptions                $runtime
-     *
-     * @return UpdateMeetingRoomGroupResponse
-     */
-    public function updateMeetingRoomGroupWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->groupId)) {
-            @$body['groupId'] = $request->groupId;
-        }
-        if (!Utils::isUnset($request->groupName)) {
-            @$body['groupName'] = $request->groupName;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateMeetingRoomGroupResponse::fromMap($this->doROARequest('UpdateMeetingRoomGroup', 'rooms_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/rooms/groups', 'json', $req, $runtime));
     }
 }

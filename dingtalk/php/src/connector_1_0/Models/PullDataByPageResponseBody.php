@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class PullDataByPageResponseBody extends Model
 {
     /**
-     * @description resultList
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 单次获取的最大记录条数。
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 用于查看下一页数据的游标，如果为空则说明没有更多数据了。
-     *
      * @var string
      */
     public $nextToken;

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryUserManagementResourcesResponseBody extends Model
 {
     /**
-     * @description 资源列表
-     *
      * @var string[]
      */
     public $resourceIds;

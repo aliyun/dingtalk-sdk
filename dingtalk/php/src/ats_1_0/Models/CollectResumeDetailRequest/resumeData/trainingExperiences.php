@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class trainingExperiences extends Model
 {
     /**
-     * @description 详细内容描述
+     * @example 培训期间，学习了xxxx技能，获取xxxx证书。
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 结束时间
+     * @example yyyy-MM-dd
      *
      * @var string
      */
     public $endDate;
 
     /**
-     * @description 培训机构名称
+     * @example 新东方挖掘机学校
      *
      * @var string
      */
     public $institutionName;
 
     /**
-     * @description 培训地点
+     * @example 浙江省杭州市余杭区
      *
      * @var string
      */
     public $location;
 
     /**
-     * @description 培训名称
+     * @example 挖掘机专业技能培训
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 开始时间
+     * @example yyyy-MM-dd
      *
      * @var string
      */

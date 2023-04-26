@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class punchParam extends Model
 {
     /**
-     * @description 地理位置标识：wifi:ssid_macAddress ble: deviceId gps:longitude_latitude
+     * @example longitude_latitude
      *
      * @var string
      */
     public $positionId;
 
     /**
-     * @description 地理位置名称
+     * @example 未来park
      *
      * @var string
      */
     public $positionName;
 
     /**
-     * @description 地理位置类型：wifi/ble/gps
+     * @example gps
      *
      * @var string
      */
     public $positionType;
 
     /**
-     * @description 审批单关联的打卡时间，单位毫秒
+     * @example 1650511474978
      *
      * @var int
      */

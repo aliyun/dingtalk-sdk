@@ -9,32 +9,28 @@ use AlibabaCloud\Tea\Model;
 class ListTodoWorkRecordsRequest extends Model
 {
     /**
-     * @description 分页大小，最大值50。
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标。
-     *
-     * 如果是非首次调用，该参数传上次调用时返回的nextToken。
+     * @example 0
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 待办事项的状态：
-     *
-     * -1：已经移除
+     * @example 0
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 要查询的执行人userid。
+     * @example manager001
      *
      * @var string
      */

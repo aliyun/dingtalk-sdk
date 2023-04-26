@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class ListApplicationAuthorizationServiceConnectorInformationResponseBody extends Model
 {
     /**
-     * @description 当前第几页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 100
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description pluginInfos
-     *
      * @var plugInformation[]
      */
     public $plugInformation;
 
     /**
-     * @description 总数量
+     * @example 100
      *
      * @var int
      */

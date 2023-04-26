@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class partnerLabelList extends Model
 {
     /**
-     * @description label id
-     *
      * @var int
      */
     public $id;
 
     /**
-     * @description label value
-     *
      * @var string
      */
     public $name;

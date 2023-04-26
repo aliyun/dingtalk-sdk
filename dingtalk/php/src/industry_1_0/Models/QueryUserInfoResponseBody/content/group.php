@@ -9,38 +9,42 @@ use AlibabaCloud\Tea\Model;
 class group extends Model
 {
     /**
-     * @description 医疗组所在科室Id
+     * @example 123
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 医疗组所在科室名称
+     * @example 科室名称2
      *
      * @var string
      */
     public $deptName;
 
     /**
+     * @example 2021-06-02 17:44:17
+     *
      * @var string
      */
     public $gmtCreateStr;
 
     /**
+     * @example 2021-06-02 17:44:17
+     *
      * @var string
      */
     public $gmtModifiedStr;
 
     /**
-     * @description 医疗组Id
+     * @example 123
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 医疗组名称
+     * @example 医疗组名称2
      *
      * @var string
      */

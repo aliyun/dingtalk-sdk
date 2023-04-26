@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 客户code
+     * @example CUS_xxxxxxxx
      *
      * @var string
      */
@@ -41,84 +41,84 @@ class list_ extends Model
     public $contactTelephone;
 
     /**
-     * @description 客户描述
+     * @example abc
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 开票人邮箱
+     * @example www.abc.com
      *
      * @var string
      */
     public $drawerEmail;
 
     /**
-     * @description 开票人手机号
+     * @example 12345678901
      *
      * @var string
      */
     public $drawerTelephone;
 
     /**
-     * @description 客户名字
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 购方账户
+     * @example abc
      *
      * @var string
      */
     public $purchaserAccount;
 
     /**
-     * @description 购方地址
+     * @example 杭州市
      *
      * @var string
      */
     public $purchaserAddress;
 
     /**
-     * @description 购方姓名
+     * @example abc
      *
      * @var string
      */
     public $purchaserName;
 
     /**
-     * @description 购方税号
+     * @example 123
      *
      * @var string
      */
     public $purchaserTaxNo;
 
     /**
-     * @description 购方电话
+     * @example 13333333333
      *
      * @var string
      */
     public $purchaserTel;
 
     /**
-     * @description 购方银行
+     * @example 建行
      *
      * @var string
      */
     public $purchaserrBankName;
 
     /**
-     * @description 状态
+     * @example valid
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 用户自定义code
+     * @example 199200
      *
      * @var string
      */

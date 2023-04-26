@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class records extends Model
 {
     /**
-     * @description 是否内部员工
-     *
      * @var bool
      */
     public $innerStaff;
 
     /**
-     * @description 群成员昵称
-     *
      * @var string
      */
     public $nickName;
 
     /**
-     * @description 是否群主
-     *
      * @var bool
      */
     public $owner;
 
     /**
-     * @description 群成员uinionId
-     *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 员工ID
-     *
      * @var string
      */
     public $userId;

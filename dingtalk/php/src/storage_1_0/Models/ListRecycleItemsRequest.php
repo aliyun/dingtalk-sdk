@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ListRecycleItemsRequest extends Model
 {
     /**
-     * @description 分页大小, 不保证全量返回
-     * 50
+     * @example 30
+     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标，首次拉取nextToken传空
+     * @example next_token
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

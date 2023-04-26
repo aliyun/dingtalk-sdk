@@ -9,92 +9,68 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 创建人
+     * @example 张三
      *
      * @var string
      */
     public $dataUserid;
 
     /**
-     * @description 对应客户
-     *
      * @var string
      */
     public $schCustomerid;
 
     /**
-     * @description 完成日期
-     *
      * @var string
      */
     public $schEndtime;
 
     /**
-     * @description 状态（未生产，生产中，生产中止，生产完成）
-     *
      * @var string
      */
     public $schFinished;
 
     /**
-     * @description 订单
-     *
      * @var string
      */
     public $schHtid;
 
     /**
-     * @description 生产人员
-     *
      * @var string
      */
     public $schMakeemp;
 
     /**
-     * @description 单号
-     *
      * @var string
      */
     public $schNumber;
 
     /**
-     * @description 计划完成
-     *
      * @var string
      */
     public $schPlanendtime;
 
     /**
-     * @description 负责人
-     *
      * @var string
      */
     public $schPrincipal;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $schRemark;
 
     /**
-     * @description 开始日期
-     *
      * @var string
      */
     public $schStarttime;
 
     /**
-     * @description 阶段（计划，审核，领料，生产，验收，入库/退料，结单，取消）
-     *
      * @var string
      */
     public $schStatesstr;
 
     /**
-     * @description 主题
-     *
      * @var string
      */
     public $schTitle;

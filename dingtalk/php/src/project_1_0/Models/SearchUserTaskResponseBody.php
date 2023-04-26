@@ -9,29 +9,23 @@ use AlibabaCloud\Tea\Model;
 class SearchUserTaskResponseBody extends Model
 {
     /**
-     * @description 分页标，供分页使用，下一页token。
+     * @example f279e812-e431-428d-846d-cxxxxxx
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 请求 ID，请求异常时可提供此 ID，进行问题排查。
-     *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description 任务ID列表。
-     *
      * @var string[]
      */
     public $result;
 
     /**
-     * @description 任务总数。
-     *
      * @var int
      */
     public $totalSize;

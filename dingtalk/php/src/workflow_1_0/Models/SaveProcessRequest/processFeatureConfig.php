@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class processFeatureConfig extends Model
 {
     /**
-     * @description 配置列表
-     *
      * @var features[]
      */
     public $features;

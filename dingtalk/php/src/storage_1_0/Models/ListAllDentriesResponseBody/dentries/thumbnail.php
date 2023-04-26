@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class thumbnail extends Model
 {
     /**
-     * @description 缩略图高度
+     * @example 64
      *
      * @var int
      */
     public $height;
 
     /**
-     * @description 缩略图url
+     * @example url
      *
      * @var string
      */
     public $url;
 
     /**
-     * @description 缩略图宽度
+     * @example 64
      *
      * @var int
      */

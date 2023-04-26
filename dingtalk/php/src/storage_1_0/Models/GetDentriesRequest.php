@@ -10,21 +10,17 @@ use AlibabaCloud\Tea\Model;
 class GetDentriesRequest extends Model
 {
     /**
-     * @description 文件(夹)id列表
-     * 30
      * @var string[]
      */
     public $dentryIds;
 
     /**
-     * @description 可选参数
-     *
      * @var option
      */
     public $option;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

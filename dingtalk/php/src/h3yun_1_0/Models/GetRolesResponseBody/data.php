@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 角色组数组
-     *
      * @var roleGroups[]
      */
     public $roleGroups;
 
     /**
-     * @description 角色数组
-     *
      * @var roles[]
      */
     public $roles;

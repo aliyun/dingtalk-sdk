@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class CreateOrgHonorRequest extends Model
 {
     /**
-     * @description 头像挂件   图片尺寸 240*240，不超过1M，支持PNG。图片请使用钉钉媒体资源标识符media_id，参考文档：https://open.dingtalk.com/document/isvapp-server/upload-media-files
+     * @example $xxxxxxx
      *
      * @var string
      */
     public $avatarFrameMediaId;
 
     /**
-     * @description 背景颜色，如下可选：#FFFBB4 #FFE7BC #FFDAF4 #DAF6A8 #E4D7FF #BFDFFF #B9F2D6
+     * @example #FFFBB4
      *
      * @var string
      */
     public $defaultBgColor;
 
     /**
-     * @description 描述 长度30字符 不支持表情图标等
+     * @example 客户服务用心，奖励荣誉
      *
      * @var string
      */
     public $medalDesc;
 
     /**
-     * @description 荣誉图片  图片尺寸 900*900，不超过1M，支持PNG 。图片请使用钉钉媒体资源标识符media_id，参考文档：https://open.dingtalk.com/document/isvapp-server/upload-media-files
+     * @example @xxxxxxx
      *
      * @var string
      */
     public $medalMediaId;
 
     /**
-     * @description 组织的勋章名称 长度10字符 不支持表情图标等
+     * @example 客户第一
      *
      * @var string
      */
     public $medalName;
 
     /**
-     * @description 创建荣誉勋章模板人在组织内的userid，需要主/子管理员角色
+     * @example 12312312
      *
      * @var string
      */

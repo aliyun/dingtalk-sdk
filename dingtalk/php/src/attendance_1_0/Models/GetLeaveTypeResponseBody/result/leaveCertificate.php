@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class leaveCertificate extends Model
 {
     /**
-     * @description 超过多长时间需提供请假证明
+     * @example 1
      *
      * @var float
      */
     public $duration;
 
     /**
-     * @description 是否开启请假证明
+     * @example false
      *
      * @var bool
      */
     public $enable;
 
     /**
-     * @description 请假提示文案
+     * @example 请假文案
      *
      * @var string
      */
     public $promptInformation;
 
     /**
-     * @description 请假证明单位hour，day
+     * @example hour
      *
      * @var string
      */

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CreateTicketResponseBody extends Model
 {
     /**
-     * @description 新创建工单ID
-     *
      * @var string
      */
     public $ticketId;

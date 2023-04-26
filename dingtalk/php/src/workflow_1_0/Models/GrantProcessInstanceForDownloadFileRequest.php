@@ -9,16 +9,15 @@ use AlibabaCloud\Tea\Model;
 class GrantProcessInstanceForDownloadFileRequest extends Model
 {
     /**
-     * @description 文件id，调用获取审批实例详情接口获取。
+     * @example 111
      *
      * @var string
      */
     public $fileId;
 
     /**
-     * @description 实例ID。
+     * @example a17444d1-075b-4a4d-xxxx
      *
-     * 调用获取审批实例详情接口获取。
      * @var string
      */
     public $processInstanceId;

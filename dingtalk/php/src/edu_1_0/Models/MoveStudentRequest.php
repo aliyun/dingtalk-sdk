@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class MoveStudentRequest extends Model
 {
     /**
-     * @description 管理员id
+     * @example 1234
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 愿班级id
+     * @example 2000
      *
      * @var int
      */
     public $originClassId;
 
     /**
-     * @description 目标班级id
+     * @example 2001
      *
      * @var int
      */
     public $targetClassId;
 
     /**
-     * @description 学生id
+     * @example 1000
      *
      * @var string
      */

@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class departmentList extends Model
 {
     /**
-     * @description 下属组织的部门ID
-     *
      * @var int
      */
     public $departmentId;
 
     /**
-     * @description 组户名称
-     *
      * @var string
      */
     public $departmentName;
 
     /**
-     * @description 父部门ID
-     *
      * @var int
      */
     public $superDepartmentId;

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CreateVersionAcrossBundleResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var string
      */
     public $result;

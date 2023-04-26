@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class UpdateResidenceRequest extends Model
 {
     /**
-     * @description 组id
+     * @example 12345
      *
      * @var int
      */
     public $departmentId;
 
     /**
-     * @description 户名字
+     * @example 101户
      *
      * @var string
      */
     public $departmentName;
 
     /**
-     * @description 是否是贫困户
+     * @example false
      *
      * @var bool
      */
     public $destitute;
 
     /**
-     * @description 所属网格
+     * @example 第1网格
      *
      * @var string
      */
     public $grid;
 
     /**
-     * @description 家庭电话
+     * @example 16612345678
      *
      * @var string
      */
     public $homeTel;
 
     /**
-     * @description 家庭管理员用户id
+     * @example 1234
      *
      * @var string
      */
     public $managerUserId;
 
     /**
-     * @description 组id
+     * @example 12345
      *
      * @var int
      */

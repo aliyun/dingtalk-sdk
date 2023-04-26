@@ -31,18 +31,94 @@ use AlibabaCloud\SDK\Dingtalk\Vbadge_1_0\Models\UpdateBadgeCodeUserInstanceReque
 use AlibabaCloud\SDK\Dingtalk\Vbadge_1_0\Models\UpdateBadgeCodeUserInstanceResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CreateBadgeCodeUserInstanceRequest $request
+     * @param CreateBadgeCodeUserInstanceHeaders $headers
+     * @param RuntimeOptions                     $runtime
+     *
+     * @return CreateBadgeCodeUserInstanceResponse
+     */
+    public function createBadgeCodeUserInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->availableTimes)) {
+            $body['availableTimes'] = $request->availableTimes;
+        }
+        if (!Utils::isUnset($request->codeIdentity)) {
+            $body['codeIdentity'] = $request->codeIdentity;
+        }
+        if (!Utils::isUnset($request->codeValue)) {
+            $body['codeValue'] = $request->codeValue;
+        }
+        if (!Utils::isUnset($request->codeValueType)) {
+            $body['codeValueType'] = $request->codeValueType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->extInfo)) {
+            $body['extInfo'] = $request->extInfo;
+        }
+        if (!Utils::isUnset($request->gmtExpired)) {
+            $body['gmtExpired'] = $request->gmtExpired;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->userCorpRelationType)) {
+            $body['userCorpRelationType'] = $request->userCorpRelationType;
+        }
+        if (!Utils::isUnset($request->userIdentity)) {
+            $body['userIdentity'] = $request->userIdentity;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateBadgeCodeUserInstance',
+            'version'     => 'badge_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/badge/codes/userInstances',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateBadgeCodeUserInstanceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -59,62 +135,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateBadgeCodeUserInstanceRequest $request
-     * @param CreateBadgeCodeUserInstanceHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param CreateBadgeNotifyRequest $request
+     * @param CreateBadgeNotifyHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return CreateBadgeCodeUserInstanceResponse
+     * @return CreateBadgeNotifyResponse
      */
-    public function createBadgeCodeUserInstanceWithOptions($request, $headers, $runtime)
+    public function createBadgeNotifyWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->availableTimes)) {
-            @$body['availableTimes'] = $request->availableTimes;
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
         }
-        if (!Utils::isUnset($request->codeIdentity)) {
-            @$body['codeIdentity'] = $request->codeIdentity;
+        if (!Utils::isUnset($request->msgId)) {
+            $body['msgId'] = $request->msgId;
         }
-        if (!Utils::isUnset($request->codeValue)) {
-            @$body['codeValue'] = $request->codeValue;
+        if (!Utils::isUnset($request->msgType)) {
+            $body['msgType'] = $request->msgType;
         }
-        if (!Utils::isUnset($request->codeValueType)) {
-            @$body['codeValueType'] = $request->codeValueType;
-        }
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
-        }
-        if (!Utils::isUnset($request->extInfo)) {
-            @$body['extInfo'] = $request->extInfo;
-        }
-        if (!Utils::isUnset($request->gmtExpired)) {
-            @$body['gmtExpired'] = $request->gmtExpired;
-        }
-        if (!Utils::isUnset($request->requestId)) {
-            @$body['requestId'] = $request->requestId;
-        }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
-        }
-        if (!Utils::isUnset($request->userCorpRelationType)) {
-            @$body['userCorpRelationType'] = $request->userCorpRelationType;
-        }
-        if (!Utils::isUnset($request->userIdentity)) {
-            @$body['userIdentity'] = $request->userIdentity;
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateBadgeNotify',
+            'version'     => 'badge_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/badge/notices',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateBadgeCodeUserInstanceResponse::fromMap($this->doROARequest('CreateBadgeCodeUserInstance', 'badge_1.0', 'HTTP', 'POST', 'AK', '/v1.0/badge/codes/userInstances', 'json', $req, $runtime));
+        return CreateBadgeNotifyResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -131,41 +197,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateBadgeNotifyRequest $request
-     * @param CreateBadgeNotifyHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param DecodeBadgeCodeRequest $request
+     * @param DecodeBadgeCodeHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return CreateBadgeNotifyResponse
+     * @return DecodeBadgeCodeResponse
      */
-    public function createBadgeNotifyWithOptions($request, $headers, $runtime)
+    public function decodeBadgeCodeWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->content)) {
-            @$body['content'] = $request->content;
+        if (!Utils::isUnset($request->payCode)) {
+            $body['payCode'] = $request->payCode;
         }
-        if (!Utils::isUnset($request->msgId)) {
-            @$body['msgId'] = $request->msgId;
-        }
-        if (!Utils::isUnset($request->msgType)) {
-            @$body['msgType'] = $request->msgType;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'DecodeBadgeCode',
+            'version'     => 'badge_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/badge/codes/decode',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateBadgeNotifyResponse::fromMap($this->doROARequest('CreateBadgeNotify', 'badge_1.0', 'HTTP', 'POST', 'AK', '/v1.0/badge/notices', 'json', $req, $runtime));
+        return DecodeBadgeCodeResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -182,35 +253,91 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DecodeBadgeCodeRequest $request
-     * @param DecodeBadgeCodeHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param NotifyBadgeCodePayResultRequest $request
+     * @param NotifyBadgeCodePayResultHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return DecodeBadgeCodeResponse
+     * @return NotifyBadgeCodePayResultResponse
      */
-    public function decodeBadgeCodeWithOptions($request, $headers, $runtime)
+    public function notifyBadgeCodePayResultWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->payCode)) {
-            @$body['payCode'] = $request->payCode;
+        if (!Utils::isUnset($request->amount)) {
+            $body['amount'] = $request->amount;
         }
-        if (!Utils::isUnset($request->requestId)) {
-            @$body['requestId'] = $request->requestId;
+        if (!Utils::isUnset($request->chargeAmount)) {
+            $body['chargeAmount'] = $request->chargeAmount;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->extInfo)) {
+            $body['extInfo'] = $request->extInfo;
+        }
+        if (!Utils::isUnset($request->gmtTradeCreate)) {
+            $body['gmtTradeCreate'] = $request->gmtTradeCreate;
+        }
+        if (!Utils::isUnset($request->gmtTradeFinish)) {
+            $body['gmtTradeFinish'] = $request->gmtTradeFinish;
+        }
+        if (!Utils::isUnset($request->merchantName)) {
+            $body['merchantName'] = $request->merchantName;
+        }
+        if (!Utils::isUnset($request->payChannelDetailList)) {
+            $body['payChannelDetailList'] = $request->payChannelDetailList;
+        }
+        if (!Utils::isUnset($request->payCode)) {
+            $body['payCode'] = $request->payCode;
+        }
+        if (!Utils::isUnset($request->promotionAmount)) {
+            $body['promotionAmount'] = $request->promotionAmount;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->tradeErrorCode)) {
+            $body['tradeErrorCode'] = $request->tradeErrorCode;
+        }
+        if (!Utils::isUnset($request->tradeErrorMsg)) {
+            $body['tradeErrorMsg'] = $request->tradeErrorMsg;
+        }
+        if (!Utils::isUnset($request->tradeNo)) {
+            $body['tradeNo'] = $request->tradeNo;
+        }
+        if (!Utils::isUnset($request->tradeStatus)) {
+            $body['tradeStatus'] = $request->tradeStatus;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'NotifyBadgeCodePayResult',
+            'version'     => 'badge_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/badge/codes/payResults',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return DecodeBadgeCodeResponse::fromMap($this->doROARequest('DecodeBadgeCode', 'badge_1.0', 'HTTP', 'POST', 'AK', '/v1.0/badge/codes/decode', 'json', $req, $runtime));
+        return NotifyBadgeCodePayResultResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -227,80 +354,70 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param NotifyBadgeCodePayResultRequest $request
-     * @param NotifyBadgeCodePayResultHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param NotifyBadgeCodeRefundResultRequest $request
+     * @param NotifyBadgeCodeRefundResultHeaders $headers
+     * @param RuntimeOptions                     $runtime
      *
-     * @return NotifyBadgeCodePayResultResponse
+     * @return NotifyBadgeCodeRefundResultResponse
      */
-    public function notifyBadgeCodePayResultWithOptions($request, $headers, $runtime)
+    public function notifyBadgeCodeRefundResultWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->amount)) {
-            @$body['amount'] = $request->amount;
-        }
-        if (!Utils::isUnset($request->chargeAmount)) {
-            @$body['chargeAmount'] = $request->chargeAmount;
-        }
         if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
+            $body['corpId'] = $request->corpId;
         }
-        if (!Utils::isUnset($request->extInfo)) {
-            @$body['extInfo'] = $request->extInfo;
-        }
-        if (!Utils::isUnset($request->gmtTradeCreate)) {
-            @$body['gmtTradeCreate'] = $request->gmtTradeCreate;
-        }
-        if (!Utils::isUnset($request->gmtTradeFinish)) {
-            @$body['gmtTradeFinish'] = $request->gmtTradeFinish;
-        }
-        if (!Utils::isUnset($request->merchantName)) {
-            @$body['merchantName'] = $request->merchantName;
+        if (!Utils::isUnset($request->gmtRefund)) {
+            $body['gmtRefund'] = $request->gmtRefund;
         }
         if (!Utils::isUnset($request->payChannelDetailList)) {
-            @$body['payChannelDetailList'] = $request->payChannelDetailList;
+            $body['payChannelDetailList'] = $request->payChannelDetailList;
         }
         if (!Utils::isUnset($request->payCode)) {
-            @$body['payCode'] = $request->payCode;
+            $body['payCode'] = $request->payCode;
         }
-        if (!Utils::isUnset($request->promotionAmount)) {
-            @$body['promotionAmount'] = $request->promotionAmount;
+        if (!Utils::isUnset($request->refundAmount)) {
+            $body['refundAmount'] = $request->refundAmount;
+        }
+        if (!Utils::isUnset($request->refundOrderNo)) {
+            $body['refundOrderNo'] = $request->refundOrderNo;
+        }
+        if (!Utils::isUnset($request->refundPromotionAmount)) {
+            $body['refundPromotionAmount'] = $request->refundPromotionAmount;
         }
         if (!Utils::isUnset($request->remark)) {
-            @$body['remark'] = $request->remark;
-        }
-        if (!Utils::isUnset($request->title)) {
-            @$body['title'] = $request->title;
-        }
-        if (!Utils::isUnset($request->tradeErrorCode)) {
-            @$body['tradeErrorCode'] = $request->tradeErrorCode;
-        }
-        if (!Utils::isUnset($request->tradeErrorMsg)) {
-            @$body['tradeErrorMsg'] = $request->tradeErrorMsg;
+            $body['remark'] = $request->remark;
         }
         if (!Utils::isUnset($request->tradeNo)) {
-            @$body['tradeNo'] = $request->tradeNo;
-        }
-        if (!Utils::isUnset($request->tradeStatus)) {
-            @$body['tradeStatus'] = $request->tradeStatus;
+            $body['tradeNo'] = $request->tradeNo;
         }
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'NotifyBadgeCodeRefundResult',
+            'version'     => 'badge_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/badge/codes/refundResults',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return NotifyBadgeCodePayResultResponse::fromMap($this->doROARequest('NotifyBadgeCodePayResult', 'badge_1.0', 'HTTP', 'POST', 'AK', '/v1.0/badge/codes/payResults', 'json', $req, $runtime));
+        return NotifyBadgeCodeRefundResultResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -317,59 +434,70 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param NotifyBadgeCodeRefundResultRequest $request
-     * @param NotifyBadgeCodeRefundResultHeaders $headers
+     * @param NotifyBadgeCodeVerifyResultRequest $request
+     * @param NotifyBadgeCodeVerifyResultHeaders $headers
      * @param RuntimeOptions                     $runtime
      *
-     * @return NotifyBadgeCodeRefundResultResponse
+     * @return NotifyBadgeCodeVerifyResultResponse
      */
-    public function notifyBadgeCodeRefundResultWithOptions($request, $headers, $runtime)
+    public function notifyBadgeCodeVerifyResultWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
-        }
-        if (!Utils::isUnset($request->gmtRefund)) {
-            @$body['gmtRefund'] = $request->gmtRefund;
-        }
-        if (!Utils::isUnset($request->payChannelDetailList)) {
-            @$body['payChannelDetailList'] = $request->payChannelDetailList;
+            $body['corpId'] = $request->corpId;
         }
         if (!Utils::isUnset($request->payCode)) {
-            @$body['payCode'] = $request->payCode;
-        }
-        if (!Utils::isUnset($request->refundAmount)) {
-            @$body['refundAmount'] = $request->refundAmount;
-        }
-        if (!Utils::isUnset($request->refundOrderNo)) {
-            @$body['refundOrderNo'] = $request->refundOrderNo;
-        }
-        if (!Utils::isUnset($request->refundPromotionAmount)) {
-            @$body['refundPromotionAmount'] = $request->refundPromotionAmount;
+            $body['payCode'] = $request->payCode;
         }
         if (!Utils::isUnset($request->remark)) {
-            @$body['remark'] = $request->remark;
+            $body['remark'] = $request->remark;
         }
-        if (!Utils::isUnset($request->tradeNo)) {
-            @$body['tradeNo'] = $request->tradeNo;
+        if (!Utils::isUnset($request->userCorpRelationType)) {
+            $body['userCorpRelationType'] = $request->userCorpRelationType;
         }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->userIdentity)) {
+            $body['userIdentity'] = $request->userIdentity;
+        }
+        if (!Utils::isUnset($request->verifyEvent)) {
+            $body['verifyEvent'] = $request->verifyEvent;
+        }
+        if (!Utils::isUnset($request->verifyLocation)) {
+            $body['verifyLocation'] = $request->verifyLocation;
+        }
+        if (!Utils::isUnset($request->verifyNo)) {
+            $body['verifyNo'] = $request->verifyNo;
+        }
+        if (!Utils::isUnset($request->verifyResult)) {
+            $body['verifyResult'] = $request->verifyResult;
+        }
+        if (!Utils::isUnset($request->verifyTime)) {
+            $body['verifyTime'] = $request->verifyTime;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'NotifyBadgeCodeVerifyResult',
+            'version'     => 'badge_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/badge/codes/verifyResults',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return NotifyBadgeCodeRefundResultResponse::fromMap($this->doROARequest('NotifyBadgeCodeRefundResult', 'badge_1.0', 'HTTP', 'POST', 'AK', '/v1.0/badge/codes/refundResults', 'json', $req, $runtime));
+        return NotifyBadgeCodeVerifyResultResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -386,59 +514,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param NotifyBadgeCodeVerifyResultRequest $request
-     * @param NotifyBadgeCodeVerifyResultHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param SaveBadgeCodeCorpInstanceRequest $request
+     * @param SaveBadgeCodeCorpInstanceHeaders $headers
+     * @param RuntimeOptions                   $runtime
      *
-     * @return NotifyBadgeCodeVerifyResultResponse
+     * @return SaveBadgeCodeCorpInstanceResponse
      */
-    public function notifyBadgeCodeVerifyResultWithOptions($request, $headers, $runtime)
+    public function saveBadgeCodeCorpInstanceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->codeIdentity)) {
+            $body['codeIdentity'] = $request->codeIdentity;
+        }
         if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
+            $body['corpId'] = $request->corpId;
         }
-        if (!Utils::isUnset($request->payCode)) {
-            @$body['payCode'] = $request->payCode;
+        if (!Utils::isUnset($request->extInfo)) {
+            $body['extInfo'] = $request->extInfo;
         }
-        if (!Utils::isUnset($request->remark)) {
-            @$body['remark'] = $request->remark;
-        }
-        if (!Utils::isUnset($request->userCorpRelationType)) {
-            @$body['userCorpRelationType'] = $request->userCorpRelationType;
-        }
-        if (!Utils::isUnset($request->userIdentity)) {
-            @$body['userIdentity'] = $request->userIdentity;
-        }
-        if (!Utils::isUnset($request->verifyEvent)) {
-            @$body['verifyEvent'] = $request->verifyEvent;
-        }
-        if (!Utils::isUnset($request->verifyLocation)) {
-            @$body['verifyLocation'] = $request->verifyLocation;
-        }
-        if (!Utils::isUnset($request->verifyNo)) {
-            @$body['verifyNo'] = $request->verifyNo;
-        }
-        if (!Utils::isUnset($request->verifyResult)) {
-            @$body['verifyResult'] = $request->verifyResult;
-        }
-        if (!Utils::isUnset($request->verifyTime)) {
-            @$body['verifyTime'] = $request->verifyTime;
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'SaveBadgeCodeCorpInstance',
+            'version'     => 'badge_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/badge/codes/corpInstances',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return NotifyBadgeCodeVerifyResultResponse::fromMap($this->doROARequest('NotifyBadgeCodeVerifyResult', 'badge_1.0', 'HTTP', 'POST', 'AK', '/v1.0/badge/codes/verifyResults', 'json', $req, $runtime));
+        return SaveBadgeCodeCorpInstanceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -455,41 +576,70 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SaveBadgeCodeCorpInstanceRequest $request
-     * @param SaveBadgeCodeCorpInstanceHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param UpdateBadgeCodeUserInstanceRequest $request
+     * @param UpdateBadgeCodeUserInstanceHeaders $headers
+     * @param RuntimeOptions                     $runtime
      *
-     * @return SaveBadgeCodeCorpInstanceResponse
+     * @return UpdateBadgeCodeUserInstanceResponse
      */
-    public function saveBadgeCodeCorpInstanceWithOptions($request, $headers, $runtime)
+    public function updateBadgeCodeUserInstanceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->availableTimes)) {
+            $body['availableTimes'] = $request->availableTimes;
+        }
+        if (!Utils::isUnset($request->codeId)) {
+            $body['codeId'] = $request->codeId;
+        }
         if (!Utils::isUnset($request->codeIdentity)) {
-            @$body['codeIdentity'] = $request->codeIdentity;
+            $body['codeIdentity'] = $request->codeIdentity;
+        }
+        if (!Utils::isUnset($request->codeValue)) {
+            $body['codeValue'] = $request->codeValue;
         }
         if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
+            $body['corpId'] = $request->corpId;
         }
         if (!Utils::isUnset($request->extInfo)) {
-            @$body['extInfo'] = $request->extInfo;
+            $body['extInfo'] = $request->extInfo;
+        }
+        if (!Utils::isUnset($request->gmtExpired)) {
+            $body['gmtExpired'] = $request->gmtExpired;
         }
         if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->userCorpRelationType)) {
+            $body['userCorpRelationType'] = $request->userCorpRelationType;
+        }
+        if (!Utils::isUnset($request->userIdentity)) {
+            $body['userIdentity'] = $request->userIdentity;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateBadgeCodeUserInstance',
+            'version'     => 'badge_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/badge/codes/userInstances',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return SaveBadgeCodeCorpInstanceResponse::fromMap($this->doROARequest('SaveBadgeCodeCorpInstance', 'badge_1.0', 'HTTP', 'POST', 'AK', '/v1.0/badge/codes/corpInstances', 'json', $req, $runtime));
+        return UpdateBadgeCodeUserInstanceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -503,61 +653,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateBadgeCodeUserInstanceHeaders([]);
 
         return $this->updateBadgeCodeUserInstanceWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param UpdateBadgeCodeUserInstanceRequest $request
-     * @param UpdateBadgeCodeUserInstanceHeaders $headers
-     * @param RuntimeOptions                     $runtime
-     *
-     * @return UpdateBadgeCodeUserInstanceResponse
-     */
-    public function updateBadgeCodeUserInstanceWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->availableTimes)) {
-            @$body['availableTimes'] = $request->availableTimes;
-        }
-        if (!Utils::isUnset($request->codeId)) {
-            @$body['codeId'] = $request->codeId;
-        }
-        if (!Utils::isUnset($request->codeIdentity)) {
-            @$body['codeIdentity'] = $request->codeIdentity;
-        }
-        if (!Utils::isUnset($request->codeValue)) {
-            @$body['codeValue'] = $request->codeValue;
-        }
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
-        }
-        if (!Utils::isUnset($request->extInfo)) {
-            @$body['extInfo'] = $request->extInfo;
-        }
-        if (!Utils::isUnset($request->gmtExpired)) {
-            @$body['gmtExpired'] = $request->gmtExpired;
-        }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
-        }
-        if (!Utils::isUnset($request->userCorpRelationType)) {
-            @$body['userCorpRelationType'] = $request->userCorpRelationType;
-        }
-        if (!Utils::isUnset($request->userIdentity)) {
-            @$body['userIdentity'] = $request->userIdentity;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateBadgeCodeUserInstanceResponse::fromMap($this->doROARequest('UpdateBadgeCodeUserInstance', 'badge_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/badge/codes/userInstances', 'json', $req, $runtime));
     }
 }

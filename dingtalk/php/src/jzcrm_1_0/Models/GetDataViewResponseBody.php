@@ -15,15 +15,11 @@ class GetDataViewResponseBody extends Model
     public $data;
 
     /**
-     * @description 字段明细
-     *
      * @var mixed[][]
      */
     public $dataname;
 
     /**
-     * @description 响应时间
-     *
      * @var string
      */
     public $time;

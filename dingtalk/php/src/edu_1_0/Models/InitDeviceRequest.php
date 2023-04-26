@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class InitDeviceRequest extends Model
 {
     /**
-     * @description 公钥密文
+     * @example sdf34DFf2344
      *
      * @var string
      */
     public $encryptPubKey;
 
     /**
-     * @description 签名
+     * @example sdf34DFfffdf2344
      *
      * @var string
      */
     public $signature;
 
     /**
-     * @description 设备sn号
+     * @example SN123456
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 时间戳，utc时间
+     * @example 1231245511
      *
      * @var int
      */
     public $timestamp;
 
     /**
-     * @description 版本号
+     * @example 1.0
      *
      * @var string
      */

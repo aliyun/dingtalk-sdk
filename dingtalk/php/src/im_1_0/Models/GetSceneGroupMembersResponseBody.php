@@ -9,29 +9,27 @@ use AlibabaCloud\Tea\Model;
 class GetSceneGroupMembersResponseBody extends Model
 {
     /**
-     * @description 是否还有更多数据
+     * @example false
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 群成员员工号
+     * @example cidXXXXXXXXX==
      *
      * @var string[]
      */
     public $memberUserIds;
 
     /**
-     * @description 下一次请求的游标
+     * @example 92233720368
      *
      * @var string
      */
     public $nextCursor;
 
     /**
-     * @description result
-     *
      * @var bool
      */
     public $success;

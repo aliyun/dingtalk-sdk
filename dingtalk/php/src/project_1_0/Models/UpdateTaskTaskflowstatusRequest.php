@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class UpdateTaskTaskflowstatusRequest extends Model
 {
     /**
-     * @description 任务状态ID。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $taskflowStatusId;
 
     /**
-     * @description 任务流转说明。
+     * @example 说明。
      *
      * @var string
      */

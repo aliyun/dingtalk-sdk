@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 颜色
+     * @example blue
      *
      * @var string
      */
     public $color;
 
     /**
-     * @description 名称
+     * @example 普通
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 优先级值
+     * @example 1
      *
      * @var string
      */
     public $priority;
 
     /**
-     * @description id
+     * @example 5e870bc35b79b70xxxxx
      *
      * @var string
      */

@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class usagePlugins extends Model
 {
     /**
-     * @description iconUrl
-     *
      * @var string
      */
     public $iconUrl;
 
     /**
-     * @description pluginName
-     *
      * @var string
      */
     public $pluginName;

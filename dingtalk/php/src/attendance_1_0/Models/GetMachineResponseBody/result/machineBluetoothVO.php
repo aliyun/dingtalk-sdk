@@ -9,70 +9,70 @@ use AlibabaCloud\Tea\Model;
 class machineBluetoothVO extends Model
 {
     /**
-     * @description 地址位置描述
+     * @example 绿城-未来park
      *
      * @var string
      */
     public $address;
 
     /**
-     * @description 蓝牙打卡人脸识别开关值
+     * @example true
      *
      * @var bool
      */
     public $bluetoothCheckWithFace;
 
     /**
-     * @description 蓝牙打卡范围
+     * @example default
      *
      * @var string
      */
     public $bluetoothDistanceMode;
 
     /**
-     * @description 蓝牙打卡范围描述
+     * @example 默认 (最远5-10米)
      *
      * @var string
      */
     public $bluetoothDistanceModeDesc;
 
     /**
-     * @description 蓝牙打卡开关
+     * @example true
      *
      * @var bool
      */
     public $bluetoothValue;
 
     /**
-     * @description 纬度
+     * @example 30.285871310763888
      *
      * @var float
      */
     public $latitude;
 
     /**
-     * @description 是否限制员工常用手机
+     * @example true
      *
      * @var bool
      */
     public $limitUserDeviceCount;
 
     /**
-     * @description 经度
+     * @example 120.01757758246528
      *
      * @var float
      */
     public $longitude;
 
     /**
-     * @description 是否打开位置异常监控
+     * @example true
      *
      * @var bool
      */
     public $monitorLocationAbnormal;
 
     /**
-     * @description 员工常用手机数量
+     * @example 1
      *
      * @var int
      */

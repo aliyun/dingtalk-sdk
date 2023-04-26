@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateResideceGroupRequest extends Model
 {
     /**
-     * @description 组id
+     * @example 12345
      *
      * @var int
      */
     public $departmentId;
 
     /**
-     * @description 组名字
+     * @example 第一网格组
      *
      * @var string
      */
     public $departmentName;
 
     /**
-     * @description 组长userid
+     * @example 1234
      *
      * @var string
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CreateTaskObjectLinkResponseBody extends Model
 {
     /**
-     * @description 返回结果对象
-     *
      * @var result
      */
     public $result;

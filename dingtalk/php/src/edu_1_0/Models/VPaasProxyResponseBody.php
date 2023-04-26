@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class VPaasProxyResponseBody extends Model
 {
     /**
-     * @description 结果密文
-     *
      * @var string
      */
     public $result;
 
     /**
-     * @description 公钥加密的盐
-     *
      * @var string
      */
     public $ticket;

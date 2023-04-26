@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CheckUserIsGroupMemberResponseBody extends Model
 {
     /**
-     * @description 用户是否为群成员。
-     *
      * @var bool
      */
     public $result;

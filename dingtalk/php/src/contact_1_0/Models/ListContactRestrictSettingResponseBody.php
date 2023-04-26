@@ -10,22 +10,18 @@ use AlibabaCloud\Tea\Model;
 class ListContactRestrictSettingResponseBody extends Model
 {
     /**
-     * @description 是否还有数据
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 设置列表
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 下一次拉取数据时的token
-     *
      * @var int
      */
     public $nextToken;

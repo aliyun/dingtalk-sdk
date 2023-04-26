@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ListPermissionsRequest extends Model
 {
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

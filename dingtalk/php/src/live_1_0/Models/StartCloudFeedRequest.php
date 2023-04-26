@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class StartCloudFeedRequest extends Model
 {
     /**
-     * @description 操作者的组织内id（staffId）
+     * @example 214675
      *
      * @var string
      */

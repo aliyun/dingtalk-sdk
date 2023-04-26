@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceAccountingStatusRequest extends Model
 {
     /**
-     * @description 发票财务模型列表
-     *
      * @var invoiceFinanceInfoVOList[]
      */
     public $invoiceFinanceInfoVOList;
 
     /**
-     * @description 员工id
+     * @example 1234567
      *
      * @var string
      */

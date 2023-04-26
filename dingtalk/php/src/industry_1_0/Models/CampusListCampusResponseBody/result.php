@@ -9,119 +9,119 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 地址
+     * @example 杭州市余杭区
      *
      * @var string
      */
     public $address;
 
     /**
-     * @description 面积
+     * @example 121212.1
      *
      * @var float
      */
     public $area;
 
     /**
-     * @description 项目组ID
+     * @example 1
      *
      * @var int
      */
     public $belongProjectGroupId;
 
     /**
-     * @description 园区组织ID
+     * @example ding121212
      *
      * @var string
      */
     public $campusCorpId;
 
     /**
-     * @description 园区部门ID
+     * @example 1
      *
      * @var int
      */
     public $campusDeptId;
 
     /**
-     * @description 园区名称
+     * @example 测试园区
      *
      * @var string
      */
     public $campusName;
 
     /**
-     * @description 市
+     * @example 30450
      *
      * @var int
      */
     public $cityId;
 
     /**
-     * @description 国家
+     * @example 中国
      *
      * @var string
      */
     public $country;
 
     /**
-     * @description 区
+     * @example 304501
      *
      * @var int
      */
     public $countyId;
 
     /**
-     * @description 描述
+     * @example 测试
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 扩展信息
+     * @example 扩展
      *
      * @var string
      */
     public $extend;
 
     /**
-     * @description 经纬度
+     * @example 120.1321,28.1213
      *
      * @var string
      */
     public $location;
 
     /**
-     * @description 结束时间
+     * @example 1655704317794
      *
      * @var int
      */
     public $orderEndTime;
 
     /**
-     * @description 订购信息
+     * @example 规格1
      *
      * @var string
      */
     public $orderInfo;
 
     /**
-     * @description 订购时间
+     * @example 1655704317794
      *
      * @var int
      */
     public $orderStartTime;
 
     /**
-     * @description 省
+     * @example 304
      *
      * @var int
      */
     public $provId;
 
     /**
-     * @description 手机号
+     * @example 13914773133
      *
      * @var string
      */

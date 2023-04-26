@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ValidateApplicationServiceOrderUpgradeRequest extends Model
 {
     /**
-     * @description accessKey
+     * @example accessKey
      *
      * @var string
      */

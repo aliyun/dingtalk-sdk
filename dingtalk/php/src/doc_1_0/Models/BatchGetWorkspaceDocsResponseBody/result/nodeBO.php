@@ -14,15 +14,11 @@ class nodeBO extends Model
     public $deleted;
 
     /**
-     * @description 节点类型
-     *
      * @var string
      */
     public $docType;
 
     /**
-     * @description 最后编辑时间
-     *
      * @var int
      */
     public $lastEditTime;

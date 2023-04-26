@@ -10,22 +10,20 @@ use AlibabaCloud\Tea\Model;
 class option extends Model
 {
     /**
-     * @description 文件在应用上的属性, 一个应用最多只能设置3个属性
-     *
      * @var appProperties[]
      */
     public $appProperties;
 
     /**
-     * @description 文件名称冲突策略
-     * AUTO_RENAME
+     * @example AUTO_RENAME
+     *
      * @var string
      */
     public $conflictStrategy;
 
     /**
-     * @description 默认文件大小, 单位:Byte
-     * 如果此字段不为空，企业存储系统会校验文件实际大小是否和此字段是否一致，不一致会报错
+     * @example 512
+     *
      * @var int
      */
     public $size;

@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class DeleteFilesResponseBody extends Model
 {
     /**
-     * @description 是否成功
-     *
      * @var bool
      */
     public $success;
 
     /**
-     * @description 异步任务id
-     *
      * @var string
      */
     public $taskId;

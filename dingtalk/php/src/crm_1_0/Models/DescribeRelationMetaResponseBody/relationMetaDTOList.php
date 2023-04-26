@@ -10,63 +10,51 @@ use AlibabaCloud\Tea\Model;
 class relationMetaDTOList extends Model
 {
     /**
-     * @description 创建者userId
-     *
      * @var string
      */
     public $creatorUserId;
 
     /**
-     * @description 模型结构描述
+     * @example 企业客户表
      *
      * @var string
      */
     public $desc;
 
     /**
-     * @description 创建时间
-     *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间
-     *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 模型结构字段集合
-     *
      * @var items[]
      */
     public $items;
 
     /**
-     * @description 模型结构名称
+     * @example 企业客户
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 模型结构code
-     *
      * @var string
      */
     public $relationMetaCode;
 
     /**
-     * @description 模型结构状态
-     *
      * @var string
      */
     public $relationMetaStatus;
 
     /**
-     * @description 关系类型
+     * @example crm_customer
      *
      * @var string
      */

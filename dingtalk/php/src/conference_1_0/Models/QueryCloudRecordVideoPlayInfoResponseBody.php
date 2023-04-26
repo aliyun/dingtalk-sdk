@@ -9,36 +9,34 @@ use AlibabaCloud\Tea\Model;
 class QueryCloudRecordVideoPlayInfoResponseBody extends Model
 {
     /**
-     * @description 时长
+     * @example 59886
      *
      * @var int
      */
     public $duration;
 
     /**
-     * @description 大小
+     * @example 1127942
      *
      * @var int
      */
     public $fileSize;
 
     /**
-     * @description MP4格式下载链接
+     * @example https://vod.mcs.dingtalk.com/faa1566c5bc24f21821ae2394f82db2e/8bbd1612e686462ab4717919f67bb721-b8531e0d534b2f9747a9fdfxxxxxxxxc-sd.mp4
      *
      * @var string
      */
     public $mp4FileUrl;
 
     /**
-     * @description 在线播放链接
+     * @example https://vod.mcs.dingtalk.com/faa1566c5bc24f21821ae2394f82db2e/8bbd1612e686462ab4717919f67bb721-ab85cc044a163568c9485xxxxxxxx76d-sd.m3u8
      *
      * @var string
      */
     public $playUrl;
 
     /**
-     * @description 状态
-     *
      * @var int
      */
     public $status;

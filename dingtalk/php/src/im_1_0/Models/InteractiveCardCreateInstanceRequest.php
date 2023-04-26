@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class InteractiveCardCreateInstanceRequest extends Model
 {
     /**
-     * @description 可控制卡片回调时的路由Key，用于指定特定的callbackUrl【可空：不填写默认用企业的回调地址】
-     *
      * @var string
      */
     public $callbackRouteKey;
@@ -22,71 +20,51 @@ class InteractiveCardCreateInstanceRequest extends Model
     public $cardData;
 
     /**
-     * @description 卡片模板ID
-     *
      * @var string
      */
     public $cardTemplateId;
 
     /**
-     * @description 【robotCode & chatBotId二选一必填】机器人ID（企业机器人）
-     *
      * @var string
      */
     public $chatBotId;
 
     /**
-     * @description 发送的会话类型：单聊-0, 群聊-1（单聊时：openConversationId不用填写；receiverUserIdList填写有且一个员工号）
-     *
      * @var int
      */
     public $conversationType;
 
     /**
-     * @description 接收卡片的群的openConversationId
-     *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）
-     *
      * @var string
      */
     public $outTrackId;
 
     /**
-     * @description 指定用户可见的按钮列表（key：用户userId；value：用户数据）
-     *
      * @var PrivateDataValue[]
      */
     public $privateData;
 
     /**
-     * @description 是否开启卡片纯拉模式
-     *
      * @var bool
      */
     public $pullStrategy;
 
     /**
-     * @description 接收人userId列表
-     *
      * @var string[]
      */
     public $receiverUserIdList;
 
     /**
-     * @description 【robotCode & chatBotId二选一必填】机器人编码（群模板机器人）
-     *
      * @var string
      */
     public $robotCode;
 
     /**
-     * @description 用户ID类型：1：staffId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
-     *
      * @var int
      */
     public $userIdType;

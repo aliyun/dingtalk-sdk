@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class GetSceneGroupInfoRequest extends Model
 {
     /**
-     * @description 酷应用编码
-     *
      * @var string
      */
     public $coolAppCode;
 
     /**
-     * @description 开放群ID
+     * @example cidXXXXXXX
      *
      * @var string
      */

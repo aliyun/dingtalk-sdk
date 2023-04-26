@@ -10,35 +10,33 @@ use AlibabaCloud\Tea\Model;
 class StartCourseRequest extends Model
 {
     /**
-     * @description 课程编码
+     * @example testCourseCode
      *
      * @var string
      */
     public $courseCode;
 
     /**
-     * @description 拓展字段
+     * @example extData
      *
      * @var string
      */
     public $ext;
 
     /**
-     * @description isvCode
+     * @example DDIsv
      *
      * @var string
      */
     public $isvCode;
 
     /**
-     * @description livePlayInfoList
-     *
      * @var livePlayInfoList[]
      */
     public $livePlayInfoList;
 
     /**
-     * @description opUserId
+     * @example 1
      *
      * @var string
      */

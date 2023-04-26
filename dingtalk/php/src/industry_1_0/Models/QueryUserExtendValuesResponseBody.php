@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class QueryUserExtendValuesResponseBody extends Model
 {
     /**
-     * @description 人员列表
-     *
      * @var content[]
      */
     public $content;
 
     /**
-     * @description 是否成功
-     *
      * @var bool
      */
     public $success;
 
     /**
-     * @description 数据总量
-     *
      * @var int
      */
     public $totalCount;

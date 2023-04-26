@@ -12,155 +12,111 @@ use AlibabaCloud\Tea\Model;
 class CreateTodoTaskResponseBody extends Model
 {
     /**
-     * @description 接入应用标识
-     *
      * @var string
      */
     public $bizTag;
 
     /**
-     * @description 内容区表单字段配置
-     *
      * @var contentFieldList[]
      */
     public $contentFieldList;
 
     /**
-     * @description 创建时间
-     *
      * @var int
      */
     public $createdTime;
 
     /**
-     * @description 创建者（用户的unionId）
-     *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 描述
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 自定义详情页跳转配置
-     *
      * @var detailUrl
      */
     public $detailUrl;
 
     /**
-     * @description 完成状态
-     *
      * @var bool
      */
     public $done;
 
     /**
-     * @description 截止时间
-     *
      * @var int
      */
     public $dueTime;
 
     /**
-     * @description 执行者列表（用户的unionId）
-     *
      * @var string[]
      */
     public $executorIds;
 
     /**
-     * @description 完成时间
-     *
      * @var int
      */
     public $finishTime;
 
     /**
-     * @description id
-     *
      * @var string
      */
     public $id;
 
     /**
-     * @description 生成的待办是否仅展示在执行者的待办列表中
-     *
      * @var bool
      */
     public $isOnlyShowExecutor;
 
     /**
-     * @description 更新时间
-     *
      * @var int
      */
     public $modifiedTime;
 
     /**
-     * @description 更新者（用户的unionId）
-     *
      * @var string
      */
     public $modifierId;
 
     /**
-     * @description 待办通知配置
-     *
      * @var notifyConfigs
      */
     public $notifyConfigs;
 
     /**
-     * @description 参与者列表（用户的unionId）
-     *
      * @var string[]
      */
     public $participantIds;
 
     /**
-     * @description 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
-     *
      * @var int
      */
     public $priority;
 
     /**
-     * @description requestId
-     *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description 业务来源
-     *
      * @var string
      */
     public $source;
 
     /**
-     * @description 业务来源id
-     *
      * @var string
      */
     public $sourceId;
 
     /**
-     * @description 开始时间
-     *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 标题
-     *
      * @var string
      */
     public $subject;

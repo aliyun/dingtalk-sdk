@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class UpdateFileStatusRequest extends Model
 {
     /**
-     * @description 请求id列表
-     *
      * @var string[]
      */
     public $requestIds;
 
     /**
-     * @description 更新的状态
+     * @example 1-检测通过，2-检测失败
      *
      * @var int
      */

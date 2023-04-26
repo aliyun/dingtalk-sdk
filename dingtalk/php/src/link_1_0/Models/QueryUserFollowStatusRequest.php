@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryUserFollowStatusRequest extends Model
 {
     /**
-     * @description 服务窗帐号ID，此ID可以通过服务窗帐号信息查询接口获取。
+     * @example ding1234
      *
      * @var string
      */
     public $accountId;
 
     /**
-     * @description 待查询的服务窗关注者unionId。
+     * @example UgIzXXo+Rp3Rqcts7BE08y49Jr6iu6xW4iQ
      *
      * @var string
      */

@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class QueryProjectRequest extends Model
 {
     /**
-     * @description 分页大小。每页返回最大数量。默认10，最大300。
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 项目名字(模糊匹配)。
+     * @example 测试项目
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 分页标。供分页使用，下一页token，从当前页结果中获取。
+     * @example f279e812xxxxxx
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 项目ID集合，逗号分隔。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $projectIds;
 
     /**
-     * @description 原始项目ID。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class image extends Model
 {
     /**
-     * @description 图片mediaId，可以通过上传媒体文件接口上传图片获取mediaId。
+     * @example @lALPBbCc1XuaP_rNAljNAl
      *
      * @var string
      */

@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class CreateKeyResultRequest extends Model
 {
     /**
-     * @description KR 内容。
+     * @example 我的内容
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 所属 Objective ID。
+     * @example 58Y4
      *
      * @var string
      */
     public $objectiveId;
 
     /**
-     * @description 周期 ID。
+     * @example 1006
      *
      * @var string
      */
     public $periodId;
 
     /**
-     * @description 上一个 KR 的位置。
+     * @example 234631
      *
      * @var int
      */
     public $prevPosition;
 
     /**
-     * @description KR 的权重比。
+     * @example 100
      *
      * @var int
      */
     public $weight;
 
     /**
-     * @description 当前用户的 user ID。
+     * @example 06186238011033616
      *
      * @var string
      */

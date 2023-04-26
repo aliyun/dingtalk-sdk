@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpgradeNormalGroupRequest extends Model
 {
     /**
-     * @description 群id
-     *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 升级的目标群组id
-     *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 升级的目标团队id
-     *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 升级的目标模板id
-     *
      * @var string
      */
     public $templateId;

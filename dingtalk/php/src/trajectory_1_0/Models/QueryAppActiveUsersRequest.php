@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryAppActiveUsersRequest extends Model
 {
     /**
-     * @description 本次读取的最大数据记录数量
+     * @example 100
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 是否需要返回位置信息
+     * @example true
      *
      * @var bool
      */
     public $needPositionInfo;
 
     /**
-     * @description 标记当前开始读取的位置，置空表示从头开始
+     * @example 0
      *
      * @var int
      */

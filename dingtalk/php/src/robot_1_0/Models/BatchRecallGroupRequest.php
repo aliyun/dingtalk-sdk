@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class BatchRecallGroupRequest extends Model
 {
     /**
-     * @description 机器人的robotCode
+     * @example dingXXXXXXXXXX
      *
      * @var string
      */
     public $chatbotId;
 
     /**
-     * @description 开放的群id
+     * @example cidfCSpXXXXXXXXXXXchatbotId
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 消息id
-     *
      * @var string[]
      */
     public $processQueryKeys;

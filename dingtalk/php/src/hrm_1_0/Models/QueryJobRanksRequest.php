@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class QueryJobRanksRequest extends Model
 {
     /**
-     * @description 本次读取的最大数据记录数量
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 标记当前开始读取的位置
-     *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 职级序列
-     *
      * @var string
      */
     public $rankCategoryId;
 
     /**
-     * @description 职级编码
-     *
      * @var string
      */
     public $rankCode;
 
     /**
-     * @description 职级名称
-     *
      * @var string
      */
     public $rankName;

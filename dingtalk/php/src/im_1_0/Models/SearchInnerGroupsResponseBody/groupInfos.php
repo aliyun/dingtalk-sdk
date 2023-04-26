@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class groupInfos extends Model
 {
     /**
-     * @description 群头像。
+     * @example @lAD*****
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 群成员人数。
+     * @example 10
      *
      * @var string
      */
     public $memberAmount;
 
     /**
-     * @description 会话id。
+     * @example cid13*****==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 群名称。
+     * @example 测试群名称
      *
      * @var string
      */

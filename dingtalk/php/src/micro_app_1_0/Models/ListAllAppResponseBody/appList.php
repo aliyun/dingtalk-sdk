@@ -9,70 +9,68 @@ use AlibabaCloud\Tea\Model;
 class appList extends Model
 {
     /**
-     * @description 应用id
+     * @example 1
      *
      * @var int
      */
     public $agentId;
 
     /**
-     * @description 三方应用id，如果是企业内部应用，返回0
+     * @example 111
      *
      * @var int
      */
     public $appId;
 
     /**
-     * @description 应用状态，0：停用，1：启用 ，3：过期
-     *
      * @var int
      */
     public $appStatus;
 
     /**
-     * @description 应用描述
+     * @example desc
      *
      * @var string
      */
     public $desc;
 
     /**
-     * @description 应用类型，0表示h5应用，1表示小程序
+     * @example 0
      *
      * @var int
      */
     public $developType;
 
     /**
-     * @description 应用移动端首页地址
+     * @example https://www.dingtalk.com
      *
      * @var string
      */
     public $homepageLink;
 
     /**
-     * @description 应用图标
+     * @example icon
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 应用名称
+     * @example name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 应用管理后台地址
+     * @example https://www.dingtalk.com
      *
      * @var string
      */
     public $ompLink;
 
     /**
-     * @description 应用PC端首页地址
+     * @example https://www.dingtalk.com
      *
      * @var string
      */

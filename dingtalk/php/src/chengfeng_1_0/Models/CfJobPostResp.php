@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CfJobPostResp extends Model
 {
     /**
-     * @description 职务编码
+     * @example 1234
      *
      * @var string
      */
     public $jobPostCode;
 
     /**
-     * @description 职务名称
+     * @example 技术岗
      *
      * @var string
      */

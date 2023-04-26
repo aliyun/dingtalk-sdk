@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ModifyFeedWhiteListResponseBody extends Model
 {
     /**
-     * @description 是否修改成功
+     * @example true
      *
      * @var bool
      */

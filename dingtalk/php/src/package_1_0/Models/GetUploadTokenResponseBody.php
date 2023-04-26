@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class GetUploadTokenResponseBody extends Model
 {
     /**
-     * @description 阿里云OSS SDK初始化配置项
+     * @example STS.NUPjgnMhCVWvo1HSxfftf
      *
      * @var string
      */
     public $accessKeyId;
 
     /**
-     * @description 阿里云OSS SDK初始化配置项
+     * @example ASviryNDy9tTuS5KiYMA6fCYf81vHg4KdoX7CVHz4CSx
      *
      * @var string
      */
     public $accessKeySecret;
 
     /**
-     * @description 阿里云OSS SDK初始化配置项
+     * @example dingtalk-bucket
      *
      * @var string
      */
     public $bucket;
 
     /**
-     * @description 阿里云OSS SDK初始化配置项
+     * @example oss-cn-shanghai.aliyuncs.com
      *
      * @var string
      */
     public $endpoint;
 
     /**
-     * @description 阿里云OSS SDK初始化配置项
+     * @example 2022-09-21T09:32:16Z
      *
      * @var string
      */
     public $expiration;
 
     /**
-     * @description 阿里云OSS SDK初始化配置项
+     * @example 5000000002761167/1663751835956
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 阿里云OSS SDK初始化配置项
+     * @example oss-cn-shanghai
      *
      * @var string
      */
     public $region;
 
     /**
-     * @description 阿里云OSS SDK初始化配置项
+     * @example CAIS0QJ1q6Ft5B2yfSjIr5blId3aoLdi4ZWdbRf5t3gzavt...
      *
      * @var string
      */

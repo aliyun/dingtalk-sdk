@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryUnReadMessageRequest extends Model
 {
     /**
-     * @description 钉外账号在业务系统内的唯一标志。
+     * @example 1107****2120
      *
      * @var string
      */
     public $appUserId;
 
     /**
-     * @description 群会话Id列表。
+     * @example 1745****8777
      *
      * @var string[]
      */

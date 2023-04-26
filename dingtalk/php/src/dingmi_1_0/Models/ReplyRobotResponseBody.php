@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ReplyRobotResponseBody extends Model
 {
     /**
-     * @description 回复是否成功结果
+     * @example true
      *
      * @var bool
      */

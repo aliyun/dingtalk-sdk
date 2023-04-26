@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryAcquireRefundOrderRequest extends Model
 {
     /**
-     * @description 外部退款订单流水号
+     * @example 202100001
      *
      * @var string
      */

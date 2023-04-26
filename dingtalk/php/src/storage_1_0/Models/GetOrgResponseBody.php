@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetOrgResponseBody extends Model
 {
     /**
-     * @description 企业信息
-     *
      * @var org
      */
     public $org;

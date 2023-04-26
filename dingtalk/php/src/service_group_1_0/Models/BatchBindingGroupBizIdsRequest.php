@@ -15,7 +15,7 @@ class BatchBindingGroupBizIdsRequest extends Model
     public $bindingGroupBizIds;
 
     /**
-     * @description 开放团队ID
+     * @example Jciwnfw
      *
      * @var string
      */

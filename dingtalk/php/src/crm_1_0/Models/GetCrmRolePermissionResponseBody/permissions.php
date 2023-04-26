@@ -13,56 +13,48 @@ use AlibabaCloud\Tea\Model;
 class permissions extends Model
 {
     /**
-     * @description 是否是默认权限
+     * @example true
      *
      * @var bool
      */
     public $defaultRole;
 
     /**
-     * @description 字段权限
-     *
      * @var fieldScopes[]
      */
     public $fieldScopes;
 
     /**
-     * @description 权限组适用范围配置
-     *
      * @var managingScopeList[]
      */
     public $managingScopeList;
 
     /**
-     * @description 操作范围
-     *
      * @var operateScopes[]
      */
     public $operateScopes;
 
     /**
-     * @description 资源id
+     * @example PROC-478E50CA-856C-4C08-B806-E664D4CEC8C4
      *
      * @var string
      */
     public $resourceId;
 
     /**
-     * @description 权限组id
+     * @example 12821738
      *
      * @var float
      */
     public $roleId;
 
     /**
-     * @description 权限组配置
-     *
      * @var roleMemberList[]
      */
     public $roleMemberList;
 
     /**
-     * @description 权限组名称
+     * @example 销售权限组
      *
      * @var string
      */

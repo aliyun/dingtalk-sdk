@@ -30,8 +30,6 @@ class AddHrmPreentryRequest extends Model
     public $name;
 
     /**
-     * @description 是否需要发送完善入职登记表的入职IM消息给员工本人
-     *
      * @var bool
      */
     public $needSendPreEntryMsg;

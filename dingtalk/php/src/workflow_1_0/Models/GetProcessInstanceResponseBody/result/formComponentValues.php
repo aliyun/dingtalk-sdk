@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class formComponentValues extends Model
 {
     /**
-     * @description 组件别名。
+     * @example TextField-bizAlias
      *
      * @var string
      */
     public $bizAlias;
 
     /**
-     * @description 组件类型。
+     * @example DDSelectField
      *
      * @var string
      */
     public $componentType;
 
     /**
-     * @description 标签扩展值。
+     * @example 示例值
      *
      * @var string
      */
     public $extValue;
 
     /**
-     * @description 组件ID。
+     * @example DDHolidayField-J2Bxxxx
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 组件名称。
+     * @example 组件1
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 标签值。
+     * @example 示例值
      *
      * @var string
      */

@@ -11,21 +11,17 @@ use AlibabaCloud\Tea\Model;
 class InitCoursesOfClassRequest extends Model
 {
     /**
-     * @description 课程设置。
-     *
      * @var courses[]
      */
     public $courses;
 
     /**
-     * @description 节次设置
-     *
      * @var sectionConfig
      */
     public $sectionConfig;
 
     /**
-     * @description 操作人的userid。
+     * @example manager235
      *
      * @var string
      */

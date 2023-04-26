@@ -10,28 +10,22 @@ use AlibabaCloud\Tea\Model;
 class messages extends Model
 {
     /**
-     * @description 消息类型，2-图片、202视频、3100富文本消息
-     *
      * @var int
      */
     public $contentType;
 
     /**
-     * @description 消息的创建时间
-     *
      * @var int
      */
     public $createAt;
 
     /**
-     * @description media文件对象列表
-     *
      * @var mediaModels[]
      */
     public $mediaModels;
 
     /**
-     * @description 消息的唯一标识
+     * @example msgxxx
      *
      * @var string
      */

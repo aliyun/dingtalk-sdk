@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteSpaceRequest extends Model
 {
     /**
-     * @description 部门id
+     * @example 忘川路1号
      *
      * @var int[]
      */

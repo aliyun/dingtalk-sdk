@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateTaskPriorityRequest extends Model
 {
     /**
-     * @description 优先级。
+     * @example 1
      *
      * @var int
      */

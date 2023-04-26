@@ -18,99 +18,71 @@ class CreateTodoTaskRequest extends Model
     public $actionList;
 
     /**
-     * @description 二级分类
-     *
      * @var string
      */
     public $bizCategoryId;
 
     /**
-     * @description 待办卡片内容区表单自定义字段列表
-     *
      * @var contentFieldList[]
      */
     public $contentFieldList;
 
     /**
-     * @description 创建者id，需传用户的unionId
-     *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 待办备注描述
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 详情页url跳转地址
-     *
      * @var detailUrl
      */
     public $detailUrl;
 
     /**
-     * @description 截止时间
-     *
      * @var int
      */
     public $dueTime;
 
     /**
-     * @description 执行者列表，需传用户的unionId
-     *
      * @var string[]
      */
     public $executorIds;
 
     /**
-     * @description 生成的待办是否仅展示在执行者的待办列表中
-     *
      * @var bool
      */
     public $isOnlyShowExecutor;
 
     /**
-     * @description 通知提醒配置
-     *
      * @var notifyConfigs
      */
     public $notifyConfigs;
 
     /**
-     * @description 参与者列表，需传用户的unionId
-     *
      * @var string[]
      */
     public $participantIds;
 
     /**
-     * @description 优先级
-     *
      * @var int
      */
     public $priority;
 
     /**
-     * @description 来源id，接入业务系统侧的唯一标识id
-     *
      * @var string
      */
     public $sourceId;
 
     /**
-     * @description 待办标题
-     *
      * @var string
      */
     public $subject;
 
     /**
-     * @description 当前操作者id，需传用户的unionId
-     *
      * @var string
      */
     public $operatorId;

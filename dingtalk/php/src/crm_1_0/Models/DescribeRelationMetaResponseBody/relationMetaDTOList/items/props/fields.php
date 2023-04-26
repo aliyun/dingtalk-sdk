@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class fields extends Model
 {
     /**
-     * @description 字段类型
-     *
      * @var string
      */
     public $componentName;
 
     /**
-     * @description 字段属性
-     *
      * @var relateProps
      */
     public $relateProps;

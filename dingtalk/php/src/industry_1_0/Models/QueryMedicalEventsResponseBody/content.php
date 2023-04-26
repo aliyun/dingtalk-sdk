@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 事件code
-     *
      * @var string
      */
     public $code;
 
     /**
-     * @description 事件内容
-     *
      * @var string
      */
     public $content;
 
     /**
-     * @description 事件id
-     *
      * @var int
      */
     public $eventId;

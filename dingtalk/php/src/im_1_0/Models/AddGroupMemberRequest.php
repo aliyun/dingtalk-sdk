@@ -9,29 +9,25 @@ use AlibabaCloud\Tea\Model;
 class AddGroupMemberRequest extends Model
 {
     /**
-     * @description 钉外成员列表。
-     *
      * @var string[]
      */
     public $appUserIds;
 
     /**
-     * @description 群会话Id。
+     * @example 14da****2760
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 操作者在业务系统内的唯一标识。
+     * @example 1745****8777
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 钉内成员列表。
-     *
      * @var string[]
      */
     public $userIds;

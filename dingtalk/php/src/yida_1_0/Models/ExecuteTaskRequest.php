@@ -9,77 +9,77 @@ use AlibabaCloud\Tea\Model;
 class ExecuteTaskRequest extends Model
 {
     /**
-     * @description 应用ID
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 电子签名
+     * @example https://tianshu-vpc.oss-cn-sahnghai.aliyuncs.com
      *
      * @var string
      */
     public $digitalSignUrl;
 
     /**
-     * @description 更新的表单值
+     * @example 未知
      *
      * @var string
      */
     public $formDataJson;
 
     /**
-     * @description 语言
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 是否不执行校验&关联操作
+     * @example y
      *
      * @var string
      */
     public $noExecuteExpressions;
 
     /**
-     * @description 审批结果
+     * @example AGREE
      *
      * @var string
      */
     public $outResult;
 
     /**
-     * @description 实例ID
+     * @example f30233fb-72e1-4af4-8cb8-c7e0ea9ee530
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 审批意见
+     * @example 确认同意
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 应用秘钥
+     * @example hexxyy
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 任务ID
+     * @example 12002575
      *
      * @var int
      */
     public $taskId;
 
     /**
-     * @description 钉钉的userId
+     * @example 未知
      *
      * @var string
      */

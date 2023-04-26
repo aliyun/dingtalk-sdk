@@ -126,18 +126,67 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\UpdateProcessInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\UpdateProcessInstanceResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AddApproveDentryAuthRequest $request
+     * @param AddApproveDentryAuthHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return AddApproveDentryAuthResponse
+     */
+    public function addApproveDentryAuthWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileInfos)) {
+            $body['fileInfos'] = $request->fileInfos;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddApproveDentryAuth',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processInstances/spaces/files/authDownload',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddApproveDentryAuthResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -154,35 +203,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddApproveDentryAuthRequest $request
-     * @param AddApproveDentryAuthHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param AddProcessInstanceCommentRequest $request
+     * @param AddProcessInstanceCommentHeaders $headers
+     * @param RuntimeOptions                   $runtime
      *
-     * @return AddApproveDentryAuthResponse
+     * @return AddProcessInstanceCommentResponse
      */
-    public function addApproveDentryAuthWithOptions($request, $headers, $runtime)
+    public function addProcessInstanceCommentWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->fileInfos)) {
-            @$body['fileInfos'] = $request->fileInfos;
+        if (!Utils::isUnset($request->commentUserId)) {
+            $body['commentUserId'] = $request->commentUserId;
         }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->file)) {
+            $body['file'] = $request->file;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->text)) {
+            $body['text'] = $request->text;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'AddProcessInstanceComment',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processInstances/comments',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddApproveDentryAuthResponse::fromMap($this->doROARequest('AddApproveDentryAuth', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processInstances/spaces/files/authDownload', 'json', $req, $runtime));
+        return AddProcessInstanceCommentResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -199,41 +265,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddProcessInstanceCommentRequest $request
-     * @param AddProcessInstanceCommentHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param BatchUpdateProcessInstanceRequest $request
+     * @param BatchUpdateProcessInstanceHeaders $headers
+     * @param RuntimeOptions                    $runtime
      *
-     * @return AddProcessInstanceCommentResponse
+     * @return BatchUpdateProcessInstanceResponse
      */
-    public function addProcessInstanceCommentWithOptions($request, $headers, $runtime)
+    public function batchUpdateProcessInstanceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->commentUserId)) {
-            @$body['commentUserId'] = $request->commentUserId;
-        }
-        if (!Utils::isUnset($request->file)) {
-            @$body['file'] = $request->file;
-        }
-        if (!Utils::isUnset($request->processInstanceId)) {
-            @$body['processInstanceId'] = $request->processInstanceId;
-        }
-        if (!Utils::isUnset($request->text)) {
-            @$body['text'] = $request->text;
+        if (!Utils::isUnset($request->updateProcessInstanceRequests)) {
+            $body['updateProcessInstanceRequests'] = $request->updateProcessInstanceRequests;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'BatchUpdateProcessInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processCentres/instances/batch',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddProcessInstanceCommentResponse::fromMap($this->doROARequest('AddProcessInstanceComment', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processInstances/comments', 'json', $req, $runtime));
+        return BatchUpdateProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -250,32 +318,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchUpdateProcessInstanceRequest $request
-     * @param BatchUpdateProcessInstanceHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @param CancelIntegratedTaskRequest $request
+     * @param CancelIntegratedTaskHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return BatchUpdateProcessInstanceResponse
+     * @return CancelIntegratedTaskResponse
      */
-    public function batchUpdateProcessInstanceWithOptions($request, $headers, $runtime)
+    public function cancelIntegratedTaskWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->updateProcessInstanceRequests)) {
-            @$body['updateProcessInstanceRequests'] = $request->updateProcessInstanceRequests;
+        if (!Utils::isUnset($request->activityId)) {
+            $body['activityId'] = $request->activityId;
+        }
+        if (!Utils::isUnset($request->activityIds)) {
+            $body['activityIds'] = $request->activityIds;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CancelIntegratedTask',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processCentres/tasks/cancel',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchUpdateProcessInstanceResponse::fromMap($this->doROARequest('BatchUpdateProcessInstance', 'workflow_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/workflow/processCentres/instances/batch', 'json', $req, $runtime));
+        return CancelIntegratedTaskResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -292,38 +377,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CancelIntegratedTaskRequest $request
-     * @param CancelIntegratedTaskHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param CleanProcessDataRequest $request
+     * @param CleanProcessDataHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return CancelIntegratedTaskResponse
+     * @return CleanProcessDataResponse
      */
-    public function cancelIntegratedTaskWithOptions($request, $headers, $runtime)
+    public function cleanProcessDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->activityId)) {
-            @$body['activityId'] = $request->activityId;
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
         }
-        if (!Utils::isUnset($request->activityIds)) {
-            @$body['activityIds'] = $request->activityIds;
-        }
-        if (!Utils::isUnset($request->processInstanceId)) {
-            @$body['processInstanceId'] = $request->processInstanceId;
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CleanProcessData',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processes/clean',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CancelIntegratedTaskResponse::fromMap($this->doROARequest('CancelIntegratedTask', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processCentres/tasks/cancel', 'json', $req, $runtime));
+        return CleanProcessDataResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -340,35 +433,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CleanProcessDataRequest $request
-     * @param CleanProcessDataHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param CopyProcessRequest $request
+     * @param CopyProcessHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return CleanProcessDataResponse
+     * @return CopyProcessResponse
      */
-    public function cleanProcessDataWithOptions($request, $headers, $runtime)
+    public function copyProcessWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
+        if (!Utils::isUnset($request->copyOptions)) {
+            $body['copyOptions'] = $request->copyOptions;
         }
-        if (!Utils::isUnset($request->processCode)) {
-            @$body['processCode'] = $request->processCode;
+        if (!Utils::isUnset($request->sourceCorpId)) {
+            $body['sourceCorpId'] = $request->sourceCorpId;
+        }
+        if (!Utils::isUnset($request->sourceProcessVOList)) {
+            $body['sourceProcessVOList'] = $request->sourceProcessVOList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CopyProcess',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processes/copy',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CleanProcessDataResponse::fromMap($this->doROARequest('CleanProcessData', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processes/clean', 'json', $req, $runtime));
+        return CopyProcessResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -385,38 +492,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CopyProcessRequest $request
-     * @param CopyProcessHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param CreateIntegratedTaskRequest $request
+     * @param CreateIntegratedTaskHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return CopyProcessResponse
+     * @return CreateIntegratedTaskResponse
      */
-    public function copyProcessWithOptions($request, $headers, $runtime)
+    public function createIntegratedTaskWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->copyOptions)) {
-            @$body['copyOptions'] = $request->copyOptions;
+        if (!Utils::isUnset($request->activityId)) {
+            $body['activityId'] = $request->activityId;
         }
-        if (!Utils::isUnset($request->sourceCorpId)) {
-            @$body['sourceCorpId'] = $request->sourceCorpId;
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
         }
-        if (!Utils::isUnset($request->sourceProcessVOList)) {
-            @$body['sourceProcessVOList'] = $request->sourceProcessVOList;
+        if (!Utils::isUnset($request->tasks)) {
+            $body['tasks'] = $request->tasks;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateIntegratedTask',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processCentres/tasks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CopyProcessResponse::fromMap($this->doROARequest('CopyProcess', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processes/copy', 'json', $req, $runtime));
+        return CreateIntegratedTaskResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -433,38 +551,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateIntegratedTaskRequest $request
-     * @param CreateIntegratedTaskHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param DeleteProcessRequest $request
+     * @param DeleteProcessHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return CreateIntegratedTaskResponse
+     * @return DeleteProcessResponse
      */
-    public function createIntegratedTaskWithOptions($request, $headers, $runtime)
+    public function deleteProcessWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->activityId)) {
-            @$body['activityId'] = $request->activityId;
+        $query = [];
+        if (!Utils::isUnset($request->cleanRunningTask)) {
+            $query['cleanRunningTask'] = $request->cleanRunningTask;
         }
-        if (!Utils::isUnset($request->processInstanceId)) {
-            @$body['processInstanceId'] = $request->processInstanceId;
-        }
-        if (!Utils::isUnset($request->tasks)) {
-            @$body['tasks'] = $request->tasks;
+        if (!Utils::isUnset($request->processCode)) {
+            $query['processCode'] = $request->processCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteProcess',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processCentres/schemas',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return CreateIntegratedTaskResponse::fromMap($this->doROARequest('CreateIntegratedTask', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processCentres/tasks', 'json', $req, $runtime));
+        return DeleteProcessResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -481,35 +607,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteProcessRequest $request
-     * @param DeleteProcessHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param ExecuteProcessInstanceRequest $request
+     * @param ExecuteProcessInstanceHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return DeleteProcessResponse
+     * @return ExecuteProcessInstanceResponse
      */
-    public function deleteProcessWithOptions($request, $headers, $runtime)
+    public function executeProcessInstanceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->cleanRunningTask)) {
-            @$query['cleanRunningTask'] = $request->cleanRunningTask;
+        $body = [];
+        if (!Utils::isUnset($request->actionerUserId)) {
+            $body['actionerUserId'] = $request->actionerUserId;
         }
-        if (!Utils::isUnset($request->processCode)) {
-            @$query['processCode'] = $request->processCode;
+        if (!Utils::isUnset($request->file)) {
+            $body['file'] = $request->file;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->result)) {
+            $body['result'] = $request->result;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ExecuteProcessInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processInstances/execute',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return DeleteProcessResponse::fromMap($this->doROARequest('DeleteProcess', 'workflow_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/workflow/processCentres/schemas', 'json', $req, $runtime));
+        return ExecuteProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -526,47 +675,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ExecuteProcessInstanceRequest $request
-     * @param ExecuteProcessInstanceHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param FormCreateRequest $request
+     * @param FormCreateHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return ExecuteProcessInstanceResponse
+     * @return FormCreateResponse
      */
-    public function executeProcessInstanceWithOptions($request, $headers, $runtime)
+    public function formCreateWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->actionerUserId)) {
-            @$body['actionerUserId'] = $request->actionerUserId;
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
         }
-        if (!Utils::isUnset($request->file)) {
-            @$body['file'] = $request->file;
+        if (!Utils::isUnset($request->formComponents)) {
+            $body['formComponents'] = $request->formComponents;
         }
-        if (!Utils::isUnset($request->processInstanceId)) {
-            @$body['processInstanceId'] = $request->processInstanceId;
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
         }
-        if (!Utils::isUnset($request->remark)) {
-            @$body['remark'] = $request->remark;
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
         }
-        if (!Utils::isUnset($request->result)) {
-            @$body['result'] = $request->result;
-        }
-        if (!Utils::isUnset($request->taskId)) {
-            @$body['taskId'] = $request->taskId;
+        if (!Utils::isUnset($request->templateConfig)) {
+            $body['templateConfig'] = $request->templateConfig;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'FormCreate',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/forms',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return ExecuteProcessInstanceResponse::fromMap($this->doROARequest('ExecuteProcessInstance', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processInstances/execute', 'json', $req, $runtime));
+        return FormCreateResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -583,44 +740,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param FormCreateRequest $request
-     * @param FormCreateHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param GetAttachmentSpaceRequest $request
+     * @param GetAttachmentSpaceHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return FormCreateResponse
+     * @return GetAttachmentSpaceResponse
      */
-    public function formCreateWithOptions($request, $headers, $runtime)
+    public function getAttachmentSpaceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->description)) {
-            @$body['description'] = $request->description;
+        if (!Utils::isUnset($request->agentId)) {
+            $body['agentId'] = $request->agentId;
         }
-        if (!Utils::isUnset($request->formComponents)) {
-            @$body['formComponents'] = $request->formComponents;
-        }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
-        }
-        if (!Utils::isUnset($request->processCode)) {
-            @$body['processCode'] = $request->processCode;
-        }
-        if (!Utils::isUnset($request->templateConfig)) {
-            @$body['templateConfig'] = $request->templateConfig;
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'GetAttachmentSpace',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processInstances/spaces/infos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return FormCreateResponse::fromMap($this->doROARequest('FormCreate', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/forms', 'json', $req, $runtime));
+        return GetAttachmentSpaceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -637,35 +796,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAttachmentSpaceRequest $request
-     * @param GetAttachmentSpaceHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param GetConditionFormComponentRequest $request
+     * @param GetConditionFormComponentHeaders $headers
+     * @param RuntimeOptions                   $runtime
      *
-     * @return GetAttachmentSpaceResponse
+     * @return GetConditionFormComponentResponse
      */
-    public function getAttachmentSpaceWithOptions($request, $headers, $runtime)
+    public function getConditionFormComponentWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->agentId)) {
-            @$body['agentId'] = $request->agentId;
+            $query['agentId'] = $request->agentId;
         }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->processCode)) {
+            $query['processCode'] = $request->processCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetConditionFormComponent',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processes/conditions/components',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetAttachmentSpaceResponse::fromMap($this->doROARequest('GetAttachmentSpace', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processInstances/spaces/infos/query', 'json', $req, $runtime));
+        return GetConditionFormComponentResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -682,35 +852,36 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetConditionFormComponentRequest $request
-     * @param GetConditionFormComponentHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param GetCrmProcCodesHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return GetConditionFormComponentResponse
+     * @return GetCrmProcCodesResponse
      */
-    public function getConditionFormComponentWithOptions($request, $headers, $runtime)
+    public function getCrmProcCodesWithOptions($headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->agentId)) {
-            @$query['agentId'] = $request->agentId;
-        }
-        if (!Utils::isUnset($request->processCode)) {
-            @$query['processCode'] = $request->processCode;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetCrmProcCodes',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/crm/processes',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetConditionFormComponentResponse::fromMap($this->doROARequest('GetConditionFormComponent', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/processes/conditions/components', 'json', $req, $runtime));
+        return GetCrmProcCodesResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -725,25 +896,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCrmProcCodesHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param GetManageProcessByStaffIdRequest $request
+     * @param GetManageProcessByStaffIdHeaders $headers
+     * @param RuntimeOptions                   $runtime
      *
-     * @return GetCrmProcCodesResponse
+     * @return GetManageProcessByStaffIdResponse
      */
-    public function getCrmProcCodesWithOptions($headers, $runtime)
+    public function getManageProcessByStaffIdWithOptions($request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetManageProcessByStaffId',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processes/managements/templates',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetCrmProcCodesResponse::fromMap($this->doROARequest('GetCrmProcCodes', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/crm/processes', 'json', $req, $runtime));
+        return GetManageProcessByStaffIdResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -760,32 +949,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetManageProcessByStaffIdRequest $request
-     * @param GetManageProcessByStaffIdHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param GetProcessCodeByNameRequest $request
+     * @param GetProcessCodeByNameHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return GetManageProcessByStaffIdResponse
+     * @return GetProcessCodeByNameResponse
      */
-    public function getManageProcessByStaffIdWithOptions($request, $headers, $runtime)
+    public function getProcessCodeByNameWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+        if (!Utils::isUnset($request->name)) {
+            $query['name'] = $request->name;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetProcessCodeByName',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processCentres/schemaNames/processCodes',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetManageProcessByStaffIdResponse::fromMap($this->doROARequest('GetManageProcessByStaffId', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/processes/managements/templates', 'json', $req, $runtime));
+        return GetProcessCodeByNameResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -802,32 +1002,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetProcessCodeByNameRequest $request
-     * @param GetProcessCodeByNameHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param GetProcessConfigRequest $request
+     * @param GetProcessConfigHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return GetProcessCodeByNameResponse
+     * @return GetProcessConfigResponse
      */
-    public function getProcessCodeByNameWithOptions($request, $headers, $runtime)
+    public function getProcessConfigWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->name)) {
-            @$query['name'] = $request->name;
+        if (!Utils::isUnset($request->procCode)) {
+            $query['procCode'] = $request->procCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetProcessConfig',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/crm/processes/configurations',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetProcessCodeByNameResponse::fromMap($this->doROARequest('GetProcessCodeByName', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/processCentres/schemaNames/processCodes', 'json', $req, $runtime));
+        return GetProcessConfigResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -844,32 +1055,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetProcessConfigRequest $request
-     * @param GetProcessConfigHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param GetProcessInstanceRequest $request
+     * @param GetProcessInstanceHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return GetProcessConfigResponse
+     * @return GetProcessInstanceResponse
      */
-    public function getProcessConfigWithOptions($request, $headers, $runtime)
+    public function getProcessInstanceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->procCode)) {
-            @$query['procCode'] = $request->procCode;
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $query['processInstanceId'] = $request->processInstanceId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetProcessInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processInstances',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetProcessConfigResponse::fromMap($this->doROARequest('GetProcessConfig', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/crm/processes/configurations', 'json', $req, $runtime));
+        return GetProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -886,32 +1108,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetProcessInstanceRequest $request
-     * @param GetProcessInstanceHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param GetSpaceWithDownloadAuthRequest $request
+     * @param GetSpaceWithDownloadAuthHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return GetProcessInstanceResponse
+     * @return GetSpaceWithDownloadAuthResponse
      */
-    public function getProcessInstanceWithOptions($request, $headers, $runtime)
+    public function getSpaceWithDownloadAuthWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
+        if (!Utils::isUnset($request->agentId)) {
+            $body['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->fileId)) {
+            $body['fileId'] = $request->fileId;
+        }
+        if (!Utils::isUnset($request->fileIdList)) {
+            $body['fileIdList'] = $request->fileIdList;
+        }
         if (!Utils::isUnset($request->processInstanceId)) {
-            @$query['processInstanceId'] = $request->processInstanceId;
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetSpaceWithDownloadAuth',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processInstances/spaces/authPreview',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetProcessInstanceResponse::fromMap($this->doROARequest('GetProcessInstance', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/processInstances', 'json', $req, $runtime));
+        return GetSpaceWithDownloadAuthResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -928,44 +1173,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSpaceWithDownloadAuthRequest $request
-     * @param GetSpaceWithDownloadAuthHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param GetUserTodoTaskSumRequest $request
+     * @param GetUserTodoTaskSumHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return GetSpaceWithDownloadAuthResponse
+     * @return GetUserTodoTaskSumResponse
      */
-    public function getSpaceWithDownloadAuthWithOptions($request, $headers, $runtime)
+    public function getUserTodoTaskSumWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->agentId)) {
-            @$body['agentId'] = $request->agentId;
-        }
-        if (!Utils::isUnset($request->fileId)) {
-            @$body['fileId'] = $request->fileId;
-        }
-        if (!Utils::isUnset($request->fileIdList)) {
-            @$body['fileIdList'] = $request->fileIdList;
-        }
-        if (!Utils::isUnset($request->processInstanceId)) {
-            @$body['processInstanceId'] = $request->processInstanceId;
-        }
+        $query = [];
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetUserTodoTaskSum',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processes/todoTasks/numbers',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetSpaceWithDownloadAuthResponse::fromMap($this->doROARequest('GetSpaceWithDownloadAuth', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processInstances/spaces/authPreview', 'json', $req, $runtime));
+        return GetUserTodoTaskSumResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -982,32 +1226,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserTodoTaskSumRequest $request
-     * @param GetUserTodoTaskSumHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param GrantCspaceAuthorizationRequest $request
+     * @param GrantCspaceAuthorizationHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return GetUserTodoTaskSumResponse
+     * @return GrantCspaceAuthorizationResponse
      */
-    public function getUserTodoTaskSumWithOptions($request, $headers, $runtime)
+    public function grantCspaceAuthorizationWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
+        if (!Utils::isUnset($request->durationSeconds)) {
+            $body['durationSeconds'] = $request->durationSeconds;
+        }
+        if (!Utils::isUnset($request->spaceId)) {
+            $body['spaceId'] = $request->spaceId;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
         if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GrantCspaceAuthorization',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/spaces/authorize',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'none',
         ]);
 
-        return GetUserTodoTaskSumResponse::fromMap($this->doROARequest('GetUserTodoTaskSum', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/processes/todoTasks/numbers', 'json', $req, $runtime));
+        return GrantCspaceAuthorizationResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1024,41 +1288,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GrantCspaceAuthorizationRequest $request
-     * @param GrantCspaceAuthorizationHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param GrantProcessInstanceForDownloadFileRequest $request
+     * @param GrantProcessInstanceForDownloadFileHeaders $headers
+     * @param RuntimeOptions                             $runtime
      *
-     * @return GrantCspaceAuthorizationResponse
+     * @return GrantProcessInstanceForDownloadFileResponse
      */
-    public function grantCspaceAuthorizationWithOptions($request, $headers, $runtime)
+    public function grantProcessInstanceForDownloadFileWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->durationSeconds)) {
-            @$body['durationSeconds'] = $request->durationSeconds;
+        if (!Utils::isUnset($request->fileId)) {
+            $body['fileId'] = $request->fileId;
         }
-        if (!Utils::isUnset($request->spaceId)) {
-            @$body['spaceId'] = $request->spaceId;
-        }
-        if (!Utils::isUnset($request->type)) {
-            @$body['type'] = $request->type;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'GrantProcessInstanceForDownloadFile',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processInstances/spaces/files/urls/download',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GrantCspaceAuthorizationResponse::fromMap($this->doROARequest('GrantCspaceAuthorization', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/spaces/authorize', 'none', $req, $runtime));
+        return GrantProcessInstanceForDownloadFileResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1075,35 +1344,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GrantProcessInstanceForDownloadFileRequest $request
-     * @param GrantProcessInstanceForDownloadFileHeaders $headers
-     * @param RuntimeOptions                             $runtime
+     * @param InstallAppRequest $request
+     * @param InstallAppHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return GrantProcessInstanceForDownloadFileResponse
+     * @return InstallAppResponse
      */
-    public function grantProcessInstanceForDownloadFileWithOptions($request, $headers, $runtime)
+    public function installAppWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->fileId)) {
-            @$body['fileId'] = $request->fileId;
+        if (!Utils::isUnset($request->bizGroup)) {
+            $body['bizGroup'] = $request->bizGroup;
         }
-        if (!Utils::isUnset($request->processInstanceId)) {
-            @$body['processInstanceId'] = $request->processInstanceId;
+        if (!Utils::isUnset($request->installOption)) {
+            $body['installOption'] = $request->installOption;
+        }
+        if (!Utils::isUnset($request->sourceDirName)) {
+            $body['sourceDirName'] = $request->sourceDirName;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'InstallApp',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processes/apps/install',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GrantProcessInstanceForDownloadFileResponse::fromMap($this->doROARequest('GrantProcessInstanceForDownloadFile', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processInstances/spaces/files/urls/download', 'json', $req, $runtime));
+        return InstallAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1120,38 +1403,61 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InstallAppRequest $request
-     * @param InstallAppHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param ListProcessInstanceIdsRequest $request
+     * @param ListProcessInstanceIdsHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return InstallAppResponse
+     * @return ListProcessInstanceIdsResponse
      */
-    public function installAppWithOptions($request, $headers, $runtime)
+    public function listProcessInstanceIdsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->bizGroup)) {
-            @$body['bizGroup'] = $request->bizGroup;
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
         }
-        if (!Utils::isUnset($request->installOption)) {
-            @$body['installOption'] = $request->installOption;
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
         }
-        if (!Utils::isUnset($request->sourceDirName)) {
-            @$body['sourceDirName'] = $request->sourceDirName;
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->statuses)) {
+            $body['statuses'] = $request->statuses;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'ListProcessInstanceIds',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processes/instanceIds/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return InstallAppResponse::fromMap($this->doROARequest('InstallApp', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processes/apps/install', 'json', $req, $runtime));
+        return ListProcessInstanceIdsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1168,50 +1474,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListProcessInstanceIdsRequest $request
-     * @param ListProcessInstanceIdsHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param ListTodoWorkRecordsRequest $request
+     * @param ListTodoWorkRecordsHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return ListProcessInstanceIdsResponse
+     * @return ListTodoWorkRecordsResponse
      */
-    public function listProcessInstanceIdsWithOptions($request, $headers, $runtime)
+    public function listTodoWorkRecordsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->endTime)) {
-            @$body['endTime'] = $request->endTime;
-        }
+        $query = [];
         if (!Utils::isUnset($request->maxResults)) {
-            @$body['maxResults'] = $request->maxResults;
+            $query['maxResults'] = $request->maxResults;
         }
         if (!Utils::isUnset($request->nextToken)) {
-            @$body['nextToken'] = $request->nextToken;
+            $query['nextToken'] = $request->nextToken;
         }
-        if (!Utils::isUnset($request->processCode)) {
-            @$body['processCode'] = $request->processCode;
+        if (!Utils::isUnset($request->status)) {
+            $query['status'] = $request->status;
         }
-        if (!Utils::isUnset($request->startTime)) {
-            @$body['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->statuses)) {
-            @$body['statuses'] = $request->statuses;
-        }
-        if (!Utils::isUnset($request->userIds)) {
-            @$body['userIds'] = $request->userIds;
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListTodoWorkRecords',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/workRecords/todoTasks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ListProcessInstanceIdsResponse::fromMap($this->doROARequest('ListProcessInstanceIds', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processes/instanceIds/query', 'json', $req, $runtime));
+        return ListTodoWorkRecordsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1228,41 +1536,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListTodoWorkRecordsRequest $request
-     * @param ListTodoWorkRecordsHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param ListUserVisibleBpmsProcessesRequest $request
+     * @param ListUserVisibleBpmsProcessesHeaders $headers
+     * @param RuntimeOptions                      $runtime
      *
-     * @return ListTodoWorkRecordsResponse
+     * @return ListUserVisibleBpmsProcessesResponse
      */
-    public function listTodoWorkRecordsWithOptions($request, $headers, $runtime)
+    public function listUserVisibleBpmsProcessesWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
+            $query['maxResults'] = $request->maxResults;
         }
         if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->status)) {
-            @$query['status'] = $request->status;
+            $query['nextToken'] = $request->nextToken;
         }
         if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'ListUserVisibleBpmsProcesses',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processes/userVisibilities/templates',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return ListTodoWorkRecordsResponse::fromMap($this->doROARequest('ListTodoWorkRecords', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/workRecords/todoTasks', 'json', $req, $runtime));
+        return ListUserVisibleBpmsProcessesResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1279,38 +1595,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListUserVisibleBpmsProcessesRequest $request
-     * @param ListUserVisibleBpmsProcessesHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @param ProcessForecastRequest $request
+     * @param ProcessForecastHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return ListUserVisibleBpmsProcessesResponse
+     * @return ProcessForecastResponse
      */
-    public function listUserVisibleBpmsProcessesWithOptions($request, $headers, $runtime)
+    public function processForecastWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
+        $body = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $body['deptId'] = $request->deptId;
         }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
+        if (!Utils::isUnset($request->formComponentValues)) {
+            $body['formComponentValues'] = $request->formComponentValues;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
         }
         if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ProcessForecast',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processes/forecast',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ListUserVisibleBpmsProcessesResponse::fromMap($this->doROARequest('ListUserVisibleBpmsProcesses', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/processes/userVisibilities/templates', 'json', $req, $runtime));
+        return ProcessForecastResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1327,41 +1657,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ProcessForecastRequest $request
-     * @param ProcessForecastHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param QueryAllFormInstancesRequest $request
+     * @param QueryAllFormInstancesHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return ProcessForecastResponse
+     * @return QueryAllFormInstancesResponse
      */
-    public function processForecastWithOptions($request, $headers, $runtime)
+    public function queryAllFormInstancesWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->deptId)) {
-            @$body['deptId'] = $request->deptId;
+        $query = [];
+        if (!Utils::isUnset($request->appUuid)) {
+            $query['appUuid'] = $request->appUuid;
         }
-        if (!Utils::isUnset($request->formComponentValues)) {
-            @$body['formComponentValues'] = $request->formComponentValues;
+        if (!Utils::isUnset($request->formCode)) {
+            $query['formCode'] = $request->formCode;
         }
-        if (!Utils::isUnset($request->processCode)) {
-            @$body['processCode'] = $request->processCode;
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
         }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryAllFormInstances',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/forms/pages/instances',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ProcessForecastResponse::fromMap($this->doROARequest('ProcessForecast', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processes/forecast', 'json', $req, $runtime));
+        return QueryAllFormInstancesResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1378,41 +1719,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAllFormInstancesRequest $request
-     * @param QueryAllFormInstancesHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param QueryAllProcessInstancesRequest $request
+     * @param QueryAllProcessInstancesHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return QueryAllFormInstancesResponse
+     * @return QueryAllProcessInstancesResponse
      */
-    public function queryAllFormInstancesWithOptions($request, $headers, $runtime)
+    public function queryAllProcessInstancesWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->appUuid)) {
-            @$query['appUuid'] = $request->appUuid;
+            $query['appUuid'] = $request->appUuid;
         }
-        if (!Utils::isUnset($request->formCode)) {
-            @$query['formCode'] = $request->formCode;
+        if (!Utils::isUnset($request->endTimeInMills)) {
+            $query['endTimeInMills'] = $request->endTimeInMills;
         }
         if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
+            $query['maxResults'] = $request->maxResults;
         }
         if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $query['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->startTimeInMills)) {
+            $query['startTimeInMills'] = $request->startTimeInMills;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryAllProcessInstances',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processes/pages/instances',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryAllFormInstancesResponse::fromMap($this->doROARequest('QueryAllFormInstances', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/forms/pages/instances', 'json', $req, $runtime));
+        return QueryAllProcessInstancesResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1429,47 +1787,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAllProcessInstancesRequest $request
-     * @param QueryAllProcessInstancesHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param QueryFormByBizTypeRequest $request
+     * @param QueryFormByBizTypeHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return QueryAllProcessInstancesResponse
+     * @return QueryFormByBizTypeResponse
      */
-    public function queryAllProcessInstancesWithOptions($request, $headers, $runtime)
+    public function queryFormByBizTypeWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->appUuid)) {
-            @$query['appUuid'] = $request->appUuid;
+            $body['appUuid'] = $request->appUuid;
         }
-        if (!Utils::isUnset($request->endTimeInMills)) {
-            @$query['endTimeInMills'] = $request->endTimeInMills;
-        }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->processCode)) {
-            @$query['processCode'] = $request->processCode;
-        }
-        if (!Utils::isUnset($request->startTimeInMills)) {
-            @$query['startTimeInMills'] = $request->startTimeInMills;
+        if (!Utils::isUnset($request->bizTypes)) {
+            $body['bizTypes'] = $request->bizTypes;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryFormByBizType',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/forms/forminfos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryAllProcessInstancesResponse::fromMap($this->doROARequest('QueryAllProcessInstances', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/processes/pages/instances', 'json', $req, $runtime));
+        return QueryFormByBizTypeResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1486,35 +1843,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryFormByBizTypeRequest $request
-     * @param QueryFormByBizTypeHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param QueryFormInstanceRequest $request
+     * @param QueryFormInstanceHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return QueryFormByBizTypeResponse
+     * @return QueryFormInstanceResponse
      */
-    public function queryFormByBizTypeWithOptions($request, $headers, $runtime)
+    public function queryFormInstanceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->appUuid)) {
-            @$body['appUuid'] = $request->appUuid;
+            $query['appUuid'] = $request->appUuid;
         }
-        if (!Utils::isUnset($request->bizTypes)) {
-            @$body['bizTypes'] = $request->bizTypes;
+        if (!Utils::isUnset($request->formCode)) {
+            $query['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->formInstanceId)) {
+            $query['formInstanceId'] = $request->formInstanceId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryFormInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/forms/instances',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryFormByBizTypeResponse::fromMap($this->doROARequest('QueryFormByBizType', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/forms/forminfos/query', 'json', $req, $runtime));
+        return QueryFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1531,38 +1902,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryFormInstanceRequest $request
-     * @param QueryFormInstanceHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param QueryIntegratedTodoTaskRequest $request
+     * @param QueryIntegratedTodoTaskHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return QueryFormInstanceResponse
+     * @return QueryIntegratedTodoTaskResponse
      */
-    public function queryFormInstanceWithOptions($request, $headers, $runtime)
+    public function queryIntegratedTodoTaskWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->appUuid)) {
-            @$query['appUuid'] = $request->appUuid;
+        if (!Utils::isUnset($request->createBefore)) {
+            $query['createBefore'] = $request->createBefore;
         }
-        if (!Utils::isUnset($request->formCode)) {
-            @$query['formCode'] = $request->formCode;
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
         }
-        if (!Utils::isUnset($request->formInstanceId)) {
-            @$query['formInstanceId'] = $request->formInstanceId;
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryIntegratedTodoTask',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processCentres/todoTasks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryFormInstanceResponse::fromMap($this->doROARequest('QueryFormInstance', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/forms/instances', 'json', $req, $runtime));
+        return QueryIntegratedTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1579,41 +1964,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryIntegratedTodoTaskRequest $request
-     * @param QueryIntegratedTodoTaskHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param QueryProcessByBizCategoryIdRequest $request
+     * @param QueryProcessByBizCategoryIdHeaders $headers
+     * @param RuntimeOptions                     $runtime
      *
-     * @return QueryIntegratedTodoTaskResponse
+     * @return QueryProcessByBizCategoryIdResponse
      */
-    public function queryIntegratedTodoTaskWithOptions($request, $headers, $runtime)
+    public function queryProcessByBizCategoryIdWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->createBefore)) {
-            @$query['createBefore'] = $request->createBefore;
-        }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
+        if (!Utils::isUnset($request->bizType)) {
+            $query['bizType'] = $request->bizType;
         }
         if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryProcessByBizCategoryId',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processes/categories/templates',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryIntegratedTodoTaskResponse::fromMap($this->doROARequest('QueryIntegratedTodoTask', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/processCentres/todoTasks', 'json', $req, $runtime));
+        return QueryProcessByBizCategoryIdResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1630,35 +2020,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryProcessByBizCategoryIdRequest $request
-     * @param QueryProcessByBizCategoryIdHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param QuerySchemaByProcessCodeRequest $request
+     * @param QuerySchemaByProcessCodeHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return QueryProcessByBizCategoryIdResponse
+     * @return QuerySchemaByProcessCodeResponse
      */
-    public function queryProcessByBizCategoryIdWithOptions($request, $headers, $runtime)
+    public function querySchemaByProcessCodeWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->bizType)) {
-            @$query['bizType'] = $request->bizType;
+        if (!Utils::isUnset($request->appUuid)) {
+            $query['appUuid'] = $request->appUuid;
         }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+        if (!Utils::isUnset($request->processCode)) {
+            $query['processCode'] = $request->processCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QuerySchemaByProcessCode',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/forms/schemas/processCodes',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryProcessByBizCategoryIdResponse::fromMap($this->doROARequest('QueryProcessByBizCategoryId', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/processes/categories/templates', 'json', $req, $runtime));
+        return QuerySchemaByProcessCodeResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1675,35 +2076,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySchemaByProcessCodeRequest $request
-     * @param QuerySchemaByProcessCodeHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param RedirectWorkflowTaskRequest $request
+     * @param RedirectWorkflowTaskHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return QuerySchemaByProcessCodeResponse
+     * @return RedirectWorkflowTaskResponse
      */
-    public function querySchemaByProcessCodeWithOptions($request, $headers, $runtime)
+    public function redirectWorkflowTaskWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->appUuid)) {
-            @$query['appUuid'] = $request->appUuid;
+        $body = [];
+        if (!Utils::isUnset($request->actionName)) {
+            $body['actionName'] = $request->actionName;
         }
-        if (!Utils::isUnset($request->processCode)) {
-            @$query['processCode'] = $request->processCode;
+        if (!Utils::isUnset($request->file)) {
+            $body['file'] = $request->file;
+        }
+        if (!Utils::isUnset($request->operateUserId)) {
+            $body['operateUserId'] = $request->operateUserId;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        if (!Utils::isUnset($request->toUserId)) {
+            $body['toUserId'] = $request->toUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RedirectWorkflowTask',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/tasks/redirect',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return QuerySchemaByProcessCodeResponse::fromMap($this->doROARequest('QuerySchemaByProcessCode', 'workflow_1.0', 'HTTP', 'GET', 'AK', '/v1.0/workflow/forms/schemas/processCodes', 'json', $req, $runtime));
+        return RedirectWorkflowTaskResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1720,47 +2144,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RedirectWorkflowTaskRequest $request
-     * @param RedirectWorkflowTaskHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param SaveIntegratedInstanceRequest $request
+     * @param SaveIntegratedInstanceHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return RedirectWorkflowTaskResponse
+     * @return SaveIntegratedInstanceResponse
      */
-    public function redirectWorkflowTaskWithOptions($request, $headers, $runtime)
+    public function saveIntegratedInstanceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->actionName)) {
-            @$body['actionName'] = $request->actionName;
+        if (!Utils::isUnset($request->formComponentValueList)) {
+            $body['formComponentValueList'] = $request->formComponentValueList;
         }
-        if (!Utils::isUnset($request->file)) {
-            @$body['file'] = $request->file;
+        if (!Utils::isUnset($request->notifiers)) {
+            $body['notifiers'] = $request->notifiers;
         }
-        if (!Utils::isUnset($request->operateUserId)) {
-            @$body['operateUserId'] = $request->operateUserId;
+        if (!Utils::isUnset($request->originatorUserId)) {
+            $body['originatorUserId'] = $request->originatorUserId;
         }
-        if (!Utils::isUnset($request->remark)) {
-            @$body['remark'] = $request->remark;
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
         }
-        if (!Utils::isUnset($request->taskId)) {
-            @$body['taskId'] = $request->taskId;
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
         }
-        if (!Utils::isUnset($request->toUserId)) {
-            @$body['toUserId'] = $request->toUserId;
+        if (!Utils::isUnset($request->url)) {
+            $body['url'] = $request->url;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'SaveIntegratedInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processCentres/instances',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return RedirectWorkflowTaskResponse::fromMap($this->doROARequest('RedirectWorkflowTask', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/tasks/redirect', 'json', $req, $runtime));
+        return SaveIntegratedInstanceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1777,47 +2212,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SaveIntegratedInstanceRequest $request
-     * @param SaveIntegratedInstanceHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param SaveProcessRequest $request
+     * @param SaveProcessHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return SaveIntegratedInstanceResponse
+     * @return SaveProcessResponse
      */
-    public function saveIntegratedInstanceWithOptions($request, $headers, $runtime)
+    public function saveProcessWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->formComponentValueList)) {
-            @$body['formComponentValueList'] = $request->formComponentValueList;
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
         }
-        if (!Utils::isUnset($request->notifiers)) {
-            @$body['notifiers'] = $request->notifiers;
+        if (!Utils::isUnset($request->formComponents)) {
+            $body['formComponents'] = $request->formComponents;
         }
-        if (!Utils::isUnset($request->originatorUserId)) {
-            @$body['originatorUserId'] = $request->originatorUserId;
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
         }
         if (!Utils::isUnset($request->processCode)) {
-            @$body['processCode'] = $request->processCode;
+            $body['processCode'] = $request->processCode;
         }
-        if (!Utils::isUnset($request->title)) {
-            @$body['title'] = $request->title;
+        if (!Utils::isUnset($request->processFeatureConfig)) {
+            $body['processFeatureConfig'] = $request->processFeatureConfig;
         }
-        if (!Utils::isUnset($request->url)) {
-            @$body['url'] = $request->url;
+        if (!Utils::isUnset($request->templateConfig)) {
+            $body['templateConfig'] = $request->templateConfig;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'SaveProcess',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processCentres/schemas',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return SaveIntegratedInstanceResponse::fromMap($this->doROARequest('SaveIntegratedInstance', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processCentres/instances', 'json', $req, $runtime));
+        return SaveProcessResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1834,47 +2280,67 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SaveProcessRequest $request
-     * @param SaveProcessHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param StartProcessInstanceRequest $request
+     * @param StartProcessInstanceHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return SaveProcessResponse
+     * @return StartProcessInstanceResponse
      */
-    public function saveProcessWithOptions($request, $headers, $runtime)
+    public function startProcessInstanceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->description)) {
-            @$body['description'] = $request->description;
+        if (!Utils::isUnset($request->approvers)) {
+            $body['approvers'] = $request->approvers;
         }
-        if (!Utils::isUnset($request->formComponents)) {
-            @$body['formComponents'] = $request->formComponents;
+        if (!Utils::isUnset($request->ccList)) {
+            $body['ccList'] = $request->ccList;
         }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
+        if (!Utils::isUnset($request->ccPosition)) {
+            $body['ccPosition'] = $request->ccPosition;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            $body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->formComponentValues)) {
+            $body['formComponentValues'] = $request->formComponentValues;
+        }
+        if (!Utils::isUnset($request->microappAgentId)) {
+            $body['microappAgentId'] = $request->microappAgentId;
+        }
+        if (!Utils::isUnset($request->originatorUserId)) {
+            $body['originatorUserId'] = $request->originatorUserId;
         }
         if (!Utils::isUnset($request->processCode)) {
-            @$body['processCode'] = $request->processCode;
+            $body['processCode'] = $request->processCode;
         }
-        if (!Utils::isUnset($request->processFeatureConfig)) {
-            @$body['processFeatureConfig'] = $request->processFeatureConfig;
-        }
-        if (!Utils::isUnset($request->templateConfig)) {
-            @$body['templateConfig'] = $request->templateConfig;
+        if (!Utils::isUnset($request->targetSelectActioners)) {
+            $body['targetSelectActioners'] = $request->targetSelectActioners;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'StartProcessInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processInstances',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return SaveProcessResponse::fromMap($this->doROARequest('SaveProcess', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processCentres/schemas', 'json', $req, $runtime));
+        return StartProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1891,56 +2357,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param StartProcessInstanceRequest $request
-     * @param StartProcessInstanceHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param TerminateProcessInstanceRequest $request
+     * @param TerminateProcessInstanceHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return StartProcessInstanceResponse
+     * @return TerminateProcessInstanceResponse
      */
-    public function startProcessInstanceWithOptions($request, $headers, $runtime)
+    public function terminateProcessInstanceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->approvers)) {
-            @$body['approvers'] = $request->approvers;
+        if (!Utils::isUnset($request->isSystem)) {
+            $body['isSystem'] = $request->isSystem;
         }
-        if (!Utils::isUnset($request->ccList)) {
-            @$body['ccList'] = $request->ccList;
+        if (!Utils::isUnset($request->operatingUserId)) {
+            $body['operatingUserId'] = $request->operatingUserId;
         }
-        if (!Utils::isUnset($request->ccPosition)) {
-            @$body['ccPosition'] = $request->ccPosition;
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
         }
-        if (!Utils::isUnset($request->deptId)) {
-            @$body['deptId'] = $request->deptId;
-        }
-        if (!Utils::isUnset($request->formComponentValues)) {
-            @$body['formComponentValues'] = $request->formComponentValues;
-        }
-        if (!Utils::isUnset($request->microappAgentId)) {
-            @$body['microappAgentId'] = $request->microappAgentId;
-        }
-        if (!Utils::isUnset($request->originatorUserId)) {
-            @$body['originatorUserId'] = $request->originatorUserId;
-        }
-        if (!Utils::isUnset($request->processCode)) {
-            @$body['processCode'] = $request->processCode;
-        }
-        if (!Utils::isUnset($request->targetSelectActioners)) {
-            @$body['targetSelectActioners'] = $request->targetSelectActioners;
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'TerminateProcessInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processInstances/terminate',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return StartProcessInstanceResponse::fromMap($this->doROARequest('StartProcessInstance', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processInstances', 'json', $req, $runtime));
+        return TerminateProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1957,41 +2419,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param TerminateProcessInstanceRequest $request
-     * @param TerminateProcessInstanceHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param UpdateIntegratedTaskRequest $request
+     * @param UpdateIntegratedTaskHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return TerminateProcessInstanceResponse
+     * @return UpdateIntegratedTaskResponse
      */
-    public function terminateProcessInstanceWithOptions($request, $headers, $runtime)
+    public function updateIntegratedTaskWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->isSystem)) {
-            @$body['isSystem'] = $request->isSystem;
-        }
-        if (!Utils::isUnset($request->operatingUserId)) {
-            @$body['operatingUserId'] = $request->operatingUserId;
-        }
         if (!Utils::isUnset($request->processInstanceId)) {
-            @$body['processInstanceId'] = $request->processInstanceId;
+            $body['processInstanceId'] = $request->processInstanceId;
         }
-        if (!Utils::isUnset($request->remark)) {
-            @$body['remark'] = $request->remark;
+        if (!Utils::isUnset($request->tasks)) {
+            $body['tasks'] = $request->tasks;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateIntegratedTask',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processCentres/tasks',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return TerminateProcessInstanceResponse::fromMap($this->doROARequest('TerminateProcessInstance', 'workflow_1.0', 'HTTP', 'POST', 'AK', '/v1.0/workflow/processInstances/terminate', 'json', $req, $runtime));
+        return UpdateIntegratedTaskResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2008,35 +2475,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateIntegratedTaskRequest $request
-     * @param UpdateIntegratedTaskHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param UpdateProcessInstanceRequest $request
+     * @param UpdateProcessInstanceHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return UpdateIntegratedTaskResponse
+     * @return UpdateProcessInstanceResponse
      */
-    public function updateIntegratedTaskWithOptions($request, $headers, $runtime)
+    public function updateProcessInstanceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->processInstanceId)) {
-            @$body['processInstanceId'] = $request->processInstanceId;
+        if (!Utils::isUnset($request->notifiers)) {
+            $body['notifiers'] = $request->notifiers;
         }
-        if (!Utils::isUnset($request->tasks)) {
-            @$body['tasks'] = $request->tasks;
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->result)) {
+            $body['result'] = $request->result;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateProcessInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/processCentres/instances',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return UpdateIntegratedTaskResponse::fromMap($this->doROARequest('UpdateIntegratedTask', 'workflow_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/workflow/processCentres/tasks', 'json', $req, $runtime));
+        return UpdateProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2050,43 +2534,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateProcessInstanceHeaders([]);
 
         return $this->updateProcessInstanceWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param UpdateProcessInstanceRequest $request
-     * @param UpdateProcessInstanceHeaders $headers
-     * @param RuntimeOptions               $runtime
-     *
-     * @return UpdateProcessInstanceResponse
-     */
-    public function updateProcessInstanceWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->notifiers)) {
-            @$body['notifiers'] = $request->notifiers;
-        }
-        if (!Utils::isUnset($request->processInstanceId)) {
-            @$body['processInstanceId'] = $request->processInstanceId;
-        }
-        if (!Utils::isUnset($request->result)) {
-            @$body['result'] = $request->result;
-        }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateProcessInstanceResponse::fromMap($this->doROARequest('UpdateProcessInstance', 'workflow_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/workflow/processCentres/instances', 'json', $req, $runtime));
     }
 }

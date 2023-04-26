@@ -10,43 +10,39 @@ use AlibabaCloud\Tea\Model;
 class BatchCreateRequest extends Model
 {
     /**
-     * @description 卡片业务类型，打卡写死：industry_center
+     * @example industry_center
      *
      * @var string
      */
     public $cardBizCode;
 
     /**
-     * @description 卡片详细数据
-     *
      * @var data
      */
     public $data;
 
     /**
-     * @description 卡片幂等唯一键
+     * @example AFC35F13-8A88-728F-27C5-3616AD7DFF2E
      *
      * @var string
      */
     public $identifier;
 
     /**
-     * @description 小程序版本号
+     * @example 4
      *
      * @var int
      */
     public $jsVersion;
 
     /**
-     * @description isv业务类型
+     * @example QUPEIYIN
      *
      * @var string
      */
     public $sourceType;
 
     /**
-     * @description 老师用户id
-     *
      * @var string
      */
     public $userid;

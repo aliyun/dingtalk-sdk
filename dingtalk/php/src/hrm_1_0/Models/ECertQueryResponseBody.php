@@ -9,106 +9,102 @@ use AlibabaCloud\Tea\Model;
 class ECertQueryResponseBody extends Model
 {
     /**
-     * @description 身份证号码
+     * @example 3300111192912113
      *
      * @var string
      */
     public $certNO;
 
     /**
-     * @description 职务ID
+     * @example 1123124124124
      *
      * @var string
      */
     public $employJobId;
 
     /**
-     * @description 职务名称
+     * @example 职务
      *
      * @var string
      */
     public $employJobIdLabel;
 
     /**
-     * @description 职位ID
+     * @example 1231231232313123
      *
      * @var string
      */
     public $employPositionId;
 
     /**
-     * @description 职位名称
+     * @example 职位
      *
      * @var string
      */
     public $employPositionIdLabel;
 
     /**
-     * @description 职级ID
+     * @example 498192313
      *
      * @var string
      */
     public $employPositionRankId;
 
     /**
-     * @description 职级名称
+     * @example 职级
      *
      * @var string
      */
     public $employPositionRankIdLabel;
 
     /**
-     * @description 入职日期
+     * @example 2020-03-14
      *
      * @var string
      */
     public $hiredDate;
 
     /**
-     * @description 离职日期
+     * @example 2021-03-14
      *
      * @var string
      */
     public $lastWorkDay;
 
     /**
-     * @description 主部门ID
+     * @example -1
      *
      * @var int
      */
     public $mainDeptId;
 
     /**
-     * @description 主部门
+     * @example 测试部门
      *
      * @var string
      */
     public $mainDeptName;
 
     /**
-     * @description 姓名
+     * @example 李四
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 身份证姓名
+     * @example 张三
      *
      * @var string
      */
     public $realName;
 
     /**
-     * @description 被动离职原因
-     *
      * @var string[]
      */
     public $terminationReasonPassive;
 
     /**
-     * @description 主动离职原因
-     *
      * @var string[]
      */
     public $terminationReasonVoluntary;

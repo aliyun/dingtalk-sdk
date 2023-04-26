@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CreateConnectorResponseBody extends Model
 {
     /**
-     * @description responseUnitList
-     *
      * @var item[]
      */
     public $item;

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateRobotInteractiveCardResponseBody extends Model
 {
     /**
-     * @description 用于业务方后续查看已读列表的查询key
+     * @example xxxxxx
      *
      * @var string
      */

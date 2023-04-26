@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class PushDingMessageResponseBody extends Model
 {
     /**
-     * @description 返回1表示当前批次成功
-     *
      * @var int
      */
     public $content;

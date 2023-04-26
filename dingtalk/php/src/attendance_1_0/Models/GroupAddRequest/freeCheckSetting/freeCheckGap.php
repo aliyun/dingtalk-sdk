@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class freeCheckGap extends Model
 {
     /**
-     * @description 下班打卡最小打卡间隔（单位分钟）。
+     * @example 0
      *
      * @var int
      */
     public $offOnCheckGapMinutes;
 
     /**
-     * @description 上班打卡最小打卡间隔（单位分钟）。
+     * @example 0
      *
      * @var int
      */

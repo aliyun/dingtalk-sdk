@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class SaveTeamMembersResponseBody extends Model
 {
     /**
-     * @description 企业外的成员列表。
-     * 保存失败的时候会返回此列表。
      * @var notInOrgMembers[]
      */
     public $notInOrgMembers;
 
     /**
-     * @description 是否保存成功。
-     *
      * @var bool
      */
     public $saveSuccess;

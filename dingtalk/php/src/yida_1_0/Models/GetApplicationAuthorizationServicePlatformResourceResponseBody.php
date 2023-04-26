@@ -9,64 +9,46 @@ use AlibabaCloud\Tea\Model;
 class GetApplicationAuthorizationServicePlatformResourceResponseBody extends Model
 {
     /**
-     * @description accountTotalAmount
-     *
      * @var int
      */
     public $accountTotalAmount;
 
     /**
-     * @description accountUsageAmount
-     *
      * @var int
      */
     public $accountUsageAmount;
 
     /**
-     * @description appTotalAmount
-     *
      * @var int
      */
     public $appTotalAmount;
 
     /**
-     * @description attachmentTotalAmount
-     *
      * @var int
      */
     public $attachmentTotalAmount;
 
     /**
-     * @description attachmentUsageAmount
-     *
      * @var int
      */
     public $attachmentUsageAmount;
 
     /**
-     * @description instanceId
-     *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description instanceTotalAmount
-     *
      * @var int
      */
     public $instanceTotalAmount;
 
     /**
-     * @description instanceUsageAmount
-     *
      * @var int
      */
     public $instanceUsageAmount;
 
     /**
-     * @description pluginUsageAmount
-     *
      * @var int
      */
     public $pluginUsageAmount;

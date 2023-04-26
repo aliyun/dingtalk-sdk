@@ -10,29 +10,27 @@ use AlibabaCloud\Tea\Model;
 class updateProcessInstanceRequests extends Model
 {
     /**
-     * @description 抄送列表，注意最大抄送人数量不能超过30。
-     *
      * @var notifiers[]
      */
     public $notifiers;
 
     /**
-     * @description 实例id
+     * @example abc
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 实例结果：
-     * 实例状态为TERMINATED，必须设置代表含义，result取值agree和refuse均代表撤销审批流。
+     * @example agree
+     *
      * @var string
      */
     public $result;
 
     /**
-     * @description 实例状态：
-     * TERMINATED：终止审批流
+     * @example COMPLETED
+     *
      * @var string
      */
     public $status;

@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class userLastOperation extends Model
 {
     /**
-     * @description 操作人名称。
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 操作的时间戳（ms）。
-     *
      * @var int
      */
     public $time;

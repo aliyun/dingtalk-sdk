@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class authUserInfo extends Model
 {
     /**
-     * @description 授权管理员id
+     * @example manager975
      *
      * @var string
      */

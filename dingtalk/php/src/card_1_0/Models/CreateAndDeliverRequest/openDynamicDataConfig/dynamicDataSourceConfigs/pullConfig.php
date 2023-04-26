@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class pullConfig extends Model
 {
     /**
-     * @description 间隔
-     *
      * @var int
      */
     public $interval;
 
     /**
-     * @description 拉取策略 (NONE: 不拉取,无动态数据, INTERVAL: 间隔拉取, ONCE: 只拉取一次)
-     *
      * @var string
      */
     public $pullStrategy;
 
     /**
-     * @description 间隔的时间单位 (SECONDS, MINUTES, HOURS, DAYS)
-     *
      * @var string
      */
     public $timeUnit;

@@ -9,77 +9,75 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 创建时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 创建者ID。
+     * @example 601fdeb17f86xxxxxxxx
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 是否已删除。
+     * @example false
      *
      * @var bool
      */
     public $isDeleted;
 
     /**
-     * @description 是否特定任务角色才能流转该工作流状态。
+     * @example false
      *
      * @var bool
      */
     public $isTaskflowstatusruleexector;
 
     /**
-     * @description 任务工作流状态类型。  start: 开始  end: 结束  unset: 未设置
+     * @example start
      *
      * @var string
      */
     public $kind;
 
     /**
-     * @description 任务工作流状态名字。
+     * @example 未开始
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 任务工作流状态位置。
+     * @example 0
      *
      * @var int
      */
     public $pos;
 
     /**
-     * @description 拒绝的工作流状态Id。
-     *
      * @var string[]
      */
     public $rejectStatusIds;
 
     /**
-     * @description 任务工作流ID。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $taskflowId;
 
     /**
-     * @description 任务工作流状态ID。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $taskflowStatusId;
 
     /**
-     * @description 更新时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */

@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class UpdateTodoTaskRequest extends Model
 {
     /**
-     * @description 待办描述备注
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 完成状态
-     *
      * @var bool
      */
     public $done;
 
     /**
-     * @description 截止时间
-     *
      * @var int
      */
     public $dueTime;
 
     /**
-     * @description 执行者列表，需传用户的unionId
-     *
      * @var string[]
      */
     public $executorIds;
 
     /**
-     * @description 参与者列表，需传用户的unionId
-     *
      * @var string[]
      */
     public $participantIds;
 
     /**
-     * @description 待办标题
-     *
      * @var string
      */
     public $subject;
 
     /**
-     * @description 当前操作者id，需传用户的unionId
-     *
      * @var string
      */
     public $operatorId;

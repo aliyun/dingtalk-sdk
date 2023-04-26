@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class BatchSendOfficialAccountOTOMessageRequest extends Model
 {
     /**
-     * @description 服务窗帐号ID
-     *
      * @var string
      */
     public $accountId;
 
     /**
-     * @description 服务窗授权的调用方标识，可空
-     *
      * @var string
      */
     public $bizId;
 
     /**
-     * @description 消息详情
-     *
      * @var detail
      */
     public $detail;

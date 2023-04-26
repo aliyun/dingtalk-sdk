@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 发送申请ID
-     *
      * @var string
      */
     public $openApplyId;

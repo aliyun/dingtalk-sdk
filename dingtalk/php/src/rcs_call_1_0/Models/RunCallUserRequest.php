@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class RunCallUserRequest extends Model
 {
     /**
-     * @description 授权isv套件企业的corpid
+     * @example corpidxxxxx
      *
      * @var string
      */
     public $authorizeCorpId;
 
     /**
-     * @description 授权isv套件企业的员工userid
+     * @example xxxxx
      *
      * @var string
      */
     public $authorizeUserId;
 
     /**
-     * @description 订单id
+     * @example xxxx
      *
      * @var string
      */
     public $orderId;
 
     /**
-     * @description isv套件所属企业下的员工userid
+     * @example xxxx
      *
      * @var string
      */

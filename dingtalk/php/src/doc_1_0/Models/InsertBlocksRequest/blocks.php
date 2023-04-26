@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class blocks extends Model
 {
     /**
-     * @description 元素类型标识
-     *
      * @var string
      */
     public $blockType;
 
     /**
-     * @description 段落元素
-     *
      * @var paragraph
      */
     public $paragraph;

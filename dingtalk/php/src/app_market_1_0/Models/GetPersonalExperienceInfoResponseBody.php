@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetPersonalExperienceInfoResponseBody extends Model
 {
     /**
-     * @description 数据对象
-     *
      * @var result
      */
     public $result;

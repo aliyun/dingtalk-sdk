@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class vehicleList extends Model
 {
     /**
-     * @description 用车订单号
+     * @example 1231
      *
      * @var int
      */
     public $vehicleOrderId;
 
     /**
-     * @description 订单状态:0:初始状态,1:已超时,2:派单成功,3:派单失败,4:已退款,5:已支付,6:已取消
+     * @example 1
      *
      * @var int
      */

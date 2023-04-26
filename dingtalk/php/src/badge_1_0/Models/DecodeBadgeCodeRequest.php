@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class DecodeBadgeCodeRequest extends Model
 {
     /**
-     * @description 码值
-     *
      * @var string
      */
     public $payCode;
 
     /**
-     * @description 请求ID
-     *
      * @var string
      */
     public $requestId;

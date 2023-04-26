@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ClearRobotPluginResponseBody extends Model
 {
     /**
-     * @description 是否成功清除机器人快捷入口
-     *
      * @var bool
      */
     public $result;

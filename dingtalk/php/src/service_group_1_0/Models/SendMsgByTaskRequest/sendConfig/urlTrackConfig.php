@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class urlTrackConfig extends Model
 {
     /**
-     * @description 跟踪链接的标题
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 跟踪链接的坑位ID（sg开头）
-     *
      * @var string
      */
     public $trackId;
 
     /**
-     * @description 跟踪链接URL
-     *
      * @var string
      */
     public $trackUrl;

@@ -10,43 +10,41 @@ use AlibabaCloud\Tea\Model;
 class QueryInstancesByMultiConditionsRequest extends Model
 {
     /**
-     * @description 表单CODE
+     * @example DING_CUSTOMER
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 分页大小
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 游标位置
+     * @example 0
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 开放团队ID
+     * @example 888**
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 检索条件
+     * @example [     {         "fieldCode":"contact_name",         "fieldOperatorType":"like",         "value":"测试api"     } ]
      *
      * @var string
      */
     public $searchFields;
 
     /**
-     * @description 排序条件
-     *
      * @var sortFields[]
      */
     public $sortFields;

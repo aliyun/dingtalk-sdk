@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class recentList extends Model
 {
     /**
-     * @description 最近编辑时间
-     *
      * @var string
      */
     public $lastEditTime;
 
     /**
-     * @description 文档名称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 文档Id
-     *
      * @var string
      */
     public $nodeId;
 
     /**
-     * @description 文档打开url
-     *
      * @var string
      */
     public $url;

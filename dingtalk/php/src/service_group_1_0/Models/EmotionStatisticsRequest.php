@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class EmotionStatisticsRequest extends Model
 {
     /**
-     * @description 截止日期
+     * @example 20220101
      *
      * @var string
      */
     public $maxDt;
 
     /**
-     * @description 最大情绪值
+     * @example 0.8
      *
      * @var float
      */
     public $maxEmotion;
 
     /**
-     * @description 起始日期
+     * @example 20220101
      *
      * @var string
      */
     public $minDt;
 
     /**
-     * @description 最小情绪值
+     * @example 0
      *
      * @var float
      */
     public $minEmotion;
 
     /**
-     * @description 开放群ID列表（多个以逗号拼接）
+     * @example cidXX,cidYY
      *
      * @var string
      */
     public $openConversationIds;
 
     /**
-     * @description 开放群分组ID
+     * @example ksdfosd
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 开放团队ID
+     * @example KxisoOk
      *
      * @var string
      */

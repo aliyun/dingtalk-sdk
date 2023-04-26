@@ -30,15 +30,11 @@ class PatchEventRequest extends Model
     public $end;
 
     /**
-     * @description 扩展信息
-     *
      * @var string[]
      */
     public $extra;
 
     /**
-     * @description 日程id
-     *
      * @var string
      */
     public $id;
@@ -64,15 +60,11 @@ class PatchEventRequest extends Model
     public $reminders;
 
     /**
-     * @description 日程开始时间
-     *
      * @var start
      */
     public $start;
 
     /**
-     * @description 日程标题
-     *
      * @var string
      */
     public $summary;

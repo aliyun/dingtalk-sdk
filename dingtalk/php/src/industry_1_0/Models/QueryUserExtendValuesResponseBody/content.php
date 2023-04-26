@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 用户code
-     *
      * @var string
      */
     public $userCode;
 
     /**
-     * @description 扩展字段描述
-     *
      * @var string
      */
     public $userExtendDisplayName;
 
     /**
-     * @description 扩展字段key
-     *
      * @var string
      */
     public $userExtendKey;
 
     /**
-     * @description 扩展字段value
-     *
      * @var string
      */
     public $userExtendValue;

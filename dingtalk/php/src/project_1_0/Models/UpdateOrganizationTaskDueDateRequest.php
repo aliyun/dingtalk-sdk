@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateOrganizationTaskDueDateRequest extends Model
 {
     /**
-     * @description 是否禁止动态
+     * @example true
      *
      * @var bool
      */
     public $disableActivity;
 
     /**
-     * @description 是否禁止通知
+     * @example true
      *
      * @var bool
      */
     public $disableNotification;
 
     /**
-     * @description 任务截止时间
+     * @example 2022-06-13T03:30:42.830Z
      *
      * @var string
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryBatchTradeOrderResponseBody extends Model
 {
     /**
-     * @description 批量交易订单VO
-     *
      * @var batchTradeOrderVOs[]
      */
     public $batchTradeOrderVOs;

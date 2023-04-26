@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class CollegeUpdateCollegeDeptRequest extends Model
 {
     /**
-     * @description 部门id
+     * @example 1111
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 部门名称
-     *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 排序因子
+     * @example 10
      *
      * @var int
      */
     public $sortFactor;
 
     /**
-     * @description 父部门id
+     * @example 22222
      *
      * @var int
      */

@@ -9,21 +9,17 @@ use AlibabaCloud\Tea\Model;
 class ListSubCorpsRequest extends Model
 {
     /**
-     * @description 是否查询直接下级
-     *
      * @var bool
      */
     public $isOnlyDirect;
 
     /**
-     * @description 下属组织的组织ID，比如下属镇、村的corpId
-     *
      * @var string
      */
     public $subCorpId;
 
     /**
-     * @description 下级指定组织层级列表，组织层级为county,town,community,residential，依次为区/县、乡/镇/街道、社区/村、小区，如果查多个用 '|' 分隔
+     * @example county|community
      *
      * @var string
      */

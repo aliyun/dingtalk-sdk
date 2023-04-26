@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class CampusAddRenterMemberRequest extends Model
 {
     /**
-     * @description 扩展字段
+     * @example {"age":8}
      *
      * @var string
      */
     public $extend;
 
     /**
-     * @description 手机号
+     * @example 158********
      *
      * @var string
      */
     public $mobile;
 
     /**
-     * @description 名字
+     * @example 张三组
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 租客id
+     * @example 612355
      *
      * @var int
      */
     public $renterId;
 
     /**
-     * @description 类型
+     * @example admin
      *
      * @var string
      */

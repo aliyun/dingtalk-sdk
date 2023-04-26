@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class deptList extends Model
 {
     /**
-     * @description id
-     *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description name
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description parentId
-     *
      * @var int
      */
     public $parentId;

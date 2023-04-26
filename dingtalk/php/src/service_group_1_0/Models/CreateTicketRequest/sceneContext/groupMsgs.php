@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class groupMsgs extends Model
 {
     /**
-     * @description 是否为锚点消息
+     * @example true
      *
      * @var bool
      */
     public $anchor;
 
     /**
-     * @description 勾选消息openMsgId
+     * @example msgsbY4BzTCNX0/ClUwoTTs7w==
      *
      * @var string
      */

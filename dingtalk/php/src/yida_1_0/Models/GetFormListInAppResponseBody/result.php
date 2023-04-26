@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 分页参数，当前页码
-     *
      * @var int
      */
     public $currentPage;
 
     /**
-     * @description 返回的表单列表
-     *
      * @var data[]
      */
     public $data;
 
     /**
-     * @description 符合条件的总数目
-     *
      * @var int
      */
     public $totalCount;

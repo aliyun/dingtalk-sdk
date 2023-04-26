@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class AddDeviceRequest extends Model
 {
     /**
-     * @description 商户id
+     * @example 123123123
      *
      * @var string
      */
     public $merchantId;
 
     /**
-     * @description 设备型号
+     * @example M-123123
      *
      * @var string
      */
     public $model;
 
     /**
-     * @description 设备名称
+     * @example 支付设备
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 消费场景
+     * @example 1
      *
      * @var int
      */
     public $scene;
 
     /**
-     * @description sn码
+     * @example sn1234324234
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 设备状态
+     * @example 1
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 设备类型
+     * @example 1
      *
      * @var int
      */

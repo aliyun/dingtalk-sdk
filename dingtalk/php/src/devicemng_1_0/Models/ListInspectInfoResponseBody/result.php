@@ -9,70 +9,66 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 设备码
+     * @example testDeviceCode
      *
      * @var string
      */
     public $deviceCode;
 
     /**
-     * @description 设备名称
+     * @example 测试设备名称
      *
      * @var string
      */
     public $deviceName;
 
     /**
-     * @description 创建时间
+     * @example 2022-09-10 12:00
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 处理时间
+     * @example 2022-09-10 12:00
      *
      * @var string
      */
     public $handleTime;
 
     /**
-     * @description 维修人员
-     *
      * @var string[]
      */
     public $maintenanceStaff;
 
     /**
-     * @description 巡检表名称
+     * @example 巡检表F
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 巡检/保养内容
+     * @example 巡检项1：高度（正常)
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 处理结果（1:未修复，2:已修复）
+     * @example 1
      *
      * @var int
      */
     public $repairStatus;
 
     /**
-     * @description 巡检/保养结果：0:正常，1:异常
-     *
      * @var int
      */
     public $status;
 
     /**
-     * @description 类型（inspect：巡检，protect：保养）
+     * @example inspect
      *
      * @var string
      */

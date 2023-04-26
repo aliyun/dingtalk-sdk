@@ -15,8 +15,6 @@ class result extends Model
     public $formUkSettings;
 
     /**
-     * @description 查重列表表头字段id列表。
-     *
      * @var string[]
      */
     public $headerFieldIds;

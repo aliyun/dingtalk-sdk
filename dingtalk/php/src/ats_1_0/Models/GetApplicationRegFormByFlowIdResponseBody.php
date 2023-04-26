@@ -9,70 +9,70 @@ use AlibabaCloud\Tea\Model;
 class GetApplicationRegFormByFlowIdResponseBody extends Model
 {
     /**
-     * @description 候选人标识
+     * @example xxx
      *
      * @var string
      */
     public $candidateId;
 
     /**
-     * @description 邀填人员工标识
+     * @example manager5875
      *
      * @var string
      */
     public $creatorUserId;
 
     /**
-     * @description 招聘流程标识
+     * @example flowXXX
      *
      * @var string
      */
     public $flowId;
 
     /**
-     * @description 表单标识
+     * @example formXXX
      *
      * @var string
      */
     public $formId;
 
     /**
-     * @description 创建时间（邀填时间，单位：毫秒）
+     * @example 1626775016427
      *
      * @var int
      */
     public $gmtCreateMillis;
 
     /**
-     * @description 更新时间（填写时间，单位：毫秒），仅当表单状态为已填写时有效
+     * @example 1626775016427
      *
      * @var int
      */
     public $gmtModifiedMillis;
 
     /**
-     * @description 职位标识
+     * @example jobXXX
      *
      * @var string
      */
     public $jobId;
 
     /**
-     * @description 表单状态（0表示未填写，1表示已填写）
+     * @example 0
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 模板标识
+     * @example templateXXX
      *
      * @var string
      */
     public $templateId;
 
     /**
-     * @description 模板版本
+     * @example 0
      *
      * @var int
      */

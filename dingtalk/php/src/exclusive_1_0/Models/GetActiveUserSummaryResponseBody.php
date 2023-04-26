@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetActiveUserSummaryResponseBody extends Model
 {
     /**
-     * @description 月活跃人数
+     * @example 20
      *
      * @var string
      */

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryMeetingRoomListRequest extends Model
 {
     /**
-     * @description 请求分页大小
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 请求分页token
+     * @example 124
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 操作人unionId
+     * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string
      */

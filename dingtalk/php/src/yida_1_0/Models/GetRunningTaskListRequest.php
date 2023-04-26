@@ -9,36 +9,28 @@ use AlibabaCloud\Tea\Model;
 class GetRunningTaskListRequest extends Model
 {
     /**
-     * @description appType
-     *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 流程实例id列表, 逗号分隔
+     * @example xaff,afdfaf,fdsfasdf
      *
      * @var string
      */
     public $processInstanceIdList;
 
     /**
-     * @description systemToken
-     *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 用户所属的企业id
-     *
      * @var string
      */
     public $userCorpId;
 
     /**
-     * @description userId
-     *
      * @var string
      */
     public $userId;

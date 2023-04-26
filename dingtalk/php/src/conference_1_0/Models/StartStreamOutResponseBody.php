@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class StartStreamOutResponseBody extends Model
 {
     /**
-     * @description 失败的地址与失败原因映射
-     *
      * @var mixed[]
      */
     public $failStreamMap;
 
     /**
-     * @description 成功推流地址与liveId映射
-     *
      * @var mixed[]
      */
     public $successStreamMap;

@@ -14,57 +14,41 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 科室列表
-     *
      * @var deptList[]
      */
     public $deptList;
 
     /**
-     * @description 医疗组列表
-     *
      * @var groupList[]
      */
     public $groupList;
 
     /**
-     * @description 工号
-     *
      * @var string
      */
     public $jobNumber;
 
     /**
-     * @description 状态列表
-     *
      * @var jobStatus[]
      */
     public $jobStatus;
 
     /**
-     * @description 职称
-     *
      * @var professionalTitle
      */
     public $professionalTitle;
 
     /**
-     * @description 医生的userId
-     *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 用户名称
-     *
      * @var string
      */
     public $userName;
 
     /**
-     * @description 身份属性
-     *
      * @var userProbList[]
      */
     public $userProbList;

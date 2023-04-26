@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateGroupAvatarResponseBody extends Model
 {
     /**
-     * @description 新头像地址。
-     *
      * @var string
      */
     public $newGroupAvatar;

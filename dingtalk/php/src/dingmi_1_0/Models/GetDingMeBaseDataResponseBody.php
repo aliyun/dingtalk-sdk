@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetDingMeBaseDataResponseBody extends Model
 {
     /**
-     * @description 是否缓存
-     *
      * @var bool
      */
     public $fromCache;
 
     /**
-     * @description 结果集
-     *
      * @var string[][]
      */
     public $rawset;
 
     /**
-     * @description 运行时间
-     *
      * @var int
      */
     public $runtime;
 
     /**
-     * @description 字段解释
-     *
      * @var mixed[]
      */
     public $tips;

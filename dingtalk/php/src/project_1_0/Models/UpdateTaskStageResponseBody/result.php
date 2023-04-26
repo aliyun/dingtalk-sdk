@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 任务完成时间(UTC)。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $accomplishTime;
 
     /**
-     * @description 是否任务已完成。
+     * @example false
      *
      * @var bool
      */
     public $isDone;
 
     /**
-     * @description 项目ID。
+     * @example 64a5301e420637003f5dxxxx
      *
      * @var string
      */
     public $projectId;
 
     /**
-     * @description 任务列ID。
+     * @example 69a5301e420637003f5dxxxx
      *
      * @var string
      */
     public $stageId;
 
     /**
-     * @description 任务ID。
+     * @example 63a5301e420637003f5dxxxx
      *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description 任务分组ID。
+     * @example 66a5301e420637003f5dxxxx
      *
      * @var string
      */
     public $taskListId;
 
     /**
-     * @description 更新时间(UTC)。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */

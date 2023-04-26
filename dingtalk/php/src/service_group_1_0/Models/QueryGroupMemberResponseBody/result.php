@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 群成员列表
-     *
      * @var groupMemberList[]
      */
     public $groupMemberList;
 
     /**
-     * @description 群开放id
-     *
      * @var string
      */
     public $openConversationId;

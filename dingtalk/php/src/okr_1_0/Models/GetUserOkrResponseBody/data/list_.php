@@ -13,126 +13,114 @@ use GuzzleHttp\Psr7\Stream;
 class list_ extends Model
 {
     /**
-     * @description 被对齐的 Objective。
-     *
      * @var Stream[]
      */
     public $alignFromIds;
 
     /**
-     * @description 对齐的 Objective。
-     *
      * @var Stream[]
      */
     public $alignToIds;
 
     /**
-     * @description Objective 内容。
+     * @example Objective demo
      *
      * @var Stream
      */
     public $content;
 
     /**
-     * @description 创建时间。时间戳
+     * @example 1648625407694
      *
      * @var float
      */
     public $gmtCreate;
 
     /**
-     * @description 更新时间。时间戳
+     * @example 1648625407694
      *
      * @var float
      */
     public $gmtModified;
 
     /**
-     * @description objective。
+     * @example 5dAX8
      *
      * @var Stream
      */
     public $id;
 
     /**
-     * @description KR 详情列表。
-     *
      * @var krList[]
      */
     public $krList;
 
     /**
-     * @description 所属者信息。
-     *
      * @var owner
      */
     public $owner;
 
     /**
-     * @description 周期 ID。
+     * @example 1006
      *
      * @var Stream
      */
     public $periodId;
 
     /**
-     * @description 权限值。
-     *
      * @var float[]
      */
     public $permission;
 
     /**
-     * @description 所在位置。
+     * @example 3021332
      *
      * @var int
      */
     public $position;
 
     /**
-     * @description 进度值。
-     *
      * @var progress
      */
     public $progress;
 
     /**
-     * @description 百分比值。
+     * @example 100
      *
      * @var float
      */
     public $progressPercent;
 
     /**
-     * @description 是否已发布。
+     * @example true
      *
      * @var bool
      */
     public $published;
 
     /**
-     * @description 分数值。
+     * @example 20
      *
      * @var float
      */
     public $score;
 
     /**
-     * @description 当前内容状态。
+     * @example 0
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 用户 ID。
+     * @example s34d
      *
      * @var Stream
      */
     public $userId;
 
     /**
-     * @description 权重值。
+     * @example 50
      *
      * @var float
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListOwnedOrgByStaffIdResponseBody extends Model
 {
     /**
-     * @description 组织列表
-     *
      * @var orgList[]
      */
     public $orgList;

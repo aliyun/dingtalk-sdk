@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ConvertLegacyEventIdResponseBody extends Model
 {
     /**
-     * @description legacyEventIdMap
-     *
      * @var mixed[]
      */
     public $legacyEventIdMap;

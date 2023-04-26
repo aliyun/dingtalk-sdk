@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class seniorWhiteList extends Model
 {
     /**
+     * @example 1234
+     *
      * @var string
      */
     public $id;
 
     /**
+     * @example 测试角色
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @example 1
+     *
      * @var int
      */
     public $type;

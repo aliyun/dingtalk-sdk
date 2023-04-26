@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 创建时间
+     * @example 2022-06-13T07:36:50.318Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 分组ID
+     * @example 6215dce28972510xxxxx
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 分组名字
+     * @example 分组1
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 更新时间
+     * @example 2022-06-13T07:36:50.318Z
      *
      * @var string
      */
     public $updated;
 
     /**
-     * @description 分组可见性。organization 或者 involves
+     * @example organization
      *
      * @var string
      */

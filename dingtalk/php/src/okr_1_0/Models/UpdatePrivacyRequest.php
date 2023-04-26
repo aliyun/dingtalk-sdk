@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class UpdatePrivacyRequest extends Model
 {
     /**
-     * @description 权限修改的类型
+     * @example public
      *
      * @var string
      */
     public $privacy;
 
     /**
-     * @description 当前目标的 ID
+     * @example 3RF5
      *
      * @var string
      */
     public $targetId;
 
     /**
-     * @description 当前目标的权限类型。
+     * @example 2
      *
      * @var string
      */
     public $targetType;
 
     /**
-     * @description 当前用户的userId。
+     * @example 0115396701752283
      *
      * @var string
      */

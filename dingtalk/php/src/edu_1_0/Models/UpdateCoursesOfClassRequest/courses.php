@@ -11,64 +11,52 @@ use AlibabaCloud\Tea\Model;
 class courses extends Model
 {
     /**
-     * @description 课程code：删除/更新必填
-     *
      * @var string
      */
     public $courseCode;
 
     /**
-     * @description 课组code
-     *
      * @var string
      */
     public $courseGroupCode;
 
     /**
-     * @description 课程名称
+     * @example 语文
      *
      * @var string
      */
     public $courseName;
 
     /**
-     * @description 创建者名字
+     * @example 李老师
      *
      * @var string
      */
     public $creatorName;
 
     /**
-     * @description 上课日期
-     *
      * @var dateModel
      */
     public $dateModel;
 
     /**
-     * @description 删除标记：要删除为ture
-     *
      * @var bool
      */
     public $deleteTag;
 
     /**
-     * @description 上课地点
+     * @example 正心楼1-1
      *
      * @var string
      */
     public $location;
 
     /**
-     * @description 节次模型
-     *
      * @var sectionModel
      */
     public $sectionModel;
 
     /**
-     * @description 老师Staffid
-     *
      * @var string[]
      */
     public $teacherStaffIds;

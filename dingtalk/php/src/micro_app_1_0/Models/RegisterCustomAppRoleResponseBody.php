@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class RegisterCustomAppRoleResponseBody extends Model
 {
     /**
-     * @description 角色id
+     * @example 123
      *
      * @var int
      */
     public $roleId;
 
     /**
-     * @description 角色版本号
+     * @example 123123123
      *
      * @var int
      */

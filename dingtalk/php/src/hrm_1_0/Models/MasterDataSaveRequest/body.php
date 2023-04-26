@@ -11,42 +11,38 @@ use AlibabaCloud\Tea\Model;
 class body extends Model
 {
     /**
-     * @description 数据变更时间戳，用以保证更新操作的顺序性
+     * @example 12312
      *
      * @var int
      */
     public $bizTime;
 
     /**
-     * @description 数据流水唯一标识，如流水号，用以唯一确认一条写入数据
+     * @example uk123
      *
      * @var string
      */
     public $bizUk;
 
     /**
-     * @description 业务域下的细分领域实体
+     * @example base
      *
      * @var string
      */
     public $entityCode;
 
     /**
-     * @description 数据字段列表
-     *
      * @var fieldList[]
      */
     public $fieldList;
 
     /**
-     * @description 业务域描述，系统分配
-     *
      * @var scope
      */
     public $scope;
 
     /**
-     * @description 员工id
+     * @example user123
      *
      * @var string
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupResponseBody extends Model
 {
     /**
-     * @description 入群url
+     * @example http://qr.dingtalk.com/xxxxx
      *
      * @var string
      */
     public $groupUrl;
 
     /**
-     * @description 开放群ID
+     * @example cidxxxxxx==
      *
      * @var string
      */

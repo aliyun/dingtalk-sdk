@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetChildOrgListResponseBody extends Model
 {
     /**
-     * @description 返回内容
-     *
      * @var CfOrgResp[]
      */
     public $content;
 
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $requestId;

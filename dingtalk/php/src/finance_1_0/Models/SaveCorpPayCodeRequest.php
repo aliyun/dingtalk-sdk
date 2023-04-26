@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class SaveCorpPayCodeRequest extends Model
 {
     /**
-     * @description 码标识，由钉钉颁发
+     * @example H_FISH_CANTEEN
      *
      * @var string
      */
     public $codeIdentity;
 
     /**
-     * @description 开通的企业ID
+     * @example dingxxxx
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 扩展参数
-     *
      * @var string[]
      */
     public $extInfo;
 
     /**
-     * @description 状态，OPEN或CLOSED
+     * @example OPEN
      *
      * @var string
      */

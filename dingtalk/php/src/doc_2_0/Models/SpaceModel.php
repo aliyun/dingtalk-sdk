@@ -13,78 +13,68 @@ use AlibabaCloud\Tea\Model;
 class SpaceModel extends Model
 {
     /**
-     * @description 封面
+     * @example https://img.abc.yyy
      *
      * @var string
      */
     public $cover;
 
     /**
-     * @description 空间描述信息
+     * @example This is some description.
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 知识库高清图标
-     *
      * @var hdIconVO
      */
     public $hdIconVO;
 
     /**
-     * @description 知识库图标
-     *
      * @var iconVO
      */
     public $iconVO;
 
     /**
-     * @description 知识库id。
+     * @example abc
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 知识库名称。
+     * @example hello
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 知识库所有者。
-     *
      * @var owner
      */
     public $owner;
 
     /**
-     * @description 知识库中最近编辑的三篇文档。
-     *
      * @var DentryModel[]
      */
     public $recentList;
 
     /**
-     * @description 知识库类型。
+     * @example 1
      *
      * @var int
      */
     public $type;
 
     /**
-     * @description 知识库访问url。
+     * @example https://xx.yy
      *
      * @var string
      */
     public $url;
 
     /**
-     * @description 访问者对当前知识库的权限等信息。
-     *
      * @var visitorInfo
      */
     public $visitorInfo;

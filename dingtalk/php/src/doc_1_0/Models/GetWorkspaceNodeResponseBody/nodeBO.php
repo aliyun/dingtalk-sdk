@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class nodeBO extends Model
 {
     /**
-     * @description 节点类型
-     *
      * @var string
      */
     public $docType;
 
     /**
-     * @description 最后编辑时间
-     *
      * @var int
      */
     public $lastEditTime;
 
     /**
-     * @description 节点名称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 节点Id
-     *
      * @var string
      */
     public $nodeId;
 
     /**
-     * @description 节点打开url
-     *
      * @var string
      */
     public $url;

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class InitCoursesOfClassResponseBody extends Model
 {
     /**
-     * @description 初始化是否成功。
+     * @example true
      *
      * @var bool
      */

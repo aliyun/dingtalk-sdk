@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class records extends Model
 {
     /**
-     * @description 群名称
+     * @example 钉钉专属服务群
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 入群链接
+     * @example dingtalk:xxx
      *
      * @var string
      */
     public $groupUrl;
 
     /**
-     * @description 开放群ID
+     * @example cidxxxxx==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开放群组ID
+     * @example xjfjdsiw
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 开放团队ID
+     * @example xkjhfker
      *
      * @var string
      */

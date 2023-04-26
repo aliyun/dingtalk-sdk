@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryUserPayInfoRequest extends Model
 {
     /**
-     * @description 人脸id
+     * @example 123
      *
      * @var string
      */
     public $faceId;
 
     /**
-     * @description 设备id
+     * @example 123
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 员工id
+     * @example 123
      *
      * @var string
      */

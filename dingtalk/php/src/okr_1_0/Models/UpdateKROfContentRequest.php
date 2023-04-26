@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class UpdateKROfContentRequest extends Model
 {
     /**
-     * @description KR的内容。
+     * @example 更新内容
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 待更新的划词 ID 列表。
-     *
      * @var string[]
      */
     public $updateQuoteList;
 
     /**
-     * @description 当前 KR ID。
+     * @example 46GM2
      *
      * @var string
      */
     public $krId;
 
     /**
-     * @description 当前用户的userId。
+     * @example 0115396701752283
      *
      * @var string
      */

@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class CreateCustomClassResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var result
      */
     public $result;
 
     /**
-     * @description success
-     *
      * @var bool
      */
     public $success;

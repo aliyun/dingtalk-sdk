@@ -10,63 +10,61 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 设备id
+     * @example 123
      *
      * @var string
      */
     public $deviceId;
 
     /**
-     * @description 设备昵称
+     * @example XX摄像头
      *
      * @var string
      */
     public $deviceName;
 
     /**
-     * @description 设备状态 0:在线 1:离线
+     * @example 0
      *
      * @var int
      */
     public $deviceStatus;
 
     /**
-     * @description 设备类型
+     * @example CAMERA
      *
      * @var string
      */
     public $deviceType;
 
     /**
-     * @description 设备类型名称
+     * @example 摄像头
      *
      * @var string
      */
     public $deviceTypeName;
 
     /**
-     * @description 直播地址
-     *
      * @var liveUrls
      */
     public $liveUrls;
 
     /**
-     * @description 设备地址
+     * @example XX地址
      *
      * @var string
      */
     public $location;
 
     /**
-     * @description 设备父节点id
+     * @example 123
      *
      * @var string
      */
     public $parentId;
 
     /**
-     * @description 产品类型 摄像头:CAMERA 其它:OTHERS
+     * @example CAMERA
      *
      * @var string
      */

@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class orgInfoList extends Model
 {
     /**
-     * @description 组织ID
+     * @example ding32xxxxxxxxe0105d
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 是否是主组织
+     * @example true
      *
      * @var bool
      */
     public $isMainOrg;
 
     /**
-     * @description 组织图标地址
+     * @example http://xxx.dingtalk.com/xxx.jpg
      *
      * @var string
      */
     public $logoUrl;
 
     /**
-     * @description 组织全称
+     * @example 钉钉(中国)信息技术有限公司
      *
      * @var string
      */
     public $orgFullName;
 
     /**
-     * @description 组织名称
+     * @example 钉钉
      *
      * @var string
      */

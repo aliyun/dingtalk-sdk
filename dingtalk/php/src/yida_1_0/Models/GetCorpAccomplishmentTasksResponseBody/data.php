@@ -9,141 +9,101 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description activeTime
-     *
      * @var string
      */
     public $activeTimeGMT;
 
     /**
-     * @description actualActionerId
-     *
      * @var string
      */
     public $actualActionerId;
 
     /**
-     * @description appType
-     *
      * @var string
      */
     public $appType;
 
     /**
-     * @description createTime
-     *
      * @var string
      */
     public $createTimeGMT;
 
     /**
-     * @description finishTime
-     *
      * @var string
      */
     public $finishTimeGMT;
 
     /**
-     * @description originatorEmail
-     *
      * @var string
      */
     public $originatorEmail;
 
     /**
-     * @description originatorId
-     *
      * @var string
      */
     public $originatorId;
 
     /**
-     * @description originatorName
-     *
      * @var string
      */
     public $originatorName;
 
     /**
-     * @description originatorNameEn
-     *
      * @var string
      */
     public $originatorNameInEnglish;
 
     /**
-     * @description originatorNickName
-     *
      * @var string
      */
     public $originatorNickName;
 
     /**
-     * @description originatorNickNameEn
-     *
      * @var string
      */
     public $originatorNickNameInEnglish;
 
     /**
-     * @description originatorPhoto
-     *
      * @var string
      */
     public $originatorPhoto;
 
     /**
-     * @description outResult
-     *
      * @var string
      */
     public $outResult;
 
     /**
-     * @description outResultName
-     *
      * @var string
      */
     public $outResultName;
 
     /**
-     * @description processInstanceId
-     *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description status
-     *
      * @var string
      */
     public $status;
 
     /**
-     * @description taskId
-     *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description taskType
-     *
      * @var string
      */
     public $taskType;
 
     /**
-     * @description title
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description titleEn
-     *
      * @var string
      */
     public $titleInEnglish;

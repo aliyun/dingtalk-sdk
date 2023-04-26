@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class CreateSceneGroupConversationRequest extends Model
 {
     /**
-     * @description 功能增强
-     *
      * @var string[]
      */
     public $features;
 
     /**
-     * @description 群名称。
+     * @example 客户群
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 群主(钉外用户)userId。
+     * @example 1107****2120
      *
      * @var string
      */
     public $groupOwnerId;
 
     /**
-     * @description 群头像。
+     * @example http://***.png
      *
      * @var string
      */
@@ -43,7 +41,7 @@ class CreateSceneGroupConversationRequest extends Model
     public $managementOptions;
 
     /**
-     * @description 群模板Id。
+     * @example 8d42****nkld
      *
      * @var string
      */
@@ -55,7 +53,7 @@ class CreateSceneGroupConversationRequest extends Model
     public $userIdList;
 
     /**
-     * @description 建群去重的业务ID。
+     * @example asdazxc
      *
      * @var string
      */

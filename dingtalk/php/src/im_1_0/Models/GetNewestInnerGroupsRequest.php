@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetNewestInnerGroupsRequest extends Model
 {
     /**
-     * @description 用户userId。
+     * @example 015*****
      *
      * @var string
      */

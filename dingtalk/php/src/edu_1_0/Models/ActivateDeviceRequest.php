@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class ActivateDeviceRequest extends Model
 {
     /**
-     * @description 授权码
+     * @example fafdfa-rewerwr-rewew-rwe
      *
      * @var string
      */
     public $licenseKey;
 
     /**
-     * @description 设备型号
+     * @example model1
      *
      * @var string
      */
     public $model;
 
     /**
-     * @description 设备名称
+     * @example 三年级一班班牌
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 设备sn码
+     * @example ujoo-233
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 设备类型
+     * @example VIDEO_CALL
      *
      * @var string
      */

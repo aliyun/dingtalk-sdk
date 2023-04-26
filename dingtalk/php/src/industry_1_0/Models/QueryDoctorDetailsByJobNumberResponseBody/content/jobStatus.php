@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class jobStatus extends Model
 {
     /**
-     * @description 状态编码
-     *
      * @var string
      */
     public $code;
 
     /**
-     * @description 状态名称
-     *
      * @var string
      */
     public $statusName;

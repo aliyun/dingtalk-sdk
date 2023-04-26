@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CollegeActiveCollegeDeptGroupRequest extends Model
 {
     /**
-     * @description 部门id
+     * @example 11111
      *
      * @var int
      */

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class RedirectWorkflowTaskResponseBody extends Model
 {
     /**
-     * @description 是否转交成功
-     *
      * @var bool
      */
     public $result;

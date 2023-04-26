@@ -9,56 +9,42 @@ use AlibabaCloud\Tea\Model;
 class OpenObjectiveDTO extends Model
 {
     /**
-     * @description 负责人信息
-     *
      * @var OpenUserDTO
      */
     public $executor;
 
     /**
-     * @description 主键
-     *
      * @var string
      */
     public $id;
 
     /**
-     * @description KR列表
-     *
      * @var OpenKeyResultDTO[]
      */
     public $keyResults;
 
     /**
-     * @description 周期信息
-     *
      * @var OpenPeriodDTO
      */
     public $period;
 
     /**
-     * @description 进度
-     *
      * @var int
      */
     public $progress;
 
     /**
-     * @description 状态
-     *
      * @var int
      */
     public $status;
 
     /**
-     * @description 团队信息列表
-     *
      * @var OpenTeamDTO[]
      */
     public $teams;
 
     /**
-     * @description 目标标题
+     * @example 提升系统性能
      *
      * @var string
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetSimpleOvertimeSettingResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
      * @var result[]
      */
     public $result;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class AddAppToWorkBenchGroupRequest extends Model
 {
     /**
-     * @description 工作台分组id
+     * @example namexx
      *
      * @var string
      */
     public $componentId;
 
     /**
-     * @description 关联组织corpId
+     * @example corpxxxx
      *
      * @var string
      */
     public $ecologicalCorpId;
 
     /**
-     * @description 创建人unionId
+     * @example xxxx
      *
      * @var string
      */

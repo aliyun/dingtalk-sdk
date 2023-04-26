@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class QueryDevicePropertiesRequest extends Model
 {
     /**
-     * @description 设备属性名称列表
-     *
      * @var string[]
      */
     public $propertyNames;
 
     /**
-     * @description 查询设备id
+     * @example 1234
      *
      * @var string
      */
     public $deviceId;
 
     /**
-     * @description 查询设备unionId
+     * @example "lmvUrRkpboRrSMtgsiS9V3AiEiE"
      *
      * @var string
      */
     public $deviceUnionId;
 
     /**
-     * @description 查询人unionId
+     * @example "lmvUrEjpboFrSMtgsiS9V3AiEiE"
      *
      * @var string
      */

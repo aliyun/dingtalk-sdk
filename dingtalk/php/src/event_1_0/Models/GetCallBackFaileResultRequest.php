@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetCallBackFaileResultRequest extends Model
 {
     /**
-     * @description 大于等于时间戳
+     * @example 1606126433000
      *
      * @var int
      */
     public $beginTime;
 
     /**
-     * @description 小于等于时间戳
+     * @example 1606126493000
      *
      * @var int
      */

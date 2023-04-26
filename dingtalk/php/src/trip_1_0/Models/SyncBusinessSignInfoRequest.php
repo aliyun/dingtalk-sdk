@@ -9,45 +9,40 @@ use AlibabaCloud\Tea\Model;
 class SyncBusinessSignInfoRequest extends Model
 {
     /**
-     * @description 签约企业所支持的订单类目，如机票、酒店、火车票、打车。
-     * ["HOTEL","FLIGHT","TAXI","TRAIN"]
      * @var string[]
      */
     public $bizTypeList;
 
     /**
-     * @description 开通企业支付的时间戳，毫秒
-     *
+     * @example 1661927020219
      *
      * @var string
      */
     public $gmtOrgPay;
 
     /**
-     * @description 签约时间戳，毫秒
-     *
+     * @example 1661927020219
      *
      * @var string
      */
     public $gmtSign;
 
     /**
-     * @description 开通企业支付状态
-     *
+     * @example ORG_PAY
      *
      * @var string
      */
     public $orgPayStatus;
 
     /**
-     * @description 企业签约状态
+     * @example SIGN
      *
      * @var string
      */
     public $signStatus;
 
     /**
-     * @description 签约企业corpId
+     * @example ding89233847892ndkas
      *
      * @var string
      */

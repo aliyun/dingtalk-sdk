@@ -12,43 +12,31 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 应用对象
-     *
      * @var appLink[]
      */
     public $appLink;
 
     /**
-     * @description 审批人
-     *
      * @var string
      */
     public $approveName;
 
     /**
-     * @description 联系人
-     *
      * @var string[]
      */
     public $contacts;
 
     /**
-     * @description 创建人
-     *
      * @var string
      */
     public $creatorName;
 
     /**
-     * @description 创建时间
-     *
      * @var int
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间
-     *
      * @var int
      */
     public $gmtModify;
@@ -59,92 +47,66 @@ class data extends Model
     public $highLightWordAlias;
 
     /**
-     * @description 内部群是否高亮
-     *
      * @var bool
      */
     public $imHighLight;
 
     /**
-     * @description 组织名称
-     *
      * @var string
      */
     public $orgName;
 
     /**
-     * @description 相关文档
-     *
      * @var relatedDoc[]
      */
     public $relatedDoc;
 
     /**
-     * @description 相关链接
-     *
      * @var relatedLink[]
      */
     public $relatedLink;
 
     /**
-     * @description 服务群是否高亮
-     *
      * @var bool
      */
     public $simHighLight;
 
     /**
-     * @description 抹除文本格式后的释义
-     *
      * @var string
      */
     public $simpleWordParaphrase;
 
     /**
-     * @description 标签列表
-     *
      * @var string[]
      */
     public $tagsList;
 
     /**
-     * @description 更新人
-     *
      * @var string
      */
     public $updaterName;
 
     /**
-     * @description 唯一编号
-     *
      * @var int
      */
     public $uuid;
 
     /**
-     * @description 别名
-     *
      * @var string[]
      */
     public $wordAlias;
 
     /**
-     * @description 全名
-     *
      * @var string
      */
     public $wordFullName;
 
     /**
-     * @description 词条名称
-     *
      * @var string
      */
     public $wordName;
 
     /**
-     * @description 原始释义(带格式数据的释义）
-     *
      * @var string
      */
     public $wordParaphrase;

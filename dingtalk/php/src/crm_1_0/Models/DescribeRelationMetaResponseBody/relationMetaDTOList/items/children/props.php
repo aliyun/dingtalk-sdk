@@ -51,7 +51,7 @@ class props extends Model
     public $dataSource;
 
     /**
-     * @description 标签字段 颜色属性
+     * @example 标签字段 颜色属性，格式：#0089FF
      *
      * @var string
      */
@@ -123,7 +123,7 @@ class props extends Model
     public $mode;
 
     /**
-     * @description 支持选择多个部门
+     * @example true：支持多选，false：单选
      *
      * @var bool
      */

@@ -10,22 +10,20 @@ use AlibabaCloud\Tea\Model;
 class GetDingPortalDetailResponseBody extends Model
 {
     /**
-     * @description 工作台ID
+     * @example SWAPP-XXX
      *
      * @var string
      */
     public $appUuid;
 
     /**
-     * @description 工作台名称
+     * @example 我的自定义工作台
      *
      * @var string
      */
     public $dingPortalName;
 
     /**
-     * @description 工作台页面信息
-     *
      * @var pages[]
      */
     public $pages;

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteTeamRequest extends Model
 {
     /**
-     * @description 操作人unionId。
+     * @example YEp3JcM******UIbhwiE
      *
      * @var string
      */

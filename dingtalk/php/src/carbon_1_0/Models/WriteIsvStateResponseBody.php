@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class WriteIsvStateResponseBody extends Model
 {
     /**
-     * @description 数据写入标识
+     * @example 1
      *
      * @var int
      */

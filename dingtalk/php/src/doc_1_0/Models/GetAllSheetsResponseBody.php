@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetAllSheetsResponseBody extends Model
 {
     /**
-     * @description 工作表列表
-     *
      * @var value[]
      */
     public $value;

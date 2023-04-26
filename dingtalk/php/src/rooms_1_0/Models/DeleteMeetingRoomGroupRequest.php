@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteMeetingRoomGroupRequest extends Model
 {
     /**
-     * @description 操作人unionId
+     * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string
      */

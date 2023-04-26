@@ -10,105 +10,105 @@ use AlibabaCloud\Tea\Model;
 class AddOpenKnowledgeRequest extends Model
 {
     /**
-     * @description 附件列表
+     * @example 1
      *
      * @var attachments[]
      */
     public $attachments;
 
     /**
-     * @description 知识点所属类目ID
+     * @example 44555
      *
      * @var int
      */
     public $categoryId;
 
     /**
-     * @description 知识点正文
+     * @example 这是服务群的介绍
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 生效结束时间(默认2100-01-01 23:59:59)
+     * @example 2100-01-01 23:59:59
      *
      * @var string
      */
     public $effectTimeend;
 
     /**
-     * @description 生效开始时间(默认1980-01-01 00:00:00)
+     * @example 1980-01-01 00:00:00
      *
      * @var string
      */
     public $effectTimestart;
 
     /**
-     * @description 扩展问法(多个英文逗号隔开)
+     * @example 这是问法1,这是问法2
      *
      * @var string
      */
     public $extTitle;
 
     /**
-     * @description 关键词(多个逗号隔开)
+     * @example 服务群,智能场景群
      *
      * @var string
      */
     public $keyword;
 
     /**
-     * @description 所属知识库唯一标识id
+     * @example 1
      *
      * @var int
      */
     public $libraryId;
 
     /**
-     * @description 开放团队ID
+     * @example Jxi12wo3qxoa
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 知识点来源
+     * @example XMD
      *
      * @var string
      */
     public $source;
 
     /**
-     * @description 标签(多个可逗号隔开)
+     * @example 服务群,智能场景群
      *
      * @var string
      */
     public $tags;
 
     /**
-     * @description 知识点标准问
+     * @example 服务群是什么
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 知识点类型()
+     * @example EXTERNAL
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 用户/员工ID
+     * @example 0159003451667222
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 用户昵称或姓名
+     * @example 钉三多
      *
      * @var string
      */

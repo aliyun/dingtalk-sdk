@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class payAccountVOList extends Model
 {
     /**
-     * @description 账户分类
+     * @example B
      *
      * @var string
      */
     public $accountClass;
 
     /**
-     * @description 账号唯一id
+     * @example 20210912001
      *
      * @var string
      */
     public $accountId;
 
     /**
-     * @description 账号名称
+     * @example test
      *
      * @var string
      */
     public $accountName;
 
     /**
-     * @description 付款账号（脱敏）
+     * @example 139****1
      *
      * @var string
      */
     public $accountNo;
 
     /**
-     * @description 账户备注
+     * @example 备注
      *
      * @var string
      */
     public $accountRemark;
 
     /**
-     * @description 账户类型
+     * @example ALIPAY
      *
      * @var string
      */

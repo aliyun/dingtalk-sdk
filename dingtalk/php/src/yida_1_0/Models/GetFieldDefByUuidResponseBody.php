@@ -15,8 +15,6 @@ class GetFieldDefByUuidResponseBody extends Model
     public $result;
 
     /**
-     * @description 是否成功，true代表成功
-     *
      * @var bool
      */
     public $success;

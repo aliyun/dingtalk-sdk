@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class UpdateReceiptVoucherStatusRequest extends Model
 {
     /**
-     * @description 账期
+     * @example abc
      *
      * @var string
      */
     public $accountPeriod;
 
     /**
-     * @description 操作类型 add 添加凭证关系、delete 删除凭证关系
+     * @example add
      *
      * @var string
      */
     public $actionType;
 
     /**
-     * @description 操作人工号
+     * @example 0021241
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 审批单据ID
+     * @example abc
      *
      * @var string
      */
     public $receiptId;
 
     /**
-     * @description 凭证CODE
+     * @example abc
      *
      * @var string
      */
     public $voucherCode;
 
     /**
-     * @description 凭证ID
+     * @example abc
      *
      * @var string
      */

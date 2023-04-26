@@ -10,43 +10,31 @@ use AlibabaCloud\Tea\Model;
 class module extends Model
 {
     /**
-     * @description 类目
-     *
      * @var int
      */
     public $category;
 
     /**
-     * @description 企业id
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 数据集合
-     *
      * @var dataList[]
      */
     public $dataList;
 
     /**
-     * @description 记账更新结束日期
-     *
      * @var string
      */
     public $periodEnd;
 
     /**
-     * @description 记账更新开始日期
-     *
      * @var string
      */
     public $periodStart;
 
     /**
-     * @description 总数据量
-     *
      * @var int
      */
     public $totalNum;

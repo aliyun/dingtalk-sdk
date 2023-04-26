@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class ProcessForecastRequest extends Model
 {
     /**
-     * @description 部门ID
+     * @example 1
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 表单数据内容，控件列表
-     *
      * @var formComponentValues[]
      */
     public $formComponentValues;
 
     /**
-     * @description 审批流的唯一码
+     * @example PROC-EF6YJL35P2-SCKICSB7P750S0YISYKV3-xxxx-1
      *
      * @var string
      */
     public $processCode;
 
     /**
-     * @description 审批发起人的userId
+     * @example manager432
      *
      * @var string
      */

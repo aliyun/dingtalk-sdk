@@ -35,8 +35,6 @@ class participants extends Model
     public $signOrder;
 
     /**
-     * @description 参与方签署位置信息列表
-     *
      * @var signPosList[]
      */
     public $signPosList;

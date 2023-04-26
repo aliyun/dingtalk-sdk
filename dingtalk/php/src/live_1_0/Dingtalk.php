@@ -69,18 +69,71 @@ use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param string                 $feedId
+     * @param AddShareCidListRequest $request
+     * @param AddShareCidListHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return AddShareCidListResponse
+     */
+    public function addShareCidListWithOptions($feedId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->groupIdType)) {
+            $body['groupIdType'] = $request->groupIdType;
+        }
+        if (!Utils::isUnset($request->groupIds)) {
+            $body['groupIds'] = $request->groupIds;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddShareCidList',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/cloudFeeds/' . $feedId . '/share',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddShareCidListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -98,40 +151,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                 $feedId
-     * @param AddShareCidListRequest $request
-     * @param AddShareCidListHeaders $headers
+     * @param CreateCloudFeedRequest $request
+     * @param CreateCloudFeedHeaders $headers
      * @param RuntimeOptions         $runtime
      *
-     * @return AddShareCidListResponse
+     * @return CreateCloudFeedResponse
      */
-    public function addShareCidListWithOptions($feedId, $request, $headers, $runtime)
+    public function createCloudFeedWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $body   = [];
-        if (!Utils::isUnset($request->groupIdType)) {
-            @$body['groupIdType'] = $request->groupIdType;
+        $body = [];
+        if (!Utils::isUnset($request->coverUrl)) {
+            $body['coverUrl'] = $request->coverUrl;
         }
-        if (!Utils::isUnset($request->groupIds)) {
-            @$body['groupIds'] = $request->groupIds;
+        if (!Utils::isUnset($request->intro)) {
+            $body['intro'] = $request->intro;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
         }
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->videoUrl)) {
+            $body['videoUrl'] = $request->videoUrl;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateCloudFeed',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/cloudFeeds',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddShareCidListResponse::fromMap($this->doROARequest('AddShareCidList', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/cloudFeeds/' . $feedId . '/share', 'json', $req, $runtime));
+        return CreateCloudFeedResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -148,47 +219,61 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCloudFeedRequest $request
-     * @param CreateCloudFeedHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param CreateLiveRequest $request
+     * @param CreateLiveHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return CreateCloudFeedResponse
+     * @return CreateLiveResponse
      */
-    public function createCloudFeedWithOptions($request, $headers, $runtime)
+    public function createLiveWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->coverUrl)) {
-            @$body['coverUrl'] = $request->coverUrl;
+            $body['coverUrl'] = $request->coverUrl;
         }
-        if (!Utils::isUnset($request->intro)) {
-            @$body['intro'] = $request->intro;
+        if (!Utils::isUnset($request->introduction)) {
+            $body['introduction'] = $request->introduction;
         }
-        if (!Utils::isUnset($request->startTime)) {
-            @$body['startTime'] = $request->startTime;
+        if (!Utils::isUnset($request->preEndTime)) {
+            $body['preEndTime'] = $request->preEndTime;
+        }
+        if (!Utils::isUnset($request->preStartTime)) {
+            $body['preStartTime'] = $request->preStartTime;
+        }
+        if (!Utils::isUnset($request->publicType)) {
+            $body['publicType'] = $request->publicType;
         }
         if (!Utils::isUnset($request->title)) {
-            @$body['title'] = $request->title;
+            $body['title'] = $request->title;
         }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->videoUrl)) {
-            @$body['videoUrl'] = $request->videoUrl;
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateLive',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/lives',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateCloudFeedResponse::fromMap($this->doROARequest('CreateCloudFeed', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/cloudFeeds', 'json', $req, $runtime));
+        return CreateLiveResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -205,50 +290,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateLiveRequest $request
-     * @param CreateLiveHeaders $headers
+     * @param DeleteLiveRequest $request
+     * @param DeleteLiveHeaders $headers
      * @param RuntimeOptions    $runtime
      *
-     * @return CreateLiveResponse
+     * @return DeleteLiveResponse
      */
-    public function createLiveWithOptions($request, $headers, $runtime)
+    public function deleteLiveWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->coverUrl)) {
-            @$body['coverUrl'] = $request->coverUrl;
-        }
-        if (!Utils::isUnset($request->introduction)) {
-            @$body['introduction'] = $request->introduction;
-        }
-        if (!Utils::isUnset($request->preEndTime)) {
-            @$body['preEndTime'] = $request->preEndTime;
-        }
-        if (!Utils::isUnset($request->preStartTime)) {
-            @$body['preStartTime'] = $request->preStartTime;
-        }
-        if (!Utils::isUnset($request->publicType)) {
-            @$body['publicType'] = $request->publicType;
-        }
-        if (!Utils::isUnset($request->title)) {
-            @$body['title'] = $request->title;
+        $query = [];
+        if (!Utils::isUnset($request->liveId)) {
+            $query['liveId'] = $request->liveId;
         }
         if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteLive',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/lives',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return CreateLiveResponse::fromMap($this->doROARequest('CreateLive', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/lives', 'json', $req, $runtime));
+        return DeleteLiveResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -265,35 +346,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteLiveRequest $request
-     * @param DeleteLiveHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param string                $feedId
+     * @param DeleteLiveFeedRequest $request
+     * @param DeleteLiveFeedHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return DeleteLiveResponse
+     * @return DeleteLiveFeedResponse
      */
-    public function deleteLiveWithOptions($request, $headers, $runtime)
+    public function deleteLiveFeedWithOptions($feedId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->liveId)) {
-            @$query['liveId'] = $request->liveId;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteLiveFeed',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/openFeeds/' . $feedId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteLiveResponse::fromMap($this->doROARequest('DeleteLive', 'live_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/live/lives', 'json', $req, $runtime));
+        return DeleteLiveFeedResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -312,33 +402,49 @@ class Dingtalk extends OpenApiClient
 
     /**
      * @param string                $feedId
-     * @param DeleteLiveFeedRequest $request
-     * @param DeleteLiveFeedHeaders $headers
+     * @param EditFeedReplayRequest $request
+     * @param EditFeedReplayHeaders $headers
      * @param RuntimeOptions        $runtime
      *
-     * @return DeleteLiveFeedResponse
+     * @return EditFeedReplayResponse
      */
-    public function deleteLiveFeedWithOptions($feedId, $request, $headers, $runtime)
+    public function editFeedReplayWithOptions($feedId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $query  = [];
+        $body = [];
+        if (!Utils::isUnset($request->editEndTime)) {
+            $body['editEndTime'] = $request->editEndTime;
+        }
+        if (!Utils::isUnset($request->editStartTime)) {
+            $body['editStartTime'] = $request->editStartTime;
+        }
         if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'EditFeedReplay',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/openFeeds/' . $feedId . '/cutReplay',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return DeleteLiveFeedResponse::fromMap($this->doROARequest('DeleteLiveFeed', 'live_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/live/openFeeds/' . $feedId . '', 'json', $req, $runtime));
+        return EditFeedReplayResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -356,40 +462,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                $feedId
-     * @param EditFeedReplayRequest $request
-     * @param EditFeedReplayHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param GetUserAllLiveListRequest $request
+     * @param GetUserAllLiveListHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return EditFeedReplayResponse
+     * @return GetUserAllLiveListResponse
      */
-    public function editFeedReplayWithOptions($feedId, $request, $headers, $runtime)
+    public function getUserAllLiveListWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $body   = [];
-        if (!Utils::isUnset($request->editEndTime)) {
-            @$body['editEndTime'] = $request->editEndTime;
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
         }
-        if (!Utils::isUnset($request->editStartTime)) {
-            @$body['editStartTime'] = $request->editStartTime;
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
         }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->statuses)) {
+            $body['statuses'] = $request->statuses;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'GetUserAllLiveList',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/users/allLiveInfos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return EditFeedReplayResponse::fromMap($this->doROARequest('EditFeedReplay', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/openFeeds/' . $feedId . '/cutReplay', 'json', $req, $runtime));
+        return GetUserAllLiveListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -406,52 +535,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserAllLiveListRequest $request
-     * @param GetUserAllLiveListHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param GetUserCreateLiveListRequest $request
+     * @param GetUserCreateLiveListHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return GetUserAllLiveListResponse
+     * @return GetUserCreateLiveListResponse
      */
-    public function getUserAllLiveListWithOptions($request, $headers, $runtime)
+    public function getUserCreateLiveListWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
         }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
         }
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+            $query['unionId'] = $request->unionId;
         }
         $body = [];
         if (!Utils::isUnset($request->endTime)) {
-            @$body['endTime'] = $request->endTime;
+            $body['endTime'] = $request->endTime;
         }
         if (!Utils::isUnset($request->startTime)) {
-            @$body['startTime'] = $request->startTime;
+            $body['startTime'] = $request->startTime;
         }
         if (!Utils::isUnset($request->statuses)) {
-            @$body['statuses'] = $request->statuses;
+            $body['statuses'] = $request->statuses;
         }
         if (!Utils::isUnset($request->title)) {
-            @$body['title'] = $request->title;
+            $body['title'] = $request->title;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'GetUserCreateLiveList',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/users/createLiveInfos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetUserAllLiveListResponse::fromMap($this->doROARequest('GetUserAllLiveList', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/users/allLiveInfos/query', 'json', $req, $runtime));
+        return GetUserCreateLiveListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -468,52 +608,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserCreateLiveListRequest $request
-     * @param GetUserCreateLiveListHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param GetUserWatchLiveListRequest $request
+     * @param GetUserWatchLiveListHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return GetUserCreateLiveListResponse
+     * @return GetUserWatchLiveListResponse
      */
-    public function getUserCreateLiveListWithOptions($request, $headers, $runtime)
+    public function getUserWatchLiveListWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->filterType)) {
+            $query['filterType'] = $request->filterType;
+        }
         if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
+            $query['maxResults'] = $request->maxResults;
         }
         if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
+            $query['nextToken'] = $request->nextToken;
         }
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
-        }
-        $body = [];
-        if (!Utils::isUnset($request->endTime)) {
-            @$body['endTime'] = $request->endTime;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$body['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->statuses)) {
-            @$body['statuses'] = $request->statuses;
-        }
-        if (!Utils::isUnset($request->title)) {
-            @$body['title'] = $request->title;
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetUserWatchLiveList',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/users/watchRecords',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetUserCreateLiveListResponse::fromMap($this->doROARequest('GetUserCreateLiveList', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/users/createLiveInfos/query', 'json', $req, $runtime));
+        return GetUserWatchLiveListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -530,41 +670,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserWatchLiveListRequest $request
-     * @param GetUserWatchLiveListHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param string                     $feedId
+     * @param ModifyFeedWhiteListRequest $tmpReq
+     * @param ModifyFeedWhiteListHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return GetUserWatchLiveListResponse
+     * @return ModifyFeedWhiteListResponse
      */
-    public function getUserWatchLiveListWithOptions($request, $headers, $runtime)
+    public function modifyFeedWhiteListWithOptions($feedId, $tmpReq, $headers, $runtime)
     {
-        Utils::validateModel($request);
+        Utils::validateModel($tmpReq);
+        $request = new ModifyFeedWhiteListShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->modifyUserList)) {
+            $request->modifyUserListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->modifyUserList, 'modifyUserList', 'json');
+        }
         $query = [];
-        if (!Utils::isUnset($request->filterType)) {
-            @$query['filterType'] = $request->filterType;
+        if (!Utils::isUnset($request->action)) {
+            $query['action'] = $request->action;
         }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
+        if (!Utils::isUnset($request->modifyUserListShrink)) {
+            $query['modifyUserList'] = $request->modifyUserListShrink;
         }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'ModifyFeedWhiteList',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/openFeeds/' . $feedId . '/whiteList',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetUserWatchLiveListResponse::fromMap($this->doROARequest('GetUserWatchLiveList', 'live_1.0', 'HTTP', 'GET', 'AK', '/v1.0/live/users/watchRecords', 'json', $req, $runtime));
+        return ModifyFeedWhiteListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -582,45 +736,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                     $feedId
-     * @param ModifyFeedWhiteListRequest $tmpReq
-     * @param ModifyFeedWhiteListHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param string                    $feedId
+     * @param QueryFeedWhiteListRequest $request
+     * @param QueryFeedWhiteListHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return ModifyFeedWhiteListResponse
+     * @return QueryFeedWhiteListResponse
      */
-    public function modifyFeedWhiteListWithOptions($feedId, $tmpReq, $headers, $runtime)
+    public function queryFeedWhiteListWithOptions($feedId, $request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $feedId  = OpenApiUtilClient::getEncodeParam($feedId);
-        $request = new ModifyFeedWhiteListShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->modifyUserList)) {
-            $request->modifyUserListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->modifyUserList, 'modifyUserList', 'json');
-        }
+        Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->action)) {
-            @$query['action'] = $request->action;
-        }
-        if (!Utils::isUnset($request->modifyUserListShrink)) {
-            @$query['modifyUserList'] = $request->modifyUserListShrink;
-        }
         if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryFeedWhiteList',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/openFeeds/' . $feedId . '/whiteList',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return ModifyFeedWhiteListResponse::fromMap($this->doROARequest('ModifyFeedWhiteList', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/openFeeds/' . $feedId . '/whiteList', 'json', $req, $runtime));
+        return QueryFeedWhiteListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -638,34 +791,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                    $feedId
-     * @param QueryFeedWhiteListRequest $request
-     * @param QueryFeedWhiteListHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param QueryLiveInfoRequest $request
+     * @param QueryLiveInfoHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return QueryFeedWhiteListResponse
+     * @return QueryLiveInfoResponse
      */
-    public function queryFeedWhiteListWithOptions($feedId, $request, $headers, $runtime)
+    public function queryLiveInfoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $query  = [];
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+        $query = [];
+        if (!Utils::isUnset($request->liveId)) {
+            $query['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryLiveInfo',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/lives',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryFeedWhiteListResponse::fromMap($this->doROARequest('QueryFeedWhiteList', 'live_1.0', 'HTTP', 'GET', 'AK', '/v1.0/live/openFeeds/' . $feedId . '/whiteList', 'json', $req, $runtime));
+        return QueryLiveInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -682,35 +847,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryLiveInfoRequest $request
-     * @param QueryLiveInfoHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param QueryLiveWatchDetailRequest $request
+     * @param QueryLiveWatchDetailHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return QueryLiveInfoResponse
+     * @return QueryLiveWatchDetailResponse
      */
-    public function queryLiveInfoWithOptions($request, $headers, $runtime)
+    public function queryLiveWatchDetailWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->liveId)) {
-            @$query['liveId'] = $request->liveId;
+            $query['liveId'] = $request->liveId;
         }
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryLiveWatchDetail',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/lives/watchDetails',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryLiveInfoResponse::fromMap($this->doROARequest('QueryLiveInfo', 'live_1.0', 'HTTP', 'GET', 'AK', '/v1.0/live/lives', 'json', $req, $runtime));
+        return QueryLiveWatchDetailResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -727,35 +903,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryLiveWatchDetailRequest $request
-     * @param QueryLiveWatchDetailHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param QueryLiveWatchUserListRequest $request
+     * @param QueryLiveWatchUserListHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return QueryLiveWatchDetailResponse
+     * @return QueryLiveWatchUserListResponse
      */
-    public function queryLiveWatchDetailWithOptions($request, $headers, $runtime)
+    public function queryLiveWatchUserListWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->liveId)) {
-            @$query['liveId'] = $request->liveId;
+            $query['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
         }
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryLiveWatchUserList',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/lives/watchUsers',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryLiveWatchDetailResponse::fromMap($this->doROARequest('QueryLiveWatchDetail', 'live_1.0', 'HTTP', 'GET', 'AK', '/v1.0/live/lives/watchDetails', 'json', $req, $runtime));
+        return QueryLiveWatchUserListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -769,57 +962,6 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryLiveWatchUserListHeaders([]);
 
         return $this->queryLiveWatchUserListWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryLiveWatchUserListRequest $request
-     * @param QueryLiveWatchUserListHeaders $headers
-     * @param RuntimeOptions                $runtime
-     *
-     * @return QueryLiveWatchUserListResponse
-     */
-    public function queryLiveWatchUserListWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->liveId)) {
-            @$query['liveId'] = $request->liveId;
-        }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryLiveWatchUserListResponse::fromMap($this->doROARequest('QueryLiveWatchUserList', 'live_1.0', 'HTTP', 'GET', 'AK', '/v1.0/live/lives/watchUsers', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QuerySubscribeStatusRequest $request
-     *
-     * @return QuerySubscribeStatusResponse
-     */
-    public function querySubscribeStatus($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QuerySubscribeStatusHeaders([]);
-
-        return $this->querySubscribeStatusWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -839,24 +981,89 @@ class Dingtalk extends OpenApiClient
         }
         $query = [];
         if (!Utils::isUnset($request->bodyShrink)) {
-            @$query['body'] = $request->bodyShrink;
+            $query['body'] = $request->bodyShrink;
         }
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QuerySubscribeStatus',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/subscribeStatuses/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QuerySubscribeStatusResponse::fromMap($this->doROARequest('QuerySubscribeStatus', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/subscribeStatuses/query', 'json', $req, $runtime));
+        return QuerySubscribeStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QuerySubscribeStatusRequest $request
+     *
+     * @return QuerySubscribeStatusResponse
+     */
+    public function querySubscribeStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QuerySubscribeStatusHeaders([]);
+
+        return $this->querySubscribeStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param string                $feedId
+     * @param StartCloudFeedRequest $request
+     * @param StartCloudFeedHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return StartCloudFeedResponse
+     */
+    public function startCloudFeedWithOptions($feedId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'StartCloudFeed',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/cloudFeeds/' . $feedId . '/start',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
+
+        return StartCloudFeedResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -874,34 +1081,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                $feedId
-     * @param StartCloudFeedRequest $request
-     * @param StartCloudFeedHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param string               $feedId
+     * @param StopCloudFeedRequest $request
+     * @param StopCloudFeedHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return StartCloudFeedResponse
+     * @return StopCloudFeedResponse
      */
-    public function startCloudFeedWithOptions($feedId, $request, $headers, $runtime)
+    public function stopCloudFeedWithOptions($feedId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $body   = [];
+        $body = [];
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'StopCloudFeed',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/cloudFeeds/' . $feedId . '/stop',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return StartCloudFeedResponse::fromMap($this->doROARequest('StartCloudFeed', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/cloudFeeds/' . $feedId . '/start', 'json', $req, $runtime));
+        return StopCloudFeedResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -919,34 +1136,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string               $feedId
-     * @param StopCloudFeedRequest $request
-     * @param StopCloudFeedHeaders $headers
+     * @param SubscribeLiveRequest $request
+     * @param SubscribeLiveHeaders $headers
      * @param RuntimeOptions       $runtime
      *
-     * @return StopCloudFeedResponse
+     * @return SubscribeLiveResponse
      */
-    public function stopCloudFeedWithOptions($feedId, $request, $headers, $runtime)
+    public function subscribeLiveWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $body   = [];
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        $query = [];
+        if (!Utils::isUnset($request->liveId)) {
+            $query['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->subscribe)) {
+            $query['subscribe'] = $request->subscribe;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SubscribeLive',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/lives/subscribe',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return StopCloudFeedResponse::fromMap($this->doROARequest('StopCloudFeed', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/cloudFeeds/' . $feedId . '/stop', 'json', $req, $runtime));
+        return SubscribeLiveResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -963,38 +1195,61 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SubscribeLiveRequest $request
-     * @param SubscribeLiveHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param UpdateLiveRequest $request
+     * @param UpdateLiveHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return SubscribeLiveResponse
+     * @return UpdateLiveResponse
      */
-    public function subscribeLiveWithOptions($request, $headers, $runtime)
+    public function updateLiveWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->liveId)) {
-            @$query['liveId'] = $request->liveId;
+        $body = [];
+        if (!Utils::isUnset($request->coverUrl)) {
+            $body['coverUrl'] = $request->coverUrl;
         }
-        if (!Utils::isUnset($request->subscribe)) {
-            @$query['subscribe'] = $request->subscribe;
+        if (!Utils::isUnset($request->introduction)) {
+            $body['introduction'] = $request->introduction;
+        }
+        if (!Utils::isUnset($request->liveId)) {
+            $body['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->preEndTime)) {
+            $body['preEndTime'] = $request->preEndTime;
+        }
+        if (!Utils::isUnset($request->preStartTime)) {
+            $body['preStartTime'] = $request->preStartTime;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
         }
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+            $body['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateLive',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/lives',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return SubscribeLiveResponse::fromMap($this->doROARequest('SubscribeLive', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/lives/subscribe', 'json', $req, $runtime));
+        return UpdateLiveResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1011,50 +1266,56 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateLiveRequest $request
-     * @param UpdateLiveHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param string                $feedId
+     * @param UpdateLiveFeedRequest $request
+     * @param UpdateLiveFeedHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return UpdateLiveResponse
+     * @return UpdateLiveFeedResponse
      */
-    public function updateLiveWithOptions($request, $headers, $runtime)
+    public function updateLiveFeedWithOptions($feedId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->coverUrl)) {
-            @$body['coverUrl'] = $request->coverUrl;
+            $query['coverUrl'] = $request->coverUrl;
         }
         if (!Utils::isUnset($request->introduction)) {
-            @$body['introduction'] = $request->introduction;
+            $query['introduction'] = $request->introduction;
         }
-        if (!Utils::isUnset($request->liveId)) {
-            @$body['liveId'] = $request->liveId;
-        }
-        if (!Utils::isUnset($request->preEndTime)) {
-            @$body['preEndTime'] = $request->preEndTime;
-        }
-        if (!Utils::isUnset($request->preStartTime)) {
-            @$body['preStartTime'] = $request->preStartTime;
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
         }
         if (!Utils::isUnset($request->title)) {
-            @$body['title'] = $request->title;
+            $query['title'] = $request->title;
         }
-        if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateLiveFeed',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/openFeeds/' . $feedId . '',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return UpdateLiveResponse::fromMap($this->doROARequest('UpdateLive', 'live_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/live/lives', 'json', $req, $runtime));
+        return UpdateLiveFeedResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1069,48 +1330,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateLiveFeedHeaders([]);
 
         return $this->updateLiveFeedWithOptions($feedId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                $feedId
-     * @param UpdateLiveFeedRequest $request
-     * @param UpdateLiveFeedHeaders $headers
-     * @param RuntimeOptions        $runtime
-     *
-     * @return UpdateLiveFeedResponse
-     */
-    public function updateLiveFeedWithOptions($feedId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $feedId = OpenApiUtilClient::getEncodeParam($feedId);
-        $query  = [];
-        if (!Utils::isUnset($request->coverUrl)) {
-            @$query['coverUrl'] = $request->coverUrl;
-        }
-        if (!Utils::isUnset($request->introduction)) {
-            @$query['introduction'] = $request->introduction;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$query['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->title)) {
-            @$query['title'] = $request->title;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return UpdateLiveFeedResponse::fromMap($this->doROARequest('UpdateLiveFeed', 'live_1.0', 'HTTP', 'POST', 'AK', '/v1.0/live/openFeeds/' . $feedId . '', 'json', $req, $runtime));
     }
 }

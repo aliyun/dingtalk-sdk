@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetAdministrativeLicensingResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * Content:许可内容
+     * @example [     {       "LicenseNo": "梯4403331978",       "StartDate": "2022-05-10",       "Department": "深圳市市场监督管理局",       "Content": "注册代码:7;设备种类:电梯",       "LicenseName": "特种设备使用登记",       "EndDate": "2099-12-31"     },     {       "LicenseNo": "东水务审﹝2021﹞8267号",       "StartDate": "2021-06-11",       "Department": "东莞市水务局",       "Content": "水土保持方案审批准予行政许可决定",       "LicenseName": "",       "EndDate": "2026-12-31"     } ]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

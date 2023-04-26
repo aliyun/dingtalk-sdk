@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class QueryCorpStatisticDataRequest extends Model
 {
     /**
-     * @description 结束时间（yyyymmdd）
+     * @example 20230101
      *
      * @var string
      */
     public $endTime;
 
     /**
-     * @description 开始时间（yyyymmdd）
+     * @example 20220101
      *
      * @var string
      */
     public $startTime;
 
     /**
-     * @description 模版id列表
-     *
      * @var string[]
      */
     public $templateIds;
 
     /**
-     * @description 操作者id
+     * @example RCsp7PJmmTUr7w0hbs9aKAiEiE
      *
      * @var string
      */

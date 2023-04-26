@@ -9,141 +9,105 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 附加费用金额
-     *
      * @var string
      */
     public $cgFjmoney;
 
     /**
-     * @description 附加费用分类
-     *
      * @var string
      */
     public $cgFjmoneylx;
 
     /**
-     * @description 优惠抹零金额
-     *
      * @var string
      */
     public $cgKjmoney;
 
     /**
-     * @description 优惠折扣率
-     *
      * @var string
      */
     public $cgMoneyzhekou;
 
     /**
-     * @description 执行状态
-     *
      * @var string
      */
     public $cgZxstate;
 
     /**
-     * @description 采购日期
-     *
      * @var string
      */
     public $cgdate;
 
     /**
-     * @description 采购主题
-     *
      * @var string
      */
     public $cgname;
 
     /**
-     * @description 采购单号
-     *
      * @var string
      */
     public $cgno;
 
     /**
-     * @description 采购摘要
-     *
      * @var string
      */
     public $cgremark;
 
     /**
-     * @description 采购分类
-     *
      * @var string
      */
     public $cgtype;
 
     /**
-     * @description 产品明细，json格式
+     * @example "child_mx":[{"产品ID":"1","数量":"10","单价":"58.5","总价":"585","明细备注":"包含的测试产品"}]
      *
      * @var string
      */
     public $childMx;
 
     /**
-     * @description 创建人
+     * @example 张三
      *
      * @var string
      */
     public $dataUserid;
 
     /**
-     * @description 我方代表
-     *
      * @var string
      */
     public $empid;
 
     /**
-     * @description 供应商联系人
-     *
      * @var string
      */
     public $gysLxrid;
 
     /**
-     * @description 联系方式
-     *
      * @var string
      */
     public $gysLxrinfo;
 
     /**
-     * @description 供应商
-     *
      * @var string
      */
     public $gysid;
 
     /**
-     * @description 供应商代表
-     *
      * @var string
      */
     public $gysjingban;
 
     /**
-     * @description 关联订单
-     *
      * @var string
      */
     public $orderHtid;
 
     /**
-     * @description 关联订单客户
-     *
      * @var string
      */
     public $orderKhid;
 
     /**
-     * @description 采购金额
-     *
      * @var string
      */
     public $summoney;

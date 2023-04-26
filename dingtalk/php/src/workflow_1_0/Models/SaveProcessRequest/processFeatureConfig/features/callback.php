@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class callback extends Model
 {
     /**
-     * @description 网关接口标识
+     * @example abc
      *
      * @var string
      */
     public $apiKey;
 
     /**
-     * @description 网关接口对应应用的uuid
+     * @example abc
      *
      * @var string
      */
     public $appUuid;
 
     /**
-     * @description 网关接口版本
+     * @example 1
      *
      * @var string
      */

@@ -9,70 +9,68 @@ use AlibabaCloud\Tea\Model;
 class CreateOrganizationTaskRequest extends Model
 {
     /**
-     * @description 任务标题
+     * @example 明天12点前完成周报撰写
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 任务创建日期
+     * @example 2021-08-13T07:36:50.318Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 是否禁止动态
+     * @example false
      *
      * @var bool
      */
     public $disableActivity;
 
     /**
-     * @description 是否禁止通知
+     * @example false
      *
      * @var bool
      */
     public $disableNotification;
 
     /**
-     * @description 任务截止日期
+     * @example 2021-08-13T07:36:50.318Z
      *
      * @var string
      */
     public $dueDate;
 
     /**
-     * @description 执行者id
+     * @example 173xxxx
      *
      * @var string
      */
     public $executorId;
 
     /**
-     * @description 参与者id
-     *
      * @var string[]
      */
     public $involveMembers;
 
     /**
-     * @description 任务备注
+     * @example 我是一条任务备注
      *
      * @var string
      */
     public $note;
 
     /**
-     * @description 优先级【-10,0,1,2】中选一个
+     * @example -10
      *
      * @var int
      */
     public $priority;
 
     /**
-     * @description 任务可见性。involves：仅参与者可见。members:所有人可见
+     * @example members
      *
      * @var string
      */

@@ -9,49 +9,45 @@ use AlibabaCloud\Tea\Model;
 class SendRobotMessageRequest extends Model
 {
     /**
-     * @description @群所有人为true， 默认false。
-     *
      * @var bool
      */
     public $atAll;
 
     /**
-     * @description @钉外账号在业务系统内的唯一标志。
+     * @example 1107****2120
      *
      * @var string
      */
     public $atAppUserId;
 
     /**
-     * @description @钉内账号userId。
+     * @example 1107****2120
      *
      * @var string
      */
     public $atDingUserId;
 
     /**
-     * @description 消息体内容，按照下面参考示例格式上传。
+     * @example { "content": "我就是我, 是不一样的烟火"}
      *
      * @var string
      */
     public $msgContent;
 
     /**
-     * @description 消息类型 文本：text，图片：photo，markdown：markdown，actionCard：actionCard。
+     * @example text
      *
      * @var string
      */
     public $msgType;
 
     /**
-     * @description 群会话Id列表。
-     *
      * @var string[]
      */
     public $openConversationIds;
 
     /**
-     * @description 机器人robotId（robotCode），指定哪个机器人发送消息
+     * @example kelian-custom-service-robot-101
      *
      * @var string
      */

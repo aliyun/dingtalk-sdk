@@ -11,21 +11,17 @@ use AlibabaCloud\Tea\Model;
 class scheduleItems extends Model
 {
     /**
-     * @description 结束时间，表示一个日期，或者一个带时区的时间戳
-     *
      * @var end
      */
     public $end;
 
     /**
-     * @description 开始时间，表示一个日期，或者一个带时区的时间戳
-     *
      * @var start
      */
     public $start;
 
     /**
-     * @description 状态: - BUSY：繁忙, - TENTATIVE：暂定繁忙
+     * @example BUSY
      *
      * @var string
      */

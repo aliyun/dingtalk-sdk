@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateTaskStageRequest extends Model
 {
     /**
-     * @description 任务列表Id。
+     * @example 64ba333e4206372f3f5cxxxx
      *
      * @var string
      */

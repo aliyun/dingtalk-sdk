@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ClearRecycleFilesRequest extends Model
 {
     /**
-     * @description 回收站类型
-     *
      * @var string
      */
     public $recycleType;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

@@ -9,63 +9,63 @@ use AlibabaCloud\Tea\Model;
 class ExecutePlatformTaskRequest extends Model
 {
     /**
-     * @description 应用ID
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 更新的表单数据
+     * @example 未知
      *
      * @var string
      */
     public $formDataJson;
 
     /**
-     * @description 语言
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 是否不执行校验&关联操作
+     * @example y
      *
      * @var string
      */
     public $noExecuteExpressions;
 
     /**
-     * @description 审批结果
-     *
+     * @example ●
+     * disagree
      * @var string
      */
     public $outResult;
 
     /**
-     * @description 流程实例ID
+     * @example f30233fb-72e1-4af4-8cb8-c7e0ea9ee530
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 审批意见
+     * @example 确认同意
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 应用秘钥
+     * @example hexxyyddd
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉的userId
+     * @example yida_pub_account
      *
      * @var string
      */

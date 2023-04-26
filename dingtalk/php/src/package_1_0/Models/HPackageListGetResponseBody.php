@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class HPackageListGetResponseBody extends Model
 {
     /**
-     * @description 离线包列表
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 总数量
-     *
      * @var int
      */
     public $totalCount;

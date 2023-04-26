@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class CreateWorkspaceDocRequest extends Model
 {
     /**
-     * @description 文档类型
-     *
      * @var string
      */
     public $docType;
 
     /**
-     * @description 文档名
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 操作人unionId
-     *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 父节点nodeId
-     *
      * @var string
      */
     public $parentNodeId;
 
     /**
-     * @description 文档模板id
-     *
      * @var string
      */
     public $templateId;

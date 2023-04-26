@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class groupMembers extends Model
 {
     /**
-     * @description 钉外账号在业务系统内的唯一标识。
+     * @example 1107****2120
      *
      * @var string
      */
     public $appUserId;
 
     /**
-     * @description 钉内账号userId。
+     * @example 1745****8778
      *
      * @var string
      */

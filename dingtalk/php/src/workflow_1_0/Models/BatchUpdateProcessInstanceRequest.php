@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class BatchUpdateProcessInstanceRequest extends Model
 {
     /**
-     * @description 实列列表。
-     *
      * @var updateProcessInstanceRequests[]
      */
     public $updateProcessInstanceRequests;

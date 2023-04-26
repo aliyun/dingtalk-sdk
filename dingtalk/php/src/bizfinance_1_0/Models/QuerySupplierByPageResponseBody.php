@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class QuerySupplierByPageResponseBody extends Model
 {
     /**
-     * @description 是否还有更多数据
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description resultList
-     *
      * @var list_[]
      */
     public $list;

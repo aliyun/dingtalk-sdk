@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryDepartmentExtendInfoRequest extends Model
 {
     /**
-     * @description 科室或医疗组code
+     * @example 1000
      *
      * @var int
      */
     public $deptCode;
 
     /**
-     * @description 扩展属性code
+     * @example 1
      *
      * @var string
      */

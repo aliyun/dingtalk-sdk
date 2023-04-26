@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class PublishInnerAppVersionResponseBody extends Model
 {
     /**
-     * @description 小程序发布结果
-     *
      * @var bool
      */
     public $result;

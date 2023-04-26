@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 应用编码
+     * @example D000183inventory
      *
      * @var string
      */
     public $appCode;
 
     /**
-     * @description 应用的来源类型。Custom=自开发的、Installed=安装的
+     * @example Installed
      *
      * @var string
      */
     public $appSource;
 
     /**
-     * @description 应用状态。Enable=启用、Forbidden=禁用、Warring=预警
+     * @example Enable
      *
      * @var string
      */
     public $appState;
 
     /**
-     * @description 应用显示名称
+     * @example 人事管理
      *
      * @var string
      */
     public $displayName;
 
     /**
-     * @description 应用所属的解决方案名称
+     * @example dev001
      *
      * @var string
      */

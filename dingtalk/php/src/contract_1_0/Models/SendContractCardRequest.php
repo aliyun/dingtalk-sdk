@@ -12,63 +12,53 @@ use AlibabaCloud\Tea\Model;
 class SendContractCardRequest extends Model
 {
     /**
-     * @description 卡片类型
+     * @example signing
      *
      * @var string
      */
     public $cardType;
 
     /**
-     * @description 合同信息
-     *
      * @var contractInfo
      */
     public $contractInfo;
 
     /**
-     * @description 合同的企业id
+     * @example ding5f62ac8a3c24952ebc961a6cb783455b
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 额外信息
-     *
      * @var string[]
      */
     public $extension;
 
     /**
-     * @description 审批实例id
+     * @example PROC_Xxxxxxxx
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 接收群id
-     *
      * @var string[]
      */
     public $receiveGroups;
 
     /**
-     * @description 接收者
-     *
      * @var receivers[]
      */
     public $receivers;
 
     /**
-     * @description 发送者
-     *
      * @var sender
      */
     public $sender;
 
     /**
-     * @description 是否同步单聊
+     * @example true
      *
      * @var bool
      */

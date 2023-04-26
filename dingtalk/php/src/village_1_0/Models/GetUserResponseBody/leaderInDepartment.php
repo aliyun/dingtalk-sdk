@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class leaderInDepartment extends Model
 {
     /**
-     * @description 下属组织的部门ID
-     *
      * @var int
      */
     public $departmentId;
 
     /**
-     * @description 员工在对应的部门中是否领导
-     *
      * @var bool
      */
     public $leader;

@@ -10,84 +10,82 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 创建时间。iso8601格式。
+     * @example 2022-07-27T18:53Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 填表code，用此code可调接口获取填表列表。
+     * @example PROC-E5BD2166-B6F4-xxxx
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 实例ID。
+     * @example 11125769-fxxxx
      *
      * @var string
      */
     public $formInstanceId;
 
     /**
-     * @description 表单内容列表。
-     *
      * @var forms[]
      */
     public $forms;
 
     /**
-     * @description 更新时间。iso8601格式。
+     * @example 2022-07-27T18:53Z
      *
      * @var string
      */
     public $modifyTime;
 
     /**
-     * @description 学生班级ID。
+     * @example 1
      *
      * @var string
      */
     public $studentClassId;
 
     /**
-     * @description 学生班级名称。
+     * @example 三年二班
      *
      * @var string
      */
     public $studentClassName;
 
     /**
-     * @description 学生名称。
+     * @example 钉三多
      *
      * @var string
      */
     public $studentName;
 
     /**
-     * @description 学生ID。
+     * @example 1
      *
      * @var string
      */
     public $studentUserId;
 
     /**
-     * @description 提交人的userid。
+     * @example user123
      *
      * @var string
      */
     public $submitterUserId;
 
     /**
-     * @description 提交人姓名。
+     * @example 钉三多
      *
      * @var string
      */
     public $submitterUserName;
 
     /**
-     * @description 填表名称。
+     * @example 智能填表测试
      *
      * @var string
      */

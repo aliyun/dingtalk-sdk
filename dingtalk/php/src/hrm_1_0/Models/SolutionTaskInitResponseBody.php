@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SolutionTaskInitResponseBody extends Model
 {
     /**
-     * @description 数据是否初始化成功
+     * @example true
      *
      * @var bool
      */

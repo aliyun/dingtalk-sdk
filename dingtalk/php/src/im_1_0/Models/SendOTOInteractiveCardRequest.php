@@ -11,85 +11,61 @@ use AlibabaCloud\Tea\Model;
 class SendOTOInteractiveCardRequest extends Model
 {
     /**
-     * @description 消息@人，{123456:"钉三多"}，key：根据userIdType来设置，【特殊设置：如果key、value都为"@ALL"则判断at所有人】
-     *
      * @var string[]
      */
     public $atOpenIds;
 
     /**
-     * @description 可控制卡片回调时的路由Key，用于指定特定的callbackUrl【可空：不填写默认用企业的回调地址】
-     *
      * @var string
      */
     public $callbackRouteKey;
 
     /**
-     * @description 卡片公共主体部分数据
-     *
      * @var cardData
      */
     public $cardData;
 
     /**
-     * @description 卡片属性
-     *
      * @var cardOptions
      */
     public $cardOptions;
 
     /**
-     * @description 卡片模板ID
-     *
      * @var string
      */
     public $cardTemplateId;
 
     /**
-     * @description 接收卡片的群的openConversationId
-     *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）
-     *
      * @var string
      */
     public $outTrackId;
 
     /**
-     * @description 卡片用户私有差异部分数据（如卡片不同人显示不同按钮；key：用户userId；value：用户数据变量）
-     *
      * @var PrivateDataValue[]
      */
     public $privateData;
 
     /**
-     * @description 是否开启卡片纯拉模式
-     *
      * @var bool
      */
     public $pullStrategy;
 
     /**
-     * @description 互动卡片消息需要群会话部分人可见时的接收人列表，不填写默认群会话所有人可见
-     *
      * @var string[]
      */
     public $receiverUserIdList;
 
     /**
-     * @description 【robotCode & chatBotId二选一必填】机器人编码（群模板机器人）
-     *
      * @var string
      */
     public $robotCode;
 
     /**
-     * @description 用户ID类型：1：userId模式【默认】；2：unionId模式；对应receiverUserIdList、privateData字段关于用户id的值填写方式
-     *
      * @var int
      */
     public $userIdType;

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetRecycleBinResponseBody extends Model
 {
     /**
-     * @description 回收站信息
-     *
      * @var recycleBin
      */
     public $recycleBin;

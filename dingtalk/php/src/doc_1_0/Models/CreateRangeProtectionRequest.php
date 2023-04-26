@@ -10,21 +10,17 @@ use AlibabaCloud\Tea\Model;
 class CreateRangeProtectionRequest extends Model
 {
     /**
-     * @description 对于拥有「可编辑」权限的用户的细化权限配置。
-     *
      * @var editableSetting
      */
     public $editableSetting;
 
     /**
-     * @description 其它用户的权限
-     *
      * @var string
      */
     public $otherUserPermission;
 
     /**
-     * @description 操作人unionId
+     * @example ppgAQuHfOoNVpJiStDwWCEgiEiE
      *
      * @var string
      */

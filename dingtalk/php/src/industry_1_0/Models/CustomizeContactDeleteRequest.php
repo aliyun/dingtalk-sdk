@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactDeleteRequest extends Model
 {
     /**
-     * @description 自定义通讯录Code
+     * @example xxx
      *
      * @var string
      */

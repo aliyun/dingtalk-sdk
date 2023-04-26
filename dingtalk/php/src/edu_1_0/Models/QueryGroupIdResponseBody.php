@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupIdResponseBody extends Model
 {
     /**
-     * @description 组织id
+     * @example dingding123
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 人脸库id
+     * @example NTK300001
      *
      * @var string
      */
     public $groupId;
 
     /**
-     * @description 商户id
+     * @example 200001
      *
      * @var string
      */
     public $merchantId;
 
     /**
-     * @description 商户名称
+     * @example 某某商户
      *
      * @var string
      */
     public $merchantName;
 
     /**
-     * @description 开发者名称
+     * @example 阿里云教育
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 开发者pid
+     * @example 100001
      *
      * @var string
      */

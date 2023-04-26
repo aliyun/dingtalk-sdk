@@ -59,29 +59,24 @@ use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\TransferUserObjectiveRequest
 use AlibabaCloud\SDK\Dingtalk\Vchengfeng_1_0\Models\TransferUserObjectiveResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
-    }
-
-    /**
-     * @return GetAllJobLevelResponse
-     */
-    public function getAllJobLevel()
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetAllJobLevelHeaders([]);
-
-        return $this->getAllJobLevelWithOptions($headers, $runtime);
     }
 
     /**
@@ -97,24 +92,35 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetAllJobLevel',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/jobLevels',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetAllJobLevelResponse::fromMap($this->doROARequest('GetAllJobLevel', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/jobLevels', 'json', $req, $runtime));
+        return GetAllJobLevelResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
-     * @return GetAllJobPositionResponse
+     * @return GetAllJobLevelResponse
      */
-    public function getAllJobPosition()
+    public function getAllJobLevel()
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetAllJobPositionHeaders([]);
+        $headers = new GetAllJobLevelHeaders([]);
 
-        return $this->getAllJobPositionWithOptions($headers, $runtime);
+        return $this->getAllJobLevelWithOptions($headers, $runtime);
     }
 
     /**
@@ -130,24 +136,35 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetAllJobPosition',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/jobPositions',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetAllJobPositionResponse::fromMap($this->doROARequest('GetAllJobPosition', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/jobPositions', 'json', $req, $runtime));
+        return GetAllJobPositionResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
-     * @return GetAllJobPostResponse
+     * @return GetAllJobPositionResponse
      */
-    public function getAllJobPost()
+    public function getAllJobPosition()
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetAllJobPostHeaders([]);
+        $headers = new GetAllJobPositionHeaders([]);
 
-        return $this->getAllJobPostWithOptions($headers, $runtime);
+        return $this->getAllJobPositionWithOptions($headers, $runtime);
     }
 
     /**
@@ -163,13 +180,80 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetAllJobPost',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/jobPosts',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetAllJobPostResponse::fromMap($this->doROARequest('GetAllJobPost', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/jobPosts', 'json', $req, $runtime));
+        return GetAllJobPostResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return GetAllJobPostResponse
+     */
+    public function getAllJobPost()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAllJobPostHeaders([]);
+
+        return $this->getAllJobPostWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetAnalyzeDataRequest $request
+     * @param GetAnalyzeDataHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetAnalyzeDataResponse
+     */
+    public function getAnalyzeDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $query['deptId'] = $request->deptId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->periodIds)) {
+            $body['periodIds'] = $request->periodIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetAnalyzeData',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/okr/analyses/datas/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetAnalyzeDataResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -186,37 +270,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAnalyzeDataRequest $request
-     * @param GetAnalyzeDataHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param GetChildOrgListRequest $request
+     * @param GetChildOrgListHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return GetAnalyzeDataResponse
+     * @return GetChildOrgListResponse
      */
-    public function getAnalyzeDataWithOptions($request, $headers, $runtime)
+    public function getChildOrgListWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->deptId)) {
-            @$query['deptId'] = $request->deptId;
-        }
-        $body = [];
-        if (!Utils::isUnset($request->periodIds)) {
-            @$body['periodIds'] = $request->periodIds;
+        if (!Utils::isUnset($request->deptCode)) {
+            $query['deptCode'] = $request->deptCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetChildOrgList',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/organizations',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetAnalyzeDataResponse::fromMap($this->doROARequest('GetAnalyzeData', 'chengfeng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/chengfeng/okr/analyses/datas/query', 'json', $req, $runtime));
+        return GetChildOrgListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -233,32 +323,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetChildOrgListRequest $request
-     * @param GetChildOrgListHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param GetEmployeeInfoByWorkNoRequest $request
+     * @param GetEmployeeInfoByWorkNoHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return GetChildOrgListResponse
+     * @return GetEmployeeInfoByWorkNoResponse
      */
-    public function getChildOrgListWithOptions($request, $headers, $runtime)
+    public function getEmployeeInfoByWorkNoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->deptCode)) {
-            @$query['deptCode'] = $request->deptCode;
+        if (!Utils::isUnset($request->workNo)) {
+            $query['workNo'] = $request->workNo;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetEmployeeInfoByWorkNo',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/workNumbers/employees',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetChildOrgListResponse::fromMap($this->doROARequest('GetChildOrgList', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/organizations', 'json', $req, $runtime));
+        return GetEmployeeInfoByWorkNoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -275,32 +376,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetEmployeeInfoByWorkNoRequest $request
-     * @param GetEmployeeInfoByWorkNoHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param string                             $workNumbers
+     * @param GetEmploymentRecordByWorkNoHeaders $headers
+     * @param RuntimeOptions                     $runtime
      *
-     * @return GetEmployeeInfoByWorkNoResponse
+     * @return GetEmploymentRecordByWorkNoResponse
      */
-    public function getEmployeeInfoByWorkNoWithOptions($request, $headers, $runtime)
+    public function getEmploymentRecordByWorkNoWithOptions($workNumbers, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->workNo)) {
-            @$query['workNo'] = $request->workNo;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetEmploymentRecordByWorkNo',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/users/workNumber/' . $workNumbers . 'employmentRecords',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetEmployeeInfoByWorkNoResponse::fromMap($this->doROARequest('GetEmployeeInfoByWorkNo', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/workNumbers/employees', 'json', $req, $runtime));
+        return GetEmploymentRecordByWorkNoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -317,27 +423,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                             $workNumbers
-     * @param GetEmploymentRecordByWorkNoHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param GetJobPositionRequest $request
+     * @param GetJobPositionHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return GetEmploymentRecordByWorkNoResponse
+     * @return GetJobPositionResponse
      */
-    public function getEmploymentRecordByWorkNoWithOptions($workNumbers, $headers, $runtime)
+    public function getJobPositionWithOptions($request, $headers, $runtime)
     {
-        $workNumbers = OpenApiUtilClient::getEncodeParam($workNumbers);
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->jobPositionCode)) {
+            $query['jobPositionCode'] = $request->jobPositionCode;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetJobPosition',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/jobPositions/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetEmploymentRecordByWorkNoResponse::fromMap($this->doROARequest('GetEmploymentRecordByWorkNo', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/users/workNumber/' . $workNumbers . 'employmentRecords', 'json', $req, $runtime));
+        return GetJobPositionResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -354,32 +476,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetJobPositionRequest $request
-     * @param GetJobPositionHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param GetJobPostRequest $request
+     * @param GetJobPostHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return GetJobPositionResponse
+     * @return GetJobPostResponse
      */
-    public function getJobPositionWithOptions($request, $headers, $runtime)
+    public function getJobPostWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->jobPositionCode)) {
-            @$query['jobPositionCode'] = $request->jobPositionCode;
+        if (!Utils::isUnset($request->jobPostCode)) {
+            $query['jobPostCode'] = $request->jobPostCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetJobPost',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/jobPosts/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetJobPositionResponse::fromMap($this->doROARequest('GetJobPosition', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/jobPositions/infos', 'json', $req, $runtime));
+        return GetJobPostResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -396,32 +529,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetJobPostRequest $request
-     * @param GetJobPostHeaders $headers
+     * @param GetOrgInfoRequest $request
+     * @param GetOrgInfoHeaders $headers
      * @param RuntimeOptions    $runtime
      *
-     * @return GetJobPostResponse
+     * @return GetOrgInfoResponse
      */
-    public function getJobPostWithOptions($request, $headers, $runtime)
+    public function getOrgInfoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->jobPostCode)) {
-            @$query['jobPostCode'] = $request->jobPostCode;
+        if (!Utils::isUnset($request->deptCode)) {
+            $query['deptCode'] = $request->deptCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetOrgInfo',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/organizations/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetJobPostResponse::fromMap($this->doROARequest('GetJobPost', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/jobPosts/infos', 'json', $req, $runtime));
+        return GetOrgInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -438,32 +582,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOrgInfoRequest $request
-     * @param GetOrgInfoHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param GetStaffInfoByWorkNoRequest $request
+     * @param GetStaffInfoByWorkNoHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return GetOrgInfoResponse
+     * @return GetStaffInfoByWorkNoResponse
      */
-    public function getOrgInfoWithOptions($request, $headers, $runtime)
+    public function getStaffInfoByWorkNoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->deptCode)) {
-            @$query['deptCode'] = $request->deptCode;
+        if (!Utils::isUnset($request->workNumbers)) {
+            $query['workNumbers'] = $request->workNumbers;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetStaffInfoByWorkNo',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/users',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetOrgInfoResponse::fromMap($this->doROARequest('GetOrgInfo', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/organizations/infos', 'json', $req, $runtime));
+        return GetStaffInfoByWorkNoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -480,32 +635,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetStaffInfoByWorkNoRequest $request
-     * @param GetStaffInfoByWorkNoHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param GetStaffPageQueryRequest $request
+     * @param GetStaffPageQueryHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return GetStaffInfoByWorkNoResponse
+     * @return GetStaffPageQueryResponse
      */
-    public function getStaffInfoByWorkNoWithOptions($request, $headers, $runtime)
+    public function getStaffPageQueryWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->workNumbers)) {
-            @$query['workNumbers'] = $request->workNumbers;
+        if (!Utils::isUnset($request->deptCode)) {
+            $query['deptCode'] = $request->deptCode;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $query['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->workNo)) {
+            $query['workNo'] = $request->workNo;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetStaffPageQuery',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/users/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetStaffInfoByWorkNoResponse::fromMap($this->doROARequest('GetStaffInfoByWorkNo', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/users', 'json', $req, $runtime));
+        return GetStaffPageQueryResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -522,44 +700,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetStaffPageQueryRequest $request
-     * @param GetStaffPageQueryHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param GetUserRequest $request
+     * @param GetUserHeaders $headers
+     * @param RuntimeOptions $runtime
      *
-     * @return GetStaffPageQueryResponse
+     * @return GetUserResponse
      */
-    public function getStaffPageQueryWithOptions($request, $headers, $runtime)
+    public function getUserWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->deptCode)) {
-            @$query['deptCode'] = $request->deptCode;
+        if (!Utils::isUnset($request->okrUserId)) {
+            $query['okrUserId'] = $request->okrUserId;
         }
-        if (!Utils::isUnset($request->name)) {
-            @$query['name'] = $request->name;
-        }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->workNo)) {
-            @$query['workNo'] = $request->workNo;
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetUser',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/okr/users',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetStaffPageQueryResponse::fromMap($this->doROARequest('GetStaffPageQuery', 'chengfeng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/chengfeng/users/query', 'json', $req, $runtime));
+        return GetUserResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -576,35 +756,36 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUserRequest $request
-     * @param GetUserHeaders $headers
-     * @param RuntimeOptions $runtime
+     * @param ListAnalyzePeriodsHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return GetUserResponse
+     * @return ListAnalyzePeriodsResponse
      */
-    public function getUserWithOptions($request, $headers, $runtime)
+    public function listAnalyzePeriodsWithOptions($headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->okrUserId)) {
-            @$query['okrUserId'] = $request->okrUserId;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListAnalyzePeriods',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/okr/analyses/periods',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetUserResponse::fromMap($this->doROARequest('GetUser', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/okr/users', 'json', $req, $runtime));
+        return ListAnalyzePeriodsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -619,25 +800,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListAnalyzePeriodsHeaders $headers
+     * @param ListObjectiveByIdsRequest $request
+     * @param ListObjectiveByIdsHeaders $headers
      * @param RuntimeOptions            $runtime
      *
-     * @return ListAnalyzePeriodsResponse
+     * @return ListObjectiveByIdsResponse
      */
-    public function listAnalyzePeriodsWithOptions($headers, $runtime)
+    public function listObjectiveByIdsWithOptions($request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->objectiveIds)) {
+            $body['objectiveIds'] = $request->objectiveIds;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ListObjectiveByIds',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/okr/objectives/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ListAnalyzePeriodsResponse::fromMap($this->doROARequest('ListAnalyzePeriods', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/okr/analyses/periods', 'json', $req, $runtime));
+        return ListObjectiveByIdsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -654,32 +853,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListObjectiveByIdsRequest $request
-     * @param ListObjectiveByIdsHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param ListObjectiveByUserRequest $request
+     * @param ListObjectiveByUserHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return ListObjectiveByIdsResponse
+     * @return ListObjectiveByUserResponse
      */
-    public function listObjectiveByIdsWithOptions($request, $headers, $runtime)
+    public function listObjectiveByUserWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->objectiveIds)) {
-            @$body['objectiveIds'] = $request->objectiveIds;
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListObjectiveByUser',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/okr/users/objectives',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ListObjectiveByIdsResponse::fromMap($this->doROARequest('ListObjectiveByIds', 'chengfeng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/chengfeng/okr/objectives/query', 'json', $req, $runtime));
+        return ListObjectiveByUserResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -696,38 +912,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListObjectiveByUserRequest $request
-     * @param ListObjectiveByUserHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param ListProgressByIdsRequest $request
+     * @param ListProgressByIdsHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return ListObjectiveByUserResponse
+     * @return ListProgressByIdsResponse
      */
-    public function listObjectiveByUserWithOptions($request, $headers, $runtime)
+    public function listProgressByIdsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+        $body = [];
+        if (!Utils::isUnset($request->progressIds)) {
+            $body['progressIds'] = $request->progressIds;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ListProgressByIds',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/okr/objectives/progresses/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ListObjectiveByUserResponse::fromMap($this->doROARequest('ListObjectiveByUser', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/okr/users/objectives', 'json', $req, $runtime));
+        return ListProgressByIdsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -744,32 +965,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListProgressByIdsRequest $request
-     * @param ListProgressByIdsHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param PageListObjectiveProgressRequest $request
+     * @param PageListObjectiveProgressHeaders $headers
+     * @param RuntimeOptions                   $runtime
      *
-     * @return ListProgressByIdsResponse
+     * @return PageListObjectiveProgressResponse
      */
-    public function listProgressByIdsWithOptions($request, $headers, $runtime)
+    public function pageListObjectiveProgressWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->progressIds)) {
-            @$body['progressIds'] = $request->progressIds;
+        $query = [];
+        if (!Utils::isUnset($request->objectiveId)) {
+            $query['objectiveId'] = $request->objectiveId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PageListObjectiveProgress',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/okr/objectives/progresses/records',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ListProgressByIdsResponse::fromMap($this->doROARequest('ListProgressByIds', 'chengfeng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/chengfeng/okr/objectives/progresses/query', 'json', $req, $runtime));
+        return PageListObjectiveProgressResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -786,38 +1024,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PageListObjectiveProgressRequest $request
-     * @param PageListObjectiveProgressHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param TransferUserObjectiveRequest $request
+     * @param TransferUserObjectiveHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return PageListObjectiveProgressResponse
+     * @return TransferUserObjectiveResponse
      */
-    public function pageListObjectiveProgressWithOptions($request, $headers, $runtime)
+    public function transferUserObjectiveWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->objectiveId)) {
-            @$query['objectiveId'] = $request->objectiveId;
+            $query['objectiveId'] = $request->objectiveId;
         }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
+        if (!Utils::isUnset($request->targetUserId)) {
+            $query['targetUserId'] = $request->targetUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'TransferUserObjective',
+            'version'     => 'chengfeng_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/chengfeng/okr/objectives/transfer',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return PageListObjectiveProgressResponse::fromMap($this->doROARequest('PageListObjectiveProgress', 'chengfeng_1.0', 'HTTP', 'GET', 'AK', '/v1.0/chengfeng/okr/objectives/progresses/records', 'json', $req, $runtime));
+        return TransferUserObjectiveResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -831,37 +1077,5 @@ class Dingtalk extends OpenApiClient
         $headers = new TransferUserObjectiveHeaders([]);
 
         return $this->transferUserObjectiveWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param TransferUserObjectiveRequest $request
-     * @param TransferUserObjectiveHeaders $headers
-     * @param RuntimeOptions               $runtime
-     *
-     * @return TransferUserObjectiveResponse
-     */
-    public function transferUserObjectiveWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->objectiveId)) {
-            @$query['objectiveId'] = $request->objectiveId;
-        }
-        if (!Utils::isUnset($request->targetUserId)) {
-            @$query['targetUserId'] = $request->targetUserId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return TransferUserObjectiveResponse::fromMap($this->doROARequest('TransferUserObjective', 'chengfeng_1.0', 'HTTP', 'POST', 'AK', '/v1.0/chengfeng/okr/objectives/transfer', 'json', $req, $runtime));
     }
 }

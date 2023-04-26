@@ -9,77 +9,77 @@ use AlibabaCloud\Tea\Model;
 class BuyFreshOrderRequest extends Model
 {
     /**
-     * @description 访问秘钥
+     * @example hexaaaa
      *
      * @var string
      */
     public $accessKey;
 
     /**
-     * @description 账户号
+     * @example 123
      *
      * @var string
      */
     public $accountNumber;
 
     /**
-     * @description 开始时间
+     * @example 1234567891234
      *
      * @var int
      */
     public $beginTimeGMT;
 
     /**
-     * @description 调用者unionId
+     * @example 44234122
      *
      * @var string
      */
     public $callerUnionId;
 
     /**
-     * @description 收费类型
+     * @example subscribe
      *
      * @var string
      */
     public $chargeType;
 
     /**
-     * @description 商业类型
+     * @example subscribe
      *
      * @var string
      */
     public $commerceType;
 
     /**
-     * @description 商品类型
+     * @example Business
      *
      * @var string
      */
     public $commodityType;
 
     /**
-     * @description 结束时间
+     * @example 1234567891234
      *
      * @var int
      */
     public $endTimeGMT;
 
     /**
-     * @description 实例id
+     * @example 12
      *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description 实例名称
+     * @example A发起的实例
      *
      * @var string
      */
     public $instanceName;
 
     /**
-     * @description 阿里云产品码
+     * @example yun-1234
      *
      * @var string
      */

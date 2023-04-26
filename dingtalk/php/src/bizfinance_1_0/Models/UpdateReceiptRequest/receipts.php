@@ -9,98 +9,98 @@ use AlibabaCloud\Tea\Model;
 class receipts extends Model
 {
     /**
-     * @description 总金额，传空代表不修改
+     * @example 2.44
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 关联收支类别，传空代表不修改
+     * @example INC_XXX
      *
      * @var string
      */
     public $categoryCode;
 
     /**
-     * @description 单据唯一编号
+     * @example abcd_efgh
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 关联客户code，传空代表不修改
+     * @example CUS_XXX
      *
      * @var string
      */
     public $customerCode;
 
     /**
-     * @description 关联企业账户code，传空代表不修改
+     * @example ACC_XXX
      *
      * @var string
      */
     public $enterpriseAcountCode;
 
     /**
-     * @description 业务发生时间，传空代表不修改
+     * @example 1636445218000
      *
      * @var int
      */
     public $occurDate;
 
     /**
-     * @description 负责人工号，传空代表不修改
+     * @example emp_xxx
      *
      * @var string
      */
     public $principalId;
 
     /**
-     * @description 关联项目code，传空代表不修改
+     * @example PROJ_XXX
      *
      * @var string
      */
     public $projectCode;
 
     /**
-     * @description 单据类型：1付款单，2收款单
+     * @example 1
      *
      * @var int
      */
     public $receiptType;
 
     /**
-     * @description 备注，传空代表不修改
+     * @example 测试单据
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 关联供应商code，传空代表不修改
+     * @example SUP_XXX
      *
      * @var string
      */
     public $supplierCode;
 
     /**
-     * @description 单据标题，传空代表不修改
+     * @example 付款单
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 单据更新时间
+     * @example 1636445218000
      *
      * @var int
      */
     public $updateTime;
 
     /**
-     * @description 修改者工号
+     * @example emp_xxx
      *
      * @var string
      */

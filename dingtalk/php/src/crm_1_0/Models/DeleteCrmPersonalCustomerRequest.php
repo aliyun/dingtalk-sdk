@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class DeleteCrmPersonalCustomerRequest extends Model
 {
     /**
-     * @description 操作人用户ID
-     *
      * @var string
      */
     public $currentOperatorUserId;

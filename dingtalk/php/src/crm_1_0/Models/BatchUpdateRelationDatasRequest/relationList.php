@@ -10,21 +10,17 @@ use AlibabaCloud\Tea\Model;
 class relationList extends Model
 {
     /**
-     * @description 关系模型数据。
-     *
      * @var bizDataList[]
      */
     public $bizDataList;
 
     /**
-     * @description 扩展业务字段。
-     *
      * @var string[]
      */
     public $bizExtMap;
 
     /**
-     * @description 关系id
+     * @example fasdg8i814-0afsd
      *
      * @var string
      */

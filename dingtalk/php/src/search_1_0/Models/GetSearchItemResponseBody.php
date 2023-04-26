@@ -9,77 +9,75 @@ use AlibabaCloud\Tea\Model;
 class GetSearchItemResponseBody extends Model
 {
     /**
-     * @description 数据项的脚注
+     * @example 四大名著
      *
      * @var string
      */
     public $footer;
 
     /**
-     * @description 创建时间
+     * @example 2021-09-17T19:43Z
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间
+     * @example 2021-09-17T19:43Z
      *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 数据项的头像
-     *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 数据项的id,tabId和orgId相同的情况下，itemId唯一标识一条数据项
+     * @example 1111
      *
      * @var string
      */
     public $itemId;
 
     /**
-     * @description 数据项的移动端跳转url地址，若同时配置默认url和mobileUrl，移动端跳转链接优先使用mobileUrl
+     * @example www.baidu.com
      *
      * @var string
      */
     public $mobileUrl;
 
     /**
-     * @description 数据项的PC端跳转url地址，若同时配置默认url和pcUrl，PC端跳转链接优先使用pcUrl
+     * @example www.baidu.com
      *
      * @var string
      */
     public $pcUrl;
 
     /**
-     * @description 数据项的摘要
+     * @example 中国古代章回体长篇小说
      *
      * @var string
      */
     public $summary;
 
     /**
-     * @description 数据源id
+     * @example 3333
      *
      * @var int
      */
     public $tabId;
 
     /**
-     * @description 数据项的标题
+     * @example 红楼梦
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 数据项的默认url地址，若mobileUrl或pcUrl没有配置，则使用该url地址，默认url和mobileUrl、pcUrl至少配置其中一个
+     * @example www.baidu.com
      *
      * @var string
      */

@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class resultList extends Model
 {
     /**
-     * @description 客户ID
-     *
      * @var string
      */
     public $customerId;
 
     /**
-     * @description 上次跟进时间
+     * @example 2022-03-24T09:30Z
      *
      * @var string
      */
@@ -28,21 +26,19 @@ class resultList extends Model
     public $isDeleted;
 
     /**
-     * @description 掉保提醒时间
+     * @example 2022-03-24T09:30Z
      *
      * @var string
      */
     public $notifyTime;
 
     /**
-     * @description 掉保规则ID
-     *
      * @var int
      */
     public $recycleRuleId;
 
     /**
-     * @description 掉保时间
+     * @example 2022-03-24T09:30Z
      *
      * @var string
      */

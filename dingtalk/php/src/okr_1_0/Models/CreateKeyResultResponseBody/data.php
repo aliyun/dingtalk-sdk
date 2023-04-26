@@ -10,21 +10,21 @@ use GuzzleHttp\Psr7\Stream;
 class data extends Model
 {
     /**
-     * @description 创建成功的 KR ID。
+     * @example R45Y
      *
      * @var Stream
      */
     public $id;
 
     /**
-     * @description KR的位置。
+     * @example 420983
      *
      * @var int
      */
     public $position;
 
     /**
-     * @description KR 的权重。
+     * @example 100
      *
      * @var int
      */

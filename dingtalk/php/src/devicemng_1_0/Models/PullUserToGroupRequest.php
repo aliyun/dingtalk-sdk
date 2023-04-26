@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class PullUserToGroupRequest extends Model
 {
     /**
-     * @description 开放群唯一标识
+     * @example xxxx
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 入群用户唯一标识列表
-     *
      * @var string[]
      */
     public $userIds;

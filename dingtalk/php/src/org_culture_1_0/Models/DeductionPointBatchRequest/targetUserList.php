@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class targetUserList extends Model
 {
     /**
-     * @description 积分交易单号
+     * @example 232344342
      *
      * @var string
      */
     public $outId;
 
     /**
-     * @description 扣减目标用户userId
+     * @example 01274411491620908910
      *
      * @var string
      */

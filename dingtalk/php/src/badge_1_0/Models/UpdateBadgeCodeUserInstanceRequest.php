@@ -10,70 +10,62 @@ use AlibabaCloud\Tea\Model;
 class UpdateBadgeCodeUserInstanceRequest extends Model
 {
     /**
-     * @description 有效时间列表，对于连续时间段，只需传入一个对象即可，注意过期时间必须晚于最晚结束时间
-     *
      * @var availableTimes[]
      */
     public $availableTimes;
 
     /**
-     * @description 用户码ID
+     * @example ccodexxxxx
      *
      * @var string
      */
     public $codeId;
 
     /**
-     * @description 码标识
+     * @example TEST
      *
      * @var string
      */
     public $codeIdentity;
 
     /**
-     * @description 码值
-     *
      * @var string
      */
     public $codeValue;
 
     /**
-     * @description 企业ID
+     * @example corpIdxxxx
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 扩展参数
-     *
      * @var mixed[]
      */
     public $extInfo;
 
     /**
-     * @description 临时码，传入过期时间
-     *
      * @var string
      */
     public $gmtExpired;
 
     /**
-     * @description 状态
+     * @example OPEN
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
+     * @example INTERNAL_STAFF
      *
      * @var string
      */
     public $userCorpRelationType;
 
     /**
-     * @description 用户身份标识，取值和用户企业关系类型相关，如果企业无关，传入手机号
+     * @example 86-xxxxxx
      *
      * @var string
      */

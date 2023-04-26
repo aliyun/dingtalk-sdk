@@ -9,63 +9,63 @@ use AlibabaCloud\Tea\Model;
 class DecodeBadgeCodeResponseBody extends Model
 {
     /**
-     * @description 支付宝付款码
+     * @example 2512345678
      *
      * @var string
      */
     public $alipayCode;
 
     /**
-     * @description 码ID，对于访客或会展码等静态码值返回
+     * @example codeIdxxxxx
      *
      * @var string
      */
     public $codeId;
 
     /**
-     * @description 码标识，工牌码：DT_IDENTITY，访客码：DT_VISITOR，会展码：DT_CONFERENCE
+     * @example DT_VISITOR
      *
      * @var string
      */
     public $codeIdentity;
 
     /**
-     * @description 码类型
+     * @example PURE_IDENTIFY_CODE
      *
      * @var string
      */
     public $codeType;
 
     /**
-     * @description 企业id
+     * @example ding1234
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 扩展信息
+     * @example {"authRules":{}}
      *
      * @var string
      */
     public $extInfo;
 
     /**
-     * @description 外部业务ID，值为调用创建工牌码接口传入的requestId
+     * @example xxxx
      *
      * @var string
      */
     public $outBizId;
 
     /**
-     * @description 用户和企业关系
+     * @example INTERNAL_STAFF
      *
      * @var string
      */
     public $userCorpRelationType;
 
     /**
-     * @description 员工id
+     * @example staffId
      *
      * @var string
      */

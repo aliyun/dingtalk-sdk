@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SendPhoneDingResponseBody extends Model
 {
     /**
-     * @description 本次操作是否更新成功
+     * @example true
      *
      * @var bool
      */

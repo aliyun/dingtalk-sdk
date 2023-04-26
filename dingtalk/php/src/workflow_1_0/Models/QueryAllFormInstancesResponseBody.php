@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryAllFormInstancesResponseBody extends Model
 {
     /**
-     * @description 分页结果
-     *
      * @var result
      */
     public $result;

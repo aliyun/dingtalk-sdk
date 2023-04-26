@@ -9,70 +9,64 @@ use AlibabaCloud\Tea\Model;
 class GetFinanceAccountResponseBody extends Model
 {
     /**
-     * @description 账户code
+     * @example 12345
      *
      * @var string
      */
     public $accountCode;
 
     /**
-     * @description 关联资金账户id
+     * @example test@alipay.com
      *
      * @var string
      */
     public $accountId;
 
     /**
-     * @description 账户名称
+     * @example 测试
      *
      * @var string
      */
     public $accountName;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $accountRemark;
 
     /**
-     * @description 账户类型:ALIPAY, BANKCARD, CASH, WECHAT
+     * @example ALIPAY
      *
      * @var string
      */
     public $accountType;
 
     /**
-     * @description 账户总额，保留2位小数
+     * @example 50000.55
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 银行代号，如果是银行卡类型，有值，其他类型时，为空
-     *
      * @var string
      */
     public $bankCode;
 
     /**
-     * @description 银行名称，如果是银行卡类型，有值，其他类型时，为空
-     *
      * @var string
      */
     public $bankName;
 
     /**
-     * @description 创建时间
+     * @example 1631526550994
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 创建人工号
+     * @example abcdef
      *
      * @var string
      */

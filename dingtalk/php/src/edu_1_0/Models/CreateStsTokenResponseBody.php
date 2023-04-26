@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class CreateStsTokenResponseBody extends Model
 {
     /**
-     * @description keyId
+     * @example fdasfad
      *
      * @var string
      */
     public $accessKeyId;
 
     /**
-     * @description KeySecret
+     * @example fdsfwdsfdsafdaf
      *
      * @var string
      */
     public $accessKeySecret;
 
     /**
-     * @description 过期时间，默认1小时过期
+     * @example 3600000
      *
      * @var string
      */
     public $expiration;
 
     /**
-     * @description 扩展信息
+     * @example {}
      *
      * @var string
      */
     public $extInfo;
 
     /**
-     * @description 授权的token
+     * @example fdasgtwtgfds
      *
      * @var string
      */
     public $securityToken;
 
     /**
-     * @description 状态
+     * @example 200
      *
      * @var string
      */

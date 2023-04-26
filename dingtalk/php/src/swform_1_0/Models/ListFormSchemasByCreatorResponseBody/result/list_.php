@@ -10,36 +10,34 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 创建人。
+     * @example user123
      *
      * @var string
      */
     public $creator;
 
     /**
-     * @description 填表code，用此code可调接口获取填表列表。
+     * @example PROC-E5BD2166-B6F4-xxxx
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 填表提示。
+     * @example 请大家仔细填写，谢谢合作
      *
      * @var string
      */
     public $memo;
 
     /**
-     * @description 填表名称。
+     * @example 智能填表测试
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 填表设置。
-     *
      * @var setting
      */
     public $setting;

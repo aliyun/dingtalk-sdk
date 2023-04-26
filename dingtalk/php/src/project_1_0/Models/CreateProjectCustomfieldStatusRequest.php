@@ -10,29 +10,27 @@ use AlibabaCloud\Tea\Model;
 class CreateProjectCustomfieldStatusRequest extends Model
 {
     /**
-     * @description 自定义字段ID。
+     * @example 63a5301e420637003f5dxxxx
      *
      * @var string
      */
     public $customfieldId;
 
     /**
-     * @description 自定义字段InstanceId(如果提供自定义字段ID 或者 自定义字段名称 则忽略)。
+     * @example 64a5301e420637003f5dxxxx
      *
      * @var string
      */
     public $customfieldInstanceId;
 
     /**
-     * @description 自定义字段名称(如果提供自定义字段ID 则忽略)。
+     * @example 项目进度
      *
      * @var string
      */
     public $customfieldName;
 
     /**
-     * @description 字段值集合。
-     *
      * @var value[]
      */
     public $value;

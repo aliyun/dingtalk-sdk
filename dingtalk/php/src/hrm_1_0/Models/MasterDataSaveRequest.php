@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class MasterDataSaveRequest extends Model
 {
     /**
-     * @description 主数据
-     *
      * @var body[]
      */
     public $body;
 
     /**
-     * @description 租户id
+     * @example 123
      *
      * @var int
      */

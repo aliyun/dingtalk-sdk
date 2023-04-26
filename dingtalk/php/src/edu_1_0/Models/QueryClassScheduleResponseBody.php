@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class QueryClassScheduleResponseBody extends Model
 {
     /**
-     * @description 课表时间节次配置。
-     *
      * @var config
      */
     public $config;
 
     /**
-     * @description 课程列表
-     *
      * @var courseDTOS[]
      */
     public $courseDTOS;

@@ -9,63 +9,63 @@ use AlibabaCloud\Tea\Model;
 class AddCustomerTrackRequest extends Model
 {
     /**
-     * @description 动态内容（明文未脱敏内容），markdown格式，必填。客户动态列表页的展示规则：如果有maskedContent字段对应动态脱敏内容则优先展示动态脱敏内容，否则优先展示本content字段内容。当显示了动态脱敏内容时用户可以点击页面按钮来查看动态未脱敏明文内容。
+     * @example [华佗](http://******)创建了合同：**今日合同**
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 客户ID
+     * @example fb037d68-c1bd-4be2-8c3b-6739261d1332
      *
      * @var string
      */
     public $customerId;
 
     /**
-     * @description 任意业务自定义的数据，可空
+     * @example {"bizId":"1"}
      *
      * @var string
      */
     public $extraBizInfo;
 
     /**
-     * @description 幂等key，5分钟内避免重复写入，保证幂等，可空
+     * @example fb037d68-c1bd-4be2-8c3b-6739261d1332-1
      *
      * @var string
      */
     public $idempotentKey;
 
     /**
-     * @description 动态脱敏内容，markdown格式，非必填。客户动态列表页的展示规则：如果本字段有值，则优先展示本字段的动态脱敏内容，否则展示content字段内容。当显示了动态脱敏内容时用户可以点击页面按钮来查看动态未脱敏明文内容。
+     * @example [华佗](http://******)创建了合同：**今日合同**
      *
      * @var string
      */
     public $maskedContent;
 
     /**
-     * @description 操作人userId
+     * @example manager1120
      *
      * @var string
      */
     public $operatorUserId;
 
     /**
-     * @description 关系类型
+     * @example crm_customer
      *
      * @var string
      */
     public $relationType;
 
     /**
-     * @description 动态标题
+     * @example 创建合同
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 动态的类型
+     * @example 212
      *
      * @var int
      */

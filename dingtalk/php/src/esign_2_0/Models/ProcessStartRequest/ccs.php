@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class ccs extends Model
 {
     /**
-     * @description OUTER_USER必填
-     *
      * @var string
      */
     public $account;
 
     /**
-     * @description OUTER_USER必填
-     *
      * @var string
      */
     public $accountName;
 
     /**
-     * @description 用户类型（"DING_USER":钉钉用户，"OUTER_USER":外部用户）
-     *
      * @var string
      */
     public $accountType;
 
     /**
-     * @description 发给企业方必填
-     *
      * @var string
      */
     public $orgName;
 
     /**
-     * @description DING_USER必填
-     *
      * @var string
      */
     public $userId;

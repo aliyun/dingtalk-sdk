@@ -10,49 +10,41 @@ use AlibabaCloud\Tea\Model;
 class ExecuteActivityRequest extends Model
 {
     /**
-     * @description 动作编码
-     *
      * @var string
      */
     public $activityCode;
 
     /**
-     * @description 会员ID
-     *
      * @var string
      */
     public $foreignId;
 
     /**
-     * @description 会员名称
-     *
      * @var string
      */
     public $foreignName;
 
     /**
-     * @description 实例id
+     * @example default
      *
      * @var string
      */
     public $openInstanceId;
 
     /**
-     * @description 产品类型
+     * @example 1
      *
      * @var int
      */
     public $productionType;
 
     /**
-     * @description 工单表单字段
-     *
      * @var properties[]
      */
     public $properties;
 
     /**
-     * @description 来源ID
+     * @example dcd6cb6b-b537-493c-8953-3507700e9c4b
      *
      * @var string
      */

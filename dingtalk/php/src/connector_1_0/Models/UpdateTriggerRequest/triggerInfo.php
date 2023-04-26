@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class triggerInfo extends Model
 {
     /**
-     * @description 触发事件描述。
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 连接平台连接器唯一标识。
-     *
      * @var string
      */
     public $dingConnectorId;
 
     /**
-     * @description 连接平台触发事件唯一标识。
-     *
      * @var string
      */
     public $dingTriggerId;
 
     /**
-     * @description 入参属性描述。
-     *
      * @var string
      */
     public $inputSchema;
 
     /**
-     * @description 服务商的连接器唯一标识。
-     *
      * @var string
      */
     public $integratorConnectorId;
 
     /**
-     * @description 服务商的触发事件唯一标识。
-     *
      * @var string
      */
     public $integratorTriggerId;
 
     /**
-     * @description 触发事件名称。
-     *
      * @var string
      */
     public $name;

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ListHotDocsResponseBody extends Model
 {
     /**
-     * @description 热门文档列表。
-     *
      * @var DentryModel[]
      */
     public $items;

@@ -9,169 +9,121 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description action
-     *
      * @var string
      */
     public $action;
 
     /**
-     * @description actionExt
-     *
      * @var string
      */
     public $actionExit;
 
     /**
-     * @description activeTime
-     *
      * @var string
      */
     public $activeTimeGMT;
 
     /**
-     * @description activityId
-     *
      * @var string
      */
     public $activityId;
 
     /**
-     * @description id
-     *
      * @var int
      */
     public $dataId;
 
     /**
-     * @description digitalSign
-     *
      * @var string
      */
     public $digitalSign;
 
     /**
-     * @description files
-     *
      * @var string
      */
     public $files;
 
     /**
-     * @description operateTime
-     *
      * @var string
      */
     public $operateTimeGMT;
 
     /**
-     * @description operateType
-     *
      * @var string
      */
     public $operateType;
 
     /**
-     * @description operatorDisplayName
-     *
      * @var string
      */
     public $operatorDisplayName;
 
     /**
-     * @description operatorName
-     *
      * @var string
      */
     public $operatorName;
 
     /**
-     * @description operatorNick
-     *
      * @var string
      */
     public $operatorNickName;
 
     /**
-     * @description operatorPhotoUrl
-     *
      * @var string
      */
     public $operatorPhotoUrl;
 
     /**
-     * @description operatorStatus
-     *
      * @var string
      */
     public $operatorStatus;
 
     /**
-     * @description operator
-     *
      * @var string
      */
     public $operatorUserId;
 
     /**
-     * @description processInstanceId
-     *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description remark
-     *
      * @var string
      */
     public $remark;
 
     /**
-     * @description showName
-     *
      * @var string
      */
     public $showName;
 
     /**
-     * @description size
-     *
      * @var int
      */
     public $size;
 
     /**
-     * @description taskExecuteType
-     *
      * @var string
      */
     public $taskExecuteType;
 
     /**
-     * @description taskHoldTime
-     *
      * @var int
      */
     public $taskHoldTimeGMT;
 
     /**
-     * @description taskId
-     *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description taskType
-     *
      * @var string
      */
     public $taskType;
 
     /**
-     * @description type
-     *
      * @var string
      */
     public $type;

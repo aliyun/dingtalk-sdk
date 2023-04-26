@@ -9,17 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryBotInstanceInGroupInfoRequest extends Model
 {
     /**
+     * @example 0
+     *
      * @var int
      */
     public $pageNumber;
 
     /**
+     * @example 10
+     *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 钉钉开放平台后台机器人的robotCode
+     * @example dingykcdkjnwpcll27gm
      *
      * @var string
      */

@@ -11,35 +11,29 @@ use AlibabaCloud\Tea\Model;
 class okrRecommendItems extends Model
 {
     /**
-     * @description krResultRelatedResults
-     *
      * @var krResultRelatedResults[]
      */
     public $krResultRelatedResults;
 
     /**
-     * @description objectiveRelatedResults
-     *
      * @var objectiveRelatedResults[]
      */
     public $objectiveRelatedResults;
 
     /**
-     * @description relatedLevel
-     *
      * @var int
      */
     public $relatedLevel;
 
     /**
-     * @description semanticLevel
+     * @example 3
      *
      * @var int
      */
     public $semanticLevel;
 
     /**
-     * @description userId
+     * @example 111
      *
      * @var string
      */

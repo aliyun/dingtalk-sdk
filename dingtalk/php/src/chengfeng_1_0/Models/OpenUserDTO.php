@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class OpenUserDTO extends Model
 {
     /**
-     * @description 用户id
+     * @example 1
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 用户名称
+     * @example 王五
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 钉钉用户id
+     * @example 015310183065939140
      *
      * @var string
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetFlowIdByRelationEntityIdResponseBody extends Model
 {
     /**
-     * @description 招聘流程标识
+     * @example xxx
      *
      * @var string
      */

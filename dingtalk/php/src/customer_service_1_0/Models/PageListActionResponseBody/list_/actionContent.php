@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class actionContent extends Model
 {
     /**
-     * @description displayName
-     *
      * @var string
      */
     public $displayName;
 
     /**
-     * @description displayValue
-     *
      * @var string
      */
     public $displayValue;
 
     /**
-     * @description name
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description value
-     *
      * @var string
      */
     public $value;
 
     /**
-     * @description valueType
-     *
      * @var string
      */
     public $valueType;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class OpenTeamDTO extends Model
 {
     /**
-     * @description 部门id
+     * @example 1
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 部门名称
+     * @example 销售部
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 钉钉对应部门编号
+     * @example 30211
      *
      * @var string
      */

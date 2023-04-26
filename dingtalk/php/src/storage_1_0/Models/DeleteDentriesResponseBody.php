@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class DeleteDentriesResponseBody extends Model
 {
     /**
-     * @description 批量删除文件结果列表
-     * 50
      * @var resultItems[]
      */
     public $resultItems;

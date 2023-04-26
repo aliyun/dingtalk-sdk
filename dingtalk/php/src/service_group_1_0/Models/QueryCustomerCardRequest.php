@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryCustomerCardRequest extends Model
 {
     /**
-     * @description 查询jsonString
-     *
      * @var string
      */
     public $jsonParams;

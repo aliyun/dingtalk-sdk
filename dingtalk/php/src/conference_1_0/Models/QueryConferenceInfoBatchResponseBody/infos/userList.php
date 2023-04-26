@@ -9,43 +9,39 @@ use AlibabaCloud\Tea\Model;
 class userList extends Model
 {
     /**
-     * @description 在会状态
+     * @example 0-未定义,1-初始化,2-加入中,3-在会,4-加入失败,5,被踢出,6-离开
      *
      * @var int
      */
     public $attendStatus;
 
     /**
-     * @description 摄像头状态
+     * @example 0-初始化，1-关闭，2-打开
      *
      * @var int
      */
     public $cameraStatus;
 
     /**
-     * @description 麦克风状态
+     * @example 0-初始化，1-关闭，2-打开
      *
      * @var int
      */
     public $micStatus;
 
     /**
-     * @description 名称
-     *
      * @var string
      */
     public $nick;
 
     /**
-     * @description 拒绝原因
+     * @example 抱歉，正在开会
      *
      * @var string
      */
     public $rejectDescription;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $userId;

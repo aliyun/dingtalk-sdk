@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class TerminateProcessInstanceResponseBody extends Model
 {
     /**
-     * @description 撤销结果。
+     * @example true
      *
      * @var bool
      */
     public $result;
 
     /**
-     * @description 接口调用是否成功。
+     * @example true
      *
      * @var bool
      */

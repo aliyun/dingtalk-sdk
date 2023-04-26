@@ -10,77 +10,71 @@ use AlibabaCloud\Tea\Model;
 class CreateUserCodeInstanceRequest extends Model
 {
     /**
-     * @description 有效时间列表，对于连续时间段，只需传入一个对象即可，注意过期时间必须晚于最晚结束时间
-     *
      * @var availableTimes[]
      */
     public $availableTimes;
 
     /**
-     * @description 码标识，由钉钉颁发
+     * @example TEST
      *
      * @var string
      */
     public $codeIdentity;
 
     /**
-     * @description 码值
-     *
      * @var string
      */
     public $codeValue;
 
     /**
-     * @description 码值类型，钉钉静态码值：DING_STATIC，访客码或会展码传入
+     * @example DING_STATIC
      *
      * @var string
      */
     public $codeValueType;
 
     /**
-     * @description 企业ID
+     * @example corpid1234
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 扩展参数
-     *
      * @var mixed[]
      */
     public $extInfo;
 
     /**
-     * @description 临时码，传入过期时间
+     * @example yyyy-MM-dd HH:mm:ss
      *
      * @var string
      */
     public $gmtExpired;
 
     /**
-     * @description 业务幂等ID
+     * @example 202102021212
      *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description 状态，传入关闭状态需要用户手动开启后才会渲染二维
+     * @example OPEN
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
+     * @example INTERNAL_STAFF
      *
      * @var string
      */
     public $userCorpRelationType;
 
     /**
-     * @description 用户身份标识，取值和用户企业关系类型相关，如果企业无关，传入手机号
+     * @example 86-xxxxxx
      *
      * @var string
      */

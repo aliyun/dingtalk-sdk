@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class ReportCustomerDetailRequest extends Model
 {
     /**
-     * @description 是否登录钉钉
+     * @example true
      *
      * @var bool
      */
     public $hasLogin;
 
     /**
-     * @description 是否打开群
+     * @example true
      *
      * @var bool
      */
     public $hasOpenConv;
 
     /**
-     * @description 截止日期
+     * @example 20220102
      *
      * @var string
      */
     public $maxDt;
 
     /**
-     * @description 起始日期
+     * @example 20220101
      *
      * @var string
      */
     public $minDt;
 
     /**
-     * @description 开放群id
+     * @example cidXXX
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开发团队ID
+     * @example iSoqrhLQDtK
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页大小
+     * @example 20
      *
      * @var int
      */

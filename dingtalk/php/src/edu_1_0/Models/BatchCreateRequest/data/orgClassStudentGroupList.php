@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class orgClassStudentGroupList extends Model
 {
     /**
-     * @description 班级列表
-     *
      * @var classList[]
      */
     public $classList;
 
     /**
-     * @description 组织id
-     *
      * @var string
      */
     public $corpId;

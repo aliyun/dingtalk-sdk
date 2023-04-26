@@ -9,63 +9,63 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 绑定钉钉组织ID
+     * @example ding3242423
      *
      * @var string
      */
     public $bindRenterCorpId;
 
     /**
-     * @description 绑定时间
+     * @example 1655704317794
      *
      * @var int
      */
     public $bindTime;
 
     /**
-     * @description 企业信用代码
+     * @example 1313131414
      *
      * @var string
      */
     public $creditCode;
 
     /**
-     * @description 到期时间
+     * @example 1655704317794
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 扩展信息
+     * @example 扩展信息
      *
      * @var string
      */
     public $extend;
 
     /**
-     * @description 租客名称
+     * @example 测试租客
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 租客部门ID
+     * @example 100
      *
      * @var int
      */
     public $renterDeptId;
 
     /**
-     * @description 起始时间
+     * @example 1655704317794
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 状态
+     * @example 1
      *
      * @var int
      */

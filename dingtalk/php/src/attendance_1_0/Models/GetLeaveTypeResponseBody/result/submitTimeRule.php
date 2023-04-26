@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class submitTimeRule extends Model
 {
     /**
-     * @description 是否开启限时提交功能：仅且为true时开启
+     * @example false
      *
      * @var bool
      */
     public $enableTimeLimit;
 
     /**
-     * @description 限制类型：before-提前；after-补交
+     * @example before
      *
      * @var string
      */
     public $timeType;
 
     /**
-     * @description 时间单位：day-天；hour-小时
+     * @example day
      *
      * @var string
      */
     public $timeUnit;
 
     /**
-     * @description 限制值：timeUnit=day时，有效值范围[0~30] 天；timeUnit=hour时，有效值范围[0~24] 小时
+     * @example 1
      *
      * @var int
      */

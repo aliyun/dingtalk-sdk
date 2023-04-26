@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetOfficialAccountOTOMessageResultResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description 查询结果
-     *
      * @var result
      */
     public $result;

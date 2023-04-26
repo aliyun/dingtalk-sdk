@@ -9,21 +9,17 @@ use AlibabaCloud\Tea\Model;
 class imGroupOpenDeliverModel extends Model
 {
     /**
-     * @description 消息@人，
-     *
      * @var string[]
      */
     public $atUserIds;
 
     /**
-     * @description 指定接收者
-     *
      * @var string[]
      */
     public $recipients;
 
     /**
-     * @description 机器人的code
+     * @example dingg3xmqdkpaojuakm8
      *
      * @var string
      */

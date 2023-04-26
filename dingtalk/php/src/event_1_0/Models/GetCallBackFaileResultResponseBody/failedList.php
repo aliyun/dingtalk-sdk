@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class failedList extends Model
 {
     /**
-     * @description 返回的事件内容
+     * @example {\"CalendarEventUpdateTime\":1668735924619,\"CorpId\":\"ding9**cd16741\",\"ChangeType\":\"updated\",\"EventType\":\"calendar_event_change\",\"CalendarId\":\"NzE3MjU0NEB1c2V***5jb218MTQwMDE2\",\"EventTime\":1668735924640,\"LegacyCalendarEventId\":\"1C1BB56076***8A338\",\"BizId\":\"1668**4640\",\"CalendarEventId\":\"RVNUZllHK**elEydz09\",\"operator\":{\"type\":\"user\"},\"UnionIdList\":[\"QQa**mYiE\"]}
      *
      * @var string
      */
     public $callBackData;
 
     /**
-     * @description 事件类型
+     * @example calendar_event_change
      *
      * @var string
      */
     public $callBackTag;
 
     /**
-     * @description 事件所属的corpId
+     * @example ding9f50b15b*****41
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 事件的时间戳。
+     * @example 166***39184
      *
      * @var int
      */

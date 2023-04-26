@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class ListEmpLeaveRecordsRequest extends Model
 {
     /**
-     * @description 结束时间，YYYY-MM-DDTHH:mm:ssZ (ISO 8601/RFC 3339)
+     * @example 2020-08-10T00:00:00
      *
      * @var string
      */
     public $endTime;
 
     /**
-     * @description 分页大小
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页token
+     * @example DCCD7A656FFA6F07
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 开始时间，YYYY-MM-DDTHH:mm:ssZ (ISO 8601/RFC 3339)
+     * @example 2020-07-10T00:00:00
      *
      * @var string
      */

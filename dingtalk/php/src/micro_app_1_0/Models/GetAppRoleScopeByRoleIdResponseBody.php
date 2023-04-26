@@ -9,50 +9,46 @@ use AlibabaCloud\Tea\Model;
 class GetAppRoleScopeByRoleIdResponseBody extends Model
 {
     /**
-     * @description 是否拥有角色管理权限，默认false
+     * @example false
      *
      * @var bool
      */
     public $canManageRole;
 
     /**
-     * @description 部门id列表
-     *
      * @var int[]
      */
     public $deptIdList;
 
     /**
-     * @description 角色id
+     * @example 123
      *
      * @var int
      */
     public $roleId;
 
     /**
-     * @description 角色名称
+     * @example 财务
      *
      * @var string
      */
     public $roleName;
 
     /**
-     * @description 角色范围类型，“ALL_VISIBLE”表示全员，“PART_VISIBLE”表示部分
+     * @example PART_VISIBLE
      *
      * @var string
      */
     public $scopeType;
 
     /**
-     * @description 角色范围版本号
+     * @example 123
      *
      * @var string
      */
     public $scopeVersion;
 
     /**
-     * @description 员工userId列表
-     *
      * @var string[]
      */
     public $userIdList;

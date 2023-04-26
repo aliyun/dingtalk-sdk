@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class AddOrgRequest extends Model
 {
     /**
-     * @description 手机号
+     * @example 15800000000
      *
      * @var string
      */
     public $mobileNum;
 
     /**
-     * @description 组织名称
+     * @example 测试组织
      *
      * @var string
      */

@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class GetStaffPageQueryRequest extends Model
 {
     /**
-     * @description 部门编码
+     * @example 123
      *
      * @var string
      */
     public $deptCode;
 
     /**
-     * @description 员工名称,模糊查询
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 当前页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页条数
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 工号
+     * @example 123456
      *
      * @var string
      */

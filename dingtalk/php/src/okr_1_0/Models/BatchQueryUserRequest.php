@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class BatchQueryUserRequest extends Model
 {
     /**
-     * @description OKR 系统中的用户 ID 列表
-     *
      * @var string[]
      */
     public $okrUserIds;
 
     /**
-     * @description 开放平台中用户 ID 列表
-     *
      * @var string[]
      */
     public $userIds;

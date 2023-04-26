@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class students extends Model
 {
     /**
-     * @description 学生头像
-     *
      * @var string
      */
     public $avatar;
 
     /**
-     * @description 学生姓名
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 学生userid
-     *
      * @var string
      */
     public $staffId;

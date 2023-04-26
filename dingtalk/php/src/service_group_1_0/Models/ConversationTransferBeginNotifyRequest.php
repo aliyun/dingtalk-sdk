@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class ConversationTransferBeginNotifyRequest extends Model
 {
     /**
-     * @description DT端会话ID
-     *
      * @var string
      */
     public $conversationId;
 
     /**
-     * @description 转接备注
-     *
      * @var string
      */
     public $memo;
 
     /**
-     * @description 团队ID
-     *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 对应外部渠道的会话ID
-     *
      * @var string
      */
     public $serviceToken;
 
     /**
-     * @description 原始技能组ID
-     *
      * @var string
      */
     public $sourceSkillGroupId;
 
     /**
-     * @description 目标技能组ID
-     *
      * @var string
      */
     public $targetSkillGroupId;

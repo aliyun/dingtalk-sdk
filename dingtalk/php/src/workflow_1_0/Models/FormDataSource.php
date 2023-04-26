@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class FormDataSource extends Model
 {
     /**
-     * @description 关联表单信息
-     *
      * @var target
      */
     public $target;
 
     /**
-     * @description 关联类型，form关联表单
+     * @example form
      *
      * @var string
      */

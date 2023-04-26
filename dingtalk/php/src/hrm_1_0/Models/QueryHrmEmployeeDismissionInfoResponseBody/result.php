@@ -10,78 +10,56 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 离职部门列表
-     *
      * @var deptList[]
      */
     public $deptList;
 
     /**
-     * @description 离职交接人
-     *
      * @var string
      */
     public $handoverUserId;
 
     /**
-     * @description 最后工作日
-     *
      * @var int
      */
     public $lastWorkDay;
 
     /**
-     * @description 离职前主部门id
-     *
      * @var int
      */
     public $mainDeptId;
 
     /**
-     * @description 离职前主部门名称
-     *
      * @var string
      */
     public $mainDeptName;
 
     /**
-     * @description 离职原因-被动
-     *
      * @var string[]
      */
     public $passiveReason;
 
     /**
-     * @description 离职前工作状态：1，待入职；2，试用期；3，正式
-     *
      * @var int
      */
     public $preStatus;
 
     /**
-     * @description 离职原因备注
-     *
      * @var string
      */
     public $reasonMemo;
 
     /**
-     * @description 离职状态：1，待离职；2，已离职
-     *
      * @var int
      */
     public $status;
 
     /**
-     * @description 员工id
-     *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 离职原因-主动
-     *
      * @var string[]
      */
     public $voluntaryReason;

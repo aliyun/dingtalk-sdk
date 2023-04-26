@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryCategoryByPageRequest extends Model
 {
     /**
-     * @description 分页，从1开始
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小，默认10
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 类型：income收入，expense支出
+     * @example 0
      *
      * @var string
      */

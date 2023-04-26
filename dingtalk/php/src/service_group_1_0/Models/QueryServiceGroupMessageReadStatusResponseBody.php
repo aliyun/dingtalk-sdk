@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class QueryServiceGroupMessageReadStatusResponseBody extends Model
 {
     /**
-     * @description 本次请求所返回的最大记录条数。
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 表示当前调用返回读取到的位置，空代表数据已经读取完毕
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 已读未读信息列表
-     *
      * @var records[]
      */
     public $records;
 
     /**
-     * @description 本次请求条件下的数据总量，此参数为可选参数，默认可不返回。本次请求条件下的数据总量，此参数为可选参数，默认可不返回
-     *
      * @var int
      */
     public $totalCount;

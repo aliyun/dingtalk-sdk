@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetTaskByIdsRequest extends Model
 {
     /**
-     * @description 父任务ID,和taskIds冲突(选其一)。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $parentTaskId;
 
     /**
-     * @description 任务ID集合,使用逗号分隔,和parentTaskId冲突(选其一)。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */

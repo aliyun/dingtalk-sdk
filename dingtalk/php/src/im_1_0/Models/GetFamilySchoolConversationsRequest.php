@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class GetFamilySchoolConversationsRequest extends Model
 {
     /**
-     * @description 获取家校群数量
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 时间的毫秒值，分页游标
-     *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 用户身份ID
+     * @example xxx
      *
      * @var string
      */

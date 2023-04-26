@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpateUserCodeInstanceResponseBody extends Model
 {
     /**
-     * @description 码ID
+     * @example codexxxxxx
      *
      * @var string
      */

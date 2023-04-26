@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class scope extends Model
 {
     /**
-     * @description 权限类型
-     *
      * @var string
      */
     public $scopeType;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $userId;

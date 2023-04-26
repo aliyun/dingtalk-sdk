@@ -10,133 +10,131 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 表单类型。
+     * @example 0
      *
      * @var int
      */
     public $appType;
 
     /**
-     * @description 表单应用 uuid 或者 corpId。
+     * @example xxxx
      *
      * @var string
      */
     public $appUuid;
 
     /**
-     * @description 代表表单业务含义的类型。
+     * @example hrm.xxxx
      *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 创建人 userId。
+     * @example 26652461xxxx5992
      *
      * @var string
      */
     public $creatorUserId;
 
     /**
-     * @description 业务自定义设置数据。
+     * @example null
      *
      * @var string
      */
     public $customSetting;
 
     /**
-     * @description 引擎类型，表单：0，页面：1
+     * @example 0
      *
      * @var int
      */
     public $engineType;
 
     /**
-     * @description 表单的唯一码。
+     * @example PROC-17428B8C-6C60-470E-xxxx-64F1037AE067
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 表单 uuid。
+     * @example FORM-28215C3E-00E3-4118-xxxx-4091F828AF2F
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 创建时间的时间戳。
+     * @example 2021-12-01T10:49Z
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间的时间戳。
+     * @example 2021-12-01T10:49Z
      *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 图标。
+     * @example null
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 排序 id。
+     * @example 1
      *
      * @var int
      */
     public $listOrder;
 
     /**
-     * @description 说明文案。
+     * @example xxxx
      *
      * @var string
      */
     public $memo;
 
     /**
-     * @description 表单名称。
+     * @example 示例模板
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 数据归属者的 id 类型。企业(orgId), 群(cid), 人(uid)。
+     * @example 25xxxx01
      *
      * @var string
      */
     public $ownerIdType;
 
     /**
-     * @description 目标类型: inner, outer, customer。
+     * @example inner
      *
      * @var string
      */
     public $procType;
 
     /**
-     * @description 表单 schema 详情。
-     *
      * @var schemaContent
      */
     public $schemaContent;
 
     /**
-     * @description 状态, PUBLISHED(启用), INVALID(停用), SAVED(草稿)
+     * @example PUBLISHED
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 可见范围类型。
+     * @example PRIVATE
      *
      * @var string
      */

@@ -11,35 +11,35 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 是否预测成功
+     * @example true
      *
      * @var bool
      */
     public $isForecastSuccess;
 
     /**
-     * @description 是否静态流程
+     * @example true
      *
      * @var bool
      */
     public $isStaticWorkflow;
 
     /**
-     * @description 流程 code
+     * @example PROC-2B60E506-D6CB-43F3-B661-359B27F90947
      *
      * @var string
      */
     public $processCode;
 
     /**
-     * @description 流程 id
+     * @example 63657309999
      *
      * @var int
      */
     public $processId;
 
     /**
-     * @description 用户 id
+     * @example 2665246100805992
      *
      * @var string
      */

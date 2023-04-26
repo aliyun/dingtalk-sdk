@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class AddKnowledgeRequest extends Model
 {
     /**
-     * @description 附件列表
-     *
      * @var attachmentList[]
      */
     public $attachmentList;
 
     /**
-     * @description 知识点内容
+     * @example 测试内容
      *
      * @var string
      */
@@ -34,77 +32,71 @@ class AddKnowledgeRequest extends Model
     public $effectTimestart;
 
     /**
-     * @description 知识点扩展问(多个用英文逗号隔开)
-     *
      * @var string
      */
     public $extTitle;
 
     /**
-     * @description 关键字(多个用英文逗号隔开)
-     *
      * @var string
      */
     public $keyword;
 
     /**
-     * @description 知识库的唯一标识
+     * @example xuvw1245
      *
      * @var string
      */
     public $libraryKey;
 
     /**
-     * @description CCM的知识点外链
+     * @example http://www.test.com/xxxxx
      *
      * @var string
      */
     public $linkUrl;
 
     /**
-     * @description 开放团队ID
+     * @example Jxi12wo3qxoa
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 关联问题id
-     *
      * @var int[]
      */
     public $questionIds;
 
     /**
-     * @description 知识点来源
+     * @example CCM
      *
      * @var string
      */
     public $source;
 
     /**
-     * @description 知识点唯一标识
+     * @example CCM-123
      *
      * @var string
      */
     public $sourcePrimaryKey;
 
     /**
-     * @description 知识点名称
+     * @example 测试
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 知识点类型 NORMAL：普通型 CARD：卡片 CONDITION：条件
+     * @example CONDITION
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 知识点版本号
+     * @example V0193859102
      *
      * @var string
      */

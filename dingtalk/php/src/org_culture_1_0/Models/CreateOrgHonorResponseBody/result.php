@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @example 10000283
+     *
      * @var string
      */
     public $honorId;

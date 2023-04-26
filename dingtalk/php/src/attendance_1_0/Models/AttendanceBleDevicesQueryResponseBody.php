@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class AttendanceBleDevicesQueryResponseBody extends Model
 {
     /**
-     * @description 蓝牙列表
-     *
      * @var result[]
      */
     public $result;

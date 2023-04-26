@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreUserInfoResponseBody extends Model
 {
     /**
-     * @description 人员名称
+     * @example 张三
      *
      * @var string
      */
@@ -21,21 +21,19 @@ class DigitalStoreUserInfoResponseBody extends Model
     public $roleIdList;
 
     /**
-     * @description 管理范围
+     * @example 5647993312
      *
      * @var int[]
      */
     public $scopeList;
 
     /**
-     * @description 所在节点列表
-     *
      * @var int[]
      */
     public $storeList;
 
     /**
-     * @description 人员Id
+     * @example 331222222
      *
      * @var string
      */

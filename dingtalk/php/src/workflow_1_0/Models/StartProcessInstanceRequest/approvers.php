@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class approvers extends Model
 {
     /**
-     * @description 审批类型
+     * @example 会签：AND；或签：OR；单人：NONE
      *
      * @var string
      */
     public $actionType;
 
     /**
-     * @description 审批人列表
-     *
      * @var string[]
      */
     public $userIds;

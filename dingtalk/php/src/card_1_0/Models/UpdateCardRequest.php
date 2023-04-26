@@ -11,29 +11,23 @@ use AlibabaCloud\Tea\Model;
 class UpdateCardRequest extends Model
 {
     /**
-     * @description 卡片数据
-     *
      * @var cardData
      */
     public $cardData;
 
     /**
-     * @description 卡片更新选项
-     *
      * @var cardUpdateOptions
      */
     public $cardUpdateOptions;
 
     /**
-     * @description 【必填】外部卡片实例Id
+     * @example 123
      *
      * @var string
      */
     public $outTrackId;
 
     /**
-     * @description 用户的私有数据。
-     * ● value：用户私有数据（cardData）
      * @var PrivateDataValue[]
      */
     public $privateData;

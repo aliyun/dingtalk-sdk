@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class coFeedOpenSpaceModel extends Model
 {
     /**
-     * @description 卡片标题
-     *
      * @var string
      */
     public $title;

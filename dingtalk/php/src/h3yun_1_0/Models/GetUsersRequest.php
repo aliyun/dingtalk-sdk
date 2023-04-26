@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetUsersRequest extends Model
 {
     /**
-     * @description 部门id。
+     * @example 18f923a7-5a5e-426d-94ae-a55ad1a4b240
      *
      * @var string
      */
     public $departmentId;
 
     /**
-     * @description 是否递归获取子级部门下的用户。默认值为false
+     * @example true
      *
      * @var bool
      */

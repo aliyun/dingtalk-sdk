@@ -13,182 +13,178 @@ use AlibabaCloud\Tea\Model;
 class generalInvoiceVOList extends Model
 {
     /**
-     * @description 账期时间
+     * @example abc
      *
      * @var string
      */
     public $accountPeriod;
 
     /**
-     * @description 不含税金额
+     * @example 100
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 含税金额
+     * @example 120
      *
      * @var string
      */
     public $amountWithTax;
 
     /**
-     * @description 校验码
+     * @example 1111
      *
      * @var string
      */
     public $checkCode;
 
     /**
-     * @description 查验时间
+     * @example 2010-12-12
      *
      * @var string
      */
     public $checkTime;
 
     /**
-     * @description 开票日期
+     * @example 2022-12-10
      *
      * @var string
      */
     public $drewDate;
 
     /**
-     * @description 电票版式文件下载地址
+     * @example abc
      *
      * @var string
      */
     public $electronicUrl;
 
     /**
-     * @description 财务类型，INPUT-VAT(进项),OUTPUT_VAT(销项)
+     * @example INPUT_VAT
      *
      * @var string
      */
     public $financeType;
 
     /**
-     * @description 资金类型 ，RED（红票），（BLUE）蓝票
+     * @example RED
      *
      * @var string
      */
     public $fundType;
 
     /**
-     * @description 常规发票明细
-     *
      * @var generalInvoiceDetailVOList[]
      */
     public $generalInvoiceDetailVOList;
 
     /**
-     * @description 发票代码
+     * @example abc
      *
      * @var string
      */
     public $invoiceCode;
 
     /**
-     * @description 发票号码
+     * @example abc
      *
      * @var string
      */
     public $invoiceNo;
 
     /**
-     * @description 发票状态
+     * @example abc
      *
      * @var string
      */
     public $invoiceStatus;
 
     /**
-     * @description 发票类型
+     * @example INTPUT_VAT
      *
      * @var string
      */
     public $invoiceType;
 
     /**
-     * @description 机器码
+     * @example 1111
      *
      * @var string
      */
     public $machineCode;
 
     /**
-     * @description 成品油标识
+     * @example abc
      *
      * @var string
      */
     public $oilFlag;
 
     /**
-     * @description 收款人
+     * @example abc
      *
      * @var string
      */
     public $payee;
 
     /**
-     * @description 审批单实例
+     * @example abc
      *
      * @var string
      */
     public $processInstCode;
 
     /**
-     * @description 审批单类型
+     * @example abc
      *
      * @var string
      */
     public $processInstType;
 
     /**
-     * @description 购方地址
+     * @example 杭州市
      *
      * @var string
      */
     public $purchaserAddress;
 
     /**
-     * @description 购方银行账户
-     *
      * @var string
      */
     public $purchaserBankAccount;
 
     /**
-     * @description 购方银行名称
+     * @example 建行
      *
      * @var string
      */
     public $purchaserBankNameAccount;
 
     /**
-     * @description 购方名称
+     * @example 张三
      *
      * @var string
      */
     public $purchaserName;
 
     /**
-     * @description 购方税号
+     * @example 155655
      *
      * @var string
      */
     public $purchaserTaxNo;
 
     /**
-     * @description 购方电话
+     * @example 1333333333
      *
      * @var string
      */
     public $purchaserTel;
 
     /**
-     * @description 备注
+     * @example abc
      *
      * @var string
      */
@@ -200,56 +196,54 @@ class generalInvoiceVOList extends Model
     public $secondHandCarInvoiceDetailList;
 
     /**
-     * @description 销方地址
+     * @example 8852
      *
      * @var string
      */
     public $sellerAddress;
 
     /**
-     * @description 销方银行账户
-     *
      * @var string
      */
     public $sellerBankAccount;
 
     /**
-     * @description 销方银行名称
+     * @example 招商银行
      *
      * @var string
      */
     public $sellerBankNameAccount;
 
     /**
-     * @description 销方名称
+     * @example 李四
      *
      * @var string
      */
     public $sellerName;
 
     /**
-     * @description 销方税号
+     * @example 2202
      *
      * @var string
      */
     public $sellerTaxNo;
 
     /**
-     * @description 销方电话
+     * @example 13355222222
      *
      * @var string
      */
     public $sellerTel;
 
     /**
-     * @description 代开发票标识 1-自开，2-代开
+     * @example abc
      *
      * @var string
      */
     public $supplySign;
 
     /**
-     * @description 税额
+     * @example 20
      *
      * @var string
      */
@@ -266,21 +260,21 @@ class generalInvoiceVOList extends Model
     public $vehicleSaleDetailVOList;
 
     /**
-     * @description 发票查验状态
+     * @example abc
      *
      * @var string
      */
     public $verifyStatus;
 
     /**
-     * @description 凭证code
+     * @example abc
      *
      * @var string
      */
     public $voucherCode;
 
     /**
-     * @description 生成凭证状态
+     * @example abc
      *
      * @var string
      */

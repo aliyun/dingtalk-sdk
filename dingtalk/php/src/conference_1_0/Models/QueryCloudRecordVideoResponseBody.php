@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryCloudRecordVideoResponseBody extends Model
 {
     /**
-     * @description 视频列表
-     *
      * @var videoList[]
      */
     public $videoList;

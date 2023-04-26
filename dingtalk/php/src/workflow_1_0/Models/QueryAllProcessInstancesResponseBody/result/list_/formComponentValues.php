@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class formComponentValues extends Model
 {
     /**
-     * @description 控件扩展数据
+     * @example {"staffId":"abcd"}
      *
      * @var string
      */
     public $extValue;
 
     /**
-     * @description 控件id
+     * @example TextField-a32bcdef
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 控件名称
+     * @example 姓名
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 控件数据
+     * @example 张三
      *
      * @var string
      */

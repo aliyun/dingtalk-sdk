@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceAccountPeriodResponseBody extends Model
 {
     /**
-     * @description 错误信息
-     *
      * @var errorResult[]
      */
     public $errorResult;
 
     /**
-     * @description 成功信息
-     *
      * @var successResult[]
      */
     public $successResult;

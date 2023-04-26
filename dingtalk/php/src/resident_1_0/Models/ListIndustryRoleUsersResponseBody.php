@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ListIndustryRoleUsersResponseBody extends Model
 {
     /**
-     * @description 用户id列表
-     *
      * @var string[]
      */
     public $userIdList;

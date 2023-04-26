@@ -9,42 +9,36 @@ use AlibabaCloud\Tea\Model;
 class BoundTemplateToTeamRequest extends Model
 {
     /**
-     * @description 目标团队id
+     * @example btkoYsadwyQiE
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 模板中的机器人配置信息
+     * @example [{"robotCode":"123ITJovyMHtmi216233798228941001","robotName":"服务小钉"}]
      *
      * @var string
      */
     public $robotConfig;
 
     /**
-     * @description 模板描述信息
-     *
      * @var string
      */
     public $templateDesc;
 
     /**
-     * @description 模板id
-     *
      * @var string
      */
     public $templateId;
 
     /**
-     * @description 模板名字
-     *
      * @var string
      */
     public $templateName;
 
     /**
-     * @description 模板类型
+     * @example 0普通群模板，1内部群模板
      *
      * @var string
      */

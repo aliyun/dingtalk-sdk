@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryPayResultResponseBody extends Model
 {
     /**
-     * @description 状态
+     * @example 状态，取值：10：待支付，11：关单，20：支付成功
      *
      * @var int
      */

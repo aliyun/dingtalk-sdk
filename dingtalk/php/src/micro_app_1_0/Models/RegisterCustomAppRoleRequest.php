@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class RegisterCustomAppRoleRequest extends Model
 {
     /**
-     * @description 是否拥有管理角色的权限，可不传，默认false
+     * @example false
      *
      * @var bool
      */
     public $canManageRole;
 
     /**
-     * @description 执行用户userId
-     *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 角色名称
-     *
      * @var string
      */
     public $roleName;

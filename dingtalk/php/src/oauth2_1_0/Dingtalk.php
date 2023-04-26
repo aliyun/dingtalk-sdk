@@ -27,29 +27,25 @@ use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetUserTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Voauth2_1_0\Models\GetUserTokenResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
-        $this->_endpointRule = '';
+        $this->_client             = new DarabonbaGatewayDingTalkClient();
+        $this->_spi                = $this->_client;
+        $this->_signatureAlgorithm = 'v2';
+        $this->_endpointRule       = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
-    }
-
-    /**
-     * @return CreateJsapiTicketResponse
-     */
-    public function createJsapiTicket()
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new CreateJsapiTicketHeaders([]);
-
-        return $this->createJsapiTicketWithOptions($headers, $runtime);
     }
 
     /**
@@ -65,13 +61,71 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'CreateJsapiTicket',
+            'version'     => 'oauth2_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/oauth2/jsapiTickets',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateJsapiTicketResponse::fromMap($this->doROARequest('CreateJsapiTicket', 'oauth2_1.0', 'HTTP', 'POST', 'AK', '/v1.0/oauth2/jsapiTickets', 'json', $req, $runtime));
+        return CreateJsapiTicketResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return CreateJsapiTicketResponse
+     */
+    public function createJsapiTicket()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateJsapiTicketHeaders([]);
+
+        return $this->createJsapiTicketWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetAccessTokenRequest $request
+     * @param string[]              $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return GetAccessTokenResponse
+     */
+    public function getAccessTokenWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appKey)) {
+            $body['appKey'] = $request->appKey;
+        }
+        if (!Utils::isUnset($request->appSecret)) {
+            $body['appSecret'] = $request->appSecret;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetAccessToken',
+            'version'     => 'oauth2_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/oauth2/accessToken',
+            'method'      => 'POST',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -88,28 +142,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAccessTokenRequest $request
-     * @param string[]              $headers
-     * @param RuntimeOptions        $runtime
+     * @param GetAuthInfoRequest $request
+     * @param GetAuthInfoHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return GetAccessTokenResponse
+     * @return GetAuthInfoResponse
      */
-    public function getAccessTokenWithOptions($request, $headers, $runtime)
+    public function getAuthInfoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->appKey)) {
-            @$body['appKey'] = $request->appKey;
+        $query = [];
+        if (!Utils::isUnset($request->authCorpId)) {
+            $query['authCorpId'] = $request->authCorpId;
         }
-        if (!Utils::isUnset($request->appSecret)) {
-            @$body['appSecret'] = $request->appSecret;
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
-            'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetAuthInfo',
+            'version'     => 'oauth2_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/oauth2/apps/authInfo',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return GetAccessTokenResponse::fromMap($this->doROARequest('GetAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', '/v1.0/oauth2/accessToken', 'json', $req, $runtime));
+        return GetAuthInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -126,32 +195,45 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAuthInfoRequest $request
-     * @param GetAuthInfoHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param GetCorpAccessTokenRequest $request
+     * @param string[]                  $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return GetAuthInfoResponse
+     * @return GetCorpAccessTokenResponse
      */
-    public function getAuthInfoWithOptions($request, $headers, $runtime)
+    public function getCorpAccessTokenWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->authCorpId)) {
-            @$query['authCorpId'] = $request->authCorpId;
+            $body['authCorpId'] = $request->authCorpId;
         }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
+        if (!Utils::isUnset($request->suiteKey)) {
+            $body['suiteKey'] = $request->suiteKey;
         }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        if (!Utils::isUnset($request->suiteSecret)) {
+            $body['suiteSecret'] = $request->suiteSecret;
+        }
+        if (!Utils::isUnset($request->suiteTicket)) {
+            $body['suiteTicket'] = $request->suiteTicket;
         }
         $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'headers' => $headers,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetCorpAccessToken',
+            'version'     => 'oauth2_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/oauth2/corpAccessToken',
+            'method'      => 'POST',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetAuthInfoResponse::fromMap($this->doROARequest('GetAuthInfo', 'oauth2_1.0', 'HTTP', 'GET', 'AK', '/v1.0/oauth2/apps/authInfo', 'json', $req, $runtime));
+        return GetCorpAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -168,34 +250,36 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCorpAccessTokenRequest $request
-     * @param string[]                  $headers
-     * @param RuntimeOptions            $runtime
+     * @param GetPersonalAuthRuleHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return GetCorpAccessTokenResponse
+     * @return GetPersonalAuthRuleResponse
      */
-    public function getCorpAccessTokenWithOptions($request, $headers, $runtime)
+    public function getPersonalAuthRuleWithOptions($headers, $runtime)
     {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->authCorpId)) {
-            @$body['authCorpId'] = $request->authCorpId;
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($request->suiteKey)) {
-            @$body['suiteKey'] = $request->suiteKey;
-        }
-        if (!Utils::isUnset($request->suiteSecret)) {
-            @$body['suiteSecret'] = $request->suiteSecret;
-        }
-        if (!Utils::isUnset($request->suiteTicket)) {
-            @$body['suiteTicket'] = $request->suiteTicket;
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
-            'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'GetPersonalAuthRule',
+            'version'     => 'oauth2_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/oauth2/authRules/user',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return GetCorpAccessTokenResponse::fromMap($this->doROARequest('GetCorpAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', '/v1.0/oauth2/corpAccessToken', 'json', $req, $runtime));
+        return GetPersonalAuthRuleResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -210,25 +294,39 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPersonalAuthRuleHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param GetSsoAccessTokenRequest $request
+     * @param string[]                 $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return GetPersonalAuthRuleResponse
+     * @return GetSsoAccessTokenResponse
      */
-    public function getPersonalAuthRuleWithOptions($headers, $runtime)
+    public function getSsoAccessTokenWithOptions($request, $headers, $runtime)
     {
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpid)) {
+            $body['corpid'] = $request->corpid;
         }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        if (!Utils::isUnset($request->ssoSecret)) {
+            $body['ssoSecret'] = $request->ssoSecret;
         }
         $req = new OpenApiRequest([
-            'headers' => $realHeaders,
+            'headers' => $headers,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetSsoAccessToken',
+            'version'     => 'oauth2_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/oauth2/ssoAccessToken',
+            'method'      => 'POST',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return GetPersonalAuthRuleResponse::fromMap($this->doROARequest('GetPersonalAuthRule', 'oauth2_1.0', 'HTTP', 'GET', 'AK', '/v1.0/oauth2/authRules/user', 'json', $req, $runtime));
+        return GetSsoAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -245,28 +343,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSsoAccessTokenRequest $request
-     * @param string[]                 $headers
-     * @param RuntimeOptions           $runtime
+     * @param GetSsoUserInfoRequest $request
+     * @param GetSsoUserInfoHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return GetSsoAccessTokenResponse
+     * @return GetSsoUserInfoResponse
      */
-    public function getSsoAccessTokenWithOptions($request, $headers, $runtime)
+    public function getSsoUserInfoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->corpid)) {
-            @$body['corpid'] = $request->corpid;
+        $query = [];
+        if (!Utils::isUnset($request->code)) {
+            $query['code'] = $request->code;
         }
-        if (!Utils::isUnset($request->ssoSecret)) {
-            @$body['ssoSecret'] = $request->ssoSecret;
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
-            'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetSsoUserInfo',
+            'version'     => 'oauth2_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/oauth2/ssoUserInfo',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetSsoAccessTokenResponse::fromMap($this->doROARequest('GetSsoAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', '/v1.0/oauth2/ssoAccessToken', 'json', $req, $runtime));
+        return GetSsoUserInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -283,32 +396,42 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSsoUserInfoRequest $request
-     * @param GetSsoUserInfoHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param GetSuiteAccessTokenRequest $request
+     * @param string[]                   $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return GetSsoUserInfoResponse
+     * @return GetSuiteAccessTokenResponse
      */
-    public function getSsoUserInfoWithOptions($request, $headers, $runtime)
+    public function getSuiteAccessTokenWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->code)) {
-            @$query['code'] = $request->code;
+        $body = [];
+        if (!Utils::isUnset($request->suiteKey)) {
+            $body['suiteKey'] = $request->suiteKey;
         }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
+        if (!Utils::isUnset($request->suiteSecret)) {
+            $body['suiteSecret'] = $request->suiteSecret;
         }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        if (!Utils::isUnset($request->suiteTicket)) {
+            $body['suiteTicket'] = $request->suiteTicket;
         }
         $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'headers' => $headers,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetSuiteAccessToken',
+            'version'     => 'oauth2_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/oauth2/suiteAccessToken',
+            'method'      => 'POST',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return GetSsoUserInfoResponse::fromMap($this->doROARequest('GetSsoUserInfo', 'oauth2_1.0', 'HTTP', 'GET', 'AK', '/v1.0/oauth2/ssoUserInfo', 'json', $req, $runtime));
+        return GetSuiteAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -325,31 +448,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSuiteAccessTokenRequest $request
-     * @param string[]                   $headers
-     * @param RuntimeOptions             $runtime
+     * @param GetUserTokenRequest $request
+     * @param string[]            $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return GetSuiteAccessTokenResponse
+     * @return GetUserTokenResponse
      */
-    public function getSuiteAccessTokenWithOptions($request, $headers, $runtime)
+    public function getUserTokenWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->suiteKey)) {
-            @$body['suiteKey'] = $request->suiteKey;
+        if (!Utils::isUnset($request->clientId)) {
+            $body['clientId'] = $request->clientId;
         }
-        if (!Utils::isUnset($request->suiteSecret)) {
-            @$body['suiteSecret'] = $request->suiteSecret;
+        if (!Utils::isUnset($request->clientSecret)) {
+            $body['clientSecret'] = $request->clientSecret;
         }
-        if (!Utils::isUnset($request->suiteTicket)) {
-            @$body['suiteTicket'] = $request->suiteTicket;
+        if (!Utils::isUnset($request->code)) {
+            $body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->grantType)) {
+            $body['grantType'] = $request->grantType;
+        }
+        if (!Utils::isUnset($request->refreshToken)) {
+            $body['refreshToken'] = $request->refreshToken;
         }
         $req = new OpenApiRequest([
             'headers' => $headers,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'GetUserToken',
+            'version'     => 'oauth2_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/oauth2/userAccessToken',
+            'method'      => 'POST',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetSuiteAccessTokenResponse::fromMap($this->doROARequest('GetSuiteAccessToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', '/v1.0/oauth2/suiteAccessToken', 'json', $req, $runtime));
+        return GetUserTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -363,39 +503,5 @@ class Dingtalk extends OpenApiClient
         $headers = [];
 
         return $this->getUserTokenWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetUserTokenRequest $request
-     * @param string[]            $headers
-     * @param RuntimeOptions      $runtime
-     *
-     * @return GetUserTokenResponse
-     */
-    public function getUserTokenWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->clientId)) {
-            @$body['clientId'] = $request->clientId;
-        }
-        if (!Utils::isUnset($request->clientSecret)) {
-            @$body['clientSecret'] = $request->clientSecret;
-        }
-        if (!Utils::isUnset($request->code)) {
-            @$body['code'] = $request->code;
-        }
-        if (!Utils::isUnset($request->grantType)) {
-            @$body['grantType'] = $request->grantType;
-        }
-        if (!Utils::isUnset($request->refreshToken)) {
-            @$body['refreshToken'] = $request->refreshToken;
-        }
-        $req = new OpenApiRequest([
-            'headers' => $headers,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return GetUserTokenResponse::fromMap($this->doROARequest('GetUserToken', 'oauth2_1.0', 'HTTP', 'POST', 'AK', '/v1.0/oauth2/userAccessToken', 'json', $req, $runtime));
     }
 }

@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class ChannelOrdersRequest extends Model
 {
     /**
-     * @description 商品id
-     *
      * @var string
      */
     public $itemCode;
 
     /**
-     * @description 商品名称
-     *
      * @var string
      */
     public $itemName;
 
     /**
-     * @description 下单时间
-     *
      * @var float
      */
     public $orderCreateTime;
 
     /**
-     * @description isv方的订单Id（用于幂等，请保证唯一性）
-     *
      * @var string
      */
     public $orderId;
 
     /**
-     * @description 支付金额（以分为单位，仅作记录，不作为凭证）
-     *
      * @var float
      */
     public $payFee;
 
     /**
-     * @description 购买数量
-     *
      * @var float
      */
     public $quantity;

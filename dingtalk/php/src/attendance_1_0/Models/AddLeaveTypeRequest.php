@@ -12,70 +12,64 @@ use AlibabaCloud\Tea\Model;
 class AddLeaveTypeRequest extends Model
 {
     /**
-     * @description 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
+     * @example general_leave
      *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 调休假有效期规则(validity_type:有效类型 absolute_time(绝对时间)、relative_time(相对时间)其中一种 validity_value:延长日期(当validity_type为absolute_time该值该值不为空且满足yy-mm格式 validity_type为relative_time该值为大于1的整数))
+     * @example {"validity_type":"absolute_time","validity_value":"12-31"}
      *
      * @var string
      */
     public $extras;
 
     /**
-     * @description 每天折算的工作时长(百分之一 例如1天=10小时=1000)
+     * @example 1000
      *
      * @var int
      */
     public $hoursInPerDay;
 
     /**
-     * @description 请假证明
-     *
      * @var leaveCertificate
      */
     public $leaveCertificate;
 
     /**
-     * @description 假期名称
+     * @example 年假
      *
      * @var string
      */
     public $leaveName;
 
     /**
-     * @description 请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)
+     * @example day
      *
      * @var string
      */
     public $leaveViewUnit;
 
     /**
-     * @description 是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。
+     * @example true
      *
      * @var bool
      */
     public $naturalDayLeave;
 
     /**
-     * @description 限时提交规则
-     *
      * @var submitTimeRule
      */
     public $submitTimeRule;
 
     /**
-     * @description 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
-     *
      * @var visibilityRules[]
      */
     public $visibilityRules;
 
     /**
-     * @description 操作者ID
+     * @example user01
      *
      * @var string
      */

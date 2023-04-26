@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class categoryNames extends Model
 {
     /**
-     * @description 类目名称
+     * @example 应用
      *
      * @var string
      */

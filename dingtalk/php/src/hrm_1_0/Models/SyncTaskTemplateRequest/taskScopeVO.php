@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class taskScopeVO extends Model
 {
     /**
-     * @description 按照部门圈人
-     *
      * @var int[]
      */
     public $deptIds;
 
     /**
-     * @description 按照职位圈人
-     *
      * @var string[]
      */
     public $positionIds;
 
     /**
-     * @description 按照角色圈人
-     *
      * @var string[]
      */
     public $roleIds;
 
     /**
-     * @description 按照员工userId圈人
-     *
      * @var string[]
      */
     public $userIds;

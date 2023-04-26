@@ -10,42 +10,40 @@ use AlibabaCloud\Tea\Model;
 class CreateApproveRequest extends Model
 {
     /**
-     * @description 三方审批单id，全局唯一
+     * @example 341lkfjdkf
      *
      * @var string
      */
     public $approveId;
 
     /**
-     * @description 审批人员工id
+     * @example 4243235dfd
      *
      * @var string
      */
     public $opUserid;
 
     /**
-     * @description 审批单关联的打卡信息
-     *
      * @var punchParam
      */
     public $punchParam;
 
     /**
-     * @description 子类型名称，最大长度20个字符
+     * @example 年假
      *
      * @var string
      */
     public $subType;
 
     /**
-     * @description 审批单类型名称，最大长度20个字符
+     * @example 请假
      *
      * @var string
      */
     public $tagName;
 
     /**
-     * @description 员工id
+     * @example fdfi3435
      *
      * @var string
      */

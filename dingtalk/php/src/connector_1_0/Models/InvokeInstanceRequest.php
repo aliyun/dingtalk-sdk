@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class InvokeInstanceRequest extends Model
 {
     /**
-     * @description 连接资产标识
+     * @example dca://ding32fff839a3e0105d.connect.dingtalk.com/ding32fff839a3e0105d/action/G-ACT-101FDEBD3C6E213DB474000P
      *
      * @var string
      */
     public $connectAssetUri;
 
     /**
-     * @description 入参JSON文本
+     * @example {}
      *
      * @var string
      */
     public $inputJsonString;
 
     /**
-     * @description 外部实例唯一标识
+     * @example SAMPLE
      *
      * @var string
      */

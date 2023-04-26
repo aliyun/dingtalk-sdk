@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class roomGroup extends Model
 {
     /**
-     * @description 分组id
+     * @example 1
      *
      * @var int
      */
     public $groupId;
 
     /**
-     * @description 分组名称
+     * @example 测试分组
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 父分组id
+     * @example 0
      *
      * @var int
      */

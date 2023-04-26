@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class BatchRemovalByFormInstanceIdListRequest extends Model
 {
     /**
-     * @description 宜搭应用编码
+     * @example APP_XCE0EVXS6DYG3YDYC5RD
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 是否需要宜搭服务端异步执行该任务(选择异步执行删除操作，那么OpenAPI调用会立即返回，并且宜搭服务端会继续执行删除操作直至结束，且允许的单次删除数据量上限更大)
+     * @example true
      *
      * @var bool
      */
     public $asynchronousExecution;
 
     /**
-     * @description 是否需要触发表单绑定的校验规则、关联业务规则和第三方服务回调（如果您的业务无必要执行这些，那么请填false以降低API的耗时以及获得更大的单次删除数据量上限）
+     * @example true
      *
      * @var bool
      */
     public $executeExpression;
 
     /**
-     * @description 表单实例id列表
+     * @example FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24
      *
      * @var string[]
      */
     public $formInstanceIdList;
 
     /**
-     * @description 表单编码
+     * @example FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 宜搭应用秘钥
+     * @example 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉userId
+     * @example ding173982232112232
      *
      * @var string
      */

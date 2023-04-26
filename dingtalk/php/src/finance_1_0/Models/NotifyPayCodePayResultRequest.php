@@ -10,119 +10,117 @@ use AlibabaCloud\Tea\Model;
 class NotifyPayCodePayResultRequest extends Model
 {
     /**
-     * @description 订单金额
+     * @example 1234.56
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 收费金额
+     * @example 1.00, 没有传0.00
      *
      * @var string
      */
     public $chargeAmount;
 
     /**
-     * @description 企业id
+     * @example ding1234
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 扩展信息
+     * @example { "akey": "avalue“}
      *
      * @var string
      */
     public $extInfo;
 
     /**
-     * @description 交易开始时间
+     * @example 2021-01-01 11:11:11
      *
      * @var string
      */
     public $gmtTradeCreate;
 
     /**
-     * @description 交易结束时间
+     * @example 2021-01-01 11:11:11
      *
      * @var string
      */
     public $gmtTradeFinish;
 
     /**
-     * @description merchantName
+     * @example XX公司食堂
      *
      * @var string
      */
     public $merchantName;
 
     /**
-     * @description 支付渠道明细信息
-     *
      * @var payChannelDetailList[]
      */
     public $payChannelDetailList;
 
     /**
-     * @description 付款码值
+     * @example 261234567890
      *
      * @var string
      */
     public $payCode;
 
     /**
-     * @description 订单优惠金额
+     * @example 1.23，没有传0.00
      *
      * @var string
      */
     public $promotionAmount;
 
     /**
-     * @description 备注
+     * @example 备注
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 订单标题
+     * @example 晚餐100.0元
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 支付失败错误码
+     * @example BALANCE_NOT_ENOUGH
      *
      * @var string
      */
     public $tradeErrorCode;
 
     /**
-     * @description 支付失败信息
+     * @example 余额不足，请充值
      *
      * @var string
      */
     public $tradeErrorMsg;
 
     /**
-     * @description 交易号
+     * @example 202101012345678
      *
      * @var string
      */
     public $tradeNo;
 
     /**
-     * @description 交易状态
+     * @example SUCCESS/FAIL
      *
      * @var string
      */
     public $tradeStatus;
 
     /**
-     * @description 用户id
+     * @example userId1234
      *
      * @var string
      */

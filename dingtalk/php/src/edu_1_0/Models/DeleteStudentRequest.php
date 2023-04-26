@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteStudentRequest extends Model
 {
     /**
-     * @description 钉钉管理员员工ID
+     * @example 123456
      *
      * @var string
      */

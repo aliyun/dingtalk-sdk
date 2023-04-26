@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ListPointRulesRequest extends Model
 {
     /**
-     * @description 是否查询全员圈积分
+     * @example false
      *
      * @var bool
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CallbackRegiesterResponseBody extends Model
 {
     /**
-     * @description 注册结果详情
-     *
      * @var result
      */
     public $result;

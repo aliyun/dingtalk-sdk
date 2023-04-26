@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class GetMicroAppScopeResponseBody extends Model
 {
     /**
-     * @description 可见范围结果
+     * @example true
      *
      * @var result
      */

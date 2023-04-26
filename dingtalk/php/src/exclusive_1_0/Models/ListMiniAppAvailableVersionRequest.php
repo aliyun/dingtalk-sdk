@@ -9,29 +9,25 @@ use AlibabaCloud\Tea\Model;
 class ListMiniAppAvailableVersionRequest extends Model
 {
     /**
-     * @description 小程序id
+     * @example 5000003
      *
      * @var string
      */
     public $miniAppId;
 
     /**
-     * @description 分页数1
-     *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 版本类型列表，0-开发版，1-灰度版，2-发布版，3-体验版
-     *
      * @var int[]
      */
     public $versionTypeSet;

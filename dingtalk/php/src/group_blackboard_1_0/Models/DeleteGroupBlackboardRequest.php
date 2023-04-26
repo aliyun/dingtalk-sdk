@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class DeleteGroupBlackboardRequest extends Model
 {
     /**
-     * @description 群公告 Id
+     * @example e3b4f5
      *
      * @var string
      */
     public $dataId;
 
     /**
-     * @description 群会话的 Id
+     * @example cid123456
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 操作用户的 userId
+     * @example 001
      *
      * @var string
      */

@@ -9,14 +9,18 @@ use AlibabaCloud\Tea\Model;
 class templateConfig extends Model
 {
     /**
-     * @description 表单创建移动端地址
+     * @example https://open.dingtalk.com/
+     *
+     * @deprecated
      *
      * @var string
      */
     public $createInstanceMobileUrl;
 
     /**
-     * @description 表单创建PC端地址
+     * @example https://open.dingtalk.com/
+     *
+     * @deprecated
      *
      * @var string
      */
@@ -28,14 +32,16 @@ class templateConfig extends Model
     public $disableSendCard;
 
     /**
-     * @description 是否为隐藏模板
+     * @example true
      *
      * @var bool
      */
     public $hidden;
 
     /**
-     * @description 模板编辑地址
+     * @example https://open.dingtalk.com/
+     *
+     * @deprecated
      *
      * @var string
      */

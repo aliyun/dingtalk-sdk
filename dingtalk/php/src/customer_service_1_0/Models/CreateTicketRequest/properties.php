@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class properties extends Model
 {
     /**
+     * @example 字段名称
+     *
      * @var string
      */
     public $name;
 
     /**
+     * @example 字段取值
+     *
      * @var string
      */
     public $value;

@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class SaveUserExtendValuesRequest extends Model
 {
     /**
-     * @description 字段展示名称
-     *
      * @var string
      */
     public $userDisplayName;
 
     /**
-     * @description 用户拓展字段key
-     *
      * @var string
      */
     public $userExtendKey;
 
     /**
-     * @description 用户扩展字段value
-     *
      * @var string
      */
     public $userExtendValue;

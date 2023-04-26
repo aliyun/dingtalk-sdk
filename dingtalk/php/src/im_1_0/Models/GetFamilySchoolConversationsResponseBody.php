@@ -15,14 +15,14 @@ class GetFamilySchoolConversationsResponseBody extends Model
     public $groupInfoList;
 
     /**
-     * @description 是否还有数据
+     * @example false
      *
      * @var string
      */
     public $hasMore;
 
     /**
-     * @description 返回下一页游标
+     * @example 1666671122000
      *
      * @var string
      */

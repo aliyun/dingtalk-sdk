@@ -11,29 +11,27 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 操作类型
+     * @example 0
      *
      * @var int
      */
     public $action;
 
     /**
-     * @description 操作类型翻译值
+     * @example 企业群
      *
      * @var string
      */
     public $actionView;
 
     /**
-     * @description 文件id
+     * @example 11258620701
      *
      * @var string
      */
     public $bizId;
 
     /**
-     * @description 接收成员列表，仅分享文档返回
-     *
      * @var docMemberList[]
      */
     public $docMemberList;
@@ -49,140 +47,138 @@ class list_ extends Model
     public $docPcUrl;
 
     /**
-     * @description 成员授权列表，仅文档授权返回
-     *
      * @var docReceiverList[]
      */
     public $docReceiverList;
 
     /**
-     * @description 记录生成时间，unix时间戳，单位ms
+     * @example 1577601221260
      *
      * @var int
      */
     public $gmtCreate;
 
     /**
-     * @description 记录修改时间，unix时间戳，单位ms
+     * @example 1577601221260
      *
      * @var int
      */
     public $gmtModified;
 
     /**
-     * @description 操作机器ip
+     * @example 1.1.1.1
      *
      * @var string
      */
     public $ipAddress;
 
     /**
-     * @description 操作来源空间
+     * @example 2
      *
      * @var int
      */
     public $operateModule;
 
     /**
-     * @description 操作来源翻译值
+     * @example 企业群
      *
      * @var string
      */
     public $operateModuleView;
 
     /**
-     * @description 用户昵称
+     * @example 测试
      *
      * @var string
      */
     public $operatorName;
 
     /**
-     * @description 文件所属组织名称
+     * @example 水果公司
      *
      * @var string
      */
     public $orgName;
 
     /**
-     * @description 操作端
+     * @example 11
      *
      * @var int
      */
     public $platform;
 
     /**
-     * @description 操作端翻译值
+     * @example WIN
      *
      * @var string
      */
     public $platformView;
 
     /**
-     * @description 用户姓名
+     * @example 张三
      *
      * @var string
      */
     public $realName;
 
     /**
-     * @description 文件接收方名称
+     * @example 总经理办公室
      *
      * @var string
      */
     public $receiverName;
 
     /**
-     * @description 文件接收方类型
+     * @example 0
      *
      * @var int
      */
     public $receiverType;
 
     /**
-     * @description 文件接收方类型翻译值
+     * @example 单聊
      *
      * @var string
      */
     public $receiverTypeView;
 
     /**
-     * @description test.docx
+     * @example 文件名
      *
      * @var string
      */
     public $resource;
 
     /**
-     * @description 文件类型
+     * @example doc
      *
      * @var string
      */
     public $resourceExtension;
 
     /**
-     * @description 文件大小
+     * @example 1024
      *
      * @var int
      */
     public $resourceSize;
 
     /**
-     * @description 记录状态
+     * @example 0
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 空间id
+     * @example 11258620
      *
      * @var int
      */
     public $targetSpaceId;
 
     /**
-     * @description 员工的userId
+     * @example 123
      *
      * @var string
      */

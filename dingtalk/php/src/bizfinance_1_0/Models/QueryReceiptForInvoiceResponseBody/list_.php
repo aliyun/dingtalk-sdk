@@ -12,154 +12,146 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 金额
+     * @example 5000
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 开票状态
+     * @example applied
      *
      * @var string
      */
     public $applyStatus;
 
     /**
-     * @description 创建时间
-     *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 创建人
-     *
      * @var creator
      */
     public $creator;
 
     /**
-     * @description 客户
-     *
      * @var customer
      */
     public $customer;
 
     /**
-     * @description 开票人邮箱
+     * @example www.abc.com
      *
      * @var string
      */
     public $drawerEmail;
 
     /**
-     * @description 开票人手机号码
+     * @example 12345678901
      *
      * @var string
      */
     public $drawerTelephone;
 
     /**
-     * @description 发票种类
+     * @example 增值税发票
      *
      * @var string
      */
     public $invoiceType;
 
     /**
-     * @description 主数据modelId
+     * @example EM-xxxxx
      *
      * @var string
      */
     public $modelId;
 
     /**
-     * @description 商品列表
-     *
      * @var productInfoList[]
      */
     public $productInfoList;
 
     /**
-     * @description 购方账户
+     * @example abc
      *
      * @var string
      */
     public $purchaserAccount;
 
     /**
-     * @description 购方地址
+     * @example 杭州市
      *
      * @var string
      */
     public $purchaserAddress;
 
     /**
-     * @description 购方银行
+     * @example 建设银行
      *
      * @var string
      */
     public $purchaserBankName;
 
     /**
-     * @description 购方抬头
+     * @example 钉有限公司
      *
      * @var string
      */
     public $purchaserName;
 
     /**
-     * @description 购方税号
+     * @example 123456
      *
      * @var string
      */
     public $purchaserTaxNo;
 
     /**
-     * @description 购方电话
+     * @example 13333333333
      *
      * @var string
      */
     public $purchaserTel;
 
     /**
-     * @description 单据ID
+     * @example abc
      *
      * @var string
      */
     public $receiptId;
 
     /**
-     * @description 记录时间，默认为审批通过时间
+     * @example 16000000
      *
      * @var string
      */
     public $recordTime;
 
     /**
-     * @description 备注
+     * @example 备注信息
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 来源
+     * @example approval
      *
      * @var string
      */
     public $source;
 
     /**
-     * @description 状态 agree running
+     * @example agree
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 单据标题
+     * @example 张三提交的开票申请单
      *
      * @var string
      */

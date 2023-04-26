@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreateMeetingRoomResponseBody extends Model
 {
     /**
-     * @description 创建的会议室id
+     * @example 0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed
      *
      * @var string
      */

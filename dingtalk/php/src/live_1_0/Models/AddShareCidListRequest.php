@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class AddShareCidListRequest extends Model
 {
     /**
-     * @description 传入的群id类型（1 chatId / 2 openConversationId ）
+     * @example 2
      *
      * @var int
      */
     public $groupIdType;
 
     /**
-     * @description 添加的联播群列表
-     *
      * @var string[]
      */
     public $groupIds;
 
     /**
-     * @description 操作的的组织内id(staffId)
+     * @example 214675
      *
      * @var string
      */

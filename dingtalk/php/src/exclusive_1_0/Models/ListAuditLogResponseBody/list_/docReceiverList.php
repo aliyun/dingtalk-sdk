@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class docReceiverList extends Model
 {
     /**
-     * @description 成员名称
+     * @example 张三
      *
      * @var string
      */
     public $receiverName;
 
     /**
-     * @description 成员类型
+     * @example 1
      *
      * @var int
      */
     public $receiverType;
 
     /**
-     * @description 成员类型翻译值
+     * @example 单聊
      *
      * @var string
      */

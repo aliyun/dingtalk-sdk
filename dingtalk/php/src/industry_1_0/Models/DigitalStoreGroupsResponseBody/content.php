@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 分组Id
+     * @example 1
      *
      * @var int
      */
     public $groupId;
 
     /**
-     * @description 分组名称
+     * @example 待装修门店
      *
      * @var string
      */

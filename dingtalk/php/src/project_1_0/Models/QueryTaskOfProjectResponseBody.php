@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class QueryTaskOfProjectResponseBody extends Model
 {
     /**
-     * @description 供分页使用，下一页token，从当前页结果中获取。
+     * @example f279e812-e431-428d-846d-cxxxxxx
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 任务对象列表。
-     *
      * @var result[]
      */
     public $result;
 
     /**
-     * @description 任务总数。
+     * @example 35
      *
      * @var int
      */

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class DeleteProjectMemberResponseBody extends Model
 {
     /**
-     * @description 项目成员列表。
-     *
      * @var string[]
      */
     public $result;

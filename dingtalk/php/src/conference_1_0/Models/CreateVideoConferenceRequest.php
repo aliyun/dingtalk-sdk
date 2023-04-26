@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class CreateVideoConferenceRequest extends Model
 {
     /**
-     * @description 会议主题： 文字，不超过20中文
+     * @example XXX的视频会议
      *
      * @var string
      */
     public $confTitle;
 
     /**
-     * @description 是否邀请主叫
+     * @example false
      *
      * @var bool
      */
     public $inviteCaller;
 
     /**
-     * @description 邀请参会人员UID列表（必须好友或同事）
-     *
      * @var string[]
      */
     public $inviteUserIds;
 
     /**
-     * @description 会议发起人UID
+     * @example 27SaQ3iiHLN0uwqcPisedfreNwiEiE
      *
      * @var string
      */

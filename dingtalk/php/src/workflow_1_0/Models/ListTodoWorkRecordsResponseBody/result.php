@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 待办事项列表。
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 分页游标。不为空表示有数据。
-     *
      * @var int
      */
     public $nextToken;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 蓝牙设备Id
+     * @example 34666777
      *
      * @var int
      */
     public $deviceId;
 
     /**
-     * @description 蓝牙设备名称
+     * @example 蓝牙设备
      *
      * @var string
      */
     public $deviceName;
 
     /**
-     * @description sn
+     * @example 12321kllksdf
      *
      * @var string
      */

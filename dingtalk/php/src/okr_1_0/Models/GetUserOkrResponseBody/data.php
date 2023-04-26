@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description OKR 列表详情。
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 当前页码。
+     * @example 2
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每一页的个数。
+     * @example 50
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 总数。
+     * @example 1
      *
      * @var int
      */

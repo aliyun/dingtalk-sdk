@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class GetSearchItemsByKeyWordResponseBody extends Model
 {
     /**
-     * @description 下一次请求的加密offset，若为空则代表item已经读取完毕
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 本次请求条件下的item总量
+     * @example 20
      *
      * @var int
      */

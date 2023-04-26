@@ -9,8 +9,8 @@ use AlibabaCloud\Tea\Model;
 class copyOptions extends Model
 {
     /**
-     * @description 默认为1
-     * COPE_TYPE_INCLUDE_FLOW = 2 使用dingtalk 2作为隔离分组，审批首页可见
+     * @example 1
+     *
      * @var int
      */
     public $copyType;

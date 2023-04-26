@@ -9,70 +9,70 @@ use AlibabaCloud\Tea\Model;
 class ListOrderRequest extends Model
 {
     /**
-     * @description 开单结束时间
+     * @example 1647503420000
      *
      * @var int
      */
     public $createTimeEnd;
 
     /**
-     * @description 开单开始时间，utc
+     * @example 1647503420000
      *
      * @var int
      */
     public $createTimeStart;
 
     /**
-     * @description 商户id
+     * @example SM123124124
      *
      * @var string
      */
     public $merchantId;
 
     /**
-     * @description 订单号
+     * @example 2022312312333
      *
      * @var string
      */
     public $orderNo;
 
     /**
-     * @description 分页下标
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 200
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 场景
+     * @example 1
      *
      * @var int
      */
     public $scene;
 
     /**
-     * @description 状态
+     * @example 20
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 交易单号
+     * @example 202221312333
      *
      * @var string
      */
     public $tradeNo;
 
     /**
-     * @description 员工id
+     * @example 123123123
      *
      * @var string
      */

@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class applyIntentionInfoDO extends Model
 {
     /**
-     * @description 入住日期
+     * @example 2021-07-08
      *
      * @var string
      */
     public $checkIn;
 
     /**
-     * @description 离店日期
+     * @example 2021-07-08
      *
      * @var string
      */
     public $checkOut;
 
     /**
-     * @description 入住城市三字码
+     * @example SHA
      *
      * @var string
      */
     public $cityCode;
 
     /**
-     * @description 入住城市名称
+     * @example 上海
      *
      * @var string
      */
     public $cityName;
 
     /**
-     * @description 意向酒店金额（分）
+     * @example 10000
      *
      * @var int
      */
     public $price;
 
     /**
-     * @description 是否合住
+     * @example true
      *
      * @var bool
      */
     public $together;
 
     /**
-     * @description 超标类型，32：金额超标
+     * @example 16
      *
      * @var int
      */

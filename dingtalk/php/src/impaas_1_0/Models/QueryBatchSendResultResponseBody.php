@@ -15,7 +15,7 @@ class QueryBatchSendResultResponseBody extends Model
     public $results;
 
     /**
-     * @description status
+     * @example 1
      *
      * @var int
      */

@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class contentFieldList extends Model
 {
     /**
-     * @description 字段唯一标识
-     *
      * @var string
      */
     public $fieldKey;
 
     /**
-     * @description 字段值
-     *
      * @var string
      */
     public $fieldValue;

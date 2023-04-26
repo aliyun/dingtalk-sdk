@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class UpdateLiveRequest extends Model
 {
     /**
-     * @description 直播封面
+     * @example https://gw.alicdn.com/tfs/TB1thlYyAT2gK0jSZPcXXcKkpXa-1125-633.png
      *
      * @var string
      */
     public $coverUrl;
 
     /**
-     * @description 简介
+     * @example 测试直播简介
      *
      * @var string
      */
     public $introduction;
 
     /**
-     * @description 直播id
+     * @example 4d383876-1ff9-4b73-a057-a8f47b346ecb
      *
      * @var string
      */
     public $liveId;
 
     /**
-     * @description 预计结束时间
+     * @example 1659653648000
      *
      * @var int
      */
     public $preEndTime;
 
     /**
-     * @description 预计开播时间
+     * @example 1659613648000
      *
      * @var int
      */
     public $preStartTime;
 
     /**
-     * @description 标题
+     * @example 测试直播
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 用户id（主播id）
+     * @example DC7wZGOSueEEIGOf3WKwWgiEiE
      *
      * @var string
      */

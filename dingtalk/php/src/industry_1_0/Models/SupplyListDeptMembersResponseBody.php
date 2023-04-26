@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class SupplyListDeptMembersResponseBody extends Model
 {
     /**
-     * @description 是否还有下一页
+     * @example true
      *
      * @var bool
      */

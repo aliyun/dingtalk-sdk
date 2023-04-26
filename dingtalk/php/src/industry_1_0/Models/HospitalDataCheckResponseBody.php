@@ -9,64 +9,46 @@ use AlibabaCloud\Tea\Model;
 class HospitalDataCheckResponseBody extends Model
 {
     /**
-     * @description 所有状态的科室数量
-     *
      * @var int
      */
     public $allDeptCount;
 
     /**
-     * @description 所有状态的科室人员数量
-     *
      * @var int
      */
     public $allDeptUserCount;
 
     /**
-     * @description 所有状态的医疗组数量
-     *
      * @var int
      */
     public $allGroupCount;
 
     /**
-     * @description 所有状态的医疗组人员数量
-     *
      * @var int
      */
     public $allGroupUserCount;
 
     /**
-     * @description 正常状态的科室数量
-     *
      * @var int
      */
     public $deptCount;
 
     /**
-     * @description 正常状态的科室人员数量
-     *
      * @var int
      */
     public $deptUserCount;
 
     /**
-     * @description 正常状态的医疗组数量
-     *
      * @var int
      */
     public $groupCount;
 
     /**
-     * @description 正常状态的医疗组人员数量
-     *
      * @var int
      */
     public $groupUserCount;
 
     /**
-     * @description 数据是否一致
-     *
      * @var bool
      */
     public $match;

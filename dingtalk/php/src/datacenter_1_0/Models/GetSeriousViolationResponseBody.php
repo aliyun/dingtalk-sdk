@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetSeriousViolationResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * IN_REASON:列入严重违法失信企业名单原因
+     * @example [     {       "IN_DATE": "xx",       "IN_DEPARTMENT": "xx",       "IN_REASON": "xx"      }   ]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

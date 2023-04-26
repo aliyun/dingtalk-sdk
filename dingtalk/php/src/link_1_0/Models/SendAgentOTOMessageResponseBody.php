@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class SendAgentOTOMessageResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description 推送结果
-     *
      * @var result
      */
     public $result;

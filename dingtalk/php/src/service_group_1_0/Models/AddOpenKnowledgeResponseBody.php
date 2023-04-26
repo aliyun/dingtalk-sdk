@@ -10,14 +10,14 @@ use AlibabaCloud\Tea\Model;
 class AddOpenKnowledgeResponseBody extends Model
 {
     /**
-     * @description 返回结果
+     * @example 22
      *
      * @var result
      */
     public $result;
 
     /**
-     * @description 请求是否成功
+     * @example true
      *
      * @var bool
      */

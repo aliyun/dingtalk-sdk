@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class recurrence extends Model
 {
     /**
-     * @description 重复模式
-     *
      * @var pattern
      */
     public $pattern;
 
     /**
-     * @description 重复范围
-     *
      * @var range
      */
     public $range;

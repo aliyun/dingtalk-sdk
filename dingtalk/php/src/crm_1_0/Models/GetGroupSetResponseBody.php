@@ -21,7 +21,7 @@ class GetGroupSetResponseBody extends Model
     public $gmtModified;
 
     /**
-     * @description 群组内群数量（不包含已解散的群）。
+     * @example 5
      *
      * @var int
      */

@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class DeleteFormDataRequest extends Model
 {
     /**
-     * @description 应用ID
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 要删除的表单数据ID
+     * @example 33f6d221-17f8-42b7-836a-682b95a046c2
      *
      * @var string
      */
     public $formInstanceId;
 
     /**
-     * @description 语言
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 应用秘钥
+     * @example helxxx
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉的userId
+     * @example 未知
      *
      * @var string
      */

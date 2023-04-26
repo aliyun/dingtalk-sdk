@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CloseTopBoxInteractiveOTOMessageRequest extends Model
 {
     /**
-     * @description 卡片参数
-     *
      * @var detail
      */
     public $detail;

@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class GetScheduleRequest extends Model
 {
     /**
-     * @description 查询结束时间
-     *
      * @var string
      */
     public $endTime;
 
     /**
-     * @description 查询开始时间
-     *
      * @var string
      */
     public $startTime;
 
     /**
-     * @description 待查询的用户列表
-     *
      * @var string[]
      */
     public $userIds;

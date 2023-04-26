@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class MergeRangeResponseBody extends Model
 {
     /**
-     * @description 合并的单元格地址
-     *
      * @var string
      */
     public $a1Notation;

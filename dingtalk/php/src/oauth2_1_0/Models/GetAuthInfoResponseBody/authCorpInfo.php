@@ -9,63 +9,63 @@ use AlibabaCloud\Tea\Model;
 class authCorpInfo extends Model
 {
     /**
-     * @description 渠道码。
+     * @example 123
      *
      * @var string
      */
     public $authChannel;
 
     /**
-     * @description 渠道类型。  为了避免渠道码重复，可与渠道码共同确认渠道。可能为空，非空时当前只有满天星类型，值为STAR_ACTIVITY。
+     * @example 1
      *
      * @var string
      */
     public $authChannelType;
 
     /**
-     * @description 企业认证等级：  0：未认证  1：高级认证  2：中级认证  3：初级认证
+     * @example 1
      *
      * @var int
      */
     public $authLevel;
 
     /**
-     * @description 企业logo。
+     * @example https://static-legacy.dingtalk.com/xxx
      *
      * @var string
      */
     public $corpLogoUrl;
 
     /**
-     * @description 授权方企业名称。
+     * @example 小程序体验HTTP
      *
      * @var string
      */
     public $corpName;
 
     /**
-     * @description 企业所属行业。
+     * @example 201
      *
      * @var string
      */
     public $industry;
 
     /**
-     * @description 邀请码，只有自己邀请的企业才会返回邀请码，可用该邀请码统计不同渠道的拉新，否则值为空字符串。
+     * @example 111
      *
      * @var string
      */
     public $inviteCode;
 
     /**
-     * @description 企业邀请链接。
+     * @example https://wx.dingtalk.com/invite-page/xxx
      *
      * @var string
      */
     public $inviteUrl;
 
     /**
-     * @description 序列号。
+     * @example 111
      *
      * @var string
      */

@@ -10,42 +10,40 @@ use AlibabaCloud\Tea\Model;
 class operationRecords extends Model
 {
     /**
-     * @description 评论附件
-     *
      * @var attachments[]
      */
     public $attachments;
 
     /**
-     * @description 操作类型
+     * @example EXECUTE_TASK_NORMAL（正常执行任务），EXECUTE_TASK_AGENT（代理人执行任务），APPEND_TASK_BEFORE（前加签任务），APPEND_TASK_AFTER（后加签任务），REDIRECT_TASK（转交任务），START_PROCESS_INSTANCE（发起流程实例），TERMINATE_PROCESS_INSTANCE（终止(撤销)流程实例），FINISH_PROCESS_INSTANCE（结束流程实例），ADD_REMARK（添加评论）
      *
      * @var string
      */
     public $operationType;
 
     /**
-     * @description 评论
+     * @example 同意
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 操作结果
+     * @example AGREE（同意），REFUSE（拒绝），NONE（未知）
      *
      * @var string
      */
     public $result;
 
     /**
-     * @description 操作时间戳
+     * @example 1657522271000
      *
      * @var int
      */
     public $timestamp;
 
     /**
-     * @description 操作人staffId
+     * @example manager1
      *
      * @var string
      */

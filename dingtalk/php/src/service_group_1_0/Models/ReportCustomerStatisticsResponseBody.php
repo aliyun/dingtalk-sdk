@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class ReportCustomerStatisticsResponseBody extends Model
 {
     /**
-     * @description 页码
+     * @example 1
      *
      * @var int
      */
     public $currentPage;
 
     /**
-     * @description 每页大小
+     * @example 20
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 数据列表
-     *
      * @var records[]
      */
     public $records;
 
     /**
-     * @description 总数目
+     * @example 100
      *
      * @var int
      */

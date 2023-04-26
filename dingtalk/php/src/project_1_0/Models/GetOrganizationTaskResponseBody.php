@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetOrganizationTaskResponseBody extends Model
 {
     /**
-     * @description 返回结构体
-     *
      * @var result
      */
     public $result;

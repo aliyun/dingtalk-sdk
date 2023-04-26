@@ -12,35 +12,29 @@ use AlibabaCloud\Tea\Model;
 class InsertSectionConfigRequest extends Model
 {
     /**
-     * @description 结束日期
-     *
      * @var end
      */
     public $end;
 
     /**
-     * @description 课程表名称
+     * @example 2020学年第一学期课表
      *
      * @var string
      */
     public $scheduleName;
 
     /**
-     * @description 节次模型
-     *
      * @var sectionModels[]
      */
     public $sectionModels;
 
     /**
-     * @description 开始日期
-     *
      * @var start
      */
     public $start;
 
     /**
-     * @description 操作人的userid。
+     * @example manager235
      *
      * @var string
      */

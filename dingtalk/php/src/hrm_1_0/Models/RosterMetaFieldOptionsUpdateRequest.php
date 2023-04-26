@@ -14,28 +14,26 @@ class RosterMetaFieldOptionsUpdateRequest extends Model
     public $appAgentId;
 
     /**
-     * @description 字段fieldCode
+     * @example sys05-contractType
      *
      * @var string
      */
     public $fieldCode;
 
     /**
-     * @description 花名册分组id
+     * @example sys05
      *
      * @var string
      */
     public $groupId;
 
     /**
-     * @description 需要修改的选项值
-     *
      * @var string[]
      */
     public $labels;
 
     /**
-     * @description 修改类型，OPTIONS_ADD选项添加，OPTIONS_DELETE选项删除
+     * @example OPTIONS_ADD
      *
      * @var string
      */

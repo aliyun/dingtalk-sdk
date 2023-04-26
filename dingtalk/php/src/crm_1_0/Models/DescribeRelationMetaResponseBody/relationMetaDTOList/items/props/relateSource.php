@@ -21,8 +21,6 @@ class relateSource extends Model
     public $dataSource;
 
     /**
-     * @description 关联表单的关联控件显示
-     *
      * @var fields[]
      */
     public $fields;

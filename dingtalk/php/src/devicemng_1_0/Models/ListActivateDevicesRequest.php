@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class ListActivateDevicesRequest extends Model
 {
     /**
-     * @description 设备分类（0：设备，1 : 助手）
-     *
      * @var int
      */
     public $deviceCategory;
 
     /**
-     * @description deviceCode
-     *
      * @var string
      */
     public $deviceCode;
 
     /**
-     * @description deviceTypeId
-     *
      * @var string
      */
     public $deviceTypeId;
 
     /**
-     * @description groupId
-     *
      * @var string
      */
     public $groupId;
 
     /**
-     * @description pageNo
-     *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description pageSize
-     *
      * @var int
      */
     public $pageSize;

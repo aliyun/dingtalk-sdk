@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class userMuteResult extends Model
 {
     /**
-     * @description 禁言结束时间
+     * @example 1645315682000
      *
      * @var int
      */
     public $muteEndTime;
 
     /**
-     * @description 禁言开始时间
+     * @example 1645315682000
      *
      * @var int
      */
     public $muteStartTime;
 
     /**
-     * @description 成员禁言状态
+     * @example true
      *
      * @var bool
      */

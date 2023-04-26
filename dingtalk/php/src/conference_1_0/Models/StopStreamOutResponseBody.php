@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class StopStreamOutResponseBody extends Model
 {
     /**
-     * @description conferenceId
-     *
      * @var string
      */
     public $code;

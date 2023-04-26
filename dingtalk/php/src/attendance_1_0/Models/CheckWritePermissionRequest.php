@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class CheckWritePermissionRequest extends Model
 {
     /**
-     * @description category
+     * @example GROUP
      *
      * @var string
      */
     public $category;
 
     /**
-     * @description entityIds
-     *
      * @var int[]
      */
     public $entityIds;
 
     /**
-     * @description opUserId
+     * @example 050728xxx921
      *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description resourceKey
+     * @example SCHEDULE
      *
      * @var string
      */

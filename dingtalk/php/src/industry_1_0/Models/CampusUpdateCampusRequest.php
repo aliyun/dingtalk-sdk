@@ -9,112 +9,112 @@ use AlibabaCloud\Tea\Model;
 class CampusUpdateCampusRequest extends Model
 {
     /**
-     * @description 所在具体地址
+     * @example 锦城街道和谐社区101号
      *
      * @var string
      */
     public $address;
 
     /**
-     * @description 面积
+     * @example 5200.13（平方米）
      *
      * @var float
      */
     public $area;
 
     /**
-     * @description 归属项目组
+     * @example 0
      *
      * @var int
      */
     public $belongProjectGroupId;
 
     /**
-     * @description 项目部门id
+     * @example 12345
      *
      * @var int
      */
     public $campusDeptId;
 
     /**
-     * @description 园区项目名
+     * @example 绿城未来park
      *
      * @var string
      */
     public $campusName;
 
     /**
-     * @description 容量
+     * @example 10000
      *
      * @var int
      */
     public $capacity;
 
     /**
-     * @description 所在市行政编码
+     * @example 371500
      *
      * @var int
      */
     public $cityId;
 
     /**
-     * @description 国家
+     * @example 中国
      *
      * @var string
      */
     public $country;
 
     /**
-     * @description 所在区行政编码
+     * @example 371502
      *
      * @var int
      */
     public $countyId;
 
     /**
-     * @description 园区项目描述
+     * @example 绿城产业
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 扩展信息
+     * @example {"creator":"dsy"}
      *
      * @var string
      */
     public $extend;
 
     /**
-     * @description 项目订阅到期时间
+     * @example 1655704317794
      *
      * @var int
      */
     public $orderEndTime;
 
     /**
-     * @description 购买信息
+     * @example 线下付款
      *
      * @var int
      */
     public $orderInfo;
 
     /**
-     * @description 项目订阅开始时间
+     * @example 1655704317794
      *
      * @var int
      */
     public $orderStartTime;
 
     /**
-     * @description 所在省行政编码
+     * @example 370000（山东）
      *
      * @var int
      */
     public $provId;
 
     /**
-     * @description 联系电话
+     * @example 156XXXX338
      *
      * @var string
      */

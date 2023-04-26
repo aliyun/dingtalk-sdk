@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 文件下载地址。
+     * @example http://lippi-space-zjk.oss-cn-zhangjiakou.aliyuncs.com/xxxxx
      *
      * @var string
      */
     public $downloadUri;
 
     /**
-     * @description 文件ID。
+     * @example 26748422566
      *
      * @var string
      */
     public $fileId;
 
     /**
-     * @description 钉盘空间ID。
+     * @example 3996960664
      *
      * @var int
      */

@@ -14,21 +14,21 @@ class AskRobotRequest extends Model
     public $dingUserId;
 
     /**
-     * @description 问题
+     * @example 小蜜机器人能做什么
      *
      * @var string
      */
     public $question;
 
     /**
-     * @description 机器人id
+     * @example abcd1234
      *
      * @var string
      */
     public $robotAppKey;
 
     /**
-     * @description sessionId(非必传)
+     * @example 1234
      *
      * @var string
      */

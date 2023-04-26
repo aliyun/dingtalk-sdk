@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class area extends Model
 {
     /**
-     * @description 地区
-     *
      * @var string
      */
     public $region;
 
     /**
-     * @description 地区详细数据
-     *
      * @var string
      */
     public $regionFullName;

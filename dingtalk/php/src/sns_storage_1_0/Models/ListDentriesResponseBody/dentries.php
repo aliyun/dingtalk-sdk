@@ -12,140 +12,134 @@ use AlibabaCloud\Tea\Model;
 class dentries extends Model
 {
     /**
-     * @description 在特定应用上的属性。key是微应用Id, value是属性列表。
-     * 10
      * @var DentriesAppPropertiesValue[][]
      */
     public $appProperties;
 
     /**
-     * @description 创建时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 创建者id
+     * @example creator_id
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 后缀
+     * @example txt
      *
      * @var string
      */
     public $extension;
 
     /**
-     * @description id
+     * @example dentry_id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 修改时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $modifiedTime;
 
     /**
-     * @description 修改者id
+     * @example modifier_id
      *
      * @var string
      */
     public $modifierId;
 
     /**
-     * @description 名称
+     * @example dentry_name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 父目录id, 根目录id值为0
-     * 空值代表根目录的parentId不存在
+     * @example parent_id
+     *
      * @var string
      */
     public $parentId;
 
     /**
-     * @description 存储分区，目前包括公有云OSS存储分区和专属Mini OSS存储分区
-     * MINI_OSS_PARTITION: 专属Mini OSS存储分区
+     * @example PUBLIC_OSS_PARTITION
+     *
      * @var string
      */
     public $partitionType;
 
     /**
-     * @description 路径
+     * @example dentry_path
      *
      * @var string
      */
     public $path;
 
     /**
-     * @description 属性
-     *
      * @var properties
      */
     public $properties;
 
     /**
-     * @description 大小, 单位:Byte
+     * @example 512
      *
      * @var int
      */
     public $size;
 
     /**
-     * @description 所在空间id
+     * @example space_id
      *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 状态
-     * EXPIRED: 已过期
+     * @example NORMAL
+     *
      * @var string
      */
     public $status;
 
     /**
-     * @description 驱动类型
-     * UNKNOWN: 未知驱动
+     * @example DINGTALK
+     *
      * @var string
      */
     public $storageDriver;
 
     /**
-     * @description 缩略图信息
-     *
      * @var thumbnail
      */
     public $thumbnail;
 
     /**
-     * @description 类型，目录或文件
-     * FOLDER: 文件夹
+     * @example file
+     *
      * @var string
      */
     public $type;
 
     /**
-     * @description uuid，如移动文件，此字段不变
+     * @example uuid
      *
      * @var string
      */
     public $uuid;
 
     /**
-     * @description 版本
+     * @example 1
      *
      * @var int
      */

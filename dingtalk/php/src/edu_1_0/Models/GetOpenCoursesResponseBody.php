@@ -15,7 +15,7 @@ class GetOpenCoursesResponseBody extends Model
     public $courseList;
 
     /**
-     * @description 总记录数
+     * @example 68
      *
      * @var int
      */

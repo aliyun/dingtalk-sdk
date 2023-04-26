@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteRemoteClassCourseResponseBody extends Model
 {
     /**
-     * @description success
+     * @example true
      *
      * @var bool
      */

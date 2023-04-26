@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class PageFeedRequest extends Model
 {
     /**
-     * @description 内容Id，如果传入该参数，表示仅筛选内容Id出现在本列表中的内容
-     *
      * @var string[]
      */
     public $body;
 
     /**
-     * @description 分页参数：页面展示数量
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 入驻账号Id(请联系钉钉接口同学获取)
+     * @example 50730********40554
      *
      * @var string
      */
     public $mcnId;
 
     /**
-     * @description 分页参数：起始位置，初始值应为0，后续传入返回值中的nextCursor字段中的值
+     * @example 10
      *
      * @var int
      */

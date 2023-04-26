@@ -9,57 +9,41 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 自定义通讯录Code
-     *
      * @var string
      */
     public $code;
 
     /**
-     * @description 部门Id
-     *
      * @var int
      */
     public $id;
 
     /**
-     * @description 部门主管列表
-     *
      * @var string[]
      */
     public $managerIdList;
 
     /**
-     * @description 部门名称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 部门排序
-     *
      * @var int
      */
     public $order;
 
     /**
-     * @description 上级部门Id
-     *
      * @var int
      */
     public $parentDeptId;
 
     /**
-     * @description 引用的内部通讯录部门Id
-     *
      * @var int
      */
     public $refId;
 
     /**
-     * @description 部门类型 0:普通部门 1:引用部门
-     *
      * @var int
      */
     public $type;

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceVerifyStatusResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
      * @var bool
      */
     public $result;

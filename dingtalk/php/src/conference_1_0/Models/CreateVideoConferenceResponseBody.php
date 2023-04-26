@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class CreateVideoConferenceResponseBody extends Model
 {
     /**
-     * @description conferenceId
-     *
      * @var string
      */
     public $conferenceId;
 
     /**
-     * @description 会议密码
-     *
      * @var string
      */
     public $conferencePassword;
 
     /**
-     * @description 入会链接
-     *
      * @var string
      */
     public $externalLinkUrl;
 
     /**
-     * @description 主持人密码
-     *
      * @var string
      */
     public $hostPassword;
 
     /**
-     * @description 电话入会号码
-     *
      * @var string[]
      */
     public $phoneNumbers;

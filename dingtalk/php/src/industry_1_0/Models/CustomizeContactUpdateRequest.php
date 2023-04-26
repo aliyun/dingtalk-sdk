@@ -9,29 +9,25 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactUpdateRequest extends Model
 {
     /**
-     * @description 自定义通讯录Code
+     * @example alt-contact:MjkwMDAa
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 通讯录管理员UserId
-     *
      * @var string[]
      */
     public $managerIdList;
 
     /**
-     * @description 自定义通讯录名称
+     * @example A项目通讯录
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 在自定义通讯录列表中的排序
-     *
      * @var int
      */
     public $order;

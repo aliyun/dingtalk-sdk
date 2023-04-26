@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class DeleteDentryAppPropertiesRequest extends Model
 {
     /**
-     * @description 文件上App属性名称
-     * 3
      * @var string[]
      */
     public $propertyNames;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

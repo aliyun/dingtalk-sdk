@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class connectorInfo extends Model
 {
     /**
-     * @description 连接器中执行动作的接口路径域名。
-     *
      * @var string
      */
     public $apiDomain;
 
     /**
-     * @description 连接器中执行动作接口的加密签名。
-     *
      * @var string
      */
     public $apiSecret;
@@ -28,8 +24,6 @@ class connectorInfo extends Model
     public $appId;
 
     /**
-     * @description 将apiSecret设置为模板变量。
-     *
      * @var bool
      */
     public $authValueEnv;
@@ -40,8 +34,6 @@ class connectorInfo extends Model
     public $description;
 
     /**
-     * @description 将执行动作域名设为环境变量。
-     *
      * @var bool
      */
     public $domainEnv;

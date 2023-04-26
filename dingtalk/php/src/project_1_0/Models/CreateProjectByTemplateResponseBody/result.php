@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 创建时间
+     * @example 2022-08-01T09:50:31.275Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 项目ID
+     * @example 62e7a1e721d20b5aexxx
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 项目图标地址
+     * @example https://www.xxx.com/xxxxx
      *
      * @var string
      */
     public $logo;
 
     /**
-     * @description 项目名字
+     * @example 项目1
      *
      * @var string
      */

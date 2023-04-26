@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class GetConversationIdRequest extends Model
 {
     /**
+     * @example chatd575783672bb40c005ba4e8b2*****ab
+     *
      * @var string
      */
     public $chatId;

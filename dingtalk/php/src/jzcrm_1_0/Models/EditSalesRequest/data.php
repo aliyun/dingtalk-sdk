@@ -9,134 +9,98 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 创建人
+     * @example 张三
      *
      * @var string
      */
     public $dataUserid;
 
     /**
-     * @description 对应客户
-     *
      * @var string
      */
     public $xshCustomerid;
 
     /**
-     * @description 发现时间
-     *
      * @var string
      */
     public $xshDate;
 
     /**
-     * @description 预计签单日
-     *
      * @var string
      */
     public $xshExpdate;
 
     /**
-     * @description 预期金额
-     *
      * @var string
      */
     public $xshExpmoney;
 
     /**
-     * @description 来源
-     *
      * @var string
      */
     public $xshFrom;
 
     /**
-     * @description 可能性
-     *
      * @var string
      */
     public $xshKnx;
 
     /**
-     * @description 联系方式
-     *
      * @var string
      */
     public $xshLianxi;
 
     /**
-     * @description 联系人
-     *
      * @var string
      */
     public $xshLxrid;
 
     /**
-     * @description 外币备注
-     *
      * @var string
      */
     public $xshMoneynote;
 
     /**
-     * @description 机会编号
-     *
      * @var string
      */
     public $xshNumber;
 
     /**
-     * @description 阶段
-     *
      * @var string
      */
     public $xshPhase;
 
     /**
-     * @description 阶段备注
-     *
      * @var string
      */
     public $xshPhasenote;
 
     /**
-     * @description 所有者
-     *
      * @var string
      */
     public $xshPreside;
 
     /**
-     * @description 提供人
-     *
      * @var string
      */
     public $xshProvider;
 
     /**
-     * @description 客户需求
-     *
      * @var string
      */
     public $xshRequire;
 
     /**
-     * @description 状态
-     *
      * @var string
      */
     public $xshState;
 
     /**
-     * @description 主题
-     *
      * @var string
      */
     public $xshTitle;
 
     /**
-     * @description 类型
-     *
      * @var string
      */
     public $xshType;

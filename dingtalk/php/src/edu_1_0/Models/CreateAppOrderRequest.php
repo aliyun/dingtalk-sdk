@@ -10,77 +10,75 @@ use AlibabaCloud\Tea\Model;
 class CreateAppOrderRequest extends Model
 {
     /**
-     * @description 实际金额，单位分。
+     * @example 1
      *
      * @var int
      */
     public $actualAmount;
 
     /**
-     * @description 支付宝应用id。
+     * @example 1234
      *
      * @var string
      */
     public $alipayAppId;
 
     /**
-     * @description 业务编码。
+     * @example 1
      *
      * @var int
      */
     public $bizCode;
 
     /**
-     * @description 订单明细列表。
-     *
      * @var detailList[]
      */
     public $detailList;
 
     /**
-     * @description 标签金额，单位分。
+     * @example 1
      *
      * @var int
      */
     public $labelAmount;
 
     /**
-     * @description 商户id。
+     * @example 10000
      *
      * @var string
      */
     public $merchantId;
 
     /**
-     * @description 商户订单号。
+     * @example M00001
      *
      * @var string
      */
     public $merchantOrderNo;
 
     /**
-     * @description 用户唯一id。
+     * @example 10000
      *
      * @var string
      */
     public $outerUserId;
 
     /**
-     * @description 签名。
+     * @example WWrhziOLF/XuRd3IyKwLkLeSFgKnUfeg2yLEVD9Bw+8
      *
      * @var string
      */
     public $signature;
 
     /**
-     * @description 订单标题。
+     * @example 数字图书
      *
      * @var string
      */
     public $subject;
 
     /**
-     * @description 时间戳。
+     * @example 100000
      *
      * @var int
      */

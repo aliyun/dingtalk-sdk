@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class UploadRegisterImageRequest extends Model
 {
     /**
-     * @description 图片内容
+     * @example byte[]转Base64
      *
      * @var string
      */
     public $imageContent;
 
     /**
-     * @description 图片名称
+     * @example test
      *
      * @var string
      */
     public $imageName;
 
     /**
-     * @description 图片类型
+     * @example JPG
      *
      * @var string
      */
     public $imageType;
 
     /**
-     * @description 主机构id
+     * @example 12020001
      *
      * @var string
      */
     public $instId;
 
     /**
-     * @description 进件渠道
+     * @example ALIPAY
      *
      * @var string
      */

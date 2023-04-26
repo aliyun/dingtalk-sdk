@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class WikiWordsParseRequest extends Model
 {
     /**
-     * @description 消息体以及文章内容
-     *
      * @var string
      */
     public $content;

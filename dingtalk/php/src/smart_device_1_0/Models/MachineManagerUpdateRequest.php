@@ -10,28 +10,24 @@ use AlibabaCloud\Tea\Model;
 class MachineManagerUpdateRequest extends Model
 {
     /**
-     * @description 设备管理员权限点。
-     *
      * @var atmManagerRightMap
      */
     public $atmManagerRightMap;
 
     /**
-     * @description 设备id。
+     * @example 165441111
      *
      * @var int
      */
     public $deviceId;
 
     /**
-     * @description 权限范围：可管理的部门id列表，-1表示全公司
-     *
      * @var int[]
      */
     public $scopeDeptIds;
 
     /**
-     * @description 设备管理员的userId。
+     * @example user01
      *
      * @var string
      */

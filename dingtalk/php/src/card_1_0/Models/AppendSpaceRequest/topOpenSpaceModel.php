@@ -9,9 +9,8 @@ use AlibabaCloud\Tea\Model;
 class topOpenSpaceModel extends Model
 {
     /**
-     * @description 【必填】场域类型
+     * @example ONE_BOX
      *
-     * 吊顶无其他场域属性，通过设置spaeType为ONE_BOX使卡片支持吊顶场域
      * @var string
      */
     public $spaceType;

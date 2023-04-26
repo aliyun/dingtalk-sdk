@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class auditSignedDetailDTOList extends Model
 {
     /**
-     * @description 部门名称
+     * @example 部门1
      *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 邮件
+     * @example **@**.com
      *
      * @var string
      */
     public $email;
 
     /**
-     * @description 员工名称
+     * @example 小张
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 手机号
+     * @example ***
      *
      * @var string
      */
     public $phone;
 
     /**
-     * @description 角色
+     * @example 主管理员
      *
      * @var string
      */
     public $roles;
 
     /**
-     * @description 工号
+     * @example 123***
      *
      * @var string
      */
     public $staffId;
 
     /**
-     * @description 职位
+     * @example 经理
      *
      * @var string
      */

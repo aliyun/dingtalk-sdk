@@ -10,28 +10,28 @@ use AlibabaCloud\Tea\Model;
 class PagePointHistoryResponseBody extends Model
 {
     /**
-     * @description 是否有下一页
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下一个游标值
+     * @example 3276
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 查询所得积分流水集合
+     * @example 123
      *
      * @var pointRecordList[]
      */
     public $pointRecordList;
 
     /**
-     * @description 总数，如果为-1则不计算总数
+     * @example -1
      *
      * @var int
      */

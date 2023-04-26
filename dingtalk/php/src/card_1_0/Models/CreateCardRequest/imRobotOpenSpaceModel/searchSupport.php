@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class searchSupport extends Model
 {
     /**
-     * @description 【条件必填】供消息展示与搜索的字段
-     * 【注意】最大限制200个字符，超过存储截断200
      * @var string
      */
     public $searchDesc;
 
     /**
-     * @description 类型的icon，供搜索展示使用
+     * @example @lALPDgQ9q8hFhlHNAXzNAqI
      *
      * @var string
      */
     public $searchIcon;
 
     /**
-     * @description 卡片类型名
+     * @example {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
      *
      * @var string
      */

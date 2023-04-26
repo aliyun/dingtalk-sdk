@@ -14,70 +14,60 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 部门id
+     * @example 1234
      *
      * @var string
      */
     public $deptId;
 
     /**
-     * @description 部门名称
+     * @example 管理部
      *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 部门人数
+     * @example 10
      *
      * @var int
      */
     public $memberCount;
 
     /**
-     * @description 部门一级伙伴类型
-     *
      * @var partnerLabelVOLevel1
      */
     public $partnerLabelVOLevel1;
 
     /**
-     * @description 部门二级伙伴类型
-     *
      * @var partnerLabelVOLevel2
      */
     public $partnerLabelVOLevel2;
 
     /**
-     * @description 部门三级伙伴类型
-     *
      * @var partnerLabelVOLevel3
      */
     public $partnerLabelVOLevel3;
 
     /**
-     * @description 部门四级伙伴类型
-     *
      * @var partnerLabelVOLevel4
      */
     public $partnerLabelVOLevel4;
 
     /**
-     * @description 部门五级伙伴类型
-     *
      * @var partnerLabelVOLevel5
      */
     public $partnerLabelVOLevel5;
 
     /**
-     * @description 部门伙伴编码
+     * @example 1234
      *
      * @var string
      */
     public $partnerNum;
 
     /**
-     * @description 父部门id
+     * @example 1234
      *
      * @var string
      */

@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class QueryAllProcessInstancesRequest extends Model
 {
     /**
-     * @description 应用编码
+     * @example SWAPP-4C2F4B-example
      *
      * @var string
      */
     public $appUuid;
 
     /**
-     * @description 结束时间
+     * @example 1633795200000
      *
      * @var int
      */
     public $endTimeInMills;
 
     /**
-     * @description 分页大小
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页起始值
+     * @example 1
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 模板编码
+     * @example PROC-C53-example
      *
      * @var string
      */
     public $processCode;
 
     /**
-     * @description 开始时间
+     * @example 1631289600000
      *
      * @var int
      */

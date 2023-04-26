@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class CollegeQueryCollegeDeptInfoResponseBody extends Model
 {
     /**
-     * @description 部门id
+     * @example 01123
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 部门名称
+     * @example 三年二班
      *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 部门类型
+     * @example class
      *
      * @var string
      */
     public $deptType;
 
     /**
-     * @description 排序因子
+     * @example 1
      *
      * @var int
      */
     public $sortFactor;
 
     /**
-     * @description 父部门编号
+     * @example 0123123
      *
      * @var int
      */

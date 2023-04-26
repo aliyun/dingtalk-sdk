@@ -15,15 +15,11 @@ class SendOfficialAccountSNSMessageRequest extends Model
     public $bindingToken;
 
     /**
-     * @description API调用标识，可选参数
-     *
      * @var string
      */
     public $bizId;
 
     /**
-     * @description 消息详情
-     *
      * @var detail
      */
     public $detail;

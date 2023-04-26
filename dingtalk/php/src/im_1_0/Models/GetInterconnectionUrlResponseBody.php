@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetInterconnectionUrlResponseBody extends Model
 {
     /**
-     * @description 会话url
-     *
      * @var string
      */
     public $url;

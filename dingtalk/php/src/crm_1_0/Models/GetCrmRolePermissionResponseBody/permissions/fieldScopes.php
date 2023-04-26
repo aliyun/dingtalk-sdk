@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class fieldScopes extends Model
 {
     /**
-     * @description 字段权限点
-     *
      * @var string[]
      */
     public $fieldActions;
 
     /**
-     * @description 字段id
+     * @example "DDSelectField-KI5S975E"
      *
      * @var string
      */

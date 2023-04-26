@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteRangeProtectionResponseBody extends Model
 {
     /**
-     * @description Range地址
+     * @example A1
      *
      * @var string
      */

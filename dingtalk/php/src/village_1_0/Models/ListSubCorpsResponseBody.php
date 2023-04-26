@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListSubCorpsResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var corpList[]
      */
     public $corpList;

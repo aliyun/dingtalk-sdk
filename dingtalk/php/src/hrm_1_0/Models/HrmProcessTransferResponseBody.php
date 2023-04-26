@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class HrmProcessTransferResponseBody extends Model
 {
     /**
-     * @description 是否转岗成功
+     * @example true
      *
      * @var bool
      */

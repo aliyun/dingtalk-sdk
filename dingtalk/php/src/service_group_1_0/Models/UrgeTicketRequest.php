@@ -10,29 +10,27 @@ use AlibabaCloud\Tea\Model;
 class UrgeTicketRequest extends Model
 {
     /**
-     * @description 开放团队ID
+     * @example bLkvfXKiSngQiE
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 工单开放id
+     * @example iPbrfXjdNjRoiE
      *
      * @var string
      */
     public $openTicketId;
 
     /**
-     * @description 工单催单操作人UnionId
+     * @example Dq9hP8Sk2v6vQ6l05nCe5wiEiE
      *
      * @var string
      */
     public $operatorUnionId;
 
     /**
-     * @description 备注
-     *
      * @var ticketMemo
      */
     public $ticketMemo;

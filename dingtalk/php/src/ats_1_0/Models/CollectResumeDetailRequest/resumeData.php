@@ -16,50 +16,36 @@ use AlibabaCloud\Tea\Model;
 class resumeData extends Model
 {
     /**
-     * @description 简历基础信息
-     *
      * @var baseInfo
      */
     public $baseInfo;
 
     /**
-     * @description 证书信息
-     *
      * @var certificates[]
      */
     public $certificates;
 
     /**
-     * @description 教育经历
-     *
      * @var educationExperiences[]
      */
     public $educationExperiences;
 
     /**
-     * @description 期望职位信息
-     *
      * @var jobExpect
      */
     public $jobExpect;
 
     /**
-     * @description 语言能力
-     *
      * @var languageSkill[]
      */
     public $languageSkill;
 
     /**
-     * @description 培训经历
-     *
      * @var trainingExperiences[]
      */
     public $trainingExperiences;
 
     /**
-     * @description 工作经历
-     *
      * @var workExperiences[]
      */
     public $workExperiences;

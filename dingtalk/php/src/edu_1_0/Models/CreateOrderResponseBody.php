@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreateOrderResponseBody extends Model
 {
     /**
-     * @description 订单号
+     * @example 20220124001
      *
      * @var string
      */

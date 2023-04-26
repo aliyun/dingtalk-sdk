@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class ListNavigationByFormTypeRequest extends Model
 {
     /**
-     * @description 应用ID
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 页面类型
+     * @example 未知
      *
      * @var string
      */
     public $formType;
 
     /**
-     * @description 语言
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 应用秘钥
+     * @example hexxxx
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 评论人钉钉的userId
+     * @example 未知
      *
      * @var string
      */

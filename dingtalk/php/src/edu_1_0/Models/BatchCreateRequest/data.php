@@ -11,22 +11,20 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 是否可以补卡
+     * @example true
      *
      * @var bool
      */
     public $canReissueCard;
 
     /**
-     * @description 打卡周期,单位为天
+     * @example 3
      *
      * @var int
      */
     public $cardCycle;
 
     /**
-     * @description 打卡的频次设置："cardFrequency":[             1,//周天             2,//周一             3,//周二             4,//周三             5,//周四             6,//周五             7//周六         ]
-     *
      * @var int[]
      */
     public $cardFrequency;
@@ -37,43 +35,33 @@ class data extends Model
     public $cardRuleItemParamList;
 
     /**
-     * @description 班级列表
-     *
      * @var string[]
      */
     public $classIds;
 
     /**
-     * @description 班级名称列表
-     *
      * @var string[]
      */
     public $classNames;
 
     /**
-     * @description 打卡的内容
+     * @example 打卡的内容
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 卡片生效时间
-     *
      * @var int
      */
     public $effectDate;
 
     /**
-     * @description 上传相册，图片，录音，盯盘的信息
-     *
      * @var string
      */
     public $medias;
 
     /**
-     * @description 计量开启
-     *
      * @var string
      */
     public $needMetering;
@@ -84,43 +72,31 @@ class data extends Model
     public $orgClassStudentGroupList;
 
     /**
-     * @description 提醒时间（小时）
-     *
      * @var int
      */
     public $remindHour;
 
     /**
-     * @description 提醒时间（分钟）
-     *
      * @var int
      */
     public $remindMinute;
 
     /**
-     * @description 默认：student_guardian
-     *
      * @var string
      */
     public $targetRole;
 
     /**
-     * @description 打卡模板id
-     *
      * @var int
      */
     public $templateId;
 
     /**
-     * @description 卡片标题
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 计量单位
-     *
      * @var string
      */
     public $unitOfMeasurement;

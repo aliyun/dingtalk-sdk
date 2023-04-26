@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description Teambition企业Id
+     * @example 50c32afae8cf1439xxxx
      *
      * @var string
      */

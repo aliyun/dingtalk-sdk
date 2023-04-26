@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class QueryMedicalEventsResponseBody extends Model
 {
     /**
-     * @description 事件详情列表
-     *
      * @var content[]
      */
     public $content;
 
     /**
-     * @description 是否成功
-     *
      * @var bool
      */
     public $success;
 
     /**
-     * @description 数据总量
-     *
      * @var int
      */
     public $totalCount;

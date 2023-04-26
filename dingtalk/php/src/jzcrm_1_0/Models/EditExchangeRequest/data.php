@@ -9,113 +9,85 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 产品明细，json格式
+     * @example "child_mx":[{"产品ID":"1","数量":"10","明细备注":"包含的测试产品","序列号-换入":"• in1001• in1002...无则不传递","批次号-换入":"• in2001 (10)• in2002 (20)...无则不传递","序列号-换出":"• out1001• out1002...无则不传递","批次号-换出":"• out2001 (10)• out2002 (20)...无则不传递"}]
      *
      * @var string
      */
     public $childMx;
 
     /**
-     * @description 创建人
+     * @example 张三
      *
      * @var string
      */
     public $dataUserid;
 
     /**
-     * @description 对应客户
-     *
      * @var string
      */
     public $hhCustomerid;
 
     /**
-     * @description 换货日期
-     *
      * @var string
      */
     public $hhDate;
 
     /**
-     * @description 换入操作员
-     *
      * @var string
      */
     public $hhInempid;
 
     /**
-     * @description 换入仓库
-     *
      * @var string
      */
     public $hhInlibid;
 
     /**
-     * @description 换入时间
-     *
      * @var string
      */
     public $hhIntime;
 
     /**
-     * @description 换货单号
-     *
      * @var string
      */
     public $hhNumber;
 
     /**
-     * @description 合同/订单
-     *
      * @var string
      */
     public $hhOrderid;
 
     /**
-     * @description 换出操作员
-     *
      * @var string
      */
     public $hhOutempid;
 
     /**
-     * @description 换出仓库
-     *
      * @var string
      */
     public $hhOutlibid;
 
     /**
-     * @description 换出时间
-     *
      * @var string
      */
     public $hhOuttime;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $hhRemark;
 
     /**
-     * @description 状态（未执行，已入待出，已出待入，结束）
-     *
      * @var string
      */
     public $hhState;
 
     /**
-     * @description 主题
-     *
      * @var string
      */
     public $hhTitle;
 
     /**
-     * @description 分类
-     *
      * @var string
      */
     public $hhType;

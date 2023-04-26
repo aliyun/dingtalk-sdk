@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetAttachmentTemporaryUrlRequest extends Model
 {
     /**
-     * @description 附件id
+     * @example 006f870b-4d1c-4cd0-85b3-2e866798e947
      *
      * @var string
      */

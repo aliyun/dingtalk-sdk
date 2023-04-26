@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ListInnerAppRequest extends Model
 {
     /**
-     * @description 合作空间corpId
+     * @example xxxx
      *
      * @var string
      */

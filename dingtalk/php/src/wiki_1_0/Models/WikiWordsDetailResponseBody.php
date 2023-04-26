@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class WikiWordsDetailResponseBody extends Model
 {
     /**
-     * @description 返回的参数
-     *
      * @var data[]
      */
     public $data;
 
     /**
-     * @description 返回的错误信息
-     *
      * @var string
      */
     public $errMsg;
 
     /**
-     * @description 查询是否成功
-     *
      * @var bool
      */
     public $success;

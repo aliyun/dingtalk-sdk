@@ -10,22 +10,20 @@ use AlibabaCloud\Tea\Model;
 class QueryCrmGroupContactResponseBody extends Model
 {
     /**
-     * @description 游标
+     * @example token****
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 开放会话ID
+     * @example cid****
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 群成员数据列表
-     *
      * @var records[]
      */
     public $records;

@@ -11,28 +11,24 @@ use AlibabaCloud\Tea\Model;
 class AddPermissionRequest extends Model
 {
     /**
-     * @description 权限成员列表
-     * 30
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 可选参数
-     *
      * @var option
      */
     public $option;
 
     /**
-     * @description 权限角色id
+     * @example MANAGER
      *
      * @var string
      */
     public $roleId;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class SearchDepartmentRequest extends Model
 {
     /**
-     * @description 分页查询锚点
+     * @example 0
      *
      * @var int
      */
     public $offset;
 
     /**
-     * @description 部门名称或者部门名称拼音
+     * @example 财务部
      *
      * @var string
      */
     public $queryWord;
 
     /**
-     * @description 分页长度
+     * @example 10
      *
      * @var int
      */

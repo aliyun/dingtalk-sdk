@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreateSceneGroupConversationResponseBody extends Model
 {
     /**
-     * @description 群会话Id。
+     * @example cidxxxxxx==
      *
      * @var string
      */

@@ -11,36 +11,30 @@ use AlibabaCloud\Tea\Model;
 class groups extends Model
 {
     /**
-     * @description 管理组id
+     * @example rolexxx
      *
      * @var string
      */
     public $groupId;
 
     /**
-     * @description 管理组名
+     * @example 财务管理
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 成员
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 资源列表
-     *
      * @var string[]
      */
     public $resourceIds;
 
     /**
-     * @description 管理范围
-     *
      * @var scope
      */
     public $scope;

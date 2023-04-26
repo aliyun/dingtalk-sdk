@@ -9,57 +9,41 @@ use AlibabaCloud\Tea\Model;
 class masterDataDepartments extends Model
 {
     /**
-     * @description deptName
-     *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description deptNameEn
-     *
      * @var string
      */
     public $deptNameInEnglish;
 
     /**
-     * @description deptNo
-     *
      * @var string
      */
     public $deptNo;
 
     /**
-     * @description deptPath
-     *
      * @var string
      */
     public $deptPath;
 
     /**
-     * @description humanSourceGroupOrderNum
-     *
      * @var string
      */
     public $humanSourceGroupOrderNumber;
 
     /**
-     * @description humanSourceGroupWorkNo
-     *
      * @var string
      */
     public $humanSourceGroupWorkNo;
 
     /**
-     * @description id
-     *
      * @var int
      */
     public $id;
 
     /**
-     * @description masterWorkNo
-     *
      * @var string
      */
     public $masterWorkNo;

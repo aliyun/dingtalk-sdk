@@ -15,14 +15,14 @@ class GetPublicDevicesResponseBody extends Model
     public $data;
 
     /**
-     * @description 当前页条目数
+     * @example 100
      *
      * @var int
      */
     public $dataCnt;
 
     /**
-     * @description 总条目数
+     * @example 100
      *
      * @var int
      */

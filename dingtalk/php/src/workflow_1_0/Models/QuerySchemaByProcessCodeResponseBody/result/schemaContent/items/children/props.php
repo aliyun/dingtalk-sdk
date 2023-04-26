@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class props extends Model
 {
     /**
-     * @description 控件业务别名
-     *
      * @var string
      */
     public $bizAlias;
 
     /**
-     * @description 控件id
-     *
      * @var string
      */
     public $id;
 
     /**
-     * @description 控件名称
-     *
      * @var string
      */
     public $label;
 
     /**
-     * @description 是否必填
-     *
      * @var bool
      */
     public $required;

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class users extends Model
 {
     /**
-     * @description 所在其中一个班级ID
+     * @example 123
      *
      * @var int
      */
     public $classId;
 
     /**
-     * @description 所在其中一个班级名称
+     * @example 紫金港校区-小学-二年级2019级-二年级8班
      *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 名称
+     * @example 李老师
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 用户ID
+     * @example 12345678
      *
      * @var string
      */

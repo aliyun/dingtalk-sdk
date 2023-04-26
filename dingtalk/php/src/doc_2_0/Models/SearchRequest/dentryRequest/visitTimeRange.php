@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class visitTimeRange extends Model
 {
     /**
-     * @description 结束时间戳（ms）。
-     *
      * @var int
      */
     public $end;
 
     /**
-     * @description 起始时间戳（ms）。
-     *
      * @var int
      */
     public $start;

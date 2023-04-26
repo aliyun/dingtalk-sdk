@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetChildOrgListRequest extends Model
 {
     /**
-     * @description 部门编码
+     * @example 123
      *
      * @var string
      */

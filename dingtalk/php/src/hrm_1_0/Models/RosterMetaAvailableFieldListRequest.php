@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class RosterMetaAvailableFieldListRequest extends Model
 {
     /**
-     * @description 应用的agentId
+     * @example 1231
      *
      * @var int
      */

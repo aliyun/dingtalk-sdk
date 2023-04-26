@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class productInfoList extends Model
 {
     /**
-     * @description 含税金额
+     * @example 12.3
      *
      * @var string
      */
     public $amountWithTax;
 
     /**
-     * @description 商品名称
+     * @example 鱼
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 数量
+     * @example 2
      *
      * @var string
      */
     public $quantity;
 
     /**
-     * @description 规格型号
+     * @example 大型
      *
      * @var string
      */
     public $specification;
 
     /**
-     * @description 税率
+     * @example 0.3
      *
      * @var string
      */
     public $taxRate;
 
     /**
-     * @description 计量单位
+     * @example 千克
      *
      * @var string
      */
     public $unit;
 
     /**
-     * @description 含税单价
+     * @example 12.3
      *
      * @var string
      */

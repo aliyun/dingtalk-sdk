@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ListUserIndustryRolesRequest extends Model
 {
     /**
-     * @description 用户id
+     * @example 12345
      *
      * @var string
      */

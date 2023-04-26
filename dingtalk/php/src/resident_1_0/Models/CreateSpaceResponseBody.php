@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreateSpaceResponseBody extends Model
 {
     /**
-     * @description deptId
+     * @example 10005
      *
      * @var string
      */

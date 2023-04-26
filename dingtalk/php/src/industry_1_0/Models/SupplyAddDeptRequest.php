@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class SupplyAddDeptRequest extends Model
 {
     /**
-     * @description 部门名字
+     * @example 闪电供应商
      *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 供应商编号
+     * @example G12345
      *
      * @var string
      */
     public $partnerNumber;
 
     /**
-     * @description 上级部门id
+     * @example 1111
      *
      * @var int
      */
     public $superDeptId;
 
     /**
-     * @description 供应链部门类型
+     * @example SUPPLY_CHAIN_DEPT_TYPE
      *
      * @var string
      */

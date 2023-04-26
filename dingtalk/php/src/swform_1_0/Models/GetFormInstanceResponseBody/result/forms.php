@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class forms extends Model
 {
     /**
-     * @description 表单控件key。
+     * @example TextareaField_KGAW58AQ
      *
      * @var string
      */
     public $key;
 
     /**
-     * @description 表单主题。  当label字段为空或不存在时，忽略这个label和value。
+     * @example 你希望的主题
      *
      * @var string
      */
     public $label;
 
     /**
-     * @description 表单的值。
+     * @example 操作演示
      *
      * @var string
      */

@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class CreateEduAssetSpaceRequest extends Model
 {
     /**
-     * @description 业务类型编码
+     * @example 目前仅支持soke
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 空间描述
+     * @example 存放语文教研文件
      *
      * @var string
      */
     public $spaceDesc;
 
     /**
-     * @description 空间图标
+     * @example https://gw.alicdn.com/imgextra/i4/O1CN01QGjRTl27z8YPPEQdr_!!6000000007867-2-tps-99-78.png
      *
      * @var string
      */
     public $spaceIcon;
 
     /**
-     * @description 空间名称
+     * @example 语文教研组空间
      *
      * @var string
      */
     public $spaceName;
 
     /**
-     * @description 用户staffId
+     * @example aa12324
      *
      * @var string
      */

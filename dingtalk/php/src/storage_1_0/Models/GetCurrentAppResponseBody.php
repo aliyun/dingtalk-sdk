@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetCurrentAppResponseBody extends Model
 {
     /**
-     * @description 企业存储应用信息
-     *
      * @var app
      */
     public $app;

@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class GetRelationUkSettingResponseBody extends Model
 {
     /**
+     * @example true
+     *
      * @var result[]
      */
     public $result;

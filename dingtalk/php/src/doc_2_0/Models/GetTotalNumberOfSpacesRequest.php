@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetTotalNumberOfSpacesRequest extends Model
 {
     /**
-     * @description 操作用户unionId。
+     * @example abcd
      *
      * @var string
      */

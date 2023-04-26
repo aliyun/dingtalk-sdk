@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ValidateUserRoleResponseBody extends Model
 {
     /**
-     * @description 是否是家长身份。
-     * true表示是家长，false表示不是家长。
      * @var bool
      */
     public $matchParentIdentity;
 
     /**
-     * @description 是否为老师身份。
-     * true表示是老师，false表示不是老师。
      * @var bool
      */
     public $matchTeacherIdentity;

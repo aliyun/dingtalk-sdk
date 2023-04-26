@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CreateTeamResponseBody extends Model
 {
     /**
-     * @description 团队id
-     *
      * @var string
      */
     public $result;

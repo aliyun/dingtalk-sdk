@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class ListFilesRequest extends Model
 {
     /**
-     * @description 分页长度
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页查询锚点
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 排序类型
-     *
      * @var string
      */
     public $orderType;
 
     /**
-     * @description 父目录id
-     *
      * @var string
      */
     public $parentId;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 是否返回文件图标
-     *
      * @var bool
      */
     public $withIcon;

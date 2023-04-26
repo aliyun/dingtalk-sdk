@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class WearOrgHonorRequest extends Model
 {
     /**
-     * @description 员工userid
+     * @example accs233sxx
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 佩戴true，卸下false
-     *
      * @var bool
      */
     public $wear;

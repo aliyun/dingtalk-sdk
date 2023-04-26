@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetOssTempUrlRequest extends Model
 {
     /**
-     * @description 访问模式 AUTO(自动，例如在浏览器中如果是图片，PDF等可以在线直接查看，不能在线看时自动下载)、DOWNLOAD（直接下载）
-     *
      * @var string
      */
     public $fetchMode;
 
     /**
-     * @description 文件名
-     *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description oss文件key
-     *
      * @var string
      */
     public $key;
 
     /**
-     * @description 团队开放ID
-     *
      * @var string
      */
     public $openTeamId;

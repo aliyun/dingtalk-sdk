@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ApplyFollowerAuthInfoResponseBody extends Model
 {
     /**
-     * @description 推送结果
-     *
      * @var result
      */
     public $result;

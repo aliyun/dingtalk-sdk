@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateTaskDueDateRequest extends Model
 {
     /**
-     * @description 截止时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */

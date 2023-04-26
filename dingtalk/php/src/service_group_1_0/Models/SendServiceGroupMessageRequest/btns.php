@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class btns extends Model
 {
     /**
-     * @description 跳转地址
+     * @example http://www.dingtalk.com
      *
      * @var string
      */
     public $actionURL;
 
     /**
-     * @description 按钮名称
+     * @example 测试按钮
      *
      * @var string
      */

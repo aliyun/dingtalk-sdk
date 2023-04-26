@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class range extends Model
 {
     /**
-     * @description 循环终止日期
+     * @example 2020-01-01T10:15:30+08:00
      *
      * @var string
      */
     public $endDate;
 
     /**
-     * @description 循环出现次数
+     * @example 5
      *
      * @var int
      */
     public $numberOfOccurrences;
 
     /**
-     * @description 范围类型(endDate, noEnd, numbered)
+     * @example noEnd
      *
      * @var string
      */

@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ListTicketOperateRecordRequest extends Model
 {
     /**
-     * @description 开放团队ID
-     *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 工单开放ID
-     *
      * @var string
      */
     public $openTicketId;

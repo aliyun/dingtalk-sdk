@@ -10,21 +10,21 @@ use AlibabaCloud\Tea\Model;
 class GetAllCustomerRecyclesResponseBody extends Model
 {
     /**
-     * @description 是否还有下一页。
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下一页的游标。
+     * @example 10
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 数据列表。
+     * @example true
      *
      * @var resultList[]
      */

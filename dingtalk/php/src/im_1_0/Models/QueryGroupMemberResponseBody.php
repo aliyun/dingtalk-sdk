@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupMemberResponseBody extends Model
 {
     /**
-     * @description 群成员列表。
-     *
      * @var groupMembers[]
      */
     public $groupMembers;
 
     /**
-     * @description 群会话Id。
+     * @example 14da****2760
      *
      * @var string
      */

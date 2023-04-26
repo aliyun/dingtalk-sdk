@@ -14,155 +14,124 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 相关应用列表
-     *
      * @var appLink[]
      */
     public $appLink;
 
     /**
-     * @description 审核者名称
+     * @example 审核人钉钉名称
      *
      * @var string
      */
     public $approveName;
 
     /**
-     * @description 相关联系人
-     *
      * @var contactList[]
      */
     public $contactList;
 
     /**
-     * @description 联系人列表
-     *
      * @var string[]
      */
     public $contacts;
 
     /**
-     * @description 创建者的名称
+     * @example 创建者
      *
      * @var string
      */
     public $creatorName;
 
     /**
-     * @description 词条创建时间
-     *
      * @var int
      */
     public $gmtCreate;
 
     /**
-     * @description 词条修改时间
-     *
      * @var int
      */
     public $gmtModify;
 
     /**
-     * @description 词条中需要在聊天中被分词的别名
-     *
      * @var string[]
      */
     public $highLightWordAlias;
 
     /**
-     * @description 该词条内部群是否分词
-     *
      * @var bool
      */
     public $imHighLight;
 
     /**
-     * @description 当前词条的父类ID，审核通过的该字段为空
-     *
      * @var int
      */
     public $parentUuid;
 
     /**
-     * @description 相关图片
-     *
      * @var picList[]
      */
     public $picList;
 
     /**
-     * @description 相关文档链接，这里只针对钉钉在线文档，没有则忽略
-     *
      * @var relatedDoc[]
      */
     public $relatedDoc;
 
     /**
-     * @description 相关链接
-     *
-     *
      * @var relatedLink[]
      */
     public $relatedLink;
 
     /**
-     * @description 该词条服务群是否分词
-     *
      * @var bool
      */
     public $simHighLight;
 
     /**
-     * @description 词条非富文本释义
+     * @example 剔除了富文本格式后的释义信息
      *
      * @var string
      */
     public $simpleWordParaphrase;
 
     /**
-     * @description 分类列表
-     *
      * @var string[]
      */
     public $tagsList;
 
     /**
-     * @description 更新者名称
+     * @example 修改人钉钉名称
      *
      * @var string
      */
     public $updaterName;
 
     /**
-     * @description 员工的userId
+     * @example 312312312
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 当前词条对应的主键ID
-     *
      * @var int
      */
     public $uuid;
 
     /**
-     * @description 词条别名
-     *
      * @var string[]
      */
     public $wordAlias;
 
     /**
-     * @description 词条名称
+     * @example 测试词条
      *
      * @var string
      */
     public $wordName;
 
     /**
-     * @description 词条富文本释义
+     * @example 释义信息
      *
      * @var string
      */

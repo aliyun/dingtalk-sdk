@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetTbProjectSourceResponseBody extends Model
 {
     /**
-     * @description 应用安装来源，"0"：来自应用中心，”6“：预安装
+     * @example ”0“
      *
      * @var string
      */

@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class pattern extends Model
 {
     /**
-     * @description 每月的第几天
+     * @example 14
      *
      * @var int
      */
     public $dayOfMonth;
 
     /**
-     * @description 每周的第几天
+     * @example sunday
      *
      * @var string
      */
     public $daysOfWeek;
 
     /**
-     * @description 指定事件发生在daysOfsWeek中指定的允许天数的哪个实例上，从该月的第一个实例开始计算。取值为:first, second, third, fourth, last。默认是first。如果类型是relativMonthly或relativeYear，则可选并使用
+     * @example first
      *
      * @var string
      */
     public $index;
 
     /**
-     * @description 循环间隔
+     * @example 1
      *
      * @var int
      */
     public $interval;
 
     /**
-     * @description 循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)
+     * @example daily
      *
      * @var string
      */

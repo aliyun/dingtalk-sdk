@@ -10,28 +10,22 @@ use AlibabaCloud\Tea\Model;
 class QueryAllMemberByDeptResponseBody extends Model
 {
     /**
-     * @description 人员列表
-     *
      * @var content[]
      */
     public $content;
 
     /**
-     * @description 当前页码
-     *
      * @var int
      */
     public $currentPage;
 
     /**
-     * @description 数据总量
-     *
      * @var int
      */
     public $totalCount;
 
     /**
-     * @description 总页数
+     * @example 32
      *
      * @var int
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class UniqueQueryUserCardRequest extends Model
 {
     /**
-     * @description 名片模版id
+     * @example 123
      *
      * @var string
      */
     public $templateId;
 
     /**
-     * @description 用户unionId
+     * @example dfsdfsfsfdsfs
      *
      * @var string
      */

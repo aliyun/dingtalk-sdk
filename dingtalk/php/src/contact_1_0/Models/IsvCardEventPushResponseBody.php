@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class IsvCardEventPushResponseBody extends Model
 {
     /**
-     * @description 执行结果
-     *
      * @var bool
      */
     public $success;

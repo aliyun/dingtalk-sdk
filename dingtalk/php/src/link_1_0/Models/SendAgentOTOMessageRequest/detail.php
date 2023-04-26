@@ -10,33 +10,33 @@ use AlibabaCloud\Tea\Model;
 class detail extends Model
 {
     /**
-     * @description 消息体
-     *
      * @var messageBody
      */
     public $messageBody;
 
     /**
-     * @description 消息类型
+     * @example text
      *
      * @var string
      */
     public $msgType;
 
     /**
+     * @example sid002b6dbb4f963e93e0
+     *
      * @var string
      */
     public $sessionId;
 
     /**
-     * @description 消息接收人id
+     * @example user0001
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 请求唯一 ID
+     * @example 1234-5678-000
      *
      * @var string
      */

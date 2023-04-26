@@ -9,36 +9,34 @@ use AlibabaCloud\Tea\Model;
 class QueryCrmGroupContactRequest extends Model
 {
     /**
-     * @description 条数
+     * @example 10
      *
      * @var int
      */
     public $minResult;
 
     /**
-     * @description 游标
+     * @example 8888
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 群ID
+     * @example cid888
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开放团队ID
+     * @example 888
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 检索条件
-     *
      * @var string
      */
     public $searchFields;

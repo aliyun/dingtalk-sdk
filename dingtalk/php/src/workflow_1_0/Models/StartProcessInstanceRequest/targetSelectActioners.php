@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class targetSelectActioners extends Model
 {
     /**
-     * @description 自选节点的规则key
+     * @example manual_1918_5cd3_5e19_6a98
      *
      * @var string
      */
     public $actionerKey;
 
     /**
-     * @description 操作人userId列表
-     *
      * @var string[]
      */
     public $actionerUserIds;

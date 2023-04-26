@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ListParentByDeptRequest extends Model
 {
     /**
-     * @description 下属组织的部门ID
-     *
      * @var int
      */
     public $departmentId;
 
     /**
-     * @description 下属组织的组织ID，比如下属镇、村的corpId
-     *
      * @var string
      */
     public $subCorpId;

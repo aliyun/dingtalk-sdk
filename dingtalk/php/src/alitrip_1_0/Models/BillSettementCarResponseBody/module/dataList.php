@@ -9,246 +9,176 @@ use AlibabaCloud\Tea\Model;
 class dataList extends Model
 {
     /**
-     * @description 支付交易流水号
-     *
      * @var string
      */
     public $alipayTradeNo;
 
     /**
-     * @description 审批单号
-     *
      * @var string
      */
     public $applyId;
 
     /**
-     * @description 到达城市
-     *
      * @var string
      */
     public $arrCity;
 
     /**
-     * @description 到达日期
-     *
      * @var string
      */
     public $arrDate;
 
     /**
-     * @description 到达地
-     *
      * @var string
      */
     public $arrLocation;
 
     /**
-     * @description 到达时间
-     *
      * @var string
      */
     public $arrTime;
 
     /**
-     * @description 入账时间
-     *
      * @var string
      */
     public $billRecordTime;
 
     /**
-     * @description 预定时间
-     *
      * @var string
      */
     public $bookTime;
 
     /**
-     * @description 预定人use id
-     *
      * @var string
      */
     public $bookerId;
 
     /**
-     * @description 预订人工号
-     *
      * @var string
      */
     public $bookerJobNo;
 
     /**
-     * @description 预订人名称
-     *
      * @var string
      */
     public $bookerName;
 
     /**
-     * @description 用车事由
-     *
      * @var string
      */
     public $businessCategory;
 
     /**
-     * @description 资金方向
-     *
      * @var string
      */
     public $capitalDirection;
 
     /**
-     * @description 车型
-     *
      * @var string
      */
     public $carLevel;
 
     /**
-     * @description 级联部门
-     *
      * @var string
      */
     public $cascadeDepartment;
 
     /**
-     * @description 成本中心名称
-     *
      * @var string
      */
     public $costCenter;
 
     /**
-     * @description 成本中心编号
-     *
      * @var string
      */
     public $costCenterNumber;
 
     /**
-     * @description 优惠券
-     *
      * @var float
      */
     public $coupon;
 
     /**
-     * @description 优惠金额
-     *
      * @var float
      */
     public $couponPrice;
 
     /**
-     * @description 末级部门
-     *
      * @var string
      */
     public $department;
 
     /**
-     * @description 部门id
-     *
      * @var string
      */
     public $departmentId;
 
     /**
-     * @description 出发城市
-     *
      * @var string
      */
     public $deptCity;
 
     /**
-     * @description 出发日期
-     *
      * @var string
      */
     public $deptDate;
 
     /**
-     * @description 出发地
-     *
      * @var string
      */
     public $deptLocation;
 
     /**
-     * @description 出发时间
-     *
      * @var string
      */
     public $deptTime;
 
     /**
-     * @description 预估行驶距离
-     *
      * @var string
      */
     public $estimateDriveDistance;
 
     /**
-     * @description 预估金额
-     *
      * @var float
      */
     public $estimatePrice;
 
     /**
-     * @description 费用类型
-     *
      * @var string
      */
     public $feeType;
 
     /**
-     * @description 序号
-     *
      * @var string
      */
     public $index;
 
     /**
-     * @description 发票抬头
-     *
      * @var string
      */
     public $invoiceTitle;
 
     /**
-     * @description 用车事由
-     *
      * @var string
      */
     public $memo;
 
     /**
-     * @description 订单id
-     *
      * @var string
      */
     public $orderId;
 
     /**
-     * @description 订单金额
-     *
      * @var float
      */
     public $orderPrice;
 
     /**
-     * @description 超标审批单号
-     *
      * @var string
      */
     public $overApplyId;
 
     /**
-     * @description 个人支付金额
-     *
      * @var float
      */
     public $personSettleFee;
@@ -259,148 +189,106 @@ class dataList extends Model
     public $primaryId;
 
     /**
-     * @description 项目编码
-     *
      * @var string
      */
     public $projectCode;
 
     /**
-     * @description 项目名称
-     *
      * @var string
      */
     public $projectName;
 
     /**
-     * @description 供应商
-     *
      * @var string
      */
     public $providerName;
 
     /**
-     * @description 实际行驶距离
-     *
      * @var string
      */
     public $realDriveDistance;
 
     /**
-     * @description 实际上车点
-     *
      * @var string
      */
     public $realFromAddr;
 
     /**
-     * @description 实际下车点
-     *
      * @var string
      */
     public $realToAddr;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 服务费，仅在feeType 40111 中展示
-     *
      * @var string
      */
     public $serviceFee;
 
     /**
-     * @description 结算金额
-     *
      * @var float
      */
     public $settlementFee;
 
     /**
-     * @description 预存赠送金额消费
-     *
      * @var float
      */
     public $settlementGrantFee;
 
     /**
-     * @description 结算时间
-     *
      * @var string
      */
     public $settlementTime;
 
     /**
-     * @description 结算类型
-     *
      * @var string
      */
     public $settlementType;
 
     /**
-     * @description 特别关注订单
-     *
      * @var string
      */
     public $specialOrder;
 
     /**
-     * @description 特别关注原因
-     *
      * @var string
      */
     public $specialReason;
 
     /**
-     * @description 入账状态
-     *
      * @var int
      */
     public $status;
 
     /**
-     * @description 子订单号
-     *
      * @var string
      */
     public $subOrderId;
 
     /**
-     * @description 出行人use id
-     *
      * @var string
      */
     public $travelerId;
 
     /**
-     * @description 出行人工号
-     *
      * @var string
      */
     public $travelerJobNo;
 
     /**
-     * @description 出行人名称
-     *
      * @var string
      */
     public $travelerName;
 
     /**
-     * @description 员工是否认可
-     *
      * @var string
      */
     public $userConfirmDesc;
 
     /**
-     * @description 发票类型
-     *
      * @var int
      */
     public $voucherType;

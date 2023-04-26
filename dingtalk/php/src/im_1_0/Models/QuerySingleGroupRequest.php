@@ -10,14 +10,14 @@ use AlibabaCloud\Tea\Model;
 class QuerySingleGroupRequest extends Model
 {
     /**
-     * @description 群成员列表。
+     * @example 1745****8777
      *
      * @var groupMembers[]
      */
     public $groupMembers;
 
     /**
-     * @description 群模版Id。
+     * @example 14da****2760
      *
      * @var string
      */

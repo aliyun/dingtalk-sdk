@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class AddSpaceRequest extends Model
 {
     /**
-     * @description 空间名称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

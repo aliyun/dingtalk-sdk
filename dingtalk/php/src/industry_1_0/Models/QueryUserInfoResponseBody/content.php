@@ -15,71 +15,59 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description comments
+     * @example comments
      *
      * @var string
      */
     public $comments;
 
     /**
-     * @description 所在科室
-     *
      * @var dept[]
      */
     public $dept;
 
     /**
-     * @description 所在医疗组
-     *
      * @var group[]
      */
     public $group;
 
     /**
-     * @description 职称标签
-     *
      * @var job
      */
     public $job;
 
     /**
-     * @description 工号
+     * @example 0001
      *
      * @var string
      */
     public $jobNum;
 
     /**
-     * @description 工作状态标签, 已废弃, 请使用jobStatusList字段
-     *
      * @var jobStatus
      */
     public $jobStatus;
 
     /**
-     * @description 工作状态标签
-     *
      * @var jobStatusList[]
      */
     public $jobStatusList;
 
     /**
-     * @description 用户Id
+     * @example u0398812938821
      *
      * @var string
      */
     public $uid;
 
     /**
-     * @description 用户名称
+     * @example 用户名称
      *
      * @var string
      */
     public $userName;
 
     /**
-     * @description 人员属性标签
-     *
      * @var userProb
      */
     public $userProb;

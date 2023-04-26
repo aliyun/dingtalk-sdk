@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class contractInfo extends Model
 {
     /**
-     * @description 合同编号
+     * @example HT_xxxxxxx
      *
      * @var string
      */
     public $contractCode;
 
     /**
-     * @description 合同名称
+     * @example 合同
      *
      * @var string
      */
     public $contractName;
 
     /**
-     * @description 签署时间
+     * @example 1242153453
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 签署人名称
+     * @example 张三
      *
      * @var string
      */

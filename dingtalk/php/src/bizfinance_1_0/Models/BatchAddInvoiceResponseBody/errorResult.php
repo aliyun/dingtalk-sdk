@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class errorResult extends Model
 {
     /**
-     * @description 错误数据的key
+     * @example abc
      *
      * @var string
      */
     public $errorKey;
 
     /**
-     * @description 错误信息
+     * @example abc
      *
      * @var string
      */

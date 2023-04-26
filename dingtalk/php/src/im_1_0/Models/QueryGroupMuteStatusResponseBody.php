@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupMuteStatusResponseBody extends Model
 {
     /**
-     * @description 群禁言状态
+     * @example true
      *
      * @var bool
      */

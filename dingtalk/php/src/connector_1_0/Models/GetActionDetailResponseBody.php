@@ -10,56 +10,54 @@ use AlibabaCloud\Tea\Model;
 class GetActionDetailResponseBody extends Model
 {
     /**
-     * @description 连接资产标识
+     * @example dca://ding32fff839a3e0105d.connect.dingtalk.com/ding32fff839a3e0105d/action/G-ACT-101FDEBD3C6E213DB474000P
      *
      * @var string
      */
     public $connectAssetUri;
 
     /**
-     * @description 调用时以JsonSchema描述的入参格式
+     * @example {"title":"A registration form","description":"A simple form example.","type":"object","required":[],"properties":{"password":{"type":"string","title":"Password","minLength":3},"telephone":{"type":"string","title":"Telephone","minLength":10}}}
      *
      * @var string
      */
     public $inputSchema;
 
     /**
-     * @description 执行动作集成配置信息
-     *
      * @var integrationConfig
      */
     public $integrationConfig;
 
     /**
-     * @description 执行动作的名称
+     * @example XX执行动作
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 调用时以JsonSchema描述的出参格式
+     * @example {"title":"A registration form","description":"A simple form example.","type":"object","required":[],"properties":{"password":{"type":"string","title":"Password","minLength":3},"telephone":{"type":"string","title":"Telephone","minLength":10}}}
      *
      * @var string
      */
     public $outputSchema;
 
     /**
-     * @description 执行动作的ID
+     * @example G-ACT-101FDEBD3C6E213DB474000P
      *
      * @var string
      */
     public $refId;
 
     /**
-     * @description 执行动作提供组织
+     * @example ding32fff839a3e0105d
      *
      * @var string
      */
     public $refProviderCorpId;
 
     /**
-     * @description 连接资产类型
+     * @example action
      *
      * @var string
      */

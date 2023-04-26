@@ -9,36 +9,34 @@ use AlibabaCloud\Tea\Model;
 class UpgradeCloudGroupRequest extends Model
 {
     /**
-     * @description 云客服租户id
+     * @example sdfdfser
      *
      * @var string
      */
     public $ccsInstanceId;
 
     /**
-     * @description 钉钉群id
+     * @example cidrQnTVXH/X+ERaVqGaH+asw==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 升级的目标群组id
+     * @example oPnDlfVYYIUia
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 升级的目标团队id
+     * @example btkoYsadwyQiE
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 升级的目标模板id
-     *
      * @var string
      */
     public $templateId;

@@ -9,70 +9,70 @@ use AlibabaCloud\Tea\Model;
 class batchTradeDetailList extends Model
 {
     /**
-     * @description 金额
+     * @example 1.00
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 明细单号
+     * @example 20210909153300000002734746770740
      *
      * @var string
      */
     public $detailNo;
 
     /**
-     * @description 订单时间时间
+     * @example 2021-09-29 14:46:48
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 支付完成时间
+     * @example 2021-09-29 16:05:00
      *
      * @var string
      */
     public $gmtFinish;
 
     /**
-     * @description 备注
+     * @example 测试
      *
      * @var string
      */
     public $memo;
 
     /**
-     * @description 收款方电子钱包持有者姓名
+     * @example 收款人
      *
      * @var string
      */
     public $payeeAccountName;
 
     /**
-     * @description 收款人账号
+     * @example 13900000000
      *
      * @var string
      */
     public $payeeAccountNo;
 
     /**
-     * @description 收款账号类型
+     * @example ALIPAY
      *
      * @var string
      */
     public $payeeAccountType;
 
     /**
-     * @description 序号
+     * @example 1
      *
      * @var int
      */
     public $serialNo;
 
     /**
-     * @description 状态
+     * @example SUCCESS
      *
      * @var string
      */

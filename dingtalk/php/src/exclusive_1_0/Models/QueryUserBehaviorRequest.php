@@ -9,48 +9,38 @@ use AlibabaCloud\Tea\Model;
 class QueryUserBehaviorRequest extends Model
 {
     /**
-     * @description 结束时间(默认当前时间)
-     *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 起始页(默认从1开始)
-     *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 页大小(最大100)
-     *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 端类型((0-全部，1-iOS，2-Android, 3-Mac, 4-Windows))
-     *
      * @var int
      */
     public $platform;
 
     /**
-     * @description 开始时间(默认当前时间前7天)
-     *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 用户行为((0-全部，1-截屏，2-录屏))
-     *
      * @var int
      */
     public $type;
 
     /**
+     * @example 12034-1233
+     *
      * @var string
      */
     public $userId;

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 分类
+     * @example 1
      *
      * @var string
      */
     public $category;
 
     /**
-     * @description 固定字段标识
+     * @example 1
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 展示名字
+     * @example 主任医师
      *
      * @var string
      */
     public $displayName;
 
     /**
-     * @description 1:医师,0:非医师,2:待补充
+     * @example 医师
      *
      * @var string
      */

@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class QueryOrgTodoByUserResponseBody extends Model
 {
     /**
-     * @description 每页数量
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 翻页token
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 待办卡片列表
-     *
      * @var todoCards[]
      */
     public $todoCards;

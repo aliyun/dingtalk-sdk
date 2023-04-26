@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class address extends Model
 {
     /**
-     * @description 区域
-     *
      * @var area
      */
     public $area;
 
     /**
-     * @description 详细地址
-     *
      * @var string
      */
     public $detail;

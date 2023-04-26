@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryUserBehaviorResponseBody extends Model
 {
     /**
-     * @description 数据列表
-     *
      * @var data[]
      */
     public $data;

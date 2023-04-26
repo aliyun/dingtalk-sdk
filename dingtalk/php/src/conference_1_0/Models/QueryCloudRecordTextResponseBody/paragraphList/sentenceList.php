@@ -10,36 +10,34 @@ use AlibabaCloud\Tea\Model;
 class sentenceList extends Model
 {
     /**
-     * @description 结束时间
+     * @example 7940
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 句子
+     * @example 这里是小钉
      *
      * @var string
      */
     public $sentence;
 
     /**
-     * @description 开始时间
+     * @example 7940
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 用户unionId
+     * @example WFBkgJvt0xxxxSaA1jK4sgiEiE
      *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 单词列表
-     *
      * @var wordList[]
      */
     public $wordList;

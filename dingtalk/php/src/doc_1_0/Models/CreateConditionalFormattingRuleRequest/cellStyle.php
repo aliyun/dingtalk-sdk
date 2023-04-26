@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class cellStyle extends Model
 {
     /**
-     * @description 背景色，使用十六进制颜色表示法，如#ff0000
-     *
      * @var string
      */
     public $backgroundColor;

@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class sectionModel extends Model
 {
     /**
-     * @description 节次index
+     * @example 1
      *
      * @var int
      */
     public $sectionIndex;
 
     /**
-     * @description 节次名称
+     * @example 第一节/午休
      *
      * @var string
      */
     public $sectionName;
 
     /**
-     * @description sectionType
-     *
      * @var string
      */
     public $sectionType;

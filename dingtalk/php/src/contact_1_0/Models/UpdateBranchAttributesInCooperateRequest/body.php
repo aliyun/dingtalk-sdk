@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class body extends Model
 {
     /**
-     * @description 分支的企业ID
+     * @example ding1234
      *
      * @var string
      */
     public $branchCorpId;
 
     /**
-     * @description 挂载节点部门ID
+     * @example 23456
      *
      * @var int
      */
     public $linkDeptId;
 
     /**
-     * @description （分支/合作伙伴）在（集团/合作空间）的别名
+     * @example ding1234
      *
      * @var string
      */

@@ -10,23 +10,20 @@ use AlibabaCloud\Tea\Model;
 class CreateIntegratedTaskRequest extends Model
 {
     /**
-     * @description 待办组ID，调用方提供自定义唯一分组标识
+     * @example act_xxxx
      *
      * @var string
      */
     public $activityId;
 
     /**
-     * @description OA审批实例ID，通过创建实例接口获取。
-     *
+     * @example tPr_FB_mT_xxxxxxxxx2hQ05201655306463
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 任务列表
-     *
      * @var tasks[]
      */
     public $tasks;

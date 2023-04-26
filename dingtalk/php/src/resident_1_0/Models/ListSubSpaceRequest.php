@@ -14,8 +14,6 @@ class ListSubSpaceRequest extends Model
     public $referId;
 
     /**
-     * @description A short description of struct
-     *
      * @var string
      */
     public $residentCorpId;

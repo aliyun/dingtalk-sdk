@@ -10,84 +10,80 @@ use AlibabaCloud\Tea\Model;
 class QueryFormInstanceResponseBody extends Model
 {
     /**
-     * @description 应用搭建id
+     * @example SWAPP-dfeacds-example
      *
      * @var string
      */
     public $appUuid;
 
     /**
-     * @description 扩展信息
-     *
      * @var mixed[]
      */
     public $attributes;
 
     /**
-     * @description 实例创建时间戳
+     * @example 1631870043000
      *
      * @var int
      */
     public $createTimestamp;
 
     /**
-     * @description 创建人
+     * @example 00003
      *
      * @var string
      */
     public $creator;
 
     /**
-     * @description 表单模板id
+     * @example PROC-abcdef-example
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 表单数据
-     *
      * @var formInstDataList[]
      */
     public $formInstDataList;
 
     /**
-     * @description 实例id
+     * @example 951a8-8828-430c-b3e-example
      *
      * @var string
      */
     public $formInstanceId;
 
     /**
-     * @description 修改人
+     * @example 000025
      *
      * @var string
      */
     public $modifier;
 
     /**
-     * @description 实例最近修改时间戳
+     * @example 1631870043000
      *
      * @var int
      */
     public $modifyTimestamp;
 
     /**
-     * @description 外联业务code
+     * @example PROC-abcdef-example
      *
      * @var string
      */
     public $outBizCode;
 
     /**
-     * @description 外联业务实例id
+     * @example 951a8-8828-430c-b3e-example
      *
      * @var string
      */
     public $outInstanceId;
 
     /**
-     * @description 表单标题
+     * @example xxx提交的表单数据
      *
      * @var string
      */

@@ -9,70 +9,70 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 额度有效期结束时间。
+     * @example 1753851001000
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 假期类型标识。
+     * @example c00ced14-xxxxxd438748
      *
      * @var string
      */
     public $leaveCode;
 
     /**
-     * @description 年度。
+     * @example 2022
      *
      * @var string
      */
     public $quotaCycle;
 
     /**
-     * @description 余额标识。
+     * @example b13cc5b0--xxxx5b0
      *
      * @var string
      */
     public $quotaId;
 
     /**
-     * @description 以天计算额度总数。
+     * @example 700
      *
      * @var int
      */
     public $quotaNumPerDay;
 
     /**
-     * @description 以小时计算额度总数。
+     * @example 800
      *
      * @var int
      */
     public $quotaNumPerHour;
 
     /**
-     * @description 额度有效期开始时间。
+     * @example 1653851001000
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 用过的配额天数。
+     * @example 200
      *
      * @var int
      */
     public $usedNumPerDay;
 
     /**
-     * @description 用过的配额小时数。
+     * @example 100
      *
      * @var int
      */
     public $usedNumPerHour;
 
     /**
-     * @description 用户id。
+     * @example user1
      *
      * @var string
      */

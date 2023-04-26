@@ -10,22 +10,20 @@ use AlibabaCloud\Tea\Model;
 class UpdateCustomfieldValueRequest extends Model
 {
     /**
-     * @description 自定义字段id
+     * @example 62a010c153c2ef52xxxx
      *
      * @var string
      */
     public $customfieldId;
 
     /**
-     * @description 自定义字段名
+     * @example 自定义字段-文本
      *
      * @var string
      */
     public $customfieldName;
 
     /**
-     * @description 自定义字段值列表，最多10个
-     *
      * @var value[]
      */
     public $value;

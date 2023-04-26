@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class AddWorkspaceDocMembersRequest extends Model
 {
     /**
-     * @description 被操作用户组
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 发起操作者unionId
-     *
      * @var string
      */
     public $operatorId;

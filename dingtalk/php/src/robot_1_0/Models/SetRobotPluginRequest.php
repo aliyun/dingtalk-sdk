@@ -15,7 +15,7 @@ class SetRobotPluginRequest extends Model
     public $pluginInfoList;
 
     /**
-     * @description 钉钉开放平台后台机器人的robotCode
+     * @example dingncjdnfpkN7dsh
      *
      * @var string
      */

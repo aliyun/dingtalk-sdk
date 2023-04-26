@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class categoryStatisticsRecords extends Model
 {
     /**
-     * @description 心声数量
+     * @example 10
      *
      * @var int
      */
     public $count;
 
     /**
-     * @description 上期心声数量
+     * @example 9
      *
      * @var int
      */
     public $lastCount;
 
     /**
-     * @description 分类名称
+     * @example 工单类
      *
      * @var string
      */

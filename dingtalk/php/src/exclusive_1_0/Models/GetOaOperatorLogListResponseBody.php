@@ -15,8 +15,6 @@ class GetOaOperatorLogListResponseBody extends Model
     public $data;
 
     /**
-     * @description 当前获取记录数
-     *
      * @var int
      */
     public $itemCount;

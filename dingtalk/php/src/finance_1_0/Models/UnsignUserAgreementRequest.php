@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class UnsignUserAgreementRequest extends Model
 {
     /**
-     * @description 协议编号
+     * @example 23021_12342134
      *
      * @var string
      */
     public $agreementNo;
 
     /**
-     * @description 业务代码
+     * @example TRADE
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 业务场景
+     * @example WITHHOLDING
      *
      * @var string
      */
     public $bizScene;
 
     /**
-     * @description 主机构编号
+     * @example 202111090001
      *
      * @var string
      */
     public $instId;
 
     /**
-     * @description 子机构编号
+     * @example 1001
      *
      * @var string
      */
     public $subInstId;
 
     /**
-     * @description 付款人staffId
+     * @example 2120493284
      *
      * @var string
      */

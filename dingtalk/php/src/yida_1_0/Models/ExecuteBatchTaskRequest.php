@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class ExecuteBatchTaskRequest extends Model
 {
     /**
-     * @description 宜搭应用编码
+     * @example APP_XCE0EVXS6DYG3YDYC5RD
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 审批动作
+     * @example 备选值：agree/disagree
      *
      * @var string
      */
     public $outResult;
 
     /**
-     * @description 审批意见
+     * @example OK
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 宜搭应用秘钥
+     * @example 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description taskInfoList
+     * @example [{"taskId":"2267855699","formInstId":"4d226eb1-1f4e-4348-a9cc-616477c3daa6"},{"taskId":"2267855700","formInstId":"905a922e-da05-4ef9-ba1c-db9ad60bbe60"}]
      *
      * @var string
      */
     public $taskInformationList;
 
     /**
-     * @description 钉钉userId
+     * @example ding173982232112232
      *
      * @var string
      */

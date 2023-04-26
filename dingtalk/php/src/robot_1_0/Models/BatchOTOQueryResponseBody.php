@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class BatchOTOQueryResponseBody extends Model
 {
     /**
-     * @description 消息已读情况
-     *
      * @var messageReadInfoList[]
      */
     public $messageReadInfoList;
 
     /**
-     * @description 消息发送状态
+     * @example SUCESS
      *
      * @var string
      */

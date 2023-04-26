@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class coFeedOpenDeliverModel extends Model
 {
     /**
-     * @description 【必填】业务标识
+     * @example xxx_biz_tag
      *
      * @var string
      */
     public $bizTag;
 
     /**
-     * @description 【必填】协作场域下的排序时间
+     * @example 1665473229000
      *
      * @var int
      */

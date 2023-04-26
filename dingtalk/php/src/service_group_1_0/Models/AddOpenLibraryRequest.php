@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class AddOpenLibraryRequest extends Model
 {
     /**
-     * @description 知识库描述
+     * @example 这个是业务知识库
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 开放团队ID
+     * @example Jxi12wo3qxoa
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 知识库来源
+     * @example XMD
      *
      * @var string
      */
     public $source;
 
     /**
-     * @description 知识库名称
+     * @example 测试库
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 知识库类型
+     * @example EXTERNAL
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 用户/员工ID
+     * @example 0159003451667222
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 用户昵称或姓名
+     * @example 钉三多
      *
      * @var string
      */

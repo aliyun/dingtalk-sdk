@@ -10,42 +10,40 @@ use AlibabaCloud\Tea\Model;
 class ProcessApproveCreateRequest extends Model
 {
     /**
-     * @description 三方审批单id，全局唯一
+     * @example 25c4c49f-cf3a-4ba1-b321-7defd93b7f89
      *
      * @var string
      */
     public $approveId;
 
     /**
-     * @description 审批人员工userId
+     * @example user02
      *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 审批单关联的打卡信息
-     *
      * @var punchParam
      */
     public $punchParam;
 
     /**
-     * @description 审批单子类型名称：调店:shiftGroup
+     * @example shiftGroup
      *
      * @var string
      */
     public $subType;
 
     /**
-     * @description 审批单类型名称
+     * @example 请假
      *
      * @var string
      */
     public $tagName;
 
     /**
-     * @description 员工的userId
+     * @example user01
      *
      * @var string
      */

@@ -15,8 +15,6 @@ class ServiceWindowMessageBatchPushResponseBody extends Model
     public $requestId;
 
     /**
-     * @description result
-     *
      * @var result
      */
     public $result;

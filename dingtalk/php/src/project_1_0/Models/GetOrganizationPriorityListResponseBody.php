@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetOrganizationPriorityListResponseBody extends Model
 {
     /**
-     * @description 优先级列表
-     *
      * @var result[]
      */
     public $result;

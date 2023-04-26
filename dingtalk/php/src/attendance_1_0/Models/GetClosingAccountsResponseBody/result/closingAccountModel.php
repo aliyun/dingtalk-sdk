@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class closingAccountModel extends Model
 {
     /**
-     * @description 封账时间-日
-     *
      * @var int
      */
     public $closingDay;
 
     /**
-     * @description 封账时间-时分
-     *
      * @var int
      */
     public $closingHourMinutes;
 
     /**
-     * @description 封账范围-结束日
-     *
      * @var int
      */
     public $endDay;
 
     /**
-     * @description 封账范围-结束月
-     *
      * @var int
      */
     public $endMonth;
 
     /**
-     * @description 封账范围-开始日
-     *
      * @var int
      */
     public $startDay;
 
     /**
-     * @description 封账范围-开始月
-     *
      * @var int
      */
     public $startMonth;

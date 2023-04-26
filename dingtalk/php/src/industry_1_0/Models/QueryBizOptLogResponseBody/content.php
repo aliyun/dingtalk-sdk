@@ -9,120 +9,100 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 业务类型
+     * @example 固定值 1-医疗组
      *
      * @var int
      */
     public $bizType;
 
     /**
-     * @description 数据类型
+     * @example 1-钉钉数据，2-自建数据
      *
      * @var int
      */
     public $dataType;
 
     /**
-     * @description 日志ID
+     * @example 23821
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 操作后对象数据快照，json格式
-     *
      * @var string
      */
     public $optAfterData;
 
     /**
-     * @description 操作前对象数据快照，json格式
-     *
      * @var string
      */
     public $optBeforeData;
 
     /**
-     * @description 操作业务类型
+     * @example 1-人员，2-部门
      *
      * @var int
      */
     public $optBizType;
 
     /**
-     * @description 扩展信息，map json格式
-     *
      * @var string
      */
     public $optExtend;
 
     /**
-     * @description 操作者工号
-     *
      * @var string
      */
     public $optJobNumber;
 
     /**
-     * @description 操作对象code，人员code，或者部门code
-     *
      * @var string
      */
     public $optObjectCode;
 
     /**
-     * @description 操作对象名称
-     *
      * @var string
      */
     public $optObjectName;
 
     /**
-     * @description 操作对象人员工号
-     *
      * @var string
      */
     public $optObjectUserJobNo;
 
     /**
-     * @description 操作是否成功
+     * @example 1-成功，2-失败
      *
      * @var int
      */
     public $optSuccess;
 
     /**
-     * @description 操作时间 时间戳
+     * @example 1622191102012
      *
      * @var int
      */
     public $optTime;
 
     /**
-     * @description 操作类型
+     * @example 0-删除，1-添加，2-修改，3-作废
      *
      * @var int
      */
     public $optType;
 
     /**
-     * @description 操作用户code
-     *
      * @var string
      */
     public $optUserCode;
 
     /**
-     * @description 操作用户名称
-     *
      * @var string
      */
     public $optUserName;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $remark;

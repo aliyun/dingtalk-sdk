@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 部门可见列表
-     *
      * @var int[]
      */
     public $deptIds;
 
     /**
-     * @description 是否管理员可见。如果为true，优先看这个字段
-     *
      * @var bool
      */
     public $onlyAdminVisible;
 
     /**
-     * @description 角色可见列表
-     *
      * @var int[]
      */
     public $roleIds;
 
     /**
-     * @description 用户可见列表
-     *
      * @var string[]
      */
     public $userIds;

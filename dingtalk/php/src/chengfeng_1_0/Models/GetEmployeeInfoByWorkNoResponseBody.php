@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class GetEmployeeInfoByWorkNoResponseBody extends Model
 {
     /**
-     * @description 请求返回数据对象
-     *
      * @var content
      */
     public $content;
 
     /**
-     * @description 接口请求成功标识,成功为true,失败为false
+     * @example true
      *
      * @var bool
      */

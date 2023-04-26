@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class SaveAcrossCloudStroageConfigsResponseBody extends Model
 {
     /**
-     * @description 密匙ID
+     * @example sampleKeyId1234
      *
      * @var string
      */
     public $accessKeyId;
 
     /**
-     * @description 存储域名地址
+     * @example https://oss-cn-test.aliyuncs.com
      *
      * @var string
      */
     public $endpoint;
 
     /**
-     * @description 执行结果
+     * @example 0
      *
      * @var int
      */

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ListItemUserDataRequest extends Model
 {
     /**
-     * @description 希望查询的用户的id列表
-     *
      * @var string[]
      */
     public $body;

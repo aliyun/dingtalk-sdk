@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListInnerAppVersionResponseBody extends Model
 {
     /**
-     * @description 企业内部小程序版本号列表
-     *
      * @var appVersionList[]
      */
     public $appVersionList;

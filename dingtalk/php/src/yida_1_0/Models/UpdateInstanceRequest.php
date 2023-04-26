@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class UpdateInstanceRequest extends Model
 {
     /**
-     * @description 应用ID
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 语言环境
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 实例ID
+     * @example 未知
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 应用秘钥
+     * @example hello1234
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 更新的表单数据
+     * @example 未知
      *
      * @var string
      */
     public $updateFormDataJson;
 
     /**
-     * @description 钉钉的userId
+     * @example 未知
      *
      * @var string
      */

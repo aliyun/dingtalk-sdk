@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class CreateCustomerResponseBody extends Model
 {
     /**
-     * @description 联系人保存结果
-     *
      * @var contacts[]
      */
     public $contacts;
 
     /**
-     * @description 客户实例id
+     * @example customer_id
      *
      * @var string
      */
     public $customerInstanceId;
 
     /**
-     * @description 保存客户类型
+     * @example crm_customer
      *
      * @var string
      */

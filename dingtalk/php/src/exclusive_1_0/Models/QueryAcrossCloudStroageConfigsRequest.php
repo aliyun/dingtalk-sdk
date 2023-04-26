@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryAcrossCloudStroageConfigsRequest extends Model
 {
     /**
-     * @description 云厂商类型
+     * @example 1
      *
      * @var int
      */
     public $targetCloudType;
 
     /**
-     * @description 企业的corpId
+     * @example ding77b8cac4e026cc123xxxxxxxxeb6378f
      *
      * @var string
      */

@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class ManagementModifySpaceRequest extends Model
 {
     /**
-     * @description 容量
-     *
      * @var int
      */
     public $quota;
 
     /**
-     * @description 空间id列表
-     *
      * @var string[]
      */
     public $spaceIds;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

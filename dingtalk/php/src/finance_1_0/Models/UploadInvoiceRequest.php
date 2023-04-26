@@ -17,8 +17,6 @@ class UploadInvoiceRequest extends Model
     public $extension;
 
     /**
-     * @description 上传发票列表
-     *
      * @var invoices[]
      */
     public $invoices;

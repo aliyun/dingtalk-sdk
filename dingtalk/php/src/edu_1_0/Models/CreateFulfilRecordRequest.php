@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class CreateFulfilRecordRequest extends Model
 {
     /**
-     * @description 业务发生时间
+     * @example 1647503420000
      *
      * @var int
      */
     public $bizTime;
 
     /**
-     * @description 扩展信息，json格式
+     * @example {"key":"value"}
      *
      * @var string
      */
     public $extInfo;
 
     /**
-     * @description 人脸id
+     * @example F123123
      *
      * @var string
      */
     public $faceId;
 
     /**
-     * @description 场景
+     * @example 1
      *
      * @var int
      */
     public $scene;
 
     /**
-     * @description 设备sn号
+     * @example SN123456
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 员工id
+     * @example 12312312444
      *
      * @var string
      */

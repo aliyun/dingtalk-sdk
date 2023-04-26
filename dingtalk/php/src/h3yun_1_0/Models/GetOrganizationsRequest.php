@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetOrganizationsRequest extends Model
 {
     /**
-     * @description 18f923a7-5a5e-426d-94ae-a55ad1a4b240
+     * @example 部门id。获取指定部门及其下的子部门（以及子部门的子部门等等，递归获取）。 如果不填，默认获取全量组织架构
      *
      * @var string
      */

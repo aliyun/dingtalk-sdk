@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class pluginInfoList extends Model
 {
     /**
-     * @description 快捷入口的图标id
+     * @example @lALPDtXaDkO3j7hgYA
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 手机端快捷入口跳转链接
+     * @example https://www.dingtalk.com
      *
      * @var string
      */
     public $mobileUrl;
 
     /**
-     * @description 快捷入口的名称
+     * @example 快捷入口名称
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description pc端会话快捷入口跳转链接
+     * @example https://www.dingtalk.com
      *
      * @var string
      */

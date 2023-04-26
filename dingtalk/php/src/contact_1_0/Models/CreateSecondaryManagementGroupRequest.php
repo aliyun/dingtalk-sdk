@@ -11,35 +11,29 @@ use AlibabaCloud\Tea\Model;
 class CreateSecondaryManagementGroupRequest extends Model
 {
     /**
-     * @description 管理组名称
+     * @example 财务常用权限
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 管理组成员列表
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 资源id列表
-     *
      * @var string[]
      */
     public $resourceIds;
 
     /**
-     * @description 管理组权限范围信息
-     *
      * @var scope
      */
     public $scope;
 
     /**
-     * @description 员工id
+     * @example WB001
      *
      * @var string
      */

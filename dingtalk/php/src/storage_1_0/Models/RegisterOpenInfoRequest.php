@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class RegisterOpenInfoRequest extends Model
 {
     /**
-     * @description 注册打开信息
-     *
      * @var openInfos[]
      */
     public $openInfos;
 
     /**
-     * @description 链接供应商名称
-     * MS_OFFICE: MS Office
+     * @example DINGTALK
+     *
      * @var string
      */
     public $provider;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

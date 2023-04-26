@@ -10,21 +10,17 @@ use AlibabaCloud\Tea\Model;
 class SaveTeamMembersRequest extends Model
 {
     /**
-     * @description 待添加/修改的成员列表。
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 是否通知被授权成员，默认否。
-     *
      * @var bool
      */
     public $notify;
 
     /**
-     * @description 操作人unionId。
+     * @example YEp3JcM******UIbhwiE
      *
      * @var string
      */

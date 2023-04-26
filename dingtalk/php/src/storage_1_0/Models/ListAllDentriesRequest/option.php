@@ -9,29 +9,29 @@ use AlibabaCloud\Tea\Model;
 class option extends Model
 {
     /**
-     * @description 分页大小
-     * 50
+     * @example 30
+     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标, 首次拉取不用传
+     * @example next_token
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 排序规则, 升降或降序
-     * ASC
+     * @example DESC
+     *
      * @var string
      */
     public $order;
 
     /**
-     * @description 是否获取文件缩略图临时链接
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $withThumbnail;

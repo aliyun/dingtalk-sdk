@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class participants extends Model
 {
     /**
-     * @description OUTER_USER必填
-     *
      * @var string
      */
     public $account;
 
     /**
-     * @description OUTER_USER必填
-     *
      * @var string
      */
     public $accountName;
 
     /**
-     * @description 用户类型（"DING_USER":钉钉用户，"OUTER_USER":外部用户）
-     *
      * @var string
      */
     public $accountType;
 
     /**
-     * @description OUTER_USER需要盖企业章必填(如果不传，默认会赋值当前企业名称)
-     *
      * @var string
      */
     public $orgName;
 
     /**
-     * @description 签署印章类型（1：企业章 2：个人章  1,2：个人和企业章）
-     *
      * @var string
      */
     public $signRequirements;
 
     /**
-     * @description DING_USER必填
-     *
      * @var string
      */
     public $userId;

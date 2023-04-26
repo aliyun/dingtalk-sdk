@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 部门id
+     * @example 123
      *
      * @var string
      */
     public $deptId;
 
     /**
-     * @description 部门名称
+     * @example 部门A
      *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 最近1天累计创建日志数
+     * @example 100
      *
      * @var string
      */
     public $dingReportSendCnt;
 
     /**
-     * @description 最近1天累计创建日志人数
+     * @example 100
      *
      * @var string
      */

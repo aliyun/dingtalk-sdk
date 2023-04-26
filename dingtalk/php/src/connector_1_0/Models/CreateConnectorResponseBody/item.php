@@ -9,35 +9,31 @@ use AlibabaCloud\Tea\Model;
 class item extends Model
 {
     /**
-     * @description 连接平台connectorId
+     * @example G-CONN-101921B15FE0212B4AF70
      *
      * @var string
      */
     public $dingConnectorId;
 
     /**
-     * @description 服务商连接器connectorId
+     * @example xxxx
      *
      * @var string
      */
     public $integratorConnectorId;
 
     /**
-     * @description 错误码
-     *
      * @var string
      */
     public $subErrCode;
 
     /**
-     * @description 错误信息
-     *
      * @var string
      */
     public $subErrMsg;
 
     /**
-     * @description 是否成功
+     * @example true
      *
      * @var bool
      */

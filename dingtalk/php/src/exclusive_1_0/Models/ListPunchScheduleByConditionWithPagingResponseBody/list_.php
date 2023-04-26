@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 巡点业务id，同个巡点id同一个用户最多会有两条记录，一条签到，一条签退
+     * @example be0d84e04316488cxxxxxxxx129522b0
      *
      * @var string
      */
     public $bizOuterId;
 
     /**
-     * @description 打卡巡点机名称
+     * @example 测试打卡机
      *
      * @var string
      */
     public $positionName;
 
     /**
-     * @description 巡点类型（checkIn-签到，checkOut-签退）
+     * @example checkIn
      *
      * @var string
      */
     public $punchSymbol;
 
     /**
-     * @description 用户id
+     * @example 200003
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 用户巡点打卡时间
+     * @example 1647333408000
      *
      * @var int
      */

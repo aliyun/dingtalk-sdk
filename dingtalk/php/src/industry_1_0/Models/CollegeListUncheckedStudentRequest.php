@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CollegeListUncheckedStudentRequest extends Model
 {
     /**
-     * @description 部门id
+     * @example 1111111
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页条目数
+     * @example 100
      *
      * @var int
      */

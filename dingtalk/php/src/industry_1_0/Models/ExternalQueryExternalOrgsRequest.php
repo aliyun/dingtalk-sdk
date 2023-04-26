@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ExternalQueryExternalOrgsRequest extends Model
 {
     /**
-     * @description 外部组织类型,ecological:上下游
+     * @example ecological
      *
      * @var string
      */

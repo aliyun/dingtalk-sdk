@@ -13,57 +13,41 @@ use AlibabaCloud\Tea\Model;
 class ProcessStartRequest extends Model
 {
     /**
-     * @description 是否自动发起
-     *
      * @var string
      */
     public $autoStart;
 
     /**
-     * @description 抄送人列表
-     *
      * @var ccs[]
      */
     public $ccs;
 
     /**
-     * @description 文件列表
-     *
      * @var files[]
      */
     public $files;
 
     /**
-     * @description 发起方userId
-     *
      * @var string
      */
     public $initiatorUserId;
 
     /**
-     * @description 参与方列表
-     *
      * @var participants[]
      */
     public $participants;
 
     /**
-     * @description 回跳地址
-     *
      * @var string
      */
     public $redirectUrl;
 
     /**
-     * @description 来源信息(目前支持传入审批信息和跳转地址)
-     *
      * @var sourceInfo
      */
     public $sourceInfo;
 
     /**
-     * @description 任务名称（默认文件名）
-     *
      * @var string
      */
     public $taskName;

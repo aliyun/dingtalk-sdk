@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetPrincipalEmployeeResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * JobTitle:职位
+     * @example [     {       "JobTitle": "董事长",       "Name": "梁华"     },     {       "JobTitle": "副董事长",       "Name": "孟晚舟"     },     {       "JobTitle": "副董事长",       "Name": "徐直军"     }   ]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

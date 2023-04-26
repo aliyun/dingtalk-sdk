@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetEnvironmentalPenaltiesResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * PUNISH_DATE:处罚时间
+     * @example [     {       "DEPARTMENT": "xx",       "ENT_NAME": "xx",       "EXEC_STATUS": "xx",       "PUNISH_BASIS": "xx",       "PUNISH_CONTENT": "xx",       "PUNISH_LAW": "xx",       "PUNISH_NUM": "xx",       "PUNISH_RES": "xx",       "PUNISH_DATE": "xx"      }   ]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

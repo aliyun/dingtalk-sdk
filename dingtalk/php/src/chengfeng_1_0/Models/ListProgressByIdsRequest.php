@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ListProgressByIdsRequest extends Model
 {
     /**
-     * @description 进展ID列表
-     *
      * @var string[]
      */
     public $progressIds;

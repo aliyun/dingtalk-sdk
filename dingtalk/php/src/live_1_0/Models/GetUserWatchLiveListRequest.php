@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class GetUserWatchLiveListRequest extends Model
 {
     /**
-     * @description 过滤类型，0：不过滤， 1：过滤已经看完的
+     * @example 0
      *
      * @var int
      */
     public $filterType;
 
     /**
-     * @description 单次拉去上限，默认40个
+     * @example 30
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标 第一次可不填， 后面填回包的值
+     * @example preOrStartTime_desc_1658804913000
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 用户uid
+     * @example 6crtQT2XOgPHviiPvXhhiP6gdhiE
      *
      * @var string
      */

@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class formComponentValues extends Model
 {
     /**
-     * @description 控件别名
+     * @example Phone
      *
      * @var string
      */
     public $bizAlias;
 
     /**
-     * @description 控件类型
-     *
      * @var string
      */
     public $componentType;
@@ -29,28 +27,28 @@ class formComponentValues extends Model
     public $details;
 
     /**
-     * @description 控件扩展值
+     * @example 总个数:1
      *
      * @var string
      */
     public $extValue;
 
     /**
-     * @description 控件id
+     * @example PhoneField_IZI2LP8QF6O0
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 控件名称
+     * @example PhoneField
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 控件值
+     * @example 123xxxxxxxx
      *
      * @var string
      */

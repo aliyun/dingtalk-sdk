@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class GetApplyInviteInfoResponseBody extends Model
 {
     /**
-     * @description 仅部门邀请有效： 0-无需审核 1-有权限的子管理员
-     *
      * @var int
      */
     public $auditType;
 
     /**
-     * @description 是否允许员工扫码加入部门，仅在无需审核的时候有效（已经在组织内的成员通过扫描部门二维码加入某个部门）
-     *
      * @var bool
      */
     public $empApplyJoinDept;
 
     /**
-     * @description 是否开启邀请
-     *
      * @var bool
      */
     public $inviteSwitch;
 
     /**
-     * @description 邀请链接
-     *
      * @var string
      */
     public $inviteUrl;
 
     /**
-     * @description 是否开启通过链接邀请加入
-     *
      * @var bool
      */
     public $linkInvite;
 
     /**
-     * @description 是否开启通过团队号申请加入
-     *
      * @var bool
      */
     public $orgApplyCodeInvite;
 
     /**
-     * @description 是否开启通过企业名称搜索申请
-     *
      * @var bool
      */
     public $searchNameInvite;

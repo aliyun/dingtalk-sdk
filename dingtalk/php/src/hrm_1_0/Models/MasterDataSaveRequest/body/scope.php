@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class scope extends Model
 {
     /**
-     * @description 业务域code，如PERFORMANCE，系统分配
+     * @example performance
      *
      * @var string
      */
     public $scopeCode;
 
     /**
-     * @description 业务域版本，接入时系统分配，默认传1
+     * @example 1
      *
      * @var int
      */

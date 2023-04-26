@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreUserInfoRequest extends Model
 {
     /**
-     * @description 门店通迅录Code
+     * @example alt;ss1331
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 人员Id
+     * @example 2311sds1
      *
      * @var string
      */

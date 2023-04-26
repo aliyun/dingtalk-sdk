@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 子标签id
+     * @example 1234
      *
      * @var string
      */
     public $labelId;
 
     /**
-     * @description 目前无意义
+     * @example 目前无意义
      *
      * @var float
      */
     public $typeId;
 
     /**
-     * @description 子标签名
+     * @example 经销商
      *
      * @var string
      */

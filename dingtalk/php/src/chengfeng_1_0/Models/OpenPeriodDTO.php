@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class OpenPeriodDTO extends Model
 {
     /**
-     * @description 结束日期
+     * @example 311212121
      *
      * @var int
      */
     public $endDate;
 
     /**
-     * @description 周期id
+     * @example 111
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 周期名称
+     * @example 2023
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 周期类型
+     * @example FY_S1
      *
      * @var string
      */
     public $periodBizType;
 
     /**
-     * @description 开始日期
+     * @example 8383838383
      *
      * @var int
      */

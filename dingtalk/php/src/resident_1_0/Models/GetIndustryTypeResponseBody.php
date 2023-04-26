@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetIndustryTypeResponseBody extends Model
 {
     /**
-     * @description 行业类型
+     * @example RESIDENCE
      *
      * @var string
      */

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryUserCredentialsRequest extends Model
 {
     /**
-     * @description userId列表
-     *
      * @var string[]
      */
     public $userIds;

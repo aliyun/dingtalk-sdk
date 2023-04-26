@@ -12,22 +12,16 @@ use AlibabaCloud\Tea\Model;
 class actionInfo extends Model
 {
     /**
-     * @description api请求url path，结合Connector上的apiDomain使用
-     *
      * @var string
      */
     public $apiPath;
 
     /**
-     * @description 描述
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 连接平台连接器id
-     *
      * @var string
      */
     public $dingConnectorId;
@@ -38,36 +32,26 @@ class actionInfo extends Model
     public $inputMappingConfig;
 
     /**
-     * @description 入参schema
-     *
      * @var string
      */
     public $inputSchema;
 
     /**
-     * @description 服务商的执行事件Id
-     *
      * @var string
      */
     public $integratorActionId;
 
     /**
-     * @description 服务商的连接器Id
-     *
      * @var string
      */
     public $integratorConnectorId;
 
     /**
-     * @description 名称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 执行动作接口成功调用规则。
-     *
      * @var outputDataRules[]
      */
     public $outputDataRules;
@@ -78,8 +62,6 @@ class actionInfo extends Model
     public $outputMappingConfig;
 
     /**
-     * @description 出参schema
-     *
      * @var string
      */
     public $outputSchema;

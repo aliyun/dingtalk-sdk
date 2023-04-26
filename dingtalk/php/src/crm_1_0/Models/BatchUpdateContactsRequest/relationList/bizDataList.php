@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class bizDataList extends Model
 {
     /**
-     * @description 模型字段extendValue。
+     * @example {}
      *
      * @var string
      */
     public $extendValue;
 
     /**
-     * @description 模型字段id。
+     * @example TextField_71U51A
      *
      * @var string
      */
     public $key;
 
     /**
-     * @description 模型字段value。
+     * @example XX有限公司
      *
      * @var string
      */

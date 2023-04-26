@@ -10,36 +10,32 @@ use AlibabaCloud\Tea\Model;
 class GetFamilySchoolConversationMsgResponseBody extends Model
 {
     /**
-     * @description 企业名称，corp123
+     * @example corp123
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 是否有更多数据
+     * @example false
      *
      * @var string
      */
     public $hasMore;
 
     /**
-     * @description 消息数据
-     *
      * @var messages[]
      */
     public $messages;
 
     /**
-     * @description 查询下次消息的游标,时间毫秒值
+     * @example 1666671122000
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 开放群Id
-     *
      * @var string
      */
     public $openConversationId;

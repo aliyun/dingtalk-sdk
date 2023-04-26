@@ -49,18 +49,64 @@ use AlibabaCloud\SDK\Dingtalk\Vpackage_1_0\Models\ReleaseGrayUserIdGetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vpackage_1_0\Models\ReleaseGrayUserIdGetResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CloseHPackageRequest $request
+     * @param CloseHPackageHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return CloseHPackageResponse
+     */
+    public function closeHPackageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->miniAppId)) {
+            $body['miniAppId'] = $request->miniAppId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CloseHPackage',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/h5/microApps/close',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CloseHPackageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -77,32 +123,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CloseHPackageRequest $request
-     * @param CloseHPackageHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param GetUploadTokenRequest $request
+     * @param GetUploadTokenHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return CloseHPackageResponse
+     * @return GetUploadTokenResponse
      */
-    public function closeHPackageWithOptions($request, $headers, $runtime)
+    public function getUploadTokenWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->miniAppId)) {
-            @$body['miniAppId'] = $request->miniAppId;
+            $query['miniAppId'] = $request->miniAppId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetUploadToken',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/uploadTokens',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return CloseHPackageResponse::fromMap($this->doROARequest('CloseHPackage', 'package_1.0', 'HTTP', 'POST', 'AK', '/v1.0/package/h5/microApps/close', 'json', $req, $runtime));
+        return GetUploadTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -119,32 +176,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetUploadTokenRequest $request
-     * @param GetUploadTokenHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param HPackageListGetRequest $request
+     * @param HPackageListGetHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return GetUploadTokenResponse
+     * @return HPackageListGetResponse
      */
-    public function getUploadTokenWithOptions($request, $headers, $runtime)
+    public function hPackageListGetWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->miniAppId)) {
-            @$query['miniAppId'] = $request->miniAppId;
+            $query['miniAppId'] = $request->miniAppId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'HPackageListGet',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/h5/versions',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetUploadTokenResponse::fromMap($this->doROARequest('GetUploadToken', 'package_1.0', 'HTTP', 'GET', 'AK', '/v1.0/package/uploadTokens', 'json', $req, $runtime));
+        return HPackageListGetResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -161,38 +235,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HPackageListGetRequest $request
-     * @param HPackageListGetHeaders $headers
+     * @param HPublishPackageRequest $request
+     * @param HPublishPackageHeaders $headers
      * @param RuntimeOptions         $runtime
      *
-     * @return HPackageListGetResponse
+     * @return HPublishPackageResponse
      */
-    public function hPackageListGetWithOptions($request, $headers, $runtime)
+    public function hPublishPackageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->miniAppId)) {
-            @$query['miniAppId'] = $request->miniAppId;
+            $body['miniAppId'] = $request->miniAppId;
         }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
+        if (!Utils::isUnset($request->version)) {
+            $body['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'HPublishPackage',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/h5/publish',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return HPackageListGetResponse::fromMap($this->doROARequest('HPackageListGet', 'package_1.0', 'HTTP', 'GET', 'AK', '/v1.0/package/h5/versions', 'json', $req, $runtime));
+        return HPublishPackageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -209,35 +291,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HPublishPackageRequest $request
-     * @param HPublishPackageHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param HUploadPackageRequest $request
+     * @param HUploadPackageHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return HPublishPackageResponse
+     * @return HUploadPackageResponse
      */
-    public function hPublishPackageWithOptions($request, $headers, $runtime)
+    public function hUploadPackageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->miniAppId)) {
-            @$body['miniAppId'] = $request->miniAppId;
+            $body['miniAppId'] = $request->miniAppId;
         }
-        if (!Utils::isUnset($request->version)) {
-            @$body['version'] = $request->version;
+        if (!Utils::isUnset($request->ossObjectKey)) {
+            $body['ossObjectKey'] = $request->ossObjectKey;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'HUploadPackage',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/h5/asyncUpload',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return HPublishPackageResponse::fromMap($this->doROARequest('HPublishPackage', 'package_1.0', 'HTTP', 'POST', 'AK', '/v1.0/package/h5/publish', 'json', $req, $runtime));
+        return HUploadPackageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -254,35 +347,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HUploadPackageRequest $request
-     * @param HUploadPackageHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param HUploadPackageStatusRequest $request
+     * @param HUploadPackageStatusHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return HUploadPackageResponse
+     * @return HUploadPackageStatusResponse
      */
-    public function hUploadPackageWithOptions($request, $headers, $runtime)
+    public function hUploadPackageStatusWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->miniAppId)) {
-            @$body['miniAppId'] = $request->miniAppId;
+            $query['miniAppId'] = $request->miniAppId;
         }
-        if (!Utils::isUnset($request->ossObjectKey)) {
-            @$body['ossObjectKey'] = $request->ossObjectKey;
+        if (!Utils::isUnset($request->taskId)) {
+            $query['taskId'] = $request->taskId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'HUploadPackageStatus',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/h5/uploadStatus',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return HUploadPackageResponse::fromMap($this->doROARequest('HUploadPackage', 'package_1.0', 'HTTP', 'POST', 'AK', '/v1.0/package/h5/asyncUpload', 'json', $req, $runtime));
+        return HUploadPackageStatusResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -299,35 +403,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param HUploadPackageStatusRequest $request
-     * @param HUploadPackageStatusHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param OpenMicroAppPackageRequest $request
+     * @param OpenMicroAppPackageHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return HUploadPackageStatusResponse
+     * @return OpenMicroAppPackageResponse
      */
-    public function hUploadPackageStatusWithOptions($request, $headers, $runtime)
+    public function openMicroAppPackageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->miniAppId)) {
-            @$query['miniAppId'] = $request->miniAppId;
-        }
-        if (!Utils::isUnset($request->taskId)) {
-            @$query['taskId'] = $request->taskId;
+        $body = [];
+        if (!Utils::isUnset($request->agentId)) {
+            $body['agentId'] = $request->agentId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OpenMicroAppPackage',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/h5/microApps/open',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return HUploadPackageStatusResponse::fromMap($this->doROARequest('HUploadPackageStatus', 'package_1.0', 'HTTP', 'GET', 'AK', '/v1.0/package/h5/uploadStatus', 'json', $req, $runtime));
+        return OpenMicroAppPackageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -344,32 +456,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param OpenMicroAppPackageRequest $request
-     * @param OpenMicroAppPackageHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param ReleaseGrayDeployRequest $request
+     * @param ReleaseGrayDeployHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return OpenMicroAppPackageResponse
+     * @return ReleaseGrayDeployResponse
      */
-    public function openMicroAppPackageWithOptions($request, $headers, $runtime)
+    public function releaseGrayDeployWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->agentId)) {
-            @$body['agentId'] = $request->agentId;
+        if (!Utils::isUnset($request->miniAppId)) {
+            $body['miniAppId'] = $request->miniAppId;
+        }
+        if (!Utils::isUnset($request->version)) {
+            $body['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'ReleaseGrayDeploy',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/greys/deploy',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return OpenMicroAppPackageResponse::fromMap($this->doROARequest('OpenMicroAppPackage', 'package_1.0', 'HTTP', 'POST', 'AK', '/v1.0/package/h5/microApps/open', 'json', $req, $runtime));
+        return ReleaseGrayDeployResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -386,35 +512,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayDeployRequest $request
-     * @param ReleaseGrayDeployHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param ReleaseGrayExitRequest $request
+     * @param ReleaseGrayExitHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return ReleaseGrayDeployResponse
+     * @return ReleaseGrayExitResponse
      */
-    public function releaseGrayDeployWithOptions($request, $headers, $runtime)
+    public function releaseGrayExitWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->miniAppId)) {
-            @$body['miniAppId'] = $request->miniAppId;
+            $body['miniAppId'] = $request->miniAppId;
         }
         if (!Utils::isUnset($request->version)) {
-            @$body['version'] = $request->version;
+            $body['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'ReleaseGrayExit',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/greys/exit',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return ReleaseGrayDeployResponse::fromMap($this->doROARequest('ReleaseGrayDeploy', 'package_1.0', 'HTTP', 'POST', 'AK', '/v1.0/package/greys/deploy', 'json', $req, $runtime));
+        return ReleaseGrayExitResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -431,35 +568,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayExitRequest $request
-     * @param ReleaseGrayExitHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param ReleaseGrayOrgGetRequest $request
+     * @param ReleaseGrayOrgGetHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return ReleaseGrayExitResponse
+     * @return ReleaseGrayOrgGetResponse
      */
-    public function releaseGrayExitWithOptions($request, $headers, $runtime)
+    public function releaseGrayOrgGetWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->miniAppId)) {
-            @$body['miniAppId'] = $request->miniAppId;
+            $query['miniAppId'] = $request->miniAppId;
         }
         if (!Utils::isUnset($request->version)) {
-            @$body['version'] = $request->version;
+            $query['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ReleaseGrayOrgGet',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/greys/organizations',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ReleaseGrayExitResponse::fromMap($this->doROARequest('ReleaseGrayExit', 'package_1.0', 'HTTP', 'POST', 'AK', '/v1.0/package/greys/exit', 'json', $req, $runtime));
+        return ReleaseGrayOrgGetResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -476,35 +624,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayOrgGetRequest $request
-     * @param ReleaseGrayOrgGetHeaders $headers
+     * @param ReleaseGrayOrgSetRequest $request
+     * @param ReleaseGrayOrgSetHeaders $headers
      * @param RuntimeOptions           $runtime
      *
-     * @return ReleaseGrayOrgGetResponse
+     * @return ReleaseGrayOrgSetResponse
      */
-    public function releaseGrayOrgGetWithOptions($request, $headers, $runtime)
+    public function releaseGrayOrgSetWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->miniAppId)) {
-            @$query['miniAppId'] = $request->miniAppId;
+            $body['miniAppId'] = $request->miniAppId;
+        }
+        if (!Utils::isUnset($request->value)) {
+            $body['value'] = $request->value;
         }
         if (!Utils::isUnset($request->version)) {
-            @$query['version'] = $request->version;
+            $body['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ReleaseGrayOrgSet',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/greys/organizations/release',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ReleaseGrayOrgGetResponse::fromMap($this->doROARequest('ReleaseGrayOrgGet', 'package_1.0', 'HTTP', 'GET', 'AK', '/v1.0/package/greys/organizations', 'json', $req, $runtime));
+        return ReleaseGrayOrgSetResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -521,38 +683,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayOrgSetRequest $request
-     * @param ReleaseGrayOrgSetHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param ReleaseGrayPercentGetRequest $request
+     * @param ReleaseGrayPercentGetHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return ReleaseGrayOrgSetResponse
+     * @return ReleaseGrayPercentGetResponse
      */
-    public function releaseGrayOrgSetWithOptions($request, $headers, $runtime)
+    public function releaseGrayPercentGetWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->miniAppId)) {
-            @$body['miniAppId'] = $request->miniAppId;
-        }
-        if (!Utils::isUnset($request->value)) {
-            @$body['value'] = $request->value;
+            $query['miniAppId'] = $request->miniAppId;
         }
         if (!Utils::isUnset($request->version)) {
-            @$body['version'] = $request->version;
+            $query['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ReleaseGrayPercentGet',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/greys/users/percents',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ReleaseGrayOrgSetResponse::fromMap($this->doROARequest('ReleaseGrayOrgSet', 'package_1.0', 'HTTP', 'POST', 'AK', '/v1.0/package/greys/organizations/release', 'json', $req, $runtime));
+        return ReleaseGrayPercentGetResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -569,35 +739,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayPercentGetRequest $request
-     * @param ReleaseGrayPercentGetHeaders $headers
+     * @param ReleaseGrayPercentSetRequest $request
+     * @param ReleaseGrayPercentSetHeaders $headers
      * @param RuntimeOptions               $runtime
      *
-     * @return ReleaseGrayPercentGetResponse
+     * @return ReleaseGrayPercentSetResponse
      */
-    public function releaseGrayPercentGetWithOptions($request, $headers, $runtime)
+    public function releaseGrayPercentSetWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->miniAppId)) {
-            @$query['miniAppId'] = $request->miniAppId;
+            $body['miniAppId'] = $request->miniAppId;
+        }
+        if (!Utils::isUnset($request->value)) {
+            $body['value'] = $request->value;
         }
         if (!Utils::isUnset($request->version)) {
-            @$query['version'] = $request->version;
+            $body['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ReleaseGrayPercentSet',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/greys/users/percents/release',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ReleaseGrayPercentGetResponse::fromMap($this->doROARequest('ReleaseGrayPercentGet', 'package_1.0', 'HTTP', 'GET', 'AK', '/v1.0/package/greys/users/percents', 'json', $req, $runtime));
+        return ReleaseGrayPercentSetResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -614,38 +798,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReleaseGrayPercentSetRequest $request
-     * @param ReleaseGrayPercentSetHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param ReleaseGrayUserIdGetRequest $request
+     * @param ReleaseGrayUserIdGetHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return ReleaseGrayPercentSetResponse
+     * @return ReleaseGrayUserIdGetResponse
      */
-    public function releaseGrayPercentSetWithOptions($request, $headers, $runtime)
+    public function releaseGrayUserIdGetWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->miniAppId)) {
-            @$body['miniAppId'] = $request->miniAppId;
-        }
-        if (!Utils::isUnset($request->value)) {
-            @$body['value'] = $request->value;
+            $query['miniAppId'] = $request->miniAppId;
         }
         if (!Utils::isUnset($request->version)) {
-            @$body['version'] = $request->version;
+            $query['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ReleaseGrayUserIdGet',
+            'version'     => 'package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/package/greys/users',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ReleaseGrayPercentSetResponse::fromMap($this->doROARequest('ReleaseGrayPercentSet', 'package_1.0', 'HTTP', 'POST', 'AK', '/v1.0/package/greys/users/percents/release', 'json', $req, $runtime));
+        return ReleaseGrayUserIdGetResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -659,37 +851,5 @@ class Dingtalk extends OpenApiClient
         $headers = new ReleaseGrayUserIdGetHeaders([]);
 
         return $this->releaseGrayUserIdGetWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param ReleaseGrayUserIdGetRequest $request
-     * @param ReleaseGrayUserIdGetHeaders $headers
-     * @param RuntimeOptions              $runtime
-     *
-     * @return ReleaseGrayUserIdGetResponse
-     */
-    public function releaseGrayUserIdGetWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->miniAppId)) {
-            @$query['miniAppId'] = $request->miniAppId;
-        }
-        if (!Utils::isUnset($request->version)) {
-            @$query['version'] = $request->version;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return ReleaseGrayUserIdGetResponse::fromMap($this->doROARequest('ReleaseGrayUserIdGet', 'package_1.0', 'HTTP', 'GET', 'AK', '/v1.0/package/greys/users', 'json', $req, $runtime));
     }
 }

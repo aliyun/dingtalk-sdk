@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ExportPointOpenRequest extends Model
 {
     /**
-     * @description exportType为1时不需要传此参数，目前仅exportType=3时必须传入此参数,必须为七日内某一天且不能选择当日，格式yyyyMmdd。
+     * @example 20220601
      *
      * @var string
      */
     public $exportDate;
 
     /**
-     * @description 导出类型 1为七日内明细，3为七日内某一天榜单，且都不包含当日
+     * @example 1
      *
      * @var int
      */
     public $exportType;
 
     /**
-     * @description 操作人userId 必须为管理员
+     * @example 11185568-1380470824
      *
      * @var string
      */

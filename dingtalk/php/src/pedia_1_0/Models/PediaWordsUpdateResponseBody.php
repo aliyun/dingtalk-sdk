@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class PediaWordsUpdateResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * true,成功
      * @var bool
      */
     public $success;
 
     /**
-     * @description 更新后待审核词条编号
+     * @example 3213213213
      *
      * @var int
      */

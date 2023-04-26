@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class order extends Model
 {
     /**
-     * @description 业务类型
-     *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 待扩容的容量
-     *
      * @var int
      */
     public $capacity;
 
     /**
-     * @description 容量类型
-     *
      * @var string
      */
     public $capacityType;
 
     /**
-     * @description 时长
-     *
      * @var int
      */
     public $day;
 
     /**
-     * @description 金额
-     *
      * @var int
      */
     public $money;
 
     /**
-     * @description 订单id
-     *
      * @var int
      */
     public $orderId;

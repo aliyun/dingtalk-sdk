@@ -9,70 +9,68 @@ use AlibabaCloud\Tea\Model;
 class GetInnerAppResponseBody extends Model
 {
     /**
-     * @description 应用id
+     * @example 1
      *
      * @var int
      */
     public $agentId;
 
     /**
-     * @description 应用的appkey
+     * @example aooxxx
      *
      * @var string
      */
     public $appKey;
 
     /**
-     * @description 应用的secret
+     * @example aaaxxxxx
      *
      * @var string
      */
     public $appSecret;
 
     /**
-     * @description 应用描述
+     * @example desc
      *
      * @var string
      */
     public $desc;
 
     /**
-     * @description 应用移动端首页地址
+     * @example https://www.dingtalk.com
      *
      * @var string
      */
     public $homepageLink;
 
     /**
-     * @description 应用图标
+     * @example icon
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 服务器出口ip
-     *
      * @var string[]
      */
     public $ipWhiteList;
 
     /**
-     * @description 应用名称
+     * @example name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 应用管理后台地址
+     * @example https://www.dingtalk.com
      *
      * @var string
      */
     public $ompLink;
 
     /**
-     * @description 应用PC端首页地址
+     * @example https://www.dingtalk.com
      *
      * @var string
      */

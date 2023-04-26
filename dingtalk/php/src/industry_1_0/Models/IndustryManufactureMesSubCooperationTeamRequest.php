@@ -13,91 +13,79 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureMesSubCooperationTeamRequest extends Model
 {
     /**
-     * @description 本次操作的行为，取值： ● add：增加   -- 创建群 ● update：更新 -- 群成员变更
+     * @example add
      *
      * @var string
      */
     public $action;
 
     /**
-     * @description ISV的唯一标识,由BPaaS分配
+     * @example libai
      *
      * @var string
      */
     public $appKey;
 
     /**
-     * @description 基础数据名称。比如班组
+     * @example outTeam
      *
      * @var string
      */
     public $baseDataName;
 
     /**
-     * @description 事件配置列表(启用卡片列表),所有枚举值： 任务分配提醒: TASK_ASSIGN_REMINDER 任务逾期提醒: TASK_OVERDUE_REMINDER 置顶加急任务: STICK_URGET_TASK 报工审批提醒: OUTPUT_APPROVE_REMINDER 报工审批反馈: OUTPUT_APPROVE_RESULT 班组概览 :TEAM_OVERVIEW 我的任务:MYTASK_OVERVIEW     例如： ["STICK_URGET_TASK","OUTPUT_APPROVE_REMINDER"]
-     *
      * @var string[]
      */
     public $events;
 
     /**
-     * @description 扩展字段
-     *
      * @var extendData[]
      */
     public $extendData;
 
     /**
-     * @description 群插件列表
-     *
      * @var groupPlugins[]
      */
     public $groupPlugins;
 
     /**
-     * @description 群类型，枚举
+     * @example SUB_COOPERATION_GROUP
      *
      * @var string
      */
     public $groupType;
 
     /**
-     * @description 班组长(支持多个)
-     *
      * @var leaders[]
      */
     public $leaders;
 
     /**
-     * @description 班组成员(群成员)
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 班组群名称
+     * @example 打磨班组
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 委外合作群所属组织
+     * @example dingfsdfs3fsd2234wds
      *
      * @var string
      */
     public $outCorpId;
 
     /**
-     * @description 关联的工序
-     *
      * @var string[]
      */
     public $processIds;
 
     /**
-     * @description 班组模型实例的唯一Id， 由业务方传递
+     * @example d41d8cd98f00b204e9800998ecf8427e
      *
      * @var string
      */

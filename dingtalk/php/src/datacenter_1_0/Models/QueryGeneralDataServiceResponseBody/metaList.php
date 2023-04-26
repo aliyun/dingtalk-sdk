@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class metaList extends Model
 {
     /**
-     * @description 指标名称
-     *
      * @var string
      */
     public $fieldDesc;
 
     /**
-     * @description 指标口径
-     *
      * @var string
      */
     public $fieldId;
 
     /**
-     * @description 指标ID
-     *
      * @var string
      */
     public $fieldName;
 
     /**
-     * @description 指标单位
-     *
      * @var string
      */
     public $fieldType;

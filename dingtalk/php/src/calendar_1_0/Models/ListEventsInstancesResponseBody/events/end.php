@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class end extends Model
 {
     /**
-     * @description 日期，格式：yyyyMMdd
+     * @example 2020-01-01
      *
      * @var string
      */
     public $date;
 
     /**
-     * @description 时间戳，按照ISO 8601格式
+     * @example 2020-01-01T11:15:30+08:00
      *
      * @var string
      */
     public $dateTime;
 
     /**
-     * @description 时区
+     * @example Asia/Shanghai
      *
      * @var string
      */

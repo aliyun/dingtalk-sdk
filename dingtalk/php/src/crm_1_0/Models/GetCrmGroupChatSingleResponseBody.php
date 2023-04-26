@@ -9,57 +9,43 @@ use AlibabaCloud\Tea\Model;
 class GetCrmGroupChatSingleResponseBody extends Model
 {
     /**
-     * @description 创建时间(时间戳)
-     *
      * @var int
      */
     public $gmtCreate;
 
     /**
-     * @description 群头像地址
+     * @example https://static/xx.com/xx.jpg
      *
      * @var string
      */
     public $iconUrl;
 
     /**
-     * @description 客户群成员数
-     *
      * @var int
      */
     public $memberCount;
 
     /**
-     * @description 客户群名
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 客户群openConversationId
-     *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 群组openGroupSetId
-     *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 群主userId
-     *
      * @var string
      */
     public $ownerUserId;
 
     /**
-     * @description 群主userName
-     *
      * @var string
      */
     public $ownerUserName;

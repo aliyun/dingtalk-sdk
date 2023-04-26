@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryProcessesWorkItemsRequest extends Model
 {
     /**
-     * @description 流程实例ID
+     * @example 006f870b-4d1c-4cd0-85b3-2e866798e947
      *
      * @var string
      */

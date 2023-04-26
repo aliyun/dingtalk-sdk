@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class customDept extends Model
 {
     /**
-     * @description 自定义校区或部门名称
+     * @example 紫金港校区
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 部门类型：custom_campus: 自定义校区；custom_dept: 自定义部门
+     * @example custom_dept
      *
      * @var string
      */

@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class PrivateChatQueryResponseBody extends Model
 {
     /**
-     * @description 分页查询是否还有人员可查询消息已读状态
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下次分页查询的加密凭证
+     * @example Kna29Ra5pdJznx1ghavbumkQKwDzgfxZLapw55G7x0Q=
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 消息已读人的userId列表
-     *
      * @var string[]
      */
     public $readUserIds;
 
     /**
-     * @description 消息发送状态
+     * @example SUCCESS
      *
      * @var string
      */

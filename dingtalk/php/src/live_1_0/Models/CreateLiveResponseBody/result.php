@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
+     * @example 1a353547-040d-4095-bb93-404bc5d47920
+     *
      * @var string
      */
     public $liveId;

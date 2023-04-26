@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupRequest extends Model
 {
     /**
-     * @description 业务关联ID，和开放群ID二选一传
+     * @example 101813123123
      *
      * @var string
      */
     public $bizId;
 
     /**
-     * @description 开放群ID
+     * @example cidxxxxxx==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开放团队ID
+     * @example KxisoOk
      *
      * @var string
      */

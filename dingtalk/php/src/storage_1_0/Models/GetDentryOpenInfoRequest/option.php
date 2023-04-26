@@ -9,29 +9,29 @@ use AlibabaCloud\Tea\Model;
 class option extends Model
 {
     /**
-     * @description 是否检查钉钉登录态, 目前仅对预览生效。
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $checkLogin;
 
     /**
-     * @description 打开方式，可以分为预览和编辑
-     * PREVIEW
+     * @example PREVIEW
+     *
      * @var string
      */
     public $type;
 
     /**
-     * @description 历史版本号, 不填表示最新版本
+     * @example 1
      *
      * @var int
      */
     public $version;
 
     /**
-     * @description 是否需要水印
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $waterMark;

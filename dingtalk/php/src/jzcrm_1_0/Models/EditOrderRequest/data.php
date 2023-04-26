@@ -9,211 +9,155 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 产品明细，json格式
+     * @example "child_mx":[{"产品ID":"1","数量":"10","单价":"58.5","总价":"585","明细备注":"包含的测试产品"}]
      *
      * @var string
      */
     public $childMx;
 
     /**
-     * @description 创建人
+     * @example 张三
      *
      * @var string
      */
     public $dataUserid;
 
     /**
-     * @description 收货地址
-     *
      * @var string
      */
     public $fahuoaddressid;
 
     /**
-     * @description 开始日期
-     *
      * @var string
      */
     public $htBegindate;
 
     /**
-     * @description 合同正文
-     *
      * @var string
      */
     public $htContract;
 
     /**
-     * @description 对应客户
-     *
      * @var string
      */
     public $htCustomerid;
 
     /**
-     * @description 客户签约人
-     *
      * @var string
      */
     public $htCusub;
 
     /**
-     * @description 签单日期
-     *
      * @var string
      */
     public $htDate;
 
     /**
-     * @description 交付地点
-     *
      * @var string
      */
     public $htDeliplace;
 
     /**
-     * @description 最晚发货日
-     *
      * @var string
      */
     public $htEnddate;
 
     /**
-     * @description 附加费用金额
-     *
      * @var string
      */
     public $htFjmoney;
 
     /**
-     * @description 附加费用分类
-     *
      * @var string
      */
     public $htFjmoneylx;
 
     /**
-     * @description 优惠抹零金额
-     *
      * @var string
      */
     public $htKjmoney;
 
     /**
-     * @description 对应联系人
-     *
      * @var string
      */
     public $htLxrid;
 
     /**
-     * @description 联系方式
-     *
      * @var string
      */
     public $htLxrinfo;
 
     /**
-     * @description 优惠折扣率
-     *
      * @var string
      */
     public $htMoneyzhekou;
 
     /**
-     * @description 合同单号
-     *
      * @var string
      */
     public $htNumber;
 
     /**
-     * @description 单据类型（合同，合同订单，店面单）
-     *
      * @var string
      */
     public $htOrder;
 
     /**
-     * @description 付款方式
-     *
      * @var string
      */
     public $htPaymode;
 
     /**
-     * @description 所有者
-     *
      * @var string
      */
     public $htPreside;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $htRemark;
 
     /**
-     * @description 状态
-     *
      * @var string
      */
     public $htState;
 
     /**
-     * @description 外币备注
-     *
      * @var string
      */
     public $htSummemo;
 
     /**
-     * @description 总金额
-     *
      * @var string
      */
     public $htSummoney;
 
     /**
-     * @description 主题
-     *
      * @var string
      */
     public $htTitle;
 
     /**
-     * @description 分类
-     *
      * @var string
      */
     public $htType;
 
     /**
-     * @description 我方签约人
-     *
      * @var string
      */
     public $htWesub;
 
     /**
-     * @description 发货方式
-     *
      * @var string
      */
     public $htWuliutype;
 
     /**
-     * @description 对应机会
-     *
      * @var string
      */
     public $htXshid;
 
     /**
-     * @description 预计运费
-     *
      * @var string
      */
     public $htYunfeimoney;

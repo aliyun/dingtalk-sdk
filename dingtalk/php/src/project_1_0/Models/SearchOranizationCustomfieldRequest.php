@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class SearchOranizationCustomfieldRequest extends Model
 {
     /**
-     * @description 自定义字段ID集合，逗号组合。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $customfieldIds;
 
     /**
-     * @description 字段InstanceId集合，用逗号组合。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $instanceIds;
 
     /**
-     * @description 每页返回最大数量。默认10，最大300。
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 供分页使用，下一页token，从当前页结果中获取。
+     * @example f279e812xxxxxx
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 过滤出在指定项目中使用的企业字段，当scope=usedInProjectIds有效。多个以逗号隔开。
+     * @example 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $projectIds;
 
     /**
-     * @description 过滤字段名字。
+     * @example 自定义字段1
      *
      * @var string
      */
     public $query;
 
     /**
-     * @description 字段应用场景, 可以是 sfcAdd,usedInProjectIds,all 其中一个。
+     * @example all
      *
      * @var string
      */

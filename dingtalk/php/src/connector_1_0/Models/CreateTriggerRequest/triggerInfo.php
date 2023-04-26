@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class triggerInfo extends Model
 {
     /**
-     * @description 描述
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 连接平台连接器id
-     *
      * @var string
      */
     public $dingConnectorId;
 
     /**
-     * @description 入参jsonSchema
-     *
      * @var string
      */
     public $inputSchema;
 
     /**
-     * @description 服务商的连接器Id，优先使用dingConnectorId，其次使用integratorConnectorId
-     *
      * @var string
      */
     public $integratorConnectorId;
 
     /**
-     * @description 服务商的触发事件Id
-     *
      * @var string
      */
     public $integratorTriggerId;
 
     /**
-     * @description 名称
-     *
      * @var string
      */
     public $name;

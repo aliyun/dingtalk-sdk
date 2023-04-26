@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryActiveUsersRequest extends Model
 {
     /**
-     * @description 开放群ID
+     * @example cidxxxxxx==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开放团队ID
+     * @example KxisoOk
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 查询topN的数据
+     * @example 5
      *
      * @var int
      */

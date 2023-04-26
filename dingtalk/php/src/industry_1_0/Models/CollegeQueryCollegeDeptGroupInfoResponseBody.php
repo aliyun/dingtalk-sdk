@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CollegeQueryCollegeDeptGroupInfoResponseBody extends Model
 {
     /**
-     * @description 群名称
+     * @example xxx全员群
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 群编号
+     * @example 0124215
      *
      * @var string
      */

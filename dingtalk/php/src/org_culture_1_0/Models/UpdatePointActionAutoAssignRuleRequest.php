@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class UpdatePointActionAutoAssignRuleRequest extends Model
 {
     /**
-     * @description 行为规则列表
-     *
      * @var updatePointRuleRequestDTOList[]
      */
     public $updatePointRuleRequestDTOList;
 
     /**
-     * @description 操作人userId
+     * @example 11185568-1380470824
      *
      * @var string
      */

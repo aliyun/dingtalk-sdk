@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GenerateCaldavAccountRequest extends Model
 {
     /**
-     * @description 设备名称
-     *
      * @var string
      */
     public $device;

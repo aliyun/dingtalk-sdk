@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class GetResidentInfoResponseBody extends Model
 {
     /**
-     * @description 小区地址
-     *
      * @var string
      */
     public $address;
 
     /**
-     * @description 全员群opencid
-     *
      * @var string
      */
     public $allUserGroupOpenConversationId;
 
     /**
-     * @description 全员群群主 userid
-     *
      * @var string
      */
     public $allUserGroupOwnerUserId;
@@ -36,43 +30,31 @@ class GetResidentInfoResponseBody extends Model
     public $buildingArea;
 
     /**
-     * @description 小区归属的市的id
-     *
      * @var int
      */
     public $cityId;
 
     /**
-     * @description 通信录模式:0标准/1自定义
-     *
      * @var int
      */
     public $contactMode;
 
     /**
-     * @description 小区归属的区/县的id
-     *
      * @var int
      */
     public $countyId;
 
     /**
-     * @description 交付时间
-     *
      * @var int
      */
     public $deliveryTime;
 
     /**
-     * @description 经纬度，格式：经度,纬度
-     *
      * @var string
      */
     public $location;
 
     /**
-     * @description 小区名称
-     *
      * @var string
      */
     public $name;
@@ -83,71 +65,51 @@ class GetResidentInfoResponseBody extends Model
     public $projectManager;
 
     /**
-     * @description 物业部门群cid
-     *
      * @var string
      */
     public $propertyDeptGroupOpenConversationId;
 
     /**
-     * @description 物业部门群主userid
-     *
      * @var string
      */
     public $propertyDeptGroupOwnerUserId;
 
     /**
-     * @description 小区归属的省的id
-     *
      * @var int
      */
     public $provId;
 
     /**
-     * @description 物业管理范围-东
-     *
      * @var string
      */
     public $scopeEast;
 
     /**
-     * @description 物业管理范围-北
-     *
      * @var string
      */
     public $scopeNorth;
 
     /**
-     * @description 物业管理范围-南
-     *
      * @var string
      */
     public $scopeSouth;
 
     /**
-     * @description 物业管理范围-西
-     *
      * @var string
      */
     public $scopeWest;
 
     /**
-     * @description 物业电话
-     *
      * @var string
      */
     public $telephone;
 
     /**
-     * @description 小区归属的街道/镇的id
-     *
      * @var int
      */
     public $townId;
 
     /**
-     * @description 1纯住宅；2:商住混合；3:办公；4:办公商业混合；5:商业；6:公共场所；7:其他
-     *
      * @var int
      */
     public $type;

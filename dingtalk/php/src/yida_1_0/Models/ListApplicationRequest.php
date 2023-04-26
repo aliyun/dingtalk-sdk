@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class ListApplicationRequest extends Model
 {
     /**
-     * @description 应用过滤条件, 不填则获取发布到了宜搭应用中心的宜搭应用, 填createdByMe获取我创建的宜搭应用, 填managedByMe获取我管理的宜搭应用
+     * @example createdByMe
      *
      * @var string
      */
     public $appFilter;
 
     /**
-     * @description 应用名称检索关键词
+     * @example 步凡的测试应用
      *
      * @var string
      */
     public $appNameSearchKeyword;
 
     /**
-     * @description 钉钉组织id
+     * @example ding5d17e3add038d44535c2f4657eb6378e
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 第几页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 100
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description corpId+userId+CorpToken做md5加密计算生成的字符串(每个企业有自己的唯一corpToken), 获取具体计算详情请联系宜搭 dingtalk://dingtalkclient/action/sendmsg?dingtalk_id=somjffs
+     * @example B073AF673BEB044D59F8F612D65E1EA2
      *
      * @var string
      */
     public $token;
 
     /**
-     * @description 钉钉userId
+     * @example ding173982232112232
      *
      * @var string
      */

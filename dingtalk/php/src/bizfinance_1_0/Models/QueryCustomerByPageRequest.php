@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryCustomerByPageRequest extends Model
 {
     /**
-     * @description 分页，从1开始
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小，默认10
+     * @example 10
      *
      * @var int
      */

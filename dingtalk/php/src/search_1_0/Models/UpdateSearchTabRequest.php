@@ -9,42 +9,36 @@ use AlibabaCloud\Tea\Model;
 class UpdateSearchTabRequest extends Model
 {
     /**
-     * @description 暗黑模式下，数据源图标，非必填，不填则使用默认图标
-     *
      * @var string
      */
     public $darkIcon;
 
     /**
-     * @description 数据源图标，非必填，不填则使用默认图标
-     *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 数据源名称
+     * @example 专辑
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 数据源优先级，数值越小优先级越高
+     * @example 1
      *
      * @var int
      */
     public $priority;
 
     /**
-     * @description 数据来源,非必填,默认来源为钉钉搜索内部引擎
-     *
      * @var string
      */
     public $source;
 
     /**
-     * @description 数据源状态，1表示上线，0表示下线
+     * @example 1
      *
      * @var int
      */

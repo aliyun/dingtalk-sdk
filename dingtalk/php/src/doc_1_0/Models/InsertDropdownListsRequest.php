@@ -15,7 +15,7 @@ class InsertDropdownListsRequest extends Model
     public $options;
 
     /**
-     * @description 操作人unionId
+     * @example ppgAQuHfOoNVpJiStDwWCEgiEiE
      *
      * @var string
      */

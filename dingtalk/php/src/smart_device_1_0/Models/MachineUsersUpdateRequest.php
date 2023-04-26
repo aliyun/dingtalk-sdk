@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class MachineUsersUpdateRequest extends Model
 {
     /**
-     * @description 新增的部门id列表
-     *
      * @var int[]
      */
     public $addDeptIds;
 
     /**
-     * @description 新增的员工id列表
-     *
      * @var string[]
      */
     public $addUserIds;
 
     /**
-     * @description 移除的部门id列表
-     *
      * @var int[]
      */
     public $delDeptIds;
 
     /**
-     * @description 移除的员工id列表
-     *
      * @var string[]
      */
     public $delUserIds;
 
     /**
-     * @description 设备唯一标识id列表，Long数组
-     *
      * @var int[]
      */
     public $devIds;
 
     /**
-     * @description 设备唯一标识id列表，字符串数组
-     *
      * @var string[]
      */
     public $deviceIds;

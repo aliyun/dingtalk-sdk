@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class relatedLink extends Model
 {
     /**
-     * @description 链接地址
+     * @example https://123466.com
      *
      * @var string
      */
     public $link;
 
     /**
-     * @description 链接名称
+     * @example 相关链接
      *
      * @var string
      */

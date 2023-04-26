@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListAvaiableVersionResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var versions[]
      */
     public $versions;

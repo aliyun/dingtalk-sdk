@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 行为规则列表
-     *
      * @var queryPointRuleResponseDTOS[]
      */
     public $queryPointRuleResponseDTOS;

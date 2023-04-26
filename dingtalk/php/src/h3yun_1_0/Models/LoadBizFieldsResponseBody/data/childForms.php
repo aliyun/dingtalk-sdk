@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class childForms extends Model
 {
     /**
-     * @description 子表字段
-     *
      * @var fields[]
      */
     public $fields;
 
     /**
-     * @description 子表名称
+     * @example 子表
      *
      * @var string
      */
     public $formName;
 
     /**
-     * @description 子表编码
+     * @example D000183Fcd15f3a51e624bbc9945392d190b6aa8
      *
      * @var string
      */

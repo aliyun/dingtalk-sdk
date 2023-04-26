@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class subInstAddressInfo extends Model
 {
     /**
-     * @description 详细地址
+     * @example 未来park
      *
      * @var string
      */
     public $address;
 
     /**
-     * @description 市码
+     * @example 330100
      *
      * @var string
      */
     public $cityCode;
 
     /**
-     * @description 区码
+     * @example 330104
      *
      * @var string
      */
     public $districtCode;
 
     /**
-     * @description 省码
+     * @example 330000
      *
      * @var string
      */

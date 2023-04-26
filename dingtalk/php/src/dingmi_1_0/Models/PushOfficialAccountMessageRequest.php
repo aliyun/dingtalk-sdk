@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class PushOfficialAccountMessageRequest extends Model
 {
     /**
-     * @description 消息类型
+     * @example sampleText
      *
      * @var string
      */
     public $msgKey;
 
     /**
-     * @description 消息模板替换参数
+     * @example eyJjb250ZW50IjogIua1i+ivleWGheWuuSJ9(即{"content": "测试内容"}的base64编码值)
      *
      * @var string
      */
     public $msgParam;
 
     /**
-     * @description 用户id(在服务窗对应虚拟企业中的用户id)
+     * @example 123456abc
      *
      * @var string
      */

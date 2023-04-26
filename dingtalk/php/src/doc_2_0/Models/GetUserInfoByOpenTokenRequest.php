@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetUserInfoByOpenTokenRequest extends Model
 {
     /**
-     * @description 文档docKey，标识一篇文档的key。
-     *
      * @var string
      */
     public $docKey;
 
     /**
-     * @description 文档颁发给三方应用的 OpenToken，用于三方应用在文档中的免登。
-     *
      * @var string
      */
     public $openToken;

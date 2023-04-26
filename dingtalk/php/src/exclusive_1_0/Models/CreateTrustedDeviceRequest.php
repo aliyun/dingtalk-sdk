@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class CreateTrustedDeviceRequest extends Model
 {
     /**
-     * @description 支持SDK集成的设备唯一标识。
+     * @example CV11z5d2bdbb2260d1576000b4a9955fa
      *
      * @var string
      */
     public $did;
 
     /**
-     * @description mac地址
+     * @example 88:92:5a:1f:e8:24
      *
      * @var string
      */
     public $macAddress;
 
     /**
-     * @description 平台类型
+     * @example Mac
      *
      * @var string
      */
     public $platform;
 
     /**
-     * @description 设备状态
+     * @example 2
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 员工userId
+     * @example 65224157501039784
      *
      * @var string
      */

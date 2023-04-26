@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class substituteSubmitConf extends Model
 {
     /**
-     * @description 是否允许代提交
-     *
      * @var bool
      */
     public $enable;
 
     /**
-     * @description 代提交人
-     *
      * @var submitterList[]
      */
     public $submitterList;

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class iconUrl extends Model
 {
     /**
-     * @description 默认的目录树图标。
+     * @example gh
      *
      * @var string
      */
     public $line;
 
     /**
-     * @description 被选中时的加深图标。
+     * @example def
      *
      * @var string
      */

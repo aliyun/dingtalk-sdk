@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteDeviceRequest extends Model
 {
     /**
-     * @description 设备sn码
+     * @example testSn
      *
      * @var string
      */

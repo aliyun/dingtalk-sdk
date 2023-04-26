@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class AskRobotResponseBody extends Model
 {
     /**
-     * @description 答案的json string
+     * @example {\"sessionUuid\":\"op_2c35e603af6c4e62bcf5xxxx\",\"answerType\":\"recommendAnswer\",\"recommendAnswerContent\":[\"通讯录上人员可以排序吗？\"]}
      *
      * @var string
      */

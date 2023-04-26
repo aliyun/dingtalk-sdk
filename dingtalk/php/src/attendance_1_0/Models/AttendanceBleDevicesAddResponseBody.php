@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class AttendanceBleDevicesAddResponseBody extends Model
 {
     /**
-     * @description 添加错误列表
-     *
      * @var errorList[]
      */
     public $errorList;
 
     /**
-     * @description 添加成功蓝牙设备列表
-     *
      * @var successList[]
      */
     public $successList;

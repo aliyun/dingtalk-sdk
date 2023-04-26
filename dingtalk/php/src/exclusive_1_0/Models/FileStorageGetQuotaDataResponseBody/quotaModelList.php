@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class quotaModelList extends Model
 {
     /**
-     * @description 统计时间点
+     * @example 2022-04
      *
      * @var string
      */
     public $statisticTime;
 
     /**
-     * @description 使用的容量（byte）
+     * @example 14000
      *
      * @var int
      */

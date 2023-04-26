@@ -9,37 +9,33 @@ use AlibabaCloud\Tea\Model;
 class DeleteWaterMarkTemplateRequest extends Model
 {
     /**
-     * @description 模板的表单Code。
+     * @example PROC-292988B1-5064-4A42-9389-A76B97xxxxx
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 模板的内容。
+     * @example {     \"items\":[         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"enableModifyPlace\",                 \"id\":\"enableModifyPlace-undefined\",                 \"value\":\"true\"             }         },         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"modifyPlaceDistance\",                 \"id\":\"modifyPlaceDistance-undefined\",                 \"value\":200             }         },         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"title\",                 \"id\":\"title-undefined\",                 \"value\":\"wofu1\"             }         },         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"titleBgColor\",                 \"id\":\"titleBgColor-undefined\",                 \"value\":\"#0089FF\"             }         }     ] }
      *
      * @var string
      */
     public $formContent;
 
     /**
-     * @description 群会话ID。
+     * @example 1234567
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 是否是系统模板。
-     * - false：否
-     *
-     *
      * @var bool
      */
     public $systemTemplate;
 
     /**
-     * @description 用户的userid。
+     * @example manage123
      *
      * @var string
      */

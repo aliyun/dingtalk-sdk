@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class GetDeveloperMetadataResponseBody extends Model
 {
     /**
-     * @description 元数据所关联到的列
-     *
      * @var associatedColumn
      */
     public $associatedColumn;
 
     /**
-     * @description 元数据所关联到的行
-     *
      * @var associatedRow
      */
     public $associatedRow;

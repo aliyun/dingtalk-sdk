@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class ModifyFeedWhiteListShrinkRequest extends Model
 {
     /**
-     * @description 操作类型（1 添加白名单 / 2 删除白名单）
+     * @example 1
      *
      * @var int
      */
     public $action;
 
     /**
-     * @description 操作的白名单列表
-     *
      * @var string
      */
     public $modifyUserListShrink;
 
     /**
-     * @description 用户id（操作者的组织内id）
+     * @example 1206186351746728
      *
      * @var string
      */

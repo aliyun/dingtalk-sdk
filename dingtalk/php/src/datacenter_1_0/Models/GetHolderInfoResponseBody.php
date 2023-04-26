@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetHolderInfoResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * SHOULD_CAPI_TIME:认缴出资日期
+     * @example [     {       "STOCK_TYPE": "企业法人",       "STOCK_NAME": "xxx",       "STOCK_PERCENT": "100.00%",       "SHOULD_CAPI": "1000.0",       "SHOULD_CAPI_TIME": "2007-09-28"     }   ]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

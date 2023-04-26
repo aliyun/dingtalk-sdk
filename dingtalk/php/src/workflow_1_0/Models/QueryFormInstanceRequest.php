@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryFormInstanceRequest extends Model
 {
     /**
-     * @description 应用搭建id
+     * @example SWAPP-dfeacds-example
      *
      * @var string
      */
     public $appUuid;
 
     /**
-     * @description 表单模板Code
+     * @example PROC-abcdef-example
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 表单实例id
+     * @example 951a8-8828-430c-b3e-example
      *
      * @var string
      */

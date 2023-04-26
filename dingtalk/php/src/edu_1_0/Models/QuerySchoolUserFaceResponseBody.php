@@ -10,22 +10,20 @@ use AlibabaCloud\Tea\Model;
 class QuerySchoolUserFaceResponseBody extends Model
 {
     /**
-     * @description 组织id
+     * @example dingding123
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 是否还有下一页
+     * @example true/false
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 用户人脸列表
-     *
      * @var userFaceList[]
      */
     public $userFaceList;

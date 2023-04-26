@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class RoleMemberMapValue extends Model
 {
     /**
-     * @description 角色唯一标识
-     *
      * @var string
      */
     public $roleCode;
 
     /**
-     * @description 成员信息列表
-     *
      * @var memberList[]
      */
     public $memberList;

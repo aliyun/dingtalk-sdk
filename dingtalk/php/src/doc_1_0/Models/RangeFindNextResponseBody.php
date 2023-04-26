@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class RangeFindNextResponseBody extends Model
 {
     /**
-     * @description 找到的单元格的地址，使用A1表示法
+     * @example A2
      *
      * @var string
      */

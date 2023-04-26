@@ -11,42 +11,36 @@ use AlibabaCloud\Tea\Model;
 class relateProps extends Model
 {
     /**
-     * @description textnote的样式
-     *
      * @var string
      */
     public $align;
 
     /**
-     * @description 字段别名
-     *
      * @var string
      */
     public $bizAlias;
 
     /**
-     * @description 内部联系人choice
+     * @example 1：多选，0：单选
      *
      * @var int
      */
     public $choice;
 
     /**
-     * @description 说明文字内容
-     *
      * @var string
      */
     public $content;
 
     /**
-     * @description 是否可编辑
+     * @example true：可编辑
      *
      * @var bool
      */
     public $disabled;
 
     /**
-     * @description 是否自动计算时长
+     * @example true：自动
      *
      * @var string
      */
@@ -58,36 +52,30 @@ class relateProps extends Model
     public $durationLabel;
 
     /**
-     * @description 字段id
-     *
      * @var string
      */
     public $fieldId;
 
     /**
-     * @description 时间格式
+     * @example DDDateField和DDDateRangeField
      *
      * @var string
      */
     public $format;
 
     /**
-     * @description 公式
-     *
      * @var string
      */
     public $formula;
 
     /**
-     * @description 隐藏字段
+     * @example true：隐藏
      *
      * @var bool
      */
     public $invisible;
 
     /**
-     * @description 字段标题
-     *
      * @var string
      */
     public $label;
@@ -103,8 +91,6 @@ class relateProps extends Model
     public $limit;
 
     /**
-     * @description 说明文案的链接地址
-     *
      * @var string
      */
     public $link;
@@ -115,29 +101,25 @@ class relateProps extends Model
     public $mode;
 
     /**
-     * @description 是否需要大写 默认是需要
+     * @example 1:不需要大写, 空或者0:需要大写
      *
      * @var string
      */
     public $notUpper;
 
     /**
-     * @description 选项内容列表
-     *
      * @var options[]
      */
     public $options;
 
     /**
-     * @description 是否有支付属性
+     * @example true：是
      *
      * @var bool
      */
     public $payEnable;
 
     /**
-     * @description 界面空值提示占位符 前后端统一用placeholder
-     *
      * @var string
      */
     public $placeholder;
@@ -148,7 +130,7 @@ class relateProps extends Model
     public $ratio;
 
     /**
-     * @description 字段是否必填
+     * @example true：必填
      *
      * @var bool
      */
@@ -165,21 +147,17 @@ class relateProps extends Model
     public $spread;
 
     /**
-     * @description 需要计算总和的明细组件
-     *
      * @var statField[]
      */
     public $statField;
 
     /**
-     * @description 数字组件/日期区间组件单位属性
-     *
      * @var string
      */
     public $unit;
 
     /**
-     * @description 明细打印排版方式
+     * @example true：纵向，false：横向
      *
      * @var bool
      */

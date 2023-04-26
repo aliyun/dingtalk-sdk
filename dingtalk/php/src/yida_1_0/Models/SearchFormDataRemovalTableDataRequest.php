@@ -9,91 +9,91 @@ use AlibabaCloud\Tea\Model;
 class SearchFormDataRemovalTableDataRequest extends Model
 {
     /**
-     * @description 宜搭应用编码
+     * @example APP_XCE0EVXS6DYG3YDYC5RD
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 创建时间起始值
+     * @example 2021-05-01
      *
      * @var string
      */
     public $createFromTimeGMT;
 
     /**
-     * @description 创建时间终止值
+     * @example 2021-05-01
      *
      * @var string
      */
     public $createToTimeGMT;
 
     /**
-     * @description 表单编码
+     * @example FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 修改时间起始值
+     * @example 2021-05-01
      *
      * @var string
      */
     public $modifiedFromTimeGMT;
 
     /**
-     * @description 修改时间终止值
+     * @example 2021-09-10
      *
      * @var string
      */
     public $modifiedToTimeGMT;
 
     /**
-     * @description 排序规则, json格式数据
+     * @example 示例: 按照创建时间和文本组件值做升序排序则填写 {\"gmt_create\":\"+\",\"textField_1234\":\"+\"}。详情参考 https://www.yuque.com/yida/support/agb8im#CQro8
      *
      * @var string
      */
     public $orderConfigJson;
 
     /**
-     * @description 表单提交人的钉钉userId
+     * @example manager123
      *
      * @var string
      */
     public $originatorId;
 
     /**
-     * @description 当前第几页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 100
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 用于模糊查询表单实例的查询或精确查询的条件
+     * @example 支持2种检索规则{"numberField_l0c1cwiu":1}或者[{"key":"currentNodeName","value":"步凡","type":"TEXT","operator":"like","componentName":"TextField"}], 前一种规则仅仅做模糊匹配无法设置精确匹配, 第二种可以设置精确匹配条件。详情参考 https://www.yuque.com/yida/support/agb8im#F4S8e
      *
      * @var string
      */
     public $searchFieldJson;
 
     /**
-     * @description 宜搭应用秘钥
+     * @example 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉userId
+     * @example ding173982232112232
      *
      * @var string
      */

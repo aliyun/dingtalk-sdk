@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class RobotMessageFileDownloadRequest extends Model
 {
     /**
-     * @description 机器人收到消息中的下载码，换取临时下载文件的链接使用。
+     * @example mIofN681YE3f/+m+NntqpZSvSH2iMD6xP7Ow/ezdb1Wgn38tqVwL+zoRgzXipAMzmV5uhVKUlBdjKugAIvsm+TrvaPI0JYCMjvFMAlXvMWnMJsi2nZ9a0+N2c9CoV90hiB/B+fEThASPz+jmIa4J6x4WTsmmU3E/AopGsSGugE+hkHBcu52o76Yd2SCpPNUqenvdySSqjowEt1+Ddz55/9Qj8Y8ZhTryqsb7tYwzLFB+F3lsWCotXBOQvEgy3e/bEQtOyV6YrP3KG6YNSb3Q==
      *
      * @var string
      */
     public $downloadCode;
 
     /**
-     * @description 机器人的robotCode。
+     * @example dingue4kfzdxbyn0pjqd
      *
      * @var string
      */

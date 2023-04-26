@@ -11,22 +11,18 @@ use AlibabaCloud\Tea\Model;
 class integrationConfig extends Model
 {
     /**
-     * @description 类目配置
-     *
      * @var categoryNames[]
      */
     public $categoryNames;
 
     /**
-     * @description 集成对象的名称
+     * @example 表单
      *
      * @var string
      */
     public $entityName;
 
     /**
-     * @description 其它额外属性
-     *
      * @var props[]
      */
     public $props;

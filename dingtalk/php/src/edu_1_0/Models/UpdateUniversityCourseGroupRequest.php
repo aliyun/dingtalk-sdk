@@ -10,42 +10,40 @@ use AlibabaCloud\Tea\Model;
 class UpdateUniversityCourseGroupRequest extends Model
 {
     /**
-     * @description 课程组编码
+     * @example GS1001
      *
      * @var string
      */
     public $courseGroupCode;
 
     /**
-     * @description 课程组介绍
+     * @example 高等数学
      *
      * @var string
      */
     public $courseGroupIntroduce;
 
     /**
-     * @description 课程组名称
+     * @example 高等数学
      *
      * @var string
      */
     public $courseGroupName;
 
     /**
-     * @description 课程组详细
-     *
      * @var courserGroupItemModels[]
      */
     public $courserGroupItemModels;
 
     /**
-     * @description 扩展信息
+     * @example {}
      *
      * @var string
      */
     public $ext;
 
     /**
-     * @description opUserId
+     * @example manger1234
      *
      * @var string
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class attendParticipants extends Model
 {
     /**
-     * @description 组织ID
+     * @example ding23456
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 组织名称
+     * @example 组织234
      *
      * @var string
      */
     public $orgName;
 
     /**
-     * @description 参与方ID
+     * @example 865306
      *
      * @var string
      */
     public $participantId;
 
     /**
-     * @description 参与方名称
+     * @example 二年级1班
      *
      * @var string
      */

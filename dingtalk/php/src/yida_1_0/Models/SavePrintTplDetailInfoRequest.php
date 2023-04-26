@@ -9,70 +9,64 @@ use AlibabaCloud\Tea\Model;
 class SavePrintTplDetailInfoRequest extends Model
 {
     /**
-     * @description 应用代码
+     * @example 123456
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 模板描述
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 文件名配置
-     *
      * @var string
      */
     public $fileNameConfig;
 
     /**
-     * @description 表单id
+     * @example abc
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 表单版本
+     * @example 123456
      *
      * @var int
      */
     public $formVersion;
 
     /**
-     * @description 模板的其他配置信息
+     * @example 123456
      *
      * @var string
      */
     public $setting;
 
     /**
-     * @description 打印模板id
+     * @example 123456
      *
      * @var int
      */
     public $templateId;
 
     /**
-     * @description 模板标题
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 用户id
+     * @example 123456
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 模板的VM
+     * @example 123456
      *
      * @var string
      */

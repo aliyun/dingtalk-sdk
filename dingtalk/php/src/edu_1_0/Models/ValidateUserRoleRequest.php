@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class ValidateUserRoleRequest extends Model
 {
     /**
-     * @description 时间阈值，查询在此时间之前的用户角色信息
+     * @example 1677600000000
      *
      * @var int
      */
     public $timeThreshold;
 
     /**
-     * @description 用户的uionId
+     * @example VYn5fYjORJMi
      *
      * @var string
      */

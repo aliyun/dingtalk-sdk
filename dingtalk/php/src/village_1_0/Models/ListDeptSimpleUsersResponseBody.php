@@ -25,8 +25,6 @@ class ListDeptSimpleUsersResponseBody extends Model
     public $totalCount;
 
     /**
-     * @description 用户列表
-     *
      * @var userList[]
      */
     public $userList;

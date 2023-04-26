@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SendServiceGroupMessageResponseBody extends Model
 {
     /**
-     * @description 开放消息任务ID
+     * @example msgxxxxxx==
      *
      * @var string
      */

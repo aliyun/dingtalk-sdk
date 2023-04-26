@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class CreateUniversityStudentRequest extends Model
 {
     /**
-     * @description 班级id
-     *
      * @var int
      */
     public $classId;
 
     /**
-     * @description 性别
-     *
      * @var string
      */
     public $gender;
 
     /**
-     * @description 身份证号
-     *
      * @var string
      */
     public $identityNumber;
 
     /**
-     * @description 电话
-     *
      * @var string
      */
     public $mobile;
 
     /**
-     * @description 名字
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 学号
-     *
      * @var string
      */
     public $studentNumber;
 
     /**
-     * @description opUserId
-     *
      * @var string
      */
     public $opUserId;

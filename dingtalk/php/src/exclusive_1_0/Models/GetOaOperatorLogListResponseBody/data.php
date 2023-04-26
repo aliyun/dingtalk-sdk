@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 操作分类（一级）
-     *
      * @var string
      */
     public $category1Name;
 
     /**
-     * @description 操作分类（二级）
-     *
      * @var string
      */
     public $category2Name;
 
     /**
-     * @description 操作详情
-     *
      * @var string
      */
     public $content;
 
     /**
-     * @description 操作员名字
-     *
      * @var string
      */
     public $opName;
 
     /**
-     * @description 操作时间
-     *
      * @var int
      */
     public $opTime;
 
     /**
-     * @description 操作员userId
-     *
      * @var string
      */
     public $opUserId;

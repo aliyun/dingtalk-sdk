@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class SearchUserTaskRequest extends Model
 {
     /**
-     * @description 每页返回最大数量。默认10，最大300。
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页标，从上一次请求结果中获取。
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 企业下任务搜索TQL语句。
-     *
      * @var string
      */
     public $tql;

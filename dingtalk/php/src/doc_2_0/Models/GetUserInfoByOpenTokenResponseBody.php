@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetUserInfoByOpenTokenResponseBody extends Model
 {
     /**
-     * @description 用户的 unionId。
-     *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 用户的userId。
-     *
      * @var string
      */
     public $userId;

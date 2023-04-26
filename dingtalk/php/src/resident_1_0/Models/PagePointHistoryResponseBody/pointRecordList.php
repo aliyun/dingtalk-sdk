@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class pointRecordList extends Model
 {
     /**
-     * @description 创建时间（精确到毫秒数）
+     * @example 1634630147
      *
      * @var int
      */
     public $createAt;
 
     /**
-     * @description 对应的行为代码（可空）
+     * @example rule_1
      *
      * @var string
      */
     public $ruleCode;
 
     /**
-     * @description 对应的行为名字
+     * @example 发动态
      *
      * @var string
      */
     public $ruleName;
 
     /**
-     * @description 增加或减少的分数（增加为正数，减少为负数）
+     * @example 3
      *
      * @var int
      */
     public $score;
 
     /**
-     * @description 成员id
+     * @example 123
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 幂等键
+     * @example 7653
      *
      * @var string
      */

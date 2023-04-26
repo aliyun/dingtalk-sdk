@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CreateOrUpdateFormDataResponseBody extends Model
 {
     /**
-     * @description 新增的或者更新的表单实例id列表
-     *
      * @var string[]
      */
     public $result;

@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class GetFileUploadInfoResponseBody extends Model
 {
     /**
-     * @description Header加签上传信息, 当protocol等于HEADER_SIGNATURE时，此字段生效
-     *
      * @var headerSignatureInfo
      */
     public $headerSignatureInfo;
 
     /**
-     * @description 上传协议，根据不同上传类型返回对应的信息.
-     * HEADER_SIGNATURE: Header加签
+     * @example HEADER_SIGNATURE
+     *
      * @var string
      */
     public $protocol;
 
     /**
-     * @description 文件存储类型
-     * UNKNOWN: 未知驱动
+     * @example DINGTALK
+     *
      * @var string
      */
     public $storageDriver;
 
     /**
-     * @description 上传唯一标识
+     * @example upload_key
      *
      * @var string
      */

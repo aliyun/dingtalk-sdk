@@ -9,43 +9,37 @@ use AlibabaCloud\Tea\Model;
 class CreateDeviceChatRoomRequest extends Model
 {
     /**
-     * @description 场景群类型，不填，为默认普通设备群，示例值--维修群：REPAIR_GROUP，点检群:INSPECT_GROUP,保养群：MAINTAIN_GROUP。
+     * @example REPAIR_GROUP
      *
      * @var string
      */
     public $chatType;
 
     /**
-     * @description 设备编码，客户侧生成的设备标识，能够唯一标识一个设备，该字段与deviceUuids字段需要二选一，并且不能都填充。
-     *
      * @var string[]
      */
     public $deviceCodes;
 
     /**
-     * @description 设备唯一标识，钉钉侧生成的设备标识，能够唯一标识一个设备，该字段与deviceCodes字段需要二选一，并且不能都填充。
-     *
      * @var string[]
      */
     public $deviceUuids;
 
     /**
-     * @description 群主钉钉账户。
+     * @example xxxxxxx
      *
      * @var string
      */
     public $ownerUserId;
 
     /**
-     * @description 设备场景群名称。
+     * @example 设备维修群
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 需要被拉入群聊的钉钉账号，可以传多个，通过英文逗号分隔。
-     *
      * @var string[]
      */
     public $userIds;

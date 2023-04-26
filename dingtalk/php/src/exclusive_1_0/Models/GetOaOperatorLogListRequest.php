@@ -9,43 +9,35 @@ use AlibabaCloud\Tea\Model;
 class GetOaOperatorLogListRequest extends Model
 {
     /**
-     * @description 操作分类（一级目录）
-     *
      * @var string[]
      */
     public $categoryList;
 
     /**
-     * @description 结束时间
-     *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 操作员userId
-     *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 分页起始页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 50
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 起始时间
-     *
      * @var int
      */
     public $startTime;

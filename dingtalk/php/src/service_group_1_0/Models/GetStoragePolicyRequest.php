@@ -9,29 +9,27 @@ use AlibabaCloud\Tea\Model;
 class GetStoragePolicyRequest extends Model
 {
     /**
-     * @description 业务类型
+     * @example TICKET_IMAGE
      *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 文件名称
+     * @example wahah.txt
      *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 文件大小，单位字节
+     * @example 10000
      *
      * @var int
      */
     public $fileSize;
 
     /**
-     * @description 团队ID
-     *
      * @var string
      */
     public $openTeamId;

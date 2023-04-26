@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateGroupNameResponseBody extends Model
 {
     /**
-     * @description 新群名称
-     *
      * @var string
      */
     public $newGroupName;

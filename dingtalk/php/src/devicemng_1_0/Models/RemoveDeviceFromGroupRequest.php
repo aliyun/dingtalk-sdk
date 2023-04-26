@@ -9,28 +9,24 @@ use AlibabaCloud\Tea\Model;
 class RemoveDeviceFromGroupRequest extends Model
 {
     /**
-     * @description 设备编号列表（与设备唯一标识列表二选一）
-     *
      * @var string[]
      */
     public $deviceCodes;
 
     /**
-     * @description 设备唯一标识列表（与设备编码列表二选一）
-     *
      * @var string[]
      */
     public $deviceUuids;
 
     /**
-     * @description 开放群唯一标识
+     * @example xxxx
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 操作人唯一标识
+     * @example xxxx
      *
      * @var string
      */

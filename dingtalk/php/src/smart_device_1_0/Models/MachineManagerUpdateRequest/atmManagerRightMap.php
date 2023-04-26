@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class atmManagerRightMap extends Model
 {
     /**
-     * @description 添加/删除考勤人员。
+     * @example true
      *
      * @var bool
      */
     public $attendancePersonManage;
 
     /**
-     * @description 蓝牙打卡管理。
+     * @example true
      *
      * @var bool
      */
     public $bluetoothPunchManage;
 
     /**
-     * @description 设备解绑并重置。
+     * @example true
      *
      * @var bool
      */
     public $deviceReset;
 
     /**
-     * @description 设备设置。
+     * @example true
      *
      * @var bool
      */
     public $deviceSettings;
 
     /**
-     * @description 人脸打卡管理。
+     * @example true
      *
      * @var bool
      */
     public $facePunchManage;
 
     /**
-     * @description 指纹打卡管理。
+     * @example true
      *
      * @var bool
      */

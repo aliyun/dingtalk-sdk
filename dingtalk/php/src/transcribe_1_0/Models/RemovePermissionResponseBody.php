@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class RemovePermissionResponseBody extends Model
 {
     /**
-     * @description 当执行出错的时候，移除权限失败的用户昵称列表
-     *
      * @var data
      */
     public $data;
 
     /**
-     * @description 服务端返回的错误代码
-     *
      * @var int
      */
     public $statusCode;
 
     /**
-     * @description 描述本次调用的业务层面是否成功
-     *
      * @var bool
      */
     public $success;

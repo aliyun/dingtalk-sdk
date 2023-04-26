@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class GetPublicDevicesRequest extends Model
 {
     /**
-     * @description 注册/申请时间止
+     * @example 1671767361000
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 设备mac地址
+     * @example 88:66:5a:07:2b:04
      *
      * @var string
      */
     public $macAddress;
 
     /**
-     * @description 页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 单页条目数
+     * @example 100
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 系统
+     * @example Mac
      *
      * @var string
      */
     public $platform;
 
     /**
-     * @description 注册/申请时间起
+     * @example 1671767361000
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 设备标题
+     * @example 这是标题
      *
      * @var string
      */

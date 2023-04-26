@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class QueryAllDepartmentResponseBody extends Model
 {
     /**
-     * @description 科室列表
-     *
      * @var content[]
      */
     public $content;
 
     /**
-     * @description 当前页码
+     * @example 1
      *
      * @var int
      */
     public $currentPage;
 
     /**
-     * @description 数据总量
+     * @example 100
      *
      * @var int
      */
     public $totalCount;
 
     /**
-     * @description 总页数
+     * @example 10
      *
      * @var int
      */

@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class QueryOrgTodoTasksResponseBody extends Model
 {
     /**
-     * @description 翻页token
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 待办卡片列表
-     *
      * @var todoCards[]
      */
     public $todoCards;

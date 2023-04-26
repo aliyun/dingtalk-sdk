@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class UpdateInstanceRequest extends Model
 {
     /**
-     * @description 外部业务ID
+     * @example hhdhg
      *
      * @var string
      */
     public $externalBizId;
 
     /**
-     * @description 表单CODE
+     * @example DING_CUSTOMER
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 数据表单实例数据，JSON格式
+     * @example {"node_888":"hhhh"}
      *
      * @var string
      */
     public $formDataList;
 
     /**
-     * @description 开放数据实例ID
+     * @example 888555
      *
      * @var string
      */
     public $openDataInstanceId;
 
     /**
-     * @description 开放团队ID
+     * @example 888***
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 操作人unionId
+     * @example 8888
      *
      * @var string
      */
     public $operatorUnionId;
 
     /**
-     * @description 拥有人unionId
+     * @example 88888
      *
      * @var string
      */

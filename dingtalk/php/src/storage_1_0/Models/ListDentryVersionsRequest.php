@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ListDentryVersionsRequest extends Model
 {
     /**
-     * @description 历史版本分页大小，默认100
-     * 100
+     * @example 30
+     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 下一页的游标位置
+     * @example next_token
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

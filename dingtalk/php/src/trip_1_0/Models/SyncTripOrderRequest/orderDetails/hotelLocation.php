@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class hotelLocation extends Model
 {
     /**
-     * @description 纬度
+     * @example 30.278569
      *
      * @var string
      */
     public $lat;
 
     /**
-     * @description 经度
+     * @example 120.023458
      *
      * @var string
      */
     public $lon;
 
     /**
-     * @description 坐标数据源
-     * - WGS84: 来自GPS的坐标
+     * @example GCJ02
+     *
      * @var string
      */
     public $source;
 
     /**
-     * @description 定位url
+     * @example https://ditu.amap.com/place/B0FFIYYAIA
      *
      * @var string
      */

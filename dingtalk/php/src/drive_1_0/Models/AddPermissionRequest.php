@@ -15,15 +15,11 @@ class AddPermissionRequest extends Model
     public $members;
 
     /**
-     * @description 权限角色
-     *
      * @var string
      */
     public $role;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

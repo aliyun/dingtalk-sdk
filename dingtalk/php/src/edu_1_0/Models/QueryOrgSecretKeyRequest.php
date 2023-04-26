@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryOrgSecretKeyRequest extends Model
 {
     /**
-     * @description 合作方编码
+     * @example DDISV
      *
      * @var string
      */
     public $isvCode;
 
     /**
-     * @description 操作人
+     * @example manger1234
      *
      * @var string
      */

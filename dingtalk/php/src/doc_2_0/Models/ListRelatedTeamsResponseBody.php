@@ -9,21 +9,17 @@ use AlibabaCloud\Tea\Model;
 class ListRelatedTeamsResponseBody extends Model
 {
     /**
-     * @description 是否还有更多数据。
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 小组列表。
-     *
      * @var TeamModel[]
      */
     public $items;
 
     /**
-     * @description 分页游标。
+     * @example cjk72iEakdim
      *
      * @var string
      */

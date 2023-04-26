@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class ListGroupSetResponseBody extends Model
 {
     /**
-     * @description 是否有下一页
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下一页的游标
+     * @example fasfasd
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 群组列表
-     *
      * @var resultList[]
      */
     public $resultList;
 
     /**
-     * @description 总条数，queryDsl入参为空时才会返回
+     * @example 100
      *
      * @var int
      */

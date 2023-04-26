@@ -9,43 +9,41 @@ use AlibabaCloud\Tea\Model;
 class SaveFormDataRequest extends Model
 {
     /**
-     * @description 应用编码
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 表单数据
+     * @example {"textField_jcpm6agt": "单行","employeeField_jcos0sar": ["workno"]}
      *
      * @var string
      */
     public $formDataJson;
 
     /**
-     * @description 表单ID
+     * @example FORM-NJYJZELV8YZRDEI2N5IQ7L6VEDMR1VE9GMPCJB
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 语言。可选值：zh_CN/en_US 默认：zh_CN
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 应用秘钥。在应用数据中获取。
+     * @example hexxx
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉userId
-     *
      * @var string
      */
     public $userId;

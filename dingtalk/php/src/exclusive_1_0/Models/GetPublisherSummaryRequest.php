@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetPublisherSummaryRequest extends Model
 {
     /**
-     * @description 每页包含的数据条数
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 启始数据游标
+     * @example 0
      *
      * @var int
      */

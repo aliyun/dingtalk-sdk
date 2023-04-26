@@ -10,78 +10,56 @@ use AlibabaCloud\Tea\Model;
 class values extends Model
 {
     /**
-     * @description 创建记录的用户昵称
-     *
      * @var string
      */
     public $creatorNick;
 
     /**
-     * @description 创建记录的用户ID
-     *
      * @var string
      */
     public $creatorUserId;
 
     /**
-     * @description 数据内容
-     *
      * @var mixed[]
      */
     public $data;
 
     /**
-     * @description 扩展数据内容
-     *
      * @var mixed[]
      */
     public $extendData;
 
     /**
-     * @description 记录创建时间
-     *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 记录修改时间
-     *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 数据ID
-     *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description 数据类型
-     *
      * @var string
      */
     public $objectType;
 
     /**
-     * @description 数据权限信息
-     *
      * @var permission
      */
     public $permission;
 
     /**
-     * @description 审批状态
-     *
      * @var string
      */
     public $procInstStatus;
 
     /**
-     * @description 审批结果
-     *
      * @var string
      */
     public $procOutResult;

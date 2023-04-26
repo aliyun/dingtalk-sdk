@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class event extends Model
 {
     /**
-     * @description 订单事件
+     * @example INIT
      *
      * @var string
      */
     public $action;
 
     /**
-     * @description 事件时间
+     * @example 2022-05-15 10:10:10
      *
      * @var string
      */

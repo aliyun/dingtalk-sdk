@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CreateInterconnectionResponseBody extends Model
 {
     /**
-     * @description 创建失败的钉外账号列表。
-     *
      * @var results[]
      */
     public $results;

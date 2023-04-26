@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class BatchGetGroupSetConfigResponseBody extends Model
 {
     /**
-     * @description 群粗配置列表
-     *
      * @var groupSetConfigs[]
      */
     public $groupSetConfigs;

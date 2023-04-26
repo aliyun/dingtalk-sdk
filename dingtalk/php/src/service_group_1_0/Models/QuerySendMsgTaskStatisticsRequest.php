@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class QuerySendMsgTaskStatisticsRequest extends Model
 {
     /**
-     * @description 每页条数
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 游标，首页为空
+     * @example 1
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 开放群发任务ID
+     * @example Jci333
      *
      * @var string
      */
     public $openBatchTaskId;
 
     /**
-     * @description 开放团队ID
+     * @example Jciwnfw
      *
      * @var string
      */

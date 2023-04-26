@@ -14,134 +14,110 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 自定义摘要信息
-     *
      * @var string[]
      */
     public $abstractGenRule;
 
     /**
-     * @description 表单节点权限
+     * @example {"sid_instStart":[{"fieldId":"TextField-K2AD4O5B","fieldBehavior":"HIDDEN","componentName":"TextField","disableBehaviors":[]}],"1918_5cd3":[{"fieldId":"TextField-K2AD4O5B","fieldBehavior":"HIDDEN","componentName":"TextField","disableBehaviors":[]}],"d01c_a677":[{"fieldId":"TextField-K2AD4O5B","fieldBehavior":"NORMAL","componentName":"TextField","disableBehaviors":[]}]}
      *
      * @var string
      */
     public $activityAuth;
 
     /**
-     * @description 是否允许撤销
-     *
      * @var bool
      */
     public $allowRevoke;
 
     /**
-     * @description 是否允许加签
-     *
      * @var bool
      */
     public $appendEnable;
 
     /**
-     * @description 如果审批人和发起人是同一个人，则去重
-     *
      * @var bool
      */
     public $autoExecuteOriginatorTasks;
 
     /**
-     * @description 流程表单业务标识
+     * @example alitrip.business
      *
      * @var string
      */
     public $bizCategoryId;
 
     /**
-     * @description 纯表单业务标识
+     * @example crm_customer
      *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 评论配置
-     *
      * @var commentConf
      */
     public $commentConf;
 
     /**
-     * @description 审批人自动去重
+     * @example continuousFirst
      *
      * @var string
      */
     public $duplicateRemoval;
 
     /**
-     * @description 表单配置
+     * @example {"items":[]}
      *
      * @var string
      */
     public $formSchema;
 
     /**
-     * @description 手写签名配置
-     *
      * @var handSignConf
      */
     public $handSignConf;
 
     /**
-     * @description 表单管理员
-     *
      * @var string[]
      */
     public $managers;
 
     /**
-     * @description 表单名称
+     * @example 模板名称
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 是否流程表单
-     *
      * @var bool
      */
     public $processAppType;
 
     /**
-     * @description 流程配置
+     * @example {"type":"","properties":{},"childNode":{}}
      *
      * @var string
      */
     public $processConfig;
 
     /**
-     * @description 是否静态流程
-     *
      * @var bool
      */
     public $staticProc;
 
     /**
-     * @description 代提交配置
-     *
      * @var substituteSubmitConf
      */
     public $substituteSubmitConf;
 
     /**
-     * @description 自定义标题规则
-     *
      * @var titleGenRule
      */
     public $titleGenRule;
 
     /**
-     * @description 模板可见性
-     *
      * @var visibility[]
      */
     public $visibility;

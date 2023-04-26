@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryOrgSecretKeyResponseBody extends Model
 {
     /**
-     * @description 秘钥信息
-     *
      * @var universitySecretKeyInfo
      */
     public $universitySecretKeyInfo;

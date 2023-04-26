@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class QueryItemByUrlRequest extends Model
 {
     /**
-     * @description 操作用户unionId。
+     * @example YEp3JcM******UIbhwiE
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 链接url。
+     * @example https://alidocs.dingtalk.com/i/nodes/m0Xw6OYE4D7VLeaBP***
      *
      * @var string
      */
     public $url;
 
     /**
-     * @description 是否查询统计信息
-     *
      * @var bool
      */
     public $withStatisticalInfo;

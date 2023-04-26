@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class empList extends Model
 {
     /**
-     * @description avatar
-     *
      * @var string
      */
     public $avatar;
 
     /**
-     * @description deptIdList
-     *
      * @var int[]
      */
     public $deptIdList;
 
     /**
-     * @description dingId
-     *
      * @var string
      */
     public $dingId;
 
     /**
-     * @description name
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description nick
-     *
      * @var string
      */
     public $nick;
 
     /**
-     * @description orgId
-     *
      * @var int
      */
     public $orgId;
@@ -56,15 +44,11 @@ class empList extends Model
     public $position;
 
     /**
-     * @description unionId
-     *
      * @var string
      */
     public $unionid;
 
     /**
-     * @description userid
-     *
      * @var string
      */
     public $userid;

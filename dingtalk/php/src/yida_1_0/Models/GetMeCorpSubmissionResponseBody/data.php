@@ -11,183 +11,131 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description actioner
-     *
      * @var actioner[]
      */
     public $actioner;
 
     /**
-     * @description actionerId
-     *
      * @var string[]
      */
     public $actionerId;
 
     /**
-     * @description actionerName
-     *
      * @var string[]
      */
     public $actionerName;
 
     /**
-     * @description appType
-     *
      * @var string
      */
     public $appType;
 
     /**
-     * @description createTime
-     *
      * @var string
      */
     public $createTimeGMT;
 
     /**
-     * @description currentActivityInstances
-     *
      * @var currentActivityInstances[]
      */
     public $currentActivityInstances;
 
     /**
-     * @description dataMap
-     *
      * @var mixed[]
      */
     public $dataMap;
 
     /**
-     * @description dataType
-     *
      * @var string
      */
     public $dataType;
 
     /**
-     * @description finishTime
-     *
      * @var string
      */
     public $finishTimeGMT;
 
     /**
-     * @description formInstanceId
-     *
      * @var string
      */
     public $formInstanceId;
 
     /**
-     * @description formUuid
-     *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description instValue
-     *
      * @var string
      */
     public $instanceValue;
 
     /**
-     * @description modifiedTime
-     *
      * @var string
      */
     public $modifiedTimeGMT;
 
     /**
-     * @description originatorAvatar
-     *
      * @var string
      */
     public $originatorAvatar;
 
     /**
-     * @description originatorDisplayName
-     *
      * @var string
      */
     public $originatorDisplayName;
 
     /**
-     * @description originatorId
-     *
      * @var string
      */
     public $originatorId;
 
     /**
-     * @description processApprovedResult
-     *
      * @var string
      */
     public $processApprovedResult;
 
     /**
-     * @description processApprovedResultText
-     *
      * @var string
      */
     public $processApprovedResultText;
 
     /**
-     * @description processCode
-     *
      * @var string
      */
     public $processCode;
 
     /**
-     * @description processId
-     *
      * @var int
      */
     public $processId;
 
     /**
-     * @description processInstanceId
-     *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description processInstanceStatus
-     *
      * @var string
      */
     public $processInstanceStatus;
 
     /**
-     * @description processInstanceStatusText
-     *
      * @var string
      */
     public $processInstanceStatusText;
 
     /**
-     * @description processName
-     *
      * @var string
      */
     public $processName;
 
     /**
-     * @description title
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description version
-     *
      * @var int
      */
     public $version;

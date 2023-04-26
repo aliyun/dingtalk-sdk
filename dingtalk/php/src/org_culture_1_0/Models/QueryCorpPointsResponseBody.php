@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class QueryCorpPointsResponseBody extends Model
 {
     /**
-     * @description 响应数据
-     *
      * @var result
      */
     public $result;
 
     /**
-     * @description 请求响应状态
+     * @example true
      *
      * @var bool
      */

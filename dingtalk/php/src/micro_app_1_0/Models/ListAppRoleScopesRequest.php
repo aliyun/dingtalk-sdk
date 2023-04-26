@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ListAppRoleScopesRequest extends Model
 {
     /**
-     * @description 起始点，默认0
-     *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 数据量，默认20，最大50
-     *
      * @var int
      */
     public $size;

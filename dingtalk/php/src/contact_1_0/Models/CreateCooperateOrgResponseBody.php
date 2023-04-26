@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CreateCooperateOrgResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var string
      */
     public $cooperateCorpId;

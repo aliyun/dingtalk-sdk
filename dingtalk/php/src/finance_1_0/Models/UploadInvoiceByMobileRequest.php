@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class UploadInvoiceByMobileRequest extends Model
 {
     /**
-     * @description 上传发票列表
-     *
      * @var invoices[]
      */
     public $invoices;
 
     /**
-     * @description 手机号
+     * @example 13600000000
      *
      * @var string
      */
     public $mobile;
 
     /**
-     * @description 手机号国家码
+     * @example 86
      *
      * @var string
      */

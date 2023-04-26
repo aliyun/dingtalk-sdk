@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetStarInfoResponseBody extends Model
 {
     /**
-     * @description 是否已星标
-     *
      * @var bool
      */
     public $starred;

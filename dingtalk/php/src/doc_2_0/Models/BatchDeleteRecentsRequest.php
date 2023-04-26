@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class BatchDeleteRecentsRequest extends Model
 {
     /**
-     * @description 移除最近记录文档uuid
-     * 20
      * @var string[]
      */
     public $dentryUuids;
 
     /**
-     * @description 操作人id
+     * @example union_id
      *
      * @var string
      */

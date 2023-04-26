@@ -10,35 +10,29 @@ use AlibabaCloud\Tea\Model;
 class DescribeCrmPersonalCustomerObjectMetaResponseBody extends Model
 {
     /**
-     * @description 表单code
+     * @example PROC-XXXX
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 是否自定义对象
-     *
      * @var bool
      */
     public $customized;
 
     /**
-     * @description 字段列表
-     *
      * @var fields[]
      */
     public $fields;
 
     /**
-     * @description 对象名称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 表单状态
+     * @example PUBLISHED
      *
      * @var string
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 附件上传地址
+     * @example https://***?uploadSecret=***
      *
      * @var string
      */

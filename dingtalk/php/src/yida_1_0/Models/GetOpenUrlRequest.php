@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class GetOpenUrlRequest extends Model
 {
     /**
-     * @description 宜搭附件地址
+     * @example https://www.aliwork.com/fileHandle?appType=APP_VN7I6HVKUTXES7XX4OI8&fileName=2a4103a6-44d5-4114-990d-4147a2d53811.xlsx&instId=&type=download
      *
      * @var string
      */
     public $fileUrl;
 
     /**
-     * @description 语言
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 应用秘钥
+     * @example hexxxx
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 临时地址多久失效,单位毫秒
+     * @example 60000
      *
      * @var int
      */
     public $timeout;
 
     /**
-     * @description 钉钉的userId
+     * @example 未知
      *
      * @var string
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateReceiptRequest extends Model
 {
     /**
-     * @description 单据列表 ，最长10
-     *
      * @var receipts[]
      */
     public $receipts;

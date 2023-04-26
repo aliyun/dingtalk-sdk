@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateTaskStartdateRequest extends Model
 {
     /**
-     * @description 任务开始时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetDentryThumbnailsResponseBody extends Model
 {
     /**
-     * @description 缩略图获取结果列表
-     * 30
      * @var resultItems[]
      */
     public $resultItems;

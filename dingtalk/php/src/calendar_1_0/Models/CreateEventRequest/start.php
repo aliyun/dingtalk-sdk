@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class start extends Model
 {
     /**
-     * @description 日程开始日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
+     * @example 2020-01-01
      *
      * @var string
      */
     public $date;
 
     /**
-     * @description 日程开始时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
+     * @example 2020-01-01T10:15:30+08:00
      *
      * @var string
      */
     public $dateTime;
 
     /**
-     * @description 日程开始时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+     * @example Asia/Shanghai
      *
      * @var string
      */

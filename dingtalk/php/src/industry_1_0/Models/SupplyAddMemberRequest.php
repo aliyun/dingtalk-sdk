@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class SupplyAddMemberRequest extends Model
 {
     /**
-     * @description 是否为伙伴负责人
+     * @example false
      *
      * @var bool
      */
     public $isPartnerManager;
 
     /**
-     * @description 成员手机号
+     * @example 187xxxx0001
      *
      * @var string
      */
     public $memberMobile;
 
     /**
-     * @description 成员名字
+     * @example 李白
      *
      * @var string
      */
     public $memberName;
 
     /**
-     * @description 成员编码/工号
+     * @example 1001
      *
      * @var string
      */
     public $memberWorkNumber;
 
     /**
-     * @description 所属伙伴/子部门
+     * @example 1111
      *
      * @var int
      */

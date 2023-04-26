@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 任务标题
+     * @example 后天交周报
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 更新时间
+     * @example 2022-06-08T07:32:48.958Z
      *
      * @var string
      */

@@ -9,71 +9,65 @@ use AlibabaCloud\Tea\Model;
 class GetTaskCopiesRequest extends Model
 {
     /**
-     * @description 应用ID
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 创建时间开始; 时间戳
+     * @example 1234567891234
      *
      * @var int
      */
     public $createFromTimeGMT;
 
     /**
-     * @description 创建时间结束; 时间戳
+     * @example 1234567891234
      *
      * @var int
      */
     public $createToTimeGMT;
 
     /**
-     * @description 关键词
-     *
      * @var string
      */
     public $keyword;
 
     /**
-     * @description 语言环境; 可选值：zh_CN/en_US
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 当前页; 必须大于0 默认1
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页记录数; 必须大于0 默认10 最大值：100
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 流程code列表
+     * @example ["xx","xxx"]
      *
      * @var string
      */
     public $processCodes;
 
     /**
-     * @description 验权token
-     *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉的userId
-     *
      * @var string
      */
     public $userId;

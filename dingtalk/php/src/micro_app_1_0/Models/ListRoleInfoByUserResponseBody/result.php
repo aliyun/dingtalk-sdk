@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 是否拥有角色管理权限，默认false
+     * @example false
      *
      * @var bool
      */
     public $canManageRole;
 
     /**
-     * @description 角色id
+     * @example 123
      *
      * @var int
      */
     public $roleId;
 
     /**
-     * @description 角色名称
+     * @example 财务
      *
      * @var string
      */

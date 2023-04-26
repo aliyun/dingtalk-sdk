@@ -10,84 +10,82 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 流程所属的应用编码
+     * @example D000183D000185
      *
      * @var string
      */
     public $appCode;
 
     /**
-     * @description 流程关联的业务对象id
+     * @example 006f870b-4d1c-4cd0-85b3-2e866798e947
      *
      * @var string
      */
     public $bizObjectId;
 
     /**
-     * @description 创建时间
+     * @example 2021-11-19 19:36:54
      *
      * @var string
      */
     public $createdTimeGMT;
 
     /**
-     * @description 钉钉流程Id
+     * @example null
      *
      * @var string
      */
     public $dingTalkProcessId;
 
     /**
-     * @description 完成时间
+     * @example null
      *
      * @var string
      */
     public $finishTimeGMT;
 
     /**
-     * @description 流程发起人信息
-     *
      * @var originator
      */
     public $originator;
 
     /**
-     * @description 流程名称
+     * @example 报销管理
      *
      * @var string
      */
     public $processDisplayName;
 
     /**
-     * @description 流程实例ID
+     * @example 3d0ad4a4-d7d5-4196-9f2c-3ed246f2b713
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 工作流模板的版本
+     * @example 3
      *
      * @var int
      */
     public $processVersion;
 
     /**
-     * @description 流程所属的表单编码
+     * @example D0001833abb0fb61524487eb01848207bc89b47
      *
      * @var string
      */
     public $schemaCode;
 
     /**
-     * @description 开始时间
+     * @example 2021-11-19 19:36:54
      *
      * @var string
      */
     public $startTimeGMT;
 
     /**
-     * @description 状态。Initiated=初始化完成，Starting=正在启动，Running=正在运行，Finishing=正在结束，Finished=已完成，Canceled=已取
+     * @example Running
      *
      * @var string
      */

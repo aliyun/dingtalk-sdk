@@ -9,70 +9,70 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 部门编码
+     * @example 123
      *
      * @var string
      */
     public $deptCode;
 
     /**
-     * @description 部门名称
+     * @example 开发技术部
      *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 部门人数
+     * @example 10
      *
      * @var string
      */
     public $deptNum;
 
     /**
-     * @description 部门层级
+     * @example 1
      *
      * @var string
      */
     public $level;
 
     /**
-     * @description 部门编码路径
+     * @example /1/123
      *
      * @var string
      */
     public $organizationCodePath;
 
     /**
-     * @description 部门路径
+     * @example /开发技术部
      *
      * @var string
      */
     public $organizationPath;
 
     /**
-     * @description 父级部门编码
+     * @example 1
      *
      * @var string
      */
     public $parentDeptCode;
 
     /**
-     * @description 部门简称
+     * @example 开发部
      *
      * @var string
      */
     public $shortName;
 
     /**
-     * @description 生效日期
+     * @example 1678886770065
      *
      * @var string
      */
     public $startDate;
 
     /**
-     * @description 失效日期
+     * @example 1678886770065
      *
      * @var string
      */

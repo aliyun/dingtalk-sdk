@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateSheetRequest extends Model
 {
     /**
-     * @description 工作表名称
+     * @example sheet_name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 工作表可见性
-     * hidden: 隐藏
+     * @example visible
+     *
      * @var string
      */
     public $visibility;
 
     /**
-     * @description 操作人id
+     * @example union_id
      *
      * @var string
      */

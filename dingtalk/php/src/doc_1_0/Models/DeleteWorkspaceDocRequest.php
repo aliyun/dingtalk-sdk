@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class DeleteWorkspaceDocRequest extends Model
 {
     /**
-     * @description 发起删除请求的用户用户的unionId
-     *
      * @var string
      */
     public $operatorId;

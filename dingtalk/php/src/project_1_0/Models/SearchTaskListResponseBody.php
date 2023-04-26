@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class SearchTaskListResponseBody extends Model
 {
     /**
-     * @description 分页标，供分页使用，下一页token。
+     * @example f279e812-e431-428d-846d-cxxxxxx
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 任务分0组列表。
-     *
      * @var result[]
      */
     public $result;
 
     /**
-     * @description 总数。
+     * @example 32
      *
      * @var int
      */

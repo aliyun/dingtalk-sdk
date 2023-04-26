@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class QueryStatisticsDataRequest extends Model
 {
     /**
-     * @description 课程节次列表
-     *
      * @var int[]
      */
     public $sectionIndexList;
 
     /**
-     * @description 老师UserIds
-     *
      * @var string[]
      */
     public $teacherUserIds;
 
     /**
-     * @description endTime
-     *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description opUserId
-     *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description startTime
-     *
      * @var int
      */
     public $startTime;

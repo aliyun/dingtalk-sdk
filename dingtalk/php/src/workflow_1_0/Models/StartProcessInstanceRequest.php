@@ -12,64 +12,56 @@ use AlibabaCloud\Tea\Model;
 class StartProcessInstanceRequest extends Model
 {
     /**
-     * @description 不使用审批流模板时，直接指定审批人列表
-     *
      * @var approvers[]
      */
     public $approvers;
 
     /**
-     * @description 抄送人userId列表
-     *
      * @var string[]
      */
     public $ccList;
 
     /**
-     * @description 抄送时间
+     * @example START、FINISH、START_FINISH
      *
      * @var string
      */
     public $ccPosition;
 
     /**
-     * @description 部门ID
+     * @example 1
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 表单数据内容，控件列表
-     *
      * @var formComponentValues[]
      */
     public $formComponentValues;
 
     /**
-     * @description 企业微应用标识
+     * @example 41605932
      *
      * @var int
      */
     public $microappAgentId;
 
     /**
-     * @description 审批发起人的userId
+     * @example manager432
      *
      * @var string
      */
     public $originatorUserId;
 
     /**
-     * @description 审批流的唯一码
+     * @example PROC-EF6YJL35P2-SCKICSB7P750S0YISYKV3-xxxx-1
      *
      * @var string
      */
     public $processCode;
 
     /**
-     * @description 使用审批流模板时，模板上的自选操作人列表
-     *
      * @var targetSelectActioners[]
      */
     public $targetSelectActioners;

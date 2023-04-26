@@ -9,35 +9,33 @@ use AlibabaCloud\Tea\Model;
 class GrantHonorRequest extends Model
 {
     /**
-     * @description 有效期到期时间 时间戳. 会处理成到期那天的23:59:59秒的时间戳
-     *
      * @var int
      */
     public $expirationTime;
 
     /**
-     * @description 颁奖词，最多可以填50字
+     * @example 表现优秀，特此奖励！
      *
      * @var string
      */
     public $grantReason;
 
     /**
-     * @description 颁奖人名字，最多15个字
+     * @example 组织文化团队
      *
      * @var string
      */
     public $granterName;
 
     /**
-     * @description 是否使用官宣号发送内网动态
+     * @example false
      *
      * @var bool
      */
     public $noticeAnnouncer;
 
     /**
-     * @description 是否触达单聊会话通知
+     * @example false
      *
      * @var bool
      */
@@ -49,14 +47,12 @@ class GrantHonorRequest extends Model
     public $openConversationIds;
 
     /**
-     * @description 接受人userId
-     *
      * @var string[]
      */
     public $receiverUserIds;
 
     /**
-     * @description 发送人userId
+     * @example xxxUserId
      *
      * @var string
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class AddRobotToConversationRequest extends Model
 {
     /**
-     * @description 机器人meidaId
+     * @example @lALPDe7s26Bre
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 机器人名称
+     * @example 小加
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 会话id
+     * @example cid123cd
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 机器人编码
+     * @example 123
      *
      * @var string
      */

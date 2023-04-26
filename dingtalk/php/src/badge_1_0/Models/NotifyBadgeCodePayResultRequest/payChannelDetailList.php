@@ -10,56 +10,54 @@ use AlibabaCloud\Tea\Model;
 class payChannelDetailList extends Model
 {
     /**
-     * @description 支付金额
+     * @example 1.23
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 资金工具明细
-     *
      * @var fundToolDetailList[]
      */
     public $fundToolDetailList;
 
     /**
-     * @description 开始时间
+     * @example 2021-01-01 11:11:11
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 结束时间
+     * @example 2021-01-01 11:11:11
      *
      * @var string
      */
     public $gmtFinish;
 
     /**
-     * @description 支付渠道名称
+     * @example 卡余额
      *
      * @var string
      */
     public $payChannelName;
 
     /**
-     * @description 支付渠道单号
+     * @example 20211234
      *
      * @var string
      */
     public $payChannelOrderNo;
 
     /**
-     * @description 支付渠道类型
+     * @example ALIPAY|BALANCE
      *
      * @var string
      */
     public $payChannelType;
 
     /**
-     * @description 优惠金额
+     * @example 0.00
      *
      * @var string
      */

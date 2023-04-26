@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 设备属性名称
+     * @example "dev_app_status"
      *
      * @var string
      */
     public $propertyName;
 
     /**
-     * @description 设备属性值
+     * @example "idle"
      *
      * @var string
      */

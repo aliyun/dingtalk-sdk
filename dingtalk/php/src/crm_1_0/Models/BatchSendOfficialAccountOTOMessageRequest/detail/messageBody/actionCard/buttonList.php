@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class buttonList extends Model
 {
     /**
-     * @description 使用独立跳转ActionCard样式时的跳转链接。
-     *
      * @var string
      */
     public $actionUrl;
 
     /**
-     * @description 使用独立跳转ActionCard样式时的按钮的标题，最长20个字符。
-     *
      * @var string
      */
     public $title;

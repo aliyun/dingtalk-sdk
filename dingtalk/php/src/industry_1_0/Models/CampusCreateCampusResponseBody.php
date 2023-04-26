@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CampusCreateCampusResponseBody extends Model
 {
     /**
-     * @description 园区组织ID
-     *
      * @var string
      */
     public $campusCorpId;
 
     /**
-     * @description 园区部门ID
-     *
      * @var string
      */
     public $campusDeptId;

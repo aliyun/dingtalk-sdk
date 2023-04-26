@@ -9,29 +9,25 @@ use AlibabaCloud\Tea\Model;
 class deliverResults extends Model
 {
     /**
-     * @description 错误信息
-     *
      * @var string
      */
     public $errorMsg;
 
     /**
-     * @description 场域Id
+     * @example cid1234abcd
      *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 场域类型 (IM: IM类型，包括群聊和单聊，仅供返回结果使用, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
+     * @example IM_GROUP
      *
      * @var string
      */
     public $spaceType;
 
     /**
-     * @description 投放成功
-     *
      * @var bool
      */
     public $success;

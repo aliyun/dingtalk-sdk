@@ -10,28 +10,24 @@ use AlibabaCloud\Tea\Model;
 class relations extends Model
 {
     /**
-     * @description 关系模型。
-     *
      * @var bizDataList[]
      */
     public $bizDataList;
 
     /**
-     * @description 关系所在的群ID，加密形式。
-     *
      * @var string[]
      */
     public $openConversationIds;
 
     /**
-     * @description 关系实例ID。
+     * @example abc123
      *
      * @var string
      */
     public $relationId;
 
     /**
-     * @description 关系类型。
+     * @example abc123
      *
      * @var string
      */

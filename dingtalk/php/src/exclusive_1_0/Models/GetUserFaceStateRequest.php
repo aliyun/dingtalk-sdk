@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetUserFaceStateRequest extends Model
 {
     /**
-     * @description userIds
-     *
      * @var string[]
      */
     public $userIds;

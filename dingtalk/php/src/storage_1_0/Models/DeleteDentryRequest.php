@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class DeleteDentryRequest extends Model
 {
     /**
-     * @description 是否删除到回收站，默认不删除到回收站，直接删除
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $toRecycleBin;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

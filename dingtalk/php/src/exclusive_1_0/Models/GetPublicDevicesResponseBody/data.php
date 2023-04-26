@@ -12,63 +12,57 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 部门列表，仅生效范围是部分生效时有效
-     *
      * @var deviceDepts[]
      */
     public $deviceDepts;
 
     /**
-     * @description 角色列表，仅生效范围是部分生效时有效
-     *
      * @var deviceRoles[]
      */
     public $deviceRoles;
 
     /**
-     * @description 生效范围
+     * @example 1
      *
      * @var int
      */
     public $deviceScopeType;
 
     /**
-     * @description 员工列表，仅生效范围是部分生效时有效
-     *
      * @var deviceStaffs[]
      */
     public $deviceStaffs;
 
     /**
-     * @description 创建时间时间戳
+     * @example 1671767361000
      *
      * @var int
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间时间戳
+     * @example 1671767361000
      *
      * @var int
      */
     public $gmtModified;
 
     /**
-     * @description 设备mac地址
+     * @example 88:66:5a:07:2b:04
      *
      * @var string
      */
     public $macAddress;
 
     /**
-     * @description 系统
+     * @example Mac
      *
      * @var string
      */
     public $platform;
 
     /**
-     * @description 设备标题
+     * @example 这是标题
      *
      * @var string
      */

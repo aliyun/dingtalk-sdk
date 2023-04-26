@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class ListFilesResponseBody extends Model
 {
     /**
-     * @description 文件列表
-     *
      * @var files[]
      */
     public $files;
 
     /**
-     * @description 分页加载锚点, nextToken不为空表示有更多数据
-     *
      * @var string
      */
     public $nextToken;

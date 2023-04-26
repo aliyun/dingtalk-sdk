@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ListSpacesRequest extends Model
 {
     /**
-     * @description 分页大小
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页加载锚点
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 空间类型
-     *
      * @var string
      */
     public $spaceType;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

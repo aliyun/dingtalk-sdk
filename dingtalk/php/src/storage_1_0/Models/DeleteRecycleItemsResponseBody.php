@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteRecycleItemsResponseBody extends Model
 {
     /**
-     * @description 本次操作是否成功
+     * @example true
      *
      * @var bool
      */

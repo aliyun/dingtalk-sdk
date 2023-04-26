@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetJobPostResponseBody extends Model
 {
     /**
-     * @description 返回数据
-     *
      * @var content
      */
     public $content;
 
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $requestId;

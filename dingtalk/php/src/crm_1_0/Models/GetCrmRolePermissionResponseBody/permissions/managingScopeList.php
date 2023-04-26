@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class managingScopeList extends Model
 {
     /**
-     * @description 扩展信息
-     *
      * @var ext
      */
     public $ext;
 
     /**
-     * @description 是否是主管
+     * @example false 如果是主管，要做逻辑的单独处理。比如如果设置了管理下属或当前部门，只管理他是主管的部门
      *
      * @var bool
      */
     public $manager;
 
     /**
-     * @description 管理范围类型
+     * @example 10_own 自己负责的 15_all_org 全公司 20_selfDept 同层级 30_selfSubDept 下属的 40_customized 自定义的
      *
      * @var string
      */

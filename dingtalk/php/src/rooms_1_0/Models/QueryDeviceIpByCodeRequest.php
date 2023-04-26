@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryDeviceIpByCodeRequest extends Model
 {
     /**
-     * @description 设备sn号
+     * @example 1005F1K203604N000676
      *
      * @var string
      */

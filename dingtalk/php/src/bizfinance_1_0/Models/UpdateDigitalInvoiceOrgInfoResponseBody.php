@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateDigitalInvoiceOrgInfoResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     *
      * @var bool
      */
     public $result;

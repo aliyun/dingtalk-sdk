@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class ListAppRoleScopesResponseBody extends Model
 {
     /**
-     * @description 数据列表
-     *
      * @var dataList[]
      */
     public $dataList;
 
     /**
-     * @description 是否还有数据，true: 还有；false: 已经全部拉取完成
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下一次请求的起始点
+     * @example 0
      *
      * @var int
      */

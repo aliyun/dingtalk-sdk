@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class RemoveRobotFromConversationRequest extends Model
 {
     /**
-     * @description 机器人在会话里的id
+     * @example 123
      *
      * @var string
      */
     public $chatBotUserId;
 
     /**
-     * @description 会话id
+     * @example cid123cd
      *
      * @var string
      */

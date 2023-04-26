@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CollegeAddCollegeDeptResponseBody extends Model
 {
     /**
-     * @description 部门id
+     * @example 123123
      *
      * @var int
      */

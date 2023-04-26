@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class actionList extends Model
 {
     /**
-     * @description 操作按钮的唯一标识
-     *
      * @var string
      */
     public $actionKey;
 
     /**
-     * @description 按钮类型（1：有操作的，2：直接跳转）
-     *
      * @var int
      */
     public $actionType;
 
     /**
-     * @description 按钮样式类型（101：蓝色线型主按钮样式，例如「同意」，102：黑色线型副按钮样式，例如「拒绝」）
-     *
      * @var int
      */
     public $buttonStyleType;
 
     /**
-     * @description 按钮操作的显示名称（支持国际化）
-     *
      * @var mixed[]
      */
     public $nameI18n;
 
     /**
-     * @description 按钮类型为直接跳转时，对应的跳转url
-     *
      * @var string
      */
     public $url;

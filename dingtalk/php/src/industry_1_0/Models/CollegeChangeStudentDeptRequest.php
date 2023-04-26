@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CollegeChangeStudentDeptRequest extends Model
 {
     /**
-     * @description 部门id
+     * @example 11111
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 新部门id
+     * @example 222222
      *
      * @var int
      */
     public $newDeptId;
 
     /**
-     * @description 学生id
+     * @example 33333
      *
      * @var int
      */

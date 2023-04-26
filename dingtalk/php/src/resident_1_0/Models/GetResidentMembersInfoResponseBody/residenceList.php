@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class residenceList extends Model
 {
     /**
-     * @description 是否激活
-     *
      * @var bool
      */
     public $active;
 
     /**
-     * @description 扩展字段，如果是租客存起止时间
-     *
      * @var string
      */
     public $extField;
 
     /**
-     * @description 是否是产权人
-     *
      * @var bool
      */
     public $isPropertyOwner;
@@ -35,8 +29,6 @@ class residenceList extends Model
     public $name;
 
     /**
-     * @description 业主/租客/亲友等
-     *
      * @var string
      */
     public $relateType;

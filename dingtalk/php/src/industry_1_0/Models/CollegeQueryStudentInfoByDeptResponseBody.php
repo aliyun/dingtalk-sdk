@@ -9,84 +9,84 @@ use AlibabaCloud\Tea\Model;
 class CollegeQueryStudentInfoByDeptResponseBody extends Model
 {
     /**
-     * @description 部门id
+     * @example 01123
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 学生在组织状态
+     * @example NORMAL
      *
      * @var string
      */
     public $dingMemberStatus;
 
     /**
-     * @description 人员拓展信息
+     * @example ”city“:"Beijing"
      *
      * @var mixed[]
      */
     public $empExtension;
 
     /**
-     * @description 性别
+     * @example male
      *
      * @var string
      */
     public $gender;
 
     /**
-     * @description 身份证号
+     * @example 11019xxxxxx0001
      *
      * @var string
      */
     public $identifyId;
 
     /**
-     * @description 账号是否激活
+     * @example true
      *
      * @var bool
      */
     public $isActive;
 
     /**
-     * @description 入学年月
+     * @example 2015
      *
      * @var string
      */
     public $startYear;
 
     /**
-     * @description 学生id
+     * @example 1111111
      *
      * @var int
      */
     public $studentId;
 
     /**
-     * @description 学生姓名
+     * @example 张三
      *
      * @var string
      */
     public $studentName;
 
     /**
-     * @description 学生学号
+     * @example mf1922051
      *
      * @var string
      */
     public $studentNumber;
 
     /**
-     * @description unionId
+     * @example 11111111
      *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description userId
+     * @example 0324124
      *
      * @var string
      */

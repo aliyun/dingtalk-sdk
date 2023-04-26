@@ -9,85 +9,77 @@ use AlibabaCloud\Tea\Model;
 class RenderBatchCallbackRequest extends Model
 {
     /**
-     * @description appType
-     *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 组织id
+     * @example ding123
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 文件大小
+     * @example 123789
      *
      * @var int
      */
     public $fileSize;
 
     /**
-     * @description language
-     *
      * @var string
      */
     public $language;
 
     /**
-     * @description 名称空间
+     * @example dingtalk
      *
      * @var string
      */
     public $namespace;
 
     /**
-     * @description oss文件链接
+     * @example https://oss/com/a/b.pdf
      *
      * @var string
      */
     public $ossUrl;
 
     /**
-     * @description 流水号
+     * @example seq-xxx
      *
      * @var string
      */
     public $sequenceId;
 
     /**
-     * @description 源
+     * @example 宜搭
      *
      * @var string
      */
     public $source;
 
     /**
-     * @description 状态
+     * @example running
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description systemToken
-     *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 时间区域
+     * @example GMT
      *
      * @var string
      */
     public $timeZone;
 
     /**
-     * @description userId
-     *
      * @var string
      */
     public $userId;

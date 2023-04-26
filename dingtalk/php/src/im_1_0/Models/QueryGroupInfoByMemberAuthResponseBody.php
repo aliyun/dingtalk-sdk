@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupInfoByMemberAuthResponseBody extends Model
 {
     /**
-     * @description 群内总人数
+     * @example 99
      *
      * @var int
      */

@@ -9,85 +9,61 @@ use AlibabaCloud\Tea\Model;
 class liveBasicInfo extends Model
 {
     /**
-     * @description 直播封面
-     *
      * @var string
      */
     public $coverUrl;
 
     /**
-     * @description 直播时长
-     *
      * @var int
      */
     public $duration;
 
     /**
-     * @description 直播真实结束时间
-     *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 直播简介
-     *
      * @var string
      */
     public $introduction;
 
     /**
-     * @description 直播id
-     *
      * @var string
      */
     public $liveId;
 
     /**
-     * @description 直播观看地址
-     *
      * @var string
      */
     public $livePlayUrl;
 
     /**
-     * @description 直播状态
-     *
      * @var int
      */
     public $liveStatus;
 
     /**
-     * @description 直播真实开始时间
-     *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 预约人数
-     *
      * @var int
      */
     public $subscribeCount;
 
     /**
-     * @description 直播标题
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 主播id
-     *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 观看人数
-     *
      * @var int
      */
     public $uv;

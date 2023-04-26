@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description formUuid
-     *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description processCode
-     *
      * @var string
      */
     public $processCode;
 
     /**
-     * @description title
-     *
      * @var title
      */
     public $title;

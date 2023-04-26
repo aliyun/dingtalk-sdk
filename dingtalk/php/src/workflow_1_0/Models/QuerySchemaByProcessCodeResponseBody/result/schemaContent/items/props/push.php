@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class push extends Model
 {
     /**
-     * @description 考勤类型(1表示请假, 2表示出差, 3表示加班, 4表示外出)
+     * @example 1
      *
      * @var int
      */
     public $attendanceRule;
 
     /**
-     * @description 开启状态(1表示开启, 0表示关闭)
+     * @example 1
      *
      * @var int
      */
     public $pushSwitch;
 
     /**
-     * @description 状态显示名称
+     * @example xxxx
      *
      * @var string
      */

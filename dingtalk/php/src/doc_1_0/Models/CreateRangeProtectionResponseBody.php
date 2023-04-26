@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreateRangeProtectionResponseBody extends Model
 {
     /**
-     * @description 单元格锁定ID
+     * @example lkxxxx
      *
      * @var string
      */

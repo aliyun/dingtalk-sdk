@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class GroupManageQueryResponseBody extends Model
 {
     /**
-     * @description 群信息列表
-     *
      * @var groupInfoList[]
      */
     public $groupInfoList;
 
     /**
-     * @description 分页拉取时, 是否还有更多
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 分页拉取游标, 请求下一页时回传
+     * @example 500
      *
      * @var string
      */

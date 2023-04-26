@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 是否拉取完成
-     *
      * @var bool
      */
     public $hasFinish;
 
     /**
-     * @description 直播详情
-     *
      * @var liveInfoPopModelList[]
      */
     public $liveInfoPopModelList;

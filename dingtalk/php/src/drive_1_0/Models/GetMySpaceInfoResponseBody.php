@@ -9,57 +9,41 @@ use AlibabaCloud\Tea\Model;
 class GetMySpaceInfoResponseBody extends Model
 {
     /**
-     * @description 创建时间
-     *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 修改时间
-     *
      * @var string
      */
     public $modifyTime;
 
     /**
-     * @description 授权模式
-     *
      * @var string
      */
     public $permissionMode;
 
     /**
-     * @description 容量
-     *
      * @var int
      */
     public $quota;
 
     /**
-     * @description 空间id
-     *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 空间名称
-     *
      * @var string
      */
     public $spaceName;
 
     /**
-     * @description 空间类型
-     *
      * @var string
      */
     public $spaceType;
 
     /**
-     * @description 已使用容量
-     *
      * @var int
      */
     public $usedQuota;

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ext extends Model
 {
     /**
-     * @description plist下载地址
-     *
      * @var string
      */
     public $plist;

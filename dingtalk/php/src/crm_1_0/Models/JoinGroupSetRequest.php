@@ -10,28 +10,24 @@ use AlibabaCloud\Tea\Model;
 class JoinGroupSetRequest extends Model
 {
     /**
-     * @description 关系模型数据。
-     *
      * @var bizDataList[]
      */
     public $bizDataList;
 
     /**
-     * @description 组织id。
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 群组openGroupSetId。
+     * @example abc123
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description unionId。
+     * @example abc123
      *
      * @var string
      */

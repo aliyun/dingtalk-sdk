@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class ListCommodityResponseBody extends Model
 {
     /**
-     * @description commodityVOList
-     *
      * @var commodityVOList[]
      */
     public $commodityVOList;
 
     /**
-     * @description 当前第几页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 100
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 总数量
+     * @example 100
      *
      * @var int
      */

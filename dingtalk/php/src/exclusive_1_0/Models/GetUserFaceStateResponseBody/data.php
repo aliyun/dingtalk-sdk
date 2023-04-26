@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 人脸录入状态 1-无人脸 2-有人脸
+     * @example 1
      *
      * @var int
      */
     public $state;
 
     /**
-     * @description userId
+     * @example userId
      *
      * @var string
      */

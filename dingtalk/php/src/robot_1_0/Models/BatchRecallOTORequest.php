@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class BatchRecallOTORequest extends Model
 {
     /**
-     * @description 消息id
-     *
      * @var string[]
      */
     public $processQueryKeys;
 
     /**
-     * @description 机器人的robotCode
+     * @example dingXXXXXX
      *
      * @var string
      */

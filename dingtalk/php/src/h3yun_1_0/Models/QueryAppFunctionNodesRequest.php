@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryAppFunctionNodesRequest extends Model
 {
     /**
-     * @description 应用编码
+     * @example D000001
      *
      * @var string
      */

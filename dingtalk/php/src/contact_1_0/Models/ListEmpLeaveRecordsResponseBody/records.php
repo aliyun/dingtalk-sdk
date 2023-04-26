@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class records extends Model
 {
     /**
-     * @description 离职原因(oapi-开放平台删除，cancel-注销，leave-主动离职，unknown-未知原因，delete-管理员删除）
+     * @example oapi
      *
      * @var string
      */
     public $leaveReason;
 
     /**
-     * @description 离职时间
+     * @example 2021-01-06T11:47:37Z
      *
      * @var string
      */
     public $leaveTime;
 
     /**
-     * @description 手机号码
+     * @example 185xxxx7676
      *
      * @var string
      */
     public $mobile;
 
     /**
-     * @description 员工名称
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 国际电话区号
+     * @example 86
      *
      * @var string
      */
     public $stateCode;
 
     /**
-     * @description 员工userid
+     * @example 10000
      *
      * @var string
      */

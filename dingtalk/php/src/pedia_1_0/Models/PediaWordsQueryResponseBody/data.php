@@ -14,71 +14,60 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 相关应用
-     *
      * @var appLink[]
      */
     public $appLink;
 
     /**
-     * @description 审核人
+     * @example 审核者
      *
      * @var string
      */
     public $approveName;
 
     /**
-     * @description 联系人列表
-     *
      * @var contactList[]
      */
     public $contactList;
 
     /**
-     * @description 相关联系人
-     *
      * @var string[]
      */
     public $contacts;
 
     /**
-     * @description 创建者
+     * @example 创建者
      *
      * @var string
      */
     public $creatorName;
 
     /**
-     * @description 创建时间
+     * @example 31312312
      *
      * @var int
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间
+     * @example 321312312
      *
      * @var int
      */
     public $gmtModify;
 
     /**
-     * @description 高亮的词条别名
-     *
-     *
      * @var string[]
      */
     public $highLightWordAlias;
 
     /**
-     * @description 内部群是否高亮
-     *
      * @var bool
      */
     public $imHighLight;
 
     /**
-     * @description 当为待审核词条的时候的父编号
+     * @example 12345678
      *
      * @var int
      */
@@ -90,78 +79,67 @@ class data extends Model
     public $picList;
 
     /**
-     * @description 相关文档
-     *
      * @var relatedDoc[]
      */
     public $relatedDoc;
 
     /**
-     * @description 相关链接
-     *
      * @var relatedLink[]
      */
     public $relatedLink;
 
     /**
-     * @description 服务群是否高亮
-     *
      * @var bool
      */
     public $simHighLight;
 
     /**
-     * @description 词条释义非富文本
+     * @example 剔除富文本释义
      *
      * @var string
      */
     public $simpleWordParaphrase;
 
     /**
-     * @description 分类名称
-     *
      * @var string[]
      */
     public $tagsList;
 
     /**
-     * @description 更新人
+     * @example 更新者
      *
      * @var string
      */
     public $updaterName;
 
     /**
-     * @description 操作员工userId
+     * @example 213123123
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 词条主键ID
+     * @example 123123121
      *
      * @var int
      */
     public $uuid;
 
     /**
-     * @description 词条别名
-     *
      * @var string[]
      */
     public $wordAlias;
 
     /**
-     * @description 词条名称
-     *
+     * @example 词条名称
      *
      * @var string
      */
     public $wordName;
 
     /**
-     * @description 词条释义，富文本
+     * @example 释义
      *
      * @var string
      */

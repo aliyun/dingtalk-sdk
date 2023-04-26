@@ -9,85 +9,83 @@ use AlibabaCloud\Tea\Model;
 class department extends Model
 {
     /**
-     * @description 部门code
+     * @example asd123
      *
      * @var string
      */
     public $deptCode;
 
     /**
-     * @description 科室名称，同name
+     * @example 骨科
      *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 排序
+     * @example 1
      *
      * @var int
      */
     public $deptOrder;
 
     /**
-     * @description 部门状态：0-正常，1-删除
+     * @example 0
      *
      * @var int
      */
     public $deptStatus;
 
     /**
-     * @description 部门类型：1-科室，2-医疗组
+     * @example 1
      *
      * @var int
      */
     public $deptType;
 
     /**
-     * @description 创建时间
+     * @example 2021-08-24 20:30:31
      *
      * @var string
      */
     public $gmtCreateStr;
 
     /**
-     * @description 修改时间
+     * @example 2021-08-24 20:30:31
      *
      * @var string
      */
     public $gmtModifiedStr;
 
     /**
-     * @description 科室ID
+     * @example 130000
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 科室名称，同deptName
+     * @example 骨科
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 父部门code（与dept_code来源保持一致）
+     * @example asd123
      *
      * @var string
      */
     public $parentDeptCode;
 
     /**
-     * @description 备注
+     * @example 备注
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 病区id列表
-     *
      * @var int[]
      */
     public $wardIdList;

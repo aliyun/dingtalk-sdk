@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CloseLoanEntranceResponseBody extends Model
 {
     /**
-     * @description 请求id与传入保持一致
+     * @example 1a23qdfa
      *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description 结果：Y 成功, N 失败
+     * @example Y
      *
      * @var string
      */

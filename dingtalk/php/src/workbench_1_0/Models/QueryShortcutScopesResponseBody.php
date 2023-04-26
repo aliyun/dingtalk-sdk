@@ -14,8 +14,6 @@ class QueryShortcutScopesResponseBody extends Model
     public $deptVisibleScopes;
 
     /**
-     * @description errorMsg
-     *
      * @var string[]
      */
     public $userVisibleScopes;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CreateAcquireRefundOrderResponseBody extends Model
 {
     /**
-     * @description 外部退款单号
+     * @example r2021113000001
      *
      * @var string
      */
     public $outRefundNo;
 
     /**
-     * @description 钉钉退款单号
+     * @example 202111110000111
      *
      * @var string
      */
     public $refundOrderNo;
 
     /**
-     * @description 退款状态
+     * @example SUCCESS
      *
      * @var string
      */

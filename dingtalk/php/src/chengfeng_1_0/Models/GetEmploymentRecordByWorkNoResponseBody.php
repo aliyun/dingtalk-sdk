@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetEmploymentRecordByWorkNoResponseBody extends Model
 {
     /**
-     * @description 任职记录
-     *
      * @var CfEmploymentRecordResp[]
      */
     public $content;
 
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $requestId;

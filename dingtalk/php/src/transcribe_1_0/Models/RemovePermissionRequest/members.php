@@ -9,24 +9,20 @@ use AlibabaCloud\Tea\Model;
 class members extends Model
 {
     /**
-     * @description 执行授权操作的闪记任务的任务Id
+     * @example 533xxxxxx
      *
      * @var int
      */
     public $memberId;
 
     /**
-     * @description 要赋予用户的权限名称。该字段表示要授予特定用户的权限名称，由开发者填写。
+     * @example EDITOR
      *
-     * READ：只读权限
      * @var string
      */
     public $memberType;
 
     /**
-     * @description 要被移除的权限，枚举值类型。
-     * "READ"//只读权限
-     *
      * @var string
      */
     public $policyType;

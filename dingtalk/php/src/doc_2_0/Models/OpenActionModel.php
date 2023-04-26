@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class OpenActionModel extends Model
 {
     /**
-     * @description 操作人名称。
+     * @example sky
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 操作时间戳。
+     * @example 273829092
      *
      * @var int
      */

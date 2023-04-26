@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetQuotaInfosResponseBody extends Model
 {
     /**
-     * @description 容量信息列表
-     *
      * @var quotas[]
      */
     public $quotas;

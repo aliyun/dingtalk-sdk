@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class UpgradeTenantInformationRequest extends Model
 {
     /**
-     * @description 访问秘钥
+     * @example hexaaaa
      *
      * @var string
      */
     public $accessKey;
 
     /**
-     * @description 账户号
+     * @example 123
      *
      * @var string
      */
     public $accountNumber;
 
     /**
-     * @description 调用者unionId
+     * @example 44234122
      *
      * @var string
      */
     public $callerUnionId;
 
     /**
-     * @description 商品类型
+     * @example Business
      *
      * @var string
      */

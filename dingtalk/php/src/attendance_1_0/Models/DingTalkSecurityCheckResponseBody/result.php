@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 是否有风险
+     * @example true
      *
      * @var bool
      */
     public $hasRisk;
 
     /**
-     * @description 风险信息
+     * @example {"riskTypeMinor":"bbbb""riskTypeMajor":"aaaa""riskTypeMsg":"ccc"}
      *
      * @var string[]
      */

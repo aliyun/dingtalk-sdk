@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ListCrmPersonalCustomersRequest extends Model
 {
     /**
-     * @description 数据客户列表
-     *
      * @var string[]
      */
     public $body;
 
     /**
-     * @description 操作人用户ID
-     *
      * @var string
      */
     public $currentOperatorUserId;

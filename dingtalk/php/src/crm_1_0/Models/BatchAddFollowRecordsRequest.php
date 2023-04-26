@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class BatchAddFollowRecordsRequest extends Model
 {
     /**
-     * @description 关系数据列表。
-     *
      * @var instanceList[]
      */
     public $instanceList;
 
     /**
-     * @description 操作人userId
+     * @example manager021a
      *
      * @var string
      */

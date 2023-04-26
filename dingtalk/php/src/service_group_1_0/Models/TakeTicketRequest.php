@@ -9,16 +9,22 @@ use AlibabaCloud\Tea\Model;
 class TakeTicketRequest extends Model
 {
     /**
+     * @example eKWh3GBwsKEiE
+     *
      * @var string
      */
     public $openTeamId;
 
     /**
+     * @example a8iS4X94TgtgiE
+     *
      * @var string
      */
     public $openTicketId;
 
     /**
+     * @example Dq9hP8Sk2v6vQ6l05nCe5wiEiE
+     *
      * @var string
      */
     public $takerUnionId;

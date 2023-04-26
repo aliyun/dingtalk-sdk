@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CardTemplateBuildActionResponseBody extends Model
 {
     /**
-     * @description 模板构建的dto对象
+     * @example {"xxx":"xxx"}
      *
      * @var string
      */

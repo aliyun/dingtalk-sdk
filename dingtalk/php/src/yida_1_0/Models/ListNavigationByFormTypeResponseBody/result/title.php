@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class title extends Model
 {
     /**
-     * @description 中文名称
+     * @example 张三
      *
      * @var string
      */
     public $nameInChinese;
 
     /**
-     * @description 英文名称
+     * @example ZhangSan
      *
      * @var string
      */
     public $nameInEnglish;
 
     /**
-     * @description type
-     *
      * @var string
      */
     public $type;

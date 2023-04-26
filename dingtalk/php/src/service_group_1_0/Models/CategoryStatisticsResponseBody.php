@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class CategoryStatisticsResponseBody extends Model
 {
     /**
-     * @description 分类统计
-     *
      * @var categoryStatisticsRecords[]
      */
     public $categoryStatisticsRecords;
 
     /**
-     * @description 分类趋势
-     *
      * @var categoryTrend[]
      */
     public $categoryTrend;

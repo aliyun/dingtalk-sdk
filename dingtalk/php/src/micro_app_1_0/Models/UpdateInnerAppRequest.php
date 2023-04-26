@@ -9,56 +9,54 @@ use AlibabaCloud\Tea\Model;
 class UpdateInnerAppRequest extends Model
 {
     /**
-     * @description 应用描述
+     * @example descxxx
      *
      * @var string
      */
     public $desc;
 
     /**
-     * @description 应用首页地址
+     * @example https://www.dingtalk.com
      *
      * @var string
      */
     public $homepageLink;
 
     /**
-     * @description 应用图标
+     * @example mediaxxx
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 服务器出口ip白名单
-     *
      * @var string[]
      */
     public $ipWhiteList;
 
     /**
-     * @description 应用名称
+     * @example namexx
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 应用管理后台地址
+     * @example https://www.dingtalk.com
      *
      * @var string
      */
     public $ompLink;
 
     /**
-     * @description 创建人unionId
+     * @example xxxx
      *
      * @var string
      */
     public $opUnionId;
 
     /**
-     * @description 应用PC端地址
+     * @example https://www.dingtalk.com
      *
      * @var string
      */

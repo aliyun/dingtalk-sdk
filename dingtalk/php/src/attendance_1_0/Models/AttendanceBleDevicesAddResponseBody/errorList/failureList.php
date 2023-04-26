@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class failureList extends Model
 {
     /**
-     * @description 蓝牙设备Id
+     * @example 3244523553
      *
      * @var int
      */
     public $deviceId;
 
     /**
-     * @description 蓝牙设备名称
+     * @example 蓝牙设备1
      *
      * @var string
      */
     public $deviceName;
 
     /**
-     * @description sn
+     * @example dfsgdsdgd
      *
      * @var string
      */

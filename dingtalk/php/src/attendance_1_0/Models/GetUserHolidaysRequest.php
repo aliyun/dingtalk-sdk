@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class GetUserHolidaysRequest extends Model
 {
     /**
-     * @description 员工列表
-     *
      * @var string[]
      */
     public $userIds;
 
     /**
-     * @description 开始日期
-     *
      * @var int
      */
     public $workDateFrom;
 
     /**
-     * @description 结束日期
-     *
      * @var int
      */
     public $workDateTo;

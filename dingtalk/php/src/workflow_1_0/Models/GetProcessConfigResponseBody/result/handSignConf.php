@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class handSignConf extends Model
 {
     /**
-     * @description 开启手写签名
-     *
      * @var bool
      */
     public $handSignEnable;
 
     /**
-     * @description 是否使用上次签名
-     *
      * @var bool
      */
     public $resignEnable;

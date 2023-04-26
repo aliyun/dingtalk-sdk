@@ -11,14 +11,14 @@ use AlibabaCloud\Tea\Model;
 class CollectRecruitJobDetailRequest extends Model
 {
     /**
-     * @description 业务标识，目前固定为ddats
+     * @example ddats
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 渠道ID
+     * @example zhilian
      *
      * @var string
      */
@@ -30,35 +30,33 @@ class CollectRecruitJobDetailRequest extends Model
     public $jobInfo;
 
     /**
-     * @description 渠道侧外部企业唯一ID
+     * @example corpxxxxxxxxx
      *
      * @var string
      */
     public $outCorpId;
 
     /**
-     * @description 企业名称
+     * @example 小莫科技有限公司
      *
      * @var string
      */
     public $outCorpName;
 
     /**
-     * @description 招聘人信息
-     *
      * @var recruitUserInfo
      */
     public $recruitUserInfo;
 
     /**
-     * @description 来源
+     * @example BOSS
      *
      * @var string
      */
     public $source;
 
     /**
-     * @description 数据源更新时间
+     * @example 1677465956008
      *
      * @var int
      */

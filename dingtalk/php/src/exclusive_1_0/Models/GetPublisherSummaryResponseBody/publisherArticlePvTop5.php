@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class publisherArticlePvTop5 extends Model
 {
     /**
-     * @description 文章名称
+     * @example 文章1
      *
      * @var string
      */

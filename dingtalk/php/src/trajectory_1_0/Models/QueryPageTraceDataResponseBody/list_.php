@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 经纬度
-     *
      * @var coordinates
      */
     public $coordinates;
 
     /**
-     * @description 定位时间
-     *
      * @var int
      */
     public $gmtLocation;
 
     /**
-     * @description 上报时间
-     *
      * @var int
      */
     public $gmtUpload;

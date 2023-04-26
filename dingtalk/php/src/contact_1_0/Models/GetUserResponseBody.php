@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class GetUserResponseBody extends Model
 {
     /**
-     * @description 头像url
-     *
      * @var string
      */
     public $avatarUrl;
 
     /**
-     * @description 个人邮箱
-     *
      * @var string
      */
     public $email;
 
     /**
-     * @description 手机号
-     *
      * @var string
      */
     public $mobile;
 
     /**
-     * @description 昵称
-     *
      * @var string
      */
     public $nick;
 
     /**
-     * @description openId
-     *
      * @var string
      */
     public $openId;
 
     /**
-     * @description 手机号对应的国家号
-     *
      * @var string
      */
     public $stateCode;
 
     /**
-     * @description unionId
-     *
      * @var string
      */
     public $unionId;

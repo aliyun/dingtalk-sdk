@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class UpdateShortcutsRequest extends Model
 {
     /**
-     * @description 配置详情
-     *
      * @var details[]
      */
     public $details;
 
     /**
-     * @description 会话id
+     * @example sid001234
      *
      * @var string
      */
     public $sessionId;
 
     /**
-     * @description 用户信息
+     * @example idzb26bxl64vqx2keyi
      *
      * @var string
      */

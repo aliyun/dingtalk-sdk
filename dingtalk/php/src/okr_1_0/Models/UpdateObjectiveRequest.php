@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class UpdateObjectiveRequest extends Model
 {
     /**
-     * @description 当前 Objective 的内容。
+     * @example 更新的内容
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 当前用户的 userId。
+     * @example 06186238011033616
      *
      * @var string
      */

@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class CampusUpdateRenterRequest extends Model
 {
     /**
-     * @description 企业信用代码
+     * @example 231313
      *
      * @var string
      */
     public $creditCode;
 
     /**
-     * @description 租期开始时间
+     * @example 16123523124
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 扩展字段
+     * @example 扩展
      *
      * @var string
      */
     public $extend;
 
     /**
-     * @description 租客名字
+     * @example 钉钉
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 租客ID
+     * @example 12352335
      *
      * @var int
      */
     public $renterId;
 
     /**
-     * @description 租期结束时间
+     * @example 2183478412
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 启用状态
+     * @example 0
      *
      * @var int
      */

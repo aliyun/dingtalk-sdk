@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description activityId
-     *
      * @var string
      */
     public $activityId;
 
     /**
-     * @description activityName
-     *
      * @var string
      */
     public $activityName;
 
     /**
-     * @description activityNameEn
-     *
      * @var string
      */
     public $activityNameInEnglish;

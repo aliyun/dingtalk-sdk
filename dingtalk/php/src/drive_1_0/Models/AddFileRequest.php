@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class AddFileRequest extends Model
 {
     /**
-     * @description 文件名冲突策略
-     *
      * @var string
      */
     public $addConflictPolicy;
 
     /**
-     * @description 文件名
-     *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 文件类型
-     *
      * @var string
      */
     public $fileType;
 
     /**
-     * @description mediaId
-     *
      * @var string
      */
     public $mediaId;
 
     /**
-     * @description 父目录id
-     *
      * @var string
      */
     public $parentId;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

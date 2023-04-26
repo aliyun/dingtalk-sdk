@@ -10,63 +10,61 @@ use AlibabaCloud\Tea\Model;
 class universityCourseGroupInfo extends Model
 {
     /**
-     * @description 课程组编码
+     * @example GS1001
      *
      * @var string
      */
     public $courseGroupCode;
 
     /**
-     * @description 课程组介绍
+     * @example 高数
      *
      * @var string
      */
     public $courseGroupIntroduce;
 
     /**
-     * @description 课程组名称
+     * @example 高数_李老师
      *
      * @var string
      */
     public $courseGroupName;
 
     /**
-     * @description 课程组详细
-     *
      * @var courserGroupItemModels[]
      */
     public $courserGroupItemModels;
 
     /**
-     * @description 合作方课程组code
+     * @example GZ1001
      *
      * @var string
      */
     public $isvCourseGroupCode;
 
     /**
-     * @description 学段编码
+     * @example university
      *
      * @var string
      */
     public $periodCode;
 
     /**
-     * @description 学年
+     * @example 2021-2022
      *
      * @var string
      */
     public $schoolYear;
 
     /**
-     * @description 学期
+     * @example 1
      *
      * @var int
      */
     public $semester;
 
     /**
-     * @description 学科名称
+     * @example 高等数学
      *
      * @var string
      */

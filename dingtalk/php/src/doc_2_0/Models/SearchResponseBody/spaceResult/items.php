@@ -12,50 +12,36 @@ use AlibabaCloud\Tea\Model;
 class items extends Model
 {
     /**
-     * @description 知识库图标。
-     *
      * @var iconVO
      */
     public $iconVO;
 
     /**
-     * @description 知识库名称，如果命中了关键词，会带有高亮。
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 知识库原始名称，不带高亮。
-     *
      * @var string
      */
     public $originName;
 
     /**
-     * @description 知识库id。
-     *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 知识小组信息
-     *
      * @var teamVO
      */
     public $teamVO;
 
     /**
-     * @description 知识库访问url。
-     *
      * @var string
      */
     public $url;
 
     /**
-     * @description 用户最后一次操作信息。
-     *
      * @var userLastOperation
      */
     public $userLastOperation;

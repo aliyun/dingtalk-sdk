@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class operateScopes extends Model
 {
     /**
-     * @description 是否有权限
+     * @example true
      *
      * @var bool
      */
     public $hasAuth;
 
     /**
-     * @description 操作范围类型
+     * @example * 操作类型      * 发起：OPERATE_CREATE      * 查看：OPERATE_VIEW      * 编辑：OPERATE_EDIT      * 删除：OPERATE_DELETE      * 打印：OPERATE_PRINT      * 分配：ASSIGN      * 转交：TRANS      * 导入：IMPORT      * 导出：EXPORT
      *
      * @var string
      */

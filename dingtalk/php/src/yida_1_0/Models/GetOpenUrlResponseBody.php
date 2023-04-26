@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetOpenUrlResponseBody extends Model
 {
     /**
-     * @description 临时免登地址url
-     *
      * @var string
      */
     public $result;

@@ -15,7 +15,7 @@ class BatchCreateCustomerRequest extends Model
     public $createCustomerRequestList;
 
     /**
-     * @description 创建人userId
+     * @example 55001121
      *
      * @var string
      */

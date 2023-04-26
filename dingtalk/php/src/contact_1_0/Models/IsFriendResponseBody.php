@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class IsFriendResponseBody extends Model
 {
     /**
-     * @description 是否有好友关系
+     * @example true
      *
      * @var bool
      */

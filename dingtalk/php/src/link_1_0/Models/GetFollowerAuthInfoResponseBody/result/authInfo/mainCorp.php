@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class mainCorp extends Model
 {
     /**
-     * @description 是否授权主组织信息。
-     * 当且仅当此值为true时返回用户主组织信息。
      * @var bool
      */
     public $authorized;
 
     /**
-     * @description 主组织名
-     *
      * @var string
      */
     public $corpName;

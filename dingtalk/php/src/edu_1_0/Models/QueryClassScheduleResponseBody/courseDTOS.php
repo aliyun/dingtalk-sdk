@@ -11,147 +11,139 @@ use AlibabaCloud\Tea\Model;
 class courseDTOS extends Model
 {
     /**
-     * @description 课程所在班级id
+     * @example 2345
      *
      * @var int
      */
     public $classId;
 
     /**
-     * @description 课堂列表
-     *
      * @var classrooms[]
      */
     public $classrooms;
 
     /**
-     * @description 课程编码
+     * @example cn_yuwen
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 课程组编码
+     * @example Ekk24352534
      *
      * @var string
      */
     public $courseGroupCode;
 
     /**
-     * @description 课程封面地址
+     * @example ruu
      *
      * @var string
      */
     public $coverUrl;
 
     /**
-     * @description 创建者组织id
+     * @example ding32534536235
      *
      * @var string
      */
     public $creatorCorpId;
 
     /**
-     * @description 创建者UserId
+     * @example 234525235
      *
      * @var string
      */
     public $creatorUserId;
 
     /**
-     * @description 创建者UserName
+     * @example 行政老师A
      *
      * @var string
      */
     public $creatorUserName;
 
     /**
-     * @description 课程参与人列表
-     *
      * @var eduUserModels[]
      */
     public $eduUserModels;
 
     /**
-     * @description 结束时间
-     *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 课程扩展信息
+     * @example ext
      *
      * @var string
      */
     public $extInfo;
 
     /**
-     * @description 课程介绍
+     * @example 这是语文
      *
      * @var string
      */
     public $introduce;
 
     /**
-     * @description 课程名称
+     * @example 语文
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 课程所在节次序列号
+     * @example 2
      *
      * @var int
      */
     public $sectionIndex;
 
     /**
-     * @description 课程名称
+     * @example 语文
      *
      * @var string
      */
     public $sectionName;
 
     /**
-     * @description 开始时间
-     *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 课程状态
+     * @example 0
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 学科编码
+     * @example cn_yuwen
      *
      * @var string
      */
     public $subjectCode;
 
     /**
-     * @description 老师CorpId
+     * @example ding32534536235
      *
      * @var string
      */
     public $teacherCorpId;
 
     /**
-     * @description 老师UserId
+     * @example 25354252543
      *
      * @var string
      */
     public $teacherUserId;
 
     /**
-     * @description 老师UserName
+     * @example 李老师
      *
      * @var string
      */

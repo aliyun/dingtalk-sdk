@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryRelationDatasByTargetIdResponseBody extends Model
 {
     /**
-     * @description 关系数据。
-     *
      * @var relations[]
      */
     public $relations;

@@ -11,50 +11,36 @@ use AlibabaCloud\Tea\Model;
 class CreateTodoTypeConfigRequest extends Model
 {
     /**
-     * @description 待办卡片操作区按钮配置
-     *
      * @var actionList[]
      */
     public $actionList;
 
     /**
-     * @description 卡片类型（取值为：1-标准卡片，2-自定义卡片）
-     *
      * @var int
      */
     public $cardType;
 
     /**
-     * @description 待办卡片内容区表单自定义字段配置
-     *
      * @var contentFieldList[]
      */
     public $contentFieldList;
 
     /**
-     * @description 待办卡片类型描述
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 卡片类型icon，用于在待办列表展示
-     *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 详情页链接在PC端的打开方式，取值为：「PC_SLIDE」-PC端侧边栏打开，「PC_BROWSER」-浏览器打开
-     *
      * @var string
      */
     public $pcDetailUrlOpenMode;
 
     /**
-     * @description 当前操作者id，需传用户的unionId
-     *
      * @var string
      */
     public $operatorId;

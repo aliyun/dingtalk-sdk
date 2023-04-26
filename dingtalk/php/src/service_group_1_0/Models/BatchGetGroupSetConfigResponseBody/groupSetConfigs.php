@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class groupSetConfigs extends Model
 {
     /**
-     * @description 配置项key
+     * @example ROBOT_SWITCH
      *
      * @var string
      */
     public $configKey;
 
     /**
-     * @description 配置项值
+     * @example 1
      *
      * @var string
      */

@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 病区对应的物理地址
+     * @example 一楼
      *
      * @var string
      */
     public $address;
 
     /**
-     * @description 删除，0:正常，其他：已删除
+     * @example 0
      *
      * @var int
      */
     public $deleted;
 
     /**
-     * @description 院区或病区名称
+     * @example 一病区
      *
      * @var string
      */
     public $districtName;
 
     /**
-     * @description 类型，1：院区；2：病区
+     * @example 1
      *
      * @var int
      */
     public $districtType;
 
     /**
-     * @description 创建时间
+     * @example 2021-12-22 15:30:31
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间
+     * @example 2021-12-22 15:30:31
      *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 主键
+     * @example 123
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 院区id
+     * @example 123
      *
      * @var int
      */

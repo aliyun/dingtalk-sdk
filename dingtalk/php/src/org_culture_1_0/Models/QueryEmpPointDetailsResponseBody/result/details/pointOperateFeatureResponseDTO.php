@@ -11,29 +11,24 @@ use AlibabaCloud\Tea\Model;
 class pointOperateFeatureResponseDTO extends Model
 {
     /**
-     * @description 来源账户
-     *
      * @var accountSource
      */
     public $accountSource;
 
     /**
-     * @description 目标账户
-     *
-     *
      * @var accountTarget
      */
     public $accountTarget;
 
     /**
-     * @description 备注信息，在明细中展示
+     * @example 收到奖励积分
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 来源/用途，一般是系统固定的场景
+     * @example 三方系统员工收到积分
      *
      * @var string
      */

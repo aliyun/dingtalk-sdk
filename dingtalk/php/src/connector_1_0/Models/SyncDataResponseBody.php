@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class SyncDataResponseBody extends Model
 {
     /**
-     * @description resultList
-     *
      * @var list_[]
      */
     public $list;

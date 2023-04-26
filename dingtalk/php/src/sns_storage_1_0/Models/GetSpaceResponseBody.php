@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetSpaceResponseBody extends Model
 {
     /**
-     * @description IM会话存储空间信息
-     *
      * @var space
      */
     public $space;

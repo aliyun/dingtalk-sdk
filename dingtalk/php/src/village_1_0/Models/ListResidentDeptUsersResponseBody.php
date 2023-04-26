@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class ListResidentDeptUsersResponseBody extends Model
 {
     /**
-     * @description 是否还有更多数据
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下一个游标
-     *
      * @var int
      */
     public $nextCursor;
 
     /**
-     * @description 用户列表
-     *
      * @var userList[]
      */
     public $userList;

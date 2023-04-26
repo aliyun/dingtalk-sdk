@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class DeleteGuardianRequest extends Model
 {
     /**
-     * @description 钉钉企业管理员员工ID
+     * @example manager123
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 学生ID
+     * @example 1345
      *
      * @var string
      */

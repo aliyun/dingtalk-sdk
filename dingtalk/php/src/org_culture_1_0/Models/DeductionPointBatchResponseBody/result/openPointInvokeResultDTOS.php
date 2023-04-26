@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class openPointInvokeResultDTOS extends Model
 {
     /**
-     * @description 错误码
+     * @example banliang#-20005
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 状态 success：成功。 Fail：失败 UNKNOWN:结果未知
+     * @example Fail
      *
      * @var string
      */
     public $invokeStatus;
 
     /**
-     * @description 错误信息
+     * @example freeze already settle
      *
      * @var string
      */
     public $msg;
 
     /**
-     * @description 积分交易单号
+     * @example 34345435345
      *
      * @var string
      */
     public $outId;
 
     /**
-     * @description 扣减用户userId
+     * @example 01274411491620908910
      *
      * @var string
      */

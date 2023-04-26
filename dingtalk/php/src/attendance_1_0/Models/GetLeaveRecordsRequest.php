@@ -9,36 +9,34 @@ use AlibabaCloud\Tea\Model;
 class GetLeaveRecordsRequest extends Model
 {
     /**
-     * @description 假期类型唯一标识。
+     * @example f84a2dxxxx
      *
      * @var string
      */
     public $leaveCode;
 
     /**
-     * @description 操作人userId。
+     * @example user01
      *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 分页页码。
+     * @example 0
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小。
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 查询员工userId列表。一次最多支持50个。
-     *
      * @var string[]
      */
     public $userIds;

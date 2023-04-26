@@ -9,31 +9,35 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 角色范围最新版本号
+     * @example 123
      *
      * @var int
      */
     public $latestScopeVersion;
 
     /**
-     * @description 角色id
+     * @example 123
      *
      * @var int
      */
     public $roleId;
 
     /**
+     * @example userNoPrivilegeToManageApp
+     *
      * @var string
      */
     public $subErrorCode;
 
     /**
+     * @example 传入的角色范围数据版本号不合法
+     *
      * @var string
      */
     public $subErrorMsg;
 
     /**
-     * @description 角色添加结果，true: 成功，false: 失败
+     * @example true
      *
      * @var bool
      */

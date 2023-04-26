@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryFeedWhiteListResponseBody extends Model
 {
     /**
-     * @description 是否在白名单内
+     * @example true
      *
      * @var bool
      */

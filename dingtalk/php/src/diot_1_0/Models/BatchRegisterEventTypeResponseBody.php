@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class BatchRegisterEventTypeResponseBody extends Model
 {
     /**
-     * @description 注册成功的事件类型列表。
-     *
      * @var string[]
      */
     public $eventTypes;

@@ -9,98 +9,92 @@ use AlibabaCloud\Tea\Model;
 class invoices extends Model
 {
     /**
-     * @description 发票总金额
+     * @example 100.00
      *
      * @var string
      */
     public $invoiceAmount;
 
     /**
-     * @description 发票代码
+     * @example 033002000712
      *
      * @var string
      */
     public $invoiceCode;
 
     /**
-     * @description 开票时间
+     * @example 2022-02-21
      *
      * @var string
      */
     public $invoiceDate;
 
     /**
-     * @description 发票号码
+     * @example 20532643
      *
      * @var string
      */
     public $invoiceNo;
 
     /**
-     * @description 发票类型
-     *
      * @var string
      */
     public $invoiceType;
 
     /**
-     * @description 发票logo地址
-     *
      * @var string
      */
     public $logoUrl;
 
     /**
-     * @description 收款方名称
+     * @example 小钉科技有限公司
      *
      * @var string
      */
     public $payeeName;
 
     /**
-     * @description 收款方税号
+     * @example 91330100MA28XNB274
      *
      * @var string
      */
     public $payeeTaxNo;
 
     /**
-     * @description 付款方名称
+     * @example 小钉科技有限公司
      *
      * @var string
      */
     public $payerName;
 
     /**
-     * @description 付款方税号
+     * @example 91330100MA28XNB274
      *
      * @var string
      */
     public $payerTaxNo;
 
     /**
-     * @description 发票pdf原件下载链接
-     *
      * @var string
      */
     public $pdfUrl;
 
     /**
-     * @description 税金额
+     * @example 0.50
      *
      * @var string
      */
     public $taxAmount;
 
     /**
-     * @description 发票校验码
+     * @example 增值税普通发票必填，示例：52501101414266612380
      *
      * @var string
      */
     public $verifyCode;
 
     /**
-     * @description 不含税金额
+     * @example 99.50
      *
      * @var string
      */

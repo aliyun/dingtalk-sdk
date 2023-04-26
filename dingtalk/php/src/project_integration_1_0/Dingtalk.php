@@ -4,7 +4,6 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0;
 
-use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\AddAttendeeToEventGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\AddAttendeeToEventGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\CreateEventGroupHeaders;
@@ -17,18 +16,59 @@ use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\UpdateInteractiveC
 use AlibabaCloud\SDK\Dingtalk\Vproject_integration_1_0\Models\UpdateInteractiveCardResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param string                         $userId
+     * @param string                         $groupId
+     * @param AddAttendeeToEventGroupHeaders $headers
+     * @param RuntimeOptions                 $runtime
+     *
+     * @return AddAttendeeToEventGroupResponse
+     */
+    public function addAttendeeToEventGroupWithOptions($userId, $groupId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'AddAttendeeToEventGroup',
+            'version'     => 'projectIntegration_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/projectIntegration/users/' . $userId . '/eventGroups/' . $groupId . '/members',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddAttendeeToEventGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -46,29 +86,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                         $userId
-     * @param string                         $groupId
-     * @param AddAttendeeToEventGroupHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param string                  $userId
+     * @param CreateEventGroupHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return AddAttendeeToEventGroupResponse
+     * @return CreateEventGroupResponse
      */
-    public function addAttendeeToEventGroupWithOptions($userId, $groupId, $headers, $runtime)
+    public function createEventGroupWithOptions($userId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
-        $groupId     = OpenApiUtilClient::getEncodeParam($groupId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'CreateEventGroup',
+            'version'     => 'projectIntegration_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/projectIntegration/users/' . $userId . '/eventGroups',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddAttendeeToEventGroupResponse::fromMap($this->doROARequest('AddAttendeeToEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', '/v1.0/projectIntegration/users/' . $userId . '/eventGroups/' . $groupId . '/members', 'json', $req, $runtime));
+        return CreateEventGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -85,27 +133,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                  $userId
-     * @param CreateEventGroupHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param string                     $userId
+     * @param SendInteractiveCardHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return CreateEventGroupResponse
+     * @return SendInteractiveCardResponse
      */
-    public function createEventGroupWithOptions($userId, $headers, $runtime)
+    public function sendInteractiveCardWithOptions($userId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'SendInteractiveCard',
+            'version'     => 'projectIntegration_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/projectIntegration/users/' . $userId . '/groupChatCardMessages',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateEventGroupResponse::fromMap($this->doROARequest('CreateEventGroup', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', '/v1.0/projectIntegration/users/' . $userId . '/eventGroups', 'json', $req, $runtime));
+        return SendInteractiveCardResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -122,27 +180,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                     $userId
-     * @param SendInteractiveCardHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param string                           $userId
+     * @param SendSingleInteractiveCardHeaders $headers
+     * @param RuntimeOptions                   $runtime
      *
-     * @return SendInteractiveCardResponse
+     * @return SendSingleInteractiveCardResponse
      */
-    public function sendInteractiveCardWithOptions($userId, $headers, $runtime)
+    public function sendSingleInteractiveCardWithOptions($userId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'SendSingleInteractiveCard',
+            'version'     => 'projectIntegration_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/projectIntegration/users/' . $userId . '/singleChatCardMessages',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return SendInteractiveCardResponse::fromMap($this->doROARequest('SendInteractiveCard', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', '/v1.0/projectIntegration/users/' . $userId . '/groupChatCardMessages', 'json', $req, $runtime));
+        return SendSingleInteractiveCardResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -159,27 +227,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                           $userId
-     * @param SendSingleInteractiveCardHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param string                       $userId
+     * @param UpdateInteractiveCardHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return SendSingleInteractiveCardResponse
+     * @return UpdateInteractiveCardResponse
      */
-    public function sendSingleInteractiveCardWithOptions($userId, $headers, $runtime)
+    public function updateInteractiveCardWithOptions($userId, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'UpdateInteractiveCard',
+            'version'     => 'projectIntegration_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/projectIntegration/users/' . $userId . '/cardMessages',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return SendSingleInteractiveCardResponse::fromMap($this->doROARequest('SendSingleInteractiveCard', 'projectIntegration_1.0', 'HTTP', 'POST', 'AK', '/v1.0/projectIntegration/users/' . $userId . '/singleChatCardMessages', 'json', $req, $runtime));
+        return UpdateInteractiveCardResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -193,29 +271,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateInteractiveCardHeaders([]);
 
         return $this->updateInteractiveCardWithOptions($userId, $headers, $runtime);
-    }
-
-    /**
-     * @param string                       $userId
-     * @param UpdateInteractiveCardHeaders $headers
-     * @param RuntimeOptions               $runtime
-     *
-     * @return UpdateInteractiveCardResponse
-     */
-    public function updateInteractiveCardWithOptions($userId, $headers, $runtime)
-    {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return UpdateInteractiveCardResponse::fromMap($this->doROARequest('UpdateInteractiveCard', 'projectIntegration_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/projectIntegration/users/' . $userId . '/cardMessages', 'json', $req, $runtime));
     }
 }

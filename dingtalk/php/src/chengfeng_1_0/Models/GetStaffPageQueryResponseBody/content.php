@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 员工列表
-     *
      * @var CfStaffResp[]
      */
     public $data;
 
     /**
-     * @description 当前页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页条数
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 总数量
+     * @example 100
      *
      * @var int
      */

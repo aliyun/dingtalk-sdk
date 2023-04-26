@@ -9,104 +9,78 @@ use AlibabaCloud\Tea\Model;
 class vehicleSaleDetailVOList extends Model
 {
     /**
-     * @description 品牌
-     *
      * @var string
      */
     public $brand;
 
     /**
-     * @description 合格证号
-     *
      * @var string
      */
     public $certificateNo;
 
     /**
-     * @description 发动机号
-     *
      * @var string
      */
     public $engineNo;
 
     /**
-     * @description 身份证号/组织机构代码
-     *
      * @var string
      */
     public $idCardNo;
 
     /**
-     * @description 进口证书号
-     *
      * @var string
      */
     public $importCertificateNo;
 
     /**
+     * @example 111
+     *
      * @var string
      */
     public $inspectionListNo;
 
     /**
-     * @description 限乘人数
-     *
      * @var string
      */
     public $maxPassengers;
 
     /**
-     * @description 产地
-     *
      * @var string
      */
     public $originPlace;
 
     /**
-     * @description 完税凭证号码
-     *
      * @var string
      */
     public $paymentVoucherNo;
 
     /**
-     * @description 主管税务机关名称
-     *
      * @var string
      */
     public $taxAuthorityName;
 
     /**
-     * @description 主管税务机关代码
-     *
      * @var string
      */
     public $taxAuthorityNo;
 
     /**
-     * @description 税率
-     *
      * @var string
      */
     public $taxRate;
 
     /**
-     * @description 吨位
-     *
      * @var string
      */
     public $tonnage;
 
     /**
-     * @description 车架号码
-     *
      * @var string
      */
     public $vehicleNo;
 
     /**
-     * @description 车辆类型
-     *
      * @var string
      */
     public $vehicleType;

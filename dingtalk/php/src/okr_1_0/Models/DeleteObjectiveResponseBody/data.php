@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 当前 Objective ID。
+     * @example 58YD
      *
      * @var string
      */

@@ -41,18 +41,80 @@ use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\UpdateVersionStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vminiapp_1_0\Models\UpdateVersionStatusResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
-        $this->_endpointRule = '';
+        $this->_client             = new DarabonbaGatewayDingTalkClient();
+        $this->_spi                = $this->_client;
+        $this->_signatureAlgorithm = 'v2';
+        $this->_endpointRule       = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CreateMiniAppRequest $request
+     * @param CreateMiniAppHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return CreateMiniAppResponse
+     */
+    public function createMiniAppWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->bizType)) {
+            $body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->bundleId)) {
+            $body['bundleId'] = $request->bundleId;
+        }
+        if (!Utils::isUnset($request->desc)) {
+            $body['desc'] = $request->desc;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateMiniApp',
+            'version'     => 'miniapp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/miniapp/apps',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateMiniAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -69,47 +131,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateMiniAppRequest $request
-     * @param CreateMiniAppHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param CreateMiniAppPluginRequest $request
+     * @param CreateMiniAppPluginHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return CreateMiniAppResponse
+     * @return CreateMiniAppPluginResponse
      */
-    public function createMiniAppWithOptions($request, $headers, $runtime)
+    public function createMiniAppPluginWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->bizId)) {
-            @$body['bizId'] = $request->bizId;
+            $body['bizId'] = $request->bizId;
         }
         if (!Utils::isUnset($request->bizType)) {
-            @$body['bizType'] = $request->bizType;
+            $body['bizType'] = $request->bizType;
         }
         if (!Utils::isUnset($request->bundleId)) {
-            @$body['bundleId'] = $request->bundleId;
+            $body['bundleId'] = $request->bundleId;
         }
         if (!Utils::isUnset($request->desc)) {
-            @$body['desc'] = $request->desc;
+            $body['desc'] = $request->desc;
         }
         if (!Utils::isUnset($request->icon)) {
-            @$body['icon'] = $request->icon;
+            $body['icon'] = $request->icon;
         }
         if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
+            $body['name'] = $request->name;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateMiniAppPlugin',
+            'version'     => 'miniapp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/miniapp/plugins',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateMiniAppResponse::fromMap($this->doROARequest('CreateMiniApp', 'miniapp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/miniapp/apps', 'json', $req, $runtime));
+        return CreateMiniAppPluginResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -126,47 +199,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateMiniAppPluginRequest $request
-     * @param CreateMiniAppPluginHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param CreateVersionAcrossBundleRequest $request
+     * @param CreateVersionAcrossBundleHeaders $headers
+     * @param RuntimeOptions                   $runtime
      *
-     * @return CreateMiniAppPluginResponse
+     * @return CreateVersionAcrossBundleResponse
      */
-    public function createMiniAppPluginWithOptions($request, $headers, $runtime)
+    public function createVersionAcrossBundleWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->bizId)) {
-            @$body['bizId'] = $request->bizId;
-        }
-        if (!Utils::isUnset($request->bizType)) {
-            @$body['bizType'] = $request->bizType;
-        }
         if (!Utils::isUnset($request->bundleId)) {
-            @$body['bundleId'] = $request->bundleId;
+            $body['bundleId'] = $request->bundleId;
         }
-        if (!Utils::isUnset($request->desc)) {
-            @$body['desc'] = $request->desc;
+        if (!Utils::isUnset($request->miniAppId)) {
+            $body['miniAppId'] = $request->miniAppId;
         }
-        if (!Utils::isUnset($request->icon)) {
-            @$body['icon'] = $request->icon;
+        if (!Utils::isUnset($request->sourceBundleId)) {
+            $body['sourceBundleId'] = $request->sourceBundleId;
         }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
+        if (!Utils::isUnset($request->sourceVersion)) {
+            $body['sourceVersion'] = $request->sourceVersion;
+        }
+        if (!Utils::isUnset($request->version)) {
+            $body['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateVersionAcrossBundle',
+            'version'     => 'miniapp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/miniapp/versions/createAcrossBundle',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateMiniAppPluginResponse::fromMap($this->doROARequest('CreateMiniAppPlugin', 'miniapp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/miniapp/plugins', 'json', $req, $runtime));
+        return CreateVersionAcrossBundleResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -183,44 +264,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateVersionAcrossBundleRequest $request
-     * @param CreateVersionAcrossBundleHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param GetMaxVersionRequest $request
+     * @param GetMaxVersionHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return CreateVersionAcrossBundleResponse
+     * @return GetMaxVersionResponse
      */
-    public function createVersionAcrossBundleWithOptions($request, $headers, $runtime)
+    public function getMaxVersionWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->bundleId)) {
-            @$body['bundleId'] = $request->bundleId;
+            $query['bundleId'] = $request->bundleId;
         }
         if (!Utils::isUnset($request->miniAppId)) {
-            @$body['miniAppId'] = $request->miniAppId;
-        }
-        if (!Utils::isUnset($request->sourceBundleId)) {
-            @$body['sourceBundleId'] = $request->sourceBundleId;
-        }
-        if (!Utils::isUnset($request->sourceVersion)) {
-            @$body['sourceVersion'] = $request->sourceVersion;
+            $query['miniAppId'] = $request->miniAppId;
         }
         if (!Utils::isUnset($request->version)) {
-            @$body['version'] = $request->version;
+            $query['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetMaxVersion',
+            'version'     => 'miniapp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/miniapp/apps/maxVersions',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return CreateVersionAcrossBundleResponse::fromMap($this->doROARequest('CreateVersionAcrossBundle', 'miniapp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/miniapp/versions/createAcrossBundle', 'json', $req, $runtime));
+        return GetMaxVersionResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -237,38 +323,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetMaxVersionRequest $request
-     * @param GetMaxVersionHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param GetMiniAppMetaDataRequest $request
+     * @param GetMiniAppMetaDataHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return GetMaxVersionResponse
+     * @return GetMiniAppMetaDataResponse
      */
-    public function getMaxVersionWithOptions($request, $headers, $runtime)
+    public function getMiniAppMetaDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->bundleId)) {
-            @$query['bundleId'] = $request->bundleId;
+            $body['bundleId'] = $request->bundleId;
         }
-        if (!Utils::isUnset($request->miniAppId)) {
-            @$query['miniAppId'] = $request->miniAppId;
+        if (!Utils::isUnset($request->bundleIdTableGmtModified)) {
+            $body['bundleIdTableGmtModified'] = $request->bundleIdTableGmtModified;
         }
-        if (!Utils::isUnset($request->version)) {
-            @$query['version'] = $request->version;
+        if (!Utils::isUnset($request->fromAppName)) {
+            $body['fromAppName'] = $request->fromAppName;
+        }
+        if (!Utils::isUnset($request->miniAppIdTableGmtModified)) {
+            $body['miniAppIdTableGmtModified'] = $request->miniAppIdTableGmtModified;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetMiniAppMetaData',
+            'version'     => 'miniapp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/miniapp/apps/metadata',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetMaxVersionResponse::fromMap($this->doROARequest('GetMaxVersion', 'miniapp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/miniapp/apps/maxVersions', 'json', $req, $runtime));
+        return GetMiniAppMetaDataResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -285,41 +385,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetMiniAppMetaDataRequest $request
-     * @param GetMiniAppMetaDataHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param string                       $miniAppId
+     * @param GetSettingByMiniAppIdHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return GetMiniAppMetaDataResponse
+     * @return GetSettingByMiniAppIdResponse
      */
-    public function getMiniAppMetaDataWithOptions($request, $headers, $runtime)
+    public function getSettingByMiniAppIdWithOptions($miniAppId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->bundleId)) {
-            @$body['bundleId'] = $request->bundleId;
-        }
-        if (!Utils::isUnset($request->bundleIdTableGmtModified)) {
-            @$body['bundleIdTableGmtModified'] = $request->bundleIdTableGmtModified;
-        }
-        if (!Utils::isUnset($request->fromAppName)) {
-            @$body['fromAppName'] = $request->fromAppName;
-        }
-        if (!Utils::isUnset($request->miniAppIdTableGmtModified)) {
-            @$body['miniAppIdTableGmtModified'] = $request->miniAppIdTableGmtModified;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetSettingByMiniAppId',
+            'version'     => 'miniapp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/miniapp/apps/settings',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetMiniAppMetaDataResponse::fromMap($this->doROARequest('GetMiniAppMetaData', 'miniapp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/miniapp/apps/metadata', 'json', $req, $runtime));
+        return GetSettingByMiniAppIdResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -336,27 +432,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                       $miniAppId
-     * @param GetSettingByMiniAppIdHeaders $headers
+     * @param InvokeHtmlBundleBuildRequest $request
+     * @param InvokeHtmlBundleBuildHeaders $headers
      * @param RuntimeOptions               $runtime
      *
-     * @return GetSettingByMiniAppIdResponse
+     * @return InvokeHtmlBundleBuildResponse
      */
-    public function getSettingByMiniAppIdWithOptions($miniAppId, $headers, $runtime)
+    public function invokeHtmlBundleBuildWithOptions($request, $headers, $runtime)
     {
-        $miniAppId   = OpenApiUtilClient::getEncodeParam($miniAppId);
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bundleId)) {
+            $body['bundleId'] = $request->bundleId;
+        }
+        if (!Utils::isUnset($request->miniAppId)) {
+            $body['miniAppId'] = $request->miniAppId;
+        }
+        if (!Utils::isUnset($request->version)) {
+            $body['version'] = $request->version;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'InvokeHtmlBundleBuild',
+            'version'     => 'miniapp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/miniapp/h5Bundles/build',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetSettingByMiniAppIdResponse::fromMap($this->doROARequest('GetSettingByMiniAppId', 'miniapp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/miniapp/apps/settings', 'json', $req, $runtime));
+        return InvokeHtmlBundleBuildResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -373,38 +491,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InvokeHtmlBundleBuildRequest $request
-     * @param InvokeHtmlBundleBuildHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param ListAvaiableVersionRequest $request
+     * @param ListAvaiableVersionHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return InvokeHtmlBundleBuildResponse
+     * @return ListAvaiableVersionResponse
      */
-    public function invokeHtmlBundleBuildWithOptions($request, $headers, $runtime)
+    public function listAvaiableVersionWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->bundleId)) {
-            @$body['bundleId'] = $request->bundleId;
+            $body['bundleId'] = $request->bundleId;
         }
         if (!Utils::isUnset($request->miniAppId)) {
-            @$body['miniAppId'] = $request->miniAppId;
+            $body['miniAppId'] = $request->miniAppId;
         }
-        if (!Utils::isUnset($request->version)) {
-            @$body['version'] = $request->version;
+        if (!Utils::isUnset($request->pageNum)) {
+            $body['pageNum'] = $request->pageNum;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->versionTypeSet)) {
+            $body['versionTypeSet'] = $request->versionTypeSet;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'ListAvaiableVersion',
+            'version'     => 'miniapp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/miniapp/apps/versions/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return InvokeHtmlBundleBuildResponse::fromMap($this->doROARequest('InvokeHtmlBundleBuild', 'miniapp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/miniapp/h5Bundles/build', 'json', $req, $runtime));
+        return ListAvaiableVersionResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -421,44 +556,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListAvaiableVersionRequest $request
-     * @param ListAvaiableVersionHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param QueryHtmlBundleBuildRequest $request
+     * @param QueryHtmlBundleBuildHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return ListAvaiableVersionResponse
+     * @return QueryHtmlBundleBuildResponse
      */
-    public function listAvaiableVersionWithOptions($request, $headers, $runtime)
+    public function queryHtmlBundleBuildWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->bundleId)) {
-            @$body['bundleId'] = $request->bundleId;
+            $query['bundleId'] = $request->bundleId;
         }
         if (!Utils::isUnset($request->miniAppId)) {
-            @$body['miniAppId'] = $request->miniAppId;
+            $query['miniAppId'] = $request->miniAppId;
         }
-        if (!Utils::isUnset($request->pageNum)) {
-            @$body['pageNum'] = $request->pageNum;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$body['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->versionTypeSet)) {
-            @$body['versionTypeSet'] = $request->versionTypeSet;
+        if (!Utils::isUnset($request->version)) {
+            $query['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryHtmlBundleBuild',
+            'version'     => 'miniapp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/miniapp/h5Bundles/buildResults',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ListAvaiableVersionResponse::fromMap($this->doROARequest('ListAvaiableVersion', 'miniapp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/miniapp/apps/versions/query', 'json', $req, $runtime));
+        return QueryHtmlBundleBuildResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -475,38 +615,45 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryHtmlBundleBuildRequest $request
-     * @param QueryHtmlBundleBuildHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param RollBackVersionRequest $request
+     * @param string[]               $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return QueryHtmlBundleBuildResponse
+     * @return RollBackVersionResponse
      */
-    public function queryHtmlBundleBuildWithOptions($request, $headers, $runtime)
+    public function rollBackVersionWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->bundleId)) {
-            @$query['bundleId'] = $request->bundleId;
+            $body['bundleId'] = $request->bundleId;
         }
         if (!Utils::isUnset($request->miniAppId)) {
-            @$query['miniAppId'] = $request->miniAppId;
+            $body['miniAppId'] = $request->miniAppId;
         }
-        if (!Utils::isUnset($request->version)) {
-            @$query['version'] = $request->version;
+        if (!Utils::isUnset($request->rollbackVersion)) {
+            $body['rollbackVersion'] = $request->rollbackVersion;
         }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        if (!Utils::isUnset($request->targetVersion)) {
+            $body['targetVersion'] = $request->targetVersion;
         }
         $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'headers' => $headers,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RollBackVersion',
+            'version'     => 'miniapp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/miniapp/versions/rollback',
+            'method'      => 'POST',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryHtmlBundleBuildResponse::fromMap($this->doROARequest('QueryHtmlBundleBuild', 'miniapp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/miniapp/h5Bundles/buildResults', 'json', $req, $runtime));
+        return RollBackVersionResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -523,34 +670,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RollBackVersionRequest $request
-     * @param string[]               $headers
-     * @param RuntimeOptions         $runtime
+     * @param SetExtendSettingRequest $request
+     * @param SetExtendSettingHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return RollBackVersionResponse
+     * @return SetExtendSettingResponse
      */
-    public function rollBackVersionWithOptions($request, $headers, $runtime)
+    public function setExtendSettingWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->bundleId)) {
-            @$body['bundleId'] = $request->bundleId;
+        if (!Utils::isUnset($request->buildH5Bundle)) {
+            $body['buildH5Bundle'] = $request->buildH5Bundle;
         }
         if (!Utils::isUnset($request->miniAppId)) {
-            @$body['miniAppId'] = $request->miniAppId;
+            $body['miniAppId'] = $request->miniAppId;
         }
-        if (!Utils::isUnset($request->rollbackVersion)) {
-            @$body['rollbackVersion'] = $request->rollbackVersion;
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($request->targetVersion)) {
-            @$body['targetVersion'] = $request->targetVersion;
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
-            'headers' => $headers,
+            'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'SetExtendSetting',
+            'version'     => 'miniapp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/miniapp/apps/settings',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return RollBackVersionResponse::fromMap($this->doROARequest('RollBackVersion', 'miniapp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/miniapp/versions/rollback', 'json', $req, $runtime));
+        return SetExtendSettingResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -567,35 +726,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SetExtendSettingRequest $request
-     * @param SetExtendSettingHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param UpdateVersionStatusRequest $request
+     * @param UpdateVersionStatusHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return SetExtendSettingResponse
+     * @return UpdateVersionStatusResponse
      */
-    public function setExtendSettingWithOptions($request, $headers, $runtime)
+    public function updateVersionStatusWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->buildH5Bundle)) {
-            @$body['buildH5Bundle'] = $request->buildH5Bundle;
+        if (!Utils::isUnset($request->bundleId)) {
+            $body['bundleId'] = $request->bundleId;
         }
         if (!Utils::isUnset($request->miniAppId)) {
-            @$body['miniAppId'] = $request->miniAppId;
+            $body['miniAppId'] = $request->miniAppId;
+        }
+        if (!Utils::isUnset($request->version)) {
+            $body['version'] = $request->version;
+        }
+        if (!Utils::isUnset($request->versionType)) {
+            $body['versionType'] = $request->versionType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateVersionStatus',
+            'version'     => 'miniapp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/miniapp/versions/status',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return SetExtendSettingResponse::fromMap($this->doROARequest('SetExtendSetting', 'miniapp_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/miniapp/apps/settings', 'json', $req, $runtime));
+        return UpdateVersionStatusResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -609,43 +785,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateVersionStatusHeaders([]);
 
         return $this->updateVersionStatusWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param UpdateVersionStatusRequest $request
-     * @param UpdateVersionStatusHeaders $headers
-     * @param RuntimeOptions             $runtime
-     *
-     * @return UpdateVersionStatusResponse
-     */
-    public function updateVersionStatusWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->bundleId)) {
-            @$body['bundleId'] = $request->bundleId;
-        }
-        if (!Utils::isUnset($request->miniAppId)) {
-            @$body['miniAppId'] = $request->miniAppId;
-        }
-        if (!Utils::isUnset($request->version)) {
-            @$body['version'] = $request->version;
-        }
-        if (!Utils::isUnset($request->versionType)) {
-            @$body['versionType'] = $request->versionType;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateVersionStatusResponse::fromMap($this->doROARequest('UpdateVersionStatus', 'miniapp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/miniapp/versions/status', 'json', $req, $runtime));
     }
 }

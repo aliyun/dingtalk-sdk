@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryCrmPersonalCustomerRequest extends Model
 {
     /**
-     * @description 用户ID
-     *
      * @var string
      */
     public $currentOperatorUserId;
 
     /**
-     * @description 分页条数
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页页码
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 查询条件
-     *
      * @var string
      */
     public $queryDsl;

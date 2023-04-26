@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class SyncDataRequest extends Model
 {
     /**
-     * @description 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
-     *
      * @var string
      */
     public $appId;

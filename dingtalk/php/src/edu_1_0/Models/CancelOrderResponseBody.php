@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CancelOrderResponseBody extends Model
 {
     /**
-     * @description 是否需要重试
+     * @example false
      *
      * @var bool
      */
     public $needRetry;
 
     /**
-     * @description 交易动作
+     * @example refund
      *
      * @var string
      */

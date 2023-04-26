@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class CollegeAddStudentResponseBody extends Model
 {
     /**
-     * @description 人员状态
+     * @example NORMAL
      *
      * @var string
      */
     public $dingMemberStatus;
 
     /**
-     * @description 账号是否激活
+     * @example true
      *
      * @var bool
      */
     public $isActive;
 
     /**
-     * @description 学生id
+     * @example 1111111
      *
      * @var int
      */
     public $studentId;
 
     /**
-     * @description unionId
+     * @example 11111111
      *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description userId
+     * @example 0324124
      *
      * @var string
      */

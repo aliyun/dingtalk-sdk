@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetUnionIdByMigrationUnionIdResponseBody extends Model
 {
     /**
-     * @description unionId
-     *
      * @var string
      */
     public $unionId;

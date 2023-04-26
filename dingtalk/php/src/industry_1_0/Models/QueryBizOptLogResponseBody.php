@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class QueryBizOptLogResponseBody extends Model
 {
     /**
-     * @description content
-     *
      * @var content[]
      */
     public $content;
 
     /**
-     * @description 下次拉取数据的起始位置
-     *
      * @var int
      */
     public $nextToken;

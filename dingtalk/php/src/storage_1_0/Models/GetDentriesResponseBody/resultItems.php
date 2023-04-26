@@ -10,35 +10,33 @@ use AlibabaCloud\Tea\Model;
 class resultItems extends Model
 {
     /**
-     * @description 文件(夹)信息
-     *
      * @var dentry
      */
     public $dentry;
 
     /**
-     * @description 文件(夹)id
+     * @example dentry_id
      *
      * @var string
      */
     public $dentryId;
 
     /**
-     * @description 错误原因
+     * @example permissionDenied
      *
      * @var string
      */
     public $errorCode;
 
     /**
-     * @description 文件(夹)空间id
+     * @example space_id
      *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 是否成功
+     * @example true
      *
      * @var bool
      */

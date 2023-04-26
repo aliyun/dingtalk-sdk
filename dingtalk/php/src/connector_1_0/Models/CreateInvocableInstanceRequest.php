@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CreateInvocableInstanceRequest extends Model
 {
     /**
-     * @description 连接资产标识
+     * @example dca://ding32fff839a3e0105d.connect.dingtalk.com/ding32fff839a3e0105d/action/G-ACT-101FDEBD3C6E213DB474000P
      *
      * @var string
      */
     public $connectAssetUri;
 
     /**
-     * @description 关联实例标识
+     * @example SAMPLE
      *
      * @var string
      */

@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class RefundCommodityResponseBody extends Model
 {
     /**
-     * @description message
-     *
      * @var string
      */
     public $message;
 
     /**
-     * @description success
-     *
      * @var bool
      */
     public $success;

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CollectRecruitJobDetailResponseBody extends Model
 {
     /**
-     * @description 是否成功
-     *
      * @var bool
      */
     public $result;

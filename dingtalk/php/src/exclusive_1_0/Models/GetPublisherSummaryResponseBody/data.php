@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 历史截至当日服务窗文章数
+     * @example 100
      *
      * @var string
      */
     public $publisherArticleCntStd;
 
     /**
-     * @description 历史截至当日服务窗文章阅读数
+     * @example 100
      *
      * @var string
      */
     public $publisherArticlePvCntStd;
 
     /**
-     * @description 服务窗名称
+     * @example 服务窗1
      *
      * @var string
      */
     public $publisherName;
 
     /**
-     * @description 服务窗unionId
+     * @example 123
      *
      * @var string
      */

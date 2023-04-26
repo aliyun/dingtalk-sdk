@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetUserTokenResponseBody extends Model
 {
     /**
-     * @description accessToken
-     *
      * @var string
      */
     public $accessToken;
 
     /**
-     * @description 所选企业corpId
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 超时时间
-     *
      * @var int
      */
     public $expireIn;
 
     /**
-     * @description refreshToken
-     *
      * @var string
      */
     public $refreshToken;

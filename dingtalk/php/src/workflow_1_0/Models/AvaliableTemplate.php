@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class AvaliableTemplate extends Model
 {
     /**
-     * @description 表单名称
+     * @example 出差申请
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 表单模板processCode
+     * @example PROC-abcd
      *
      * @var string
      */

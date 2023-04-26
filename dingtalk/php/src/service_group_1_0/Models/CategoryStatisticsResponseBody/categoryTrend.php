@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class categoryTrend extends Model
 {
     /**
-     * @description 心声数量
+     * @example 10
      *
      * @var int
      */
     public $count;
 
     /**
-     * @description 日期
+     * @example 20220101
      *
      * @var string
      */
     public $dt;
 
     /**
-     * @description 分类名称
+     * @example 工单类
      *
      * @var string
      */

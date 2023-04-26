@@ -10,36 +10,34 @@ use AlibabaCloud\Tea\Model;
 class resultItems extends Model
 {
     /**
-     * @description 源文件(夹)id
+     * @example dentry_id
      *
      * @var string
      */
     public $dentryId;
 
     /**
-     * @description 错误原因
+     * @example permissionDenied
      *
      * @var string
      */
     public $errorCode;
 
     /**
-     * @description 源文件(夹)空间id
+     * @example space_id
      *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 是否成功获取到缩略图
+     * @example true
      *
      * @var bool
      */
     public $success;
 
     /**
-     * @description 缩略图信息
-     *
      * @var thumbnail
      */
     public $thumbnail;

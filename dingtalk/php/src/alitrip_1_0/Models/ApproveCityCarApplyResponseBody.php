@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ApproveCityCarApplyResponseBody extends Model
 {
     /**
-     * @description 审批结果
+     * @example true
      *
      * @var bool
      */

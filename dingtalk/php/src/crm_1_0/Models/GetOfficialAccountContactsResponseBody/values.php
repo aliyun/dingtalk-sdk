@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class values extends Model
 {
     /**
-     * @description 用户的联系人数据
-     *
      * @var contacts[]
      */
     public $contacts;
 
     /**
-     * @description 用户userId
+     * @example user_id
      *
      * @var string
      */

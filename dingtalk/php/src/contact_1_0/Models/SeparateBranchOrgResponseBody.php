@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SeparateBranchOrgResponseBody extends Model
 {
     /**
-     * @description 处理结果
+     * @example true
      *
      * @var bool
      */

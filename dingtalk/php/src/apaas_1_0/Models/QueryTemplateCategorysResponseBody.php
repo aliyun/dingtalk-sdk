@@ -15,7 +15,7 @@ class QueryTemplateCategorysResponseBody extends Model
     public $categoryList;
 
     /**
-     * @description 总数
+     * @example 3
      *
      * @var string
      */

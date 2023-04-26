@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 表单业务数据id
+     * @example 50599800-af82-487e-9386-0a7278cab69f
      *
      * @var string
      */
     public $bizObjectId;
 
     /**
-     * @description 数据模型。DataList=本地存储的列表库，Workflow=工作流应用
+     * @example DataList
      *
      * @var string
      */
     public $formUsageType;
 
     /**
-     * @description 流程实例id
+     * @example 3b5451bc-9fd3-4d0c-ba47-191f8bff95ab
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 表单编码
+     * @example D0001839bbbbe346bbf496498bb76c44c7eb972
      *
      * @var string
      */

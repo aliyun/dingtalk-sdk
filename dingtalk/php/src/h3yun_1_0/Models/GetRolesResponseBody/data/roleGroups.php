@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class roleGroups extends Model
 {
     /**
-     * @description 所属企业id
+     * @example 18f923a7-5a5e-426d-94ae-a55ad1a4b240
      *
      * @var string
      */
     public $companyId;
 
     /**
-     * @description 描述
+     * @example 这是一个游客体验组
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 组编码
+     * @example 261befb8-728d-4b79-a0b4-7b6ddfb3f94e
      *
      * @var string
      */
     public $groupCode;
 
     /**
-     * @description 组id
+     * @example 261befb8-728d-4b79-a0b4-7b6ddfb3f94e
      *
      * @var string
      */
     public $groupId;
 
     /**
-     * @description 组名称
+     * @example 游客体验组
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 状态。Active=激活、Inactive=未激活，Unspecified=未指定状态
+     * @example Active
      *
      * @var string
      */
     public $state;
 
     /**
-     * @description 可见性。All=全部可见、Normal=普通可见、OnlyAdmin=只有管理的时候可见、OnlyOrganization=本组织范围可见
+     * @example All
      *
      * @var string
      */

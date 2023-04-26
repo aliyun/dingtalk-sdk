@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class UninstallDeviceRobotResponseBody extends Model
 {
     /**
-     * @description 接口处理返回结果，内容为群的唯一标识。
-     *
      * @var string
      */
     public $result;
 
     /**
-     * @description 接口处理是否成功。
-     *
      * @var bool
      */
     public $success;

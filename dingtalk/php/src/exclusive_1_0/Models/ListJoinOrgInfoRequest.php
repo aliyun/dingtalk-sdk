@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ListJoinOrgInfoRequest extends Model
 {
     /**
-     * @description 手机号码，企业内必须唯一，不可重复。如果是国际号码，请使用+xx-xxxxxx的格式。
+     * @example 15800000000
      *
      * @var string
      */

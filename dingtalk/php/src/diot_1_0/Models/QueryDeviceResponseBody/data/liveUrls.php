@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class liveUrls extends Model
 {
     /**
-     * @description flv格式直播地址
+     * @example https://abc.stream.flv
      *
      * @var string
      */
     public $flv;
 
     /**
-     * @description hls格式直播地址
+     * @example https://abc.stream.m3u8
      *
      * @var string
      */
     public $hls;
 
     /**
-     * @description rtmp格式直播地址
+     * @example rtmp://abc.stream
      *
      * @var string
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class detailList extends Model
 {
     /**
-     * @description 商品id。
+     * @example 1234000
      *
      * @var string
      */
     public $goodsId;
 
     /**
-     * @description 商品名称。
+     * @example 绘画图书
      *
      * @var string
      */
     public $goodsName;
 
     /**
-     * @description 商品价格，单位分。
+     * @example 1
      *
      * @var int
      */
     public $goodsPrice;
 
     /**
-     * @description 商品数量。
+     * @example 1
      *
      * @var int
      */

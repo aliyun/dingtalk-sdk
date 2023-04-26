@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetPeriodListResponseBody extends Model
 {
     /**
-     * @description data
-     *
      * @var data
      */
     public $data;
 
     /**
-     * @description success
-     *
      * @var bool
      */
     public $success;

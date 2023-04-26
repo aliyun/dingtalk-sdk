@@ -9,22 +9,21 @@ use AlibabaCloud\Tea\Model;
 class accountSource extends Model
 {
     /**
-     * @description 积分账号的类型
-     * 企业账号：ORG, 员工账号：EMP
+     * @example EMP
+     *
      * @var string
      */
     public $accountType;
 
     /**
-     * @description 企业内名字
+     * @example 张三
      *
      * @var string
      */
     public $empName;
 
     /**
-     * @description 用户userId
-     *
+     * @example 01274411491620908910
      *
      * @var string
      */

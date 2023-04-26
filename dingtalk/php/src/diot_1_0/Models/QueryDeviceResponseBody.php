@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class QueryDeviceResponseBody extends Model
 {
     /**
-     * @description 结果数据
-     *
      * @var data[]
      */
     public $data;
 
     /**
-     * @description 当前页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 页面大小
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 总数
+     * @example 40
      *
      * @var int
      */

@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class notification extends Model
 {
     /**
+     * @example 你收到了一个卡片消息
+     *
      * @var string
      */
     public $alertContent;

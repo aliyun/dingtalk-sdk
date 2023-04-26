@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryHrmEmployeeDismissionInfoRequest extends Model
 {
     /**
-     * @description 员工 ids
-     *
      * @var string[]
      */
     public $userIdList;

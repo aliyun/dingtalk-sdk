@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class formInstDataList extends Model
 {
     /**
-     * @description 控件别名
+     * @example staff_name
      *
      * @var string
      */
     public $bizAlias;
 
     /**
-     * @description 控件类型
+     * @example 具体参见审批控件列表
      *
      * @var string
      */
     public $componentType;
 
     /**
-     * @description 表单控件扩展数据
+     * @example {"key":"value}
      *
      * @var string
      */
     public $extendValue;
 
     /**
-     * @description 控件唯一id
+     * @example TextField-abcdefg
      *
      * @var string
      */
     public $key;
 
     /**
-     * @description 控件名称
+     * @example 员工姓名
      *
      * @var string
      */
     public $label;
 
     /**
-     * @description 控件填写的数据
+     * @example 张三
      *
      * @var string
      */

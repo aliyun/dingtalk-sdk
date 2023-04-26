@@ -10,22 +10,18 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 失败发票数
+     * @example 100
      *
      * @var int
      */
     public $failCount;
 
     /**
-     * @description 失败发票列表
-     *
      * @var failInvoices[]
      */
     public $failInvoices;
 
     /**
-     * @description 是否成功
-     *
      * @var bool
      */
     public $success;

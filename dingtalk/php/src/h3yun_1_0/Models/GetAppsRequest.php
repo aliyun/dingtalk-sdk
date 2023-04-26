@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetAppsRequest extends Model
 {
     /**
-     * @description 查询类型。All=全部，Solution=以解决方案编码为条件来查询应用，AppCode=以应用编码为条件来查询
+     * @example All
      *
      * @var string
      */
     public $queryType;
 
     /**
-     * @description 待查询的编码数组。queryType参数为All时，此值可为空
-     *
      * @var string[]
      */
     public $values;

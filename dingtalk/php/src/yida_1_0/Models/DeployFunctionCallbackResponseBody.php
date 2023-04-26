@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class DeployFunctionCallbackResponseBody extends Model
 {
     /**
-     * @description 是否处理成功
-     *
      * @var bool
      */
     public $result;

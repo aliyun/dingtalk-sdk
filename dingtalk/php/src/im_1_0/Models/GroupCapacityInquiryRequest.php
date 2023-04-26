@@ -9,35 +9,33 @@ use AlibabaCloud\Tea\Model;
 class GroupCapacityInquiryRequest extends Model
 {
     /**
-     * @description 有效生命周期
+     * @example 1Y
      *
      * @var string
      */
     public $effectiveDuration;
 
     /**
-     * @description 开放的群id
+     * @example ciddmslasdfxcvbxcvgidnxsd==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 当前操作人工号
+     * @example 5782431748978293
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 扩展参数
-     *
      * @var mixed[]
      */
     public $options;
 
     /**
-     * @description 目标容量
+     * @example 2000
      *
      * @var int
      */

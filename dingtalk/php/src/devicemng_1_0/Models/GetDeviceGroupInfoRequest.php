@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetDeviceGroupInfoRequest extends Model
 {
     /**
-     * @description 开放群唯一标识
+     * @example xxxx
      *
      * @var string
      */

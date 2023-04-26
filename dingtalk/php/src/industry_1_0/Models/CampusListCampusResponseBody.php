@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CampusListCampusResponseBody extends Model
 {
     /**
-     * @description 返回信息
-     *
      * @var result[]
      */
     public $result;

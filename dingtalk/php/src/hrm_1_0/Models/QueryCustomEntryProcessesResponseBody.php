@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class QueryCustomEntryProcessesResponseBody extends Model
 {
     /**
-     * @description 是否有更多
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 表单信息列表
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 下次获取数据的起始游标
-     *
      * @var int
      */
     public $nextToken;

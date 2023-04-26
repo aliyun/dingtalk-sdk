@@ -12,77 +12,71 @@ use AlibabaCloud\Tea\Model;
 class spaceInfo extends Model
 {
     /**
-     * @description 知识库封面路径
+     * @example space_cover
      *
      * @var string
      */
     public $cover;
 
     /**
-     * @description 创建时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 创建者信息
-     *
      * @var creator
      */
     public $creator;
 
     /**
-     * @description 知识库描述
+     * @example description
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 知识库图标
-     *
      * @var iconVO
      */
     public $iconVO;
 
     /**
-     * @description 知识库id
+     * @example space_id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description Mobile 访问链接
+     * @example mobile_url
      *
      * @var string
      */
     public $mobileUrl;
 
     /**
-     * @description 修改时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $modifiedTime;
 
     /**
-     * @description 修改者信息
-     *
      * @var modifier
      */
     public $modifier;
 
     /**
-     * @description 知识库名称
+     * @example space_name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description PC 访问链接
+     * @example pc_url
      *
      * @var string
      */

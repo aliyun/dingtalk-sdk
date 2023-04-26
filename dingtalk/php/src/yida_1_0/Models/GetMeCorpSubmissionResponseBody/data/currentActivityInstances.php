@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class currentActivityInstances extends Model
 {
     /**
-     * @description activityId
-     *
      * @var string
      */
     public $activityId;
 
     /**
-     * @description activityInstanceStatus
-     *
      * @var string
      */
     public $activityInstanceStatus;
 
     /**
-     * @description activityName
-     *
      * @var string
      */
     public $activityName;
 
     /**
-     * @description activityNameEn
-     *
      * @var string
      */
     public $activityNameEn;
 
     /**
-     * @description id
-     *
      * @var int
      */
     public $id;

@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class GetSceneGroupMembersRequest extends Model
 {
     /**
-     * @description 酷应用编码
-     *
      * @var string
      */
     public $coolAppCode;
 
     /**
-     * @description 分页游标，首页传0
+     * @example false
      *
      * @var string
      */
     public $cursor;
 
     /**
-     * @description 开放群ID
+     * @example cidXXXXXXX
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 本次查询返回数量上限（该入参传入值小于钉钉阈值时不启用）
+     * @example 200
      *
      * @var int
      */

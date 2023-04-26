@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class GetCustomerTracksByRelationIdRequest extends Model
 {
     /**
-     * @description 每页返回的结果集个数，默认10。
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 第一页不传，下一页传入上一页返回的nextToken
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 关系id。
+     * @example fasd-afsd1-21312-faaa
      *
      * @var string
      */
     public $relationId;
 
     /**
-     * @description 动态类型分组。
+     * @example 0
      *
      * @var int
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class SendRequest extends Model
 {
     /**
-     * @description 文件id
+     * @example file_id
      *
      * @var string
      */
     public $dentryId;
 
     /**
-     * @description 目标会话id
+     * @example open_conversation_id
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 文件所在空间id
+     * @example space_id
      *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

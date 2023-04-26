@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class RemoveMemberForAppRoleRequest extends Model
 {
     /**
-     * @description 部门id列表
-     *
      * @var int[]
      */
     public $deptIdList;
 
     /**
-     * @description 执行用户userId
-     *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 角色范围版本号
-     *
      * @var int
      */
     public $scopeVersion;
 
     /**
-     * @description 员工userId列表
-     *
      * @var string[]
      */
     public $userIdList;

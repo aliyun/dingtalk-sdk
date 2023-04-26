@@ -10,35 +10,33 @@ use AlibabaCloud\Tea\Model;
 class QueryBatchTradeDetailListResponseBody extends Model
 {
     /**
-     * @description 明细列表
-     *
      * @var batchTradeDetailList[]
      */
     public $batchTradeDetailList;
 
     /**
-     * @description 当前页数
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 单页条数
+     * @example 1
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 总记录数
+     * @example 1
      *
      * @var int
      */
     public $total;
 
     /**
-     * @description 总页数
+     * @example 1
      *
      * @var int
      */

@@ -9,22 +9,22 @@ use AlibabaCloud\Tea\Model;
 class members extends Model
 {
     /**
-     * @description 权限归属的企业
-     * 如果memberType是dept类型，必须要有企业id
+     * @example corp_id
+     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 权限成员id
+     * @example member_id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 权限成员类型
-     * ALL_USERS: 所有用户
+     * @example USER
+     *
      * @var string
      */
     public $type;

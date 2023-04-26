@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetWordCloudRequest extends Model
 {
     /**
-     * @description 开放团队ID
+     * @example KxisoOk
      *
      * @var string
      */

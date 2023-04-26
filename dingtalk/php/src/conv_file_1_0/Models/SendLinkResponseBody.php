@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class SendLinkResponseBody extends Model
 {
     /**
-     * @description 发送到目标会话的文件链接信息
-     *
      * @var file
      */
     public $file;

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreateCustomerResponseBody extends Model
 {
     /**
-     * @description 客户CODE
+     * @example CUS_xxxxxx
      *
      * @var string
      */

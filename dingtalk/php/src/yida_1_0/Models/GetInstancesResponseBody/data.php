@@ -11,85 +11,61 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description actioners
-     *
      * @var actionExecutor[]
      */
     public $actionExecutor;
 
     /**
-     * @description approvedResult
-     *
      * @var string
      */
     public $approvedResult;
 
     /**
-     * @description 创建时间
-     *
      * @var string
      */
     public $createTimeGMT;
 
     /**
-     * @description data
-     *
      * @var mixed[]
      */
     public $data;
 
     /**
-     * @description formUuid
-     *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description instanceStatus
-     *
      * @var string
      */
     public $instanceStatus;
 
     /**
-     * @description 修改时间
-     *
      * @var string
      */
     public $modifiedTimeGMT;
 
     /**
-     * @description originator
-     *
      * @var originator
      */
     public $originator;
 
     /**
-     * @description processCode
-     *
      * @var string
      */
     public $processCode;
 
     /**
-     * @description processInstanceId
-     *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description title
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description version
-     *
      * @var int
      */
     public $version;

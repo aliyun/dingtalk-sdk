@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class BatchSendOfficialAccountOTOMessageResponseBody extends Model
 {
     /**
-     * @description 开放API
+     * @example acs1234
      *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description result
-     *
      * @var result
      */
     public $result;

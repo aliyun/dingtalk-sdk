@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class LoadBizFieldsRequest extends Model
 {
     /**
-     * @description 表单编码
+     * @example D0001839bbbbe346bbf496498bb76c44c7eb972
      *
      * @var string
      */

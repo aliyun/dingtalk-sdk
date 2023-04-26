@@ -10,35 +10,33 @@ use AlibabaCloud\Tea\Model;
 class DeductionPointBatchRequest extends Model
 {
     /**
-     * @description 扣减数量 范围：1—100000
+     * @example 10000
      *
      * @var int
      */
     public $deductionAmount;
 
     /**
-     * @description 扣减积分原因
+     * @example 表现不佳，以此惩罚。
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 是否发送组织文化通知
+     * @example 组织文化通知扣减原因
      *
      * @var bool
      */
     public $sendOrgCultureInform;
 
     /**
-     * @description 批量扣减积分用户
-     *
      * @var targetUserList[]
      */
     public $targetUserList;
 
     /**
-     * @description 操作人userId
+     * @example 01274411491620908910
      *
      * @var string
      */

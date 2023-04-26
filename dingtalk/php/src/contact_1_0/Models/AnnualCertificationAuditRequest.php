@@ -9,101 +9,71 @@ use AlibabaCloud\Tea\Model;
 class AnnualCertificationAuditRequest extends Model
 {
     /**
-     * @description 申请人手机号。
-     *
      * @var string
      */
     public $applicantMobile;
 
     /**
-     * @description 申请人姓名。
-     *
      * @var string
      */
     public $applicantName;
 
     /**
-     * @description 认证/修改认证授权函
-     *
      * @var string
      */
     public $applicationLetter;
 
     /**
-     * @description 结果状态
-     * 3:审核通过
      * @var int
      */
     public $authStatus;
 
     /**
-     * @description 证书类型：
-     *
-     * 1：其它
      * @var int
      */
     public $certificateType;
 
     /**
-     * @description 用户提交的企业名称
-     *
      * @var string
      */
     public $corpName;
 
     /**
-     * @description 开户行。
-     *
      * @var string
      */
     public $depositaryBank;
 
     /**
-     * @description 扩展字段，json格式传递，传递上面字段的额外字段。
-     *
      * @var string
      */
     public $extension;
 
     /**
-     * @description 法人姓名。
-     *
      * @var string
      */
     public $legalPerson;
 
     /**
-     * @description 证件号：
-     *
-     * 组织机构代码证号（格式11111111-1）
      * @var string
      */
     public $licenseNumber;
 
     /**
-     * @description 企业证件照片url。
-     *
      * @var string
      */
     public $licenseUrl;
 
     /**
-     * @description 订单ID
-     *
      * @var string
      */
     public $orderId;
 
     /**
-     * @description 对公账号。
-     *
      * @var string
      */
     public $publicAccount;
 
     /**
-     * @description 失败原因，认证中预警 和 认证中需要补充材料以及认证失败时需要提供。
-     *
      * @var string
      */
     public $reasonCode;
@@ -114,9 +84,6 @@ class AnnualCertificationAuditRequest extends Model
     public $reasonMsg;
 
     /**
-     * @description 送审打标类型：
-     *
-     * "AV"：四要素未通过
      * @var string
      */
     public $tag;

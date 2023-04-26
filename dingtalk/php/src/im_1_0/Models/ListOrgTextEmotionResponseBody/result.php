@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 企业文字表情列表
-     *
      * @var emotions[]
      */
     public $emotions;

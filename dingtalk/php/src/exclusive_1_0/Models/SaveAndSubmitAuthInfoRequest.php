@@ -9,126 +9,126 @@ use AlibabaCloud\Tea\Model;
 class SaveAndSubmitAuthInfoRequest extends Model
 {
     /**
-     * @description 申请说明
+     * @example XXX组织申请高级认证
      *
      * @var string
      */
     public $applyRemark;
 
     /**
-     * @description 认证书图片mediaId
+     * @example @lQLxxxxxxxxVvjg8zImwm6t1BYIUNv0Cas0x7UA-AA
      *
      * @var string
      */
     public $authorizeMediaId;
 
     /**
-     * @description 行业
+     * @example 计算机
      *
      * @var string
      */
     public $industry;
 
     /**
-     * @description 企业法人
+     * @example 钉三多
      *
      * @var string
      */
     public $legalPerson;
 
     /**
-     * @description 企业法人身份证
+     * @example 3301XX1997XXXXXXXXX
      *
      * @var string
      */
     public $legalPersonIdCard;
 
     /**
-     * @description 营业执照图片mediaId
+     * @example @lQLxxxxxxxxVvjg8zImwm6t1BYIUNv0Cas0x7UA-AA
      *
      * @var string
      */
     public $licenseMediaId;
 
     /**
-     * @description 城市编码
+     * @example 330100
      *
      * @var int
      */
     public $locCity;
 
     /**
-     * @description 城市名字
+     * @example 杭州
      *
      * @var string
      */
     public $locCityName;
 
     /**
-     * @description 省份编码
+     * @example 330000
      *
      * @var int
      */
     public $locProvince;
 
     /**
-     * @description 省份名字
+     * @example 浙江
      *
      * @var string
      */
     public $locProvinceName;
 
     /**
-     * @description 申请人手机号（需要实名认证）
+     * @example 15869110714
      *
      * @var string
      */
     public $mobileNum;
 
     /**
-     * @description 组织名，提交认证的时候可以修改
+     * @example 测试组织
      *
      * @var string
      */
     public $orgName;
 
     /**
-     * @description 组织机构代码证号（格式11111111-1）
+     * @example 11111111-1
      *
      * @var string
      */
     public $organizationCode;
 
     /**
-     * @description 组织机构代码证图片mediaId
+     * @example @lQLxxxxxxxxVvjg8zImwm6t1BYIUNv0Cas0x7UA-AA
      *
      * @var string
      */
     public $organizationCodeMediaId;
 
     /**
-     * @description 认证企业详细地址
+     * @example 余杭区文一西路XX号
      *
      * @var string
      */
     public $registLocation;
 
     /**
-     * @description 营业执照注册号（一般15位）
+     * @example 1111111111111111
      *
      * @var string
      */
     public $registNum;
 
     /**
-     * @description 企业id
+     * @example dingxxxxxxxxxxxx
      *
      * @var string
      */
     public $targetCorpId;
 
     /**
-     * @description 社会统一信用代码（固定18位）
+     * @example 9111111XX2957XX4X
      *
      * @var string
      */

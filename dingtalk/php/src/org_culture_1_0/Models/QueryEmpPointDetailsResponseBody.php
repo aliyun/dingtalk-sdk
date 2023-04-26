@@ -15,7 +15,7 @@ class QueryEmpPointDetailsResponseBody extends Model
     public $result;
 
     /**
-     * @description 调用是否成功
+     * @example true
      *
      * @var bool
      */

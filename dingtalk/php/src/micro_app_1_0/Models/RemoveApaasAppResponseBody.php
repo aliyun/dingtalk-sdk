@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class RemoveApaasAppResponseBody extends Model
 {
     /**
-     * @description 结果
-     *
      * @var bool
      */
     public $result;

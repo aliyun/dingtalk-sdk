@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class ListBasicRoleInPageRequest extends Model
 {
     /**
-     * @description 应用的agentId
+     * @example 123
      *
      * @var string
      */
     public $agentId;
 
     /**
-     * @description 单页查询的最大条目数
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 查询凭证，初始使用0
-     *
      * @var int
      */
     public $nextToken;

@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class signPosList extends Model
 {
     /**
-     * @description 文件id
-     *
      * @var string
      */
     public $fileId;
 
     /**
-     * @description 是否为骑缝章
-     *
      * @var bool
      */
     public $isCrossPage;
 
     /**
-     * @description 是否需要显示签署时间
-     *
      * @var bool
      */
     public $needSignDate;
 
     /**
-     * @description 签署区页码
-     *
      * @var string
      */
     public $page;
@@ -43,22 +35,16 @@ class signPosList extends Model
     public $signDate;
 
     /**
-     * @description 签署要求,1-企业章 2-经办人
-     *
      * @var string
      */
     public $signRequirement;
 
     /**
-     * @description 签署区x坐标
-     *
      * @var float
      */
     public $x;
 
     /**
-     * @description 签署区y坐标
-     *
      * @var float
      */
     public $y;

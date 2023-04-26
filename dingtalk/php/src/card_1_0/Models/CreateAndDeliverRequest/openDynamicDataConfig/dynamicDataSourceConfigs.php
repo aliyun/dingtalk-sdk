@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class dynamicDataSourceConfigs extends Model
 {
     /**
-     * @description 回调数据源的常量参数
-     *
      * @var string[]
      */
     public $constParams;
 
     /**
-     * @description 数据源配置id
-     *
      * @var string
      */
     public $dynamicDataSourceId;
 
     /**
-     * @description 数据源拉取配置
-     *
      * @var pullConfig
      */
     public $pullConfig;

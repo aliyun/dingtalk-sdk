@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class GetFormComponentDefinitionListRequest extends Model
 {
     /**
-     * @description 语言
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 应用秘钥
+     * @example hexxxx
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉的userId
+     * @example 未知
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 表单版本
+     * @example 1
      *
      * @var int
      */

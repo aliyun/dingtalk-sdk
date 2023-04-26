@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetCrmGroupChatMultiResponseBody extends Model
 {
     /**
-     * @description 客户群列表。
-     *
      * @var result[]
      */
     public $result;

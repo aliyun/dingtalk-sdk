@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class CountTodoTasksRequest extends Model
 {
     /**
-     * @description 所属分类
-     *
      * @var string
      */
     public $category;
 
     /**
-     * @description 查询从计划完成时间开始
-     *
      * @var int
      */
     public $fromDueTime;
 
     /**
-     * @description 待办完成状态。
-     *
      * @var bool
      */
     public $isDone;
 
     /**
-     * @description 待办回收状态
-     *
      * @var bool
      */
     public $isRecycled;
 
     /**
-     * @description 查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]
-     *
      * @var string[][]
      */
     public $roleTypes;
 
     /**
-     * @description 查询到计划完成时间结束
-     *
      * @var int
      */
     public $toDueTime;

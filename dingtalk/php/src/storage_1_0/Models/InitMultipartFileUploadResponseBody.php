@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class InitMultipartFileUploadResponseBody extends Model
 {
     /**
-     * @description 文件存储类型
-     * UNKNOWN: 未知驱动
+     * @example DINGTALK
+     *
      * @var string
      */
     public $storageDriver;
 
     /**
-     * @description 上传唯一标识
+     * @example upload_key
      *
      * @var string
      */

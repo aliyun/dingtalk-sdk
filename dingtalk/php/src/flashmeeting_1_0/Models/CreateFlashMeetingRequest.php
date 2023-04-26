@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class CreateFlashMeetingRequest extends Model
 {
     /**
-     * @description 创建人union id
-     *
      * @var string
      */
     public $creator;
 
     /**
-     * @description 日程id
-     *
      * @var string
      */
     public $eventId;
 
     /**
-     * @description 钉闪会名称
-     *
      * @var string
      */
     public $title;

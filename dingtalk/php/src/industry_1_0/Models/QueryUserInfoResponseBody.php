@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryUserInfoResponseBody extends Model
 {
     /**
-     * @description 人员详情
-     *
      * @var content
      */
     public $content;

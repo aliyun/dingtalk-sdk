@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class sourceProcessVOList extends Model
 {
     /**
-     * @description 套件业务标识
+     * @example abc
      *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 模板名称
+     * @example abc
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 模板code
+     * @example proc-abc
      *
      * @var string
      */

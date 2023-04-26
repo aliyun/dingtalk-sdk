@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 应用轨迹ID
+     * @example ffsfsdf
      *
      * @var string
      */
@@ -41,7 +41,7 @@ class list_ extends Model
     public $reportStartTime;
 
     /**
-     * @description 组织下员工Id
+     * @example I01231231ads1
      *
      * @var string
      */

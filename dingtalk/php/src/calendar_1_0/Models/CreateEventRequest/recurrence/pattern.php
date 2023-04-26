@@ -29,9 +29,6 @@ class pattern extends Model
     public $interval;
 
     /**
-     * @description 循环规则类型：  daily：每interval天 weekly：每interval周的第daysOfWeek天 absoluteMonthly：每interval月的第dayOfMonth天 relativeMonthly：每interval月的第index周的第daysOfWeek天 absoluteYearly：每interval年
-     *
-     *
      * @var string
      */
     public $type;

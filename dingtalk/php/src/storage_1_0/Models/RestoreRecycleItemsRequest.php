@@ -10,21 +10,17 @@ use AlibabaCloud\Tea\Model;
 class RestoreRecycleItemsRequest extends Model
 {
     /**
-     * @description 可选参数
-     *
      * @var option
      */
     public $option;
 
     /**
-     * @description 回收项id列表
-     * 30
      * @var string[]
      */
     public $recycleItemIds;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

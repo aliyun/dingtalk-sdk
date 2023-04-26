@@ -11,91 +11,87 @@ use AlibabaCloud\Tea\Model;
 class dentryInfo extends Model
 {
     /**
-     * @description 创建时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 创建者信息
-     *
      * @var creator
      */
     public $creator;
 
     /**
-     * @description 后缀
+     * @example txt
      *
      * @var string
      */
     public $extension;
 
     /**
-     * @description id
+     * @example dentry_id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description Mobile访问链接
+     * @example mobile_url
      *
      * @var string
      */
     public $mobileUrl;
 
     /**
-     * @description 修改时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $modifiedTime;
 
     /**
-     * @description 修改者信息
-     *
      * @var modifier
      */
     public $modifier;
 
     /**
-     * @description 名称
+     * @example dentry_name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description PC 访问链接
+     * @example pc_url
      *
      * @var string
      */
     public $pcUrl;
 
     /**
-     * @description 所在空间id
+     * @example space_id
      *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 状态
-     * EXPIRED: 已过期
+     * @example NORMAL
+     *
      * @var string
      */
     public $status;
 
     /**
-     * @description 类型，目录或文件
-     * FOLDER: 文件夹
+     * @example FILE
+     *
      * @var string
      */
     public $type;
 
     /**
-     * @description uuid，如移动文件，此字段不变
+     * @example uuid
      *
      * @var string
      */

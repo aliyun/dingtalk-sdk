@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class resumeFile extends Model
 {
     /**
-     * @description 简历文件下载链接
+     * @example http:www.xxx.com
      *
      * @var string
      */
     public $downloadUrl;
 
     /**
-     * @description 文件名称
+     * @example xxx.pdf
      *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 文件类型
+     * @example pdf
      *
      * @var string
      */

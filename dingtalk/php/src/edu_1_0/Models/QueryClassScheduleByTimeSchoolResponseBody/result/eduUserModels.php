@@ -14,15 +14,11 @@ class eduUserModels extends Model
     public $name;
 
     /**
-     * @description 用户uid
-     *
      * @var int
      */
     public $uid;
 
     /**
-     * @description 用户userid
-     *
      * @var string
      */
     public $userId;

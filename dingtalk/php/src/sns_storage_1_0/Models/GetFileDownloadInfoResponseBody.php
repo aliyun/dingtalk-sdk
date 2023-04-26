@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class GetFileDownloadInfoResponseBody extends Model
 {
     /**
-     * @description Header加签信息, 当protocol等于HEADER_SIGNATURE时，此字段生效
-     *
      * @var headerSignatureInfo
      */
     public $headerSignatureInfo;
 
     /**
-     * @description 文件下载协议
-     * HEADER_SIGNATURE: Header加签
+     * @example HEADER_SIGNATURE
+     *
      * @var string
      */
     public $protocol;

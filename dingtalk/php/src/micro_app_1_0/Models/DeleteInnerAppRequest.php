@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteInnerAppRequest extends Model
 {
     /**
-     * @description 操作人unionId
+     * @example xxxx
      *
      * @var string
      */

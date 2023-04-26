@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryFeedWhiteListRequest extends Model
 {
     /**
-     * @description 用户组织内id（查询该用户是否在白名单列表中）
+     * @example 1206186351746728
      *
      * @var string
      */

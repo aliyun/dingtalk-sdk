@@ -9,36 +9,30 @@ use AlibabaCloud\Tea\Model;
 class headerSignatureInfo extends Model
 {
     /**
-     * @description 过期时间，单位秒
+     * @example 900
      *
      * @var int
      */
     public $expirationSeconds;
 
     /**
-     * @description 请求头
-     * 20
      * @var string[]
      */
     public $headers;
 
     /**
-     * @description 内网URL, 在网络连通的情况下，使用内网URL可加速服务器间上传
-     * 10
      * @var string[]
      */
     public $internalResourceUrls;
 
     /**
-     * @description 地域
-     * UNKNOWN: 未知
+     * @example ZHANGJIAKOU
+     *
      * @var string
      */
     public $region;
 
     /**
-     * @description 多个上传下载URL, 前面url优先
-     * 10
      * @var string[]
      */
     public $resourceUrls;

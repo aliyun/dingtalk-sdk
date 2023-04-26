@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetNegativeWordCloudRequest extends Model
 {
     /**
-     * @description 开放团队ID
+     * @example KxisoOk
      *
      * @var string
      */

@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class PagePointHistoryRequest extends Model
 {
     /**
-     * @description 结束时间Unix时间戳（不包含），可空
+     * @example 1631260866105
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 是否查询全员圈积分
+     * @example false
      *
      * @var bool
      */
     public $isCircle;
 
     /**
-     * @description 本次读取的最大数据记录数量，最大20
+     * @example 15
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 用来标记当前开始读取的位置
+     * @example 0
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 起始时间Unix时间戳，可空
+     * @example 1630345050858
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 用户userid，可空，不传表示查询组织内所有用户的流水数据
+     * @example 123
      *
      * @var string
      */

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class AddSchoolConfigRequest extends Model
 {
     /**
-     * @description 123
+     * @example 操作人id
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 123
+     * @example 操作人名称
      *
      * @var string
      */
     public $operatorName;
 
     /**
-     * @description 3700
+     * @example 测温上限
      *
      * @var int
      */

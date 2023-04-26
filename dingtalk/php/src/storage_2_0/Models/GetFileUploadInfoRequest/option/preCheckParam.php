@@ -9,16 +9,14 @@ use AlibabaCloud\Tea\Model;
 class preCheckParam extends Model
 {
     /**
-     * @description 文件名称, 文件名称合法性和文件名称冲突校验
-     * 1. 头尾不能包含空格，否则会自动去除
-     * 2. 不能包含特殊字符，包括：制表符、*、"、<、>、|
-     * 3. 不能以"."结尾
+     * @example dentry_name
+     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 文件大小, 做容量相关校验。不传则不做校验。
+     * @example 512
      *
      * @var int
      */

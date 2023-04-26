@@ -10,43 +10,41 @@ use AlibabaCloud\Tea\Model;
 class app extends Model
 {
     /**
-     * @description 开放平台应用appId
+     * @example app_id
      *
      * @var string
      */
     public $appId;
 
     /**
-     * @description 应用归属企业的id
+     * @example corp_id
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 应用创建时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 应用修改时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $modifiedTime;
 
     /**
-     * @description 应用名称，对应开放平台应用名称
+     * @example app_name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 分区容量信息
-     * 3
      * @var partitions[]
      */
     public $partitions;

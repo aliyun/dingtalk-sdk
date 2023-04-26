@@ -11,49 +11,47 @@ use AlibabaCloud\Tea\Model;
 class GetPublisherSummaryResponseBody extends Model
 {
     /**
-     * @description 互动服务窗相关数据
-     *
      * @var data[]
      */
     public $data;
 
     /**
-     * @description 是否有更多数据
+     * @example false
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下一次请求的分页游标
+     * @example 2
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 历史截至当日服务窗文章数
+     * @example 100
      *
      * @var string
      */
     public $publisherArticleCntStd;
 
     /**
-     * @description 历史截至当日服务窗文章阅读数
+     * @example 100
      *
      * @var string
      */
     public $publisherArticlePvCntStd;
 
     /**
-     * @description 阅读量最高的5个文章
+     * @example 阅读量最高文章，阅读量第二高文章
      *
      * @var publisherArticlePvTop5[]
      */
     public $publisherArticlePvTop5;
 
     /**
-     * @description 历史截至当日服务窗数
+     * @example 100
      *
      * @var string
      */

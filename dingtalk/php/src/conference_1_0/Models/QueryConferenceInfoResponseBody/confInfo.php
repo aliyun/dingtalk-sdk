@@ -9,91 +9,89 @@ use AlibabaCloud\Tea\Model;
 class confInfo extends Model
 {
     /**
-     * @description 当前在会人数
+     * @example 10
      *
      * @var int
      */
     public $activeNum;
 
     /**
-     * @description 累积入会人数
+     * @example 15
      *
      * @var int
      */
     public $attendNum;
 
     /**
-     * @description 会议时长
+     * @example 1000000
      *
      * @var int
      */
     public $confDuration;
 
     /**
-     * @description 会议id
+     * @example 6323d7568777190142ab9d10
      *
      * @var string
      */
     public $conferenceId;
 
     /**
-     * @description 会议创建人unionId
+     * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 会议创建人昵称
+     * @example 昵称
      *
      * @var string
      */
     public $creatorNick;
 
     /**
-     * @description 会议结束时间
-     *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 会议web入会链接
+     * @example https://meeting.dingtalk.com/app?roomCode=42726033559&token=1_7ac974ac-6e4f-47c3-b82b-bfb32fd94d2c
      *
      * @var string
      */
     public $externalLinkUrl;
 
     /**
-     * @description 邀请人数
+     * @example 20
      *
      * @var int
      */
     public $invitedNum;
 
     /**
-     * @description 会议码
+     * @example 42726033559
      *
      * @var string
      */
     public $roomCode;
 
     /**
-     * @description 会议开始时间
+     * @example 1663293270000
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 会议状态
-     * 2 结束
+     * @example 1
+     *
      * @var int
      */
     public $status;
 
     /**
-     * @description 会议标题
+     * @example 标题
      *
      * @var string
      */

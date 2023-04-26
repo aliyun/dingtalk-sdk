@@ -10,36 +10,26 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description actionCode
-     *
      * @var string
      */
     public $actionCode;
 
     /**
-     * @description actionContent
-     *
      * @var actionContent[]
      */
     public $actionContent;
 
     /**
-     * @description operator
-     *
      * @var string
      */
     public $operator;
 
     /**
-     * @description operatorId
-     *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description operatorRole
-     *
      * @var string
      */
     public $operatorRole;

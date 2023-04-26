@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class UpdateDentryAppPropertiesRequest extends Model
 {
     /**
-     * @description App属性列表 属性不存在时则新增，存在则覆盖原值
-     * 3
      * @var appProperties[]
      */
     public $appProperties;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

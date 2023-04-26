@@ -10,29 +10,27 @@ use AlibabaCloud\Tea\Model;
 class AddTicketMemoRequest extends Model
 {
     /**
-     * @description 开放团队ID
+     * @example eKWh3GBwsKEiE
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 工单开放ID
+     * @example a8iS4X94TgtgiE
      *
      * @var string
      */
     public $openTicketId;
 
     /**
-     * @description 当前工单处理人
+     * @example Dq9hP8Sk2v6vQ6l05nCe5wiEiE
      *
      * @var string
      */
     public $processorUnionId;
 
     /**
-     * @description 备注
-     *
      * @var ticketMemo
      */
     public $ticketMemo;

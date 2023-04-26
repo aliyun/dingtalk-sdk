@@ -9,36 +9,34 @@ use AlibabaCloud\Tea\Model;
 class BindSystemRequest extends Model
 {
     /**
-     * @description 与三方平台绑定验证的临时授权码。
+     * @example abcde12345
      *
      * @var string
      */
     public $authCode;
 
     /**
-     * @description 三方平台的用户ID。
+     * @example d12345
      *
      * @var string
      */
     public $clientId;
 
     /**
-     * @description 三方平台的用户名。
+     * @example xx社区。
      *
      * @var string
      */
     public $clientName;
 
     /**
-     * @description 三方平台的用户的钉钉物联组织ID。
+     * @example ding12345
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 三方平台协定的其它参数。
-     *
      * @var mixed[]
      */
     public $extraData;

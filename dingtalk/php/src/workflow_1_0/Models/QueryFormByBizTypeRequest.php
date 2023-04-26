@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class QueryFormByBizTypeRequest extends Model
 {
     /**
-     * @description 应用搭建id
+     * @example SWAPP-abcdef-example
      *
      * @var string
      */
     public $appUuid;
 
     /**
-     * @description 表单业务标识
-     *
      * @var string[]
      */
     public $bizTypes;

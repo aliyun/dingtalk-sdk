@@ -9,78 +9,56 @@ use AlibabaCloud\Tea\Model;
 class generalInvoiceDetailVOList extends Model
 {
     /**
-     * @description 金额
-     *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 商品名称
-     *
      * @var string
      */
     public $goodsName;
 
     /**
-     * @description 数量
-     *
      * @var string
      */
     public $quantity;
 
     /**
-     * @description 税收分类编码
-     *
      * @var string
      */
     public $revenueCode;
 
     /**
-     * @description 行号
-     *
      * @var string
      */
     public $rowNo;
 
     /**
-     * @description 规格型号
-     *
      * @var string
      */
     public $specification;
 
     /**
-     * @description 税额
-     *
      * @var string
      */
     public $taxAmount;
 
     /**
-     * @description 是否享受税收优惠：0-不享受，1-享受
-     *
      * @var string
      */
     public $taxPre;
 
     /**
-     * @description 税率
-     *
      * @var string
      */
     public $taxRate;
 
     /**
-     * @description 单位
-     *
      * @var string
      */
     public $unit;
 
     /**
-     * @description 单价
-     *
      * @var string
      */
     public $unitPrice;

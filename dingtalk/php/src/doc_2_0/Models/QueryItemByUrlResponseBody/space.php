@@ -10,35 +10,33 @@ use AlibabaCloud\Tea\Model;
 class space extends Model
 {
     /**
-     * @description 知识库简介。
+     * @example 这是知识库简介
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 知识库id。
+     * @example YRBG******vJXDAr
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 知识库名称。
+     * @example 这是知识库名称
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 如果type=2，会返回其所有者。
-     *
      * @var owner
      */
     public $owner;
 
     /**
-     * @description 知识库类型。1-知识库；2-我的文档。
+     * @example 1
      *
      * @var int
      */

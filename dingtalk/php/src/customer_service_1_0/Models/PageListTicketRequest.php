@@ -9,78 +9,66 @@ use AlibabaCloud\Tea\Model;
 class PageListTicketRequest extends Model
 {
     /**
-     * @description 结束时间
-     *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 第三方用户id
-     *
      * @var string
      */
     public $foreignId;
 
     /**
-     * @description 本次读取的最大数据记录数量
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 用来标记当前开始读取的位置，置空表示从头开始
+     * @example 0
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 实例id
+     * @example default
      *
      * @var string
      */
     public $openInstanceId;
 
     /**
-     * @description 产品类型
+     * @example 1
      *
      * @var int
      */
     public $productionType;
 
     /**
-     * @description 来源
-     *
      * @var string
      */
     public $sourceId;
 
     /**
-     * @description 开始时间
-     *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 工单模板
+     * @example 42
      *
      * @var string
      */
     public $templateId;
 
     /**
-     * @description 工单ID
-     *
      * @var string
      */
     public $ticketId;
 
     /**
-     * @description 工单状态
-     *
      * @var string
      */
     public $ticketStatus;

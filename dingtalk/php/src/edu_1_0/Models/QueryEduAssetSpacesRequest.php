@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryEduAssetSpacesRequest extends Model
 {
     /**
-     * @description 业务编码
+     * @example soke
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 本次读取的最大数据记录数量
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 标记当前开始读取的位置，置空表示从头开始
+     * @example 20110
      *
      * @var int
      */

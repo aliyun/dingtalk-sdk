@@ -10,78 +10,70 @@ use AlibabaCloud\Tea\Model;
 class SendRobotInteractiveCardRequest extends Model
 {
     /**
-     * @description 可交互卡片回调的url【可空：不填写无需回调】
+     * @example https://xxx
      *
      * @var string
      */
     public $callbackUrl;
 
     /**
-     * @description 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）【备注：同一个outTrackId重复创建，卡片数据不覆盖更新】
+     * @example cardXXXX01
      *
      * @var string
      */
     public $cardBizId;
 
     /**
-     * @description 卡片模板-文本内容参数（卡片json结构体）
+     * @example 根据具体的cardTemplateId参考文档格式
      *
      * @var string
      */
     public $cardData;
 
     /**
-     * @description 卡片搭建平台模板ID
+     * @example xxxxxxxx
      *
      * @var string
      */
     public $cardTemplateId;
 
     /**
-     * @description 【openConversationId & singleChatReceiver 二选一必填】接收卡片的加密群ID，特指多人群会话（非单聊）
+     * @example cidXXXX
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 是否开启卡片纯拉模式
-     *
      * @var bool
      */
     public $pullStrategy;
 
     /**
-     * @description 机器人代码，群模板机器人网页有机器人ID；企业内部机器人为机器人appKey，企业三方机器人有robotCode
+     * @example xxxxxx
      *
      * @var string
      */
     public $robotCode;
 
     /**
-     * @description 互动卡片发送选项
-     *
      * @var sendOptions
      */
     public $sendOptions;
 
     /**
-     * @description 【openConversationId & singleChatReceiver 二选一必填】单聊会话接受者json串
+     * @example 以userId为例：{"userId":"userId0001"}；以unionId为例{"unionId":"unionId001"}
      *
      * @var string
      */
     public $singleChatReceiver;
 
     /**
-     * @description 卡片模板-userId差异用户参数（json结构体）
-     *
      * @var string
      */
     public $unionIdPrivateDataMap;
 
     /**
-     * @description 卡片模板-userId差异用户参数（json结构体）
-     *
      * @var string
      */
     public $userIdPrivateDataMap;

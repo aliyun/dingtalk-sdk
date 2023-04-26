@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ModifyWaterMarkTemplateResponseBody extends Model
 {
     /**
-     * @description Id of the request
+     * @example PROC-292988B1-5064-4A42-9389-A76B97xxxxx
      *
      * @var string
      */

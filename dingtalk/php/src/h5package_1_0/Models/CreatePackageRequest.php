@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class CreatePackageRequest extends Model
 {
     /**
-     * @description 企业内部微应用agentId
+     * @example 1234
      *
      * @var int
      */
     public $agentId;
 
     /**
-     * @description 第三方企业应用appId
+     * @example 1234
      *
      * @var int
      */
     public $appId;
 
     /**
-     * @description 离线包入口页面地址。没有设置时，默认值是应用设置中的应用首页地址。
+     * @example https://example.com/myapp/index.html
      *
      * @var string
      */
     public $homeUrl;
 
     /**
-     * @description 通过获取上传凭据接口返回的name值
+     * @example aaaaaa/bbbbbb
      *
      * @var string
      */

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 扩展信息
+     * @example 扩展
      *
      * @var string
      */
     public $extend;
 
     /**
-     * @description 项目组ID
+     * @example 10101
      *
      * @var int
      */
     public $groupDeptId;
 
     /**
-     * @description 项目组名称
+     * @example 测试项目组
      *
      * @var string
      */

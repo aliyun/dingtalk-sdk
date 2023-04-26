@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 已读消息的userid列表
-     *
      * @var string[]
      */
     public $readUserIdList;
 
     /**
-     * @description 执行状态： 0：未开始  1：处理中  2：处理完毕
-     *
      * @var int
      */
     public $status;

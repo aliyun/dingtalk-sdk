@@ -10,63 +10,55 @@ use AlibabaCloud\Tea\Model;
 class resultList extends Model
 {
     /**
-     * @description 动态内容。
-     *
      * @var string
      */
     public $content;
 
     /**
-     * @description 操作人姓名。
+     * @example 华佗
      *
      * @var string
      */
     public $creatorName;
 
     /**
-     * @description 动态详情。
-     *
      * @var string[]
      */
     public $detail;
 
     /**
-     * @description 动态格式：markdown表示markdown格式，为空表示老格式
+     * @example markdown
      *
      * @var string
      */
     public $format;
 
     /**
-     * @description 创建时间。
+     * @example 2022-03-24T09:30Z
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 写入动态的三方应用身份信息。
-     *
      * @var isvInfo
      */
     public $isvInfo;
 
     /**
-     * @description 动态标题。
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 动态类型。
+     * @example 201
      *
      * @var int
      */
     public $type;
 
     /**
-     * @description 动态类型分组。
+     * @example 1
      *
      * @var int
      */

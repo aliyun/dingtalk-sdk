@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class sender extends Model
 {
     /**
-     * @description 根据id的类型决定是哪一种id
+     * @example user1234
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 发送者的id类型，可以是userId或者unionId
+     * @example userId
      *
      * @var string
      */
     public $idType;
 
     /**
-     * @description 用户-user 机器人-bot 系统账号-sys
+     * @example user
      *
      * @var string
      */

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetCrmProcCodesResponseBody extends Model
 {
     /**
-     * @description 模板code列表。
-     *
      * @var string[]
      */
     public $result;

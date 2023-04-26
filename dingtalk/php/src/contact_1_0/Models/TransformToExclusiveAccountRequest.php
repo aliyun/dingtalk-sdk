@@ -9,36 +9,30 @@ use AlibabaCloud\Tea\Model;
 class TransformToExclusiveAccountRequest extends Model
 {
     /**
-     * @description idpDingTalk
+     * @example false/true
      *
      * @var bool
      */
     public $idpDingTalk;
 
     /**
-     * @description initPassword
-     *
      * @var string
      */
     public $initPassword;
 
     /**
-     * @description loginId
-     *
      * @var string
      */
     public $loginId;
 
     /**
-     * @description transformType
+     * @example migrate
      *
      * @var string
      */
     public $transformType;
 
     /**
-     * @description userId
-     *
      * @var string
      */
     public $userId;

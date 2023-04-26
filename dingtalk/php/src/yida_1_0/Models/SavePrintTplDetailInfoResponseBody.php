@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class SavePrintTplDetailInfoResponseBody extends Model
 {
     /**
-     * @description 模板id
-     *
      * @var int
      */
     public $result;

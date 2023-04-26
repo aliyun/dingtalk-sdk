@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class CreateDepartmentRequest extends Model
 {
     /**
-     * @description 认证信息
+     * @example zhangsan/password
      *
      * @var string
      */
     public $authInfo;
 
     /**
-     * @description 认证方式
+     * @example Acount
      *
      * @var string
      */
     public $authType;
 
     /**
-     * @description 业务扩展
+     * @example {"workdate":"workday"}
      *
      * @var string
      */
     public $bizExt;
 
     /**
-     * @description 部门名称
+     * @example 生产1组
      *
      * @var string
      */
     public $departmentName;
 
     /**
-     * @description 部门类型
+     * @example Primary
      *
      * @var string
      */
     public $departmentType;
 
     /**
-     * @description 部门描述
+     * @example 生产1组负责中控机的组装
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 业务系统地址
+     * @example https://xxx.xxx.com/manage
      *
      * @var string
      */
     public $systemUrl;
 
     /**
-     * @description 创建人工号
+     * @example manager10
      *
      * @var string
      */

@@ -9,63 +9,63 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 节点所属的应用编码
+     * @example D000001
      *
      * @var string
      */
     public $appCode;
 
     /**
-     * @description 显示名称
+     * @example 客户管理
      *
      * @var string
      */
     public $displayName;
 
     /**
-     * @description 是否是系统节点，如果是则无法删除
+     * @example false
      *
      * @var bool
      */
     public $isSystem;
 
     /**
-     * @description 菜单节点类型。 AppPackage=应用程序 FormModule=列表模块(不能发起流程)、 WorkflowModule=流程列表模块(可以发起流程) ReportModule=报表模块 GroupModule=节点分组
+     * @example FormModule
      *
      * @var string
      */
     public $nodeType;
 
     /**
-     * @description 菜单可见类型。 Inactive=未指定 AllVisible=全部可见 PcVisible=仅pc可见 MobileVisible=仅移动端可见 InVisible=全部不可见
+     * @example AllVisible
      *
      * @var string
      */
     public $nodeVisibleType;
 
     /**
-     * @description 父节点的编码
+     * @example 6b42e223-c849-4fe9-9916-52f52d1a41b5
      *
      * @var string
      */
     public $parentCode;
 
     /**
-     * @description 节点编码。如果nodeType=FormModule,则为表单编码
+     * @example 8d56c3b7-e996-4223-96a0-85ad16c11825
      *
      * @var string
      */
     public $schemaCode;
 
     /**
-     * @description 排序编号
+     * @example 1000000011
      *
      * @var int
      */
     public $sortKey;
 
     /**
-     * @description 菜单状态。 Inactive=未激活 Active=激活
+     * @example Active
      *
      * @var string
      */

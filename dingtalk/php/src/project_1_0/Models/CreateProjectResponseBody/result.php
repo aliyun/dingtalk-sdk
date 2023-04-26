@@ -10,112 +10,110 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 创建时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 创建人ID。
+     * @example 0517xxxxxxx
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 自定义字段值集合。
-     *
      * @var customfields[]
      */
     public $customfields;
 
     /**
-     * @description 项目默认文件夹ID。
+     * @example 6398042ec98a4e4e33xxxxxx
      *
      * @var string
      */
     public $defaultCollectionId;
 
     /**
-     * @description 是否在回收站。
+     * @example false
      *
      * @var bool
      */
     public $isArchived;
 
     /**
-     * @description 是否归档。
+     * @example false
      *
      * @var bool
      */
     public $isSuspended;
 
     /**
-     * @description 是否为模版项目。
+     * @example false
      *
      * @var bool
      */
     public $isTemplate;
 
     /**
-     * @description 项目封面。
+     * @example "https://tcs-ga.teambition.net/thumb/xxxxxxx
      *
      * @var string
      */
     public $logo;
 
     /**
-     * @description 项目名称。
+     * @example 项目1
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 项目类型。
+     * @example taskflow
      *
      * @var string
      */
     public $normalType;
 
     /**
-     * @description 项目ID。
+     * @example 62c25e3b376ecxxxxxxx
      *
      * @var string
      */
     public $projectId;
 
     /**
-     * @description 项目根文件夹ID。
+     * @example 6398042ec98a4e4e33
      *
      * @var string
      */
     public $rootCollectionId;
 
     /**
-     * @description 来源项目ID。
+     * @example 62c25e3b376ecxxxxxxx
      *
      * @var string
      */
     public $sourceId;
 
     /**
-     * @description 任务ID前缀。
+     * @example ""
      *
      * @var string
      */
     public $uniqueIdPrefix;
 
     /**
-     * @description 更新时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $updated;
 
     /**
-     * @description 项目可见性。
+     * @example project
      *
      * @var string
      */

@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class BatchRecallOTOResponseBody extends Model
 {
     /**
-     * @description 撤回失败的消息id及对应的失败原因
+     * @example b5fe11095f46315d8d30d3f8XXXXXX:system error
      *
      * @var string[]
      */
     public $failedResult;
 
     /**
-     * @description 撤回成功的消息id
-     *
      * @var string[]
      */
     public $successResult;

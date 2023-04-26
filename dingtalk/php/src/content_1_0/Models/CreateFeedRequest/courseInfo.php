@@ -11,21 +11,17 @@ use AlibabaCloud\Tea\Model;
 class courseInfo extends Model
 {
     /**
-     * @description 讲师身份信息
-     *
      * @var lectorUserInfo
      */
     public $lectorUserInfo;
 
     /**
-     * @description 支付信息
-     *
      * @var payInfo
      */
     public $payInfo;
 
     /**
-     * @description 创建一个和该课程绑定的学习群和圈子
+     * @example xx学习群
      *
      * @var string
      */

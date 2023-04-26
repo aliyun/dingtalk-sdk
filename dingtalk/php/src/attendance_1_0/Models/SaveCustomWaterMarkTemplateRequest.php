@@ -9,60 +9,56 @@ use AlibabaCloud\Tea\Model;
 class SaveCustomWaterMarkTemplateRequest extends Model
 {
     /**
-     * @description 模板的业务码：
-     * - water_mark_checkin
-     *
+     * @example water_mark_checkin
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 模板的预览图片。
+     * @example https://xx.xx.png
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 模板的布局ID。
+     * @example industry_dx_xx
      *
      * @var string
      */
     public $layoutDesignId;
 
     /**
-     * @description 模板的场景码：
-     * - water_mark_checkin_h3yun 开放场景码
-     *
+     * @example water_mark_checkin_open
      *
      * @var string
      */
     public $sceneCode;
 
     /**
-     * @description 模板的内容。
+     * @example { \"items\":[ { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"enableModifyPlace\", \"id\":\"enableModifyPlace-undefined\", \"value\":\"true\" } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"modifyPlaceDistance\", \"id\":\"modifyPlaceDistance-undefined\", \"value\":200 } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"title\", \"id\":\"title-undefined\", \"value\":\"wofu1\" } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"titleBgColor\", \"id\":\"titleBgColor-undefined\", \"value\":\"#0089FF\" } } ] }
      *
      * @var string
      */
     public $schemaContent;
 
     /**
-     * @description 模板的标题。
+     * @example 标题
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 群会话ID。
+     * @example 1234567
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 用户的userid。
+     * @example manage123
      *
      * @var string
      */

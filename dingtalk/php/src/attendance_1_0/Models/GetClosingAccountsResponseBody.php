@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetClosingAccountsResponseBody extends Model
 {
     /**
-     * @description 规则列表
-     *
      * @var result[]
      */
     public $result;

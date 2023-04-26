@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class AddCustomSpaceRequest extends Model
 {
     /**
-     * @description 业务类型
-     *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 空间标识
-     *
      * @var string
      */
     public $identifier;
 
     /**
-     * @description 授权模式
-     *
      * @var string
      */
     public $permissionMode;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

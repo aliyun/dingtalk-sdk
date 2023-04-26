@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetUserHolidaysResponseBody extends Model
 {
     /**
-     * @description 员工假期列表
-     *
      * @var result[]
      */
     public $result;

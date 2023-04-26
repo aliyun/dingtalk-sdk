@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GroupCapacityOrderConfirmRequest extends Model
 {
     /**
-     * @description 操作人工号
+     * @example 066224
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 订单号
+     * @example FAKE:0-28937rufhjdkslnawdkjsfk
      *
      * @var string
      */

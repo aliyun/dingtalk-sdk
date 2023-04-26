@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class cardOptions extends Model
 {
     /**
-     * @description 是否支持转发
-     *
      * @var bool
      */
     public $supportForward;

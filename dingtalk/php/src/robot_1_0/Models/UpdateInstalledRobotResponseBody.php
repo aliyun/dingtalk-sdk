@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateInstalledRobotResponseBody extends Model
 {
     /**
-     * @description 本次更新操作是否成功。
-     *
      * @var bool
      */
     public $success;

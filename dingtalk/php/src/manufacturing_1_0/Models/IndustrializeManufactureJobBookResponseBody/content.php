@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 影响行数
+     * @example 1
      *
      * @var int
      */
     public $count;
 
     /**
-     * @description 新增记录的数据库id
-     *
      * @var int
      */
     public $id;

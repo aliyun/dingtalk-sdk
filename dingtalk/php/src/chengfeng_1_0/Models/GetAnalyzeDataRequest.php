@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class GetAnalyzeDataRequest extends Model
 {
     /**
-     * @description 周期ID列表
-     *
      * @var string[]
      */
     public $periodIds;
 
     /**
-     * @description 部门编号(钉钉部门号)
+     * @example 32222
      *
      * @var string
      */

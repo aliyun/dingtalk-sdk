@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class QueryCloudRecordTextResponseBody extends Model
 {
     /**
-     * @description 是否有更多
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 段落列表
-     *
      * @var paragraphList[]
      */
     public $paragraphList;

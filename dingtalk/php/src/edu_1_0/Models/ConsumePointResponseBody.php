@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ConsumePointResponseBody extends Model
 {
     /**
-     * @description 结果
-     *
      * @var bool
      */
     public $result;
 
     /**
-     * @description 操作是否成功
-     *
      * @var bool
      */
     public $success;

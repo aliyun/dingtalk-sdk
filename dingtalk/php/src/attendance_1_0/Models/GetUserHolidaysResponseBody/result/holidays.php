@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class holidays extends Model
 {
     /**
-     * @description 假期名称
-     *
      * @var string
      */
     public $holidayName;
 
     /**
-     * @description 假期类型，festival：法定节假日；rest：调休日；overtime：加班日；
-     *
      * @var string
      */
     public $holidayType;
 
     /**
-     * @description 补休日，只有假期类型为加班日时才有值
-     *
      * @var int
      */
     public $realWorkDate;
 
     /**
-     * @description 日期
-     *
      * @var int
      */
     public $workDate;

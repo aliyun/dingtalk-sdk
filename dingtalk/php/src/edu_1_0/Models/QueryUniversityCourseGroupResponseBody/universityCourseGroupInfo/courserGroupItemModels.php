@@ -11,50 +11,44 @@ use AlibabaCloud\Tea\Model;
 class courserGroupItemModels extends Model
 {
     /**
-     * @description 上课周期
+     * @example 1、单周；2、双周；3、全周
      *
      * @var int
      */
     public $classPeriodType;
 
     /**
-     * @description 教室主键
+     * @example 10001
      *
      * @var int
      */
     public $classroomId;
 
     /**
-     * @description 课程类型
+     * @example 1:音视频直播；2:线下课程；4:音视频及线下
      *
      * @var int
      */
     public $courseType;
 
     /**
-     * @description 结束时间
-     *
      * @var courserGroupItemEndDate
      */
     public $courserGroupItemEndDate;
 
     /**
-     * @description 开始时间
-     *
      * @var courserGroupItemStartDate
      */
     public $courserGroupItemStartDate;
 
     /**
-     * @description 一周的第几天
+     * @example 7
      *
      * @var int
      */
     public $dayOfWeek;
 
     /**
-     * @description 课节
-     *
      * @var int[]
      */
     public $sectionIndex;

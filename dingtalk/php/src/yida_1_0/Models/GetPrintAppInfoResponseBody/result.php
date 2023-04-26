@@ -10,29 +10,23 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 应用名称
+     * @example 李四的宜搭应用
      *
      * @var string
      */
     public $appName;
 
     /**
-     * @description appType
-     *
      * @var string
      */
     public $appType;
 
     /**
-     * @description formInfoList
-     *
      * @var formInfoList[]
      */
     public $formInfoList;
 
     /**
-     * @description 图标链接
-     *
      * @var string
      */
     public $iconUrl;

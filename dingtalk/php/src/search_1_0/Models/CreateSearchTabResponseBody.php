@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreateSearchTabResponseBody extends Model
 {
     /**
-     * @description 数据源的id,范围为3000-4000
+     * @example 3333
      *
      * @var int
      */

@@ -9,49 +9,41 @@ use AlibabaCloud\Tea\Model;
 class GetUserAllLiveListRequest extends Model
 {
     /**
-     * @description 筛选直播截止时间
-     *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 筛选直播开始时间
-     *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 直播状态列表
-     *
      * @var int[]
      */
     public $statuses;
 
     /**
-     * @description 筛选直播标题
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 第几页，从1开始
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 单次拉去上限，默认40个
+     * @example 30
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 用户uid
+     * @example 6crtQT2XOgPHviiPvXhhiP6gdhiE
      *
      * @var string
      */

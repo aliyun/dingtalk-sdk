@@ -10,22 +10,20 @@ use AlibabaCloud\Tea\Model;
 class ListUncheckUsersResponseBody extends Model
 {
     /**
-     * @description 是否仍有数据
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下一个数据序号
+     * @example 10
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description result
-     *
      * @var values[]
      */
     public $values;

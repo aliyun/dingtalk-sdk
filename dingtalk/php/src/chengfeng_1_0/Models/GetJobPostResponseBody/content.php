@@ -9,36 +9,30 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 职务编码
+     * @example 123
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 设立日期
-     *
      * @var string
      */
     public $establishDate;
 
     /**
-     * @description 职务名称
+     * @example 测试
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 生效日期
-     *
      * @var string
      */
     public $startDate;
 
     /**
-     * @description 失效日期
-     *
      * @var string
      */
     public $stopDate;

@@ -62,18 +62,61 @@ use AlibabaCloud\SDK\Dingtalk\Vesign_2_0\Models\UsersRealnameRequest;
 use AlibabaCloud\SDK\Dingtalk\Vesign_2_0\Models\UsersRealnameResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param string              $taskId
+     * @param ApprovalListHeaders $headers
+     * @param RuntimeOptions      $runtime
+     *
+     * @return ApprovalListResponse
+     */
+    public function approvalListWithOptions($taskId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->serviceGroup)) {
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'ApprovalList',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/approvals/' . $taskId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
+
+        return ApprovalListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -87,46 +130,6 @@ class Dingtalk extends OpenApiClient
         $headers = new ApprovalListHeaders([]);
 
         return $this->approvalListWithOptions($taskId, $headers, $runtime);
-    }
-
-    /**
-     * @param string              $taskId
-     * @param ApprovalListHeaders $headers
-     * @param RuntimeOptions      $runtime
-     *
-     * @return ApprovalListResponse
-     */
-    public function approvalListWithOptions($taskId, $headers, $runtime)
-    {
-        $taskId      = OpenApiUtilClient::getEncodeParam($taskId);
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return ApprovalListResponse::fromMap($this->doROARequest('ApprovalList', 'esign_2.0', 'HTTP', 'GET', 'AK', '/v2.0/esign/approvals/' . $taskId . '', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param CancelCorpAuthRequest $request
-     *
-     * @return CancelCorpAuthResponse
-     */
-    public function cancelCorpAuth($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new CancelCorpAuthHeaders([]);
-
-        return $this->cancelCorpAuthWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -144,16 +147,98 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'CancelCorpAuth',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/auths/cancel',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return CancelCorpAuthResponse::fromMap($this->doROARequest('CancelCorpAuth', 'esign_2.0', 'HTTP', 'POST', 'AK', '/v2.0/esign/auths/cancel', 'json', $req, $runtime));
+        return CancelCorpAuthResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param CancelCorpAuthRequest $request
+     *
+     * @return CancelCorpAuthResponse
+     */
+    public function cancelCorpAuth($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CancelCorpAuthHeaders([]);
+
+        return $this->cancelCorpAuthWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param ChannelOrdersRequest $request
+     * @param ChannelOrdersHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return ChannelOrdersResponse
+     */
+    public function channelOrdersWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->itemCode)) {
+            $body['itemCode'] = $request->itemCode;
+        }
+        if (!Utils::isUnset($request->itemName)) {
+            $body['itemName'] = $request->itemName;
+        }
+        if (!Utils::isUnset($request->orderCreateTime)) {
+            $body['orderCreateTime'] = $request->orderCreateTime;
+        }
+        if (!Utils::isUnset($request->orderId)) {
+            $body['orderId'] = $request->orderId;
+        }
+        if (!Utils::isUnset($request->payFee)) {
+            $body['payFee'] = $request->payFee;
+        }
+        if (!Utils::isUnset($request->quantity)) {
+            $body['quantity'] = $request->quantity;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->serviceGroup)) {
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChannelOrders',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/orders/channel',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChannelOrdersResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -170,50 +255,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ChannelOrdersRequest $request
-     * @param ChannelOrdersHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param CorpRealnameRequest $request
+     * @param CorpRealnameHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return ChannelOrdersResponse
+     * @return CorpRealnameResponse
      */
-    public function channelOrdersWithOptions($request, $headers, $runtime)
+    public function corpRealnameWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->itemCode)) {
-            @$body['itemCode'] = $request->itemCode;
+        if (!Utils::isUnset($request->redirectUrl)) {
+            $body['redirectUrl'] = $request->redirectUrl;
         }
-        if (!Utils::isUnset($request->itemName)) {
-            @$body['itemName'] = $request->itemName;
-        }
-        if (!Utils::isUnset($request->orderCreateTime)) {
-            @$body['orderCreateTime'] = $request->orderCreateTime;
-        }
-        if (!Utils::isUnset($request->orderId)) {
-            @$body['orderId'] = $request->orderId;
-        }
-        if (!Utils::isUnset($request->payFee)) {
-            @$body['payFee'] = $request->payFee;
-        }
-        if (!Utils::isUnset($request->quantity)) {
-            @$body['quantity'] = $request->quantity;
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CorpRealname',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/corps/realnames',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return ChannelOrdersResponse::fromMap($this->doROARequest('ChannelOrders', 'esign_2.0', 'HTTP', 'POST', 'AK', '/v2.0/esign/orders/channel', 'json', $req, $runtime));
+        return CorpRealnameResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -230,38 +314,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CorpRealnameRequest $request
-     * @param CorpRealnameHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param CreateDevelopersRequest $request
+     * @param CreateDevelopersHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return CorpRealnameResponse
+     * @return CreateDevelopersResponse
      */
-    public function corpRealnameWithOptions($request, $headers, $runtime)
+    public function createDevelopersWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->redirectUrl)) {
-            @$body['redirectUrl'] = $request->redirectUrl;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->noticeUrl)) {
+            $body['noticeUrl'] = $request->noticeUrl;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateDevelopers',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/developers',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return CorpRealnameResponse::fromMap($this->doROARequest('CorpRealname', 'esign_2.0', 'HTTP', 'POST', 'AK', '/v2.0/esign/corps/realnames', 'json', $req, $runtime));
+        return CreateDevelopersResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -278,35 +370,64 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateDevelopersRequest $request
-     * @param CreateDevelopersHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param CreateProcessRequest $request
+     * @param CreateProcessHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return CreateDevelopersResponse
+     * @return CreateProcessResponse
      */
-    public function createDevelopersWithOptions($request, $headers, $runtime)
+    public function createProcessWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->noticeUrl)) {
-            @$body['noticeUrl'] = $request->noticeUrl;
+        if (!Utils::isUnset($request->ccs)) {
+            $body['ccs'] = $request->ccs;
+        }
+        if (!Utils::isUnset($request->files)) {
+            $body['files'] = $request->files;
+        }
+        if (!Utils::isUnset($request->initiatorUserId)) {
+            $body['initiatorUserId'] = $request->initiatorUserId;
+        }
+        if (!Utils::isUnset($request->participants)) {
+            $body['participants'] = $request->participants;
+        }
+        if (!Utils::isUnset($request->redirectUrl)) {
+            $body['redirectUrl'] = $request->redirectUrl;
+        }
+        if (!Utils::isUnset($request->signEndTime)) {
+            $body['signEndTime'] = $request->signEndTime;
+        }
+        if (!Utils::isUnset($request->sourceInfo)) {
+            $body['sourceInfo'] = $request->sourceInfo;
+        }
+        if (!Utils::isUnset($request->taskName)) {
+            $body['taskName'] = $request->taskName;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
-        if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
-        }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateProcess',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/process/startAtOnce',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateDevelopersResponse::fromMap($this->doROARequest('CreateDevelopers', 'esign_2.0', 'HTTP', 'POST', 'AK', '/v2.0/esign/developers', 'json', $req, $runtime));
+        return CreateProcessResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -323,53 +444,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateProcessRequest $request
-     * @param CreateProcessHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param string                    $instanceId
+     * @param GetAttachsApprovalHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return CreateProcessResponse
+     * @return GetAttachsApprovalResponse
      */
-    public function createProcessWithOptions($request, $headers, $runtime)
+    public function getAttachsApprovalWithOptions($instanceId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->ccs)) {
-            @$body['ccs'] = $request->ccs;
-        }
-        if (!Utils::isUnset($request->files)) {
-            @$body['files'] = $request->files;
-        }
-        if (!Utils::isUnset($request->initiatorUserId)) {
-            @$body['initiatorUserId'] = $request->initiatorUserId;
-        }
-        if (!Utils::isUnset($request->participants)) {
-            @$body['participants'] = $request->participants;
-        }
-        if (!Utils::isUnset($request->redirectUrl)) {
-            @$body['redirectUrl'] = $request->redirectUrl;
-        }
-        if (!Utils::isUnset($request->signEndTime)) {
-            @$body['signEndTime'] = $request->signEndTime;
-        }
-        if (!Utils::isUnset($request->sourceInfo)) {
-            @$body['sourceInfo'] = $request->sourceInfo;
-        }
-        if (!Utils::isUnset($request->taskName)) {
-            @$body['taskName'] = $request->taskName;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
+        if (!Utils::isUnset($headers->serviceGroup)) {
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+        }
+        if (!Utils::isUnset($headers->tsignOpenAppId)) {
+            $realHeaders['tsignOpenAppId'] = Utils::toJSONString($headers->tsignOpenAppId);
+        }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetAttachsApproval',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/dingInstances/' . $instanceId . '/attachments',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return CreateProcessResponse::fromMap($this->doROARequest('CreateProcess', 'esign_2.0', 'HTTP', 'POST', 'AK', '/v2.0/esign/process/startAtOnce', 'json', $req, $runtime));
+        return GetAttachsApprovalResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -386,33 +497,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                    $instanceId
-     * @param GetAttachsApprovalHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param GetAuthUrlRequest $request
+     * @param GetAuthUrlHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return GetAttachsApprovalResponse
+     * @return GetAuthUrlResponse
      */
-    public function getAttachsApprovalWithOptions($instanceId, $headers, $runtime)
+    public function getAuthUrlWithOptions($request, $headers, $runtime)
     {
-        $instanceId  = OpenApiUtilClient::getEncodeParam($instanceId);
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->redirectUrl)) {
+            $body['redirectUrl'] = $request->redirectUrl;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
-        }
-        if (!Utils::isUnset($headers->tsignOpenAppId)) {
-            @$realHeaders['tsignOpenAppId'] = Utils::toJSONString($headers->tsignOpenAppId);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetAuthUrl',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/auths/urls',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return GetAttachsApprovalResponse::fromMap($this->doROARequest('GetAttachsApproval', 'esign_2.0', 'HTTP', 'GET', 'AK', '/v2.0/esign/dingInstances/' . $instanceId . '/attachments', 'json', $req, $runtime));
+        return GetAuthUrlResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -429,49 +553,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAuthUrlRequest $request
-     * @param GetAuthUrlHeaders $headers
-     * @param RuntimeOptions    $runtime
-     *
-     * @return GetAuthUrlResponse
-     */
-    public function getAuthUrlWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->redirectUrl)) {
-            @$body['redirectUrl'] = $request->redirectUrl;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return GetAuthUrlResponse::fromMap($this->doROARequest('GetAuthUrl', 'esign_2.0', 'HTTP', 'POST', 'AK', '/v2.0/esign/auths/urls', 'json', $req, $runtime));
-    }
-
-    /**
-     * @return GetContractMarginResponse
-     */
-    public function getContractMargin()
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new GetContractMarginHeaders([]);
-
-        return $this->getContractMarginWithOptions($headers, $runtime);
-    }
-
-    /**
      * @param GetContractMarginHeaders $headers
      * @param RuntimeOptions           $runtime
      *
@@ -484,27 +565,38 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetContractMargin',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/margins',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetContractMarginResponse::fromMap($this->doROARequest('GetContractMargin', 'esign_2.0', 'HTTP', 'GET', 'AK', '/v2.0/esign/margins', 'json', $req, $runtime));
+        return GetContractMarginResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
-     * @return GetCorpConsoleResponse
+     * @return GetContractMarginResponse
      */
-    public function getCorpConsole()
+    public function getContractMargin()
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetCorpConsoleHeaders([]);
+        $headers = new GetContractMarginHeaders([]);
 
-        return $this->getCorpConsoleWithOptions($headers, $runtime);
+        return $this->getContractMarginWithOptions($headers, $runtime);
     }
 
     /**
@@ -520,27 +612,38 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetCorpConsole',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/corps/consoles',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetCorpConsoleResponse::fromMap($this->doROARequest('GetCorpConsole', 'esign_2.0', 'HTTP', 'GET', 'AK', '/v2.0/esign/corps/consoles', 'json', $req, $runtime));
+        return GetCorpConsoleResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
-     * @return GetCorpInfoResponse
+     * @return GetCorpConsoleResponse
      */
-    public function getCorpInfo()
+    public function getCorpConsole()
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new GetCorpInfoHeaders([]);
+        $headers = new GetCorpConsoleHeaders([]);
 
-        return $this->getCorpInfoWithOptions($headers, $runtime);
+        return $this->getCorpConsoleWithOptions($headers, $runtime);
     }
 
     /**
@@ -556,16 +659,87 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetCorpInfo',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/corps/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetCorpInfoResponse::fromMap($this->doROARequest('GetCorpInfo', 'esign_2.0', 'HTTP', 'GET', 'AK', '/v2.0/esign/corps/infos', 'json', $req, $runtime));
+        return GetCorpInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return GetCorpInfoResponse
+     */
+    public function getCorpInfo()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCorpInfoHeaders([]);
+
+        return $this->getCorpInfoWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param GetExecuteUrlRequest $request
+     * @param GetExecuteUrlHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return GetExecuteUrlResponse
+     */
+    public function getExecuteUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->account)) {
+            $body['account'] = $request->account;
+        }
+        if (!Utils::isUnset($request->signContainer)) {
+            $body['signContainer'] = $request->signContainer;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->serviceGroup)) {
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetExecuteUrl',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/process/executeUrls',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetExecuteUrlResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -582,41 +756,40 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetExecuteUrlRequest $request
-     * @param GetExecuteUrlHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param string             $fileId
+     * @param GetFileInfoHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return GetExecuteUrlResponse
+     * @return GetFileInfoResponse
      */
-    public function getExecuteUrlWithOptions($request, $headers, $runtime)
+    public function getFileInfoWithOptions($fileId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->account)) {
-            @$body['account'] = $request->account;
-        }
-        if (!Utils::isUnset($request->signContainer)) {
-            @$body['signContainer'] = $request->signContainer;
-        }
-        if (!Utils::isUnset($request->taskId)) {
-            @$body['taskId'] = $request->taskId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetFileInfo',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/files/' . $fileId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return GetExecuteUrlResponse::fromMap($this->doROARequest('GetExecuteUrl', 'esign_2.0', 'HTTP', 'POST', 'AK', '/v2.0/esign/process/executeUrls', 'json', $req, $runtime));
+        return GetFileInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -633,30 +806,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string             $fileId
-     * @param GetFileInfoHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param GetFileUploadUrlRequest $request
+     * @param GetFileUploadUrlHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return GetFileInfoResponse
+     * @return GetFileUploadUrlResponse
      */
-    public function getFileInfoWithOptions($fileId, $headers, $runtime)
+    public function getFileUploadUrlWithOptions($request, $headers, $runtime)
     {
-        $fileId      = OpenApiUtilClient::getEncodeParam($fileId);
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->contentMd5)) {
+            $body['contentMd5'] = $request->contentMd5;
+        }
+        if (!Utils::isUnset($request->contentType)) {
+            $body['contentType'] = $request->contentType;
+        }
+        if (!Utils::isUnset($request->convert2Pdf)) {
+            $body['convert2Pdf'] = $request->convert2Pdf;
+        }
+        if (!Utils::isUnset($request->fileName)) {
+            $body['fileName'] = $request->fileName;
+        }
+        if (!Utils::isUnset($request->fileSize)) {
+            $body['fileSize'] = $request->fileSize;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetFileUploadUrl',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/files/uploadUrls',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return GetFileInfoResponse::fromMap($this->doROARequest('GetFileInfo', 'esign_2.0', 'HTTP', 'GET', 'AK', '/v2.0/esign/files/' . $fileId . '', 'json', $req, $runtime));
+        return GetFileUploadUrlResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -673,47 +874,40 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetFileUploadUrlRequest $request
-     * @param GetFileUploadUrlHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param string               $taskId
+     * @param GetFlowDetailHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return GetFileUploadUrlResponse
+     * @return GetFlowDetailResponse
      */
-    public function getFileUploadUrlWithOptions($request, $headers, $runtime)
+    public function getFlowDetailWithOptions($taskId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->contentMd5)) {
-            @$body['contentMd5'] = $request->contentMd5;
-        }
-        if (!Utils::isUnset($request->contentType)) {
-            @$body['contentType'] = $request->contentType;
-        }
-        if (!Utils::isUnset($request->convert2Pdf)) {
-            @$body['convert2Pdf'] = $request->convert2Pdf;
-        }
-        if (!Utils::isUnset($request->fileName)) {
-            @$body['fileName'] = $request->fileName;
-        }
-        if (!Utils::isUnset($request->fileSize)) {
-            @$body['fileSize'] = $request->fileSize;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetFlowDetail',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/flowTasks/' . $taskId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return GetFileUploadUrlResponse::fromMap($this->doROARequest('GetFileUploadUrl', 'esign_2.0', 'HTTP', 'POST', 'AK', '/v2.0/esign/files/uploadUrls', 'json', $req, $runtime));
+        return GetFlowDetailResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -730,30 +924,40 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string               $taskId
-     * @param GetFlowDetailHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param string             $taskId
+     * @param GetFlowDocsHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return GetFlowDetailResponse
+     * @return GetFlowDocsResponse
      */
-    public function getFlowDetailWithOptions($taskId, $headers, $runtime)
+    public function getFlowDocsWithOptions($taskId, $headers, $runtime)
     {
-        $taskId      = OpenApiUtilClient::getEncodeParam($taskId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetFlowDocs',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/flowTasks/' . $taskId . '/docs',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetFlowDetailResponse::fromMap($this->doROARequest('GetFlowDetail', 'esign_2.0', 'HTTP', 'GET', 'AK', '/v2.0/esign/flowTasks/' . $taskId . '', 'json', $req, $runtime));
+        return GetFlowDocsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -770,30 +974,39 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string             $taskId
-     * @param GetFlowDocsHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param GetIsvStatusHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return GetFlowDocsResponse
+     * @return GetIsvStatusResponse
      */
-    public function getFlowDocsWithOptions($taskId, $headers, $runtime)
+    public function getIsvStatusWithOptions($headers, $runtime)
     {
-        $taskId      = OpenApiUtilClient::getEncodeParam($taskId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetIsvStatus',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/corps/appStatus',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetFlowDocsResponse::fromMap($this->doROARequest('GetFlowDocs', 'esign_2.0', 'HTTP', 'GET', 'AK', '/v2.0/esign/flowTasks/' . $taskId . '/docs', 'json', $req, $runtime));
+        return GetIsvStatusResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -808,28 +1021,40 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetIsvStatusHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param string               $taskId
+     * @param GetSignDetailHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return GetIsvStatusResponse
+     * @return GetSignDetailResponse
      */
-    public function getIsvStatusWithOptions($headers, $runtime)
+    public function getSignDetailWithOptions($taskId, $headers, $runtime)
     {
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetSignDetail',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/signTasks/' . $taskId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetIsvStatusResponse::fromMap($this->doROARequest('GetIsvStatus', 'esign_2.0', 'HTTP', 'GET', 'AK', '/v2.0/esign/corps/appStatus', 'json', $req, $runtime));
+        return GetSignDetailResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -846,30 +1071,40 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string               $taskId
-     * @param GetSignDetailHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param string             $userId
+     * @param GetUserInfoHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return GetSignDetailResponse
+     * @return GetUserInfoResponse
      */
-    public function getSignDetailWithOptions($taskId, $headers, $runtime)
+    public function getUserInfoWithOptions($userId, $headers, $runtime)
     {
-        $taskId      = OpenApiUtilClient::getEncodeParam($taskId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetUserInfo',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/users/' . $userId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetSignDetailResponse::fromMap($this->doROARequest('GetSignDetail', 'esign_2.0', 'HTTP', 'GET', 'AK', '/v2.0/esign/signTasks/' . $taskId . '', 'json', $req, $runtime));
+        return GetUserInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -886,30 +1121,67 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string             $userId
-     * @param GetUserInfoHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param ProcessStartRequest $request
+     * @param ProcessStartHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return GetUserInfoResponse
+     * @return ProcessStartResponse
      */
-    public function getUserInfoWithOptions($userId, $headers, $runtime)
+    public function processStartWithOptions($request, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->autoStart)) {
+            $body['autoStart'] = $request->autoStart;
+        }
+        if (!Utils::isUnset($request->ccs)) {
+            $body['ccs'] = $request->ccs;
+        }
+        if (!Utils::isUnset($request->files)) {
+            $body['files'] = $request->files;
+        }
+        if (!Utils::isUnset($request->initiatorUserId)) {
+            $body['initiatorUserId'] = $request->initiatorUserId;
+        }
+        if (!Utils::isUnset($request->participants)) {
+            $body['participants'] = $request->participants;
+        }
+        if (!Utils::isUnset($request->redirectUrl)) {
+            $body['redirectUrl'] = $request->redirectUrl;
+        }
+        if (!Utils::isUnset($request->sourceInfo)) {
+            $body['sourceInfo'] = $request->sourceInfo;
+        }
+        if (!Utils::isUnset($request->taskName)) {
+            $body['taskName'] = $request->taskName;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ProcessStart',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/processes/startUrls',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return GetUserInfoResponse::fromMap($this->doROARequest('GetUserInfo', 'esign_2.0', 'HTTP', 'GET', 'AK', '/v2.0/esign/users/' . $userId . '', 'json', $req, $runtime));
+        return ProcessStartResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -926,56 +1198,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ProcessStartRequest $request
-     * @param ProcessStartHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param ResaleOrderRequest $request
+     * @param ResaleOrderHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return ProcessStartResponse
+     * @return ResaleOrderResponse
      */
-    public function processStartWithOptions($request, $headers, $runtime)
+    public function resaleOrderWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->autoStart)) {
-            @$body['autoStart'] = $request->autoStart;
+        if (!Utils::isUnset($request->orderCreateTime)) {
+            $body['orderCreateTime'] = $request->orderCreateTime;
         }
-        if (!Utils::isUnset($request->ccs)) {
-            @$body['ccs'] = $request->ccs;
+        if (!Utils::isUnset($request->orderId)) {
+            $body['orderId'] = $request->orderId;
         }
-        if (!Utils::isUnset($request->files)) {
-            @$body['files'] = $request->files;
+        if (!Utils::isUnset($request->quantity)) {
+            $body['quantity'] = $request->quantity;
         }
-        if (!Utils::isUnset($request->initiatorUserId)) {
-            @$body['initiatorUserId'] = $request->initiatorUserId;
+        if (!Utils::isUnset($request->serviceStartTime)) {
+            $body['serviceStartTime'] = $request->serviceStartTime;
         }
-        if (!Utils::isUnset($request->participants)) {
-            @$body['participants'] = $request->participants;
-        }
-        if (!Utils::isUnset($request->redirectUrl)) {
-            @$body['redirectUrl'] = $request->redirectUrl;
-        }
-        if (!Utils::isUnset($request->sourceInfo)) {
-            @$body['sourceInfo'] = $request->sourceInfo;
-        }
-        if (!Utils::isUnset($request->taskName)) {
-            @$body['taskName'] = $request->taskName;
+        if (!Utils::isUnset($request->serviceStopTime)) {
+            $body['serviceStopTime'] = $request->serviceStopTime;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'ResaleOrder',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/orders/resale',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return ProcessStartResponse::fromMap($this->doROARequest('ProcessStart', 'esign_2.0', 'HTTP', 'POST', 'AK', '/v2.0/esign/processes/startUrls', 'json', $req, $runtime));
+        return ResaleOrderResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -992,47 +1266,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ResaleOrderRequest $request
-     * @param ResaleOrderHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param UsersRealnameRequest $request
+     * @param UsersRealnameHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return ResaleOrderResponse
+     * @return UsersRealnameResponse
      */
-    public function resaleOrderWithOptions($request, $headers, $runtime)
+    public function usersRealnameWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->orderCreateTime)) {
-            @$body['orderCreateTime'] = $request->orderCreateTime;
+        if (!Utils::isUnset($request->redirectUrl)) {
+            $body['redirectUrl'] = $request->redirectUrl;
         }
-        if (!Utils::isUnset($request->orderId)) {
-            @$body['orderId'] = $request->orderId;
-        }
-        if (!Utils::isUnset($request->quantity)) {
-            @$body['quantity'] = $request->quantity;
-        }
-        if (!Utils::isUnset($request->serviceStartTime)) {
-            @$body['serviceStartTime'] = $request->serviceStartTime;
-        }
-        if (!Utils::isUnset($request->serviceStopTime)) {
-            @$body['serviceStopTime'] = $request->serviceStopTime;
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
+            $realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UsersRealname',
+            'version'     => 'esign_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/esign/users/realnames',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return ResaleOrderResponse::fromMap($this->doROARequest('ResaleOrder', 'esign_2.0', 'HTTP', 'POST', 'AK', '/v2.0/esign/orders/resale', 'json', $req, $runtime));
+        return UsersRealnameResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1046,40 +1322,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UsersRealnameHeaders([]);
 
         return $this->usersRealnameWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param UsersRealnameRequest $request
-     * @param UsersRealnameHeaders $headers
-     * @param RuntimeOptions       $runtime
-     *
-     * @return UsersRealnameResponse
-     */
-    public function usersRealnameWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->redirectUrl)) {
-            @$body['redirectUrl'] = $request->redirectUrl;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->serviceGroup)) {
-            @$realHeaders['serviceGroup'] = Utils::toJSONString($headers->serviceGroup);
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UsersRealnameResponse::fromMap($this->doROARequest('UsersRealname', 'esign_2.0', 'HTTP', 'POST', 'AK', '/v2.0/esign/users/realnames', 'json', $req, $runtime));
     }
 }

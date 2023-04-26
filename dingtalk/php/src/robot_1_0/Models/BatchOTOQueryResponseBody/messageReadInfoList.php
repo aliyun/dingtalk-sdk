@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class messageReadInfoList extends Model
 {
     /**
-     * @description 姓名
+     * @example 曲大岳
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 已读状态
+     * @example READ
      *
      * @var string
      */
     public $readStatus;
 
     /**
-     * @description 已读时间
+     * @example 1433138400000
      *
      * @var int
      */
     public $readTimestamp;
 
     /**
-     * @description 工号
+     * @example 201382020
      *
      * @var string
      */

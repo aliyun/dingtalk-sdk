@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class legalPersonCertInfo extends Model
 {
     /**
-     * @description 法人证件反面url
+     * @example ossUrl
      *
      * @var string
      */
     public $certBackImage;
 
     /**
-     * @description 法人证件正面url
+     * @example ossUrl
      *
      * @var string
      */
     public $certFrontImage;
 
     /**
-     * @description 法人姓名
+     * @example 李某某
      *
      * @var string
      */
     public $certName;
 
     /**
-     * @description 法人证件类型 不填默认为身份证
+     * @example 100
      *
      * @var string
      */
     public $certType;
 
     /**
-     * @description 法人证件号
+     * @example 330104200010109999
      *
      * @var string
      */

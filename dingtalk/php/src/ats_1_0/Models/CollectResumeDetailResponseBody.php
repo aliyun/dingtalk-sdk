@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CollectResumeDetailResponseBody extends Model
 {
     /**
-     * @description 简历标识
-     *
      * @var string
      */
     public $resumeId;

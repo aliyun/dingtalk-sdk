@@ -11,29 +11,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 封账规则
-     *
      * @var closingAccountModel
      */
     public $closingAccountModel;
 
     /**
-     * @description 开关
-     *
      * @var bool
      */
     public $switchOn;
 
     /**
-     * @description 解封规则
-     *
      * @var unsealClosingAccountModel
      */
     public $unsealClosingAccountModel;
 
     /**
-     * @description 人员ID
-     *
      * @var string
      */
     public $userId;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryRemoteClassCourseRequest extends Model
 {
     /**
-     * @description 结束时间
+     * @example 1635436800000
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 操作者用户ID
+     * @example manager1234
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 开始时间
+     * @example 1634832000000
      *
      * @var int
      */

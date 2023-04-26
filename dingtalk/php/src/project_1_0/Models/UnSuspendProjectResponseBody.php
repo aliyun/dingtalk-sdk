@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class UnSuspendProjectResponseBody extends Model
 {
     /**
-     * @description 返回对象。
-     *
      * @var result
      */
     public $result;

@@ -9,57 +9,45 @@ use AlibabaCloud\Tea\Model;
 class CreateEduAssetSpaceResponseBody extends Model
 {
     /**
-     * @description 创建时间戳
-     *
      * @var int
      */
     public $createTimeMillis;
 
     /**
-     * @description 修改时间戳
-     *
      * @var int
      */
     public $modifyTimeMillis;
 
     /**
-     * @description 权限模型
+     * @example acl：acl授权 ; custom：自定义授权
      *
      * @var string
      */
     public $permissionMode;
 
     /**
-     * @description 总容量
-     *
      * @var int
      */
     public $quota;
 
     /**
-     * @description 空间id
-     *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 空间名称
-     *
      * @var string
      */
     public $spaceName;
 
     /**
-     * @description 空间类型
+     * @example custom：自定义类型
      *
      * @var string
      */
     public $spaceType;
 
     /**
-     * @description 已使用容量
-     *
      * @var int
      */
     public $usedQuota;

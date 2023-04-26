@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateProjectGroupRequest extends Model
 {
     /**
-     * @description 增加到项目分组的Id列表，最多5个
-     *
      * @var string[]
      */
     public $addProjectGroupIds;
 
     /**
-     * @description 移除项目分组的Id列表，最多5个
-     *
      * @var string[]
      */
     public $delProjectGroupIds;

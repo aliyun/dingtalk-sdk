@@ -25,18 +25,64 @@ use AlibabaCloud\SDK\Dingtalk\Vapaas_1_0\Models\RecallAuditTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapaas_1_0\Models\RecallAuditTemplateResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param BatchCreateTemplateRequest $request
+     * @param BatchCreateTemplateHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return BatchCreateTemplateResponse
+     */
+    public function batchCreateTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->templateList)) {
+            $body['templateList'] = $request->templateList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchCreateTemplate',
+            'version'     => 'apaas_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/apaas/templates',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchCreateTemplateResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -53,32 +99,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchCreateTemplateRequest $request
-     * @param BatchCreateTemplateHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param BatchQueryByTemplateKeyRequest $request
+     * @param BatchQueryByTemplateKeyHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return BatchCreateTemplateResponse
+     * @return BatchQueryByTemplateKeyResponse
      */
-    public function batchCreateTemplateWithOptions($request, $headers, $runtime)
+    public function batchQueryByTemplateKeyWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->templateList)) {
-            @$body['templateList'] = $request->templateList;
+        if (!Utils::isUnset($request->templateKeys)) {
+            $body['templateKeys'] = $request->templateKeys;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'BatchQueryByTemplateKey',
+            'version'     => 'apaas_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/apaas/templates/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchCreateTemplateResponse::fromMap($this->doROARequest('BatchCreateTemplate', 'apaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/apaas/templates', 'json', $req, $runtime));
+        return BatchQueryByTemplateKeyResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -95,32 +152,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchQueryByTemplateKeyRequest $request
-     * @param BatchQueryByTemplateKeyHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param BatchUpdateTemplateRequest $request
+     * @param BatchUpdateTemplateHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return BatchQueryByTemplateKeyResponse
+     * @return BatchUpdateTemplateResponse
      */
-    public function batchQueryByTemplateKeyWithOptions($request, $headers, $runtime)
+    public function batchUpdateTemplateWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->templateKeys)) {
-            @$body['templateKeys'] = $request->templateKeys;
+        if (!Utils::isUnset($request->templateList)) {
+            $body['templateList'] = $request->templateList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'BatchUpdateTemplate',
+            'version'     => 'apaas_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/apaas/templates',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchQueryByTemplateKeyResponse::fromMap($this->doROARequest('BatchQueryByTemplateKey', 'apaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/apaas/templates/query', 'json', $req, $runtime));
+        return BatchUpdateTemplateResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -137,46 +205,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchUpdateTemplateRequest $request
-     * @param BatchUpdateTemplateHeaders $headers
-     * @param RuntimeOptions             $runtime
-     *
-     * @return BatchUpdateTemplateResponse
-     */
-    public function batchUpdateTemplateWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->templateList)) {
-            @$body['templateList'] = $request->templateList;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return BatchUpdateTemplateResponse::fromMap($this->doROARequest('BatchUpdateTemplate', 'apaas_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/apaas/templates', 'json', $req, $runtime));
-    }
-
-    /**
-     * @return QueryIndustryTagListResponse
-     */
-    public function queryIndustryTagList()
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryIndustryTagListHeaders([]);
-
-        return $this->queryIndustryTagListWithOptions($headers, $runtime);
-    }
-
-    /**
      * @param QueryIndustryTagListHeaders $headers
      * @param RuntimeOptions              $runtime
      *
@@ -189,24 +217,35 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'QueryIndustryTagList',
+            'version'     => 'apaas_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/apaas/templates/industries',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryIndustryTagListResponse::fromMap($this->doROARequest('QueryIndustryTagList', 'apaas_1.0', 'HTTP', 'GET', 'AK', '/v1.0/apaas/templates/industries', 'json', $req, $runtime));
+        return QueryIndustryTagListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
-     * @return QueryRoleTagListResponse
+     * @return QueryIndustryTagListResponse
      */
-    public function queryRoleTagList()
+    public function queryIndustryTagList()
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryRoleTagListHeaders([]);
+        $headers = new QueryIndustryTagListHeaders([]);
 
-        return $this->queryRoleTagListWithOptions($headers, $runtime);
+        return $this->queryIndustryTagListWithOptions($headers, $runtime);
     }
 
     /**
@@ -222,24 +261,35 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'QueryRoleTagList',
+            'version'     => 'apaas_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/apaas/templates/roles',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryRoleTagListResponse::fromMap($this->doROARequest('QueryRoleTagList', 'apaas_1.0', 'HTTP', 'GET', 'AK', '/v1.0/apaas/templates/roles', 'json', $req, $runtime));
+        return QueryRoleTagListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
-     * @return QueryTemplateCategorysResponse
+     * @return QueryRoleTagListResponse
      */
-    public function queryTemplateCategorys()
+    public function queryRoleTagList()
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new QueryTemplateCategorysHeaders([]);
+        $headers = new QueryRoleTagListHeaders([]);
 
-        return $this->queryTemplateCategorysWithOptions($headers, $runtime);
+        return $this->queryRoleTagListWithOptions($headers, $runtime);
     }
 
     /**
@@ -255,26 +305,35 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'QueryTemplateCategorys',
+            'version'     => 'apaas_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/apaas/templates/categories',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryTemplateCategorysResponse::fromMap($this->doROARequest('QueryTemplateCategorys', 'apaas_1.0', 'HTTP', 'GET', 'AK', '/v1.0/apaas/templates/categories', 'json', $req, $runtime));
+        return QueryTemplateCategorysResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
-     * @param RecallAuditTemplateRequest $request
-     *
-     * @return RecallAuditTemplateResponse
+     * @return QueryTemplateCategorysResponse
      */
-    public function recallAuditTemplate($request)
+    public function queryTemplateCategorys()
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new RecallAuditTemplateHeaders([]);
+        $headers = new QueryTemplateCategorysHeaders([]);
 
-        return $this->recallAuditTemplateWithOptions($request, $headers, $runtime);
+        return $this->queryTemplateCategorysWithOptions($headers, $runtime);
     }
 
     /**
@@ -289,20 +348,44 @@ class Dingtalk extends OpenApiClient
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->templateKeys)) {
-            @$body['templateKeys'] = $request->templateKeys;
+            $body['templateKeys'] = $request->templateKeys;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'RecallAuditTemplate',
+            'version'     => 'apaas_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/apaas/templates/audits/recall',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return RecallAuditTemplateResponse::fromMap($this->doROARequest('RecallAuditTemplate', 'apaas_1.0', 'HTTP', 'POST', 'AK', '/v1.0/apaas/templates/audits/recall', 'json', $req, $runtime));
+        return RecallAuditTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param RecallAuditTemplateRequest $request
+     *
+     * @return RecallAuditTemplateResponse
+     */
+    public function recallAuditTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RecallAuditTemplateHeaders([]);
+
+        return $this->recallAuditTemplateWithOptions($request, $headers, $runtime);
     }
 }

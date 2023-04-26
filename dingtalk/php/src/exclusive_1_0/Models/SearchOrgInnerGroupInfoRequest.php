@@ -9,91 +9,91 @@ use AlibabaCloud\Tea\Model;
 class SearchOrgInnerGroupInfoRequest extends Model
 {
     /**
-     * @description createTimeEnd
+     * @example 创建时间查询最大时间戳
      *
      * @var int
      */
     public $createTimeEnd;
 
     /**
-     * @description createTimeStart
+     * @example 创建时间查询最小时间戳
      *
      * @var int
      */
     public $createTimeStart;
 
     /**
-     * @description groupMembersCntEnd
+     * @example 群人数范围最大值，例如100
      *
      * @var int
      */
     public $groupMembersCountEnd;
 
     /**
-     * @description groupMembersCntStart
+     * @example 群人数范围最小值，例如1
      *
      * @var int
      */
     public $groupMembersCountStart;
 
     /**
-     * @description groupName
+     * @example 群名称
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description groupOwner
+     * @example 群主userId
      *
      * @var string
      */
     public $groupOwner;
 
     /**
-     * @description lastActiveTimeEnd
+     * @example 最后一次活跃时间戳最大值
      *
      * @var int
      */
     public $lastActiveTimeEnd;
 
     /**
-     * @description lastActiveTimeStart
+     * @example 最后一次活跃时间戳最小值
      *
      * @var int
      */
     public $lastActiveTimeStart;
 
     /**
-     * @description operatorUserId
+     * @example 当前查询人的userId
      *
      * @var string
      */
     public $operatorUserId;
 
     /**
-     * @description pageSize
+     * @example 分页大小，最大不能超过100
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description pageStart
+     * @example 分页号，从1开始
      *
      * @var int
      */
     public $pageStart;
 
     /**
-     * @description syncToDingpan
+     * @example 是否同步到钉盘 0不同步 1同步
      *
      * @var int
      */
     public $syncToDingpan;
 
     /**
-     * @description uuid
+     * @example 每次查询唯一标识，保证每次分页查询时该值不变
      *
      * @var string
      */

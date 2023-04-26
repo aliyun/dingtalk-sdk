@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class tasks extends Model
 {
     /**
-     * @description 节点id
+     * @example 1234_abcd
      *
      * @var string
      */
     public $activityId;
 
     /**
-     * @description 任务创建时间戳
+     * @example 1657522271000
      *
      * @var int
      */
     public $createTimestamp;
 
     /**
-     * @description 任务结束时间戳
+     * @example 1657522271000
      *
      * @var int
      */
     public $finishTimestamp;
 
     /**
-     * @description 任务结果
+     * @example 分为AGREE（同意），REFUSE（拒绝），REDIRECTED（转交）
      *
      * @var string
      */
     public $result;
 
     /**
-     * @description 任务状态
+     * @example NEW（未启动），RUNNING（处理中），PAUSED（暂停），CANCELED（取消），COMPLETED（完成），TERMINATED（终止）
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 任务Id
+     * @example 123456
      *
      * @var int
      */
     public $taskId;
 
     /**
-     * @description 任务处理人
+     * @example staff1234
      *
      * @var string
      */

@@ -9,26 +9,28 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreContactInfoResponseBody extends Model
 {
     /**
-     * @description 门店通通讯录Code
+     * @example codexxxxx
      *
      * @var string
      */
     public $code;
 
     /**
+     * @example 123
+     *
      * @var int
      */
     public $dingDeptId;
 
     /**
-     * @description 门店通通讯录名称
+     * @example 门店通
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 门店通通讯录根节点Id
+     * @example 5647993312
      *
      * @var int
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class detailList extends Model
 {
     /**
-     * @description 计算优惠后的实付金额，单位为分
+     * @example 100
      *
      * @var int
      */
     public $actualAmount;
 
     /**
-     * @description 应付金额，单位为分
+     * @example 100
      *
      * @var int
      */
     public $itemAmount;
 
     /**
-     * @description 商品名
+     * @example 测试商品
      *
      * @var string
      */
     public $itemName;
 
     /**
-     * @description 场景
+     * @example 1
      *
      * @var int
      */

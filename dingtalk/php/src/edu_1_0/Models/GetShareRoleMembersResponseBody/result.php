@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 分支组织corpId
+     * @example ding4lj234j3hj43hl312lh
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 角色成员在主干组织中的userId列表
-     *
      * @var string[]
      */
     public $memberUserIdListInTrunkOrg;

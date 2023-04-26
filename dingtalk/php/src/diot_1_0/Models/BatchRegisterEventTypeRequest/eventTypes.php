@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class eventTypes extends Model
 {
     /**
-     * @description 事件类型(唯一)，最长20个字符。
+     * @example fireDetect
      *
      * @var string
      */
     public $eventType;
 
     /**
-     * @description 事件类型名称，长度4-20个字符，一个中文汉字算2个字符。
+     * @example 火焰告警
      *
      * @var string
      */

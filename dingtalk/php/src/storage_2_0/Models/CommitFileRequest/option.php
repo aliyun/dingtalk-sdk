@@ -10,37 +10,43 @@ use AlibabaCloud\Tea\Model;
 class option extends Model
 {
     /**
-     * @description 文件在应用上的属性, 一个应用最多只能设置3个属性
-     * 3
      * @var appProperties[]
      */
     public $appProperties;
 
     /**
-     * @description 文件名称冲突策略
-     * AUTO_RENAME
+     * @example AUTO_RENAME
+     *
      * @var string
      */
     public $conflictStrategy;
 
     /**
-     * @description 是否转换成在线文档
-     * false
+     * @example false
+     *
      * @var bool
      */
     public $convertToOnlineDoc;
 
     /**
-     * @description 默认文件大小, 单位:Byte
-     * 如果此字段不为空，企业存储系统会校验文件实际大小是否和此字段是否一致，不一致会报错
+     * @example DOC
+     *
+     * @var string
+     */
+    public $convertToOnlineDocTargetDocumentType;
+
+    /**
+     * @example 512
+     *
      * @var int
      */
     public $size;
     protected $_name = [
-        'appProperties'      => 'appProperties',
-        'conflictStrategy'   => 'conflictStrategy',
-        'convertToOnlineDoc' => 'convertToOnlineDoc',
-        'size'               => 'size',
+        'appProperties'                        => 'appProperties',
+        'conflictStrategy'                     => 'conflictStrategy',
+        'convertToOnlineDoc'                   => 'convertToOnlineDoc',
+        'convertToOnlineDocTargetDocumentType' => 'convertToOnlineDocTargetDocumentType',
+        'size'                                 => 'size',
     ];
 
     public function validate()
@@ -64,6 +70,9 @@ class option extends Model
         }
         if (null !== $this->convertToOnlineDoc) {
             $res['convertToOnlineDoc'] = $this->convertToOnlineDoc;
+        }
+        if (null !== $this->convertToOnlineDocTargetDocumentType) {
+            $res['convertToOnlineDocTargetDocumentType'] = $this->convertToOnlineDocTargetDocumentType;
         }
         if (null !== $this->size) {
             $res['size'] = $this->size;
@@ -94,6 +103,9 @@ class option extends Model
         }
         if (isset($map['convertToOnlineDoc'])) {
             $model->convertToOnlineDoc = $map['convertToOnlineDoc'];
+        }
+        if (isset($map['convertToOnlineDocTargetDocumentType'])) {
+            $model->convertToOnlineDocTargetDocumentType = $map['convertToOnlineDocTargetDocumentType'];
         }
         if (isset($map['size'])) {
             $model->size = $map['size'];

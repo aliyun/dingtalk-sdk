@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 自定义字段数组
-     *
      * @var customfields[]
      */
     public $customfields;

@@ -9,57 +9,53 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupConversationRequest extends Model
 {
     /**
-     * @description 钉外成员列表。
-     *
      * @var string[]
      */
     public $appUserIds;
 
     /**
-     * @description 群头像地址。
+     * @example http://***.png
      *
      * @var string
      */
     public $groupAvatar;
 
     /**
-     * @description 群名称。
+     * @example 客户群
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 群主在业务系统内的唯一标识
+     * @example 1745****8777
      *
      * @var string
      */
     public $groupOwnerId;
 
     /**
-     * @description 群主类型<2.钉内用户类型 3.钉外用户类型>，如果不指定的话，默认是钉钉用户类型
+     * @example 3
      *
      * @var int
      */
     public $groupOwnerType;
 
     /**
-     * @description 群模板Id。
+     * @example 8d42****nkld
      *
      * @var string
      */
     public $groupTemplateId;
 
     /**
-     * @description 操作者在业务系统内的唯一标识。
+     * @example 1745****8777
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 钉内成员列表。
-     *
      * @var string[]
      */
     public $userIds;

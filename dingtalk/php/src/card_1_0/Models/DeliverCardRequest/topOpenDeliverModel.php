@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class topOpenDeliverModel extends Model
 {
     /**
-     * @description 【必填】过期时间戳
+     * @example 1665473229000
      *
      * @var int
      */
     public $expiredTimeMillis;
 
     /**
-     * @description 可以查看该吊顶卡片的设备
-     *
      * @var string[]
      */
     public $platforms;
 
     /**
-     * @description 可以查看该吊顶卡片的staffId
-     *
      * @var string[]
      */
     public $userIds;

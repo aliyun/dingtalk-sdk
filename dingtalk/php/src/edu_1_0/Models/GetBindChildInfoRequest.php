@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetBindChildInfoRequest extends Model
 {
     /**
-     * @description 学校id
+     * @example ding95eef8003c9ca8ca24f2f5cc6abecb85
      *
      * @var string
      */
     public $schoolCorpId;
 
     /**
-     * @description 学生id
+     * @example 3000000000307711730
      *
      * @var string
      */
     public $studentUserId;
 
     /**
-     * @description 当前操作人唯一id
+     * @example X5y5kd8XiiqiScCl4Qlfy5GgiEiE
      *
      * @var string
      */

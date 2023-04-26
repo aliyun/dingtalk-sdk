@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupBlackboardRequest extends Model
 {
     /**
-     * @description 文本内容
+     * @example 这是一条群公告
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 群会话的 Id
+     * @example cid123456
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 是否发DING
+     * @example false
      *
      * @var bool
      */
     public $sendDing;
 
     /**
-     * @description 是否设为置顶
+     * @example false
      *
      * @var bool
      */
     public $sticky;
 
     /**
-     * @description 业务唯一键
+     * @example xxx
      *
      * @var string
      */
     public $uniqueId;
 
     /**
-     * @description 操作用户的 userId
+     * @example 001
      *
      * @var string
      */

@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class DeleteRecycleItemsRequest extends Model
 {
     /**
-     * @description 回收项id列表
-     * 50
      * @var string[]
      */
     public $recycleItemIds;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

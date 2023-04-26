@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class DingTalkSecurityCheckRequest extends Model
 {
     /**
-     * @description 客户端版本号
+     * @example 6.3.30
      *
      * @var string
      */
     public $clientVer;
 
     /**
-     * @description 客户端平台类型(iOS,Android)
+     * @example iOS
      *
      * @var string
      */
     public $platform;
 
     /**
-     * @description 客户端平台平台版本
+     * @example 15
      *
      * @var string
      */
     public $platformVer;
 
     /**
-     * @description 加密字符
+     * @example {"lbsWuaToken": "lbsWua","ddSec":"ddSec"}
      *
      * @var string
      */
     public $sec;
 
     /**
-     * @description 用户id
+     * @example user01
      *
      * @var string
      */

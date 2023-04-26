@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryProcessesInstanceRequest extends Model
 {
     /**
-     * @description 业务数据id
+     * @example 006f870b-4d1c-4cd0-85b3-2e866798e947
      *
      * @var string
      */
     public $bizObjectId;
 
     /**
-     * @description 表单编码
+     * @example D0001833abb0fb61524487eb01848207bc89b47
      *
      * @var string
      */

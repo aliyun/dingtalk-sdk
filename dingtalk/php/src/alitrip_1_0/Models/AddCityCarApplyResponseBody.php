@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class AddCityCarApplyResponseBody extends Model
 {
     /**
-     * @description 商旅内部审批单ID
+     * @example 1
      *
      * @var int
      */

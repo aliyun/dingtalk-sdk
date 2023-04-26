@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 成员状态，已进组织或者待接收邀请
+     * @example NORMAL
      *
      * @var string
      */
     public $dingMemberStatus;
 
     /**
-     * @description 成员是否激活
+     * @example true
      *
      * @var bool
      */
     public $isActive;
 
     /**
-     * @description 成员名字
+     * @example 李白
      *
      * @var string
      */
     public $memberName;
 
     /**
-     * @description 成员在上下游中的工号
+     * @example 123
      *
      * @var string
      */

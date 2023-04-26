@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class visitInfo extends Model
 {
     /**
-     * @description 用户对这个团队的访问情况
+     * @example 5
      *
      * @var string
      */

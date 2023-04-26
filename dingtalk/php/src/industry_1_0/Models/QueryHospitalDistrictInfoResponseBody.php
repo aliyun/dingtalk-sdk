@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class QueryHospitalDistrictInfoResponseBody extends Model
 {
     /**
-     * @description 院区病区详情
-     *
      * @var content[]
      */
     public $content;
 
     /**
-     * @description 当前页码
+     * @example 2
      *
      * @var int
      */
     public $currentPage;
 
     /**
-     * @description 数据总量
+     * @example 100
      *
      * @var int
      */
     public $totalCount;
 
     /**
-     * @description 总页数
+     * @example 10
      *
      * @var int
      */

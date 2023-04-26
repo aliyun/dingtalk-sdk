@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class body extends Model
 {
     /**
-     * @description 直播id列表
-     *
      * @var string[]
      */
     public $liveIds;

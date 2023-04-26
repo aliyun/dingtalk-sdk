@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetSignOutListResponseBody extends Model
 {
     /**
-     * @description 翻页token
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 签退信息
-     *
      * @var users[]
      */
     public $users;

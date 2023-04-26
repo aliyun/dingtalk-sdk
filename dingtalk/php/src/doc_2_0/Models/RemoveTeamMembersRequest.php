@@ -10,21 +10,17 @@ use AlibabaCloud\Tea\Model;
 class RemoveTeamMembersRequest extends Model
 {
     /**
-     * @description 待移除的成员列表。
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 是否通知被移除的成员，默认否。
-     *
      * @var bool
      */
     public $notify;
 
     /**
-     * @description 操作人unionId。
+     * @example YEp3JcM******UIbhwiE
      *
      * @var string
      */

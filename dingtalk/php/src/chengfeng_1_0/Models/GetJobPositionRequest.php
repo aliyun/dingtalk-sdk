@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetJobPositionRequest extends Model
 {
     /**
-     * @description 职位编码
+     * @example 1
      *
      * @var string
      */

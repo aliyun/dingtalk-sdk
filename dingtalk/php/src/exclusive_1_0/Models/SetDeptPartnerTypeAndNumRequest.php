@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class SetDeptPartnerTypeAndNumRequest extends Model
 {
     /**
-     * @description 部门id
+     * @example 1234
      *
      * @var string
      */
     public $deptId;
 
     /**
-     * @description 伙伴类型id列表
-     *
      * @var string[]
      */
     public $labelIds;
 
     /**
-     * @description 伙伴编码
+     * @example 1234
      *
      * @var string
      */

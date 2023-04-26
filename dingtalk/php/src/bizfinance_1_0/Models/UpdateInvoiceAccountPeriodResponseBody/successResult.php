@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class successResult extends Model
 {
     /**
-     * @description 发票代码
-     *
      * @var string
      */
     public $invoiceCode;
 
     /**
-     * @description 发票号码
-     *
      * @var string
      */
     public $invoiceNo;

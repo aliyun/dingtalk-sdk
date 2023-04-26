@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class headerSignatureUploadInfo extends Model
 {
     /**
-     * @description 过期秒数
-     *
      * @var int
      */
     public $expirationSeconds;
 
     /**
-     * @description header加签信息
-     *
      * @var mixed[]
      */
     public $headers;
 
     /**
-     * @description 内网上传地址
-     *
      * @var string
      */
     public $internalResourceUrl;
 
     /**
-     * @description mediaId
-     *
      * @var string
      */
     public $mediaId;
 
     /**
-     * @description 上传地址
-     *
      * @var string
      */
     public $resourceUrl;

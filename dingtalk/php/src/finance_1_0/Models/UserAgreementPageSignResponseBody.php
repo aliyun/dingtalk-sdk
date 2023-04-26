@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UserAgreementPageSignResponseBody extends Model
 {
     /**
-     * @description 拉起签约页的字符串
+     * @example 略
      *
      * @var string
      */

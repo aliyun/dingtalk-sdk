@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class AlignObjectiveRequest extends Model
 {
     /**
-     * @description 周期 ID。
+     * @example 1006
      *
      * @var string
      */
     public $periodId;
 
     /**
-     * @description 对齐目标的 ID。
+     * @example 59YD
      *
      * @var string
      */
     public $targetId;
 
     /**
-     * @description 当前用户的 user ID。
+     * @example 0115396701752283
      *
      * @var string
      */

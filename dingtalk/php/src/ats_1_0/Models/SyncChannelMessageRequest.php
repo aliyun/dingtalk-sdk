@@ -9,47 +9,49 @@ use AlibabaCloud\Tea\Model;
 class SyncChannelMessageRequest extends Model
 {
     /**
+     * @example ddats
+     *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 渠道标识。
+     * @example Corp-ABC-prd
      *
      * @var string
      */
     public $channel;
 
     /**
-     * @description 消息内容。
+     * @example {"msgtype":"text","text":{"content":"月会通知"}}
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 消息创建时间。
+     * @example 1667964772048
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 消息接收者ID。
+     * @example AppUid@Channel
      *
      * @var string
      */
     public $receiverUserId;
 
     /**
-     * @description 消息发送者用户ID。
+     * @example AppUid@Channel
      *
      * @var string
      */
     public $senderUserId;
 
     /**
-     * @description 消息UUID，业务方产生用于去重。
+     * @example 594c5b30-57bd-4001-8903-4dc64cdc6739
      *
      * @var string
      */

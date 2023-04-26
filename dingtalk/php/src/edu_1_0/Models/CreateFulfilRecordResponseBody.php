@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreateFulfilRecordResponseBody extends Model
 {
     /**
-     * @description 成功信息
+     * @example success
      *
      * @var string
      */

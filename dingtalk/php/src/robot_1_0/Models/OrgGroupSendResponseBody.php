@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class OrgGroupSendResponseBody extends Model
 {
     /**
-     * @description 加密消息id
-     *
      * @var string
      */
     public $processQueryKey;

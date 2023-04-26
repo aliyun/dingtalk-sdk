@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class PushIntelligentRobotGroupMessageResponseBody extends Model
 {
     /**
-     * @description 推送queryKey
+     * @example 1234
      *
      * @var string
      */

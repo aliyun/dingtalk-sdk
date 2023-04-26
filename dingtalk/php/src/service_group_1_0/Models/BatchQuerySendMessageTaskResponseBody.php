@@ -15,8 +15,6 @@ class BatchQuerySendMessageTaskResponseBody extends Model
     public $maxResults;
 
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $nextToken;

@@ -9,28 +9,24 @@ use AlibabaCloud\Tea\Model;
 class RelatedSpacesRequest extends Model
 {
     /**
-     * @description 每页最大条目数，最大值100。
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标，第一页可不传。
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 操作用户unionId。
+     * @example abcd
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 小组id。
+     * @example abc
      *
      * @var string
      */

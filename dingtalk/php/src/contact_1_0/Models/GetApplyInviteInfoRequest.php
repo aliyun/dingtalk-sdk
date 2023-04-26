@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetApplyInviteInfoRequest extends Model
 {
     /**
-     * @description 获取部门邀请链接的部门ID
-     *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 邀请者userId
-     *
      * @var string
      */
     public $inviterUserId;

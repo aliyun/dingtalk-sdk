@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryDeviceRequest extends Model
 {
     /**
-     * @description 钉钉组织id
+     * @example ding123
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 指定显示返回结果中的第几页的内容。默认值是 1
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 指定返回结果中每页显示的记录数量，最大值是50。默认值是10
+     * @example 10
      *
      * @var int
      */

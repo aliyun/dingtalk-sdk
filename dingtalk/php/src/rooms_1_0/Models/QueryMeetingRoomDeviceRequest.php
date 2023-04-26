@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryMeetingRoomDeviceRequest extends Model
 {
     /**
-     * @description 查询设备id
+     * @example 1234
      *
      * @var string
      */
     public $deviceId;
 
     /**
-     * @description 查询设备unionId
+     * @example "lmvUrRkpboRrSMtgsiS9V3AiEiE"
      *
      * @var string
      */
     public $deviceUnionId;
 
     /**
-     * @description 查询人unionId
+     * @example "lmvUrEjpboFrSMtgsiS9V3AiEiE"
      *
      * @var string
      */

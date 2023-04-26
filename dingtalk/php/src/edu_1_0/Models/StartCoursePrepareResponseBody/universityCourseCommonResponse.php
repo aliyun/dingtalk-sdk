@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class universityCourseCommonResponse extends Model
 {
     /**
-     * @description 课程编码
+     * @example testCourseCode
      *
      * @var string
      */
     public $courseCode;
 
     /**
-     * @description 调用是否成功
+     * @example true
      *
      * @var bool
      */

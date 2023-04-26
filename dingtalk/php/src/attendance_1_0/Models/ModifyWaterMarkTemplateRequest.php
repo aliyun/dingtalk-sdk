@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class ModifyWaterMarkTemplateRequest extends Model
 {
     /**
-     * @description 模板的表单Code。
+     * @example PROC-292988B1-5064-4A42-9389-A76B97xxxxx
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 模板的预览图片。
+     * @example https://xx.xx.png
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 模板的布局ID。
+     * @example industry_dx_xx
      *
      * @var string
      */
     public $layoutDesignId;
 
     /**
-     * @description 模板的内容。
+     * @example { \"items\":[ { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"enableModifyPlace\", \"id\":\"enableModifyPlace-undefined\", \"value\":\"true\" } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"modifyPlaceDistance\", \"id\":\"modifyPlaceDistance-undefined\", \"value\":200 } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"title\", \"id\":\"title-undefined\", \"value\":\"wofu1\" } }, { \"componentName\":\"HiddenField\", \"props\":{ \"bizAlias\":\"titleBgColor\", \"id\":\"titleBgColor-undefined\", \"value\":\"#0089FF\" } } ] }
      *
      * @var string
      */
     public $schemaContent;
 
     /**
-     * @description 模板的标题。
+     * @example 标题
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 模板的水印ID。
+     * @example PROC-292988B1-5064-4A42-9389-A76B97xxxxx
      *
      * @var string
      */
     public $waterMarkId;
 
     /**
-     * @description 群会话ID。
+     * @example 1234567
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 用户的userid。
+     * @example manage123
      *
      * @var string
      */

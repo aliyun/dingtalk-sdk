@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class AddApplicationRegFormTemplateResponseBody extends Model
 {
     /**
-     * @description 模板标识
+     * @example xxxxxx
      *
      * @var string
      */
     public $templateId;
 
     /**
-     * @description 模板版本
+     * @example 0
      *
      * @var int
      */

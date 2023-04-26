@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class SearchTaskflowStatusResponseBody extends Model
 {
     /**
-     * @description 任务工作流状态列表。
-     *
      * @var result[]
      */
     public $result;

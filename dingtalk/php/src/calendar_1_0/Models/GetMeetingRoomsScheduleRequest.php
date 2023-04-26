@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class GetMeetingRoomsScheduleRequest extends Model
 {
     /**
-     * @description 查询结束时间
-     *
      * @var string
      */
     public $endTime;
 
     /**
-     * @description 待查询的用户列表
-     *
      * @var string[]
      */
     public $roomIds;
 
     /**
-     * @description 查询开始时间
-     *
      * @var string
      */
     public $startTime;

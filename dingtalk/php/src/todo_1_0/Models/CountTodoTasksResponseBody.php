@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CountTodoTasksResponseBody extends Model
 {
     /**
-     * @description 待办数量
+     * @example 99
      *
      * @var int
      */

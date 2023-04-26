@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description token
-     *
      * @var string
      */
     public $authToken;
 
     /**
-     * @description 小二渠道来源 DT/LINKS
-     *
      * @var string
      */
     public $channel;
 
     /**
-     * @description token有效期秒
-     *
      * @var int
      */
     public $effectiveTime;
 
     /**
-     * @description 小二id
-     *
      * @var string
      */
     public $serverId;
 
     /**
-     * @description 小二名称
-     *
      * @var string
      */
     public $serverName;

@@ -10,63 +10,61 @@ use AlibabaCloud\Tea\Model;
 class paragraphList extends Model
 {
     /**
-     * @description 结束时间，毫秒
+     * @example 7940
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 游标，下次查询时使用
+     * @example 1631172045153000
      *
      * @var int
      */
     public $nextTtoken;
 
     /**
-     * @description 发言人昵称
+     * @example 小钉
      *
      * @var string
      */
     public $nickName;
 
     /**
-     * @description 段落内容
+     * @example 嘿！你好，这里是小钉
      *
      * @var string
      */
     public $paragraph;
 
     /**
-     * @description 云录制id
+     * @example 44444
      *
      * @var int
      */
     public $recordId;
 
     /**
-     * @description 句子列表
-     *
      * @var sentenceList[]
      */
     public $sentenceList;
 
     /**
-     * @description 开始时间，毫秒
+     * @example 7940
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 状态，暂不解析
+     * @example 1
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 发言人unionId
+     * @example WFBkgJvt0xxxxSaA1jK4sgiEiE
      *
      * @var string
      */

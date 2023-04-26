@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class MoveDentryResponseBody extends Model
 {
     /**
-     * @description 是否是异步任务
-     * 如果操作对象有子节点，则会异步处理
+     * @example true
+     *
      * @var bool
      */
     public $async;
 
     /**
-     * @description 文件信息
-     *
      * @var dentry
      */
     public $dentry;
 
     /**
-     * @description 任务id，用于查询任务执行状态
+     * @example task_id
      *
      * @var string
      */

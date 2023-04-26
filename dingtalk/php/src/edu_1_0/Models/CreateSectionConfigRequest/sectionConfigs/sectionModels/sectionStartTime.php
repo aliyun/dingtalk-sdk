@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class sectionStartTime extends Model
 {
     /**
-     * @description 小时
+     * @example 11
      *
      * @var int
      */
     public $hour;
 
     /**
-     * @description 分
+     * @example 0
      *
      * @var int
      */

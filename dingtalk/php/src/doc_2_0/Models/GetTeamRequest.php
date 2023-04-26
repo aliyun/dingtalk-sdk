@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetTeamRequest extends Model
 {
     /**
-     * @description 操作用户unionId。
+     * @example YEp3JcM******UIbhwiE
      *
      * @var string
      */

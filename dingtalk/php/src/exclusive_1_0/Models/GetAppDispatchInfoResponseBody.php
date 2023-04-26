@@ -13,29 +13,21 @@ use AlibabaCloud\Tea\Model;
 class GetAppDispatchInfoResponseBody extends Model
 {
     /**
-     * @description android打包记录
-     *
      * @var android[]
      */
     public $android;
 
     /**
-     * @description iOS打包记录
-     *
      * @var iOS[]
      */
     public $iOS;
 
     /**
-     * @description mac打包记录
-     *
      * @var mac[]
      */
     public $mac;
 
     /**
-     * @description windows打包记录
-     *
      * @var windows[]
      */
     public $windows;

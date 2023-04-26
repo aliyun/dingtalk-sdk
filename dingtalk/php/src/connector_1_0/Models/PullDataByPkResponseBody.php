@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class PullDataByPkResponseBody extends Model
 {
     /**
-     * @description 创建数据的应用id。
-     *
      * @var string
      */
     public $dataCreateAppId;
 
     /**
-     * @description 创建数据的应用类型，isv应用为premium_microapp。
-     *
      * @var string
      */
     public $dataCreateAppType;
 
     /**
-     * @description 数据创建时间。
-     *
      * @var int
      */
     public $dataGmtCreate;
 
     /**
-     * @description 数据最后修改时间。
-     *
      * @var int
      */
     public $dataGmtModified;
 
     /**
-     * @description 最后修改数据的应用id。
-     *
      * @var string
      */
     public $dataModifiedAppId;
 
     /**
-     * @description 最后修改数据的应用类型，取值同dataCreateAppType。
-     *
      * @var string
      */
     public $dataModifiedAppType;
 
     /**
-     * @description 数据完整内容。
-     *
      * @var string
      */
     public $jsonData;

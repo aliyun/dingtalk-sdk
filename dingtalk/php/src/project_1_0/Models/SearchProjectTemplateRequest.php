@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SearchProjectTemplateRequest extends Model
 {
     /**
-     * @description 项目模板名关键词
+     * @example 模板1
      *
      * @var string
      */

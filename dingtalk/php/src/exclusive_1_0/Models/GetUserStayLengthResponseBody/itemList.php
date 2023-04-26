@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class itemList extends Model
 {
     /**
-     * @description 员工名称
+     * @example 小张
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 统计日期
+     * @example 20220501
      *
      * @var string
      */
     public $statDate;
 
     /**
-     * @description 1日app使用时长（秒）
+     * @example 1000
      *
      * @var int
      */
     public $stayTimeLenApp1d;
 
     /**
-     * @description 1日PC端使用时长（秒）
+     * @example 2000
      *
      * @var int
      */
     public $stayTimeLenPc1d;
 
     /**
-     * @description 工号
+     * @example 123***
      *
      * @var string
      */

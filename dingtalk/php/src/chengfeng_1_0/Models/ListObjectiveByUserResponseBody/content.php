@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 总数
+     * @example 1
      *
      * @var int
      */

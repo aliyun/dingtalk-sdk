@@ -12,21 +12,19 @@ use AlibabaCloud\Tea\Model;
 class jobInfo extends Model
 {
     /**
-     * @description 地址信息
-     *
      * @var address
      */
     public $address;
 
     /**
-     * @description 职位分类编码
+     * @example C10001
      *
      * @var string
      */
     public $category;
 
     /**
-     * @description 职位描述
+     * @example 园艺师职位描述
      *
      * @var string
      */
@@ -38,70 +36,64 @@ class jobInfo extends Model
     public $extInfo;
 
     /**
-     * @description 全职信息
-     *
      * @var fullTimeInfo
      */
     public $fullTimeInfo;
 
     /**
-     * @description 招聘人数
+     * @example 20
      *
      * @var string
      */
     public $headCount;
 
     /**
-     * @description 职位性质
+     * @example FULL-TIME
      *
      * @var string
      */
     public $jobNature;
 
     /**
-     * @description 职位标签，字符串列表
-     *
      * @var string[]
      */
     public $jobTags;
 
     /**
-     * @description 最高薪资
+     * @example 8000
      *
      * @var string
      */
     public $maxSalary;
 
     /**
-     * @description 最低薪资
+     * @example 3000
      *
      * @var string
      */
     public $minSalary;
 
     /**
-     * @description 职位名称
+     * @example 园艺师
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 渠道职位ID
+     * @example jobIdxxxxxxx
      *
      * @var string
      */
     public $outJobId;
 
     /**
-     * @description 兼职信息
-     *
      * @var partTimeInfo
      */
     public $partTimeInfo;
 
     /**
-     * @description 学历要求
+     * @example 高中
      *
      * @var string
      */

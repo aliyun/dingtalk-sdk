@@ -9,29 +9,25 @@ use AlibabaCloud\Tea\Model;
 class target extends Model
 {
     /**
-     * @description 表单类型，0流程表单
+     * @example 0
      *
      * @var int
      */
     public $appType;
 
     /**
-     * @description 应用appUuid
+     * @example SWAPP-abcd
      *
      * @var string
      */
     public $appUuid;
 
     /**
-     * @description 关联表单业务标识
-     *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 关联表单的formCode
-     *
      * @var string
      */
     public $formCode;

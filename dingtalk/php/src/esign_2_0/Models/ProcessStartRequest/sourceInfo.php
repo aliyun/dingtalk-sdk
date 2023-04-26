@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class sourceInfo extends Model
 {
     /**
-     * @description 移动端跳转地址
-     *
      * @var string
      */
     public $mobileUrl;
 
     /**
-     * @description pc端跳转地址
-     *
      * @var string
      */
     public $pcUrl;
 
     /**
-     * @description 展示文案
-     *
      * @var string
      */
     public $showText;

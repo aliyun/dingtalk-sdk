@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class statField extends Model
 {
     /**
-     * @description 需要统计的明细控件内子控件id
+     * @example NumberField-abcd
      *
      * @var string
      */
     public $componentId;
 
     /**
-     * @description 子控件标题
+     * @example 金额
      *
      * @var string
      */
     public $label;
 
     /**
-     * @description 金额控件是否需要大写，1不需要大写，其他需要大写
+     * @example 1
      *
      * @var string
      */

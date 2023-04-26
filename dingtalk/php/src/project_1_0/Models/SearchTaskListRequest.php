@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class SearchTaskListRequest extends Model
 {
     /**
-     * @description 每页返回最大数量。默认10，最大300。
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页标，从上一次请求结果中获取。
+     * @example f279e812xxxxxx
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 模糊任务分组名字。
+     * @example 自定义分组1
      *
      * @var string
      */
     public $query;
 
     /**
-     * @description 任务分组ID集合，逗号组合。
+     * @example 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
      *
      * @var string
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class RollbackMiniAppVersionResponseBody extends Model
 {
     /**
-     * @description 失败原因
+     * @example 成功
      *
      * @var string
      */
     public $cause;
 
     /**
-     * @description 结果码
+     * @example 200
      *
      * @var int
      */

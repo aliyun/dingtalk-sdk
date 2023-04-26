@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetNewestInnerGroupsResponseBody extends Model
 {
     /**
-     * @description 群列表
-     *
      * @var groupInfos[]
      */
     public $groupInfos;

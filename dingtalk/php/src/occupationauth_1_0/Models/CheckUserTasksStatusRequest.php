@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CheckUserTasksStatusRequest extends Model
 {
     /**
-     * @description 省级任务对接入
-     *
      * @var string
      */
     public $provinceCode;

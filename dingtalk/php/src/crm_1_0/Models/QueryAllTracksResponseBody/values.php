@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class values extends Model
 {
     /**
-     * @description 动态外键
+     * @example 1234
      *
      * @var string
      */
     public $bizId;
 
     /**
-     * @description 创建人userId
+     * @example manager1234
      *
      * @var string
      */
     public $creator;
 
     /**
-     * @description 客户id
+     * @example customer_id
      *
      * @var string
      */
     public $customerId;
 
     /**
-     * @description 创建时间
+     * @example 1237126786127
      *
      * @var int
      */
     public $gmtCreate;
 
     /**
-     * @description 动态加密主键
+     * @example asjkdh189127836
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 动态子类型
+     * @example 4
      *
      * @var int
      */
     public $subType;
 
     /**
-     * @description 动态类型
+     * @example 80
      *
      * @var int
      */

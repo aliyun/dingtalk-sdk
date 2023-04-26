@@ -9,57 +9,41 @@ use AlibabaCloud\Tea\Model;
 class QueryRegisterOrderResponseBody extends Model
 {
     /**
-     * @description 失败原因
-     *
      * @var string
      */
     public $failReason;
 
     /**
-     * @description 审核时间
-     *
      * @var string
      */
     public $gmtAudit;
 
     /**
-     * @description 主机构编号
-     *
      * @var string
      */
     public $instId;
 
     /**
-     * @description 申请单号
-     *
      * @var string
      */
     public $orderId;
 
     /**
-     * @description 外部流水号
-     *
      * @var string
      */
     public $outTradeNo;
 
     /**
-     * @description 申请单状态
-     *
      * @var string
      */
     public $status;
 
     /**
-     * @description 子机构编号
-     *
      * @var string
      */
     public $subInstId;
 
     /**
-     * @description 子机构名称
-     *
      * @var string
      */
     public $subInstName;

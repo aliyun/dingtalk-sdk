@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class cardData extends Model
 {
     /**
-     * @description 卡片模板内容替换参数-多媒体类型
-     *
      * @var string[]
      */
     public $cardMediaIdParamMap;
 
     /**
-     * @description 卡片模板内容替换参数-普通文本类型
-     *
      * @var string[]
      */
     public $cardParamMap;

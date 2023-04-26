@@ -10,15 +10,15 @@ use AlibabaCloud\Tea\Model;
 class OpenConnectionRequest extends Model
 {
     /**
-     * @description 企业三方应用为suiteKey
-     * 企业自建应用为appKey
+     * @example suiteudabcd123
+     *
      * @var string
      */
     public $clientId;
 
     /**
-     * @description 企业三方应用为suiteSecret
-     * 企业自己应用为appSecret
+     * @example 9W1berqrwfs
+     *
      * @var string
      */
     public $clientSecret;

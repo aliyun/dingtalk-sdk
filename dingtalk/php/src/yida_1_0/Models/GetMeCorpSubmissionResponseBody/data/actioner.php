@@ -9,127 +9,91 @@ use AlibabaCloud\Tea\Model;
 class actioner extends Model
 {
     /**
-     * @description buName
-     *
      * @var string
      */
     public $buName;
 
     /**
-     * @description email
-     *
      * @var string
      */
     public $email;
 
     /**
-     * @description empType
-     *
      * @var string
      */
     public $employeeType;
 
     /**
-     * @description employeeTypeInformation
-     *
      * @var string
      */
     public $employeeTypeInformation;
 
     /**
-     * @description hrgWorkNo
-     *
      * @var string
      */
     public $humanResourceGroupWorkNumber;
 
     /**
-     * @description isSystemAdmin
-     *
      * @var bool
      */
     public $isSystemAdmin;
 
     /**
-     * @description level
-     *
      * @var string
      */
     public $level;
 
     /**
-     * @description name
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description nickName
-     *
      * @var string
      */
     public $nickName;
 
     /**
-     * @description orderNum
-     *
      * @var string
      */
     public $orderNumber;
 
     /**
-     * @description personalPhoto
-     *
      * @var string
      */
     public $personalPhoto;
 
     /**
-     * @description personalPhotoUrl
-     *
      * @var string
      */
     public $personalPhotoUrl;
 
     /**
-     * @description pinyinNameAll
-     *
      * @var string
      */
     public $pinyinNameAll;
 
     /**
-     * @description pinyinNick
-     *
      * @var string
      */
     public $pinyinNickName;
 
     /**
-     * @description state
-     *
      * @var string
      */
     public $state;
 
     /**
-     * @description superUserId
-     *
      * @var string
      */
     public $superUserId;
 
     /**
-     * @description tbWang
-     *
      * @var string
      */
     public $tbWang;
 
     /**
-     * @description userId
-     *
      * @var string
      */
     public $userId;

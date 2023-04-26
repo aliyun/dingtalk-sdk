@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class customfields extends Model
 {
     /**
-     * @description 自定义字段ID。
-     *
      * @var string
      */
     public $customfieldId;
 
     /**
-     * @description 自定义字段类型。
-     *
      * @var string
      */
     public $type;
 
     /**
-     * @description 自定义字段值列表。
-     *
      * @var value[]
      */
     public $value;

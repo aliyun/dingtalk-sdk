@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class AddFolderResponseBody extends Model
 {
     /**
-     * @description 文件夹信息
-     * dentry.type等于FOLDER表示是文件夹
      * @var dentry
      */
     public $dentry;

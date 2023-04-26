@@ -10,43 +10,40 @@ use AlibabaCloud\Tea\Model;
 class ExecuteProcessInstanceRequest extends Model
 {
     /**
-     * @description 操作人userid，可通过调用获取审批实例详情接口获取。
+     * @example 133743186427339452
      *
      * @var string
      */
     public $actionerUserId;
 
     /**
-     * @description 文件。
-     *
      * @var file
      */
     public $file;
 
     /**
-     * @description 审批实例ID，可通过调用获取审批实例ID列表接口获取。
+     * @example a171de6c-8bxxxx
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 审批意见，可为空。
+     * @example 同意。
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 审批操作，取值。
+     * @example agree
      *
-     * refuse：拒绝
      * @var string
      */
     public $result;
 
     /**
-     * @description 任务节点id，可通过调用获取审批实例详情接口获取。
+     * @example 67583405630
      *
      * @var int
      */

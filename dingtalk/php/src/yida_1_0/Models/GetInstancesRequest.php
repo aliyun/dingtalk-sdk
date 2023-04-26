@@ -9,119 +9,117 @@ use AlibabaCloud\Tea\Model;
 class GetInstancesRequest extends Model
 {
     /**
-     * @description 应用编码
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 审批结果。可选值为：agree, disagree。 分别表示：同意， 拒绝。
+     * @example agree
      *
      * @var string
      */
     public $approvedResult;
 
     /**
-     * @description createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表, 字符串格式，且为yyyy-MM-DD格式
+     * @example 2018-01-01
      *
      * @var string
      */
     public $createFromTimeGMT;
 
     /**
-     * @description createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表。字符串格式，且为yyyy-MM-DD格式。 和createFrom一起，相当于查询在 2018-01-01到2018-01-31之间(包含01和31号)创建的数据。
+     * @example 2018-02-01
      *
      * @var string
      */
     public $createToTimeGMT;
 
     /**
-     * @description 表单ID
+     * @example FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 实例状态, 可选值为：RUNNING,TERMINATED,COMPLETED,ERROR。 分别代表：运行中，已终止，已完成，异常。
+     * @example RUNNING
      *
      * @var string
      */
     public $instanceStatus;
 
     /**
-     * @description 语言。可选值：zh_CN/en_US 默认：zh_CN
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。字符串格式，且为yyyy-MM-DD格式
+     * @example 2018-01-01
      *
      * @var string
      */
     public $modifiedFromTimeGMT;
 
     /**
-     * @description modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。字符串格式，且为yyyy-MM-DD格式。 和modifiedFrom一起，相当于查询在 2018-01-01到2018-01-31之间(包含01和31号)被修改的数据。
+     * @example 2018-02-01
      *
      * @var string
      */
     public $modifiedToTimeGMT;
 
     /**
-     * @description 排序规则
+     * @example 例如按照创建时间升序再按照文本组件值升序排序则填{\"gmt_create\":\"+\",\"textField_1234\":\"+\"} ，详情参考 https://www.yuque.com/yida/support/agb8im#CQro8
      *
      * @var string
      */
     public $orderConfigJson;
 
     /**
-     * @description 数据提交人的钉钉userId
+     * @example manager123
      *
      * @var string
      */
     public $originatorId;
 
     /**
-     * @description 查询过滤条件，支持2种模式的过滤规则
+     * @example 模式1：根据组件值模糊匹配，示例：{"textField_jcr0069m":"danhang","selectField_jcr0069q":"K"}     模式2: 采用数据管理的查询过滤条件，匹配功能更强大，示例：[{"key":"currentNodeName","value":"步凡","type":"TEXT","operator":"like","componentName":"TextField”}]，详情参考  https://www.yuque.com/yida/support/agb8im#F4S8e
      *
      * @var string
      */
     public $searchFieldJson;
 
     /**
-     * @description 应用秘钥。在应用数据中获取。
+     * @example hexxx
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 任务ID。一般用不到。
+     * @example 2199132092
      *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description 钉钉userId
-     *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 当前第几页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页多少条数据
+     * @example 100
      *
      * @var int
      */

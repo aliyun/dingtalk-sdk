@@ -9,35 +9,33 @@ use AlibabaCloud\Tea\Model;
 class SendMessageRequest extends Model
 {
     /**
-     * @description 消息的唯一id
+     * @example 123123123123
      *
      * @var string
      */
     public $bizId;
 
     /**
-     * @description 发送者
+     * @example 123456
      *
      * @var string
      */
     public $fromUserId;
 
     /**
-     * @description 设备sn
+     * @example SN123456
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 接收者
-     *
      * @var string[]
      */
     public $toUserIdList;
 
     /**
-     * @description 发送消息的类型
+     * @example 1
      *
      * @var int
      */

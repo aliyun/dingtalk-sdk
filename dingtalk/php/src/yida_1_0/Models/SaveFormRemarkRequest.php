@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class SaveFormRemarkRequest extends Model
 {
     /**
-     * @description 应用ID
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 将评论内容通过钉钉发给指定用户, 逗号分隔
+     * @example 多个工号,用英文逗号分隔
      *
      * @var string
      */
     public $atUserId;
 
     /**
-     * @description 评论内容
+     * @example 未知
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 实例ID
+     * @example 33f6d221-17f8-42b7-836a-682b95a046c2
      *
      * @var string
      */
     public $formInstanceId;
 
     /**
-     * @description 语言
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 对评论进行回复
+     * @example 12
      *
      * @var int
      */
     public $replyId;
 
     /**
-     * @description 应用秘钥
+     * @example hexxxx
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 评论人钉钉的userId
+     * @example 未知
      *
      * @var string
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class RelatedSpacesResponseBody extends Model
 {
     /**
-     * @description 是否还有更多数据。
-     *
      * @var bool
      */
     public $hasMore;
@@ -22,8 +20,6 @@ class RelatedSpacesResponseBody extends Model
     public $items;
 
     /**
-     * @description 分页游标。
-     *
      * @var string
      */
     public $nextToken;

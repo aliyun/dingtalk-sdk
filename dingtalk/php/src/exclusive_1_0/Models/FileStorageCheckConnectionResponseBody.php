@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class FileStorageCheckConnectionResponseBody extends Model
 {
     /**
-     * @description 密匙ID
+     * @example sampleKeyId1234
      *
      * @var string
      */
     public $accessKeyId;
 
     /**
-     * @description 检测oss状态 0正常1异常
+     * @example 0
      *
      * @var int
      */
     public $checkState;
 
     /**
-     * @description OSS链接
+     * @example https://oss-cn-test.aliyuncs.com\
      *
      * @var string
      */

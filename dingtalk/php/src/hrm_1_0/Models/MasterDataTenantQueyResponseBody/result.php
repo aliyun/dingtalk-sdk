@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 该租户是否已向主数据同步数据
+     * @example true
      *
      * @var bool
      */
     public $hasData;
 
     /**
-     * @description 该租户是否有向主数据写数据的权限
+     * @example true
      *
      * @var bool
      */
     public $integrateDataAuth;
 
     /**
-     * @description 租户名称
+     * @example "智能绩效"
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 调用方是否有读该租户数据的权限
+     * @example true
      *
      * @var bool
      */
     public $readAuth;
 
     /**
-     * @description 租户 id
+     * @example 4
      *
      * @var int
      */
     public $tenantId;
 
     /**
-     * @description 租户类型
+     * @example 1
      *
      * @var int
      */

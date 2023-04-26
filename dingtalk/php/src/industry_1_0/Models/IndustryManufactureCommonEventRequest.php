@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureCommonEventRequest extends Model
 {
     /**
-     * @description add 创建事件/update 更新事件
-     *
      * @var string
      */
     public $action;
 
     /**
-     * @description 应用appkey
-     *
      * @var string
      */
     public $appKey;
@@ -28,8 +24,6 @@ class IndustryManufactureCommonEventRequest extends Model
     public $bizData;
 
     /**
-     * @description 事件集合，目前仅1个有效
-     *
      * @var string[]
      */
     public $eventType;

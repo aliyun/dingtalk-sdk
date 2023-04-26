@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class sortFields extends Model
 {
     /**
-     * @description 排序字段
+     * @example gmt_create
      *
      * @var string
      */
     public $fieldCode;
 
     /**
-     * @description 排序方式
+     * @example asc升序；desc降序
      *
      * @var string
      */

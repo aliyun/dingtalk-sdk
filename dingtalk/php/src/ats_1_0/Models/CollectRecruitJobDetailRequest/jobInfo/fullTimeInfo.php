@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class fullTimeInfo extends Model
 {
     /**
-     * @description 工作经验要求最高年限
+     * @example 20
      *
      * @var string
      */
     public $maxJobExperience;
 
     /**
-     * @description 工作经验要求最低年限
+     * @example 2
      *
      * @var string
      */
     public $minJobExperience;
 
     /**
-     * @description 薪资发放月数
+     * @example 12
      *
      * @var string
      */

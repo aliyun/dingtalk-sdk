@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class feedItem extends Model
 {
     /**
-     * @description 子内容的持续时长，单位为毫秒
+     * @example 9320
      *
      * @var int
      */
     public $durationMillis;
 
     /**
-     * @description 内容类型，0表示直播，1表示图文，2表示视频，3表示音频
+     * @example 0
      *
      * @var int
      */
     public $feedContentType;
 
     /**
-     * @description 子内容Id
+     * @example 08****b5-2442-****-bd56-99cf****8861
      *
      * @var string
      */
     public $itemId;
 
     /**
-     * @description 子内容标题
+     * @example 子内容标题
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 子内容的跳转链接
+     * @example https://h5.dingtalk.com/live/video_lesson.htm?feedId=66****03-a825-****-9501-b1eeb****a8d&mcnId=1832**********06173&feedProperty=2&itemId=08****b5-2442-****-bd56-99c*****8861&dd_nav_bgcolor=FF2C2D2F#/video
      *
      * @var string
      */

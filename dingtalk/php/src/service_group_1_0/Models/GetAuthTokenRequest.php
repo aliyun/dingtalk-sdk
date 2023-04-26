@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class GetAuthTokenRequest extends Model
 {
     /**
-     * @description 渠道DT/LINKS
-     *
      * @var string
      */
     public $channel;
 
     /**
-     * @description token有效时间（秒）-可不传
-     *
      * @var int
      */
     public $effectiveTime;
 
     /**
-     * @description 团队ID
-     *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 小二id
-     *
      * @var string
      */
     public $serverId;
 
     /**
-     * @description 小二名称
-     *
      * @var string
      */
     public $serverName;

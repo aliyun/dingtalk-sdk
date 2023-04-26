@@ -14,21 +14,21 @@ class findOptions extends Model
     public $includeHidden;
 
     /**
-     * @description 匹配大小写
+     * @example true
      *
      * @var bool
      */
     public $matchCase;
 
     /**
-     * @description 匹配整个单元格
+     * @example true
      *
      * @var bool
      */
     public $matchEntireCell;
 
     /**
-     * @description 在公式内搜索
+     * @example true
      *
      * @var bool
      */
@@ -45,7 +45,7 @@ class findOptions extends Model
     public $unionCells;
 
     /**
-     * @description text是正则表达式
+     * @example true
      *
      * @var bool
      */

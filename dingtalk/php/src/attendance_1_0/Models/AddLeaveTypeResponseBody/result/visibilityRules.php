@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class visibilityRules extends Model
 {
     /**
-     * @description 规则类型：dept-部门；staff-员工；label-角色
+     * @example staff
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 规则数据：当type=staff时，传员工userId列表；当type=dept时，传部门id列表；当type=label时，传角色id列表
-     *
      * @var string[]
      */
     public $visible;

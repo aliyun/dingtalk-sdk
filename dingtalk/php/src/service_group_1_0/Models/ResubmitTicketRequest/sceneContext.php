@@ -15,15 +15,13 @@ class sceneContext extends Model
     public $groupMsgs;
 
     /**
-     * @description 服务群openConversationId
+     * @example cidZBSNlUi/Jq9x76PAXUCrAA==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 工单相关人UnionId列表
-     *
      * @var string[]
      */
     public $relevantorUnionIds;

@@ -9,57 +9,41 @@ use AlibabaCloud\Tea\Model;
 class templateList extends Model
 {
     /**
-     * @description 模版预览url
-     *
      * @var string
      */
     public $coverUrl;
 
     /**
-     * @description 模版创建时间
-     *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 模版对应文档类型
-     *
      * @var string
      */
     public $docType;
 
     /**
-     * @description 模版Id
-     *
      * @var string
      */
     public $id;
 
     /**
-     * @description 模版类型
-     *
      * @var string
      */
     public $templateType;
 
     /**
-     * @description 模版标题
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 模版修改时间
-     *
      * @var int
      */
     public $updateTime;
 
     /**
-     * @description 模版归属知识库id。
-     *
      * @var string
      */
     public $workspaceId;

@@ -10,70 +10,68 @@ use AlibabaCloud\Tea\Model;
 class CreatWithholdingOrderAndPayRequest extends Model
 {
     /**
-     * @description 扣款金额
+     * @example 10.01
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 主机构编号
+     * @example 202111090001
      *
      * @var string
      */
     public $instId;
 
     /**
-     * @description 其他资金渠道付款明细
-     *
      * @var otherPayChannelDetailInfoList[]
      */
     public $otherPayChannelDetailInfoList;
 
     /**
-     * @description 外部订单号
+     * @example 2021113000001
      *
      * @var string
      */
     public $outTradeNo;
 
     /**
-     * @description 支付渠道
+     * @example ALIPAY
      *
      * @var string
      */
     public $payChannel;
 
     /**
-     * @description 付款人staffId
+     * @example 2120493284
      *
      * @var string
      */
     public $payerUserId;
 
     /**
-     * @description 代扣备注
+     * @example 备注
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 子机构编号
+     * @example 1001
      *
      * @var string
      */
     public $subInstId;
 
     /**
-     * @description 代扣过期时间
+     * @example 15m
      *
      * @var string
      */
     public $timeOutExpress;
 
     /**
-     * @description 代扣标题
+     * @example 餐费
      *
      * @var string
      */

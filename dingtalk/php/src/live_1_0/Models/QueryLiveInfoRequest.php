@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class QueryLiveInfoRequest extends Model
 {
     /**
+     * @example 4d383876-1ff9-4b73-a057-a8f47b346ecb
+     *
      * @var string
      */
     public $liveId;
 
     /**
+     * @example DC7wZGOSueEEIGOf3WKwWgiEiE
+     *
      * @var string
      */
     public $unionId;

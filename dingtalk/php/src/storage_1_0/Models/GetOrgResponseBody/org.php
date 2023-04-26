@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class org extends Model
 {
     /**
-     * @description 企业id
+     * @example corp_id
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 分区容量信息
-     * 2
      * @var partitions[]
      */
     public $partitions;

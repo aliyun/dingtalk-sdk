@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class AttendanceBleDevicesRemoveResponseBody extends Model
 {
     /**
-     * @description 移出错误列表
-     *
      * @var errorList[]
      */
     public $errorList;
 
     /**
-     * @description 移除成功蓝牙设备Id列表
-     *
      * @var int[]
      */
     public $successList;

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateMeetingRoomGroupRequest extends Model
 {
     /**
-     * @description 分组id
+     * @example 172
      *
      * @var int
      */
     public $groupId;
 
     /**
-     * @description 分组名称
+     * @example 测试分组
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 操作人unionId
+     * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string
      */

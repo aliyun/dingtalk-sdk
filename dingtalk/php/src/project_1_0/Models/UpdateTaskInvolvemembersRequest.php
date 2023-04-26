@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class UpdateTaskInvolvemembersRequest extends Model
 {
     /**
-     * @description 新增参与者列表。
-     *
      * @var string[]
      */
     public $addInvolvers;
 
     /**
-     * @description 移除参与者列表。
-     *
      * @var string[]
      */
     public $delInvolvers;
 
     /**
-     * @description 更新任务参与者列表。
-     *
      * @var string[]
      */
     public $involveMembers;

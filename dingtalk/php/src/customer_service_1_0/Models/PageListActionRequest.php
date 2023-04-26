@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class PageListActionRequest extends Model
 {
     /**
-     * @description 本次读取的最大数据记录数量，此参数为可选参数，用户传入为空时，应该有默认值。应设置最大值限制，最大不超过100
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 用来标记当前开始读取的位置，置空表示从头开始。
+     * @example 0
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 实例id
+     * @example default
      *
      * @var string
      */
     public $openInstanceId;
 
     /**
-     * @description 产品类型
+     * @example 1
      *
      * @var int
      */

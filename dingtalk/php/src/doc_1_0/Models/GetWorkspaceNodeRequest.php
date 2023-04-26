@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetWorkspaceNodeRequest extends Model
 {
     /**
-     * @description 操作用户unionId
-     *
      * @var string
      */
     public $operatorId;

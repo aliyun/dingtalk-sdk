@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class invoiceKeyVOList extends Model
 {
     /**
-     * @description 发票编码
+     * @example 1001
      *
      * @var string
      */
     public $invoiceCode;
 
     /**
-     * @description 发票号码
+     * @example 2202
      *
      * @var string
      */

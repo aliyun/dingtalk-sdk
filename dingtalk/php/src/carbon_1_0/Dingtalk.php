@@ -28,18 +28,67 @@ use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteUserCarbonRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcarbon_1_0\Models\WriteUserCarbonResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param GetPersonalCarbonInfoRequest $request
+     * @param GetPersonalCarbonInfoHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return GetPersonalCarbonInfoResponse
+     */
+    public function getPersonalCarbonInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->actionType)) {
+            $query['actionType'] = $request->actionType;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetPersonalCarbonInfo',
+            'version'     => 'carbon_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/carbon/personals/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetPersonalCarbonInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -56,35 +105,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPersonalCarbonInfoRequest $request
-     * @param GetPersonalCarbonInfoHeaders $headers
+     * @param WriteAlibabaOrgCarbonRequest $request
+     * @param WriteAlibabaOrgCarbonHeaders $headers
      * @param RuntimeOptions               $runtime
      *
-     * @return GetPersonalCarbonInfoResponse
+     * @return WriteAlibabaOrgCarbonResponse
      */
-    public function getPersonalCarbonInfoWithOptions($request, $headers, $runtime)
+    public function writeAlibabaOrgCarbonWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->actionType)) {
-            @$query['actionType'] = $request->actionType;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+        $body = [];
+        if (!Utils::isUnset($request->orgDetailsList)) {
+            $body['orgDetailsList'] = $request->orgDetailsList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'WriteAlibabaOrgCarbon',
+            'version'     => 'carbon_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/carbon/alibabaOrgDetails/write',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetPersonalCarbonInfoResponse::fromMap($this->doROARequest('GetPersonalCarbonInfo', 'carbon_1.0', 'HTTP', 'GET', 'AK', '/v1.0/carbon/personals/infos', 'json', $req, $runtime));
+        return WriteAlibabaOrgCarbonResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -101,32 +158,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteAlibabaOrgCarbonRequest $request
-     * @param WriteAlibabaOrgCarbonHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param WriteAlibabaUserCarbonRequest $request
+     * @param WriteAlibabaUserCarbonHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return WriteAlibabaOrgCarbonResponse
+     * @return WriteAlibabaUserCarbonResponse
      */
-    public function writeAlibabaOrgCarbonWithOptions($request, $headers, $runtime)
+    public function writeAlibabaUserCarbonWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->orgDetailsList)) {
-            @$body['orgDetailsList'] = $request->orgDetailsList;
+        if (!Utils::isUnset($request->userDetailsList)) {
+            $body['userDetailsList'] = $request->userDetailsList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'WriteAlibabaUserCarbon',
+            'version'     => 'carbon_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/carbon/alibabaUserDetails/write',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return WriteAlibabaOrgCarbonResponse::fromMap($this->doROARequest('WriteAlibabaOrgCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', '/v1.0/carbon/alibabaOrgDetails/write', 'json', $req, $runtime));
+        return WriteAlibabaUserCarbonResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -143,32 +211,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteAlibabaUserCarbonRequest $request
-     * @param WriteAlibabaUserCarbonHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param WriteIsvStateRequest $request
+     * @param WriteIsvStateHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return WriteAlibabaUserCarbonResponse
+     * @return WriteIsvStateResponse
      */
-    public function writeAlibabaUserCarbonWithOptions($request, $headers, $runtime)
+    public function writeIsvStateWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->userDetailsList)) {
-            @$body['userDetailsList'] = $request->userDetailsList;
+        $query = [];
+        if (!Utils::isUnset($request->isvName)) {
+            $query['isvName'] = $request->isvName;
+        }
+        if (!Utils::isUnset($request->statDate)) {
+            $query['statDate'] = $request->statDate;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'WriteIsvState',
+            'version'     => 'carbon_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/carbon/datas/states/write',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return WriteAlibabaUserCarbonResponse::fromMap($this->doROARequest('WriteAlibabaUserCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', '/v1.0/carbon/alibabaUserDetails/write', 'json', $req, $runtime));
+        return WriteIsvStateResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -185,35 +267,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteIsvStateRequest $request
-     * @param WriteIsvStateHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param WriteOrgCarbonRequest $request
+     * @param WriteOrgCarbonHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return WriteIsvStateResponse
+     * @return WriteOrgCarbonResponse
      */
-    public function writeIsvStateWithOptions($request, $headers, $runtime)
+    public function writeOrgCarbonWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->isvName)) {
-            @$query['isvName'] = $request->isvName;
-        }
-        if (!Utils::isUnset($request->statDate)) {
-            @$query['statDate'] = $request->statDate;
+        $body = [];
+        if (!Utils::isUnset($request->orgDetailsList)) {
+            $body['orgDetailsList'] = $request->orgDetailsList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'WriteOrgCarbon',
+            'version'     => 'carbon_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/carbon/orgDetails/write',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return WriteIsvStateResponse::fromMap($this->doROARequest('WriteIsvState', 'carbon_1.0', 'HTTP', 'POST', 'AK', '/v1.0/carbon/datas/states/write', 'json', $req, $runtime));
+        return WriteOrgCarbonResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -230,32 +320,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteOrgCarbonRequest $request
-     * @param WriteOrgCarbonHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param WriteUserCarbonRequest $request
+     * @param WriteUserCarbonHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return WriteOrgCarbonResponse
+     * @return WriteUserCarbonResponse
      */
-    public function writeOrgCarbonWithOptions($request, $headers, $runtime)
+    public function writeUserCarbonWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->orgDetailsList)) {
-            @$body['orgDetailsList'] = $request->orgDetailsList;
+        if (!Utils::isUnset($request->userDetailsList)) {
+            $body['userDetailsList'] = $request->userDetailsList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'WriteUserCarbon',
+            'version'     => 'carbon_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/carbon/userDetails/write',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return WriteOrgCarbonResponse::fromMap($this->doROARequest('WriteOrgCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', '/v1.0/carbon/orgDetails/write', 'json', $req, $runtime));
+        return WriteUserCarbonResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -272,32 +373,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param WriteUserCarbonRequest $request
-     * @param WriteUserCarbonHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param WriteUserCarbonEnergyRequest $request
+     * @param WriteUserCarbonEnergyHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return WriteUserCarbonResponse
+     * @return WriteUserCarbonEnergyResponse
      */
-    public function writeUserCarbonWithOptions($request, $headers, $runtime)
+    public function writeUserCarbonEnergyWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->userDetailsList)) {
-            @$body['userDetailsList'] = $request->userDetailsList;
+            $body['userDetailsList'] = $request->userDetailsList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'WriteUserCarbonEnergy',
+            'version'     => 'carbon_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/carbon/userDetails/energies/write',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return WriteUserCarbonResponse::fromMap($this->doROARequest('WriteUserCarbon', 'carbon_1.0', 'HTTP', 'POST', 'AK', '/v1.0/carbon/userDetails/write', 'json', $req, $runtime));
+        return WriteUserCarbonEnergyResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -311,34 +423,5 @@ class Dingtalk extends OpenApiClient
         $headers = new WriteUserCarbonEnergyHeaders([]);
 
         return $this->writeUserCarbonEnergyWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param WriteUserCarbonEnergyRequest $request
-     * @param WriteUserCarbonEnergyHeaders $headers
-     * @param RuntimeOptions               $runtime
-     *
-     * @return WriteUserCarbonEnergyResponse
-     */
-    public function writeUserCarbonEnergyWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->userDetailsList)) {
-            @$body['userDetailsList'] = $request->userDetailsList;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return WriteUserCarbonEnergyResponse::fromMap($this->doROARequest('WriteUserCarbonEnergy', 'carbon_1.0', 'HTTP', 'POST', 'AK', '/v1.0/carbon/userDetails/energies/write', 'json', $req, $runtime));
     }
 }

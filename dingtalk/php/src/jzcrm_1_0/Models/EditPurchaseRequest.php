@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class EditPurchaseRequest extends Model
 {
     /**
-     * @description 编辑数据
-     *
      * @var data
      */
     public $data;
 
     /**
-     * @description 数据类型，固定填写153
+     * @example 153
      *
      * @var int
      */
     public $datatype;
 
     /**
-     * @description 数据id，不填或者填0为新增数据
+     * @example 1
      *
      * @var int
      */
     public $msgid;
 
     /**
-     * @description 时间戳
+     * @example 1621822122
      *
      * @var int
      */

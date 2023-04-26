@@ -12,22 +12,16 @@ use AlibabaCloud\Tea\Model;
 class sectionConfig extends Model
 {
     /**
-     * @description 课程表结束开始时间（精确到日）
-     *
      * @var end
      */
     public $end;
 
     /**
-     * @description 节次模型
-     *
      * @var sectionModels[]
      */
     public $sectionModels;
 
     /**
-     * @description 课程表开始时间（精确到日）
-     *
      * @var start
      */
     public $start;

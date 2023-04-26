@@ -16,8 +16,6 @@ class GetUploadInfoResponseBody extends Model
     public $headerSignatureUploadInfo;
 
     /**
-     * @description 文件所存储的区域
-     *
      * @var string
      */
     public $region;

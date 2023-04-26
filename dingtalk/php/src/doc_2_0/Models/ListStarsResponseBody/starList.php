@@ -12,71 +12,63 @@ use AlibabaCloud\Tea\Model;
 class starList extends Model
 {
     /**
-     * @description 创建时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 资源实体数据
-     *
      * @var dentryInfo
      */
     public $dentryInfo;
 
     /**
-     * @description 文档权限
-     * OWNER: 所有者
+     * @example NO_PERMISSION
+     *
      * @var string
      */
     public $dentryPermissionRole;
 
     /**
-     * @description 星标id
+     * @example star_id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 是否已经删除
+     * @example true
      *
      * @var bool
      */
     public $isDeleted;
 
     /**
-     * @description 修改时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $modifiedTime;
 
     /**
-     * @description 知识库信息
-     *
      * @var spaceInfo
      */
     public $spaceInfo;
 
     /**
-     * @description 知识库权限
-     * OWNER: 所有者
+     * @example NO_PERMISSION
+     *
      * @var string
      */
     public $spacePermissionRole;
 
     /**
-     * @description 星标类型
-     * COMMON: 普通星标
      * @var string
      */
     public $starType;
 
     /**
-     * @description 小组信息
-     *
      * @var teamInfo
      */
     public $teamInfo;

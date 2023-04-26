@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class OpenConnectionResponseBody extends Model
 {
     /**
-     * @description 长连接接入点
+     * @example wss://open-connection.dingtalk.com/connect
      *
      * @var string
      */
     public $endpoint;
 
     /**
-     * @description 连接ticket
+     * @example 67e5aeb3-de99-11ed-897e-e251245ed5d2
      *
      * @var string
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListTicketOperateRecordResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
      * @var records[]
      */
     public $records;

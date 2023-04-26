@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 下一次分页调用的值，当返回结果里没有nextToken时，表示分页结束。
+     * @example 10
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 可见表单列表。
-     *
      * @var processList[]
      */
     public $processList;

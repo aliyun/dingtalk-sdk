@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class GetProcessInstanceResponseBody extends Model
 {
     /**
-     * @description 返回结果。
-     *
      * @var result
      */
     public $result;
 
     /**
-     * @description 调用是否成功。
+     * @example true
      *
      * @var string
      */

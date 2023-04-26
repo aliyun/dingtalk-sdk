@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class ListOrderResponseBody extends Model
 {
     /**
-     * @description 列表
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 总数
-     *
      * @var int
      */
     public $total;

@@ -9,106 +9,76 @@ use AlibabaCloud\Tea\Model;
 class QueryTradeOrderResponseBody extends Model
 {
     /**
-     * @description 商品编码
-     *
      * @var string
      */
     public $articleCode;
 
     /**
-     * @description 规格编码
-     *
      * @var string
      */
     public $articleItemCode;
 
     /**
-     * @description 规格名称
-     *
      * @var string
      */
     public $articleItemName;
 
     /**
-     * @description 商品名称
-     *
      * @var string
      */
     public $articleName;
 
     /**
-     * @description 订单关闭时间（单位：ms）
-     *
      * @var int
      */
     public $closeTime;
 
     /**
-     * @description 订单创建时间（单位：ms）
-     *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 原价（单位：分）
-     *
      * @var int
      */
     public $fee;
 
     /**
-     * @description ISV的组织ID
-     *
      * @var string
      */
     public $isvCropId;
 
     /**
-     * @description 内部订单号
-     *
      * @var int
      */
     public $orderId;
 
     /**
-     * @description 外部订单号
-     *
      * @var string
      */
     public $outerOrderId;
 
     /**
-     * @description 实际支付的价格（单位：分）
-     *
      * @var int
      */
     public $payFee;
 
     /**
-     * @description 订单支付时间（单位：ms）
-     *
      * @var int
      */
     public $payTime;
 
     /**
-     * @description 商品数量
-     *
      * @var int
      */
     public $quantity;
 
     /**
-     * @description 订单退款时间（单位：ms）
-     *
      * @var int
      */
     public $refundTime;
 
     /**
-     * @description 订单状态：-1表示已关闭、0表示未支付、1表示已支付、2表示已退款
-     *
      * @var int
      */
     public $status;

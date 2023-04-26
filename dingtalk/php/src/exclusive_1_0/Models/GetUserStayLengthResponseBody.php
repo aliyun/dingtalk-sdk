@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class GetUserStayLengthResponseBody extends Model
 {
     /**
-     * @description 员工使用时长列表
-     *
      * @var itemList[]
      */
     public $itemList;
 
     /**
-     * @description 总数据量
+     * @example 1000
      *
      * @var int
      */

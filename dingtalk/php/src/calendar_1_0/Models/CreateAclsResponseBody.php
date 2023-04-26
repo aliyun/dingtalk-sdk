@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class CreateAclsResponseBody extends Model
 {
     /**
-     * @description acl资源ID
-     *
      * @var string
      */
     public $aclId;
 
     /**
-     * @description 对日历的访问权限
-     *
      * @var string
      */
     public $privilege;
 
     /**
-     * @description 权限范围
-     *
      * @var scope
      */
     public $scope;

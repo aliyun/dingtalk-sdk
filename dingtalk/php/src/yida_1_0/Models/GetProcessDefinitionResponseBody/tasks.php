@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class tasks extends Model
 {
     /**
-     * @description actioner
-     *
      * @var string
      */
     public $actionerId;
 
     /**
-     * @description activity
-     *
      * @var activity
      */
     public $activity;
 
     /**
-     * @description status
-     *
      * @var string
      */
     public $status;
 
     /**
-     * @description taskId
-     *
      * @var int
      */
     public $taskId;

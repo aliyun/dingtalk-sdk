@@ -10,77 +10,75 @@ use AlibabaCloud\Tea\Model;
 class GetFlightExceedApplyResponseBody extends Model
 {
     /**
-     * @description 商旅超标审批单id
+     * @example 1234
      *
      * @var int
      */
     public $applyId;
 
     /**
-     * @description 意向出行信息
-     *
      * @var applyIntentionInfoDO
      */
     public $applyIntentionInfoDO;
 
     /**
-     * @description 出差原因
+     * @example 出差
      *
      * @var string
      */
     public $btripCause;
 
     /**
-     * @description 第三方企业id
+     * @example ding1234
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 超标原因
+     * @example 出差
      *
      * @var string
      */
     public $exceedReason;
 
     /**
-     * @description 超标类型，1:折扣 2,8,10:时间 3,9,11:折扣和时间
+     * @example 1
      *
      * @var int
      */
     public $exceedType;
 
     /**
-     * @description 原差旅标准
+     * @example 经济舱（2折及以下）
      *
      * @var string
      */
     public $originStandard;
 
     /**
-     * @description 审批单状态 0:审批中 1:已同意 2:已拒绝
+     * @example 0
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 审批单提交时间
+     * @example 2021-07-08 15:23:56
      *
      * @var string
      */
     public $submitTime;
 
     /**
-     * @description 第三方出差审批单号
+     * @example 0001A1100000007EX08O
      *
      * @var string
      */
     public $thirdpartApplyId;
 
     /**
-     * @description 第三方用户id
+     * @example weifeng
      *
      * @var string
      */

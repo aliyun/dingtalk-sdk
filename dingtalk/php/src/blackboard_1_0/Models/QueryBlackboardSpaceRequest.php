@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryBlackboardSpaceRequest extends Model
 {
     /**
-     * @description 操作人userId。
+     * @example manager01
      *
      * @var string
      */

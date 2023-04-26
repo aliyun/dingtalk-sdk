@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class PublishFileChangeNoticeRequest extends Model
 {
     /**
-     * @description 钉盘文件id
+     * @example xxxx
      *
      * @var string
      */
     public $fileId;
 
     /**
-     * @description 操作类型: 1-添加 2-修改
+     * @example 1
      *
      * @var string
      */
     public $operateType;
 
     /**
-     * @description 操作人unionId
+     * @example xxxx
      *
      * @var string
      */
     public $operatorUnionId;
 
     /**
-     * @description 钉盘spaceId
+     * @example xxxx
      *
      * @var string
      */

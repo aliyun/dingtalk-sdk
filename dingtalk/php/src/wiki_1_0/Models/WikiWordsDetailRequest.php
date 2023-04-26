@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class WikiWordsDetailRequest extends Model
 {
     /**
-     * @description 传递的词条名称
-     *
      * @var string
      */
     public $wordName;

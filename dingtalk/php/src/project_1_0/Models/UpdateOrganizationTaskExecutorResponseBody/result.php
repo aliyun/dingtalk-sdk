@@ -11,28 +11,24 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 执行者信息
-     *
      * @var executor
      */
     public $executor;
 
     /**
-     * @description 执行者id
+     * @example 173xxxx
      *
      * @var string
      */
     public $executorId;
 
     /**
-     * @description 参与者列表
-     *
      * @var involvers[]
      */
     public $involvers;
 
     /**
-     * @description 更新时间
+     * @example 2022-06-08T03:00:17.031Z
      *
      * @var string
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetSheetRequest extends Model
 {
     /**
-     * @description 操作人id
+     * @example union_id
      *
      * @var string
      */

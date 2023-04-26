@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class targets extends Model
 {
     /**
-     * @description 行为。
+     * @example xxxx
      *
      * @var string
      */
     public $behavior;
 
     /**
-     * @description 字段 id。
+     * @example TextField-K2AD4O5B
      *
      * @var string
      */

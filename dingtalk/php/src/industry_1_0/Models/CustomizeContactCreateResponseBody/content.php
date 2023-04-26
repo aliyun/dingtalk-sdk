@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 自定义通讯录Code
+     * @example alt:vndk1nd0
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 自定义通讯录名称
+     * @example A项目通讯录
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 在自定义通讯录列表中的排序
+     * @example 1
      *
      * @var int
      */
     public $order;
 
     /**
-     * @description 根部们Id
+     * @example 78933133
      *
      * @var int
      */

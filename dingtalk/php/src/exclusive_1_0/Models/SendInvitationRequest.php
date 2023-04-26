@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class SendInvitationRequest extends Model
 {
     /**
-     * @description 部门id
+     * @example 1234
      *
      * @var string
      */
     public $deptId;
 
     /**
-     * @description 组织别名
+     * @example 钉开放组织别名
      *
      * @var string
      */
     public $orgAlias;
 
     /**
-     * @description 伙伴标签id
+     * @example 1234
      *
      * @var int
      */
     public $partnerLabelId;
 
     /**
-     * @description 伙伴编码
+     * @example 1234
      *
      * @var string
      */
     public $partnerNum;
 
     /**
-     * @description 手机号
+     * @example 133XXXXXX57
      *
      * @var string
      */

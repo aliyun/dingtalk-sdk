@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class EditFeedReplayRequest extends Model
 {
     /**
-     * @description 剪辑的结束位置的时间戳（在原开始结束的时间戳之内）
+     * @example 1617356058000
      *
      * @var int
      */
     public $editEndTime;
 
     /**
-     * @description 剪辑的起始位置的时间戳（在原开始结束的时间戳之内）
+     * @example 1617336058000
      *
      * @var int
      */
     public $editStartTime;
 
     /**
-     * @description 用户id(剪辑者的组织内id)
+     * @example 1206186351746728
      *
      * @var string
      */

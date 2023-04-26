@@ -10,71 +10,51 @@ use AlibabaCloud\Tea\Model;
 class GetConferenceDetailResponseBody extends Model
 {
     /**
-     * @description 出席会议人数
-     *
      * @var int
      */
     public $attendeeNum;
 
     /**
-     * @description 出席率
-     *
      * @var string
      */
     public $attendeePercentage;
 
     /**
-     * @description 发起人uid
-     *
      * @var string
      */
     public $callerId;
 
     /**
-     * @description 发起人昵称
-     *
      * @var string
      */
     public $callerName;
 
     /**
-     * @description 开始时间
-     *
      * @var float
      */
     public $confStartTime;
 
     /**
-     * @description 会议ID
-     *
      * @var string
      */
     public $conferenceId;
 
     /**
-     * @description 持续时间
-     *
      * @var float
      */
     public $duration;
 
     /**
-     * @description 参会人员列表
-     *
      * @var memberList[]
      */
     public $memberList;
 
     /**
-     * @description 会议标题
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 会议人数
-     *
      * @var int
      */
     public $totalNum;

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryRobotPluginRequest extends Model
 {
     /**
-     * @description 钉钉开放平台后台机器人的robotCode
+     * @example dingykcdkjnwpcll27gm
      *
      * @var string
      */

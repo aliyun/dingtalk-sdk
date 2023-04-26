@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateOfficialAccountRobotInfoResponseBody extends Model
 {
     /**
-     * @description 结果
+     * @example success
      *
      * @var string
      */

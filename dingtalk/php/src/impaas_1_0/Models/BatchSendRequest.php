@@ -9,28 +9,22 @@ use AlibabaCloud\Tea\Model;
 class BatchSendRequest extends Model
 {
     /**
-     * @description 接受者列表，外部用户
-     *
      * @var string[]
      */
     public $appUids;
 
     /**
-     * @description 消息内容
-     *
      * @var string
      */
     public $content;
 
     /**
-     * @description 接收消息的群聊列表
-     *
      * @var string[]
      */
     public $conversationIds;
 
     /**
-     * @description 发送者，企业员工账号
+     * @example 234#dingxxx@dingding
      *
      * @var string
      */

@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 加班规则集合
-     *
      * @var items[]
      */
     public $items;
 
     /**
-     * @description 当前页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 总页数
+     * @example 1
      *
      * @var int
      */

@@ -10,57 +10,43 @@ use AlibabaCloud\Tea\Model;
 class CreateTicketRequest extends Model
 {
     /**
-     * @description 第三方会员ID
-     *
      * @var string
      */
     public $foreignId;
 
     /**
-     * @description 第三方会员名称
-     *
      * @var string
      */
     public $foreignName;
 
     /**
-     * @description 实例ID
-     *
      * @var string
      */
     public $openInstanceId;
 
     /**
-     * @description 智能客服产品
+     * @example 1
      *
      * @var int
      */
     public $productionType;
 
     /**
-     * @description 工单表单
-     *
      * @var properties[]
      */
     public $properties;
 
     /**
-     * @description 会员来源
-     *
      * @var string
      */
     public $sourceId;
 
     /**
-     * @description 工单模板ID
-     *
      * @var string
      */
     public $templateId;
 
     /**
-     * @description 工单标题
-     *
      * @var string
      */
     public $title;

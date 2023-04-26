@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetRemoteClassCourseRequest extends Model
 {
     /**
-     * @description 操作者用户ID
+     * @example manager1234
      *
      * @var string
      */

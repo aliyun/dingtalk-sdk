@@ -14,77 +14,63 @@ use AlibabaCloud\Tea\Model;
 class PediaWordsUpdateRequest extends Model
 {
     /**
-     * @description 相关应用
-     *
      * @var appLink[]
      */
     public $appLink;
 
     /**
-     * @description 相关联系人
-     *
      * @var contactList[]
      */
     public $contactList;
 
     /**
-     * @description 在聊天中可命中的别名
-     *
      * @var string[]
      */
     public $highLightWordAlias;
 
     /**
-     * @description 相关图片
-     *
      * @var picList[]
      */
     public $picList;
 
     /**
-     * @description 相关文档，支持钉钉在线文档
-     *
      * @var relatedDoc[]
      */
     public $relatedDoc;
 
     /**
-     * @description 相关链接
-     *
      * @var relatedLink[]
      */
     public $relatedLink;
 
     /**
-     * @description 操作人的组织员工编号
+     * @example 312123213
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 更新的词条编号
+     * @example 2131321
      *
      * @var int
      */
     public $uuid;
 
     /**
-     * @description 词条别名
-     *
      * @var string[]
      */
     public $wordAlias;
 
     /**
-     * @description 词条名称
+     * @example 词条名称
      *
      * @var string
      */
     public $wordName;
 
     /**
-     * @description 词条释义
+     * @example 释义
      *
      * @var string
      */

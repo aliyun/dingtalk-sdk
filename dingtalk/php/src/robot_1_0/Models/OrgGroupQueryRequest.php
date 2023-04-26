@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class OrgGroupQueryRequest extends Model
 {
     /**
-     * @description 分页查询每页的数量
+     * @example 50
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 一次查询后返回的加密的分页凭证，首次查询不填
+     * @example 50
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 开放的群id
+     * @example cid6KeBBLoveMJOGXoYKF5x7EeiodoA==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 发送消息返回的加密消息id
+     * @example Kna29Ra5pdJznx1ghavbumkQKwDzgfxZLapw55G7x0Q=
      *
      * @var string
      */
     public $processQueryKey;
 
     /**
-     * @description 企业机器人的robotcode
+     * @example dingue4kfzdxbyn0pjqd
      *
      * @var string
      */
     public $robotCode;
 
     /**
-     * @description 群内机器人的webhook中的Token
+     * @example 02feb1cd4ncmed92998723813a6bfa89eea1df91a750721979992870dd90bdfa
      *
      * @var string
      */

@@ -9,29 +9,27 @@ use AlibabaCloud\Tea\Model;
 class BatchSendOTORequest extends Model
 {
     /**
-     * @description 消息的msgKey
+     * @example sampleMarkdown
      *
      * @var string
      */
     public $msgKey;
 
     /**
-     * @description 消息体
+     * @example {"text": "hello dafu","title": "hello title"}
      *
      * @var string
      */
     public $msgParam;
 
     /**
-     * @description 机器人的robotCode
+     * @example dingxxxxxx
      *
      * @var string
      */
     public $robotCode;
 
     /**
-     * @description 被推送会话人员的userId列表
-     *
      * @var string[]
      */
     public $userIds;

@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class ListPermissionsResponseBody extends Model
 {
     /**
-     * @description 企业内成员权限列表
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 企业外成员权限列表
-     *
      * @var outMembers[]
      */
     public $outMembers;

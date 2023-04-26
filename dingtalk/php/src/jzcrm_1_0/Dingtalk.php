@@ -52,18 +52,73 @@ use AlibabaCloud\SDK\Dingtalk\Vjzcrm_1_0\Models\GetDataViewRequest;
 use AlibabaCloud\SDK\Dingtalk\Vjzcrm_1_0\Models\GetDataViewResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param EditContactRequest $request
+     * @param EditContactHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return EditContactResponse
+     */
+    public function editContactWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->data)) {
+            $body['data'] = $request->data;
+        }
+        if (!Utils::isUnset($request->datatype)) {
+            $body['datatype'] = $request->datatype;
+        }
+        if (!Utils::isUnset($request->msgid)) {
+            $body['msgid'] = $request->msgid;
+        }
+        if (!Utils::isUnset($request->stamp)) {
+            $body['stamp'] = $request->stamp;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'EditContact',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/contacts',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return EditContactResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -80,41 +135,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditContactRequest $request
-     * @param EditContactHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param EditCustomerRequest $request
+     * @param EditCustomerHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return EditContactResponse
+     * @return EditCustomerResponse
      */
-    public function editContactWithOptions($request, $headers, $runtime)
+    public function editCustomerWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+            $body['data'] = $request->data;
         }
         if (!Utils::isUnset($request->datatype)) {
-            @$body['datatype'] = $request->datatype;
+            $body['datatype'] = $request->datatype;
         }
         if (!Utils::isUnset($request->msgid)) {
-            @$body['msgid'] = $request->msgid;
+            $body['msgid'] = $request->msgid;
         }
         if (!Utils::isUnset($request->stamp)) {
-            @$body['stamp'] = $request->stamp;
+            $body['stamp'] = $request->stamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'EditCustomer',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/customers',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return EditContactResponse::fromMap($this->doROARequest('EditContact', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/jzcrm/contacts', 'json', $req, $runtime));
+        return EditCustomerResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -131,41 +197,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditCustomerRequest $request
-     * @param EditCustomerHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param EditCustomerPoolRequest $request
+     * @param EditCustomerPoolHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return EditCustomerResponse
+     * @return EditCustomerPoolResponse
      */
-    public function editCustomerWithOptions($request, $headers, $runtime)
+    public function editCustomerPoolWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+            $body['data'] = $request->data;
         }
         if (!Utils::isUnset($request->datatype)) {
-            @$body['datatype'] = $request->datatype;
+            $body['datatype'] = $request->datatype;
         }
         if (!Utils::isUnset($request->msgid)) {
-            @$body['msgid'] = $request->msgid;
+            $body['msgid'] = $request->msgid;
         }
         if (!Utils::isUnset($request->stamp)) {
-            @$body['stamp'] = $request->stamp;
+            $body['stamp'] = $request->stamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'EditCustomerPool',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/customerPools',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return EditCustomerResponse::fromMap($this->doROARequest('EditCustomer', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/jzcrm/customers', 'json', $req, $runtime));
+        return EditCustomerPoolResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -182,41 +259,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditCustomerPoolRequest $request
-     * @param EditCustomerPoolHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param EditExchangeRequest $request
+     * @param EditExchangeHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return EditCustomerPoolResponse
+     * @return EditExchangeResponse
      */
-    public function editCustomerPoolWithOptions($request, $headers, $runtime)
+    public function editExchangeWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+            $body['data'] = $request->data;
         }
         if (!Utils::isUnset($request->datatype)) {
-            @$body['datatype'] = $request->datatype;
+            $body['datatype'] = $request->datatype;
         }
         if (!Utils::isUnset($request->msgid)) {
-            @$body['msgid'] = $request->msgid;
+            $body['msgid'] = $request->msgid;
         }
         if (!Utils::isUnset($request->stamp)) {
-            @$body['stamp'] = $request->stamp;
+            $body['stamp'] = $request->stamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'EditExchange',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/exchanges',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return EditCustomerPoolResponse::fromMap($this->doROARequest('EditCustomerPool', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/jzcrm/customerPools', 'json', $req, $runtime));
+        return EditExchangeResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -233,41 +321,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditExchangeRequest $request
-     * @param EditExchangeHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param EditGoodsRequest $request
+     * @param EditGoodsHeaders $headers
+     * @param RuntimeOptions   $runtime
      *
-     * @return EditExchangeResponse
+     * @return EditGoodsResponse
      */
-    public function editExchangeWithOptions($request, $headers, $runtime)
+    public function editGoodsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+            $body['data'] = $request->data;
         }
         if (!Utils::isUnset($request->datatype)) {
-            @$body['datatype'] = $request->datatype;
+            $body['datatype'] = $request->datatype;
         }
         if (!Utils::isUnset($request->msgid)) {
-            @$body['msgid'] = $request->msgid;
+            $body['msgid'] = $request->msgid;
         }
         if (!Utils::isUnset($request->stamp)) {
-            @$body['stamp'] = $request->stamp;
+            $body['stamp'] = $request->stamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'EditGoods',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/goods',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return EditExchangeResponse::fromMap($this->doROARequest('EditExchange', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/jzcrm/exchanges', 'json', $req, $runtime));
+        return EditGoodsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -284,41 +383,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditGoodsRequest $request
-     * @param EditGoodsHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @param EditIntostockRequest $request
+     * @param EditIntostockHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return EditGoodsResponse
+     * @return EditIntostockResponse
      */
-    public function editGoodsWithOptions($request, $headers, $runtime)
+    public function editIntostockWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+            $body['data'] = $request->data;
         }
         if (!Utils::isUnset($request->datatype)) {
-            @$body['datatype'] = $request->datatype;
+            $body['datatype'] = $request->datatype;
         }
         if (!Utils::isUnset($request->msgid)) {
-            @$body['msgid'] = $request->msgid;
+            $body['msgid'] = $request->msgid;
         }
         if (!Utils::isUnset($request->stamp)) {
-            @$body['stamp'] = $request->stamp;
+            $body['stamp'] = $request->stamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'EditIntostock',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/intostocks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return EditGoodsResponse::fromMap($this->doROARequest('EditGoods', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/jzcrm/goods', 'json', $req, $runtime));
+        return EditIntostockResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -335,41 +445,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditIntostockRequest $request
-     * @param EditIntostockHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param EditInvoiceRequest $request
+     * @param EditInvoiceHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return EditIntostockResponse
+     * @return EditInvoiceResponse
      */
-    public function editIntostockWithOptions($request, $headers, $runtime)
+    public function editInvoiceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+            $body['data'] = $request->data;
         }
         if (!Utils::isUnset($request->datatype)) {
-            @$body['datatype'] = $request->datatype;
+            $body['datatype'] = $request->datatype;
         }
         if (!Utils::isUnset($request->msgid)) {
-            @$body['msgid'] = $request->msgid;
+            $body['msgid'] = $request->msgid;
         }
         if (!Utils::isUnset($request->stamp)) {
-            @$body['stamp'] = $request->stamp;
+            $body['stamp'] = $request->stamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'EditInvoice',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/invoices',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return EditIntostockResponse::fromMap($this->doROARequest('EditIntostock', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/jzcrm/intostocks', 'json', $req, $runtime));
+        return EditInvoiceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -386,41 +507,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditInvoiceRequest $request
-     * @param EditInvoiceHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param EditOrderRequest $request
+     * @param EditOrderHeaders $headers
+     * @param RuntimeOptions   $runtime
      *
-     * @return EditInvoiceResponse
+     * @return EditOrderResponse
      */
-    public function editInvoiceWithOptions($request, $headers, $runtime)
+    public function editOrderWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+            $body['data'] = $request->data;
         }
         if (!Utils::isUnset($request->datatype)) {
-            @$body['datatype'] = $request->datatype;
+            $body['datatype'] = $request->datatype;
         }
         if (!Utils::isUnset($request->msgid)) {
-            @$body['msgid'] = $request->msgid;
+            $body['msgid'] = $request->msgid;
         }
         if (!Utils::isUnset($request->stamp)) {
-            @$body['stamp'] = $request->stamp;
+            $body['stamp'] = $request->stamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'EditOrder',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/orders',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return EditInvoiceResponse::fromMap($this->doROARequest('EditInvoice', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/jzcrm/invoices', 'json', $req, $runtime));
+        return EditOrderResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -437,41 +569,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditOrderRequest $request
-     * @param EditOrderHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @param EditOutstockRequest $request
+     * @param EditOutstockHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return EditOrderResponse
+     * @return EditOutstockResponse
      */
-    public function editOrderWithOptions($request, $headers, $runtime)
+    public function editOutstockWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+            $body['data'] = $request->data;
         }
         if (!Utils::isUnset($request->datatype)) {
-            @$body['datatype'] = $request->datatype;
+            $body['datatype'] = $request->datatype;
         }
         if (!Utils::isUnset($request->msgid)) {
-            @$body['msgid'] = $request->msgid;
+            $body['msgid'] = $request->msgid;
         }
         if (!Utils::isUnset($request->stamp)) {
-            @$body['stamp'] = $request->stamp;
+            $body['stamp'] = $request->stamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'EditOutstock',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/outstocks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return EditOrderResponse::fromMap($this->doROARequest('EditOrder', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/jzcrm/orders', 'json', $req, $runtime));
+        return EditOutstockResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -488,41 +631,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditOutstockRequest $request
-     * @param EditOutstockHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param EditProductionRequest $request
+     * @param EditProductionHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return EditOutstockResponse
+     * @return EditProductionResponse
      */
-    public function editOutstockWithOptions($request, $headers, $runtime)
+    public function editProductionWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+            $body['data'] = $request->data;
         }
         if (!Utils::isUnset($request->datatype)) {
-            @$body['datatype'] = $request->datatype;
+            $body['datatype'] = $request->datatype;
         }
         if (!Utils::isUnset($request->msgid)) {
-            @$body['msgid'] = $request->msgid;
+            $body['msgid'] = $request->msgid;
         }
         if (!Utils::isUnset($request->stamp)) {
-            @$body['stamp'] = $request->stamp;
+            $body['stamp'] = $request->stamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'EditProduction',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/productions',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return EditOutstockResponse::fromMap($this->doROARequest('EditOutstock', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/jzcrm/outstocks', 'json', $req, $runtime));
+        return EditProductionResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -539,41 +693,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditProductionRequest $request
-     * @param EditProductionHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param EditPurchaseRequest $request
+     * @param EditPurchaseHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return EditProductionResponse
+     * @return EditPurchaseResponse
      */
-    public function editProductionWithOptions($request, $headers, $runtime)
+    public function editPurchaseWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+            $body['data'] = $request->data;
         }
         if (!Utils::isUnset($request->datatype)) {
-            @$body['datatype'] = $request->datatype;
+            $body['datatype'] = $request->datatype;
         }
         if (!Utils::isUnset($request->msgid)) {
-            @$body['msgid'] = $request->msgid;
+            $body['msgid'] = $request->msgid;
         }
         if (!Utils::isUnset($request->stamp)) {
-            @$body['stamp'] = $request->stamp;
+            $body['stamp'] = $request->stamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'EditPurchase',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/purchases',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return EditProductionResponse::fromMap($this->doROARequest('EditProduction', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/jzcrm/productions', 'json', $req, $runtime));
+        return EditPurchaseResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -590,41 +755,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditPurchaseRequest $request
-     * @param EditPurchaseHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param EditQuotationRecordRequest $request
+     * @param EditQuotationRecordHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return EditPurchaseResponse
+     * @return EditQuotationRecordResponse
      */
-    public function editPurchaseWithOptions($request, $headers, $runtime)
+    public function editQuotationRecordWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+            $body['data'] = $request->data;
         }
         if (!Utils::isUnset($request->datatype)) {
-            @$body['datatype'] = $request->datatype;
+            $body['datatype'] = $request->datatype;
         }
         if (!Utils::isUnset($request->msgid)) {
-            @$body['msgid'] = $request->msgid;
+            $body['msgid'] = $request->msgid;
         }
         if (!Utils::isUnset($request->stamp)) {
-            @$body['stamp'] = $request->stamp;
+            $body['stamp'] = $request->stamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'EditQuotationRecord',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/quotationRecords',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return EditPurchaseResponse::fromMap($this->doROARequest('EditPurchase', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/jzcrm/purchases', 'json', $req, $runtime));
+        return EditQuotationRecordResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -641,41 +817,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditQuotationRecordRequest $request
-     * @param EditQuotationRecordHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param EditSalesRequest $request
+     * @param EditSalesHeaders $headers
+     * @param RuntimeOptions   $runtime
      *
-     * @return EditQuotationRecordResponse
+     * @return EditSalesResponse
      */
-    public function editQuotationRecordWithOptions($request, $headers, $runtime)
+    public function editSalesWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+            $body['data'] = $request->data;
         }
         if (!Utils::isUnset($request->datatype)) {
-            @$body['datatype'] = $request->datatype;
+            $body['datatype'] = $request->datatype;
         }
         if (!Utils::isUnset($request->msgid)) {
-            @$body['msgid'] = $request->msgid;
+            $body['msgid'] = $request->msgid;
         }
         if (!Utils::isUnset($request->stamp)) {
-            @$body['stamp'] = $request->stamp;
+            $body['stamp'] = $request->stamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'EditSales',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/sales',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return EditQuotationRecordResponse::fromMap($this->doROARequest('EditQuotationRecord', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/jzcrm/quotationRecords', 'json', $req, $runtime));
+        return EditSalesResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -692,41 +879,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EditSalesRequest $request
-     * @param EditSalesHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @param GetDataListRequest $request
+     * @param GetDataListHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return EditSalesResponse
+     * @return GetDataListResponse
      */
-    public function editSalesWithOptions($request, $headers, $runtime)
+    public function getDataListWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
-        }
+        $query = [];
         if (!Utils::isUnset($request->datatype)) {
-            @$body['datatype'] = $request->datatype;
+            $query['datatype'] = $request->datatype;
         }
-        if (!Utils::isUnset($request->msgid)) {
-            @$body['msgid'] = $request->msgid;
+        if (!Utils::isUnset($request->page)) {
+            $query['page'] = $request->page;
         }
-        if (!Utils::isUnset($request->stamp)) {
-            @$body['stamp'] = $request->stamp;
+        if (!Utils::isUnset($request->pagesize)) {
+            $query['pagesize'] = $request->pagesize;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetDataList',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/data',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return EditSalesResponse::fromMap($this->doROARequest('EditSales', 'jzcrm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/jzcrm/sales', 'json', $req, $runtime));
+        return GetDataListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -743,38 +938,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDataListRequest $request
-     * @param GetDataListHeaders $headers
+     * @param GetDataViewRequest $request
+     * @param GetDataViewHeaders $headers
      * @param RuntimeOptions     $runtime
      *
-     * @return GetDataListResponse
+     * @return GetDataViewResponse
      */
-    public function getDataListWithOptions($request, $headers, $runtime)
+    public function getDataViewWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->datatype)) {
-            @$query['datatype'] = $request->datatype;
+            $query['datatype'] = $request->datatype;
         }
-        if (!Utils::isUnset($request->page)) {
-            @$query['page'] = $request->page;
-        }
-        if (!Utils::isUnset($request->pagesize)) {
-            @$query['pagesize'] = $request->pagesize;
+        if (!Utils::isUnset($request->msgid)) {
+            $query['msgid'] = $request->msgid;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetDataView',
+            'version'     => 'jzcrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/jzcrm/dataView',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetDataListResponse::fromMap($this->doROARequest('GetDataList', 'jzcrm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/jzcrm/data', 'json', $req, $runtime));
+        return GetDataViewResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -788,37 +991,5 @@ class Dingtalk extends OpenApiClient
         $headers = new GetDataViewHeaders([]);
 
         return $this->getDataViewWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param GetDataViewRequest $request
-     * @param GetDataViewHeaders $headers
-     * @param RuntimeOptions     $runtime
-     *
-     * @return GetDataViewResponse
-     */
-    public function getDataViewWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->datatype)) {
-            @$query['datatype'] = $request->datatype;
-        }
-        if (!Utils::isUnset($request->msgid)) {
-            @$query['msgid'] = $request->msgid;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return GetDataViewResponse::fromMap($this->doROARequest('GetDataView', 'jzcrm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/jzcrm/dataView', 'json', $req, $runtime));
     }
 }

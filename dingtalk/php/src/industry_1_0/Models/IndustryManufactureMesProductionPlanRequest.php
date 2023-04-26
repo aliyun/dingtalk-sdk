@@ -10,175 +10,171 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureMesProductionPlanRequest extends Model
 {
     /**
-     * @description 本次操作的行为
+     * @example add
      *
      * @var string
      */
     public $action;
 
     /**
-     * @description actualEndTime
+     * @example 2021-03-12 00:00:00
      *
      * @var string
      */
     public $actualEndTime;
 
     /**
-     * @description actualStartTime
+     * @example 2021-03-12 00:00:00
      *
      * @var string
      */
     public $actualStartTime;
 
     /**
-     * @description 生态唯一标识,枚举:opsoft， 需要注册
+     * @example opsoft
      *
      * @var string
      */
     public $appKey;
 
     /**
-     * @description 主数据名称
+     * @example productionplan
      *
      * @var string
      */
     public $baseDataName;
 
     /**
-     * @description BOM业务唯一标识
+     * @example 39C1E213-86B2-706B-9615-5B957DF8C15D
      *
      * @var string
      */
     public $bomUuid;
 
     /**
-     * @description 事件列表
-     *
      * @var string[]
      */
     public $events;
 
     /**
-     * @description 扩展字段
-     *
      * @var extendData[]
      */
     public $extendData;
 
     /**
-     * @description 工单编号(生产订单号)
+     * @example 20220509034
      *
      * @var string
      */
     public $no;
 
     /**
-     * @description 任务逾期
+     * @example 0
      *
      * @var string
      */
     public $overdue;
 
     /**
-     * @description 计划结束时间
+     * @example 2021-03-12 00:00:00
      *
      * @var string
      */
     public $planEndTime;
 
     /**
-     * @description 工单计划数
+     * @example 321
      *
      * @var string
      */
     public $planQuantity;
 
     /**
-     * @description 计划开始时间
+     * @example 2021-03-12 00:00:00
      *
      * @var string
      */
     public $planStartTime;
 
     /**
-     * @description 工序列表(有序) 主体
+     * @example { TODO       "uuid": "1543878029722550273",       "name": "YF-钣金",       "preProcess": ""     }
      *
      * @var string
      */
     public $processUuids;
 
     /**
-     * @description 产品代码(物料编号)
+     * @example 011351
      *
      * @var string
      */
     public $productCode;
 
     /**
-     * @description 产品名称
+     * @example 毛坯KM50三级盖
      *
      * @var string
      */
     public $productName;
 
     /**
-     * @description 规格型号
+     * @example KM50
      *
      * @var string
      */
     public $productSpecification;
 
     /**
-     * @description 最后一道工序完成数量
+     * @example 300
      *
      * @var string
      */
     public $qualifiedQuantity;
 
     /**
-     * @description 销售订单
+     * @example sell20220509034
      *
      * @var string
      */
     public $sellOrderNo;
 
     /**
-     * @description 工单状态
+     * @example WORKING
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 班组信息(有序)
+     * @example {     "processId1": ["teamId11", "teamId12", "teamId13"],     "processId2": ["teamId21", "teamId22", "teamId23"] }
      *
      * @var string
      */
     public $teamList;
 
     /**
-     * @description 工单标题
+     * @example 毛坯KM50三级盖
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 工单类型,["NORMAL"(普通),"返工","样品"],默认"NORMAL"
+     * @example NORMAL
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 单位
+     * @example 个
      *
      * @var string
      */
     public $unit;
 
     /**
-     * @description 工单实例的唯一Id
+     * @example 39C1E213-86B2-706B-9615-5B957DF8C15D
      *
      * @var string
      */

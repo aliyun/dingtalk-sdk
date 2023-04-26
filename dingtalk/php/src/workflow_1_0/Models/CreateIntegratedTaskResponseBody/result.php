@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description OA审批任务ID
-     *
      * @var int
      */
     public $taskId;
 
     /**
-     * @description OA审批任务执行人用户ID
-     *
      * @var string
      */
     public $userId;

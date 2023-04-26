@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryConferenceMembersRequest extends Model
 {
     /**
-     * @description 返回的最大结果数
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页token
+     * @example 0
      *
      * @var string
      */

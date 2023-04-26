@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetUserFaceStateResponseBody extends Model
 {
     /**
-     * @description data
-     *
      * @var data[]
      */
     public $data;

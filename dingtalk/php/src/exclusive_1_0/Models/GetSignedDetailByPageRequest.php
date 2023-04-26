@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetSignedDetailByPageRequest extends Model
 {
     /**
-     * @description pageStart
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description pageSize
+     * @example 1
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description signStatus
+     * @example 1
      *
      * @var int
      */

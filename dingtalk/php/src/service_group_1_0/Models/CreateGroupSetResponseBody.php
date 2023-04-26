@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupSetResponseBody extends Model
 {
     /**
-     * @description 群分组id
-     *
      * @var string
      */
     public $result;

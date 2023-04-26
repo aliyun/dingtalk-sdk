@@ -10,70 +10,68 @@ use AlibabaCloud\Tea\Model;
 class NotifyPayCodeRefundResultRequest extends Model
 {
     /**
-     * @description 企业id
+     * @example ding1234
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 退款时间
+     * @example 2021-11-11 11:11:11
      *
      * @var string
      */
     public $gmtRefund;
 
     /**
-     * @description 支付渠道信息
-     *
      * @var payChannelDetailList[]
      */
     public $payChannelDetailList;
 
     /**
-     * @description 支付时使用的付款码
+     * @example payCode
      *
      * @var string
      */
     public $payCode;
 
     /**
-     * @description 退款金额
+     * @example 1.00
      *
      * @var string
      */
     public $refundAmount;
 
     /**
-     * @description 本次退款订单号
+     * @example refundOrderNo
      *
      * @var string
      */
     public $refundOrderNo;
 
     /**
-     * @description 退款的优惠金额
+     * @example 0.00
      *
      * @var string
      */
     public $refundPromotionAmount;
 
     /**
-     * @description 备注
+     * @example 晚餐退款
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 交易订单号
+     * @example tradeNo
      *
      * @var string
      */
     public $tradeNo;
 
     /**
-     * @description 用户id
+     * @example userId
      *
      * @var string
      */

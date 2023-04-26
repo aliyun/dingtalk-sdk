@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ReleaseGrayUserIdGetResponseBody extends Model
 {
     /**
-     * @description 灰度用户的工号列表
-     *
      * @var string[]
      */
     public $value;

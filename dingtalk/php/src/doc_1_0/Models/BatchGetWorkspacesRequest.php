@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class BatchGetWorkspacesRequest extends Model
 {
     /**
-     * @description 是否查询最近访问文档
-     *
      * @var bool
      */
     public $includeRecent;
 
     /**
-     * @description 操作用户unionId
-     *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 待查询知识库id。
-     *
      * @var string[]
      */
     public $workspaceIds;

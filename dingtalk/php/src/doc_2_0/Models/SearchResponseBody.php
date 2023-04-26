@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class SearchResponseBody extends Model
 {
     /**
-     * @description 节点搜索结果。
-     *
      * @var dentryResult
      */
     public $dentryResult;
 
     /**
-     * @description 知识库搜索结果。
-     *
      * @var spaceResult
      */
     public $spaceResult;

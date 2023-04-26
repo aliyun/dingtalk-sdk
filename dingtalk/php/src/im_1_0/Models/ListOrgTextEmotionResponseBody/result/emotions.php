@@ -9,43 +9,43 @@ use AlibabaCloud\Tea\Model;
 class emotions extends Model
 {
     /**
-     * @description 展示在消息气泡中的文字表情的mediaId
+     * @example @234xxx
      *
      * @var string
      */
     public $backgroundMediaId;
 
     /**
-     * @description 展示在消息长按菜单中的文字表情的mediaId
+     * @example @123xxx
      *
      * @var string
      */
     public $backgroundMediaIdForPanel;
 
     /**
-     * @description 表情所属部门Id：
-     * 一级部门Id：该表情为一级部门层面的文字表情
+     * @example -1
+     *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 表情Id
+     * @example corp_131xxx
      *
      * @var string
      */
     public $emotionId;
 
     /**
-     * @description 表情名称，对用户不可见
+     * @example 企业表情1
      *
      * @var string
      */
     public $emotionName;
 
     /**
-     * @description 表情状态
-     * 2：安全审核不通过
+     * @example 1
+     *
      * @var int
      */
     public $status;

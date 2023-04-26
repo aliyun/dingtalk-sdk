@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryAllTracksRequest extends Model
 {
     /**
-     * @description 分页size
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标
+     * @example 10000
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 排序
+     * @example asc
      *
      * @var string
      */

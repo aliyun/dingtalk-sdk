@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class SearchFormDataIdListResponseBody extends Model
 {
     /**
-     * @description data
-     *
      * @var string[]
      */
     public $data;
 
     /**
-     * @description 当前第几页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 总数量
+     * @example 100
      *
      * @var int
      */

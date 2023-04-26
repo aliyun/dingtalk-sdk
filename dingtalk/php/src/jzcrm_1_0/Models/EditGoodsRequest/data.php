@@ -9,204 +9,148 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 上架时间
-     *
      * @var string
      */
     public $addedtime;
 
     /**
-     * @description 成本价格
-     *
      * @var string
      */
     public $cbprice;
 
     /**
-     * @description 基准产品
-     *
      * @var string
      */
     public $cpParentid;
 
     /**
-     * @description 产品产地
-     *
      * @var string
      */
     public $cparea;
 
     /**
-     * @description 条形码
-     *
      * @var string
      */
     public $cpbarcode;
 
     /**
-     * @description 产品品牌
-     *
      * @var string
      */
     public $cpbrand;
 
     /**
-     * @description 产品说明
-     *
      * @var string
      */
     public $cpcontent;
 
     /**
-     * @description 产品规格
-     *
      * @var string
      */
     public $cpguige;
 
     /**
-     * @description 产品图片
-     *
      * @var string
      */
     public $cpimg;
 
     /**
-     * @description 产品名称
-     *
      * @var string
      */
     public $cpname;
 
     /**
-     * @description 产品编号
-     *
      * @var string
      */
     public $cpno;
 
     /**
-     * @description 产品备注
-     *
      * @var string
      */
     public $cpremark;
 
     /**
-     * @description 产品型号
-     *
      * @var string
      */
     public $cptype;
 
     /**
-     * @description 产品单位
-     *
      * @var string
      */
     public $cpunit;
 
     /**
-     * @description 产品重量
-     *
      * @var string
      */
     public $cpweight;
 
     /**
-     * @description 创建人
+     * @example 张三
      *
      * @var string
      */
     public $dataUserid;
 
     /**
-     * @description 默认供应商
-     *
      * @var string
      */
     public $gysid;
 
     /**
-     * @description 批次号管理（是，否）
-     *
      * @var string
      */
     public $ispicimanage;
 
     /**
-     * @description 序列号管理（是，否）
-     *
      * @var string
      */
     public $issnmanage;
 
     /**
-     * @description 是否算库存（计算，不计算，计算(按基准规格)）
-     *
      * @var string
      */
     public $isstock;
 
     /**
-     * @description 产品状态（正常，停售，下架）
-     *
      * @var string
      */
     public $isstop;
 
     /**
-     * @description 零售价格
-     *
      * @var string
      */
     public $preprice1;
 
     /**
-     * @description 预设价格1
-     *
      * @var string
      */
     public $preprice2;
 
     /**
-     * @description 预设价格2
-     *
      * @var string
      */
     public $preprice3;
 
     /**
-     * @description 预设价格3
-     *
      * @var string
      */
     public $preprice4;
 
     /**
-     * @description 库存下限
-     *
      * @var string
      */
     public $stockdown;
 
     /**
-     * @description 库存上限
-     *
      * @var string
      */
     public $stockup;
 
     /**
-     * @description 产品类别
-     *
      * @var string
      */
     public $typeid;
 
     /**
-     * @description 单位换算
-     *
      * @var string
      */
     public $unitrate;

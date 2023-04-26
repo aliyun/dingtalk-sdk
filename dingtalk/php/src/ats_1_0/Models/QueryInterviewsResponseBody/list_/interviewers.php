@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class interviewers extends Model
 {
     /**
-     * @description 面试官员工标识
+     * @example xxx
      *
      * @var string
      */

@@ -9,42 +9,40 @@ use AlibabaCloud\Tea\Model;
 class BatchQueryObjectiveRequest extends Model
 {
     /**
-     * @description 需要查看的 Objective ID。
-     *
      * @var string[]
      */
     public $objectiveIds;
 
     /**
-     * @description 周期 ID。
+     * @example 10056
      *
      * @var string
      */
     public $periodId;
 
     /**
-     * @description 是否返回关联信息。
+     * @example false
      *
      * @var bool
      */
     public $withAlign;
 
     /**
-     * @description 是否返回 KR 信息。
+     * @example false
      *
      * @var bool
      */
     public $withKr;
 
     /**
-     * @description 是否返回进度信息
+     * @example true
      *
      * @var bool
      */
     public $withProgress;
 
     /**
-     * @description 当前用户的 staff ID。
+     * @example 0115396701752283
      *
      * @var string
      */

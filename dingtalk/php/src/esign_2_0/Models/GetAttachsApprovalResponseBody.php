@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetAttachsApprovalResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
      * @var data[]
      */
     public $data;

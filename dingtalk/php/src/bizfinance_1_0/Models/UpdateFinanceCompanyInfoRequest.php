@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateFinanceCompanyInfoRequest extends Model
 {
     /**
-     * @description 公司名字
-     *
      * @var string
      */
     public $companyName;
 
     /**
-     * @description 纳税性质 小规模纳税人 一般纳税人
-     *
      * @var string
      */
     public $taxNature;
 
     /**
-     * @description 税号
-     *
      * @var string
      */
     public $taxNo;
 
     /**
-     * @description 用户ID
-     *
      * @var string
      */
     public $userId;

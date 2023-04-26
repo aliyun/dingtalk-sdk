@@ -10,36 +10,34 @@ use AlibabaCloud\Tea\Model;
 class messageList extends Model
 {
     /**
-     * @description 内容
+     * @example {   "text": {     "content": "这是一段文本"   } }
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 内容类型 文本/语音/视频
+     * @example text/audio/video
      *
      * @var string
      */
     public $contentType;
 
     /**
-     * @description 发送时间 格式:yyyy-MM-dd HH:mm:ss
+     * @example 2022-07-05 15:43:03
      *
      * @var string
      */
     public $createAt;
 
     /**
-     * @description 会话id
+     * @example cid123456
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 发送人
-     *
      * @var sender
      */
     public $sender;

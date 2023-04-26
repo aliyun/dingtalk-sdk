@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class ConversationTransferCompleteNotifyRequest extends Model
 {
     /**
-     * @description 小二2088id
-     *
      * @var string
      */
     public $alipayUserId;
 
     /**
-     * @description DT端会话ID
-     *
      * @var string
      */
     public $conversationId;
 
     /**
-     * @description 小二昵称
-     *
      * @var string
      */
     public $nickName;
 
     /**
-     * @description 开放团队id
-     *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 对应外部渠道的会话ID
-     *
      * @var string
      */
     public $serviceToken;
 
     /**
-     * @description 小二id
-     *
      * @var string
      */
     public $userId;
 
     /**
-     * @description DT端定义的，标识唯一的访
-     *
      * @var string
      */
     public $visitorToken;

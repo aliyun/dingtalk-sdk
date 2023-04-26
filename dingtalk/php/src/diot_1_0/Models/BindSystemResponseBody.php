@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class BindSystemResponseBody extends Model
 {
     /**
-     * @description 三方平台的用户ID。
+     * @example d12345
      *
      * @var string
      */
     public $clientId;
 
     /**
-     * @description 钉钉物联组织ID。
+     * @example ding12345
      *
      * @var string
      */

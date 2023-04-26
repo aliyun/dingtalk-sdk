@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class workspaces extends Model
 {
     /**
-     * @description 是否有访问知识库权限。
-     *
      * @var bool
      */
     public $hasPermission;
 
     /**
-     * @description 知识库信息。
-     *
      * @var workspace
      */
     public $workspace;

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class attendees extends Model
 {
     /**
-     * @description 用户名
-     *
      * @var string
      */
     public $displayName;
@@ -26,15 +24,11 @@ class attendees extends Model
     public $isOptional;
 
     /**
-     * @description 回复状态
-     *
      * @var string
      */
     public $responseStatus;
 
     /**
-     * @description 是否是当前登陆用户
-     *
      * @var bool
      */
     public $self;

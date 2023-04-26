@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class AddResidentDepartmentRequest extends Model
 {
     /**
-     * @description 部门名字
+     * @example 第一网格组
      *
      * @var string
      */
     public $departmentName;
 
     /**
-     * @description 是否为组
+     * @example true
      *
      * @var bool
      */
     public $isResidenceGroup;
 
     /**
-     * @description 父部门id
+     * @example 12345
      *
      * @var int
      */

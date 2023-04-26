@@ -10,78 +10,56 @@ use AlibabaCloud\Tea\Model;
 class GetCardInfoResponseBody extends Model
 {
     /**
-     * @description 用户角色
-     *
      * @var int
      */
     public $adminRole;
 
     /**
-     * @description 头像
-     *
      * @var string
      */
     public $avatarUrl;
 
     /**
-     * @description 名片ID
-     *
      * @var string
      */
     public $cardId;
 
     /**
-     * @description 扩展信息
-     *
      * @var extension
      */
     public $extension;
 
     /**
-     * @description 行业
-     *
      * @var string
      */
     public $industryName;
 
     /**
-     * @description 个人介绍
-     *
      * @var mixed[]
      */
     public $introduce;
 
     /**
-     * @description 名字
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 组织名称
-     *
      * @var string
      */
     public $orgName;
 
     /**
-     * @description 用户名片信息设置
-     *
      * @var mixed[]
      */
     public $settings;
 
     /**
-     * @description 模板ID
-     *
      * @var string
      */
     public $templateId;
 
     /**
-     * @description 职位
-     *
      * @var string
      */
     public $title;

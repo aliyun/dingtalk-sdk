@@ -9,50 +9,46 @@ use AlibabaCloud\Tea\Model;
 class QueryReceiptsBaseInfoRequest extends Model
 {
     /**
-     * @description 结束时间
+     * @example 16000000
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 分页参数，从1 开始
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页参数，每页查询个数
+     * @example 20
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 开始时间
+     * @example 16000000
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 时间筛选条件 gmt_create / record_time
-     *
      * @var string
      */
     public $timeFilterField;
 
     /**
-     * @description 单据标题
+     * @example 收款单
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 凭证状态
-     *
      * @var string
      */
     public $voucherStatus;

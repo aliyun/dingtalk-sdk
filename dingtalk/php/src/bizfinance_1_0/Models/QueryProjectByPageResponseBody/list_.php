@@ -9,64 +9,58 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 项目code
-     *
      * @var string
      */
     public $caode;
 
     /**
-     * @description 创建时间
+     * @example 1631524595555
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 创建人工号
+     * @example aaaa
      *
      * @var string
      */
     public $creator;
 
     /**
-     * @description 描述
+     * @example 外派项目
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 项目名字
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 项目code，废弃，请使用code
+     * @example PROJ-xxx
      *
      * @var string
      */
     public $projectCode;
 
     /**
-     * @description 项目名称，废弃，请使用name
+     * @example 外派项目
      *
      * @var string
      */
     public $projectName;
 
     /**
-     * @description 状态: valid, invalid, deleted
+     * @example valid
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 用户自定义code
-     *
      * @var string
      */
     public $userDefineCode;

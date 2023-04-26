@@ -25,8 +25,6 @@ class QuerySendMsgTaskStatisticsResponseBody extends Model
     public $records;
 
     /**
-     * @description Id of the request
-     *
      * @var int
      */
     public $totalCount;

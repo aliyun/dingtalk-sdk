@@ -11,8 +11,6 @@ use AlibabaCloud\Tea\Model;
 class recurrence extends Model
 {
     /**
-     * @description 循环规则
-     *
      * @var pattern
      */
     public $pattern;

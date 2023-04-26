@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class partitions extends Model
 {
     /**
-     * @description 分区类型
-     * MINI_OSS_PARTITION: 专属Mini OSS存储分区
+     * @example PUBLIC_OSS_PARTITION
+     *
      * @var string
      */
     public $partitionType;
 
     /**
-     * @description 容量信息
-     *
      * @var quota
      */
     public $quota;

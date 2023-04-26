@@ -14,8 +14,6 @@ class userList extends Model
     public $active;
 
     /**
-     * @description 部门ID列表
-     *
      * @var int[]
      */
     public $departmentList;
@@ -31,15 +29,11 @@ class userList extends Model
     public $name;
 
     /**
-     * @description unionId
-     *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 用户ID
-     *
      * @var string
      */
     public $userId;

@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class details extends Model
 {
     /**
-     * @description 用户点快捷入口时的跳转链接，此参数与callbackKey二选一。
+     * @example https://dingtalk.com
      *
      * @var string
      */
     public $actionUrl;
 
     /**
-     * @description 快捷入口点击回调Key,可通过回调注册接口获得。此参数与actionUrl二选一。
+     * @example 033bd94b1168d7e4f0d644c3c95e35bf
      *
      * @var string
      */
     public $callbackKey;
 
     /**
-     * @description windows侧边栏图标的unicode
+     * @example e73e
      *
      * @var string
      */
     public $iconFont;
 
     /**
-     * @description 移动端图标
+     * @example @lADPDg7mWPzw0i_NArzNArw
      *
      * @var string
      */
     public $iconMediaId;
 
     /**
-     * @description 插件唯一标识
+     * @example test123456
      *
      * @var string
      */
     public $shortcutId;
 
     /**
-     * @description 适配mac端侧边栏图标的mediaId
+     * @example @lADPDg7mWPzw0i_NArzNArw
      *
      * @var string
      */
     public $slideIconMediaId;
 
     /**
-     * @description 插件标题
+     * @example 测试
      *
      * @var string
      */

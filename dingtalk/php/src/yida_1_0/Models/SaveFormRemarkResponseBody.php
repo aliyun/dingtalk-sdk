@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SaveFormRemarkResponseBody extends Model
 {
     /**
-     * @description 评论的ID
+     * @example 123
      *
      * @var int
      */

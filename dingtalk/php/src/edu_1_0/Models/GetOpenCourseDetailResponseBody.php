@@ -10,63 +10,61 @@ use AlibabaCloud\Tea\Model;
 class GetOpenCourseDetailResponseBody extends Model
 {
     /**
-     * @description 课程id
+     * @example fdjakl-fdaf-ds
      *
      * @var string
      */
     public $courseId;
 
     /**
-     * @description 课程类型: 0-直播 2-视频内容
+     * @example 0
      *
      * @var int
      */
     public $courseType;
 
     /**
-     * @description 封面图片地址
+     * @example https://static.dingtalk.com/media/lALPDgCwRt4FagzMi8yZ_153_139.png
      *
      * @var string
      */
     public $coverUrl;
 
     /**
-     * @description 课程介绍
+     * @example 开学的第一堂课
      *
      * @var string
      */
     public $introduction;
 
     /**
-     * @description 发布详情model
-     *
      * @var pushModel
      */
     public $pushModel;
 
     /**
-     * @description 课程开始时间
+     * @example 1618369786000
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 老师的userId
+     * @example 123124312314
      *
      * @var string
      */
     public $teacherId;
 
     /**
-     * @description 老师名称
+     * @example 张老师
      *
      * @var string
      */
     public $teacherName;
 
     /**
-     * @description 课程标题
+     * @example 开学第一课
      *
      * @var string
      */

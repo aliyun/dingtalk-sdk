@@ -19,8 +19,6 @@ class GetStoragePolicyResponseBody extends Model
     public $endpoint;
 
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $key;

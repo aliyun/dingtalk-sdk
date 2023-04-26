@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class installOption extends Model
 {
     /**
-     * @description 是否同步，目前只有同步
-     *
      * @var bool
      */
     public $isSync;

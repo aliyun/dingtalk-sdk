@@ -29,21 +29,17 @@ class SetRobotConfigRequest extends Model
     public $dingTokenGrantType;
 
     /**
-     * @description 群组开放ID
-     *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 开放团队ID
-     *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 设置状态，0代表关闭,1代表开启
+     * @example 0
      *
      * @var string
      */

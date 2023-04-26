@@ -15,6 +15,8 @@ class sections extends Model
     public $empFieldVOList;
 
     /**
+     * @example 0
+     *
      * @var int
      */
     public $oldIndex;

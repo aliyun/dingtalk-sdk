@@ -9,112 +9,112 @@ use AlibabaCloud\Tea\Model;
 class file extends Model
 {
     /**
-     * @description 文件所在会话id
+     * @example open_conversation_id
      *
      * @var string
      */
     public $conversationId;
 
     /**
-     * @description 创建时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 创建者id
+     * @example creator_id
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 文件后缀
+     * @example txt
      *
      * @var string
      */
     public $extension;
 
     /**
-     * @description 文件id
+     * @example file_id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 修改时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $modifiedTime;
 
     /**
-     * @description 修改者id
+     * @example modified_id
      *
      * @var string
      */
     public $modifierId;
 
     /**
-     * @description 文件(夹)名称
+     * @example file_name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 文件所在的父目录id, 根目录id值为0
+     * @example parent_id
      *
      * @var string
      */
     public $parentId;
 
     /**
-     * @description 文件路径
+     * @example file_path
      *
      * @var string
      */
     public $path;
 
     /**
-     * @description 文件大小, 单位:Byte
+     * @example 256
      *
      * @var int
      */
     public $size;
 
     /**
-     * @description 文件所在空间id
+     * @example space_id
      *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 文件状态
-     * EXPIRED: 已过期
+     * @example NORMAL
+     *
      * @var string
      */
     public $status;
 
     /**
-     * @description 文件类型：文件、文件夹
-     * FOLDER: 文件夹
+     * @example file
+     *
      * @var string
      */
     public $type;
 
     /**
-     * @description uuid，如移动文件，此字段不变
+     * @example uuid
      *
      * @var string
      */
     public $uuid;
 
     /**
-     * @description 文件版本
+     * @example 1
      *
      * @var int
      */

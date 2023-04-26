@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryBatchSendResultRequest extends Model
 {
     /**
-     * @description 发送者，必须是B端用户
+     * @example 234#dingxxx@dingding
      *
      * @var string
      */
     public $senderUserId;
 
     /**
-     * @description batchSend返回的taskId
+     * @example 1234567890
      *
      * @var string
      */

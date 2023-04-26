@@ -9,27 +9,29 @@ use AlibabaCloud\Tea\Model;
 class QueryIntegratedTodoTaskRequest extends Model
 {
     /**
-     * @description 在此时间戳之前创建的
+     * @example 1660036833411
      *
      * @var int
      */
     public $createBefore;
 
     /**
-     * @description 第几页，取值范围为 1 ≤ page ≤ 1000
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小，取值范围为 1 ≤ pageSize ≤ 40
+     * @example 20
      *
      * @var int
      */
     public $pageSize;
 
     /**
+     * @example manager001
+     *
      * @var string
      */
     public $userId;

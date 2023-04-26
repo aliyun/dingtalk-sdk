@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class AddResidentUsersResponseBody extends Model
 {
     /**
-     * @description 创建成功的userId
+     * @example 1234
      *
      * @var string
      */

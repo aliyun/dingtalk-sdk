@@ -9,57 +9,41 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 商品code
-     *
      * @var string
      */
     public $code;
 
     /**
-     * @description 创建时间
-     *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 商品备注
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 商品名称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 商品规格
-     *
      * @var string
      */
     public $specification;
 
     /**
-     * @description 商品状态
-     *
      * @var string
      */
     public $status;
 
     /**
-     * @description 商品单位
-     *
      * @var string
      */
     public $unit;
 
     /**
-     * @description 商品用户自定义码
-     *
      * @var string
      */
     public $userDefineCode;

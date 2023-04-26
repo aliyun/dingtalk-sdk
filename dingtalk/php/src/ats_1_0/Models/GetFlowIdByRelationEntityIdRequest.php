@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetFlowIdByRelationEntityIdRequest extends Model
 {
     /**
-     * @description 业务标识
+     * @example ddats
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 招聘流程关联实体
+     * @example interview
      *
      * @var string
      */
     public $relationEntity;
 
     /**
-     * @description 招聘流程关联实体标识
+     * @example xxx
      *
      * @var string
      */

@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class GetOrgAuthInfoResponseBody extends Model
 {
     /**
-     * @description 认证等级 1高级认证 2中级认证
+     * @example 1
      *
      * @var int
      */
     public $authLevel;
 
     /**
-     * @description 法人
+     * @example xxx
      *
      * @var string
      */
     public $legalPerson;
 
     /**
-     * @description 提交企业认证时营业执照上面的企业名称
+     * @example 测试有限公司
      *
      * @var string
      */
     public $licenseOrgName;
 
     /**
-     * @description 营业执照url
+     * @example https://XXX.XX
      *
      * @var string
      */
     public $licenseUrl;
 
     /**
-     * @description 企业在钉钉通讯录的名称
+     * @example 测试
      *
      * @var string
      */
     public $orgName;
 
     /**
-     * @description 组织机构代码证号（格式11111111-1）
+     * @example 2456677
      *
      * @var string
      */
     public $organizationCode;
 
     /**
-     * @description 营业执照注册号（一般15位）
+     * @example 1233
      *
      * @var string
      */
     public $registrationNum;
 
     /**
-     * @description 社会统一信用代码（固定18位）
+     * @example 123566788
      *
      * @var string
      */

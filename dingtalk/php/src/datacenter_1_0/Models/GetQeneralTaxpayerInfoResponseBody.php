@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetQeneralTaxpayerInfoResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * JUDGE_DATE:认定时间
+     * @example [     {       "DEPARTMENT":"xx"       "END_DATE":"2017-01-04"       "ENT_NAME":"xx"       "QUALIFICATION"       "START_DATE":"2017-01-04"       "TAXPAYER_NUM":"11"       "JUDGE_DATE":"2017-05-04"      }   ]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

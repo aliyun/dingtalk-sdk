@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class UnsubscribeUniversityCourseGroupRequest extends Model
 {
     /**
-     * @description 课程组
+     * @example GSS10023
      *
      * @var string
      */
     public $courseGroupCode;
 
     /**
-     * @description 学生用户id
-     *
      * @var string[]
      */
     public $studentUserIds;
 
     /**
-     * @description opUserId
-     *
      * @var string
      */
     public $opUserId;

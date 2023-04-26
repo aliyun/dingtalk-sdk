@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class intentionStatisticsRecords extends Model
 {
     /**
-     * @description 心声数量
+     * @example 10
      *
      * @var int
      */
     public $count;
 
     /**
-     * @description 意图
+     * @example 产品异常类
      *
      * @var string
      */
     public $intention;
 
     /**
-     * @description 上期心声数量
+     * @example 9
      *
      * @var int
      */

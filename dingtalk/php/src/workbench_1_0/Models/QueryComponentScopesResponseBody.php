@@ -14,8 +14,6 @@ class QueryComponentScopesResponseBody extends Model
     public $deptVisibleScopes;
 
     /**
-     * @description scopes
-     *
      * @var string[]
      */
     public $userVisibleScopes;

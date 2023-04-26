@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class DeleteRowsRequest extends Model
 {
     /**
-     * @description 要删除的第一行的位置，从0开始。
+     * @example row
      *
      * @var int
      */
     public $row;
 
     /**
-     * @description 要删除的行的数量。
+     * @example row_count
      *
      * @var int
      */
     public $rowCount;
 
     /**
-     * @description 操作人id
+     * @example union_id
      *
      * @var string
      */

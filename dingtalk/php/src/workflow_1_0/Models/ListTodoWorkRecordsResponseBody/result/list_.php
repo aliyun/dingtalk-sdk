@@ -10,35 +10,33 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 表单列表。
-     *
      * @var forms[]
      */
     public $forms;
 
     /**
-     * @description 实例ID。
+     * @example Siw2WNVZS4KiUt3tTmaNKg04*****809950
      *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description 待办任务ID。
+     * @example 1234567
      *
      * @var int
      */
     public $taskId;
 
     /**
-     * @description 待办标题。
+     * @example xxx提交的入职审批
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 待办跳转链接。
+     * @example https://www.dingtalk.com
      *
      * @var string
      */

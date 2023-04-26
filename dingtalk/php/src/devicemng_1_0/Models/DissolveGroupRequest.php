@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DissolveGroupRequest extends Model
 {
     /**
-     * @description 场景群唯一标识，调用创建场景群接口时，会返回该标识。
+     * @example xxxxxxxx
      *
      * @var string
      */

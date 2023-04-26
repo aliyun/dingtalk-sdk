@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ListMiniAppHistoryVersionRequest extends Model
 {
     /**
-     * @description 小程序id
+     * @example 500000003
      *
      * @var string
      */
     public $miniAppId;
 
     /**
-     * @description 分页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 10
      *
      * @var int
      */

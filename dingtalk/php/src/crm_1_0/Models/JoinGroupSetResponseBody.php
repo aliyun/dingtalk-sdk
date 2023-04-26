@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class JoinGroupSetResponseBody extends Model
 {
     /**
-     * @description chatId
+     * @example abc123
      *
      * @var string
      */
     public $chatId;
 
     /**
-     * @description 加密群ID。
+     * @example abc123
      *
      * @var string
      */

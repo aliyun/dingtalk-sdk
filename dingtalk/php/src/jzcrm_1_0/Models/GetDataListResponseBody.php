@@ -10,43 +10,31 @@ use AlibabaCloud\Tea\Model;
 class GetDataListResponseBody extends Model
 {
     /**
-     * @description 数据列表
-     *
      * @var data[]
      */
     public $data;
 
     /**
-     * @description 字段明细
-     *
      * @var string[]
      */
     public $dataname;
 
     /**
-     * @description 当前页码
-     *
      * @var int
      */
     public $page;
 
     /**
-     * @description 分页条数
-     *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 响应时间
-     *
      * @var string
      */
     public $time;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $totalCount;

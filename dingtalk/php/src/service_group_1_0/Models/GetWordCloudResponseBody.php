@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetWordCloudResponseBody extends Model
 {
     /**
-     * @description 词列表
-     *
      * @var words[]
      */
     public $words;

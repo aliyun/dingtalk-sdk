@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class CreateInstanceRequest extends Model
 {
     /**
-     * @description 渠道
+     * @example DOU_YIN
      *
      * @var string
      */
     public $channel;
 
     /**
-     * @description 外部业务ID，由英文、数字构成
+     * @example 888888
      *
      * @var string
      */
     public $externalBizId;
 
     /**
-     * @description 表单CODE,客户表单：DING_CUSTOMER；联系人表单：DING_CONTACT
+     * @example DING_CUSTOMER
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 表单数据，JSON格式
+     * @example {"node_1111":"hahha"}
      *
      * @var string
      */
     public $formDataList;
 
     /**
-     * @description 开放团队ID，从服务群后台ID信息中获取
+     * @example 88444***
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 操作人unionId
+     * @example 88855
      *
      * @var string
      */
     public $operatorUnionId;
 
     /**
-     * @description 拥有人unionId
+     * @example 88855
      *
      * @var string
      */

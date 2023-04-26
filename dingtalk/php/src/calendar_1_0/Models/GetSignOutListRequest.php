@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetSignOutListRequest extends Model
 {
     /**
-     * @description 查询返回结果数（上限200）
-     *
      * @var int
      */
     public $maxResults;
@@ -21,7 +19,7 @@ class GetSignOutListRequest extends Model
     public $nextToken;
 
     /**
-     * @description 签到信息类型（sign_out，not_yet_sign_out)
+     * @example sign_out
      *
      * @var string
      */

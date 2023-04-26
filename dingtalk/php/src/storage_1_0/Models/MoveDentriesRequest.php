@@ -10,35 +10,31 @@ use AlibabaCloud\Tea\Model;
 class MoveDentriesRequest extends Model
 {
     /**
-     * @description 源文件(夹)id列表
-     * 30
      * @var string[]
      */
     public $dentryIds;
 
     /**
-     * @description 可选参数
-     *
      * @var option
      */
     public $option;
 
     /**
-     * @description 目标文件夹id, 根目录id值为0
+     * @example target_folder_id
      *
      * @var string
      */
     public $targetFolderId;
 
     /**
-     * @description 目标文件(夹)空间id
+     * @example target_space_id
      *
      * @var string
      */
     public $targetSpaceId;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

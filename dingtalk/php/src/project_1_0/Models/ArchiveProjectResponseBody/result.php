@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 是否已放入回收站。
+     * @example true
      *
      * @var bool
      */
     public $isArchived;
 
     /**
-     * @description 更新时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */

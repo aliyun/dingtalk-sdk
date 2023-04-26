@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class BatchQueryGroupMemberRequest extends Model
 {
     /**
-     * @description 每页条数
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 游标
+     * @example ***
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 群会话ID
+     * @example cid***
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开放团队ID
+     * @example 888
      *
      * @var string
      */

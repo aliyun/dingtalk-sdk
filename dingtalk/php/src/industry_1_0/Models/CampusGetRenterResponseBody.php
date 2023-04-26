@@ -9,63 +9,63 @@ use AlibabaCloud\Tea\Model;
 class CampusGetRenterResponseBody extends Model
 {
     /**
-     * @description 绑定组织
+     * @example ding121313
      *
      * @var string
      */
     public $bindRenterCorpId;
 
     /**
-     * @description 绑定时间
+     * @example 1655704317794
      *
      * @var int
      */
     public $bindTime;
 
     /**
-     * @description 企业信用代码
+     * @example 231313
      *
      * @var string
      */
     public $creditCode;
 
     /**
-     * @description 结束时间
+     * @example 1655704317794
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 扩展信息
+     * @example 扩展
      *
      * @var string
      */
     public $extend;
 
     /**
-     * @description 租客名称
+     * @example 名称
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 部门iD
+     * @example 101
      *
      * @var int
      */
     public $renterDeptId;
 
     /**
-     * @description 开始时间
+     * @example 1655704317794
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 状态
+     * @example 1
      *
      * @var int
      */

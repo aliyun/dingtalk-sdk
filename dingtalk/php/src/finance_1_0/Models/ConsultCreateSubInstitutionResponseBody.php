@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ConsultCreateSubInstitutionResponseBody extends Model
 {
     /**
-     * @description 进件申请单号
+     * @example 202110110000001
      *
      * @var string
      */

@@ -10,29 +10,27 @@ use AlibabaCloud\Tea\Model;
 class QueryAllTracksResponseBody extends Model
 {
     /**
-     * @description 是否还有数据
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 翻页size
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 下页翻页起始游标
+     * @example 10001
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 客户动态分页数据
-     *
      * @var values[]
      */
     public $values;

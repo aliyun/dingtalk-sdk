@@ -9,71 +9,51 @@ use AlibabaCloud\Tea\Model;
 class secondHandCarInvoiceDetailList extends Model
 {
     /**
-     * @description 金额
-     *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 车牌号
-     *
      * @var string
      */
     public $cardNo;
 
     /**
-     * @description 通行日期止
-     *
      * @var string
      */
     public $endDate;
 
     /**
-     * @description 商品名称
-     *
      * @var string
      */
     public $goodsName;
 
     /**
-     * @description 税收分类编码
-     *
      * @var string
      */
     public $revenueCode;
 
     /**
-     * @description 行号
-     *
      * @var string
      */
     public $rowNo;
 
     /**
-     * @description 通行日期起
-     *
      * @var string
      */
     public $startDate;
 
     /**
-     * @description 税额
-     *
      * @var string
      */
     public $taxAmount;
 
     /**
-     * @description 税率
-     *
      * @var string
      */
     public $taxRate;
 
     /**
-     * @description 类型
-     *
      * @var string
      */
     public $vehicleType;

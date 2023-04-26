@@ -11,28 +11,24 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 子表结构
-     *
      * @var childForms[]
      */
     public $childForms;
 
     /**
-     * @description 字段、组件结构数组
-     *
      * @var fields[]
      */
     public $fields;
 
     /**
-     * @description 表单名称
+     * @example 客户管理
      *
      * @var string
      */
     public $formName;
 
     /**
-     * @description 表单编码
+     * @example D0001839bbbbe346bbf496498bb76c44c7eb972
      *
      * @var string
      */

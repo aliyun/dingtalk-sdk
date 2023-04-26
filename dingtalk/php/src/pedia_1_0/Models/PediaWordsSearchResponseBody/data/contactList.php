@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class contactList extends Model
 {
     /**
-     * @description 员工头像
+     * @example @12321312ds
      *
      * @var string
      */
     public $avatarMediaId;
 
     /**
-     * @description 员工的名字
+     * @example 员工名称
      *
      * @var string
      */
     public $nickName;
 
     /**
-     * @description 员工的userId
+     * @example 1232343
      *
      * @var string
      */

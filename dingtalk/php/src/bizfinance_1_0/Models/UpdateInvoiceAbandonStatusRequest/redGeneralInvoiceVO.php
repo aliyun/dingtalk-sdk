@@ -13,183 +13,133 @@ use AlibabaCloud\Tea\Model;
 class redGeneralInvoiceVO extends Model
 {
     /**
-     * @description 账期时间
-     *
      * @var string
      */
     public $accountPeriod;
 
     /**
-     * @description 不含税金额
-     *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 含税金额
-     *
      * @var string
      */
     public $amountWithTax;
 
     /**
-     * @description 校验码
-     *
      * @var string
      */
     public $checkCode;
 
     /**
-     * @description 查验时间
-     *
      * @var string
      */
     public $checkTime;
 
     /**
-     * @description 开票日期
-     *
      * @var string
      */
     public $drewDate;
 
     /**
-     * @description 电票版式文件下载地址
-     *
      * @var string
      */
     public $electronicUrl;
 
     /**
-     * @description 财务类型，INPUT-VAT(进项),OUTPUT_VAT(销项)
-     *
      * @var string
      */
     public $financeType;
 
     /**
-     * @description 资金类型 ，RED（红票），（BLUE）蓝票
-     *
      * @var string
      */
     public $fundType;
 
     /**
-     * @description 常规发票明细
-     *
      * @var generalInvoiceDetailVOList[]
      */
     public $generalInvoiceDetailVOList;
 
     /**
-     * @description 发票代码
-     *
      * @var string
      */
     public $invoiceCode;
 
     /**
-     * @description 发票号码
-     *
      * @var string
      */
     public $invoiceNo;
 
     /**
-     * @description 发票状态
-     *
      * @var string
      */
     public $invoiceStatus;
 
     /**
-     * @description 发票类型
-     *
      * @var string
      */
     public $invoiceType;
 
     /**
-     * @description 机器码
-     *
      * @var string
      */
     public $machineCode;
 
     /**
-     * @description 成品油标识
-     *
      * @var string
      */
     public $oilFlag;
 
     /**
-     * @description 收款人
-     *
      * @var string
      */
     public $payee;
 
     /**
-     * @description 审批单实例
-     *
      * @var string
      */
     public $processInstCode;
 
     /**
-     * @description 审批单类型
-     *
      * @var string
      */
     public $processInstType;
 
     /**
-     * @description 购方地址
-     *
      * @var string
      */
     public $purchaserAddress;
 
     /**
-     * @description 购方银行账户
+     * @example aaa
      *
      * @var string
      */
     public $purchaserBankAccount;
 
     /**
-     * @description 购方银行
-     *
      * @var string
      */
     public $purchaserBankNameAccount;
 
     /**
-     * @description 购方名称
-     *
      * @var string
      */
     public $purchaserName;
 
     /**
-     * @description 购方税号
-     *
      * @var string
      */
     public $purchaserTaxNo;
 
     /**
-     * @description 购方电话
-     *
      * @var string
      */
     public $purchaserTel;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $remark;
@@ -200,57 +150,43 @@ class redGeneralInvoiceVO extends Model
     public $secondHandCarInvoiceDetailList;
 
     /**
-     * @description 销方地址
-     *
      * @var string
      */
     public $sellerAddress;
 
     /**
-     * @description 购方银行账户
+     * @example 111
      *
      * @var string
      */
     public $sellerBankAccount;
 
     /**
-     * @description 销方银行
-     *
      * @var string
      */
     public $sellerBankNameAccount;
 
     /**
-     * @description 销方名称
-     *
      * @var string
      */
     public $sellerName;
 
     /**
-     * @description 销方税号
-     *
      * @var string
      */
     public $sellerTaxNo;
 
     /**
-     * @description 销方电话
-     *
      * @var string
      */
     public $sellerTel;
 
     /**
-     * @description 代开发票标识 1-自开，2-代开
-     *
      * @var string
      */
     public $supplySign;
 
     /**
-     * @description 税额
-     *
      * @var string
      */
     public $taxAmount;
@@ -266,22 +202,16 @@ class redGeneralInvoiceVO extends Model
     public $vehicleSaleDetailVOList;
 
     /**
-     * @description 发票查验状态
-     *
      * @var string
      */
     public $verifyStatus;
 
     /**
-     * @description 凭证code
-     *
      * @var string
      */
     public $voucherCode;
 
     /**
-     * @description 生成凭证状态
-     *
      * @var string
      */
     public $voucherStatus;

@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupResponseBody extends Model
 {
     /**
-     * @description 群bizId
+     * @example 234
      *
      * @var string
      */
     public $bizId;
 
     /**
-     * @description 群名称
+     * @example 钉钉专属服务群
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 入群URL
+     * @example https://qr.dingtalk.com/xxxxxxx
      *
      * @var string
      */
     public $groupUrl;
 
     /**
-     * @description 开放群ID
+     * @example cidxxxxx==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开放群组ID
+     * @example xjfjdsiw
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 开放团队ID
+     * @example xkjhfker
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 服务群机器人code
+     * @example jikwrjcowa
      *
      * @var string
      */
     public $robotCode;
 
     /**
-     * @description 服务群机器人名称
+     * @example 服务小钉
      *
      * @var string
      */

@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 是否有更多结果。
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 假期消费记录列表。
-     *
      * @var leaveRecords[]
      */
     public $leaveRecords;

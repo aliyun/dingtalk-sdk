@@ -9,85 +9,61 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description bizDataMap
-     *
      * @var mixed[]
      */
     public $bizDataMap;
 
     /**
-     * @description foreignId
-     *
      * @var string
      */
     public $foreignId;
 
     /**
-     * @description foreignName
-     *
      * @var string
      */
     public $foreignName;
 
     /**
-     * @description gmtCreate
-     *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description gmtModified
-     *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description openInstanceId
-     *
      * @var string
      */
     public $openInstanceId;
 
     /**
-     * @description productionType
-     *
      * @var int
      */
     public $productionType;
 
     /**
-     * @description sourceId
-     *
      * @var string
      */
     public $sourceId;
 
     /**
-     * @description templateId
-     *
      * @var string
      */
     public $templateId;
 
     /**
-     * @description ticketId
-     *
      * @var string
      */
     public $ticketId;
 
     /**
-     * @description ticketStatus
-     *
      * @var string
      */
     public $ticketStatus;
 
     /**
-     * @description title
-     *
      * @var string
      */
     public $title;

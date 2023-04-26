@@ -9,22 +9,22 @@ use AlibabaCloud\Tea\Model;
 class capabilities extends Model
 {
     /**
-     * @description 是否进最近使用, 默认不支持
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $canRecordRecentFile;
 
     /**
-     * @description 是否支持重命名空间名称, 默认不支持
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $canRename;
 
     /**
-     * @description 是否支持搜索, 默认不支持
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $canSearch;

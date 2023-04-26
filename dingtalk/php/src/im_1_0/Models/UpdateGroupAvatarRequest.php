@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class UpdateGroupAvatarRequest extends Model
 {
     /**
-     * @description 群头像地址。
+     * @example http://***.png
      *
      * @var string
      */
     public $groupAvatar;
 
     /**
-     * @description 群会话id。
-     *
      * @var string
      */
     public $openConversationId;

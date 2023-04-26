@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class downloadInfo extends Model
 {
     /**
-     * @description 加签url过期时间
-     *
      * @var int
      */
     public $expirationSeconds;
 
     /**
-     * @description headers
-     *
      * @var mixed[]
      */
     public $headers;
 
     /**
-     * @description 内网加签url
-     *
      * @var string
      */
     public $internalResourceUrl;
 
     /**
-     * @description 加签url
-     *
      * @var string
      */
     public $resourceUrl;

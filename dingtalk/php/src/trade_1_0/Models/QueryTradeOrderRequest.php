@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryTradeOrderRequest extends Model
 {
     /**
-     * @description 内部订单号
-     *
      * @var int
      */
     public $orderId;
 
     /**
-     * @description 外部订单号
-     *
      * @var string
      */
     public $outerOrderId;

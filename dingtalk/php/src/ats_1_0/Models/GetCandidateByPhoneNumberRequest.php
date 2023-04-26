@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetCandidateByPhoneNumberRequest extends Model
 {
     /**
-     * @description 业务标识
+     * @example ddats
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 候选人手机号
+     * @example 13688888888
      *
      * @var string
      */

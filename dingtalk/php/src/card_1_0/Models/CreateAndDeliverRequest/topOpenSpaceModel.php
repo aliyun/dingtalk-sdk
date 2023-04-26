@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class topOpenSpaceModel extends Model
 {
     /**
-     * @description 【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
+     * @example ONE_BOX
      *
      * @var string
      */

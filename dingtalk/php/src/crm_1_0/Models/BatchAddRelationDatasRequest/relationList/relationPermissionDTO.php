@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class relationPermissionDTO extends Model
 {
     /**
-     * @description 协同人列表
-     *
      * @var string[]
      */
     public $participantUserIds;
 
     /**
-     * @description 负责人列表
-     *
      * @var string[]
      */
     public $principalUserIds;

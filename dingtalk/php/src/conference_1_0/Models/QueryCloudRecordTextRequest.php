@@ -9,36 +9,28 @@ use AlibabaCloud\Tea\Model;
 class QueryCloudRecordTextRequest extends Model
 {
     /**
-     * @description 0-向前查询，1-向后查询 。 向前查询：此次查询按照时间由小到大的顺序进行。
+     * @example 1
      *
      * @var string
      */
     public $direction;
 
     /**
-     * @description 单页查询的最大条目数，最多2000
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 游标，第一次查询可为空，之后每次带上一次的游标
-     *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 开始时间
-     *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

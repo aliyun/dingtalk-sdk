@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class availableTemplates extends Model
 {
     /**
-     * @description PROC-BFA563D4-BBC7-4B1F-8F72-886A302665FC
+     * @example 审批模板id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 补卡申请
+     * @example 审批模板名称
      *
      * @var string
      */

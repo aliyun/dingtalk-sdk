@@ -10,49 +10,47 @@ use AlibabaCloud\Tea\Model;
 class payChannelDetailList extends Model
 {
     /**
-     * @description 金额
+     * @example 1.00
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 支付资金列表
-     *
      * @var fundToolDetailList[]
      */
     public $fundToolDetailList;
 
     /**
-     * @description 支付渠道名称
+     * @example ALIPAY
      *
      * @var string
      */
     public $payChannelName;
 
     /**
-     * @description 支付渠道号
+     * @example 20210531123456
      *
      * @var string
      */
     public $payChannelOrderNo;
 
     /**
-     * @description 支付渠道退款号
+     * @example 2021053112345678
      *
      * @var string
      */
     public $payChannelRefundOrderNo;
 
     /**
-     * @description 支付渠道类型
+     * @example ALIPAY
      *
      * @var string
      */
     public $payChannelType;
 
     /**
-     * @description 优惠金额
+     * @example 0.00
      *
      * @var string
      */

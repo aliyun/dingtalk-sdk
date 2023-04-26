@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class wifis extends Model
 {
     /**
-     * @description mac地址。
+     * @example C0:E0:D0:E0:C0:0F
      *
      * @var string
      */
     public $macAddr;
 
     /**
-     * @description wifi的ssid。
+     * @example OFFICE-WiFi
      *
      * @var string
      */

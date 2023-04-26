@@ -9,337 +9,243 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 创建人
+     * @example 张三
      *
      * @var string
      */
     public $dataUserid;
 
     /**
-     * @description 家庭地址
-     *
      * @var string
      */
     public $khAddress;
 
     /**
-     * @description 称谓
-     *
      * @var string
      */
     public $khAppellation;
 
     /**
-     * @description 爱好
-     *
      * @var string
      */
     public $khBefontof;
 
     /**
-     * @description 开票资料
-     *
      * @var string
      */
     public $khBillinfo;
 
     /**
-     * @description 城市
-     *
      * @var string
      */
     public $khCity;
 
     /**
-     * @description 类别（企业客户，个人客户，供应商，个人供应商）
-     *
      * @var string
      */
     public $khClass;
 
     /**
-     * @description 单位地址
-     *
      * @var string
      */
     public $khCoaddress;
 
     /**
-     * @description 联系人分类
-     *
      * @var string
      */
     public $khContype;
 
     /**
-     * @description 国家地区
-     *
      * @var string
      */
     public $khCountry;
 
     /**
-     * @description 信用等级（低，中，高）
-     *
      * @var string
      */
     public $khCreditgrade;
 
     /**
-     * @description 证件号码
-     *
      * @var string
      */
     public $khCtnumber;
 
     /**
-     * @description 证件类型
-     *
      * @var string
      */
     public $khCttype;
 
     /**
-     * @description 部门
-     *
      * @var string
      */
     public $khDepartment;
 
     /**
-     * @description 钉钉号
-     *
      * @var string
      */
     public $khDingtalk;
 
     /**
-     * @description 邮箱
-     *
      * @var string
      */
     public $khEmail;
 
     /**
-     * @description 人员规模
-     *
      * @var string
      */
     public $khEmployees;
 
     /**
-     * @description 传真
-     *
      * @var string
      */
     public $khFax;
 
     /**
-     * @description 来源
-     *
      * @var string
      */
     public $khFrom;
 
     /**
-     * @description 手机
-     *
      * @var string
      */
     public $khHandset;
 
     /**
-     * @description 职务
-     *
      * @var string
      */
     public $khHeadship;
 
     /**
-     * @description 热点分类
-     *
      * @var string
      */
     public $khHotfl;
 
     /**
-     * @description 热度（无，低热，中热，高热）
-     *
      * @var string
      */
     public $khHotlevel;
 
     /**
-     * @description 热点说明
-     *
      * @var string
      */
     public $khHotmemo;
 
     /**
-     * @description 热点客户（是，否）
-     *
      * @var string
      */
     public $khHottype;
 
     /**
-     * @description 行业
-     *
      * @var string
      */
     public $khIndustry;
 
     /**
-     * @description 公司简介
-     *
      * @var string
      */
     public $khInfo;
 
     /**
-     * @description 客户级别
-     *
      * @var string
      */
     public $khJibie;
 
     /**
-     * @description 客户名称
-     *
      * @var string
      */
     public $khName;
 
     /**
-     * @description 上级客户
-     *
      * @var string
      */
     public $khPkhid;
 
     /**
-     * @description 负责业务
-     *
      * @var string
      */
     public $khPreside;
 
     /**
-     * @description 省份
-     *
      * @var string
      */
     public $khProvince;
 
     /**
-     * @description 邮编
-     *
      * @var string
      */
     public $khPst;
 
     /**
-     * @description QQ
-     *
      * @var string
      */
     public $khQq;
 
     /**
-     * @description 关系等级
-     *
      * @var string
      */
     public $khRalagrade;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $khRemark;
 
     /**
-     * @description 性别（男，女）
-     *
      * @var string
      */
     public $khSex;
 
     /**
-     * @description 助记简称
-     *
      * @var string
      */
     public $khShortname;
 
     /**
-     * @description Skype
-     *
      * @var string
      */
     public $khSkype;
 
     /**
-     * @description 编号
-     *
      * @var string
      */
     public $khSn;
 
     /**
-     * @description 阶段
-     *
      * @var string
      */
     public $khStatus;
 
     /**
-     * @description 家庭电话
-     *
      * @var string
      */
     public $khTel;
 
     /**
-     * @description 种类
-     *
      * @var string
      */
     public $khType;
 
     /**
-     * @description 价值评估（低，中，高）
-     *
      * @var string
      */
     public $khValrating;
 
     /**
-     * @description 旺旺
-     *
      * @var string
      */
     public $khWangwang;
 
     /**
-     * @description 网址
-     *
      * @var string
      */
     public $khWeb;
 
     /**
-     * @description 微信号
-     *
      * @var string
      */
     public $khWeixin;
 
     /**
-     * @description 工作电话
-     *
      * @var string
      */
     public $khWorktel;

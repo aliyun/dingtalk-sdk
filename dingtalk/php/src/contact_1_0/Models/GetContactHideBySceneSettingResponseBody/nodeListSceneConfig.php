@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class nodeListSceneConfig extends Model
 {
     /**
-     * @description 是否生效
-     *
      * @var bool
      */
     public $active;
 
     /**
-     * @description 是否同时隐藏被隐藏部门下的员工，默认为true。如果为false，仅部门不可见，但是允许跳转到被隐藏部门查看部门下员工。
-     *
      * @var bool
      */
     public $deptObjectIncludeEmp;

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetEmployeeInfoByWorkNoRequest extends Model
 {
     /**
-     * @description 工号
+     * @example 305932
      *
      * @var string
      */

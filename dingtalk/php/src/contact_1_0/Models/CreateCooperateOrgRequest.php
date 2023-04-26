@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CreateCooperateOrgRequest extends Model
 {
     /**
-     * @description 行业code
+     * @example 123456
      *
      * @var int
      */
     public $industryCode;
 
     /**
-     * @description 合作空间的logo
+     * @example mediaId
      *
      * @var string
      */
     public $logoMediaId;
 
     /**
-     * @description 合作空间组织名称
+     * @example 测试联盟
      *
      * @var string
      */

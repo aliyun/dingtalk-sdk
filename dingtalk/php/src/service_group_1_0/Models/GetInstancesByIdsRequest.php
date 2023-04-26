@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class GetInstancesByIdsRequest extends Model
 {
     /**
-     * @description 表单CODE
+     * @example DING_CUSTOMER
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 开放数据实例ID集合
-     *
      * @var string[]
      */
     public $openDataInstanceIdList;
 
     /**
-     * @description 开放团队ID
+     * @example 888***
      *
      * @var string
      */

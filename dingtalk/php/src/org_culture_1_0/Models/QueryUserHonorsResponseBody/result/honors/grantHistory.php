@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class grantHistory extends Model
 {
     /**
-     * @description 授予时间 时间戳
-     *
      * @var int
      */
     public $grantTime;
 
     /**
-     * @description 必须。荣誉发放人userid
-     *
      * @var string
      */
     public $senderUserid;

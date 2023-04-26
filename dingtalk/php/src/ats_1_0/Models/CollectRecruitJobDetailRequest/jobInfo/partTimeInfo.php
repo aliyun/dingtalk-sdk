@@ -9,70 +9,70 @@ use AlibabaCloud\Tea\Model;
 class partTimeInfo extends Model
 {
     /**
-     * @description 联系电话
+     * @example 158****8718
      *
      * @var string
      */
     public $contactNumber;
 
     /**
-     * @description 薪资发放周期
+     * @example MONTH
      *
      * @var string
      */
     public $salaryPeriod;
 
     /**
-     * @description 薪资结算类型
+     * @example MONTH
      *
      * @var string
      */
     public $settleType;
 
     /**
-     * @description 是否指定工作日期
+     * @example N
      *
      * @var string
      */
     public $specifyWorkDate;
 
     /**
-     * @description 是否指定工作时间
+     * @example N
      *
      * @var string
      */
     public $specifyWorkTime;
 
     /**
-     * @description 工作开始时间
+     * @example 480
      *
      * @var string
      */
     public $workBeginTimeMin;
 
     /**
-     * @description 工作日期类型
+     * @example WORKDAY
      *
      * @var string
      */
     public $workDateType;
 
     /**
-     * @description 工作结束日期
+     * @example 2024-02-18
      *
      * @var string
      */
     public $workEndDate;
 
     /**
-     * @description 工作结束时间
+     * @example 1080
      *
      * @var string
      */
     public $workEndTimeMin;
 
     /**
-     * @description 工作开始日期
+     * @example 2023-02-18
      *
      * @var string
      */

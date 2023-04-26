@@ -9,84 +9,84 @@ use AlibabaCloud\Tea\Model;
 class OpenAnalyzeDataDTO extends Model
 {
     /**
-     * @description 部门总人数
+     * @example 1
      *
      * @var int
      */
     public $deptCount;
 
     /**
-     * @description 无对齐O人数
+     * @example 22
      *
      * @var int
      */
     public $noAlignObjectiveCount;
 
     /**
-     * @description 未关联关键行动人数
+     * @example 33
      *
      * @var int
      */
     public $noKeyActionCount;
 
     /**
-     * @description 目标对齐率
+     * @example 33.2
      *
      * @var float
      */
     public $objectiveAlignRate;
 
     /**
-     * @description 目标未设定人数
+     * @example 1
      *
      * @var int
      */
     public $objectiveNoSetCount;
 
     /**
-     * @description 有风险O的人数
+     * @example 11
      *
      * @var int
      */
     public $objectiveRiskCount;
 
     /**
-     * @description 目标设定率
+     * @example 33.3
      *
      * @var float
      */
     public $objectiveSetRate;
 
     /**
-     * @description 只有1个KR的人数
+     * @example 44
      *
      * @var int
      */
     public $onlyOneKeyResultCount;
 
     /**
-     * @description 只有1个O的人数
+     * @example 33
      *
      * @var int
      */
     public $onlyOneObjectiveCount;
 
     /**
-     * @description 近15天进展更新率
+     * @example 22.3
      *
      * @var float
      */
     public $progressUpdateRateLast15Days;
 
     /**
-     * @description 近30天进展更新率
+     * @example 33.11
      *
      * @var float
      */
     public $progressUpdateRateLast30Days;
 
     /**
-     * @description 近7天进展更新率
+     * @example 33.4
      *
      * @var float
      */

@@ -9,57 +9,41 @@ use AlibabaCloud\Tea\Model;
 class recycleItems extends Model
 {
     /**
-     * @description 文件内容类型
-     *
      * @var string
      */
     public $contentType;
 
     /**
-     * @description 删除员工工号
-     *
      * @var string
      */
     public $deleteStaffId;
 
     /**
-     * @description 删除时间
-     *
      * @var string
      */
     public $deleteTime;
 
     /**
-     * @description 文件名称
-     *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 文件路径
-     *
      * @var string
      */
     public $filePath;
 
     /**
-     * @description 文件大小
-     *
      * @var int
      */
     public $fileSize;
 
     /**
-     * @description 文件类型
-     *
      * @var string
      */
     public $fileType;
 
     /**
-     * @description 回收站item id
-     *
      * @var string
      */
     public $recycleItemId;

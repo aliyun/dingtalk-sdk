@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CampusCreateCampusGroupRequest extends Model
 {
     /**
-     * @description 扩展信息
+     * @example 扩展信息
      *
      * @var string
      */
     public $extend;
 
     /**
-     * @description 园区项目组
+     * @example 测试项目组
      *
      * @var string
      */

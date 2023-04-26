@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 绑定对象Id，此接口为项目id。
+     * @example 62c25e3b376ecxxxxxxx
      *
      * @var string
      */
     public $boundToObjectId;
 
     /**
-     * @description 绑定类型，增加项目成员默认是project。
+     * @example project
      *
      * @var string
      */
     public $boundToObjectType;
 
     /**
-     * @description 创建时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 创建者id。
+     * @example 07151530111xxxxx
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 是否已删除。
+     * @example false
      *
      * @var bool
      */
     public $isDeleted;
 
     /**
-     * @description 工作流名称。
+     * @example 工作流1
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 工作流ID。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $taskflowId;
 
     /**
-     * @description 更新时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */

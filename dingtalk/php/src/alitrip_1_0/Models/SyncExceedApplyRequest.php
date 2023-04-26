@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class SyncExceedApplyRequest extends Model
 {
     /**
-     * @description 商旅超标审批单id
+     * @example 12345
      *
      * @var string
      */
     public $applyId;
 
     /**
-     * @description 企业id
+     * @example ding12345
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 审批意见
+     * @example 同意
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 审批单状态 1同意2拒绝
+     * @example 1
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 第三方流程实例id
+     * @example asdfg
      *
      * @var string
      */
     public $thirdpartyFlowId;
 
     /**
-     * @description 用户id
+     * @example asdfgh
      *
      * @var string
      */

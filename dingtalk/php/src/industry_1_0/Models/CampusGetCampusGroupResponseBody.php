@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CampusGetCampusGroupResponseBody extends Model
 {
     /**
-     * @description 扩展信息
+     * @example 项目扩展信息
      *
      * @var string
      */
     public $extend;
 
     /**
-     * @description 项目名
+     * @example 测试项目组
      *
      * @var string
      */

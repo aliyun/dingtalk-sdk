@@ -20,92 +20,68 @@ use AlibabaCloud\Tea\Model;
 class CreateAndDeliverRequest extends Model
 {
     /**
-     * @description 卡片回调时的路由 key
-     *
      * @var string
      */
     public $callbackRouteKey;
 
     /**
-     * @description 卡片数据
-     *
      * @var cardData
      */
     public $cardData;
 
     /**
-     * @description 卡片内容模板ID
-     *
      * @var string
      */
     public $cardTemplateId;
 
     /**
-     * @description 协作投放参数
-     *
      * @var coFeedOpenDeliverModel
      */
     public $coFeedOpenDeliverModel;
 
     /**
-     * @description 协作场域信息
-     *
      * @var coFeedOpenSpaceModel
      */
     public $coFeedOpenSpaceModel;
 
     /**
-     * @description 文档投放参数
-     *
      * @var docOpenDeliverModel
      */
     public $docOpenDeliverModel;
 
     /**
-     * @description 群聊投放参数
-     *
      * @var imGroupOpenDeliverModel
      */
     public $imGroupOpenDeliverModel;
 
     /**
-     * @description IM群聊场域信息
-     *
      * @var imGroupOpenSpaceModel
      */
     public $imGroupOpenSpaceModel;
 
     /**
-     * @description 单聊场域投放参数
-     *
      * @var imRobotOpenDeliverModel
      */
     public $imRobotOpenDeliverModel;
 
     /**
-     * @description IM单聊场域信息
-     *
      * @var imRobotOpenSpaceModel
      */
     public $imRobotOpenSpaceModel;
 
     /**
-     * @description 动态数据源配置
-     *
      * @var openDynamicDataConfig
      */
     public $openDynamicDataConfig;
 
     /**
-     * @description dt.card//spaceType.spaceId;spaceType.spaceId
+     * @example dtv1.card//im_group.cidp4Gh*******VCQ==;im_robot.manager****67;co_feed.manager****67;one_box.cidp4Gh*******VCQ==
      *
      * @var string
      */
     public $openSpaceId;
 
     /**
-     * @description 外部业务标识符
-     *
      * @var string
      */
     public $outTrackId;
@@ -116,22 +92,16 @@ class CreateAndDeliverRequest extends Model
     public $privateData;
 
     /**
-     * @description 吊顶投放参数
-     *
      * @var topOpenDeliverModel
      */
     public $topOpenDeliverModel;
 
     /**
-     * @description 吊顶场域信息
-     *
      * @var topOpenSpaceModel
      */
     public $topOpenSpaceModel;
 
     /**
-     * @description 卡片创建者 id
-     *
      * @var string
      */
     public $userId;

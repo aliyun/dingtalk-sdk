@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class members extends Model
 {
     /**
-     * @description 是否是继承的权限
-     *
      * @var bool
      */
     public $extend;
 
     /**
-     * @description 成员信息
-     *
      * @var member
      */
     public $member;
 
     /**
-     * @description 权限角色
-     *
      * @var string
      */
     public $role;

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class extension extends Model
 {
     /**
-     * @description true
-     *
      * @var bool
      */
     public $editFreeze;

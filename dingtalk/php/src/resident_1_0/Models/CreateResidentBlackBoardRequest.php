@@ -19,8 +19,6 @@ class CreateResidentBlackBoardRequest extends Model
     public $mediaId;
 
     /**
-     * @description 格式yyyy-MM-dd HH:mm:ss
-     *
      * @var string
      */
     public $sendTime;

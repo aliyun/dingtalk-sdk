@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class records extends Model
 {
     /**
-     * @description 状态：已读1/未读0
+     * @example 1
      *
      * @var int
      */
     public $readStatus;
 
     /**
-     * @description 已读时间
+     * @example 2021-09-01 00:00:00
      *
      * @var string
      */
     public $readTimeStr;
 
     /**
-     * @description 接收者dingtalkId
+     * @example $:LWCP_v1:xxxx==
      *
      * @var string
      */
     public $receiverDingTalkId;
 
     /**
-     * @description 接收者昵称
+     * @example 张三
      *
      * @var string
      */
     public $receiverName;
 
     /**
-     * @description 已读人员为非企业员工则有值
+     * @example Kxiwk2
      *
      * @var string
      */
     public $receiverUnionId;
 
     /**
-     * @description 已读人员为企业员工则有值
+     * @example manager123
      *
      * @var string
      */
     public $receiverUserId;
 
     /**
-     * @description 发送时间
+     * @example 2021-09-01 00:00:00
      *
      * @var string
      */

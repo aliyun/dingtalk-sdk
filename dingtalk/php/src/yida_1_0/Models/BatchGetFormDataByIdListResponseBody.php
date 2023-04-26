@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class BatchGetFormDataByIdListResponseBody extends Model
 {
     /**
-     * @description 表单实例数据
-     *
      * @var result[]
      */
     public $result;

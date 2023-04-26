@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class results extends Model
 {
     /**
-     * @description 业务错误码
+     * @example 20006
      *
      * @var string
      */
     public $errCode;
 
     /**
-     * @description 发票代码
+     * @example 033002000712
      *
      * @var string
      */
     public $invoiceCode;
 
     /**
-     * @description 发票号码
+     * @example 20532643
      *
      * @var string
      */
     public $invoiceNo;
 
     /**
-     * @description 失败原因
+     * @example duplicateInvoice
      *
      * @var string
      */
     public $reason;
 
     /**
-     * @description 是否成功
+     * @example true
      *
      * @var bool
      */

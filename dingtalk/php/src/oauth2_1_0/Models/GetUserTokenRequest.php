@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class GetUserTokenRequest extends Model
 {
     /**
-     * @description 应用id
-     *
      * @var string
      */
     public $clientId;
 
     /**
-     * @description 应用密码
-     *
      * @var string
      */
     public $clientSecret;
 
     /**
-     * @description OAuth 2.0 临时授权码
-     *
      * @var string
      */
     public $code;
 
     /**
-     * @description 分为authorization_code和refresh_token。使用授权码换token，传authorization_code；使用刷新token换用户token，传refresh_token
-     *
      * @var string
      */
     public $grantType;
 
     /**
-     * @description OAuth 2.0 刷新令牌
-     *
      * @var string
      */
     public $refreshToken;

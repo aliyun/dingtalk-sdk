@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class SaveWhiteAppRequest extends Model
 {
     /**
-     * @description 微应用白名单AgentID
-     *
      * @var int[]
      */
     public $agentIdList;
 
     /**
-     * @description 操作符
+     * @example add
      *
      * @var string
      */

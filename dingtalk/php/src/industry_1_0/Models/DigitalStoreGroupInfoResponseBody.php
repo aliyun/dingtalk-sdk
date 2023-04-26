@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreGroupInfoResponseBody extends Model
 {
     /**
-     * @description 分组Id
+     * @example 1
      *
      * @var int
      */
     public $groupId;
 
     /**
-     * @description 分组名称
+     * @example 分组1
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 分组中门店Id列表
-     *
      * @var int[]
      */
     public $storeIdList;

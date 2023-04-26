@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class SubscribeLiveRequest extends Model
 {
     /**
-     * @description 直播uuid
+     * @example 3dd295eb-17a1-4dfg-ae1b-aa165c5007eb
      *
      * @var string
      */
     public $liveId;
 
     /**
-     * @description true:关注 false:取消关注
-     *
      * @var bool
      */
     public $subscribe;
 
     /**
-     * @description 用户id
+     * @example 6crtQT2XOgPHviiPvXhhiP6gdhiE
      *
      * @var string
      */

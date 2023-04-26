@@ -9,36 +9,30 @@ use AlibabaCloud\Tea\Model;
 class UpdateOrganizationTaskInvolveMembersRequest extends Model
 {
     /**
-     * @description 增加的参与者uid
-     *
      * @var string[]
      */
     public $addInvolvers;
 
     /**
-     * @description 删除的参与者uid
-     *
      * @var string[]
      */
     public $delInvolvers;
 
     /**
-     * @description 是否禁用动态
+     * @example true
      *
      * @var bool
      */
     public $disableActivity;
 
     /**
-     * @description 是否禁用通知
+     * @example true
      *
      * @var bool
      */
     public $disableNotification;
 
     /**
-     * @description 所有参与者uid
-     *
      * @var string[]
      */
     public $involveMembers;

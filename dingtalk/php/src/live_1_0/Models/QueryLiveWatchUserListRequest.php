@@ -9,28 +9,24 @@ use AlibabaCloud\Tea\Model;
 class QueryLiveWatchUserListRequest extends Model
 {
     /**
-     * @description 直播id
+     * @example 1a353547-040d-4095-bb93-404bc5d47920
      *
      * @var string
      */
     public $liveId;
 
     /**
-     * @description 分页起始位置
-     *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
-     *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 用户id
+     * @example DC7wZGOSueEEIGOf3WKwWgiEiE
      *
      * @var string
      */

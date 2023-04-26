@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class StopCloudRecordResponseBody extends Model
 {
     /**
-     * @description 返回码
-     *
      * @var string
      */
     public $code;

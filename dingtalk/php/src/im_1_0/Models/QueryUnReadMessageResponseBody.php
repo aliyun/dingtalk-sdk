@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class QueryUnReadMessageResponseBody extends Model
 {
     /**
-     * @description 未读消息数。
+     * @example 10
      *
      * @var int
      */
     public $unReadCount;
 
     /**
-     * @description 未读消息列表。
-     *
      * @var unReadItems[]
      */
     public $unReadItems;

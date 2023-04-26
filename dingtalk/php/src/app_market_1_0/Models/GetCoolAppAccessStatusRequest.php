@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetCoolAppAccessStatusRequest extends Model
 {
     /**
-     * @description 免登授权码
+     * @example b195bb70dde337aabf3bcc020bf6250c
      *
      * @var string
      */
     public $authCode;
 
     /**
-     * @description 酷应用的code
+     * @example COOLAPP-1-1019F4BBC7D6212C5861000T
      *
      * @var string
      */
     public $coolAppCode;
 
     /**
-     * @description 加密的场域业务code
+     * @example cid5uZRmigtVWpjcKPLrp5Pag==
      *
      * @var string
      */

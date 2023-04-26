@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class deptAndExt extends Model
 {
     /**
-     * @description 科室详情
-     *
      * @var department
      */
     public $department;
 
     /**
-     * @description 科室扩展信息列表
-     *
      * @var extendInfos[]
      */
     public $extendInfos;

@@ -15,8 +15,6 @@ class GetRecentOpenDocsResponseBody extends Model
     public $nextToken;
 
     /**
-     * @description 查询结果
-     *
      * @var recentList[]
      */
     public $recentList;

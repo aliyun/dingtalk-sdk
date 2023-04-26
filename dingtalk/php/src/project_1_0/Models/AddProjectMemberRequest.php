@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class AddProjectMemberRequest extends Model
 {
     /**
-     * @description 用户ID列表，建议一次不超过10个
-     *
      * @var string[]
      */
     public $userIds;

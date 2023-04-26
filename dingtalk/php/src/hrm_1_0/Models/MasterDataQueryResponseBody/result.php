@@ -10,36 +10,34 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 唯一id
+     * @example uk123123
      *
      * @var string
      */
     public $outerId;
 
     /**
-     * @description 关联id列表，一般为userId
+     * @example admind123
      *
      * @var string
      */
     public $relationId;
 
     /**
-     * @description 领域
+     * @example PERFORMANCE
      *
      * @var string
      */
     public $scopeCode;
 
     /**
-     * @description 编码
+     * @example base
      *
      * @var string
      */
     public $viewEntityCode;
 
     /**
-     * @description 字段列表
-     *
      * @var viewEntityFieldVOList[]
      */
     public $viewEntityFieldVOList;

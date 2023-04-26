@@ -10,35 +10,33 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description creatorOrgId
+     * @example 创建者orgId
      *
      * @var int
      */
     public $creatorOrgId;
 
     /**
-     * @description 拓展信息
-     *
      * @var ext
      */
     public $ext;
 
     /**
-     * @description 学段编码：  KINDERGARTEN：小学 PRIMARY_SCHOOL：小学 MODDLE_SCHOOL： 初中 HIGH_SCHOOL： 高中 UNIVERSITY：大学 NOT_SCHOOL：无学段
+     * @example HIGH_SCHOOL
      *
      * @var string
      */
     public $periodCode;
 
     /**
-     * @description 学科code。
+     * @example cn_yuwen
      *
      * @var string
      */
     public $subjectCode;
 
     /**
-     * @description 学科名称。
+     * @example 语文
      *
      * @var string
      */

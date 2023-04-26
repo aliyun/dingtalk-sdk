@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class unsealClosingAccountModel extends Model
 {
     /**
-     * @description 解封时间点
-     *
      * @var int
      */
     public $invalidTimeStamp;

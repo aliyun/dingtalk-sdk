@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class GetQualificationCertRequest extends Model
 {
     /**
-     * @description 页数,第几页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页条数
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 关键词
-     *
      * @var string
      */
     public $searchKey;

@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class QueryAllGroupResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
      * @var content[]
      */
     public $content;
 
     /**
-     * @description 当前页码
-     *
      * @var int
      */
     public $currentPage;
 
     /**
-     * @description 数据总量
-     *
      * @var int
      */
     public $totalCount;
 
     /**
-     * @description 总页数
-     *
      * @var int
      */
     public $totalPages;

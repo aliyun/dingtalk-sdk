@@ -12,140 +12,134 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 活动编码
+     * @example Activity1
      *
      * @var string
      */
     public $activityCode;
 
     /**
-     * @description 当前活动名称
+     * @example 发起流程
      *
      * @var string
      */
     public $activityName;
 
     /**
-     * @description 应用编码
+     * @example D000001
      *
      * @var string
      */
     public $appCode;
 
     /**
-     * @description 工作项所关联的业务对象id
+     * @example 106f870b-4d1c-4cd0-85b3-2e866798e947
      *
      * @var string
      */
     public $bizObjectId;
 
     /**
-     * @description 对该工作项的意见
+     * @example 同意
      *
      * @var string
      */
     public $comment;
 
     /**
-     * @description 显示名称
+     * @example 发起流程
      *
      * @var string
      */
     public $displayName;
 
     /**
-     * @description 完成时间
+     * @example null
      *
      * @var string
      */
     public $finishTimeGMT;
 
     /**
-     * @description 完成者
-     *
      * @var finisher
      */
     public $finisher;
 
     /**
-     * @description 对该工作项是否同意
+     * @example true
      *
      * @var bool
      */
     public $isApproval;
 
     /**
-     * @description 是否已完成
+     * @example false
      *
      * @var bool
      */
     public $isFinish;
 
     /**
-     * @description 参与者
-     *
      * @var participant
      */
     public $participant;
 
     /**
-     * @description 流程实例ID
+     * @example 006f870b-4d1c-4cd0-85b3-2e866798e947
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 工作流版本
+     * @example 3
      *
      * @var string
      */
     public $processVersion;
 
     /**
-     * @description 转交工作的接收人。如无转接人，则为空
-     *
      * @var receiptor
      */
     public $receiptor;
 
     /**
-     * @description 接收时间
+     * @example 2021-11-19 19:36:54
      *
      * @var string
      */
     public $receiveTimeGMT;
 
     /**
-     * @description 表单编码
+     * @example D0001833abb0fb61524487eb01848207bc89b47
      *
      * @var string
      */
     public $schemaCode;
 
     /**
-     * @description 开始这个任务的时间
+     * @example 2021-11-19 19:36:54
      *
      * @var string
      */
     public $startTimeGMT;
 
     /**
-     * @description 状态。Waiting=等待的状态，Working=正在工作中的状态，Finished=处于完成状态，Canceled=已经被取消，Forwarded=已转交状态，Revoked=撤回
+     * @example Waiting
      *
      * @var string
      */
     public $state;
 
     /**
-     * @description 工作任务Id
+     * @example 3d0ad4a4-d7d5-4196-9f2c-3ed246f2b713
      *
      * @var string
      */
     public $workItemId;
 
     /**
-     * @description 工作项类型。Fill=普通工作项，Approve=审批类型工作项，Circulate=传阅
+     * @example Fill
      *
      * @var string
      */

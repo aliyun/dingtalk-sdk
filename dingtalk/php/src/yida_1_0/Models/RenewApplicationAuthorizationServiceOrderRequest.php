@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class RenewApplicationAuthorizationServiceOrderRequest extends Model
 {
     /**
-     * @description 访问秘钥
+     * @example hexaaaa
      *
      * @var string
      */
     public $accessKey;
 
     /**
-     * @description 调用者unionId
+     * @example 44234122
      *
      * @var string
      */
     public $callerUnionId;
 
     /**
-     * @description 结束时间
+     * @example 1234567891234
      *
      * @var int
      */
     public $endTimeGMT;
 
     /**
-     * @description 实例id
+     * @example 12
      *
      * @var string
      */

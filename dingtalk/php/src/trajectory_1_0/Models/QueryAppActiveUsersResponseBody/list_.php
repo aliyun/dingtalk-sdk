@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 应用轨迹ID
+     * @example kxm9dhfs01jd98cuv
      *
      * @var string
      */
     public $appTraceId;
 
     /**
-     * @description 纬度
+     * @example 123.123
      *
      * @var float
      */
     public $latitude;
 
     /**
-     * @description 经度
+     * @example 123.123
      *
      * @var float
      */
     public $longitude;
 
     /**
-     * @description 该位置采集时间
+     * @example 1619341954123
      *
      * @var int
      */
     public $reportTime;
 
     /**
-     * @description 轨迹采集开启时间
+     * @example 1619341754123
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 员工Id
+     * @example I0912384771
      *
      * @var string
      */

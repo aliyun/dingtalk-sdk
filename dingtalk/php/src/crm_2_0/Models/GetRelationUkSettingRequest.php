@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetRelationUkSettingRequest extends Model
 {
     /**
-     * @description 关系类型。
+     * @example crm_customer
      *
      * @var string
      */

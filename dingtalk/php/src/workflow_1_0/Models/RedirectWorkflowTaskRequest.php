@@ -10,42 +10,40 @@ use AlibabaCloud\Tea\Model;
 class RedirectWorkflowTaskRequest extends Model
 {
     /**
-     * @description 操作节点名
+     * @example test
      *
      * @var string
      */
     public $actionName;
 
     /**
-     * @description 文件。
-     *
      * @var file
      */
     public $file;
 
     /**
-     * @description 操作人的用户ID，需要跟任务的当前执行人保持一致，否则无法通过校验
+     * @example manager001
      *
      * @var string
      */
     public $operateUserId;
 
     /**
-     * @description 转交备注信息
+     * @example 请XX帮忙审批一下
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description OA审批任务ID
+     * @example 1234567
      *
      * @var int
      */
     public $taskId;
 
     /**
-     * @description OA审批任务被转交对象的用户ID
+     * @example manager001
      *
      * @var string
      */

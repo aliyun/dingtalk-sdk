@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 验签加密串
+     * @example dsiuuuuiasudnuai
      *
      * @var string
      */
     public $secretString;
 
     /**
-     * @description 钉钉侧对应的组织ID
+     * @example ding001
      *
      * @var string
      */
     public $targetCorpId;
 
     /**
-     * @description 商旅侧对接key
+     * @example dingwieudsiu
      *
      * @var string
      */
     public $tripAppKey;
 
     /**
-     * @description 商旅侧对接密钥
+     * @example dusuduiidvs
      *
      * @var string
      */
     public $tripAppSecurity;
 
     /**
-     * @description 商旅侧对应的组织ID
+     * @example isv001
      *
      * @var string
      */

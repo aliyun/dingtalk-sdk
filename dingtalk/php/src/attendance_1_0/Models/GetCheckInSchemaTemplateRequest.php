@@ -9,32 +9,28 @@ use AlibabaCloud\Tea\Model;
 class GetCheckInSchemaTemplateRequest extends Model
 {
     /**
-     * @description 业务码：
-     * - water_mark_checkin 水印签到
-     *
+     * @example water_mark_checkin
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 群会话ID。
+     * @example 1234567
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 场景码：
-     * - water_mark_checkin_h3yun 开放场景码
-     *
+     * @example water_mark_checkin
      *
      * @var string
      */
     public $sceneCode;
 
     /**
-     * @description 用户的userid。
+     * @example manage123
      *
      * @var string
      */

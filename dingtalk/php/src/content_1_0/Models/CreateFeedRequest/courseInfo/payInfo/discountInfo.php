@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class discountInfo extends Model
 {
     /**
-     * @description 打折结束的时间，时间戳精确到毫秒，时间为东八区时间
+     * @example 1624507431777
      *
      * @var int
      */
     public $endTimeMillis;
 
     /**
-     * @description 打折时商品的价格，单位为分
+     * @example 100
      *
      * @var int
      */
     public $price;
 
     /**
-     * @description 打折开始的时间，时间戳精确到毫秒，时间为东八区时间
+     * @example 1624507431777
      *
      * @var int
      */

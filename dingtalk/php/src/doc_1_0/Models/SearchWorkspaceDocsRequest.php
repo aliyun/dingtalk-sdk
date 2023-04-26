@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class SearchWorkspaceDocsRequest extends Model
 {
     /**
-     * @description 搜索关键字
-     *
      * @var string
      */
     public $keyword;
 
     /**
-     * @description 搜索数量
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 翻页Id
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 发起操作用户unionId
-     *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 知识库id。
-     *
      * @var string
      */
     public $workspaceId;

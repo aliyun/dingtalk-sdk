@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetDingReportSummaryResponseBody extends Model
 {
     /**
-     * @description 最近1天日志评论用户数
+     * @example 100
      *
      * @var string
      */

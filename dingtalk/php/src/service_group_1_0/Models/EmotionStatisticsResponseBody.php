@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class EmotionStatisticsResponseBody extends Model
 {
     /**
-     * @description 情感统计
-     *
      * @var emotionStatisticsRecords[]
      */
     public $emotionStatisticsRecords;

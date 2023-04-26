@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 设备过期时间
+     * @example 1696753792000
      *
      * @var int
      */
     public $gmtExpiry;
 
     /**
-     * @description 设备型号
+     * @example model1
      *
      * @var string
      */
     public $model;
 
     /**
-     * @description 设备名称
+     * @example 三年级1班班牌
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 设备sn码
+     * @example fadf-8008
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 设备类型
+     * @example VIDEO_CALL
      *
      * @var string
      */

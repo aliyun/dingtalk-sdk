@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class dingPanFile extends Model
 {
     /**
-     * @description 钉盘文件标识
+     * @example "123456"
      *
      * @var string
      */
     public $fileId;
 
     /**
-     * @description 文件名
+     * @example "张三的应聘登记表（开发工程师）"
      *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 文件大小（单位：字节）
+     * @example 1024
      *
      * @var int
      */
     public $fileSize;
 
     /**
-     * @description 文件类型（支持：pdf，doc，docx，ppt，pptx，jpg等）
+     * @example pdf
      *
      * @var string
      */
     public $fileType;
 
     /**
-     * @description 钉盘空间标识
+     * @example 223344
      *
      * @var int
      */

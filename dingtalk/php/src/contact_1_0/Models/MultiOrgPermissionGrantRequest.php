@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class MultiOrgPermissionGrantRequest extends Model
 {
     /**
-     * @description 被授权的部门，如果不填则默认全组织
+     * @example 123
      *
      * @var int[]
      */
     public $grantDeptIdList;
 
     /**
-     * @description 授权加入的组织corpId
+     * @example dingxxxxx
      *
      * @var string
      */

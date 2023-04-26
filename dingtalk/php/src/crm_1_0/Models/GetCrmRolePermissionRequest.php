@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetCrmRolePermissionRequest extends Model
 {
     /**
-     * @description 表单bizType
+     * @example crm_customer
      *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 资源id，填表单code
+     * @example PROC-9EC85C45-E404-4E26-9300-E67455F0FF8F
      *
      * @var string
      */

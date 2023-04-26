@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class BatchSaveFormDataResponseBody extends Model
 {
     /**
-     * @description 新增的表单实例的id列表
-     *
      * @var string[]
      */
     public $result;

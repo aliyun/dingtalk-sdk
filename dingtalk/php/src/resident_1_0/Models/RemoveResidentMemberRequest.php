@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class RemoveResidentMemberRequest extends Model
 {
     /**
-     * @description 空位标识
+     * @example 0
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description unionId
-     *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 人员标识
+     * @example 111112***
      *
      * @var string
      */

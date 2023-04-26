@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class memberList extends Model
 {
     /**
-     * @description 参会时长
-     *
      * @var float
      */
     public $attendDuration;
 
     /**
-     * @description 用户昵称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 员工id
-     *
      * @var string
      */
     public $staffId;
 
     /**
-     * @description 用户uid
-     *
      * @var string
      */
     public $unionId;

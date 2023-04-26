@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 是否有无效的成员。
-     *
      * @var bool
      */
     public $hasInvalidUser;
 
     /**
-     * @description 权限信息。
-     *
      * @var permissionTree
      */
     public $permissionTree;

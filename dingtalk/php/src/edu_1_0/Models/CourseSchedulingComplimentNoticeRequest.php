@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CourseSchedulingComplimentNoticeRequest extends Model
 {
     /**
-     * @description opUserId
+     * @example 行政老师A
      *
      * @var string
      */

@@ -9,113 +9,81 @@ use AlibabaCloud\Tea\Model;
 class usedVehicleSaleDetailVOList extends Model
 {
     /**
-     * @description 经营、拍卖单位
-     *
      * @var string
      */
     public $auctionUnit;
 
     /**
-     * @description 经营、拍卖单位地址
-     *
      * @var string
      */
     public $auctionUnitAddress;
 
     /**
-     * @description 经营、拍卖单位银行
-     *
      * @var string
      */
     public $auctionUnitBank;
 
     /**
-     * @description 经营、拍卖单位税号
-     *
      * @var string
      */
     public $auctionUnitTaxNo;
 
     /**
-     * @description 经营、拍卖单位电话
-     *
      * @var string
      */
     public $auctionUtilTel;
 
     /**
-     * @description 厂牌型号
-     *
      * @var string
      */
     public $carModel;
 
     /**
-     * @description 车牌照号
-     *
      * @var string
      */
     public $cardNo;
 
     /**
-     * @description 登记证号
-     *
      * @var string
      */
     public $registration;
 
     /**
-     * @description 转入地车辆管理所名称
-     *
      * @var string
      */
     public $transferVehicle;
 
     /**
-     * @description 二手车市场地址
-     *
      * @var string
      */
     public $usedCarAddress;
 
     /**
-     * @description 二手车市场
-     *
      * @var string
      */
     public $usedCarMarket;
 
     /**
-     * @description 二手车市场开户银行、账号
-     *
      * @var string
      */
     public $usedCarMarketBank;
 
     /**
-     * @description 二手车市场电话
-     *
      * @var string
      */
     public $usedCarMarketPhone;
 
     /**
-     * @description 二手车市场纳税人识别号
-     *
      * @var string
      */
     public $usedCarMarketTaxNo;
 
     /**
-     * @description 车架号/车辆识别号
-     *
      * @var string
      */
     public $vehicleNo;
 
     /**
-     * @description 车辆类型
-     *
      * @var string
      */
     public $vehicleType;

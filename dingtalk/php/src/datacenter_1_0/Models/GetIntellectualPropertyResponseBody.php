@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetIntellectualPropertyResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * PublicDate:公示日期
+     * @example [     {       "Status": "有效",       "Type": "专利",       "Pledgor": "齐风莲",       "Number": "91611024MA70X17M7E",       "Period": "2015年06月11日至2015年06月11日",       "PublicDate": "2015-06-18 00:00:00",       "Pawnee": "齐风莲",       "entName": "东兰县鸿发摩托车安全技术检验有限公司"     }   ]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

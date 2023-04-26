@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class SendAppDingRequest extends Model
 {
     /**
-     * @description 消息内容
+     * @example 开会
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 接收DING消息的用户列表
-     *
      * @var string[]
      */
     public $userids;

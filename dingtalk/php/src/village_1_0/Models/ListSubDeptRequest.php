@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class ListSubDeptRequest extends Model
 {
     /**
-     * @description 通讯录语言(默认zh_CN另外支持en_US)
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 下属组织的组织ID，比如下属镇、村的corpId
-     *
      * @var string
      */
     public $subCorpId;

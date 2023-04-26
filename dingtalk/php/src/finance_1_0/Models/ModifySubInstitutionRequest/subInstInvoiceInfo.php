@@ -10,91 +10,89 @@ use AlibabaCloud\Tea\Model;
 class subInstInvoiceInfo extends Model
 {
     /**
-     * @description 是否接受电票
+     * @example true
      *
      * @var bool
      */
     public $acceptElectronic;
 
     /**
-     * @description 开票地址
+     * @example 浙江省杭州市西湖区西溪路蚂蚁金服
      *
      * @var string
      */
     public $address;
 
     /**
-     * @description 是否自动开票
+     * @example false
      *
      * @var bool
      */
     public $autoInvoice;
 
     /**
-     * @description 银行账户
+     * @example 1234567812345678123
      *
      * @var string
      */
     public $bankAccount;
 
     /**
-     * @description 银行名称
+     * @example 中国银行
      *
      * @var string
      */
     public $bankName;
 
     /**
-     * @description 收件地址
-     *
      * @var mailAddress
      */
     public $mailAddress;
 
     /**
-     * @description 收件人名称
+     * @example 张三
      *
      * @var string
      */
     public $mailName;
 
     /**
-     * @description 收件人号码
+     * @example 057162288888
      *
      * @var string
      */
     public $mailPhone;
 
     /**
-     * @description 纳税人识别号
+     * @example 51010482542598631219
      *
      * @var string
      */
     public $taxNo;
 
     /**
-     * @description 纳税人资质
+     * @example 01
      *
      * @var string
      */
     public $taxPayerQualification;
 
     /**
-     * @description 纳税人资格开始时间
+     * @example 19981011
      *
      * @var string
      */
     public $taxPayerValidDate;
 
     /**
-     * @description 开票电话
+     * @example 057162288888
      *
      * @var string
      */
     public $telephone;
 
     /**
-     * @description 纳税人抬头
+     * @example **有限公司
      *
      * @var string
      */

@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 版本信息
+     * @example 6.0
      *
      * @var string
      */
     public $appVersion;
 
     /**
-     * @description 端信息
+     * @example iOS
      *
      * @var string
      */
     public $client;
 
     /**
-     * @description 组织名称
+     * @example 组织1
      *
      * @var string
      */
     public $orgName;
 
     /**
-     * @description 统计日期
+     * @example 20210808
      *
      * @var string
      */
     public $statDate;
 
     /**
-     * @description 用户数
+     * @example 10
      *
      * @var float
      */

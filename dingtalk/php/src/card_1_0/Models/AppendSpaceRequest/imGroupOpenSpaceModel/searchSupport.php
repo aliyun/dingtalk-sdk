@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class searchSupport extends Model
 {
     /**
-     * @description 卡片的具体描述
+     * @example 卡片的具体描述
      *
      * @var string
      */
     public $searchDesc;
 
     /**
-     * @description 类型的icon，供搜索展示使用
+     * @example @lALPDgQ9q8hFhlHNAXzNAqI
      *
      * @var string
      */
     public $searchIcon;
 
     /**
-     * @description 卡片类型名
+     * @example {"zh_CN":"待办","zh_TW":"待辦","en_US":"ToDo"}
      *
      * @var string
      */

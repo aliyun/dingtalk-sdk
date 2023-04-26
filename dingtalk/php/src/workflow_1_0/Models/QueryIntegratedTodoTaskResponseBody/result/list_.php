@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 待办组ID，需要在调用创建流程中心集成任务接口时，主动设置该值。
+     * @example act_0001
      *
      * @var string
      */
     public $activityId;
 
     /**
-     * @description OA审批任务创建时间。
+     * @example 2022-10-17T15:12Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description OA审批任务完成时间。
+     * @example 2022-10-17T15:12Z
      *
      * @var string
      */
     public $finishTime;
 
     /**
-     * @description 流程实例ID
+     * @example Siw2WNVZS4KiUt3tTmaNKg04*****809950
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 任务处理结果：agree 或 refuse
+     * @example agree
      *
      * @var string
      */
     public $result;
 
     /**
-     * @description 任务状态
+     * @example RUNNING
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description OA审批任务ID
+     * @example 1234567
      *
      * @var int
      */
     public $taskId;
 
     /**
-     * @description OA审批任务执行人的用户ID
+     * @example manager001
      *
      * @var string
      */

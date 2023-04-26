@@ -13,315 +13,303 @@ use AlibabaCloud\Tea\Model;
 class props extends Model
 {
     /**
-     * @description 加班套件4.0新增 加班明细名称。
+     * @example 添加
      *
      * @var string
      */
     public $actionName;
 
     /**
-     * @description textnote的样式，top|middle|bottom。
+     * @example top
      *
      * @var string
      */
     public $align;
 
     /**
-     * @description ISV 微应用 appId，用于ISV身份权限识别，ISV可获得相应数据。
+     * @example 1234567
      *
      * @var int
      */
     public $appId;
 
     /**
-     * @description 套件是否开启异步获取分条件规则，true：开启；false：不开启。
+     * @example true
      *
      * @var bool
      */
     public $asyncCondition;
 
     /**
-     * @description 请假、出差、外出、加班类型标签。
+     * @example 请假
      *
      * @var string
      */
     public $attendTypeLabel;
 
     /**
-     * @description 表单关联控件列表。
-     *
      * @var behaviorLinkage[]
      */
     public $behaviorLinkage;
 
     /**
-     * @description 控件业务自定义别名。
+     * @example 我的单行输入框
      *
      * @var string
      */
     public $bizAlias;
 
     /**
-     * @description 业务套件类型。
+     * @example hrm.xxxx
      *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 套件内子组件可见性
-     *
      * @var bool[]
      */
     public $childFieldVisible;
 
     /**
-     * @description 内部联系人choice，1表示多选，0表示单选。
+     * @example 1
      *
      * @var int
      */
     public $choice;
 
     /**
-     * @description common field的commonBizType。
+     * @example xxxx
      *
      * @var string
      */
     public $commonBizType;
 
     /**
-     * @description 是否可编辑。
+     * @example true
      *
      * @var bool
      */
     public $disabled;
 
     /**
-     * @description 是否自动计算时长。
+     * @example true
      *
      * @var bool
      */
     public $duration;
 
     /**
-     * @description 兼容字段。
+     * @example xxxx
      *
      * @var string
      */
     public $durationLabel;
 
     /**
-     * @description e签宝专用标识。
+     * @example true
      *
      * @var bool
      */
     public $eSign;
 
     /**
-     * @description 套件值是否打平
+     * @example true
      *
      * @var bool
      */
     public $extract;
 
     /**
-     * @description 关联表单中的fields存储
+     * @example xxxx
      *
      * @var string
      */
     public $fieldsInfo;
 
     /**
-     * @description 时间格式(DDDateField和DDDateRangeField)。
+     * @example yyyy-MM-dd
      *
      * @var string
      */
     public $format;
 
     /**
-     * @description 公式。
+     * @example xxxx
      *
      * @var string
      */
     public $formula;
 
     /**
-     * @description 加班套件4.0新增 加班明细是否隐藏。
+     * @example true
      *
      * @var bool
      */
     public $hidden;
 
     /**
-     * @description textnote在详情页是否隐藏，true隐藏， false不隐藏
+     * @example true
      *
      * @var bool
      */
     public $hiddenInApprovalDetail;
 
     /**
-     * @description 加班套件4.0新增 加班明细是否隐藏标签。
+     * @example true
      *
      * @var bool
      */
     public $hideLabel;
 
     /**
-     * @description 兼容出勤套件类型。
+     * @example "[{\"name\":\"\open"}]"
      *
      * @var string[][]
      */
     public $holidayOptions;
 
     /**
-     * @description 控件 id。
+     * @example TextField-K2AD4O5B
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 控件名称。
+     * @example 单行输入框
      *
      * @var string
      */
     public $label;
 
     /**
-     * @description label是否可修改 true：不可修改。
+     * @example true
      *
      * @var bool
      */
     public $labelEditableFreeze;
 
     /**
-     * @description 说明文案的链接地址。
+     * @example xxxx
      *
      * @var string
      */
     public $link;
 
     /**
-     * @description 加班套件4.0新增 加班明细描述。
+     * @example xxxx
      *
      * @var string
      */
     public $mainTitle;
 
     /**
-     * @description 是否参与打印(1表示不打印, 0表示打印)。
+     * @example 1
      *
      * @var string
      */
     public $notPrint;
 
     /**
-     * @description 是否需要大写 默认是需要; 1:不需要大写, 空或者0:需要大写。
+     * @example 1
      *
      * @var string
      */
     public $notUpper;
 
     /**
-     * @description 选项内容列表，提供给业务方更多的选择器操作。
-     *
      * @var objOptions[]
      */
     public $objOptions;
 
     /**
-     * @description 单选框选项列表。
-     *
      * @var string[]
      */
     public $options;
 
     /**
-     * @description 是否有支付属性。
+     * @example true
      *
      * @var bool
      */
     public $payEnable;
 
     /**
-     * @description 占位符。
+     * @example 请输入文字
      *
      * @var string
      */
     public $placeholder;
 
     /**
-     * @description 同步到考勤, 表示是否设置为员工状态。
-     *
      * @var push
      */
     public $push;
 
     /**
-     * @description 推送到考勤, 子类型(DDSelectField)。
+     * @example true
      *
      * @var bool
      */
     public $pushToAttendance;
 
     /**
-     * @description 是否推送管理日历(DDDateRangeField, 1表示推送, 0表示不推送, 该属性为兼容保留)。
+     * @example 1
      *
      * @var int
      */
     public $pushToCalendar;
 
     /**
-     * @description 是否必填。
+     * @example true
      *
      * @var bool
      */
     public $required;
 
     /**
-     * @description 必填是否可修改 true：不可修改。
+     * @example true
      *
      * @var bool
      */
     public $requiredEditableFreeze;
 
     /**
-     * @description 兼容出勤套件类型。
+     * @example true
      *
      * @var bool
      */
     public $showAttendOptions;
 
     /**
-     * @description 是否开启员工状态。
+     * @example true
      *
      * @var bool
      */
     public $staffStatusEnabled;
 
     /**
-     * @description 需要计算总和的明细组件
-     *
      * @var statField[]
      */
     public $statField;
 
     /**
-     * @description 数字组件/日期区间组件单位属性。
+     * @example 天
      *
      * @var string
      */
     public $unit;
 
     /**
-     * @description 是否使用考勤日历。
+     * @example true
      *
      * @var bool
      */
     public $useCalendar;
 
     /**
-     * @description 明细打印排版方式 false：横向 true：纵向。
+     * @example true
      *
      * @var bool
      */

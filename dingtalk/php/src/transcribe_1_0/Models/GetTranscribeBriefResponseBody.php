@@ -20,8 +20,6 @@ class GetTranscribeBriefResponseBody extends Model
     public $statusCode;
 
     /**
-     * @description 用于描述本次请求是否成功的字段
-     *
      * @var bool
      */
     public $success;

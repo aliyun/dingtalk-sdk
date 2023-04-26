@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class SetRobotPluginResponseBody extends Model
 {
     /**
-     * @description 是否成功设置机器人插件
-     *
      * @var bool
      */
     public $result;

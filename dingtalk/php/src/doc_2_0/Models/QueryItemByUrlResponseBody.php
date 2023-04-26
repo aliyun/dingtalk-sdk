@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class QueryItemByUrlResponseBody extends Model
 {
     /**
-     * @description 业务类型。可选值：dingpan-云盘中的文档；mainsite-知识库中的文档。
+     * @example mainsite
      *
      * @var string
      */
@@ -22,15 +22,13 @@ class QueryItemByUrlResponseBody extends Model
     public $dentry;
 
     /**
-     * @description 资源类型。可选值有：space-知识库；file-文档；folder-文件夹。
+     * @example file
      *
      * @var string
      */
     public $resourceType;
 
     /**
-     * @description 当resourceType为space时，这里会返回知识库信息。
-     *
      * @var space
      */
     public $space;

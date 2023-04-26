@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class CloseConversationRequest extends Model
 {
     /**
-     * @description DT端会话ID
-     *
      * @var string
      */
     public $conversationId;
 
     /**
-     * @description 开放团队ID
-     *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 客户信息
-     *
      * @var string
      */
     public $serverTips;
 
     /**
-     * @description 对应外部渠道的会话ID
-     *
      * @var string
      */
     public $serviceToken;
 
     /**
-     * @description 渠道类型
-     *
      * @var string
      */
     public $targetChannel;
 
     /**
-     * @description DT端定义的
-     *
      * @var string
      */
     public $visitorToken;

@@ -11,120 +11,116 @@ use AlibabaCloud\Tea\Model;
 class space extends Model
 {
     /**
-     * @description 开放平台应用appId
+     * @example app_id
      *
      * @var string
      */
     public $appId;
 
     /**
-     * @description 空间能力项
-     *
      * @var capabilities
      */
     public $capabilities;
 
     /**
-     * @description 空间归属企业的id
+     * @example corp_id
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 创建时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 创建者id
+     * @example creator_id
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 空间id
+     * @example space_id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 修改时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $modifiedTime;
 
     /**
-     * @description 修改者id
+     * @example modifier_id
      *
      * @var string
      */
     public $modifierId;
 
     /**
-     * @description 空间名称
+     * @example space_name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 所有者id, 根据ownerType定义, 确定值的所属类型
+     * @example owner_id
      *
      * @var string
      */
     public $ownerId;
 
     /**
-     * @description owner类型
-     * APP: App类型
+     * @example USER
+     *
      * @var string
      */
     public $ownerType;
 
     /**
-     * @description 分区容量信息
-     * 2
      * @var partitions[]
      */
     public $partitions;
 
     /**
-     * @description 容量上限
-     * 建议使用分区上容量信息字段
+     * @example 1048576
+     *
      * @var int
      */
     public $quota;
 
     /**
-     * @description 业务场景，可以自定义，表示多个不同空间的聚合，可以提供对特定场景做能力设计、容量管理，如根据场景来做搜索或查询。
-     * default
+     * @example scene
+     *
      * @var string
      */
     public $scene;
 
     /**
-     * @description 关联业务id, 配合scene一起使用。创建空间时，不指定sceneId， 默认值是0
-     * 0
+     * @example scene_id
+     *
      * @var string
      */
     public $sceneId;
 
     /**
-     * @description 空间状态
-     * DELETE: 已删除
+     * @example NORMAL
+     *
      * @var string
      */
     public $status;
 
     /**
-     * @description 已使用容量, 包含各分区已使用容量和
-     * 建议使用分区上容量信息字段
+     * @example 1024
+     *
      * @var int
      */
     public $usedQuota;

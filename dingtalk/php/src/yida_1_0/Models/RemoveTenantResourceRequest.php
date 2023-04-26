@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class RemoveTenantResourceRequest extends Model
 {
     /**
-     * @description accessKey
+     * @example accessKey
      *
      * @var string
      */

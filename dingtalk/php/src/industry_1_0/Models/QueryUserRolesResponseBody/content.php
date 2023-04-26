@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 角色编码
+     * @example roleCode
      *
      * @var string
      */
     public $roleCode;
 
     /**
-     * @description 角色名称
+     * @example roleNem
      *
      * @var string
      */

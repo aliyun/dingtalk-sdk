@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class originator extends Model
 {
     /**
-     * @description 部门名称
+     * @example 开发部
      *
      * @var string
      */
     public $departmentName;
 
     /**
-     * @description 电子邮箱
+     * @example abc@alimail.com
      *
      * @var string
      */
     public $email;
 
     /**
-     * @description 名称
-     *
      * @var name
      */
     public $name;
 
     /**
-     * @description 钉钉userId
+     * @example ding173982232112232
      *
      * @var string
      */

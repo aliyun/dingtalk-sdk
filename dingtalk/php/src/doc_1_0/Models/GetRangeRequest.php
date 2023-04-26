@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetRangeRequest extends Model
 {
     /**
-     * @description 操作人id
+     * @example union_id
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 限定要返回的字段
+     * @example select
      *
      * @var string
      */

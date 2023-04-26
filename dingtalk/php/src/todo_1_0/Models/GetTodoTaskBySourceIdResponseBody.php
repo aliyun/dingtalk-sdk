@@ -10,155 +10,111 @@ use AlibabaCloud\Tea\Model;
 class GetTodoTaskBySourceIdResponseBody extends Model
 {
     /**
-     * @description 接入业务应用标识
-     *
      * @var string
      */
     public $bizTag;
 
     /**
-     * @description 创建时间
-     *
      * @var int
      */
     public $createdTime;
 
     /**
-     * @description 创建者id（用户的unionId）
-     *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 描述
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 自定义详情页跳转配置
-     *
      * @var detailUrl
      */
     public $detailUrl;
 
     /**
-     * @description 完成状态
-     *
      * @var bool
      */
     public $done;
 
     /**
-     * @description 截止时间
-     *
      * @var int
      */
     public $dueTime;
 
     /**
-     * @description 执行者列表（用户的unionId）
-     *
      * @var string[]
      */
     public $executorIds;
 
     /**
-     * @description 完成时间
-     *
      * @var int
      */
     public $finishTime;
 
     /**
-     * @description id
-     *
      * @var string
      */
     public $id;
 
     /**
-     * @description 待办是否仅展示在执行人的待办列表中
-     *
      * @var bool
      */
     public $isOnlyShowExecutor;
 
     /**
-     * @description 更新时间
-     *
      * @var int
      */
     public $modifiedTime;
 
     /**
-     * @description 更新者id（用户的unionId）
-     *
      * @var string
      */
     public $modifierId;
 
     /**
-     * @description 参与者列表（用户的unionId）
-     *
      * @var string[]
      */
     public $participantIds;
 
     /**
-     * @description 优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40
-     *
      * @var int
      */
     public $priority;
 
     /**
-     * @description requestId
-     *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description 业务来源
-     *
      * @var string
      */
     public $source;
 
     /**
-     * @description 业务来源id
-     *
      * @var string
      */
     public $sourceId;
 
     /**
-     * @description 开始时间
-     *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 标题
-     *
      * @var string
      */
     public $subject;
 
     /**
-     * @description 租户id(unionId/orgId/groupId)
-     *
      * @var string
      */
     public $tenantId;
 
     /**
-     * @description 租户类型（user/org/group）
-     *
      * @var string
      */
     public $tenantType;

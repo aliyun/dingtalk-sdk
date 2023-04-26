@@ -10,98 +10,84 @@ use AlibabaCloud\Tea\Model;
 class SendServiceGroupMessageRequest extends Model
 {
     /**
-     * @description at dingtalkId
-     *
      * @var string[]
      */
     public $atDingtalkIds;
 
     /**
-     * @description at 手机号
-     *
      * @var string[]
      */
     public $atMobiles;
 
     /**
-     * @description at unionIds
-     *
      * @var string[]
      */
     public $atUnionIds;
 
     /**
-     * @description 排列方式：0-按钮竖直排列，1-按钮横向排列
+     * @example 0
      *
      * @var string
      */
     public $btnOrientation;
 
     /**
-     * @description actionCard按钮
-     *
      * @var btns[]
      */
     public $btns;
 
     /**
-     * @description 内容
+     * @example 你有新的任务待审批
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 如果正文内容包含链接，并且按钮链接和文本链接分开跳转，则传递true; 否则传递false
+     * @example false
      *
      * @var bool
      */
     public $hasContentLinks;
 
     /**
-     * @description 是否 at所有人
+     * @example false
      *
      * @var bool
      */
     public $isAtAll;
 
     /**
-     * @description 消息类型：MARKDOWN，ACTIONCARD
+     * @example MARKDOWN
      *
      * @var string
      */
     public $messageType;
 
     /**
-     * @description dingtalkId接收者
-     *
      * @var string[]
      */
     public $receiverDingtalkIds;
 
     /**
-     * @description 手机号接收者
-     *
      * @var string[]
      */
     public $receiverMobiles;
 
     /**
-     * @description unionId接收者
-     *
      * @var string[]
      */
     public $receiverUnionIds;
 
     /**
-     * @description 开放群ID
+     * @example cidxxxxx==
      *
      * @var string
      */
     public $targetOpenConversationId;
 
     /**
-     * @description 标题
+     * @example 服务提醒
      *
      * @var string
      */

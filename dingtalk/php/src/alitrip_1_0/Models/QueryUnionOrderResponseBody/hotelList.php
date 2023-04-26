@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class hotelList extends Model
 {
     /**
-     * @description 酒店订单号
+     * @example 12312
      *
      * @var int
      */
     public $hotelOrderId;
 
     /**
-     * @description 订单状态1:等待确认,2:等待付款,3:预订成功,4:申请退款,5:退款成功,6:已关闭,7:结账成功,8:支付成功
+     * @example 1
      *
      * @var int
      */

@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 项目状态内容。
+     * @example 进度正常，详细说明
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 创建时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 项目状态创建人ID。
+     * @example 0715153011xxxxxx
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 项目状态指标：'normal','risky','urgent'。
+     * @example normal
      *
      * @var string
      */
     public $degree;
 
     /**
-     * @description 项目状态名称。
+     * @example 进度正常
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 项目ID。
+     * @example 62c25e3b376ecxxxxxxx
      *
      * @var string
      */

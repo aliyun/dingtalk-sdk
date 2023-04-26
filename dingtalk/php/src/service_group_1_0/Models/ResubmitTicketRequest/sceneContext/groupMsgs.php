@@ -14,7 +14,7 @@ class groupMsgs extends Model
     public $anchor;
 
     /**
-     * @description 勾选消息openMsgId
+     * @example msgsbY4BzTCNX0/ClUwoTTs7w==
      *
      * @var string
      */

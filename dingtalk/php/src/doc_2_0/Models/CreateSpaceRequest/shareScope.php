@@ -9,8 +9,8 @@ use AlibabaCloud\Tea\Model;
 class shareScope extends Model
 {
     /**
-     * @description 公开范围。
-     * 1-当前组织所有人可见。
+     * @example 0
+     *
      * @var int
      */
     public $scope;

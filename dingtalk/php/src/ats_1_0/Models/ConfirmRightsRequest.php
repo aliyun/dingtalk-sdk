@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ConfirmRightsRequest extends Model
 {
     /**
-     * @description 业务标识
+     * @example ddats
      *
      * @var string
      */

@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class SearchFormDataRemovalTableDataResponseBody extends Model
 {
     /**
-     * @description 数据
-     *
      * @var data[]
      */
     public $data;
 
     /**
-     * @description 是否还有数据
+     * @example true
      *
      * @var bool
      */
     public $hasMoreData;
 
     /**
-     * @description 当前第几页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 总数量
+     * @example 100
      *
      * @var int
      */

@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class ListManagementGroupsResponseBody extends Model
 {
     /**
-     * @description 管理组列表
-     *
      * @var groups[]
      */
     public $groups;
 
     /**
-     * @description 是否有下一页
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下一次读取的位置
+     * @example 111
      *
      * @var int
      */

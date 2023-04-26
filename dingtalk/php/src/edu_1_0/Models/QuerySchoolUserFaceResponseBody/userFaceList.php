@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class userFaceList extends Model
 {
     /**
-     * @description 人脸id
+     * @example 200001
      *
      * @var string
      */
     public $faceId;
 
     /**
-     * @description 员工名字
+     * @example 小明
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 员工状态
+     * @example 1有效；0无效
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 员工id
+     * @example 30001
      *
      * @var string
      */

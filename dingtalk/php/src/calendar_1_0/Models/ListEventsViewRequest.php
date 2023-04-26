@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class ListEventsViewRequest extends Model
 {
     /**
-     * @description 每个日程的参与者查询个数，默认100，最大100。
-     *
      * @var int
      */
     public $maxAttendees;
 
     /**
-     * @description 返回的最大日程数，最大100个，默认100个。
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 查询翻页token
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 查询截止时间
-     *
      * @var string
      */
     public $timeMax;
 
     /**
-     * @description 查询开始时间
-     *
      * @var string
      */
     public $timeMin;

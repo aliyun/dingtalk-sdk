@@ -16,22 +16,16 @@ class CreateManagementGroupRequest extends Model
     public $groupName;
 
     /**
-     * @description 管理组成员
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 资源列表
-     *
      * @var string[]
      */
     public $resourceIds;
 
     /**
-     * @description 管理范围
-     *
      * @var scope
      */
     public $scope;

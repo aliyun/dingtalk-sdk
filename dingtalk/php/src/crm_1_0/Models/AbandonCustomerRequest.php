@@ -9,29 +9,23 @@ use AlibabaCloud\Tea\Model;
 class AbandonCustomerRequest extends Model
 {
     /**
-     * @description 自定义动态描述
-     *
      * @var string
      */
     public $customTrackDesc;
 
     /**
-     * @description 客户实例 id 数组
-     *
      * @var string[]
      */
     public $instanceIdList;
 
     /**
-     * @description 操作人staffId，一般为企业员工
+     * @example 123123123
      *
      * @var string
      */
     public $operatorUserId;
 
     /**
-     * @description 释放类型：returnPool-退回公海（默认），innerAbandon-仅清除负责人
-     *
      * @var string
      */
     public $optType;

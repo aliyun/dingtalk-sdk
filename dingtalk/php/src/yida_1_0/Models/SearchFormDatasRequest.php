@@ -9,98 +9,96 @@ use AlibabaCloud\Tea\Model;
 class SearchFormDatasRequest extends Model
 {
     /**
-     * @description 应用编码
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表, 字符串格式，且为yyyy-MM-DD格式
+     * @example 2018-01-01
      *
      * @var string
      */
     public $createFromTimeGMT;
 
     /**
-     * @description createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表。字符串格式，且为yyyy-MM-DD格式。 和createFrom一起，相当于查询在 2018-01-01到2018-01-31之间(包含01和31号)创建的数据。
+     * @example 2018-02-01
      *
      * @var string
      */
     public $createToTimeGMT;
 
     /**
-     * @description 当前页
+     * @example 1
      *
      * @var int
      */
     public $currentPage;
 
     /**
-     * @description 指定排序字段
+     * @example {"numberField_1ac":"+"}, 表示按照字段numberField_1ac升序排列
      *
      * @var string
      */
     public $dynamicOrder;
 
     /**
-     * @description 表单ID
+     * @example FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 语言。可选值：zh_CN/en_US 默认：zh_CN
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。字符串格式，且为yyyy-MM-DD格式
+     * @example 2018-01-01
      *
      * @var string
      */
     public $modifiedFromTimeGMT;
 
     /**
-     * @description modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。字符串格式，且为yyyy-MM-DD格式。 和modifiedFrom一起，相当于查询在 2018-01-01到2018-01-31之间(包含01和31号)被修改的数据。
+     * @example 2018-02-01
      *
      * @var string
      */
     public $modifiedToTimeGMT;
 
     /**
-     * @description 根据数据提交人工号查询
-     *
      * @var string
      */
     public $originatorId;
 
     /**
-     * @description 每页记录数
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 根据表单内组件值查询
+     * @example {"textField_jcr0069m":"danhang","textareaField_jcr0069n":"duohang","numberField_jcr0069o":["1","10"],"radioField_jcr0069p":"选项一","selectField_jcr0069q":"选项一","checkboxField_jcr0069r":["选项二"],"multiSelectField_jcr0069s":["选项二","选项三"],"dateField_jcr0069t":[1514736000000,1517414399000],"cascadeDate_jcr0069u":[[1514736000000,1517414399000],[1514736000000,1517414399000]],"employeeField_jcr0069x":["xxxxx"],"citySelectField_jcr0069y":["110000","110100","110101"],"departmentField_jcr0069z":1123456,"cascadeSelectField_jcr006a0":["part","part_b"],"tableField_jcr006a1":"明细数据"}
      *
      * @var string
      */
     public $searchFieldJson;
 
     /**
-     * @description 应用秘钥。在应用数据中获取。
+     * @example hexxx
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉userId
+     * @example 173112212211
      *
      * @var string
      */

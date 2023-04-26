@@ -11,22 +11,16 @@ use AlibabaCloud\Tea\Model;
 class InsertBlocksRequest extends Model
 {
     /**
-     * @description 元素数组
-     *
      * @var blocks[]
      */
     public $blocks;
 
     /**
-     * @description 位置信息
-     *
      * @var location
      */
     public $location;
 
     /**
-     * @description 操作用户unionId
-     *
      * @var string
      */
     public $operatorId;

@@ -9,64 +9,62 @@ use AlibabaCloud\Tea\Model;
 class PushDingMessageRequest extends Model
 {
     /**
-     * @description 应用Id，默认是医疗的应用。
+     * @example 10001
      *
      * @var int
      */
     public $appId;
 
     /**
-     * @description 消息内容，长度不超过500。
+     * @example 消息内容
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 消息类型：CARD:卡片消息；LINK:链接消息；TEXT：文本消息；
+     * @example CARD
      *
      * @var string
      */
     public $messageType;
 
     /**
-     * @description 链接消息时，消息文案下的URL。
+     * @example https://www.dingtalk.com
      *
      * @var string
      */
     public $messageUrl;
 
     /**
-     * @description 链接消息时，右侧图片URL。
+     * @example http://pic.616pic.com/ys_b_img/00/27/71/Uu8E6C2Edn.jpg
      *
      * @var string
      */
     public $pictureUrl;
 
     /**
-     * @description 卡片消息时，消息下面action的标题，长度不超过20。
+     * @example 转跳链接
      *
      * @var string
      */
     public $singleTitle;
 
     /**
-     * @description 卡片消息时，消息下面action转跳URL，长度不超过500。
+     * @example https://www.dingtalk.com
      *
      * @var string
      */
     public $singleUrl;
 
     /**
-     * @description 消息展示标题，长度不超过100。
+     * @example 消息title
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 组织下的staffId列表
-     *
      * @var string[]
      */
     public $userIdList;

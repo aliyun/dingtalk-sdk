@@ -9,105 +9,105 @@ use AlibabaCloud\Tea\Model;
 class QueryServiceRecordRequest extends Model
 {
     /**
-     * @description 宜搭应用编码
+     * @example APP_XCE0EVXS6DYG3YDYC5RD
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 表单编码
+     * @example FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 服务类型
+     * @example HTTP
      *
      * @var string
      */
     public $hookType;
 
     /**
-     * @description 本次服务调用的唯一ID
+     * @example INVOKE-E7766VC1KJ4ZVFCR346USCT2ORYI2UVRBHA1L0
      *
      * @var string
      */
     public $hookUuid;
 
     /**
-     * @description 表单实例ID
+     * @example FINST-NJS33HHSLFNH533HHOFN
      *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description 服务在此时间之后调用的
+     * @example 2022-03-28
      *
      * @var string
      */
     public $invokeAfterDateGMT;
 
     /**
-     * @description 服务在此时间之前调用的
+     * @example 2022-03-29
      *
      * @var string
      */
     public $invokeBeforeDateGMT;
 
     /**
-     * @description 服务调用状态
+     * @example 可选值：SUCCESS、FAIL、FINAL_SUCCESS、ERROR
      *
      * @var string
      */
     public $invokeStatus;
 
     /**
-     * @description 分页第几页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 100
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 服务调用地址包含的部分字符串，用于模糊搜索
+     * @example www.aliwork.com/query/
      *
      * @var string
      */
     public $requestUrl;
 
     /**
-     * @description 被重试的服务调用唯一ID(此次服务调用是重试哪个执行失败的服务调用)
+     * @example INVOKE-E7766VC1KJ4ZVFCR346USCT2ORYI2UVRBHA1LI
      *
      * @var string
      */
     public $sourceUuid;
 
     /**
-     * @description 服务调用是否成功(不传此参数则查询全部的)
+     * @example true
      *
      * @var bool
      */
     public $success;
 
     /**
-     * @description 宜搭应用秘钥
+     * @example 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 操作人的钉钉userId
+     * @example ding173982232112232
      *
      * @var string
      */

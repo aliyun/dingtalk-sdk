@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class PushBadgeRequest extends Model
 {
     /**
-     * @description 微应用agentId
+     * @example 110000000
      *
      * @var string
      */
     public $agentId;
 
     /**
-     * @description 推送列表
-     *
      * @var badgeItems[]
      */
     public $badgeItems;
 
     /**
-     * @description 推送类型
+     * @example 0
      *
      * @var string
      */

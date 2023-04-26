@@ -9,20 +9,20 @@ use AlibabaCloud\Tea\Model;
 class items extends Model
 {
     /**
-     * @description 补卡规则id
+     * @example 1
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 补卡规则名称
-     *
      * @var string
      */
     public $name;
 
     /**
+     * @example 1
+     *
      * @var int
      */
     public $settingId;

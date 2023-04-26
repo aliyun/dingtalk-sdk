@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class ListRecycleFilesRequest extends Model
 {
     /**
-     * @description 分页长度
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页加载更多锚点
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 文件排序类型
-     *
      * @var string
      */
     public $orderType;
 
     /**
-     * @description 回收站类型
-     *
      * @var string
      */
     public $recycleType;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

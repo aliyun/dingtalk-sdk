@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class NotifyVerifyResultResponseBody extends Model
 {
     /**
-     * @description 结果
+     * @example SUCCESS
      *
      * @var string
      */

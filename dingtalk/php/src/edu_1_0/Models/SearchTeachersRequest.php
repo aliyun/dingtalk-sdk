@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class SearchTeachersRequest extends Model
 {
     /**
+     * @example 李
+     *
      * @var string
      */
     public $nameKeyword;

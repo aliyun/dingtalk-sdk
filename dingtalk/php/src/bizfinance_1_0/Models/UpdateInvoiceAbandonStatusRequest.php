@@ -11,70 +11,58 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceAbandonStatusRequest extends Model
 {
     /**
-     * @description 发票全票面信息（蓝票）
-     *
      * @var blueGeneralInvoiceVO
      */
     public $blueGeneralInvoiceVO;
 
     /**
-     * @description 发票编码（蓝票）
-     *
      * @var string
      */
     public $blueInvoiceCode;
 
     /**
-     * @description 发票号码（蓝票）
-     *
      * @var string
      */
     public $blueInvoiceNo;
 
     /**
-     * @description 状态-红冲、废弃
-     *
      * @var string
      */
     public $blueInvoiceStatus;
 
     /**
-     * @description 操作员
+     * @example abc
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 发票全票面信息（红票）
-     *
      * @var redGeneralInvoiceVO
      */
     public $redGeneralInvoiceVO;
 
     /**
-     * @description 红字发票code
-     *
      * @var string
      */
     public $redInvoiceCode;
 
     /**
-     * @description 红字发票编码
+     * @example abc
      *
      * @var string
      */
     public $redInvoiceNo;
 
     /**
-     * @description 红字发票状态
+     * @example abc
      *
      * @var string
      */
     public $redInvoiceStatus;
 
     /**
-     * @description 目标发票
+     * @example abc
      *
      * @var string
      */

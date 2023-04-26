@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ClearRecycleBinRequest extends Model
 {
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

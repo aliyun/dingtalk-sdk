@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class GetInnerGroupMembersRequest extends Model
 {
     /**
-     * @description 分页大小。
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标。
+     * @example UZr*****
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 会话id。
+     * @example cid1e*****==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 用户userId。
+     * @example 015*****
      *
      * @var string
      */

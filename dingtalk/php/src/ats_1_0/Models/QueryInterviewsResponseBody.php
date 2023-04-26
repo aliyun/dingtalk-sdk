@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class QueryInterviewsResponseBody extends Model
 {
     /**
-     * @description 是否有更多数据
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 数据列表
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 下次查询的分页游标
+     * @example xxx
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 总数量
+     * @example 总数量
      *
      * @var int
      */

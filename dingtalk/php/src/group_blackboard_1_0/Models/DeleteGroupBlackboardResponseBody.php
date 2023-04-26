@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class DeleteGroupBlackboardResponseBody extends Model
 {
     /**
-     * @description 是否成功删除
+     * @example true
      *
      * @var bool
      */
     public $isDeleted;
 
     /**
-     * @description 请求是否成功
+     * @example true
      *
      * @var bool
      */

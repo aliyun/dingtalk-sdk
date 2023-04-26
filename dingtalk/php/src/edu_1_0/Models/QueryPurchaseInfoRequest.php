@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class QueryPurchaseInfoRequest extends Model
 {
     /**
-     * @description 商户id
+     * @example 300001
      *
      * @var string
      */
     public $merchantId;
 
     /**
-     * @description 场景
+     * @example 1代表视频通话
      *
      * @var int
      */
     public $scene;
 
     /**
-     * @description 设备序列号
+     * @example sn123
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 员工id
+     * @example 20001
      *
      * @var string
      */

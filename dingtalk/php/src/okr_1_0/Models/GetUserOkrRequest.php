@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class GetUserOkrRequest extends Model
 {
     /**
-     * @description 页码，默认 为 1。
+     * @example 2
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页的个数，默认100。
+     * @example 30
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 周期 ID。
+     * @example 1005
      *
      * @var string
      */
     public $periodId;
 
     /**
-     * @description 当前用户的user ID。
+     * @example 011539670175223
      *
      * @var string
      */

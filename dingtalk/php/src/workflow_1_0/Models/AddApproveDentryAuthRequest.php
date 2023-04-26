@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class AddApproveDentryAuthRequest extends Model
 {
     /**
-     * @description 授权的钉盘文件信息列表。支持批量授权，最大列表长度：10。
-     *
      * @var fileInfos[]
      */
     public $fileInfos;
 
     /**
-     * @description 授权的用户userid。
+     * @example user123
      *
      * @var string
      */

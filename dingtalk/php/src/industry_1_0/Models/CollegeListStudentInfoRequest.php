@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class CollegeListStudentInfoRequest extends Model
 {
     /**
-     * @description 部门id
-     *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 人员状态
+     * @example UNCHECKED
      *
      * @var string
      */
     public $dingStudentStatus;
 
     /**
-     * @description 当前页数
+     * @example 10
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 单页的条目数
+     * @example 100
      *
      * @var int
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetUserTodoTaskSumRequest extends Model
 {
     /**
-     * @description 要查询的用户userid。
+     * @example manager123
      *
      * @var string
      */

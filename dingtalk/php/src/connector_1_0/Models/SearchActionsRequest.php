@@ -9,35 +9,33 @@ use AlibabaCloud\Tea\Model;
 class SearchActionsRequest extends Model
 {
     /**
-     * @description 连接器的ID
+     * @example G-CONN-1015BC8093540B01B8D0000Q
      *
      * @var string
      */
     public $connectorId;
 
     /**
-     * @description 连接器提供组织ID
+     * @example ding32fff839a3e0105d
      *
      * @var string
      */
     public $connectorProviderCorpId;
 
     /**
-     * @description 集成类型，默认只有basic-基础类型
-     *
      * @var string[]
      */
     public $integrationTypes;
 
     /**
-     * @description 最大返回记录数
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 查询位置，为空表示从头开始
+     * @example 0
      *
      * @var string
      */

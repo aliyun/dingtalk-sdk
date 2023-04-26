@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 业务Key
-     *
      * @var string
      */
     public $configKey;
 
     /**
-     * @description 业务value
-     *
      * @var string
      */
     public $configValue;

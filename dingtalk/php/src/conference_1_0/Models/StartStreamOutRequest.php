@@ -9,40 +9,38 @@ use AlibabaCloud\Tea\Model;
 class StartStreamOutRequest extends Model
 {
     /**
-     * @description 布局
+     * @example grip
      *
      * @var string
      */
     public $mode;
 
     /**
-     * @description 是否需要主持人加入后才允许推流
+     * @example true
      *
      * @var bool
      */
     public $needHostJoin;
 
     /**
-     * @description 小窗位置
-     *
      * @var string
      */
     public $smallWindowPosition;
 
     /**
+     * @example 推流名称
+     *
      * @var string
      */
     public $streamName;
 
     /**
-     * @description 推流地址列表, 最多10个，需要以RTMP开头
-     *
      * @var string[]
      */
     public $streamUrlList;
 
     /**
-     * @description 主持人UID
+     * @example 27SaQ3iiHLN0uwqcPisedfreNwiEiE
      *
      * @var string
      */

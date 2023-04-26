@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class DeleteTaskResponseBody extends Model
 {
     /**
-     * @description 删除的任务Id
-     *
      * @var string[]
      */
     public $result;

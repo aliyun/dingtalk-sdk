@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class ListRelatedSpaceTeamsRequest extends Model
 {
     /**
-     * @description 操作用户unionId。
+     * @example abcd
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 团队类型。
-     * 0-空白团队；1-部门；2-项目组；3-兴趣小组。
      * @var int
      */
     public $type;

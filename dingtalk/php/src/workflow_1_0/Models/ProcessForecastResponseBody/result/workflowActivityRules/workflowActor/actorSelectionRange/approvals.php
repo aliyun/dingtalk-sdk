@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class approvals extends Model
 {
     /**
-     * @description 员工姓名
-     *
      * @var string
      */
     public $userName;
 
     /**
-     * @description 员工 userId
-     *
      * @var string
      */
     public $workNo;

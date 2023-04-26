@@ -14,59 +14,47 @@ use AlibabaCloud\Tea\Model;
 class DeliverCardRequest extends Model
 {
     /**
-     * @description 协作投放参数
-     *
      * @var coFeedOpenDeliverModel
      */
     public $coFeedOpenDeliverModel;
 
     /**
-     * @description 文档投放参数
-     *
      * @var docOpenDeliverModel
      */
     public $docOpenDeliverModel;
 
     /**
-     * @description 群聊投放参数
-     *
      * @var imGroupOpenDeliverModel
      */
     public $imGroupOpenDeliverModel;
 
     /**
-     * @description 单聊机器人场域投放参数
-     *
-     * 【注意】 机器人与人的单聊，直接用支持机器人单聊的应用来发送
      * @var imRobotOpenDeliverModel
      */
     public $imRobotOpenDeliverModel;
 
     /**
-     * @description dt.card//spaceType.spaceId;spaceType.spaceId
+     * @example dtv1.card//im_group.cidp4Gh*******VCQ==;im_robot.manager****67;co_feed.manager****67;one_box.cidp4Gh*******VCQ==
      *
      * @var string
      */
     public $openSpaceId;
 
     /**
-     * @description 外部卡片实例Id
+     * @example out_track_id_123456
      *
      * @var string
      */
     public $outTrackId;
 
     /**
-     * @description 吊顶投放参数
-     *
      * @var topOpenDeliverModel
      */
     public $topOpenDeliverModel;
 
     /**
-     * @description 用户id类型：
+     * @example 1
      *
-     * 2：unionId模式
      * @var int
      */
     public $userIdType;

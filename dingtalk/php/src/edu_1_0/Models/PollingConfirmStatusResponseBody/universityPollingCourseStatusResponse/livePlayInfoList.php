@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class livePlayInfoList extends Model
 {
     /**
-     * @description 推流地址
+     * @example testUrl
      *
      * @var string
      */
     public $liveInputUrl;
 
     /**
-     * @description 直播拉流地址
+     * @example testUrl
      *
      * @var string
      */
     public $liveOutputUrl;
 
     /**
-     * @description 视频流类型
+     * @example 0
      *
      * @var int
      */
     public $liveType;
 
     /**
-     * @description 视频回放地址
+     * @example testUrl
      *
      * @var string
      */

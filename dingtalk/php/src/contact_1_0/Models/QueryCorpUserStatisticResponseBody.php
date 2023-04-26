@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryCorpUserStatisticResponseBody extends Model
 {
     /**
-     * @description 是否还有更多数据
-     *
      * @var bool
      */
     public $hasMore;
@@ -22,14 +20,14 @@ class QueryCorpUserStatisticResponseBody extends Model
     public $list;
 
     /**
-     * @description 下一游标
+     * @example 5
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 总数
+     * @example 20
      *
      * @var int
      */

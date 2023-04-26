@@ -9,84 +9,84 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 考核医疗组id
+     * @example 1758
      *
      * @var string
      */
     public $assessGroupId;
 
     /**
-     * @description 考核医疗组名称
+     * @example 张三组
      *
      * @var string
      */
     public $assessGroupName;
 
     /**
-     * @description 关联的部门id
+     * @example 1312312321
      *
      * @var string
      */
     public $deptCode;
 
     /**
-     * @description 科室医疗组标识
+     * @example 3
      *
      * @var string
      */
     public $deptType;
 
     /**
-     * @description 用户创建时间
+     * @example 2021-06-08 21:57:10
      *
      * @var string
      */
     public $gmtCreateStr;
 
     /**
-     * @description 用户最后修改时间
+     * @example 2021-06-08 21:57:10
      *
      * @var string
      */
     public $gmtModifiedStr;
 
     /**
-     * @description 用户id
+     * @example 123345
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 工号
+     * @example 0001
      *
      * @var string
      */
     public $jobNum;
 
     /**
-     * @description 状态0-有效，1-删除
+     * @example 0
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 租户下staffId
+     * @example u0398812938821
      *
      * @var string
      */
     public $uid;
 
     /**
-     * @description 租户内staffId
+     * @example aaa12312312
      *
      * @var string
      */
     public $userCode;
 
     /**
-     * @description 用户名称
+     * @example 用户名称
      *
      * @var string
      */

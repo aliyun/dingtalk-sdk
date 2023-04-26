@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class batchTradeDetails extends Model
 {
     /**
-     * @description 金额（必填，单位：元）
+     * @example 1.00
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 备注（选填）
+     * @example 工资
      *
      * @var string
      */
     public $memo;
 
     /**
-     * @description 收款方户名（必填）
+     * @example 测试
      *
      * @var string
      */
     public $payeeAccountName;
 
     /**
-     * @description 收款方账号（必填）
+     * @example 13000000000
      *
      * @var string
      */
     public $payeeAccountNo;
 
     /**
-     * @description 收款方账号类型（必填）
+     * @example ALIPAY
      *
      * @var string
      */
     public $payeeAccountType;
 
     /**
-     * @description 序号（必填）
+     * @example 1
      *
      * @var int
      */

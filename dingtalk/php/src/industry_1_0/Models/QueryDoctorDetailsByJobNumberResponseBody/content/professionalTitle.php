@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class professionalTitle extends Model
 {
     /**
-     * @description 职称编码
-     *
      * @var string
      */
     public $code;
 
     /**
-     * @description 职称大类
-     *
      * @var string
      */
     public $professionalTitleCategory;
 
     /**
-     * @description 职称明细
-     *
      * @var string
      */
     public $professionalTitleDetail;

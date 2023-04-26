@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class cardSettings extends Model
 {
     /**
-     * @description 是否开启卡片纯拉模式。
-     *
      * @var bool
      */
     public $pullStrategy;

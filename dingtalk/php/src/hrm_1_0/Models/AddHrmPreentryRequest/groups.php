@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class groups extends Model
 {
     /**
+     * @example sys01
+     *
      * @var string
      */
     public $groupId;

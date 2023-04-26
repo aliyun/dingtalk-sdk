@@ -14,8 +14,6 @@ class RegisterAndActivateDeviceRequest extends Model
     public $deviceCallbackUrl;
 
     /**
-     * @description 设备分类（0：设备，1 : 助手）
-     *
      * @var int
      */
     public $deviceCategory;

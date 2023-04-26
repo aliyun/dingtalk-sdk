@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class empFieldVOList extends Model
 {
     /**
+     * @example sys01-birthTime
+     *
      * @var string
      */
     public $fieldCode;
 
     /**
+     * @example 2020-10-10
+     *
      * @var string
      */
     public $value;

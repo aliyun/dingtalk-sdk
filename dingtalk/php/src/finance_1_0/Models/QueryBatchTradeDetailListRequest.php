@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryBatchTradeDetailListRequest extends Model
 {
     /**
-     * @description 外部商户批次号
+     * @example 20210901001
      *
      * @var string
      */
     public $outBatchNo;
 
     /**
-     * @description 当前页数
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页记录数
+     * @example 50
      *
      * @var int
      */

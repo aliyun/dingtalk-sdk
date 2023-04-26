@@ -14,8 +14,6 @@ class UpdateCardResponseBody extends Model
     public $result;
 
     /**
-     * @description 是否成功
-     *
      * @var bool
      */
     public $success;

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class attachments extends Model
 {
     /**
-     * @description 附件钉盘id
+     * @example 1234567
      *
      * @var string
      */
     public $fileId;
 
     /**
-     * @description 附件名称
+     * @example 附件
      *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 文件大小
+     * @example 123
      *
      * @var string
      */
     public $fileSize;
 
     /**
-     * @description 文件类型
+     * @example pdf
      *
      * @var string
      */

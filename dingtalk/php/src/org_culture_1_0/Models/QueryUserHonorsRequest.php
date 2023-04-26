@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryUserHonorsRequest extends Model
 {
     /**
-     * @description 查询数据的条数，默认查询20条，最大可传100
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页查询的标记，查询第一页时传0，非第一页时传入上次调用本接口返回值中的nextToken
+     * @example 0
      *
      * @var string
      */

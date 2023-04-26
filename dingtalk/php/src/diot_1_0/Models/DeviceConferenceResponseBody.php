@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeviceConferenceResponseBody extends Model
 {
     /**
-     * @description 会议ID
+     * @example 123456789
      *
      * @var string
      */

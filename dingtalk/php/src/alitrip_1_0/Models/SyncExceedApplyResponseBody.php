@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SyncExceedApplyResponseBody extends Model
 {
     /**
-     * @description 是否同步成功
+     * @example true
      *
      * @var bool
      */

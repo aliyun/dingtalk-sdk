@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetWebChannelUserTokenRequest extends Model
 {
     /**
-     * @description 登录用户在业务账号体系内的用户id
+     * @example 123abc
      *
      * @var string
      */
     public $foreignId;
 
     /**
-     * @description 登录用户在业务账号体系内的昵称
+     * @example 客户abc
      *
      * @var string
      */
     public $nick;
 
     /**
-     * @description 调用方在小蜜客服平台申请的业务账号体系的id
+     * @example 123
      *
      * @var int
      */

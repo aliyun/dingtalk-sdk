@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreNodeInfoRequest extends Model
 {
     /**
-     * @description 门店通通讯录Code
-     *
      * @var string
      */
     public $code;
 
     /**
-     * @description 节点Id
-     *
      * @var int
      */
     public $nodeId;

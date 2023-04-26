@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CleanProcessDataResponseBody extends Model
 {
     /**
-     * @description 是否调用成功。
-     *
      * @var bool
      */
     public $success;

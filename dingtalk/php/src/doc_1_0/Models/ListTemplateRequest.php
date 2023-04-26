@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class ListTemplateRequest extends Model
 {
     /**
-     * @description 查询模版数量
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 翻页token
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 操作用户unionId
-     *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 模版类型
-     *
      * @var string
      */
     public $templateType;
 
     /**
-     * @description 知识库id。
-     *
      * @var string
      */
     public $workspaceId;

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListWorkBenchGroupResponseBody extends Model
 {
     /**
-     * @description 应用列表
-     *
      * @var groupList[]
      */
     public $groupList;

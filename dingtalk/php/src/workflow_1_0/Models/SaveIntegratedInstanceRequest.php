@@ -21,28 +21,22 @@ class SaveIntegratedInstanceRequest extends Model
     public $notifiers;
 
     /**
-     * @description 审批实例接收人的userId。
-     *
      * @var string
      */
     public $originatorUserId;
 
     /**
-     * @description 审批模板唯一码
-     *
      * @var string
      */
     public $processCode;
 
     /**
-     * @description 实例标题
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 三方审批系统中审批单的详情页地址
+     * @example https://www.dingtalk.com/
      *
      * @var string
      */

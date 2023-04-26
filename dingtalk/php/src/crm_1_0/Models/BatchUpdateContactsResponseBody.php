@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class BatchUpdateContactsResponseBody extends Model
 {
     /**
-     * @description 批量插入结果列表，results的结果和要新增的数据是一一对应的，可以获取到每条数据分别是否成功。
+     * @example true
      *
      * @var results[]
      */

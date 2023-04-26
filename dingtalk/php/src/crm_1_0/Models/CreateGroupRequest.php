@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupRequest extends Model
 {
     /**
-     * @description 群名称
+     * @example abc
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 群成员id
+     * @example a,b,c
      *
      * @var string
      */
     public $memberUserIds;
 
     /**
-     * @description 群主id
+     * @example abc123
      *
      * @var string
      */
     public $ownerUserId;
 
     /**
-     * @description 关系类型
+     * @example abc
      *
      * @var string
      */

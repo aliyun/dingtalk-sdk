@@ -9,29 +9,27 @@ use AlibabaCloud\Tea\Model;
 class ListEventsInstancesRequest extends Model
 {
     /**
-     * @description listInstances每个日程的参与者查询个数，默认100，最大100。
+     * @example 100
      *
      * @var int
      */
     public $maxAttendees;
 
     /**
-     * @description listInstances返回的最大日程数，最大100个，默认100个。
+     * @example 100
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 循环主日程id。
+     * @example cnNTbW1YbxxxxdEgvdlQrQT09
      *
      * @var string
      */
     public $seriesMasterId;
 
     /**
-     * @description 大于等于次序列id的所有实例
-     *
      * @var string
      */
     public $startRecurrenceId;

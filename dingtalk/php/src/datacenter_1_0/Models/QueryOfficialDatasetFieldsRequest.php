@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryOfficialDatasetFieldsRequest extends Model
 {
     /**
-     * @description 数据集id
+     * @example ding3xxx__-PROC-42FF6625-9692-4003-B13C-307CAACEC354
      *
      * @var string
      */
     public $dsId;
 
     /**
-     * @description 用户id
+     * @example 12345
      *
      * @var string
      */

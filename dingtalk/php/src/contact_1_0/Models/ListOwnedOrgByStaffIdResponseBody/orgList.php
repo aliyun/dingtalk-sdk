@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class orgList extends Model
 {
     /**
-     * @description corpId
+     * @example corpIdxxx
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description corpName
+     * @example corpNamexxx
      *
      * @var string
      */

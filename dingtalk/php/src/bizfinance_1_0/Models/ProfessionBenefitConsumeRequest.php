@@ -9,24 +9,20 @@ use AlibabaCloud\Tea\Model;
 class ProfessionBenefitConsumeRequest extends Model
 {
     /**
-     * @description 权益编码
-     *
+     * @example SF_INVOICE
      *
      * @var string
      */
     public $benefitCode;
 
     /**
-     * @description 幂等ID
-     *
+     * @example 1234567890
      *
      * @var string
      */
     public $bizRequestId;
 
     /**
-     * @description 核销数量
-     *
      * @var int
      */
     public $quota;

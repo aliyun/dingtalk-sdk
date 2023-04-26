@@ -12,119 +12,109 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 审批人userid列表。
-     *
      * @var string[]
      */
     public $approverUserIds;
 
     /**
-     * @description 审批附属实例列表，当已经通过的审批实例被修改或撤销，会生成一个新的实例，作为原有审批实例的附属。  如果想知道当前已经通过的审批实例的状态，可以依次遍历它的附属列表，查询里面每个实例的biz_action。
+     * @example ["instance1","instance2"]
      *
      * @var string[]
      */
     public $attachedProcessInstanceIds;
 
     /**
-     * @description 审批实例业务动作：  MODIFY：表示该审批实例是基于原来的实例修改而来  REVOKE：表示该审批实例是由原来的实例撤销后重新发起的  NONE表示正常发起
+     * @example MODIFY
      *
      * @var string
      */
     public $bizAction;
 
     /**
-     * @description 审批实例业务编号。
+     * @example 111
      *
      * @var string
      */
     public $businessId;
 
     /**
-     * @description 抄送人userid列表。
-     *
      * @var string[]
      */
     public $ccUserIds;
 
     /**
-     * @description 创建时间。
+     * @example 2022-08-31T11:52Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 结束时间。
+     * @example 2022-08-31T11:52Z
      *
      * @var string
      */
     public $finishTime;
 
     /**
-     * @description 表单详情列表。
-     *
      * @var formComponentValues[]
      */
     public $formComponentValues;
 
     /**
-     * @description 主流程实例标识。
+     * @example 111
      *
      * @var string
      */
     public $mainProcessInstanceId;
 
     /**
-     * @description 操作记录列表。
-     *
      * @var operationRecords[]
      */
     public $operationRecords;
 
     /**
-     * @description 发起人的部门。-1表示根部门。
+     * @example -1
      *
      * @var string
      */
     public $originatorDeptId;
 
     /**
-     * @description 发起人的部门名。
+     * @example 测试
      *
      * @var string
      */
     public $originatorDeptName;
 
     /**
-     * @description 发起人的userid。
+     * @example manager1
      *
      * @var string
      */
     public $originatorUserId;
 
     /**
-     * @description 审批结果：  agree：同意  refuse：拒绝。 说明 status为COMPLETED且result为同意时，表示审批单完结并审批通过。
+     * @example agree
      *
      * @var string
      */
     public $result;
 
     /**
-     * @description 审批状态：  NEW：新创建  RUNNING：审批中  TERMINATED：被终止  COMPLETED：完成  CANCELED：取消
+     * @example NEW
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 任务列表。
-     *
      * @var tasks[]
      */
     public $tasks;
 
     /**
-     * @description 审批实例标题。
+     * @example xx提交的请假申请
      *
      * @var string
      */

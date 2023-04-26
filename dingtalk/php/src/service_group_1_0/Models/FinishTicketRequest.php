@@ -11,34 +11,32 @@ use AlibabaCloud\Tea\Model;
 class FinishTicketRequest extends Model
 {
     /**
-     * @description 工单通知
-     *
      * @var notify
      */
     public $notify;
 
     /**
+     * @example eKWh3GBwsKEiE
+     *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 工单开放id
+     * @example a8iS4X94TgtgiE
      *
      * @var string
      */
     public $openTicketId;
 
     /**
-     * @description 当前工单处理人
+     * @example Dq9hP8Sk2v6vQ6l05nCe5wiEiE
      *
      * @var string
      */
     public $processorUnionId;
 
     /**
-     * @description 备注
-     *
      * @var ticketMemo
      */
     public $ticketMemo;

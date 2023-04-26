@@ -20,15 +20,11 @@ class RemovePermissionRequest extends Model
     public $members;
 
     /**
-     * @description 任务的创建者uid
-     *
      * @var int
      */
     public $taskCreator;
 
     /**
-     * @description 闪记任务的闪记ID
-     *
      * @var int
      */
     public $taskId;

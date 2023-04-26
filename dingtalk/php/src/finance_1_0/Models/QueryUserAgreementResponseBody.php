@@ -9,84 +9,84 @@ use AlibabaCloud\Tea\Model;
 class QueryUserAgreementResponseBody extends Model
 {
     /**
-     * @description 协议编号
+     * @example 201220123212312
      *
      * @var string
      */
     public $agreementNo;
 
     /**
-     * @description 组织id
+     * @example ding123123234234
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 实际过期日期
+     * @example 2021-11-11 10:10:10
      *
      * @var string
      */
     public $gmtExpire;
 
     /**
-     * @description 实际签约日期
+     * @example 2021-11-11 10:10:10
      *
      * @var string
      */
     public $gmtSign;
 
     /**
-     * @description 实际生效日期
+     * @example 2021-11-11 10:10:10
      *
      * @var string
      */
     public $gmtValid;
 
     /**
-     * @description 主机构id
+     * @example 2021000001
      *
      * @var string
      */
     public $instId;
 
     /**
-     * @description 支付渠道
+     * @example ALIPAY
      *
      * @var string
      */
     public $payChannel;
 
     /**
-     * @description 实际支付账户名（脱敏）
+     * @example *川
      *
      * @var string
      */
     public $payChannelAccountName;
 
     /**
-     * @description 实际支付账号（脱敏）
+     * @example 139*****0
      *
      * @var string
      */
     public $payChannelAccountNo;
 
     /**
-     * @description 签约状态
+     * @example SUCCESS
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 子机构id
+     * @example 101
      *
      * @var string
      */
     public $subInstId;
 
     /**
-     * @description 用户id
+     * @example 54646545
      *
      * @var string
      */

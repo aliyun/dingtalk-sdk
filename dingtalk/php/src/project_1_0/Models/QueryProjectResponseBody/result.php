@@ -10,112 +10,110 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 创建时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 创建人ID。
+     * @example 0715153011125xxxx
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 自定义字段值集合。
-     *
      * @var customfields[]
      */
     public $customfields;
 
     /**
-     * @description 项目描述。
+     * @example 描述内容
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 项目结束时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $endDate;
 
     /**
-     * @description 是否放入回收站。
+     * @example false
      *
      * @var bool
      */
     public $isArchived;
 
     /**
-     * @description 是否归档。
+     * @example false
      *
      * @var bool
      */
     public $isSuspended;
 
     /**
-     * @description 是模版项目。
+     * @example false
      *
      * @var bool
      */
     public $isTemplate;
 
     /**
-     * @description 项目LOGO。
+     * @example http://xxxxx
      *
      * @var string
      */
     public $logo;
 
     /**
-     * @description 项目名称。
+     * @example 测试项目
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 企业ID。
+     * @example dingc23b7b9682b4xxxx
      *
      * @var string
      */
     public $organizationId;
 
     /**
-     * @description 项目ID。
+     * @example 64ba333e4206372f3f5cxxxx
      *
      * @var string
      */
     public $projectId;
 
     /**
-     * @description 项目开始时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $startDate;
 
     /**
-     * @description 任务ID前缀。
+     * @example UNI
      *
      * @var string
      */
     public $uniqueIdPrefix;
 
     /**
-     * @description 更新时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $updated;
 
     /**
-     * @description 可见性，project | organization。
+     * @example organization
      *
      * @var string
      */

@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class SearchActivationCodeResponseBody extends Model
 {
     /**
-     * @description activationCode
-     *
      * @var string
      */
     public $activationCode;
 
     /**
-     * @description authType
-     *
      * @var string
      */
     public $authType;
 
     /**
-     * @description expireTime
-     *
      * @var string
      */
     public $expireTimeGMT;
 
     /**
-     * @description instanceId
-     *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description status
-     *
      * @var int
      */
     public $status;

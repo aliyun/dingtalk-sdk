@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 知识库ID
+     * @example 22
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 失败时错误消息
-     *
      * @var string
      */
     public $message;
 
     /**
-     * @description 添加/修改知识库是否成功
+     * @example true
      *
      * @var bool
      */

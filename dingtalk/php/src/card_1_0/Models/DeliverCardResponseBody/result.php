@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 场域Id
+     * @example cid1234abcd
      *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)
+     * @example IM_GROUP
      *
      * @var string
      */
     public $spaceType;
 
     /**
-     * @description 投放成功
-     *
      * @var bool
      */
     public $success;

@@ -9,56 +9,52 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 修改时间
-     *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 主键
+     * @example 1
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 是否已删除，默认0未删除，1已删除
+     * @example 0
      *
      * @var int
      */
     public $isDeleted;
 
     /**
-     * @description 角色关联权限点是否只读
+     * @example 0
      *
      * @var int
      */
     public $readOnly;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 角色编码
+     * @example sys_admin
      *
      * @var string
      */
     public $roleCode;
 
     /**
-     * @description 角色名称
+     * @example 系统管理员
      *
      * @var string
      */
     public $roleName;
 
     /**
-     * @description 排序，数字越小越靠前，默认0
+     * @example 0
      *
      * @var int
      */

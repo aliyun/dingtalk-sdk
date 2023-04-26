@@ -9,49 +9,47 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 报修设备码
+     * @example testDeviceCode
      *
      * @var string
      */
     public $deviceCode;
 
     /**
-     * @description 设备名称
+     * @example 测试设备名称
      *
      * @var string
      */
     public $deviceName;
 
     /**
-     * @description 报修时间
+     * @example 2022-7-14 13:00
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 处理时间
+     * @example 2022=12-25 15:00
      *
      * @var string
      */
     public $handleTime;
 
     /**
-     * @description 报修人
-     *
      * @var string[]
      */
     public $maintenanceStaff;
 
     /**
-     * @description 处理结果，0:同意，1:拒绝，2:终止，3:删除，4:进行中
+     * @example 0
      *
      * @var int
      */
     public $processState;
 
     /**
-     * @description 异常描述
+     * @example 温度过高导致异常
      *
      * @var string
      */

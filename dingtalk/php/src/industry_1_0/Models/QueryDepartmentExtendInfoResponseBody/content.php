@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 科室或医疗组code
+     * @example 1231
      *
      * @var string
      */
     public $deptCode;
 
     /**
-     * @description 扩展属性显示名称
+     * @example a
      *
      * @var string
      */
     public $deptExtendDisplayName;
 
     /**
-     * @description 扩展属性key
+     * @example 2
      *
      * @var string
      */
     public $deptExtendKey;
 
     /**
-     * @description 扩展属性value
+     * @example 1
      *
      * @var string
      */
     public $deptExtendValue;
 
     /**
-     * @description 创建时间
+     * @example 2021-08-24 20:30:31
      *
      * @var string
      */
     public $gmtCreateStr;
 
     /**
-     * @description 修改时间
+     * @example 2021-08-24 20:30:31
      *
      * @var string
      */
     public $gmtModifiedStr;
 
     /**
-     * @description id
+     * @example 1000
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 删除标识
+     * @example 0
      *
      * @var int
      */

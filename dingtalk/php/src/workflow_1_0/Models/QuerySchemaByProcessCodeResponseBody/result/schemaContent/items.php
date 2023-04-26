@@ -11,22 +11,18 @@ use AlibabaCloud\Tea\Model;
 class items extends Model
 {
     /**
-     * @description 子控件列表
-     *
      * @var children[]
      */
     public $children;
 
     /**
-     * @description 控件类型，取值：
+     * @example TextField
      *
      * @var string
      */
     public $componentName;
 
     /**
-     * @description 控件属性。
-     *
      * @var props
      */
     public $props;

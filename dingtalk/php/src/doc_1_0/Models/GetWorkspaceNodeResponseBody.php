@@ -11,22 +11,16 @@ use AlibabaCloud\Tea\Model;
 class GetWorkspaceNodeResponseBody extends Model
 {
     /**
-     * @description 是否有权限
-     *
      * @var bool
      */
     public $hasPermission;
 
     /**
-     * @description 节点信息
-     *
      * @var nodeBO
      */
     public $nodeBO;
 
     /**
-     * @description 节点所属知识库信息。
-     *
      * @var workspaceBO
      */
     public $workspaceBO;

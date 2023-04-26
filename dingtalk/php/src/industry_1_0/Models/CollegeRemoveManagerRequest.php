@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CollegeRemoveManagerRequest extends Model
 {
     /**
-     * @description 部门id
+     * @example 11111
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 是否强制移除
+     * @example true
      *
      * @var bool
      */
     public $isForce;
 
     /**
-     * @description userId
+     * @example 12345
      *
      * @var string
      */

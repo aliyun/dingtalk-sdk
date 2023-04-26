@@ -9,57 +9,41 @@ use AlibabaCloud\Tea\Model;
 class editableSetting extends Model
 {
     /**
-     * @description 是否可删除列
-     *
      * @var bool
      */
     public $deleteColumns;
 
     /**
-     * @description 是否可删除行
-     *
      * @var bool
      */
     public $deleteRows;
 
     /**
-     * @description 是否可修改单元格的值
-     *
      * @var bool
      */
     public $editCells;
 
     /**
-     * @description 是否可修改单元格样式
-     *
      * @var bool
      */
     public $formatCells;
 
     /**
-     * @description 是否可插入列
-     *
      * @var bool
      */
     public $insertColumns;
 
     /**
-     * @description 是否可插入行
-     *
      * @var bool
      */
     public $insertRows;
 
     /**
-     * @description 是否可显示、隐藏列
-     *
      * @var bool
      */
     public $toggleColumnsVisibility;
 
     /**
-     * @description 是否可显示、隐藏行
-     *
      * @var bool
      */
     public $toggleRowsVisibility;

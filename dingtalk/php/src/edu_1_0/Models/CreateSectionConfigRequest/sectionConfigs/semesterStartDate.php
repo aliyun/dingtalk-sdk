@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class semesterStartDate extends Model
 {
     /**
-     * @description 日
+     * @example 31
      *
      * @var int
      */
     public $dayOfMonth;
 
     /**
-     * @description 月
+     * @example 8
      *
      * @var int
      */
     public $month;
 
     /**
-     * @description 年
+     * @example 2021
      *
      * @var int
      */

@@ -10,13 +10,13 @@ use AlibabaCloud\Tea\Model;
 class instanceList extends Model
 {
     /**
-     * @description 关系模型数据。
-     *
      * @var dataArray[]
      */
     public $dataArray;
 
     /**
+     * @example yU9TbER1TDazjPq1rRCzwg04841675924041
+     *
      * @var string
      */
     public $instanceId;

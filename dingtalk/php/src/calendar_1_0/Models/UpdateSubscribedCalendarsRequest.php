@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateSubscribedCalendarsRequest extends Model
 {
     /**
-     * @description 日历介绍
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 日历管理员列表
-     *
      * @var string[]
      */
     public $managers;
 
     /**
-     * @description 日历名
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 可订阅列表
-     *
      * @var subscribeScope
      */
     public $subscribeScope;

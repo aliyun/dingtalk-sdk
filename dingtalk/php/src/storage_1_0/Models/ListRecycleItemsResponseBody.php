@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class ListRecycleItemsResponseBody extends Model
 {
     /**
-     * @description 分页游标
-     * 不为空表示有更多数据
+     * @example next_token
+     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 回收项列表
-     * 50
      * @var recycleItems[]
      */
     public $recycleItems;

@@ -9,197 +9,143 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 创建人
+     * @example 张三
      *
      * @var string
      */
     public $dataUserid;
 
     /**
-     * @description 住址
-     *
      * @var string
      */
     public $lxrAddress;
 
     /**
-     * @description 生日
-     *
      * @var string
      */
     public $lxrBirthday;
 
     /**
-     * @description 称谓
-     *
      * @var string
      */
     public $lxrChengwei;
 
     /**
-     * @description 证件号码
-     *
      * @var string
      */
     public $lxrCtnumber;
 
     /**
-     * @description 证件类型
-     *
      * @var string
      */
     public $lxrCttype;
 
     /**
-     * @description 对应客户
-     *
      * @var string
      */
     public $lxrCustomerid;
 
     /**
-     * @description 部门
-     *
      * @var string
      */
     public $lxrDepartment;
 
     /**
-     * @description 钉钉号
-     *
      * @var string
      */
     public $lxrDingtalk;
 
     /**
-     * @description Email
-     *
      * @var string
      */
     public $lxrEmail;
 
     /**
-     * @description 传真
-     *
      * @var string
      */
     public $lxrFax;
 
     /**
-     * @description 分类
-     *
      * @var string
      */
     public $lxrGroup;
 
     /**
-     * @description 手机
-     *
      * @var string
      */
     public $lxrHandset;
 
     /**
-     * @description 职务
-     *
      * @var string
      */
     public $lxrHeadship;
 
     /**
-     * @description 爱好
-     *
      * @var string
      */
     public $lxrLike;
 
     /**
-     * @description 姓名
-     *
      * @var string
      */
     public $lxrName;
 
     /**
-     * @description 联系名片
-     *
      * @var string
      */
     public $lxrPhoto;
 
     /**
-     * @description 负责业务
-     *
      * @var string
      */
     public $lxrPreside;
 
     /**
-     * @description 邮编
-     *
      * @var string
      */
     public $lxrPst;
 
     /**
-     * @description QQ
-     *
      * @var string
      */
     public $lxrQq;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $lxrRemark;
 
     /**
-     * @description 性别（男，女）
-     *
      * @var string
      */
     public $lxrSex;
 
     /**
-     * @description Skype
-     *
      * @var string
      */
     public $lxrSkype;
 
     /**
-     * @description 家庭电话
-     *
      * @var string
      */
     public $lxrTel;
 
     /**
-     * @description 类型（联系人，主联系人）
-     *
      * @var string
      */
     public $lxrType;
 
     /**
-     * @description 旺旺
-     *
      * @var string
      */
     public $lxrWangwang;
 
     /**
-     * @description 微信号
-     *
      * @var string
      */
     public $lxrWeixin;
 
     /**
-     * @description 工作电话
-     *
      * @var string
      */
     public $lxrWorktel;

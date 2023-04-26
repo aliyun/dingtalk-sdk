@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 创建时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 创建者用户ID。
+     * @example 0715153011125xxxx
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 任务分组名称。
+     * @example 描述...
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 项目ID。
+     * @example 62c25e3b376ecxxxxxxx
      *
      * @var string
      */
     public $projectId;
 
     /**
-     * @description 任务分组ID。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description 任务分组名称。
+     * @example 自定义分组1
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 更新时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */

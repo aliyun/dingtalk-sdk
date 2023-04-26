@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class partnerLabelVOLevel3 extends Model
 {
     /**
-     * @description 伙伴类型id
+     * @example 1234
      *
      * @var int
      */
     public $labelId;
 
     /**
-     * @description 伙伴类型
+     * @example 三级供应商
      *
      * @var string
      */
     public $labelName;
 
     /**
-     * @description 伙伴类型层级
+     * @example 3
      *
      * @var int
      */

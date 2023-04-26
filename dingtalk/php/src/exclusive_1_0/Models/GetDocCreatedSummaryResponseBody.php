@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetDocCreatedSummaryResponseBody extends Model
 {
     /**
-     * @description 最近1天创建文档人数
+     * @example 100
      *
      * @var string
      */
     public $docCreateUserCnt1d;
 
     /**
-     * @description 最近1天创建文档数
+     * @example 100
      *
      * @var string
      */

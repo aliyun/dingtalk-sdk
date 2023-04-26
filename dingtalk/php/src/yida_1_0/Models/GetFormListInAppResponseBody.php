@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetFormListInAppResponseBody extends Model
 {
     /**
-     * @description 接口返回的结果
-     *
      * @var result
      */
     public $result;
 
     /**
-     * @description 是否成功，true代表成功
-     *
      * @var bool
      */
     public $success;

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class owner extends Model
 {
     /**
-     * @description 用户名称。
+     * @example dingtalk
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 用户unionId。
+     * @example abcd
      *
      * @var string
      */

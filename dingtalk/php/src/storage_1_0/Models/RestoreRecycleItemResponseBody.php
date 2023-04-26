@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class RestoreRecycleItemResponseBody extends Model
 {
     /**
-     * @description 是否是异步任务
-     * 如果操作对象有子节点，则会异步处理
+     * @example true
+     *
      * @var bool
      */
     public $async;
 
     /**
-     * @description 操作对应根节点还原之后的文件id
-     * 非失败的情况下同步或者异步都会返回
+     * @example dentry_id
+     *
      * @var string
      */
     public $dentryId;
 
     /**
-     * @description 操作对应根节点还原之后的空间id
-     * 非失败的情况下同步或者异步都会返回
+     * @example space_id
+     *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 异步任务id，用于查询任务执行状态
+     * @example task_id
      *
      * @var string
      */

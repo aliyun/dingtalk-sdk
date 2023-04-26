@@ -316,18 +316,76 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VPaasProxyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VPaasProxyResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param ActivateDeviceRequest $request
+     * @param ActivateDeviceHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return ActivateDeviceResponse
+     */
+    public function activateDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->licenseKey)) {
+            $body['licenseKey'] = $request->licenseKey;
+        }
+        if (!Utils::isUnset($request->model)) {
+            $body['model'] = $request->model;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ActivateDevice',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/vpaas/devices/activate',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ActivateDeviceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -344,44 +402,61 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ActivateDeviceRequest $request
-     * @param ActivateDeviceHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param AddDeviceRequest $request
+     * @param AddDeviceHeaders $headers
+     * @param RuntimeOptions   $runtime
      *
-     * @return ActivateDeviceResponse
+     * @return AddDeviceResponse
      */
-    public function activateDeviceWithOptions($request, $headers, $runtime)
+    public function addDeviceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->licenseKey)) {
-            @$body['licenseKey'] = $request->licenseKey;
+        if (!Utils::isUnset($request->merchantId)) {
+            $body['merchantId'] = $request->merchantId;
         }
         if (!Utils::isUnset($request->model)) {
-            @$body['model'] = $request->model;
+            $body['model'] = $request->model;
         }
         if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->scene)) {
+            $body['scene'] = $request->scene;
         }
         if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
+            $body['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
         }
         if (!Utils::isUnset($request->type)) {
-            @$body['type'] = $request->type;
+            $body['type'] = $request->type;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'AddDevice',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/devices',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return ActivateDeviceResponse::fromMap($this->doROARequest('ActivateDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/vpaas/devices/activate', 'json', $req, $runtime));
+        return AddDeviceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -398,50 +473,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddDeviceRequest $request
-     * @param AddDeviceHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @param AddSchoolConfigRequest $request
+     * @param AddSchoolConfigHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return AddDeviceResponse
+     * @return AddSchoolConfigResponse
      */
-    public function addDeviceWithOptions($request, $headers, $runtime)
+    public function addSchoolConfigWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->merchantId)) {
-            @$body['merchantId'] = $request->merchantId;
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
         }
-        if (!Utils::isUnset($request->model)) {
-            @$body['model'] = $request->model;
+        if (!Utils::isUnset($request->operatorName)) {
+            $body['operatorName'] = $request->operatorName;
         }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
-        }
-        if (!Utils::isUnset($request->scene)) {
-            @$body['scene'] = $request->scene;
-        }
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
-        }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
-        }
-        if (!Utils::isUnset($request->type)) {
-            @$body['type'] = $request->type;
+        if (!Utils::isUnset($request->temperatureUpLimit)) {
+            $body['temperatureUpLimit'] = $request->temperatureUpLimit;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'AddSchoolConfig',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/schools/configurations',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddDeviceResponse::fromMap($this->doROARequest('AddDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/devices', 'json', $req, $runtime));
+        return AddSchoolConfigResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -458,38 +532,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddSchoolConfigRequest $request
-     * @param AddSchoolConfigHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param BatchCreateRequest $request
+     * @param BatchCreateHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return AddSchoolConfigResponse
+     * @return BatchCreateResponse
      */
-    public function addSchoolConfigWithOptions($request, $headers, $runtime)
+    public function batchCreateWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->operatorId)) {
-            @$body['operatorId'] = $request->operatorId;
+        if (!Utils::isUnset($request->cardBizCode)) {
+            $body['cardBizCode'] = $request->cardBizCode;
         }
-        if (!Utils::isUnset($request->operatorName)) {
-            @$body['operatorName'] = $request->operatorName;
+        if (!Utils::isUnset($request->data)) {
+            $body['data'] = $request->data;
         }
-        if (!Utils::isUnset($request->temperatureUpLimit)) {
-            @$body['temperatureUpLimit'] = $request->temperatureUpLimit;
+        if (!Utils::isUnset($request->identifier)) {
+            $body['identifier'] = $request->identifier;
+        }
+        if (!Utils::isUnset($request->jsVersion)) {
+            $body['jsVersion'] = $request->jsVersion;
+        }
+        if (!Utils::isUnset($request->sourceType)) {
+            $body['sourceType'] = $request->sourceType;
+        }
+        if (!Utils::isUnset($request->userid)) {
+            $body['userid'] = $request->userid;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'BatchCreate',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/cards',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddSchoolConfigResponse::fromMap($this->doROARequest('AddSchoolConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/schools/configurations', 'json', $req, $runtime));
+        return BatchCreateResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -506,47 +600,97 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchCreateRequest $request
-     * @param BatchCreateHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param BatchOrgCreateHWRequest $request
+     * @param BatchOrgCreateHWHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return BatchCreateResponse
+     * @return BatchOrgCreateHWResponse
      */
-    public function batchCreateWithOptions($request, $headers, $runtime)
+    public function batchOrgCreateHWWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->cardBizCode)) {
-            @$body['cardBizCode'] = $request->cardBizCode;
+        if (!Utils::isUnset($request->attributes)) {
+            $body['attributes'] = $request->attributes;
         }
-        if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->courseName)) {
+            $body['courseName'] = $request->courseName;
+        }
+        if (!Utils::isUnset($request->hwContent)) {
+            $body['hwContent'] = $request->hwContent;
+        }
+        if (!Utils::isUnset($request->hwDeadline)) {
+            $body['hwDeadline'] = $request->hwDeadline;
+        }
+        if (!Utils::isUnset($request->hwDeadlineOpen)) {
+            $body['hwDeadlineOpen'] = $request->hwDeadlineOpen;
+        }
+        if (!Utils::isUnset($request->hwMedia)) {
+            $body['hwMedia'] = $request->hwMedia;
+        }
+        if (!Utils::isUnset($request->hwPhoto)) {
+            $body['hwPhoto'] = $request->hwPhoto;
+        }
+        if (!Utils::isUnset($request->hwTitle)) {
+            $body['hwTitle'] = $request->hwTitle;
+        }
+        if (!Utils::isUnset($request->hwType)) {
+            $body['hwType'] = $request->hwType;
+        }
+        if (!Utils::isUnset($request->hwVideo)) {
+            $body['hwVideo'] = $request->hwVideo;
         }
         if (!Utils::isUnset($request->identifier)) {
-            @$body['identifier'] = $request->identifier;
+            $body['identifier'] = $request->identifier;
         }
-        if (!Utils::isUnset($request->jsVersion)) {
-            @$body['jsVersion'] = $request->jsVersion;
+        if (!Utils::isUnset($request->openSelectItemList)) {
+            $body['openSelectItemList'] = $request->openSelectItemList;
         }
-        if (!Utils::isUnset($request->sourceType)) {
-            @$body['sourceType'] = $request->sourceType;
+        if (!Utils::isUnset($request->scheduledRelease)) {
+            $body['scheduledRelease'] = $request->scheduledRelease;
         }
-        if (!Utils::isUnset($request->userid)) {
-            @$body['userid'] = $request->userid;
+        if (!Utils::isUnset($request->scheduledTime)) {
+            $body['scheduledTime'] = $request->scheduledTime;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->targetRole)) {
+            $body['targetRole'] = $request->targetRole;
+        }
+        if (!Utils::isUnset($request->teacherName)) {
+            $body['teacherName'] = $request->teacherName;
+        }
+        if (!Utils::isUnset($request->teacherUserId)) {
+            $body['teacherUserId'] = $request->teacherUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'BatchOrgCreateHW',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/homeworks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchCreateResponse::fromMap($this->doROARequest('BatchCreate', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/cards', 'json', $req, $runtime));
+        return BatchOrgCreateHWResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -563,86 +707,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchOrgCreateHWRequest $request
-     * @param BatchOrgCreateHWHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param CancelOrderRequest $request
+     * @param CancelOrderHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return BatchOrgCreateHWResponse
+     * @return CancelOrderResponse
      */
-    public function batchOrgCreateHWWithOptions($request, $headers, $runtime)
+    public function cancelOrderWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->attributes)) {
-            @$body['attributes'] = $request->attributes;
+        if (!Utils::isUnset($request->faceId)) {
+            $body['faceId'] = $request->faceId;
         }
-        if (!Utils::isUnset($request->bizCode)) {
-            @$body['bizCode'] = $request->bizCode;
+        if (!Utils::isUnset($request->orderNo)) {
+            $body['orderNo'] = $request->orderNo;
         }
-        if (!Utils::isUnset($request->courseName)) {
-            @$body['courseName'] = $request->courseName;
+        if (!Utils::isUnset($request->signature)) {
+            $body['signature'] = $request->signature;
         }
-        if (!Utils::isUnset($request->hwContent)) {
-            @$body['hwContent'] = $request->hwContent;
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
         }
-        if (!Utils::isUnset($request->hwDeadline)) {
-            @$body['hwDeadline'] = $request->hwDeadline;
+        if (!Utils::isUnset($request->timestamp)) {
+            $body['timestamp'] = $request->timestamp;
         }
-        if (!Utils::isUnset($request->hwDeadlineOpen)) {
-            @$body['hwDeadlineOpen'] = $request->hwDeadlineOpen;
-        }
-        if (!Utils::isUnset($request->hwMedia)) {
-            @$body['hwMedia'] = $request->hwMedia;
-        }
-        if (!Utils::isUnset($request->hwPhoto)) {
-            @$body['hwPhoto'] = $request->hwPhoto;
-        }
-        if (!Utils::isUnset($request->hwTitle)) {
-            @$body['hwTitle'] = $request->hwTitle;
-        }
-        if (!Utils::isUnset($request->hwType)) {
-            @$body['hwType'] = $request->hwType;
-        }
-        if (!Utils::isUnset($request->hwVideo)) {
-            @$body['hwVideo'] = $request->hwVideo;
-        }
-        if (!Utils::isUnset($request->identifier)) {
-            @$body['identifier'] = $request->identifier;
-        }
-        if (!Utils::isUnset($request->openSelectItemList)) {
-            @$body['openSelectItemList'] = $request->openSelectItemList;
-        }
-        if (!Utils::isUnset($request->scheduledRelease)) {
-            @$body['scheduledRelease'] = $request->scheduledRelease;
-        }
-        if (!Utils::isUnset($request->scheduledTime)) {
-            @$body['scheduledTime'] = $request->scheduledTime;
-        }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
-        }
-        if (!Utils::isUnset($request->targetRole)) {
-            @$body['targetRole'] = $request->targetRole;
-        }
-        if (!Utils::isUnset($request->teacherName)) {
-            @$body['teacherName'] = $request->teacherName;
-        }
-        if (!Utils::isUnset($request->teacherUserId)) {
-            @$body['teacherUserId'] = $request->teacherUserId;
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CancelOrder',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/orders/cancel',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchOrgCreateHWResponse::fromMap($this->doROARequest('BatchOrgCreateHW', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/homeworks', 'json', $req, $runtime));
+        return CancelOrderResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -659,47 +775,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CancelOrderRequest $request
-     * @param CancelOrderHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param CancelSnsOrderRequest $request
+     * @param CancelSnsOrderHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return CancelOrderResponse
+     * @return CancelSnsOrderResponse
      */
-    public function cancelOrderWithOptions($request, $headers, $runtime)
+    public function cancelSnsOrderWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->faceId)) {
-            @$body['faceId'] = $request->faceId;
+        if (!Utils::isUnset($request->alipayAppId)) {
+            $body['alipayAppId'] = $request->alipayAppId;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            $body['merchantId'] = $request->merchantId;
         }
         if (!Utils::isUnset($request->orderNo)) {
-            @$body['orderNo'] = $request->orderNo;
+            $body['orderNo'] = $request->orderNo;
         }
         if (!Utils::isUnset($request->signature)) {
-            @$body['signature'] = $request->signature;
-        }
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
+            $body['signature'] = $request->signature;
         }
         if (!Utils::isUnset($request->timestamp)) {
-            @$body['timestamp'] = $request->timestamp;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $body['timestamp'] = $request->timestamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CancelSnsOrder',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/snsUserOrders/cancel',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CancelOrderResponse::fromMap($this->doROARequest('CancelOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/orders/cancel', 'json', $req, $runtime));
+        return CancelSnsOrderResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -716,44 +840,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CancelSnsOrderRequest $request
-     * @param CancelSnsOrderHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param CancelUserOrderRequest $request
+     * @param CancelUserOrderHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return CancelSnsOrderResponse
+     * @return CancelUserOrderResponse
      */
-    public function cancelSnsOrderWithOptions($request, $headers, $runtime)
+    public function cancelUserOrderWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->alipayAppId)) {
-            @$body['alipayAppId'] = $request->alipayAppId;
+            $body['alipayAppId'] = $request->alipayAppId;
         }
         if (!Utils::isUnset($request->merchantId)) {
-            @$body['merchantId'] = $request->merchantId;
+            $body['merchantId'] = $request->merchantId;
         }
         if (!Utils::isUnset($request->orderNo)) {
-            @$body['orderNo'] = $request->orderNo;
+            $body['orderNo'] = $request->orderNo;
         }
         if (!Utils::isUnset($request->signature)) {
-            @$body['signature'] = $request->signature;
+            $body['signature'] = $request->signature;
         }
         if (!Utils::isUnset($request->timestamp)) {
-            @$body['timestamp'] = $request->timestamp;
+            $body['timestamp'] = $request->timestamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CancelUserOrder',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/userOrders/cancel',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CancelSnsOrderResponse::fromMap($this->doROARequest('CancelSnsOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/snsUserOrders/cancel', 'json', $req, $runtime));
+        return CancelUserOrderResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -770,44 +905,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CancelUserOrderRequest $request
-     * @param CancelUserOrderHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param CheckRestrictionRequest $request
+     * @param CheckRestrictionHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return CancelUserOrderResponse
+     * @return CheckRestrictionResponse
      */
-    public function cancelUserOrderWithOptions($request, $headers, $runtime)
+    public function checkRestrictionWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->alipayAppId)) {
-            @$body['alipayAppId'] = $request->alipayAppId;
+        if (!Utils::isUnset($request->actualAmount)) {
+            $body['actualAmount'] = $request->actualAmount;
         }
-        if (!Utils::isUnset($request->merchantId)) {
-            @$body['merchantId'] = $request->merchantId;
+        if (!Utils::isUnset($request->faceId)) {
+            $body['faceId'] = $request->faceId;
         }
-        if (!Utils::isUnset($request->orderNo)) {
-            @$body['orderNo'] = $request->orderNo;
+        if (!Utils::isUnset($request->scene)) {
+            $body['scene'] = $request->scene;
         }
-        if (!Utils::isUnset($request->signature)) {
-            @$body['signature'] = $request->signature;
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
         }
-        if (!Utils::isUnset($request->timestamp)) {
-            @$body['timestamp'] = $request->timestamp;
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CheckRestriction',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/restrictions/check',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CancelUserOrderResponse::fromMap($this->doROARequest('CancelUserOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/userOrders/cancel', 'json', $req, $runtime));
+        return CheckRestrictionResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -824,44 +970,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckRestrictionRequest $request
-     * @param CheckRestrictionHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param ConsumePointRequest $request
+     * @param ConsumePointHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return CheckRestrictionResponse
+     * @return ConsumePointResponse
      */
-    public function checkRestrictionWithOptions($request, $headers, $runtime)
+    public function consumePointWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->actualAmount)) {
-            @$body['actualAmount'] = $request->actualAmount;
+        if (!Utils::isUnset($request->amount)) {
+            $body['amount'] = $request->amount;
         }
-        if (!Utils::isUnset($request->faceId)) {
-            @$body['faceId'] = $request->faceId;
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
         }
-        if (!Utils::isUnset($request->scene)) {
-            @$body['scene'] = $request->scene;
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
         }
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->productCode)) {
+            $body['productCode'] = $request->productCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'ConsumePoint',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/poins/consume',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CheckRestrictionResponse::fromMap($this->doROARequest('CheckRestriction', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/restrictions/check', 'json', $req, $runtime));
+        return ConsumePointResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -878,41 +1032,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ConsumePointRequest $request
-     * @param ConsumePointHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param CourseSchedulingComplimentNoticeRequest $request
+     * @param CourseSchedulingComplimentNoticeHeaders $headers
+     * @param RuntimeOptions                          $runtime
      *
-     * @return ConsumePointResponse
+     * @return CourseSchedulingComplimentNoticeResponse
      */
-    public function consumePointWithOptions($request, $headers, $runtime)
+    public function courseSchedulingComplimentNoticeWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->amount)) {
-            @$body['amount'] = $request->amount;
-        }
-        if (!Utils::isUnset($request->bizId)) {
-            @$body['bizId'] = $request->bizId;
-        }
-        if (!Utils::isUnset($request->description)) {
-            @$body['description'] = $request->description;
-        }
-        if (!Utils::isUnset($request->productCode)) {
-            @$body['productCode'] = $request->productCode;
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'CourseSchedulingComplimentNotice',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/schedules/finishNotify',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return ConsumePointResponse::fromMap($this->doROARequest('ConsumePoint', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/poins/consume', 'json', $req, $runtime));
+        return CourseSchedulingComplimentNoticeResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -929,32 +1085,73 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CourseSchedulingComplimentNoticeRequest $request
-     * @param CourseSchedulingComplimentNoticeHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @param CreateAppOrderRequest $request
+     * @param CreateAppOrderHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return CourseSchedulingComplimentNoticeResponse
+     * @return CreateAppOrderResponse
      */
-    public function courseSchedulingComplimentNoticeWithOptions($request, $headers, $runtime)
+    public function createAppOrderWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+        $body = [];
+        if (!Utils::isUnset($request->actualAmount)) {
+            $body['actualAmount'] = $request->actualAmount;
+        }
+        if (!Utils::isUnset($request->alipayAppId)) {
+            $body['alipayAppId'] = $request->alipayAppId;
+        }
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->detailList)) {
+            $body['detailList'] = $request->detailList;
+        }
+        if (!Utils::isUnset($request->labelAmount)) {
+            $body['labelAmount'] = $request->labelAmount;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            $body['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->merchantOrderNo)) {
+            $body['merchantOrderNo'] = $request->merchantOrderNo;
+        }
+        if (!Utils::isUnset($request->outerUserId)) {
+            $body['outerUserId'] = $request->outerUserId;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            $body['signature'] = $request->signature;
+        }
+        if (!Utils::isUnset($request->subject)) {
+            $body['subject'] = $request->subject;
+        }
+        if (!Utils::isUnset($request->timestamp)) {
+            $body['timestamp'] = $request->timestamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateAppOrder',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/appOrders',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return CourseSchedulingComplimentNoticeResponse::fromMap($this->doROARequest('CourseSchedulingComplimentNotice', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/schedules/finishNotify', 'json', $req, $runtime));
+        return CreateAppOrderResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -971,62 +1168,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateAppOrderRequest $request
-     * @param CreateAppOrderHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param CreateCustomClassRequest $request
+     * @param CreateCustomClassHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return CreateAppOrderResponse
+     * @return CreateCustomClassResponse
      */
-    public function createAppOrderWithOptions($request, $headers, $runtime)
+    public function createCustomClassWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->actualAmount)) {
-            @$body['actualAmount'] = $request->actualAmount;
+        if (!Utils::isUnset($request->customClass)) {
+            $body['customClass'] = $request->customClass;
         }
-        if (!Utils::isUnset($request->alipayAppId)) {
-            @$body['alipayAppId'] = $request->alipayAppId;
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
         }
-        if (!Utils::isUnset($request->bizCode)) {
-            @$body['bizCode'] = $request->bizCode;
-        }
-        if (!Utils::isUnset($request->detailList)) {
-            @$body['detailList'] = $request->detailList;
-        }
-        if (!Utils::isUnset($request->labelAmount)) {
-            @$body['labelAmount'] = $request->labelAmount;
-        }
-        if (!Utils::isUnset($request->merchantId)) {
-            @$body['merchantId'] = $request->merchantId;
-        }
-        if (!Utils::isUnset($request->merchantOrderNo)) {
-            @$body['merchantOrderNo'] = $request->merchantOrderNo;
-        }
-        if (!Utils::isUnset($request->outerUserId)) {
-            @$body['outerUserId'] = $request->outerUserId;
-        }
-        if (!Utils::isUnset($request->signature)) {
-            @$body['signature'] = $request->signature;
-        }
-        if (!Utils::isUnset($request->subject)) {
-            @$body['subject'] = $request->subject;
-        }
-        if (!Utils::isUnset($request->timestamp)) {
-            @$body['timestamp'] = $request->timestamp;
+        if (!Utils::isUnset($request->superId)) {
+            $body['superId'] = $request->superId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateCustomClass',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/customClasses',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateAppOrderResponse::fromMap($this->doROARequest('CreateAppOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/appOrders', 'json', $req, $runtime));
+        return CreateCustomClassResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1043,38 +1227,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCustomClassRequest $request
-     * @param CreateCustomClassHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param CreateCustomDeptRequest $request
+     * @param CreateCustomDeptHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return CreateCustomClassResponse
+     * @return CreateCustomDeptResponse
      */
-    public function createCustomClassWithOptions($request, $headers, $runtime)
+    public function createCustomDeptWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->customClass)) {
-            @$body['customClass'] = $request->customClass;
+        if (!Utils::isUnset($request->customDept)) {
+            $body['customDept'] = $request->customDept;
         }
         if (!Utils::isUnset($request->operator)) {
-            @$body['operator'] = $request->operator;
+            $body['operator'] = $request->operator;
         }
         if (!Utils::isUnset($request->superId)) {
-            @$body['superId'] = $request->superId;
+            $body['superId'] = $request->superId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateCustomDept',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/customDepts',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateCustomClassResponse::fromMap($this->doROARequest('CreateCustomClass', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/customClasses', 'json', $req, $runtime));
+        return CreateCustomDeptResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1091,38 +1286,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCustomDeptRequest $request
-     * @param CreateCustomDeptHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param CreateEduAssetSpaceRequest $request
+     * @param CreateEduAssetSpaceHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return CreateCustomDeptResponse
+     * @return CreateEduAssetSpaceResponse
      */
-    public function createCustomDeptWithOptions($request, $headers, $runtime)
+    public function createEduAssetSpaceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->customDept)) {
-            @$body['customDept'] = $request->customDept;
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
         }
-        if (!Utils::isUnset($request->operator)) {
-            @$body['operator'] = $request->operator;
+        if (!Utils::isUnset($request->spaceDesc)) {
+            $body['spaceDesc'] = $request->spaceDesc;
         }
-        if (!Utils::isUnset($request->superId)) {
-            @$body['superId'] = $request->superId;
+        if (!Utils::isUnset($request->spaceIcon)) {
+            $body['spaceIcon'] = $request->spaceIcon;
+        }
+        if (!Utils::isUnset($request->spaceName)) {
+            $body['spaceName'] = $request->spaceName;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateEduAssetSpace',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/assets/spaces',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateCustomDeptResponse::fromMap($this->doROARequest('CreateCustomDept', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/customDepts', 'json', $req, $runtime));
+        return CreateEduAssetSpaceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1139,44 +1351,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateEduAssetSpaceRequest $request
-     * @param CreateEduAssetSpaceHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param CreateFulfilRecordRequest $request
+     * @param CreateFulfilRecordHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return CreateEduAssetSpaceResponse
+     * @return CreateFulfilRecordResponse
      */
-    public function createEduAssetSpaceWithOptions($request, $headers, $runtime)
+    public function createFulfilRecordWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->bizCode)) {
-            @$body['bizCode'] = $request->bizCode;
+        if (!Utils::isUnset($request->bizTime)) {
+            $body['bizTime'] = $request->bizTime;
         }
-        if (!Utils::isUnset($request->spaceDesc)) {
-            @$body['spaceDesc'] = $request->spaceDesc;
+        if (!Utils::isUnset($request->extInfo)) {
+            $body['extInfo'] = $request->extInfo;
         }
-        if (!Utils::isUnset($request->spaceIcon)) {
-            @$body['spaceIcon'] = $request->spaceIcon;
+        if (!Utils::isUnset($request->faceId)) {
+            $body['faceId'] = $request->faceId;
         }
-        if (!Utils::isUnset($request->spaceName)) {
-            @$body['spaceName'] = $request->spaceName;
+        if (!Utils::isUnset($request->scene)) {
+            $body['scene'] = $request->scene;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
         }
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateFulfilRecord',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/fulfilRecords',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateEduAssetSpaceResponse::fromMap($this->doROARequest('CreateEduAssetSpace', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/assets/spaces', 'json', $req, $runtime));
+        return CreateFulfilRecordResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1193,47 +1419,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateFulfilRecordRequest $request
-     * @param CreateFulfilRecordHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param CreateInviteUrlRequest $request
+     * @param CreateInviteUrlHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return CreateFulfilRecordResponse
+     * @return CreateInviteUrlResponse
      */
-    public function createFulfilRecordWithOptions($request, $headers, $runtime)
+    public function createInviteUrlWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->bizTime)) {
-            @$body['bizTime'] = $request->bizTime;
+        if (!Utils::isUnset($request->authCode)) {
+            $body['authCode'] = $request->authCode;
         }
-        if (!Utils::isUnset($request->extInfo)) {
-            @$body['extInfo'] = $request->extInfo;
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $body['targetCorpId'] = $request->targetCorpId;
         }
-        if (!Utils::isUnset($request->faceId)) {
-            @$body['faceId'] = $request->faceId;
-        }
-        if (!Utils::isUnset($request->scene)) {
-            @$body['scene'] = $request->scene;
-        }
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->targetOperator)) {
+            $body['targetOperator'] = $request->targetOperator;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateInviteUrl',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/remoteClasses/orgRelations/inviteUrls',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateFulfilRecordResponse::fromMap($this->doROARequest('CreateFulfilRecord', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/fulfilRecords', 'json', $req, $runtime));
+        return CreateInviteUrlResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1250,38 +1478,76 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateInviteUrlRequest $request
-     * @param CreateInviteUrlHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param CreateItemRequest $request
+     * @param CreateItemHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return CreateInviteUrlResponse
+     * @return CreateItemResponse
      */
-    public function createInviteUrlWithOptions($request, $headers, $runtime)
+    public function createItemWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->authCode)) {
-            @$body['authCode'] = $request->authCode;
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
         }
-        if (!Utils::isUnset($request->targetCorpId)) {
-            @$body['targetCorpId'] = $request->targetCorpId;
+        if (!Utils::isUnset($request->effectType)) {
+            $body['effectType'] = $request->effectType;
         }
-        if (!Utils::isUnset($request->targetOperator)) {
-            @$body['targetOperator'] = $request->targetOperator;
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            $body['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->optUser)) {
+            $body['optUser'] = $request->optUser;
+        }
+        if (!Utils::isUnset($request->periodType)) {
+            $body['periodType'] = $request->periodType;
+        }
+        if (!Utils::isUnset($request->price)) {
+            $body['price'] = $request->price;
+        }
+        if (!Utils::isUnset($request->scene)) {
+            $body['scene'] = $request->scene;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateItem',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/items',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateInviteUrlResponse::fromMap($this->doROARequest('CreateInviteUrl', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/remoteClasses/orgRelations/inviteUrls', 'json', $req, $runtime));
+        return CreateItemResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1298,65 +1564,76 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateItemRequest $request
-     * @param CreateItemHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param CreateOrderRequest $request
+     * @param CreateOrderHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return CreateItemResponse
+     * @return CreateOrderResponse
      */
-    public function createItemWithOptions($request, $headers, $runtime)
+    public function createOrderWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->description)) {
-            @$body['description'] = $request->description;
+        if (!Utils::isUnset($request->actualAmount)) {
+            $body['actualAmount'] = $request->actualAmount;
         }
-        if (!Utils::isUnset($request->effectType)) {
-            @$body['effectType'] = $request->effectType;
+        if (!Utils::isUnset($request->createTime)) {
+            $body['createTime'] = $request->createTime;
         }
-        if (!Utils::isUnset($request->endTime)) {
-            @$body['endTime'] = $request->endTime;
+        if (!Utils::isUnset($request->detailList)) {
+            $body['detailList'] = $request->detailList;
         }
-        if (!Utils::isUnset($request->merchantId)) {
-            @$body['merchantId'] = $request->merchantId;
+        if (!Utils::isUnset($request->faceId)) {
+            $body['faceId'] = $request->faceId;
         }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
+        if (!Utils::isUnset($request->ftoken)) {
+            $body['ftoken'] = $request->ftoken;
         }
-        if (!Utils::isUnset($request->optUser)) {
-            @$body['optUser'] = $request->optUser;
+        if (!Utils::isUnset($request->signature)) {
+            $body['signature'] = $request->signature;
         }
-        if (!Utils::isUnset($request->periodType)) {
-            @$body['periodType'] = $request->periodType;
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
         }
-        if (!Utils::isUnset($request->price)) {
-            @$body['price'] = $request->price;
+        if (!Utils::isUnset($request->terminalParams)) {
+            $body['terminalParams'] = $request->terminalParams;
         }
-        if (!Utils::isUnset($request->scene)) {
-            @$body['scene'] = $request->scene;
+        if (!Utils::isUnset($request->timestamp)) {
+            $body['timestamp'] = $request->timestamp;
         }
-        if (!Utils::isUnset($request->startTime)) {
-            @$body['startTime'] = $request->startTime;
+        if (!Utils::isUnset($request->totalAmount)) {
+            $body['totalAmount'] = $request->totalAmount;
         }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
-        if (!Utils::isUnset($request->type)) {
-            @$body['type'] = $request->type;
+        if (!Utils::isUnset($request->version)) {
+            $body['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateOrder',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/orders',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateItemResponse::fromMap($this->doROARequest('CreateItem', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/items', 'json', $req, $runtime));
+        return CreateOrderResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1373,65 +1650,79 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateOrderRequest $request
-     * @param CreateOrderHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param CreateOrderFlowRequest $request
+     * @param CreateOrderFlowHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return CreateOrderResponse
+     * @return CreateOrderFlowResponse
      */
-    public function createOrderWithOptions($request, $headers, $runtime)
+    public function createOrderFlowWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->actualAmount)) {
-            @$body['actualAmount'] = $request->actualAmount;
+            $body['actualAmount'] = $request->actualAmount;
+        }
+        if (!Utils::isUnset($request->alipayUid)) {
+            $body['alipayUid'] = $request->alipayUid;
         }
         if (!Utils::isUnset($request->createTime)) {
-            @$body['createTime'] = $request->createTime;
+            $body['createTime'] = $request->createTime;
         }
         if (!Utils::isUnset($request->detailList)) {
-            @$body['detailList'] = $request->detailList;
+            $body['detailList'] = $request->detailList;
         }
         if (!Utils::isUnset($request->faceId)) {
-            @$body['faceId'] = $request->faceId;
+            $body['faceId'] = $request->faceId;
         }
-        if (!Utils::isUnset($request->ftoken)) {
-            @$body['ftoken'] = $request->ftoken;
+        if (!Utils::isUnset($request->guardianUserId)) {
+            $body['guardianUserId'] = $request->guardianUserId;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            $body['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->orderNo)) {
+            $body['orderNo'] = $request->orderNo;
         }
         if (!Utils::isUnset($request->signature)) {
-            @$body['signature'] = $request->signature;
+            $body['signature'] = $request->signature;
         }
         if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
-        }
-        if (!Utils::isUnset($request->terminalParams)) {
-            @$body['terminalParams'] = $request->terminalParams;
+            $body['sn'] = $request->sn;
         }
         if (!Utils::isUnset($request->timestamp)) {
-            @$body['timestamp'] = $request->timestamp;
+            $body['timestamp'] = $request->timestamp;
         }
         if (!Utils::isUnset($request->totalAmount)) {
-            @$body['totalAmount'] = $request->totalAmount;
+            $body['totalAmount'] = $request->totalAmount;
         }
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->version)) {
-            @$body['version'] = $request->version;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateOrderFlow',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/orders/flows',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateOrderResponse::fromMap($this->doROARequest('CreateOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/orders', 'json', $req, $runtime));
+        return CreateOrderFlowResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1448,68 +1739,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateOrderFlowRequest $request
-     * @param CreateOrderFlowHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param CreatePhysicalClassroomRequest $request
+     * @param CreatePhysicalClassroomHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return CreateOrderFlowResponse
+     * @return CreatePhysicalClassroomResponse
      */
-    public function createOrderFlowWithOptions($request, $headers, $runtime)
+    public function createPhysicalClassroomWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
+        }
         $body = [];
-        if (!Utils::isUnset($request->actualAmount)) {
-            @$body['actualAmount'] = $request->actualAmount;
+        if (!Utils::isUnset($request->classroomBuilding)) {
+            $body['classroomBuilding'] = $request->classroomBuilding;
         }
-        if (!Utils::isUnset($request->alipayUid)) {
-            @$body['alipayUid'] = $request->alipayUid;
+        if (!Utils::isUnset($request->classroomCampus)) {
+            $body['classroomCampus'] = $request->classroomCampus;
         }
-        if (!Utils::isUnset($request->createTime)) {
-            @$body['createTime'] = $request->createTime;
+        if (!Utils::isUnset($request->classroomFloor)) {
+            $body['classroomFloor'] = $request->classroomFloor;
         }
-        if (!Utils::isUnset($request->detailList)) {
-            @$body['detailList'] = $request->detailList;
+        if (!Utils::isUnset($request->classroomName)) {
+            $body['classroomName'] = $request->classroomName;
         }
-        if (!Utils::isUnset($request->faceId)) {
-            @$body['faceId'] = $request->faceId;
+        if (!Utils::isUnset($request->classroomNumber)) {
+            $body['classroomNumber'] = $request->classroomNumber;
         }
-        if (!Utils::isUnset($request->guardianUserId)) {
-            @$body['guardianUserId'] = $request->guardianUserId;
+        if (!Utils::isUnset($request->directBroadcast)) {
+            $body['directBroadcast'] = $request->directBroadcast;
         }
-        if (!Utils::isUnset($request->merchantId)) {
-            @$body['merchantId'] = $request->merchantId;
-        }
-        if (!Utils::isUnset($request->orderNo)) {
-            @$body['orderNo'] = $request->orderNo;
-        }
-        if (!Utils::isUnset($request->signature)) {
-            @$body['signature'] = $request->signature;
-        }
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
-        }
-        if (!Utils::isUnset($request->timestamp)) {
-            @$body['timestamp'] = $request->timestamp;
-        }
-        if (!Utils::isUnset($request->totalAmount)) {
-            @$body['totalAmount'] = $request->totalAmount;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->ext)) {
+            $body['ext'] = $request->ext;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreatePhysicalClassroom',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/physicalClassrooms',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateOrderFlowResponse::fromMap($this->doROARequest('CreateOrderFlow', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/orders/flows', 'json', $req, $runtime));
+        return CreatePhysicalClassroomResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1526,55 +1815,64 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreatePhysicalClassroomRequest $request
-     * @param CreatePhysicalClassroomHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param CreateRefundFlowRequest $request
+     * @param CreateRefundFlowHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return CreatePhysicalClassroomResponse
+     * @return CreateRefundFlowResponse
      */
-    public function createPhysicalClassroomWithOptions($request, $headers, $runtime)
+    public function createRefundFlowWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
-        }
         $body = [];
-        if (!Utils::isUnset($request->classroomBuilding)) {
-            @$body['classroomBuilding'] = $request->classroomBuilding;
+        if (!Utils::isUnset($request->faceId)) {
+            $body['faceId'] = $request->faceId;
         }
-        if (!Utils::isUnset($request->classroomCampus)) {
-            @$body['classroomCampus'] = $request->classroomCampus;
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
         }
-        if (!Utils::isUnset($request->classroomFloor)) {
-            @$body['classroomFloor'] = $request->classroomFloor;
+        if (!Utils::isUnset($request->operatorName)) {
+            $body['operatorName'] = $request->operatorName;
         }
-        if (!Utils::isUnset($request->classroomName)) {
-            @$body['classroomName'] = $request->classroomName;
+        if (!Utils::isUnset($request->orderNo)) {
+            $body['orderNo'] = $request->orderNo;
         }
-        if (!Utils::isUnset($request->classroomNumber)) {
-            @$body['classroomNumber'] = $request->classroomNumber;
+        if (!Utils::isUnset($request->signature)) {
+            $body['signature'] = $request->signature;
         }
-        if (!Utils::isUnset($request->directBroadcast)) {
-            @$body['directBroadcast'] = $request->directBroadcast;
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
         }
-        if (!Utils::isUnset($request->ext)) {
-            @$body['ext'] = $request->ext;
+        if (!Utils::isUnset($request->timestamp)) {
+            $body['timestamp'] = $request->timestamp;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateRefundFlow',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/refunds/flows',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreatePhysicalClassroomResponse::fromMap($this->doROARequest('CreatePhysicalClassroom', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/physicalClassrooms', 'json', $req, $runtime));
+        return CreateRefundFlowResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1591,53 +1889,58 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateRefundFlowRequest $request
-     * @param CreateRefundFlowHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param CreateRemoteClassCourseRequest $request
+     * @param CreateRemoteClassCourseHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return CreateRefundFlowResponse
+     * @return CreateRemoteClassCourseResponse
      */
-    public function createRefundFlowWithOptions($request, $headers, $runtime)
+    public function createRemoteClassCourseWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->faceId)) {
-            @$body['faceId'] = $request->faceId;
+        if (!Utils::isUnset($request->attendParticipants)) {
+            $body['attendParticipants'] = $request->attendParticipants;
         }
-        if (!Utils::isUnset($request->operatorId)) {
-            @$body['operatorId'] = $request->operatorId;
+        if (!Utils::isUnset($request->authCode)) {
+            $body['authCode'] = $request->authCode;
         }
-        if (!Utils::isUnset($request->operatorName)) {
-            @$body['operatorName'] = $request->operatorName;
+        if (!Utils::isUnset($request->courseName)) {
+            $body['courseName'] = $request->courseName;
         }
-        if (!Utils::isUnset($request->orderNo)) {
-            @$body['orderNo'] = $request->orderNo;
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
         }
-        if (!Utils::isUnset($request->signature)) {
-            @$body['signature'] = $request->signature;
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
         }
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
-        }
-        if (!Utils::isUnset($request->timestamp)) {
-            @$body['timestamp'] = $request->timestamp;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->teachingParticipant)) {
+            $body['teachingParticipant'] = $request->teachingParticipant;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateRemoteClassCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/remoteClasses/courses',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateRefundFlowResponse::fromMap($this->doROARequest('CreateRefundFlow', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/refunds/flows', 'json', $req, $runtime));
+        return CreateRemoteClassCourseResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1654,47 +1957,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateRemoteClassCourseRequest $request
-     * @param CreateRemoteClassCourseHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param CreateSectionConfigRequest $request
+     * @param CreateSectionConfigHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return CreateRemoteClassCourseResponse
+     * @return CreateSectionConfigResponse
      */
-    public function createRemoteClassCourseWithOptions($request, $headers, $runtime)
+    public function createSectionConfigWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
+        }
         $body = [];
-        if (!Utils::isUnset($request->attendParticipants)) {
-            @$body['attendParticipants'] = $request->attendParticipants;
+        if (!Utils::isUnset($request->ext)) {
+            $body['ext'] = $request->ext;
         }
-        if (!Utils::isUnset($request->authCode)) {
-            @$body['authCode'] = $request->authCode;
-        }
-        if (!Utils::isUnset($request->courseName)) {
-            @$body['courseName'] = $request->courseName;
-        }
-        if (!Utils::isUnset($request->endTime)) {
-            @$body['endTime'] = $request->endTime;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$body['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->teachingParticipant)) {
-            @$body['teachingParticipant'] = $request->teachingParticipant;
+        if (!Utils::isUnset($request->sectionConfigs)) {
+            $body['sectionConfigs'] = $request->sectionConfigs;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateSectionConfig',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/sectionConfigs',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateRemoteClassCourseResponse::fromMap($this->doROARequest('CreateRemoteClassCourse', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/remoteClasses/courses', 'json', $req, $runtime));
+        return CreateSectionConfigResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1711,40 +2018,70 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateSectionConfigRequest $request
-     * @param CreateSectionConfigHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param CreateSnsAppOrderRequest $request
+     * @param CreateSnsAppOrderHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return CreateSectionConfigResponse
+     * @return CreateSnsAppOrderResponse
      */
-    public function createSectionConfigWithOptions($request, $headers, $runtime)
+    public function createSnsAppOrderWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
-        }
         $body = [];
-        if (!Utils::isUnset($request->ext)) {
-            @$body['ext'] = $request->ext;
+        if (!Utils::isUnset($request->actualAmount)) {
+            $body['actualAmount'] = $request->actualAmount;
         }
-        if (!Utils::isUnset($request->sectionConfigs)) {
-            @$body['sectionConfigs'] = $request->sectionConfigs;
+        if (!Utils::isUnset($request->alipayAppId)) {
+            $body['alipayAppId'] = $request->alipayAppId;
+        }
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->detailList)) {
+            $body['detailList'] = $request->detailList;
+        }
+        if (!Utils::isUnset($request->labelAmount)) {
+            $body['labelAmount'] = $request->labelAmount;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            $body['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->merchantOrderNo)) {
+            $body['merchantOrderNo'] = $request->merchantOrderNo;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            $body['signature'] = $request->signature;
+        }
+        if (!Utils::isUnset($request->subject)) {
+            $body['subject'] = $request->subject;
+        }
+        if (!Utils::isUnset($request->timestamp)) {
+            $body['timestamp'] = $request->timestamp;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateSnsAppOrder',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/snsAppOrders',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateSectionConfigResponse::fromMap($this->doROARequest('CreateSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/sectionConfigs', 'json', $req, $runtime));
+        return CreateSnsAppOrderResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1761,59 +2098,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateSnsAppOrderRequest $request
-     * @param CreateSnsAppOrderHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param CreateStsTokenRequest $request
+     * @param CreateStsTokenHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return CreateSnsAppOrderResponse
+     * @return CreateStsTokenResponse
      */
-    public function createSnsAppOrderWithOptions($request, $headers, $runtime)
+    public function createStsTokenWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->actualAmount)) {
-            @$body['actualAmount'] = $request->actualAmount;
+        if (!Utils::isUnset($request->deviceSn)) {
+            $body['deviceSn'] = $request->deviceSn;
         }
-        if (!Utils::isUnset($request->alipayAppId)) {
-            @$body['alipayAppId'] = $request->alipayAppId;
-        }
-        if (!Utils::isUnset($request->bizCode)) {
-            @$body['bizCode'] = $request->bizCode;
-        }
-        if (!Utils::isUnset($request->detailList)) {
-            @$body['detailList'] = $request->detailList;
-        }
-        if (!Utils::isUnset($request->labelAmount)) {
-            @$body['labelAmount'] = $request->labelAmount;
-        }
-        if (!Utils::isUnset($request->merchantId)) {
-            @$body['merchantId'] = $request->merchantId;
-        }
-        if (!Utils::isUnset($request->merchantOrderNo)) {
-            @$body['merchantOrderNo'] = $request->merchantOrderNo;
-        }
-        if (!Utils::isUnset($request->signature)) {
-            @$body['signature'] = $request->signature;
-        }
-        if (!Utils::isUnset($request->subject)) {
-            @$body['subject'] = $request->subject;
-        }
-        if (!Utils::isUnset($request->timestamp)) {
-            @$body['timestamp'] = $request->timestamp;
+        if (!Utils::isUnset($request->stsType)) {
+            $body['stsType'] = $request->stsType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateStsToken',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/vpaas/ststoken',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateSnsAppOrderResponse::fromMap($this->doROARequest('CreateSnsAppOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/snsAppOrders', 'json', $req, $runtime));
+        return CreateStsTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1830,35 +2154,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateStsTokenRequest $request
-     * @param CreateStsTokenHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param CreateTokenRequest $request
+     * @param CreateTokenHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return CreateStsTokenResponse
+     * @return CreateTokenResponse
      */
-    public function createStsTokenWithOptions($request, $headers, $runtime)
+    public function createTokenWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->deviceSn)) {
-            @$body['deviceSn'] = $request->deviceSn;
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
         }
-        if (!Utils::isUnset($request->stsType)) {
-            @$body['stsType'] = $request->stsType;
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateToken',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/tokens',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateStsTokenResponse::fromMap($this->doROARequest('CreateStsToken', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/vpaas/ststoken', 'json', $req, $runtime));
+        return CreateTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1875,35 +2210,75 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateTokenRequest $request
-     * @param CreateTokenHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param CreateUniversityCourseGroupRequest $request
+     * @param CreateUniversityCourseGroupHeaders $headers
+     * @param RuntimeOptions                     $runtime
      *
-     * @return CreateTokenResponse
+     * @return CreateUniversityCourseGroupResponse
      */
-    public function createTokenWithOptions($request, $headers, $runtime)
+    public function createUniversityCourseGroupWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
         }
-        if (!Utils::isUnset($request->type)) {
-            @$body['type'] = $request->type;
+        $body = [];
+        if (!Utils::isUnset($request->courseGroupIntroduce)) {
+            $body['courseGroupIntroduce'] = $request->courseGroupIntroduce;
+        }
+        if (!Utils::isUnset($request->courseGroupName)) {
+            $body['courseGroupName'] = $request->courseGroupName;
+        }
+        if (!Utils::isUnset($request->courserGroupItemModels)) {
+            $body['courserGroupItemModels'] = $request->courserGroupItemModels;
+        }
+        if (!Utils::isUnset($request->ext)) {
+            $body['ext'] = $request->ext;
+        }
+        if (!Utils::isUnset($request->isvCourseGroupCode)) {
+            $body['isvCourseGroupCode'] = $request->isvCourseGroupCode;
+        }
+        if (!Utils::isUnset($request->periodCode)) {
+            $body['periodCode'] = $request->periodCode;
+        }
+        if (!Utils::isUnset($request->schoolYear)) {
+            $body['schoolYear'] = $request->schoolYear;
+        }
+        if (!Utils::isUnset($request->semester)) {
+            $body['semester'] = $request->semester;
+        }
+        if (!Utils::isUnset($request->subjectName)) {
+            $body['subjectName'] = $request->subjectName;
+        }
+        if (!Utils::isUnset($request->teacherInfos)) {
+            $body['teacherInfos'] = $request->teacherInfos;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateUniversityCourseGroup',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/courseGroups',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateTokenResponse::fromMap($this->doROARequest('CreateToken', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/tokens', 'json', $req, $runtime));
+        return CreateUniversityCourseGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1920,64 +2295,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateUniversityCourseGroupRequest $request
-     * @param CreateUniversityCourseGroupHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param CreateUniversityStudentRequest $request
+     * @param CreateUniversityStudentHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return CreateUniversityCourseGroupResponse
+     * @return CreateUniversityStudentResponse
      */
-    public function createUniversityCourseGroupWithOptions($request, $headers, $runtime)
+    public function createUniversityStudentWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+            $query['opUserId'] = $request->opUserId;
         }
         $body = [];
-        if (!Utils::isUnset($request->courseGroupIntroduce)) {
-            @$body['courseGroupIntroduce'] = $request->courseGroupIntroduce;
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
         }
-        if (!Utils::isUnset($request->courseGroupName)) {
-            @$body['courseGroupName'] = $request->courseGroupName;
+        if (!Utils::isUnset($request->gender)) {
+            $body['gender'] = $request->gender;
         }
-        if (!Utils::isUnset($request->courserGroupItemModels)) {
-            @$body['courserGroupItemModels'] = $request->courserGroupItemModels;
+        if (!Utils::isUnset($request->identityNumber)) {
+            $body['identityNumber'] = $request->identityNumber;
         }
-        if (!Utils::isUnset($request->ext)) {
-            @$body['ext'] = $request->ext;
+        if (!Utils::isUnset($request->mobile)) {
+            $body['mobile'] = $request->mobile;
         }
-        if (!Utils::isUnset($request->isvCourseGroupCode)) {
-            @$body['isvCourseGroupCode'] = $request->isvCourseGroupCode;
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
         }
-        if (!Utils::isUnset($request->periodCode)) {
-            @$body['periodCode'] = $request->periodCode;
-        }
-        if (!Utils::isUnset($request->schoolYear)) {
-            @$body['schoolYear'] = $request->schoolYear;
-        }
-        if (!Utils::isUnset($request->semester)) {
-            @$body['semester'] = $request->semester;
-        }
-        if (!Utils::isUnset($request->subjectName)) {
-            @$body['subjectName'] = $request->subjectName;
-        }
-        if (!Utils::isUnset($request->teacherInfos)) {
-            @$body['teacherInfos'] = $request->teacherInfos;
+        if (!Utils::isUnset($request->studentNumber)) {
+            $body['studentNumber'] = $request->studentNumber;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateUniversityStudent',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/students',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateUniversityCourseGroupResponse::fromMap($this->doROARequest('CreateUniversityCourseGroup', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/courseGroups', 'json', $req, $runtime));
+        return CreateUniversityStudentResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1994,52 +2368,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateUniversityStudentRequest $request
-     * @param CreateUniversityStudentHeaders $headers
+     * @param CreateUniversityTeacherRequest $request
+     * @param CreateUniversityTeacherHeaders $headers
      * @param RuntimeOptions                 $runtime
      *
-     * @return CreateUniversityStudentResponse
+     * @return CreateUniversityTeacherResponse
      */
-    public function createUniversityStudentWithOptions($request, $headers, $runtime)
+    public function createUniversityTeacherWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
-        }
         $body = [];
         if (!Utils::isUnset($request->classId)) {
-            @$body['classId'] = $request->classId;
+            $body['classId'] = $request->classId;
         }
-        if (!Utils::isUnset($request->gender)) {
-            @$body['gender'] = $request->gender;
+        if (!Utils::isUnset($request->opUserId)) {
+            $body['opUserId'] = $request->opUserId;
         }
-        if (!Utils::isUnset($request->identityNumber)) {
-            @$body['identityNumber'] = $request->identityNumber;
+        if (!Utils::isUnset($request->role)) {
+            $body['role'] = $request->role;
         }
-        if (!Utils::isUnset($request->mobile)) {
-            @$body['mobile'] = $request->mobile;
-        }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
-        }
-        if (!Utils::isUnset($request->studentNumber)) {
-            @$body['studentNumber'] = $request->studentNumber;
+        if (!Utils::isUnset($request->teacherUserId)) {
+            $body['teacherUserId'] = $request->teacherUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateUniversityTeacher',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/teachers',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateUniversityStudentResponse::fromMap($this->doROARequest('CreateUniversityStudent', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/students', 'json', $req, $runtime));
+        return CreateUniversityTeacherResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2056,41 +2430,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateUniversityTeacherRequest $request
-     * @param CreateUniversityTeacherHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param DeactivateDeviceRequest $request
+     * @param DeactivateDeviceHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return CreateUniversityTeacherResponse
+     * @return DeactivateDeviceResponse
      */
-    public function createUniversityTeacherWithOptions($request, $headers, $runtime)
+    public function deactivateDeviceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->classId)) {
-            @$body['classId'] = $request->classId;
+        if (!Utils::isUnset($request->model)) {
+            $body['model'] = $request->model;
         }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
         }
-        if (!Utils::isUnset($request->role)) {
-            @$body['role'] = $request->role;
-        }
-        if (!Utils::isUnset($request->teacherUserId)) {
-            @$body['teacherUserId'] = $request->teacherUserId;
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'DeactivateDevice',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/vpaas/devices/deactivate',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateUniversityTeacherResponse::fromMap($this->doROARequest('CreateUniversityTeacher', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/teachers', 'json', $req, $runtime));
+        return DeactivateDeviceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2107,38 +2489,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeactivateDeviceRequest $request
-     * @param DeactivateDeviceHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param string            $deptId
+     * @param DeleteDeptRequest $request
+     * @param DeleteDeptHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return DeactivateDeviceResponse
+     * @return DeleteDeptResponse
      */
-    public function deactivateDeviceWithOptions($request, $headers, $runtime)
+    public function deleteDeptWithOptions($deptId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->model)) {
-            @$body['model'] = $request->model;
-        }
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
-        }
-        if (!Utils::isUnset($request->type)) {
-            @$body['type'] = $request->type;
+        $query = [];
+        if (!Utils::isUnset($request->operator)) {
+            $query['operator'] = $request->operator;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteDept',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/depts/' . $deptId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return DeactivateDeviceResponse::fromMap($this->doROARequest('DeactivateDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/vpaas/devices/deactivate', 'json', $req, $runtime));
+        return DeleteDeptResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2156,34 +2544,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string            $deptId
-     * @param DeleteDeptRequest $request
-     * @param DeleteDeptHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param DeleteDeviceRequest $request
+     * @param DeleteDeviceHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return DeleteDeptResponse
+     * @return DeleteDeviceResponse
      */
-    public function deleteDeptWithOptions($deptId, $request, $headers, $runtime)
+    public function deleteDeviceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $deptId = OpenApiUtilClient::getEncodeParam($deptId);
-        $query  = [];
-        if (!Utils::isUnset($request->operator)) {
-            @$query['operator'] = $request->operator;
+        $query = [];
+        if (!Utils::isUnset($request->sn)) {
+            $query['sn'] = $request->sn;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteDevice',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/vpaas/devices',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteDeptResponse::fromMap($this->doROARequest('DeleteDept', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/depts/' . $deptId . '', 'json', $req, $runtime));
+        return DeleteDeviceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2200,32 +2597,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteDeviceRequest $request
-     * @param DeleteDeviceHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param DeleteDeviceOrgRequest $request
+     * @param DeleteDeviceOrgHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return DeleteDeviceResponse
+     * @return DeleteDeviceOrgResponse
      */
-    public function deleteDeviceWithOptions($request, $headers, $runtime)
+    public function deleteDeviceOrgWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->sn)) {
-            @$query['sn'] = $request->sn;
+        if (!Utils::isUnset($request->authCode)) {
+            $query['authCode'] = $request->authCode;
+        }
+        if (!Utils::isUnset($request->deviceCode)) {
+            $query['deviceCode'] = $request->deviceCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteDeviceOrg',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/remoteClasses/deviceOrgs',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteDeviceResponse::fromMap($this->doROARequest('DeleteDevice', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/vpaas/devices', 'json', $req, $runtime));
+        return DeleteDeviceOrgResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2242,35 +2653,48 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteDeviceOrgRequest $request
-     * @param DeleteDeviceOrgHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param string                $classId
+     * @param string                $userId
+     * @param DeleteGuardianRequest $request
+     * @param DeleteGuardianHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return DeleteDeviceOrgResponse
+     * @return DeleteGuardianResponse
      */
-    public function deleteDeviceOrgWithOptions($request, $headers, $runtime)
+    public function deleteGuardianWithOptions($classId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->authCode)) {
-            @$query['authCode'] = $request->authCode;
+        if (!Utils::isUnset($request->operator)) {
+            $query['operator'] = $request->operator;
         }
-        if (!Utils::isUnset($request->deviceCode)) {
-            @$query['deviceCode'] = $request->deviceCode;
+        if (!Utils::isUnset($request->stuId)) {
+            $query['stuId'] = $request->stuId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteGuardian',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/classes/' . $classId . '/guardians/' . $userId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteDeviceOrgResponse::fromMap($this->doROARequest('DeleteDeviceOrg', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/remoteClasses/deviceOrgs', 'json', $req, $runtime));
+        return DeleteGuardianResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2289,39 +2713,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                $classId
-     * @param string                $userId
-     * @param DeleteGuardianRequest $request
-     * @param DeleteGuardianHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param DeleteOrgRelationRequest $request
+     * @param DeleteOrgRelationHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return DeleteGuardianResponse
+     * @return DeleteOrgRelationResponse
      */
-    public function deleteGuardianWithOptions($classId, $userId, $request, $headers, $runtime)
+    public function deleteOrgRelationWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $classId = OpenApiUtilClient::getEncodeParam($classId);
-        $userId  = OpenApiUtilClient::getEncodeParam($userId);
-        $query   = [];
-        if (!Utils::isUnset($request->operator)) {
-            @$query['operator'] = $request->operator;
+        $query = [];
+        if (!Utils::isUnset($request->authCode)) {
+            $query['authCode'] = $request->authCode;
         }
-        if (!Utils::isUnset($request->stuId)) {
-            @$query['stuId'] = $request->stuId;
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $query['targetCorpId'] = $request->targetCorpId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteOrgRelation',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/remoteClasses/orgRelations',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteGuardianResponse::fromMap($this->doROARequest('DeleteGuardian', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/classes/' . $classId . '/guardians/' . $userId . '', 'json', $req, $runtime));
+        return DeleteOrgRelationResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2338,35 +2769,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteOrgRelationRequest $request
-     * @param DeleteOrgRelationHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param DeletePhysicalClassroomRequest $request
+     * @param DeletePhysicalClassroomHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return DeleteOrgRelationResponse
+     * @return DeletePhysicalClassroomResponse
      */
-    public function deleteOrgRelationWithOptions($request, $headers, $runtime)
+    public function deletePhysicalClassroomWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->authCode)) {
-            @$query['authCode'] = $request->authCode;
+        if (!Utils::isUnset($request->classroomId)) {
+            $query['classroomId'] = $request->classroomId;
         }
-        if (!Utils::isUnset($request->targetCorpId)) {
-            @$query['targetCorpId'] = $request->targetCorpId;
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeletePhysicalClassroom',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/physicalClassrooms',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteOrgRelationResponse::fromMap($this->doROARequest('DeleteOrgRelation', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/remoteClasses/orgRelations', 'json', $req, $runtime));
+        return DeletePhysicalClassroomResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2383,35 +2825,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeletePhysicalClassroomRequest $request
-     * @param DeletePhysicalClassroomHeaders $headers
+     * @param string                         $courseCode
+     * @param DeleteRemoteClassCourseRequest $request
+     * @param DeleteRemoteClassCourseHeaders $headers
      * @param RuntimeOptions                 $runtime
      *
-     * @return DeletePhysicalClassroomResponse
+     * @return DeleteRemoteClassCourseResponse
      */
-    public function deletePhysicalClassroomWithOptions($request, $headers, $runtime)
+    public function deleteRemoteClassCourseWithOptions($courseCode, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->classroomId)) {
-            @$query['classroomId'] = $request->classroomId;
-        }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+        if (!Utils::isUnset($request->authCode)) {
+            $query['authCode'] = $request->authCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteRemoteClassCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/remoteClasses/courses/' . $courseCode . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeletePhysicalClassroomResponse::fromMap($this->doROARequest('DeletePhysicalClassroom', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/physicalClassrooms', 'json', $req, $runtime));
+        return DeleteRemoteClassCourseResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2429,34 +2880,45 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                         $courseCode
-     * @param DeleteRemoteClassCourseRequest $request
-     * @param DeleteRemoteClassCourseHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param string               $classId
+     * @param string               $userId
+     * @param DeleteStudentRequest $request
+     * @param DeleteStudentHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return DeleteRemoteClassCourseResponse
+     * @return DeleteStudentResponse
      */
-    public function deleteRemoteClassCourseWithOptions($courseCode, $request, $headers, $runtime)
+    public function deleteStudentWithOptions($classId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $courseCode = OpenApiUtilClient::getEncodeParam($courseCode);
-        $query      = [];
-        if (!Utils::isUnset($request->authCode)) {
-            @$query['authCode'] = $request->authCode;
+        $query = [];
+        if (!Utils::isUnset($request->operator)) {
+            $query['operator'] = $request->operator;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteStudent',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/classes/' . $classId . '/students/' . $userId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteRemoteClassCourseResponse::fromMap($this->doROARequest('DeleteRemoteClassCourse', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/remoteClasses/courses/' . $courseCode . '', 'json', $req, $runtime));
+        return DeleteStudentResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2477,34 +2939,46 @@ class Dingtalk extends OpenApiClient
     /**
      * @param string               $classId
      * @param string               $userId
-     * @param DeleteStudentRequest $request
-     * @param DeleteStudentHeaders $headers
+     * @param DeleteTeacherRequest $request
+     * @param DeleteTeacherHeaders $headers
      * @param RuntimeOptions       $runtime
      *
-     * @return DeleteStudentResponse
+     * @return DeleteTeacherResponse
      */
-    public function deleteStudentWithOptions($classId, $userId, $request, $headers, $runtime)
+    public function deleteTeacherWithOptions($classId, $userId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $classId = OpenApiUtilClient::getEncodeParam($classId);
-        $userId  = OpenApiUtilClient::getEncodeParam($userId);
-        $query   = [];
+        $query = [];
+        if (!Utils::isUnset($request->adviser)) {
+            $query['adviser'] = $request->adviser;
+        }
         if (!Utils::isUnset($request->operator)) {
-            @$query['operator'] = $request->operator;
+            $query['operator'] = $request->operator;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteTeacher',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/classes/' . $classId . '/teachers/' . $userId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteStudentResponse::fromMap($this->doROARequest('DeleteStudent', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/classes/' . $classId . '/students/' . $userId . '', 'json', $req, $runtime));
+        return DeleteTeacherResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2523,39 +2997,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string               $classId
-     * @param string               $userId
-     * @param DeleteTeacherRequest $request
-     * @param DeleteTeacherHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param DeleteUniversityCourseGroupRequest $request
+     * @param DeleteUniversityCourseGroupHeaders $headers
+     * @param RuntimeOptions                     $runtime
      *
-     * @return DeleteTeacherResponse
+     * @return DeleteUniversityCourseGroupResponse
      */
-    public function deleteTeacherWithOptions($classId, $userId, $request, $headers, $runtime)
+    public function deleteUniversityCourseGroupWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $classId = OpenApiUtilClient::getEncodeParam($classId);
-        $userId  = OpenApiUtilClient::getEncodeParam($userId);
-        $query   = [];
-        if (!Utils::isUnset($request->adviser)) {
-            @$query['adviser'] = $request->adviser;
+        $query = [];
+        if (!Utils::isUnset($request->courseGroupCode)) {
+            $query['courseGroupCode'] = $request->courseGroupCode;
         }
-        if (!Utils::isUnset($request->operator)) {
-            @$query['operator'] = $request->operator;
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteUniversityCourseGroup',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/courseGroups',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteTeacherResponse::fromMap($this->doROARequest('DeleteTeacher', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/classes/' . $classId . '/teachers/' . $userId . '', 'json', $req, $runtime));
+        return DeleteUniversityCourseGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2572,35 +3053,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteUniversityCourseGroupRequest $request
-     * @param DeleteUniversityCourseGroupHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param DeleteUniversityStudentRequest $request
+     * @param DeleteUniversityStudentHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return DeleteUniversityCourseGroupResponse
+     * @return DeleteUniversityStudentResponse
      */
-    public function deleteUniversityCourseGroupWithOptions($request, $headers, $runtime)
+    public function deleteUniversityStudentWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->courseGroupCode)) {
-            @$query['courseGroupCode'] = $request->courseGroupCode;
+        if (!Utils::isUnset($request->classId)) {
+            $query['classId'] = $request->classId;
         }
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+            $query['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->studentUserId)) {
+            $query['studentUserId'] = $request->studentUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteUniversityStudent',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/students',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteUniversityCourseGroupResponse::fromMap($this->doROARequest('DeleteUniversityCourseGroup', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/universities/courseGroups', 'json', $req, $runtime));
+        return DeleteUniversityStudentResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2617,38 +3112,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteUniversityStudentRequest $request
-     * @param DeleteUniversityStudentHeaders $headers
+     * @param DeleteUniversityTeacherRequest $request
+     * @param DeleteUniversityTeacherHeaders $headers
      * @param RuntimeOptions                 $runtime
      *
-     * @return DeleteUniversityStudentResponse
+     * @return DeleteUniversityTeacherResponse
      */
-    public function deleteUniversityStudentWithOptions($request, $headers, $runtime)
+    public function deleteUniversityTeacherWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->classId)) {
-            @$query['classId'] = $request->classId;
+            $query['classId'] = $request->classId;
         }
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+            $query['opUserId'] = $request->opUserId;
         }
-        if (!Utils::isUnset($request->studentUserId)) {
-            @$query['studentUserId'] = $request->studentUserId;
+        if (!Utils::isUnset($request->role)) {
+            $query['role'] = $request->role;
+        }
+        if (!Utils::isUnset($request->teacherUserId)) {
+            $query['teacherUserId'] = $request->teacherUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteUniversityTeacher',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/teachers',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteUniversityStudentResponse::fromMap($this->doROARequest('DeleteUniversityStudent', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/universities/students', 'json', $req, $runtime));
+        return DeleteUniversityTeacherResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2665,41 +3174,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteUniversityTeacherRequest $request
-     * @param DeleteUniversityTeacherHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param DeviceHeartbeatRequest $request
+     * @param DeviceHeartbeatHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return DeleteUniversityTeacherResponse
+     * @return DeviceHeartbeatResponse
      */
-    public function deleteUniversityTeacherWithOptions($request, $headers, $runtime)
+    public function deviceHeartbeatWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->classId)) {
-            @$query['classId'] = $request->classId;
-        }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
-        }
-        if (!Utils::isUnset($request->role)) {
-            @$query['role'] = $request->role;
-        }
-        if (!Utils::isUnset($request->teacherUserId)) {
-            @$query['teacherUserId'] = $request->teacherUserId;
+        if (!Utils::isUnset($request->sn)) {
+            $query['sn'] = $request->sn;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeviceHeartbeat',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/heartbeats/report',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteUniversityTeacherResponse::fromMap($this->doROARequest('DeleteUniversityTeacher', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/universities/teachers', 'json', $req, $runtime));
+        return DeviceHeartbeatResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2716,32 +3227,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeviceHeartbeatRequest $request
-     * @param DeviceHeartbeatHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param EduTeacherListRequest $request
+     * @param EduTeacherListHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return DeviceHeartbeatResponse
+     * @return EduTeacherListResponse
      */
-    public function deviceHeartbeatWithOptions($request, $headers, $runtime)
+    public function eduTeacherListWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->sn)) {
-            @$query['sn'] = $request->sn;
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'EduTeacherList',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/teachers',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeviceHeartbeatResponse::fromMap($this->doROARequest('DeviceHeartbeat', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/heartbeats/report', 'json', $req, $runtime));
+        return EduTeacherListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2758,35 +3283,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EduTeacherListRequest $request
-     * @param EduTeacherListHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param EndCourseRequest $request
+     * @param EndCourseHeaders $headers
+     * @param RuntimeOptions   $runtime
      *
-     * @return EduTeacherListResponse
+     * @return EndCourseResponse
      */
-    public function eduTeacherListWithOptions($request, $headers, $runtime)
+    public function endCourseWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
         }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
+        $body = [];
+        if (!Utils::isUnset($request->courseCode)) {
+            $body['courseCode'] = $request->courseCode;
+        }
+        if (!Utils::isUnset($request->ext)) {
+            $body['ext'] = $request->ext;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->livePlayInfoList)) {
+            $body['livePlayInfoList'] = $request->livePlayInfoList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'EndCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/courses/end',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return EduTeacherListResponse::fromMap($this->doROARequest('EduTeacherList', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/teachers', 'json', $req, $runtime));
+        return EndCourseResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2803,46 +3350,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param EndCourseRequest $request
-     * @param EndCourseHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @param GetBindChildInfoRequest $request
+     * @param GetBindChildInfoHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return EndCourseResponse
+     * @return GetBindChildInfoResponse
      */
-    public function endCourseWithOptions($request, $headers, $runtime)
+    public function getBindChildInfoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+        if (!Utils::isUnset($request->schoolCorpId)) {
+            $query['schoolCorpId'] = $request->schoolCorpId;
         }
-        $body = [];
-        if (!Utils::isUnset($request->courseCode)) {
-            @$body['courseCode'] = $request->courseCode;
+        if (!Utils::isUnset($request->studentUserId)) {
+            $query['studentUserId'] = $request->studentUserId;
         }
-        if (!Utils::isUnset($request->ext)) {
-            @$body['ext'] = $request->ext;
-        }
-        if (!Utils::isUnset($request->isvCode)) {
-            @$body['isvCode'] = $request->isvCode;
-        }
-        if (!Utils::isUnset($request->livePlayInfoList)) {
-            @$body['livePlayInfoList'] = $request->livePlayInfoList;
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetBindChildInfo',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/families/childs/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return EndCourseResponse::fromMap($this->doROARequest('EndCourse', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/courses/end', 'json', $req, $runtime));
+        return GetBindChildInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2859,38 +3409,36 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetBindChildInfoRequest $request
-     * @param GetBindChildInfoHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param GetDefaultChildHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return GetBindChildInfoResponse
+     * @return GetDefaultChildResponse
      */
-    public function getBindChildInfoWithOptions($request, $headers, $runtime)
+    public function getDefaultChildWithOptions($headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->schoolCorpId)) {
-            @$query['schoolCorpId'] = $request->schoolCorpId;
-        }
-        if (!Utils::isUnset($request->studentUserId)) {
-            @$query['studentUserId'] = $request->studentUserId;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetDefaultChild',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/defaultChildren',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return GetBindChildInfoResponse::fromMap($this->doROARequest('GetBindChildInfo', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/families/childs/infos', 'json', $req, $runtime));
+        return GetDefaultChildResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2905,25 +3453,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetDefaultChildHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param GetEduUserIdentityRequest $request
+     * @param GetEduUserIdentityHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return GetDefaultChildResponse
+     * @return GetEduUserIdentityResponse
      */
-    public function getDefaultChildWithOptions($headers, $runtime)
+    public function getEduUserIdentityWithOptions($request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetEduUserIdentity',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/apollos/activities/userIdentities',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetDefaultChildResponse::fromMap($this->doROARequest('GetDefaultChild', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/defaultChildren', 'json', $req, $runtime));
+        return GetEduUserIdentityResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2940,32 +3506,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetEduUserIdentityRequest $request
-     * @param GetEduUserIdentityHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param string                     $courseId
+     * @param GetOpenCourseDetailHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return GetEduUserIdentityResponse
+     * @return GetOpenCourseDetailResponse
      */
-    public function getEduUserIdentityWithOptions($request, $headers, $runtime)
+    public function getOpenCourseDetailWithOptions($courseId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetOpenCourseDetail',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/openCourse/' . $courseId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetEduUserIdentityResponse::fromMap($this->doROARequest('GetEduUserIdentity', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/apollos/activities/userIdentities', 'json', $req, $runtime));
+        return GetOpenCourseDetailResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2982,27 +3553,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                     $courseId
-     * @param GetOpenCourseDetailHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param GetOpenCoursesRequest $request
+     * @param GetOpenCoursesHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return GetOpenCourseDetailResponse
+     * @return GetOpenCoursesResponse
      */
-    public function getOpenCourseDetailWithOptions($courseId, $headers, $runtime)
+    public function getOpenCoursesWithOptions($request, $headers, $runtime)
     {
-        $courseId    = OpenApiUtilClient::getEncodeParam($courseId);
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetOpenCourses',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/openCourses',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetOpenCourseDetailResponse::fromMap($this->doROARequest('GetOpenCourseDetail', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/openCourse/' . $courseId . '', 'json', $req, $runtime));
+        return GetOpenCoursesResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3019,35 +3609,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOpenCoursesRequest $request
-     * @param GetOpenCoursesHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param string                      $courseCode
+     * @param GetRemoteClassCourseRequest $request
+     * @param GetRemoteClassCourseHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return GetOpenCoursesResponse
+     * @return GetRemoteClassCourseResponse
      */
-    public function getOpenCoursesWithOptions($request, $headers, $runtime)
+    public function getRemoteClassCourseWithOptions($courseCode, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
+        if (!Utils::isUnset($request->operator)) {
+            $query['operator'] = $request->operator;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetRemoteClassCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/remoteClasses/courses/' . $courseCode . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetOpenCoursesResponse::fromMap($this->doROARequest('GetOpenCourses', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/openCourses', 'json', $req, $runtime));
+        return GetRemoteClassCourseResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3065,34 +3664,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                      $courseCode
-     * @param GetRemoteClassCourseRequest $request
-     * @param GetRemoteClassCourseHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param string                     $shareRoleCode
+     * @param GetShareRoleMembersHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return GetRemoteClassCourseResponse
+     * @return GetShareRoleMembersResponse
      */
-    public function getRemoteClassCourseWithOptions($courseCode, $request, $headers, $runtime)
+    public function getShareRoleMembersWithOptions($shareRoleCode, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $courseCode = OpenApiUtilClient::getEncodeParam($courseCode);
-        $query      = [];
-        if (!Utils::isUnset($request->operator)) {
-            @$query['operator'] = $request->operator;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetShareRoleMembers',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/shareRoles/' . $shareRoleCode . '/members',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetRemoteClassCourseResponse::fromMap($this->doROARequest('GetRemoteClassCourse', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/remoteClasses/courses/' . $courseCode . '', 'json', $req, $runtime));
+        return GetShareRoleMembersResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3109,27 +3711,36 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                     $shareRoleCode
-     * @param GetShareRoleMembersHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param GetShareRolesHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return GetShareRoleMembersResponse
+     * @return GetShareRolesResponse
      */
-    public function getShareRoleMembersWithOptions($shareRoleCode, $headers, $runtime)
+    public function getShareRolesWithOptions($headers, $runtime)
     {
-        $shareRoleCode = OpenApiUtilClient::getEncodeParam($shareRoleCode);
-        $realHeaders   = [];
+        $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetShareRoles',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/shareRoles',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetShareRoleMembersResponse::fromMap($this->doROARequest('GetShareRoleMembers', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/shareRoles/' . $shareRoleCode . '/members', 'json', $req, $runtime));
+        return GetShareRolesResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3144,25 +3755,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetShareRolesHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param string                    $classId
+     * @param InitCoursesOfClassRequest $request
+     * @param InitCoursesOfClassHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return GetShareRolesResponse
+     * @return InitCoursesOfClassResponse
      */
-    public function getShareRolesWithOptions($headers, $runtime)
+    public function initCoursesOfClassWithOptions($classId, $request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->courses)) {
+            $body['courses'] = $request->courses;
+        }
+        if (!Utils::isUnset($request->sectionConfig)) {
+            $body['sectionConfig'] = $request->sectionConfig;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'InitCoursesOfClass',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/classes/' . $classId . '/courses/init',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return GetShareRolesResponse::fromMap($this->doROARequest('GetShareRoles', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/shareRoles', 'json', $req, $runtime));
+        return InitCoursesOfClassResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3180,42 +3818,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                    $classId
-     * @param InitCoursesOfClassRequest $request
-     * @param InitCoursesOfClassHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param InitDeviceRequest $request
+     * @param InitDeviceHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return InitCoursesOfClassResponse
+     * @return InitDeviceResponse
      */
-    public function initCoursesOfClassWithOptions($classId, $request, $headers, $runtime)
+    public function initDeviceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $classId = OpenApiUtilClient::getEncodeParam($classId);
-        $query   = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
-        }
         $body = [];
-        if (!Utils::isUnset($request->courses)) {
-            @$body['courses'] = $request->courses;
+        if (!Utils::isUnset($request->encryptPubKey)) {
+            $body['encryptPubKey'] = $request->encryptPubKey;
         }
-        if (!Utils::isUnset($request->sectionConfig)) {
-            @$body['sectionConfig'] = $request->sectionConfig;
+        if (!Utils::isUnset($request->signature)) {
+            $body['signature'] = $request->signature;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->timestamp)) {
+            $body['timestamp'] = $request->timestamp;
+        }
+        if (!Utils::isUnset($request->version)) {
+            $body['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'InitDevice',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/devices/init',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return InitCoursesOfClassResponse::fromMap($this->doROARequest('InitCoursesOfClass', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/classes/' . $classId . '/courses/init', 'json', $req, $runtime));
+        return InitDeviceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3232,44 +3883,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InitDeviceRequest $request
-     * @param InitDeviceHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param InitVPaasDeviceRequest $request
+     * @param InitVPaasDeviceHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return InitDeviceResponse
+     * @return InitVPaasDeviceResponse
      */
-    public function initDeviceWithOptions($request, $headers, $runtime)
+    public function initVPaasDeviceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->encryptPubKey)) {
-            @$body['encryptPubKey'] = $request->encryptPubKey;
-        }
-        if (!Utils::isUnset($request->signature)) {
-            @$body['signature'] = $request->signature;
-        }
         if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
+            $body['sn'] = $request->sn;
         }
         if (!Utils::isUnset($request->timestamp)) {
-            @$body['timestamp'] = $request->timestamp;
+            $body['timestamp'] = $request->timestamp;
         }
-        if (!Utils::isUnset($request->version)) {
-            @$body['version'] = $request->version;
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'InitVPaasDevice',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/vpaas/devices/init',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return InitDeviceResponse::fromMap($this->doROARequest('InitDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/devices/init', 'json', $req, $runtime));
+        return InitVPaasDeviceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3286,38 +3942,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InitVPaasDeviceRequest $request
-     * @param InitVPaasDeviceHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param InsertSectionConfigRequest $request
+     * @param InsertSectionConfigHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return InitVPaasDeviceResponse
+     * @return InsertSectionConfigResponse
      */
-    public function initVPaasDeviceWithOptions($request, $headers, $runtime)
+    public function insertSectionConfigWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
+        }
         $body = [];
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
+        if (!Utils::isUnset($request->end)) {
+            $body['end'] = $request->end;
         }
-        if (!Utils::isUnset($request->timestamp)) {
-            @$body['timestamp'] = $request->timestamp;
+        if (!Utils::isUnset($request->scheduleName)) {
+            $body['scheduleName'] = $request->scheduleName;
         }
-        if (!Utils::isUnset($request->type)) {
-            @$body['type'] = $request->type;
+        if (!Utils::isUnset($request->sectionModels)) {
+            $body['sectionModels'] = $request->sectionModels;
+        }
+        if (!Utils::isUnset($request->start)) {
+            $body['start'] = $request->start;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'InsertSectionConfig',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/schedules/configs',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return InitVPaasDeviceResponse::fromMap($this->doROARequest('InitVPaasDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/vpaas/devices/init', 'json', $req, $runtime));
+        return InsertSectionConfigResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3334,46 +4009,70 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param InsertSectionConfigRequest $request
-     * @param InsertSectionConfigHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param ListOrderRequest $request
+     * @param ListOrderHeaders $headers
+     * @param RuntimeOptions   $runtime
      *
-     * @return InsertSectionConfigResponse
+     * @return ListOrderResponse
      */
-    public function insertSectionConfigWithOptions($request, $headers, $runtime)
+    public function listOrderWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
-        }
         $body = [];
-        if (!Utils::isUnset($request->end)) {
-            @$body['end'] = $request->end;
+        if (!Utils::isUnset($request->createTimeEnd)) {
+            $body['createTimeEnd'] = $request->createTimeEnd;
         }
-        if (!Utils::isUnset($request->scheduleName)) {
-            @$body['scheduleName'] = $request->scheduleName;
+        if (!Utils::isUnset($request->createTimeStart)) {
+            $body['createTimeStart'] = $request->createTimeStart;
         }
-        if (!Utils::isUnset($request->sectionModels)) {
-            @$body['sectionModels'] = $request->sectionModels;
+        if (!Utils::isUnset($request->merchantId)) {
+            $body['merchantId'] = $request->merchantId;
         }
-        if (!Utils::isUnset($request->start)) {
-            @$body['start'] = $request->start;
+        if (!Utils::isUnset($request->orderNo)) {
+            $body['orderNo'] = $request->orderNo;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->scene)) {
+            $body['scene'] = $request->scene;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->tradeNo)) {
+            $body['tradeNo'] = $request->tradeNo;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'ListOrder',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/orders/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return InsertSectionConfigResponse::fromMap($this->doROARequest('InsertSectionConfig', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/schedules/configs', 'json', $req, $runtime));
+        return ListOrderResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3390,59 +4089,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListOrderRequest $request
-     * @param ListOrderHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @param MoveStudentRequest $request
+     * @param MoveStudentHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return ListOrderResponse
+     * @return MoveStudentResponse
      */
-    public function listOrderWithOptions($request, $headers, $runtime)
+    public function moveStudentWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->createTimeEnd)) {
-            @$body['createTimeEnd'] = $request->createTimeEnd;
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
         }
-        if (!Utils::isUnset($request->createTimeStart)) {
-            @$body['createTimeStart'] = $request->createTimeStart;
+        if (!Utils::isUnset($request->originClassId)) {
+            $body['originClassId'] = $request->originClassId;
         }
-        if (!Utils::isUnset($request->merchantId)) {
-            @$body['merchantId'] = $request->merchantId;
-        }
-        if (!Utils::isUnset($request->orderNo)) {
-            @$body['orderNo'] = $request->orderNo;
-        }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$body['pageNumber'] = $request->pageNumber;
-        }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$body['pageSize'] = $request->pageSize;
-        }
-        if (!Utils::isUnset($request->scene)) {
-            @$body['scene'] = $request->scene;
-        }
-        if (!Utils::isUnset($request->status)) {
-            @$body['status'] = $request->status;
-        }
-        if (!Utils::isUnset($request->tradeNo)) {
-            @$body['tradeNo'] = $request->tradeNo;
+        if (!Utils::isUnset($request->targetClassId)) {
+            $body['targetClassId'] = $request->targetClassId;
         }
         if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'MoveStudent',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/students/move',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return ListOrderResponse::fromMap($this->doROARequest('ListOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/orders/query', 'json', $req, $runtime));
+        return MoveStudentResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3459,41 +4151,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param MoveStudentRequest $request
-     * @param MoveStudentHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param PageQueryDevicesRequest $request
+     * @param PageQueryDevicesHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return MoveStudentResponse
+     * @return PageQueryDevicesResponse
      */
-    public function moveStudentWithOptions($request, $headers, $runtime)
+    public function pageQueryDevicesWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->operator)) {
-            @$body['operator'] = $request->operator;
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
         }
-        if (!Utils::isUnset($request->originClassId)) {
-            @$body['originClassId'] = $request->originClassId;
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
         }
-        if (!Utils::isUnset($request->targetClassId)) {
-            @$body['targetClassId'] = $request->targetClassId;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        if (!Utils::isUnset($request->type)) {
+            $query['type'] = $request->type;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PageQueryDevices',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/vpaas/devices',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return MoveStudentResponse::fromMap($this->doROARequest('MoveStudent', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/students/move', 'json', $req, $runtime));
+        return PageQueryDevicesResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3510,38 +4210,61 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PageQueryDevicesRequest $request
-     * @param PageQueryDevicesHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param PayOrderRequest $request
+     * @param PayOrderHeaders $headers
+     * @param RuntimeOptions  $runtime
      *
-     * @return PageQueryDevicesResponse
+     * @return PayOrderResponse
      */
-    public function pageQueryDevicesWithOptions($request, $headers, $runtime)
+    public function payOrderWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
+        $body = [];
+        if (!Utils::isUnset($request->faceId)) {
+            $body['faceId'] = $request->faceId;
         }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
+        if (!Utils::isUnset($request->orderNo)) {
+            $body['orderNo'] = $request->orderNo;
         }
-        if (!Utils::isUnset($request->type)) {
-            @$query['type'] = $request->type;
+        if (!Utils::isUnset($request->signature)) {
+            $body['signature'] = $request->signature;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->timestamp)) {
+            $body['timestamp'] = $request->timestamp;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->version)) {
+            $body['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PayOrder',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/orders/pay',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return PageQueryDevicesResponse::fromMap($this->doROARequest('PageQueryDevices', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/vpaas/devices', 'json', $req, $runtime));
+        return PayOrderResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3558,50 +4281,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PayOrderRequest $request
-     * @param PayOrderHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @param PollingConfirmStatusRequest $request
+     * @param PollingConfirmStatusHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return PayOrderResponse
+     * @return PollingConfirmStatusResponse
      */
-    public function payOrderWithOptions($request, $headers, $runtime)
+    public function pollingConfirmStatusWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->faceId)) {
-            @$body['faceId'] = $request->faceId;
+        $query = [];
+        if (!Utils::isUnset($request->courseCode)) {
+            $query['courseCode'] = $request->courseCode;
         }
-        if (!Utils::isUnset($request->orderNo)) {
-            @$body['orderNo'] = $request->orderNo;
+        if (!Utils::isUnset($request->ext)) {
+            $query['ext'] = $request->ext;
         }
-        if (!Utils::isUnset($request->signature)) {
-            @$body['signature'] = $request->signature;
+        if (!Utils::isUnset($request->isvCode)) {
+            $query['isvCode'] = $request->isvCode;
         }
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
-        }
-        if (!Utils::isUnset($request->timestamp)) {
-            @$body['timestamp'] = $request->timestamp;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->version)) {
-            @$body['version'] = $request->version;
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PollingConfirmStatus',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/courses/pollingConfirmStatus',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return PayOrderResponse::fromMap($this->doROARequest('PayOrder', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/orders/pay', 'json', $req, $runtime));
+        return PollingConfirmStatusResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3618,41 +4343,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param PollingConfirmStatusRequest $request
-     * @param PollingConfirmStatusHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param PreDialRequest $request
+     * @param PreDialHeaders $headers
+     * @param RuntimeOptions $runtime
      *
-     * @return PollingConfirmStatusResponse
+     * @return PreDialResponse
      */
-    public function pollingConfirmStatusWithOptions($request, $headers, $runtime)
+    public function preDialWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->courseCode)) {
-            @$query['courseCode'] = $request->courseCode;
+        $body = [];
+        if (!Utils::isUnset($request->callerUserId)) {
+            $body['callerUserId'] = $request->callerUserId;
         }
-        if (!Utils::isUnset($request->ext)) {
-            @$query['ext'] = $request->ext;
+        if (!Utils::isUnset($request->receiverUserId)) {
+            $body['receiverUserId'] = $request->receiverUserId;
         }
-        if (!Utils::isUnset($request->isvCode)) {
-            @$query['isvCode'] = $request->isvCode;
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
         }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PreDial',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/vpaas/devices/preDial',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return PollingConfirmStatusResponse::fromMap($this->doROARequest('PollingConfirmStatus', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/universities/courses/pollingConfirmStatus', 'json', $req, $runtime));
+        return PreDialResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3666,57 +4402,6 @@ class Dingtalk extends OpenApiClient
         $headers = new PreDialHeaders([]);
 
         return $this->preDialWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param PreDialRequest $request
-     * @param PreDialHeaders $headers
-     * @param RuntimeOptions $runtime
-     *
-     * @return PreDialResponse
-     */
-    public function preDialWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->callerUserId)) {
-            @$body['callerUserId'] = $request->callerUserId;
-        }
-        if (!Utils::isUnset($request->receiverUserId)) {
-            @$body['receiverUserId'] = $request->receiverUserId;
-        }
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
-        }
-        if (!Utils::isUnset($request->type)) {
-            @$body['type'] = $request->type;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return PreDialResponse::fromMap($this->doROARequest('PreDial', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/vpaas/devices/preDial', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryAllSubjectsFromClassScheduleRequest $request
-     *
-     * @return QueryAllSubjectsFromClassScheduleResponse
-     */
-    public function queryAllSubjectsFromClassSchedule($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryAllSubjectsFromClassScheduleHeaders([]);
-
-        return $this->queryAllSubjectsFromClassScheduleWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3736,27 +4421,108 @@ class Dingtalk extends OpenApiClient
         }
         $query = [];
         if (!Utils::isUnset($request->classIdsShrink)) {
-            @$query['classIds'] = $request->classIdsShrink;
+            $query['classIds'] = $request->classIdsShrink;
         }
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+            $query['opUserId'] = $request->opUserId;
         }
         if (!Utils::isUnset($request->periodCode)) {
-            @$query['periodCode'] = $request->periodCode;
+            $query['periodCode'] = $request->periodCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryAllSubjectsFromClassSchedule',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/subjects/instances',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryAllSubjectsFromClassScheduleResponse::fromMap($this->doROARequest('QueryAllSubjectsFromClassSchedule', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/subjects/instances', 'json', $req, $runtime));
+        return QueryAllSubjectsFromClassScheduleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryAllSubjectsFromClassScheduleRequest $request
+     *
+     * @return QueryAllSubjectsFromClassScheduleResponse
+     */
+    public function queryAllSubjectsFromClassSchedule($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAllSubjectsFromClassScheduleHeaders([]);
+
+        return $this->queryAllSubjectsFromClassScheduleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryClassScheduleRequest $request
+     * @param QueryClassScheduleHeaders $headers
+     * @param RuntimeOptions            $runtime
+     *
+     * @return QueryClassScheduleResponse
+     */
+    public function queryClassScheduleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->subscriberType)) {
+            $query['subscriberType'] = $request->subscriberType;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->sectionIndexList)) {
+            $body['sectionIndexList'] = $request->sectionIndexList;
+        }
+        if (!Utils::isUnset($request->subscriberIds)) {
+            $body['subscriberIds'] = $request->subscriberIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryClassSchedule',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/classes/schedules/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryClassScheduleResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3773,49 +4539,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryClassScheduleRequest $request
-     * @param QueryClassScheduleHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param QueryClassScheduleByTimeSchoolRequest $request
+     * @param QueryClassScheduleByTimeSchoolHeaders $headers
+     * @param RuntimeOptions                        $runtime
      *
-     * @return QueryClassScheduleResponse
+     * @return QueryClassScheduleByTimeSchoolResponse
      */
-    public function queryClassScheduleWithOptions($request, $headers, $runtime)
+    public function queryClassScheduleByTimeSchoolWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->endTime)) {
-            @$query['endTime'] = $request->endTime;
+            $query['endTime'] = $request->endTime;
         }
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+            $query['opUserId'] = $request->opUserId;
         }
         if (!Utils::isUnset($request->startTime)) {
-            @$query['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->subscriberType)) {
-            @$query['subscriberType'] = $request->subscriberType;
-        }
-        $body = [];
-        if (!Utils::isUnset($request->sectionIndexList)) {
-            @$body['sectionIndexList'] = $request->sectionIndexList;
-        }
-        if (!Utils::isUnset($request->subscriberIds)) {
-            @$body['subscriberIds'] = $request->subscriberIds;
+            $query['startTime'] = $request->startTime;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryClassScheduleByTimeSchool',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/schools/classes/courses ',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryClassScheduleResponse::fromMap($this->doROARequest('QueryClassSchedule', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/classes/schedules/query', 'json', $req, $runtime));
+        return QueryClassScheduleByTimeSchoolResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3829,54 +4595,6 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryClassScheduleByTimeSchoolHeaders([]);
 
         return $this->queryClassScheduleByTimeSchoolWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param QueryClassScheduleByTimeSchoolRequest $request
-     * @param QueryClassScheduleByTimeSchoolHeaders $headers
-     * @param RuntimeOptions                        $runtime
-     *
-     * @return QueryClassScheduleByTimeSchoolResponse
-     */
-    public function queryClassScheduleByTimeSchoolWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->endTime)) {
-            @$query['endTime'] = $request->endTime;
-        }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$query['startTime'] = $request->startTime;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return QueryClassScheduleByTimeSchoolResponse::fromMap($this->doROARequest('QueryClassScheduleByTimeSchool', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/schools/classes/courses ', 'json', $req, $runtime));
-    }
-
-    /**
-     * @param QueryClassScheduleConfigRequest $request
-     *
-     * @return QueryClassScheduleConfigResponse
-     */
-    public function queryClassScheduleConfig($request)
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new QueryClassScheduleConfigHeaders([]);
-
-        return $this->queryClassScheduleConfigWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3896,24 +4614,88 @@ class Dingtalk extends OpenApiClient
         }
         $query = [];
         if (!Utils::isUnset($request->classIdsShrink)) {
-            @$query['classIds'] = $request->classIdsShrink;
+            $query['classIds'] = $request->classIdsShrink;
         }
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+            $query['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryClassScheduleConfig',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/schedules/configs',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryClassScheduleConfigResponse::fromMap($this->doROARequest('QueryClassScheduleConfig', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/schedules/configs', 'json', $req, $runtime));
+        return QueryClassScheduleConfigResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryClassScheduleConfigRequest $request
+     *
+     * @return QueryClassScheduleConfigResponse
+     */
+    public function queryClassScheduleConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryClassScheduleConfigHeaders([]);
+
+        return $this->queryClassScheduleConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryDeviceRequest $request
+     * @param QueryDeviceHeaders $headers
+     * @param RuntimeOptions     $runtime
+     *
+     * @return QueryDeviceResponse
+     */
+    public function queryDeviceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->sn)) {
+            $query['sn'] = $request->sn;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryDevice',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/vpass/devices/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryDeviceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3930,32 +4712,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDeviceRequest $request
-     * @param QueryDeviceHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param QueryDeviceListByCorpIdRequest $request
+     * @param QueryDeviceListByCorpIdHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return QueryDeviceResponse
+     * @return QueryDeviceListByCorpIdResponse
      */
-    public function queryDeviceWithOptions($request, $headers, $runtime)
+    public function queryDeviceListByCorpIdWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->sn)) {
-            @$query['sn'] = $request->sn;
+        if (!Utils::isUnset($request->operator)) {
+            $query['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryDeviceListByCorpId',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/remoteClasses/devices',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryDeviceResponse::fromMap($this->doROARequest('QueryDevice', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/vpass/devices/query', 'json', $req, $runtime));
+        return QueryDeviceListByCorpIdResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -3972,38 +4771,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryDeviceListByCorpIdRequest $request
-     * @param QueryDeviceListByCorpIdHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param QueryEduAssetSpacesRequest $request
+     * @param QueryEduAssetSpacesHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return QueryDeviceListByCorpIdResponse
+     * @return QueryEduAssetSpacesResponse
      */
-    public function queryDeviceListByCorpIdWithOptions($request, $headers, $runtime)
+    public function queryEduAssetSpacesWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->operator)) {
-            @$query['operator'] = $request->operator;
+        if (!Utils::isUnset($request->bizCode)) {
+            $query['bizCode'] = $request->bizCode;
         }
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
         }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryEduAssetSpaces',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/assets/spaces',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryDeviceListByCorpIdResponse::fromMap($this->doROARequest('QueryDeviceListByCorpId', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/remoteClasses/devices', 'json', $req, $runtime));
+        return QueryEduAssetSpacesResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4020,38 +4830,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryEduAssetSpacesRequest $request
-     * @param QueryEduAssetSpacesHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param QueryGroupIdRequest $request
+     * @param QueryGroupIdHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return QueryEduAssetSpacesResponse
+     * @return QueryGroupIdResponse
      */
-    public function queryEduAssetSpacesWithOptions($request, $headers, $runtime)
+    public function queryGroupIdWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->bizCode)) {
-            @$query['bizCode'] = $request->bizCode;
-        }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
+        if (!Utils::isUnset($request->sn)) {
+            $query['sn'] = $request->sn;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryGroupId',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/faces/groups',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryEduAssetSpacesResponse::fromMap($this->doROARequest('QueryEduAssetSpaces', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/assets/spaces', 'json', $req, $runtime));
+        return QueryGroupIdResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4068,32 +4883,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryGroupIdRequest $request
-     * @param QueryGroupIdHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param QueryOrderRequest $request
+     * @param QueryOrderHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return QueryGroupIdResponse
+     * @return QueryOrderResponse
      */
-    public function queryGroupIdWithOptions($request, $headers, $runtime)
+    public function queryOrderWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->sn)) {
-            @$query['sn'] = $request->sn;
+        if (!Utils::isUnset($request->alipayAppId)) {
+            $query['alipayAppId'] = $request->alipayAppId;
+        }
+        if (!Utils::isUnset($request->merchantId)) {
+            $query['merchantId'] = $request->merchantId;
+        }
+        if (!Utils::isUnset($request->orderNo)) {
+            $query['orderNo'] = $request->orderNo;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            $query['signature'] = $request->signature;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryOrder',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/orders',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryGroupIdResponse::fromMap($this->doROARequest('QueryGroupId', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/faces/groups', 'json', $req, $runtime));
+        return QueryOrderResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4110,41 +4945,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOrderRequest $request
-     * @param QueryOrderHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param QueryOrgRelationListRequest $request
+     * @param QueryOrgRelationListHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return QueryOrderResponse
+     * @return QueryOrgRelationListResponse
      */
-    public function queryOrderWithOptions($request, $headers, $runtime)
+    public function queryOrgRelationListWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->alipayAppId)) {
-            @$query['alipayAppId'] = $request->alipayAppId;
-        }
-        if (!Utils::isUnset($request->merchantId)) {
-            @$query['merchantId'] = $request->merchantId;
-        }
-        if (!Utils::isUnset($request->orderNo)) {
-            @$query['orderNo'] = $request->orderNo;
-        }
-        if (!Utils::isUnset($request->signature)) {
-            @$query['signature'] = $request->signature;
+        if (!Utils::isUnset($request->operator)) {
+            $query['operator'] = $request->operator;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryOrgRelationList',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/remoteClasses/orgRelations',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryOrderResponse::fromMap($this->doROARequest('QueryOrder', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/orders', 'json', $req, $runtime));
+        return QueryOrgRelationListResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4161,32 +4998,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOrgRelationListRequest $request
-     * @param QueryOrgRelationListHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param QueryOrgSecretKeyRequest $request
+     * @param QueryOrgSecretKeyHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return QueryOrgRelationListResponse
+     * @return QueryOrgSecretKeyResponse
      */
-    public function queryOrgRelationListWithOptions($request, $headers, $runtime)
+    public function queryOrgSecretKeyWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->operator)) {
-            @$query['operator'] = $request->operator;
+        if (!Utils::isUnset($request->isvCode)) {
+            $query['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryOrgSecretKey',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/secretKeys',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryOrgRelationListResponse::fromMap($this->doROARequest('QueryOrgRelationList', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/remoteClasses/orgRelations', 'json', $req, $runtime));
+        return QueryOrgSecretKeyResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4203,35 +5054,36 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOrgSecretKeyRequest $request
-     * @param QueryOrgSecretKeyHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param QueryOrgTypeHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return QueryOrgSecretKeyResponse
+     * @return QueryOrgTypeResponse
      */
-    public function queryOrgSecretKeyWithOptions($request, $headers, $runtime)
+    public function queryOrgTypeWithOptions($headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->isvCode)) {
-            @$query['isvCode'] = $request->isvCode;
-        }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryOrgType',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/orgTypes',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryOrgSecretKeyResponse::fromMap($this->doROARequest('QueryOrgSecretKey', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/universities/secretKeys', 'json', $req, $runtime));
+        return QueryOrgTypeResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4246,25 +5098,61 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOrgTypeHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param QueryPayResultRequest $request
+     * @param QueryPayResultHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return QueryOrgTypeResponse
+     * @return QueryPayResultResponse
      */
-    public function queryOrgTypeWithOptions($headers, $runtime)
+    public function queryPayResultWithOptions($request, $headers, $runtime)
     {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->faceId)) {
+            $body['faceId'] = $request->faceId;
+        }
+        if (!Utils::isUnset($request->orderNo)) {
+            $body['orderNo'] = $request->orderNo;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            $body['signature'] = $request->signature;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->timestamp)) {
+            $body['timestamp'] = $request->timestamp;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->version)) {
+            $body['version'] = $request->version;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryPayResult',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/payResults/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryOrgTypeResponse::fromMap($this->doROARequest('QueryOrgType', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/orgTypes', 'json', $req, $runtime));
+        return QueryPayResultResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4281,50 +5169,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPayResultRequest $request
-     * @param QueryPayResultHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param QueryPhysicalClassroomRequest $request
+     * @param QueryPhysicalClassroomHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return QueryPayResultResponse
+     * @return QueryPhysicalClassroomResponse
      */
-    public function queryPayResultWithOptions($request, $headers, $runtime)
+    public function queryPhysicalClassroomWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->faceId)) {
-            @$body['faceId'] = $request->faceId;
+        $query = [];
+        if (!Utils::isUnset($request->classroomId)) {
+            $query['classroomId'] = $request->classroomId;
         }
-        if (!Utils::isUnset($request->orderNo)) {
-            @$body['orderNo'] = $request->orderNo;
-        }
-        if (!Utils::isUnset($request->signature)) {
-            @$body['signature'] = $request->signature;
-        }
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
-        }
-        if (!Utils::isUnset($request->timestamp)) {
-            @$body['timestamp'] = $request->timestamp;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
-        }
-        if (!Utils::isUnset($request->version)) {
-            @$body['version'] = $request->version;
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryPhysicalClassroom',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/physicalClassrooms',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryPayResultResponse::fromMap($this->doROARequest('QueryPayResult', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/payResults/query', 'json', $req, $runtime));
+        return QueryPhysicalClassroomResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4341,35 +5225,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPhysicalClassroomRequest $request
-     * @param QueryPhysicalClassroomHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param QueryPurchaseInfoRequest $request
+     * @param QueryPurchaseInfoHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return QueryPhysicalClassroomResponse
+     * @return QueryPurchaseInfoResponse
      */
-    public function queryPhysicalClassroomWithOptions($request, $headers, $runtime)
+    public function queryPurchaseInfoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->classroomId)) {
-            @$query['classroomId'] = $request->classroomId;
+        if (!Utils::isUnset($request->merchantId)) {
+            $query['merchantId'] = $request->merchantId;
         }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+        if (!Utils::isUnset($request->scene)) {
+            $query['scene'] = $request->scene;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            $query['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryPurchaseInfo',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/users/purchases',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryPhysicalClassroomResponse::fromMap($this->doROARequest('QueryPhysicalClassroom', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/physicalClassrooms', 'json', $req, $runtime));
+        return QueryPurchaseInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4386,41 +5287,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryPurchaseInfoRequest $request
-     * @param QueryPurchaseInfoHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param QueryRemoteClassCourseRequest $request
+     * @param QueryRemoteClassCourseHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return QueryPurchaseInfoResponse
+     * @return QueryRemoteClassCourseResponse
      */
-    public function queryPurchaseInfoWithOptions($request, $headers, $runtime)
+    public function queryRemoteClassCourseWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->merchantId)) {
-            @$query['merchantId'] = $request->merchantId;
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
         }
-        if (!Utils::isUnset($request->scene)) {
-            @$query['scene'] = $request->scene;
+        if (!Utils::isUnset($request->operator)) {
+            $query['operator'] = $request->operator;
         }
-        if (!Utils::isUnset($request->sn)) {
-            @$query['sn'] = $request->sn;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryRemoteClassCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/remoteClasses/courses',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryPurchaseInfoResponse::fromMap($this->doROARequest('QueryPurchaseInfo', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/users/purchases', 'json', $req, $runtime));
+        return QueryRemoteClassCourseResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4437,38 +5346,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryRemoteClassCourseRequest $request
-     * @param QueryRemoteClassCourseHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param QuerySchoolUserFaceRequest $request
+     * @param QuerySchoolUserFaceHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return QueryRemoteClassCourseResponse
+     * @return QuerySchoolUserFaceResponse
      */
-    public function queryRemoteClassCourseWithOptions($request, $headers, $runtime)
+    public function querySchoolUserFaceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->endTime)) {
-            @$query['endTime'] = $request->endTime;
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
         }
-        if (!Utils::isUnset($request->operator)) {
-            @$query['operator'] = $request->operator;
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
         }
-        if (!Utils::isUnset($request->startTime)) {
-            @$query['startTime'] = $request->startTime;
+        if (!Utils::isUnset($request->sn)) {
+            $query['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $query['type'] = $request->type;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QuerySchoolUserFace',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/schools/faces',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryRemoteClassCourseResponse::fromMap($this->doROARequest('QueryRemoteClassCourse', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/remoteClasses/courses', 'json', $req, $runtime));
+        return QuerySchoolUserFaceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4485,41 +5408,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySchoolUserFaceRequest $request
-     * @param QuerySchoolUserFaceHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param QuerySnsOrderRequest $request
+     * @param QuerySnsOrderHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return QuerySchoolUserFaceResponse
+     * @return QuerySnsOrderResponse
      */
-    public function querySchoolUserFaceWithOptions($request, $headers, $runtime)
+    public function querySnsOrderWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
+        if (!Utils::isUnset($request->alipayAppId)) {
+            $query['alipayAppId'] = $request->alipayAppId;
         }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
+        if (!Utils::isUnset($request->merchantId)) {
+            $query['merchantId'] = $request->merchantId;
         }
-        if (!Utils::isUnset($request->sn)) {
-            @$query['sn'] = $request->sn;
+        if (!Utils::isUnset($request->orderNo)) {
+            $query['orderNo'] = $request->orderNo;
         }
-        if (!Utils::isUnset($request->type)) {
-            @$query['type'] = $request->type;
+        if (!Utils::isUnset($request->signature)) {
+            $query['signature'] = $request->signature;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QuerySnsOrder',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/snsOrders',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QuerySchoolUserFaceResponse::fromMap($this->doROARequest('QuerySchoolUserFace', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/schools/faces', 'json', $req, $runtime));
+        return QuerySnsOrderResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4536,41 +5470,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySnsOrderRequest $request
-     * @param QuerySnsOrderHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param QueryStatisticsDataRequest $request
+     * @param QueryStatisticsDataHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return QuerySnsOrderResponse
+     * @return QueryStatisticsDataResponse
      */
-    public function querySnsOrderWithOptions($request, $headers, $runtime)
+    public function queryStatisticsDataWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->alipayAppId)) {
-            @$query['alipayAppId'] = $request->alipayAppId;
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
         }
-        if (!Utils::isUnset($request->merchantId)) {
-            @$query['merchantId'] = $request->merchantId;
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
         }
-        if (!Utils::isUnset($request->orderNo)) {
-            @$query['orderNo'] = $request->orderNo;
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
         }
-        if (!Utils::isUnset($request->signature)) {
-            @$query['signature'] = $request->signature;
+        $body = [];
+        if (!Utils::isUnset($request->sectionIndexList)) {
+            $body['sectionIndexList'] = $request->sectionIndexList;
+        }
+        if (!Utils::isUnset($request->teacherUserIds)) {
+            $body['teacherUserIds'] = $request->teacherUserIds;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryStatisticsData',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/classes/schedules/statisticData/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return QuerySnsOrderResponse::fromMap($this->doROARequest('QuerySnsOrder', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/snsOrders', 'json', $req, $runtime));
+        return QueryStatisticsDataResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4587,46 +5537,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryStatisticsDataRequest $request
-     * @param QueryStatisticsDataHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param QuerySubjectTeachersRequest $request
+     * @param QuerySubjectTeachersHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return QueryStatisticsDataResponse
+     * @return QuerySubjectTeachersResponse
      */
-    public function queryStatisticsDataWithOptions($request, $headers, $runtime)
+    public function querySubjectTeachersWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->endTime)) {
-            @$query['endTime'] = $request->endTime;
+        if (!Utils::isUnset($request->classIds)) {
+            $query['classIds'] = $request->classIds;
         }
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+            $query['opUserId'] = $request->opUserId;
         }
-        if (!Utils::isUnset($request->startTime)) {
-            @$query['startTime'] = $request->startTime;
-        }
-        $body = [];
-        if (!Utils::isUnset($request->sectionIndexList)) {
-            @$body['sectionIndexList'] = $request->sectionIndexList;
-        }
-        if (!Utils::isUnset($request->teacherUserIds)) {
-            @$body['teacherUserIds'] = $request->teacherUserIds;
+        if (!Utils::isUnset($request->subjectCode)) {
+            $query['subjectCode'] = $request->subjectCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QuerySubjectTeachers',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/subjects/teachers',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryStatisticsDataResponse::fromMap($this->doROARequest('QueryStatisticsData', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/classes/schedules/statisticData/query', 'json', $req, $runtime));
+        return QuerySubjectTeachersResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4643,38 +5596,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QuerySubjectTeachersRequest $request
-     * @param QuerySubjectTeachersHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param QueryTeachSubjectsRequest $request
+     * @param QueryTeachSubjectsHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return QuerySubjectTeachersResponse
+     * @return QueryTeachSubjectsResponse
      */
-    public function querySubjectTeachersWithOptions($request, $headers, $runtime)
+    public function queryTeachSubjectsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->classIds)) {
-            @$query['classIds'] = $request->classIds;
+            $query['classIds'] = $request->classIds;
         }
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
-        }
-        if (!Utils::isUnset($request->subjectCode)) {
-            @$query['subjectCode'] = $request->subjectCode;
+            $query['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryTeachSubjects',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/teachers/subjects',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return QuerySubjectTeachersResponse::fromMap($this->doROARequest('QuerySubjectTeachers', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/subjects/teachers', 'json', $req, $runtime));
+        return QueryTeachSubjectsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4691,35 +5652,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryTeachSubjectsRequest $request
-     * @param QueryTeachSubjectsHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param QueryUniversityCourseGroupRequest $request
+     * @param QueryUniversityCourseGroupHeaders $headers
+     * @param RuntimeOptions                    $runtime
      *
-     * @return QueryTeachSubjectsResponse
+     * @return QueryUniversityCourseGroupResponse
      */
-    public function queryTeachSubjectsWithOptions($request, $headers, $runtime)
+    public function queryUniversityCourseGroupWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->classIds)) {
-            @$query['classIds'] = $request->classIds;
+        if (!Utils::isUnset($request->courseGroupCode)) {
+            $query['courseGroupCode'] = $request->courseGroupCode;
         }
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+            $query['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryUniversityCourseGroup',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/courseGroups',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryTeachSubjectsResponse::fromMap($this->doROARequest('QueryTeachSubjects', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/teachers/subjects', 'json', $req, $runtime));
+        return QueryUniversityCourseGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4736,35 +5708,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUniversityCourseGroupRequest $request
-     * @param QueryUniversityCourseGroupHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @param QueryUserFaceRequest $request
+     * @param QueryUserFaceHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return QueryUniversityCourseGroupResponse
+     * @return QueryUserFaceResponse
      */
-    public function queryUniversityCourseGroupWithOptions($request, $headers, $runtime)
+    public function queryUserFaceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->courseGroupCode)) {
-            @$query['courseGroupCode'] = $request->courseGroupCode;
+        if (!Utils::isUnset($request->faceId)) {
+            $query['faceId'] = $request->faceId;
         }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+        if (!Utils::isUnset($request->sn)) {
+            $query['sn'] = $request->sn;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryUserFace',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/users/faces',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryUniversityCourseGroupResponse::fromMap($this->doROARequest('QueryUniversityCourseGroup', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/universities/courseGroups', 'json', $req, $runtime));
+        return QueryUserFaceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4781,35 +5764,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUserFaceRequest $request
-     * @param QueryUserFaceHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param QueryUserPayInfoRequest $request
+     * @param QueryUserPayInfoHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return QueryUserFaceResponse
+     * @return QueryUserPayInfoResponse
      */
-    public function queryUserFaceWithOptions($request, $headers, $runtime)
+    public function queryUserPayInfoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->faceId)) {
-            @$query['faceId'] = $request->faceId;
+            $query['faceId'] = $request->faceId;
         }
         if (!Utils::isUnset($request->sn)) {
-            @$query['sn'] = $request->sn;
+            $query['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryUserPayInfo',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/orders/payInfos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryUserFaceResponse::fromMap($this->doROARequest('QueryUserFace', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/users/faces', 'json', $req, $runtime));
+        return QueryUserPayInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4826,38 +5823,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryUserPayInfoRequest $request
-     * @param QueryUserPayInfoHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param RemoveDeviceRequest $request
+     * @param RemoveDeviceHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return QueryUserPayInfoResponse
+     * @return RemoveDeviceResponse
      */
-    public function queryUserPayInfoWithOptions($request, $headers, $runtime)
+    public function removeDeviceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->faceId)) {
-            @$query['faceId'] = $request->faceId;
+        if (!Utils::isUnset($request->merchantId)) {
+            $query['merchantId'] = $request->merchantId;
         }
         if (!Utils::isUnset($request->sn)) {
-            @$query['sn'] = $request->sn;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
+            $query['sn'] = $request->sn;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'RemoveDevice',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/devices',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryUserPayInfoResponse::fromMap($this->doROARequest('QueryUserPayInfo', 'edu_1.0', 'HTTP', 'GET', 'AK', '/v1.0/edu/orders/payInfos', 'json', $req, $runtime));
+        return RemoveDeviceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4874,35 +5879,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveDeviceRequest $request
-     * @param RemoveDeviceHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param ReportDeviceLogRequest $request
+     * @param ReportDeviceLogHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return RemoveDeviceResponse
+     * @return ReportDeviceLogResponse
      */
-    public function removeDeviceWithOptions($request, $headers, $runtime)
+    public function reportDeviceLogWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->merchantId)) {
-            @$query['merchantId'] = $request->merchantId;
+        if (!Utils::isUnset($request->mediaId)) {
+            $query['mediaId'] = $request->mediaId;
         }
         if (!Utils::isUnset($request->sn)) {
-            @$query['sn'] = $request->sn;
+            $query['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $query['type'] = $request->type;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'ReportDeviceLog',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/deviceLogs/report',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return RemoveDeviceResponse::fromMap($this->doROARequest('RemoveDevice', 'edu_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/edu/devices', 'json', $req, $runtime));
+        return ReportDeviceLogResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4919,38 +5938,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReportDeviceLogRequest $request
-     * @param ReportDeviceLogHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param ReportDeviceUseLogRequest $request
+     * @param ReportDeviceUseLogHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return ReportDeviceLogResponse
+     * @return ReportDeviceUseLogResponse
      */
-    public function reportDeviceLogWithOptions($request, $headers, $runtime)
+    public function reportDeviceUseLogWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->mediaId)) {
-            @$query['mediaId'] = $request->mediaId;
+        $body = [];
+        if (!Utils::isUnset($request->action)) {
+            $body['action'] = $request->action;
+        }
+        if (!Utils::isUnset($request->orderNo)) {
+            $body['orderNo'] = $request->orderNo;
         }
         if (!Utils::isUnset($request->sn)) {
-            @$query['sn'] = $request->sn;
+            $body['sn'] = $request->sn;
         }
-        if (!Utils::isUnset($request->type)) {
-            @$query['type'] = $request->type;
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ReportDeviceUseLog',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/deviceUseLogs/report',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ReportDeviceLogResponse::fromMap($this->doROARequest('ReportDeviceLog', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/deviceLogs/report', 'json', $req, $runtime));
+        return ReportDeviceUseLogResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -4967,41 +6000,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ReportDeviceUseLogRequest $request
-     * @param ReportDeviceUseLogHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param SearchTeachersRequest $request
+     * @param SearchTeachersHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return ReportDeviceUseLogResponse
+     * @return SearchTeachersResponse
      */
-    public function reportDeviceUseLogWithOptions($request, $headers, $runtime)
+    public function searchTeachersWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->action)) {
-            @$body['action'] = $request->action;
-        }
-        if (!Utils::isUnset($request->orderNo)) {
-            @$body['orderNo'] = $request->orderNo;
-        }
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
-        }
-        if (!Utils::isUnset($request->userId)) {
-            @$body['userId'] = $request->userId;
+        $query = [];
+        if (!Utils::isUnset($request->nameKeyword)) {
+            $query['nameKeyword'] = $request->nameKeyword;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SearchTeachers',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/teachers/search',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return ReportDeviceUseLogResponse::fromMap($this->doROARequest('ReportDeviceUseLog', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/deviceUseLogs/report', 'json', $req, $runtime));
+        return SearchTeachersResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -5018,32 +6053,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SearchTeachersRequest $request
-     * @param SearchTeachersHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param SendMessageRequest $request
+     * @param SendMessageHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return SearchTeachersResponse
+     * @return SendMessageResponse
      */
-    public function searchTeachersWithOptions($request, $headers, $runtime)
+    public function sendMessageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->nameKeyword)) {
-            @$query['nameKeyword'] = $request->nameKeyword;
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->fromUserId)) {
+            $body['fromUserId'] = $request->fromUserId;
+        }
+        if (!Utils::isUnset($request->sn)) {
+            $body['sn'] = $request->sn;
+        }
+        if (!Utils::isUnset($request->toUserIdList)) {
+            $body['toUserIdList'] = $request->toUserIdList;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SendMessage',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/messages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return SearchTeachersResponse::fromMap($this->doROARequest('SearchTeachers', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/teachers/search', 'json', $req, $runtime));
+        return SendMessageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -5060,44 +6118,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendMessageRequest $request
-     * @param SendMessageHeaders $headers
+     * @param StartCourseRequest $request
+     * @param StartCourseHeaders $headers
      * @param RuntimeOptions     $runtime
      *
-     * @return SendMessageResponse
+     * @return StartCourseResponse
      */
-    public function sendMessageWithOptions($request, $headers, $runtime)
+    public function startCourseWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
+        }
         $body = [];
-        if (!Utils::isUnset($request->bizId)) {
-            @$body['bizId'] = $request->bizId;
+        if (!Utils::isUnset($request->courseCode)) {
+            $body['courseCode'] = $request->courseCode;
         }
-        if (!Utils::isUnset($request->fromUserId)) {
-            @$body['fromUserId'] = $request->fromUserId;
+        if (!Utils::isUnset($request->ext)) {
+            $body['ext'] = $request->ext;
         }
-        if (!Utils::isUnset($request->sn)) {
-            @$body['sn'] = $request->sn;
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
         }
-        if (!Utils::isUnset($request->toUserIdList)) {
-            @$body['toUserIdList'] = $request->toUserIdList;
-        }
-        if (!Utils::isUnset($request->type)) {
-            @$body['type'] = $request->type;
+        if (!Utils::isUnset($request->livePlayInfoList)) {
+            $body['livePlayInfoList'] = $request->livePlayInfoList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'StartCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/courses/start',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return SendMessageResponse::fromMap($this->doROARequest('SendMessage', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/messages/send', 'json', $req, $runtime));
+        return StartCourseResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -5114,46 +6185,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param StartCourseRequest $request
-     * @param StartCourseHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param StartCoursePrepareRequest $request
+     * @param StartCoursePrepareHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return StartCourseResponse
+     * @return StartCoursePrepareResponse
      */
-    public function startCourseWithOptions($request, $headers, $runtime)
+    public function startCoursePrepareWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+            $query['opUserId'] = $request->opUserId;
         }
         $body = [];
-        if (!Utils::isUnset($request->courseCode)) {
-            @$body['courseCode'] = $request->courseCode;
+        if (!Utils::isUnset($request->courseDate)) {
+            $body['courseDate'] = $request->courseDate;
+        }
+        if (!Utils::isUnset($request->courseGroupCode)) {
+            $body['courseGroupCode'] = $request->courseGroupCode;
+        }
+        if (!Utils::isUnset($request->deviceId)) {
+            $body['deviceId'] = $request->deviceId;
         }
         if (!Utils::isUnset($request->ext)) {
-            @$body['ext'] = $request->ext;
+            $body['ext'] = $request->ext;
         }
         if (!Utils::isUnset($request->isvCode)) {
-            @$body['isvCode'] = $request->isvCode;
+            $body['isvCode'] = $request->isvCode;
         }
-        if (!Utils::isUnset($request->livePlayInfoList)) {
-            @$body['livePlayInfoList'] = $request->livePlayInfoList;
+        if (!Utils::isUnset($request->liveCoverImage)) {
+            $body['liveCoverImage'] = $request->liveCoverImage;
+        }
+        if (!Utils::isUnset($request->sectionIndex)) {
+            $body['sectionIndex'] = $request->sectionIndex;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'StartCoursePrepare',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/courses/prepare',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return StartCourseResponse::fromMap($this->doROARequest('StartCourse', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/courses/start', 'json', $req, $runtime));
+        return StartCoursePrepareResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -5170,55 +6261,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param StartCoursePrepareRequest $request
-     * @param StartCoursePrepareHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param SubscribeUniversityCourseGroupRequest $request
+     * @param SubscribeUniversityCourseGroupHeaders $headers
+     * @param RuntimeOptions                        $runtime
      *
-     * @return StartCoursePrepareResponse
+     * @return SubscribeUniversityCourseGroupResponse
      */
-    public function startCoursePrepareWithOptions($request, $headers, $runtime)
+    public function subscribeUniversityCourseGroupWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+            $query['opUserId'] = $request->opUserId;
         }
         $body = [];
-        if (!Utils::isUnset($request->courseDate)) {
-            @$body['courseDate'] = $request->courseDate;
-        }
         if (!Utils::isUnset($request->courseGroupCode)) {
-            @$body['courseGroupCode'] = $request->courseGroupCode;
+            $body['courseGroupCode'] = $request->courseGroupCode;
         }
-        if (!Utils::isUnset($request->deviceId)) {
-            @$body['deviceId'] = $request->deviceId;
-        }
-        if (!Utils::isUnset($request->ext)) {
-            @$body['ext'] = $request->ext;
-        }
-        if (!Utils::isUnset($request->isvCode)) {
-            @$body['isvCode'] = $request->isvCode;
-        }
-        if (!Utils::isUnset($request->liveCoverImage)) {
-            @$body['liveCoverImage'] = $request->liveCoverImage;
-        }
-        if (!Utils::isUnset($request->sectionIndex)) {
-            @$body['sectionIndex'] = $request->sectionIndex;
+        if (!Utils::isUnset($request->studentUserIds)) {
+            $body['studentUserIds'] = $request->studentUserIds;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'SubscribeUniversityCourseGroup',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/courseGroups/subscribe',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return StartCoursePrepareResponse::fromMap($this->doROARequest('StartCoursePrepare', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/courses/prepare', 'json', $req, $runtime));
+        return SubscribeUniversityCourseGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -5235,40 +6322,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SubscribeUniversityCourseGroupRequest $request
-     * @param SubscribeUniversityCourseGroupHeaders $headers
-     * @param RuntimeOptions                        $runtime
+     * @param UnsubscribeUniversityCourseGroupRequest $request
+     * @param UnsubscribeUniversityCourseGroupHeaders $headers
+     * @param RuntimeOptions                          $runtime
      *
-     * @return SubscribeUniversityCourseGroupResponse
+     * @return UnsubscribeUniversityCourseGroupResponse
      */
-    public function subscribeUniversityCourseGroupWithOptions($request, $headers, $runtime)
+    public function unsubscribeUniversityCourseGroupWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+            $query['opUserId'] = $request->opUserId;
         }
         $body = [];
         if (!Utils::isUnset($request->courseGroupCode)) {
-            @$body['courseGroupCode'] = $request->courseGroupCode;
+            $body['courseGroupCode'] = $request->courseGroupCode;
         }
         if (!Utils::isUnset($request->studentUserIds)) {
-            @$body['studentUserIds'] = $request->studentUserIds;
+            $body['studentUserIds'] = $request->studentUserIds;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UnsubscribeUniversityCourseGroup',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/courseGroups/unsubscribe',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return SubscribeUniversityCourseGroupResponse::fromMap($this->doROARequest('SubscribeUniversityCourseGroup', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/courseGroups/subscribe', 'json', $req, $runtime));
+        return UnsubscribeUniversityCourseGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -5285,40 +6383,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UnsubscribeUniversityCourseGroupRequest $request
-     * @param UnsubscribeUniversityCourseGroupHeaders $headers
-     * @param RuntimeOptions                          $runtime
+     * @param string                      $classId
+     * @param UpdateCoursesOfClassRequest $request
+     * @param UpdateCoursesOfClassHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return UnsubscribeUniversityCourseGroupResponse
+     * @return UpdateCoursesOfClassResponse
      */
-    public function unsubscribeUniversityCourseGroupWithOptions($request, $headers, $runtime)
+    public function updateCoursesOfClassWithOptions($classId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+            $query['opUserId'] = $request->opUserId;
         }
         $body = [];
-        if (!Utils::isUnset($request->courseGroupCode)) {
-            @$body['courseGroupCode'] = $request->courseGroupCode;
+        if (!Utils::isUnset($request->courses)) {
+            $body['courses'] = $request->courses;
         }
-        if (!Utils::isUnset($request->studentUserIds)) {
-            @$body['studentUserIds'] = $request->studentUserIds;
+        if (!Utils::isUnset($request->sectionConfig)) {
+            $body['sectionConfig'] = $request->sectionConfig;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateCoursesOfClass',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/classes/' . $classId . '/courses/schedules',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return UnsubscribeUniversityCourseGroupResponse::fromMap($this->doROARequest('UnsubscribeUniversityCourseGroup', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/universities/courseGroups/unsubscribe', 'json', $req, $runtime));
+        return UpdateCoursesOfClassResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -5336,42 +6446,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                      $classId
-     * @param UpdateCoursesOfClassRequest $request
-     * @param UpdateCoursesOfClassHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param UpdatePhysicalClassroomRequest $request
+     * @param UpdatePhysicalClassroomHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return UpdateCoursesOfClassResponse
+     * @return UpdatePhysicalClassroomResponse
      */
-    public function updateCoursesOfClassWithOptions($classId, $request, $headers, $runtime)
+    public function updatePhysicalClassroomWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $classId = OpenApiUtilClient::getEncodeParam($classId);
-        $query   = [];
+        $query = [];
         if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+            $query['opUserId'] = $request->opUserId;
         }
         $body = [];
-        if (!Utils::isUnset($request->courses)) {
-            @$body['courses'] = $request->courses;
+        if (!Utils::isUnset($request->classroomBuilding)) {
+            $body['classroomBuilding'] = $request->classroomBuilding;
         }
-        if (!Utils::isUnset($request->sectionConfig)) {
-            @$body['sectionConfig'] = $request->sectionConfig;
+        if (!Utils::isUnset($request->classroomCampus)) {
+            $body['classroomCampus'] = $request->classroomCampus;
+        }
+        if (!Utils::isUnset($request->classroomFloor)) {
+            $body['classroomFloor'] = $request->classroomFloor;
+        }
+        if (!Utils::isUnset($request->classroomId)) {
+            $body['classroomId'] = $request->classroomId;
+        }
+        if (!Utils::isUnset($request->classroomName)) {
+            $body['classroomName'] = $request->classroomName;
+        }
+        if (!Utils::isUnset($request->classroomNumber)) {
+            $body['classroomNumber'] = $request->classroomNumber;
+        }
+        if (!Utils::isUnset($request->directBroadcast)) {
+            $body['directBroadcast'] = $request->directBroadcast;
+        }
+        if (!Utils::isUnset($request->ext)) {
+            $body['ext'] = $request->ext;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdatePhysicalClassroom',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/physicalClassrooms',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return UpdateCoursesOfClassResponse::fromMap($this->doROARequest('UpdateCoursesOfClass', 'edu_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/edu/classes/' . $classId . '/courses/schedules', 'json', $req, $runtime));
+        return UpdatePhysicalClassroomResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -5388,58 +6525,61 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdatePhysicalClassroomRequest $request
-     * @param UpdatePhysicalClassroomHeaders $headers
+     * @param UpdateRemoteClassCourseRequest $request
+     * @param UpdateRemoteClassCourseHeaders $headers
      * @param RuntimeOptions                 $runtime
      *
-     * @return UpdatePhysicalClassroomResponse
+     * @return UpdateRemoteClassCourseResponse
      */
-    public function updatePhysicalClassroomWithOptions($request, $headers, $runtime)
+    public function updateRemoteClassCourseWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
-        }
         $body = [];
-        if (!Utils::isUnset($request->classroomBuilding)) {
-            @$body['classroomBuilding'] = $request->classroomBuilding;
+        if (!Utils::isUnset($request->attendParticipants)) {
+            $body['attendParticipants'] = $request->attendParticipants;
         }
-        if (!Utils::isUnset($request->classroomCampus)) {
-            @$body['classroomCampus'] = $request->classroomCampus;
+        if (!Utils::isUnset($request->authCode)) {
+            $body['authCode'] = $request->authCode;
         }
-        if (!Utils::isUnset($request->classroomFloor)) {
-            @$body['classroomFloor'] = $request->classroomFloor;
+        if (!Utils::isUnset($request->courseCode)) {
+            $body['courseCode'] = $request->courseCode;
         }
-        if (!Utils::isUnset($request->classroomId)) {
-            @$body['classroomId'] = $request->classroomId;
+        if (!Utils::isUnset($request->courseName)) {
+            $body['courseName'] = $request->courseName;
         }
-        if (!Utils::isUnset($request->classroomName)) {
-            @$body['classroomName'] = $request->classroomName;
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
         }
-        if (!Utils::isUnset($request->classroomNumber)) {
-            @$body['classroomNumber'] = $request->classroomNumber;
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
         }
-        if (!Utils::isUnset($request->directBroadcast)) {
-            @$body['directBroadcast'] = $request->directBroadcast;
-        }
-        if (!Utils::isUnset($request->ext)) {
-            @$body['ext'] = $request->ext;
+        if (!Utils::isUnset($request->teachingParticipant)) {
+            $body['teachingParticipant'] = $request->teachingParticipant;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateRemoteClassCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/remoteClasses/courses',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return UpdatePhysicalClassroomResponse::fromMap($this->doROARequest('UpdatePhysicalClassroom', 'edu_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/edu/physicalClassrooms', 'json', $req, $runtime));
+        return UpdateRemoteClassCourseResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -5456,50 +6596,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateRemoteClassCourseRequest $request
-     * @param UpdateRemoteClassCourseHeaders $headers
+     * @param UpdateRemoteClassDeviceRequest $request
+     * @param UpdateRemoteClassDeviceHeaders $headers
      * @param RuntimeOptions                 $runtime
      *
-     * @return UpdateRemoteClassCourseResponse
+     * @return UpdateRemoteClassDeviceResponse
      */
-    public function updateRemoteClassCourseWithOptions($request, $headers, $runtime)
+    public function updateRemoteClassDeviceWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->attendParticipants)) {
-            @$body['attendParticipants'] = $request->attendParticipants;
-        }
+        $query = [];
         if (!Utils::isUnset($request->authCode)) {
-            @$body['authCode'] = $request->authCode;
+            $query['authCode'] = $request->authCode;
         }
-        if (!Utils::isUnset($request->courseCode)) {
-            @$body['courseCode'] = $request->courseCode;
+        if (!Utils::isUnset($request->deviceCode)) {
+            $query['deviceCode'] = $request->deviceCode;
         }
-        if (!Utils::isUnset($request->courseName)) {
-            @$body['courseName'] = $request->courseName;
-        }
-        if (!Utils::isUnset($request->endTime)) {
-            @$body['endTime'] = $request->endTime;
-        }
-        if (!Utils::isUnset($request->startTime)) {
-            @$body['startTime'] = $request->startTime;
-        }
-        if (!Utils::isUnset($request->teachingParticipant)) {
-            @$body['teachingParticipant'] = $request->teachingParticipant;
+        if (!Utils::isUnset($request->deviceName)) {
+            $query['deviceName'] = $request->deviceName;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateRemoteClassDevice',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/remoteClasses/deviceNames',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return UpdateRemoteClassCourseResponse::fromMap($this->doROARequest('UpdateRemoteClassCourse', 'edu_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/edu/remoteClasses/courses', 'json', $req, $runtime));
+        return UpdateRemoteClassDeviceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -5516,38 +6655,60 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateRemoteClassDeviceRequest $request
-     * @param UpdateRemoteClassDeviceHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param UpdateUniversityCourseGroupRequest $request
+     * @param UpdateUniversityCourseGroupHeaders $headers
+     * @param RuntimeOptions                     $runtime
      *
-     * @return UpdateRemoteClassDeviceResponse
+     * @return UpdateUniversityCourseGroupResponse
      */
-    public function updateRemoteClassDeviceWithOptions($request, $headers, $runtime)
+    public function updateUniversityCourseGroupWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->authCode)) {
-            @$query['authCode'] = $request->authCode;
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
         }
-        if (!Utils::isUnset($request->deviceCode)) {
-            @$query['deviceCode'] = $request->deviceCode;
+        $body = [];
+        if (!Utils::isUnset($request->courseGroupCode)) {
+            $body['courseGroupCode'] = $request->courseGroupCode;
         }
-        if (!Utils::isUnset($request->deviceName)) {
-            @$query['deviceName'] = $request->deviceName;
+        if (!Utils::isUnset($request->courseGroupIntroduce)) {
+            $body['courseGroupIntroduce'] = $request->courseGroupIntroduce;
+        }
+        if (!Utils::isUnset($request->courseGroupName)) {
+            $body['courseGroupName'] = $request->courseGroupName;
+        }
+        if (!Utils::isUnset($request->courserGroupItemModels)) {
+            $body['courserGroupItemModels'] = $request->courserGroupItemModels;
+        }
+        if (!Utils::isUnset($request->ext)) {
+            $body['ext'] = $request->ext;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateUniversityCourseGroup',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/universities/courseGroups',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return UpdateRemoteClassDeviceResponse::fromMap($this->doROARequest('UpdateRemoteClassDevice', 'edu_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/edu/remoteClasses/deviceNames', 'json', $req, $runtime));
+        return UpdateUniversityCourseGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -5564,49 +6725,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateUniversityCourseGroupRequest $request
-     * @param UpdateUniversityCourseGroupHeaders $headers
-     * @param RuntimeOptions                     $runtime
+     * @param VPaasProxyRequest $request
+     * @param VPaasProxyHeaders $headers
+     * @param RuntimeOptions    $runtime
      *
-     * @return UpdateUniversityCourseGroupResponse
+     * @return VPaasProxyResponse
      */
-    public function updateUniversityCourseGroupWithOptions($request, $headers, $runtime)
+    public function vPaasProxyWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
-        }
         $body = [];
-        if (!Utils::isUnset($request->courseGroupCode)) {
-            @$body['courseGroupCode'] = $request->courseGroupCode;
+        if (!Utils::isUnset($request->actionCode)) {
+            $body['actionCode'] = $request->actionCode;
         }
-        if (!Utils::isUnset($request->courseGroupIntroduce)) {
-            @$body['courseGroupIntroduce'] = $request->courseGroupIntroduce;
+        if (!Utils::isUnset($request->params)) {
+            $body['params'] = $request->params;
         }
-        if (!Utils::isUnset($request->courseGroupName)) {
-            @$body['courseGroupName'] = $request->courseGroupName;
-        }
-        if (!Utils::isUnset($request->courserGroupItemModels)) {
-            @$body['courserGroupItemModels'] = $request->courserGroupItemModels;
-        }
-        if (!Utils::isUnset($request->ext)) {
-            @$body['ext'] = $request->ext;
+        if (!Utils::isUnset($request->publicKey)) {
+            $body['publicKey'] = $request->publicKey;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'VPaasProxy',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/vpaas/proxy',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return UpdateUniversityCourseGroupResponse::fromMap($this->doROARequest('UpdateUniversityCourseGroup', 'edu_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/edu/universities/courseGroups', 'json', $req, $runtime));
+        return VPaasProxyResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -5623,38 +6784,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param VPaasProxyRequest $request
-     * @param VPaasProxyHeaders $headers
-     * @param RuntimeOptions    $runtime
+     * @param ValidateUserRoleRequest $request
+     * @param ValidateUserRoleHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return VPaasProxyResponse
+     * @return ValidateUserRoleResponse
      */
-    public function vPaasProxyWithOptions($request, $headers, $runtime)
+    public function validateUserRoleWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->actionCode)) {
-            @$body['actionCode'] = $request->actionCode;
+        if (!Utils::isUnset($request->timeThreshold)) {
+            $body['timeThreshold'] = $request->timeThreshold;
         }
-        if (!Utils::isUnset($request->params)) {
-            @$body['params'] = $request->params;
-        }
-        if (!Utils::isUnset($request->publicKey)) {
-            @$body['publicKey'] = $request->publicKey;
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'ValidateUserRole',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/users/roles/validate',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return VPaasProxyResponse::fromMap($this->doROARequest('VPaasProxy', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/vpaas/proxy', 'json', $req, $runtime));
+        return ValidateUserRoleResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -5668,37 +6837,5 @@ class Dingtalk extends OpenApiClient
         $headers = new ValidateUserRoleHeaders([]);
 
         return $this->validateUserRoleWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param ValidateUserRoleRequest $request
-     * @param ValidateUserRoleHeaders $headers
-     * @param RuntimeOptions          $runtime
-     *
-     * @return ValidateUserRoleResponse
-     */
-    public function validateUserRoleWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->timeThreshold)) {
-            @$body['timeThreshold'] = $request->timeThreshold;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return ValidateUserRoleResponse::fromMap($this->doROARequest('ValidateUserRole', 'edu_1.0', 'HTTP', 'POST', 'AK', '/v1.0/edu/users/roles/validate', 'json', $req, $runtime));
     }
 }

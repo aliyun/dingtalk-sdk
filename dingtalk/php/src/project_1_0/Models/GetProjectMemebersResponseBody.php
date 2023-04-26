@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetProjectMemebersResponseBody extends Model
 {
     /**
-     * @description 项目成员列表。
-     *
      * @var result[]
      */
     public $result;

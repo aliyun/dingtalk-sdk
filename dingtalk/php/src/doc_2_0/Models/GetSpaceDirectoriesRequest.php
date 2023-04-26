@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetSpaceDirectoriesRequest extends Model
 {
     /**
-     * @description 知识库节点id。
-     *
      * @var string
      */
     public $dentryId;
 
     /**
-     * @description 查询数量，最大500。
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页token，第一页可不传。
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 操作用户unionId。
-     *
      * @var string
      */
     public $operatorId;

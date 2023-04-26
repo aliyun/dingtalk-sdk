@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CollegeRemoveStudentRequest extends Model
 {
     /**
-     * @description 部门id
+     * @example 1111
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 学生id
+     * @example 2222
      *
      * @var int
      */

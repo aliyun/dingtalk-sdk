@@ -10,43 +10,39 @@ use AlibabaCloud\Tea\Model;
 class LoadBizObjectsRequest extends Model
 {
     /**
-     * @description json格式的动态条件过滤器参数
+     * @example {     "Type": "Item",     "Name": "F0000010",     "Operator": 2,     "Value": "0000007" }
      *
      * @var string
      */
     public $matcherJson;
 
     /**
-     * @description 分页页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页页大小。限制在1~500
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 返回的字段.仅支持传入主表的字段
-     *
      * @var string[]
      */
     public $returnFields;
 
     /**
-     * @description 表单编码
+     * @example D0001839bbbbe346bbf496498bb76c44c7eb972
      *
      * @var string
      */
     public $schemaCode;
 
     /**
-     * @description 排序字段结构数组
-     *
      * @var sortByFields[]
      */
     public $sortByFields;

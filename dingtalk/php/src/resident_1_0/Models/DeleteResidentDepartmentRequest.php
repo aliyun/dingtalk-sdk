@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteResidentDepartmentRequest extends Model
 {
     /**
-     * @description 组/户id
+     * @example 12345
      *
      * @var int
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class languageSkill extends Model
 {
     /**
-     * @description 证书名称
+     * @example 大学英语六级
      *
      * @var string
      */
     public $certificateName;
 
     /**
-     * @description 语言名称
+     * @example 英语
      *
      * @var string
      */

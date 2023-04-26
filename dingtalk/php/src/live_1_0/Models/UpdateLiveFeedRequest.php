@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class UpdateLiveFeedRequest extends Model
 {
     /**
-     * @description 封面图url
+     * @example http:xxx.png
      *
      * @var string
      */
     public $coverUrl;
 
     /**
-     * @description 课程简介
+     * @example 简介
      *
      * @var string
      */
     public $introduction;
 
     /**
-     * @description 预计开始时间（毫秒值）（课程必须预告状态才可以修改该项）
+     * @example 1617436058000
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 课程标题
+     * @example 标题
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 操作者id（修改者的组织内id）
+     * @example 1206186351746728
      *
      * @var string
      */

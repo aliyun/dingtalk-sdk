@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class SupplyListDeptMembersRequest extends Model
 {
     /**
-     * @description 页码
+     * @example 10
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 单页的条目数
+     * @example 100
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 供应链部门id
+     * @example 1111
      *
      * @var int
      */

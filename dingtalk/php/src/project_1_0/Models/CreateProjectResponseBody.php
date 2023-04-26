@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CreateProjectResponseBody extends Model
 {
     /**
-     * @description 返回结果。
-     *
      * @var result
      */
     public $result;

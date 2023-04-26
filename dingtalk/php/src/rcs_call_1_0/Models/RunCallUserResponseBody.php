@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class RunCallUserResponseBody extends Model
 {
     /**
-     * @description 执行结果
+     * @example true、false
      *
      * @var string
      */

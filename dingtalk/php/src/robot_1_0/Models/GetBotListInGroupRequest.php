@@ -9,8 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetBotListInGroupRequest extends Model
 {
     /**
-     * @description 群id。
-     *
+     * @example cidjknasndcbaXXXXX
      *
      * @var string
      */

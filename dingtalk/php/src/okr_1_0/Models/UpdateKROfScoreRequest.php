@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateKROfScoreRequest extends Model
 {
     /**
-     * @description 分数值。
+     * @example 10
      *
      * @var int
      */
     public $score;
 
     /**
-     * @description 当前 KR ID。
+     * @example 46GM2
      *
      * @var string
      */
     public $krId;
 
     /**
-     * @description 当前用户的userId。
+     * @example 0115396701752283
      *
      * @var string
      */

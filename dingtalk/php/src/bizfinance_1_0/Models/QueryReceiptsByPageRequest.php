@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class QueryReceiptsByPageRequest extends Model
 {
     /**
-     * @description 检索结束时间，默认当前时间，离开始时间最长不超过180天
+     * @example 1637658261363
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 数据模型id
+     * @example EM-1017F28E03350B1738B3000X
      *
      * @var string
      */
     public $modelId;
 
     /**
-     * @description 分页，从1开始
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小，默认10，最大100
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 检索开始时间
+     * @example 1637658261363
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 检索排序时间类型：创建时间(gmt_create)，更新时间(gmt_modified)
+     * @example gmt_create
      *
      * @var string
      */

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class InsertRowsBeforeRequest extends Model
 {
     /**
-     * @description 要插入行的位置，从0开始。
+     * @example row
      *
      * @var int
      */
     public $row;
 
     /**
-     * @description 要插入行的数量。
+     * @example row_count
      *
      * @var int
      */
     public $rowCount;
 
     /**
-     * @description 操作人id
+     * @example union_id
      *
      * @var string
      */

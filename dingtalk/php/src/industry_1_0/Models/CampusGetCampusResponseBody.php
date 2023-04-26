@@ -9,126 +9,126 @@ use AlibabaCloud\Tea\Model;
 class CampusGetCampusResponseBody extends Model
 {
     /**
-     * @description 详细地址
+     * @example ##街道
      *
      * @var string
      */
     public $address;
 
     /**
-     * @description 面积
+     * @example 1000
      *
      * @var float
      */
     public $area;
 
     /**
-     * @description 项目组ID
+     * @example 1011
      *
      * @var string
      */
     public $belongProjectGroupId;
 
     /**
-     * @description 园区组织ID
+     * @example ding121212
      *
      * @var string
      */
     public $campusCorpId;
 
     /**
-     * @description 园区部门ID
+     * @example 1001
      *
      * @var int
      */
     public $campusDeptId;
 
     /**
-     * @description 园区名称
+     * @example 测试园区
      *
      * @var string
      */
     public $campusName;
 
     /**
-     * @description 容纳人数
+     * @example 100
      *
      * @var string
      */
     public $capacity;
 
     /**
-     * @description 市
+     * @example 2030
      *
      * @var int
      */
     public $cityId;
 
     /**
-     * @description 国家
+     * @example 中国
      *
      * @var string
      */
     public $country;
 
     /**
-     * @description 区
+     * @example 203040
      *
      * @var int
      */
     public $countyId;
 
     /**
-     * @description 描述
+     * @example 描述
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 扩展属性
+     * @example 扩展
      *
      * @var string
      */
     public $extend;
 
     /**
-     * @description 经纬度
+     * @example 120.1,28.1
      *
      * @var string
      */
     public $location;
 
     /**
-     * @description 过期时间
+     * @example 1655704317794
      *
      * @var int
      */
     public $orderEndTime;
 
     /**
-     * @description 购买信息
+     * @example 购买信息
      *
      * @var string
      */
     public $orderInfo;
 
     /**
-     * @description 订购时间
+     * @example 1655704317794
      *
      * @var int
      */
     public $orderStartTime;
 
     /**
-     * @description 省
+     * @example 20
      *
      * @var int
      */
     public $provId;
 
     /**
-     * @description 电话
+     * @example 13914772123
      *
      * @var string
      */

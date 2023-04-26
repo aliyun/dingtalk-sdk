@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class acls extends Model
 {
     /**
-     * @description acl资源ID
-     *
      * @var string
      */
     public $aclId;
 
     /**
-     * @description 权限信息
-     *
      * @var string
      */
     public $privilege;
 
     /**
-     * @description 权限范围
-     *
      * @var scope
      */
     public $scope;

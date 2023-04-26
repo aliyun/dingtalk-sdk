@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class TitleMention extends Model
 {
     /**
-     * @description 结束位置
+     * @example 22
      *
      * @var int
      */
     public $length;
 
     /**
-     * @description 开始位置
+     * @example 1
      *
      * @var int
      */
     public $offset;
 
     /**
-     * @description “@人员”对象信息
-     *
      * @var OpenUserDTO
      */
     public $user;

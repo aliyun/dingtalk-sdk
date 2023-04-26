@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class BatchInsertBizObjectRequest extends Model
 {
     /**
-     * @description 待新增的业对象json数组
-     *
      * @var string[]
      */
     public $bizObjectJsonArray;
 
     /**
-     * @description 是否是草稿数据。true=创建草稿数据，false=创建生效数据
+     * @example true
      *
      * @var bool
      */
     public $isDraft;
 
     /**
-     * @description 操作用户id
+     * @example 1eeb5ad3-b6da-4d4d-b6a5-8d342567d189
      *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 表单编码
+     * @example D0001839bbbbe346bbf496498bb76c44c7eb972
      *
      * @var string
      */

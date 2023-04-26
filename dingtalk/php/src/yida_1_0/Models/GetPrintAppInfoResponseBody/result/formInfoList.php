@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class formInfoList extends Model
 {
     /**
-     * @description formName
-     *
      * @var string
      */
     public $formName;
 
     /**
-     * @description formUuid
-     *
      * @var string
      */
     public $formUuid;

@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class CreateCustomClassRequest extends Model
 {
     /**
-     * @description 班级信息
-     *
      * @var customClass
      */
     public $customClass;
 
     /**
-     * @description 钉钉企业管理员工ID
+     * @example 1234
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 上级部门ID
+     * @example 12345
      *
      * @var int
      */

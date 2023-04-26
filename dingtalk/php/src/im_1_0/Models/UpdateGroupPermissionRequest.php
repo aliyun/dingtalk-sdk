@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class UpdateGroupPermissionRequest extends Model
 {
     /**
-     * @description 开放群ID
+     * @example cidXXXXXXX
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 群权限项
-     *
      * @var string
      */
     public $permissionGroup;
 
     /**
-     * @description 状态,0-关闭，1-开启
-     *
      * @var string
      */
     public $status;

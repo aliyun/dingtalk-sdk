@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class SetColumnsVisibilityRequest extends Model
 {
     /**
-     * @description 要显示、隐藏的第一列的位置，从0开始。
+     * @example column
      *
      * @var int
      */
     public $column;
 
     /**
-     * @description 要显示、隐藏的列的数量。
+     * @example column_count
      *
      * @var int
      */
     public $columnCount;
 
     /**
-     * @description 列可见性
-     * hidden: 隐藏
+     * @example visible
+     *
      * @var string
      */
     public $visibility;
 
     /**
-     * @description 操作人id
+     * @example union_id
      *
      * @var string
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class CfJobLevelResp extends Model
 {
     /**
-     * @description 级别
+     * @example 1
      *
      * @var int
      */
     public $level;
 
     /**
-     * @description 名称
+     * @example P1
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 生效日期
+     * @example 1639065600000
      *
      * @var string
      */
     public $startDate;
 
     /**
-     * @description 失效日期
+     * @example 1652198400000
      *
      * @var string
      */

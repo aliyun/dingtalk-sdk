@@ -14,57 +14,47 @@ use AlibabaCloud\Tea\Model;
 class sectionConfigs extends Model
 {
     /**
-     * @description 课表名称
+     * @example 第一学期课表
      *
      * @var string
      */
     public $scheduleName;
 
     /**
-     * @description 学年
+     * @example 2021-2022
      *
      * @var string
      */
     public $schoolYear;
 
     /**
-     * @description 结束时间
-     *
      * @var sectionEndDate
      */
     public $sectionEndDate;
 
     /**
-     * @description 节次模型
-     *
      * @var sectionModels[]
      */
     public $sectionModels;
 
     /**
-     * @description 开始时间（精确到日）
-     *
      * @var sectionStartDate
      */
     public $sectionStartDate;
 
     /**
-     * @description 学期
+     * @example 1
      *
      * @var int
      */
     public $semester;
 
     /**
-     * @description 学期结束时间
-     *
      * @var semesterEndDate
      */
     public $semesterEndDate;
 
     /**
-     * @description 学期开始时间
-     *
      * @var semesterStartDate
      */
     public $semesterStartDate;

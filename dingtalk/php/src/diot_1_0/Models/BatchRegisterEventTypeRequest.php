@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class BatchRegisterEventTypeRequest extends Model
 {
     /**
-     * @description 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。
+     * @example ding12345
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 事件类型列表，最多支持添加500个。
-     *
      * @var eventTypes[]
      */
     public $eventTypes;

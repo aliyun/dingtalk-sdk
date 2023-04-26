@@ -10,62 +10,60 @@ use AlibabaCloud\Tea\Model;
 class SyncTaskTemplateRequest extends Model
 {
     /**
-     * @description 是否删除任务模版，true删除，false不删除
-     *
      * @var bool
      */
     public $delete;
 
     /**
-     * @description 任务模板描述
+     * @example 培训、薪酬任务模版
      *
      * @var string
      */
     public $des;
 
     /**
-     * @description 扩展信息，json串
+     * @example {\"key\":value}
      *
      * @var string
      */
     public $ext;
 
     /**
-     * @description 模版名称
+     * @example 培训模版
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 任务模版创建人staffId
+     * @example 23234
      *
      * @var string
      */
     public $optUserId;
 
     /**
-     * @description isv对应的任务模版唯一键
+     * @example 232332
      *
      * @var string
      */
     public $outerId;
 
     /**
-     * @description 圈人规则
-     *
      * @var taskScopeVO
      */
     public $taskScopeVO;
 
     /**
-     * @description 任务模版类型：TRAIN_TASK、PERFORMANCE_TASK
+     * @example PERFORMANCE_TASK、TRAIN_TASK
      *
      * @var string
      */
     public $taskType;
 
     /**
+     * @example onboarding
+     *
      * @var string
      */
     public $solutionType;

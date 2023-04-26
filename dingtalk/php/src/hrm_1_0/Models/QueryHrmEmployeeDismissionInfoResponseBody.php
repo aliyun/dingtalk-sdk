@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryHrmEmployeeDismissionInfoResponseBody extends Model
 {
     /**
-     * @description 名称列表
-     *
      * @var result[]
      */
     public $result;

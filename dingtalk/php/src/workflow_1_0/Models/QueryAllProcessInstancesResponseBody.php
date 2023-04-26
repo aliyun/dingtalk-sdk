@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryAllProcessInstancesResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var result
      */
     public $result;

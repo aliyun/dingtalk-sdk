@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class item extends Model
 {
     /**
-     * @description 连接平台连接器id
-     *
      * @var string
      */
     public $dingConnectorId;
 
     /**
-     * @description 连接平台触发事件id
-     *
      * @var string
      */
     public $dingTriggerId;
 
     /**
-     * @description 服务商的连接器Id
-     *
      * @var string
      */
     public $integratorConnectorId;
 
     /**
-     * @description 服务商的触发事件id
-     *
      * @var string
      */
     public $integratorTriggerId;
 
     /**
-     * @description 错误码
-     *
      * @var string
      */
     public $subErrCode;
 
     /**
-     * @description 错误信息
-     *
      * @var string
      */
     public $subErrMsg;
 
     /**
-     * @description 是否成功
-     *
      * @var bool
      */
     public $success;

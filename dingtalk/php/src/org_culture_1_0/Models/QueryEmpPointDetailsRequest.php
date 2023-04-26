@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryEmpPointDetailsRequest extends Model
 {
     /**
-     * @description 第几页 第一页是1
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页大小最多50 默认值10
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 查询目标对象userId
+     * @example 042216842933
      *
      * @var string
      */

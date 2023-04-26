@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 员工积分数量
+     * @example 4990
      *
      * @var int
      */

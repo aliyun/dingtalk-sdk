@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class ListCommodityRequest extends Model
 {
     /**
-     * @description accessKey
+     * @example accessKey
      *
      * @var string
      */
     public $accessKey;
 
     /**
-     * @description callerUid
+     * @example callerUid
      *
      * @var string
      */
     public $callerUid;
 
     /**
-     * @description currentPage
+     * @example currentPage
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description pageSize
+     * @example pageSize
      *
      * @var int
      */

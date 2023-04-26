@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class pointRuleList extends Model
 {
     /**
-     * @description 单日计次上限，0表示无上限
+     * @example 50
      *
      * @var int
      */
     public $dayLimitTimes;
 
     /**
-     * @description 扩展字段
+     * @example text
      *
      * @var string
      */
     public $extension;
 
     /**
-     * @description 分组ID, 默认写入为0
+     * @example 100
      *
      * @var int
      */
     public $groupId;
 
     /**
-     * @description 排序ID
+     * @example 排序Id
      *
      * @var int
      */
     public $orderId;
 
     /**
-     * @description 对应的行为代码（可空）
+     * @example rule_1
      *
      * @var string
      */
     public $ruleCode;
 
     /**
-     * @description 对应的行为名字
+     * @example 发动态
      *
      * @var string
      */
     public $ruleName;
 
     /**
-     * @description 增加或减少的分数（增加为正数，减少为负数）
+     * @example 3
      *
      * @var int
      */
     public $score;
 
     /**
-     * @description 生效状态 0：不生效，1：生效
+     * @example 0
      *
      * @var int
      */

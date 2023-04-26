@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 投放结果
-     *
      * @var deliverResults[]
      */
     public $deliverResults;
 
     /**
-     * @description 外部卡片实例Id
+     * @example out_track_id_xxx
      *
      * @var string
      */

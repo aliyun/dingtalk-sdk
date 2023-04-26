@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetUserRealPeopleStateRequest extends Model
 {
     /**
-     * @description userIds
-     *
      * @var string[]
      */
     public $userIds;

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CreateStoreGroupConversationResponseBody extends Model
 {
     /**
-     * @description 钉钉群会话id
+     * @example cid****8Q==
      *
      * @var string
      */
     public $conversationId;
 
     /**
-     * @description 群会话Id。
+     * @example 14da****2760
      *
      * @var string
      */

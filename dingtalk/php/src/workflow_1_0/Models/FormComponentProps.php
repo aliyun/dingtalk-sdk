@@ -10,231 +10,219 @@ use AlibabaCloud\Tea\Model;
 class FormComponentProps extends Model
 {
     /**
-     * @description 明细控件按钮显示文案
+     * @example 增加明细
      *
      * @var string
      */
     public $actionName;
 
     /**
-     * @description 地址控件模式city省市,district省市区,street省市区街道
-     *
      * @var string
      */
     public $addressModel;
 
     /**
-     * @description 文字提示控件显示方式:top|middle|bottom
+     * @example top
      *
      * @var string
      */
     public $align;
 
     /**
-     * @description 套件中控件是否可设置为分条件字段
+     * @example true
      *
      * @var bool
      */
     public $asyncCondition;
 
     /**
-     * @description 关联审批单控件限定模板列表
-     *
      * @var AvaliableTemplate[]
      */
     public $availableTemplates;
 
     /**
-     * @description 业务别名
+     * @example finance_name
      *
      * @var string
      */
     public $bizAlias;
 
     /**
-     * @description 套件的业务标识
+     * @example attendance.leave
      *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 联系人控件是否支持多选，1多选，0单选
+     * @example 0
      *
      * @var string
      */
     public $choice;
 
     /**
-     * @description 自定义控件渲染标识
+     * @example custom_view
      *
      * @var string
      */
     public $commonBizType;
 
     /**
-     * @description 控件表单内唯一id
+     * @example TextField-abcd
      *
      * @var string
      */
     public $componentId;
 
     /**
-     * @description 说明文字控件内容
+     * @example 我是说明文字控件
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 关联数据源配置
-     *
      * @var FormDataSource
      */
     public $dataSource;
 
     /**
-     * @description 是否不可编辑
+     * @example true
      *
      * @var bool
      */
     public $disabled;
 
     /**
-     * @description 是否自动计算时长
+     * @example true
      *
      * @var bool
      */
     public $duration;
 
     /**
-     * @description 时间格式
+     * @example yyyy-MM-dd
      *
      * @var string
      */
     public $format;
 
     /**
-     * @description 公式
-     *
      * @var string
      */
     public $formula;
 
     /**
-     * @description 是否隐藏字段
+     * @example true
      *
      * @var bool
      */
     public $invisible;
 
     /**
-     * @description 控件标题
+     * @example 姓名
      *
      * @var string
      */
     public $label;
 
     /**
-     * @description 评分控件上限
+     * @example 5
      *
      * @var int
      */
     public $limit;
 
     /**
-     * @description 说明文字控件链接地址
+     * @example http://www.
      *
      * @var string
      */
     public $link;
 
     /**
-     * @description 文本控件支持的最大长度
+     * @example 20
      *
      * @var int
      */
     public $maxLength;
 
     /**
-     * @description 电话控件支持的类型
+     * @example phone_tel
      *
      * @var string
      */
     public $mode;
 
     /**
-     * @description 部门控件是否可多选
+     * @example true
      *
      * @var bool
      */
     public $multiple;
 
     /**
-     * @description 单选多选控件选项列表
-     *
      * @var SelectOption[]
      */
     public $options;
 
     /**
-     * @description 输入提示
+     * @example 请输入
      *
      * @var string
      */
     public $placeholder;
 
     /**
-     * @description 小数点位数
+     * @example 2
      *
      * @var int
      */
     public $precision;
 
     /**
-     * @description 字段是否可打印，1打印，0不打印，默认打印
+     * @example 1
      *
      * @var string
      */
     public $print;
 
     /**
-     * @description 是否必填
+     * @example true
      *
      * @var bool
      */
     public $required;
 
     /**
-     * @description 明细控件数据汇总统计
-     *
      * @var statField[]
      */
     public $statField;
 
     /**
-     * @description 明细填写方式，table（表格）、list（列表）
+     * @example table
      *
      * @var string
      */
     public $tableViewMode;
 
     /**
-     * @description 时间单位（天、小时）
+     * @example 天
      *
      * @var string
      */
     public $unit;
 
     /**
-     * @description 金额控件是否需要大写，1不需要大写，其他需要大写
+     * @example 1
      *
      * @var string
      */
     public $upper;
 
     /**
-     * @description 明细打印方式false横向，true纵向
+     * @example true
      *
      * @var bool
      */

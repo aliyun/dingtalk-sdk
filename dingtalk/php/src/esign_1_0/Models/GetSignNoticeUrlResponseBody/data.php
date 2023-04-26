@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 移动端URL
-     *
      * @var string
      */
     public $mobileUrl;
 
     /**
-     * @description PC端URL
-     *
      * @var string
      */
     public $pcUrl;

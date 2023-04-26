@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class GetMediaCerficateRequest extends Model
 {
     /**
-     * @description 视频的文件名称,必须带扩展名,支持的扩展名参考:https://help.aliyun.com/document_detail/55396.htm?spm=a2c4g.11186623.2.11.2d385d4aG2IkCZ#title-j7o-gr4-c7a
+     * @example D:\****.mp4
      *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 入驻账号Id(请联系钉钉接口同学获取)
+     * @example 87712****6723412
      *
      * @var string
      */
     public $mcnId;
 
     /**
-     * @description 如果传入该值，表示续订该mediaId对应的上传凭证 ;否则将视为新建一个视频上传连接和凭证
+     * @example cd8b21090b6*********b78fa733
      *
      * @var string
      */
     public $mediaId;
 
     /**
-     * @description 视频介绍
+     * @example 视频描述。  长度不超过1024个字符。 UTF-8编码。
      *
      * @var string
      */
     public $mediaIntroduction;
 
     /**
-     * @description 视频的标题
+     * @example UploadTest
      *
      * @var string
      */
     public $mediaTitle;
 
     /**
-     * @description 自定义视频封面的URL地址
+     * @example https://*****test.cn/image/D22F553*****TEST.jpeg
      *
      * @var string
      */
     public $thumbUrl;
 
     /**
-     * @description 操作人的用户id
+     * @example edb2*****1090b66
      *
      * @var string
      */

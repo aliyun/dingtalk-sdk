@@ -9,50 +9,40 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 最大等级
+     * @example 30
      *
      * @var int
      */
     public $maxJobGrade;
 
     /**
-     * @description 最小等级
+     * @example 1
      *
      * @var int
      */
     public $minJobGrade;
 
     /**
-     * @description 职级序列ID
-     *
      * @var string
      */
     public $rankCategoryId;
 
     /**
-     * @description 职级编码
-     *
      * @var string
      */
     public $rankCode;
 
     /**
-     * @description 职级描述
-     *
      * @var string
      */
     public $rankDescription;
 
     /**
-     * @description 职级ID
-     *
      * @var string
      */
     public $rankId;
 
     /**
-     * @description 职级名称
-     *
      * @var string
      */
     public $rankName;

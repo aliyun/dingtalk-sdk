@@ -9,52 +9,46 @@ use AlibabaCloud\Tea\Model;
 class ListProcessInstanceIdsRequest extends Model
 {
     /**
-     * @description 审批实例结束时间，Unix时间戳，单位毫秒。  例如：获取审批单发起时间在2020.4.10-2020.4.14之间审批单，该值传2020.4.14 23:59:59对应的时间戳1586879999000。
+     * @example 1496678400000
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 分页参数，每页大小，最多传20。
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页查询的游标，最开始传0，后续传返回参数中的nextToken值。
+     * @example 0
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 审批流的唯一码。
+     * @example PROC-FF6Y2xxxx
      *
-     * processCode在审批模板编辑页面的URL中获取。
      * @var string
      */
     public $processCode;
 
     /**
-     * @description 审批实例开始时间。Unix时间戳，单位毫秒。
+     * @example 1496678400000
      *
-     * 例如：获取审批单发起时间在2020.4.10-2020.4.14之间审批单，该值传2020.4.10 00:00:00对应的时间戳1586448000000。
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 流程实例状态，未传值代表查询所有状态的实例ID列表。
-     * CANCELED：取消
      * @var string[]
      */
     public $statuses;
 
     /**
-     * @description 发起userid列表，最大列表长度为10。
-     *
      * @var string[]
      */
     public $userIds;

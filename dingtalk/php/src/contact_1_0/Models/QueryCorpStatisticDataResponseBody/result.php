@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 被收下名片数
+     * @example 2
      *
      * @var int
      */
     public $cardBeReceivedTotalCnt;
 
     /**
-     * @description 收下名片数
+     * @example 4
      *
      * @var int
      */
     public $cardReceiveTotalCnt;
 
     /**
-     * @description 被访问数
+     * @example 1
      *
      * @var int
      */
     public $cardTotalBeVisitedCnt;
 
     /**
-     * @description 日期
+     * @example 20230101
      *
      * @var string
      */
     public $dataDate;
 
     /**
-     * @description 钉钉发送数
+     * @example 3
      *
      * @var int
      */
     public $dingTotalShareCnt;
 
     /**
-     * @description 总发送数
+     * @example 1
      *
      * @var int
      */
     public $totalSendCnt;
 
     /**
-     * @description 微信发送数
+     * @example 2
      *
      * @var int
      */

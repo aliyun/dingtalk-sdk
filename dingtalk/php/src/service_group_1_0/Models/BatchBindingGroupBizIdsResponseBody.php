@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class BatchBindingGroupBizIdsResponseBody extends Model
 {
     /**
-     * @description 是否执行成功
+     * @example true
      *
      * @var bool
      */

@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class SearchProjectCustomfieldRequest extends Model
 {
     /**
-     * @description 自定义字段ID集合，逗号组合。
+     * @example 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $customfieldIds;
 
     /**
-     * @description 字段InstanceId集合，用逗号组合。
+     * @example 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $instanceIds;
 
     /**
-     * @description 每页返回最大数量。默认10，最大500。
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页标。
+     * @example f279e812xxxxxx
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 过滤字段名字。
+     * @example 自定义字段名1
      *
      * @var string
      */
     public $query;
 
     /**
-     * @description 任务类型ID。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $scenariofieldconfigId;
 
     /**
-     * @description 字段应用场景, 可以是 taskTableHeader,searcherAdd,taskExportHeader,sfcAdd,kanbanCardAdd,all 其中一个。
+     * @example all
      *
      * @var string
      */

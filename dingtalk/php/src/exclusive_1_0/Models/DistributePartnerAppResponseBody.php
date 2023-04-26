@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class DistributePartnerAppResponseBody extends Model
 {
     /**
-     * @description 安装邀请链接
-     *
      * @var string
      */
     public $inviteUrl;

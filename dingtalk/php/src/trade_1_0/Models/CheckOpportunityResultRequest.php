@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class CheckOpportunityResultRequest extends Model
 {
     /**
-     * @description belongToPhoneNum
-     *
      * @var string
      */
     public $belongToPhoneNum;
 
     /**
-     * @description contactPhoneNum
-     *
      * @var string
      */
     public $contactPhoneNum;
 
     /**
-     * @description corpId
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description deptId
-     *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description marketCode
-     *
      * @var string
      */
     public $marketCode;

@@ -9,35 +9,33 @@ use AlibabaCloud\Tea\Model;
 class PageListRobotRequest extends Model
 {
     /**
-     * @description 查询的企业Id
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 本次读取的最大数据记录数量
+     * @example 50
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 用来标记当前开始读取的位置，置空表示从头开始
+     * @example 0
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 多实例ID
+     * @example default
      *
      * @var string
      */
     public $openInstanceId;
 
     /**
-     * @description 产品类型
+     * @example 1
      *
      * @var int
      */

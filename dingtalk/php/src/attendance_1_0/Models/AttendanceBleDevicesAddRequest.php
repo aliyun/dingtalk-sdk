@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class AttendanceBleDevicesAddRequest extends Model
 {
     /**
-     * @description 蓝牙设备Id列表
-     *
      * @var int[]
      */
     public $deviceIdList;
 
     /**
-     * @description 考勤组Id
+     * @example 62001E1C5B9362D369D316DED25F3656
      *
      * @var string
      */
     public $groupKey;
 
     /**
-     * @description 操作人Id
+     * @example userId001
      *
      * @var string
      */

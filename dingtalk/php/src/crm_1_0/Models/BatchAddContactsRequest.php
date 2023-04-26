@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class BatchAddContactsRequest extends Model
 {
     /**
-     * @description 操作人userId
+     * @example manager021a
      *
      * @var string
      */
     public $operatorUserId;
 
     /**
-     * @description 关系数据列表。
-     *
      * @var relationList[]
      */
     public $relationList;

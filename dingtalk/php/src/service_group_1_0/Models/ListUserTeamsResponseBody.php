@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListUserTeamsResponseBody extends Model
 {
     /**
-     * @description teams
-     *
      * @var teams[]
      */
     public $teams;

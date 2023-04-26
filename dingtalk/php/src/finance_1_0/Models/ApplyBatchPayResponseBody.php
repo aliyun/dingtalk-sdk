@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class ApplyBatchPayResponseBody extends Model
 {
     /**
-     * @description 钉钉支付的批次号
+     * @example 20210909153300000002734753314700
      *
      * @var string
      */
     public $orderNo;
 
     /**
-     * @description 支付确认页数据
+     * @example payData
      *
      * @var string
      */

@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetSoftwareCopyrightResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * ApprovalDate:登记批准日期
+     * @example [{ "EntName:企业名称", "CopyNum:登记号", "TypeNum:分类号", "ShortName:作品简称", "CopyName:作品全称", "Version:版本号", "SuccessDate:创作完成日期", "FirstDate:首次发表日期", "ApprovalDate:登记批准日期" }]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

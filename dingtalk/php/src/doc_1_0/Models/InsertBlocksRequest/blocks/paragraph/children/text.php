@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class text extends Model
 {
     /**
-     * @description 文本内容
-     *
      * @var string
      */
     public $content;
 
     /**
-     * @description 文字样式
-     *
      * @var textStyle
      */
     public $textStyle;

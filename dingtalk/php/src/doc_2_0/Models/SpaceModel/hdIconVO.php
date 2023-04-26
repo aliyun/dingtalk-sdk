@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class hdIconVO extends Model
 {
     /**
-     * @description 图标
+     * @example https://img.xxx.yyy
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 图标类型
+     * @example url
      *
      * @var string
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class GetPrintDictionaryRequest extends Model
 {
     /**
-     * @description 应用代码
+     * @example APP_XABJJSJ
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 表单id
+     * @example FORM-XABJJSJ
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 用户id
+     * @example abfefw
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 版本
+     * @example 0
      *
      * @var int
      */

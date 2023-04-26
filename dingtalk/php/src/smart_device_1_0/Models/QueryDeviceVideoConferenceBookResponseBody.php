@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryDeviceVideoConferenceBookResponseBody extends Model
 {
     /**
-     * @description 入会口令
-     *
      * @var string
      */
     public $code;
 
     /**
-     * @description 会议id
-     *
      * @var string
      */
     public $conferenceId;

@@ -10,35 +10,33 @@ use AlibabaCloud\Tea\Model;
 class EndCourseRequest extends Model
 {
     /**
-     * @description 课程编码
+     * @example testCourseCode
      *
      * @var string
      */
     public $courseCode;
 
     /**
-     * @description 拓展字段
+     * @example extData
      *
      * @var string
      */
     public $ext;
 
     /**
-     * @description isv编码
+     * @example DDIsv
      *
      * @var string
      */
     public $isvCode;
 
     /**
-     * @description 直播流信息
-     *
      * @var livePlayInfoList[]
      */
     public $livePlayInfoList;
 
     /**
-     * @description 用户id
+     * @example 1
      *
      * @var string
      */

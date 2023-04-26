@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class DeleteInstanceRequest extends Model
 {
     /**
-     * @description 表单CODE
+     * @example DING_CUSTOMER
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 开放数据实例ID
+     * @example 888***
      *
      * @var string
      */
     public $openDataInstanceId;
 
     /**
-     * @description 开放团队ID
+     * @example 888**
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 操作人unionid
+     * @example 8889999
      *
      * @var string
      */

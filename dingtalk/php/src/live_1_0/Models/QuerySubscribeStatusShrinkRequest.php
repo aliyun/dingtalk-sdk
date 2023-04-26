@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QuerySubscribeStatusShrinkRequest extends Model
 {
     /**
-     * @description post请求体, 开放平台建议以对象形式存储
-     *
      * @var string
      */
     public $bodyShrink;
 
     /**
-     * @description 用户id（主播id）
-     *
      * @var string
      */
     public $unionId;

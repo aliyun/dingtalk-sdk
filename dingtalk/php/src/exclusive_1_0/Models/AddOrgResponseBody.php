@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class AddOrgResponseBody extends Model
 {
     /**
-     * @description 组织id
+     * @example dinge4a454fa5f32aba6f5bf40edxxxxxxxx
      *
      * @var string
      */

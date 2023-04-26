@@ -10,49 +10,45 @@ use AlibabaCloud\Tea\Model;
 class CreateTrustGroupRequest extends Model
 {
     /**
-     * @description IMPASS渠道编码
+     * @example channel_abcd
      *
      * @var string
      */
     public $channel;
 
     /**
-     * @description 素材ID
+     * @example @lALOKACADDA
      *
      * @var string
      */
     public $iconMediaId;
 
     /**
-     * @description 群成员列表
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 群名称
+     * @example 测试群名称XXX
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 其他扩展参数
-     *
      * @var string[]
      */
     public $properties;
 
     /**
-     * @description 系统消息
+     * @example 你有新的会话
      *
      * @var string
      */
     public $systemMsg;
 
     /**
-     * @description 外部系统映射唯一标识
+     * @example 1657099913071
      *
      * @var string
      */

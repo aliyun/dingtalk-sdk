@@ -9,92 +9,66 @@ use AlibabaCloud\Tea\Model;
 class RenameFileResponseBody extends Model
 {
     /**
-     * @description 文件内容类型
-     *
      * @var string
      */
     public $contentType;
 
     /**
-     * @description 创建时间
-     *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 创建者
-     *
      * @var string
      */
     public $creator;
 
     /**
-     * @description 文件后缀
-     *
      * @var string
      */
     public $fileExtension;
 
     /**
-     * @description 文件id
-     *
      * @var string
      */
     public $fileId;
 
     /**
-     * @description 文件名称
-     *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 文件路径
-     *
      * @var string
      */
     public $filePath;
 
     /**
-     * @description 文件大小
-     *
      * @var int
      */
     public $fileSize;
 
     /**
-     * @description 文件类型
-     *
      * @var string
      */
     public $fileType;
 
     /**
-     * @description 修改者
-     *
      * @var string
      */
     public $modifier;
 
     /**
-     * @description 修改时间
-     *
      * @var string
      */
     public $modifyTime;
 
     /**
-     * @description 父目录id
-     *
      * @var string
      */
     public $parentId;
 
     /**
-     * @description 空间id
-     *
      * @var string
      */
     public $spaceId;

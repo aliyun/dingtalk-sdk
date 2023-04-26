@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class mediaContents extends Model
 {
     /**
-     * @description 媒体的mediaId，唯一对应oss中的一个视频或者音频
+     * @example 378a1a0154b34**********86313948e
      *
      * @var string
      */
     public $mediaId;
 
     /**
-     * @description 媒体的标题
+     * @example 媒体标题
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 媒体的类型，当前该接口只支持video和audio,2:视频,3:音频
+     * @example 2
      *
      * @var int
      */

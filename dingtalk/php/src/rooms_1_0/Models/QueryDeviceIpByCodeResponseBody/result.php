@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 设备内网ip
+     * @example 30.12.1.100
      *
      * @var string
      */

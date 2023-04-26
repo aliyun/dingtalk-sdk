@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class InfoSpaceRequest extends Model
 {
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

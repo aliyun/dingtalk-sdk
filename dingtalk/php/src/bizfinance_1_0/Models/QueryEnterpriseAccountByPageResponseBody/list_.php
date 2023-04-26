@@ -9,70 +9,66 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 账户code
+     * @example 12345
      *
      * @var string
      */
     public $accountCode;
 
     /**
-     * @description 关联资金账号id
+     * @example test@alipay.com
      *
      * @var string
      */
     public $accountId;
 
     /**
-     * @description 账户名称
+     * @example 网商银行
      *
      * @var string
      */
     public $accountName;
 
     /**
-     * @description 备注
+     * @example test
      *
      * @var string
      */
     public $accountRemark;
 
     /**
-     * @description 账户类型:ALIPAY, BANKCARD, CASH, WECHAT
+     * @example ALIPAY
      *
      * @var string
      */
     public $accountType;
 
     /**
-     * @description 账户总额，保留2位小数
+     * @example 10000.33
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 银行代号，如果是银行卡类型，有值，其他类型时，为空
-     *
      * @var string
      */
     public $bankCode;
 
     /**
-     * @description 银行名字，如果是银行卡类型，有值，其他类型时，为空
-     *
      * @var string
      */
     public $bankName;
 
     /**
-     * @description 创建时间
+     * @example 1631526550994
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 创建人工号
+     * @example aaa
      *
      * @var string
      */

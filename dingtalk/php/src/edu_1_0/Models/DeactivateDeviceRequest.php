@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class DeactivateDeviceRequest extends Model
 {
     /**
-     * @description 设备型号
+     * @example model1
      *
      * @var string
      */
     public $model;
 
     /**
-     * @description 设备sn码
+     * @example fdafds-432432
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 设备类型
+     * @example VIDEO_CALL
      *
      * @var string
      */

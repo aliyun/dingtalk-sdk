@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CreateMiniAppResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var string
      */
     public $miniAppId;

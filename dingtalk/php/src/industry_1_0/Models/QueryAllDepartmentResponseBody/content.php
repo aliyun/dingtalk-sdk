@@ -11,28 +11,24 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 科室详情
-     *
      * @var deptAndExt
      */
     public $deptAndExt;
 
     /**
-     * @description 医疗组列表
-     *
      * @var groupAndExtList[]
      */
     public $groupAndExtList;
 
     /**
-     * @description 科室ID
+     * @example 130000
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 科室名称
+     * @example 骨科
      *
      * @var string
      */

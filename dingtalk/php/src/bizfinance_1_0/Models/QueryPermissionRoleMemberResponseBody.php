@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryPermissionRoleMemberResponseBody extends Model
 {
     /**
-     * @description 角色下的成员MAP
-     *
      * @var RoleMemberMapValue[]
      */
     public $roleMemberMap;

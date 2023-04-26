@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 连接器的描述信息
+     * @example 【钉钉官方】通讯录
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 连接器的图标
+     * @example https://static.dingtalk.com/media/lALPDfJ6WadAG1dgYA_96_96.png
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 连接器的ID
+     * @example G-CONN-1015BC8093540B01B8D0000Q
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 连接器的名称
+     * @example 通讯录
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 连接器的提供组织
+     * @example ding32fff839a3e0105d
      *
      * @var string
      */

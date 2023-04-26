@@ -25,7 +25,7 @@ class BatchAddPermissionRequest extends Model
     public $targetType;
 
     /**
-     * @description A short description of struct
+     * @example 当前用户 userId。
      *
      * @var string
      */

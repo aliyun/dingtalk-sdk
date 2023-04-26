@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class imRobotOpenDeliverModel extends Model
 {
     /**
-     * @description 【条件必填】IM机器人单聊暂无其他投放属性，仅需设置spaeType为IM_ROBOT
+     * @example IM_ROBOT
      *
      * @var string
      */

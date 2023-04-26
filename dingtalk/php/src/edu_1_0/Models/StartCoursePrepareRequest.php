@@ -9,56 +9,54 @@ use AlibabaCloud\Tea\Model;
 class StartCoursePrepareRequest extends Model
 {
     /**
-     * @description 上课日期
+     * @example 2021-11-16
      *
      * @var string
      */
     public $courseDate;
 
     /**
-     * @description 课程组编号
+     * @example course1
      *
      * @var string
      */
     public $courseGroupCode;
 
     /**
-     * @description 设备id
+     * @example device1
      *
      * @var string
      */
     public $deviceId;
 
     /**
-     * @description 拓展信息
+     * @example extNumber
      *
      * @var string
      */
     public $ext;
 
     /**
-     * @description isv编号
+     * @example DDISV
      *
      * @var string
      */
     public $isvCode;
 
     /**
-     * @description 封面url
+     * @example ""
      *
      * @var string
      */
     public $liveCoverImage;
 
     /**
-     * @description 课节信息
-     *
      * @var int[]
      */
     public $sectionIndex;
 
     /**
-     * @description 操作人
+     * @example manger1234
      *
      * @var string
      */

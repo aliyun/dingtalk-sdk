@@ -13,99 +13,91 @@ use AlibabaCloud\Tea\Model;
 class TeamModel extends Model
 {
     /**
-     * @description 封面
+     * @example https://abc.com
      *
      * @var string
      */
     public $cover;
 
     /**
-     * @description 创建时间
+     * @example 12340000
      *
      * @var int
      */
     public $createdTime;
 
     /**
-     * @description 创建人
-     *
      * @var creator
      */
     public $creator;
 
     /**
-     * @description 团队描述
+     * @example 这里是团队描述
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 图标
+     * @example https://def.com
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 团队ID
+     * @example AbcDef
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 团队名称
+     * @example 测试团队名称
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 关联部门信息
-     *
      * @var relatedDeptInfo
      */
     public $relatedDeptInfo;
 
     /**
-     * @description 团队状态
+     * @example 0
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 团队类型
+     * @example 0
      *
      * @var int
      */
     public $type;
 
     /**
-     * @description 更新时间
+     * @example 34560000
      *
      * @var int
      */
     public $updatedTime;
 
     /**
-     * @description 更新人
-     *
      * @var updater
      */
     public $updater;
 
     /**
-     * @description 团队链接
+     * @example https://abc.com
      *
      * @var string
      */
     public $url;
 
     /**
-     * @description 用户对这个团队的访问情况
-     *
      * @var visitInfo
      */
     public $visitInfo;

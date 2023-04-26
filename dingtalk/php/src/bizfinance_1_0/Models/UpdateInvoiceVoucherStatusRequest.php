@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceVoucherStatusRequest extends Model
 {
     /**
-     * @description 操作类型
+     * @example ADD/DELETE
      *
      * @var string
      */
     public $actionType;
 
     /**
-     * @description 发票编码
+     * @example abc
      *
      * @var string
      */
     public $invoiceCode;
 
     /**
-     * @description 发票号码
+     * @example abc
      *
      * @var string
      */
     public $invoiceNo;
 
     /**
-     * @description 操作员
+     * @example 11011023488
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 凭证id
+     * @example abc
      *
      * @var string
      */

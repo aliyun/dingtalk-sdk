@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class CardTemplateBuildActionRequest extends Model
 {
     /**
-     * @description 模板构建的action：含create、save、deploy
-     *
      * @var string
      */
     public $action;
 
     /**
-     * @description 模板构建的dto对象
+     * @example merge
      *
      * @var string
      */

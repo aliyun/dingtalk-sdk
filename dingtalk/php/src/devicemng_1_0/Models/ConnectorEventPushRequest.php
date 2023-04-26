@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ConnectorEventPushRequest extends Model
 {
     /**
-     * @description 设备类型唯一标识
+     * @example DeviceType-xxxxxx
      *
      * @var string
      */
     public $deviceTypeUuid;
 
     /**
-     * @description 事件名称
+     * @example 设备关机
      *
      * @var string
      */
     public $eventName;
 
     /**
-     * @description 事件入参，json字符串
+     * @example {"var1":"value"}
      *
      * @var string
      */

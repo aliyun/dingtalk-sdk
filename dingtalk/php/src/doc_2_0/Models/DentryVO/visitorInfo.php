@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class visitorInfo extends Model
 {
     /**
-     * @description 节点的操作列表。
-     *
      * @var string[]
      */
     public $dentryActions;
 
     /**
-     * @description 当前用户对这个空间的访问角色。
+     * @example 5
      *
      * @var string
      */
     public $roleCode;
 
     /**
-     * @description 空间的操作列表。
-     *
      * @var string[]
      */
     public $spaceActions;

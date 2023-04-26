@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreatePhysicalClassroomResponseBody extends Model
 {
     /**
-     * @description 教室id
+     * @example 10001
      *
      * @var int
      */

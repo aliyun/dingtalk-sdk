@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetSsoAccessTokenResponseBody extends Model
 {
     /**
-     * @description accessToken
+     * @example 1234
      *
      * @var string
      */
     public $accessToken;
 
     /**
-     * @description 超时时间
+     * @example 3600
      *
      * @var int
      */

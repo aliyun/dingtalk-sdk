@@ -11,21 +11,17 @@ use AlibabaCloud\Tea\Model;
 class payInfo extends Model
 {
     /**
-     * @description 客服身份信息
-     *
      * @var csUserInfo
      */
     public $csUserInfo;
 
     /**
-     * @description 课程打折信息
-     *
      * @var discountInfo
      */
     public $discountInfo;
 
     /**
-     * @description 商品的默认情况下非打折时的价格，单位为分
+     * @example 10000
      *
      * @var int
      */

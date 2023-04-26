@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class PageListActionResponseBody extends Model
 {
     /**
-     * @description list
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description nextCursor
-     *
      * @var int
      */
     public $nextCursor;
 
     /**
-     * @description total
-     *
      * @var int
      */
     public $total;

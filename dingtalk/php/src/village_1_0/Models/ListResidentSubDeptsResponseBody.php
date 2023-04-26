@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class ListResidentSubDeptsResponseBody extends Model
 {
     /**
-     * @description 组户列表
-     *
      * @var departmentList[]
      */
     public $departmentList;
 
     /**
-     * @description 是否还有记录
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 游标
-     *
      * @var int
      */
     public $nextCursor;
 
     /**
-     * @description 总数
-     *
      * @var int
      */
     public $total;

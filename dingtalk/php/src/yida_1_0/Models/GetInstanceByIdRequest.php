@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class GetInstanceByIdRequest extends Model
 {
     /**
-     * @description 应用ID
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 语言
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 应用秘钥
+     * @example hexxyy
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉的userId
+     * @example 未知
      *
      * @var string
      */

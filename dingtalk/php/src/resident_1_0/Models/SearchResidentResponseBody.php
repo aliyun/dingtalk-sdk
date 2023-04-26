@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class SearchResidentResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var residenceList[]
      */
     public $residenceList;

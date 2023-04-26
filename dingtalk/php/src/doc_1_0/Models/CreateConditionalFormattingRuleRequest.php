@@ -11,28 +11,22 @@ use AlibabaCloud\Tea\Model;
 class CreateConditionalFormattingRuleRequest extends Model
 {
     /**
-     * @description 设定当前配置的规则的单元格样式
-     *
      * @var cellStyle
      */
     public $cellStyle;
 
     /**
-     * @description 重复值规则
-     *
      * @var duplicateCondition
      */
     public $duplicateCondition;
 
     /**
-     * @description 条件格式生效的区域。
-     *
      * @var string[]
      */
     public $ranges;
 
     /**
-     * @description 操作人unionId
+     * @example ppgAQuHfOoNVpJiStDwWCEgiEiE
      *
      * @var string
      */

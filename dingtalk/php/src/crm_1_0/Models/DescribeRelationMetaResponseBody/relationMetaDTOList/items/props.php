@@ -16,12 +16,14 @@ use AlibabaCloud\Tea\Model;
 class props extends Model
 {
     /**
+     * @example 明细动作名称
+     *
      * @var string
      */
     public $actionName;
 
     /**
-     * @description textnote的样式
+     * @example top|middle|bottom
      *
      * @var string
      */
@@ -33,124 +35,110 @@ class props extends Model
     public $availableTemplates;
 
     /**
-     * @description 字段别名
-     *
      * @var string
      */
     public $bizAlias;
 
     /**
-     * @description 内部联系人choice
+     * @example 1：多选，0：单选
      *
      * @var int
      */
     public $choice;
 
     /**
-     * @description 说明文字内容
-     *
      * @var string
      */
     public $content;
 
     /**
-     * @description 关联表单的数据源配置
-     *
      * @var dataSource
      */
     public $dataSource;
 
     /**
-     * @description 标签字段 颜色属性
+     * @example 标签字段 颜色属性，格式：#0089FF
      *
      * @var string
      */
     public $defaultColor;
 
     /**
-     * @description 是否可编辑
+     * @example true：可编辑
      *
      * @var bool
      */
     public $disabled;
 
     /**
-     * @description 是否自动计算时长
+     * @example true：自动
      *
      * @var bool
      */
     public $duration;
 
     /**
+     * @example 日期区间控件，自动计算时长的标题
+     *
      * @var string
      */
     public $durationLabel;
 
     /**
-     * @description 字段id
-     *
      * @var string
      */
     public $fieldId;
 
     /**
-     * @description 关联表单的关联控件显示
-     *
      * @var fields[]
      */
     public $fields;
 
     /**
-     * @description 时间格式
+     * @example DDDateField和DDDateRangeField
      *
      * @var string
      */
     public $format;
 
     /**
-     * @description 公式
-     *
      * @var string
      */
     public $formula;
 
     /**
-     * @description 隐藏字段
+     * @example true：隐藏
      *
      * @var bool
      */
     public $invisible;
 
     /**
-     * @description 字段标题
-     *
      * @var string
      */
     public $label;
 
     /**
-     * @description 字段标题是否可修改
+     * @example true：不可修改
      *
      * @var bool
      */
     public $labelEditableFreeze;
 
     /**
-     * @description 5
+     * @example 评分组件限制
      *
      * @var int
      */
     public $limit;
 
     /**
-     * @description 说明文案的链接地址
-     *
      * @var string
      */
     public $link;
 
     /**
-     * @description phone
+     * @example 电话控件模式 phone：仅手机，phone_tel： 手机和固话，tel：仅固话
      *
      * @var string
      */
@@ -162,7 +150,7 @@ class props extends Model
     public $multi;
 
     /**
-     * @description 支持选择多个部门
+     * @example true：支持多选，false：单选
      *
      * @var bool
      */
@@ -174,49 +162,45 @@ class props extends Model
     public $needDetail;
 
     /**
-     * @description 是否参与打印
+     * @example 1：不打印，0：打印
      *
      * @var string
      */
     public $notPrint;
 
     /**
-     * @description 是否需要大写 默认是需要
+     * @example 1:不需要大写, 空或者0:需要大写
      *
      * @var string
      */
     public $notUpper;
 
     /**
-     * @description 选项内容列表
-     *
      * @var options[]
      */
     public $options;
 
     /**
-     * @description 是否有支付属性
+     * @example true：是
      *
      * @var bool
      */
     public $payEnable;
 
     /**
-     * @description 界面空值提示占位符 前后端统一用placeholder
-     *
      * @var string
      */
     public $placeholder;
 
     /**
-     * @description 1
+     * @example 关联表单 1：引用，0：拷贝
      *
      * @var int
      */
     public $quote;
 
     /**
-     * @description 50
+     * @example 文本控件、选项控件等限制文本字数ratio
      *
      * @var int
      */
@@ -228,22 +212,20 @@ class props extends Model
     public $relateSource;
 
     /**
-     * @description 字段是否必填
+     * @example true：必填
      *
      * @var bool
      */
     public $required;
 
     /**
-     * @description 字段必填是否修改
+     * @example true：不可修改
      *
      * @var bool
      */
     public $requiredEditableFreeze;
 
     /**
-     * @description 流水号控件规则
-     *
      * @var rule[]
      */
     public $rule;
@@ -254,42 +236,38 @@ class props extends Model
     public $sortable;
 
     /**
-     * @description true
+     * @example 选项控件spread
      *
      * @var bool
      */
     public $spread;
 
     /**
-     * @description 需要计算总和的明细组件
-     *
      * @var statField[]
      */
     public $statField;
 
     /**
-     * @description table
+     * @example 明细填写方式 table：表格，list：列表
      *
      * @var string
      */
     public $tableViewMode;
 
     /**
-     * @description 数字组件/日期区间组件单位属性
-     *
      * @var string
      */
     public $unit;
 
     /**
-     * @description 明细打印排版方式
+     * @example true：纵向，false：横向
      *
      * @var bool
      */
     public $verticalPrint;
 
     /**
-     * @description true
+     * @example 是否水印照片 true：是，false：否
      *
      * @var bool
      */

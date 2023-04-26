@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetPluginPermissionPointResponseBody extends Model
 {
     /**
-     * @description 插件权限点列表
-     *
      * @var string[]
      */
     public $permissionPointList;

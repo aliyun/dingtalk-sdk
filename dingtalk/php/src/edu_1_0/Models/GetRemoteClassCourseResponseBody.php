@@ -15,7 +15,7 @@ class GetRemoteClassCourseResponseBody extends Model
     public $result;
 
     /**
-     * @description 是否成功
+     * @example true
      *
      * @var bool
      */

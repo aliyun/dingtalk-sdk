@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class DeleteBizObjectRequest extends Model
 {
     /**
-     * @description 业务数据id
+     * @example 1a1ce0ab-0181-4dc2-9968-793d20906b27
      *
      * @var string
      */
     public $bizObjectId;
 
     /**
-     * @description 表单编码
+     * @example D0001839bbbbe346bbf496498bb76c44c7eb972
      *
      * @var string
      */

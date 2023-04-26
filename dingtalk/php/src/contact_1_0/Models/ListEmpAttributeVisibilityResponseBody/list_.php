@@ -9,92 +9,68 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 是否生效
-     *
      * @var bool
      */
     public $active;
 
     /**
-     * @description 设置描述
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 白名单部门id列表
-     *
      * @var int[]
      */
     public $excludeDeptIds;
 
     /**
-     * @description 白名单用户id列表
-     *
      * @var string[]
      */
     public $excludeStaffIds;
 
     /**
-     * @description 白名单角色id列表
-     *
      * @var int[]
      */
     public $excludeTagIds;
 
     /**
-     * @description 设置时间
-     *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间
-     *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 隐藏的字段id列表
-     *
      * @var string[]
      */
     public $hideFields;
 
     /**
-     * @description id
+     * @example 10001
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 名称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 被查看的部门id列表
-     *
      * @var int[]
      */
     public $objectDeptIds;
 
     /**
-     * @description 被查看的用户id列表
-     *
      * @var string[]
      */
     public $objectStaffIds;
 
     /**
-     * @description 被查看的角色id列表
-     *
      * @var int[]
      */
     public $objectTagIds;

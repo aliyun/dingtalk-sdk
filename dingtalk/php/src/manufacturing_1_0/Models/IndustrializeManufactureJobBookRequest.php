@@ -9,141 +9,115 @@ use AlibabaCloud\Tea\Model;
 class IndustrializeManufactureJobBookRequest extends Model
 {
     /**
-     * @description 钉钉组织id
+     * @example ding2fff8349a3ae0105d
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 扩展字段，用于增加自定义字段
+     * @example [     { 		"code": "equipmentName"， 		"name": "设备名称", 		"value": "8000", 		"valueType": "类型：字符串，数字等" 	}, { 		"code": "唯一标识"， 		"name": "自定义字段1", 		"value": "值", 		"valueType": "类型：字符串，数字等" 	}, { 		"code": "唯一标识"， 		"name": "自定义字段2", 		"value": "值", 		"valueType": "类型：字符串，数字等" 	}  ]
      *
      * @var string
      */
     public $extend;
 
     /**
-     * @description 工单编号
-     *
      * @var string
      */
     public $instNo;
 
     /**
-     * @description 是否是批量报工(取值[n,y])
+     * @example n
      *
      * @var string
      */
     public $isBatchJob;
 
     /**
-     * @description 生产日期时间(到时分秒)
+     * @example 2021-07-05 08:00:21
      *
      * @var string
      */
     public $manufactureDate;
 
     /**
-     * @description mes 系统唯一标识
-     *
      * @var string
      */
     public $mesAppKey;
 
     /**
-     * @description 制程英文名称
-     *
      * @var string
      */
     public $processEnName;
 
     /**
-     * @description 制程名称
-     *
      * @var string
      */
     public $processName;
 
     /**
-     * @description 产品唯一标识
-     *
      * @var string
      */
     public $productCode;
 
     /**
-     * @description 产品英文名称
-     *
      * @var string
      */
     public $productEnName;
 
     /**
-     * @description 产品名称，例如"双头螺柱001"
-     *
      * @var string
      */
     public $productName;
 
     /**
-     * @description 产品规格
-     *
      * @var string
      */
     public $productSpecification;
 
     /**
-     * @description 合格数量
-     *
      * @var string
      */
     public $qualifiedQuantity;
 
     /**
-     * @description 可重工数量
-     *
      * @var string
      */
     public $reworkableQuantity;
 
     /**
-     * @description 报废数量
-     *
      * @var string
      */
     public $scrappedQuantity;
 
     /**
-     * @description 计件单价，单位：分
+     * @example 1.02
      *
      * @var string
      */
     public $unitPrice;
 
     /**
-     * @description 批量报工时多个工人userId以英文逗号分隔
+     * @example 1919442747879777, 1919442747879774
      *
      * @var string
      */
     public $userIdList;
 
     /**
-     * @description 员工姓名
-     *
      * @var string
      */
     public $userName;
 
     /**
-     * @description 批量报工时多个人名以英文逗号分隔
+     * @example 张三,李四
      *
      * @var string
      */
     public $userNameList;
 
     /**
-     * @description 随机串，唯一标识(用于幂等及更新)
-     *
      * @var string
      */
     public $uuid;

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class sectionModel extends Model
 {
     /**
-     * @description 节次序列号。
+     * @example 1
      *
      * @var int
      */
     public $sectionIndex;
 
     /**
-     * @description 节次名称。
+     * @example 第一节
      *
      * @var string
      */

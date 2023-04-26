@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class UpdateRobotInOrgRequest extends Model
 {
     /**
-     * @description 简介
+     * @example 小加
      *
      * @var string
      */
     public $brief;
 
     /**
-     * @description 描述
+     * @example 小加
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 机器人meidaId
+     * @example @lALPDe7s26Bre
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 机器人名称
+     * @example 小加
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 消息回调验证token
+     * @example 123
      *
      * @var string
      */
     public $outgoingToken;
 
     /**
-     * @description 消息回调地址
+     * @example https://*.com
      *
      * @var string
      */
     public $outgoingUrl;
 
     /**
-     * @description 预览图mediaId
+     * @example @lALPDe7s26Bre
      *
      * @var string
      */
     public $previewMediaId;
 
     /**
-     * @description 机器人编码
+     * @example 123
      *
      * @var string
      */

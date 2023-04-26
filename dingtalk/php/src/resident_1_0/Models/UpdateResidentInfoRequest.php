@@ -14,64 +14,50 @@ class UpdateResidentInfoRequest extends Model
     public $address;
 
     /**
-     * @description 建筑面积，组多支持2位小数，总长不超过8位
-     *
      * @var float
      */
     public $buildingArea;
 
     /**
-     * @description 市的名字，有值时provName必填
-     *
      * @var string
      */
     public $cityName;
 
     /**
-     * @description 1纯住宅；2:商住混合；3:办公；4:办公商业混合；5:商业；6:公共场所；7:其他
-     *
      * @var int
      */
     public $communityType;
 
     /**
-     * @description 区/县名，有值是provName，cityName必填
-     *
      * @var string
      */
     public $countyName;
 
     /**
-     * @description 经纬度，格式：经度,纬度
-     *
      * @var string
      */
     public $location;
 
     /**
-     * @description 小区名
+     * @example 测试小区1
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 省的名字
-     *
      * @var string
      */
     public $provName;
 
     /**
-     * @description 小区状态：0正常/1关闭/2作废
+     * @example 0
      *
      * @var int
      */
     public $state;
 
     /**
-     * @description 小区服务电话
-     *
      * @var string
      */
     public $telephone;

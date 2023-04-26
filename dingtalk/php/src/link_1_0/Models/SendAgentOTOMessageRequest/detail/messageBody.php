@@ -15,15 +15,11 @@ use AlibabaCloud\Tea\Model;
 class messageBody extends Model
 {
     /**
-     * @description 卡片消息
-     *
      * @var actionCard
      */
     public $actionCard;
 
     /**
-     * @description 图片类型的消息场景使用
-     *
      * @var image
      */
     public $image;
@@ -34,22 +30,16 @@ class messageBody extends Model
     public $interactiveMessage;
 
     /**
-     * @description 链接消息类型
-     *
      * @var link
      */
     public $link;
 
     /**
-     * @description markdown消息，仅对消息类型为markdown时有效
-     *
      * @var markdown
      */
     public $markdown;
 
     /**
-     * @description 文本消息体  对于文本类型消息时必填
-     *
      * @var text
      */
     public $text;

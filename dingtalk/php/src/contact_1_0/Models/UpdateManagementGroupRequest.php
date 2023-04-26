@@ -11,22 +11,18 @@ use AlibabaCloud\Tea\Model;
 class UpdateManagementGroupRequest extends Model
 {
     /**
-     * @description 管理组名称
+     * @example 财务管理组
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 管理组成员
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 资源列表
-     *
      * @var string[]
      */
     public $resourceIds;

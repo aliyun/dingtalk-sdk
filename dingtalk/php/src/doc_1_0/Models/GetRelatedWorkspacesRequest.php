@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetRelatedWorkspacesRequest extends Model
 {
     /**
-     * @description 是否查询最近访问文档列表
-     *
      * @var bool
      */
     public $includeRecent;
 
     /**
-     * @description 发起操作用户unionId
-     *
      * @var string
      */
     public $operatorId;

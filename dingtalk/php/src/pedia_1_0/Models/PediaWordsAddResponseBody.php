@@ -9,15 +9,12 @@ use AlibabaCloud\Tea\Model;
 class PediaWordsAddResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * true，成功
      * @var bool
      */
     public $success;
 
     /**
-     * @description 插入成功后的编号主键ID
-     *
+     * @example 232432
      *
      * @var int
      */

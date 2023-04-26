@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListMiniAppHistoryVersionResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var list_[]
      */
     public $list;

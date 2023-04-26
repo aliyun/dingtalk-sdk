@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class tasks extends Model
 {
     /**
-     * @description 当status为COMPLETED时，必须指定任务结果：
-     * 说明 当status为CANCELED时，不需要传result。
+     * @example AGREE
+     *
      * @var string
      */
     public $result;
 
     /**
-     * @description 更新为目标任务状态，可选值 CANCELED、COMPLETED
+     * @example COMPLETED
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description OA审批任务ID
-     *
      * @var int
      */
     public $taskId;

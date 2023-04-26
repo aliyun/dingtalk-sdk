@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class GetDingMeBaseDataRequest extends Model
 {
     /**
-     * @description 机器人ID
+     * @example dsfsfr434
      *
      * @var string
      */
     public $appKey;
 
     /**
-     * @description 是否按天分组
+     * @example true
      *
      * @var bool
      */
     public $byDay;
 
     /**
-     * @description 结束时间
+     * @example 20210506
      *
      * @var string
      */
     public $endDay;
 
     /**
-     * @description 开始时间
+     * @example 20210405
      *
      * @var string
      */

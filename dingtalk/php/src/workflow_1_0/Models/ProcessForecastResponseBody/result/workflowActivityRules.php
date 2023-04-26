@@ -10,43 +10,41 @@ use AlibabaCloud\Tea\Model;
 class workflowActivityRules extends Model
 {
     /**
-     * @description 节点 id
+     * @example 1918_5cd3
      *
      * @var string
      */
     public $activityId;
 
     /**
-     * @description 节点名称
+     * @example 审批人
      *
      * @var string
      */
     public $activityName;
 
     /**
-     * @description 规则类型
+     * @example 包括 target_select、target_approval 等
      *
      * @var string
      */
     public $activityType;
 
     /**
-     * @description 是否自选审批节点
+     * @example true
      *
      * @var bool
      */
     public $isTargetSelect;
 
     /**
-     * @description 流程中前一个节点的 id
+     * @example 1918_5cd3
      *
      * @var string
      */
     public $prevActivityId;
 
     /**
-     * @description 节点操作人信息
-     *
      * @var workflowActor
      */
     public $workflowActor;

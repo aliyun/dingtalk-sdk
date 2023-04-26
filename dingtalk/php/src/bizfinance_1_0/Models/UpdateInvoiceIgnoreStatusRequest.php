@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceIgnoreStatusRequest extends Model
 {
     /**
-     * @description 审批单id
+     * @example abc
      *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description 操作员
+     * @example abc
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 状态
+     * @example IGNORE
      *
      * @var string
      */

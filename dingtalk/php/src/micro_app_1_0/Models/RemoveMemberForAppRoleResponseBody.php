@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class RemoveMemberForAppRoleResponseBody extends Model
 {
     /**
-     * @description 角色最新版本号
+     * @example 123
      *
      * @var int
      */

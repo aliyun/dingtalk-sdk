@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class cardOptions extends Model
 {
     /**
-     * @description 按key更新cardData数据(不填默认覆盖更新)
-     *
      * @var bool
      */
     public $updateCardDataByKey;
 
     /**
-     * @description 按key更新privateData用户数据(不填默认覆盖更新)
-     *
      * @var bool
      */
     public $updatePrivateDataByKey;

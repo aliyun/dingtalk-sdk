@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class HPackageListGetRequest extends Model
 {
     /**
-     * @description 离线包ID
+     * @example 5000000000000000
      *
      * @var string
      */
     public $miniAppId;
 
     /**
-     * @description 分页设置
+     * @example 0
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页内容数量
+     * @example 20
      *
      * @var int
      */

@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class intentionCategoryRecords extends Model
 {
     /**
-     * @description 求助咨询量
+     * @example 10
      *
      * @var int
      */
     public $askCount;
 
     /**
-     * @description 分类名
+     * @example 工单类
      *
      * @var string
      */
     public $categoryName;
 
     /**
-     * @description 不满辱骂量
+     * @example 10
      *
      * @var int
      */
     public $dissatisfiedCount;
 
     /**
-     * @description 产品异常量
+     * @example 10
      *
      * @var int
      */
     public $errorCount;
 
     /**
-     * @description 赞扬量
+     * @example 10
      *
      * @var int
      */
     public $praiseCount;
 
     /**
-     * @description 产品建议量
+     * @example 10
      *
      * @var int
      */

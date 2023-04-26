@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class QueryPurchaseInfoResponseBody extends Model
 {
     /**
-     * @description 组织id
+     * @example dingding123
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 商户id
+     * @example 300001
      *
      * @var string
      */
     public $merchantId;
 
     /**
-     * @description 名字
+     * @example 小明
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 场景id
+     * @example 1视频通话
      *
      * @var int
      */
     public $scene;
 
     /**
-     * @description 状态
+     * @example 10、已订购；11、未订购（包含已过期）；12、取消
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 员工id
+     * @example 200001
      *
      * @var string
      */

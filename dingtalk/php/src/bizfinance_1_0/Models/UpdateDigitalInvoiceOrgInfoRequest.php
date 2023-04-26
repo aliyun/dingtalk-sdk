@@ -9,28 +9,24 @@ use AlibabaCloud\Tea\Model;
 class UpdateDigitalInvoiceOrgInfoRequest extends Model
 {
     /**
-     * @description 支持的全电票种
-     *
      * @var string[]
      */
     public $digitalInvoiceType;
 
     /**
-     * @description 是否为全电企业
-     *
      * @var bool
      */
     public $isDigitalOrg;
 
     /**
-     * @description 报税地点
+     * @example zhejiang
      *
      * @var string
      */
     public $location;
 
     /**
-     * @description 员工id
+     * @example 1234567
      *
      * @var string
      */

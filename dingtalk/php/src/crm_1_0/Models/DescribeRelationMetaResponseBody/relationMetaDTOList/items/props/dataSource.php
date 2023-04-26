@@ -16,15 +16,11 @@ class dataSource extends Model
     public $params;
 
     /**
-     * @description 关联表单的业务标识
-     *
      * @var target
      */
     public $target;
 
     /**
-     * @description 关联类型{ "form": 关联表单 }
-     *
      * @var string
      */
     public $type;

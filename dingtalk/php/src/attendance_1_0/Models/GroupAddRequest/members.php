@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class members extends Model
 {
     /**
-     * @description 角色，固定值Attendance。
+     * @example Attendance
      *
      * @var string
      */
     public $role;
 
     /**
-     * @description 类型，固定值StaffMember。
+     * @example StaffMember
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 用户userid。
+     * @example 1212jfkd
      *
      * @var string
      */

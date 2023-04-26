@@ -19,18 +19,69 @@ use AlibabaCloud\SDK\Dingtalk\Vconv_file_1_0\Models\SendRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconv_file_1_0\Models\SendResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param GetSpaceRequest $request
+     * @param GetSpaceHeaders $headers
+     * @param RuntimeOptions  $runtime
+     *
+     * @return GetSpaceResponse
+     */
+    public function getSpaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetSpace',
+            'version'     => 'convFile_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/convFile/conversations/spaces/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetSpaceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -47,37 +98,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetSpaceRequest $request
-     * @param GetSpaceHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @param SendRequest    $request
+     * @param SendHeaders    $headers
+     * @param RuntimeOptions $runtime
      *
-     * @return GetSpaceResponse
+     * @return SendResponse
      */
-    public function getSpaceWithOptions($request, $headers, $runtime)
+    public function sendWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+            $query['unionId'] = $request->unionId;
         }
         $body = [];
+        if (!Utils::isUnset($request->dentryId)) {
+            $body['dentryId'] = $request->dentryId;
+        }
         if (!Utils::isUnset($request->openConversationId)) {
-            @$body['openConversationId'] = $request->openConversationId;
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->spaceId)) {
+            $body['spaceId'] = $request->spaceId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'Send',
+            'version'     => 'convFile_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/convFile/conversations/files/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetSpaceResponse::fromMap($this->doROARequest('GetSpace', 'convFile_1.0', 'HTTP', 'POST', 'AK', '/v1.0/convFile/conversations/spaces/query', 'json', $req, $runtime));
+        return SendResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -94,43 +162,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendRequest    $request
-     * @param SendHeaders    $headers
-     * @param RuntimeOptions $runtime
+     * @param SendByAppRequest $request
+     * @param SendByAppHeaders $headers
+     * @param RuntimeOptions   $runtime
      *
-     * @return SendResponse
+     * @return SendByAppResponse
      */
-    public function sendWithOptions($request, $headers, $runtime)
+    public function sendByAppWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+            $query['unionId'] = $request->unionId;
         }
         $body = [];
         if (!Utils::isUnset($request->dentryId)) {
-            @$body['dentryId'] = $request->dentryId;
-        }
-        if (!Utils::isUnset($request->openConversationId)) {
-            @$body['openConversationId'] = $request->openConversationId;
+            $body['dentryId'] = $request->dentryId;
         }
         if (!Utils::isUnset($request->spaceId)) {
-            @$body['spaceId'] = $request->spaceId;
+            $body['spaceId'] = $request->spaceId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'SendByApp',
+            'version'     => 'convFile_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/convFile/apps/conversations/files/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return SendResponse::fromMap($this->doROARequest('Send', 'convFile_1.0', 'HTTP', 'POST', 'AK', '/v1.0/convFile/conversations/files/send', 'json', $req, $runtime));
+        return SendByAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -147,40 +223,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendByAppRequest $request
-     * @param SendByAppHeaders $headers
-     * @param RuntimeOptions   $runtime
+     * @param SendLinkRequest $request
+     * @param SendLinkHeaders $headers
+     * @param RuntimeOptions  $runtime
      *
-     * @return SendByAppResponse
+     * @return SendLinkResponse
      */
-    public function sendByAppWithOptions($request, $headers, $runtime)
+    public function sendLinkWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+            $query['unionId'] = $request->unionId;
         }
         $body = [];
         if (!Utils::isUnset($request->dentryId)) {
-            @$body['dentryId'] = $request->dentryId;
+            $body['dentryId'] = $request->dentryId;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
         }
         if (!Utils::isUnset($request->spaceId)) {
-            @$body['spaceId'] = $request->spaceId;
+            $body['spaceId'] = $request->spaceId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'SendLink',
+            'version'     => 'convFile_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/convFile/conversations/files/links/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return SendByAppResponse::fromMap($this->doROARequest('SendByApp', 'convFile_1.0', 'HTTP', 'POST', 'AK', '/v1.0/convFile/apps/conversations/files/send', 'json', $req, $runtime));
+        return SendLinkResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -194,45 +284,5 @@ class Dingtalk extends OpenApiClient
         $headers = new SendLinkHeaders([]);
 
         return $this->sendLinkWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param SendLinkRequest $request
-     * @param SendLinkHeaders $headers
-     * @param RuntimeOptions  $runtime
-     *
-     * @return SendLinkResponse
-     */
-    public function sendLinkWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
-        }
-        $body = [];
-        if (!Utils::isUnset($request->dentryId)) {
-            @$body['dentryId'] = $request->dentryId;
-        }
-        if (!Utils::isUnset($request->openConversationId)) {
-            @$body['openConversationId'] = $request->openConversationId;
-        }
-        if (!Utils::isUnset($request->spaceId)) {
-            @$body['spaceId'] = $request->spaceId;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return SendLinkResponse::fromMap($this->doROARequest('SendLink', 'convFile_1.0', 'HTTP', 'POST', 'AK', '/v1.0/convFile/conversations/files/links/send', 'json', $req, $runtime));
     }
 }

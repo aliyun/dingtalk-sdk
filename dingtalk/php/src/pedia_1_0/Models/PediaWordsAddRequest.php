@@ -13,67 +13,51 @@ use AlibabaCloud\Tea\Model;
 class PediaWordsAddRequest extends Model
 {
     /**
-     * @description 联系人列表
-     *
-     *
      * @var contactList[]
      */
     public $contactList;
 
     /**
-     * @description 高亮的别名，从别名中选取，不在别名列表中不展示
-     *
      * @var string[]
      */
     public $highLightWordAlias;
 
     /**
-     * @description 相关图片
-     *
-     *
      * @var picList[]
      */
     public $picList;
 
     /**
-     * @description 相关文档，支持钉钉在线文档
-     *
      * @var relatedDoc[]
      */
     public $relatedDoc;
 
     /**
-     * @description 相关链接
-     *
      * @var relatedLink[]
      */
     public $relatedLink;
 
     /**
-     * @description 组织对应的员工编号
+     * @example 23231231123
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 词条的别名，多个名字的时候可以添加
-     *
-     *
      * @var string[]
      */
     public $wordAlias;
 
     /**
-     * @description 新增词条的名称
+     * @example 词条名称
      *
      * @var string
      */
     public $wordName;
 
     /**
-     * @description 词条释义，针对词条的描述内容
-     *
+     * @example 释义
      *
      * @var string
      */

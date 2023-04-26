@@ -9,147 +9,147 @@ use AlibabaCloud\Tea\Model;
 class baseInfo extends Model
 {
     /**
-     * @description 年龄
+     * @example 18
      *
      * @var int
      */
     public $age;
 
     /**
-     * @description 头像cdn地址，http链接
+     * @example http://www.xxxx.com
      *
      * @var string
      */
     public $avatar;
 
     /**
-     * @description 初次工作时间
+     * @example yyyy-MM-dd
      *
      * @var string
      */
     public $beginWorkTime;
 
     /**
-     * @description 生日
+     * @example yyyy-MM-dd
      *
      * @var string
      */
     public $birthday;
 
     /**
-     * @description 邮箱地址
+     * @example xxxxxxx@alibaba-inc.com
      *
      * @var string
      */
     public $email;
 
     /**
-     * @description 英文名称
+     * @example Jason
      *
      * @var string
      */
     public $englishName;
 
     /**
-     * @description 毕业时间
+     * @example yyyy-MM-dd
      *
      * @var string
      */
     public $graduateTime;
 
     /**
-     * @description 最高学历
+     * @example 1
      *
      * @var int
      */
     public $highestEducation;
 
     /**
-     * @description 当前工作职位名称
+     * @example java开发工程师
      *
      * @var string
      */
     public $jobTitle;
 
     /**
-     * @description 最高学历毕业院校名称
+     * @example 清华大学
      *
      * @var string
      */
     public $lastSchoolName;
 
     /**
-     * @description 婚姻状况
+     * @example 1
      *
      * @var int
      */
     public $married;
 
     /**
-     * @description 名称
+     * @example 孙先生
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 籍贯地址
+     * @example 浙江省杭州市余杭区仓前街道
      *
      * @var string
      */
     public $nativePlace;
 
     /**
-     * @description 现居住地址
+     * @example 浙江省杭州市余杭区仓前街道欧美金融城
      *
      * @var string
      */
     public $nowLocation;
 
     /**
-     * @description 个人荣誉
+     * @example 曾获得xxx比赛xxx奖项
      *
      * @var string
      */
     public $personalHonor;
 
     /**
-     * @description 手机号
+     * @example 187xxxxxxxx
      *
      * @var string
      */
     public $phoneNum;
 
     /**
-     * @description 政治面貌
+     * @example 1
      *
      * @var int
      */
     public $politicalStatus;
 
     /**
-     * @description 自我评价
+     * @example 沟通能力强......
      *
      * @var string
      */
     public $selfEvaluation;
 
     /**
-     * @description 性别
+     * @example 1
      *
      * @var int
      */
     public $sex;
 
     /**
-     * @description 虚拟手机号
+     * @example 187xxxxxxxx
      *
      * @var string
      */
     public $virtualPhoneNum;
 
     /**
-     * @description 工作年限
+     * @example 3
      *
      * @var int
      */

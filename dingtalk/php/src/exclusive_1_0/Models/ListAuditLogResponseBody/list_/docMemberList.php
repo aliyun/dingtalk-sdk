@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class docMemberList extends Model
 {
     /**
-     * @description 成员名称
+     * @example 张三
      *
      * @var string
      */
     public $memberName;
 
     /**
-     * @description 成员类型
+     * @example 0
      *
      * @var int
      */
     public $memberType;
 
     /**
-     * @description 成员类型翻译值
+     * @example 部门
      *
      * @var string
      */
     public $memberTypeView;
 
     /**
-     * @description 权限类型
+     * @example 1
      *
      * @var int
      */
     public $permissionRole;
 
     /**
-     * @description 权限类型翻译值
+     * @example 阅读者（可查看\下载）
      *
      * @var string
      */

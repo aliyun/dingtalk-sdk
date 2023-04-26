@@ -12,28 +12,28 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 附属单信息
+     * @example cdef-dae2fd2-example
      *
      * @var string
      */
     public $attachedProcessInstanceIds;
 
     /**
-     * @description 审批单编号
+     * @example 202110111558000355024
      *
      * @var string
      */
     public $businessId;
 
     /**
-     * @description 审批单创建时间
+     * @example 1635165470201
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 审批结束时间
+     * @example 1633795200000
      *
      * @var int
      */
@@ -45,63 +45,59 @@ class list_ extends Model
     public $formComponentValues;
 
     /**
-     * @description 主单实例Id
+     * @example dcdse-dae2fd2-example
      *
      * @var string
      */
     public $mainProcessInstanceId;
 
     /**
-     * @description 审批单操作记录
-     *
      * @var operationRecords[]
      */
     public $operationRecords;
 
     /**
-     * @description 发起人部门id
+     * @example 默认-1，企业根部门
      *
      * @var string
      */
     public $originatorDeptId;
 
     /**
-     * @description 发起者userId
+     * @example staff1234
      *
      * @var string
      */
     public $originatorUserid;
 
     /**
-     * @description 流程实例ID
+     * @example abcdse-dse-example
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 审批结果
+     * @example AGREE同意，REFUSE拒绝
      *
      * @var string
      */
     public $result;
 
     /**
-     * @description 审批单状态
+     * @example RUNNING审批中、TERMINATED撤销、COMPLETED审批完成、CANCELED取消
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 任务列表
-     *
      * @var tasks[]
      */
     public $tasks;
 
     /**
-     * @description 审批单标题
+     * @example 员工A提交的小肖审批单
      *
      * @var string
      */

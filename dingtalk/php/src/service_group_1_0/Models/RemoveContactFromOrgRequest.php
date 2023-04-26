@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class RemoveContactFromOrgRequest extends Model
 {
     /**
-     * @description 开放联系人uinionId
+     * @example 88888
      *
      * @var string
      */
     public $contactUnionId;
 
     /**
-     * @description 开放团队ID
+     * @example 8888
      *
      * @var string
      */

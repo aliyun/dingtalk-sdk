@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class FileStorageGetQuotaDataRequest extends Model
 {
     /**
-     * @description 结束时间
+     * @example 2022-04
      *
      * @var string
      */
     public $endTime;
 
     /**
-     * @description 开始时间
+     * @example 2021-04
      *
      * @var string
      */
     public $startTime;
 
     /**
-     * @description 企业的corpId
+     * @example ding77b8cac4e026cc123xxxxxxxxeb6378f
      *
      * @var string
      */
     public $targetCorpId;
 
     /**
-     * @description 查询类型 0按天查询；1按月查询
+     * @example 1
      *
      * @var string
      */

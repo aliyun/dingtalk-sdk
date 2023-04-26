@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryMembersOfGroupRoleRequest extends Model
 {
     /**
-     * @description 开放群ID
+     * @example cidXXXXXXX
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开放群角色id
+     * @example roleXXXXX
      *
      * @var string
      */
     public $openRoleId;
 
     /**
-     * @description 时间戳
+     * @example 1621502140000
      *
      * @var int
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryReceiptDetailForInvoiceRequest extends Model
 {
     /**
-     * @description 审批单id
+     * @example abcdefghijklmnopq
      *
      * @var string
      */

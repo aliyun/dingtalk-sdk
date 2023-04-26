@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetHotelExceedApplyRequest extends Model
 {
     /**
-     * @description 商旅超标审批单id
+     * @example 123456
      *
      * @var string
      */
     public $applyId;
 
     /**
-     * @description 第三方企业id
+     * @example ding1234
      *
      * @var string
      */

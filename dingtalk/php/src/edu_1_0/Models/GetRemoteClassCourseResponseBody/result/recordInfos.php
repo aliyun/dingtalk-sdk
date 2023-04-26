@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class recordInfos extends Model
 {
     /**
-     * @description 录制开始时间（UTC/GMT格式）
+     * @example 2021-11-17T02:08:45Z
      *
      * @var string
      */
     public $startTime;
 
     /**
-     * @description 录制结束时间（UTC/GMT格式）
+     * @example 2021-11-17T04:08:45Z
      *
      * @var string
      */
     public $stopTime;
 
     /**
-     * @description 录制文件地址（文件有效期7天）
+     * @example http://oss.xxx.com/xxxx
      *
      * @var string
      */

@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class SearchCompanyRequest extends Model
 {
     /**
-     * @description 起始页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 页面大小
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 关键词
-     *
      * @var string
      */
     public $searchKey;

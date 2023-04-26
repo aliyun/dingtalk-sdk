@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class BatchUpdateDeviceRequest extends Model
 {
     /**
-     * @description 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。
+     * @example ding123
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 设备列表。
-     *
      * @var devices[]
      */
     public $devices;

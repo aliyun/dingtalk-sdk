@@ -10,63 +10,59 @@ use AlibabaCloud\Tea\Model;
 class CreateMeetingRoomRequest extends Model
 {
     /**
-     * @description 会议室所属分组id
+     * @example 0
      *
      * @var int
      */
     public $groupId;
 
     /**
-     * @description isv外部会议室id
+     * @example xxxIsvRoomId
      *
      * @var string
      */
     public $isvRoomId;
 
     /**
-     * @description 会议室容量
+     * @example 10
      *
      * @var int
      */
     public $roomCapacity;
 
     /**
-     * @description 会议室标签
-     *
      * @var int[]
      */
     public $roomLabelIds;
 
     /**
-     * @description 会议室位置
-     *
      * @var roomLocation
      */
     public $roomLocation;
 
     /**
-     * @description 会议室名称
+     * @example 测试会议室
      *
      * @var string
      */
     public $roomName;
 
     /**
-     * @description 会议室图片
+     * @example https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg
      *
      * @var string
      */
     public $roomPicture;
 
     /**
-     * @description 会议室状态
+     * @example 0.全员可用 1.仅管理员可用
      *
      * @var int
      */
     public $roomStatus;
 
     /**
-     * @description 操作人unionId
+     * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string
      */

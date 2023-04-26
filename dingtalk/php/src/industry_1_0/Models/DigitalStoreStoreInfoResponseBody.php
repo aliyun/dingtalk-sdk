@@ -9,96 +9,98 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreStoreInfoResponseBody extends Model
 {
     /**
-     * @description 门店地址
+     * @example 余杭塘路xxxx号
      *
      * @var string
      */
     public $address;
 
     /**
-     * @description 营业时间
+     * @example 9:00-22:00
      *
      * @var string
      */
     public $businessHours;
 
     /**
+     * @example 64266411
+     *
      * @var int
      */
     public $dingDeptId;
 
     /**
-     * @description 纬度
+     * @example 123
      *
      * @var string
      */
     public $latitude;
 
     /**
-     * @description 定位地址
+     * @example 余杭塘路xxxx号
      *
      * @var string
      */
     public $locationAddress;
 
     /**
-     * @description 经度
+     * @example 123
      *
      * @var string
      */
     public $longitude;
 
     /**
-     * @description 门店名称
+     * @example 华夏之心店
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 上级节点id
+     * @example 873366531
      *
      * @var int
      */
     public $parentId;
 
     /**
-     * @description 门店状态
+     * @example CLOSED
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 门店面积
+     * @example 10平方米
      *
      * @var string
      */
     public $storeAcreage;
 
     /**
-     * @description 门店带宽
+     * @example 1千兆
      *
      * @var string
      */
     public $storeBandwidth;
 
     /**
-     * @description 门店编号
+     * @example xxxxxxxxxxx
      *
      * @var string
      */
     public $storeCode;
 
     /**
-     * @description 门店Id
+     * @example 6756433
      *
      * @var int
      */
     public $storeId;
 
     /**
-     * @description 门店电话
+     * @example 0571-123456
      *
      * @var string
      */

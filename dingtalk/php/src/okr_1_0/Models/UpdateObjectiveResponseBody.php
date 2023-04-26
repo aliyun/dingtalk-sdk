@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class UpdateObjectiveResponseBody extends Model
 {
     /**
-     * @description data
-     *
      * @var data
      */
     public $data;
 
     /**
-     * @description 请求成功的标识。
+     * @example true
      *
      * @var bool
      */

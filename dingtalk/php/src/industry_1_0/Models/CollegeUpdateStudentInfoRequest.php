@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class CollegeUpdateStudentInfoRequest extends Model
 {
     /**
-     * @description 人员拓展信息
+     * @example "city":"beijing"
      *
      * @var string[]
      */
     public $empExtension;
 
     /**
-     * @description 性别
+     * @example male
      *
      * @var string
      */
     public $gender;
 
     /**
-     * @description 身份证号
+     * @example 11019xxxxxx0001
      *
      * @var string
      */
     public $identifyId;
 
     /**
-     * @description 入学年份
+     * @example 2015
      *
      * @var string
      */
     public $startYear;
 
     /**
-     * @description studentId
+     * @example 1111111
      *
      * @var int
      */
     public $studentId;
 
     /**
-     * @description 学生姓名
+     * @example 张三
      *
      * @var string
      */

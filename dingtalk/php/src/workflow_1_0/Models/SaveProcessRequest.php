@@ -11,42 +11,38 @@ use AlibabaCloud\Tea\Model;
 class SaveProcessRequest extends Model
 {
     /**
-     * @description 表单模板描述
+     * @example 用于员工差旅费用报销使用
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 表单控件列表
-     *
      * @var FormComponent[]
      */
     public $formComponents;
 
     /**
-     * @description 表单模板名称
+     * @example 出差报销审批
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 模板code
+     * @example proc-abc
      *
      * @var string
      */
     public $processCode;
 
     /**
-     * @description 流程中心集成配置
-     *
      * @var processFeatureConfig
      */
     public $processFeatureConfig;
 
     /**
-     * @description 流程中心模板配置
+     * @deprecated
      *
      * @var templateConfig
      */

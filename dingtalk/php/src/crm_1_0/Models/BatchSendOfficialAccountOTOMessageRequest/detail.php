@@ -10,43 +10,33 @@ use AlibabaCloud\Tea\Model;
 class detail extends Model
 {
     /**
-     * @description 业务请求标识，当一次业务请求需要多次调用发送API时可以设置此参数，方便后续跟踪处理。
-     *
      * @var string
      */
     public $bizRequestId;
 
     /**
-     * @description 消息体
-     *
      * @var messageBody
      */
     public $messageBody;
 
     /**
-     * @description 消息类型
+     * @example text
      *
      * @var string
      */
     public $msgType;
 
     /**
-     * @description 全员群发
-     *
      * @var bool
      */
     public $sendToAll;
 
     /**
-     * @description 消息接收人列表，最多支持1000人
-     *
      * @var string[]
      */
     public $userIdList;
 
     /**
-     * @description 消息请求唯一ID
-     *
      * @var string
      */
     public $uuid;

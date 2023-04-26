@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class creator extends Model
 {
     /**
-     * @description 用户名称
+     * @example user_name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class properties extends Model
 {
     /**
-     * @description 文件是否只读
+     * @example true
      *
      * @var bool
      */

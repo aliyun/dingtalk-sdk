@@ -11,36 +11,34 @@ use AlibabaCloud\Tea\Model;
 class SyncTripOrderRequest extends Model
 {
     /**
-     * @description 订单渠道，枚举值：BUSINESS、CUSTOMER
+     * @example BUSSINESS
      *
      * @var string
      */
     public $channelType;
 
     /**
-     * @description 币种
+     * @example CNY
      *
      * @var string
      */
     public $currency;
 
     /**
-     * @description 钉钉用户id
+     * @example 20881001829000
      *
      * @var string
      */
     public $dingUserId;
 
     /**
-     * @description 优惠金额
+     * @example 0
      *
      * @var string
      */
     public $discountAmount;
 
     /**
-     * @description 是否是改签单
-     *
      * @var bool
      */
     public $endorseFlag;
@@ -51,105 +49,99 @@ class SyncTripOrderRequest extends Model
     public $event;
 
     /**
-     * @description 下单时间
+     * @example 2022-05-15 10:10:10
      *
      * @var string
      */
     public $gmtOrder;
 
     /**
-     * @description 付款时间
+     * @example 2022-05-15 10:10:10
      *
      * @var string
      */
     public $gmtPay;
 
     /**
-     * @description 退款时间
+     * @example 2022-05-15 10:10:10
      *
      * @var string
      */
     public $gmtRefund;
 
     /**
-     * @description 发票申请链接
-     *
      * @var string
      */
     public $invoiceApplyUrl;
 
     /**
-     * @description 行程单号
+     * @example 20220510170058192311
      *
      * @var string
      */
     public $journeyBizNo;
 
     /**
-     * @description 订单详情列表
-     *
      * @var orderDetails[]
      */
     public $orderDetails;
 
     /**
-     * @description 供应商订单号
+     * @example 20881001829000
      *
      * @var string
      */
     public $orderNo;
 
     /**
-     * @description 订单详情链接
+     * @example https:dingtalk.com/tripOrder/20220510170058192311
      *
      * @var string
      */
     public $orderUrl;
 
     /**
-     * @description 实付金额
+     * @example 100.00
      *
      * @var string
      */
     public $realAmount;
 
     /**
-     * @description 退款金额
+     * @example 0
      *
      * @var string
      */
     public $refundAmount;
 
     /**
-     * @description 供应商关联订单号
+     * @example 20881001829000
      *
      * @var string
      */
     public $relativeOrderNo;
 
     /**
-     * @description 来源埋点
-     *
      * @var string
      */
     public $source;
 
     /**
-     * @description 用户组织id
+     * @example ding32fff839a3e0105d
      *
      * @var string
      */
     public $targetCorpId;
 
     /**
-     * @description 总金额
+     * @example 100.00
      *
      * @var string
      */
     public $totalAmount;
 
     /**
-     * @description 订单类型
+     * @example FLIGHT
      *
      * @var string
      */

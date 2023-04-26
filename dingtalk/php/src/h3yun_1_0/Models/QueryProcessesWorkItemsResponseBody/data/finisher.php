@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class finisher extends Model
 {
     /**
-     * @description 用户直属的部门id
+     * @example 18f923a7-5a5e-426d-94ae-a55ad1a4b240
      *
      * @var string
      */
     public $departmentId;
 
     /**
-     * @description 用户直属的部门名称
+     * @example 研发中心
      *
      * @var string
      */
     public $departmentName;
 
     /**
-     * @description 用户名称
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 用户id
+     * @example aea4d7a7-d162-4c77-9c44-7bd9cb8316a5
      *
      * @var string
      */

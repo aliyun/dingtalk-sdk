@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 创建时间
+     * @example 2021-08-13T07:36:50.318Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 关联对象id
+     * @example xxxx
      *
      * @var string
      */

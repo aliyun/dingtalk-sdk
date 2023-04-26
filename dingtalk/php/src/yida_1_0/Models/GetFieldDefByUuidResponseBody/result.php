@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 组件展示状态
-     * 普通NORMAL/禁用DISABLED/只读READONLY/隐藏HIDDEN
      * @var string
      */
     public $behavior;
 
     /**
-     * @description 子组件信息
-     *
      * @var string
      */
     public $children;
 
     /**
-     * @description 组件类型，如文本类型：TextField
-     *
      * @var string
      */
     public $componentName;
 
     /**
-     * @description 字段ID，字段唯一标识
-     *
      * @var string
      */
     public $fieldId;
 
     /**
-     * @description 字段名称。符合国际化标准。
-     *
      * @var mixed
      */
     public $label;
 
     /**
-     * @description  组件属性
-     *
      * @var mixed
      */
     public $props;

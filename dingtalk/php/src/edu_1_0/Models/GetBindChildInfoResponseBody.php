@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetBindChildInfoResponseBody extends Model
 {
     /**
-     * @description 孩子id
+     * @example 3000000000307711730
      *
      * @var string
      */
     public $childUserId;
 
     /**
-     * @description 当前用户id
+     * @example 3000000000433459511
      *
      * @var string
      */
     public $currentUserId;
 
     /**
-     * @description 家庭id
+     * @example ding95eef8003c9ca8ca24f2f5cc6abecb85
      *
      * @var string
      */

@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class QueryEduAssetSpacesResponseBody extends Model
 {
     /**
-     * @description 是否还有数据
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 表示当前调用返回读取到的位置，空代表数据已经读取完毕
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 空间结果集
-     *
      * @var spaces[]
      */
     public $spaces;

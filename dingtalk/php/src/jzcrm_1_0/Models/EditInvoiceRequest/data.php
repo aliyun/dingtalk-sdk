@@ -9,162 +9,120 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 产品明细，json格式
+     * @example "child_mx":[{"产品ID":"1","数量":"10","单价":"58.5","总价":"585","明细备注":"包含的测试产品"}]
      *
      * @var string
      */
     public $childMx;
 
     /**
-     * @description 创建人
+     * @example 张三
      *
      * @var string
      */
     public $dataUserid;
 
     /**
-     * @description 地址
-     *
      * @var string
      */
     public $fhAddress;
 
     /**
-     * @description 对应客户
-     *
      * @var string
      */
     public $fhCustomerid;
 
     /**
-     * @description 发货日期
-     *
      * @var string
      */
     public $fhDate;
 
     /**
-     * @description Email
-     *
      * @var string
      */
     public $fhEmail;
 
     /**
-     * @description 手机
-     *
      * @var string
      */
     public $fhHandset;
 
     /**
-     * @description 对应订单
-     *
      * @var string
      */
     public $fhHtorder;
 
     /**
-     * @description 打包件数
-     *
      * @var string
      */
     public $fhJianshu;
 
     /**
-     * @description 重量(Kg)
-     *
      * @var string
      */
     public $fhKg;
 
     /**
-     * @description 收货人
-     *
      * @var string
      */
     public $fhLinkman;
 
     /**
-     * @description 联系人
-     *
      * @var string
      */
     public $fhLxrid;
 
     /**
-     * @description 发货方式
-     *
      * @var string
      */
     public $fhMode;
 
     /**
-     * @description MSN
-     *
      * @var string
      */
     public $fhMsn;
 
     /**
-     * @description 发货单号
-     *
      * @var string
      */
     public $fhNumber;
 
     /**
-     * @description 邮编
-     *
      * @var string
      */
     public $fhPost;
 
     /**
-     * @description 所有者
-     *
      * @var string
      */
     public $fhPreside;
 
     /**
-     * @description 备注
-     *
      * @var string
      */
     public $fhRemark;
 
     /**
-     * @description 发货人
-     *
      * @var string
      */
     public $fhShipper;
 
     /**
-     * @description 发货状态
-     *
      * @var string
      */
     public $fhState;
 
     /**
-     * @description 电话
-     *
      * @var string
      */
     public $fhTel;
 
     /**
-     * @description 发货主题
-     *
      * @var string
      */
     public $fhTitle;
 
     /**
-     * @description 运费
-     *
      * @var string
      */
     public $fhYunfei;

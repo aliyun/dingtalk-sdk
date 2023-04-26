@@ -10,16 +10,11 @@ use AlibabaCloud\Tea\Model;
 class UnbindApplyReceiptAndInvoiceRelatedResponseBody extends Model
 {
     /**
-     * @description 批量更新发票返回结果
-     *
-     *
      * @var batchUpdateInvoiceResponse
      */
     public $batchUpdateInvoiceResponse;
 
     /**
-     * @description 是否成功
-     *
      * @var bool
      */
     public $success;

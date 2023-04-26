@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetConversationIdRequest extends Model
 {
     /**
-     * @description 外部用户账号：outerId@channel
-     *
      * @var string
      */
     public $appUid;
 
     /**
-     * @description 员工企业账号：staffId#corpId@dingding
-     *
      * @var string
      */
     public $userId;

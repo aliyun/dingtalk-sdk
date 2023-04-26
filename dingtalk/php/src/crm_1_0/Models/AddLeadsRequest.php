@@ -10,35 +10,33 @@ use AlibabaCloud\Tea\Model;
 class AddLeadsRequest extends Model
 {
     /**
-     * @description 分配时间戳，如果不传则默认为当前时间。
+     * @example 1669360918000
      *
      * @var int
      */
     public $assignTimestamp;
 
     /**
-     * @description 分配线索的员工userId。
+     * @example manager1234
      *
      * @var string
      */
     public $assignUserId;
 
     /**
-     * @description 被分配线索的员工userId。
+     * @example manager1234
      *
      * @var string
      */
     public $assignedUserId;
 
     /**
-     * @description 线索。
-     *
      * @var leads[]
      */
     public $leads;
 
     /**
-     * @description 任务ID，用于幂等控制。
+     * @example t123123123
      *
      * @var string
      */

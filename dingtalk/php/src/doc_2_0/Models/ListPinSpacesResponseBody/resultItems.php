@@ -11,36 +11,32 @@ use AlibabaCloud\Tea\Model;
 class resultItems extends Model
 {
     /**
-     * @description 创建时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 修改时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $modifiedTime;
 
     /**
-     * @description 知识库信息
-     *
      * @var spaceInfo
      */
     public $spaceInfo;
 
     /**
-     * @description 知识库权限
-     * OWNER: 所有者
+     * @example NO_PERMISSION
+     *
      * @var string
      */
     public $spacePermissionRole;
 
     /**
-     * @description 小组信息
-     *
      * @var teamInfo
      */
     public $teamInfo;

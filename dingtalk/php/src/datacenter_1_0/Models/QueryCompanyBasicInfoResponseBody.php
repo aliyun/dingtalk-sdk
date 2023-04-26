@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class QueryCompanyBasicInfoResponseBody extends Model
 {
     /**
-     * @description code
-     *
      * @var string
      */
     public $code;
 
     /**
-     * @description data
-     *
      * @var string[][]
      */
     public $data;
 
     /**
-     * @description message
-     *
      * @var string
      */
     public $message;
 
     /**
-     * @description traceId
-     *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description total
-     *
      * @var int
      */
     public $total;

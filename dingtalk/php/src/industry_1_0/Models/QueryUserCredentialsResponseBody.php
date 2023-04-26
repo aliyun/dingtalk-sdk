@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryUserCredentialsResponseBody extends Model
 {
     /**
-     * @description 人员证书
-     *
      * @var content[]
      */
     public $content;

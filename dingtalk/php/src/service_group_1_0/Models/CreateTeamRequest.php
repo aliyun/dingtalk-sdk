@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CreateTeamRequest extends Model
 {
     /**
-     * @description 团队管理员钉钉unionId
-     *
      * @var string
      */
     public $creatorDingUnionId;
 
     /**
-     * @description 团队名字
-     *
      * @var string
      */
     public $teamName;

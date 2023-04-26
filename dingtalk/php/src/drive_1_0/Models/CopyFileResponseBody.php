@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class CopyFileResponseBody extends Model
 {
     /**
-     * @description 文件信息
-     *
      * @var file
      */
     public $file;
 
     /**
-     * @description 异步任务id
-     *
      * @var string
      */
     public $taskId;

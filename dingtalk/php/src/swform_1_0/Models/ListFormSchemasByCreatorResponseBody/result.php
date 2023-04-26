@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 是否还有下一页数据。
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 创建的填表列表。
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 下一次分页offset的值。
+     * @example 10
      *
      * @var int
      */

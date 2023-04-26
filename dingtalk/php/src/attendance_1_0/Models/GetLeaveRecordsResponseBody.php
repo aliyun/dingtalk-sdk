@@ -10,16 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetLeaveRecordsResponseBody extends Model
 {
     /**
-     * @description 返回结果。
-     *
-     *
      * @var result
      */
     public $result;
 
     /**
-     * @description 是否正确访问。
-     *
      * @var bool
      */
     public $success;

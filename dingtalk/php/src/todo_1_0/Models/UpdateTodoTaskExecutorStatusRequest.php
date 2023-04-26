@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateTodoTaskExecutorStatusRequest extends Model
 {
     /**
-     * @description 执行者状态列表，id需传用户的unionId
-     *
      * @var executorStatusList[]
      */
     public $executorStatusList;
 
     /**
-     * @description 当前操作者id，需传用户的unionId
-     *
      * @var string
      */
     public $operatorId;

@@ -9,57 +9,41 @@ use AlibabaCloud\Tea\Model;
 class nodeBO extends Model
 {
     /**
-     * @description 创建时间
-     *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 节点类型
-     *
      * @var string
      */
     public $docType;
 
     /**
-     * @description 是否被删除
-     *
      * @var bool
      */
     public $isDeleted;
 
     /**
-     * @description 内容的最后编辑时间
-     *
      * @var int
      */
     public $lastEditTime;
 
     /**
-     * @description 文档Id
-     *
      * @var string
      */
     public $nodeId;
 
     /**
-     * @description 文档名称
-     *
      * @var string
      */
     public $nodeName;
 
     /**
-     * @description 文档更新时间，包括重命名、移动、内容编辑等操作都会刷新更新时间
-     *
      * @var int
      */
     public $updateTime;
 
     /**
-     * @description 文档打开url
-     *
      * @var string
      */
     public $url;

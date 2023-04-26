@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CreateTrustedDeviceResponseBody extends Model
 {
     /**
+     * @example true
+     *
      * @var bool
      */
     public $success;

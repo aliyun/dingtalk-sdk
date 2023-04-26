@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class choices extends Model
 {
     /**
-     * @description 选项Id。
+     * @example 63a5301e420637003f5dxxxx
      *
      * @var string
      */
     public $choiceId;
 
     /**
-     * @description 选项值。
+     * @example 选项一
      *
      * @var string
      */

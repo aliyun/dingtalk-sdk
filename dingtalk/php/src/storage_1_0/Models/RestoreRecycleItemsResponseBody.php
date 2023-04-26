@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class RestoreRecycleItemsResponseBody extends Model
 {
     /**
-     * @description 批量还原文件(夹)结果列表
-     * 30
      * @var resultItems[]
      */
     public $resultItems;

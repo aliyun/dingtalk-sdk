@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 机器人所在租户ID
+     * @example 32001
      *
      * @var int
      */
     public $accountId;
 
     /**
-     * @description 机器人APPKEY
+     * @example U1xup2nKKQ9zwXynjpAHVDOD
      *
      * @var string
      */
     public $appKey;
 
     /**
-     * @description 机器人自增Id
+     * @example 62703378
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 机器人名称
+     * @example 测试的机器人
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 机器人状态
+     * @example 1
      *
      * @var int
      */

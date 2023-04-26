@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CreateAppGoodsServiceConversationResponseBody extends Model
 {
     /**
-     * @description 群名称
-     *
      * @var string
      */
     public $conversationName;
 
     /**
-     * @description 是否新群
-     *
      * @var bool
      */
     public $newConversation;

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 优先级【-10,0,1,2】中的一个
+     * @example -10
      *
      * @var int
      */
     public $priority;
 
     /**
-     * @description 更新时间
+     * @example 2022-06-13T06:02:44.835Z
      *
      * @var string
      */

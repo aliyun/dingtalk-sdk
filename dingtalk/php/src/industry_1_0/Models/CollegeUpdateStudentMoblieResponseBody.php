@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CollegeUpdateStudentMoblieResponseBody extends Model
 {
     /**
-     * @description 修改结果
+     * @example failed
      *
      * @var string
      */

@@ -14,14 +14,14 @@ class ListObjectiveByIdsResponseBody extends Model
     public $content;
 
     /**
-     * @description Id of the request
+     * @example 1
      *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description 是否成功
+     * @example true
      *
      * @var bool
      */

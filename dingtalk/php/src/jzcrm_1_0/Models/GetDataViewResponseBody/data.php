@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 数据详情
-     *
      * @var string[]
      */
     public $detail;

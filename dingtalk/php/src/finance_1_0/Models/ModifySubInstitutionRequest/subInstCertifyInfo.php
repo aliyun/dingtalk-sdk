@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class subInstCertifyInfo extends Model
 {
     /**
-     * @description 证件图片, 如果是特殊行业必填
+     * @example ossUrl
      *
      * @var string
      */
     public $certImage;
 
     /**
-     * @description 证件号码
+     * @example 331081198611111111
      *
      * @var string
      */
     public $certNo;
 
     /**
-     * @description 证件类型
+     * @example 201
      *
      * @var string
      */

@@ -13,113 +13,81 @@ use AlibabaCloud\Tea\Model;
 class todoCards extends Model
 {
     /**
-     * @description 所属应用
-     *
      * @var string
      */
     public $bizTag;
 
     /**
-     * @description 所属分类
-     *
      * @var string
      */
     public $category;
 
     /**
-     * @description 创建时间
-     *
      * @var int
      */
     public $createdTime;
 
     /**
-     * @description 创建者id
-     *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 详情页链接
-     *
      * @var detailUrl
      */
     public $detailUrl;
 
     /**
-     * @description 待办截止时间
-     *
      * @var int
      */
     public $dueTime;
 
     /**
-     * @description 待办完成状态
-     *
      * @var bool
      */
     public $isDone;
 
     /**
-     * @description 更新时间
-     *
      * @var int
      */
     public $modifiedTime;
 
     /**
-     * @description 所属组织信息
-     *
      * @var orgInfo
      */
     public $orgInfo;
 
     /**
-     * @description 业务来源信息
-     *
      * @var originalSource
      */
     public $originalSource;
 
     /**
-     * @description 优先级
-     *
      * @var int
      */
     public $priority;
 
     /**
-     * @description 来源id
-     *
      * @var string
      */
     public $sourceId;
 
     /**
-     * @description 待办标题
-     *
      * @var string
      */
     public $subject;
 
     /**
-     * @description 待办id
-     *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description 待办卡片视图模型
-     *
      * @var todoCardView
      */
     public $todoCardView;
 
     /**
-     * @description 待办状态
-     *
      * @var string
      */
     public $todoStatus;

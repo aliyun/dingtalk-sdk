@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class values extends Model
 {
     /**
-     * @description 部门ID
+     * @example 5345345
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 扩展信息
+     * @example "{\"startTime\":\"1654746593623\",\"endTime\":\"1656042593623\"}"
      *
      * @var string
      */
     public $extension;
 
     /**
-     * @description 邀请时间
+     * @example 1652683318162
      *
      * @var int
      */
     public $gmtCreate;
 
     /**
-     * @description 邀请更新时间
+     * @example 1652683318162
      *
      * @var int
      */
     public $gmtModified;
 
     /**
-     * @description 是否产权人
+     * @example true
      *
      * @var bool
      */
     public $isPropertyOwner;
 
     /**
-     * @description 用户名
+     * @example 张工
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 状态
+     * @example 1
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 用户ID
+     * @example 312423423
      *
      * @var int
      */

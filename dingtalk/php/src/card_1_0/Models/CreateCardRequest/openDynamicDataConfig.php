@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class openDynamicDataConfig extends Model
 {
     /**
-     * @description 动态数据源配置列表
-     *
      * @var dynamicDataSourceConfigs[]
      */
     public $dynamicDataSourceConfigs;

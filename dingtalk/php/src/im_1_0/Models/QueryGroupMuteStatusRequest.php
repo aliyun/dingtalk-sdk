@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupMuteStatusRequest extends Model
 {
     /**
-     * @description 开放的会话ID
+     * @example cidCtneF+XyQjcyF2ROdgSeIg==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 群成员的员工工号
+     * @example 004741900
      *
      * @var string
      */

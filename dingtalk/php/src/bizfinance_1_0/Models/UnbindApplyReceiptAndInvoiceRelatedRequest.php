@@ -10,22 +10,18 @@ use AlibabaCloud\Tea\Model;
 class UnbindApplyReceiptAndInvoiceRelatedRequest extends Model
 {
     /**
-     * @description 审批单id
+     * @example abc
      *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description 发票模型
-     *
      * @var invoiceKeyVOList[]
      */
     public $invoiceKeyVOList;
 
     /**
-     * @description 操作员
-     *
      * @var string
      */
     public $operator;

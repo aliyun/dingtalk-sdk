@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class ListDeptSimpleUsersRequest extends Model
 {
     /**
-     * @description containAccessLimit
-     *
      * @var bool
      */
     public $containAccessLimit;
 
     /**
-     * @description cursor
-     *
      * @var int
      */
     public $cursor;
 
     /**
-     * @description language
-     *
      * @var string
      */
     public $language;
 
     /**
-     * @description orderField
-     *
      * @var string
      */
     public $orderField;
 
     /**
-     * @description size
-     *
      * @var int
      */
     public $size;
 
     /**
-     * @description 下属组织的组织ID，比如下属镇、村的corpId
-     *
      * @var string
      */
     public $subCorpId;

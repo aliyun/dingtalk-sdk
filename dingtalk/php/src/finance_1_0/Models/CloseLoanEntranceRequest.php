@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CloseLoanEntranceRequest extends Model
 {
     /**
-     * @description 请求id唯一
+     * @example 1a23qdfa
      *
      * @var string
      */

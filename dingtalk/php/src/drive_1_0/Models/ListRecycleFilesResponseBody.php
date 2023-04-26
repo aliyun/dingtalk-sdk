@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class ListRecycleFilesResponseBody extends Model
 {
     /**
-     * @description 加载更多锚点, nextToken不为空表示有更多数据
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 回收站文件列表
-     *
      * @var recycleItems[]
      */
     public $recycleItems;

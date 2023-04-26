@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class SyncSecretKeyRequest extends Model
 {
     /**
-     * @description 操作类型，ADD/QUERY/MODIFY/DEL
+     * @example ADD
      *
      * @var string
      */
     public $actionType;
 
     /**
-     * @description 验签加密串
+     * @example dnsuuiwenudsjid
      *
      * @var string
      */
     public $secretString;
 
     /**
-     * @description 钉钉侧对应的组织ID
+     * @example ding001
      *
      * @var string
      */
     public $targetCorpId;
 
     /**
-     * @description 商旅侧appkey
+     * @example dingduisdvfd
      *
      * @var string
      */
     public $tripAppKey;
 
     /**
-     * @description 商旅对接密钥
+     * @example dhsuibdusijue
      *
      * @var string
      */
     public $tripAppSecurity;
 
     /**
-     * @description 商旅侧组织ID
+     * @example isv001
      *
      * @var string
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class SearchUserRequest extends Model
 {
     /**
-     * @description 精确匹配的字段。1：匹配用户名称。不填则为模糊匹配
+     * @example 1
      *
      * @var int
      */
     public $fullMatchField;
 
     /**
-     * @description 分页查询锚点
+     * @example 0
      *
      * @var int
      */
     public $offset;
 
     /**
-     * @description 用户名称、名称拼音或英文名称
+     * @example 张三
      *
      * @var string
      */
     public $queryWord;
 
     /**
-     * @description 分页长度
+     * @example 10
      *
      * @var int
      */

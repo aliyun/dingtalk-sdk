@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class templateConfig extends Model
 {
     /**
-     * @description 更新后模板目录id
+     * @example abcd
      *
      * @var string
      */
     public $dirId;
 
     /**
-     * @description 禁用模板删除按钮
+     * @example true
      *
      * @var bool
      */
     public $disableDeleteProcess;
 
     /**
-     * @description 禁用表单编辑
+     * @example true
      *
      * @var bool
      */
     public $disableFormEdit;
 
     /**
-     * @description 首页工作台是否可见
+     * @example true
      *
      * @var bool
      */
     public $disableHomepage;
 
     /**
-     * @description 禁用再次提交
+     * @example true
      *
      * @var bool
      */
     public $disableResubmit;
 
     /**
-     * @description 禁用停止按钮
+     * @example true
      *
      * @var bool
      */
     public $disableStopProcessButton;
 
     /**
-     * @description 审批场景内隐藏模板
+     * @example true
      *
      * @var bool
      */
     public $hidden;
 
     /**
-     * @description 源模板目录id
+     * @example efgh
      *
      * @var string
      */

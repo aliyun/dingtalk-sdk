@@ -11,22 +11,16 @@ use AlibabaCloud\Tea\Model;
 class items extends Model
 {
     /**
-     * @description 子字段列表
-     *
      * @var children[]
      */
     public $children;
 
     /**
-     * @description 字段类型
-     *
      * @var string
      */
     public $componentName;
 
     /**
-     * @description 字段属性
-     *
      * @var props
      */
     public $props;

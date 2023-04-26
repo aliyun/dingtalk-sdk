@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class FormCreateRequest extends Model
 {
     /**
-     * @description 表单模板描述
+     * @example 用于员工差旅费用报销使用
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 表单控件列表
-     *
      * @var FormComponent[]
      */
     public $formComponents;
 
     /**
-     * @description 表单模板名称
+     * @example 出差报销审批
      *
      * @var string
      */
@@ -36,8 +34,6 @@ class FormCreateRequest extends Model
     public $processCode;
 
     /**
-     * @description 模板配置信息
-     *
      * @var templateConfig
      */
     public $templateConfig;

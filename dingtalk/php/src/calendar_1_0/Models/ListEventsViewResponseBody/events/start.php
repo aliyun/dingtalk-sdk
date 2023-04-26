@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class start extends Model
 {
     /**
-     * @description 日期，格式：yyyyMMdd
-     *
      * @var string
      */
     public $date;
 
     /**
-     * @description 时间戳，按照ISO 8601格式
-     *
      * @var string
      */
     public $dateTime;
 
     /**
-     * @description 时区
-     *
      * @var string
      */
     public $timeZone;

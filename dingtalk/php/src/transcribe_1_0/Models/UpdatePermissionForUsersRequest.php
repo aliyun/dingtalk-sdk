@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class UpdatePermissionForUsersRequest extends Model
 {
     /**
-     * @description 闪记任务的类型。枚举值，从任务详情中获取。
+     * @example 1
      *
      * @var int
      */
     public $bizType;
 
     /**
-     * @description 被授权的用户信息列表
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 要操作的闪记任务的创建者userId。
+     * @example 533xxxxxx
      *
      * @var int
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 打包状态，0-打包中，1-成功，2-失败
+     * @example 1
      *
      * @var int
      */
     public $buildStatus;
 
     /**
-     * @description 版本
+     * @example 0.0.5
      *
      * @var string
      */

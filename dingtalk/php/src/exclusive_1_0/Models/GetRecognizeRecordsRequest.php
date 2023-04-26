@@ -9,50 +9,48 @@ use AlibabaCloud\Tea\Model;
 class GetRecognizeRecordsRequest extends Model
 {
     /**
-     * @description 应用唯一标识
+     * @example 123333
      *
      * @var int
      */
     public $agentId;
 
     /**
-     * @description 人脸对比结果 1-成功 2-失败
+     * @example 1
      *
      * @var int
      */
     public $faceCompareResult;
 
     /**
-     * @description 记录开始时间(毫秒时间戳)
+     * @example 1667000000
      *
      * @var int
      */
     public $fromTime;
 
     /**
-     * @description 一页最大值（最大50）
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 查询数据的起始位置，0表示从头开始。
+     * @example 0
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 记录结束时间(毫秒时间戳)
+     * @example 1669000000
      *
      * @var int
      */
     public $toTime;
 
     /**
-     * @description 员工userIds
-     *
      * @var string[]
      */
     public $userIds;

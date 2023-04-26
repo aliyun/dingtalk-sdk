@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class option extends Model
 {
     /**
-     * @description 文件夹在应用上的属性, 一个应用最多只能设置3个属性
-     * 3
      * @var appProperties[]
      */
     public $appProperties;
 
     /**
-     * @description 文件夹名称冲突策略
-     * AUTO_RENAME
+     * @example AUTO_RENAME
+     *
      * @var string
      */
     public $conflictStrategy;

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetRecentOpenDocsRequest extends Model
 {
     /**
-     * @description 查询size
-     *
      * @var int
      */
     public $maxResults;
@@ -21,8 +19,6 @@ class GetRecentOpenDocsRequest extends Model
     public $nextToken;
 
     /**
-     * @description 发起操作用户unionId
-     *
      * @var string
      */
     public $operatorId;

@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 审批实例ID列表。
-     *
      * @var string[]
      */
     public $list;
 
     /**
-     * @description 表示下次查询的游标，当返回结果没有该字段时表示没有更多数据了。
+     * @example 10
      *
      * @var string
      */

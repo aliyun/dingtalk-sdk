@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class IntentionStatisticsResponseBody extends Model
 {
     /**
-     * @description 意图统计
-     *
      * @var intentionStatisticsRecords[]
      */
     public $intentionStatisticsRecords;
 
     /**
-     * @description 意图趋势
-     *
      * @var intentionTrend[]
      */
     public $intentionTrend;

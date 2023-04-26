@@ -9,64 +9,64 @@ use AlibabaCloud\Tea\Model;
 class item extends Model
 {
     /**
-     * @description 原文件(夹)id
+     * @example dentry_id
      *
      * @var string
      */
     public $dentryId;
 
     /**
-     * @description 回收项id
+     * @example recycle_item_id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 操作人id
+     * @example operator_id
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 删除时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $operatorTime;
 
     /**
-     * @description 原文件(夹)名称
+     * @example dentry_name
      *
      * @var string
      */
     public $originalName;
 
     /**
-     * @description 原文件(夹)路径
+     * @example dentry_path
      *
      * @var string
      */
     public $originalPath;
 
     /**
-     * @description 原文件(夹)大小
+     * @example 512
      *
      * @var int
      */
     public $size;
 
     /**
-     * @description 原文件(夹)所在空间id
+     * @example space_id
      *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 类型，目录或文件
-     * FOLDER: 文件夹
+     * @example file
+     *
      * @var string
      */
     public $type;

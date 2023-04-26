@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateTeamRequest extends Model
 {
     /**
-     * @description 小组介绍。和小组名称至少有一个必填。
+     * @example 这是更新后的简介
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 小组名称。和小组介绍至少有一个必填。
+     * @example 更新后的名称
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 操作人unionId。
+     * @example YEp3JcM******UIbhwiE
      *
      * @var string
      */

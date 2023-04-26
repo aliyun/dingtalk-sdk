@@ -9,77 +9,77 @@ use AlibabaCloud\Tea\Model;
 class settleInfo extends Model
 {
     /**
-     * @description 账户账号
+     * @example 622202120200000000
      *
      * @var string
      */
     public $accountId;
 
     /**
-     * @description 账户名称 账号类型银行卡时为卡户名
+     * @example 李某某
      *
      * @var string
      */
     public $accountName;
 
     /**
-     * @description 卡类型
+     * @example DEBIT_CARD
      *
      * @var string
      */
     public $accountType;
 
     /**
-     * @description 支行名称
+     * @example 城东支行
      *
      * @var string
      */
     public $bankBranchName;
 
     /**
-     * @description 开户行所在地 市
+     * @example 杭州市
      *
      * @var string
      */
     public $bankCity;
 
     /**
-     * @description 联行号
+     * @example 313791000023
      *
      * @var string
      */
     public $bankCode;
 
     /**
-     * @description 银行名称
+     * @example 工商银行
      *
      * @var string
      */
     public $bankName;
 
     /**
-     * @description 开户行所在地 省
+     * @example 浙江省
      *
      * @var string
      */
     public $bankProvince;
 
     /**
-     * @description 开户行简称缩写
+     * @example ICBC
      *
      * @var string
      */
     public $bankShortNameCode;
 
     /**
-     * @description 账号类型
+     * @example ALIPAY
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 账户使用类型
+     * @example TO_PRI
      *
      * @var string
      */

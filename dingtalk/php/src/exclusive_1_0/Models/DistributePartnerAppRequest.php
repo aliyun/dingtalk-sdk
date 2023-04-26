@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class DistributePartnerAppRequest extends Model
 {
     /**
-     * @description 应用id
-     *
      * @var int
      */
     public $appId;
@@ -26,8 +24,6 @@ class DistributePartnerAppRequest extends Model
     public $subCorpId;
 
     /**
-     * @description 分发对象类型
-     *
      * @var int
      */
     public $type;

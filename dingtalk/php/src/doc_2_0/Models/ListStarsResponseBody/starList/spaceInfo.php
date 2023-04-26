@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class spaceInfo extends Model
 {
     /**
-     * @description 空间id
+     * @example space_id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 空间名称
+     * @example space_name
      *
      * @var string
      */

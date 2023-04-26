@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class attachments extends Model
 {
     /**
-     * @description 媒体类型(扩展名大写)
+     * @example PDF
      *
      * @var string
      */
     public $mimeType;
 
     /**
-     * @description 附件URL
+     * @example https://dtapp-pub.dingtalk.com/dingtalkdesktop/test.pdf
      *
      * @var string
      */
     public $path;
 
     /**
-     * @description 附件大小
+     * @example 444556
      *
      * @var float
      */
     public $size;
 
     /**
-     * @description 扩展名
+     * @example pdf
      *
      * @var string
      */
     public $suffix;
 
     /**
-     * @description 附件名称
+     * @example 这是一个附件文档
      *
      * @var string
      */

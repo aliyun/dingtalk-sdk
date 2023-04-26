@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class GetOfficialAccountRobotInfoResponseBody extends Model
 {
     /**
-     * @description 机器人id
+     * @example 123
      *
      * @var int
      */
     public $appId;
 
     /**
-     * @description 机器人简介
+     * @example 小蜜客服机器人
      *
      * @var string
      */
     public $brief;
 
     /**
-     * @description 机器人描述
+     * @example 小蜜客服机器人是7*24小时智能问答机器人
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 机器人icon
+     * @example xxxx
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 机器人名称
+     * @example 小蜜机器人
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 机器人预览图
+     * @example xxxx
      *
      * @var string
      */

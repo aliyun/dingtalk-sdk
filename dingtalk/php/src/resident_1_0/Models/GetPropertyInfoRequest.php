@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetPropertyInfoRequest extends Model
 {
     /**
-     * @description dingCropId
-     *
      * @var string
      */
     public $propertyCorpId;

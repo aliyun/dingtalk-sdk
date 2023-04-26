@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class QueryUserFaceResponseBody extends Model
 {
     /**
-     * @description 组织id
+     * @example dingding123
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 人脸id
+     * @example 30001
      *
      * @var string
      */
     public $faceId;
 
     /**
-     * @description 员工姓名
+     * @example 小明
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 员工id
+     * @example 40001
      *
      * @var string
      */

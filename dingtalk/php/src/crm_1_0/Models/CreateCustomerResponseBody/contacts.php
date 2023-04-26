@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class contacts extends Model
 {
     /**
-     * @description 联系人实例id
+     * @example contact_id
      *
      * @var string
      */

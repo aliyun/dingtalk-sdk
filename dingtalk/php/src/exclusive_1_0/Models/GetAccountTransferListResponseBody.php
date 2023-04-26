@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class GetAccountTransferListResponseBody extends Model
 {
     /**
-     * @description 迁移详情数据
-     *
      * @var itemList[]
      */
     public $itemList;
 
     /**
-     * @description 总数据量
+     * @example 1000
      *
      * @var int
      */

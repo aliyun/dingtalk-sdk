@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class notify extends Model
 {
     /**
-     * @description 服务群通知接收人（钉钉UnionId）
-     *
      * @var string[]
      */
     public $groupNoticeReceiverUnionIds;
 
     /**
-     * @description 是否向群内推送一个全员可见工单通知卡片
+     * @example true
      *
      * @var bool
      */
     public $noticeAllGroupMember;
 
     /**
-     * @description 企业工作通知接收人（钉钉UnionId）
-     *
      * @var string[]
      */
     public $workNoticeReceiverUnionIds;

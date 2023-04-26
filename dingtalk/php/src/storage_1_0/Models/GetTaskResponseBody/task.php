@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class task extends Model
 {
     /**
-     * @description 任务开始时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $beginTime;
 
     /**
-     * @description 任务结束时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $endTime;
 
     /**
-     * @description 子任务失败总数
+     * @example 1
      *
      * @var int
      */
     public $failCount;
 
     /**
-     * @description 任务失败原因
+     * @example permissionDenied
      *
      * @var string
      */
     public $failMessage;
 
     /**
-     * @description 任务id
+     * @example task_id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 任务状态
-     * FAIL: 失败
+     * @example IN_PROGRESS
+     *
      * @var string
      */
     public $status;
 
     /**
-     * @description 子任务成功总数
+     * @example 3
      *
      * @var int
      */
     public $successCount;
 
     /**
-     * @description 子任务总数
+     * @example 6
      *
      * @var int
      */

@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class warningDepts extends Model
 {
     /**
-     * @description 部门id
-     *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 部门名称
-     *
      * @var string
      */
     public $name;

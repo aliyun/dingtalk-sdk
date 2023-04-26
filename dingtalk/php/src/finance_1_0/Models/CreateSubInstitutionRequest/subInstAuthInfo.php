@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class subInstAuthInfo extends Model
 {
     /**
-     * @description 授权函图片url
+     * @example ossUrl
      *
      * @var string
      */

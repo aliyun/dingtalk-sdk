@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetUserTodoTaskSumResponseBody extends Model
 {
     /**
-     * @description 待处理的审批数量。
+     * @example 10
      *
      * @var int
      */

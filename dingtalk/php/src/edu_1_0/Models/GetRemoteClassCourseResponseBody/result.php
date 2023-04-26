@@ -12,78 +12,72 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 听课设备列表
-     *
      * @var attendParticipants[]
      */
     public $attendParticipants;
 
     /**
-     * @description 课程是否可以编辑或删除
+     * @example false
      *
      * @var bool
      */
     public $canEdit;
 
     /**
-     * @description 课程code
+     * @example UvCIp16813006
      *
      * @var string
      */
     public $courseCode;
 
     /**
-     * @description 课程名称
+     * @example 春天来了
      *
      * @var string
      */
     public $courseName;
 
     /**
-     * @description 结束时间
+     * @example 1635157800000
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 直播观看URL（如果有）
+     * @example https://pre-live.edu.dingtalk.com/live/showLive?courseCode=UvCIp16813006#/aiclass
      *
      * @var string
      */
     public $liveUrl;
 
     /**
-     * @description 录制信息列表（如果有）。根据录制端的不同，有不同时长的延迟
-     *
      * @var recordInfos[]
      */
     public $recordInfos;
 
     /**
-     * @description 课堂当前状态：0: 未进行；1: 进行中
+     * @example 1
      *
      * @var int
      */
     public $roomStatus;
 
     /**
-     * @description 开始时间
+     * @example 1635150600000
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 课程状态：0: 未开始；1: 已开始；2: 已结束
+     * @example 1
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 授课设备
-     *
      * @var teachingParticipant
      */
     public $teachingParticipant;

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class AddRobotInstanceToGroupRequest extends Model
 {
     /**
-     * @description 机器人id
+     * @example abcd123
      *
      * @var string
      */
     public $chatbotId;
 
     /**
-     * @description 对话id
+     * @example cidxxxx
      *
      * @var string
      */

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class organizer extends Model
 {
     /**
-     * @description 组织者unionId。
-     *
      * @var string
      */
     public $id;

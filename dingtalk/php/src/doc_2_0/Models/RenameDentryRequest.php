@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class RenameDentryRequest extends Model
 {
     /**
-     * @description 重命名之后的节点名称，长度不能超过50。
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 操作人unionId。
-     *
      * @var string
      */
     public $operatorId;

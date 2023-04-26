@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description authItems
-     *
      * @var string[]
      */
     public $authItems;
 
     /**
-     * @description resource
+     * @example Contact.User
      *
      * @var string
      */

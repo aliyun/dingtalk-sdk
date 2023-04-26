@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryJobStatusCodeDictionaryResponseBody extends Model
 {
     /**
-     * @description code列表
-     *
      * @var content[]
      */
     public $content;

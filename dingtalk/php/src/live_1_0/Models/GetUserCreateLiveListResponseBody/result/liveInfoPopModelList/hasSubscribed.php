@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class hasSubscribed extends Model
 {
     /**
-     * @description 是否关注
-     *
      * @var bool
      */
     public $hasSubscribed;
 
     /**
-     * @description 预告是否过期
-     *
      * @var bool
      */
     public $isForecastExpired;
 
     /**
-     * @description 回放观看进度
-     *
      * @var int
      */
     public $watchProgressMs;

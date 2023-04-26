@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class quotas extends Model
 {
     /**
-     * @description 容量标识符
-     *
      * @var string
      */
     public $identifier;
 
     /**
-     * @description 总容量
-     *
      * @var int
      */
     public $quota;
 
     /**
-     * @description 容量类型
-     *
      * @var string
      */
     public $type;
 
     /**
-     * @description 已使用容量
-     *
      * @var int
      */
     public $usedQuota;

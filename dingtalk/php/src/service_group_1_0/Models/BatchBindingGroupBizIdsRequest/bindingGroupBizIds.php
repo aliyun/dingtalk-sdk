@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class bindingGroupBizIds extends Model
 {
     /**
-     * @description 业务ID
+     * @example hghhghghhg
      *
      * @var string
      */
     public $bizId;
 
     /**
-     * @description 群会话ID
+     * @example cid123
      *
      * @var string
      */

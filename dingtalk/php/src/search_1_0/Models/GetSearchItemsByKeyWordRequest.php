@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetSearchItemsByKeyWordRequest extends Model
 {
     /**
-     * @description 搜索关键词
+     * @example 诺贝尔奖
      *
      * @var string
      */
     public $keyWord;
 
     /**
-     * @description 一次性请求的item数量
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 加密偏移量，第一次请求取“0”值，后续请求根据接口返回的nextToken值进行填写
+     * @example 0
      *
      * @var string
      */

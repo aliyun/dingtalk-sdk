@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class InitDeviceResponseBody extends Model
 {
     /**
-     * @description 成功信息
+     * @example success
      *
      * @var string
      */

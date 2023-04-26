@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetActivityButtonListRequest extends Model
 {
     /**
-     * @description 语言环境
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 应用秘钥
+     * @example hello1234
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉的userId
+     * @example 未知
      *
      * @var string
      */

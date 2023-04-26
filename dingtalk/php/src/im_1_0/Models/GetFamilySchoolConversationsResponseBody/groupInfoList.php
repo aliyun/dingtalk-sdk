@@ -9,42 +9,38 @@ use AlibabaCloud\Tea\Model;
 class groupInfoList extends Model
 {
     /**
-     * @description 企业名称
+     * @example corp123
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 部门名称链
-     *
      * @var string[]
      */
     public $deptNameChain;
 
     /**
-     * @description 群名称
+     * @example 小王的家校群
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 群类型
+     * @example 2
      *
      * @var string
      */
     public $groupType;
 
     /**
-     * @description 进群时间
-     *
      * @var int
      */
     public $joinGroupTime;
 
     /**
-     * @description 群开放ID
+     * @example cidxxx
      *
      * @var string
      */

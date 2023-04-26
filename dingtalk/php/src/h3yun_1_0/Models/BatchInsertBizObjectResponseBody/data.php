@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 成功新增的业务对象id数组
-     *
      * @var string[]
      */
     public $bizObjectIds;
 
     /**
-     * @description 新增失败的数据数组
-     *
      * @var string[]
      */
     public $failedDatas;
 
     /**
-     * @description 失败的提示信息数组
-     *
      * @var string[]
      */
     public $failedMessages;
 
     /**
-     * @description 新增成功的流程实例id数组
-     *
      * @var string[]
      */
     public $processIds;

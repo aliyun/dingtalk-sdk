@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class actorSelectionRange extends Model
 {
     /**
-     * @description 审批指定成员
-     *
      * @var approvals[]
      */
     public $approvals;
 
     /**
-     * @description 审批指定角色
-     *
      * @var labels[]
      */
     public $labels;

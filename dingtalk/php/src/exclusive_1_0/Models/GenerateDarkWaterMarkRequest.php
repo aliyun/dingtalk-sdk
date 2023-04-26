@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GenerateDarkWaterMarkRequest extends Model
 {
     /**
-     * @description 工号列表
-     *
      * @var string[]
      */
     public $userIdList;

@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class responseBody extends Model
 {
     /**
-     * @description 消息列表
-     *
      * @var messageList[]
      */
     public $messageList;
 
     /**
-     * @description 下一次请求的token,无返回值则下一条消息不存在
+     * @example 1680493837428
      *
      * @var string
      */

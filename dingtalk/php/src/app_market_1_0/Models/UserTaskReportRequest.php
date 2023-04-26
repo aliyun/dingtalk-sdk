@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class UserTaskReportRequest extends Model
 {
     /**
-     * @description 业务的幂等ID
+     * @example biz1231231231abcd
      *
      * @var string
      */
     public $bizNo;
 
     /**
-     * @description operateDate
+     * @example 2020-12-12 12:00:00
      *
      * @var string
      */
     public $operateDate;
 
     /**
-     * @description taskTag
+     * @example task-create
      *
      * @var string
      */
     public $taskTag;
 
     /**
-     * @description staffId
+     * @example 2312
      *
      * @var string
      */

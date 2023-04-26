@@ -9,42 +9,38 @@ use AlibabaCloud\Tea\Model;
 class SendDingMessageRequest extends Model
 {
     /**
-     * @description 钉内用户oauth2.0授权码。
-     *
      * @var string
      */
     public $code;
 
     /**
-     * @description 消息内容。
+     * @example {"msg_type":"text","text":"hello world"}
      *
      * @var string
      */
     public $message;
 
     /**
-     * @description 消息类型
+     * @example text
      *
      * @var string
      */
     public $messageType;
 
     /**
-     * @description 群会话Id。
-     *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 钉外账号在业务系统内的唯一标志。
+     * @example 1107****2120
      *
      * @var string
      */
     public $receiverId;
 
     /**
-     * @description 钉内账号userId。
+     * @example 1745****8777
      *
      * @var string
      */

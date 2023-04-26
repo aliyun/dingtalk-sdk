@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class QueryProcessesInstanceResponseBody extends Model
 {
     /**
-     * @description 状态码
+     * @example success
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 返回结果
-     *
      * @var data[]
      */
     public $data;
 
     /**
-     * @description 提示信息
+     * @example OK
      *
      * @var string
      */

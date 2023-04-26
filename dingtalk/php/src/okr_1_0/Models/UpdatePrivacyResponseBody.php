@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class UpdatePrivacyResponseBody extends Model
 {
     /**
-     * @description 返回的数据。
-     *
      * @var data
      */
     public $data;
 
     /**
-     * @description 请求成功的标识。
+     * @example true
      *
      * @var bool
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class saveOption extends Model
 {
     /**
-     * @description 客户已存在时的处理策略：APPEND_CONTACT_FORCE 直接追加联系人； REJECT 返回失败
+     * @example APPEND_CONTACT_FORCE
      *
      * @var string
      */
     public $customerExistedPolicy;
 
     /**
-     * @description 跳过uk查重
+     * @example false
      *
      * @var bool
      */
     public $skipDuplicateCheck;
 
     /**
-     * @description 关注配置：0 不处理， 1 自动关注（需要单独申请白名单）
+     * @example 0
      *
      * @var int
      */
     public $subscribePolicy;
 
     /**
-     * @description 保存联系人失败时是否阻断
+     * @example true
      *
      * @var bool
      */

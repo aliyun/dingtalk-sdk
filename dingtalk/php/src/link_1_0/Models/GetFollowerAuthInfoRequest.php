@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetFollowerAuthInfoRequest extends Model
 {
     /**
-     * @description 服务窗帐号ID，用于非服务窗自建应用场景下指定服务窗帐号。
+     * @example ding1234
      *
      * @var string
      */
     public $accountId;
 
     /**
-     * @description 关注用户的userId
+     * @example Rp3Rqcts7BE08y49Jr6iu6xW4iQ
      *
      * @var string
      */

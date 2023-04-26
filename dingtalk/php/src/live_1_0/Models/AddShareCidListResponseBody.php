@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class AddShareCidListResponseBody extends Model
 {
     /**
-     * @description 是否联播成功
+     * @example true
      *
      * @var bool
      */
     public $hasShareSuccess;
 
     /**
-     * @description 本次请求成功联播的群列表
-     *
      * @var string[]
      */
     public $shareSuccessGroupList;

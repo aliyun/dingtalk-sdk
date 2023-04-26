@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class SearchCompanyResponseBody extends Model
 {
     /**
-     * @description 返回数据结果
+     * @example [     {       "ENT_NAME": "xx",       "SOCIAL_CREDIT_CODE": "xx",       "LICENSE_NUMBER": "xx",       "REG_CAP": "10000000.0",       "ES_DATE": "2006-12-07",       "LEGAL_NAME": "xx",       "ORG_NO": "xx",       "TAX_NUM": "xx",       "ENT_STATUS": "在营"     }   ]
      *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

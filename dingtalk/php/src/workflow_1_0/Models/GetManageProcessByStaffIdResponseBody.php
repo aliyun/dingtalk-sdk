@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class GetManageProcessByStaffIdResponseBody extends Model
 {
     /**
-     * @description 返回结果列表。
-     *
      * @var result[]
      */
     public $result;
 
     /**
-     * @description 接口调用是否成功。
+     * @example true
      *
      * @var bool
      */

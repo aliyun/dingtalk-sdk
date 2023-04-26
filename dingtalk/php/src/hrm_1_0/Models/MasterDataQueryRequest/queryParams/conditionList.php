@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class conditionList extends Model
 {
     /**
-     * @description 字段关系符
+     * @example EQUAL
      *
      * @var string
      */
     public $operate;
 
     /**
-     * @description 操作值
-     *
      * @var string
      */
     public $value;

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryMeetingRoomGroupListResponseBody extends Model
 {
     /**
-     * @description 结果列表
-     *
      * @var result[]
      */
     public $result;

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class BatchUpdateDeviceResponseBody extends Model
 {
     /**
-     * @description 修改成功的设备ID列表。
-     *
      * @var string[]
      */
     public $deviceIds;

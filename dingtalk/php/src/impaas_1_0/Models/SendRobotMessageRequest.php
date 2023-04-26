@@ -9,105 +9,89 @@ use AlibabaCloud\Tea\Model;
 class SendRobotMessageRequest extends Model
 {
     /**
-     * @description 是否@全员
+     * @example false
      *
      * @var bool
      */
     public $atAll;
 
     /**
-     * @description @人的appuid列表
-     *
      * @var string[]
      */
     public $atAppUids;
 
     /**
-     * @description @人的手机号列表
-     *
      * @var string[]
      */
     public $atMobiles;
 
     /**
-     * @description @人的unionid列表
-     *
      * @var string[]
      */
     public $atUnionIds;
 
     /**
-     * @description @人的userid列表
-     *
      * @var string[]
      */
     public $atUsers;
 
     /**
-     * @description 租户channel
+     * @example 123
      *
      * @var string
      */
     public $channel;
 
     /**
-     * @description 消息模板内容替换参数，多媒体类型
+     * @example {\"pic1\":\"@123\",\"pic2\":\"@456\"}
      *
      * @var mixed[]
      */
     public $msgMediaIdParamMap;
 
     /**
-     * @description 消息模板内容替换参数，普通文本类型
+     * @example {\"text1\":\"hello\",\"text2\":\"world\"}
      *
      * @var mixed[]
      */
     public $msgParamMap;
 
     /**
-     * @description 消息模板id
+     * @example 123
      *
      * @var string
      */
     public $msgTemplateId;
 
     /**
-     * @description 消息接收人appuid列表
-     *
      * @var string[]
      */
     public $receiverAppUids;
 
     /**
-     * @description 消息接收人手机号列表
-     *
      * @var string[]
      */
     public $receiverMobiles;
 
     /**
-     * @description 消息接收人unionId列表
-     *
      * @var string[]
      */
     public $receiverUnionIds;
 
     /**
-     * @description 消息接收人userId列表
-     *
      * @var string[]
      */
     public $receiverUserIds;
 
     /**
-     * @description 用于发送卡片的机器人编码，与场景群模板中的机器人编码保持一致
+     * @example 123
      *
      * @var string
      */
     public $robotCode;
 
     /**
-     * @description 会话id
+     * @example 123
      *
      * @var string
      */

@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class EditDeviceAdminResponseBody extends Model
 {
     /**
-     * @description 接口处理返回结果。
-     *
      * @var string
      */
     public $result;
 
     /**
-     * @description 接口处理是否成功。
-     *
      * @var bool
      */
     public $success;

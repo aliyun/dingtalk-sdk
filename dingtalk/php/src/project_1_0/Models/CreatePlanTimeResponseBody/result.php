@@ -15,7 +15,7 @@ class result extends Model
     public $body;
 
     /**
-     * @description 执行结果描述
+     * @example 创建工时成功
      *
      * @var string
      */

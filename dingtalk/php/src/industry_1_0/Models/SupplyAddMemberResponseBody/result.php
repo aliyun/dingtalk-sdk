@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 成员在钉钉组织的状态
+     * @example NORMAL
      *
      * @var string
      */
     public $dingMemberStatus;
 
     /**
-     * @description isv内用户唯一id
+     * @example 12345abc
      *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 已经进组织的用户唯一id
+     * @example 12345abc
      *
      * @var string
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetTbOrgIdByDingOrgIdRequest extends Model
 {
     /**
-     * @description 操作者userId
+     * @example 0175xxxx
      *
      * @var string
      */

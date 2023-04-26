@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class fieldList extends Model
 {
     /**
-     * @description 字段名
+     * @example name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 字段string值
+     * @example 123
      *
      * @var string
      */

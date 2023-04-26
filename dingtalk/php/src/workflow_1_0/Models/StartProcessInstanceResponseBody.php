@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class StartProcessInstanceResponseBody extends Model
 {
     /**
-     * @description 审批实例id
+     * @example 91ef1076-c3ed-4a78-a7a5-fa29ef2d6252
      *
      * @var string
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteCrmCustomObjectDataResponseBody extends Model
 {
     /**
-     * @description 删除成功的CRM自定义对象数据ID。
+     * @example INST_xx
      *
      * @var string
      */

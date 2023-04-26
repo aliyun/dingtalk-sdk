@@ -9,99 +9,75 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 入库申请人
-     *
      * @var string
      */
     public $askempid;
 
     /**
-     * @description 入库备注
-     *
      * @var string
      */
     public $auditreson;
 
     /**
-     * @description 入库单号
-     *
      * @var string
      */
     public $billno;
 
     /**
-     * @description 产品明细，json格式
+     * @example "child_mx":[{"产品ID":"1","数量":"10","单价":"58.5","总价":"585","明细备注":"包含的测试产品"}]
      *
      * @var string
      */
     public $childMx;
 
     /**
-     * @description 供应商/客户
-     *
      * @var string
      */
     public $customerid;
 
     /**
-     * @description 创建人
+     * @example 张三
      *
      * @var string
      */
     public $dataUserid;
 
     /**
-     * @description 入库经办人
-     *
      * @var string
      */
     public $empid;
 
     /**
-     * @description 单据类型（入库，销售退货，生产退料，生产入库，维修退货）
-     *
      * @var string
      */
     public $inorout;
 
     /**
-     * @description 入库日期
-     *
      * @var string
      */
     public $libiodate;
 
     /**
-     * @description 入库主题
-     *
      * @var string
      */
     public $libioname;
 
     /**
-     * @description 入库状态（未入库，已入库）
-     *
      * @var string
      */
     public $libiostate;
 
     /**
-     * @description 对应单据
-     *
      * @var string
      */
     public $orderid;
 
     /**
-     * @description 申请备注
-     *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 入库仓库
-     *
      * @var string
      */
     public $stocklibid;

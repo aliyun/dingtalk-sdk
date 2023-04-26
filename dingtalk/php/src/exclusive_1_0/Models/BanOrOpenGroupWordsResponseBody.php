@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class BanOrOpenGroupWordsResponseBody extends Model
 {
     /**
-     * @description 原因
+     * @example 成功
      *
      * @var string
      */
     public $cause;
 
     /**
-     * @description 返回码
+     * @example 200
      *
      * @var string
      */

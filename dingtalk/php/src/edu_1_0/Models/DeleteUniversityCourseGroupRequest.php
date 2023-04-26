@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class DeleteUniversityCourseGroupRequest extends Model
 {
     /**
-     * @description 课程组编码
+     * @example GS1002
      *
      * @var string
      */
     public $courseGroupCode;
 
     /**
-     * @description 操作人
+     * @example manger1234
      *
      * @var string
      */

@@ -9,85 +9,69 @@ use AlibabaCloud\Tea\Model;
 class UpdateContactHideSettingRequest extends Model
 {
     /**
-     * @description 是否激活
+     * @example true
      *
      * @var bool
      */
     public $active;
 
     /**
-     * @description 设置描述信息
+     * @example description text
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 白名单部门列表
-     *
      * @var int[]
      */
     public $excludeDeptIds;
 
     /**
-     * @description 白名单员工列表
-     *
      * @var string[]
      */
     public $excludeStaffIds;
 
     /**
-     * @description 白名单角色列表
-     *
      * @var int[]
      */
     public $excludeTagIds;
 
     /**
-     * @description 是否同时在被搜索时隐藏
-     *
      * @var bool
      */
     public $hideInSearch;
 
     /**
-     * @description 是否同时在被查看个人资料页时隐藏
-     *
      * @var bool
      */
     public $hideInUserProfile;
 
     /**
-     * @description settingId
+     * @example 11234
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 设置名称
+     * @example test name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 影藏部门列表
-     *
      * @var int[]
      */
     public $objectDeptIds;
 
     /**
-     * @description 隐藏员工列表
-     *
      * @var string[]
      */
     public $objectStaffIds;
 
     /**
-     * @description 影藏角色列表
-     *
      * @var int[]
      */
     public $objectTagIds;

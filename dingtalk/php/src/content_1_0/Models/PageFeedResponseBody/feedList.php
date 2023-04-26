@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class feedList extends Model
 {
     /**
-     * @description 内容分类，请见https://developers.dingtalk.com/document/app/appendix-content
+     * @example 200000257
      *
      * @var string
      */
     public $feedCategory;
 
     /**
-     * @description 内容Id
+     * @example 3d******-1cd2-****-ba1d-8******3c6dc
      *
      * @var string
      */
     public $feedId;
 
     /**
-     * @description 内容类型，0：免费内容 4：平价内容 5：专栏内容 6：训练营内容
+     * @example 4
      *
      * @var int
      */
     public $feedType;
 
     /**
-     * @description 内容名称
+     * @example 名称
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 封面URL
+     * @example https://static.dingtalk.com/media/**************NAlg_600_337.jpg
      *
      * @var string
      */
     public $thumbUrl;
 
     /**
-     * @description 跳转Url，跳转到职场学堂后台页面
+     * @example https://h5.dingtalk.com/live/video_lesson.htm?spm=a1zdd.*******.0.0.3e9617129vSDL8&feedId=5e*****-17ec-45f1-8cc0-e******4a3&mcnId=183206*******06173&feedProperty=1&itemId=5ef7*****-17ec-45f1-8cc0-e64*****954a3&dd_nav_bgcolor=FF2****F#/video
      *
      * @var string
      */

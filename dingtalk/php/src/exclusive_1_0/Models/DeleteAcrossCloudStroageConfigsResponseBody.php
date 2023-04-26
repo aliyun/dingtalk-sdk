@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteAcrossCloudStroageConfigsResponseBody extends Model
 {
     /**
-     * @description 执行结果
+     * @example true
      *
      * @var bool
      */

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateOrganizationTaskPriorityRequest extends Model
 {
     /**
-     * @description 是否禁止动态
+     * @example true
      *
      * @var bool
      */
     public $disableActivity;
 
     /**
-     * @description 是否禁止通知
+     * @example true
      *
      * @var bool
      */
     public $disableNotification;
 
     /**
-     * @description 优先级【-10,0,1,2】中的一个值
+     * @example -10
      *
      * @var int
      */

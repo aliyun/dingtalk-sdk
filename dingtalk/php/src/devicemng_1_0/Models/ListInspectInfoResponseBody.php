@@ -10,21 +10,17 @@ use AlibabaCloud\Tea\Model;
 class ListInspectInfoResponseBody extends Model
 {
     /**
-     * @description 结果集
-     *
      * @var result[]
      */
     public $result;
 
     /**
-     * @description 是否成功
-     *
      * @var bool
      */
     public $success;
 
     /**
-     * @description 总共数量
+     * @example 111
      *
      * @var int
      */

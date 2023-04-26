@@ -14,14 +14,14 @@ class ListMaintainInfoRequest extends Model
     public $deviceUuid;
 
     /**
-     * @description 页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 页面大小
+     * @example 10
      *
      * @var int
      */

@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 是否符合家长活动规则
-     *
      * @var bool
      */
     public $matchGuardianRule;
 
     /**
-     * @description 是否符合教师活动规则
-     *
      * @var bool
      */
     public $matchTeacherRule;
 
     /**
-     * @description 用户unionId
-     *
      * @var string
      */
     public $unionId;

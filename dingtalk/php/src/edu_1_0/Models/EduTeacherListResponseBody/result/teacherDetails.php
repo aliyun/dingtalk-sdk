@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class teacherDetails extends Model
 {
     /**
-     * @description 用户名称
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 角色
+     * @example teacher
      *
      * @var string
      */
     public $role;
 
     /**
-     * @description PiiiPyQqBxxx
+     * @example 人员的unionId。
      *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 用户ID
+     * @example 77621233
      *
      * @var string
      */

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class PageListObjectiveProgressRequest extends Model
 {
     /**
-     * @description 目标id
+     * @example 20
      *
      * @var string
      */
     public $objectiveId;
 
     /**
-     * @description 页数
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 页大小
+     * @example 10
      *
      * @var int
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListSpaceSectionsResponseBody extends Model
 {
     /**
-     * @description 空间分组列表。
-     *
      * @var items[]
      */
     public $items;

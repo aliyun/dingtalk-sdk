@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class results extends Model
 {
     /**
-     * @description 如果保存失败，则表示失败的错误码。
+     * @example 1002
      *
      * @var string
      */
     public $errorCode;
 
     /**
-     * @description 如果保存失败，则表示失败的错误原因。
+     * @example 查重失败
      *
      * @var string
      */
     public $errorMsg;
 
     /**
-     * @description 保存成功的关系id。
+     * @example yU9TbER1TDazjPq1rRCzwg04841675924041
      *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description 数据是否保存成功。
+     * @example true
      *
      * @var bool
      */

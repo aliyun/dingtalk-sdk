@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class QueryPermissionByUserIdResponseBody extends Model
 {
     /**
-     * @description 权限信息列表
-     *
      * @var permissionDTOList[]
      */
     public $permissionDTOList;
 
     /**
-     * @description 用户ID
+     * @example 123456789
      *
      * @var string
      */

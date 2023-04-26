@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SaveFormDataResponseBody extends Model
 {
     /**
-     * @description 表单实例ID
+     * @example FINST-XIA66E71N7HSLK7H4KOZ388EEOP03A46YAYRK1
      *
      * @var string
      */

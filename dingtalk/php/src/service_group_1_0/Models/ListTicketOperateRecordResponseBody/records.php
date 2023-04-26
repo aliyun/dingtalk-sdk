@@ -11,8 +11,6 @@ use AlibabaCloud\Tea\Model;
 class records extends Model
 {
     /**
-     * @description 工单开放ID
-     *
      * @var string
      */
     public $openTicketId;
@@ -23,22 +21,16 @@ class records extends Model
     public $operateData;
 
     /**
-     * @description 操作时间
-     *
      * @var string
      */
     public $operateTime;
 
     /**
-     * @description 动作
-     *
      * @var string
      */
     public $operation;
 
     /**
-     * @description 动作展示名
-     *
      * @var string
      */
     public $operationDisplayName;

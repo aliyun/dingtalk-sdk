@@ -34,7 +34,7 @@ class DeletePermissionRequest extends Model
     public $type;
 
     /**
-     * @description 当前用户的userId。
+     * @example 0115396701752283
      *
      * @var string
      */

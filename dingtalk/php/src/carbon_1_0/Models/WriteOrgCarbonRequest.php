@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class WriteOrgCarbonRequest extends Model
 {
     /**
-     * @description 入参集
-     *
      * @var orgDetailsList[]
      */
     public $orgDetailsList;

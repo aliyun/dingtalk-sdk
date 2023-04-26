@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class courseList extends Model
 {
     /**
-     * @description 课程id
+     * @example fdjakl-fdaf-ds
      *
      * @var string
      */
     public $courseId;
 
     /**
-     * @description 封面图片地址
+     * @example https://static.dingtalk.com/media/lALPDgCwRt4FagzMi8yZ_153_139.png
      *
      * @var string
      */
     public $coverUrl;
 
     /**
-     * @description 课程类型: 0-直播 2-视频内容
+     * @example 0
      *
      * @var int
      */
     public $feedType;
 
     /**
-     * @description 课程观看地址
+     * @example https://h5.dingtalk.com/live/video_lesson.htm?feedId=4aa5ter-05d8-4aac-834a-3b3847cf642e&mcnId=7536041420201104593&feedProperty=1&itemId=4aa563e1-05d8-4aac-841a-3b3847cf642e&dd_nav_bgcolor=FF2C2D2F#/live
      *
      * @var string
      */
     public $jumpUrl;
 
     /**
-     * @description 课程开始时间
+     * @example 1618369786000
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 老师的userId
+     * @example 123124312314
      *
      * @var string
      */
     public $teacherId;
 
     /**
-     * @description 老师名称
+     * @example 张老师
      *
      * @var string
      */
     public $teacherName;
 
     /**
-     * @description 课程标题
+     * @example 开学第一课
      *
      * @var string
      */

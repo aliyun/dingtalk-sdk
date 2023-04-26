@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateRangeResponseBody extends Model
 {
     /**
-     * @description 使用A1表示法的Range地址
+     * @example a1_notation
      *
      * @var string
      */

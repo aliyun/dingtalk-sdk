@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 个人积分明细列表
-     *
      * @var details[]
      */
     public $details;
 
     /**
-     * @description 是否有下一页
+     * @example true
      *
      * @var bool
      */

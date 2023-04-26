@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 企业每月额度自动发放给每个人的数量
+     * @example 100
      *
      * @var int
      */
     public $pointAutoNum;
 
     /**
-     * @description 企业积分自动发放状态
+     * @example true
      *
      * @var bool
      */
     public $pointAutoState;
 
     /**
-     * @description 企业积分自动发放时间 指定的是每月1号或15号
+     * @example 15
      *
      * @var int
      */

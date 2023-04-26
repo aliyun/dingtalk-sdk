@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 订阅详情列表
-     *
      * @var subscribeStatusDTOS[]
      */
     public $subscribeStatusDTOS;

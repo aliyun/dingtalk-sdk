@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryCustomerCardResponseBody extends Model
 {
     /**
-     * @description dingOpenErrcode
-     *
      * @var int
      */
     public $dingOpenErrcode;
 
     /**
-     * @description errorMsg
-     *
      * @var string
      */
     public $errorMsg;
 
     /**
-     * @description result
-     *
      * @var bool
      */
     public $result;
 
     /**
-     * @description success
-     *
      * @var bool
      */
     public $success;

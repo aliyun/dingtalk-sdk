@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class submitterList extends Model
 {
     /**
-     * @description 名称
+     * @example 钉三多
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 类型
+     * @example approval
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 员工staffId/部门id
+     * @example manager1234
      *
      * @var string
      */

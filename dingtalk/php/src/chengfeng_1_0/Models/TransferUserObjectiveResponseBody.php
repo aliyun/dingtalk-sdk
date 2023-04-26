@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class TransferUserObjectiveResponseBody extends Model
 {
     /**
-     * @description 转交是否成功
+     * @example true
      *
      * @var bool
      */
     public $content;
 
     /**
-     * @description Id of the request
+     * @example 1111
      *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description 返回结果
+     * @example true
      *
      * @var bool
      */

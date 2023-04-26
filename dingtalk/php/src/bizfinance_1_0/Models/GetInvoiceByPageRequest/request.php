@@ -9,50 +9,49 @@ use AlibabaCloud\Tea\Model;
 class request extends Model
 {
     /**
-     * @description 结束时间
-     *
+     * @example abc
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 进项票/销项票
+     * @example abc
      *
      * @var string
      */
     public $financeType;
 
     /**
-     * @description 分页参数
+     * @example 2
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页参数
+     * @example 1
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 开始时间
+     * @example 2022-07-11
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 税号
+     * @example 1111111111
      *
      * @var string
      */
     public $taxNo;
 
     /**
-     * @description 认证状态
+     * @example ABC
      *
      * @var string
      */

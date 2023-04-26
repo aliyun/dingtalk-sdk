@@ -9,36 +9,34 @@ use AlibabaCloud\Tea\Model;
 class dept extends Model
 {
     /**
-     * @description 创建时间
+     * @example 2021-06-02 17:44:17
      *
      * @var string
      */
     public $gmtCreateStr;
 
     /**
-     * @description 修改时间
+     * @example 2021-06-02 17:44:17
      *
      * @var string
      */
     public $gmtModifiedStr;
 
     /**
-     * @description 科室Id
+     * @example 123
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 科室名称
+     * @example 科室名称2
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 人科关联id
-     *
      * @var int
      */
     public $relId;

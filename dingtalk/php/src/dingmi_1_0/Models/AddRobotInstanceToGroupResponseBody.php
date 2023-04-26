@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class AddRobotInstanceToGroupResponseBody extends Model
 {
     /**
-     * @description 是否成功拉入群
+     * @example true
      *
      * @var bool
      */

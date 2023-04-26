@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CreateTaskObjectLinkRequest extends Model
 {
     /**
-     * @description 关联链接对象
-     *
      * @var linkedData
      */
     public $linkedData;

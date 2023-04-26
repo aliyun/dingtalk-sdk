@@ -59,7 +59,7 @@ class CreateItemRequest extends Model
     public $startTime;
 
     /**
-     * @description 状态
+     * @example 1
      *
      * @var int
      */

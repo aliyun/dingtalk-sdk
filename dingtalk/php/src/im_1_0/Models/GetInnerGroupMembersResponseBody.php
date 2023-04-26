@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class GetInnerGroupMembersResponseBody extends Model
 {
     /**
-     * @description 是否还有更多数据。
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下一次请求的游标，若没有更多数据，则此参数为空。
+     * @example UZr*****
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 群成员userId列表。
-     *
      * @var string[]
      */
     public $userIds;

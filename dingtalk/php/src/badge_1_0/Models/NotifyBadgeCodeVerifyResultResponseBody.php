@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class NotifyBadgeCodeVerifyResultResponseBody extends Model
 {
     /**
-     * @description 结果
+     * @example SUCCESS
      *
      * @var string
      */

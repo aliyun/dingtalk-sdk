@@ -9,15 +9,15 @@ use AlibabaCloud\Tea\Model;
 class option extends Model
 {
     /**
-     * @description 文件(夹)名称冲突策略
-     * AUTO_RENAME
+     * @example AUTO_RENAME
+     *
      * @var string
      */
     public $conflictStrategy;
 
     /**
-     * @description 移动后，是否保留权限
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $presevePermissions;

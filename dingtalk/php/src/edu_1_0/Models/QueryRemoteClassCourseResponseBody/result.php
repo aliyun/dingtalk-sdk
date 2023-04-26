@@ -11,64 +11,46 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 听课设备列表
-     *
      * @var attendParticipants[]
      */
     public $attendParticipants;
 
     /**
-     * @description 课程是否可以编辑或删除
-     *
      * @var bool
      */
     public $canEdit;
 
     /**
-     * @description 课程code
-     *
      * @var string
      */
     public $courseCode;
 
     /**
-     * @description 课程名称
-     *
      * @var string
      */
     public $courseName;
 
     /**
-     * @description 当前组织在课程中的角色列表：TEACHING：授课方；ATTEND：听课方
-     *
      * @var string[]
      */
     public $courseWays;
 
     /**
-     * @description 结束时间
-     *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 开始时间
-     *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 课程状态：0: 未开始；1: 已开始；2: 已结束
-     *
      * @var int
      */
     public $status;
 
     /**
-     * @description 授课设备
-     *
      * @var teachingParticipant
      */
     public $teachingParticipant;

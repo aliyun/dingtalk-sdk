@@ -13,50 +13,42 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 角色id
+     * @example 123
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 是否必邀角色
+     * @example 1
      *
      * @var int
      */
     public $isNecessary;
 
     /**
-     * @description 角色名称
+     * @example 供应商
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 可见部门
-     *
      * @var visibleDepts[]
      */
     public $visibleDepts;
 
     /**
-     * @description 可见员工
-     *
      * @var visibleUsers[]
      */
     public $visibleUsers;
 
     /**
-     * @description 预警部门
-     *
      * @var warningDepts[]
      */
     public $warningDepts;
 
     /**
-     * @description 预警成员
-     *
      * @var warningUsers[]
      */
     public $warningUsers;

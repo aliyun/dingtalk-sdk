@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class BatchSendResponseBody extends Model
 {
     /**
-     * @description 任务Id
+     * @example 23233434
      *
      * @var string
      */

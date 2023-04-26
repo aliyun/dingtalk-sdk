@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CreateProcessesInstanceRequest extends Model
 {
     /**
-     * @description 业务数据id
+     * @example 006f870b-4d1c-4cd0-85b3-2e866798e947
      *
      * @var string
      */
     public $bizObjectId;
 
     /**
-     * @description 操作用户id。此为氚云的用户id，可从"获取用户数据API"获取
+     * @example aea4d7a7-d162-4c77-9c44-7bd9cb8316a5
      *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 表单编码
+     * @example D0001833abb0fb61524487eb01848207bc89b47
      *
      * @var string
      */

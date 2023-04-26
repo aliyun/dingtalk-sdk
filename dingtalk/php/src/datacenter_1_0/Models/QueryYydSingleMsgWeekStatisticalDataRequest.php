@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryYydSingleMsgWeekStatisticalDataRequest extends Model
 {
     /**
-     * @description statDate
-     *
      * @var string
      */
     public $statDate;

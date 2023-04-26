@@ -10,189 +10,149 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description actionerId
-     *
      * @var string[]
      */
     public $actionExecutorId;
 
     /**
-     * @description actionerName
-     *
      * @var string[]
      */
     public $actionExecutorName;
 
     /**
-     * @description appType
-     *
      * @var string
      */
     public $appType;
 
     /**
-     * @description carbonActivityId
-     *
      * @var string
      */
     public $carbonActivityId;
 
     /**
-     * @description 创建时间
+     * @example 2021-01-01
      *
      * @var string
      */
     public $createTimeGMT;
 
     /**
-     * @description currentActivityInstances
-     *
      * @var currentActivityInstances[]
      */
     public $currentActivityInstances;
 
     /**
-     * @description dataMap
-     *
      * @var mixed[]
      */
     public $dataMap;
 
     /**
-     * @description dataType
-     *
      * @var string
      */
     public $dataType;
 
     /**
-     * @description 结束时间
+     * @example 2021-01-01
      *
      * @var string
      */
     public $finishTimeGMT;
 
     /**
-     * @description formInstanceId
-     *
      * @var string
      */
     public $formInstanceId;
 
     /**
-     * @description formUuid
-     *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 实例数据
+     * @example 符合宜搭表单实例格式的json数据
      *
      * @var string
      */
     public $instanceValue;
 
     /**
-     * @description modifiedTime
-     *
      * @var string
      */
     public $modifiedTimeGMT;
 
     /**
-     * @description originatorAvatar
-     *
      * @var string
      */
     public $originatorAvatar;
 
     /**
-     * @description originatorDisplayName
-     *
      * @var string
      */
     public $originatorDisplayName;
 
     /**
-     * @description originatorId
-     *
      * @var string
      */
     public $originatorId;
 
     /**
-     * @description processApprovedResult
-     *
      * @var string
      */
     public $processApprovedResult;
 
     /**
-     * @description processApprovedResultText
-     *
      * @var string
      */
     public $processApprovedResultText;
 
     /**
-     * @description processCode
-     *
      * @var string
      */
     public $processCode;
 
     /**
-     * @description 流程id
+     * @example proc-123
      *
      * @var int
      */
     public $processId;
 
     /**
-     * @description processInstanceId
-     *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description processInstanceStatus
-     *
      * @var string
      */
     public $processInstanceStatus;
 
     /**
-     * @description processInstanceStatusText
-     *
      * @var string
      */
     public $processInstanceStatusText;
 
     /**
-     * @description processName
-     *
      * @var string
      */
     public $processName;
 
     /**
-     * @description 序列号
+     * @example ser-BNANFAHHYDFNK
      *
      * @var string
      */
     public $serialNumber;
 
     /**
-     * @description 标题
+     * @example 李四发起的请购单
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 版本
+     * @example 1.0
      *
      * @var int
      */

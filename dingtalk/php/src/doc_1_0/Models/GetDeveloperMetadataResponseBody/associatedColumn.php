@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class associatedColumn extends Model
 {
     /**
-     * @description 列号，从0开始
-     *
      * @var int
      */
     public $column;

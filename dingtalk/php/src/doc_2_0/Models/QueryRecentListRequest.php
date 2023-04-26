@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class QueryRecentListRequest extends Model
 {
     /**
-     * @description 创建人类型。0-全部；1-我创建的；2-他人创建；不填也是查全部。
-     *
      * @var int
      */
     public $creatorType;
 
     /**
-     * @description 访问文档类型：0-文字；1-表格；2-PPT；3-白板；6-脑图；7-多维表；不填的话，则默认是所有。
-     *
      * @var int
      */
     public $fileType;
 
     /**
-     * @description 每页最大条目数，最大值10。
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标，第一页可不传。
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 操作用户unionId。
-     *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 最近列表的类型：0-最近访问；1-最近编辑。
-     *
      * @var int
      */
     public $recentType;

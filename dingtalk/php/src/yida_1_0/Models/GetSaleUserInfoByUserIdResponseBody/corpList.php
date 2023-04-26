@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class corpList extends Model
 {
     /**
-     * @description corpId
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description corpName
-     *
      * @var string
      */
     public $corpName;
 
     /**
-     * @description namespace
-     *
      * @var string
      */
     public $namespace;

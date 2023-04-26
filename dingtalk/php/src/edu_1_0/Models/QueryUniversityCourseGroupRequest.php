@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryUniversityCourseGroupRequest extends Model
 {
     /**
-     * @description 课程编码
+     * @example GS10001
      *
      * @var string
      */
     public $courseGroupCode;
 
     /**
-     * @description 操作人
+     * @example manger1234
      *
      * @var string
      */

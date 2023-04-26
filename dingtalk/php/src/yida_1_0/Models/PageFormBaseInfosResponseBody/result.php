@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 当前页
-     *
      * @var int
      */
     public $currentPage;
@@ -22,8 +20,6 @@ class result extends Model
     public $data;
 
     /**
-     * @description 总行数
-     *
      * @var int
      */
     public $totalCount;

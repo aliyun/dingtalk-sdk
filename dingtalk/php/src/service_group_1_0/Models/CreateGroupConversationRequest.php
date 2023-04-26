@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupConversationRequest extends Model
 {
     /**
-     * @description 开放corpid
+     * @example dingadc88253b4d581bd35c2f4657eb6378f
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 钉群openID
+     * @example fsfsfadfasfdasdfsaf
      *
      * @var string
      */
@@ -33,21 +33,21 @@ class CreateGroupConversationRequest extends Model
     public $dingTokenGrantType;
 
     /**
-     * @description 钉群内发起人工服务的客户的ID
+     * @example 57675657
      *
      * @var string
      */
     public $dingUserId;
 
     /**
-     * @description 钉群内发起人工服务的客户的名称
+     * @example 张三
      *
      * @var string
      */
     public $dingUserName;
 
     /**
-     * @description 扩展信息
+     * @example {"isServerInitiative":"true"}
      *
      * @var string
      */
@@ -59,7 +59,7 @@ class CreateGroupConversationRequest extends Model
     public $openTeamId;
 
     /**
-     * @description 小二技能组ID
+     * @example 3434
      *
      * @var string
      */

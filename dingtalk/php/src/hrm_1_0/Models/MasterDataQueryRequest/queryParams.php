@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class queryParams extends Model
 {
     /**
-     * @description 筛选条件
-     *
      * @var conditionList[]
      */
     public $conditionList;
 
     /**
-     * @description 需要筛选的字段
+     * @example performance_code
      *
      * @var string
      */
     public $fieldCode;
 
     /**
-     * @description 筛选条件连接类型
+     * @example AND
      *
      * @var string
      */

@@ -9,43 +9,35 @@ use AlibabaCloud\Tea\Model;
 class QueryPageTraceDataRequest extends Model
 {
     /**
-     * @description 终止时间
-     *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 查询数量
+     * @example 100
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 起始位置
+     * @example 0
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 员工ID
-     *
      * @var string
      */
     public $staffId;
 
     /**
-     * @description 开始时间
-     *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description traceId
-     *
      * @var string
      */
     public $traceId;

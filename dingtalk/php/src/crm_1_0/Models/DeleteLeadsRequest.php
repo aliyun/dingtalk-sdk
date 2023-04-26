@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class DeleteLeadsRequest extends Model
 {
     /**
-     * @description 线索ID列表。
-     *
      * @var string[]
      */
     public $outLeadsIds;

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupBlackboardResponseBody extends Model
 {
     /**
-     * @description 群公告Id
+     * @example 123456
      *
      * @var string
      */
     public $dataId;
 
     /**
-     * @description 请求是否成功
+     * @example true
      *
      * @var bool
      */

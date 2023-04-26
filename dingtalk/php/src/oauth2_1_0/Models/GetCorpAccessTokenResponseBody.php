@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetCorpAccessTokenResponseBody extends Model
 {
     /**
-     * @description accessToken
-     *
      * @var string
      */
     public $accessToken;
 
     /**
-     * @description 超时时间
-     *
      * @var int
      */
     public $expireIn;

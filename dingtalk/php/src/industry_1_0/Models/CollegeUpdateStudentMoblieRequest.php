@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class CollegeUpdateStudentMoblieRequest extends Model
 {
     /**
-     * @description 是否直接更换
-     *
      * @var bool
      */
     public $isForce;
 
     /**
-     * @description 修改后的手机号
+     * @example 187xxxxxxxx
      *
      * @var string
      */
     public $newMobile;
 
     /**
-     * @description 学生id
+     * @example 222222
      *
      * @var int
      */

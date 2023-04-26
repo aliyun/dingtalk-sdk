@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class DeleteTrustedDeviceRequest extends Model
 {
     /**
-     * @description 是否踢下线
+     * @example false
      *
      * @var bool
      */
     public $kickOff;
 
     /**
-     * @description mac地址
+     * @example 88:92:5a:1f:e8:24
      *
      * @var string
      */
     public $macAddress;
 
     /**
-     * @description 员工userId
+     * @example 0119194439361061403
      *
      * @var string
      */

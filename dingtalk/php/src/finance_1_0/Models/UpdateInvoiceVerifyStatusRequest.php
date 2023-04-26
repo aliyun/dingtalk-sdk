@@ -9,82 +9,82 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceVerifyStatusRequest extends Model
 {
     /**
-     * @description 查验流水号
+     * @example lpKgSTzGSy
      *
      * @var string
      */
     public $bizId;
 
     /**
-     * @description 查验结果
+     * @example 1
      *
      * @var int
      */
     public $checkingResult;
 
     /**
-     * @description 查验状态
+     * @example 1
      *
      * @var int
      */
     public $checkingStatus;
 
     /**
-     * @description 业务响应码
+     * @example 200
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 企业Id
+     * @example ding673cxxxxxxxxxxxx85
      *
      * @var string
      */
     public $corpId;
 
     /**
+     * @example {"restCheckTimes":10,"noticeFlag":1}
+     *
      * @var string
      */
     public $extension;
 
     /**
-     * @description 发票代码
+     * @example 034012100111
      *
      * @var string
      */
     public $invoiceCode;
 
     /**
-     * @description 发票号码
+     * @example 61235725
      *
      * @var string
      */
     public $invoiceNo;
 
     /**
-     * @description 发票状态
+     * @example 1
      *
      * @var int
      */
     public $invoiceStatus;
 
     /**
-     * @description 发票验真编号
+     * @example 1299999
      *
      * @var string
      */
     public $invoiceVerifyId;
 
     /**
-     * @description 响应信息
-     *
      * @var string
      */
     public $msg;
 
     /**
-     * @description 用户Id
+     * @example BPq7qiSIH8PJHlB9kPuii1NQiEiE
      *
      * @var string
      */

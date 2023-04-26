@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListInnerAppResponseBody extends Model
 {
     /**
-     * @description 应用列表
-     *
      * @var appList[]
      */
     public $appList;

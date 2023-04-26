@@ -9,36 +9,33 @@ use AlibabaCloud\Tea\Model;
 class GetSpaceWithDownloadAuthRequest extends Model
 {
     /**
-     * @description 应用的agentid。
+     * @example 8345000
      *
      * @var int
      */
     public $agentId;
 
     /**
-     * @description 审批附件ID。
+     * @example 111
      *
      * @var string
      */
     public $fileId;
 
     /**
-     * @description 附件ID列表，支持批量授权，最大列表长度：20。
-     *
      * @var string[]
      */
     public $fileIdList;
 
     /**
-     * @description 实例ID。
+     * @example a17444d1-075b-4a4d-xxxx
      *
-     * 可以通过推送的审批事件中获取，参考biz_type=22。
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 授权允许预览附件的用户userid。
+     * @example user123
      *
      * @var string
      */

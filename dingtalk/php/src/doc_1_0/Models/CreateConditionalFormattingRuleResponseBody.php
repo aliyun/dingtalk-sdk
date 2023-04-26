@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CreateConditionalFormattingRuleResponseBody extends Model
 {
     /**
-     * @description 条件格式ID
-     *
      * @var string
      */
     public $id;

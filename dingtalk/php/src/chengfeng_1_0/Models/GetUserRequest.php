@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetUserRequest extends Model
 {
     /**
-     * @description OKR系统内部用户id
+     * @example 3adeaddeddddd
      *
      * @var string
      */
     public $okrUserId;
 
     /**
-     * @description 钉钉UserId
+     * @example 0344333
      *
      * @var string
      */

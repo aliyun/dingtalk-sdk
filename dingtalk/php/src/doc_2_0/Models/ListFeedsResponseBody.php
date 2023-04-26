@@ -10,21 +10,17 @@ use AlibabaCloud\Tea\Model;
 class ListFeedsResponseBody extends Model
 {
     /**
-     * @description 是否还有更多数据。
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 动态列表。
-     *
      * @var items[]
      */
     public $items;
 
     /**
-     * @description 分页游标。
+     * @example abcdef
      *
      * @var string
      */

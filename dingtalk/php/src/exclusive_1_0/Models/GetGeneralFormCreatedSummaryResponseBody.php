@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetGeneralFormCreatedSummaryResponseBody extends Model
 {
     /**
-     * @description 最近1天智能填表创建数
+     * @example 100
      *
      * @var string
      */
     public $generalFormCreatedCnt;
 
     /**
-     * @description 最近1天使用智能填表人数
+     * @example 100
      *
      * @var string
      */

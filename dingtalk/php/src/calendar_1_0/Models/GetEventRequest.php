@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetEventRequest extends Model
 {
     /**
-     * @description 返回参与人，上限500人，默认为0
-     *
      * @var int
      */
     public $maxAttendees;

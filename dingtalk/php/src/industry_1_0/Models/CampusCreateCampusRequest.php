@@ -9,84 +9,82 @@ use AlibabaCloud\Tea\Model;
 class CampusCreateCampusRequest extends Model
 {
     /**
-     * @description 园区所在详细地址
+     * @example 锦城街道和谐社区101号
      *
      * @var string
      */
     public $address;
 
     /**
-     * @description 园区面积，单位：平方千米
+     * @example 5200.13（平方千米）
      *
      * @var float
      */
     public $area;
 
     /**
-     * @description 归属项目组
+     * @example 0
      *
      * @var int
      */
     public $belongProjectGroupId;
 
     /**
-     * @description 园区项目名
+     * @example 绿城未来park
      *
      * @var string
      */
     public $campusName;
 
     /**
-     * @description 园区容量
+     * @example 1000
      *
      * @var int
      */
     public $capacity;
 
     /**
-     * @description 园区所在市行政编码
+     * @example 371500
      *
      * @var int
      */
     public $cityId;
 
     /**
-     * @description 园区所在国家
+     * @example 中国
      *
      * @var string
      */
     public $country;
 
     /**
-     * @description 园区所在区行政编码
+     * @example 371502
      *
      * @var int
      */
     public $countyId;
 
     /**
-     * @description 创建人的unionId
-     *
      * @var string
      */
     public $creatorUnionId;
 
     /**
-     * @description 园区项目描述
+     * @example 绿城未来park项目
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 扩展字段
+     * @example {"creator":"dsy"}
      *
      * @var string
      */
     public $extend;
 
     /**
-     * @description 园区经纬度,格式：经度,纬度
+     * @example 123,456
      *
      * @var string
      */
@@ -103,21 +101,21 @@ class CampusCreateCampusRequest extends Model
     public $orderInfo;
 
     /**
-     * @description 项目订购开始时间
+     * @example 1655704317794
      *
      * @var int
      */
     public $orderStartTime;
 
     /**
-     * @description 园区所在省行政编码
+     * @example 370000（山东）
      *
      * @var int
      */
     public $provId;
 
     /**
-     * @description 联系电话
+     * @example 156xxxx4338
      *
      * @var string
      */

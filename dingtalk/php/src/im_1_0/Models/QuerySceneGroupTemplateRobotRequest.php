@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class QuerySceneGroupTemplateRobotRequest extends Model
 {
     /**
+     * @example cidCtneF+XyQjcyF2ROdgSeIg==
+     *
      * @var string
      */
     public $openConversationId;
 
     /**
+     * @example ding5nbbeXXXXXXX
+     *
      * @var string
      */
     public $robotCode;

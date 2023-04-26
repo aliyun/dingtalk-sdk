@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class BatchOTOQueryRequest extends Model
 {
     /**
-     * @description 消息已读查询标志
+     * @example asdfasdfasdf
      *
      * @var string
      */
     public $processQueryKey;
 
     /**
-     * @description 机器人robotCode
+     * @example dingcxx5317
      *
      * @var string
      */

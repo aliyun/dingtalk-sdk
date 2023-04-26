@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteRowsResponseBody extends Model
 {
     /**
-     * @description 工作表id
+     * @example sheet_id
      *
      * @var string
      */

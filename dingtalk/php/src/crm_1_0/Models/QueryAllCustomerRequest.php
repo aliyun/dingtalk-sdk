@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class QueryAllCustomerRequest extends Model
 {
     /**
-     * @description 翻页size
+     * @example 100
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标，第一次调用传空或者null
+     * @example 100010
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 数据类型（私海个人客户：crm_customer_personal，私海企业客户：crm_customer，公海个人客户：open_customer_personal，公海企业客户：open_customer_org）
+     * @example crm_customer
      *
      * @var string
      */
     public $objectType;
 
     /**
-     * @description 用户ID
+     * @example ding_userid
      *
      * @var string
      */

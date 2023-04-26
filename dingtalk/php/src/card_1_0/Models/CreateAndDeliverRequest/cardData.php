@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class cardData extends Model
 {
     /**
-     * @description 卡片模板-文本内容参数
-     *
      * @var string[]
      */
     public $cardParamMap;

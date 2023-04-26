@@ -10,57 +10,51 @@ use AlibabaCloud\Tea\Model;
 class contacts extends Model
 {
     /**
-     * @description 记录创建时间
+     * @example 2019-12-25 15:33:12
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 创建记录的用户昵称
+     * @example 张三
      *
      * @var string
      */
     public $creatorNick;
 
     /**
-     * @description 创建记录的用户ID
+     * @example ding_userid
      *
      * @var string
      */
     public $creatorUserId;
 
     /**
-     * @description 数据内容
-     *
      * @var mixed[]
      */
     public $data;
 
     /**
-     * @description 扩展数据内容
-     *
      * @var mixed[]
      */
     public $extendData;
 
     /**
-     * @description 数据ID
+     * @example instance_id
      *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description 记录修改时间
+     * @example 2019-12-25 15:33:12
      *
      * @var string
      */
     public $modifyTime;
 
     /**
-     * @description 数据权限信息
-     *
      * @var permission
      */
     public $permission;

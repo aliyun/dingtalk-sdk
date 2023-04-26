@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateContactRestrictSettingResponseBody extends Model
 {
     /**
-     * @description settingId
+     * @example 10001
      *
      * @var int
      */

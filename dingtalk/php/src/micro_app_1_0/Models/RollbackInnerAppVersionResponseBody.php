@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class RollbackInnerAppVersionResponseBody extends Model
 {
     /**
-     * @description 小程序回滚结果
-     *
      * @var bool
      */
     public $result;

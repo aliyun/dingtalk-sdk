@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CloseHPackageRequest extends Model
 {
     /**
-     * @description 离线包ID
+     * @example 5000000000000000
      *
      * @var string
      */

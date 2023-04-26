@@ -9,126 +9,126 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureMesOutPlanRequest extends Model
 {
     /**
-     * @description 审批状态
+     * @example APPROVING
      *
      * @var string
      */
     public $approvalStatus;
 
     /**
-     * @description 审批人
+     * @example [{"userId":"123","name":"汉俊"}]
      *
      * @var string
      */
     public $approver;
 
     /**
-     * @description 主数据名称
+     * @example wwPlan
      *
      * @var string
      */
     public $baseDataName;
 
     /**
-     * @description 委外计划单号
+     * @example WWJH-20220728
      *
      * @var string
      */
     public $outSourceProjectCode;
 
     /**
-     * @description 委外群
+     * @example cid34444
      *
      * @var string
      */
     public $outSourceTeamId;
 
     /**
-     * @description 单价（元）
+     * @example 321
      *
      * @var string
      */
     public $price;
 
     /**
-     * @description 工序识别码
+     * @example 20220728_OP20
      *
      * @var string
      */
     public $processIdentificationCode;
 
     /**
-     * @description 委外的工序列表(多个)
+     * @example [{       "uuid": "1543878029936459777",       "name": "YF-盐雾",       "preProcess": "1470231820594245633"     }]
      *
      * @var string
      */
     public $processUuids;
 
     /**
-     * @description 产品代码(物料编号)
+     * @example WL12345
      *
      * @var string
      */
     public $productCode;
 
     /**
-     * @description 产品名称
+     * @example 毛坯KM63三级盖
      *
      * @var string
      */
     public $productName;
 
     /**
-     * @description 规格型号
+     * @example 5/16*13.5
      *
      * @var string
      */
     public $productSpecification;
 
     /**
-     * @description 工单编号(生产任务单)
+     * @example 20220728_001
      *
      * @var string
      */
     public $projectCode;
 
     /**
-     * @description 工单(生产计划单)ID
+     * @example 20220728_001
      *
      * @var string
      */
     public $projectId;
 
     /**
-     * @description 委外计划数
+     * @example 321
      *
      * @var string
      */
     public $sendPlanQuantity;
 
     /**
-     * @description 供应商代码
+     * @example GX002
      *
      * @var string
      */
     public $supplierCode;
 
     /**
-     * @description 供应商名称
+     * @example 北京供应
      *
      * @var string
      */
     public $supplierName;
 
     /**
-     * @description 金额（元）
+     * @example 20
      *
      * @var string
      */
     public $totalWage;
 
     /**
-     * @description 记录唯一标识
+     * @example C1E213-86B2-706B-9615-5B957DF8C15D
      *
      * @var string
      */

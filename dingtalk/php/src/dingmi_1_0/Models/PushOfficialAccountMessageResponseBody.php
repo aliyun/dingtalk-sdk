@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class PushOfficialAccountMessageResponseBody extends Model
 {
     /**
-     * @description 推送queryKey
+     * @example 1234abcd
      *
      * @var string
      */

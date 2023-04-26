@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class failInvoices extends Model
 {
     /**
-     * @description 错误码
+     * @example 50001
      *
      * @var string
      */
     public $errorCode;
 
     /**
-     * @description 错误信息
+     * @example invoice not exist
      *
      * @var string
      */
     public $errorMsg;
 
     /**
-     * @description 发票代码
+     * @example 123123123
      *
      * @var string
      */
     public $invoiceCode;
 
     /**
-     * @description 发票号码
+     * @example 123123123123
      *
      * @var string
      */

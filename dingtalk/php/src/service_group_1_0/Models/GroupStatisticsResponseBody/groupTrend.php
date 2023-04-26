@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class groupTrend extends Model
 {
     /**
-     * @description 群数量
+     * @example 10
      *
      * @var int
      */
     public $count;
 
     /**
-     * @description 日期
+     * @example 20220101
      *
      * @var string
      */

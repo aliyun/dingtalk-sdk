@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class messageContent extends Model
 {
     /**
-     * @description at活跃成员数量
-     *
      * @var int
      */
     public $atActiveMemberNum;
 
     /**
-     * @description 是否At活跃成员
-     *
      * @var bool
      */
     public $atActiveUser;
 
     /**
-     * @description 是否At全部人员
-     *
      * @var bool
      */
     public $atAll;
@@ -36,43 +30,31 @@ class messageContent extends Model
     public $btns;
 
     /**
-     * @description 内容
-     *
      * @var string
      */
     public $content;
 
     /**
-     * @description 图片列表
-     *
      * @var string[]
      */
     public $images;
 
     /**
-     * @description 消息类型
-     *
      * @var string
      */
     public $messageType;
 
     /**
-     * @description 是否提醒群成员
-     *
      * @var bool
      */
     public $remind;
 
     /**
-     * @description 标题
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 是否置顶
-     *
      * @var bool
      */
     public $top;

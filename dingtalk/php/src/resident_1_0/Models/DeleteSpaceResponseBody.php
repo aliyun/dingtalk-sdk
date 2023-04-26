@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class DeleteSpaceResponseBody extends Model
 {
     /**
-     * @description 失败列表
-     *
      * @var delFailedDept[]
      */
     public $delFailedDept;
 
     /**
-     * @description 删除成功数量
+     * @example 1
      *
      * @var bool
      */

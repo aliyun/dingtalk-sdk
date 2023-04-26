@@ -9,98 +9,94 @@ use AlibabaCloud\Tea\Model;
 class QueryMarketOrderResponseBody extends Model
 {
     /**
-     * @description 订单ID
+     * @example 2092310001312
      *
      * @var int
      */
     public $bizOrderId;
 
     /**
-     * @description 组织ID
+     * @example ding23219001
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 创建时间戳
+     * @example 10003298001
      *
      * @var int
      */
     public $createTimestamp;
 
     /**
-     * @description 生效结束时间
-     *
      * @var int
      */
     public $endTimestamp;
 
     /**
-     * @description 商品Code
+     * @example FW_GOODS_12319001
      *
      * @var string
      */
     public $goodsCode;
 
     /**
-     * @description 商品名称
+     * @example 测试商品001
      *
      * @var string
      */
     public $goodsName;
 
     /**
-     * @description 是否内购订单
-     *
      * @var bool
      */
     public $inAppOrder;
 
     /**
-     * @description 规格编码
+     * @example FW_GOODS_31001
      *
      * @var string
      */
     public $itemCode;
 
     /**
-     * @description 规格名称
+     * @example 测试规格001
      *
      * @var string
      */
     public $itemName;
 
     /**
-     * @description 支付时间戳
+     * @example 10003299001
      *
      * @var int
      */
     public $paidTimestamp;
 
     /**
-     * @description 购买数量
+     * @example 1
      *
      * @var int
      */
     public $quantity;
 
     /**
-     * @description 开始生效时间
+     * @example 10003298003
      *
      * @var int
      */
     public $startTimestamp;
 
     /**
-     * @description 订单状态(0:订单关闭； 3：订单支付；4：订单创建)
+     * @example 1
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 订单实付金额(单位分)
+     * @example 100
      *
      * @var int
      */

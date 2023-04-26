@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class qualificationInfos extends Model
 {
     /**
-     * @description 子机构行业资质图片
+     * @example ossUrl
      *
      * @var string
      */
     public $qualificationImage;
 
     /**
-     * @description 子机构行业资质类型
+     * @example 301
      *
      * @var string
      */

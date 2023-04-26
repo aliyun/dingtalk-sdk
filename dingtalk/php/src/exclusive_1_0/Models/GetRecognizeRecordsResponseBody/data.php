@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description agentId
+     * @example agentId
      *
      * @var int
      */
     public $agentId;
 
     /**
-     * @description 人脸对比结果 1-成功 2-失败
+     * @example 1
      *
      * @var int
      */
     public $faceCompareResult;
 
     /**
-     * @description 接口调用时间(毫秒时间戳)
+     * @example 166700000
      *
      * @var int
      */
     public $invokeTime;
 
     /**
-     * @description 平台 0-Android 或 1-iOS
+     * @example 1
      *
      * @var int
      */
     public $platform;
 
     /**
-     * @description userId
+     * @example 1234
      *
      * @var string
      */

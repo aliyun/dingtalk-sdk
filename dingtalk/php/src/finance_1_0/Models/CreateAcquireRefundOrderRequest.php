@@ -10,63 +10,61 @@ use AlibabaCloud\Tea\Model;
 class CreateAcquireRefundOrderRequest extends Model
 {
     /**
-     * @description 主机构编号
+     * @example 202111090001
      *
      * @var string
      */
     public $instId;
 
     /**
-     * @description 操作人userId
+     * @example 2120493284
      *
      * @var string
      */
     public $operatorUserId;
 
     /**
-     * @description 原支付单外部流水号
+     * @example 2021113000001
      *
      * @var string
      */
     public $originOutTradeNo;
 
     /**
-     * @description 其他资金渠道退款明细
-     *
      * @var otherPayChannelDetailInfoList[]
      */
     public $otherPayChannelDetailInfoList;
 
     /**
-     * @description 外部退款订单号
+     * @example r2021113000001
      *
      * @var string
      */
     public $outRefundNo;
 
     /**
-     * @description 退款金额，支持部分退款
+     * @example 10.01
      *
      * @var string
      */
     public $refundAmount;
 
     /**
-     * @description 退款备注
+     * @example 备注
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 子机构编号
+     * @example 1001
      *
      * @var string
      */
     public $subInstId;
 
     /**
-     * @description 代扣标题
+     * @example 餐费
      *
      * @var string
      */

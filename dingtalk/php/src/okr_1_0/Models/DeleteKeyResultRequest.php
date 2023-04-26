@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class DeleteKeyResultRequest extends Model
 {
     /**
-     * @description 当前 KR id。
+     * @example 4d2d
      *
      * @var string
      */
     public $krId;
 
     /**
-     * @description 当前用户的userId。
+     * @example 06186238011033616
      *
      * @var string
      */

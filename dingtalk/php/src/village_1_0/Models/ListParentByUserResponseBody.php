@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ListParentByUserResponseBody extends Model
 {
     /**
-     * @description 上级部门ID列表
-     *
      * @var int[]
      */
     public $departmentIdList;

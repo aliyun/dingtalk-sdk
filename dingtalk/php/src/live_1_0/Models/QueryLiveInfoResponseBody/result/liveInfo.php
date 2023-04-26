@@ -9,91 +9,91 @@ use AlibabaCloud\Tea\Model;
 class liveInfo extends Model
 {
     /**
-     * @description 直播封面
+     * @example https://gw.alicdn.com/tfs/TB1thlYyAT2gK0jSZPcXXcKkpXa-1125-633.png
      *
      * @var string
      */
     public $coverUrl;
 
     /**
-     * @description 直播时长
+     * @example 18450
      *
      * @var int
      */
     public $duration;
 
     /**
-     * @description 直播真实结束时间
+     * @example 1659653648000
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 直播简介
+     * @example 测试直播简介
      *
      * @var string
      */
     public $introduction;
 
     /**
-     * @description 直播id
+     * @example 1a353547-040d-4095-bb93-404bc5d47920
      *
      * @var string
      */
     public $liveId;
 
     /**
-     * @description 直播观看地址
+     * @example https://h5.dingtalk.com/group-live-share/index.htm?type=2&liveFromType=6&liveUuid=1a353547-040d-4095-bb93-404bc5d47920&dd_nav_bgcolor=FF2C2D2F#/union
      *
      * @var string
      */
     public $livePlayUrl;
 
     /**
-     * @description 直播状态
+     * @example 3
      *
      * @var int
      */
     public $liveStatus;
 
     /**
-     * @description 直播回放时长
+     * @example 18430
      *
      * @var int
      */
     public $playbackDuration;
 
     /**
-     * @description 直播真实开始时间
+     * @example 1659613648000
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 预约人数
+     * @example 2
      *
      * @var int
      */
     public $subscribeCount;
 
     /**
-     * @description 直播标题
+     * @example 测试直播
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 主播id
+     * @example DC7wZGOSueEEIGOf3WKwWgiEiE
      *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 观看人数
+     * @example 3
      *
      * @var int
      */

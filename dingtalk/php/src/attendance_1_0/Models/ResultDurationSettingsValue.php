@@ -21,71 +21,51 @@ class ResultDurationSettingsValue extends Model
     public $durationType;
 
     /**
-     * @description 加班时长计为调休或加班费开关
-     *
      * @var bool
      */
     public $overtimeRedress;
 
     /**
-     * @description 加班开始时间 或 最小加班时间
-     *
      * @var mixed[]
      */
     public $settings;
 
     /**
-     * @description 加班时长计为方式
-     *
      * @var string
      */
     public $overtimeRedressBy;
 
     /**
-     * @description 调休时长计算
-     *
      * @var float
      */
     public $vacationRate;
 
     /**
-     * @description 扣除休息时间
-     *
      * @var string
      */
     public $skipTime;
 
     /**
-     * @description 休息时段
-     *
      * @var skipTimeByFrames[]
      */
     public $skipTimeByFrames;
 
     /**
-     * @description 加班时长
-     *
      * @var skipTimeByDurations[]
      */
     public $skipTimeByDurations;
 
     /**
-     * @description 休息日或节假日排班加班时长计为调休或加班费开关
-     *
      * @var bool
      */
     public $holidayPlanOvertimeRedress;
 
     /**
-     * @description 休息日或节假日排班加班时长计为方式
-     *
      * @var string
      */
     public $holidayPlanOvertimeRedressBy;
 
     /**
-     * @description 休息日或节假日排班调休时长计算
-     *
      * @var float
      */
     public $holidayPlanVacationRate;

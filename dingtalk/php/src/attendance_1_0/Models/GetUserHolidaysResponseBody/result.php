@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 假期列表
-     *
      * @var holidays[]
      */
     public $holidays;
 
     /**
-     * @description 员工id
-     *
      * @var string
      */
     public $userId;

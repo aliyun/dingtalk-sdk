@@ -9,98 +9,98 @@ use AlibabaCloud\Tea\Model;
 class CfEmploymentRecordResp extends Model
 {
     /**
-     * @description 部门编码
+     * @example 666
      *
      * @var string
      */
     public $deptCode;
 
     /**
-     * @description 部门名称
+     * @example 开发部
      *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 人员状态(2:试用,3:正式)
+     * @example 3
      *
      * @var string
      */
     public $employeeStatus;
 
     /**
-     * @description 结束时间
+     * @example 1652198400000
      *
      * @var string
      */
     public $endDate;
 
     /**
-     * @description 是否是最新任职
+     * @example true
      *
      * @var bool
      */
     public $isLatestRecord;
 
     /**
-     * @description 职级名称
+     * @example P1
      *
      * @var string
      */
     public $jobLevelName;
 
     /**
-     * @description 职位编码
+     * @example 23
      *
      * @var string
      */
     public $jobPositionCode;
 
     /**
-     * @description 职位名称
+     * @example Java开发工程师
      *
      * @var string
      */
     public $jobPositionName;
 
     /**
-     * @description 职务编码
+     * @example 343
      *
      * @var string
      */
     public $jobPostCode;
 
     /**
-     * @description 职务名称
+     * @example 技术岗位
      *
      * @var string
      */
     public $jobPostName;
 
     /**
-     * @description 任职状态(1:任职中,2:任职结束)
+     * @example 1
      *
      * @var string
      */
     public $serviceStatus;
 
     /**
-     * @description 任职类型(5:主职, 6:兼职)
+     * @example 5
      *
      * @var string
      */
     public $serviceType;
 
     /**
-     * @description 开始时间
+     * @example 1638892800000
      *
      * @var string
      */
     public $startDate;
 
     /**
-     * @description 工号
+     * @example 123456
      *
      * @var string
      */

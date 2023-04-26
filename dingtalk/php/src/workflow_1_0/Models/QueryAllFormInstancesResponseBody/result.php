@@ -10,29 +10,27 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 是否有更多数据
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 分页大小
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 下一页的游标
+     * @example 10
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 表单列表
-     *
      * @var values[]
      */
     public $values;

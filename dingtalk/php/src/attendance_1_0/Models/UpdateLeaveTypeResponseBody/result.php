@@ -12,64 +12,58 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 假期类型，普通假期或者加班转调休假期。(general_leave、lieu_leave其中一种)
+     * @example general_leave
      *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 每天折算的工作时长(百分之一 例如1天=10小时=1000)
+     * @example 1000
      *
      * @var int
      */
     public $hoursInPerDay;
 
     /**
-     * @description 请假证明
-     *
      * @var leaveCertificate
      */
     public $leaveCertificate;
 
     /**
-     * @description 假期类型唯一标识
+     * @example 037477ae-1009-4632-b8e9-e919ae5e7973
      *
      * @var string
      */
     public $leaveCode;
 
     /**
-     * @description 假期名称
+     * @example 年假
      *
      * @var string
      */
     public $leaveName;
 
     /**
-     * @description 请假单位，可以按照天半天或者小时请假。(day、halfDay、hour其中一种)
+     * @example day
      *
      * @var string
      */
     public $leaveViewUnit;
 
     /**
-     * @description 是否按照自然日统计请假时长，当为false的时候，用户发起请假时候会根据用户在请假时间段内的排班情况来计算请假时长。
+     * @example true
      *
      * @var bool
      */
     public $naturalDayLeave;
 
     /**
-     * @description 限时提交规则
-     *
      * @var submitTimeRule
      */
     public $submitTimeRule;
 
     /**
-     * @description 适用范围规则列表：哪些部门/员工可以使用该假期类型，不传默认为全公司
-     *
      * @var visibilityRules[]
      */
     public $visibilityRules;

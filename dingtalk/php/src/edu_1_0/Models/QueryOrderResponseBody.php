@@ -14,35 +14,35 @@ class QueryOrderResponseBody extends Model
     public $actualAmount;
 
     /**
-     * @description 支付宝应用id。
+     * @example 123400
      *
      * @var string
      */
     public $alipayAppId;
 
     /**
-     * @description 订单关闭时间
+     * @example 2022-11-04T17:15Z
      *
      * @var string
      */
     public $closeTime;
 
     /**
-     * @description 订单关闭时间戳
+     * @example 1672973971107
      *
      * @var int
      */
     public $closeTimestamp;
 
     /**
-     * @description 订单创建时间
+     * @example 2022-11-04T17:15Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 订单创建时间戳
+     * @example 1672973971107
      *
      * @var int
      */
@@ -54,49 +54,49 @@ class QueryOrderResponseBody extends Model
     public $labelAmount;
 
     /**
-     * @description 商户id。
+     * @example 10000
      *
      * @var string
      */
     public $merchantId;
 
     /**
-     * @description 商户聚合支付订单号。
+     * @example M20000100
      *
      * @var string
      */
     public $merchantMergeOrderNo;
 
     /**
-     * @description 商户订单号。
+     * @example M20000100
      *
      * @var string
      */
     public $merchantOrderNo;
 
     /**
-     * @description 订单号。
+     * @example CM0001
      *
      * @var string
      */
     public $orderNo;
 
     /**
-     * @description 订单类型。
+     * @example 1
      *
      * @var string
      */
     public $orderType;
 
     /**
-     * @description 用户唯一id。
+     * @example fagweefdsdgfa
      *
      * @var string
      */
     public $outerUserId;
 
     /**
-     * @description 买家支付登陆id。
+     * @example 138***
      *
      * @var string
      */
@@ -108,21 +108,21 @@ class QueryOrderResponseBody extends Model
     public $payStatus;
 
     /**
-     * @description 订单支付时间
+     * @example 2022-11-04T17:15Z
      *
      * @var string
      */
     public $payTime;
 
     /**
-     * @description 订单支付时间戳
+     * @example 1672973971107
      *
      * @var int
      */
     public $payTimestamp;
 
     /**
-     * @description 买家支付渠道类型。
+     * @example 1
      *
      * @var string
      */
@@ -139,28 +139,28 @@ class QueryOrderResponseBody extends Model
     public $refundStatus;
 
     /**
-     * @description 订单退款时间
+     * @example 2022-11-04T17:15Z
      *
      * @var string
      */
     public $refundTime;
 
     /**
-     * @description 订单退款时间戳
+     * @example 1672973971107
      *
      * @var int
      */
     public $refundTimestamp;
 
     /**
-     * @description 订单标题。
+     * @example 教育产品
      *
      * @var string
      */
     public $subject;
 
     /**
-     * @description 交易流水号。
+     * @example 2022080311111
      *
      * @var string
      */

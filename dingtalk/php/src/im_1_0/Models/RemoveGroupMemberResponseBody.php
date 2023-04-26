@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class RemoveGroupMemberResponseBody extends Model
 {
     /**
-     * @description 操作结果
+     * @example 移除成功
      *
      * @var string
      */

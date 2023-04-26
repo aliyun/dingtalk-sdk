@@ -21,18 +21,67 @@ use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UserTaskReportRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UserTaskReportResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CreateAppGoodsServiceConversationRequest $request
+     * @param CreateAppGoodsServiceConversationHeaders $headers
+     * @param RuntimeOptions                           $runtime
+     *
+     * @return CreateAppGoodsServiceConversationResponse
+     */
+    public function createAppGoodsServiceConversationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->isvUserId)) {
+            $body['isvUserId'] = $request->isvUserId;
+        }
+        if (!Utils::isUnset($request->orderId)) {
+            $body['orderId'] = $request->orderId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateAppGoodsServiceConversation',
+            'version'     => 'appMarket_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/appMarket/orders/serviceGroups',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateAppGoodsServiceConversationResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -49,35 +98,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateAppGoodsServiceConversationRequest $request
-     * @param CreateAppGoodsServiceConversationHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @param GetCoolAppAccessStatusRequest $request
+     * @param GetCoolAppAccessStatusHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return CreateAppGoodsServiceConversationResponse
+     * @return GetCoolAppAccessStatusResponse
      */
-    public function createAppGoodsServiceConversationWithOptions($request, $headers, $runtime)
+    public function getCoolAppAccessStatusWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->isvUserId)) {
-            @$body['isvUserId'] = $request->isvUserId;
+        if (!Utils::isUnset($request->authCode)) {
+            $body['authCode'] = $request->authCode;
         }
-        if (!Utils::isUnset($request->orderId)) {
-            @$body['orderId'] = $request->orderId;
+        if (!Utils::isUnset($request->coolAppCode)) {
+            $body['coolAppCode'] = $request->coolAppCode;
+        }
+        if (!Utils::isUnset($request->encFieldBizCode)) {
+            $body['encFieldBizCode'] = $request->encFieldBizCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'GetCoolAppAccessStatus',
+            'version'     => 'appMarket_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/appMarket/coolApps/accessions/statuses/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateAppGoodsServiceConversationResponse::fromMap($this->doROARequest('CreateAppGoodsServiceConversation', 'appMarket_1.0', 'HTTP', 'POST', 'AK', '/v1.0/appMarket/orders/serviceGroups', 'json', $req, $runtime));
+        return GetCoolAppAccessStatusResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -94,38 +157,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCoolAppAccessStatusRequest $request
-     * @param GetCoolAppAccessStatusHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param GetPersonalExperienceInfoRequest $request
+     * @param GetPersonalExperienceInfoHeaders $headers
+     * @param RuntimeOptions                   $runtime
      *
-     * @return GetCoolAppAccessStatusResponse
+     * @return GetPersonalExperienceInfoResponse
      */
-    public function getCoolAppAccessStatusWithOptions($request, $headers, $runtime)
+    public function getPersonalExperienceInfoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->authCode)) {
-            @$body['authCode'] = $request->authCode;
-        }
-        if (!Utils::isUnset($request->coolAppCode)) {
-            @$body['coolAppCode'] = $request->coolAppCode;
-        }
-        if (!Utils::isUnset($request->encFieldBizCode)) {
-            @$body['encFieldBizCode'] = $request->encFieldBizCode;
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetPersonalExperienceInfo',
+            'version'     => 'appMarket_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/appMarket/personalExperiences',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return GetCoolAppAccessStatusResponse::fromMap($this->doROARequest('GetCoolAppAccessStatus', 'appMarket_1.0', 'HTTP', 'POST', 'AK', '/v1.0/appMarket/coolApps/accessions/statuses/query', 'json', $req, $runtime));
+        return GetPersonalExperienceInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -142,32 +210,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetPersonalExperienceInfoRequest $request
-     * @param GetPersonalExperienceInfoHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param string                  $orderId
+     * @param QueryMarketOrderHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return GetPersonalExperienceInfoResponse
+     * @return QueryMarketOrderResponse
      */
-    public function getPersonalExperienceInfoWithOptions($request, $headers, $runtime)
+    public function queryMarketOrderWithOptions($orderId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->userId)) {
-            @$query['userId'] = $request->userId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryMarketOrder',
+            'version'     => 'appMarket_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/appMarket/orders/' . $orderId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return GetPersonalExperienceInfoResponse::fromMap($this->doROARequest('GetPersonalExperienceInfo', 'appMarket_1.0', 'HTTP', 'GET', 'AK', '/v1.0/appMarket/personalExperiences', 'json', $req, $runtime));
+        return QueryMarketOrderResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -184,27 +257,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                  $orderId
-     * @param QueryMarketOrderHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param UserTaskReportRequest $request
+     * @param UserTaskReportHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return QueryMarketOrderResponse
+     * @return UserTaskReportResponse
      */
-    public function queryMarketOrderWithOptions($orderId, $headers, $runtime)
+    public function userTaskReportWithOptions($request, $headers, $runtime)
     {
-        $orderId     = OpenApiUtilClient::getEncodeParam($orderId);
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizNo)) {
+            $body['bizNo'] = $request->bizNo;
+        }
+        if (!Utils::isUnset($request->operateDate)) {
+            $body['operateDate'] = $request->operateDate;
+        }
+        if (!Utils::isUnset($request->taskTag)) {
+            $body['taskTag'] = $request->taskTag;
+        }
+        if (!Utils::isUnset($request->userid)) {
+            $body['userid'] = $request->userid;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UserTaskReport',
+            'version'     => 'appMarket_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/appMarket/tasks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'boolean',
         ]);
 
-        return QueryMarketOrderResponse::fromMap($this->doROARequest('QueryMarketOrder', 'appMarket_1.0', 'HTTP', 'GET', 'AK', '/v1.0/appMarket/orders/' . $orderId . '', 'json', $req, $runtime));
+        return UserTaskReportResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -218,43 +316,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UserTaskReportHeaders([]);
 
         return $this->userTaskReportWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param UserTaskReportRequest $request
-     * @param UserTaskReportHeaders $headers
-     * @param RuntimeOptions        $runtime
-     *
-     * @return UserTaskReportResponse
-     */
-    public function userTaskReportWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->bizNo)) {
-            @$body['bizNo'] = $request->bizNo;
-        }
-        if (!Utils::isUnset($request->operateDate)) {
-            @$body['operateDate'] = $request->operateDate;
-        }
-        if (!Utils::isUnset($request->taskTag)) {
-            @$body['taskTag'] = $request->taskTag;
-        }
-        if (!Utils::isUnset($request->userid)) {
-            @$body['userid'] = $request->userid;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UserTaskReportResponse::fromMap($this->doROARequest('UserTaskReport', 'appMarket_1.0', 'HTTP', 'POST', 'AK', '/v1.0/appMarket/tasks', 'boolean', $req, $runtime));
     }
 }

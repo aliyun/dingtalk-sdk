@@ -10,35 +10,33 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceAndReceiptRelatedRequest extends Model
 {
     /**
-     * @description 发票全票面信息
-     *
      * @var generalInvoiceVO
      */
     public $generalInvoiceVO;
 
     /**
-     * @description 发票代码
+     * @example code
      *
      * @var string
      */
     public $invoiceCode;
 
     /**
-     * @description 发票号码
+     * @example 155
      *
      * @var string
      */
     public $invoiceNo;
 
     /**
-     * @description 操作员
+     * @example abc
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 钉钉审批单号
+     * @example abc
      *
      * @var string
      */

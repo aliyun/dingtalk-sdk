@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class approverList extends Model
 {
     /**
-     * @description 审批备注
+     * @example 同意
      *
      * @var string
      */
     public $note;
 
     /**
-     * @description 审批时间
+     * @example 2021-03-18 20:26:56
      *
      * @var string
      */
     public $operateTime;
 
     /**
-     * @description 审批人排序值
+     * @example 1
      *
      * @var int
      */
     public $order;
 
     /**
-     * @description 审批状态枚举：审批状态：0-审批中，1-已同意，2-已拒绝
+     * @example 1
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 审批状态描述
+     * @example 同意
      *
      * @var string
      */
     public $statusDesc;
 
     /**
-     * @description 审批员工ID
+     * @example user1
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 审批员工名
+     * @example 员工1
      *
      * @var string
      */

@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class EditSalesResponseBody extends Model
 {
     /**
-     * @description 编辑数据的id
-     *
      * @var int
      */
     public $msgid;
 
     /**
-     * @description 响应时间
-     *
      * @var string
      */
     public $time;

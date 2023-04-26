@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class deptStudentInfoList extends Model
 {
     /**
-     * @description 部门id
+     * @example 01123
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 人员类别
+     * @example student
      *
      * @var string
      */
     public $memberType;
 
     /**
-     * @description 学生学号
+     * @example mf1922051
      *
      * @var string
      */

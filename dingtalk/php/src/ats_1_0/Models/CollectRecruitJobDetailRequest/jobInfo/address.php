@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class address extends Model
 {
     /**
-     * @description 城市编码
+     * @example 310000
      *
      * @var string
      */
     public $cityCode;
 
     /**
-     * @description 位置详情描述
+     * @example 文一西路999号
      *
      * @var string
      */
     public $detail;
 
     /**
-     * @description 区县编码
+     * @example 311000
      *
      * @var string
      */
     public $districtCode;
 
     /**
-     * @description 经度（高德地图选点）
+     * @example 89.54613
      *
      * @var string
      */
     public $latitude;
 
     /**
-     * @description 纬度（高德地图选点）
+     * @example 128.45613
      *
      * @var string
      */
     public $longitude;
 
     /**
-     * @description 位置名称
+     * @example 总部大楼
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 省份编码
+     * @example 300000
      *
      * @var string
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CreateSheetRequest extends Model
 {
     /**
-     * @description 工作表名称
+     * @example sheet_name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 操作人id
+     * @example union_id
      *
      * @var string
      */

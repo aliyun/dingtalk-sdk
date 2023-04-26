@@ -10,22 +10,20 @@ use AlibabaCloud\Tea\Model;
 class UpdateApplicationRegFormRequest extends Model
 {
     /**
-     * @description 业务标识
+     * @example ddats
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 应聘登记表的表单内容
+     * @example {"key":"value"}
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 钉盘文件信息
-     *
      * @var dingPanFile
      */
     public $dingPanFile;

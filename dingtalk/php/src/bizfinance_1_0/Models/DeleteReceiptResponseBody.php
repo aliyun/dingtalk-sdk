@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class DeleteReceiptResponseBody extends Model
 {
     /**
-     * @description 结果列表
-     *
      * @var results[]
      */
     public $results;

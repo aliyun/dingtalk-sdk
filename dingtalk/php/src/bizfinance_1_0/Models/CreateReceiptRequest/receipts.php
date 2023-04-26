@@ -9,98 +9,98 @@ use AlibabaCloud\Tea\Model;
 class receipts extends Model
 {
     /**
-     * @description 单据金额
+     * @example 4.44
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 关联收支类别code
+     * @example INC_XXX
      *
      * @var string
      */
     public $categoryCode;
 
     /**
-     * @description 单据唯一编号
+     * @example abcd_efgh
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 单据创建时间，默认当前时间
+     * @example 1636445218000
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 创建人工号
+     * @example emp_xxx
      *
      * @var string
      */
     public $createUserId;
 
     /**
-     * @description 关联客户code
+     * @example CUS_XXX
      *
      * @var string
      */
     public $customerCode;
 
     /**
-     * @description 关联企业账户code
+     * @example ACC_XXX
      *
      * @var string
      */
     public $enterpriseAcountCode;
 
     /**
-     * @description 业务发生时间，默认当前时间
+     * @example 1636445218000
      *
      * @var int
      */
     public $occurDate;
 
     /**
-     * @description 负责人工号，传空代表不修改
+     * @example emp_xxx
      *
      * @var string
      */
     public $principalId;
 
     /**
-     * @description 关联项目code
+     * @example PROJ_XXX
      *
      * @var string
      */
     public $projectCode;
 
     /**
-     * @description 单据类型：1付款单，2收款单
+     * @example 1
      *
      * @var int
      */
     public $receiptType;
 
     /**
-     * @description 备注
+     * @example 测试
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 关联供应商code
+     * @example SUP_XXX
      *
      * @var string
      */
     public $supplierCode;
 
     /**
-     * @description 单据标题，不传由系统默认生成
+     * @example 收款单
      *
      * @var string
      */

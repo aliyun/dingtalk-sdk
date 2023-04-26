@@ -9,71 +9,67 @@ use AlibabaCloud\Tea\Model;
 class PushEventRequest extends Model
 {
     /**
-     * @description 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。
+     * @example ding123456
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 触发事件设备ID。
+     * @example 002
      *
      * @var string
      */
     public $deviceId;
 
     /**
-     * @description 事件ID。
+     * @example sj123456
      *
      * @var string
      */
     public $eventId;
 
     /**
-     * @description 事件名称，长度4-20个字符，一个中文汉字算2个字符。
+     * @example 火焰告警
      *
      * @var string
      */
     public $eventName;
 
     /**
-     * @description 事件类型，最长20个字符。
+     * @example fireDetect
      *
      * @var string
      */
     public $eventType;
 
     /**
-     * @description 第三方平台定制参数，企业内部系统忽略。
-     *
      * @var mixed[]
      */
     public $extraData;
 
     /**
-     * @description 事件发生地点。
+     * @example 社区南门
      *
      * @var string
      */
     public $location;
 
     /**
-     * @description 事件文字信息。
+     * @example 社区南门发生火焰告警
      *
      * @var string
      */
     public $msg;
 
     /**
-     * @description 事件发生事件，Unix时间戳，单位毫秒。
+     * @example 1638250958570
      *
      * @var int
      */
     public $occurrenceTime;
 
     /**
-     * @description 事件图片地址列表。
-     *
      * @var string[]
      */
     public $picUrls;

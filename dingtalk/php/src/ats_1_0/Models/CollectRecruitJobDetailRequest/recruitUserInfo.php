@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class recruitUserInfo extends Model
 {
     /**
-     * @description 额外信息
+     * @example {"sex":"male"}
      *
      * @var string
      */
     public $extInfo;
 
     /**
-     * @description 招聘员工唯一ID
+     * @example userxxxxx
      *
      * @var string
      */
     public $outUserId;
 
     /**
-     * @description 招聘员工手机号码
+     * @example 158****8717
      *
      * @var string
      */
     public $userMobile;
 
     /**
-     * @description 招聘员工姓名
+     * @example 陈*
      *
      * @var string
      */

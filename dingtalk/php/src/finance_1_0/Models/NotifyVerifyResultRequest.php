@@ -9,70 +9,68 @@ use AlibabaCloud\Tea\Model;
 class NotifyVerifyResultRequest extends Model
 {
     /**
-     * @description 企业ID
+     * @example corpxxxx
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 码值
+     * @example 261234567890
      *
      * @var string
      */
     public $payCode;
 
     /**
-     * @description 备注信息
-     *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户
+     * @example INTERNAL_STAFF
      *
      * @var string
      */
     public $userCorpRelationType;
 
     /**
-     * @description 用户身份标识
+     * @example xxxxxx
      *
      * @var string
      */
     public $userIdentity;
 
     /**
-     * @description 验证事件，长度不超过8个中文
+     * @example 门禁验证
      *
      * @var string
      */
     public $verifyEvent;
 
     /**
-     * @description 验证地点，调用时请务必传入，以便生成工牌使用记录
+     * @example 1号食堂
      *
      * @var string
      */
     public $verifyLocation;
 
     /**
-     * @description 验证流水号，长度不超过32位，用户下唯一，调用时请务必传入，以便生成工牌使用记录
+     * @example 202112120003232
      *
      * @var string
      */
     public $verifyNo;
 
     /**
-     * @description 验证结果
+     * @example 是否通过
      *
      * @var bool
      */
     public $verifyResult;
 
     /**
-     * @description 验证时间
+     * @example 2021-01-01 12:12:12
      *
      * @var string
      */

@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class template extends Model
 {
     /**
-     * @description 工单模版业务ID
-     *
      * @var string
      */
     public $openTemplateBizId;
 
     /**
-     * @description 工单模版ID
-     *
      * @var string
      */
     public $openTemplateId;
 
     /**
-     * @description 工单模版名称
-     *
      * @var string
      */
     public $templateName;

@@ -12,15 +12,11 @@ use AlibabaCloud\Tea\Model;
 class SendMsgByTaskRequest extends Model
 {
     /**
-     * @description 群发内容
-     *
      * @var messageContent
      */
     public $messageContent;
 
     /**
-     * @description 开放团队ID
-     *
      * @var string
      */
     public $openTeamId;
@@ -31,15 +27,11 @@ class SendMsgByTaskRequest extends Model
     public $queryGroup;
 
     /**
-     * @description 发送配置
-     *
      * @var sendConfig
      */
     public $sendConfig;
 
     /**
-     * @description 群发任务名称
-     *
      * @var string
      */
     public $taskName;

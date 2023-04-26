@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class ListPermissionsResponseBody extends Model
 {
     /**
-     * @description 分页游标, nextToken不为空表示有更多数据
+     * @example next_token
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 权限列表分页数据
-     * 500
      * @var permissions[]
      */
     public $permissions;

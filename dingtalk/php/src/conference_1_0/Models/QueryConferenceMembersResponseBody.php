@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class QueryConferenceMembersResponseBody extends Model
 {
     /**
-     * @description 成员列表
-     *
      * @var memberModels[]
      */
     public $memberModels;
 
     /**
-     * @description 分页查询下一页token
+     * @example 123000000
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 本次返回结果数
+     * @example 20
      *
      * @var int
      */

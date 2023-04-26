@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class HrmProcessRegularRequest extends Model
 {
     /**
-     * @description 操作人用户ID
+     * @example 16690147049882572
      *
      * @var string
      */
     public $operationId;
 
     /**
-     * @description 转正时间
+     * @example 1672542359000
      *
      * @var int
      */
     public $regularDate;
 
     /**
-     * @description 备注
+     * @example 同意转正
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 用户ID
+     * @example 16690147049882572
      *
      * @var string
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetInnerAppRequest extends Model
 {
     /**
-     * @description 关联组织corpId
+     * @example corpxxxx
      *
      * @var string
      */
     public $ecologicalCorpId;
 
     /**
-     * @description 操作人unionId
+     * @example xxxx
      *
      * @var string
      */

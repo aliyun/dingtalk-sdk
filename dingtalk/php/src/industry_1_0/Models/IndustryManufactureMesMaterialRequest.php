@@ -10,77 +10,75 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureMesMaterialRequest extends Model
 {
     /**
-     * @description 本次操作的行为
+     * @example add
      *
      * @var string
      */
     public $action;
 
     /**
-     * @description 生态唯一标识
+     * @example opsoft
      *
      * @var string
      */
     public $appKey;
 
     /**
-     * @description 主数据名称
+     * @example material
      *
      * @var string
      */
     public $baseDataName;
 
     /**
-     * @description 物料品类
+     * @example 紧压白茶,白茶,红茶
      *
      * @var string
      */
     public $category;
 
     /**
-     * @description 扩展字段
-     *
      * @var extendData[]
      */
     public $extendData;
 
     /**
-     * @description 物料编号
+     * @example 20220509028
      *
      * @var string
      */
     public $productCode;
 
     /**
-     * @description 物料名称
+     * @example 毛坯SNR47端盖
      *
      * @var string
      */
     public $productName;
 
     /**
-     * @description 物料规格
+     * @example KM63
      *
      * @var string
      */
     public $productSpecification;
 
     /**
-     * @description 物料属性，如原材料/成品/半成品
+     * @example 原材料
      *
      * @var string
      */
     public $prop;
 
     /**
-     * @description 物料单位
+     * @example 件
      *
      * @var string
      */
     public $unit;
 
     /**
-     * @description 物料唯一标识
+     * @example 39C1E213-86B2-706B-9615-5B957DF8C15D
      *
      * @var string
      */

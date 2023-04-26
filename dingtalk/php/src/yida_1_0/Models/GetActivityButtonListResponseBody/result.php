@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description alias
+     * @example 同意
      *
      * @var string
      */
     public $aliasInChinese;
 
     /**
-     * @description aliasEn
+     * @example agree
      *
      * @var string
      */

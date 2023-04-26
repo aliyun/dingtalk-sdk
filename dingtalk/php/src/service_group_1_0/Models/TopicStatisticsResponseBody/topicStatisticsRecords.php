@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class topicStatisticsRecords extends Model
 {
     /**
-     * @description 日期
+     * @example 20220101
      *
      * @var string
      */
     public $dt;
 
     /**
-     * @description 消息量
+     * @example 20
      *
      * @var int
      */
     public $msgCount;
 
     /**
-     * @description 参与人数
+     * @example 3
      *
      * @var int
      */
     public $participantsNum;
 
     /**
-     * @description 话题数量
+     * @example 10
      *
      * @var int
      */

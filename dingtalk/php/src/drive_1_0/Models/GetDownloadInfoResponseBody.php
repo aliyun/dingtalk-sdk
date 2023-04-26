@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetDownloadInfoResponseBody extends Model
 {
     /**
-     * @description 下载加签url信息
-     *
      * @var downloadInfo
      */
     public $downloadInfo;
 
     /**
-     * @description 文件所存储的区域
-     *
      * @var string
      */
     public $region;

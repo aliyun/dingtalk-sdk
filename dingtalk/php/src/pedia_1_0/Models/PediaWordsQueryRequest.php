@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class PediaWordsQueryRequest extends Model
 {
     /**
-     * @description 操作用户编号
+     * @example 212121
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 查询主键编号
+     * @example 211121
      *
      * @var int
      */

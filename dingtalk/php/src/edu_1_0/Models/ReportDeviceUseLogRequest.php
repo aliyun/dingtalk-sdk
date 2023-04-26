@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class ReportDeviceUseLogRequest extends Model
 {
     /**
-     * @description 操作
+     * @example 1
      *
      * @var string
      */
     public $action;
 
     /**
-     * @description 订单号
+     * @example 123123
      *
      * @var string
      */
     public $orderNo;
 
     /**
-     * @description 设备序列号
+     * @example sn123
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 员工id
+     * @example 312323321111
      *
      * @var string
      */

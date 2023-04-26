@@ -21,6 +21,8 @@ class updateUserList extends Model
     public $userAuthList;
 
     /**
+     * @example 0998182231
+     *
      * @var string
      */
     public $userId;

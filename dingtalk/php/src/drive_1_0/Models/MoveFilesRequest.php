@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class MoveFilesRequest extends Model
 {
     /**
-     * @description 文件名冲突策略
-     *
      * @var string
      */
     public $addConflictPolicy;
 
     /**
-     * @description 文件id列表
-     *
      * @var string[]
      */
     public $fileIds;
 
     /**
-     * @description 目标父目录id
-     *
      * @var string
      */
     public $targetParentId;
 
     /**
-     * @description 目标空间id
-     *
      * @var string
      */
     public $targetSpaceId;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

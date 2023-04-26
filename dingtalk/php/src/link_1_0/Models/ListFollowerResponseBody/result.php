@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 下一页查询位置
-     * 当此返回值不为空时，可以将此值设置为下一次查询的参数。
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 用户列表
-     *
      * @var userList[]
      */
     public $userList;

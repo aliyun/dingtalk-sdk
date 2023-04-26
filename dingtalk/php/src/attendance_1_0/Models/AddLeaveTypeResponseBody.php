@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class AddLeaveTypeResponseBody extends Model
 {
     /**
-     * @description 返回参数
-     *
      * @var result
      */
     public $result;

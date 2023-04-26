@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class PediaWordsSearchResponseBody extends Model
 {
     /**
-     * @description 词条详情对象
-     *
      * @var data[]
      */
     public $data;
 
     /**
-     * @description 是否成功
-     *
      * @var bool
      */
     public $success;

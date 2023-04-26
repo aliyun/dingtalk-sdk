@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class RebuildRoleScopeForAppRoleResponseBody extends Model
 {
     /**
-     * @description 角色范围最新版本号
+     * @example 123
      *
      * @var int
      */

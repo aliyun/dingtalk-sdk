@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateRemoteClassDeviceResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
      * @var bool
      */
     public $success;

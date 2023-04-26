@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class GetSaleUserInfoByUserIdResponseBody extends Model
 {
     /**
-     * @description accountId
-     *
      * @var int
      */
     public $accountId;
 
     /**
-     * @description corpList
-     *
      * @var corpList[]
      */
     public $corpList;
 
     /**
-     * @description userId
-     *
      * @var string
      */
     public $userId;
 
     /**
-     * @description userName
-     *
      * @var string
      */
     public $userName;

@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class schemaContent extends Model
 {
     /**
-     * @description 图标
+     * @example common
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 控件列表
-     *
      * @var items[]
      */
     public $items;
 
     /**
-     * @description 表单名称。
+     * @example 示例模板
      *
      * @var string
      */

@@ -9,30 +9,26 @@ use AlibabaCloud\Tea\Model;
 class TerminateProcessInstanceRequest extends Model
 {
     /**
-     * @description 是否通过系统操作：
-     *
-     * false：由指定的操作者终止
      * @var bool
      */
     public $isSystem;
 
     /**
-     * @description 操作人的userid。
+     * @example 133743186427339452
      *
-     * 当is_system为false时，该参数必传。
      * @var string
      */
     public $operatingUserId;
 
     /**
-     * @description 审批实例ID，可通过调用获取审批实例ID列表接口获取。
+     * @example a171de6c-8bxxxx
      *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description 终止说明。
+     * @example 终止说明。
      *
      * @var string
      */

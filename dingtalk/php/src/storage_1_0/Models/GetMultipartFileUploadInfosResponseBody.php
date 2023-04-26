@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetMultipartFileUploadInfosResponseBody extends Model
 {
     /**
-     * @description 分片Header加签上传信息列表
-     * 30
      * @var multipartHeaderSignatureInfos[]
      */
     public $multipartHeaderSignatureInfos;

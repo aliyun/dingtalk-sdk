@@ -11,112 +11,108 @@ use AlibabaCloud\Tea\Model;
 class resultList extends Model
 {
     /**
-     * @description 创建时间
+     * @example 2021-12-23T13:00Z
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间
+     * @example 2021-12-23T13:00Z
      *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 群组内群数量（不包含已解散的群）。
+     * @example 10
      *
      * @var int
      */
     public $groupChatCount;
 
     /**
-     * @description 最新裂变群的群openConversationId
+     * @example 123agsg
      *
      * @var string
      */
     public $lastOpenConversationId;
 
     /**
-     * @description 群管理员列表
-     *
      * @var manager[]
      */
     public $manager;
 
     /**
-     * @description 群管理员userId列表，多个用逗号隔开，裂变出的新群会自动设置这些userId为群管理员
+     * @example afsd12,afsd13
      *
      * @var string
      */
     public $managerUserIds;
 
     /**
-     * @description 群组内所有群的成员数量
+     * @example 10
      *
      * @var int
      */
     public $memberCount;
 
     /**
-     * @description 单个群的人数上限
+     * @example 100
      *
      * @var int
      */
     public $memberQuota;
 
     /**
-     * @description 群组名
+     * @example 营销群
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 群公告文本，裂变出的新群会自动设置上该群公告
+     * @example 群公告
      *
      * @var string
      */
     public $notice;
 
     /**
-     * @description 群公告是否置顶，0：不置顶，1：置顶。裂变出的新群会自动设置上该属性
+     * @example 0
      *
      * @var int
      */
     public $noticeToped;
 
     /**
-     * @description 群组openGroupSetId
+     * @example adfads
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 群主
-     *
      * @var owner
      */
     public $owner;
 
     /**
-     * @description 群主userId，裂变出的新群会自动设置该userId为群主
+     * @example afsd12
      *
      * @var string
      */
     public $ownerUserId;
 
     /**
-     * @description 关系类型
+     * @example crm_customer_personal
      *
      * @var string
      */
     public $relationType;
 
     /**
-     * @description 群模板id
+     * @example sfasgsab
      *
      * @var string
      */

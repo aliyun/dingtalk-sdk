@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 创建时间(时间戳)。
+     * @example 1642078998377
      *
      * @var int
      */
     public $gmtCreate;
 
     /**
-     * @description 群头像地址。
+     * @example https://static/xx.com/xx.jpg
      *
      * @var string
      */
     public $iconUrl;
 
     /**
-     * @description 客户群成员数。
+     * @example 12
      *
      * @var int
      */
     public $memberCount;
 
     /**
-     * @description 客户群名
+     * @example 营销1群
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 客户群openConversationId。
+     * @example xx==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 群组openGroupSetId。
+     * @example xxa==
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 群主userId。
+     * @example axaf12
      *
      * @var string
      */
     public $ownerUserId;
 
     /**
-     * @description 群主userName。
+     * @example XX
      *
      * @var string
      */

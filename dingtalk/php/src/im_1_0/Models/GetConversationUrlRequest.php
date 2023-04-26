@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class GetConversationUrlRequest extends Model
 {
     /**
-     * @description 钉外账号在业务系统内的唯一标志。
+     * @example 1107****2120
      *
      * @var string
      */
     public $appUserId;
 
     /**
-     * @description 渠道code。
+     * @example oK4e****qER2
      *
      * @var string
      */
     public $channelCode;
 
     /**
-     * @description 群会话Id。
+     * @example f67b****8a0f
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 钉内账号userId。
+     * @example 1745****8777
      *
      * @var string
      */

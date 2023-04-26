@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class credentialList extends Model
 {
     /**
-     * @description 证书名称
+     * @example 医生资格证书
      *
      * @var string
      */
     public $credentialName;
 
     /**
-     * @description 证书类型
+     * @example 1
      *
      * @var int
      */
     public $credentialType;
 
     /**
-     * @description 有效日期
+     * @example 2022-08-01
      *
      * @var string
      */

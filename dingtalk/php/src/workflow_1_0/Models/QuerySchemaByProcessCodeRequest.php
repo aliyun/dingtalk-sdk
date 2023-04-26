@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class QuerySchemaByProcessCodeRequest extends Model
 {
     /**
-     * @description 应用搭建隔离信息
-     *
      * @var string
      */
     public $appUuid;
 
     /**
-     * @description 表单的唯一码
+     * @example PROC-17428B8C-6C60-xxxx-924C-64F1037AE067
      *
      * @var string
      */

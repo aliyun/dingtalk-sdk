@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class FormComponent extends Model
 {
     /**
-     * @description 子控件集合
-     *
      * @var \AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\FormComponent[]
      */
     public $children;
 
     /**
-     * @description 控件类型
+     * @example TextField
      *
      * @var string
      */
     public $componentType;
 
     /**
-     * @description 控件属性
-     *
      * @var FormComponentProps
      */
     public $props;

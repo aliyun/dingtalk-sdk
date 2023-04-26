@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class UpdateTriggerResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
      * @var item[]
      */
     public $item;

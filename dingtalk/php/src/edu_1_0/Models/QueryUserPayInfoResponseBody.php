@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryUserPayInfoResponseBody extends Model
 {
     /**
-     * @description 签约单号
+     * @example 123
      *
      * @var string
      */

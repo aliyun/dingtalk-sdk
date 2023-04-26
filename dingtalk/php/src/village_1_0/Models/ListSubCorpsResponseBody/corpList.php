@@ -9,50 +9,40 @@ use AlibabaCloud\Tea\Model;
 class corpList extends Model
 {
     /**
-     * @description 组织corpid
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 组织名字
-     *
      * @var string
      */
     public $corpName;
 
     /**
-     * @description 组织行业名称
-     *
      * @var string
      */
     public $industry;
 
     /**
-     * @description 组织行业码
+     * @example 149 区县，148 乡镇街道，145 村， 150 社区， 151 小区
      *
      * @var int
      */
     public $industryCode;
 
     /**
-     * @description 区域码
-     *
      * @var string
      */
     public $regionId;
 
     /**
-     * @description 区域详细信息
+     * @example 浙江省_杭州市_余杭区_仓前街道
      *
      * @var string
      */
     public $regionLocation;
 
     /**
-     * @description 区域类型，值为county,town,community,residential，依次为区/县、乡/镇/街道、社区/村、小区
-     *
      * @var string
      */
     public $regionType;

@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 业务数据实例数组
-     *
      * @var mixed[][]
      */
     public $bizObjects;
 
     /**
-     * @description 页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 页大小
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 匹配条件的结果总数量
+     * @example 20
      *
      * @var int
      */

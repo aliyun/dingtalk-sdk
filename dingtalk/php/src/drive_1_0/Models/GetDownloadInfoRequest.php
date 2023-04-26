@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class GetDownloadInfoRequest extends Model
 {
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 是否返回内网加签url
-     *
      * @var bool
      */
     public $withInternalResourceUrl;
 
     /**
-     * @description 是否返回区域信息
-     *
      * @var bool
      */
     public $withRegion;

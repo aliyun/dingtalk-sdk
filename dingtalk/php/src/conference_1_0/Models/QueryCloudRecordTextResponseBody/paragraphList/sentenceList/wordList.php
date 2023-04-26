@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class wordList extends Model
 {
     /**
-     * @description 结束时间
+     * @example 7940
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 开始时间
+     * @example 7940
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 单词
+     * @example 这里
      *
      * @var string
      */
     public $word;
 
     /**
-     * @description 单词id
+     * @example 1631172050535000#0
      *
      * @var string
      */

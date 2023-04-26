@@ -9,105 +9,103 @@ use AlibabaCloud\Tea\Model;
 class IndustrializeManufactureQueryJobsRequest extends Model
 {
     /**
-     * @description 当前页序号(从1开始)
+     * @example 1
      *
      * @var int
      */
     public $currentPage;
 
     /**
-     * @description 工单编号
+     * @example d41d8cd98f00b204e9800998ecf8427e
      *
      * @var string
      */
     public $instNo;
 
     /**
-     * @description 生产日期
+     * @example 2021-07-05
      *
      * @var string
      */
     public $manufactureDay;
 
     /**
-     * @description MES系统唯一标识
+     * @example mes41d8cd98f00b204e9800998ecf8427e
      *
      * @var string
      */
     public $mesAppKey;
 
     /**
-     * @description 每页显示记录条数
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 工序名称
-     *
      * @var string
      */
     public $processName;
 
     /**
-     * @description 产品唯一标识
+     * @example A001
      *
      * @var string
      */
     public $productCode;
 
     /**
-     * @description 产品中文名称
+     * @example 双头螺柱001
      *
      * @var string
      */
     public $productName;
 
     /**
-     * @description 产品规格
+     * @example M56*3*10501
      *
      * @var string
      */
     public $productSpecification;
 
     /**
-     * @description 报工合格数量
+     * @example 100
      *
      * @var string
      */
     public $qualifiedQuantity;
 
     /**
-     * @description 计件单价，单位：分
+     * @example 1.2
      *
      * @var string
      */
     public $unitPrice;
 
     /**
-     * @description 员工钉钉userId
+     * @example 1919442747879773
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 批量报工时多个人钉钉工号以英文逗号分隔
+     * @example 111,222
      *
      * @var string
      */
     public $userIdList;
 
     /**
-     * @description 员工姓名
+     * @example 张三
      *
      * @var string
      */
     public $userName;
 
     /**
-     * @description 报工记录的唯一标识
+     * @example d41d8cd98f00b204e9800998ecf8427e
      *
      * @var string
      */

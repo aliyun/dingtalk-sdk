@@ -11,91 +11,87 @@ use AlibabaCloud\Tea\Model;
 class applyList extends Model
 {
     /**
-     * @description 审批单列表
-     *
      * @var approverList[]
      */
     public $approverList;
 
     /**
-     * @description 员工所在部门ID
+     * @example 1
      *
      * @var string
      */
     public $departId;
 
     /**
-     * @description 员工所在部门名
+     * @example 部门1
      *
      * @var string
      */
     public $departName;
 
     /**
-     * @description 创建时间
+     * @example 2021-03-18 20:26:56
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 最近修改时间
+     * @example 2021-03-18 20:26:56
      *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 审批单关联的行程
-     *
      * @var itineraryList[]
      */
     public $itineraryList;
 
     /**
-     * @description 审批单状态：0-申请，1-同意，2-拒绝
+     * @example 申请
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 审批单状态：0-申请，1-同意，2-拒绝
+     * @example 0
      *
      * @var string
      */
     public $statusDesc;
 
     /**
-     * @description 三方审批单ID
+     * @example apply1
      *
      * @var string
      */
     public $thirdPartApplyId;
 
     /**
-     * @description 申请事由
+     * @example 杭州出差
      *
      * @var string
      */
     public $tripCause;
 
     /**
-     * @description 审批单标题
+     * @example 杭州出差
      *
      * @var string
      */
     public $tripTitle;
 
     /**
-     * @description 发起审批员工ID
+     * @example user1
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 发起审批员工名
+     * @example 员工1
      *
      * @var string
      */

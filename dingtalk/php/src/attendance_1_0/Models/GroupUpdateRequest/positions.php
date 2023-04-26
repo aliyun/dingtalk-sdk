@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class positions extends Model
 {
     /**
-     * @description 考勤地址。
+     * @example 生物科技产业园区经二路21号
      *
      * @var string
      */
     public $address;
 
     /**
-     * @description 纬度。
+     * @example 36.687495
      *
      * @var string
      */
     public $latitude;
 
     /**
-     * @description 经度。
+     * @example 101.750329
      *
      * @var string
      */
     public $longitude;
 
     /**
-     * @description 考勤范围。
+     * @example 500
      *
      * @var int
      */
     public $offset;
 
     /**
-     * @description 考勤标题。
+     * @example 青藏高原自然博物馆
      *
      * @var string
      */

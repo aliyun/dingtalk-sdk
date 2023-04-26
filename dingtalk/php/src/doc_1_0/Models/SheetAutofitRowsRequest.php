@@ -14,22 +14,20 @@ class SheetAutofitRowsRequest extends Model
     public $fontWidth;
 
     /**
-     * @description 行号，从0开始
+     * @example 0
      *
      * @var int
      */
     public $row;
 
     /**
-     * @description 行数
+     * @example 10
      *
      * @var int
      */
     public $rowCount;
 
     /**
-     * @description 操作人unionId
-     *
      * @var string
      */
     public $operatorId;

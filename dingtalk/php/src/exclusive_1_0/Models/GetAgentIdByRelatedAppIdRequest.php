@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetAgentIdByRelatedAppIdRequest extends Model
 {
     /**
-     * @description 应用的appId。
+     * @example 10000
      *
      * @var int
      */
     public $appId;
 
     /**
-     * @description 被查询的组织id。
+     * @example ding24f2f5ccxxxxxxxx
      *
      * @var string
      */

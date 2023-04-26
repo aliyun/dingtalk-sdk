@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class trainList extends Model
 {
     /**
-     * @description 火车订单号
+     * @example 231231
      *
      * @var int
      */
     public $trainOrderId;
 
     /**
-     * @description 订单状态：0待支付,1出票中,2已关闭,3,改签成功,4退票成功,5出票完成,6退票申请中,7改签申请中,8已出票,已发货,9出票失败,10改签失败,11退票失败
+     * @example 1
      *
      * @var int
      */

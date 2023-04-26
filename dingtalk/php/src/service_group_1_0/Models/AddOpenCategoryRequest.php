@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class AddOpenCategoryRequest extends Model
 {
     /**
-     * @description 所属知识库ID
+     * @example 5555
      *
      * @var int
      */
     public $libraryId;
 
     /**
-     * @description 开放团队ID
+     * @example Jxi12wo3qxoa
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 父类目ID(为0代表顶层id)
+     * @example 0
      *
      * @var int
      */
     public $parentId;
 
     /**
-     * @description 类目标题
+     * @example 测试类目
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 员工/用户ID
+     * @example 0159003451667222
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 用户昵称或姓名
+     * @example 钉三多
      *
      * @var string
      */

@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class fieldList extends Model
 {
     /**
-     * @description 查重字段的bizAlias。
-     *
      * @var string
      */
     public $bizAlias;
 
     /**
-     * @description 查重字段的字段id。
-     *
      * @var string
      */
     public $fieldId;

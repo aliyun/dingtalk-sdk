@@ -9,29 +9,27 @@ use AlibabaCloud\Tea\Model;
 class UpdateMemberBanWordsRequest extends Model
 {
     /**
-     * @description 禁言持续时长（单位：毫秒）
+     * @example 300000
      *
      * @var int
      */
     public $muteDuration;
 
     /**
-     * @description 禁言状态(0表示取消禁言，1表示禁言)
+     * @example 1
      *
      * @var int
      */
     public $muteStatus;
 
     /**
-     * @description 开放群id
+     * @example cid5d5uM3XEw3gxbNc/n7EQ4g==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 需要禁言或取消禁言的群成员列表
-     *
      * @var string[]
      */
     public $userIdList;

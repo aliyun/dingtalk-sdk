@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetPartnerTypeByParentIdResponseBody extends Model
 {
     /**
-     * @description 子标签列表
-     *
      * @var data[]
      */
     public $data;

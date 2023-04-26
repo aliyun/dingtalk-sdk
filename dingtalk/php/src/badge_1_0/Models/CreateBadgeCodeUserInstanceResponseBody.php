@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class CreateBadgeCodeUserInstanceResponseBody extends Model
 {
     /**
-     * @description 码详情跳转地址
-     *
      * @var string
      */
     public $codeDetailUrl;
 
     /**
-     * @description 码ID
+     * @example codexxxxxx
      *
      * @var string
      */

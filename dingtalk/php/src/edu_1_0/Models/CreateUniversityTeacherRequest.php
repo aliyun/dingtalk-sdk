@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class CreateUniversityTeacherRequest extends Model
 {
     /**
-     * @description 班级ID
+     * @example 100987
      *
      * @var int
      */
     public $classId;
 
     /**
-     * @description 操作人用户ID
+     * @example manger1234
      *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 角色
+     * @example headmaster:班主任；instructor:辅导员
      *
      * @var string
      */
     public $role;
 
     /**
-     * @description 教师用户ID
+     * @example 10877892
      *
      * @var string
      */

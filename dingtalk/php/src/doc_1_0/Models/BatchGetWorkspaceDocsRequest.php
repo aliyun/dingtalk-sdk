@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class BatchGetWorkspaceDocsRequest extends Model
 {
     /**
-     * @description 查询节点Id
-     *
      * @var string[]
      */
     public $nodeIds;
 
     /**
-     * @description 操作用户unionId
-     *
      * @var string
      */
     public $operatorId;

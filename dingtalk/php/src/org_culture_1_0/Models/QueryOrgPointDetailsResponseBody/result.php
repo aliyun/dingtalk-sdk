@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 积分明细列表
-     *
      * @var details[]
      */
     public $details;
 
     /**
-     * @description 分页使用，表示是否还有下一页
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 调用是否成功
+     * @example true
      *
      * @var bool
      */

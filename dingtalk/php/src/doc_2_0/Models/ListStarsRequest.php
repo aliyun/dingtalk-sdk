@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class ListStarsRequest extends Model
 {
     /**
-     * @description 可选参数
-     *
      * @var option
      */
     public $option;
 
     /**
-     * @description 操作人id
+     * @example union_id
      *
      * @var string
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListUserIndustryRolesResponseBody extends Model
 {
     /**
-     * @description result
-     *
      * @var roleList[]
      */
     public $roleList;

@@ -10,29 +10,23 @@ use AlibabaCloud\Tea\Model;
 class actionExecutor extends Model
 {
     /**
-     * @description 部门名称
+     * @example 开发部
      *
      * @var string
      */
     public $departmentName;
 
     /**
-     * @description 邮箱
-     *
      * @var string
      */
     public $email;
 
     /**
-     * @description 用户名
-     *
      * @var name
      */
     public $name;
 
     /**
-     * @description 用户工号
-     *
      * @var string
      */
     public $userId;

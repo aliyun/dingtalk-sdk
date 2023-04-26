@@ -9,78 +9,58 @@ use AlibabaCloud\Tea\Model;
 class UpdateEmpAttrbuteVisibilitySettingRequest extends Model
 {
     /**
-     * @description 是否生效
-     *
      * @var bool
      */
     public $active;
 
     /**
-     * @description 描述信息
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 例外部门id列表
-     *
      * @var int[]
      */
     public $excludeDeptIds;
 
     /**
-     * @description 例外员工id列表
-     *
      * @var string[]
      */
     public $excludeStaffIds;
 
     /**
-     * @description 例外角色id列表
-     *
      * @var int[]
      */
     public $excludeTagIds;
 
     /**
-     * @description 隐藏字段id列表
-     *
      * @var string[]
      */
     public $hideFields;
 
     /**
-     * @description id
+     * @example 11111
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 名称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description object部门id列表
-     *
      * @var int[]
      */
     public $objectDeptIds;
 
     /**
-     * @description object员工id列表
-     *
      * @var string[]
      */
     public $objectStaffIds;
 
     /**
-     * @description object角色id列表
-     *
      * @var int[]
      */
     public $objectTagIds;

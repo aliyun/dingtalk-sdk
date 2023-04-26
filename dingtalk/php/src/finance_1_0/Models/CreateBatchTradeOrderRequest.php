@@ -10,63 +10,61 @@ use AlibabaCloud\Tea\Model;
 class CreateBatchTradeOrderRequest extends Model
 {
     /**
-     * @description 付款账号唯一id
+     * @example 2021070712440326300185114
      *
      * @var string
      */
     public $accountId;
 
     /**
-     * @description 付款账号(注意：用户上送的是脱敏数据)
+     * @example 13****9
      *
      * @var string
      */
     public $accountNo;
 
     /**
-     * @description 批次备注
+     * @example 备注
      *
      * @var string
      */
     public $batchRemark;
 
     /**
-     * @description 交易明细列表
-     *
      * @var batchTradeDetails[]
      */
     public $batchTradeDetails;
 
     /**
-     * @description 外部商户批次号
+     * @example 20210901001
      *
      * @var string
      */
     public $outBatchNo;
 
     /**
-     * @description 员工staffId
+     * @example 8476212471
      *
      * @var string
      */
     public $staffId;
 
     /**
-     * @description 总金额（必填，单位：元）
+     * @example 1.00
      *
      * @var string
      */
     public $totalAmount;
 
     /**
-     * @description 总笔数（必填）
+     * @example 1
      *
      * @var int
      */
     public $totalCount;
 
     /**
-     * @description 交易抬头
+     * @example 工资
      *
      * @var string
      */

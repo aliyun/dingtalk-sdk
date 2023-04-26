@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class GetOutsideAuditGroupMessageByPageRequest extends Model
 {
     /**
-     * @description 页大小，一次请求几条消息，合法区间[20,50]
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 毫秒时间戳，从该时间向过去拉消息
+     * @example 1680493837426
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 会话
-     *
      * @var string
      */
     public $openConversationId;

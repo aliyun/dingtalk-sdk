@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class forms extends Model
 {
     /**
-     * @description 表单内容。
+     * @example 钉三多
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 表单标题。
+     * @example 入职员工姓名
      *
      * @var string
      */

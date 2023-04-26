@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class RollbackMiniAppVersionRequest extends Model
 {
     /**
-     * @description 小程序id
+     * @example 5000000003
      *
      * @var string
      */
     public $miniAppId;
 
     /**
-     * @description 被回滚版本
+     * @example 0.0.5
      *
      * @var string
      */
     public $rollbackVersion;
 
     /**
-     * @description 回滚到的版本
+     * @example 0.0.4
      *
      * @var string
      */

@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class UpdateMemberGroupNickRequest extends Model
 {
     /**
-     * @description 群昵称
-     *
      * @var string
      */
     public $groupNick;
 
     /**
-     * @description 开放群ID
+     * @example cidXXXXXXX
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 用户ID
-     *
      * @var string
      */
     public $userId;

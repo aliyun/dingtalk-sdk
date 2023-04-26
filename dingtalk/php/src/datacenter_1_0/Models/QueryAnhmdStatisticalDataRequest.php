@@ -19,8 +19,6 @@ class QueryAnhmdStatisticalDataRequest extends Model
     public $pageSize;
 
     /**
-     * @description statDate
-     *
      * @var string
      */
     public $statDate;

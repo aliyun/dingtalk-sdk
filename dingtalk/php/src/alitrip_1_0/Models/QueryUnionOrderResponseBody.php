@@ -13,36 +13,28 @@ use AlibabaCloud\Tea\Model;
 class QueryUnionOrderResponseBody extends Model
 {
     /**
-     * @description 企业id
+     * @example tanant1231
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 飞机订单信息
-     *
      * @var flightList[]
      */
     public $flightList;
 
     /**
-     * @description 酒店订单信息
-     *
      * @var hotelList[]
      */
     public $hotelList;
 
     /**
-     * @description 火车订单信息
-     *
      * @var trainList[]
      */
     public $trainList;
 
     /**
-     * @description 用车订单信息
-     *
      * @var vehicleList[]
      */
     public $vehicleList;

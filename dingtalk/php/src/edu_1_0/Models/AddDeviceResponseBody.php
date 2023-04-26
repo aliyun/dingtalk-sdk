@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class AddDeviceResponseBody extends Model
 {
     /**
-     * @description 组织id
+     * @example 123
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 设备id
+     * @example 1002
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 商户id
+     * @example 123
      *
      * @var string
      */
     public $merchantId;
 
     /**
-     * @description 设备sn码
+     * @example 123123
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 状态
+     * @example 1
      *
      * @var int
      */

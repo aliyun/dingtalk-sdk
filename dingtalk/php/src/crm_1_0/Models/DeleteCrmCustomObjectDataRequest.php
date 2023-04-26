@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteCrmCustomObjectDataRequest extends Model
 {
     /**
-     * @description 自定义对象表单code。
+     * @example PROC_xx
      *
      * @var string
      */

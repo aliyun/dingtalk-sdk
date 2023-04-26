@@ -14,21 +14,21 @@ class ListInspectInfoRequest extends Model
     public $deviceUuid;
 
     /**
-     * @description 页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 当页大小
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 类型（inspect：巡检，protect：保养）
+     * @example inspect
      *
      * @var string
      */

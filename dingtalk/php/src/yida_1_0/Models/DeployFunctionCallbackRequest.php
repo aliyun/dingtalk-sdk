@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class DeployFunctionCallbackRequest extends Model
 {
     /**
-     * @description 云应用id
+     * @example 202201061234
      *
      * @var string
      */
     public $appId;
 
     /**
-     * @description 自定义域名
+     * @example abc.com
      *
      * @var string
      */
     public $customDomain;
 
     /**
-     * @description 部署阶段
+     * @example RELEASE
      *
      * @var string
      */
     public $deployStage;
 
     /**
-     * @description api网关实例的AppKey
+     * @example assdfasdfWwd12212
      *
      * @var string
      */
     public $gateWayAppKey;
 
     /**
-     * @description api网关实例的APPSecret
+     * @example fasdfsfasdf1212Sff
      *
      * @var string
      */
     public $gateWayAppSecret;
 
     /**
-     * @description api网关二级域名
+     * @example 1111shanghai-aliyunapi.com
      *
      * @var string
      */

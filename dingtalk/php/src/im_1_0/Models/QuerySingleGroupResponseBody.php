@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QuerySingleGroupResponseBody extends Model
 {
     /**
-     * @description 群会话列表。
-     *
      * @var openConversations[]
      */
     public $openConversations;

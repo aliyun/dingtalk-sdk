@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SheetAutofitRowsResponseBody extends Model
 {
     /**
-     * @description 当前工作表ID
+     * @example stxxxx
      *
      * @var string
      */

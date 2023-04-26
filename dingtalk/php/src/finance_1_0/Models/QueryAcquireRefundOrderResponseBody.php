@@ -9,98 +9,98 @@ use AlibabaCloud\Tea\Model;
 class QueryAcquireRefundOrderResponseBody extends Model
 {
     /**
-     * @description 代扣金额（元）
+     * @example 10.01
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 订单创建日期
+     * @example 2021-11-15 10:10:09
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 退款完成日期
+     * @example 2021-11-15 10:10:10
      *
      * @var string
      */
     public $gmtRefund;
 
     /**
-     * @description 主机构编号
+     * @example 202111010001
      *
      * @var string
      */
     public $instId;
 
     /**
-     * @description 钉钉订单号
+     * @example 202121241343151
      *
      * @var string
      */
     public $orderNo;
 
     /**
-     * @description 原支付单外部流水号
+     * @example 202111020001
      *
      * @var string
      */
     public $originOutTradeNo;
 
     /**
-     * @description 外部退款订单号
+     * @example r202111020001
      *
      * @var string
      */
     public $outRefundNo;
 
     /**
-     * @description 支付渠道
+     * @example ALIPAY
      *
      * @var string
      */
     public $payChannel;
 
     /**
-     * @description 支付渠道支付账号（脱敏后返回）
+     * @example 13****09
      *
      * @var string
      */
     public $payChannelAccountNo;
 
     /**
-     * @description 退款人userId
+     * @example 123124
      *
      * @var string
      */
     public $payerUserId;
 
     /**
-     * @description 代扣备注
+     * @example 备注
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 状态
+     * @example SUCCESS
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 子机构编号
+     * @example 1001
      *
      * @var string
      */
     public $subInstId;
 
     /**
-     * @description 代扣标题
+     * @example 餐费
      *
      * @var string
      */

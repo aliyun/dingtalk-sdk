@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class reminders extends Model
 {
     /**
-     * @description 提醒方式
+     * @example dingtalk
      *
      * @var string
      */
     public $method;
 
     /**
-     * @description 在日程开始前N分钟发出提醒
+     * @example 0
      *
      * @var string
      */

@@ -11,50 +11,44 @@ use AlibabaCloud\Tea\Model;
 class detail extends Model
 {
     /**
-     * @description 卡片回调 URL 地址，不填则无回调
+     * @example https://www.youurl.com/callback/card
      *
      * @var string
      */
     public $callbackUrl;
 
     /**
-     * @description 唯一标识一张卡片的ID，卡片幂等ID
+     * @example service-card-20220824-001
      *
      * @var string
      */
     public $cardBizId;
 
     /**
-     * @description 卡片数据
-     *
      * @var cardData
      */
     public $cardData;
 
     /**
-     * @description 卡片模板 ID
+     * @example 3erkfi-42b0-4c83-bc56-ffhssde43
      *
      * @var string
      */
     public $cardTemplateId;
 
     /**
-     * @description 失效时间，时间戳（毫秒），最长时间不超过 90 天
-     *
      * @var int
      */
     public $expiredTime;
 
     /**
-     * @description 接收人 userId
+     * @example user001
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 卡片用户差异化数据
-     *
      * @var DetailUserIdPrivateDataMapValue[]
      */
     public $userIdPrivateDataMap;

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetClosingAccountsRequest extends Model
 {
     /**
-     * @description 人员列表
-     *
      * @var string[]
      */
     public $userIds;

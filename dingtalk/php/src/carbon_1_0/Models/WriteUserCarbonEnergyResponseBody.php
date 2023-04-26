@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class WriteUserCarbonEnergyResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     *
      * @var int
      */
     public $result;
 
     /**
-     * @description 输出状态
-     *
      * @var bool
      */
     public $success;

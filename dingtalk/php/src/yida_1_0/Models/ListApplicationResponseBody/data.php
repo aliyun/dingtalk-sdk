@@ -9,70 +9,70 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 宜搭应用配置
+     * @example {"ODIN_TOPIC_ID":"2560649","APPPROVIDER":"vigo","NEEDAYALYSIS":"n","NAVTYPE":"top_side","SHOWICON":"n","REPORT_SUPPORT_META_3":"y","ALLOW_EXTERNAL_ADDRESS_BOOK":"y","REPORTVERSION":"V5","FORM_SCHEMA_VERSION":"V5","EXCEL_SOURCE":"LOCAL","DEVICETYPE":"web,mobile","ENABLE_CSRF_SWITCH":"y","NEW_ALLOW_EXTERNAL_ADDRESS_BOOK":"y","COLOUR":"blue","DINGTALK_CID":"LOCAL","APPMODE":"normal","NAVLAYOUT":"auto","SHOWNAV":"y","SHOWCRUMB":"y","SUPPORT_META_3":"y","SUPPORT_META_2":"y","SYSTEMLINK":"https://www.aliwork.com/APP_LDYQVBGT167NAON5KB1X/workbench","DATA_QUERY_VERSION":"V1","DB_SOURCE_TYPE":"TDDL_MYSQL","ISTODINGAPPCENTER":"n","REVERSION":"5.9.16","EDS_DB_INDEX":"24","NAVIGATION":"TODO,DONE,SUBMIT","APPTYPE":"single"}
      *
      * @var string
      */
     public $appConfig;
 
     /**
-     * @description 宜搭应用编码
+     * @example APP_XCE0EVXS6DYG3YDYC5RD
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 应用状态
+     * @example 上线:ONLINE，下线:OFFLINE
      *
      * @var string
      */
     public $applicationStatus;
 
     /**
-     * @description 钉钉组织id
+     * @example ding5d17e3add038d44535c2f4657eb6378e
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 创建者的userId
+     * @example ding12345
      *
      * @var string
      */
     public $creatorUserId;
 
     /**
-     * @description 描述信息
+     * @example 步凡创建的宜搭应用
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 宜搭图标编码
+     * @example appdiqiu%%#0089FF
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 是否被删除了
+     * @example 已删除:y，未删除:n
      *
      * @var string
      */
     public $inexistence;
 
     /**
-     * @description 名称
+     * @example 测试应用
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 子组织的钉钉CorpId
+     * @example ding8eaadfkksj45343wksff334
      *
      * @var string
      */

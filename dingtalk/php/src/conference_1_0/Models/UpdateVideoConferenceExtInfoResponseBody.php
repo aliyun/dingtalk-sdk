@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateVideoConferenceExtInfoResponseBody extends Model
 {
     /**
-     * @description 失败原因
-     *
      * @var string
      */
     public $case;
 
     /**
-     * @description 返回编码
-     *
      * @var string
      */
     public $code;

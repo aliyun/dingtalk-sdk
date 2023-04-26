@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class processList extends Model
 {
     /**
-     * @description 图标URL。
+     * @example https://gw.xxxx/T-102-102.png
      *
      * @var string
      */
     public $iconUrl;
 
     /**
-     * @description 表单名称。
+     * @example 物品领用
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 表单唯一标识。
+     * @example PROC-YMLA1-xxxx-11WFJ-1
      *
      * @var string
      */
     public $processCode;
 
     /**
-     * @description 表单URL。
+     * @example https://aflow.dingtalk.com/dingtalk/mobile/homepage.htm?xxxx
      *
      * @var string
      */

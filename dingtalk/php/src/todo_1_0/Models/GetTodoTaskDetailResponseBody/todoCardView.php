@@ -10,36 +10,30 @@ use AlibabaCloud\Tea\Model;
 class todoCardView extends Model
 {
     /**
-     * @description link, button, 操作区类型，是链接类型，或者按钮类型
-     *
      * @var string
      */
     public $actionType;
 
     /**
-     * @description 卡片类型
+     * @example standard , nonStandard, 标准卡片和非标准卡片，非标准卡片由第三方接入方自定义
      *
      * @var string
      */
     public $cardType;
 
     /**
-     * @description 卡片左上角 区域类型是 icon, 或者checkbox 类型的
+     * @example 是 icon, 或者checkbox 类型的
      *
      * @var string
      */
     public $circleELType;
 
     /**
-     * @description icon, name ,内容区域类型是 icon+value, 或者name+value 类型的
-     *
      * @var string
      */
     public $contentType;
 
     /**
-     * @description 卡片icon
-     *
      * @var string
      */
     public $icon;
@@ -50,8 +44,6 @@ class todoCardView extends Model
     public $todoCardContentList;
 
     /**
-     * @description 卡片标题
-     *
      * @var string
      */
     public $todoCardTitle;

@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class GroupBanWordsRequest extends Model
 {
     /**
-     * @description 禁言模式
+     * @example 1
      *
      * @var int
      */
     public $banWordsMode;
 
     /**
-     * @description 开放群id
+     * @example cidnvcxzklxv
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 扩展参数
-     *
      * @var mixed[]
      */
     public $options;

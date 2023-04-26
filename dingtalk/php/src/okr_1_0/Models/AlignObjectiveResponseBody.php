@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class AlignObjectiveResponseBody extends Model
 {
     /**
-     * @description data
-     *
      * @var data
      */
     public $data;
 
     /**
-     * @description success
+     * @example true
      *
      * @var bool
      */

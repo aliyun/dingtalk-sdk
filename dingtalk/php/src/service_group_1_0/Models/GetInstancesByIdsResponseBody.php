@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetInstancesByIdsResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
      * @var customFormInstanceResponseList[]
      */
     public $customFormInstanceResponseList;

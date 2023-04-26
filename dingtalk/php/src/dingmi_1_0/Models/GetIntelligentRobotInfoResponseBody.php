@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetIntelligentRobotInfoResponseBody extends Model
 {
     /**
-     * @description 机器人id
+     * @example abcd1234
      *
      * @var string
      */

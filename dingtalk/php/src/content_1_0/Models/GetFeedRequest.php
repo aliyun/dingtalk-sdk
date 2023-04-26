@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetFeedRequest extends Model
 {
     /**
-     * @description 入驻账号Id(请联系钉钉接口同学获取)
+     * @example 50730********40554
      *
      * @var string
      */

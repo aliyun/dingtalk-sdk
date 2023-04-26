@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetDingIdByMigrationDingIdResponseBody extends Model
 {
     /**
-     * @description dingId
-     *
      * @var string
      */
     public $dingId;

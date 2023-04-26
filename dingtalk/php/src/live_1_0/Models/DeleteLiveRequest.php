@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class DeleteLiveRequest extends Model
 {
     /**
-     * @description 直播id
+     * @example 4d383876-1ff9-4b73-a057-a8f47b346ecb
      *
      * @var string
      */
     public $liveId;
 
     /**
-     * @description 用户id
+     * @example DC7wZGOSueEEIGOf3WKwWgiEiE
      *
      * @var string
      */

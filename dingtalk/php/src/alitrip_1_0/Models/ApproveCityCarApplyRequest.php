@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class ApproveCityCarApplyRequest extends Model
 {
     /**
-     * @description 第三方企业ID
+     * @example corpx
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 审批时间
+     * @example 2021-03-18 20:26:56
      *
      * @var string
      */
     public $operateTime;
 
     /**
-     * @description 审批备注
+     * @example 同意
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 审批结果：1-同意，2-拒绝
+     * @example 1
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 第三方审批单ID
+     * @example apply1
      *
      * @var string
      */
     public $thirdPartApplyId;
 
     /**
-     * @description 审批的第三方员工ID
+     * @example user1
      *
      * @var string
      */

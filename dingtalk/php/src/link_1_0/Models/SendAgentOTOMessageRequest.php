@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class SendAgentOTOMessageRequest extends Model
 {
     /**
-     * @description 消息详情
-     *
      * @var detail
      */
     public $detail;

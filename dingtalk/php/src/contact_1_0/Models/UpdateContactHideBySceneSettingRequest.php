@@ -12,78 +12,60 @@ use AlibabaCloud\Tea\Model;
 class UpdateContactHideBySceneSettingRequest extends Model
 {
     /**
-     * @description 设置描述信息
+     * @example description text
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 允许查看的部门列表
-     *
      * @var int[]
      */
     public $excludeDeptIds;
 
     /**
-     * @description 允许查看的角色列表
-     *
      * @var int[]
      */
     public $excludeTagIds;
 
     /**
-     * @description 允许查看的员工列表
-     *
      * @var string[]
      */
     public $excludeUserIds;
 
     /**
-     * @description 设置名称
+     * @example test name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 浏览组织架构与选人组件场景下的配置
-     *
      * @var nodeListSceneConfig
      */
     public $nodeListSceneConfig;
 
     /**
-     * @description 被隐藏的部门列表
-     *
      * @var int[]
      */
     public $objectDeptIds;
 
     /**
-     * @description 被隐藏的角色列表
-     *
      * @var int[]
      */
     public $objectTagIds;
 
     /**
-     * @description 被隐藏的员工UserId列表
-     *
      * @var string[]
      */
     public $objectUserIds;
 
     /**
-     * @description 用户详情场景下的配置
-     *
      * @var profileSceneConfig
      */
     public $profileSceneConfig;
 
     /**
-     * @description 搜索的场景配置（包括搜索部门、搜索员工）
-     *
      * @var searchSceneConfig
      */
     public $searchSceneConfig;

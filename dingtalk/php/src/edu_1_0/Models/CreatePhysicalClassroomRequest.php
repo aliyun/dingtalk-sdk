@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class CreatePhysicalClassroomRequest extends Model
 {
     /**
-     * @description 教室教学楼
+     * @example 主楼
      *
      * @var string
      */
     public $classroomBuilding;
 
     /**
-     * @description 教室校区
+     * @example 主校区
      *
      * @var string
      */
     public $classroomCampus;
 
     /**
-     * @description 教室楼层
+     * @example 2层
      *
      * @var string
      */
     public $classroomFloor;
 
     /**
-     * @description 教室名称
+     * @example 实验室
      *
      * @var string
      */
     public $classroomName;
 
     /**
-     * @description 教室房间号
+     * @example 201
      *
      * @var string
      */
     public $classroomNumber;
 
     /**
-     * @description 是否支持直播
+     * @example Y
      *
      * @var string
      */
     public $directBroadcast;
 
     /**
-     * @description 扩展信息
+     * @example {}
      *
      * @var string
      */
     public $ext;
 
     /**
-     * @description opUserId
+     * @example manger1234
      *
      * @var string
      */

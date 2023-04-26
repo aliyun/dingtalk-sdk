@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class QueryAllFormInstancesRequest extends Model
 {
     /**
-     * @description 应用搭建id
+     * @example SWAPP-dacdsa-example
      *
      * @var string
      */
     public $appUuid;
 
     /**
-     * @description 表单模板id
+     * @example PROC-daccea-example
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 翻页size
+     * @example 100
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标，第一次调用传空或者null
+     * @example 100010
      *
      * @var string
      */

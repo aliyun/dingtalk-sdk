@@ -10,43 +10,39 @@ use AlibabaCloud\Tea\Model;
 class option extends Model
 {
     /**
-     * @description 空间能力项, 默认表示不设置拓展能力项
-     *
      * @var capabilities
      */
     public $capabilities;
 
     /**
-     * @description 空间名称，默认无空间名称
+     * @example space_name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description owner类型, 空间Owner可以是用户或应用
-     * USER
+     * @example USER
+     *
      * @var string
      */
     public $ownerType;
 
     /**
-     * @description 空间能使用最大容量, 默认表示无最大容量
-     *
      * @var int
      */
     public $quota;
 
     /**
-     * @description 空间场景，详见 Space.scene 字段. 不指定默认值是default
-     * default
+     * @example scene
+     *
      * @var string
      */
     public $scene;
 
     /**
-     * @description 空间场景Id，详见 Space.sceneId 字段. 不指定默认值是0
-     * 0
+     * @example scene_id
+     *
      * @var string
      */
     public $sceneId;

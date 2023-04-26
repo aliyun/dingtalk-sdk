@@ -10,71 +10,51 @@ use AlibabaCloud\Tea\Model;
 class originator extends Model
 {
     /**
-     * @description departmentDescription
-     *
      * @var string
      */
     public $departmentDescription;
 
     /**
-     * @description displayEnName
-     *
      * @var string
      */
     public $displayEnName;
 
     /**
-     * @description displayName
-     *
      * @var string
      */
     public $displayName;
 
     /**
-     * @description masterDataDepartments
-     *
      * @var masterDataDepartments[]
      */
     public $masterDataDepartments;
 
     /**
-     * @description orderNum
-     *
      * @var string
      */
     public $orderNumber;
 
     /**
-     * @description personalPhoto
-     *
      * @var string
      */
     public $personalPhoto;
 
     /**
-     * @description status
-     *
      * @var string
      */
     public $status;
 
     /**
-     * @description tbWang
-     *
      * @var string
      */
     public $tbWang;
 
     /**
-     * @description userId
-     *
      * @var string
      */
     public $userId;
 
     /**
-     * @description userInfo
-     *
      * @var string
      */
     public $userInfo;

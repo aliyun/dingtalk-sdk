@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class involvers extends Model
 {
     /**
-     * @description 头像
+     * @example http://xxxx
      *
      * @var string
      */
     public $avatarUrl;
 
     /**
-     * @description 名字
+     * @example 鬼斩
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 用户uid
+     * @example 173xxxxx
      *
      * @var string
      */

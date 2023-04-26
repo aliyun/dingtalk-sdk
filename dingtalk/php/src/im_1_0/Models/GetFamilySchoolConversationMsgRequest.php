@@ -9,35 +9,33 @@ use AlibabaCloud\Tea\Model;
 class GetFamilySchoolConversationMsgRequest extends Model
 {
     /**
-     * @description 查询最大消息数
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 要查询的消息类型
-     *
      * @var int[]
      */
     public $msgTypes;
 
     /**
-     * @description 下一次查询的游标，毫秒值
+     * @example 1666671122000
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 接收卡片的群的openConversationId
+     * @example cidxxxx
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 用户唯一标识
+     * @example xxx
      *
      * @var string
      */

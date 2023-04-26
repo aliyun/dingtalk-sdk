@@ -9,39 +9,35 @@ use AlibabaCloud\Tea\Model;
 class PediaWordsSearchRequest extends Model
 {
     /**
-     * @description 当前查询的页数，当超过总数后返回数据为空
-     *
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 当前每页需要展示的数量，最大20
-     *
+     * @example 1
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 当前搜索列表的状态0代表审核通过，1代表创建待审核，2代表更新待审核列表
-     * 默认是0，代表获取所有审核完成的词条
+     * @example 1
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 通过开放平台获取的员工编号userId
+     * @example 121213213
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 搜索关键词
-     *
+     * @example 企业百科
      *
      * @var string
      */

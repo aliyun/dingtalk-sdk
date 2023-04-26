@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class SaveCorpPayCodeResponseBody extends Model
 {
     /**
-     * @description 码标识
-     *
      * @var string
      */
     public $codeIdentity;
 
     /**
-     * @description 开通的企业ID
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 扩展参数
-     *
      * @var string[]
      */
     public $extInfo;
 
     /**
-     * @description 状态
-     *
      * @var string
      */
     public $status;

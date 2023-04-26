@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class QueryTodoTasksResponseBody extends Model
 {
     /**
-     * @description 翻页token
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 待办卡片列表
-     *
      * @var todoCards[]
      */
     public $todoCards;
 
     /**
-     * @description 数据总量
-     *
      * @var int
      */
     public $totalCount;

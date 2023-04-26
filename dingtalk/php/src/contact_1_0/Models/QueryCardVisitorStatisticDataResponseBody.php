@@ -9,63 +9,63 @@ use AlibabaCloud\Tea\Model;
 class QueryCardVisitorStatisticDataResponseBody extends Model
 {
     /**
-     * @description 发送名片数
+     * @example 1
      *
      * @var int
      */
     public $cardSendCnt;
 
     /**
-     * @description 今日访客增加数
+     * @example 1
      *
      * @var int
      */
     public $todayVisitAddCnt;
 
     /**
-     * @description 今日访客数
+     * @example 1
      *
      * @var int
      */
     public $todayVisitCnt;
 
     /**
-     * @description 总访客新增数
+     * @example 1
      *
      * @var int
      */
     public $totalVisitAddCnt;
 
     /**
-     * @description 总访客数
+     * @example 1
      *
      * @var int
      */
     public $totalVisitCnt;
 
     /**
-     * @description 微信今日访客新增数
+     * @example 1
      *
      * @var int
      */
     public $wechatTodayVisitAddCnt;
 
     /**
-     * @description 微信今日访客数
+     * @example 1
      *
      * @var int
      */
     public $wechatTodayVisitCnt;
 
     /**
-     * @description 微信今日访客增加数
+     * @example 1
      *
      * @var int
      */
     public $wechatTotalVisitAddCnt;
 
     /**
-     * @description 微信访客数
+     * @example 1
      *
      * @var int
      */

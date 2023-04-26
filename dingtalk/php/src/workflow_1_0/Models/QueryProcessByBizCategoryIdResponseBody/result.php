@@ -9,30 +9,21 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 模板描述
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 模板名称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 模板code
-     *
      * @var string
      */
     public $processCode;
 
     /**
-     * @description 模版发布状态。
-     *
-     * - SAVED：已保存
      * @var string
      */
     public $status;

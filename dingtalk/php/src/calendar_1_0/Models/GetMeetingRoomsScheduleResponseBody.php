@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetMeetingRoomsScheduleResponseBody extends Model
 {
     /**
-     * @description 闲忙信息
-     *
      * @var scheduleInformation[]
      */
     public $scheduleInformation;

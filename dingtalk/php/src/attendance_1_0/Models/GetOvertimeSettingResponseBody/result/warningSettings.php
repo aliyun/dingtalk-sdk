@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class warningSettings extends Model
 {
     /**
-     * @description 风险预警 或 最大加班时间
-     *
      * @var string
      */
     public $action;
 
     /**
-     * @description 提醒阈值
-     *
      * @var int
      */
     public $threshold;
 
     /**
-     * @description 预警类型
-     *
      * @var string
      */
     public $time;

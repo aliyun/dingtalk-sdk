@@ -10,49 +10,45 @@ use AlibabaCloud\Tea\Model;
 class operationRecords extends Model
 {
     /**
-     * @description 评论附件列表。
-     *
      * @var attachments[]
      */
     public $attachments;
 
     /**
-     * @description 抄送人userIds列表
-     *
      * @var string[]
      */
     public $ccUserIds;
 
     /**
-     * @description 操作时间。
+     * @example 2022-08-31T11:52Z
      *
      * @var string
      */
     public $date;
 
     /**
-     * @description 评论内容。  审批操作附带评论时才返回该字段。
+     * @example 评论
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 操作结果：  AGREE：同意  REFUSE：拒绝  NONE
+     * @example AGREE
      *
      * @var string
      */
     public $result;
 
     /**
-     * @description 操作类型：  EXECUTE_TASK_NORMAL：正常执行任务  EXECUTE_TASK_AGENT：代理人执行任务  APPEND_TASK_BEFORE：前加签任务  APPEND_TASK_AFTER：后加签任务  REDIRECT_TASK：转交任务  START_PROCESS_INSTANCE：发起流程实例  TERMINATE_PROCESS_INSTANCE：终止(撤销)流程实例  FINISH_PROCESS_INSTANCE：结束流程实例  ADD_REMARK：添加评论  REDIRECT_PROCESS：审批退回  PROCESS_CC：抄送
+     * @example EXECUTE_TASK_NORMAL
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 操作人userid。
+     * @example manager1
      *
      * @var string
      */

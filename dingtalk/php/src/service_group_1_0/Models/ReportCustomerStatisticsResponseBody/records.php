@@ -9,77 +9,77 @@ use AlibabaCloud\Tea\Model;
 class records extends Model
 {
     /**
-     * @description at机器人消息数
+     * @example 1
      *
      * @var int
      */
     public $atRobotCnt;
 
     /**
-     * @description 业务ID
+     * @example bizXX
      *
      * @var string
      */
     public $bizId;
 
     /**
-     * @description 客户数
+     * @example 3
      *
      * @var int
      */
     public $customerCnt;
 
     /**
-     * @description 群名称
+     * @example 测试群
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 群分组名称
+     * @example 测试群分组
      *
      * @var string
      */
     public $groupSetName;
 
     /**
-     * @description 打开钉钉客户数
+     * @example 2
      *
      * @var int
      */
     public $loginCnt;
 
     /**
-     * @description 打开群客户数
+     * @example 1
      *
      * @var int
      */
     public $openConvCnt;
 
     /**
-     * @description 开放群ID
+     * @example cidXXX
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开放群分组ID
+     * @example iSoqrhLQDtK
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 发送消息数
+     * @example 2
      *
      * @var int
      */
     public $sendMsgCnt;
 
     /**
-     * @description 发消息的客户数
+     * @example 2
      *
      * @var int
      */

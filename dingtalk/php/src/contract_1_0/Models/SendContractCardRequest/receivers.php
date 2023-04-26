@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class receivers extends Model
 {
     /**
-     * @description 接收者所在组织
+     * @example ding5f62ac8a3c24952ebc961a6cb783455b
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 用户id
+     * @example 1622265907855672
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 用户类型
+     * @example 可以为空
      *
      * @var string
      */

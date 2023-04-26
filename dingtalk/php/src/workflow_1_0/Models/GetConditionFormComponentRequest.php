@@ -9,16 +9,15 @@ use AlibabaCloud\Tea\Model;
 class GetConditionFormComponentRequest extends Model
 {
     /**
-     * @description 应用ID (三方应用为AppID)，可在开发者管理后台后台的应用详情页面获取。
+     * @example 10
      *
      * @var int
      */
     public $agentId;
 
     /**
-     * @description 审批模板ID。
+     * @example PROC-xxx
      *
-     * processCode需要OA管理后台，在编辑审批表单的URL中获取。
      * @var string
      */
     public $processCode;

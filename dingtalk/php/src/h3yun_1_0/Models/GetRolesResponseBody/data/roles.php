@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class roles extends Model
 {
     /**
-     * @description 所属企业id
+     * @example 18f923a7-5a5e-426d-94ae-a55ad1a4b240
      *
      * @var string
      */
     public $companyId;
 
     /**
-     * @description 描述
+     * @example 这是一个游客体验角色
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 所属的角色组id
+     * @example 261befb8-728d-4b79-a0b4-7b6ddfb3f94e
      *
      * @var string
      */
     public $groupId;
 
     /**
-     * @description 角色编码
+     * @example 88cfc4a2-22ba-48e2-bc5e-8d475ce49d38
      *
      * @var string
      */
     public $roleCode;
 
     /**
-     * @description 角色id
+     * @example 085b47cf-ab7b-417f-bb7a-b5ee3b32de16
      *
      * @var string
      */
     public $roleId;
 
     /**
-     * @description 角色名称
+     * @example 游客体验角色
      *
      * @var string
      */
     public $roleName;
 
     /**
-     * @description 状态。Active=激活、Inactive=未激活，Unspecified=未指定状态
+     * @example Active
      *
      * @var string
      */
     public $state;
 
     /**
-     * @description 可见性。All=全部可见、Normal=普通可见、OnlyAdmin=只有管理的时候可见、OnlyOrganization=本组织范围可见
+     * @example All
      *
      * @var string
      */

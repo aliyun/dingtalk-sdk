@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class AddFileRequest extends Model
 {
     /**
-     * @description 业务标识
+     * @example ddats
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 文件名称
+     * @example 张三的简历
      *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 文件mediaId
+     * @example xxx
      *
      * @var string
      */
     public $mediaId;
 
     /**
-     * @description 操作人员工标识，为空时默认以企业管理员身份进行操作
+     * @example manager5875
      *
      * @var string
      */

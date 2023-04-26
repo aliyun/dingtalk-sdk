@@ -11,22 +11,18 @@ use AlibabaCloud\Tea\Model;
 class CreateFeedRequest extends Model
 {
     /**
-     * @description 课程相关信息
-     *
      * @var courseInfo
      */
     public $courseInfo;
 
     /**
-     * @description 发布者的用户Id
+     * @example 16621*******284773
      *
      * @var string
      */
     public $createUserId;
 
     /**
-     * @description 内容相关信息
-     *
      * @var feedInfo
      */
     public $feedInfo;

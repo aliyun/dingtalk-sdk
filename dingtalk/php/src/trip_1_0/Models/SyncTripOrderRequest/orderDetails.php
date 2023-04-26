@@ -10,187 +10,185 @@ use AlibabaCloud\Tea\Model;
 class orderDetails extends Model
 {
     /**
-     * @description 到达时间
+     * @example 2022-05-20 12:20:00
      *
      * @var string
      */
     public $arrivalTime;
 
     /**
-     * @description 车辆颜色
+     * @example 红色
      *
      * @var string
      */
     public $carColor;
 
     /**
-     * @description 车辆型号
+     * @example 帕萨特
      *
      * @var string
      */
     public $carModel;
 
     /**
-     * @description 车牌号
+     * @example 浙A0Z***7
      *
      * @var string
      */
     public $carNumber;
 
     /**
-     * @description 餐食描述
+     * @example 单早
      *
      * @var string
      */
     public $cateringType;
 
     /**
-     * @description 入住时间
+     * @example 2022-05-20 14:00:00
      *
      * @var string
      */
     public $checkInTime;
 
     /**
-     * @description 离店时间
+     * @example 2022-05-21 12:00:00
      *
      * @var string
      */
     public $checkOutTime;
 
     /**
-     * @description 出发时间
+     * @example 2022-05-20 10:00:00
      *
      * @var string
      */
     public $departTime;
 
     /**
-     * @description 目的地城市
+     * @example 杭州
      *
      * @var string
      */
     public $destinationCity;
 
     /**
-     * @description 目的地城市码
+     * @example 151
      *
      * @var string
      */
     public $destinationCityCode;
 
     /**
-     * @description 目的站名称
+     * @example 杭州
      *
      * @var string
      */
     public $destinationStation;
 
     /**
-     * @description 酒店地址
+     * @example 浙江省杭州市余杭区聚橙路文昌路
      *
      * @var string
      */
     public $hotelAddress;
 
     /**
+     * @example 杭州
+     *
      * @var string
      */
     public $hotelCity;
 
     /**
-     * @description 酒店定位信息
-     *
      * @var hotelLocation
      */
     public $hotelLocation;
 
     /**
-     * @description 酒店名称
+     * @example 亲橙客栈
      *
      * @var string
      */
     public $hotelName;
 
     /**
-     * @description 出发地城市
+     * @example 北京
      *
      * @var string
      */
     public $originCity;
 
     /**
-     * @description 出发地城市码
+     * @example 150
      *
      * @var string
      */
     public $originCityCode;
 
     /**
-     * @description 出发站名称
+     * @example 北京
      *
      * @var string
      */
     public $originStation;
 
     /**
-     * @description 房间数
-     *
      * @var int
      */
     public $roomCount;
 
     /**
-     * @description 舱位
+     * @example 经济舱/7车12A
      *
      * @var string
      */
     public $seatInfo;
 
     /**
-     * @description “服务类型”
+     * @example REALTIME
      *
      * @var string
      */
     public $serviceType;
 
     /**
-     * @description 下游供应商logo
+     * @example http://dingtalk.com/static/logo.png
      *
      * @var string
      */
     public $subSupplyLogo;
 
     /**
-     * @description 下游供应商名称
+     * @example 国航
      *
      * @var string
      */
     public $subSupplyName;
 
     /**
-     * @description 专车类型
+     * @example 专车
      *
      * @var string
      */
     public $taxiType;
 
     /**
-     * @description 联系方式
+     * @example 2022-05-20 14:00:00
      *
      * @var string
      */
     public $telephone;
 
     /**
-     * @description 火车/航班班次
+     * @example CA1762
      *
      * @var string
      */
     public $transportNumber;
 
     /**
-     * @description 房型描述
+     * @example 商务标准间
      *
      * @var string
      */

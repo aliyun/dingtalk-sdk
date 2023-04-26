@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryUserInfoRequest extends Model
 {
     /**
-     * @description 按月标记。不填默认当月。填0为次月。
-     *
      * @var string
      */
     public $monthMark;

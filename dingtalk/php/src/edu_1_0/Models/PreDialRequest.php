@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class PreDialRequest extends Model
 {
     /**
-     * @description 通话发起人的userId
+     * @example 00003213130
      *
      * @var string
      */
     public $callerUserId;
 
     /**
-     * @description 通话接收人的userId
+     * @example 312000030213120
      *
      * @var string
      */
     public $receiverUserId;
 
     /**
-     * @description 设备sn码
+     * @example fdaf-2132
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 设备类型
+     * @example VIDEO_CALL
      *
      * @var string
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class words extends Model
 {
     /**
-     * @description 词数量
+     * @example 10
      *
      * @var int
      */
     public $count;
 
     /**
-     * @description 词名
+     * @example 销售
      *
      * @var string
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryResourceManagementMembersResponseBody extends Model
 {
     /**
-     * @description 可管理资源的成员
-     *
      * @var members[]
      */
     public $members;

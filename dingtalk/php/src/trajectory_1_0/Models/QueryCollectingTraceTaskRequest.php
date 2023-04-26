@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryCollectingTraceTaskRequest extends Model
 {
     /**
-     * @description 员工用户ID列表
-     *
      * @var string[]
      */
     public $userIds;

@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class behaviorLinkage extends Model
 {
     /**
-     * @description 关联控件列表。
-     *
      * @var targets[]
      */
     public $targets;
 
     /**
-     * @description 控件值。
+     * @example xxxx
      *
      * @var string
      */

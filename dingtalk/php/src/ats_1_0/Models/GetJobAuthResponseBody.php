@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetJobAuthResponseBody extends Model
 {
     /**
-     * @description 职位ID
-     *
      * @var string
      */
     public $jobId;
 
     /**
-     * @description 职位负责人
-     *
      * @var jobOwners[]
      */
     public $jobOwners;

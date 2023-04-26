@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetTbOrgIdByDingOrgIdResponseBody extends Model
 {
     /**
-     * @description 结果对象
-     *
      * @var result
      */
     public $result;

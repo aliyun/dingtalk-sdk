@@ -9,35 +9,33 @@ use AlibabaCloud\Tea\Model;
 class attachmentList extends Model
 {
     /**
-     * @description 多媒体类型
+     * @example doc
      *
      * @var string
      */
     public $mimeType;
 
     /**
-     * @description 附件URL
-     *
      * @var string
      */
     public $path;
 
     /**
-     * @description 附件大小
+     * @example 655
      *
      * @var int
      */
     public $size;
 
     /**
-     * @description 附件扩展名
+     * @example pdf
      *
      * @var string
      */
     public $suffix;
 
     /**
-     * @description 附件名称
+     * @example 测试附件
      *
      * @var string
      */

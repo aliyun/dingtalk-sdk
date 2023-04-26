@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class metaList extends Model
 {
     /**
-     * @description 指标口径
-     *
      * @var string
      */
     public $kpiCaliber;
 
     /**
-     * @description 指标ID
-     *
      * @var string
      */
     public $kpiId;
 
     /**
-     * @description 指标名称
-     *
      * @var string
      */
     public $kpiName;
 
     /**
-     * @description 指标周期
-     *
      * @var string
      */
     public $period;
 
     /**
-     * @description 指标单位
-     *
      * @var string
      */
     public $unit;

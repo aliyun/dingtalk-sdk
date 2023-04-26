@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class CreateJsapiTicketResponseBody extends Model
 {
     /**
-     * @description 超时时间
-     *
      * @var int
      */
     public $expireIn;
 
     /**
-     * @description jsapi ticket
-     *
      * @var string
      */
     public $jsapiTicket;

@@ -9,84 +9,84 @@ use AlibabaCloud\Tea\Model;
 class UserAgreementPageSignRequest extends Model
 {
     /**
-     * @description 业务编码
+     * @example TRADE
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 业务场景
+     * @example WITHHOLDING
      *
      * @var string
      */
     public $bizScene;
 
     /**
-     * @description 主机构编号
+     * @example 202111090001
      *
      * @var string
      */
     public $instId;
 
     /**
-     * @description 支付渠道
+     * @example 支付宝
      *
      * @var string
      */
     public $payChannel;
 
     /**
-     * @description 备注
+     * @example 备注
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 签约后页面返回url
+     * @example http://****.com
      *
      * @var string
      */
     public $returnUrl;
 
     /**
-     * @description 签约场景
+     * @example 详见支付宝接口文档https://opendocs.alipay.com/open/20190319114403226822/signscene
      *
      * @var string
      */
     public $signScene;
 
     /**
-     * @description 子机构编号
+     * @example 1001
      *
      * @var string
      */
     public $subInstId;
 
     /**
-     * @description 子商户商户名称
+     * @example 滴滴出行
      *
      * @var string
      */
     public $subMerchantName;
 
     /**
-     * @description 子商户服务描述
+     * @example 免密付车费，单次最高500元
      *
      * @var string
      */
     public $subMerchantServiceDesc;
 
     /**
-     * @description 子商户服务名称
+     * @example 滴滴出行免密支付
      *
      * @var string
      */
     public $subMerchantServiceName;
 
     /**
-     * @description 付款人staffId
+     * @example 2120493284
      *
      * @var string
      */

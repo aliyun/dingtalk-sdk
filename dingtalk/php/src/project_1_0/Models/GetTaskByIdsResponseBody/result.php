@@ -10,196 +10,186 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 任务完成时间(UTC)。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $accomplishTime;
 
     /**
-     * @description 祖先任务ID列表。
-     *
      * @var string[]
      */
     public $ancestorIds;
 
     /**
-     * @description 任务标题。
+     * @example 任务标题
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 创建时间(UTC)。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 创建人ID。
+     * @example 0517xxxxxxx
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 自定义字段值集合。
-     *
      * @var customfields[]
      */
     public $customfields;
 
     /**
-     * @description 任务截止时间(UTC)。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $dueDate;
 
     /**
-     * @description 执行人ID。
+     * @example 0517xxxxxxx
      *
      * @var string
      */
     public $executorId;
 
     /**
-     * @description 参与者ID集合。
-     *
      * @var string[]
      */
     public $involveMembers;
 
     /**
-     * @description 是否任务放入回收站。
+     * @example false
      *
      * @var bool
      */
     public $isArchived;
 
     /**
-     * @description 是否任务已完成。
+     * @example true
      *
      * @var bool
      */
     public $isDone;
 
     /**
-     * @description 任务备注。
+     * @example 任务备注
      *
      * @var string
      */
     public $note;
 
     /**
-     * @description 父任务ID。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $parentTaskId;
 
     /**
-     * @description 任务优先级。
+     * @example 0
      *
      * @var int
      */
     public $priority;
 
     /**
-     * @description 项目ID。
+     * @example 62c25e3b376ecxxxxxxx
      *
      * @var string
      */
     public $projectId;
 
     /**
-     * @description 重复规则列表。
-     *
      * @var string[]
      */
     public $recurrence;
 
     /**
-     * @description 任务类型ID。
+     * @example 6922xxxxxxxx
      *
      * @var string
      */
     public $scenariofieldconfigId;
 
     /**
-     * @description 迭代ID。
+     * @example 61922xxxxxxxx
      *
      * @var string
      */
     public $sprintId;
 
     /**
-     * @description 任务列ID。
+     * @example 6622134xxxxxx
      *
      * @var string
      */
     public $stageId;
 
     /**
-     * @description 任务开始时间(UTC)。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $startDate;
 
     /**
-     * @description StoryPoint。
+     * @example 1
      *
      * @var string
      */
     public $storyPoint;
 
     /**
-     * @description 标签ID集合。
-     *
      * @var string[]
      */
     public $tagIds;
 
     /**
-     * @description 任务ID。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description 任务分组ID。
+     * @example 6922xxxxxxxx
      *
      * @var string
      */
     public $taskListId;
 
     /**
-     * @description 任务状态ID。
+     * @example 6722xxxxxxxx
      *
      * @var string
      */
     public $taskflowstatusId;
 
     /**
-     * @description 任务数字ID。
+     * @example 0
      *
      * @var string
      */
     public $uniqueId;
 
     /**
-     * @description 更新时间(UTC)。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $updated;
 
     /**
-     * @description 任务隐私性，'involves'表达仅参与者可见; 'members'表达项目成员可见。
+     * @example member
      *
      * @var string
      */

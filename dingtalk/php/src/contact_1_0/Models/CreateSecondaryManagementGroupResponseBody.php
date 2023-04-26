@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreateSecondaryManagementGroupResponseBody extends Model
 {
     /**
-     * @description 管理组id
+     * @example rolexxx
      *
      * @var string
      */

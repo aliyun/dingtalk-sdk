@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class successList extends Model
 {
     /**
-     * @description 蓝牙设备Id
+     * @example 6567575
      *
      * @var int
      */
     public $deviceId;
 
     /**
-     * @description 蓝牙设备名称
+     * @example 蓝牙设备2
      *
      * @var string
      */
     public $deviceName;
 
     /**
-     * @description sn
+     * @example xfdfsdfgsdgfs
      *
      * @var string
      */

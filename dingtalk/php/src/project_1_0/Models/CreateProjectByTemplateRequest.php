@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CreateProjectByTemplateRequest extends Model
 {
     /**
-     * @description 项目名字
+     * @example 项目1
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 模板ID
+     * @example 578cae9dbf83e5xxxx
      *
      * @var string
      */

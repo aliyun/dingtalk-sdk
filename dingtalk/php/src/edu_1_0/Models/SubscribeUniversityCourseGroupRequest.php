@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class SubscribeUniversityCourseGroupRequest extends Model
 {
     /**
-     * @description 课程组编号
+     * @example DDS10002
      *
      * @var string
      */
     public $courseGroupCode;
 
     /**
-     * @description 学生用户Id
-     *
      * @var string[]
      */
     public $studentUserIds;
 
     /**
-     * @description 操作人id
+     * @example manger1234
      *
      * @var string
      */

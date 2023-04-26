@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class QueryOrgPointDetailsRequest extends Model
 {
     /**
-     * @description 查询企业账号明细，ORG,ORG_DEDUCTIONS两种。     ORG:企业账户明细 查询的是企业积分发放明细       ORG_DEDUCTIONS:扣除账户明细，查询的是企业扣减积分明细
+     * @example ORG_DEDUCTIONS
      *
      * @var string
      */
     public $accountType;
 
     /**
-     * @description 查询页数 第一页是1 非空必传
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页大小最多50，默认10
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 操作人userId 必须是管理员
+     * @example 042216842933
      *
      * @var string
      */

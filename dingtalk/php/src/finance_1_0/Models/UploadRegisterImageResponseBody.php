@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UploadRegisterImageResponseBody extends Model
 {
     /**
-     * @description 进件图片上传响应
+     * @example ossUrl
      *
      * @var string
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class IsFriendRequest extends Model
 {
     /**
-     * @description 手机号码
+     * @example 15968883355
      *
      * @var string
      */
     public $mobileNo;
 
     /**
-     * @description 工号
+     * @example 098231
      *
      * @var string
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryConferenceInfoBatchResponseBody extends Model
 {
     /**
-     * @description 会议详情列表
-     *
      * @var infos[]
      */
     public $infos;

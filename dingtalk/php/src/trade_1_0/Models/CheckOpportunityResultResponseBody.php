@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CheckOpportunityResultResponseBody extends Model
 {
     /**
-     * @description success
+     * @example true
      *
      * @var bool
      */

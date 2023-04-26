@@ -10,28 +10,24 @@ use AlibabaCloud\Tea\Model;
 class GetMultipartFileUploadInfosRequest extends Model
 {
     /**
-     * @description 可选参数
-     *
      * @var option
      */
     public $option;
 
     /**
-     * @description 分片id列表
-     * 30
      * @var int[]
      */
     public $partNumbers;
 
     /**
-     * @description 上传唯一标识
+     * @example upload_key
      *
      * @var string
      */
     public $uploadKey;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class TerminateCloudAuthorizationRequest extends Model
 {
     /**
-     * @description 访问秘钥
+     * @example hexaaaa
      *
      * @var string
      */
     public $accessKey;
 
     /**
-     * @description 调用者unionId
+     * @example 44234122
      *
      * @var string
      */
     public $callerUnionId;
 
     /**
-     * @description 实例id
+     * @example 12
      *
      * @var string
      */

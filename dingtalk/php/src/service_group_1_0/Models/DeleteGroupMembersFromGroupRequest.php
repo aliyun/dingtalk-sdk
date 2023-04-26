@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class DeleteGroupMembersFromGroupRequest extends Model
 {
     /**
-     * @description 删除类型
+     * @example GROUP：从群中删除；GROUP_SET：从群组中删除
      *
      * @var string
      */
     public $deleteGroupType;
 
     /**
-     * @description 群成员unionId
+     * @example 8888
      *
      * @var string
      */
     public $memberUnionId;
 
     /**
-     * @description 会话ID
+     * @example cid**
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开放群组ID
+     * @example 8888
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 开放团队ID
+     * @example 8888
      *
      * @var string
      */

@@ -10,11 +10,15 @@ use AlibabaCloud\Tea\Model;
 class detail extends Model
 {
     /**
+     * @example service-card-202208240001
+     *
      * @var string
      */
     public $cardBizId;
 
     /**
+     * @example {"like":1}
+     *
      * @var string
      */
     public $cardData;
@@ -25,6 +29,8 @@ class detail extends Model
     public $updateOptions;
 
     /**
+     * @example {"userI":""}
+     *
      * @var string
      */
     public $userIdPrivateDataMap;

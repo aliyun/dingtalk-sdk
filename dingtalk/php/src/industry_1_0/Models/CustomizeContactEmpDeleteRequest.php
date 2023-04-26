@@ -9,22 +9,18 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactEmpDeleteRequest extends Model
 {
     /**
-     * @description 自定义通讯录Code
-     *
      * @var string
      */
     public $code;
 
     /**
-     * @description 部门Id
+     * @example 65722123
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 人员Id列表
-     *
      * @var string[]
      */
     public $userIdList;

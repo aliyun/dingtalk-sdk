@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class backgroundColors extends Model
 {
     /**
-     * @description RGB值中的红色值
+     * @example red_value
      *
      * @var int
      */
     public $red;
 
     /**
-     * @description RGB值中的绿色值
+     * @example green_value
      *
      * @var int
      */
     public $green;
 
     /**
-     * @description RGB值中的蓝色值
+     * @example blue_value
      *
      * @var int
      */
     public $blue;
 
     /**
-     * @description 16进制表示的颜色
+     * @example hex_string_value
      *
      * @var string
      */

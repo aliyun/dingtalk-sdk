@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class resultItems extends Model
 {
     /**
-     * @description 是否是异步任务
-     * 如果操作对象有子节点，则会异步处理
+     * @example true
+     *
      * @var bool
      */
     public $async;
 
     /**
-     * @description 源文件(夹)id
+     * @example dentry_id
      *
      * @var string
      */
     public $dentryId;
 
     /**
-     * @description 错误原因, 异步任务该字段不返回
+     * @example permissionDenied
      *
      * @var string
      */
     public $errorCode;
 
     /**
-     * @description 源文件(夹)空间id
+     * @example space_id
      *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 是否成功, 异步任务该字段不返回
+     * @example true
      *
      * @var bool
      */
     public $success;
 
     /**
-     * @description 操作对应根节点移动之后的文件id
-     * 非失败的情况下同步或者异步都会返回
+     * @example target_dentry_id
+     *
      * @var string
      */
     public $targetDentryId;
 
     /**
-     * @description 操作对应根节点移动之后的空间id
-     * 非失败的情况下同步或者异步都会返回
+     * @example target_space_id
+     *
      * @var string
      */
     public $targetSpaceId;
 
     /**
-     * @description 异步任务id，用于查询任务执行状态
+     * @example task_id
      *
      * @var string
      */

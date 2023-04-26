@@ -9,49 +9,45 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupRequest extends Model
 {
     /**
-     * @description 业务关联id
+     * @example PID123cjj2
      *
      * @var string
      */
     public $groupBizId;
 
     /**
-     * @description 群名称
+     * @example 测试服务群
      *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 群标签
-     *
      * @var string[]
      */
     public $groupTagNames;
 
     /**
-     * @description 群成员员工ID列表
-     *
      * @var string[]
      */
     public $memberStaffIds;
 
     /**
-     * @description 开放群组ID
+     * @example Jciwnfw
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 开放团队ID
+     * @example Jciwnfw
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 群主员工ID
+     * @example manager123
      *
      * @var string
      */

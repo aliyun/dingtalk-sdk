@@ -12,22 +12,16 @@ use AlibabaCloud\Tea\Model;
 class config extends Model
 {
     /**
-     * @description 开始时间（到日）。
-     *
      * @var end
      */
     public $end;
 
     /**
-     * @description 节次模型。
-     *
      * @var sectionModels[]
      */
     public $sectionModels;
 
     /**
-     * @description 开始时间（到日）。
-     *
      * @var start
      */
     public $start;

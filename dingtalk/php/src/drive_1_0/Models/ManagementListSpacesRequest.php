@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ManagementListSpacesRequest extends Model
 {
     /**
-     * @description 空间id列表
-     *
      * @var string[]
      */
     public $spaceIds;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

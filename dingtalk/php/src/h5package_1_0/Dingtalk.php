@@ -19,18 +19,73 @@ use AlibabaCloud\SDK\Dingtalk\Vh5package_1_0\Models\PublishPackageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vh5package_1_0\Models\PublishPackageResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CreatePackageRequest $request
+     * @param CreatePackageHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return CreatePackageResponse
+     */
+    public function createPackageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->agentId)) {
+            $body['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->appId)) {
+            $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->homeUrl)) {
+            $body['homeUrl'] = $request->homeUrl;
+        }
+        if (!Utils::isUnset($request->ossObjectKey)) {
+            $body['ossObjectKey'] = $request->ossObjectKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreatePackage',
+            'version'     => 'h5package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/h5package/asyncUpload',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreatePackageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -47,41 +102,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreatePackageRequest $request
-     * @param CreatePackageHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param GetAccessTokenRequest $request
+     * @param GetAccessTokenHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return CreatePackageResponse
+     * @return GetAccessTokenResponse
      */
-    public function createPackageWithOptions($request, $headers, $runtime)
+    public function getAccessTokenWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->agentId)) {
-            @$body['agentId'] = $request->agentId;
+            $query['agentId'] = $request->agentId;
         }
         if (!Utils::isUnset($request->appId)) {
-            @$body['appId'] = $request->appId;
-        }
-        if (!Utils::isUnset($request->homeUrl)) {
-            @$body['homeUrl'] = $request->homeUrl;
-        }
-        if (!Utils::isUnset($request->ossObjectKey)) {
-            @$body['ossObjectKey'] = $request->ossObjectKey;
+            $query['appId'] = $request->appId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetAccessToken',
+            'version'     => 'h5package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/h5package/uploadTokens',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return CreatePackageResponse::fromMap($this->doROARequest('CreatePackage', 'h5package_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h5package/asyncUpload', 'json', $req, $runtime));
+        return GetAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -98,35 +158,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAccessTokenRequest $request
-     * @param GetAccessTokenHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param GetCreateStatusRequest $request
+     * @param GetCreateStatusHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return GetAccessTokenResponse
+     * @return GetCreateStatusResponse
      */
-    public function getAccessTokenWithOptions($request, $headers, $runtime)
+    public function getCreateStatusWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->agentId)) {
-            @$query['agentId'] = $request->agentId;
-        }
-        if (!Utils::isUnset($request->appId)) {
-            @$query['appId'] = $request->appId;
+        if (!Utils::isUnset($request->taskId)) {
+            $query['taskId'] = $request->taskId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetCreateStatus',
+            'version'     => 'h5package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/h5package/uploadStatus',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetAccessTokenResponse::fromMap($this->doROARequest('GetAccessToken', 'h5package_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h5package/uploadTokens', 'json', $req, $runtime));
+        return GetCreateStatusResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -143,32 +211,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCreateStatusRequest $request
-     * @param GetCreateStatusHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param PublishPackageRequest $request
+     * @param PublishPackageHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return GetCreateStatusResponse
+     * @return PublishPackageResponse
      */
-    public function getCreateStatusWithOptions($request, $headers, $runtime)
+    public function publishPackageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->taskId)) {
-            @$query['taskId'] = $request->taskId;
+        $body = [];
+        if (!Utils::isUnset($request->agentId)) {
+            $body['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->appId)) {
+            $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->version)) {
+            $body['version'] = $request->version;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PublishPackage',
+            'version'     => 'h5package_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/h5package/publish',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetCreateStatusResponse::fromMap($this->doROARequest('GetCreateStatus', 'h5package_1.0', 'HTTP', 'GET', 'AK', '/v1.0/h5package/uploadStatus', 'json', $req, $runtime));
+        return PublishPackageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -182,40 +267,5 @@ class Dingtalk extends OpenApiClient
         $headers = new PublishPackageHeaders([]);
 
         return $this->publishPackageWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param PublishPackageRequest $request
-     * @param PublishPackageHeaders $headers
-     * @param RuntimeOptions        $runtime
-     *
-     * @return PublishPackageResponse
-     */
-    public function publishPackageWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->agentId)) {
-            @$body['agentId'] = $request->agentId;
-        }
-        if (!Utils::isUnset($request->appId)) {
-            @$body['appId'] = $request->appId;
-        }
-        if (!Utils::isUnset($request->version)) {
-            @$body['version'] = $request->version;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return PublishPackageResponse::fromMap($this->doROARequest('PublishPackage', 'h5package_1.0', 'HTTP', 'POST', 'AK', '/v1.0/h5package/publish', 'json', $req, $runtime));
     }
 }

@@ -9,49 +9,41 @@ use AlibabaCloud\Tea\Model;
 class PageFormBaseInfosRequest extends Model
 {
     /**
-     * @description 应用编码
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appKey;
 
     /**
-     * @description 表单类型列表，可传"process", "receipt"
-     *
      * @var string[]
      */
     public $formTypeList;
 
     /**
-     * @description 语言。可选值：zh_CN/en_US 默认：zh_CN
-     *
      * @var string
      */
     public $language;
 
     /**
-     * @description 当前页码
-     *
      * @var int
      */
     public $pageIndex;
 
     /**
-     * @description 每页数量，最大100
-     *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 应用秘钥。在应用数据中获取。
+     * @example hexxx
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉userId
+     * @example david123
      *
      * @var string
      */

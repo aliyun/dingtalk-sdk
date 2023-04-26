@@ -90,18 +90,74 @@ use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateInnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vmicro_app_1_0\Models\UpdateInnerAppResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param string                     $agentId
+     * @param AddAppRolesToMemberRequest $request
+     * @param AddAppRolesToMemberHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return AddAppRolesToMemberResponse
+     */
+    public function addAppRolesToMemberWithOptions($agentId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->memberId)) {
+            $body['memberId'] = $request->memberId;
+        }
+        if (!Utils::isUnset($request->memberType)) {
+            $body['memberType'] = $request->memberType;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            $body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->roleList)) {
+            $body['roleList'] = $request->roleList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddAppRolesToMember',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/members/roles',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddAppRolesToMemberResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -119,43 +175,50 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                     $agentId
-     * @param AddAppRolesToMemberRequest $request
-     * @param AddAppRolesToMemberHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param string                        $agentId
+     * @param AddAppToWorkBenchGroupRequest $request
+     * @param AddAppToWorkBenchGroupHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return AddAppRolesToMemberResponse
+     * @return AddAppToWorkBenchGroupResponse
      */
-    public function addAppRolesToMemberWithOptions($agentId, $request, $headers, $runtime)
+    public function addAppToWorkBenchGroupWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $body    = [];
-        if (!Utils::isUnset($request->memberId)) {
-            @$body['memberId'] = $request->memberId;
+        $body = [];
+        if (!Utils::isUnset($request->componentId)) {
+            $body['componentId'] = $request->componentId;
         }
-        if (!Utils::isUnset($request->memberType)) {
-            @$body['memberType'] = $request->memberType;
+        if (!Utils::isUnset($request->ecologicalCorpId)) {
+            $body['ecologicalCorpId'] = $request->ecologicalCorpId;
         }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
-        }
-        if (!Utils::isUnset($request->roleList)) {
-            @$body['roleList'] = $request->roleList;
+        if (!Utils::isUnset($request->opUnionId)) {
+            $body['opUnionId'] = $request->opUnionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'AddAppToWorkBenchGroup',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/addToWorkBenchGroup',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddAppRolesToMemberResponse::fromMap($this->doROARequest('AddAppRolesToMember', 'microApp_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/microApp/apps/' . $agentId . '/members/roles', 'json', $req, $runtime));
+        return AddAppToWorkBenchGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -173,40 +236,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                        $agentId
-     * @param AddAppToWorkBenchGroupRequest $request
-     * @param AddAppToWorkBenchGroupHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param string                    $agentId
+     * @param string                    $roleId
+     * @param AddMemberToAppRoleRequest $request
+     * @param AddMemberToAppRoleHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return AddAppToWorkBenchGroupResponse
+     * @return AddMemberToAppRoleResponse
      */
-    public function addAppToWorkBenchGroupWithOptions($agentId, $request, $headers, $runtime)
+    public function addMemberToAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $body    = [];
-        if (!Utils::isUnset($request->componentId)) {
-            @$body['componentId'] = $request->componentId;
+        $body = [];
+        if (!Utils::isUnset($request->deptIdList)) {
+            $body['deptIdList'] = $request->deptIdList;
         }
-        if (!Utils::isUnset($request->ecologicalCorpId)) {
-            @$body['ecologicalCorpId'] = $request->ecologicalCorpId;
+        if (!Utils::isUnset($request->opUserId)) {
+            $body['opUserId'] = $request->opUserId;
         }
-        if (!Utils::isUnset($request->opUnionId)) {
-            @$body['opUnionId'] = $request->opUnionId;
+        if (!Utils::isUnset($request->scopeVersion)) {
+            $body['scopeVersion'] = $request->scopeVersion;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            $body['userIdList'] = $request->userIdList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'AddMemberToAppRole',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/members',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddAppToWorkBenchGroupResponse::fromMap($this->doROARequest('AddAppToWorkBenchGroup', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/apps/' . $agentId . '/addToWorkBenchGroup', 'json', $req, $runtime));
+        return AddMemberToAppRoleResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -225,45 +302,76 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                    $agentId
-     * @param string                    $roleId
-     * @param AddMemberToAppRoleRequest $request
-     * @param AddMemberToAppRoleHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param CreateApaasAppRequest $request
+     * @param CreateApaasAppHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return AddMemberToAppRoleResponse
+     * @return CreateApaasAppResponse
      */
-    public function addMemberToAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
+    public function createApaasAppWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $roleId  = OpenApiUtilClient::getEncodeParam($roleId);
-        $body    = [];
-        if (!Utils::isUnset($request->deptIdList)) {
-            @$body['deptIdList'] = $request->deptIdList;
+        $body = [];
+        if (!Utils::isUnset($request->appDesc)) {
+            $body['appDesc'] = $request->appDesc;
+        }
+        if (!Utils::isUnset($request->appIcon)) {
+            $body['appIcon'] = $request->appIcon;
+        }
+        if (!Utils::isUnset($request->appName)) {
+            $body['appName'] = $request->appName;
+        }
+        if (!Utils::isUnset($request->bizAppId)) {
+            $body['bizAppId'] = $request->bizAppId;
+        }
+        if (!Utils::isUnset($request->homepageEditLink)) {
+            $body['homepageEditLink'] = $request->homepageEditLink;
+        }
+        if (!Utils::isUnset($request->homepageLink)) {
+            $body['homepageLink'] = $request->homepageLink;
+        }
+        if (!Utils::isUnset($request->isShortCut)) {
+            $body['isShortCut'] = $request->isShortCut;
+        }
+        if (!Utils::isUnset($request->ompLink)) {
+            $body['ompLink'] = $request->ompLink;
         }
         if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
+            $body['opUserId'] = $request->opUserId;
         }
-        if (!Utils::isUnset($request->scopeVersion)) {
-            @$body['scopeVersion'] = $request->scopeVersion;
+        if (!Utils::isUnset($request->pcHomepageEditLink)) {
+            $body['pcHomepageEditLink'] = $request->pcHomepageEditLink;
         }
-        if (!Utils::isUnset($request->userIdList)) {
-            @$body['userIdList'] = $request->userIdList;
+        if (!Utils::isUnset($request->pcHomepageLink)) {
+            $body['pcHomepageLink'] = $request->pcHomepageLink;
+        }
+        if (!Utils::isUnset($request->templateKey)) {
+            $body['templateKey'] = $request->templateKey;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateApaasApp',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apaasApps',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddMemberToAppRoleResponse::fromMap($this->doROARequest('AddMemberToAppRole', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/members', 'json', $req, $runtime));
+        return CreateApaasAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -280,65 +388,70 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateApaasAppRequest $request
-     * @param CreateApaasAppHeaders $headers
+     * @param CreateInnerAppRequest $request
+     * @param CreateInnerAppHeaders $headers
      * @param RuntimeOptions        $runtime
      *
-     * @return CreateApaasAppResponse
+     * @return CreateInnerAppResponse
      */
-    public function createApaasAppWithOptions($request, $headers, $runtime)
+    public function createInnerAppWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->appDesc)) {
-            @$body['appDesc'] = $request->appDesc;
+        if (!Utils::isUnset($request->desc)) {
+            $body['desc'] = $request->desc;
         }
-        if (!Utils::isUnset($request->appIcon)) {
-            @$body['appIcon'] = $request->appIcon;
-        }
-        if (!Utils::isUnset($request->appName)) {
-            @$body['appName'] = $request->appName;
-        }
-        if (!Utils::isUnset($request->bizAppId)) {
-            @$body['bizAppId'] = $request->bizAppId;
-        }
-        if (!Utils::isUnset($request->homepageEditLink)) {
-            @$body['homepageEditLink'] = $request->homepageEditLink;
+        if (!Utils::isUnset($request->developType)) {
+            $body['developType'] = $request->developType;
         }
         if (!Utils::isUnset($request->homepageLink)) {
-            @$body['homepageLink'] = $request->homepageLink;
+            $body['homepageLink'] = $request->homepageLink;
         }
-        if (!Utils::isUnset($request->isShortCut)) {
-            @$body['isShortCut'] = $request->isShortCut;
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->ipWhiteList)) {
+            $body['ipWhiteList'] = $request->ipWhiteList;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
         }
         if (!Utils::isUnset($request->ompLink)) {
-            @$body['ompLink'] = $request->ompLink;
+            $body['ompLink'] = $request->ompLink;
         }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
-        }
-        if (!Utils::isUnset($request->pcHomepageEditLink)) {
-            @$body['pcHomepageEditLink'] = $request->pcHomepageEditLink;
+        if (!Utils::isUnset($request->opUnionId)) {
+            $body['opUnionId'] = $request->opUnionId;
         }
         if (!Utils::isUnset($request->pcHomepageLink)) {
-            @$body['pcHomepageLink'] = $request->pcHomepageLink;
+            $body['pcHomepageLink'] = $request->pcHomepageLink;
         }
-        if (!Utils::isUnset($request->templateKey)) {
-            @$body['templateKey'] = $request->templateKey;
+        if (!Utils::isUnset($request->scopeType)) {
+            $body['scopeType'] = $request->scopeType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateInnerApp',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateApaasAppResponse::fromMap($this->doROARequest('CreateApaasApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/apaasApps', 'json', $req, $runtime));
+        return CreateInnerAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -355,59 +468,45 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateInnerAppRequest $request
-     * @param CreateInnerAppHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param string               $agentId
+     * @param string               $roleId
+     * @param DeleteAppRoleRequest $request
+     * @param DeleteAppRoleHeaders $headers
+     * @param RuntimeOptions       $runtime
      *
-     * @return CreateInnerAppResponse
+     * @return DeleteAppRoleResponse
      */
-    public function createInnerAppWithOptions($request, $headers, $runtime)
+    public function deleteAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->desc)) {
-            @$body['desc'] = $request->desc;
-        }
-        if (!Utils::isUnset($request->developType)) {
-            @$body['developType'] = $request->developType;
-        }
-        if (!Utils::isUnset($request->homepageLink)) {
-            @$body['homepageLink'] = $request->homepageLink;
-        }
-        if (!Utils::isUnset($request->icon)) {
-            @$body['icon'] = $request->icon;
-        }
-        if (!Utils::isUnset($request->ipWhiteList)) {
-            @$body['ipWhiteList'] = $request->ipWhiteList;
-        }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
-        }
-        if (!Utils::isUnset($request->ompLink)) {
-            @$body['ompLink'] = $request->ompLink;
-        }
-        if (!Utils::isUnset($request->opUnionId)) {
-            @$body['opUnionId'] = $request->opUnionId;
-        }
-        if (!Utils::isUnset($request->pcHomepageLink)) {
-            @$body['pcHomepageLink'] = $request->pcHomepageLink;
-        }
-        if (!Utils::isUnset($request->scopeType)) {
-            @$body['scopeType'] = $request->scopeType;
+        $query = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $query['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteAppRole',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return CreateInnerAppResponse::fromMap($this->doROARequest('CreateInnerApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/apps', 'json', $req, $runtime));
+        return DeleteAppRoleResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -426,36 +525,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string               $agentId
-     * @param string               $roleId
-     * @param DeleteAppRoleRequest $request
-     * @param DeleteAppRoleHeaders $headers
-     * @param RuntimeOptions       $runtime
+     * @param string                $agentId
+     * @param DeleteInnerAppRequest $request
+     * @param DeleteInnerAppHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return DeleteAppRoleResponse
+     * @return DeleteInnerAppResponse
      */
-    public function deleteAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
+    public function deleteInnerAppWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $roleId  = OpenApiUtilClient::getEncodeParam($roleId);
-        $query   = [];
-        if (!Utils::isUnset($request->opUserId)) {
-            @$query['opUserId'] = $request->opUserId;
+        $query = [];
+        if (!Utils::isUnset($request->opUnionId)) {
+            $query['opUnionId'] = $request->opUnionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteInnerApp',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteAppRoleResponse::fromMap($this->doROARequest('DeleteAppRole', 'microApp_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '', 'json', $req, $runtime));
+        return DeleteInnerAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -473,34 +580,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                $agentId
-     * @param DeleteInnerAppRequest $request
-     * @param DeleteInnerAppHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param string             $bizAppId
+     * @param GetApaasAppHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return DeleteInnerAppResponse
+     * @return GetApaasAppResponse
      */
-    public function deleteInnerAppWithOptions($agentId, $request, $headers, $runtime)
+    public function getApaasAppWithOptions($bizAppId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $query   = [];
-        if (!Utils::isUnset($request->opUnionId)) {
-            @$query['opUnionId'] = $request->opUnionId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetApaasApp',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apaasApps/' . $bizAppId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return DeleteInnerAppResponse::fromMap($this->doROARequest('DeleteInnerApp', 'microApp_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/microApp/apps/' . $agentId . '', 'json', $req, $runtime));
+        return GetApaasAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -517,27 +627,38 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string             $bizAppId
-     * @param GetApaasAppHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param string                         $agentId
+     * @param string                         $roleId
+     * @param GetAppRoleScopeByRoleIdHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return GetApaasAppResponse
+     * @return GetAppRoleScopeByRoleIdResponse
      */
-    public function getApaasAppWithOptions($bizAppId, $headers, $runtime)
+    public function getAppRoleScopeByRoleIdWithOptions($agentId, $roleId, $headers, $runtime)
     {
-        $bizAppId    = OpenApiUtilClient::getEncodeParam($bizAppId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetAppRoleScopeByRoleId',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/scopes',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetApaasAppResponse::fromMap($this->doROARequest('GetApaasApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/apaasApps/' . $bizAppId . '', 'json', $req, $runtime));
+        return GetAppRoleScopeByRoleIdResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -555,29 +676,47 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                         $agentId
-     * @param string                         $roleId
-     * @param GetAppRoleScopeByRoleIdHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param string             $agentId
+     * @param GetInnerAppRequest $request
+     * @param GetInnerAppHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return GetAppRoleScopeByRoleIdResponse
+     * @return GetInnerAppResponse
      */
-    public function getAppRoleScopeByRoleIdWithOptions($agentId, $roleId, $headers, $runtime)
+    public function getInnerAppWithOptions($agentId, $request, $headers, $runtime)
     {
-        $agentId     = OpenApiUtilClient::getEncodeParam($agentId);
-        $roleId      = OpenApiUtilClient::getEncodeParam($roleId);
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->ecologicalCorpId)) {
+            $query['ecologicalCorpId'] = $request->ecologicalCorpId;
+        }
+        if (!Utils::isUnset($request->opUnionId)) {
+            $query['opUnionId'] = $request->opUnionId;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetInnerApp',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetAppRoleScopeByRoleIdResponse::fromMap($this->doROARequest('GetAppRoleScopeByRoleId', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/scopes', 'json', $req, $runtime));
+        return GetInnerAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -595,37 +734,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string             $agentId
-     * @param GetInnerAppRequest $request
-     * @param GetInnerAppHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param string                  $agentId
+     * @param GetMicroAppScopeHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return GetInnerAppResponse
+     * @return GetMicroAppScopeResponse
      */
-    public function getInnerAppWithOptions($agentId, $request, $headers, $runtime)
+    public function getMicroAppScopeWithOptions($agentId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $query   = [];
-        if (!Utils::isUnset($request->ecologicalCorpId)) {
-            @$query['ecologicalCorpId'] = $request->ecologicalCorpId;
-        }
-        if (!Utils::isUnset($request->opUnionId)) {
-            @$query['opUnionId'] = $request->opUnionId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetMicroAppScope',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/scopes',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetInnerAppResponse::fromMap($this->doROARequest('GetInnerApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/apps/' . $agentId . '', 'json', $req, $runtime));
+        return GetMicroAppScopeResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -642,27 +781,38 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                  $agentId
-     * @param GetMicroAppScopeHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param string                       $agentId
+     * @param string                       $userId
+     * @param GetMicroAppUserAccessHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return GetMicroAppScopeResponse
+     * @return GetMicroAppUserAccessResponse
      */
-    public function getMicroAppScopeWithOptions($agentId, $headers, $runtime)
+    public function getMicroAppUserAccessWithOptions($agentId, $userId, $headers, $runtime)
     {
-        $agentId     = OpenApiUtilClient::getEncodeParam($agentId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetMicroAppUserAccess',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/users/' . $userId . '/adminAccess',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetMicroAppScopeResponse::fromMap($this->doROARequest('GetMicroAppScope', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/apps/' . $agentId . '/scopes', 'json', $req, $runtime));
+        return GetMicroAppUserAccessResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -680,29 +830,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                       $agentId
-     * @param string                       $userId
-     * @param GetMicroAppUserAccessHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param string                     $userId
+     * @param GetUserAppDevAccessHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return GetMicroAppUserAccessResponse
+     * @return GetUserAppDevAccessResponse
      */
-    public function getMicroAppUserAccessWithOptions($agentId, $userId, $headers, $runtime)
+    public function getUserAppDevAccessWithOptions($userId, $headers, $runtime)
     {
-        $agentId     = OpenApiUtilClient::getEncodeParam($agentId);
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetUserAppDevAccess',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/users/' . $userId . '/devAccesses',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetMicroAppUserAccessResponse::fromMap($this->doROARequest('GetMicroAppUserAccess', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/apps/' . $agentId . '/users/' . $userId . '/adminAccess', 'json', $req, $runtime));
+        return GetUserAppDevAccessResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -719,41 +877,6 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                     $userId
-     * @param GetUserAppDevAccessHeaders $headers
-     * @param RuntimeOptions             $runtime
-     *
-     * @return GetUserAppDevAccessResponse
-     */
-    public function getUserAppDevAccessWithOptions($userId, $headers, $runtime)
-    {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-        ]);
-
-        return GetUserAppDevAccessResponse::fromMap($this->doROARequest('GetUserAppDevAccess', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/users/' . $userId . '/devAccesses', 'json', $req, $runtime));
-    }
-
-    /**
-     * @return ListAllAppResponse
-     */
-    public function listAllApp()
-    {
-        $runtime = new RuntimeOptions([]);
-        $headers = new ListAllAppHeaders([]);
-
-        return $this->listAllAppWithOptions($headers, $runtime);
-    }
-
-    /**
      * @param ListAllAppHeaders $headers
      * @param RuntimeOptions    $runtime
      *
@@ -766,24 +889,35 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'ListAllApp',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/allApps',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return ListAllAppResponse::fromMap($this->doROARequest('ListAllApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/allApps', 'json', $req, $runtime));
+        return ListAllAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
-     * @return ListAllInnerAppsResponse
+     * @return ListAllAppResponse
      */
-    public function listAllInnerApps()
+    public function listAllApp()
     {
         $runtime = new RuntimeOptions([]);
-        $headers = new ListAllInnerAppsHeaders([]);
+        $headers = new ListAllAppHeaders([]);
 
-        return $this->listAllInnerAppsWithOptions($headers, $runtime);
+        return $this->listAllAppWithOptions($headers, $runtime);
     }
 
     /**
@@ -799,13 +933,79 @@ class Dingtalk extends OpenApiClient
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'ListAllInnerApps',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/allInnerApps',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return ListAllInnerAppsResponse::fromMap($this->doROARequest('ListAllInnerApps', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/allInnerApps', 'json', $req, $runtime));
+        return ListAllInnerAppsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @return ListAllInnerAppsResponse
+     */
+    public function listAllInnerApps()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListAllInnerAppsHeaders([]);
+
+        return $this->listAllInnerAppsWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @param string                   $agentId
+     * @param ListAppRoleScopesRequest $request
+     * @param ListAppRoleScopesHeaders $headers
+     * @param RuntimeOptions           $runtime
+     *
+     * @return ListAppRoleScopesResponse
+     */
+    public function listAppRoleScopesWithOptions($agentId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->size)) {
+            $query['size'] = $request->size;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListAppRoleScopes',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListAppRoleScopesResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -823,37 +1023,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                   $agentId
-     * @param ListAppRoleScopesRequest $request
-     * @param ListAppRoleScopesHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param ListInnerAppRequest $request
+     * @param ListInnerAppHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return ListAppRoleScopesResponse
+     * @return ListInnerAppResponse
      */
-    public function listAppRoleScopesWithOptions($agentId, $request, $headers, $runtime)
+    public function listInnerAppWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $query   = [];
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->size)) {
-            @$query['size'] = $request->size;
+        $query = [];
+        if (!Utils::isUnset($request->ecologicalCorpId)) {
+            $query['ecologicalCorpId'] = $request->ecologicalCorpId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'ListInnerApp',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return ListAppRoleScopesResponse::fromMap($this->doROARequest('ListAppRoleScopes', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/apps/' . $agentId . '/roles', 'json', $req, $runtime));
+        return ListInnerAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -870,32 +1076,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListInnerAppRequest $request
-     * @param ListInnerAppHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param string                     $agentId
+     * @param ListInnerAppVersionHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return ListInnerAppResponse
+     * @return ListInnerAppVersionResponse
      */
-    public function listInnerAppWithOptions($request, $headers, $runtime)
+    public function listInnerAppVersionWithOptions($agentId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->ecologicalCorpId)) {
-            @$query['ecologicalCorpId'] = $request->ecologicalCorpId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListInnerAppVersion',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/innerMiniApps/' . $agentId . '/versions',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ListInnerAppResponse::fromMap($this->doROARequest('ListInnerApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/apps', 'json', $req, $runtime));
+        return ListInnerAppVersionResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -912,27 +1123,38 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                     $agentId
-     * @param ListInnerAppVersionHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param string                    $agentId
+     * @param string                    $userId
+     * @param ListRoleInfoByUserHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return ListInnerAppVersionResponse
+     * @return ListRoleInfoByUserResponse
      */
-    public function listInnerAppVersionWithOptions($agentId, $headers, $runtime)
+    public function listRoleInfoByUserWithOptions($agentId, $userId, $headers, $runtime)
     {
-        $agentId     = OpenApiUtilClient::getEncodeParam($agentId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'ListRoleInfoByUser',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/users/' . $userId . '/roles',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return ListInnerAppVersionResponse::fromMap($this->doROARequest('ListInnerAppVersion', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/innerMiniApps/' . $agentId . '/versions', 'json', $req, $runtime));
+        return ListRoleInfoByUserResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -950,29 +1172,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                    $agentId
      * @param string                    $userId
-     * @param ListRoleInfoByUserHeaders $headers
+     * @param ListUserVilebleAppHeaders $headers
      * @param RuntimeOptions            $runtime
      *
-     * @return ListRoleInfoByUserResponse
+     * @return ListUserVilebleAppResponse
      */
-    public function listRoleInfoByUserWithOptions($agentId, $userId, $headers, $runtime)
+    public function listUserVilebleAppWithOptions($userId, $headers, $runtime)
     {
-        $agentId     = OpenApiUtilClient::getEncodeParam($agentId);
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'ListUserVilebleApp',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/users/' . $userId . '/apps',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return ListRoleInfoByUserResponse::fromMap($this->doROARequest('ListRoleInfoByUser', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/apps/' . $agentId . '/users/' . $userId . '/roles', 'json', $req, $runtime));
+        return ListUserVilebleAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -989,27 +1219,47 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                    $userId
-     * @param ListUserVilebleAppHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param string                            $agentId
+     * @param PageInnerAppHistoryVersionRequest $request
+     * @param PageInnerAppHistoryVersionHeaders $headers
+     * @param RuntimeOptions                    $runtime
      *
-     * @return ListUserVilebleAppResponse
+     * @return PageInnerAppHistoryVersionResponse
      */
-    public function listUserVilebleAppWithOptions($userId, $headers, $runtime)
+    public function pageInnerAppHistoryVersionWithOptions($agentId, $request, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PageInnerAppHistoryVersion',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/innerMiniApps/' . $agentId . '/historyVersions',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ListUserVilebleAppResponse::fromMap($this->doROARequest('ListUserVilebleApp', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/users/' . $userId . '/apps', 'json', $req, $runtime));
+        return PageInnerAppHistoryVersionResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1027,37 +1277,53 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                            $agentId
-     * @param PageInnerAppHistoryVersionRequest $request
-     * @param PageInnerAppHistoryVersionHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @param string                        $agentId
+     * @param PublishInnerAppVersionRequest $request
+     * @param PublishInnerAppVersionHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return PageInnerAppHistoryVersionResponse
+     * @return PublishInnerAppVersionResponse
      */
-    public function pageInnerAppHistoryVersionWithOptions($agentId, $request, $headers, $runtime)
+    public function publishInnerAppVersionWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $query   = [];
-        if (!Utils::isUnset($request->pageNumber)) {
-            @$query['pageNumber'] = $request->pageNumber;
+        $body = [];
+        if (!Utils::isUnset($request->appVersionId)) {
+            $body['appVersionId'] = $request->appVersionId;
         }
-        if (!Utils::isUnset($request->pageSize)) {
-            @$query['pageSize'] = $request->pageSize;
+        if (!Utils::isUnset($request->miniAppOnPc)) {
+            $body['miniAppOnPc'] = $request->miniAppOnPc;
+        }
+        if (!Utils::isUnset($request->opUnionId)) {
+            $body['opUnionId'] = $request->opUnionId;
+        }
+        if (!Utils::isUnset($request->publishType)) {
+            $body['publishType'] = $request->publishType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PublishInnerAppVersion',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/innerMiniApps/' . $agentId . '/versions/publish',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return PageInnerAppHistoryVersionResponse::fromMap($this->doROARequest('PageInnerAppHistoryVersion', 'microApp_1.0', 'HTTP', 'GET', 'AK', '/v1.0/microApp/innerMiniApps/' . $agentId . '/historyVersions', 'json', $req, $runtime));
+        return PublishInnerAppVersionResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1075,43 +1341,57 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                        $agentId
-     * @param PublishInnerAppVersionRequest $request
-     * @param PublishInnerAppVersionHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param string                            $agentId
+     * @param string                            $roleId
+     * @param RebuildRoleScopeForAppRoleRequest $request
+     * @param RebuildRoleScopeForAppRoleHeaders $headers
+     * @param RuntimeOptions                    $runtime
      *
-     * @return PublishInnerAppVersionResponse
+     * @return RebuildRoleScopeForAppRoleResponse
      */
-    public function publishInnerAppVersionWithOptions($agentId, $request, $headers, $runtime)
+    public function rebuildRoleScopeForAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $body    = [];
-        if (!Utils::isUnset($request->appVersionId)) {
-            @$body['appVersionId'] = $request->appVersionId;
+        $body = [];
+        if (!Utils::isUnset($request->deptIdList)) {
+            $body['deptIdList'] = $request->deptIdList;
         }
-        if (!Utils::isUnset($request->miniAppOnPc)) {
-            @$body['miniAppOnPc'] = $request->miniAppOnPc;
+        if (!Utils::isUnset($request->opUserId)) {
+            $body['opUserId'] = $request->opUserId;
         }
-        if (!Utils::isUnset($request->opUnionId)) {
-            @$body['opUnionId'] = $request->opUnionId;
+        if (!Utils::isUnset($request->scopeType)) {
+            $body['scopeType'] = $request->scopeType;
         }
-        if (!Utils::isUnset($request->publishType)) {
-            @$body['publishType'] = $request->publishType;
+        if (!Utils::isUnset($request->scopeVersion)) {
+            $body['scopeVersion'] = $request->scopeVersion;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            $body['userIdList'] = $request->userIdList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'RebuildRoleScopeForAppRole',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/scopes/rebuild',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return PublishInnerAppVersionResponse::fromMap($this->doROARequest('PublishInnerAppVersion', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/innerMiniApps/' . $agentId . '/versions/publish', 'json', $req, $runtime));
+        return RebuildRoleScopeForAppRoleResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1130,48 +1410,50 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                            $agentId
-     * @param string                            $roleId
-     * @param RebuildRoleScopeForAppRoleRequest $request
-     * @param RebuildRoleScopeForAppRoleHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @param string                       $agentId
+     * @param RegisterCustomAppRoleRequest $request
+     * @param RegisterCustomAppRoleHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return RebuildRoleScopeForAppRoleResponse
+     * @return RegisterCustomAppRoleResponse
      */
-    public function rebuildRoleScopeForAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
+    public function registerCustomAppRoleWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $roleId  = OpenApiUtilClient::getEncodeParam($roleId);
-        $body    = [];
-        if (!Utils::isUnset($request->deptIdList)) {
-            @$body['deptIdList'] = $request->deptIdList;
+        $body = [];
+        if (!Utils::isUnset($request->canManageRole)) {
+            $body['canManageRole'] = $request->canManageRole;
         }
         if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
+            $body['opUserId'] = $request->opUserId;
         }
-        if (!Utils::isUnset($request->scopeType)) {
-            @$body['scopeType'] = $request->scopeType;
-        }
-        if (!Utils::isUnset($request->scopeVersion)) {
-            @$body['scopeVersion'] = $request->scopeVersion;
-        }
-        if (!Utils::isUnset($request->userIdList)) {
-            @$body['userIdList'] = $request->userIdList;
+        if (!Utils::isUnset($request->roleName)) {
+            $body['roleName'] = $request->roleName;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'RegisterCustomAppRole',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return RebuildRoleScopeForAppRoleResponse::fromMap($this->doROARequest('RebuildRoleScopeForAppRole', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/scopes/rebuild', 'json', $req, $runtime));
+        return RegisterCustomAppRoleResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1189,40 +1471,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                       $agentId
-     * @param RegisterCustomAppRoleRequest $request
-     * @param RegisterCustomAppRoleHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param RemoveApaasAppRequest $request
+     * @param RemoveApaasAppHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return RegisterCustomAppRoleResponse
+     * @return RemoveApaasAppResponse
      */
-    public function registerCustomAppRoleWithOptions($agentId, $request, $headers, $runtime)
+    public function removeApaasAppWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $body    = [];
-        if (!Utils::isUnset($request->canManageRole)) {
-            @$body['canManageRole'] = $request->canManageRole;
+        $body = [];
+        if (!Utils::isUnset($request->bizAppId)) {
+            $body['bizAppId'] = $request->bizAppId;
         }
         if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
-        }
-        if (!Utils::isUnset($request->roleName)) {
-            @$body['roleName'] = $request->roleName;
+            $body['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'RemoveApaasApp',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apaasApps/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return RegisterCustomAppRoleResponse::fromMap($this->doROARequest('RegisterCustomAppRole', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/apps/' . $agentId . '/roles', 'json', $req, $runtime));
+        return RemoveApaasAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1239,35 +1527,54 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RemoveApaasAppRequest $request
-     * @param RemoveApaasAppHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param string                        $agentId
+     * @param string                        $roleId
+     * @param RemoveMemberForAppRoleRequest $request
+     * @param RemoveMemberForAppRoleHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return RemoveApaasAppResponse
+     * @return RemoveMemberForAppRoleResponse
      */
-    public function removeApaasAppWithOptions($request, $headers, $runtime)
+    public function removeMemberForAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->bizAppId)) {
-            @$body['bizAppId'] = $request->bizAppId;
+        if (!Utils::isUnset($request->deptIdList)) {
+            $body['deptIdList'] = $request->deptIdList;
         }
         if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
+            $body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->scopeVersion)) {
+            $body['scopeVersion'] = $request->scopeVersion;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            $body['userIdList'] = $request->userIdList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'RemoveMemberForAppRole',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/members/batchRemove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return RemoveApaasAppResponse::fromMap($this->doROARequest('RemoveApaasApp', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/apaasApps/remove', 'json', $req, $runtime));
+        return RemoveMemberForAppRoleResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1286,45 +1593,47 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                        $agentId
-     * @param string                        $roleId
-     * @param RemoveMemberForAppRoleRequest $request
-     * @param RemoveMemberForAppRoleHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param string                         $agentId
+     * @param RollbackInnerAppVersionRequest $request
+     * @param RollbackInnerAppVersionHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return RemoveMemberForAppRoleResponse
+     * @return RollbackInnerAppVersionResponse
      */
-    public function removeMemberForAppRoleWithOptions($agentId, $roleId, $request, $headers, $runtime)
+    public function rollbackInnerAppVersionWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $roleId  = OpenApiUtilClient::getEncodeParam($roleId);
-        $body    = [];
-        if (!Utils::isUnset($request->deptIdList)) {
-            @$body['deptIdList'] = $request->deptIdList;
+        $body = [];
+        if (!Utils::isUnset($request->appVersionId)) {
+            $body['appVersionId'] = $request->appVersionId;
         }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
-        }
-        if (!Utils::isUnset($request->scopeVersion)) {
-            @$body['scopeVersion'] = $request->scopeVersion;
-        }
-        if (!Utils::isUnset($request->userIdList)) {
-            @$body['userIdList'] = $request->userIdList;
+        if (!Utils::isUnset($request->opUnionId)) {
+            $body['opUnionId'] = $request->opUnionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'RollbackInnerAppVersion',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/innerMiniApps/' . $agentId . '/versions/rollback',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return RemoveMemberForAppRoleResponse::fromMap($this->doROARequest('RemoveMemberForAppRole', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '/members/batchRemove', 'json', $req, $runtime));
+        return RollbackInnerAppVersionResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1342,37 +1651,62 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                         $agentId
-     * @param RollbackInnerAppVersionRequest $request
-     * @param RollbackInnerAppVersionHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param string                  $agentId
+     * @param SetMicroAppScopeRequest $request
+     * @param SetMicroAppScopeHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return RollbackInnerAppVersionResponse
+     * @return SetMicroAppScopeResponse
      */
-    public function rollbackInnerAppVersionWithOptions($agentId, $request, $headers, $runtime)
+    public function setMicroAppScopeWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $body    = [];
-        if (!Utils::isUnset($request->appVersionId)) {
-            @$body['appVersionId'] = $request->appVersionId;
+        $body = [];
+        if (!Utils::isUnset($request->addDeptIds)) {
+            $body['addDeptIds'] = $request->addDeptIds;
         }
-        if (!Utils::isUnset($request->opUnionId)) {
-            @$body['opUnionId'] = $request->opUnionId;
+        if (!Utils::isUnset($request->addRoleIds)) {
+            $body['addRoleIds'] = $request->addRoleIds;
+        }
+        if (!Utils::isUnset($request->addUserIds)) {
+            $body['addUserIds'] = $request->addUserIds;
+        }
+        if (!Utils::isUnset($request->delDeptIds)) {
+            $body['delDeptIds'] = $request->delDeptIds;
+        }
+        if (!Utils::isUnset($request->delRoleIds)) {
+            $body['delRoleIds'] = $request->delRoleIds;
+        }
+        if (!Utils::isUnset($request->delUserIds)) {
+            $body['delUserIds'] = $request->delUserIds;
+        }
+        if (!Utils::isUnset($request->onlyAdminVisible)) {
+            $body['onlyAdminVisible'] = $request->onlyAdminVisible;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'SetMicroAppScope',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/scopes',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return RollbackInnerAppVersionResponse::fromMap($this->doROARequest('RollbackInnerAppVersion', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/innerMiniApps/' . $agentId . '/versions/rollback', 'json', $req, $runtime));
+        return SetMicroAppScopeResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1390,52 +1724,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                  $agentId
-     * @param SetMicroAppScopeRequest $request
-     * @param SetMicroAppScopeHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param UpdateApaasAppRequest $request
+     * @param UpdateApaasAppHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return SetMicroAppScopeResponse
+     * @return UpdateApaasAppResponse
      */
-    public function setMicroAppScopeWithOptions($agentId, $request, $headers, $runtime)
+    public function updateApaasAppWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $body    = [];
-        if (!Utils::isUnset($request->addDeptIds)) {
-            @$body['addDeptIds'] = $request->addDeptIds;
+        $body = [];
+        if (!Utils::isUnset($request->appIcon)) {
+            $body['appIcon'] = $request->appIcon;
         }
-        if (!Utils::isUnset($request->addRoleIds)) {
-            @$body['addRoleIds'] = $request->addRoleIds;
+        if (!Utils::isUnset($request->appName)) {
+            $body['appName'] = $request->appName;
         }
-        if (!Utils::isUnset($request->addUserIds)) {
-            @$body['addUserIds'] = $request->addUserIds;
+        if (!Utils::isUnset($request->appStatus)) {
+            $body['appStatus'] = $request->appStatus;
         }
-        if (!Utils::isUnset($request->delDeptIds)) {
-            @$body['delDeptIds'] = $request->delDeptIds;
+        if (!Utils::isUnset($request->bizAppId)) {
+            $body['bizAppId'] = $request->bizAppId;
         }
-        if (!Utils::isUnset($request->delRoleIds)) {
-            @$body['delRoleIds'] = $request->delRoleIds;
-        }
-        if (!Utils::isUnset($request->delUserIds)) {
-            @$body['delUserIds'] = $request->delUserIds;
-        }
-        if (!Utils::isUnset($request->onlyAdminVisible)) {
-            @$body['onlyAdminVisible'] = $request->onlyAdminVisible;
+        if (!Utils::isUnset($request->opUserId)) {
+            $body['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateApaasApp',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apaasApps',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return SetMicroAppScopeResponse::fromMap($this->doROARequest('SetMicroAppScope', 'microApp_1.0', 'HTTP', 'POST', 'AK', '/v1.0/microApp/apps/' . $agentId . '/scopes', 'json', $req, $runtime));
+        return UpdateApaasAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1452,44 +1789,51 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateApaasAppRequest $request
-     * @param UpdateApaasAppHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param string                   $agentId
+     * @param string                   $roleId
+     * @param UpdateAppRoleInfoRequest $request
+     * @param UpdateAppRoleInfoHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return UpdateApaasAppResponse
+     * @return UpdateAppRoleInfoResponse
      */
-    public function updateApaasAppWithOptions($request, $headers, $runtime)
+    public function updateAppRoleInfoWithOptions($agentId, $roleId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->appIcon)) {
-            @$body['appIcon'] = $request->appIcon;
+        if (!Utils::isUnset($request->canManageRole)) {
+            $body['canManageRole'] = $request->canManageRole;
         }
-        if (!Utils::isUnset($request->appName)) {
-            @$body['appName'] = $request->appName;
-        }
-        if (!Utils::isUnset($request->appStatus)) {
-            @$body['appStatus'] = $request->appStatus;
-        }
-        if (!Utils::isUnset($request->bizAppId)) {
-            @$body['bizAppId'] = $request->bizAppId;
+        if (!Utils::isUnset($request->newRoleName)) {
+            $body['newRoleName'] = $request->newRoleName;
         }
         if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
+            $body['opUserId'] = $request->opUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateAppRoleInfo',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return UpdateApaasAppResponse::fromMap($this->doROARequest('UpdateApaasApp', 'microApp_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/microApp/apaasApps', 'json', $req, $runtime));
+        return UpdateAppRoleInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1508,42 +1852,65 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                   $agentId
-     * @param string                   $roleId
-     * @param UpdateAppRoleInfoRequest $request
-     * @param UpdateAppRoleInfoHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param string                $agentId
+     * @param UpdateInnerAppRequest $request
+     * @param UpdateInnerAppHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return UpdateAppRoleInfoResponse
+     * @return UpdateInnerAppResponse
      */
-    public function updateAppRoleInfoWithOptions($agentId, $roleId, $request, $headers, $runtime)
+    public function updateInnerAppWithOptions($agentId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $roleId  = OpenApiUtilClient::getEncodeParam($roleId);
-        $body    = [];
-        if (!Utils::isUnset($request->canManageRole)) {
-            @$body['canManageRole'] = $request->canManageRole;
+        $body = [];
+        if (!Utils::isUnset($request->desc)) {
+            $body['desc'] = $request->desc;
         }
-        if (!Utils::isUnset($request->newRoleName)) {
-            @$body['newRoleName'] = $request->newRoleName;
+        if (!Utils::isUnset($request->homepageLink)) {
+            $body['homepageLink'] = $request->homepageLink;
         }
-        if (!Utils::isUnset($request->opUserId)) {
-            @$body['opUserId'] = $request->opUserId;
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->ipWhiteList)) {
+            $body['ipWhiteList'] = $request->ipWhiteList;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->ompLink)) {
+            $body['ompLink'] = $request->ompLink;
+        }
+        if (!Utils::isUnset($request->opUnionId)) {
+            $body['opUnionId'] = $request->opUnionId;
+        }
+        if (!Utils::isUnset($request->pcHomepageLink)) {
+            $body['pcHomepageLink'] = $request->pcHomepageLink;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateInnerApp',
+            'version'     => 'microApp_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/microApp/apps/' . $agentId . '',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return UpdateAppRoleInfoResponse::fromMap($this->doROARequest('UpdateAppRoleInfo', 'microApp_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/microApp/apps/' . $agentId . '/roles/' . $roleId . '', 'json', $req, $runtime));
+        return UpdateInnerAppResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1558,57 +1925,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateInnerAppHeaders([]);
 
         return $this->updateInnerAppWithOptions($agentId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                $agentId
-     * @param UpdateInnerAppRequest $request
-     * @param UpdateInnerAppHeaders $headers
-     * @param RuntimeOptions        $runtime
-     *
-     * @return UpdateInnerAppResponse
-     */
-    public function updateInnerAppWithOptions($agentId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $agentId = OpenApiUtilClient::getEncodeParam($agentId);
-        $body    = [];
-        if (!Utils::isUnset($request->desc)) {
-            @$body['desc'] = $request->desc;
-        }
-        if (!Utils::isUnset($request->homepageLink)) {
-            @$body['homepageLink'] = $request->homepageLink;
-        }
-        if (!Utils::isUnset($request->icon)) {
-            @$body['icon'] = $request->icon;
-        }
-        if (!Utils::isUnset($request->ipWhiteList)) {
-            @$body['ipWhiteList'] = $request->ipWhiteList;
-        }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
-        }
-        if (!Utils::isUnset($request->ompLink)) {
-            @$body['ompLink'] = $request->ompLink;
-        }
-        if (!Utils::isUnset($request->opUnionId)) {
-            @$body['opUnionId'] = $request->opUnionId;
-        }
-        if (!Utils::isUnset($request->pcHomepageLink)) {
-            @$body['pcHomepageLink'] = $request->pcHomepageLink;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateInnerAppResponse::fromMap($this->doROARequest('UpdateInnerApp', 'microApp_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/microApp/apps/' . $agentId . '', 'json', $req, $runtime));
     }
 }

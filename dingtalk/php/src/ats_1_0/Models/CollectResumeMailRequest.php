@@ -10,85 +10,79 @@ use AlibabaCloud\Tea\Model;
 class CollectResumeMailRequest extends Model
 {
     /**
-     * @description 业务标识
+     * @example ddats
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 渠道编码
+     * @example liepin
      *
      * @var string
      */
     public $channelCode;
 
     /**
-     * @description 候选人投递职位标识
+     * @example jobId8fc0d56a605d495ea0214af7axxxxxxx
      *
      * @var string
      */
     public $deliverJobId;
 
     /**
-     * @description 邮件来源地址
+     * @example xxxx@163.com
      *
      * @var string
      */
     public $fromMailAddress;
 
     /**
-     * @description 邮件唯一标识
+     * @example xxxxxxxx
      *
      * @var string
      */
     public $mailId;
 
     /**
-     * @description 邮件标题
+     * @example xxxxx应聘贵公司xxx职位
      *
      * @var string
      */
     public $mailTitle;
 
     /**
-     * @description 操作人userId
+     * @example 2701606624233xxxxx
      *
      * @var string
      */
     public $optUserId;
 
     /**
-     * @description 收件邮箱地址
+     * @example xxxx@163.com
      *
      * @var string
      */
     public $receiveMailAddress;
 
     /**
-     * @description 收件邮箱类型
-     *
      * @var int
      */
     public $receiveMailType;
 
     /**
-     * @description 收件时间
-     *
      * @var int
      */
     public $receivedTime;
 
     /**
-     * @description 渠道简历跳转链接
+     * @example http:www.xxx.com
      *
      * @var string
      */
     public $resumeChannelUrl;
 
     /**
-     * @description 简历原始文件
-     *
      * @var resumeFile
      */
     public $resumeFile;

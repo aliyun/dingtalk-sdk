@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetQualificationCertResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * CertScope:认证范围
+     * @example [{"EntName":"企业名称", "CertType":"证书类型", "CertNum":"证书认证编号", "ValidStartDate":"有效期开始日期", "ValidEndDate":"有效期截止日期", "AuthorizeDate":"授权日期", "AuthorizeDepartment":"授权部门", "PubDate":"公示日期", "Province":"省份", "CertScope":"认证范围"} ]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

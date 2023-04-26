@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class QueryServiceRecordResponseBody extends Model
 {
     /**
-     * @description 总数量
+     * @example 100
      *
      * @var int
      */
     public $totalCount;
 
     /**
-     * @description 服务调用记录数组
-     *
      * @var values[]
      */
     public $values;

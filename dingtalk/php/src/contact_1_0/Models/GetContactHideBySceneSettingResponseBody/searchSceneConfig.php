@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class searchSceneConfig extends Model
 {
     /**
-     * @description 是否生效
-     *
      * @var bool
      */
     public $active;
 
     /**
-     * @description 是否同时隐藏被隐藏的部门下的员工，默认为true。如果为false，objectDeptIds中的部门无法被搜索，但是员工仍然可以被搜索
-     *
      * @var bool
      */
     public $deptObjectIncludeEmp;

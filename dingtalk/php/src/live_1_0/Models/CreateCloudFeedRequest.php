@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class CreateCloudFeedRequest extends Model
 {
     /**
-     * @description 课程封面Url
+     * @example https://img.alicdn.com/tfs/TB1A7cBtYr1gK0jSZR0XXbP8XXa-750-422.png
      *
      * @var string
      */
     public $coverUrl;
 
     /**
-     * @description 课程简介
+     * @example 这是一场云导播课程
      *
      * @var string
      */
     public $intro;
 
     /**
-     * @description 预计开始的时间戳(未来的时间点)
+     * @example 1615260061000
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 课程标题
+     * @example 课程一
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 创建课程的主播id（staffId）
+     * @example 214675
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 云导播课程资源的url
+     * @example http/https:/xxx.mp4
      *
      * @var string
      */

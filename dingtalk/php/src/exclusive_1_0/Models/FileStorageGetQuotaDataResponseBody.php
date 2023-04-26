@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class FileStorageGetQuotaDataResponseBody extends Model
 {
     /**
-     * @description 文件存储使用容量列表
-     *
      * @var quotaModelList[]
      */
     public $quotaModelList;

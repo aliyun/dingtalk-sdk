@@ -9,29 +9,27 @@ use AlibabaCloud\Tea\Model;
 class DeviceConferenceRequest extends Model
 {
     /**
-     * @description 会议主题，最多不能超20个中文。
+     * @example 设备的应急会议
      *
      * @var string
      */
     public $confTitle;
 
     /**
-     * @description 钉钉会议ID，加入已存在的会议必填。
+     * @example 12345678
      *
      * @var string
      */
     public $conferenceId;
 
     /**
-     * @description 钉钉会议密码，加入已存在的会议必填。
+     * @example 123456
      *
      * @var string
      */
     public $conferencePassword;
 
     /**
-     * @description 需要邀请的设备ID，最多5个。
-     *
      * @var string[]
      */
     public $deviceIds;

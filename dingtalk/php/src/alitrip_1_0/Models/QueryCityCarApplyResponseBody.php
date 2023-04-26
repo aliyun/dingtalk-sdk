@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class QueryCityCarApplyResponseBody extends Model
 {
     /**
-     * @description 审批单列表
-     *
      * @var applyList[]
      */
     public $applyList;
 
     /**
-     * @description 总数
+     * @example 10
      *
      * @var int
      */

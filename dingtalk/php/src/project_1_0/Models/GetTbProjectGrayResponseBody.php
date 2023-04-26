@@ -14,7 +14,7 @@ class GetTbProjectGrayResponseBody extends Model
     public $requestId;
 
     /**
-     * @description 是否灰度
+     * @example true
      *
      * @var bool
      */

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetSignInListRequest extends Model
 {
     /**
-     * @description 查询返回结果数（上限200）
-     *
      * @var int
      */
     public $maxResults;
@@ -21,7 +19,7 @@ class GetSignInListRequest extends Model
     public $nextToken;
 
     /**
-     * @description 签到信息类型（check_in，not_yet_check_in)
+     * @example check_in
      *
      * @var string
      */

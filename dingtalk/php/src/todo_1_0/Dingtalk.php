@@ -45,18 +45,80 @@ use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTypeConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTypeConfigResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param string                $unionId
+     * @param CountTodoTasksRequest $request
+     * @param CountTodoTasksHeaders $headers
+     * @param RuntimeOptions        $runtime
+     *
+     * @return CountTodoTasksResponse
+     */
+    public function countTodoTasksWithOptions($unionId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->category)) {
+            $body['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->fromDueTime)) {
+            $body['fromDueTime'] = $request->fromDueTime;
+        }
+        if (!Utils::isUnset($request->isDone)) {
+            $body['isDone'] = $request->isDone;
+        }
+        if (!Utils::isUnset($request->isRecycled)) {
+            $body['isRecycled'] = $request->isRecycled;
+        }
+        if (!Utils::isUnset($request->roleTypes)) {
+            $body['roleTypes'] = $request->roleTypes;
+        }
+        if (!Utils::isUnset($request->toDueTime)) {
+            $body['toDueTime'] = $request->toDueTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CountTodoTasks',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/count',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CountTodoTasksResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -75,48 +137,87 @@ class Dingtalk extends OpenApiClient
 
     /**
      * @param string                $unionId
-     * @param CountTodoTasksRequest $request
-     * @param CountTodoTasksHeaders $headers
+     * @param CreateTodoTaskRequest $request
+     * @param CreateTodoTaskHeaders $headers
      * @param RuntimeOptions        $runtime
      *
-     * @return CountTodoTasksResponse
+     * @return CreateTodoTaskResponse
      */
-    public function countTodoTasksWithOptions($unionId, $request, $headers, $runtime)
+    public function createTodoTaskWithOptions($unionId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
-        $body    = [];
-        if (!Utils::isUnset($request->category)) {
-            @$body['category'] = $request->category;
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
         }
-        if (!Utils::isUnset($request->fromDueTime)) {
-            @$body['fromDueTime'] = $request->fromDueTime;
+        $body = [];
+        if (!Utils::isUnset($request->actionList)) {
+            $body['actionList'] = $request->actionList;
         }
-        if (!Utils::isUnset($request->isDone)) {
-            @$body['isDone'] = $request->isDone;
+        if (!Utils::isUnset($request->bizCategoryId)) {
+            $body['bizCategoryId'] = $request->bizCategoryId;
         }
-        if (!Utils::isUnset($request->isRecycled)) {
-            @$body['isRecycled'] = $request->isRecycled;
+        if (!Utils::isUnset($request->contentFieldList)) {
+            $body['contentFieldList'] = $request->contentFieldList;
         }
-        if (!Utils::isUnset($request->roleTypes)) {
-            @$body['roleTypes'] = $request->roleTypes;
+        if (!Utils::isUnset($request->creatorId)) {
+            $body['creatorId'] = $request->creatorId;
         }
-        if (!Utils::isUnset($request->toDueTime)) {
-            @$body['toDueTime'] = $request->toDueTime;
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->detailUrl)) {
+            $body['detailUrl'] = $request->detailUrl;
+        }
+        if (!Utils::isUnset($request->dueTime)) {
+            $body['dueTime'] = $request->dueTime;
+        }
+        if (!Utils::isUnset($request->executorIds)) {
+            $body['executorIds'] = $request->executorIds;
+        }
+        if (!Utils::isUnset($request->isOnlyShowExecutor)) {
+            $body['isOnlyShowExecutor'] = $request->isOnlyShowExecutor;
+        }
+        if (!Utils::isUnset($request->notifyConfigs)) {
+            $body['notifyConfigs'] = $request->notifyConfigs;
+        }
+        if (!Utils::isUnset($request->participantIds)) {
+            $body['participantIds'] = $request->participantIds;
+        }
+        if (!Utils::isUnset($request->priority)) {
+            $body['priority'] = $request->priority;
+        }
+        if (!Utils::isUnset($request->sourceId)) {
+            $body['sourceId'] = $request->sourceId;
+        }
+        if (!Utils::isUnset($request->subject)) {
+            $body['subject'] = $request->subject;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateTodoTask',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CountTodoTasksResponse::fromMap($this->doROARequest('CountTodoTasks', 'todo_1.0', 'HTTP', 'POST', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks/count', 'json', $req, $runtime));
+        return CreateTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -134,78 +235,64 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                $unionId
-     * @param CreateTodoTaskRequest $request
-     * @param CreateTodoTaskHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param string                      $unionId
+     * @param CreateTodoTypeConfigRequest $request
+     * @param CreateTodoTypeConfigHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return CreateTodoTaskResponse
+     * @return CreateTodoTypeConfigResponse
      */
-    public function createTodoTaskWithOptions($unionId, $request, $headers, $runtime)
+    public function createTodoTypeConfigWithOptions($unionId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
-        $query   = [];
+        $query = [];
         if (!Utils::isUnset($request->operatorId)) {
-            @$query['operatorId'] = $request->operatorId;
+            $query['operatorId'] = $request->operatorId;
         }
         $body = [];
         if (!Utils::isUnset($request->actionList)) {
-            @$body['actionList'] = $request->actionList;
+            $body['actionList'] = $request->actionList;
         }
-        if (!Utils::isUnset($request->bizCategoryId)) {
-            @$body['bizCategoryId'] = $request->bizCategoryId;
+        if (!Utils::isUnset($request->cardType)) {
+            $body['cardType'] = $request->cardType;
         }
         if (!Utils::isUnset($request->contentFieldList)) {
-            @$body['contentFieldList'] = $request->contentFieldList;
-        }
-        if (!Utils::isUnset($request->creatorId)) {
-            @$body['creatorId'] = $request->creatorId;
+            $body['contentFieldList'] = $request->contentFieldList;
         }
         if (!Utils::isUnset($request->description)) {
-            @$body['description'] = $request->description;
+            $body['description'] = $request->description;
         }
-        if (!Utils::isUnset($request->detailUrl)) {
-            @$body['detailUrl'] = $request->detailUrl;
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
         }
-        if (!Utils::isUnset($request->dueTime)) {
-            @$body['dueTime'] = $request->dueTime;
-        }
-        if (!Utils::isUnset($request->executorIds)) {
-            @$body['executorIds'] = $request->executorIds;
-        }
-        if (!Utils::isUnset($request->isOnlyShowExecutor)) {
-            @$body['isOnlyShowExecutor'] = $request->isOnlyShowExecutor;
-        }
-        if (!Utils::isUnset($request->notifyConfigs)) {
-            @$body['notifyConfigs'] = $request->notifyConfigs;
-        }
-        if (!Utils::isUnset($request->participantIds)) {
-            @$body['participantIds'] = $request->participantIds;
-        }
-        if (!Utils::isUnset($request->priority)) {
-            @$body['priority'] = $request->priority;
-        }
-        if (!Utils::isUnset($request->sourceId)) {
-            @$body['sourceId'] = $request->sourceId;
-        }
-        if (!Utils::isUnset($request->subject)) {
-            @$body['subject'] = $request->subject;
+        if (!Utils::isUnset($request->pcDetailUrlOpenMode)) {
+            $body['pcDetailUrlOpenMode'] = $request->pcDetailUrlOpenMode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateTodoTypeConfig',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/' . $unionId . '/configs/types',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateTodoTaskResponse::fromMap($this->doROARequest('CreateTodoTask', 'todo_1.0', 'HTTP', 'POST', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks', 'json', $req, $runtime));
+        return CreateTodoTypeConfigResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -223,54 +310,45 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                      $unionId
-     * @param CreateTodoTypeConfigRequest $request
-     * @param CreateTodoTypeConfigHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param string                $unionId
+     * @param string                $taskId
+     * @param DeleteTodoTaskRequest $request
+     * @param DeleteTodoTaskHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return CreateTodoTypeConfigResponse
+     * @return DeleteTodoTaskResponse
      */
-    public function createTodoTypeConfigWithOptions($unionId, $request, $headers, $runtime)
+    public function deleteTodoTaskWithOptions($unionId, $taskId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
-        $query   = [];
+        $query = [];
         if (!Utils::isUnset($request->operatorId)) {
-            @$query['operatorId'] = $request->operatorId;
-        }
-        $body = [];
-        if (!Utils::isUnset($request->actionList)) {
-            @$body['actionList'] = $request->actionList;
-        }
-        if (!Utils::isUnset($request->cardType)) {
-            @$body['cardType'] = $request->cardType;
-        }
-        if (!Utils::isUnset($request->contentFieldList)) {
-            @$body['contentFieldList'] = $request->contentFieldList;
-        }
-        if (!Utils::isUnset($request->description)) {
-            @$body['description'] = $request->description;
-        }
-        if (!Utils::isUnset($request->icon)) {
-            @$body['icon'] = $request->icon;
-        }
-        if (!Utils::isUnset($request->pcDetailUrlOpenMode)) {
-            @$body['pcDetailUrlOpenMode'] = $request->pcDetailUrlOpenMode;
+            $query['operatorId'] = $request->operatorId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteTodoTask',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return CreateTodoTypeConfigResponse::fromMap($this->doROARequest('CreateTodoTypeConfig', 'todo_1.0', 'HTTP', 'POST', 'AK', '/v1.0/todo/users/' . $unionId . '/configs/types', 'json', $req, $runtime));
+        return DeleteTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -289,36 +367,38 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                $unionId
-     * @param string                $taskId
-     * @param DeleteTodoTaskRequest $request
-     * @param DeleteTodoTaskHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param string             $unionId
+     * @param string             $taskId
+     * @param GetTodoTaskHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return DeleteTodoTaskResponse
+     * @return GetTodoTaskResponse
      */
-    public function deleteTodoTaskWithOptions($unionId, $taskId, $request, $headers, $runtime)
+    public function getTodoTaskWithOptions($unionId, $taskId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
-        $taskId  = OpenApiUtilClient::getEncodeParam($taskId);
-        $query   = [];
-        if (!Utils::isUnset($request->operatorId)) {
-            @$query['operatorId'] = $request->operatorId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetTodoTask',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return DeleteTodoTaskResponse::fromMap($this->doROARequest('DeleteTodoTask', 'todo_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '', 'json', $req, $runtime));
+        return GetTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -336,29 +416,38 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string             $unionId
-     * @param string             $taskId
-     * @param GetTodoTaskHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param string                       $unionId
+     * @param string                       $sourceId
+     * @param GetTodoTaskBySourceIdHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return GetTodoTaskResponse
+     * @return GetTodoTaskBySourceIdResponse
      */
-    public function getTodoTaskWithOptions($unionId, $taskId, $headers, $runtime)
+    public function getTodoTaskBySourceIdWithOptions($unionId, $sourceId, $headers, $runtime)
     {
-        $unionId     = OpenApiUtilClient::getEncodeParam($unionId);
-        $taskId      = OpenApiUtilClient::getEncodeParam($taskId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetTodoTaskBySourceId',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/sources/' . $sourceId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetTodoTaskResponse::fromMap($this->doROARequest('GetTodoTask', 'todo_1.0', 'HTTP', 'GET', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '', 'json', $req, $runtime));
+        return GetTodoTaskBySourceIdResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -376,29 +465,38 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                       $unionId
-     * @param string                       $sourceId
-     * @param GetTodoTaskBySourceIdHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param string                   $taskId
+     * @param string                   $unionId
+     * @param GetTodoTaskDetailHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return GetTodoTaskBySourceIdResponse
+     * @return GetTodoTaskDetailResponse
      */
-    public function getTodoTaskBySourceIdWithOptions($unionId, $sourceId, $headers, $runtime)
+    public function getTodoTaskDetailWithOptions($taskId, $unionId, $headers, $runtime)
     {
-        $unionId     = OpenApiUtilClient::getEncodeParam($unionId);
-        $sourceId    = OpenApiUtilClient::getEncodeParam($sourceId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetTodoTaskDetail',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/exclusive/users/' . $unionId . '/tasks/' . $taskId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetTodoTaskBySourceIdResponse::fromMap($this->doROARequest('GetTodoTaskBySourceId', 'todo_1.0', 'HTTP', 'GET', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks/sources/' . $sourceId . '', 'json', $req, $runtime));
+        return GetTodoTaskDetailResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -416,29 +514,38 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                   $taskId
      * @param string                   $unionId
-     * @param GetTodoTaskDetailHeaders $headers
+     * @param string                   $cardTypeId
+     * @param GetTodoTypeConfigHeaders $headers
      * @param RuntimeOptions           $runtime
      *
-     * @return GetTodoTaskDetailResponse
+     * @return GetTodoTypeConfigResponse
      */
-    public function getTodoTaskDetailWithOptions($taskId, $unionId, $headers, $runtime)
+    public function getTodoTypeConfigWithOptions($unionId, $cardTypeId, $headers, $runtime)
     {
-        $taskId      = OpenApiUtilClient::getEncodeParam($taskId);
-        $unionId     = OpenApiUtilClient::getEncodeParam($unionId);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
         ]);
+        $params = new Params([
+            'action'      => 'GetTodoTypeConfig',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/' . $unionId . '/configs/types/' . $cardTypeId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetTodoTaskDetailResponse::fromMap($this->doROARequest('GetTodoTaskDetail', 'todo_1.0', 'HTTP', 'GET', 'AK', '/v1.0/todo/exclusive/users/' . $unionId . '/tasks/' . $taskId . '', 'json', $req, $runtime));
+        return GetTodoTypeConfigResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -456,29 +563,62 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                   $unionId
-     * @param string                   $cardTypeId
-     * @param GetTodoTypeConfigHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param string                    $unionId
+     * @param QueryOrgTodoByUserRequest $request
+     * @param QueryOrgTodoByUserHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return GetTodoTypeConfigResponse
+     * @return QueryOrgTodoByUserResponse
      */
-    public function getTodoTypeConfigWithOptions($unionId, $cardTypeId, $headers, $runtime)
+    public function queryOrgTodoByUserWithOptions($unionId, $request, $headers, $runtime)
     {
-        $unionId     = OpenApiUtilClient::getEncodeParam($unionId);
-        $cardTypeId  = OpenApiUtilClient::getEncodeParam($cardTypeId);
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fromDueTime)) {
+            $body['fromDueTime'] = $request->fromDueTime;
+        }
+        if (!Utils::isUnset($request->isDone)) {
+            $body['isDone'] = $request->isDone;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->roleTypes)) {
+            $body['roleTypes'] = $request->roleTypes;
+        }
+        if (!Utils::isUnset($request->subject)) {
+            $body['subject'] = $request->subject;
+        }
+        if (!Utils::isUnset($request->toDueTime)) {
+            $body['toDueTime'] = $request->toDueTime;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryOrgTodoByUser',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/' . $unionId . '/organizations/tasks/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetTodoTypeConfigResponse::fromMap($this->doROARequest('GetTodoTypeConfig', 'todo_1.0', 'HTTP', 'GET', 'AK', '/v1.0/todo/users/' . $unionId . '/configs/types/' . $cardTypeId . '', 'json', $req, $runtime));
+        return QueryOrgTodoByUserResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -496,52 +636,47 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                    $unionId
-     * @param QueryOrgTodoByUserRequest $request
-     * @param QueryOrgTodoByUserHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param string                   $unionId
+     * @param QueryOrgTodoTasksRequest $request
+     * @param QueryOrgTodoTasksHeaders $headers
+     * @param RuntimeOptions           $runtime
      *
-     * @return QueryOrgTodoByUserResponse
+     * @return QueryOrgTodoTasksResponse
      */
-    public function queryOrgTodoByUserWithOptions($unionId, $request, $headers, $runtime)
+    public function queryOrgTodoTasksWithOptions($unionId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
-        $body    = [];
-        if (!Utils::isUnset($request->fromDueTime)) {
-            @$body['fromDueTime'] = $request->fromDueTime;
-        }
+        $body = [];
         if (!Utils::isUnset($request->isDone)) {
-            @$body['isDone'] = $request->isDone;
-        }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$body['maxResults'] = $request->maxResults;
+            $body['isDone'] = $request->isDone;
         }
         if (!Utils::isUnset($request->nextToken)) {
-            @$body['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->roleTypes)) {
-            @$body['roleTypes'] = $request->roleTypes;
-        }
-        if (!Utils::isUnset($request->subject)) {
-            @$body['subject'] = $request->subject;
-        }
-        if (!Utils::isUnset($request->toDueTime)) {
-            @$body['toDueTime'] = $request->toDueTime;
+            $body['nextToken'] = $request->nextToken;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'QueryOrgTodoTasks',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/' . $unionId . '/org/tasks/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryOrgTodoByUserResponse::fromMap($this->doROARequest('QueryOrgTodoByUser', 'todo_1.0', 'HTTP', 'POST', 'AK', '/v1.0/todo/users/' . $unionId . '/organizations/tasks/query', 'json', $req, $runtime));
+        return QueryOrgTodoTasksResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -559,37 +694,68 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                   $unionId
-     * @param QueryOrgTodoTasksRequest $request
-     * @param QueryOrgTodoTasksHeaders $headers
-     * @param RuntimeOptions           $runtime
+     * @param string                $unionId
+     * @param QueryTodoTasksRequest $request
+     * @param QueryTodoTasksHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return QueryOrgTodoTasksResponse
+     * @return QueryTodoTasksResponse
      */
-    public function queryOrgTodoTasksWithOptions($unionId, $request, $headers, $runtime)
+    public function queryTodoTasksWithOptions($unionId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
-        $body    = [];
+        $body = [];
+        if (!Utils::isUnset($request->category)) {
+            $body['category'] = $request->category;
+        }
+        if (!Utils::isUnset($request->fromDueTime)) {
+            $body['fromDueTime'] = $request->fromDueTime;
+        }
         if (!Utils::isUnset($request->isDone)) {
-            @$body['isDone'] = $request->isDone;
+            $body['isDone'] = $request->isDone;
+        }
+        if (!Utils::isUnset($request->isRecycled)) {
+            $body['isRecycled'] = $request->isRecycled;
         }
         if (!Utils::isUnset($request->nextToken)) {
-            @$body['nextToken'] = $request->nextToken;
+            $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->orderBy)) {
+            $body['orderBy'] = $request->orderBy;
+        }
+        if (!Utils::isUnset($request->orderDirection)) {
+            $body['orderDirection'] = $request->orderDirection;
+        }
+        if (!Utils::isUnset($request->roleTypes)) {
+            $body['roleTypes'] = $request->roleTypes;
+        }
+        if (!Utils::isUnset($request->toDueTime)) {
+            $body['toDueTime'] = $request->toDueTime;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'QueryTodoTasks',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/list',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryOrgTodoTasksResponse::fromMap($this->doROARequest('QueryOrgTodoTasks', 'todo_1.0', 'HTTP', 'POST', 'AK', '/v1.0/todo/users/' . $unionId . '/org/tasks/query', 'json', $req, $runtime));
+        return QueryTodoTasksResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -608,57 +774,64 @@ class Dingtalk extends OpenApiClient
 
     /**
      * @param string                $unionId
-     * @param QueryTodoTasksRequest $request
-     * @param QueryTodoTasksHeaders $headers
+     * @param string                $taskId
+     * @param UpdateTodoTaskRequest $request
+     * @param UpdateTodoTaskHeaders $headers
      * @param RuntimeOptions        $runtime
      *
-     * @return QueryTodoTasksResponse
+     * @return UpdateTodoTaskResponse
      */
-    public function queryTodoTasksWithOptions($unionId, $request, $headers, $runtime)
+    public function updateTodoTaskWithOptions($unionId, $taskId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
-        $body    = [];
-        if (!Utils::isUnset($request->category)) {
-            @$body['category'] = $request->category;
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
         }
-        if (!Utils::isUnset($request->fromDueTime)) {
-            @$body['fromDueTime'] = $request->fromDueTime;
+        $body = [];
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
         }
-        if (!Utils::isUnset($request->isDone)) {
-            @$body['isDone'] = $request->isDone;
+        if (!Utils::isUnset($request->done)) {
+            $body['done'] = $request->done;
         }
-        if (!Utils::isUnset($request->isRecycled)) {
-            @$body['isRecycled'] = $request->isRecycled;
+        if (!Utils::isUnset($request->dueTime)) {
+            $body['dueTime'] = $request->dueTime;
         }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$body['nextToken'] = $request->nextToken;
+        if (!Utils::isUnset($request->executorIds)) {
+            $body['executorIds'] = $request->executorIds;
         }
-        if (!Utils::isUnset($request->orderBy)) {
-            @$body['orderBy'] = $request->orderBy;
+        if (!Utils::isUnset($request->participantIds)) {
+            $body['participantIds'] = $request->participantIds;
         }
-        if (!Utils::isUnset($request->orderDirection)) {
-            @$body['orderDirection'] = $request->orderDirection;
-        }
-        if (!Utils::isUnset($request->roleTypes)) {
-            @$body['roleTypes'] = $request->roleTypes;
-        }
-        if (!Utils::isUnset($request->toDueTime)) {
-            @$body['toDueTime'] = $request->toDueTime;
+        if (!Utils::isUnset($request->subject)) {
+            $body['subject'] = $request->subject;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateTodoTask',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryTodoTasksResponse::fromMap($this->doROARequest('QueryTodoTasks', 'todo_1.0', 'HTTP', 'POST', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks/list', 'json', $req, $runtime));
+        return UpdateTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -677,56 +850,50 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                $unionId
-     * @param string                $taskId
-     * @param UpdateTodoTaskRequest $request
-     * @param UpdateTodoTaskHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param string                              $unionId
+     * @param string                              $taskId
+     * @param UpdateTodoTaskExecutorStatusRequest $request
+     * @param UpdateTodoTaskExecutorStatusHeaders $headers
+     * @param RuntimeOptions                      $runtime
      *
-     * @return UpdateTodoTaskResponse
+     * @return UpdateTodoTaskExecutorStatusResponse
      */
-    public function updateTodoTaskWithOptions($unionId, $taskId, $request, $headers, $runtime)
+    public function updateTodoTaskExecutorStatusWithOptions($unionId, $taskId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
-        $taskId  = OpenApiUtilClient::getEncodeParam($taskId);
-        $query   = [];
+        $query = [];
         if (!Utils::isUnset($request->operatorId)) {
-            @$query['operatorId'] = $request->operatorId;
+            $query['operatorId'] = $request->operatorId;
         }
         $body = [];
-        if (!Utils::isUnset($request->description)) {
-            @$body['description'] = $request->description;
-        }
-        if (!Utils::isUnset($request->done)) {
-            @$body['done'] = $request->done;
-        }
-        if (!Utils::isUnset($request->dueTime)) {
-            @$body['dueTime'] = $request->dueTime;
-        }
-        if (!Utils::isUnset($request->executorIds)) {
-            @$body['executorIds'] = $request->executorIds;
-        }
-        if (!Utils::isUnset($request->participantIds)) {
-            @$body['participantIds'] = $request->participantIds;
-        }
-        if (!Utils::isUnset($request->subject)) {
-            @$body['subject'] = $request->subject;
+        if (!Utils::isUnset($request->executorStatusList)) {
+            $body['executorStatusList'] = $request->executorStatusList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateTodoTaskExecutorStatus',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '/executorStatus',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return UpdateTodoTaskResponse::fromMap($this->doROARequest('UpdateTodoTask', 'todo_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '', 'json', $req, $runtime));
+        return UpdateTodoTaskExecutorStatusResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -745,41 +912,65 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                              $unionId
-     * @param string                              $taskId
-     * @param UpdateTodoTaskExecutorStatusRequest $request
-     * @param UpdateTodoTaskExecutorStatusHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @param string                      $unionId
+     * @param string                      $cardTypeId
+     * @param UpdateTodoTypeConfigRequest $request
+     * @param UpdateTodoTypeConfigHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return UpdateTodoTaskExecutorStatusResponse
+     * @return UpdateTodoTypeConfigResponse
      */
-    public function updateTodoTaskExecutorStatusWithOptions($unionId, $taskId, $request, $headers, $runtime)
+    public function updateTodoTypeConfigWithOptions($unionId, $cardTypeId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $unionId = OpenApiUtilClient::getEncodeParam($unionId);
-        $taskId  = OpenApiUtilClient::getEncodeParam($taskId);
-        $query   = [];
+        $query = [];
         if (!Utils::isUnset($request->operatorId)) {
-            @$query['operatorId'] = $request->operatorId;
+            $query['operatorId'] = $request->operatorId;
         }
         $body = [];
-        if (!Utils::isUnset($request->executorStatusList)) {
-            @$body['executorStatusList'] = $request->executorStatusList;
+        if (!Utils::isUnset($request->actionList)) {
+            $body['actionList'] = $request->actionList;
+        }
+        if (!Utils::isUnset($request->cardType)) {
+            $body['cardType'] = $request->cardType;
+        }
+        if (!Utils::isUnset($request->contentFieldList)) {
+            $body['contentFieldList'] = $request->contentFieldList;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->icon)) {
+            $body['icon'] = $request->icon;
+        }
+        if (!Utils::isUnset($request->pcDetailUrlOpenMode)) {
+            $body['pcDetailUrlOpenMode'] = $request->pcDetailUrlOpenMode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateTodoTypeConfig',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/users/' . $unionId . '/configs/types/' . $cardTypeId . '',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return UpdateTodoTaskExecutorStatusResponse::fromMap($this->doROARequest('UpdateTodoTaskExecutorStatus', 'todo_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/todo/users/' . $unionId . '/tasks/' . $taskId . '/executorStatus', 'json', $req, $runtime));
+        return UpdateTodoTypeConfigResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -795,58 +986,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateTodoTypeConfigHeaders([]);
 
         return $this->updateTodoTypeConfigWithOptions($unionId, $cardTypeId, $request, $headers, $runtime);
-    }
-
-    /**
-     * @param string                      $unionId
-     * @param string                      $cardTypeId
-     * @param UpdateTodoTypeConfigRequest $request
-     * @param UpdateTodoTypeConfigHeaders $headers
-     * @param RuntimeOptions              $runtime
-     *
-     * @return UpdateTodoTypeConfigResponse
-     */
-    public function updateTodoTypeConfigWithOptions($unionId, $cardTypeId, $request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $unionId    = OpenApiUtilClient::getEncodeParam($unionId);
-        $cardTypeId = OpenApiUtilClient::getEncodeParam($cardTypeId);
-        $query      = [];
-        if (!Utils::isUnset($request->operatorId)) {
-            @$query['operatorId'] = $request->operatorId;
-        }
-        $body = [];
-        if (!Utils::isUnset($request->actionList)) {
-            @$body['actionList'] = $request->actionList;
-        }
-        if (!Utils::isUnset($request->cardType)) {
-            @$body['cardType'] = $request->cardType;
-        }
-        if (!Utils::isUnset($request->contentFieldList)) {
-            @$body['contentFieldList'] = $request->contentFieldList;
-        }
-        if (!Utils::isUnset($request->description)) {
-            @$body['description'] = $request->description;
-        }
-        if (!Utils::isUnset($request->icon)) {
-            @$body['icon'] = $request->icon;
-        }
-        if (!Utils::isUnset($request->pcDetailUrlOpenMode)) {
-            @$body['pcDetailUrlOpenMode'] = $request->pcDetailUrlOpenMode;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateTodoTypeConfigResponse::fromMap($this->doROARequest('UpdateTodoTypeConfig', 'todo_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/todo/users/' . $unionId . '/configs/types/' . $cardTypeId . '', 'json', $req, $runtime));
     }
 }

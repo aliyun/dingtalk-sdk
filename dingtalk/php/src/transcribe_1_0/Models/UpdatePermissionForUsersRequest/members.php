@@ -14,14 +14,13 @@ class members extends Model
     public $memberId;
 
     /**
-     * @description 要赋予用户的权限名称。该字段表示要授予特定用户的权限名称，由开发者填写。
-     *
-     * READ：只读权限
      * @var string
      */
     public $memberType;
 
     /**
+     * @example EDITOR
+     *
      * @var string
      */
     public $policyType;

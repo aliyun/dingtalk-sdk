@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetOrganizatioTaskByIdsRequest extends Model
 {
     /**
-     * @description 多个任务id
+     * @example 62a010c153c2ef5244xxxx, 62a010c153c2ef524xxxxxx
      *
      * @var string
      */

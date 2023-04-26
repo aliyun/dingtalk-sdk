@@ -9,98 +9,98 @@ use AlibabaCloud\Tea\Model;
 class itineraryList extends Model
 {
     /**
-     * @description 目的地城市
+     * @example 杭州
      *
      * @var string
      */
     public $arrCity;
 
     /**
-     * @description 目的地城市三字码
+     * @example HGH
      *
      * @var string
      */
     public $arrCityCode;
 
     /**
-     * @description 到达目的地城市时间
+     * @example 2021-03-18 20:26:56
      *
      * @var string
      */
     public $arrDate;
 
     /**
-     * @description 商旅内部成本中心ID
+     * @example 1
      *
      * @var int
      */
     public $costCenterId;
 
     /**
-     * @description 成本中心名称
+     * @example 成本中心1
      *
      * @var string
      */
     public $costCenterName;
 
     /**
-     * @description 出发城市
+     * @example 杭州
      *
      * @var string
      */
     public $depCity;
 
     /**
-     * @description 出发城市三字码
+     * @example HGH
      *
      * @var string
      */
     public $depCityCode;
 
     /**
-     * @description 出发时间
+     * @example 2021-03-18 20:26:56
      *
      * @var string
      */
     public $depDate;
 
     /**
-     * @description 商旅内部发票抬头ID
+     * @example 1
      *
      * @var int
      */
     public $invoiceId;
 
     /**
-     * @description 发票抬头名称
+     * @example 发票抬头1
      *
      * @var string
      */
     public $invoiceName;
 
     /**
-     * @description 商旅内部行程单ID
+     * @example 1
      *
      * @var string
      */
     public $itineraryId;
 
     /**
-     * @description 项目code
+     * @example projectx
      *
      * @var string
      */
     public $projectCode;
 
     /**
-     * @description 项目名称
+     * @example 项目x
      *
      * @var string
      */
     public $projectTitle;
 
     /**
-     * @description 交通方式：4-市内交通
+     * @example 4
      *
      * @var int
      */

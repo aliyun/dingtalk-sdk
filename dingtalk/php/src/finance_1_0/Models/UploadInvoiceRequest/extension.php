@@ -9,23 +9,29 @@ use AlibabaCloud\Tea\Model;
 class extension extends Model
 {
     /**
+     * @example TRIP
+     *
      * @var string
      */
     public $bizCode;
 
     /**
+     * @example 111924191922
+     *
+     * @deprecated
+     *
      * @var string
      */
     public $orderNo;
 
     /**
-     * @description 订单号列表
-     *
      * @var string[]
      */
     public $orderNoList;
 
     /**
+     * @example HOTEL
+     *
      * @var string
      */
     public $orderType;

@@ -10,35 +10,35 @@ use GuzzleHttp\Psr7\Stream;
 class owner extends Model
 {
     /**
-     * @description 所属者头像。 ID
+     * @example @lADPDh0cQ_j4Mi_NBULNBUA
      *
      * @var Stream
      */
     public $avatarMediaId;
 
     /**
-     * @description 所属者组织 I。D
+     * @example ding4d1c8883ff63ee8124f2f5cc6abecb85
      *
      * @var Stream
      */
     public $corpId;
 
     /**
-     * @description 所属者 OKR 系统中的 ID。
+     * @example K1AMgq
      *
      * @var Stream
      */
     public $id;
 
     /**
-     * @description 所属者昵称。
+     * @example 你好
      *
      * @var Stream
      */
     public $nickname;
 
     /**
-     * @description 所属者 userId。
+     * @example 06186238011033616
      *
      * @var Stream
      */

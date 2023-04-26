@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateMiniAppVersionStatusRequest extends Model
 {
     /**
-     * @description 小程序id
+     * @example 500000003
      *
      * @var string
      */
     public $miniAppId;
 
     /**
-     * @description 版本
+     * @example 0.0.5
      *
      * @var string
      */
     public $version;
 
     /**
-     * @description 版本类型
+     * @example 0-开发版，1-灰度版，2-发布版，3-体验版
      *
      * @var int
      */

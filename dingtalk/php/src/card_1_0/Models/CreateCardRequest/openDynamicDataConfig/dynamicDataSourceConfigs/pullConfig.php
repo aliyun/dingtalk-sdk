@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class pullConfig extends Model
 {
     /**
-     * @description 拉取的间隔时间，只在将 pullStrategy 设置为 INTERVAL 的时候生效
-     *
      * @var int
      */
     public $interval;
 
     /**
-     * @description 【条件必填】拉取策略，可选值：
-     * ● ONCE：只拉取一次
+     * @example INTERVAL
+     *
      * @var string
      */
     public $pullStrategy;
 
     /**
-     * @description 拉取的间隔时间的单位，只在将 pullStrategy 设置为 INTERVAL 的时候生效。 可选值：
-     * ● DAYS
+     * @example SECONDS
+     *
      * @var string
      */
     public $timeUnit;

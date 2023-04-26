@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class certificates extends Model
 {
     /**
-     * @description 证书名称
+     * @example 高级技工证书
      *
      * @var string
      */
     public $certificateName;
 
     /**
-     * @description 证书授予时间
+     * @example yyyy-MM-dd
      *
      * @var string
      */

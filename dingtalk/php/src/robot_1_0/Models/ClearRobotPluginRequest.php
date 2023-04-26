@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ClearRobotPluginRequest extends Model
 {
     /**
-     * @description 钉钉开放平台后台机器人的robotCode
+     * @example dingkxnemxbqkifzl
      *
      * @var string
      */

@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class SendOTOInteractiveCardResponseBody extends Model
 {
     /**
-     * @description 创建卡片结果
-     *
      * @var result
      */
     public $result;
 
     /**
-     * @description success
-     *
      * @var bool
      */
     public $success;

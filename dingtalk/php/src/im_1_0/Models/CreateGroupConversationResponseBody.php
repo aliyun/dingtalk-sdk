@@ -9,29 +9,25 @@ use AlibabaCloud\Tea\Model;
 class CreateGroupConversationResponseBody extends Model
 {
     /**
-     * @description 添加成功的钉外成员列表。
-     *
      * @var string[]
      */
     public $appUserIds;
 
     /**
-     * @description 钉钉群会话Id。
+     * @example cidpZ****Vcp4g==
      *
      * @var string
      */
     public $conversationId;
 
     /**
-     * @description 群会话Id。
+     * @example 14da****2760
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 添加成功的钉内成员列表。
-     *
      * @var string[]
      */
     public $userIds;

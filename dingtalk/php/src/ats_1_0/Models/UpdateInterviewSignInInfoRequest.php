@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class UpdateInterviewSignInInfoRequest extends Model
 {
     /**
-     * @description 业务标识
+     * @example ddats
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 面试签到时间（单位：毫秒）
+     * @example 1626796800000
      *
      * @var int
      */

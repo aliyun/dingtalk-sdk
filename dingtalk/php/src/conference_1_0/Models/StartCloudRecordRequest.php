@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class StartCloudRecordRequest extends Model
 {
     /**
-     * @description 录制模版
+     * @example 演讲
      *
      * @var string
      */
     public $mode;
 
     /**
-     * @description 小窗位置
+     * @example 左上
      *
      * @var string
      */
     public $smallWindowPosition;
 
     /**
-     * @description 会议发起人UID
+     * @example 27SaQ3iiHLN0uwqcPisedfreNwiEiE
      *
      * @var string
      */

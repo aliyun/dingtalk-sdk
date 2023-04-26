@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UnsubscribeUniversityCourseGroupResponseBody extends Model
 {
     /**
-     * @description 取消订阅结果
+     * @example true
      *
      * @var bool
      */

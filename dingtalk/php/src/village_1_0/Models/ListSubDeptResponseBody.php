@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListSubDeptResponseBody extends Model
 {
     /**
-     * @description 返回列表
-     *
      * @var result[]
      */
     public $result;

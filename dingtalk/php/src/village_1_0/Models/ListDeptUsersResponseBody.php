@@ -20,8 +20,6 @@ class ListDeptUsersResponseBody extends Model
     public $nextCursor;
 
     /**
-     * @description 用户列表
-     *
      * @var userList[]
      */
     public $userList;

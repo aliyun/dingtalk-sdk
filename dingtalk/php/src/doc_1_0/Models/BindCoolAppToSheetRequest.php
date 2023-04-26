@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class BindCoolAppToSheetRequest extends Model
 {
     /**
-     * @description 酷应用编码
+     * @example cool_app_code
      *
      * @var string
      */
     public $coolAppCode;
 
     /**
-     * @description 操作人id
+     * @example union_id
      *
      * @var string
      */

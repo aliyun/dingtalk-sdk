@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class GrantPrivilegeOfCustomSpaceRequest extends Model
 {
     /**
-     * @description 权限有效时间
-     *
      * @var int
      */
     public $duration;
 
     /**
-     * @description 授权访问的文件id列表
-     *
      * @var string[]
      */
     public $fileIds;
 
     /**
-     * @description 权限类型
-     *
      * @var string
      */
     public $type;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 被授予权限的员工id
-     *
      * @var string
      */
     public $userId;

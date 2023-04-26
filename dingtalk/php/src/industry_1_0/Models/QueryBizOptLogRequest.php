@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class QueryBizOptLogRequest extends Model
 {
     /**
-     * @description 每次拉取的数据量，最大200条
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 拉取记录的起始位置，默认从上次拉取的最后位置开始
+     * @example 10000
      *
      * @var int
      */

@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 失败的userId
-     *
      * @var string[]
      */
     public $failedUserIds;
 
     /**
-     * @description 成功的userId
-     *
      * @var string[]
      */
     public $successUserIds;

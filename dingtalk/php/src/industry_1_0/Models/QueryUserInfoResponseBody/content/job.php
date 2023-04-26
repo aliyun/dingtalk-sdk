@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class job extends Model
 {
     /**
-     * @description 标签类型
+     * @example 1
      *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 分类
+     * @example 分类
      *
      * @var string
      */
     public $category;
 
     /**
-     * @description 标签Code
+     * @example code1
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 展示名称
+     * @example 展示名称
      *
      * @var string
      */

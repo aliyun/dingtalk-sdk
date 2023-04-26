@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class scope extends Model
 {
     /**
-     * @description 部门id列表
-     *
      * @var int[]
      */
     public $deptIds;
 
     /**
-     * @description 权限范围
+     * @example 1:全公司 2:所在部门 3:指定部门
      *
      * @var int
      */

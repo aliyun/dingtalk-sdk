@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetUserJoinedProjectRequest extends Model
 {
     /**
-     * @description 分页大小。
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页标。
+     * @example f279e812xxxxxx
      *
      * @var string
      */

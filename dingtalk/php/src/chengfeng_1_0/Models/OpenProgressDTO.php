@@ -9,42 +9,38 @@ use AlibabaCloud\Tea\Model;
 class OpenProgressDTO extends Model
 {
     /**
-     * @description 创建时间戳
+     * @example 48383883
      *
      * @var int
      */
     public $created;
 
     /**
-     * @description 创建人信息
-     *
      * @var OpenUserDTO
      */
     public $creator;
 
     /**
-     * @description 进展内容
+     * @example 我的目标
      *
      * @var string
      */
     public $htmlContent;
 
     /**
-     * @description 主键
+     * @example 11
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 更新人信息
-     *
      * @var OpenUserDTO
      */
     public $modifier;
 
     /**
-     * @description 更新时间戳
+     * @example 48383883
      *
      * @var int
      */

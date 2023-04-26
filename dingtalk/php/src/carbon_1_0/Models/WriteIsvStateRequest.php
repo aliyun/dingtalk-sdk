@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class WriteIsvStateRequest extends Model
 {
     /**
-     * @description ISV名称
+     * @example ISV
      *
      * @var string
      */
     public $isvName;
 
     /**
-     * @description 数据完成日期
+     * @example 20220328
      *
      * @var string
      */

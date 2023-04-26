@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateOrganizationTaskContentRequest extends Model
 {
     /**
-     * @description 任务标题
+     * @example 后天交周报
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 是否禁止动态
+     * @example true
      *
      * @var bool
      */
     public $disableActivity;
 
     /**
-     * @description 是否禁止通知
+     * @example true
      *
      * @var bool
      */

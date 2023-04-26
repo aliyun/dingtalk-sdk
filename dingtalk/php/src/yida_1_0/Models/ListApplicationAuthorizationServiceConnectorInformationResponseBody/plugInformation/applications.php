@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class applications extends Model
 {
     /**
-     * @description appName
-     *
      * @var string
      */
     public $appName;

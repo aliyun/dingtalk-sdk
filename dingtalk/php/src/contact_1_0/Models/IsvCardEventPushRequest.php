@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class IsvCardEventPushRequest extends Model
 {
     /**
-     * @description 事件参数
-     *
      * @var mixed[]
      */
     public $eventParams;
 
     /**
-     * @description 事件类型
-     *
      * @var string
      */
     public $eventType;
 
     /**
-     * @description ISV名片ID
-     *
      * @var string
      */
     public $isvCardId;
 
     /**
-     * @description ISV用户TOKEN
-     *
      * @var string
      */
     public $isvToken;
 
     /**
-     * @description ISV用户iD
-     *
      * @var string
      */
     public $isvUid;

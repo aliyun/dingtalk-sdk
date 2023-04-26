@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class relatedDoc extends Model
 {
     /**
-     * @description 链接
-     *
      * @var string
      */
     public $link;
 
     /**
-     * @description 名称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 文档类型doc或者sheet
-     *
      * @var string
      */
     public $type;

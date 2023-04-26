@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class projectManager extends Model
 {
     /**
-     * @description 头像
-     *
      * @var string
      */
     public $avatar;
 
     /**
-     * @description 人员唯一标识
-     *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 姓名
-     *
      * @var string
      */
     public $userName;

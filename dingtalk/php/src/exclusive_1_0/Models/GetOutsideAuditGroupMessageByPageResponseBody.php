@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetOutsideAuditGroupMessageByPageResponseBody extends Model
 {
     /**
-     * @description 返回结构体
-     *
      * @var responseBody
      */
     public $responseBody;

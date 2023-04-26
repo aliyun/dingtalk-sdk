@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetAgentIdByRelatedAppIdResponseBody extends Model
 {
     /**
-     * @description 微应用agentId。
+     * @example 3300000
      *
      * @var int
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetSchemaResponseBody extends Model
 {
     /**
-     * @description 当前版本。
+     * @example 0
      *
      * @var int
      */
     public $revision;
 
     /**
-     * @description schema内容。
+     * @example "{\"pageVersion\":\"1.0.0\",\"pageSchema\":{\"version\":\"1.0.0\",\"componentsMap\":[],\"componentsTree\":[]}}"
      *
      * @var string
      */

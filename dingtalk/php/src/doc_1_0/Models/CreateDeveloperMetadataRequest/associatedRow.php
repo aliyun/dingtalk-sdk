@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class associatedRow extends Model
 {
     /**
-     * @description 行号，从0开始
-     *
      * @var int
      */
     public $row;
 
     /**
-     * @description 工作表ID或名称
-     *
      * @var string
      */
     public $sheet;

@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class UpdateOfficialAccountRobotInfoRequest extends Model
 {
     /**
-     * @description 机器人头像
+     * @example xxxx
      *
      * @var string
      */
     public $avatar;
 
     /**
-     * @description 机器人简介
+     * @example 小蜜客服机器人
      *
      * @var string
      */
     public $brief;
 
     /**
-     * @description 机器人描述
+     * @example 小蜜客服机器人是7*24小时智能问答机器人
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 机器人名称
+     * @example 小蜜机器人
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 机器人预览图
+     * @example xxxx
      *
      * @var string
      */
     public $previewMediaUrl;
 
     /**
-     * @description 机器人类型参数
+     * @example 机器人类型参数，服务窗机器人：1，客户群内机器人：2
      *
      * @var string
      */

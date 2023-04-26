@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 评论ID
-     *
      * @var string
      */
     public $commentId;
 
     /**
-     * @description 评论时间
-     *
      * @var float
      */
     public $commentTime;
 
     /**
-     * @description 评论者姓名
-     *
      * @var string
      */
     public $commentUserName;
 
     /**
-     * @description 评论内容
-     *
      * @var string
      */
     public $content;

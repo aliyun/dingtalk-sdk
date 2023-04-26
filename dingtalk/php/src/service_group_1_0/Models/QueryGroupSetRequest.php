@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryGroupSetRequest extends Model
 {
     /**
-     * @description openTeamId
-     *
      * @var string
      */
     public $openTeamId;

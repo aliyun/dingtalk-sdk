@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class SendRobotMessageResponseBody extends Model
 {
     /**
-     * @description 本次操作是否成功。
-     *
      * @var bool
      */
     public $success;

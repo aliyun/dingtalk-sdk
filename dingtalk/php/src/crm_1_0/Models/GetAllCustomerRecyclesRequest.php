@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetAllCustomerRecyclesRequest extends Model
 {
     /**
-     * @description 每页返回的结果集个数，默认10。
+     * @example 10
      *
      * @var int
      */

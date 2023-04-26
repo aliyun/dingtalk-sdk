@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class ChatSubAdminUpdateRequest extends Model
 {
     /**
-     * @description 开放群ID
+     * @example cidVwhmrlxsR3sL3+JdH1LjUA==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 设置2添加为管理员，设置3删除该管理员
+     * @example 2
      *
      * @var int
      */
     public $role;
 
     /**
-     * @description 企业员工工号列表
-     *
      * @var string[]
      */
     public $userIds;

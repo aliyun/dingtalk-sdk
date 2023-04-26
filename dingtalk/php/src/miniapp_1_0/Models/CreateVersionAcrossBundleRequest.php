@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CreateVersionAcrossBundleRequest extends Model
 {
     /**
-     * @description bundleId
-     *
      * @var string
      */
     public $bundleId;
@@ -21,22 +19,16 @@ class CreateVersionAcrossBundleRequest extends Model
     public $miniAppId;
 
     /**
-     * @description sourceBundleId
-     *
      * @var string
      */
     public $sourceBundleId;
 
     /**
-     * @description sourceVersion
-     *
      * @var string
      */
     public $sourceVersion;
 
     /**
-     * @description version
-     *
      * @var string
      */
     public $version;

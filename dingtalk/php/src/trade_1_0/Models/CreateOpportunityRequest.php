@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class CreateOpportunityRequest extends Model
 {
     /**
-     * @description 归属人电话号码
-     *
      * @var string
      */
     public $belongToPhoneNum;
 
     /**
-     * @description 联系人电话
-     *
      * @var string
      */
     public $contactPhoneNum;
 
     /**
-     * @description 企业CorpId
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 部门Id
-     *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 商品码
-     *
      * @var string
      */
     public $marketCode;

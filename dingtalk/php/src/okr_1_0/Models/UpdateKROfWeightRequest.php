@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class UpdateKROfWeightRequest extends Model
 {
     /**
-     * @description 权重比。
+     * @example 100
      *
      * @var int
      */
     public $weight;
 
     /**
-     * @description 当前 KR ID。
+     * @example 46GM2
      *
      * @var string
      */
     public $krId;
 
     /**
-     * @description 当前用户的userId。
+     * @example 0115396701752283
      *
      * @var string
      */

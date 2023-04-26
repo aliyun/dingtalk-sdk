@@ -10,29 +10,27 @@ use AlibabaCloud\Tea\Model;
 class ext extends Model
 {
     /**
-     * @description 学科背景颜色
+     * @example #000000
      *
      * @var string
      */
     public $backgroundColor;
 
     /**
-     * @description 班级id。
+     * @example 2345
      *
      * @var int
      */
     public $classId;
 
     /**
-     * @description 学科字体颜色
+     * @example #000000
      *
      * @var string
      */
     public $fontColor;
 
     /**
-     * @description 老师列表
-     *
      * @var teacherList[]
      */
     public $teacherList;

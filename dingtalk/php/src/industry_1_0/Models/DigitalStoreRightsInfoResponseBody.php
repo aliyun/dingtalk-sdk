@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreRightsInfoResponseBody extends Model
 {
     /**
-     * @description 权益过期时间
+     * @example 1659668620000
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 门店通通讯录根节点Id
+     * @example 100
      *
      * @var int
      */
     public $quantity;
 
     /**
-     * @description 门店通通讯录名称
+     * @example RIGHT_MDT_LEVEL
      *
      * @var string
      */
     public $rightsCode;
 
     /**
-     * @description 门店通通讯录Code
+     * @example 高级版
      *
      * @var string
      */
     public $rightsName;
 
     /**
-     * @description 权益开始时间
+     * @example 1656990220000
      *
      * @var int
      */

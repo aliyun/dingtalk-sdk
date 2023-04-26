@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class CallbackRegiesterRequest extends Model
 {
     /**
-     * @description 回调API签名生成密钥。
-     * 最大长度不超过32个字符。
+     * @example 3b89df4dfaaccd5b8e1f9a2
+     *
      * @var string
      */
     public $apiSecret;
 
     /**
-     * @description 回调key，由调用者定义，需要确保同一服务窗帐号下的唯一性。
-     * 最长不超过32个字符。
+     * @example abc-123
+     *
      * @var string
      */
     public $callbackKey;
 
     /**
-     * @description 回调URL。暂不支持附带queryString的URL
+     * @example https://www.your.com/callback
      *
      * @var string
      */
     public $callbackUrl;
 
     /**
-     * @description 回调类型，支持互动卡片、应用快捷入口、吊顶卡片等。
+     * @example shortcut
      *
      * @var string
      */

@@ -158,18 +158,73 @@ use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcrm_1_0\Models\UpdateRelationMetaFieldResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AbandonCustomerRequest $request
+     * @param AbandonCustomerHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return AbandonCustomerResponse
+     */
+    public function abandonCustomerWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->customTrackDesc)) {
+            $body['customTrackDesc'] = $request->customTrackDesc;
+        }
+        if (!Utils::isUnset($request->instanceIdList)) {
+            $body['instanceIdList'] = $request->instanceIdList;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->optType)) {
+            $body['optType'] = $request->optType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AbandonCustomer',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/customers/abandon',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AbandonCustomerResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -186,41 +241,64 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AbandonCustomerRequest $request
-     * @param AbandonCustomerHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param AddCrmPersonalCustomerRequest $request
+     * @param AddCrmPersonalCustomerHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return AbandonCustomerResponse
+     * @return AddCrmPersonalCustomerResponse
      */
-    public function abandonCustomerWithOptions($request, $headers, $runtime)
+    public function addCrmPersonalCustomerWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->customTrackDesc)) {
-            @$body['customTrackDesc'] = $request->customTrackDesc;
+        if (!Utils::isUnset($request->action)) {
+            $body['action'] = $request->action;
         }
-        if (!Utils::isUnset($request->instanceIdList)) {
-            @$body['instanceIdList'] = $request->instanceIdList;
+        if (!Utils::isUnset($request->creatorNick)) {
+            $body['creatorNick'] = $request->creatorNick;
         }
-        if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
+        if (!Utils::isUnset($request->creatorUserId)) {
+            $body['creatorUserId'] = $request->creatorUserId;
         }
-        if (!Utils::isUnset($request->optType)) {
-            @$body['optType'] = $request->optType;
+        if (!Utils::isUnset($request->data)) {
+            $body['data'] = $request->data;
+        }
+        if (!Utils::isUnset($request->extendData)) {
+            $body['extendData'] = $request->extendData;
+        }
+        if (!Utils::isUnset($request->permission)) {
+            $body['permission'] = $request->permission;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            $body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->skipDuplicateCheck)) {
+            $body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'AddCrmPersonalCustomer',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/personalCustomers',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return AbandonCustomerResponse::fromMap($this->doROARequest('AbandonCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customers/abandon', 'json', $req, $runtime));
+        return AddCrmPersonalCustomerResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -237,53 +315,67 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddCrmPersonalCustomerRequest $request
-     * @param AddCrmPersonalCustomerHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param AddCustomerTrackRequest $request
+     * @param AddCustomerTrackHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return AddCrmPersonalCustomerResponse
+     * @return AddCustomerTrackResponse
      */
-    public function addCrmPersonalCustomerWithOptions($request, $headers, $runtime)
+    public function addCustomerTrackWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->action)) {
-            @$body['action'] = $request->action;
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
         }
-        if (!Utils::isUnset($request->creatorNick)) {
-            @$body['creatorNick'] = $request->creatorNick;
+        if (!Utils::isUnset($request->customerId)) {
+            $body['customerId'] = $request->customerId;
         }
-        if (!Utils::isUnset($request->creatorUserId)) {
-            @$body['creatorUserId'] = $request->creatorUserId;
+        if (!Utils::isUnset($request->extraBizInfo)) {
+            $body['extraBizInfo'] = $request->extraBizInfo;
         }
-        if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+        if (!Utils::isUnset($request->idempotentKey)) {
+            $body['idempotentKey'] = $request->idempotentKey;
         }
-        if (!Utils::isUnset($request->extendData)) {
-            @$body['extendData'] = $request->extendData;
+        if (!Utils::isUnset($request->maskedContent)) {
+            $body['maskedContent'] = $request->maskedContent;
         }
-        if (!Utils::isUnset($request->permission)) {
-            @$body['permission'] = $request->permission;
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
         }
         if (!Utils::isUnset($request->relationType)) {
-            @$body['relationType'] = $request->relationType;
+            $body['relationType'] = $request->relationType;
         }
-        if (!Utils::isUnset($request->skipDuplicateCheck)) {
-            @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'AddCustomerTrack',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/customerTracks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddCrmPersonalCustomerResponse::fromMap($this->doROARequest('AddCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/personalCustomers', 'json', $req, $runtime));
+        return AddCustomerTrackResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -300,56 +392,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddCustomerTrackRequest $request
-     * @param AddCustomerTrackHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param AddLeadsRequest $request
+     * @param AddLeadsHeaders $headers
+     * @param RuntimeOptions  $runtime
      *
-     * @return AddCustomerTrackResponse
+     * @return AddLeadsResponse
      */
-    public function addCustomerTrackWithOptions($request, $headers, $runtime)
+    public function addLeadsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->content)) {
-            @$body['content'] = $request->content;
+        if (!Utils::isUnset($request->assignTimestamp)) {
+            $body['assignTimestamp'] = $request->assignTimestamp;
         }
-        if (!Utils::isUnset($request->customerId)) {
-            @$body['customerId'] = $request->customerId;
+        if (!Utils::isUnset($request->assignUserId)) {
+            $body['assignUserId'] = $request->assignUserId;
         }
-        if (!Utils::isUnset($request->extraBizInfo)) {
-            @$body['extraBizInfo'] = $request->extraBizInfo;
+        if (!Utils::isUnset($request->assignedUserId)) {
+            $body['assignedUserId'] = $request->assignedUserId;
         }
-        if (!Utils::isUnset($request->idempotentKey)) {
-            @$body['idempotentKey'] = $request->idempotentKey;
+        if (!Utils::isUnset($request->leads)) {
+            $body['leads'] = $request->leads;
         }
-        if (!Utils::isUnset($request->maskedContent)) {
-            @$body['maskedContent'] = $request->maskedContent;
-        }
-        if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
-        }
-        if (!Utils::isUnset($request->relationType)) {
-            @$body['relationType'] = $request->relationType;
-        }
-        if (!Utils::isUnset($request->title)) {
-            @$body['title'] = $request->title;
-        }
-        if (!Utils::isUnset($request->type)) {
-            @$body['type'] = $request->type;
+        if (!Utils::isUnset($request->outTaskId)) {
+            $body['outTaskId'] = $request->outTaskId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'AddLeads',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/leads',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddCustomerTrackResponse::fromMap($this->doROARequest('AddCustomerTrack', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customerTracks', 'json', $req, $runtime));
+        return AddLeadsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -366,44 +457,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddLeadsRequest $request
-     * @param AddLeadsHeaders $headers
-     * @param RuntimeOptions  $runtime
+     * @param AddRelationMetaFieldRequest $request
+     * @param AddRelationMetaFieldHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return AddLeadsResponse
+     * @return AddRelationMetaFieldResponse
      */
-    public function addLeadsWithOptions($request, $headers, $runtime)
+    public function addRelationMetaFieldWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->assignTimestamp)) {
-            @$body['assignTimestamp'] = $request->assignTimestamp;
+        if (!Utils::isUnset($request->fieldDTOList)) {
+            $body['fieldDTOList'] = $request->fieldDTOList;
         }
-        if (!Utils::isUnset($request->assignUserId)) {
-            @$body['assignUserId'] = $request->assignUserId;
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
         }
-        if (!Utils::isUnset($request->assignedUserId)) {
-            @$body['assignedUserId'] = $request->assignedUserId;
+        if (!Utils::isUnset($request->relationType)) {
+            $body['relationType'] = $request->relationType;
         }
-        if (!Utils::isUnset($request->leads)) {
-            @$body['leads'] = $request->leads;
-        }
-        if (!Utils::isUnset($request->outTaskId)) {
-            @$body['outTaskId'] = $request->outTaskId;
+        if (!Utils::isUnset($request->tenant)) {
+            $body['tenant'] = $request->tenant;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'AddRelationMetaField',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/relations/metas/fields',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddLeadsResponse::fromMap($this->doROARequest('AddLeads', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/leads', 'json', $req, $runtime));
+        return AddRelationMetaFieldResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -420,41 +519,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param AddRelationMetaFieldRequest $request
-     * @param AddRelationMetaFieldHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param BatchAddContactsRequest $request
+     * @param BatchAddContactsHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return AddRelationMetaFieldResponse
+     * @return BatchAddContactsResponse
      */
-    public function addRelationMetaFieldWithOptions($request, $headers, $runtime)
+    public function batchAddContactsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->fieldDTOList)) {
-            @$body['fieldDTOList'] = $request->fieldDTOList;
-        }
         if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
+            $body['operatorUserId'] = $request->operatorUserId;
         }
-        if (!Utils::isUnset($request->relationType)) {
-            @$body['relationType'] = $request->relationType;
-        }
-        if (!Utils::isUnset($request->tenant)) {
-            @$body['tenant'] = $request->tenant;
+        if (!Utils::isUnset($request->relationList)) {
+            $body['relationList'] = $request->relationList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'BatchAddContacts',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/contacts/batch',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return AddRelationMetaFieldResponse::fromMap($this->doROARequest('AddRelationMetaField', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relations/metas/fields', 'json', $req, $runtime));
+        return BatchAddContactsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -471,35 +575,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchAddContactsRequest $request
-     * @param BatchAddContactsHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param BatchAddFollowRecordsRequest $request
+     * @param BatchAddFollowRecordsHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return BatchAddContactsResponse
+     * @return BatchAddFollowRecordsResponse
      */
-    public function batchAddContactsWithOptions($request, $headers, $runtime)
+    public function batchAddFollowRecordsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
+        if (!Utils::isUnset($request->instanceList)) {
+            $body['instanceList'] = $request->instanceList;
         }
-        if (!Utils::isUnset($request->relationList)) {
-            @$body['relationList'] = $request->relationList;
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'BatchAddFollowRecords',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/followRecords/batch',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchAddContactsResponse::fromMap($this->doROARequest('BatchAddContacts', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/contacts/batch', 'json', $req, $runtime));
+        return BatchAddFollowRecordsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -516,35 +631,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchAddFollowRecordsRequest $request
-     * @param BatchAddFollowRecordsHeaders $headers
+     * @param BatchAddRelationDatasRequest $request
+     * @param BatchAddRelationDatasHeaders $headers
      * @param RuntimeOptions               $runtime
      *
-     * @return BatchAddFollowRecordsResponse
+     * @return BatchAddRelationDatasResponse
      */
-    public function batchAddFollowRecordsWithOptions($request, $headers, $runtime)
+    public function batchAddRelationDatasWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->instanceList)) {
-            @$body['instanceList'] = $request->instanceList;
-        }
         if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationList)) {
+            $body['relationList'] = $request->relationList;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            $body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->skipDuplicateCheck)) {
+            $body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'BatchAddRelationDatas',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/relationDatas/batch',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchAddFollowRecordsResponse::fromMap($this->doROARequest('BatchAddFollowRecords', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/followRecords/batch', 'json', $req, $runtime));
+        return BatchAddRelationDatasResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -561,41 +693,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchAddRelationDatasRequest $request
-     * @param BatchAddRelationDatasHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param BatchRemoveFollowRecordsRequest $request
+     * @param BatchRemoveFollowRecordsHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return BatchAddRelationDatasResponse
+     * @return BatchRemoveFollowRecordsResponse
      */
-    public function batchAddRelationDatasWithOptions($request, $headers, $runtime)
+    public function batchRemoveFollowRecordsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->instanceIds)) {
+            $body['instanceIds'] = $request->instanceIds;
+        }
         if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
-        }
-        if (!Utils::isUnset($request->relationList)) {
-            @$body['relationList'] = $request->relationList;
-        }
-        if (!Utils::isUnset($request->relationType)) {
-            @$body['relationType'] = $request->relationType;
-        }
-        if (!Utils::isUnset($request->skipDuplicateCheck)) {
-            @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
+            $body['operatorUserId'] = $request->operatorUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'BatchRemoveFollowRecords',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/followRecords/batchRemove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchAddRelationDatasResponse::fromMap($this->doROARequest('BatchAddRelationDatas', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relationDatas/batch', 'json', $req, $runtime));
+        return BatchRemoveFollowRecordsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -612,35 +749,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchRemoveFollowRecordsRequest $request
-     * @param BatchRemoveFollowRecordsHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param BatchSendOfficialAccountOTOMessageRequest $request
+     * @param BatchSendOfficialAccountOTOMessageHeaders $headers
+     * @param RuntimeOptions                            $runtime
      *
-     * @return BatchRemoveFollowRecordsResponse
+     * @return BatchSendOfficialAccountOTOMessageResponse
      */
-    public function batchRemoveFollowRecordsWithOptions($request, $headers, $runtime)
+    public function batchSendOfficialAccountOTOMessageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->instanceIds)) {
-            @$body['instanceIds'] = $request->instanceIds;
+        if (!Utils::isUnset($request->accountId)) {
+            $body['accountId'] = $request->accountId;
         }
-        if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->detail)) {
+            $body['detail'] = $request->detail;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'BatchSendOfficialAccountOTOMessage',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/officialAccounts/oToMessages/batchSend',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchRemoveFollowRecordsResponse::fromMap($this->doROARequest('BatchRemoveFollowRecords', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/followRecords/batchRemove', 'json', $req, $runtime));
+        return BatchSendOfficialAccountOTOMessageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -657,38 +808,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchSendOfficialAccountOTOMessageRequest $request
-     * @param BatchSendOfficialAccountOTOMessageHeaders $headers
-     * @param RuntimeOptions                            $runtime
+     * @param BatchUpdateContactsRequest $request
+     * @param BatchUpdateContactsHeaders $headers
+     * @param RuntimeOptions             $runtime
      *
-     * @return BatchSendOfficialAccountOTOMessageResponse
+     * @return BatchUpdateContactsResponse
      */
-    public function batchSendOfficialAccountOTOMessageWithOptions($request, $headers, $runtime)
+    public function batchUpdateContactsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->accountId)) {
-            @$body['accountId'] = $request->accountId;
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
         }
-        if (!Utils::isUnset($request->bizId)) {
-            @$body['bizId'] = $request->bizId;
-        }
-        if (!Utils::isUnset($request->detail)) {
-            @$body['detail'] = $request->detail;
+        if (!Utils::isUnset($request->relationList)) {
+            $body['relationList'] = $request->relationList;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'BatchUpdateContacts',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/contacts/batch',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchSendOfficialAccountOTOMessageResponse::fromMap($this->doROARequest('BatchSendOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/officialAccounts/oToMessages/batchSend', 'json', $req, $runtime));
+        return BatchUpdateContactsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -705,35 +864,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchUpdateContactsRequest $request
-     * @param BatchUpdateContactsHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param BatchUpdateFollowRecordsRequest $request
+     * @param BatchUpdateFollowRecordsHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return BatchUpdateContactsResponse
+     * @return BatchUpdateFollowRecordsResponse
      */
-    public function batchUpdateContactsWithOptions($request, $headers, $runtime)
+    public function batchUpdateFollowRecordsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
+        if (!Utils::isUnset($request->instanceList)) {
+            $body['instanceList'] = $request->instanceList;
         }
-        if (!Utils::isUnset($request->relationList)) {
-            @$body['relationList'] = $request->relationList;
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'BatchUpdateFollowRecords',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/followRecords/batch',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchUpdateContactsResponse::fromMap($this->doROARequest('BatchUpdateContacts', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/contacts/batch', 'json', $req, $runtime));
+        return BatchUpdateFollowRecordsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -750,35 +920,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchUpdateFollowRecordsRequest $request
-     * @param BatchUpdateFollowRecordsHeaders $headers
+     * @param BatchUpdateRelationDatasRequest $request
+     * @param BatchUpdateRelationDatasHeaders $headers
      * @param RuntimeOptions                  $runtime
      *
-     * @return BatchUpdateFollowRecordsResponse
+     * @return BatchUpdateRelationDatasResponse
      */
-    public function batchUpdateFollowRecordsWithOptions($request, $headers, $runtime)
+    public function batchUpdateRelationDatasWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->instanceList)) {
-            @$body['instanceList'] = $request->instanceList;
-        }
         if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationList)) {
+            $body['relationList'] = $request->relationList;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            $body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->skipDuplicateCheck)) {
+            $body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'BatchUpdateRelationDatas',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/relationDatas/batch',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchUpdateFollowRecordsResponse::fromMap($this->doROARequest('BatchUpdateFollowRecords', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/followRecords/batch', 'json', $req, $runtime));
+        return BatchUpdateRelationDatasResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -795,41 +982,64 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param BatchUpdateRelationDatasRequest $request
-     * @param BatchUpdateRelationDatasHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param CreateCustomerRequest $request
+     * @param CreateCustomerHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return BatchUpdateRelationDatasResponse
+     * @return CreateCustomerResponse
      */
-    public function batchUpdateRelationDatasWithOptions($request, $headers, $runtime)
+    public function createCustomerWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
+        if (!Utils::isUnset($request->contacts)) {
+            $body['contacts'] = $request->contacts;
         }
-        if (!Utils::isUnset($request->relationList)) {
-            @$body['relationList'] = $request->relationList;
+        if (!Utils::isUnset($request->creatorUserId)) {
+            $body['creatorUserId'] = $request->creatorUserId;
         }
-        if (!Utils::isUnset($request->relationType)) {
-            @$body['relationType'] = $request->relationType;
+        if (!Utils::isUnset($request->data)) {
+            $body['data'] = $request->data;
         }
-        if (!Utils::isUnset($request->skipDuplicateCheck)) {
-            @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
+        if (!Utils::isUnset($request->extendData)) {
+            $body['extendData'] = $request->extendData;
+        }
+        if (!Utils::isUnset($request->instanceId)) {
+            $body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->objectType)) {
+            $body['objectType'] = $request->objectType;
+        }
+        if (!Utils::isUnset($request->permission)) {
+            $body['permission'] = $request->permission;
+        }
+        if (!Utils::isUnset($request->saveOption)) {
+            $body['saveOption'] = $request->saveOption;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateCustomer',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/customers',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return BatchUpdateRelationDatasResponse::fromMap($this->doROARequest('BatchUpdateRelationDatas', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/relationDatas/batch', 'json', $req, $runtime));
+        return CreateCustomerResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -846,53 +1056,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateCustomerRequest $request
-     * @param CreateCustomerHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param CreateGroupRequest $request
+     * @param CreateGroupHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return CreateCustomerResponse
+     * @return CreateGroupResponse
      */
-    public function createCustomerWithOptions($request, $headers, $runtime)
+    public function createGroupWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->contacts)) {
-            @$body['contacts'] = $request->contacts;
+        if (!Utils::isUnset($request->groupName)) {
+            $body['groupName'] = $request->groupName;
         }
-        if (!Utils::isUnset($request->creatorUserId)) {
-            @$body['creatorUserId'] = $request->creatorUserId;
+        if (!Utils::isUnset($request->memberUserIds)) {
+            $body['memberUserIds'] = $request->memberUserIds;
         }
-        if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+        if (!Utils::isUnset($request->ownerUserId)) {
+            $body['ownerUserId'] = $request->ownerUserId;
         }
-        if (!Utils::isUnset($request->extendData)) {
-            @$body['extendData'] = $request->extendData;
-        }
-        if (!Utils::isUnset($request->instanceId)) {
-            @$body['instanceId'] = $request->instanceId;
-        }
-        if (!Utils::isUnset($request->objectType)) {
-            @$body['objectType'] = $request->objectType;
-        }
-        if (!Utils::isUnset($request->permission)) {
-            @$body['permission'] = $request->permission;
-        }
-        if (!Utils::isUnset($request->saveOption)) {
-            @$body['saveOption'] = $request->saveOption;
+        if (!Utils::isUnset($request->relationType)) {
+            $body['relationType'] = $request->relationType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateGroup',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/groups',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateCustomerResponse::fromMap($this->doROARequest('CreateCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customers', 'json', $req, $runtime));
+        return CreateGroupResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -909,41 +1118,70 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateGroupRequest $request
-     * @param CreateGroupHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param CreateGroupSetRequest $request
+     * @param CreateGroupSetHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return CreateGroupResponse
+     * @return CreateGroupSetResponse
      */
-    public function createGroupWithOptions($request, $headers, $runtime)
+    public function createGroupSetWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->groupName)) {
-            @$body['groupName'] = $request->groupName;
+        if (!Utils::isUnset($request->creatorUserId)) {
+            $body['creatorUserId'] = $request->creatorUserId;
         }
-        if (!Utils::isUnset($request->memberUserIds)) {
-            @$body['memberUserIds'] = $request->memberUserIds;
+        if (!Utils::isUnset($request->managerUserIds)) {
+            $body['managerUserIds'] = $request->managerUserIds;
+        }
+        if (!Utils::isUnset($request->memberQuota)) {
+            $body['memberQuota'] = $request->memberQuota;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->notice)) {
+            $body['notice'] = $request->notice;
+        }
+        if (!Utils::isUnset($request->noticeToped)) {
+            $body['noticeToped'] = $request->noticeToped;
         }
         if (!Utils::isUnset($request->ownerUserId)) {
-            @$body['ownerUserId'] = $request->ownerUserId;
+            $body['ownerUserId'] = $request->ownerUserId;
         }
         if (!Utils::isUnset($request->relationType)) {
-            @$body['relationType'] = $request->relationType;
+            $body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            $body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->welcome)) {
+            $body['welcome'] = $request->welcome;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateGroupSet',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/groupSets',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateGroupResponse::fromMap($this->doROARequest('CreateGroup', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/groups', 'json', $req, $runtime));
+        return CreateGroupSetResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -960,59 +1198,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateGroupSetRequest $request
-     * @param CreateGroupSetHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param CreateRelationMetaRequest $request
+     * @param CreateRelationMetaHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return CreateGroupSetResponse
+     * @return CreateRelationMetaResponse
      */
-    public function createGroupSetWithOptions($request, $headers, $runtime)
+    public function createRelationMetaWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->creatorUserId)) {
-            @$body['creatorUserId'] = $request->creatorUserId;
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
         }
-        if (!Utils::isUnset($request->managerUserIds)) {
-            @$body['managerUserIds'] = $request->managerUserIds;
+        if (!Utils::isUnset($request->relationMetaDTO)) {
+            $body['relationMetaDTO'] = $request->relationMetaDTO;
         }
-        if (!Utils::isUnset($request->memberQuota)) {
-            @$body['memberQuota'] = $request->memberQuota;
-        }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
-        }
-        if (!Utils::isUnset($request->notice)) {
-            @$body['notice'] = $request->notice;
-        }
-        if (!Utils::isUnset($request->noticeToped)) {
-            @$body['noticeToped'] = $request->noticeToped;
-        }
-        if (!Utils::isUnset($request->ownerUserId)) {
-            @$body['ownerUserId'] = $request->ownerUserId;
-        }
-        if (!Utils::isUnset($request->relationType)) {
-            @$body['relationType'] = $request->relationType;
-        }
-        if (!Utils::isUnset($request->templateId)) {
-            @$body['templateId'] = $request->templateId;
-        }
-        if (!Utils::isUnset($request->welcome)) {
-            @$body['welcome'] = $request->welcome;
+        if (!Utils::isUnset($request->tenant)) {
+            $body['tenant'] = $request->tenant;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'CreateRelationMeta',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/relations/metas/create',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return CreateGroupSetResponse::fromMap($this->doROARequest('CreateGroupSet', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/groupSets', 'json', $req, $runtime));
+        return CreateRelationMetaResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1029,38 +1257,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CreateRelationMetaRequest $request
-     * @param CreateRelationMetaHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param string                           $instanceId
+     * @param DeleteCrmCustomObjectDataRequest $request
+     * @param DeleteCrmCustomObjectDataHeaders $headers
+     * @param RuntimeOptions                   $runtime
      *
-     * @return CreateRelationMetaResponse
+     * @return DeleteCrmCustomObjectDataResponse
      */
-    public function createRelationMetaWithOptions($request, $headers, $runtime)
+    public function deleteCrmCustomObjectDataWithOptions($instanceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
-        }
-        if (!Utils::isUnset($request->relationMetaDTO)) {
-            @$body['relationMetaDTO'] = $request->relationMetaDTO;
-        }
-        if (!Utils::isUnset($request->tenant)) {
-            @$body['tenant'] = $request->tenant;
+        $query = [];
+        if (!Utils::isUnset($request->formCode)) {
+            $query['formCode'] = $request->formCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteCrmCustomObjectData',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/customObjectDatas/instances/' . $instanceId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return CreateRelationMetaResponse::fromMap($this->doROARequest('CreateRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relations/metas/create', 'json', $req, $runtime));
+        return DeleteCrmCustomObjectDataResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1078,34 +1312,47 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                           $instanceId
-     * @param DeleteCrmCustomObjectDataRequest $request
-     * @param DeleteCrmCustomObjectDataHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param string                       $instanceId
+     * @param DeleteCrmFormInstanceRequest $request
+     * @param DeleteCrmFormInstanceHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return DeleteCrmCustomObjectDataResponse
+     * @return DeleteCrmFormInstanceResponse
      */
-    public function deleteCrmCustomObjectDataWithOptions($instanceId, $request, $headers, $runtime)
+    public function deleteCrmFormInstanceWithOptions($instanceId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
-        $query      = [];
-        if (!Utils::isUnset($request->formCode)) {
-            @$query['formCode'] = $request->formCode;
+        $query = [];
+        if (!Utils::isUnset($request->currentOperatorUserId)) {
+            $query['currentOperatorUserId'] = $request->currentOperatorUserId;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $query['name'] = $request->name;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteCrmFormInstance',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/formInstances/' . $instanceId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteCrmCustomObjectDataResponse::fromMap($this->doROARequest('DeleteCrmCustomObjectData', 'crm_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/crm/customObjectDatas/instances/' . $instanceId . '', 'json', $req, $runtime));
+        return DeleteCrmFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1123,37 +1370,47 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                       $instanceId
-     * @param DeleteCrmFormInstanceRequest $request
-     * @param DeleteCrmFormInstanceHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param string                           $dataId
+     * @param DeleteCrmPersonalCustomerRequest $request
+     * @param DeleteCrmPersonalCustomerHeaders $headers
+     * @param RuntimeOptions                   $runtime
      *
-     * @return DeleteCrmFormInstanceResponse
+     * @return DeleteCrmPersonalCustomerResponse
      */
-    public function deleteCrmFormInstanceWithOptions($instanceId, $request, $headers, $runtime)
+    public function deleteCrmPersonalCustomerWithOptions($dataId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $instanceId = OpenApiUtilClient::getEncodeParam($instanceId);
-        $query      = [];
+        $query = [];
         if (!Utils::isUnset($request->currentOperatorUserId)) {
-            @$query['currentOperatorUserId'] = $request->currentOperatorUserId;
+            $query['currentOperatorUserId'] = $request->currentOperatorUserId;
         }
-        if (!Utils::isUnset($request->name)) {
-            @$query['name'] = $request->name;
+        if (!Utils::isUnset($request->relationType)) {
+            $query['relationType'] = $request->relationType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteCrmPersonalCustomer',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/personalCustomers/' . $dataId . '',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteCrmFormInstanceResponse::fromMap($this->doROARequest('DeleteCrmFormInstance', 'crm_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/crm/formInstances/' . $instanceId . '', 'json', $req, $runtime));
+        return DeleteCrmPersonalCustomerResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1171,37 +1428,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                           $dataId
-     * @param DeleteCrmPersonalCustomerRequest $request
-     * @param DeleteCrmPersonalCustomerHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param DeleteLeadsRequest $request
+     * @param DeleteLeadsHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return DeleteCrmPersonalCustomerResponse
+     * @return DeleteLeadsResponse
      */
-    public function deleteCrmPersonalCustomerWithOptions($dataId, $request, $headers, $runtime)
+    public function deleteLeadsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $dataId = OpenApiUtilClient::getEncodeParam($dataId);
-        $query  = [];
-        if (!Utils::isUnset($request->currentOperatorUserId)) {
-            @$query['currentOperatorUserId'] = $request->currentOperatorUserId;
-        }
-        if (!Utils::isUnset($request->relationType)) {
-            @$query['relationType'] = $request->relationType;
+        $body = [];
+        if (!Utils::isUnset($request->outLeadsIds)) {
+            $body['outLeadsIds'] = $request->outLeadsIds;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteLeads',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/leads/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return DeleteCrmPersonalCustomerResponse::fromMap($this->doROARequest('DeleteCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'DELETE', 'AK', '/v1.0/crm/personalCustomers/' . $dataId . '', 'json', $req, $runtime));
+        return DeleteLeadsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1218,32 +1481,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteLeadsRequest $request
-     * @param DeleteLeadsHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param DeleteRelationMetaFieldRequest $request
+     * @param DeleteRelationMetaFieldHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return DeleteLeadsResponse
+     * @return DeleteRelationMetaFieldResponse
      */
-    public function deleteLeadsWithOptions($request, $headers, $runtime)
+    public function deleteRelationMetaFieldWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->outLeadsIds)) {
-            @$body['outLeadsIds'] = $request->outLeadsIds;
+        if (!Utils::isUnset($request->fieldIdList)) {
+            $body['fieldIdList'] = $request->fieldIdList;
+        }
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            $body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->tenant)) {
+            $body['tenant'] = $request->tenant;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'DeleteRelationMetaField',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/relations/metas/fields/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return DeleteLeadsResponse::fromMap($this->doROARequest('DeleteLeads', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/leads/remove', 'json', $req, $runtime));
+        return DeleteRelationMetaFieldResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1260,41 +1543,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DeleteRelationMetaFieldRequest $request
-     * @param DeleteRelationMetaFieldHeaders $headers
-     * @param RuntimeOptions                 $runtime
+     * @param DescribeCrmPersonalCustomerObjectMetaRequest $request
+     * @param DescribeCrmPersonalCustomerObjectMetaHeaders $headers
+     * @param RuntimeOptions                               $runtime
      *
-     * @return DeleteRelationMetaFieldResponse
+     * @return DescribeCrmPersonalCustomerObjectMetaResponse
      */
-    public function deleteRelationMetaFieldWithOptions($request, $headers, $runtime)
+    public function describeCrmPersonalCustomerObjectMetaWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->fieldIdList)) {
-            @$body['fieldIdList'] = $request->fieldIdList;
-        }
-        if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
-        }
+        $query = [];
         if (!Utils::isUnset($request->relationType)) {
-            @$body['relationType'] = $request->relationType;
-        }
-        if (!Utils::isUnset($request->tenant)) {
-            @$body['tenant'] = $request->tenant;
+            $query['relationType'] = $request->relationType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DescribeCrmPersonalCustomerObjectMeta',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/personalCustomers/objectMeta',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return DeleteRelationMetaFieldResponse::fromMap($this->doROARequest('DeleteRelationMetaField', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relations/metas/fields/remove', 'json', $req, $runtime));
+        return DescribeCrmPersonalCustomerObjectMetaResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1311,32 +1596,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DescribeCrmPersonalCustomerObjectMetaRequest $request
-     * @param DescribeCrmPersonalCustomerObjectMetaHeaders $headers
-     * @param RuntimeOptions                               $runtime
+     * @param DescribeRelationMetaRequest $request
+     * @param DescribeRelationMetaHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return DescribeCrmPersonalCustomerObjectMetaResponse
+     * @return DescribeRelationMetaResponse
      */
-    public function describeCrmPersonalCustomerObjectMetaWithOptions($request, $headers, $runtime)
+    public function describeRelationMetaWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->relationType)) {
-            @$query['relationType'] = $request->relationType;
+        $body = [];
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
+        }
+        if (!Utils::isUnset($request->relationTypes)) {
+            $body['relationTypes'] = $request->relationTypes;
+        }
+        if (!Utils::isUnset($request->tenant)) {
+            $body['tenant'] = $request->tenant;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DescribeRelationMeta',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/relations/metas/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return DescribeCrmPersonalCustomerObjectMetaResponse::fromMap($this->doROARequest('DescribeCrmPersonalCustomerObjectMeta', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/personalCustomers/objectMeta', 'json', $req, $runtime));
+        return DescribeRelationMetaResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1353,38 +1655,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param DescribeRelationMetaRequest $request
-     * @param DescribeRelationMetaHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param GetAllCustomerRecyclesRequest $request
+     * @param GetAllCustomerRecyclesHeaders $headers
+     * @param RuntimeOptions                $runtime
      *
-     * @return DescribeRelationMetaResponse
+     * @return GetAllCustomerRecyclesResponse
      */
-    public function describeRelationMetaWithOptions($request, $headers, $runtime)
+    public function getAllCustomerRecyclesWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
         }
-        if (!Utils::isUnset($request->relationTypes)) {
-            @$body['relationTypes'] = $request->relationTypes;
-        }
-        if (!Utils::isUnset($request->tenant)) {
-            @$body['tenant'] = $request->tenant;
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetAllCustomerRecycles',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/customerRecycles',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return DescribeRelationMetaResponse::fromMap($this->doROARequest('DescribeRelationMeta', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/relations/metas/query', 'json', $req, $runtime));
+        return GetAllCustomerRecyclesResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1401,35 +1711,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetAllCustomerRecyclesRequest $request
-     * @param GetAllCustomerRecyclesHeaders $headers
-     * @param RuntimeOptions                $runtime
+     * @param string                 $openConversationId
+     * @param GetCrmGroupChatHeaders $headers
+     * @param RuntimeOptions         $runtime
      *
-     * @return GetAllCustomerRecyclesResponse
+     * @return GetCrmGroupChatResponse
      */
-    public function getAllCustomerRecyclesWithOptions($request, $headers, $runtime)
+    public function getCrmGroupChatWithOptions($openConversationId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetCrmGroupChat',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/crmGroupChats/' . $openConversationId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetAllCustomerRecyclesResponse::fromMap($this->doROARequest('GetAllCustomerRecycles', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/customerRecycles', 'json', $req, $runtime));
+        return GetCrmGroupChatResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1446,27 +1758,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                 $openConversationId
-     * @param GetCrmGroupChatHeaders $headers
-     * @param RuntimeOptions         $runtime
+     * @param GetCrmGroupChatMultiRequest $request
+     * @param GetCrmGroupChatMultiHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return GetCrmGroupChatResponse
+     * @return GetCrmGroupChatMultiResponse
      */
-    public function getCrmGroupChatWithOptions($openConversationId, $headers, $runtime)
+    public function getCrmGroupChatMultiWithOptions($request, $headers, $runtime)
     {
-        $openConversationId = OpenApiUtilClient::getEncodeParam($openConversationId);
-        $realHeaders        = [];
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationIds)) {
+            $body['openConversationIds'] = $request->openConversationIds;
+        }
+        $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetCrmGroupChatMulti',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/crmGroupChats/batchQuery',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetCrmGroupChatResponse::fromMap($this->doROARequest('GetCrmGroupChat', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/crmGroupChats/' . $openConversationId . '', 'json', $req, $runtime));
+        return GetCrmGroupChatMultiResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1483,32 +1811,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCrmGroupChatMultiRequest $request
-     * @param GetCrmGroupChatMultiHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param GetCrmGroupChatSingleRequest $request
+     * @param GetCrmGroupChatSingleHeaders $headers
+     * @param RuntimeOptions               $runtime
      *
-     * @return GetCrmGroupChatMultiResponse
+     * @return GetCrmGroupChatSingleResponse
      */
-    public function getCrmGroupChatMultiWithOptions($request, $headers, $runtime)
+    public function getCrmGroupChatSingleWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->openConversationIds)) {
-            @$body['openConversationIds'] = $request->openConversationIds;
+        $query = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $query['openConversationId'] = $request->openConversationId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetCrmGroupChatSingle',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/crmGroupChats/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetCrmGroupChatMultiResponse::fromMap($this->doROARequest('GetCrmGroupChatMulti', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/crmGroupChats/batchQuery', 'json', $req, $runtime));
+        return GetCrmGroupChatSingleResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1525,32 +1864,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCrmGroupChatSingleRequest $request
-     * @param GetCrmGroupChatSingleHeaders $headers
-     * @param RuntimeOptions               $runtime
+     * @param GetCrmRolePermissionRequest $request
+     * @param GetCrmRolePermissionHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return GetCrmGroupChatSingleResponse
+     * @return GetCrmRolePermissionResponse
      */
-    public function getCrmGroupChatSingleWithOptions($request, $headers, $runtime)
+    public function getCrmRolePermissionWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->openConversationId)) {
-            @$query['openConversationId'] = $request->openConversationId;
+        if (!Utils::isUnset($request->bizType)) {
+            $query['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->resourceId)) {
+            $query['resourceId'] = $request->resourceId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetCrmRolePermission',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/permissions',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetCrmGroupChatSingleResponse::fromMap($this->doROARequest('GetCrmGroupChatSingle', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/crmGroupChats/query', 'json', $req, $runtime));
+        return GetCrmRolePermissionResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1567,35 +1920,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCrmRolePermissionRequest $request
-     * @param GetCrmRolePermissionHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param GetCustomerTracksByRelationIdRequest $request
+     * @param GetCustomerTracksByRelationIdHeaders $headers
+     * @param RuntimeOptions                       $runtime
      *
-     * @return GetCrmRolePermissionResponse
+     * @return GetCustomerTracksByRelationIdResponse
      */
-    public function getCrmRolePermissionWithOptions($request, $headers, $runtime)
+    public function getCustomerTracksByRelationIdWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->bizType)) {
-            @$query['bizType'] = $request->bizType;
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
         }
-        if (!Utils::isUnset($request->resourceId)) {
-            @$query['resourceId'] = $request->resourceId;
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->relationId)) {
+            $query['relationId'] = $request->relationId;
+        }
+        if (!Utils::isUnset($request->typeGroup)) {
+            $query['typeGroup'] = $request->typeGroup;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetCustomerTracksByRelationId',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/customerTracks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetCrmRolePermissionResponse::fromMap($this->doROARequest('GetCrmRolePermission', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/permissions', 'json', $req, $runtime));
+        return GetCustomerTracksByRelationIdResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1612,41 +1982,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetCustomerTracksByRelationIdRequest $request
-     * @param GetCustomerTracksByRelationIdHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @param GetGroupSetRequest $request
+     * @param GetGroupSetHeaders $headers
+     * @param RuntimeOptions     $runtime
      *
-     * @return GetCustomerTracksByRelationIdResponse
+     * @return GetGroupSetResponse
      */
-    public function getCustomerTracksByRelationIdWithOptions($request, $headers, $runtime)
+    public function getGroupSetWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->relationId)) {
-            @$query['relationId'] = $request->relationId;
-        }
-        if (!Utils::isUnset($request->typeGroup)) {
-            @$query['typeGroup'] = $request->typeGroup;
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            $query['openGroupSetId'] = $request->openGroupSetId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetGroupSet',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/groupSets',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetCustomerTracksByRelationIdResponse::fromMap($this->doROARequest('GetCustomerTracksByRelationId', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/customerTracks', 'json', $req, $runtime));
+        return GetGroupSetResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1663,32 +2035,37 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetGroupSetRequest $request
-     * @param GetGroupSetHeaders $headers
-     * @param RuntimeOptions     $runtime
+     * @param string                               $userId
+     * @param GetOfficialAccountContactInfoHeaders $headers
+     * @param RuntimeOptions                       $runtime
      *
-     * @return GetGroupSetResponse
+     * @return GetOfficialAccountContactInfoResponse
      */
-    public function getGroupSetWithOptions($request, $headers, $runtime)
+    public function getOfficialAccountContactInfoWithOptions($userId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->openGroupSetId)) {
-            @$query['openGroupSetId'] = $request->openGroupSetId;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetOfficialAccountContactInfo',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/officialAccounts/contacts/' . $userId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetGroupSetResponse::fromMap($this->doROARequest('GetGroupSet', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/groupSets', 'json', $req, $runtime));
+        return GetOfficialAccountContactInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1705,27 +2082,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                               $userId
-     * @param GetOfficialAccountContactInfoHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @param GetOfficialAccountContactsRequest $request
+     * @param GetOfficialAccountContactsHeaders $headers
+     * @param RuntimeOptions                    $runtime
      *
-     * @return GetOfficialAccountContactInfoResponse
+     * @return GetOfficialAccountContactsResponse
      */
-    public function getOfficialAccountContactInfoWithOptions($userId, $headers, $runtime)
+    public function getOfficialAccountContactsWithOptions($request, $headers, $runtime)
     {
-        $userId      = OpenApiUtilClient::getEncodeParam($userId);
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetOfficialAccountContacts',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/officialAccounts/contacts',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetOfficialAccountContactInfoResponse::fromMap($this->doROARequest('GetOfficialAccountContactInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/officialAccounts/contacts/' . $userId . '', 'json', $req, $runtime));
+        return GetOfficialAccountContactsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1742,35 +2138,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOfficialAccountContactsRequest $request
-     * @param GetOfficialAccountContactsHeaders $headers
-     * @param RuntimeOptions                    $runtime
+     * @param GetOfficialAccountOTOMessageResultRequest $request
+     * @param GetOfficialAccountOTOMessageResultHeaders $headers
+     * @param RuntimeOptions                            $runtime
      *
-     * @return GetOfficialAccountContactsResponse
+     * @return GetOfficialAccountOTOMessageResultResponse
      */
-    public function getOfficialAccountContactsWithOptions($request, $headers, $runtime)
+    public function getOfficialAccountOTOMessageResultWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
+        if (!Utils::isUnset($request->accountId)) {
+            $query['accountId'] = $request->accountId;
         }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
+        if (!Utils::isUnset($request->openPushId)) {
+            $query['openPushId'] = $request->openPushId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetOfficialAccountOTOMessageResult',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/officialAccounts/oToMessages/sendResults',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetOfficialAccountContactsResponse::fromMap($this->doROARequest('GetOfficialAccountContacts', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/officialAccounts/contacts', 'json', $req, $runtime));
+        return GetOfficialAccountOTOMessageResultResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1787,35 +2194,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetOfficialAccountOTOMessageResultRequest $request
-     * @param GetOfficialAccountOTOMessageResultHeaders $headers
-     * @param RuntimeOptions                            $runtime
+     * @param GetRelationUkSettingRequest $request
+     * @param GetRelationUkSettingHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return GetOfficialAccountOTOMessageResultResponse
+     * @return GetRelationUkSettingResponse
      */
-    public function getOfficialAccountOTOMessageResultWithOptions($request, $headers, $runtime)
+    public function getRelationUkSettingWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->accountId)) {
-            @$query['accountId'] = $request->accountId;
-        }
-        if (!Utils::isUnset($request->openPushId)) {
-            @$query['openPushId'] = $request->openPushId;
+        if (!Utils::isUnset($request->relationType)) {
+            $query['relationType'] = $request->relationType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'GetRelationUkSetting',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/relationUkSettings',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return GetOfficialAccountOTOMessageResultResponse::fromMap($this->doROARequest('GetOfficialAccountOTOMessageResult', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/officialAccounts/oToMessages/sendResults', 'json', $req, $runtime));
+        return GetRelationUkSettingResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1832,32 +2247,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param GetRelationUkSettingRequest $request
-     * @param GetRelationUkSettingHeaders $headers
-     * @param RuntimeOptions              $runtime
+     * @param JoinGroupSetRequest $request
+     * @param JoinGroupSetHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return GetRelationUkSettingResponse
+     * @return JoinGroupSetResponse
      */
-    public function getRelationUkSettingWithOptions($request, $headers, $runtime)
+    public function joinGroupSetWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->relationType)) {
-            @$query['relationType'] = $request->relationType;
+        $body = [];
+        if (!Utils::isUnset($request->bizDataList)) {
+            $body['bizDataList'] = $request->bizDataList;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            $body['openGroupSetId'] = $request->openGroupSetId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'JoinGroupSet',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/groupSets/join',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return GetRelationUkSettingResponse::fromMap($this->doROARequest('GetRelationUkSetting', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/relationUkSettings', 'json', $req, $runtime));
+        return JoinGroupSetResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1874,41 +2309,47 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param JoinGroupSetRequest $request
-     * @param JoinGroupSetHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param ListCrmPersonalCustomersRequest $request
+     * @param ListCrmPersonalCustomersHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return JoinGroupSetResponse
+     * @return ListCrmPersonalCustomersResponse
      */
-    public function joinGroupSetWithOptions($request, $headers, $runtime)
+    public function listCrmPersonalCustomersWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->bizDataList)) {
-            @$body['bizDataList'] = $request->bizDataList;
+        $query = [];
+        if (!Utils::isUnset($request->currentOperatorUserId)) {
+            $query['currentOperatorUserId'] = $request->currentOperatorUserId;
         }
-        if (!Utils::isUnset($request->corpId)) {
-            @$body['corpId'] = $request->corpId;
-        }
-        if (!Utils::isUnset($request->openGroupSetId)) {
-            @$body['openGroupSetId'] = $request->openGroupSetId;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$body['unionId'] = $request->unionId;
+        if (!Utils::isUnset($request->relationType)) {
+            $query['relationType'] = $request->relationType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => $request->body,
+        ]);
+        $params = new Params([
+            'action'      => 'ListCrmPersonalCustomers',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/personalCustomers/batchQuery',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return JoinGroupSetResponse::fromMap($this->doROARequest('JoinGroupSet', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/groupSets/join', 'json', $req, $runtime));
+        return ListCrmPersonalCustomersResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1925,36 +2366,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListCrmPersonalCustomersRequest $request
-     * @param ListCrmPersonalCustomersHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param ListGroupSetRequest $request
+     * @param ListGroupSetHeaders $headers
+     * @param RuntimeOptions      $runtime
      *
-     * @return ListCrmPersonalCustomersResponse
+     * @return ListGroupSetResponse
      */
-    public function listCrmPersonalCustomersWithOptions($request, $headers, $runtime)
+    public function listGroupSetWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->currentOperatorUserId)) {
-            @$query['currentOperatorUserId'] = $request->currentOperatorUserId;
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->queryDsl)) {
+            $query['queryDsl'] = $request->queryDsl;
         }
         if (!Utils::isUnset($request->relationType)) {
-            @$query['relationType'] = $request->relationType;
+            $query['relationType'] = $request->relationType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
-            'body'    => $request->body,
+        ]);
+        $params = new Params([
+            'action'      => 'ListGroupSet',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/groupSets/lists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ListCrmPersonalCustomersResponse::fromMap($this->doROARequest('ListCrmPersonalCustomers', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/personalCustomers/batchQuery', 'json', $req, $runtime));
+        return ListGroupSetResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -1971,41 +2428,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ListGroupSetRequest $request
-     * @param ListGroupSetHeaders $headers
-     * @param RuntimeOptions      $runtime
+     * @param QueryAllCustomerRequest $request
+     * @param QueryAllCustomerHeaders $headers
+     * @param RuntimeOptions          $runtime
      *
-     * @return ListGroupSetResponse
+     * @return QueryAllCustomerResponse
      */
-    public function listGroupSetWithOptions($request, $headers, $runtime)
+    public function queryAllCustomerWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $query = [];
+        $body = [];
         if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
+            $body['maxResults'] = $request->maxResults;
         }
         if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
+            $body['nextToken'] = $request->nextToken;
         }
-        if (!Utils::isUnset($request->queryDsl)) {
-            @$query['queryDsl'] = $request->queryDsl;
+        if (!Utils::isUnset($request->objectType)) {
+            $body['objectType'] = $request->objectType;
         }
-        if (!Utils::isUnset($request->relationType)) {
-            @$query['relationType'] = $request->relationType;
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryAllCustomer',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/customerInstances',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return ListGroupSetResponse::fromMap($this->doROARequest('ListGroupSet', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/groupSets/lists', 'json', $req, $runtime));
+        return QueryAllCustomerResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2022,41 +2490,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAllCustomerRequest $request
-     * @param QueryAllCustomerHeaders $headers
-     * @param RuntimeOptions          $runtime
+     * @param QueryAllTracksRequest $request
+     * @param QueryAllTracksHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return QueryAllCustomerResponse
+     * @return QueryAllTracksResponse
      */
-    public function queryAllCustomerWithOptions($request, $headers, $runtime)
+    public function queryAllTracksWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->maxResults)) {
-            @$body['maxResults'] = $request->maxResults;
+            $query['maxResults'] = $request->maxResults;
         }
         if (!Utils::isUnset($request->nextToken)) {
-            @$body['nextToken'] = $request->nextToken;
+            $query['nextToken'] = $request->nextToken;
         }
-        if (!Utils::isUnset($request->objectType)) {
-            @$body['objectType'] = $request->objectType;
-        }
-        if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
+        if (!Utils::isUnset($request->order)) {
+            $query['order'] = $request->order;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryAllTracks',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/customers/tracks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryAllCustomerResponse::fromMap($this->doROARequest('QueryAllCustomer', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/customerInstances', 'json', $req, $runtime));
+        return QueryAllTracksResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2073,38 +2549,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryAllTracksRequest $request
-     * @param QueryAllTracksHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param QueryCrmGroupChatsRequest $request
+     * @param QueryCrmGroupChatsHeaders $headers
+     * @param RuntimeOptions            $runtime
      *
-     * @return QueryAllTracksResponse
+     * @return QueryCrmGroupChatsResponse
      */
-    public function queryAllTracksWithOptions($request, $headers, $runtime)
+    public function queryCrmGroupChatsWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
+            $query['maxResults'] = $request->maxResults;
         }
         if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
+            $query['nextToken'] = $request->nextToken;
         }
-        if (!Utils::isUnset($request->order)) {
-            @$query['order'] = $request->order;
+        if (!Utils::isUnset($request->queryDsl)) {
+            $query['queryDsl'] = $request->queryDsl;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            $query['relationType'] = $request->relationType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryCrmGroupChats',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/crmGroupChats',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryAllTracksResponse::fromMap($this->doROARequest('QueryAllTracks', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/customers/tracks', 'json', $req, $runtime));
+        return QueryCrmGroupChatsResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2121,41 +2611,55 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCrmGroupChatsRequest $request
-     * @param QueryCrmGroupChatsHeaders $headers
-     * @param RuntimeOptions            $runtime
+     * @param QueryCrmPersonalCustomerRequest $request
+     * @param QueryCrmPersonalCustomerHeaders $headers
+     * @param RuntimeOptions                  $runtime
      *
-     * @return QueryCrmGroupChatsResponse
+     * @return QueryCrmPersonalCustomerResponse
      */
-    public function queryCrmGroupChatsWithOptions($request, $headers, $runtime)
+    public function queryCrmPersonalCustomerWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->currentOperatorUserId)) {
+            $query['currentOperatorUserId'] = $request->currentOperatorUserId;
+        }
         if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
+            $query['maxResults'] = $request->maxResults;
         }
         if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
+            $query['nextToken'] = $request->nextToken;
         }
         if (!Utils::isUnset($request->queryDsl)) {
-            @$query['queryDsl'] = $request->queryDsl;
+            $query['queryDsl'] = $request->queryDsl;
         }
         if (!Utils::isUnset($request->relationType)) {
-            @$query['relationType'] = $request->relationType;
+            $query['relationType'] = $request->relationType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryCrmPersonalCustomer',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/personalCustomers',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryCrmGroupChatsResponse::fromMap($this->doROARequest('QueryCrmGroupChats', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/crmGroupChats', 'json', $req, $runtime));
+        return QueryCrmPersonalCustomerResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2172,44 +2676,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryCrmPersonalCustomerRequest $request
-     * @param QueryCrmPersonalCustomerHeaders $headers
-     * @param RuntimeOptions                  $runtime
+     * @param QueryOfficialAccountUserBasicInfoRequest $request
+     * @param QueryOfficialAccountUserBasicInfoHeaders $headers
+     * @param RuntimeOptions                           $runtime
      *
-     * @return QueryCrmPersonalCustomerResponse
+     * @return QueryOfficialAccountUserBasicInfoResponse
      */
-    public function queryCrmPersonalCustomerWithOptions($request, $headers, $runtime)
+    public function queryOfficialAccountUserBasicInfoWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->currentOperatorUserId)) {
-            @$query['currentOperatorUserId'] = $request->currentOperatorUserId;
+        if (!Utils::isUnset($request->bindingToken)) {
+            $query['bindingToken'] = $request->bindingToken;
         }
-        if (!Utils::isUnset($request->maxResults)) {
-            @$query['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            @$query['nextToken'] = $request->nextToken;
-        }
-        if (!Utils::isUnset($request->queryDsl)) {
-            @$query['queryDsl'] = $request->queryDsl;
-        }
-        if (!Utils::isUnset($request->relationType)) {
-            @$query['relationType'] = $request->relationType;
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryOfficialAccountUserBasicInfo',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/officialAccounts/basics/users',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryCrmPersonalCustomerResponse::fromMap($this->doROARequest('QueryCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/personalCustomers', 'json', $req, $runtime));
+        return QueryOfficialAccountUserBasicInfoResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2226,35 +2732,44 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param QueryOfficialAccountUserBasicInfoRequest $request
-     * @param QueryOfficialAccountUserBasicInfoHeaders $headers
-     * @param RuntimeOptions                           $runtime
+     * @param string                              $targetId
+     * @param QueryRelationDatasByTargetIdRequest $request
+     * @param QueryRelationDatasByTargetIdHeaders $headers
+     * @param RuntimeOptions                      $runtime
      *
-     * @return QueryOfficialAccountUserBasicInfoResponse
+     * @return QueryRelationDatasByTargetIdResponse
      */
-    public function queryOfficialAccountUserBasicInfoWithOptions($request, $headers, $runtime)
+    public function queryRelationDatasByTargetIdWithOptions($targetId, $request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->bindingToken)) {
-            @$query['bindingToken'] = $request->bindingToken;
-        }
-        if (!Utils::isUnset($request->unionId)) {
-            @$query['unionId'] = $request->unionId;
+        if (!Utils::isUnset($request->relationType)) {
+            $query['relationType'] = $request->relationType;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
         ]);
+        $params = new Params([
+            'action'      => 'QueryRelationDatasByTargetId',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/relations/datas/targets/' . $targetId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return QueryOfficialAccountUserBasicInfoResponse::fromMap($this->doROARequest('QueryOfficialAccountUserBasicInfo', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/officialAccounts/basics/users', 'json', $req, $runtime));
+        return QueryRelationDatasByTargetIdResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2272,34 +2787,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param string                              $targetId
-     * @param QueryRelationDatasByTargetIdRequest $request
-     * @param QueryRelationDatasByTargetIdHeaders $headers
-     * @param RuntimeOptions                      $runtime
+     * @param RecallOfficialAccountOTOMessageRequest $request
+     * @param RecallOfficialAccountOTOMessageHeaders $headers
+     * @param RuntimeOptions                         $runtime
      *
-     * @return QueryRelationDatasByTargetIdResponse
+     * @return RecallOfficialAccountOTOMessageResponse
      */
-    public function queryRelationDatasByTargetIdWithOptions($targetId, $request, $headers, $runtime)
+    public function recallOfficialAccountOTOMessageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $targetId = OpenApiUtilClient::getEncodeParam($targetId);
-        $query    = [];
-        if (!Utils::isUnset($request->relationType)) {
-            @$query['relationType'] = $request->relationType;
+        $body = [];
+        if (!Utils::isUnset($request->accountId)) {
+            $body['accountId'] = $request->accountId;
+        }
+        if (!Utils::isUnset($request->openPushId)) {
+            $body['openPushId'] = $request->openPushId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RecallOfficialAccountOTOMessage',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/officialAccounts/oToMessages/recall',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
         ]);
 
-        return QueryRelationDatasByTargetIdResponse::fromMap($this->doROARequest('QueryRelationDatasByTargetId', 'crm_1.0', 'HTTP', 'GET', 'AK', '/v1.0/crm/relations/datas/targets/' . $targetId . '', 'json', $req, $runtime));
+        return RecallOfficialAccountOTOMessageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2316,35 +2843,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param RecallOfficialAccountOTOMessageRequest $request
-     * @param RecallOfficialAccountOTOMessageHeaders $headers
-     * @param RuntimeOptions                         $runtime
+     * @param SendOfficialAccountOTOMessageRequest $request
+     * @param SendOfficialAccountOTOMessageHeaders $headers
+     * @param RuntimeOptions                       $runtime
      *
-     * @return RecallOfficialAccountOTOMessageResponse
+     * @return SendOfficialAccountOTOMessageResponse
      */
-    public function recallOfficialAccountOTOMessageWithOptions($request, $headers, $runtime)
+    public function sendOfficialAccountOTOMessageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
         if (!Utils::isUnset($request->accountId)) {
-            @$body['accountId'] = $request->accountId;
+            $body['accountId'] = $request->accountId;
         }
-        if (!Utils::isUnset($request->openPushId)) {
-            @$body['openPushId'] = $request->openPushId;
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->detail)) {
+            $body['detail'] = $request->detail;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'SendOfficialAccountOTOMessage',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/officialAccounts/oToMessages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return RecallOfficialAccountOTOMessageResponse::fromMap($this->doROARequest('RecallOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/officialAccounts/oToMessages/recall', 'json', $req, $runtime));
+        return SendOfficialAccountOTOMessageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2361,38 +2902,49 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendOfficialAccountOTOMessageRequest $request
-     * @param SendOfficialAccountOTOMessageHeaders $headers
+     * @param SendOfficialAccountSNSMessageRequest $request
+     * @param SendOfficialAccountSNSMessageHeaders $headers
      * @param RuntimeOptions                       $runtime
      *
-     * @return SendOfficialAccountOTOMessageResponse
+     * @return SendOfficialAccountSNSMessageResponse
      */
-    public function sendOfficialAccountOTOMessageWithOptions($request, $headers, $runtime)
+    public function sendOfficialAccountSNSMessageWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->accountId)) {
-            @$body['accountId'] = $request->accountId;
+        if (!Utils::isUnset($request->bindingToken)) {
+            $body['bindingToken'] = $request->bindingToken;
         }
         if (!Utils::isUnset($request->bizId)) {
-            @$body['bizId'] = $request->bizId;
+            $body['bizId'] = $request->bizId;
         }
         if (!Utils::isUnset($request->detail)) {
-            @$body['detail'] = $request->detail;
+            $body['detail'] = $request->detail;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'SendOfficialAccountSNSMessage',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/officialAccounts/snsMessages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return SendOfficialAccountOTOMessageResponse::fromMap($this->doROARequest('SendOfficialAccountOTOMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/officialAccounts/oToMessages/send', 'json', $req, $runtime));
+        return SendOfficialAccountSNSMessageResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2409,38 +2961,46 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param SendOfficialAccountSNSMessageRequest $request
-     * @param SendOfficialAccountSNSMessageHeaders $headers
+     * @param ServiceWindowMessageBatchPushRequest $request
+     * @param ServiceWindowMessageBatchPushHeaders $headers
      * @param RuntimeOptions                       $runtime
      *
-     * @return SendOfficialAccountSNSMessageResponse
+     * @return ServiceWindowMessageBatchPushResponse
      */
-    public function sendOfficialAccountSNSMessageWithOptions($request, $headers, $runtime)
+    public function serviceWindowMessageBatchPushWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->bindingToken)) {
-            @$body['bindingToken'] = $request->bindingToken;
-        }
         if (!Utils::isUnset($request->bizId)) {
-            @$body['bizId'] = $request->bizId;
+            $body['bizId'] = $request->bizId;
         }
         if (!Utils::isUnset($request->detail)) {
-            @$body['detail'] = $request->detail;
+            $body['detail'] = $request->detail;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'ServiceWindowMessageBatchPush',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/messages/batchSend',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
 
-        return SendOfficialAccountSNSMessageResponse::fromMap($this->doROARequest('SendOfficialAccountSNSMessage', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/officialAccounts/snsMessages/send', 'json', $req, $runtime));
+        return ServiceWindowMessageBatchPushResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2457,35 +3017,67 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param ServiceWindowMessageBatchPushRequest $request
-     * @param ServiceWindowMessageBatchPushHeaders $headers
-     * @param RuntimeOptions                       $runtime
+     * @param UpdateCrmPersonalCustomerRequest $request
+     * @param UpdateCrmPersonalCustomerHeaders $headers
+     * @param RuntimeOptions                   $runtime
      *
-     * @return ServiceWindowMessageBatchPushResponse
+     * @return UpdateCrmPersonalCustomerResponse
      */
-    public function serviceWindowMessageBatchPushWithOptions($request, $headers, $runtime)
+    public function updateCrmPersonalCustomerWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->bizId)) {
-            @$body['bizId'] = $request->bizId;
+        if (!Utils::isUnset($request->action)) {
+            $body['action'] = $request->action;
         }
-        if (!Utils::isUnset($request->detail)) {
-            @$body['detail'] = $request->detail;
+        if (!Utils::isUnset($request->data)) {
+            $body['data'] = $request->data;
+        }
+        if (!Utils::isUnset($request->extendData)) {
+            $body['extendData'] = $request->extendData;
+        }
+        if (!Utils::isUnset($request->instanceId)) {
+            $body['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->modifierNick)) {
+            $body['modifierNick'] = $request->modifierNick;
+        }
+        if (!Utils::isUnset($request->modifierUserId)) {
+            $body['modifierUserId'] = $request->modifierUserId;
+        }
+        if (!Utils::isUnset($request->permission)) {
+            $body['permission'] = $request->permission;
+        }
+        if (!Utils::isUnset($request->relationType)) {
+            $body['relationType'] = $request->relationType;
+        }
+        if (!Utils::isUnset($request->skipDuplicateCheck)) {
+            $body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateCrmPersonalCustomer',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/personalCustomers',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return ServiceWindowMessageBatchPushResponse::fromMap($this->doROARequest('ServiceWindowMessageBatchPush', 'crm_1.0', 'HTTP', 'POST', 'AK', '/v1.0/crm/messages/batchSend', 'json', $req, $runtime));
+        return UpdateCrmPersonalCustomerResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2502,56 +3094,67 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateCrmPersonalCustomerRequest $request
-     * @param UpdateCrmPersonalCustomerHeaders $headers
-     * @param RuntimeOptions                   $runtime
+     * @param UpdateGroupSetRequest $request
+     * @param UpdateGroupSetHeaders $headers
+     * @param RuntimeOptions        $runtime
      *
-     * @return UpdateCrmPersonalCustomerResponse
+     * @return UpdateGroupSetResponse
      */
-    public function updateCrmPersonalCustomerWithOptions($request, $headers, $runtime)
+    public function updateGroupSetWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->action)) {
-            @$body['action'] = $request->action;
+        if (!Utils::isUnset($request->managerUserIds)) {
+            $body['managerUserIds'] = $request->managerUserIds;
         }
-        if (!Utils::isUnset($request->data)) {
-            @$body['data'] = $request->data;
+        if (!Utils::isUnset($request->memberQuota)) {
+            $body['memberQuota'] = $request->memberQuota;
         }
-        if (!Utils::isUnset($request->extendData)) {
-            @$body['extendData'] = $request->extendData;
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
         }
-        if (!Utils::isUnset($request->instanceId)) {
-            @$body['instanceId'] = $request->instanceId;
+        if (!Utils::isUnset($request->notice)) {
+            $body['notice'] = $request->notice;
         }
-        if (!Utils::isUnset($request->modifierNick)) {
-            @$body['modifierNick'] = $request->modifierNick;
+        if (!Utils::isUnset($request->noticeToped)) {
+            $body['noticeToped'] = $request->noticeToped;
         }
-        if (!Utils::isUnset($request->modifierUserId)) {
-            @$body['modifierUserId'] = $request->modifierUserId;
+        if (!Utils::isUnset($request->openGroupSetId)) {
+            $body['openGroupSetId'] = $request->openGroupSetId;
         }
-        if (!Utils::isUnset($request->permission)) {
-            @$body['permission'] = $request->permission;
+        if (!Utils::isUnset($request->ownerUserId)) {
+            $body['ownerUserId'] = $request->ownerUserId;
         }
-        if (!Utils::isUnset($request->relationType)) {
-            @$body['relationType'] = $request->relationType;
+        if (!Utils::isUnset($request->templateId)) {
+            $body['templateId'] = $request->templateId;
         }
-        if (!Utils::isUnset($request->skipDuplicateCheck)) {
-            @$body['skipDuplicateCheck'] = $request->skipDuplicateCheck;
+        if (!Utils::isUnset($request->welcome)) {
+            $body['welcome'] = $request->welcome;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateGroupSet',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/groupSets/set',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'boolean',
+        ]);
 
-        return UpdateCrmPersonalCustomerResponse::fromMap($this->doROARequest('UpdateCrmPersonalCustomer', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/personalCustomers', 'json', $req, $runtime));
+        return UpdateGroupSetResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2568,56 +3171,52 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param UpdateGroupSetRequest $request
-     * @param UpdateGroupSetHeaders $headers
-     * @param RuntimeOptions        $runtime
+     * @param UpdateRelationMetaFieldRequest $request
+     * @param UpdateRelationMetaFieldHeaders $headers
+     * @param RuntimeOptions                 $runtime
      *
-     * @return UpdateGroupSetResponse
+     * @return UpdateRelationMetaFieldResponse
      */
-    public function updateGroupSetWithOptions($request, $headers, $runtime)
+    public function updateRelationMetaFieldWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->managerUserIds)) {
-            @$body['managerUserIds'] = $request->managerUserIds;
+        if (!Utils::isUnset($request->fieldDTOList)) {
+            $body['fieldDTOList'] = $request->fieldDTOList;
         }
-        if (!Utils::isUnset($request->memberQuota)) {
-            @$body['memberQuota'] = $request->memberQuota;
+        if (!Utils::isUnset($request->operatorUserId)) {
+            $body['operatorUserId'] = $request->operatorUserId;
         }
-        if (!Utils::isUnset($request->name)) {
-            @$body['name'] = $request->name;
+        if (!Utils::isUnset($request->relationType)) {
+            $body['relationType'] = $request->relationType;
         }
-        if (!Utils::isUnset($request->notice)) {
-            @$body['notice'] = $request->notice;
-        }
-        if (!Utils::isUnset($request->noticeToped)) {
-            @$body['noticeToped'] = $request->noticeToped;
-        }
-        if (!Utils::isUnset($request->openGroupSetId)) {
-            @$body['openGroupSetId'] = $request->openGroupSetId;
-        }
-        if (!Utils::isUnset($request->ownerUserId)) {
-            @$body['ownerUserId'] = $request->ownerUserId;
-        }
-        if (!Utils::isUnset($request->templateId)) {
-            @$body['templateId'] = $request->templateId;
-        }
-        if (!Utils::isUnset($request->welcome)) {
-            @$body['welcome'] = $request->welcome;
+        if (!Utils::isUnset($request->tenant)) {
+            $body['tenant'] = $request->tenant;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
+        $params = new Params([
+            'action'      => 'UpdateRelationMetaField',
+            'version'     => 'crm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/crm/relations/metas/fields',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
 
-        return UpdateGroupSetResponse::fromMap($this->doROARequest('UpdateGroupSet', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/groupSets/set', 'boolean', $req, $runtime));
+        return UpdateRelationMetaFieldResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -2631,43 +3230,5 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateRelationMetaFieldHeaders([]);
 
         return $this->updateRelationMetaFieldWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param UpdateRelationMetaFieldRequest $request
-     * @param UpdateRelationMetaFieldHeaders $headers
-     * @param RuntimeOptions                 $runtime
-     *
-     * @return UpdateRelationMetaFieldResponse
-     */
-    public function updateRelationMetaFieldWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $body = [];
-        if (!Utils::isUnset($request->fieldDTOList)) {
-            @$body['fieldDTOList'] = $request->fieldDTOList;
-        }
-        if (!Utils::isUnset($request->operatorUserId)) {
-            @$body['operatorUserId'] = $request->operatorUserId;
-        }
-        if (!Utils::isUnset($request->relationType)) {
-            @$body['relationType'] = $request->relationType;
-        }
-        if (!Utils::isUnset($request->tenant)) {
-            @$body['tenant'] = $request->tenant;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
-        ]);
-
-        return UpdateRelationMetaFieldResponse::fromMap($this->doROARequest('UpdateRelationMetaField', 'crm_1.0', 'HTTP', 'PUT', 'AK', '/v1.0/crm/relations/metas/fields', 'json', $req, $runtime));
     }
 }

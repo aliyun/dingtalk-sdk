@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetAbnormalOperationResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * IN_DATE:列入日期
+     * @example [     {       "DEPARTMENT": "xx",       "IN_REASON": "xx",       "OUT_DATE": "2006-12-07",       "OUT_DEPARTMENT": "xx",       "IN_DATE": "2006-12-07",       "OUT_REASON": "xx"     }   ]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

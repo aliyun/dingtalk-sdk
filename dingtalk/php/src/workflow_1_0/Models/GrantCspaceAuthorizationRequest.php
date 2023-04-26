@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class GrantCspaceAuthorizationRequest extends Model
 {
     /**
-     * @description 权限有效时间，单位为秒。
+     * @example 3600
      *
      * @var int
      */
     public $durationSeconds;
 
     /**
-     * @description 审批控件 id。
+     * @example 163xxxx658
      *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 权限类型。
+     * @example add
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 用户 id。
+     * @example 26652461xxxx5992
      *
      * @var string
      */

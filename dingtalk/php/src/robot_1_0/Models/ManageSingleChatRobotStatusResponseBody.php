@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class ManageSingleChatRobotStatusResponseBody extends Model
 {
     /**
-     * @description 是否成功更新机器人状态
-     *
      * @var bool
      */
     public $result;

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryUserFaceRequest extends Model
 {
     /**
-     * @description 人脸id
+     * @example 30001
      *
      * @var string
      */
     public $faceId;
 
     /**
-     * @description 设备序列号
+     * @example sn123
      *
      * @var string
      */

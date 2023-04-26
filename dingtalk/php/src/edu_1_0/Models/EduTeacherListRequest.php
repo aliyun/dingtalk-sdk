@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class EduTeacherListRequest extends Model
 {
     /**
-     * @description 页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 10
      *
      * @var int
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ExternalQueryExternalOrgsResponseBody extends Model
 {
     /**
-     * @description 返回项目组
-     *
      * @var result[]
      */
     public $result;

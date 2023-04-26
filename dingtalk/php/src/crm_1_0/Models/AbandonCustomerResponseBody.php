@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class AbandonCustomerResponseBody extends Model
 {
     /**
-     * @description 成功退回公海的客户实例 id 数组
-     *
      * @var string[]
      */
     public $instanceIdList;

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QueryHospitalRolesResponseBody extends Model
 {
     /**
-     * @description 角色列表
-     *
      * @var content[]
      */
     public $content;

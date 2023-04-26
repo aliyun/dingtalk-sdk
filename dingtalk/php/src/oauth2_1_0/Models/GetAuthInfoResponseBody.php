@@ -12,22 +12,16 @@ use AlibabaCloud\Tea\Model;
 class GetAuthInfoResponseBody extends Model
 {
     /**
-     * @description 授权应用信息
-     *
      * @var authAppInfo
      */
     public $authAppInfo;
 
     /**
-     * @description 应用企业信息
-     *
      * @var authCorpInfo
      */
     public $authCorpInfo;
 
     /**
-     * @description 授权用户信息
-     *
      * @var authUserInfo
      */
     public $authUserInfo;

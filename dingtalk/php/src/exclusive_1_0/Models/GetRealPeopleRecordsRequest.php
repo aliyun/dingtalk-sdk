@@ -9,57 +9,55 @@ use AlibabaCloud\Tea\Model;
 class GetRealPeopleRecordsRequest extends Model
 {
     /**
-     * @description 应用唯一标识
+     * @example 123333
      *
      * @var int
      */
     public $agentId;
 
     /**
-     * @description 记录开始时间(毫秒时间戳)
+     * @example 1667000000
      *
      * @var int
      */
     public $fromTime;
 
     /**
-     * @description 一页最大值（最大50）
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 查询数据的起始位置，0表示从头开始。
+     * @example 0
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 实人认证结果 1-成功 2-失败
+     * @example 1
      *
      * @var int
      */
     public $personIdentification;
 
     /**
-     * @description 1. 姓名匹配阶段失败 2. 认证阶段失败 3. 实人流程阶段失败 4. 协议签署阶段失败 5. 人脸录入阶段失败 6. 人脸录入阶段用户主动取消 7. 人脸录入阶段成功 8. 人脸识别阶段失败 9. 人脸识别阶段主动取消 10. 人脸识别阶段成功  11.去实人场景
+     * @example 1
      *
      * @var int
      */
     public $scene;
 
     /**
-     * @description 记录结束时间(毫秒时间戳)
+     * @example 1669000000
      *
      * @var int
      */
     public $toTime;
 
     /**
-     * @description 员工userIds
-     *
      * @var string[]
      */
     public $userIds;

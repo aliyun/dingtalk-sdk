@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class CollegeListStudentInfoResponseBody extends Model
 {
     /**
-     * @description 学生信息列表
-     *
      * @var studentInfoSimpleList[]
      */
     public $studentInfoSimpleList;
 
     /**
-     * @description 条目总数
+     * @example 10
      *
      * @var int
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListJoinOrgInfoResponseBody extends Model
 {
     /**
-     * @description 组织信息列表
-     *
      * @var orgInfoList[]
      */
     public $orgInfoList;

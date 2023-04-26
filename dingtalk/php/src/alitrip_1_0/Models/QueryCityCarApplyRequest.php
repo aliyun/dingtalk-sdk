@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class QueryCityCarApplyRequest extends Model
 {
     /**
-     * @description 第三方企业ID
+     * @example corpx
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 审批单创建时间小于值
+     * @example 2021-03-18 20:26:56
      *
      * @var string
      */
     public $createdEndAt;
 
     /**
-     * @description 审批单创建时间大于等于值
+     * @example 2021-03-18 20:26:56
      *
      * @var string
      */
     public $createdStartAt;
 
     /**
-     * @description 页码，要求大于等于1，默认1
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页数据量，要求大于等于1，默认20
+     * @example 20
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 三方审批单ID
+     * @example apply1
      *
      * @var string
      */
     public $thirdPartApplyId;
 
     /**
-     * @description 第三方员工ID
+     * @example user1
      *
      * @var string
      */

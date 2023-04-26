@@ -15,14 +15,14 @@ class CreateCustomDeptRequest extends Model
     public $customDept;
 
     /**
-     * @description 钉钉管理员员工ID
+     * @example 12345
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 上级部门ID（type为custom_campus时，必须为-7）
+     * @example 1233
      *
      * @var int
      */

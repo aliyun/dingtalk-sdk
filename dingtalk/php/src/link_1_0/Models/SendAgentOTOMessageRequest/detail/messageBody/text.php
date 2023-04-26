@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class text extends Model
 {
     /**
-     * @description 消息内容，建议500字符以内。
+     * @example 你好，欢迎使用服务窗。
      *
      * @var string
      */

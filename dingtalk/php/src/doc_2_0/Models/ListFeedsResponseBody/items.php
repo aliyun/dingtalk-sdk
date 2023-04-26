@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class items extends Model
 {
     /**
-     * @description 动态内容。
+     * @example "{}"
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 动态时间。
+     * @example 12340000
      *
      * @var int
      */
     public $time;
 
     /**
-     * @description 动态类型。
+     * @example 1
      *
      * @var int
      */

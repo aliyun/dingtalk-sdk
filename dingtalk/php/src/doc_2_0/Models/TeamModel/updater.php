@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class updater extends Model
 {
     /**
-     * @description 名字
+     * @example 测试
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description unionId
+     * @example abcd
      *
      * @var string
      */

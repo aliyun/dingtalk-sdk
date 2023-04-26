@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class categoryList extends Model
 {
     /**
-     * @description 分类编码
+     * @example template_category
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 分类名称
+     * @example 模板分类
      *
      * @var string
      */

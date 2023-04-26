@@ -9,70 +9,64 @@ use AlibabaCloud\Tea\Model;
 class CreateWorkTimeRequest extends Model
 {
     /**
-     * @description 结束时间
+     * @example 2022-09-05
      *
      * @var string
      */
     public $endDate;
 
     /**
-     * @description 执行者userid
+     * @example 123456
      *
      * @var string
      */
     public $executorId;
 
     /**
-     * @description 是否包含节假日
-     *
      * @var bool
      */
     public $includesHolidays;
 
     /**
-     * @description 是否连续
-     *
      * @var bool
      */
     public $isDuration;
 
     /**
-     * @description 对象 ID，比如 任务 ID
+     * @example 63186e54e07f18003fea6b90
      *
      * @var string
      */
     public $objectId;
 
     /**
-     * @description 对象类型，默认为 task
+     * @example task
      *
      * @var string
      */
     public $objectType;
 
     /**
-     * @description 开始时间
+     * @example 2022-09-05
      *
      * @var string
      */
     public $startDate;
 
     /**
-     * @description 工时所属人员userid
+     * @example 123456
      *
      * @var string
      */
     public $submitterId;
 
     /**
-     * @description 实际工时数（单位毫秒，1小时即为3600000）
-     *
      * @var int
      */
     public $workTime;
 
     /**
-     * @description 接口校验类型，当前默认organization
+     * @example organization
      *
      * @var string
      */

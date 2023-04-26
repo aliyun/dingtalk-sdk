@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class GenerateDarkWaterMarkResponseBody extends Model
 {
     /**
-     * @description 返回码
+     * @example 200
      *
      * @var darkWatermarkVOList[]
      */

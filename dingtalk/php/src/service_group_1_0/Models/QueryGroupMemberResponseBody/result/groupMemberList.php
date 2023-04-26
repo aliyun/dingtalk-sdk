@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class groupMemberList extends Model
 {
     /**
-     * @description 头像mediaId
-     *
      * @var string
      */
     public $avatarMediaId;
 
     /**
-     * @description 是否企业员工
-     *
      * @var bool
      */
     public $isUser;
 
     /**
-     * @description 昵称
-     *
      * @var string
      */
     public $nickName;
 
     /**
-     * @description 是否群主
-     *
      * @var bool
      */
     public $owner;
@@ -42,8 +34,6 @@ class groupMemberList extends Model
     public $unionId;
 
     /**
-     * @description 企业员工id
-     *
      * @var string
      */
     public $userId;

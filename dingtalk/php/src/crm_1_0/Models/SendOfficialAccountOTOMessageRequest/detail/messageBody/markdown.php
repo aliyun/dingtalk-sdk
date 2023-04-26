@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class markdown extends Model
 {
     /**
-     * @description markdown格式的消息，建议500字符以内。
-     *
      * @var string
      */
     public $text;
 
     /**
-     * @description 首屏会话透出的展示内容。
-     *
      * @var string
      */
     public $title;

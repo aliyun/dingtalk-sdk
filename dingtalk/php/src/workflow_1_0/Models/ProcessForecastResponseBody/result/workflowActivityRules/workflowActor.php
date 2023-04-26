@@ -10,63 +10,61 @@ use AlibabaCloud\Tea\Model;
 class workflowActor extends Model
 {
     /**
-     * @description 节点激活类型
+     * @example ALL:并行，ONE_BY_ONE:串行
      *
      * @var string
      */
     public $actorActivateType;
 
     /**
-     * @description 节点操作人 key
+     * @example manual_e203_14a3_895a_45ad
      *
      * @var string
      */
     public $actorKey;
 
     /**
-     * @description 节点操作人选择范围
-     *
      * @var actorSelectionRange
      */
     public $actorSelectionRange;
 
     /**
-     * @description 节点操作人选择范围类型
+     * @example allStaff：全公司，approvals：指定成员，labels：角色
      *
      * @var string
      */
     public $actorSelectionType;
 
     /**
-     * @description 节点操作人类型
+     * @example approver:审批人，notifier:抄送人，audit：办理人
      *
      * @var string
      */
     public $actorType;
 
     /**
-     * @description 是否允许多选，还是仅允许选一人
+     * @example true
      *
      * @var bool
      */
     public $allowedMulti;
 
     /**
-     * @description 节点审批方式
+     * @example ONE_BY_ONE：依次审批，AND：会签审批，OR：或签审批
      *
      * @var string
      */
     public $approvalMethod;
 
     /**
-     * @description 节点审批类型
+     * @example MANUAL:人工审批，AUTO_AGREE:自动通过，AUTO_REFUSE:自动拒绝
      *
      * @var string
      */
     public $approvalType;
 
     /**
-     * @description 该审批人节点在发起审批时是否必填
+     * @example true
      *
      * @var bool
      */

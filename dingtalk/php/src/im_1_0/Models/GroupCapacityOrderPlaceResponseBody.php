@@ -9,84 +9,82 @@ use AlibabaCloud\Tea\Model;
 class GroupCapacityOrderPlaceResponseBody extends Model
 {
     /**
-     * @description 实际价格
+     * @example 85000
      *
      * @var int
      */
     public $actualPrice;
 
     /**
-     * @description 当前容量
+     * @example 500
      *
      * @var int
      */
     public $currentCapacity;
 
     /**
-     * @description 当前容量生效至何时
+     * @example 1652669110553
      *
      * @var int
      */
     public $currentEffectUntil;
 
     /**
-     * @description 折扣
+     * @example 85
      *
      * @var int
      */
     public $discount;
 
     /**
-     * @description 扩展信息
-     *
      * @var string[]
      */
     public $extInfo;
 
     /**
-     * @description 标价
+     * @example 10000
      *
      * @var int
      */
     public $markedPrice;
 
     /**
-     * @description 群标识
+     * @example ciddfasvc
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 当前操作人工号
+     * @example 033333
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 订单号
+     * @example 12389023745345500
      *
      * @var string
      */
     public $orderId;
 
     /**
-     * @description 目标容量
+     * @example 10000
      *
      * @var int
      */
     public $targetCapacity;
 
     /**
-     * @description 目标容量生效至何时
+     * @example 1652669110553
      *
      * @var int
      */
     public $targetEffectUntil;
 
     /**
-     * @description 校验令牌
+     * @example 90ji34ontgrefv98u0ijo3q4awefg90rej
      *
      * @var string
      */

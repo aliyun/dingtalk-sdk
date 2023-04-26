@@ -9,50 +9,50 @@ use AlibabaCloud\Tea\Model;
 class ListDentriesRequest extends Model
 {
     /**
-     * @description 分页大小
-     * 50
+     * @example 30
+     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标, 首次拉取不用传
+     * @example next_token
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 排序规则, 升降或降序
-     * DESC
+     * @example DESC
+     *
      * @var string
      */
     public $order;
 
     /**
-     * @description 排序字段
-     * MODIFIED_TIME
+     * @example 2022-01-01T10:00:00Z
+     *
      * @var string
      */
     public $orderBy;
 
     /**
-     * @description 父目录id, 根目录id值为0
+     * @example parent_id
      *
      * @var string
      */
     public $parentId;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 是否获取文件缩略图临时链接
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $withThumbnail;

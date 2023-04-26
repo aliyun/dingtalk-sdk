@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class titleGenRule extends Model
 {
     /**
-     * @description 规则表达式
+     * @example #{originator}#{formName}#{createTime}
      *
      * @var string
      */
     public $express;
 
     /**
-     * @description 规则类型
+     * @example 2
      *
      * @var int
      */

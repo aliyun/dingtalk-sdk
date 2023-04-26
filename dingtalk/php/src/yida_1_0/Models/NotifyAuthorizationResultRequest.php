@@ -59,8 +59,6 @@ class NotifyAuthorizationResultRequest extends Model
     public $instanceName;
 
     /**
-     * @description 阿里云产品code
-     *
      * @var string
      */
     public $produceCode;

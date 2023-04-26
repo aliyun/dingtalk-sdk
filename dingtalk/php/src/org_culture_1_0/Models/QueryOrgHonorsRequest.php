@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryOrgHonorsRequest extends Model
 {
     /**
-     * @description 分页获取数据时，数据的数量，默认为20，最大可传入100
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页获取数据的标记，第一页调用时传0，非第一页传入上次调用本接口返回值中的nextToken
+     * @example 0
      *
      * @var string
      */

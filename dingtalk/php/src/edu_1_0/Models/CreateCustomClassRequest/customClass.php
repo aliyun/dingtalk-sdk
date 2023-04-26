@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class customClass extends Model
 {
     /**
-     * @description 班级名称
+     * @example 2021级培训班
      *
      * @var string
      */

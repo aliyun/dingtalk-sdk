@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class searchSceneConfig extends Model
 {
     /**
-     * @description 是否生效
-     *
      * @var bool
      */
     public $active;

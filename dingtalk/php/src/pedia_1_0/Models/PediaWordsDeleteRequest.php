@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class PediaWordsDeleteRequest extends Model
 {
     /**
-     * @description 当前操作用户编号
+     * @example 2123132
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 当前需要删除的词条主键编号
+     * @example 212112
      *
      * @var int
      */

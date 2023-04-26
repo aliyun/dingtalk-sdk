@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CancelIntegratedTaskResponseBody extends Model
 {
     /**
-     * @description 是否更新成功
-     *
      * @var bool
      */
     public $success;

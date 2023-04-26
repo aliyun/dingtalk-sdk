@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetProcessCodeByNameRequest extends Model
 {
     /**
-     * @description 模板名称
+     * @example abc
      *
      * @var string
      */

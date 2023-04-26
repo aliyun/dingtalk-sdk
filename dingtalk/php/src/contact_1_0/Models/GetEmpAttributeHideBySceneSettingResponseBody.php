@@ -12,92 +12,72 @@ use AlibabaCloud\Tea\Model;
 class GetEmpAttributeHideBySceneSettingResponseBody extends Model
 {
     /**
-     * @description 单聊副标题场景配置，开启时单聊中相关的员工字段不显示
-     *
      * @var chatSubtitleConfig
      */
     public $chatSubtitleConfig;
 
     /**
-     * @description 设置描述信息
+     * @example 描述信息
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 允许查看的部门列表
-     *
      * @var int[]
      */
     public $excludeDeptIds;
 
     /**
-     * @description 允许查看的角色列表
-     *
      * @var int[]
      */
     public $excludeTagIds;
 
     /**
-     * @description 允许查看的员工列表
-     *
      * @var string[]
      */
     public $excludeUserIds;
 
     /**
-     * @description 隐藏字段id列表
-     * job_number：工号
      * @var string[]
      */
     public $hideFields;
 
     /**
-     * @description 设置id
+     * @example 123456
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 设置名称
+     * @example 设置1
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 被隐藏的部门列表
-     *
      * @var int[]
      */
     public $objectDeptIds;
 
     /**
-     * @description 被隐藏的角色列表
-     *
      * @var int[]
      */
     public $objectTagIds;
 
     /**
-     * @description 被隐藏的员工UserId列表
-     *
      * @var string[]
      */
     public $objectUserIds;
 
     /**
-     * @description 用户资料页场景配置，开启时相关的员工字段不在资料页中显示
-     *
      * @var profileSceneConfig
      */
     public $profileSceneConfig;
 
     /**
-     * @description 搜索场景配置，开启时隐藏的字段不在搜索结果中展示，并且不允许根据这些字段搜索到。
-     *
      * @var searchSceneConfig
      */
     public $searchSceneConfig;

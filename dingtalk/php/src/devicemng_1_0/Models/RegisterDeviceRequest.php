@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class RegisterDeviceRequest extends Model
 {
     /**
-     * @description 协助者userId列表
+     * @example manager1,1000,10001
      *
      * @var string
      */
     public $collaborators;
 
     /**
-     * @description 部门id
+     * @example 1
      *
      * @var int
      */
     public $departmentId;
 
     /**
-     * @description 设备描述
+     * @example 生产组1号设备负责生产第一批产品
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 设备标识
+     * @example key_xxxxxxx
      *
      * @var string
      */
     public $deviceKey;
 
     /**
-     * @description 设备名称
+     * @example 生产1组1号机
      *
      * @var string
      */
     public $deviceName;
 
     /**
-     * @description 管理员userId列表
+     * @example manager1,manager2
      *
      * @var string
      */
     public $managers;
 
     /**
-     * @description 创建者userId
+     * @example manager10
      *
      * @var string
      */

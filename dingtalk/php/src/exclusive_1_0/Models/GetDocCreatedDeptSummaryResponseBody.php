@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class GetDocCreatedDeptSummaryResponseBody extends Model
 {
     /**
-     * @description 部门维度用户创建文档数
-     *
      * @var data[]
      */
     public $data;
 
     /**
-     * @description 是否有更多数据
+     * @example false
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下一次请求的分页游标
+     * @example 2
      *
      * @var int
      */

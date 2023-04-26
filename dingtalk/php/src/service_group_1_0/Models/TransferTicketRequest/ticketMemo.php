@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class ticketMemo extends Model
 {
     /**
-     * @description 备注相关的附件
-     *
      * @var attachments[]
      */
     public $attachments;
 
     /**
-     * @description 文字备注
+     * @example 备注
      *
      * @var string
      */

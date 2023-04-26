@@ -9,63 +9,63 @@ use AlibabaCloud\Tea\Model;
 class userDetailsList extends Model
 {
     /**
-     * @description 行为结束时间
+     * @example 2021-11-26 10:09:37
      *
      * @var string
      */
     public $actionEndTime;
 
     /**
-     * @description 系统唯一id，生成格式：userId+日期20211126
+     * @example 12320211126
      *
      * @var string
      */
     public $actionId;
 
     /**
-     * @description 行为起始时间
+     * @example 2021-11-26 10:09:37
      *
      * @var string
      */
     public $actionStartTime;
 
     /**
-     * @description 碳能量行为类型，需要联系管理员添加
+     * @example VIDEO
      *
      * @var string
      */
     public $actionType;
 
     /**
-     * @description 碳能量数据
+     * @example 3.21
      *
      * @var string
      */
     public $carbonAmount;
 
     /**
-     * @description 钉钉组织id
+     * @example ding12344
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 钉钉部门id
+     * @example 111
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 钉钉用户id
+     * @example 123
      *
      * @var string
      */
     public $userId;
 
     /**
-     * @description 版本，默认为1
+     * @example 1
      *
      * @var int
      */

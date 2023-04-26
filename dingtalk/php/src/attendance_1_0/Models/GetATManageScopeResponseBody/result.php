@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 是否有更多数据。  true：有  false：没有
+     * @example false
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 可见范围。boss/主管理员/管理范围包含根部门的管理员：all ，管理员/考勤组负责人：partial，无权限：none
+     * @example partial
      *
      * @var string
      */
     public $manageScope;
 
     /**
-     * @description 员工userid。只有manageScope为partial返回数据。
-     *
      * @var string[]
      */
     public $userIds;

@@ -9,70 +9,66 @@ use AlibabaCloud\Tea\Model;
 class waterMarkTemplateModels extends Model
 {
     /**
-     * @description 是否可以修改。
-     *
      * @var bool
      */
     public $canModify;
 
     /**
-     * @description 模板的表单Code。
+     * @example PROC-292988B1-5064-4A42-9389-xxxxx
      *
      * @var string
      */
     public $formCode;
 
     /**
-     * @description 模板的预览图片。
+     * @example https://xx.xx.png
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 模板的布局信息。
+     * @example {     \"widgetName\":\"dd_watermark_xxx_xxx\",     \"miniAppId\":\"50000xxx\",     \"templateRule\":{         \"maxItems\":6,         \"canEditColor\":true,         \"canEditTitle\":true,         \"items\":[          ]     },     \"layoutDesignId\":\"industry_xx_xx\",     \"width\":\"111\" }
      *
      * @var string
      */
     public $layoutDesign;
 
     /**
-     * @description 模板的场景码。
+     * @example water_mark_checkin_open
      *
      * @var string
      */
     public $sceneCode;
 
     /**
-     * @description 模板的内容。
+     * @example {     \"items\":[         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"enableModifyPlace\",                 \"id\":\"enableModifyPlace-undefined\",                 \"value\":\"true\"             }         },         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"modifyPlaceDistance\",                 \"id\":\"modifyPlaceDistance-undefined\",                 \"value\":200             }         },         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"title\",                 \"id\":\"title-undefined\",                 \"value\":\"wofu1\"             }         },         {             \"componentName\":\"HiddenField\",             \"props\":{                 \"bizAlias\":\"titleBgColor\",                 \"id\":\"titleBgColor-undefined\",                 \"value\":\"#0089FF\"             }         }     ] }
      *
      * @var string
      */
     public $schemaContent;
 
     /**
-     * @description suiteKey。
+     * @example suiteKey
      *
      * @var string
      */
     public $suiteKey;
 
     /**
-     * @description 是否系统模板。
-     *
      * @var bool
      */
     public $systemTemplate;
 
     /**
-     * @description 模板的标题。
+     * @example 标题
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 模板的水印ID。
+     * @example PROC-292988B1-5064-4A42-9389-xxxxx
      *
      * @var string
      */

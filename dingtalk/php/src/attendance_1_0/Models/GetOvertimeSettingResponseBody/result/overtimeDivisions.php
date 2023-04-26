@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class overtimeDivisions extends Model
 {
     /**
-     * @description 后一日类型
-     *
      * @var string
      */
     public $nextDayType;
 
     /**
-     * @description 前一日类型
-     *
      * @var string
      */
     public $previousDayType;
 
     /**
-     * @description 分割时间点
-     *
      * @var string
      */
     public $timeSplitPoint;

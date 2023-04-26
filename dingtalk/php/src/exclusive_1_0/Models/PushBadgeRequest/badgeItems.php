@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class badgeItems extends Model
 {
     /**
-     * @description 推送的内容（目前仅限数字）
+     * @example 1
      *
      * @var string
      */
     public $pushValue;
 
     /**
-     * @description 员工ID。
+     * @example 12345
      *
      * @var string
      */

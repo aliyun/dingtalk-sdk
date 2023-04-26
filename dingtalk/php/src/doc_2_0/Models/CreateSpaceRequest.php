@@ -10,49 +10,47 @@ use AlibabaCloud\Tea\Model;
 class CreateSpaceRequest extends Model
 {
     /**
-     * @description 知识库简介。
-     * 最大长度50。
+     * @example 这里是知识库的简介
+     *
      * @var string
      */
     public $description;
 
     /**
-     * @description 知识库图标。
+     * @example https://img.alicdn.com/imgextra/i1/O1***.png
      *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 知识库名称。
-     * 最大长度50。
+     * @example 测试知识库
+     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 操作人unionId。
+     * @example YEp3JcM******UIbhwiE
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 知识库分组id。只有选择了所属小组的情况下，才需要设置知识库分组。
+     * @example l6gYG9****mo9Z
      *
      * @var string
      */
     public $sectionId;
 
     /**
-     * @description 公开范围。
-     *
      * @var shareScope
      */
     public $shareScope;
 
     /**
-     * @description 所属小组id。
+     * @example 5YRB***GDAr
      *
      * @var string
      */

@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class skipTimeByFrames extends Model
 {
     /**
-     * @description 开始时间，格式为"HH:mm"
-     *
      * @var string
      */
     public $startTime;
 
     /**
-     * @description 结束时间，格式为"HH:mm"
-     *
      * @var string
      */
     public $endTime;
 
     /**
-     * @description 是否生效
-     *
      * @var bool
      */
     public $valid;

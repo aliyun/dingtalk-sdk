@@ -9,36 +9,26 @@ use AlibabaCloud\Tea\Model;
 class ResaleOrderRequest extends Model
 {
     /**
-     * @description 下单时间
-     *
      * @var float
      */
     public $orderCreateTime;
 
     /**
-     * @description isv方的订单Id（用于幂等，请保证唯一性）
-     *
      * @var string
      */
     public $orderId;
 
     /**
-     * @description 购买数量（电子合同份数）
-     *
      * @var float
      */
     public $quantity;
 
     /**
-     * @description 合同生效起始时间
-     *
      * @var float
      */
     public $serviceStartTime;
 
     /**
-     * @description 合同失效截止日期，默认有效时间一年
-     *
      * @var float
      */
     public $serviceStopTime;

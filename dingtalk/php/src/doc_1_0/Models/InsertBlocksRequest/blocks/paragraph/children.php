@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class children extends Model
 {
     /**
-     * @description 元素类型
-     *
      * @var string
      */
     public $elementType;
 
     /**
-     * @description 文本元素
-     *
      * @var text
      */
     public $text;

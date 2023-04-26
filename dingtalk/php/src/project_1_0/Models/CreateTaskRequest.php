@@ -10,84 +10,82 @@ use AlibabaCloud\Tea\Model;
 class CreateTaskRequest extends Model
 {
     /**
-     * @description 任务标题
+     * @example 任务标题
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 自定义字段列表
-     *
      * @var customfields[]
      */
     public $customfields;
 
     /**
-     * @description 任务截止时间
+     * @example 2022-06-13T07:36:50.318Z
      *
      * @var string
      */
     public $dueDate;
 
     /**
-     * @description 执行者userId
+     * @example 173xxxx
      *
      * @var string
      */
     public $executorId;
 
     /**
-     * @description 任务备注
+     * @example 我是一条任务备注
      *
      * @var string
      */
     public $note;
 
     /**
-     * @description 父任务id。
+     * @example 62c25e3b376exxxxxx
      *
      * @var string
      */
     public $parentTaskId;
 
     /**
-     * @description 任务优先级
+     * @example -10
      *
      * @var int
      */
     public $priority;
 
     /**
-     * @description 项目id
+     * @example 62c25e3b376exxxxxx
      *
      * @var string
      */
     public $projectId;
 
     /**
-     * @description 任务类型id，任务类型比如：缺陷、需求。。
+     * @example 62c25e3b376exxxxxx
      *
      * @var string
      */
     public $scenariofieldconfigId;
 
     /**
-     * @description 任务列id。
+     * @example 62c25e3b376exxxxxx
      *
      * @var string
      */
     public $stageId;
 
     /**
-     * @description 任务开始时间。
+     * @example 2022-06-13T07:36:50.318Z
      *
      * @var string
      */
     public $startDate;
 
     /**
-     * @description 任务可见性,members,involves。
+     * @example members
      *
      * @var string
      */

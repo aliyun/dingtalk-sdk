@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class queryGroup extends Model
 {
     /**
-     * @description 群标签
-     *
      * @var string[]
      */
     public $groupTagNames;
 
     /**
-     * @description 活跃日期筛选类型，ACTIVE=活跃      NOTACTIVE=不活跃
-     *
      * @var string
      */
     public $lastActiveDateFilterType;
 
     /**
-     * @description 最近活跃时间的结束时间
-     *
      * @var string
      */
     public $lastActiveTimeEnd;
 
     /**
-     * @description 最近活跃时间的开始时间
-     *
      * @var string
      */
     public $lastActiveTimeStart;
 
     /**
-     * @description 精准圈选-群ID集合
-     *
      * @var string[]
      */
     public $openConversationIds;
 
     /**
-     * @description 开放群组ID
-     *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 群发圈选类型 1. AIMED 精准圈选 2. MULTI_CONDITIONS 多条件圈选
-     *
      * @var string
      */
     public $queryType;

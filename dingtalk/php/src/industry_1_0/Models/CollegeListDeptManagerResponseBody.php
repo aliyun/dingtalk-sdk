@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class CollegeListDeptManagerResponseBody extends Model
 {
     /**
-     * @description 负责人信息列表
-     *
      * @var managerInfoSimpleList[]
      */
     public $managerInfoSimpleList;
 
     /**
-     * @description 数据总条目数
+     * @example 1000
      *
      * @var int
      */

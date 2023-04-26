@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class results extends Model
 {
     /**
-     * @description 钉外账号在业务系统内的唯一标识。
-     *
      * @var string
      */
     public $appUserId;
 
     /**
-     * @description 失败原因。
-     *
      * @var string
      */
     public $message;
 
     /**
-     * @description 该钉外账号被哪个钉内账号负责。
-     *
      * @var string
      */
     public $userId;

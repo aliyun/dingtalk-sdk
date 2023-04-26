@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class viewEntityFieldVOList extends Model
 {
     /**
-     * @description 字段code
+     * @example performanceValue
      *
      * @var string
      */
     public $fieldCode;
 
     /**
-     * @description 字段值
-     *
      * @var fieldDataVO
      */
     public $fieldDataVO;
 
     /**
-     * @description 字段名称
+     * @example 绩效等级
      *
      * @var string
      */
     public $fieldName;
 
     /**
-     * @description 字段类型
+     * @example 1
      *
      * @var string
      */

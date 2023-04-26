@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class results extends Model
 {
     /**
-     * @description 数据唯一编号
+     * @example abcd_efgh
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 错误码
+     * @example success
      *
      * @var string
      */
     public $errorCode;
 
     /**
-     * @description 错误信息
+     * @example 成功
      *
      * @var string
      */
     public $errorMsg;
 
     /**
-     * @description 是否成功
+     * @example true
      *
      * @var bool
      */

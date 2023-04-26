@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SolutionTaskSaveResponseBody extends Model
 {
     /**
-     * @description 数据是否保存成功
+     * @example true
      *
      * @var bool
      */

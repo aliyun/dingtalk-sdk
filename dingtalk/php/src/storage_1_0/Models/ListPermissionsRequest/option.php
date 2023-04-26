@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class option extends Model
 {
     /**
-     * @description 角色过滤列表
-     * 30
      * @var string[]
      */
     public $filterRoleIds;
 
     /**
-     * @description 分页大小
-     * 50
+     * @example 30
+     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标
+     * @example next_token
      *
      * @var string
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateUserOwnnessResponseBody extends Model
 {
     /**
-     * @description 业务标识id
+     * @example 123456
      *
      * @var string
      */

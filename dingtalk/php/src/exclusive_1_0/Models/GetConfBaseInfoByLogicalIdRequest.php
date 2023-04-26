@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetConfBaseInfoByLogicalIdRequest extends Model
 {
     /**
-     * @description 会议id
-     *
      * @var string
      */
     public $logicalConferenceId;

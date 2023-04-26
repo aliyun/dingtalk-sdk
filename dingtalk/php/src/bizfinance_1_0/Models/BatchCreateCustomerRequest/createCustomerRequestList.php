@@ -9,70 +9,70 @@ use AlibabaCloud\Tea\Model;
 class createCustomerRequestList extends Model
 {
     /**
-     * @description 客户描述
+     * @example abc
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 开票人邮箱
+     * @example www.abc.com
      *
      * @var string
      */
     public $drawerEmail;
 
     /**
-     * @description 开票人手机号
+     * @example 1234567890
      *
      * @var string
      */
     public $drawerTelephone;
 
     /**
-     * @description 客户名字
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 购方账户
+     * @example abc
      *
      * @var string
      */
     public $purchaserAccount;
 
     /**
-     * @description 购房地址
+     * @example 杭州市
      *
      * @var string
      */
     public $purchaserAddress;
 
     /**
-     * @description 购方银行
+     * @example 建行
      *
      * @var string
      */
     public $purchaserBankName;
 
     /**
-     * @description 购方名字
+     * @example 李四
      *
      * @var string
      */
     public $purchaserName;
 
     /**
-     * @description 购方税号
+     * @example 1333
      *
      * @var string
      */
     public $purchaserTaxNo;
 
     /**
-     * @description 购方电话
+     * @example 13333333333
      *
      * @var string
      */

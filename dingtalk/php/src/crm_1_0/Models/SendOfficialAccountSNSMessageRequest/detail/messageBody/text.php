@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class text extends Model
 {
     /**
-     * @description 消息内容，建议500字符以内。
-     *
      * @var string
      */
     public $content;

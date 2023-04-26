@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class roleMemberList extends Model
 {
     /**
-     * @description 角色值
+     * @example 可以是员工 uid，可以是部门 ID 等，根据 type 确定
      *
      * @var string
      */
     public $memberId;
 
     /**
-     * @description 角色名
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 角色类型
+     * @example user：组织成员   dept：部门   tag：标签  org：组织     org_res_admin：组织管理员
      *
      * @var string
      */
     public $type;
 
     /**
-     * @description 角色的userId
+     * @example manager1234
      *
      * @var string
      */

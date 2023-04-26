@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class AddResidentMemberRequest extends Model
 {
     /**
-     * @description 人员信息
+     * @example A栋
      *
      * @var residentAddInfo
      */

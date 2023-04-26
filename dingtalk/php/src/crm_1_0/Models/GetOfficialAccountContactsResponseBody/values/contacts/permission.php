@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class permission extends Model
 {
     /**
-     * @description 负责人用户ID列表
-     *
      * @var string[]
      */
     public $ownerStaffIds;
 
     /**
-     * @description 协同人用户ID列表
-     *
      * @var string[]
      */
     public $participantStaffIds;

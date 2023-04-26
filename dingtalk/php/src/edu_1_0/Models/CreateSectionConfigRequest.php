@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class CreateSectionConfigRequest extends Model
 {
     /**
-     * @description 扩展参数
+     * @example 扩展参数
      *
      * @var string
      */
     public $ext;
 
     /**
-     * @description 课表模板信息
-     *
      * @var sectionConfigs[]
      */
     public $sectionConfigs;
 
     /**
-     * @description 操作人的userid。
+     * @example manager235
      *
      * @var string
      */

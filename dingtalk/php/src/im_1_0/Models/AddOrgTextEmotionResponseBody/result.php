@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 表情Id，用于唯一标识每个企业文字表情
+     * @example corp_123456
      *
      * @var string
      */

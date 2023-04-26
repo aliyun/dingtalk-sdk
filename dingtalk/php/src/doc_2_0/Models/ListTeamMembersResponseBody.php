@@ -10,14 +10,12 @@ use AlibabaCloud\Tea\Model;
 class ListTeamMembersResponseBody extends Model
 {
     /**
-     * @description 小组成员列表。
-     *
      * @var members[]
      */
     public $members;
 
     /**
-     * @description 小组名称。
+     * @example 测试小组名称
      *
      * @var string
      */

@@ -9,63 +9,57 @@ use AlibabaCloud\Tea\Model;
 class GetSearchTabResponseBody extends Model
 {
     /**
-     * @description 暗黑模式下，数据源图标，非必填，不填则使用默认图标
-     *
      * @var string
      */
     public $darkIcon;
 
     /**
-     * @description 创建时间
+     * @example 2021-09-17T19:43Z
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间
+     * @example 2021-09-17T19:43Z
      *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 数据源图标，非必填，不填则使用默认图标
-     *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 数据源名称
+     * @example 专辑
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 数据源优先级，数值越小优先级越高
+     * @example 1
      *
      * @var int
      */
     public $priority;
 
     /**
-     * @description 数据来源,非必填,默认来源为钉钉搜索内部引擎
-     *
      * @var string
      */
     public $source;
 
     /**
-     * @description 数据源状态，1表示上线，0表示下线
+     * @example 0
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 数据源的id,范围为3000-4000
+     * @example 3333
      *
      * @var int
      */

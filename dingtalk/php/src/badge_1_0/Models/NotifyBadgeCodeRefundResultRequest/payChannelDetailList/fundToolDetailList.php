@@ -9,42 +9,40 @@ use AlibabaCloud\Tea\Model;
 class fundToolDetailList extends Model
 {
     /**
-     * @description 金额
+     * @example 1.00
      *
      * @var string
      */
     public $amount;
 
     /**
-     * @description 扩展信息
-     *
      * @var string
      */
     public $extInfo;
 
     /**
-     * @description 资金工具名称
+     * @example 余额
      *
      * @var string
      */
     public $fundToolName;
 
     /**
-     * @description 创建时间
+     * @example 2021-05-31 11:11:11
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 完成时间
+     * @example 2021-05-31 11:11:11
      *
      * @var string
      */
     public $gmtFinish;
 
     /**
-     * @description 是否是优惠工具
+     * @example true
      *
      * @var bool
      */

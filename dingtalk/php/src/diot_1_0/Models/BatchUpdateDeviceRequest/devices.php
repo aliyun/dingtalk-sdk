@@ -10,42 +10,38 @@ use AlibabaCloud\Tea\Model;
 class devices extends Model
 {
     /**
-     * @description 设备ID。
+     * @example 002
      *
      * @var string
      */
     public $deviceId;
 
     /**
-     * @description 设备名称。
+     * @example 摄像头002
      *
      * @var string
      */
     public $deviceName;
 
     /**
-     * @description 设备状态 0:在线 1:离线
+     * @example 0
      *
      * @var int
      */
     public $deviceStatus;
 
     /**
-     * @description 第三方平台定制参数，企业内部系统忽略。
-     *
      * @var mixed[]
      */
     public $extraData;
 
     /**
-     * @description 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
-     *
      * @var liveUrls
      */
     public $liveUrls;
 
     /**
-     * @description 设备地址。
+     * @example 社区南门
      *
      * @var string
      */

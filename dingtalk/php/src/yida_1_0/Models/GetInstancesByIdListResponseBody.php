@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetInstancesByIdListResponseBody extends Model
 {
     /**
-     * @description 流程实例列表
-     *
      * @var result[]
      */
     public $result;

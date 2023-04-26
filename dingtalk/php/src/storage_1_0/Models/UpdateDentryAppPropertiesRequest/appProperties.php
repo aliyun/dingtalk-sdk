@@ -9,22 +9,22 @@ use AlibabaCloud\Tea\Model;
 class appProperties extends Model
 {
     /**
-     * @description 属性名称 该属性名称在当前app下需要保证唯一，不同app间同名属性互不影响
+     * @example property_name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 属性值
+     * @example property_value
      *
      * @var string
      */
     public $value;
 
     /**
-     * @description 属性可见范围
-     * PRIVATE: 该属性仅其归属App可见
+     * @example PRIVATE
+     *
      * @var string
      */
     public $visibility;

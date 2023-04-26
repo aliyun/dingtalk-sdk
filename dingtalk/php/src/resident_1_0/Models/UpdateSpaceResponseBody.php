@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateSpaceResponseBody extends Model
 {
     /**
-     * @description 是否成功
+     * @example true
      *
      * @var bool
      */

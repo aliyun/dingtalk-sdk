@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class FileStorageUpdateStorageResponseBody extends Model
 {
     /**
-     * @description 密匙ID
+     * @example sampleKeyId1234
      *
      * @var string
      */
     public $accessKeyId;
 
     /**
-     * @description OSS链接
+     * @example https://oss-cn-test.aliyuncs.com\
      *
      * @var string
      */

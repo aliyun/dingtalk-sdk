@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description api 签名密钥
-     *
      * @var string
      */
     public $apiSecret;
 
     /**
-     * @description ISV 接受动态卡片点击的回调地址
-     *
      * @var string
      */
     public $callbackUrl;

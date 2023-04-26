@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class CreateBatchTradeOrderResponseBody extends Model
 {
     /**
-     * @description 钉钉批次单号
-     *
      * @var string
      */
     public $orderNo;
 
     /**
-     * @description 批次订单状态
-     *
      * @var string
      */
     public $orderStatus;
 
     /**
-     * @description 商户批次号
-     *
      * @var string
      */
     public $outBatchNo;

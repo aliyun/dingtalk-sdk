@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 组织内的观看用户列表
-     *
      * @var orgUsesList[]
      */
     public $orgUsesList;
 
     /**
-     * @description 组织外的观看用户列表
-     *
      * @var outOrgUserList[]
      */
     public $outOrgUserList;

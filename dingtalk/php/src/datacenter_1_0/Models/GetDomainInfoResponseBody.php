@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetDomainInfoResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * CheckDate:备案日期
+     * @example [{ "EntName":"企业名称" "Number":"备案号" "Domain":"域名" "SiteName":"网站名称" "HomeUrl":"网站首页链接" "CheckDate":"备案日期" }]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

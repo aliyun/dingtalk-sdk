@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetConversationUrlResponseBody extends Model
 {
     /**
-     * @description ToB会话地址
-     *
      * @var string
      */
     public $url;

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CreateUniversityCourseGroupResponseBody extends Model
 {
     /**
-     * @description 课程组信息
-     *
      * @var courseGroupInfo
      */
     public $courseGroupInfo;

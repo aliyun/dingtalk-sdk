@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryWithholdingOrderRequest extends Model
 {
     /**
-     * @description 外部订单流水号
+     * @example 202100001
      *
      * @var string
      */

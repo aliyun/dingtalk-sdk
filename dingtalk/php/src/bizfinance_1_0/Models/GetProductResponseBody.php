@@ -9,57 +9,55 @@ use AlibabaCloud\Tea\Model;
 class GetProductResponseBody extends Model
 {
     /**
-     * @description Id of the request
+     * @example PROD-xxx
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 创建时间
+     * @example 1634786828686
      *
      * @var int
      */
     public $createTime;
 
     /**
-     * @description 商品备注
+     * @example 和外部合作
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 商品名称
+     * @example 外包商品
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 规格型号
+     * @example 规格型号
      *
      * @var string
      */
     public $specification;
 
     /**
-     * @description 商品状态
+     * @example valid
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 商品单位
+     * @example 个
      *
      * @var string
      */
     public $unit;
 
     /**
-     * @description 商品用户自定义码
-     *
      * @var string
      */
     public $userDefineCode;

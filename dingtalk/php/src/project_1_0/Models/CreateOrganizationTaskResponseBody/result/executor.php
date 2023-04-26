@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class executor extends Model
 {
     /**
-     * @description 头像地址
+     * @example https://xxxxxxxxxx
      *
      * @var string
      */
     public $avatarUrl;
 
     /**
-     * @description 姓名
+     * @example 鬼斩
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 执行者id
+     * @example 173xxxx
      *
      * @var string
      */

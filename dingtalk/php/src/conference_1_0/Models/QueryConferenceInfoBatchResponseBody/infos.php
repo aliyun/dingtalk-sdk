@@ -10,43 +10,35 @@ use AlibabaCloud\Tea\Model;
 class infos extends Model
 {
     /**
-     * @description 会议iD
-     *
      * @var string
      */
     public $conferenceId;
 
     /**
-     * @description 媒体状态
+     * @example 0-正常，1-麦克风静音，2-摄像头关闭，4-强制全员静音
      *
      * @var int
      */
     public $mediaStatus;
 
     /**
-     * @description 会议开始时间
-     *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 会议状态
+     * @example 0-初始化，1-会议结束，2-会议开始
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 会议名称
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 参会用户列表
-     *
      * @var userList[]
      */
     public $userList;

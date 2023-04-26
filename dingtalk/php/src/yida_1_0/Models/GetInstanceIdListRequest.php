@@ -9,98 +9,98 @@ use AlibabaCloud\Tea\Model;
 class GetInstanceIdListRequest extends Model
 {
     /**
-     * @description 应用ID
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 流程审批结果
+     * @example agree
      *
      * @var string
      */
     public $approvedResult;
 
     /**
-     * @description createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表
+     * @example 2018-01-01
      *
      * @var string
      */
     public $createFromTimeGMT;
 
     /**
-     * @description createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表。
+     * @example 2018-02-01
      *
      * @var string
      */
     public $createToTimeGMT;
 
     /**
-     * @description 表单ID
+     * @example FORM-EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ3
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 实例状态
+     * @example RUNNING
      *
      * @var string
      */
     public $instanceStatus;
 
     /**
-     * @description 语言
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表
+     * @example 2018-01-01
      *
      * @var string
      */
     public $modifiedFromTimeGMT;
 
     /**
-     * @description modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。
+     * @example 2018-02-01
      *
      * @var string
      */
     public $modifiedToTimeGMT;
 
     /**
-     * @description 根据流程发起人工号查询
+     * @example ding123
      *
      * @var string
      */
     public $originatorId;
 
     /**
-     * @description 根据表单内组件值查询
+     * @example {"text_field":"123"}
      *
      * @var string
      */
     public $searchFieldJson;
 
     /**
-     * @description 应用秘钥
+     * @example hexxxx
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 任务ID
+     * @example 2199132092
      *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description 钉钉的userId
+     * @example ding123
      *
      * @var string
      */

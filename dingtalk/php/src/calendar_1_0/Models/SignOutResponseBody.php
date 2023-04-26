@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class SignOutResponseBody extends Model
 {
     /**
-     * @description 签退时间戳
-     *
      * @var int
      */
     public $checkOutTime;

@@ -9,43 +9,37 @@ use AlibabaCloud\Tea\Model;
 class pages extends Model
 {
     /**
-     * @description 是否全公司可见
+     * @example false
      *
      * @var bool
      */
     public $allVisible;
 
     /**
-     * @description 可见部门 ID 铺
-     *
      * @var int[]
      */
     public $deptIds;
 
     /**
-     * @description 页面名称
+     * @example 我的工作台页面
      *
      * @var string
      */
     public $pageName;
 
     /**
-     * @description 页面ID
+     * @example XX-XX-XX
      *
      * @var string
      */
     public $pageUuid;
 
     /**
-     * @description 可见角色列表
-     *
      * @var int[]
      */
     public $roleIds;
 
     /**
-     * @description 可见员工 ID 列表
-     *
      * @var string[]
      */
     public $userids;

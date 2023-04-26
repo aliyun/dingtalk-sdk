@@ -12,71 +12,51 @@ use AlibabaCloud\Tea\Model;
 class GetProcessDefinitionResponseBody extends Model
 {
     /**
-     * @description formUuid
-     *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description originator
-     *
      * @var originator
      */
     public $originator;
 
     /**
-     * @description outResult
-     *
      * @var string
      */
     public $outResult;
 
     /**
-     * @description owners
-     *
      * @var owners[]
      */
     public $owners;
 
     /**
-     * @description processId
-     *
      * @var string
      */
     public $processId;
 
     /**
-     * @description processInstanceId
-     *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description status
-     *
      * @var string
      */
     public $status;
 
     /**
-     * @description tasks
-     *
      * @var tasks[]
      */
     public $tasks;
 
     /**
-     * @description title
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description variables
-     *
      * @var mixed[]
      */
     public $variables;

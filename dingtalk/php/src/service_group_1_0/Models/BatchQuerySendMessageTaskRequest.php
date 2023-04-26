@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class BatchQuerySendMessageTaskRequest extends Model
 {
     /**
-     * @description 是否获取群发任务已读数量，默认false
+     * @example false
      *
      * @var bool
      */
     public $getReadCount;
 
     /**
-     * @description 任务查询结束时间
+     * @example 2022-04-02 00:00:00
      *
      * @var string
      */
     public $gmtCreateEnd;
 
     /**
-     * @description 任务查询开始时间
+     * @example 2022-04-01 00:00:00
      *
      * @var string
      */
     public $gmtCreateStart;
 
     /**
-     * @description 每页条数
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 游标
+     * @example 首页传递空
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 开放群组ID，在服务群-群组- ID信息中获取
+     * @example fwPuycdHiiI
      *
      * @var string
      */
     public $openGroupSetId;
 
     /**
-     * @description 开放团队ID
+     * @example Jciwnfw
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 任务名称
+     * @example 群发任务双11
      *
      * @var string
      */

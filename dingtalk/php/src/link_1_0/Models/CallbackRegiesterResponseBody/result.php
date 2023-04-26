@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 成功注册的api secret
-     *
      * @var string
      */
     public $apiSecret;
 
     /**
-     * @description 成功注册的url
-     *
      * @var string
      */
     public $callbackUrl;

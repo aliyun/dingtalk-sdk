@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description 部门编码
+     * @example G06935
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 描述
+     * @example null
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 部门id
+     * @example 2b1a79e9-7545-437f-94ad-b6ab5561733f
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 部门名称
+     * @example 行政部
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 父级部门id
+     * @example 18f923a7-5a5e-426d-94ae-a55ad1a4b240
      *
      * @var string
      */
     public $parentId;
 
     /**
-     * @description 排序值
+     * @example 1
      *
      * @var int
      */
     public $sortKey;
 
     /**
-     * @description 组织类型。Company=公司，OrganizationUnit=组织单元
+     * @example OrganizationUnit
      *
      * @var string
      */

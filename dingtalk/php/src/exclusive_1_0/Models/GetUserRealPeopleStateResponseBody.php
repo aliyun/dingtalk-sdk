@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetUserRealPeopleStateResponseBody extends Model
 {
     /**
-     * @description data
-     *
      * @var data[]
      */
     public $data;

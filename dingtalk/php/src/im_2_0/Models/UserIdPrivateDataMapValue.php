@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class UserIdPrivateDataMapValue extends Model
 {
     /**
-     * @description 卡片模板内容替换参数，包含普通文本类型和多媒体类型。
-     *
      * @var string[]
      */
     public $cardParamMap;

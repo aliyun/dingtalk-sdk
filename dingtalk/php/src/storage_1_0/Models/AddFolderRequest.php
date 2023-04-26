@@ -10,23 +10,19 @@ use AlibabaCloud\Tea\Model;
 class AddFolderRequest extends Model
 {
     /**
-     * @description 名称(文件名+后缀), 规则：
-     * 1. 头尾不能包含空格，否则会自动去除
-     * 2. 不能包含特殊字符，包括：制表符、*、"、<、>、|
-     * 3. 不能以"."结尾
+     * @example dentry_name
+     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 可选参数
-     *
      * @var option
      */
     public $option;
 
     /**
-     * @description 用户id
+     * @example union_id
      *
      * @var string
      */

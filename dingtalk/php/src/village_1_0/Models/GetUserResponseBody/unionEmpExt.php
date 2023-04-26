@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class unionEmpExt extends Model
 {
     /**
-     * @description 企业id
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 员工id
-     *
      * @var string
      */
     public $staffId;
 
     /**
-     * @description 关联映射关系
-     *
      * @var unionEmpMapList[]
      */
     public $unionEmpMapList;

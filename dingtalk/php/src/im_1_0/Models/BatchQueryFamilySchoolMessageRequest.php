@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class BatchQueryFamilySchoolMessageRequest extends Model
 {
     /**
-     * @description 接收卡片的群的openConversationId
+     * @example cidxxxx
      *
      * @var string
      */
@@ -21,7 +21,7 @@ class BatchQueryFamilySchoolMessageRequest extends Model
     public $openMessageIds;
 
     /**
-     * @description 用户唯一标识
+     * @example xxx
      *
      * @var string
      */

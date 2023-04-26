@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetDataViewRequest extends Model
 {
     /**
-     * @description 数据类型，参考数据类型ID对照表
+     * @example 150
      *
      * @var string
      */
     public $datatype;
 
     /**
-     * @description 数据id
+     * @example 1
      *
      * @var int
      */

@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateStorageModeResponseBody extends Model
 {
     /**
-     * @description 组织id
+     * @example ding66b0e9d003fc91ed35c2f4xxxxxxxxxx
      *
      * @var string
      */

@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class SyncTripOrderResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description 是否成功
+     * @example true
      *
      * @var bool
      */

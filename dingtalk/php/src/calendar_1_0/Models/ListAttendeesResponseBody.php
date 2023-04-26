@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class ListAttendeesResponseBody extends Model
 {
     /**
-     * @description 参与人
-     *
      * @var attendees[]
      */
     public $attendees;
 
     /**
-     * @description 翻页token
-     *
      * @var string
      */
     public $nextToken;

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class BatchGetWorkspacesResponseBody extends Model
 {
     /**
-     * @description workspace信息
-     *
      * @var workspaces[]
      */
     public $workspaces;

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetFlightExceedApplyRequest extends Model
 {
     /**
-     * @description 商旅超标审批单id
+     * @example 1234
      *
      * @var string
      */
     public $applyId;
 
     /**
-     * @description 第三方企业id
+     * @example ding1234
      *
      * @var string
      */

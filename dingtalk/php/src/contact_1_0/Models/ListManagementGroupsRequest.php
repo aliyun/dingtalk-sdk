@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class ListManagementGroupsRequest extends Model
 {
     /**
-     * @description 本次读取的最大数据记录数量
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 开始读取的位置
-     *
      * @var int
      */
     public $nextToken;

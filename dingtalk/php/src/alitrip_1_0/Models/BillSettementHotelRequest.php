@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class BillSettementHotelRequest extends Model
 {
     /**
-     * @description 类目：机酒火车 1：机票； 2：酒店； 4：用车 6：商旅火车票
+     * @example 1
      *
      * @var int
      */
     public $category;
 
     /**
-     * @description 第三方企业
+     * @example corpx
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 页数，从1开始
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页数据量，默认100，最高500
+     * @example 100
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 记账更新结束日期
+     * @example 2021-10-01
      *
      * @var string
      */
     public $periodEnd;
 
     /**
-     * @description 记账更新开始日期
+     * @example 2021-10-01
      *
      * @var string
      */

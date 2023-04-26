@@ -9,85 +9,61 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description activeTime
-     *
      * @var string
      */
     public $activeTimeGMT;
 
     /**
-     * @description activityId
-     *
      * @var string
      */
     public $activityId;
 
     /**
-     * @description actualActionerId
-     *
      * @var string
      */
     public $actualActionerId;
 
     /**
-     * @description createTime
-     *
      * @var string
      */
     public $createTimeGMT;
 
     /**
-     * @description finishTime
-     *
      * @var string
      */
     public $finishTimeGMT;
 
     /**
-     * @description originatorId
-     *
      * @var string
      */
     public $originatorId;
 
     /**
-     * @description processInstanceId
-     *
      * @var string
      */
     public $processInstanceId;
 
     /**
-     * @description status
-     *
      * @var string
      */
     public $status;
 
     /**
-     * @description taskId
-     *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description taskType
-     *
      * @var string
      */
     public $taskType;
 
     /**
-     * @description title
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description titleEn
-     *
      * @var string
      */
     public $titleInEnglish;

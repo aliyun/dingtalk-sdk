@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class HUploadPackageStatusRequest extends Model
 {
     /**
-     * @description 离线包ID
+     * @example 5000000002761167
      *
      * @var string
      */
     public $miniAppId;
 
     /**
-     * @description 上传任务ID
+     * @example xxxx
      *
      * @var string
      */

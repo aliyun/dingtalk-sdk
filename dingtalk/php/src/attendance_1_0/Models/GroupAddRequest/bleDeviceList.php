@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class bleDeviceList extends Model
 {
     /**
-     * @description 设备ID，调用查询员工智能考勤机列表获取。
+     * @example 1311089987
      *
      * @var int
      */

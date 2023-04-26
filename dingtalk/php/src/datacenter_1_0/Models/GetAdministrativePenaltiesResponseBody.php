@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetAdministrativePenaltiesResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * DESCRIPTION:处罚判决书
+     * @example [     {       "DATE_COL": "xx",       "NUMBER": "xx",       "ILLEGAL_TYPE": "xx",       "DEPARTMENT": "xx",       "PUBLIC_DATE": "xx",       "CONTENT": "xx",       "BASED_ON":"xx",       "DESCRIPTION":"xx"      }   ]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

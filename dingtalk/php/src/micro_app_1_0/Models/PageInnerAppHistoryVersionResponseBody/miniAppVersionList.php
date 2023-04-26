@@ -9,49 +9,47 @@ use AlibabaCloud\Tea\Model;
 class miniAppVersionList extends Model
 {
     /**
-     * @description 小程序版本号
+     * @example 0.0.1
      *
      * @var string
      */
     public $appVersion;
 
     /**
-     * @description 小程序版本号id，用于小程序的发布和回滚等操作的唯一标识。
+     * @example 1
      *
      * @var int
      */
     public $appVersionId;
 
     /**
-     * @description 小程序版本类型，0表示开发版本，2表示正式版本，3表示体验版本
+     * @example 0
      *
      * @var int
      */
     public $appVersionType;
 
     /**
-     * @description 小程序版本创建事件，格式:yyyy-MM-dd HH:mm:ss
+     * @example 2023-01-01 00:00:00
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 小程序id
+     * @example 1
      *
      * @var string
      */
     public $miniAppId;
 
     /**
-     * @description 是否支持PC端打开小程序，false表示只支持移动端，true表示既支持移动端又支持PC端
-     *
      * @var bool
      */
     public $miniAppOnPc;
 
     /**
-     * @description 小程序版本号更新时间，格式:yyyy-MM-dd HH:mm:ss
+     * @example 2023-01-01 00:00:00
      *
      * @var string
      */

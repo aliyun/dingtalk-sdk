@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetSupplierRequest extends Model
 {
     /**
-     * @description 供应商code
+     * @example SUP_XXX
      *
      * @var string
      */

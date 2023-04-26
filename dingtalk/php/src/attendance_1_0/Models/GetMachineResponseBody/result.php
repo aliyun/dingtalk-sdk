@@ -10,77 +10,73 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 设备管理员列表
-     *
      * @var string[]
      */
     public $atmManagerList;
 
     /**
-     * @description 设备id (deviceId)
+     * @example 1406333705
      *
      * @var int
      */
     public $devId;
 
     /**
-     * @description 设备id (deviceUid加密之后)
+     * @example 2078053438
      *
      * @var string
      */
     public $deviceId;
 
     /**
-     * @description 设备名称
+     * @example 泱云❄️的体00056
      *
      * @var string
      */
     public $deviceName;
 
     /**
-     * @description 设备sn号
+     * @example 0601IFW201001N000056
      *
      * @var string
      */
     public $deviceSn;
 
     /**
-     * @description 考勤机蓝牙相关设置信息
-     *
      * @var machineBluetoothVO
      */
     public $machineBluetoothVO;
 
     /**
-     * @description 人脸容量
+     * @example 10000
      *
      * @var int
      */
     public $maxFace;
 
     /**
-     * @description 网络状态
+     * @example 4
      *
      * @var string
      */
     public $netStatus;
 
     /**
-     * @description 设备类型名称
+     * @example M1F
      *
      * @var string
      */
     public $productName;
 
     /**
-     * @description 固件版本
+     * @example 1.0.1-R-20200326.1543
      *
      * @var string
      */
     public $productVersion;
 
     /**
-     * @description 音量模式
+     * @example 2
      *
      * @var int
      */

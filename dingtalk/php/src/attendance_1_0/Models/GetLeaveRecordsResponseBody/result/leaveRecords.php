@@ -9,112 +9,112 @@ use AlibabaCloud\Tea\Model;
 class leaveRecords extends Model
 {
     /**
-     * @description 计算类型。
+     * @example add
      *
      * @var string
      */
     public $calType;
 
     /**
-     * @description 额度有效期结束时间或请假结束时间，毫秒级时间戳。
+     * @example 1753851001000
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 记录创建时间。
+     * @example 1653851001000
      *
      * @var int
      */
     public $gmtCreate;
 
     /**
-     * @description 记录修改时间。
+     * @example 1753851001000
      *
      * @var int
      */
     public $gmtModified;
 
     /**
-     * @description 假期类型唯一标识。
+     * @example f84a2dxxxx
      *
      * @var string
      */
     public $leaveCode;
 
     /**
-     * @description 原因。
+     * @example 管理员导入
      *
      * @var string
      */
     public $leaveReason;
 
     /**
-     * @description 假期记录类型。
+     * @example update
      *
      * @var string
      */
     public $leaveRecordType;
 
     /**
-     * @description 请假状态。
+     * @example init
      *
      * @var string
      */
     public $leaveStatus;
 
     /**
-     * @description 显示单位。
+     * @example day
      *
      * @var string
      */
     public $leaveViewUnit;
 
     /**
-     * @description 操作人userId。
+     * @example manage223
      *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 额度唯一标识。
+     * @example db1d74xxxxbaa
      *
      * @var string
      */
     public $quotaId;
 
     /**
-     * @description 假期记录唯一标识。
+     * @example db1d74xxxxbaa
      *
      * @var string
      */
     public $recordId;
 
     /**
-     * @description 以天计算的消费额度。
+     * @example 100
      *
      * @var int
      */
     public $recordNumPerDay;
 
     /**
-     * @description 以小时计算的消费额度。
+     * @example 100
      *
      * @var int
      */
     public $recordNumPerHour;
 
     /**
-     * @description 额度有效期开始时间或请假开始时间，毫秒级时间戳。
+     * @example 1653851001000
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 员工userId。
+     * @example user1
      *
      * @var string
      */

@@ -9,12 +9,14 @@ use AlibabaCloud\Tea\Model;
 class coFeedOpenSpaceModel extends Model
 {
     /**
+     * @example coolAppCode123
+     *
      * @var string
      */
     public $coolAppCode;
 
     /**
-     * @description 【必填】标题
+     * @example xxxx卡片
      *
      * @var string
      */

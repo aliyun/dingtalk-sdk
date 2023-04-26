@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryUserAlipayAccountResponseBody extends Model
 {
     /**
-     * @description 支付宝uid
+     * @example 2088894773487
      *
      * @var string
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 下次获取数据的游标
-     *
      * @var string
      */
     public $nextToken;

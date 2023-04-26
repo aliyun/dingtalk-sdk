@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetAccountTransferListRequest extends Model
 {
     /**
-     * @description 分页页数
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 迁移状态0-未迁移，1-已迁移，2-无需迁移
+     * @example 1
      *
      * @var int
      */

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class image extends Model
 {
     /**
-     * @description 图片mediaId信息
-     *
      * @var string
      */
     public $mediaId;

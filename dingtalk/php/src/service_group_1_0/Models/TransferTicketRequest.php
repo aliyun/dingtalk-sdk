@@ -16,36 +16,32 @@ class TransferTicketRequest extends Model
     public $notify;
 
     /**
-     * @description 开放团队ID
+     * @example eKWh3GBwsKEiE
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 工单开放ID
+     * @example iPFWCyMGWPiiIiE
      *
      * @var string
      */
     public $openTicketId;
 
     /**
-     * @description 工单处理人
+     * @example Dq9hP8Sk2v6vQ6l05nCe5wiEiE
      *
      * @var string
      */
     public $processorUnionId;
 
     /**
-     * @description 被转单人UnionId列表
-     *
      * @var string[]
      */
     public $processorUnionIds;
 
     /**
-     * @description 工单备注
-     *
      * @var ticketMemo
      */
     public $ticketMemo;

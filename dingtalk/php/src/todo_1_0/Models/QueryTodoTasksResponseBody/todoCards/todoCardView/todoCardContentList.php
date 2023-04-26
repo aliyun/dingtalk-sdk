@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class todoCardContentList extends Model
 {
     /**
-     * @description 自定义表单内容名字
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 自定义表单内容值
-     *
      * @var string
      */
     public $value;

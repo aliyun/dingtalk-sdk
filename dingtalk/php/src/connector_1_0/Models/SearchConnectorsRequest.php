@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class SearchConnectorsRequest extends Model
 {
     /**
-     * @description 最大返回记录数，最多50
+     * @example 20
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 查询指定位置的记录，为空则从头开始
+     * @example 0
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 查询连接器的类型
+     * @example official
      *
      * @var string
      */

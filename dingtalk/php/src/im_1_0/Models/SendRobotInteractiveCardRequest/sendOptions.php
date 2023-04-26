@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class sendOptions extends Model
 {
     /**
-     * @description 是否@所有人
+     * @example true
      *
      * @var bool
      */
     public $atAll;
 
     /**
-     * @description 消息@人，JSON格式：[{"nickName":"张三","userId":"userId0001"},{"nickName":"李四","unionId":"unionId001"}]
+     * @example [{"nickName":"张三","userId":"userId0001"},{"nickName":"李四","unionId":"unionId001"}]
      *
      * @var string
      */
     public $atUserListJson;
 
     /**
-     * @description 卡片特殊属性json串
+     * @example {}
      *
      * @var string
      */
     public $cardPropertyJson;
 
     /**
-     * @description 消息仅部分人可见的接收人列表【可空：为空则群所有人可见】，JSON格式：[{"userId":"userId0001"},{"unionId":"unionId001"}]
+     * @example [{"userId":"userId0001"},{"unionId":"unionId001"}]
      *
      * @var string
      */

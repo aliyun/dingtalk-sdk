@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListAuditLogResponseBody extends Model
 {
     /**
-     * @description 记录列表
-     *
      * @var list_[]
      */
     public $list;

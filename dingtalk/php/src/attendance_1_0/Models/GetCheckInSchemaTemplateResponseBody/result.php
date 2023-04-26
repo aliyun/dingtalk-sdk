@@ -10,57 +10,45 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 业务码。
+     * @example water_mark_checkin
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 是否可以操作模板。
-     *
      * @var bool
      */
     public $canModifyAndAddTemplate;
 
     /**
-     * @description 是否群管理员。
-     *
      * @var bool
      */
     public $conversationAdmin;
 
     /**
-     * @description 自定义模板的最大数量。
-     *
      * @var int
      */
     public $customTemplateMaxSize;
 
     /**
-     * @description 群会话ID。
+     * @example 1234567
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 是否展示统计入口。
-     *
      * @var bool
      */
     public $showStat;
 
     /**
-     * @description 是否开启水印模板降级。
-     *
      * @var bool
      */
     public $templateDegrade;
 
     /**
-     * @description 模板列表。
-     *
      * @var waterMarkTemplateModels[]
      */
     public $waterMarkTemplateModels;

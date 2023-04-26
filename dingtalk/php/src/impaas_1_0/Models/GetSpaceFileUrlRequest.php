@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetSpaceFileUrlRequest extends Model
 {
     /**
-     * @description 钉盘文件id
+     * @example 123
      *
      * @var string
      */
     public $fileId;
 
     /**
-     * @description 发送人互通账号
+     * @example 123#123@dingding
      *
      * @var string
      */
     public $senderUid;
 
     /**
-     * @description 钉盘spaceId
+     * @example 123
      *
      * @var string
      */

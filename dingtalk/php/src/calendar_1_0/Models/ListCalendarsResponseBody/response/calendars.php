@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class calendars extends Model
 {
     /**
-     * @description 日历描述
-     *
      * @var string
      */
     public $description;
 
     /**
-     * @description Calendar资源的ETag，用于检测该Calendar以及内部的Event是否有被更新
-     *
      * @var string
      */
     public $eTag;
 
     /**
-     * @description 日历id
-     *
      * @var string
      */
     public $id;
 
     /**
-     * @description 权限信息
-     *
      * @var string
      */
     public $privilege;
 
     /**
-     * @description 日历标题
-     *
      * @var string
      */
     public $summary;
 
     /**
-     * @description 时区
-     *
      * @var string
      */
     public $timeZone;
 
     /**
-     * @description 日历类型
-     *
      * @var string
      */
     public $type;

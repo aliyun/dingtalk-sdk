@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class spaceRequest extends Model
 {
     /**
-     * @description 每页最大条目数，最大值50。
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标。如果是首次调用，可不传；如果非首次调用，该参数传上次调用时返回的nextToken。
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 同时请求知识小组信息
-     *
      * @var bool
      */
     public $withTeamInfo;

@@ -9,43 +9,39 @@ use AlibabaCloud\Tea\Model;
 class GetOfficialAccountContactInfoResponseBody extends Model
 {
     /**
-     * @description 已授权的字段
-     *
      * @var string[]
      */
     public $authItems;
 
     /**
-     * @description 联系人主企业名称
+     * @example 阿里巴巴钉钉
      *
      * @var string
      */
     public $corpName;
 
     /**
-     * @description 手机号
+     * @example 18812341234
      *
      * @var string
      */
     public $mobile;
 
     /**
-     * @description 手机号国家码
+     * @example +86
      *
      * @var string
      */
     public $stateCode;
 
     /**
-     * @description 联系人的unionId
+     * @example unionId
      *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 已授权的字段
-     *
      * @var string[]
      */
     public $userInfos;

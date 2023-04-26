@@ -9,70 +9,66 @@ use AlibabaCloud\Tea\Model;
 class GroupManageQueryRequest extends Model
 {
     /**
-     * @description 建群时间不早于（辅助性条件，结合非排他条件使用）
+     * @example 1652183395772
      *
      * @var int
      */
     public $createdAfter;
 
     /**
-     * @description 群号
+     * @example 53364321
      *
      * @var string
      */
     public $groupId;
 
     /**
-     * @description 群成员样例工号列表
-     *
      * @var string[]
      */
     public $groupMemberSamples;
 
     /**
-     * @description 群主工号
+     * @example 4122134
      *
      * @var string
      */
     public $groupOwner;
 
     /**
-     * @description 群标题关键词列表
-     *
      * @var string[]
      */
     public $groupTitleKeywords;
 
     /**
-     * @description 群链接
+     * @example https://h5.dingtalk.com/circle/healthCheckin.html?dtaction=os&corpId=ding91766asjkldhfkjklasdjkfjkhajksdjkfhjkla811&5fd5e=db2ed&cbdbhh=qwertyuiop
      *
      * @var string
      */
     public $groupUrl;
 
     /**
-     * @description 分页拉取的页大小, 最大不可超过1000
+     * @example 500
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 群成员数下限（辅助性条件，结合非排他条件使用）
+     * @example 1
      *
      * @var int
      */
     public $membersOver;
 
     /**
-     * @description 分页拉取游标, 若不指定，则从头开始拉
+     * @example 500
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 开放群id
+     * @example cidnvcxzklxv23jhkg412hj==
      *
      * @var string
      */

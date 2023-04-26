@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 用户关注服务窗的状态:
-     * UNFOLLOW：未关注。
      * @var string
      */
     public $status;

@@ -9,15 +9,14 @@ use AlibabaCloud\Tea\Model;
 class targetUserList extends Model
 {
     /**
-     * @description 积分交易单号，长度1-32。
-     *
+     * @example 4353453454241
      *
      * @var string
      */
     public $outId;
 
     /**
-     * @description 操作目标对象userId
+     * @example 551341216920908910
      *
      * @var string
      */

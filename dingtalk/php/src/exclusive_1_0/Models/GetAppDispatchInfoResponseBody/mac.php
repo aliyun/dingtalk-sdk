@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class mac extends Model
 {
     /**
-     * @description 基线版本
-     *
      * @var string
      */
     public $baseLineVersion;
 
     /**
-     * @description 下载地址
-     *
      * @var string
      */
     public $downloadUrl;
 
     /**
-     * @description 是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布
-     *
      * @var bool
      */
     public $inGray;
 
     /**
-     * @description 打包时间
-     *
      * @var int
      */
     public $packTime;
 
     /**
-     * @description 客户端类型
-     *
      * @var string
      */
     public $platform;
 
     /**
-     * @description 版本号
-     *
      * @var string
      */
     public $version;

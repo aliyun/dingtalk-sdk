@@ -9,28 +9,26 @@ use AlibabaCloud\Tea\Model;
 class PublishInnerAppVersionRequest extends Model
 {
     /**
-     * @description 小程序版本id，用于唯一标识小程序版本信息。
+     * @example 1
      *
      * @var int
      */
     public $appVersionId;
 
     /**
-     * @description 小程序是否在PC端发布，true表示发布移动端和PC端，false表示只发布移动端
-     *
      * @var bool
      */
     public $miniAppOnPc;
 
     /**
-     * @description 操作人unionId
+     * @example xxx
      *
      * @var string
      */
     public $opUnionId;
 
     /**
-     * @description 小程序发布类型，”online“表示发布线上版本，”experience“表示发布体验版本
+     * @example online
      *
      * @var string
      */

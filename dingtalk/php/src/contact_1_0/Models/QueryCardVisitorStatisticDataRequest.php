@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class QueryCardVisitorStatisticDataRequest extends Model
 {
     /**
-     * @description 用户的unionId
+     * @example RCsp7PJmmTUr7w0hbs9aKAiEiE
      *
      * @var string
      */

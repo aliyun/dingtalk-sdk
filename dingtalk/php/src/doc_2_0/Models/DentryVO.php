@@ -12,127 +12,117 @@ use AlibabaCloud\Tea\Model;
 class DentryVO extends Model
 {
     /**
-     * @description 内容类型。alidoc-钉钉文档；link-快捷方式；archive-压缩包；document-文件。
+     * @example alidoc
      *
      * @var string
      */
     public $contentType;
 
     /**
-     * @description 创建时间。
+     * @example 1663918630284
      *
      * @var int
      */
     public $createdTime;
 
     /**
-     * @description 创建者。
-     *
      * @var creator
      */
     public $creator;
 
     /**
-     * @description 节点id。
+     * @example YRBd*****KGDA
      *
      * @var string
      */
     public $dentryId;
 
     /**
-     * @description 节点类型。file-文件；folder-文件夹。
+     * @example file
      *
      * @var string
      */
     public $dentryType;
 
     /**
-     * @description 节点全局唯一标识id。
+     * @example 6or0dp8Z****XWa91xzy3
      *
      * @var string
      */
     public $dentryUuid;
 
     /**
-     * @description 文档docKey，用于标识一篇钉钉文档的key。只有内容类型为alidoc的才会有值。
+     * @example v1GXn****KqD4
      *
      * @var string
      */
     public $docKey;
 
     /**
-     * @description 文件后缀名。
+     * @example alidoc
      *
      * @var string
      */
     public $extension;
 
     /**
-     * @description 是否有子节点。
+     * @example false
      *
      * @var bool
      */
     public $hasChildren;
 
     /**
-     * @description 快捷方式类型的节点，其指向的原始数据信息。
-     *
      * @var LinkSourceInfo
      */
     public $linkSourceInfo;
 
     /**
-     * @description 节点名称。
+     * @example 钉钉文档
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 节点的路径。
+     * @example 测试组织/测试知识库/abc
      *
      * @var string
      */
     public $path;
 
     /**
-     * @description 知识库信息。
-     *
      * @var SpaceModel
      */
     public $space;
 
     /**
-     * @description 知识库id。
+     * @example YGv0****0xXAr
      *
      * @var string
      */
     public $spaceId;
 
     /**
-     * @description 更新时间。
+     * @example 1663918630284
      *
      * @var int
      */
     public $updatedTime;
 
     /**
-     * @description 更新人。
-     *
      * @var updater
      */
     public $updater;
 
     /**
-     * @description 节点访问url。
+     * @example https://xxx.yy
      *
      * @var string
      */
     public $url;
 
     /**
-     * @description 访问者对当前节点的权限等信息。
-     *
      * @var visitorInfo
      */
     public $visitorInfo;

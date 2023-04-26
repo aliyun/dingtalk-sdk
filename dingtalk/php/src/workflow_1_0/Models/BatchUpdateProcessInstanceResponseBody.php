@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class BatchUpdateProcessInstanceResponseBody extends Model
 {
     /**
-     * @description 成功标识
-     *
      * @var bool
      */
     public $success;

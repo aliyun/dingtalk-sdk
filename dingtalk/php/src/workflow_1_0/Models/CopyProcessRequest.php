@@ -11,20 +11,18 @@ use AlibabaCloud\Tea\Model;
 class CopyProcessRequest extends Model
 {
     /**
-     * @description 复制选项
-     *
      * @var copyOptions
      */
     public $copyOptions;
 
     /**
+     * @example dingabc
+     *
      * @var string
      */
     public $sourceCorpId;
 
     /**
-     * @description 源模版列表
-     *
      * @var sourceProcessVOList[]
      */
     public $sourceProcessVOList;

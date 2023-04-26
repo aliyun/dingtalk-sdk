@@ -9,43 +9,35 @@ use AlibabaCloud\Tea\Model;
 class QueryPositionsRequest extends Model
 {
     /**
-     * @description 部门id
+     * @example 部门id
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 职位类别列表
-     *
      * @var string[]
      */
     public $inCategoryIds;
 
     /**
-     * @description 职位id列表
-     *
      * @var string[]
      */
     public $inPositionIds;
 
     /**
-     * @description 职位名称
+     * @example 职位名称
      *
      * @var string
      */
     public $positionName;
 
     /**
-     * @description 一次查询获取记录数
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 偏移量
-     *
      * @var int
      */
     public $nextToken;

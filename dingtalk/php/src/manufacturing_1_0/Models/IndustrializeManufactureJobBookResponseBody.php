@@ -10,50 +10,36 @@ use AlibabaCloud\Tea\Model;
 class IndustrializeManufactureJobBookResponseBody extends Model
 {
     /**
-     * @description content
-     *
      * @var content
      */
     public $content;
 
     /**
-     * @description errorCode
-     *
      * @var string
      */
     public $errorCode;
 
     /**
-     * @description errorLevel
-     *
      * @var int
      */
     public $errorLevel;
 
     /**
-     * @description errorMsg
-     *
      * @var string
      */
     public $errorMsg;
 
     /**
-     * @description httpCode
-     *
      * @var string
      */
     public $httpCode;
 
     /**
-     * @description success
-     *
      * @var bool
      */
     public $success;
 
     /**
-     * @description 此次报工记录的唯一标识
-     *
      * @var string
      */
     public $uuid;

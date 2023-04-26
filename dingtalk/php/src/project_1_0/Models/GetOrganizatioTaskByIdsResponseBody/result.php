@@ -9,112 +9,106 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 父任务id
-     *
      * @var string[]
      */
     public $ancestorIds;
 
     /**
-     * @description 任务标题
+     * @example 明天12点前写好周报
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 创建时间
+     * @example 2021-08-13T07:36:50.318Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 创建者id
+     * @example 173xxxx
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 任务截止时间
+     * @example 2021-08-13T07:36:50.318Z
      *
      * @var string
      */
     public $dueDate;
 
     /**
-     * @description 执行者id
+     * @example 173xxxx
      *
      * @var string
      */
     public $executorId;
 
     /**
-     * @description 参与者列表
-     *
      * @var string[]
      */
     public $involveMembers;
 
     /**
-     * @description 任务是否已删除
+     * @example false
      *
      * @var bool
      */
     public $isDeleted;
 
     /**
-     * @description 任务是否已完成
+     * @example false
      *
      * @var bool
      */
     public $isDone;
 
     /**
-     * @description 任务自定义标记
-     *
      * @var string[]
      */
     public $labels;
 
     /**
-     * @description 任务备注
+     * @example 我是一条备注哦
      *
      * @var string
      */
     public $note;
 
     /**
-     * @description 优先级【-10,0,1,2】中选一个
+     * @example -10
      *
      * @var int
      */
     public $priority;
 
     /**
-     * @description 任务开始时间
+     * @example 2021-08-13T07:36:50.318Z
      *
      * @var string
      */
     public $startDate;
 
     /**
-     * @description 任务id
+     * @example 62a010c153c2efxxxxxxx
      *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description 更新时间
+     * @example 2021-08-13T07:36:50.318Z
      *
      * @var string
      */
     public $updated;
 
     /**
-     * @description 任务可见性。involves：仅参与者可见。members:所有人可见
+     * @example members
      *
      * @var string
      */

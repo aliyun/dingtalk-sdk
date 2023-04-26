@@ -9,112 +9,112 @@ use AlibabaCloud\Tea\Model;
 class AddCityCarApplyRequest extends Model
 {
     /**
-     * @description 出差事由
+     * @example 杭州出差
      *
      * @var string
      */
     public $cause;
 
     /**
-     * @description 用车城市
+     * @example 杭州
      *
      * @var string
      */
     public $city;
 
     /**
-     * @description 第三方企业ID
+     * @example corpx
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 用车时间，按天管控，比如传值2021-03-18 20:26:56表示2021-03-18当天可用车，跨天情况配合finishedDate参数使用
+     * @example 2021-03-18 20:26:56
      *
      * @var string
      */
     public $date;
 
     /**
-     * @description 用车截止时间，按天管控，比如date传值2021-03-18 20:26:56、finished_date传值2021-03-30 20:26:56表示2021-03-18(含)到2021-03-30(含)之间可用车，该参数不传值情况使用date作为用车截止时间；
+     * @example 2021-03-30 20:26:56
      *
      * @var string
      */
     public $finishedDate;
 
     /**
-     * @description 审批单关联的项目code
+     * @example projectx
      *
      * @var string
      */
     public $projectCode;
 
     /**
-     * @description 审批单关联的项目名
+     * @example 项目x
      *
      * @var string
      */
     public $projectName;
 
     /**
-     * @description 审批单状态：0-申请，1-同意，2-拒绝
+     * @example 0
      *
      * @var int
      */
     public $status;
 
     /**
-     * @description 三方审批单ID
+     * @example apply1
      *
      * @var string
      */
     public $thirdPartApplyId;
 
     /**
-     * @description 审批单关联的三方成本中心ID
+     * @example costcenter1
      *
      * @var string
      */
     public $thirdPartCostCenterId;
 
     /**
-     * @description 审批单关联的三方发票抬头ID
+     * @example invoice1
      *
      * @var string
      */
     public $thirdPartInvoiceId;
 
     /**
-     * @description 审批单可用总次数
+     * @example 1
      *
      * @var int
      */
     public $timesTotal;
 
     /**
-     * @description 审批单可用次数类型：1-次数不限制，2-用户可指定次数，3-管理员限制次数；如果企业没有限制审批单使用次数的需求，这个参数传1(次数不限制)，同时times_total和times_used都传0即可
+     * @example 3
      *
      * @var int
      */
     public $timesType;
 
     /**
-     * @description 审批单已用次数
+     * @example 0
      *
      * @var int
      */
     public $timesUsed;
 
     /**
-     * @description 审批单标题
+     * @example 杭州出差
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 发起审批的第三方员工ID
+     * @example user1
      *
      * @var string
      */

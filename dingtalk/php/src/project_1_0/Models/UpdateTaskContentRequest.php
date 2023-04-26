@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateTaskContentRequest extends Model
 {
     /**
-     * @description 任务标题。
+     * @example 更改后的标题
      *
      * @var string
      */

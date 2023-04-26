@@ -10,77 +10,75 @@ use AlibabaCloud\Tea\Model;
 class RegisterDeviceRequest extends Model
 {
     /**
-     * @description 钉钉物联组织ID, 第三方平台必填，企业内部系统忽略
+     * @example ding123
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 设备名称
+     * @example 摄像头1
      *
      * @var string
      */
     public $deviceName;
 
     /**
-     * @description 设备状态 0:在线 1:离线
+     * @example 0
      *
      * @var int
      */
     public $deviceStatus;
 
     /**
-     * @description 设备类型
+     * @example Camera
      *
      * @var string
      */
     public $deviceType;
 
     /**
-     * @description 设备类型名称
+     * @example 摄像头
      *
      * @var string
      */
     public $deviceTypeName;
 
     /**
-     * @description 设备id
+     * @example 002
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
-     *
      * @var liveUrls
      */
     public $liveUrls;
 
     /**
-     * @description 设备地址
+     * @example 东南门
      *
      * @var string
      */
     public $location;
 
     /**
-     * @description 设备昵称
+     * @example 摄像头1
      *
      * @var string
      */
     public $nickName;
 
     /**
-     * @description 设备父节点id
+     * @example 001
      *
      * @var string
      */
     public $parentId;
 
     /**
-     * @description 设备类型 摄像头:CAMERA 其它:OTHERS
+     * @example CAMERA
      *
      * @var string
      */

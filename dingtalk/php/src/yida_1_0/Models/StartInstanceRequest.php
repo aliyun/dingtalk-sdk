@@ -9,56 +9,56 @@ use AlibabaCloud\Tea\Model;
 class StartInstanceRequest extends Model
 {
     /**
-     * @description 应用编码
+     * @example APP_PBKT0MFBEBTDO8T7SLVP
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 发起人所在部门编号
+     * @example 18295
      *
      * @var string
      */
     public $departmentId;
 
     /**
-     * @description 表单数据
+     * @example {"textField_jcpm6agt": "单行","employeeField_jcos0sar": ["workno"]}
      *
      * @var string
      */
     public $formDataJson;
 
     /**
-     * @description 表单唯一编码
+     * @example FORM-NJYJZELV8YZRDEI2N5IQ7L6VEDMR1VE9GMPCJB
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 语言。可选值：zh_CN/en_US 默认：zh_CN
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description 流程编码
+     * @example TPROC--EF6Y4G8WO2FN0SUB43TDQ3CGC3FMFQ1G9400RCJ4
      *
      * @var string
      */
     public $processCode;
 
     /**
-     * @description 应用秘钥。在应用数据中获取。
+     * @example hexxx
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉userId
+     * @example 1731234567
      *
      * @var string
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class CreateStsTokenRequest extends Model
 {
     /**
-     * @description 设备sn码
+     * @example fjke/12-131jk
      *
      * @var string
      */
     public $deviceSn;
 
     /**
-     * @description sts类型: oss/sls
+     * @example sls
      *
      * @var string
      */

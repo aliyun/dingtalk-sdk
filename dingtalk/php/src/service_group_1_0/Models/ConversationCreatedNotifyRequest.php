@@ -9,69 +9,55 @@ use AlibabaCloud\Tea\Model;
 class ConversationCreatedNotifyRequest extends Model
 {
     /**
-     * @description 小二客服2088
-     *
      * @var string
      */
     public $alipayUserId;
 
     /**
-     * @description DT端会话ID
-     *
      * @var string
      */
     public $conversationId;
 
     /**
-     * @description 小二客服昵称
-     *
      * @var string
      */
     public $nickName;
 
     /**
-     * @description 开放团队id
+     * @example eWaJSqDcLsoiE
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 客服名称
-     *
      * @var string
      */
     public $serverName;
 
     /**
-     * @description 客服服务提示
-     *
      * @var string
      */
     public $serverTips;
 
     /**
+     * @example 对应外部渠道的会话ID
+     *
      * @var string
      */
     public $serviceToken;
 
     /**
-     * @description 超时规则提示
-     *
      * @var string
      */
     public $timeoutRemindTips;
 
     /**
-     * @description 小二客服id
-     *
      * @var string
      */
     public $userId;
 
     /**
-     * @description DT端定义的，标识唯一的访客
-     *
      * @var string
      */
     public $visitorToken;

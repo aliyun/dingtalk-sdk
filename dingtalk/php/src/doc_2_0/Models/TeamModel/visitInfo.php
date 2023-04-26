@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class visitInfo extends Model
 {
     /**
-     * @description 加入团队时间
-     *
      * @var string
      */
     public $joinTime;
 
     /**
-     * @description 用户对这个团队的访问情况
+     * @example 5
      *
      * @var string
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class CreateBizObjectRequest extends Model
 {
     /**
-     * @description json格式的业务数据
+     * @example {\"F0000010\": \"0000004\", \"F0000011\": \"王五1\",\"F0000012\": \"D1级客户\",\"F0000013\": 7000,\"D000183Fcd15f3a51e624bbc9945392d190b6aa8\": [{\"F0000014\": \"里斯\",\"F0000015\": 156666365656, \"F0000016\": \"技术部\",\"F0000017\": \"经理1\",\"F0000018\":\"男\",\"F0000019\": \"lgbxunmi@dd.com\", \"F0000020\": true, \"F0000021\": \"测试数据\"}]}
      *
      * @var string
      */
     public $bizObjectJson;
 
     /**
-     * @description 是否是草稿数据。true=草稿数据，false=生效数据
+     * @example true
      *
      * @var bool
      */
     public $isDraft;
 
     /**
-     * @description 操作用户id。可从“获取用户信息”API获取
+     * @example aea4d7a7-d162-4c77-9c44-7bd9cb8316a5
      *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 表单编码
+     * @example D0001839bbbbe346bbf496498bb76c44c7eb972
      *
      * @var string
      */

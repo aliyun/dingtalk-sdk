@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class SearchFormDatasResponseBody extends Model
 {
     /**
-     * @description 当前页
+     * @example 1
      *
      * @var int
      */
     public $currentPage;
 
     /**
-     * @description 实例详情列表
-     *
      * @var data[]
      */
     public $data;
 
     /**
-     * @description 符合条件的实例总数
+     * @example 100
      *
      * @var int
      */

@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetDentriesResponseBody extends Model
 {
     /**
-     * @description 批量获取文件(夹)信息结果列表
-     * 30
      * @var resultItems[]
      */
     public $resultItems;

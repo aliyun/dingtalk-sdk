@@ -10,15 +10,13 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 是否还有下一页
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 教师信息
-     *
      * @var teacherDetails[]
      */
     public $teacherDetails;

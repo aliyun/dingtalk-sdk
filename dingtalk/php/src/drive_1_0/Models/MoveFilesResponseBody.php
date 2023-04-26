@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class MoveFilesResponseBody extends Model
 {
     /**
-     * @description 文件信息列表
-     *
      * @var files[]
      */
     public $files;
 
     /**
-     * @description 异步任务id
-     *
      * @var string
      */
     public $taskId;

@@ -9,44 +9,31 @@ use AlibabaCloud\Tea\Model;
 class formComponentValueList extends Model
 {
     /**
-     * @description 控件别名
-     *
      * @var string
      */
     public $bizAlias;
 
     /**
-     * @description 控件类型，取值：
-     *
-     * DepartmentField：部门控件
      * @var string
      */
     public $componentType;
 
     /**
-     * @description 表单扩展值
-     *
      * @var string
      */
     public $extValue;
 
     /**
-     * @description 控件id
-     *
      * @var string
      */
     public $id;
 
     /**
-     * @description 表单名称
-     *
      * @var string
      */
     public $name;
 
     /**
-     * @description 表单值
-     *
      * @var string
      */
     public $value;

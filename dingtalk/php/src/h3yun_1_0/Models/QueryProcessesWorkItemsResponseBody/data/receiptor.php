@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class receiptor extends Model
 {
     /**
-     * @description 用户直属的部门id
+     * @example null
      *
      * @var string
      */
     public $departmentId;
 
     /**
-     * @description 用户直属的部门名称
+     * @example null
      *
      * @var string
      */
     public $departmentName;
 
     /**
-     * @description 用户名称
+     * @example null
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 用户id
+     * @example null
      *
      * @var string
      */

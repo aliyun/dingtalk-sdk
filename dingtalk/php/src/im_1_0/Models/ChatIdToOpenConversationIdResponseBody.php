@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class ChatIdToOpenConversationIdResponseBody extends Model
 {
     /**
-     * @description openConversationId
+     * @example cidl1B8RVUFmkO50OC9uEbySQ==
      *
      * @var string
      */

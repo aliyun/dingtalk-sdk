@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class location extends Model
 {
     /**
-     * @description 展示名称
-     *
      * @var string
      */
     public $displayName;

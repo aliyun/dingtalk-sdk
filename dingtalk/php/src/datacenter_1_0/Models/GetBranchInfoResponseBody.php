@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class GetBranchInfoResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * EsDate:成立日期
+     * @example [     {       "OperName": "李柯",       "EntStatus": "",       "EntName": "华为技术有限公司驻广州办事处",       "EsDate": ""     },     {       "OperName": "李实",       "EntStatus": "",       "EntName": "华为技术有限公司重庆分公司",       "EsDate": ""     } ]
+     *
      * @var string
      */
     public $data;
 
     /**
-     * @description 总条数
-     *
      * @var int
      */
     public $total;

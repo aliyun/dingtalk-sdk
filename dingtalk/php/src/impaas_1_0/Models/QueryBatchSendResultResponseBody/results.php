@@ -9,26 +9,36 @@ use AlibabaCloud\Tea\Model;
 class results extends Model
 {
     /**
+     * @example 123@channel
+     *
      * @var string
      */
     public $appUid;
 
     /**
+     * @example cid1234567890==
+     *
      * @var string
      */
     public $conversationId;
 
     /**
+     * @example 0
+     *
      * @var string
      */
     public $errorCode;
 
     /**
+     * @example success
+     *
      * @var string
      */
     public $errorMessage;
 
     /**
+     * @example msg1234567890==
+     *
      * @var string
      */
     public $msgId;

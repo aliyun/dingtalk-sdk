@@ -9,91 +9,91 @@ use AlibabaCloud\Tea\Model;
 class applyIntentionInfoDO extends Model
 {
     /**
-     * @description 到达城市三字码
+     * @example HGH
      *
      * @var string
      */
     public $arrCity;
 
     /**
-     * @description 到达城市名称
+     * @example 杭州
      *
      * @var string
      */
     public $arrCityName;
 
     /**
-     * @description 到达时间
+     * @example 2021-07-08 15:23:56
      *
      * @var string
      */
     public $arrTime;
 
     /**
-     * @description 超标的舱位，F：头等舱 C：商务舱 Y：经济舱 P：超值经济舱
+     * @example F
      *
      * @var string
      */
     public $cabin;
 
     /**
-     * @description 申请超标的舱等 0：头等舱 1：商务舱 2：经济舱 3：超值经济舱
+     * @example 1
      *
      * @var int
      */
     public $cabinClass;
 
     /**
-     * @description 舱等描述，头等舱，商务舱，经济舱，超值经济舱
+     * @example 经济舱
      *
      * @var string
      */
     public $cabinClassStr;
 
     /**
-     * @description 出发城市三字码
+     * @example SHA
      *
      * @var string
      */
     public $depCity;
 
     /**
-     * @description 出发城市名称
+     * @example 上海
      *
      * @var string
      */
     public $depCityName;
 
     /**
-     * @description 出发时间
+     * @example 2021-07-08 15:23:56
      *
      * @var string
      */
     public $depTime;
 
     /**
-     * @description 折扣
+     * @example 4.1
      *
      * @var float
      */
     public $discount;
 
     /**
-     * @description 航班号
+     * @example MU2759
      *
      * @var string
      */
     public $flightNo;
 
     /**
-     * @description 意向航班价格（元）
+     * @example 1000
      *
      * @var int
      */
     public $price;
 
     /**
-     * @description 超标类型，1:折扣 2,8,10:时间 3,9,11:折扣和时间
+     * @example 1
      *
      * @var int
      */

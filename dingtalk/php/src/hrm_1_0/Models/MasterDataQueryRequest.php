@@ -10,63 +10,59 @@ use AlibabaCloud\Tea\Model;
 class MasterDataQueryRequest extends Model
 {
     /**
-     * @description 数据唯一键
+     * @example uk_12123
      *
      * @var string
      */
     public $bizUK;
 
     /**
-     * @description 分页查询每页数据条数
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页查询的游标
+     * @example 0
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 当前操作人userId
+     * @example admin1234
      *
      * @var string
      */
     public $optUserId;
 
     /**
-     * @description 其他查询条件
-     *
      * @var queryParams[]
      */
     public $queryParams;
 
     /**
-     * @description 关联id列表，一般为userId
-     *
      * @var string[]
      */
     public $relationIds;
 
     /**
-     * @description 领域code 由钉钉分配
+     * @example PERFORMANCE
      *
      * @var string
      */
     public $scopeCode;
 
     /**
-     * @description 数据生产方的租户id，由钉钉分配
+     * @example 3
      *
      * @var int
      */
     public $tenantId;
 
     /**
-     * @description 实体code
+     * @example base
      *
      * @var string
      */

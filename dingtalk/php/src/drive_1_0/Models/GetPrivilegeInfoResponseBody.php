@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetPrivilegeInfoResponseBody extends Model
 {
     /**
-     * @description 类型列表
-     *
      * @var string[]
      */
     public $types;

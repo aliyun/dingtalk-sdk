@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class GetConfBaseInfoByLogicalIdResponseBody extends Model
 {
     /**
-     * @description 会议ID（仅在会议正式开始后才返回该字段）
-     *
      * @var string
      */
     public $conferenceId;
 
     /**
-     * @description 会议逻辑id
-     *
      * @var string
      */
     public $logicalConferenceId;
 
     /**
-     * @description 会议创建用户昵称
-     *
      * @var string
      */
     public $nickname;
 
     /**
-     * @description 开始时间
-     *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 会议标题
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 会议创建用户id
-     *
      * @var string
      */
     public $unionId;

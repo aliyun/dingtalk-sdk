@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class WriteAlibabaUserCarbonRequest extends Model
 {
     /**
-     * @description 入参集
-     *
      * @var userDetailsList[]
      */
     public $userDetailsList;

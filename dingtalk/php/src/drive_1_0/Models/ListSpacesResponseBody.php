@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListSpacesResponseBody extends Model
 {
     /**
-     * @description 分页加载更多锚点, nextToken不为空表示有更多数据
-     *
      * @var string
      */
     public $nextToken;

@@ -15,77 +15,63 @@ use AlibabaCloud\Tea\Model;
 class CreateCardRequest extends Model
 {
     /**
-     * @description 卡片回调时的路由 Key，用于查询注册的 callbackUrl
+     * @example routekey-7931
      *
      * @var string
      */
     public $callbackRouteKey;
 
     /**
-     * @description 卡片数据
-     *
      * @var cardData
      */
     public $cardData;
 
     /**
-     * @description 卡片的模版 Id
+     * @example b0aa776f-79ac-4e13-f838-749aae913bc7
      *
      * @var string
      */
     public $cardTemplateId;
 
     /**
-     * @description 协作场域信息
-     *
      * @var coFeedOpenSpaceModel
      */
     public $coFeedOpenSpaceModel;
 
     /**
-     * @description IM 群聊场域信息
-     *
      * @var imGroupOpenSpaceModel
      */
     public $imGroupOpenSpaceModel;
 
     /**
-     * @description IM 单聊场域信息
-     *
      * @var imRobotOpenSpaceModel
      */
     public $imRobotOpenSpaceModel;
 
     /**
-     * @description 动态数据源配置
-     *
      * @var openDynamicDataConfig
      */
     public $openDynamicDataConfig;
 
     /**
-     * @description 唯一标示卡片的外部编码
+     * @example mycard-07921
      *
      * @var string
      */
     public $outTrackId;
 
     /**
-     * @description 用户的私有数据。
-     * ● value：用户私有数据（cardData）
      * @var PrivateDataValue[]
      */
     public $privateData;
 
     /**
-     * @description 吊顶场域信息
-     *
      * @var topOpenSpaceModel
      */
     public $topOpenSpaceModel;
 
     /**
-     * @description 卡片创建者的 userId
+     * @example manager1234
      *
      * @var string
      */

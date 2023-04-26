@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class data extends Model
 {
     /**
-     * @description agentId
+     * @example agentId
      *
      * @var int
      */
     public $agentId;
 
     /**
-     * @description 接口调用时间(毫秒时间戳)
+     * @example 166700000
      *
      * @var int
      */
     public $invokeTime;
 
     /**
-     * @description 实人认证结果 1-成功 2-失败
+     * @example 1
      *
      * @var int
      */
     public $personIdentification;
 
     /**
-     * @description 平台 0-Android 或 1-iOS
+     * @example 1
      *
      * @var int
      */
     public $platform;
 
     /**
-     * @description 1. 姓名匹配阶段失败 2. 认证阶段失败 3. 实人流程阶段失败 4. 协议签署阶段失败 5. 人脸录入阶段失败 6. 人脸录入阶段用户主动取消 7. 人脸录入阶段成功 8. 人脸识别阶段失败 9. 人脸识别阶段主动取消 10. 人脸识别阶段成功  11.去实人场景
+     * @example 1
      *
      * @var int
      */
     public $scene;
 
     /**
-     * @description userId
+     * @example 1234
      *
      * @var string
      */

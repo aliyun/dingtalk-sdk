@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListResidentUserInfosResponseBody extends Model
 {
     /**
-     * @description 员工信息列表
-     *
      * @var userList[]
      */
     public $userList;

@@ -10,36 +10,26 @@ use AlibabaCloud\Tea\Model;
 class applicationInformation extends Model
 {
     /**
-     * @description appName
-     *
      * @var string
      */
     public $appName;
 
     /**
-     * @description appType
-     *
      * @var string
      */
     public $appType;
 
     /**
-     * @description attachmentUsageAmount
-     *
      * @var int
      */
     public $attachmentUsageAmount;
 
     /**
-     * @description instanceUsageAmount
-     *
      * @var int
      */
     public $instanceUsageAmount;
 
     /**
-     * @description usagePlugins
-     *
      * @var usagePlugins[]
      */
     public $usagePlugins;

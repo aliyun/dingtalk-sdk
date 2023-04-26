@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class PublishPackageResponseBody extends Model
 {
     /**
-     * @description 成功标记
-     *
      * @var bool
      */
     public $success;

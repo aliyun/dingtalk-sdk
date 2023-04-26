@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryUnionOrderRequest extends Model
 {
     /**
-     * @description 第三方企业id
+     * @example tenant1231
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 第三方申请单id
+     * @example 第三方审批单号，关联单号和申请单号必选其一
      *
      * @var string
      */
     public $thirdPartApplyId;
 
     /**
-     * @description 关联单号
+     * @example 关联单号，关联单号和申请单号必选其一
      *
      * @var string
      */

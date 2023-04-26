@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ReportDeviceLogRequest extends Model
 {
     /**
-     * @description 文件id
+     * @example xdfsf20001
      *
      * @var string
      */
     public $mediaId;
 
     /**
-     * @description 设备序列号
+     * @example sn123
      *
      * @var string
      */
     public $sn;
 
     /**
-     * @description 文件类型
+     * @example file：普通文件
      *
      * @var string
      */

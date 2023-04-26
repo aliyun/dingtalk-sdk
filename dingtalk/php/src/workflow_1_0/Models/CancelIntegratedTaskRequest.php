@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class CancelIntegratedTaskRequest extends Model
 {
     /**
-     * @description 待办组ID，需要在调用创建待办接口时，主动设置该值。
+     * @example act_xxxx
      *
      * @var string
      */
     public $activityId;
 
     /**
-     * @description 待办组ID列表，用于批量取消。
-     *
      * @var string[]
      */
     public $activityIds;
 
     /**
-     * @description OA审批流程实例ID
+     * @example tPr_FB_mT_xxxxxxxxx2hQ05201655306463
      *
      * @var string
      */

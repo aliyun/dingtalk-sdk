@@ -11,62 +11,60 @@ use AlibabaCloud\Tea\Model;
 class CollectResumeDetailRequest extends Model
 {
     /**
-     * @description 业务标识，目前固定为ddats
+     * @example ddats
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 渠道编码
+     * @example liepin
      *
      * @var string
      */
     public $channelCode;
 
     /**
-     * @description 渠道侧简历标识
+     * @example resumexxxxxxxxxx
      *
      * @var string
      */
     public $channelOuterId;
 
     /**
-     * @description 渠道侧候选人标识。
+     * @example xxxxxx
      *
      * @var string
      */
     public $channelTalentId;
 
     /**
-     * @description 简历投递职位标识
+     * @example jobId8fc0d56a605d495ea0214af7axxxxxxx
      *
      * @var string
      */
     public $deliverJobId;
 
     /**
+     * @example 2701606624233xxxxx
+     *
      * @var string
      */
     public $optUserId;
 
     /**
-     * @description 渠道简历链接
+     * @example http:www.xxx.com
      *
      * @var string
      */
     public $resumeChannelUrl;
 
     /**
-     * @description 简历详情信息
-     *
      * @var resumeData
      */
     public $resumeData;
 
     /**
-     * @description 原始简历文件
-     *
      * @var resumeFile
      */
     public $resumeFile;

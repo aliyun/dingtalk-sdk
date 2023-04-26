@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class AddContactMemberToGroupRequest extends Model
 {
     /**
-     * @description 裂变方式
+     * @example 不裂变：STANDARD；裂变：FISSION
      *
      * @var string
      */
     public $fissionType;
 
     /**
-     * @description 员工unionId
+     * @example 888
      *
      * @var string
      */
     public $memberUnionId;
 
     /**
-     * @description 员工成员ID
+     * @example 1
      *
      * @var string
      */
     public $memberUserId;
 
     /**
-     * @description 群会话ID
+     * @example cid***
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 开放团队ID
+     * @example 888
      *
      * @var string
      */

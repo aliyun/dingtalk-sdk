@@ -10,28 +10,26 @@ use AlibabaCloud\Tea\Model;
 class PageListRobotResponseBody extends Model
 {
     /**
-     * @description 是否有更多结果
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 查询结果列表
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 下一次查询起始游标
+     * @example 50
      *
      * @var int
      */
     public $nextCursor;
 
     /**
-     * @description 查询结果总数
+     * @example 90
      *
      * @var int
      */

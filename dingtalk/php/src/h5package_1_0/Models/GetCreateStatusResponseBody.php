@@ -9,42 +9,40 @@ use AlibabaCloud\Tea\Model;
 class GetCreateStatusResponseBody extends Model
 {
     /**
-     * @description 创建时间
+     * @example 1663743241146
      *
      * @var int
      */
     public $buildTime;
 
     /**
-     * @description 任务是否已结束
-     *
      * @var bool
      */
     public $finished;
 
     /**
-     * @description H5离线包体积，单位Byte
+     * @example 0
      *
      * @var int
      */
     public $packageSize;
 
     /**
-     * @description 任务状态。1：构建中；2：成功；3：失败；5：超时。
+     * @example 2
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 创建离线包接口返回的taskId
+     * @example 1663748308644pjpF
      *
      * @var string
      */
     public $taskId;
 
     /**
-     * @description H5离线包版本号
+     * @example 0.0.1
      *
      * @var string
      */

@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class GetUserStayLengthRequest extends Model
 {
     /**
-     * @description 分页页数
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页大小
+     * @example 10
      *
      * @var int
      */
     public $pageSize;
 
     /**
-     * @description 统计日期（只保留当前日期的前30天）
+     * @example 20220501
      *
      * @var string
      */

@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class ListSimpleUsersByRoleResponseBody extends Model
 {
     /**
-     * @description 是否还有记录
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下一条记录
-     *
      * @var int
      */
     public $nextCursor;
 
     /**
-     * @description 用户列表
-     *
      * @var userList[]
      */
     public $userList;

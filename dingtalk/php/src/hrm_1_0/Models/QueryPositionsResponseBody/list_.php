@@ -9,50 +9,38 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 所属职务ID
-     *
      * @var string
      */
     public $jobId;
 
     /**
-     * @description 职位类别ID
-     *
      * @var string
      */
     public $positionCategoryId;
 
     /**
-     * @description 职位描述
-     *
      * @var string
      */
     public $positionDes;
 
     /**
-     * @description 职位ID
+     * @example ac67286db74c48e28d787173ccc1a111
      *
      * @var string
      */
     public $positionId;
 
     /**
-     * @description 职位名称
-     *
      * @var string
      */
     public $positionName;
 
     /**
-     * @description 职位对应职级列表
-     *
      * @var string[]
      */
     public $rankIdList;
 
     /**
-     * @description 职位状态-0，启用；1，停用
-     *
      * @var int
      */
     public $status;

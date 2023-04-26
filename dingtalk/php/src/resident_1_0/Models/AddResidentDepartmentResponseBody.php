@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class AddResidentDepartmentResponseBody extends Model
 {
     /**
-     * @description 创建成功的deptId
+     * @example 123
      *
      * @var int
      */

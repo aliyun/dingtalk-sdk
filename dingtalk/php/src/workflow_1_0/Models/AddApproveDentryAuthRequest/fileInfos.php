@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class fileInfos extends Model
 {
     /**
-     * @description 文件ID。
+     * @example B1oQixxxx
      *
      * @var string
      */
     public $fileId;
 
     /**
-     * @description 钉盘空间spaceId。
+     * @example 111
      *
      * @var int
      */

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class statField extends Model
 {
     /**
-     * @description id 值。
+     * @example TextField-K2AD4O5B
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 名称。
+     * @example 单行输入框
      *
      * @var string
      */
     public $label;
 
     /**
-     * @description 单位。
+     * @example xxxx
      *
      * @var string
      */
     public $unit;
 
     /**
-     * @description 大写。
+     * @example true
      *
      * @var bool
      */

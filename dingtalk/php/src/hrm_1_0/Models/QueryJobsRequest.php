@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class QueryJobsRequest extends Model
 {
     /**
-     * @description 职务名称
+     * @example 工程师
      *
      * @var string
      */
     public $jobName;
 
     /**
-     * @description 最大值
+     * @example 20，最大为100
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 偏移量
+     * @example 0
      *
      * @var int
      */

@@ -9,78 +9,76 @@ use AlibabaCloud\Tea\Model;
 class option extends Model
 {
     /**
-     * @description 文档类型
-     * 20
      * @var string[]
      */
     public $filterDocTypes;
 
     /**
-     * @description 分页大小
-     * 20
+     * @example 20
+     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标
+     * @example next_token
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 排序规则, 升降或降序
-     * ASC
+     * @example ASC
+     *
      * @var string
      */
     public $order;
 
     /**
-     * @description 排序字段, 根据选择字段排序
-     * CREATE_TIME: createTime
+     * @example createTime
+     *
      * @var string
      */
     public $orderBy;
 
     /**
-     * @description 是否获取文档创建者名称
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $withDentryCreatorInfo;
 
     /**
-     * @description 是否获取文档修改者名称
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $withDentryModifierInfo;
 
     /**
-     * @description 是否获取文档权限
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $withDentryPermissionRole;
 
     /**
-     * @description 是否获取知识库信息
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $withSpaceDetail;
 
     /**
-     * @description 是否获取知识库权限
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $withSpacePermissionRole;
 
     /**
-     * @description 是否获取小组信息
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $withTeamDetail;

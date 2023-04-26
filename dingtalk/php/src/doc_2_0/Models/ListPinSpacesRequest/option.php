@@ -9,43 +9,43 @@ use AlibabaCloud\Tea\Model;
 class option extends Model
 {
     /**
-     * @description 分页大小
-     * 20
+     * @example 20
+     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标
+     * @example next_token
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 是否获取知识库创建者信息
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $withSpaceCreatorInfo;
 
     /**
-     * @description 是否获取知识库修改者信息
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $withSpaceModifierInfo;
 
     /**
-     * @description 是否获取知识库权限
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $withSpacePermissionRole;
 
     /**
-     * @description 是否获取小组信息
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $withTeamDetail;

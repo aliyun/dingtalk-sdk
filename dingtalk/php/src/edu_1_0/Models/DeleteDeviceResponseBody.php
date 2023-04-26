@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class DeleteDeviceResponseBody extends Model
 {
     /**
-     * @description 是否删除成功
-     *
      * @var bool
      */
     public $result;

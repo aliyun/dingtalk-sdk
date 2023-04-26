@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class DeleteUniversityStudentRequest extends Model
 {
     /**
-     * @description 班级ID
+     * @example 76781
      *
      * @var int
      */
     public $classId;
 
     /**
-     * @description 操作人用户ID
+     * @example manger1234
      *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 学生用户ID
+     * @example uu1234
      *
      * @var string
      */

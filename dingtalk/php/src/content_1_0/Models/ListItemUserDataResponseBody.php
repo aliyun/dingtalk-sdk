@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListItemUserDataResponseBody extends Model
 {
     /**
-     * @description 学习的时长记录
-     *
      * @var studyInfos[]
      */
     public $studyInfos;

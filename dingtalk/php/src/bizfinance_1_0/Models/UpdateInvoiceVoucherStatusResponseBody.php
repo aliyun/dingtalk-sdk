@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceVoucherStatusResponseBody extends Model
 {
     /**
-     * @description 业务返回结果
-     *
      * @var bool
      */
     public $result;
 
     /**
-     * @description 系统调用结果
-     *
      * @var bool
      */
     public $success;

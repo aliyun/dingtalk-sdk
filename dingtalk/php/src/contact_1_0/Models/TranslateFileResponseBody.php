@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class TranslateFileResponseBody extends Model
 {
     /**
-     * @description 异步转译任务id，最大长度为64字符
+     * @example fXrgPrvsNiZNa8RWis9Nk1SY
      *
      * @var string
      */

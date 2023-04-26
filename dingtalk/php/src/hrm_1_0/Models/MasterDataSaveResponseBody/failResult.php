@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class failResult extends Model
 {
     /**
-     * @description 业务流水唯一标识，和入参一致
+     * @example uk123
      *
      * @var string
      */
     public $bizUk;
 
     /**
-     * @description 错误码
+     * @example S0005
      *
      * @var string
      */
     public $errorCode;
 
     /**
-     * @description 错误信息
+     * @example 主键冲突
      *
      * @var string
      */
     public $errorMsg;
 
     /**
-     * @description 是否成功
+     * @example true
      *
      * @var bool
      */

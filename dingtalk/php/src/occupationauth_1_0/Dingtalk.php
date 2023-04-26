@@ -13,18 +13,64 @@ use AlibabaCloud\SDK\Dingtalk\Voccupationauth_1_0\Models\CheckUserTaskStatusRequ
 use AlibabaCloud\SDK\Dingtalk\Voccupationauth_1_0\Models\CheckUserTaskStatusResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
+use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
 use Darabonba\OpenApi\Models\OpenApiRequest;
+use Darabonba\OpenApi\Models\Params;
 use Darabonba\OpenApi\OpenApiClient;
 
 class Dingtalk extends OpenApiClient
 {
+    protected $_client;
+
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_client       = new DarabonbaGatewayDingTalkClient();
+        $this->_spi          = $this->_client;
         $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param CheckUserTaskStatusRequest $request
+     * @param CheckUserTaskStatusHeaders $headers
+     * @param RuntimeOptions             $runtime
+     *
+     * @return CheckUserTaskStatusResponse
+     */
+    public function checkUserTaskStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->provinceCode)) {
+            $body['provinceCode'] = $request->provinceCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CheckUserTaskStatus',
+            'version'     => 'occupationauth_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/occupationauth/auths/userTasks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
+        ]);
+
+        return CheckUserTaskStatusResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -41,32 +87,43 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @param CheckUserTaskStatusRequest $request
-     * @param CheckUserTaskStatusHeaders $headers
-     * @param RuntimeOptions             $runtime
+     * @param CheckUserTasksStatusRequest $request
+     * @param CheckUserTasksStatusHeaders $headers
+     * @param RuntimeOptions              $runtime
      *
-     * @return CheckUserTaskStatusResponse
+     * @return CheckUserTasksStatusResponse
      */
-    public function checkUserTaskStatusWithOptions($request, $headers, $runtime)
+    public function checkUserTasksStatusWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->provinceCode)) {
-            @$body['provinceCode'] = $request->provinceCode;
+            $query['provinceCode'] = $request->provinceCode;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
         }
         if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'CheckUserTasksStatus',
+            'version'     => 'occupationauth_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/occupationauth/userTasks/check',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'json',
+            'bodyType'    => 'json',
         ]);
 
-        return CheckUserTaskStatusResponse::fromMap($this->doROARequest('CheckUserTaskStatus', 'occupationauth_1.0', 'HTTP', 'POST', 'AK', '/v1.0/occupationauth/auths/userTasks', 'json', $req, $runtime));
+        return CheckUserTasksStatusResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -80,34 +137,5 @@ class Dingtalk extends OpenApiClient
         $headers = new CheckUserTasksStatusHeaders([]);
 
         return $this->checkUserTasksStatusWithOptions($request, $headers, $runtime);
-    }
-
-    /**
-     * @param CheckUserTasksStatusRequest $request
-     * @param CheckUserTasksStatusHeaders $headers
-     * @param RuntimeOptions              $runtime
-     *
-     * @return CheckUserTasksStatusResponse
-     */
-    public function checkUserTasksStatusWithOptions($request, $headers, $runtime)
-    {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->provinceCode)) {
-            @$query['provinceCode'] = $request->provinceCode;
-        }
-        $realHeaders = [];
-        if (!Utils::isUnset($headers->commonHeaders)) {
-            $realHeaders = $headers->commonHeaders;
-        }
-        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
-            @$realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
-        }
-        $req = new OpenApiRequest([
-            'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
-        ]);
-
-        return CheckUserTasksStatusResponse::fromMap($this->doROARequest('CheckUserTasksStatus', 'occupationauth_1.0', 'HTTP', 'POST', 'AK', '/v1.0/occupationauth/userTasks/check', 'json', $req, $runtime));
     }
 }

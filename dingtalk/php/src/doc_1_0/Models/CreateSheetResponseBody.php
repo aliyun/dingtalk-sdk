@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class CreateSheetResponseBody extends Model
 {
     /**
-     * @description 工作表id
+     * @example sheet_id
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 工作表名称
+     * @example sheet_name
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 工作表可见性, 创建之后默认为visible
+     * @example visible
      *
      * @var string
      */

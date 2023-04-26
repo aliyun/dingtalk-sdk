@@ -9,49 +9,49 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 职责描述
+     * @example 1678886770065
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 创建时间
+     * @example 1678886770065
      *
      * @var string
      */
     public $establishDate;
 
     /**
-     * @description 职位编码
+     * @example 1
      *
      * @var string
      */
     public $jobCode;
 
     /**
-     * @description 任职要求
+     * @example 有良好的技术素养
      *
      * @var string
      */
     public $jobRequirements;
 
     /**
-     * @description 职位名称
+     * @example 技术开发
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 生效时间
+     * @example 1678886770065
      *
      * @var string
      */
     public $startDate;
 
     /**
-     * @description 失效时间
+     * @example 1678886770065
      *
      * @var string
      */

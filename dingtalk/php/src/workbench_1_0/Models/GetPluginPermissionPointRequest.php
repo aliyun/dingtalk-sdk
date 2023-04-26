@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetPluginPermissionPointRequest extends Model
 {
     /**
-     * @description 插件id
-     *
      * @var string
      */
     public $miniAppId;

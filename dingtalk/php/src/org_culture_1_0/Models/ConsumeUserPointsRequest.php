@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class ConsumeUserPointsRequest extends Model
 {
     /**
-     * @description 扣减积分数量，1～1000000
+     * @example 10
      *
      * @var int
      */
     public $amount;
 
     /**
-     * @description 幂等外部ID，最大长度32个字符
+     * @example qwe123
      *
      * @var string
      */
     public $outId;
 
     /**
-     * @description 备注，最长32个字符
+     * @example 测试积分扣减
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 用途，可用值：OPEN_EMP_POINT_CONSUME_DEFAULT-默认扣减，OPEN_EMP_POINT_PUNISH_CONSUME-惩罚扣减；默认为: OPEN_EMP_POINT_CONSUME_DEFAULT
+     * @example OPEN_EMP_POINT_CONSUME_DEFAULT
      *
      * @var string
      */

@@ -9,113 +9,97 @@ use AlibabaCloud\Tea\Model;
 class templateList extends Model
 {
     /**
-     * @description adaptEnv
-     *
      * @var string[]
      */
     public $adaptEnv;
 
     /**
-     * @description appDesc
+     * @example 这是测试
      *
      * @var string
      */
     public $appDesc;
 
     /**
-     * @description appIcon
+     * @example @lALPDe7s2JOuoyjNBaDNCgA
      *
      * @var string
      */
     public $appIcon;
 
     /**
-     * @description caseVideoList
-     *
      * @var string[]
      */
     public $caseVideoList;
 
     /**
-     * @description category
+     * @example template_category
      *
      * @var string
      */
     public $categoryCode;
 
     /**
-     * @description coverImgList
-     *
      * @var string[]
      */
     public $coverImgList;
 
     /**
-     * @description expUrl
+     * @example https://www.baidu.com/
      *
      * @var string
      */
     public $expUrl;
 
     /**
-     * @description industryLabelList
-     *
      * @var string[]
      */
     public $industryLabelList;
 
     /**
-     * @description mobilePreviewMediaList
-     *
      * @var string[]
      */
     public $mobilePreviewMediaList;
 
     /**
-     * @description name
+     * @example 这是测试
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description previewMediaList
-     *
      * @var string[]
      */
     public $previewMediaList;
 
     /**
-     * @description providerName
+     * @example 小红
      *
      * @var string
      */
     public $providerName;
 
     /**
-     * @description roleLabelList
-     *
      * @var string[]
      */
     public $roleLabelList;
 
     /**
-     * @description simpleDesc
+     * @example 这是一个描述
      *
      * @var string
      */
     public $simpleDesc;
 
     /**
-     * @description templateKey
+     * @example template_key_1
      *
      * @var string
      */
     public $templateKey;
 
     /**
-     * @description useCasesMediaList
-     *
      * @var string[]
      */
     public $useCasesMediaList;

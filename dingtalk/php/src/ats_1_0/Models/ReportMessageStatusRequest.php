@@ -9,44 +9,50 @@ use AlibabaCloud\Tea\Model;
 class ReportMessageStatusRequest extends Model
 {
     /**
+     * @example ddats
+     *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 渠道标识。
+     * @example corp-ABC-prd
      *
      * @var string
      */
     public $channel;
 
     /**
-     * @description 错误码。
+     * @example INVALID_USER
      *
      * @var string
      */
     public $errorCode;
 
     /**
-     * @description 错误信息描述。
+     * @example 无效用户
      *
      * @var string
      */
     public $errorMsg;
 
     /**
-     * @description 消息ID。
+     * @example 594c5b30-57bd-4001-8903-4dc64cdc6739
      *
      * @var string
      */
     public $messageId;
 
     /**
+     * @example AppUid@Channel
+     *
      * @var string
      */
     public $receiverUserId;
 
     /**
+     * @example AppUid@Channel
+     *
      * @var string
      */
     public $senderUserId;

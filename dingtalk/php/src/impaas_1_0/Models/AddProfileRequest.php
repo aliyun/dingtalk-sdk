@@ -9,28 +9,22 @@ use AlibabaCloud\Tea\Model;
 class AddProfileRequest extends Model
 {
     /**
-     * @description 外部app的账号，格式：xxx@channel格式
-     *
      * @var string
      */
     public $appUid;
 
     /**
-     * @description 头像mediaId，调用Upload接口获得
-     *
      * @var string
      */
     public $avatarMediaId;
 
     /**
-     * @description 手机号
-     *
      * @var string
      */
     public $mobileNumber;
 
     /**
-     * @description 昵称
+     * @example usertest
      *
      * @var string
      */

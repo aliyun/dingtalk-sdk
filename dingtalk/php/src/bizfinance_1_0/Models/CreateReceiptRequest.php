@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class CreateReceiptRequest extends Model
 {
     /**
-     * @description 单据列表，不超过10条数据
-     *
      * @var receipts[]
      */
     public $receipts;

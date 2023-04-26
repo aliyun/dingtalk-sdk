@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class ExecuteBatchTaskResponseBody extends Model
 {
     /**
-     * @description 审批失败的任务数
+     * @example 1
      *
      * @var int
      */
     public $failNumber;
 
     /**
-     * @description 审批成功的任务数
+     * @example 2
      *
      * @var int
      */
     public $successNumber;
 
     /**
-     * @description 总任务数
+     * @example 3
      *
      * @var int
      */

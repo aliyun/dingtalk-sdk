@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class BatchUpdateFormDataByInstanceIdResponseBody extends Model
 {
     /**
-     * @description 成功更新的表单实例的id
-     *
      * @var string[]
      */
     public $result;

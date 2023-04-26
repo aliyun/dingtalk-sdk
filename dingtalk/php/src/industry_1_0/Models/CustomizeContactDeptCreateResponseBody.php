@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactDeptCreateResponseBody extends Model
 {
     /**
-     * @description 部门Id
-     *
      * @var int
      */
     public $content;

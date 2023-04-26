@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class PublishPackageRequest extends Model
 {
     /**
-     * @description 企业内部微应用agentId
+     * @example 1234
      *
      * @var int
      */
     public $agentId;
 
     /**
-     * @description 第三方企业应用appId
+     * @example 1234
      *
      * @var int
      */
     public $appId;
 
     /**
-     * @description H5离线包版本号
+     * @example 0.0.1
      *
      * @var string
      */

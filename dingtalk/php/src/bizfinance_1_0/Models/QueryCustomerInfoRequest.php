@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class QueryCustomerInfoRequest extends Model
 {
     /**
-     * @description 查询条件，目前支持 名字、税号、购方电话
-     *
      * @var string
      */
     public $keyword;
 
     /**
-     * @description 查询页码，从1开始
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 每页查询数量
+     * @example 20
      *
      * @var int
      */

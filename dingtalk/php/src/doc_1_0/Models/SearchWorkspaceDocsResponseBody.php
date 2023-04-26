@@ -15,8 +15,6 @@ class SearchWorkspaceDocsResponseBody extends Model
     public $docs;
 
     /**
-     * @description 是否还有可搜索内容
-     *
      * @var bool
      */
     public $hasMore;

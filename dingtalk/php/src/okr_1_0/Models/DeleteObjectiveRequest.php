@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteObjectiveRequest extends Model
 {
     /**
-     * @description 当前用户的 userId。
+     * @example 06186238011033616
      *
      * @var string
      */

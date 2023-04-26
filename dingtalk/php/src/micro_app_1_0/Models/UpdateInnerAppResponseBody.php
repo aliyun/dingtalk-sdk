@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class UpdateInnerAppResponseBody extends Model
 {
     /**
-     * @description 更新结果
+     * @example true
      *
      * @var bool
      */

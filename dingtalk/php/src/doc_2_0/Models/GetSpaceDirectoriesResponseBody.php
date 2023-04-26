@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class GetSpaceDirectoriesResponseBody extends Model
 {
     /**
-     * @description 子节点列表。
-     *
      * @var DentryModel[]
      */
     public $children;
 
     /**
-     * @description 是否还有后续可查询子节点。
-     *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 分页token。
-     *
      * @var string
      */
     public $nextToken;

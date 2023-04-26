@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetWebChannelUserTokenResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     *
      * @var string
      */
     public $result;

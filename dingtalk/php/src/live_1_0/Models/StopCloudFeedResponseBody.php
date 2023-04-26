@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class StopCloudFeedResponseBody extends Model
 {
     /**
-     * @description 状态更改是否成功
+     * @example true
      *
      * @var bool
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetLeaveTypeRequest extends Model
 {
     /**
-     * @description 操作者ID
+     * @example user01
      *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 空:开放接口定义假期类型;all:所有假期类型
+     * @example all
      *
      * @var string
      */

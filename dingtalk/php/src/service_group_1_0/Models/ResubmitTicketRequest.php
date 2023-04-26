@@ -12,14 +12,14 @@ use AlibabaCloud\Tea\Model;
 class ResubmitTicketRequest extends Model
 {
     /**
-     * @description 工单创建人UnionId
+     * @example Dq9hP8Sk2v6vQ6l05nCe5wiEiE
      *
      * @var string
      */
     public $creatorUnionId;
 
     /**
-     * @description 自定义组件字段值(JSON格式)
+     * @example [{\"identifier\":\"input1\",\"value\":\"123\"}]
      *
      * @var string
      */
@@ -31,56 +31,50 @@ class ResubmitTicketRequest extends Model
     public $notify;
 
     /**
-     * @description 开放团队ID
+     * @example eKWh3GBwsKEiE
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 工单模板业务ID
+     * @example bLkvfXKiSngQiE
      *
      * @var string
      */
     public $openTemplateBizId;
 
     /**
-     * @description 工单开放ID
+     * @example iPbrfXjdNjRoiE
      *
      * @var string
      */
     public $openTicketId;
 
     /**
-     * @description 工单处理人UnionId列表
-     *
      * @var string[]
      */
     public $processorUnionIds;
 
     /**
-     * @description 工单场景 SG 或 VOC
+     * @example SG
      *
      * @var string
      */
     public $scene;
 
     /**
-     * @description 工单场景信息
-     *
      * @var sceneContext
      */
     public $sceneContext;
 
     /**
-     * @description 备注
-     *
      * @var ticketMemo
      */
     public $ticketMemo;
 
     /**
-     * @description 工单标题
+     * @example 工单标题
      *
      * @var string
      */

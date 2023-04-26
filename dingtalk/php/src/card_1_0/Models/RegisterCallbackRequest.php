@@ -9,29 +9,27 @@ use AlibabaCloud\Tea\Model;
 class RegisterCallbackRequest extends Model
 {
     /**
-     * @description 加密密钥用于校验来源
+     * @example mySecret
      *
      * @var string
      */
     public $apiSecret;
 
     /**
-     * @description callbackUrl 的路由 Key，一个 callbackRouteKey 可以映射一个 callbackUrl
+     * @example routeKey-12
      *
      * @var string
      */
     public $callbackRouteKey;
 
     /**
-     * @description 注册的回调 URL
+     * @example https://www.myurl/callback
      *
      * @var string
      */
     public $callbackUrl;
 
     /**
-     * @description 是否强制覆盖更新，默认 false
-     *
      * @var bool
      */
     public $forceUpdate;

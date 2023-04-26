@@ -15,7 +15,7 @@ class ticketMemo extends Model
     public $attachments;
 
     /**
-     * @description 备注文字
+     * @example 备注
      *
      * @var string
      */

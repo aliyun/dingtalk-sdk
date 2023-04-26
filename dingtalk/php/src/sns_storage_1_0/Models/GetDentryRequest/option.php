@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class option extends Model
 {
     /**
-     * @description 通过指定应用id, 返回对应的可见属性，即dentry.appProperties，
-     * 20
      * @var string[]
      */
     public $appIdsForAppProperties;
 
     /**
-     * @description 是否获取文件缩略图临时链接
-     * false
+     * @example true
+     *
      * @var bool
      */
     public $withThumbnail;

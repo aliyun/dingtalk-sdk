@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class CreateAclsRequest extends Model
 {
     /**
-     * @description 对日历的访问权限
-     *
      * @var string
      */
     public $privilege;
 
     /**
-     * @description 权限范围
-     *
      * @var scope
      */
     public $scope;
 
     /**
-     * @description 是否向授权人发消息
-     *
      * @var bool
      */
     public $sendMsg;

@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class records extends Model
 {
     /**
-     * @description 联系人画像数据
+     * @example {} ,具体字段取决于客户管理-字段管理-联系人字段设置
      *
      * @var string
      */
     public $contactData;
 
     /**
-     * @description 成员unionId
+     * @example ahghgg
      *
      * @var string
      */
     public $memberUnionId;
 
     /**
-     * @description 成员昵称
+     * @example 张三
      *
      * @var string
      */
     public $nickName;
 
     /**
-     * @description 成员ID
+     * @example 88888
      *
      * @var string
      */

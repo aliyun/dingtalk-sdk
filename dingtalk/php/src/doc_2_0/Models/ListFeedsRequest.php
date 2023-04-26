@@ -9,28 +9,22 @@ use AlibabaCloud\Tea\Model;
 class ListFeedsRequest extends Model
 {
     /**
-     * @description 是否排除文件。
-     *
      * @var bool
      */
     public $excludeFile;
 
     /**
-     * @description 每页最大条目数，最大值50。
-     *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 分页游标，第一页可不传。
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 操作用户unionId。
+     * @example abcd
      *
      * @var string
      */

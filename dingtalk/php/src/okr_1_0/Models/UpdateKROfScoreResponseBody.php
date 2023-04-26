@@ -15,7 +15,7 @@ class UpdateKROfScoreResponseBody extends Model
     public $data;
 
     /**
-     * @description 请求成功的标识。
+     * @example true
      *
      * @var bool
      */

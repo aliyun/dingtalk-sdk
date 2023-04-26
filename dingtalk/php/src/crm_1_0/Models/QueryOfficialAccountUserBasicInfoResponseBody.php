@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class QueryOfficialAccountUserBasicInfoResponseBody extends Model
 {
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $requestId;
 
     /**
-     * @description 响应结果
-     *
      * @var result
      */
     public $result;

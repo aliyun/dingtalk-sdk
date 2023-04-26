@@ -9,35 +9,31 @@ use AlibabaCloud\Tea\Model;
 class SendRobotDingMessageRequest extends Model
 {
     /**
-     * @description 模版对应的参数
-     *
      * @var string[]
      */
     public $contentParams;
 
     /**
-     * @description 颁发的模版id，可通过宜搭申请：https://yida.alibaba-inc.com/alibaba/web/APP_NSUGAGIQUMI4ESRA7O7D/inst/homepage/#/FORM-WO866371VGXSECXX4M0NC9KSGAT92VSA3TZSK9B
+     * @example template_ding_diot_monitor
      *
      * @var string
      */
     public $dingTemplateId;
 
     /**
-     * @description 群聊的对外开放Id
+     * @example cidfCSpXXXXXXXXXXXchatbotId
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 接受人的userId列表
-     *
      * @var string[]
      */
     public $receiverUserIdList;
 
     /**
-     * @description 机器人的Id
+     * @example qF9j5G8hmFLiqJ11629XXXXXXXX
      *
      * @var string
      */

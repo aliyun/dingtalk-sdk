@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class skipTimeByDurations extends Model
 {
     /**
-     * @description 每天加班满 x小时，单位 秒
-     *
      * @var int
      */
     public $duration;
 
     /**
-     * @description 扣除 x小时，单位 秒
-     *
      * @var int
      */
     public $minus;

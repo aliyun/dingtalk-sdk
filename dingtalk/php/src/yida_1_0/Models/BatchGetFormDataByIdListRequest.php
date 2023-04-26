@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class BatchGetFormDataByIdListRequest extends Model
 {
     /**
-     * @description 宜搭应用编码
+     * @example APP_XCE0EVXS6DYG3YDYC5RD
      *
      * @var string
      */
     public $appType;
 
     /**
-     * @description 表单实例id列表
+     * @example FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24
      *
      * @var string[]
      */
     public $formInstanceIdList;
 
     /**
-     * @description 表单编码
+     * @example FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 是否需要宜搭表单组件格式的实例数据
+     * @example true
      *
      * @var bool
      */
     public $needFormInstanceValue;
 
     /**
-     * @description 宜搭应用秘钥
+     * @example 09866181UTZVVD4R3DC955FNKIM52HVPU5WWK7
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉userId
+     * @example ding173982232112232
      *
      * @var string
      */

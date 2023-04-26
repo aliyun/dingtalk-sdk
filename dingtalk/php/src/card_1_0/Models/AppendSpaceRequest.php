@@ -13,36 +13,28 @@ use AlibabaCloud\Tea\Model;
 class AppendSpaceRequest extends Model
 {
     /**
-     * @description 协作场域信息
-     *
      * @var coFeedOpenSpaceModel
      */
     public $coFeedOpenSpaceModel;
 
     /**
-     * @description IM群聊场域信息
-     *
      * @var imGroupOpenSpaceModel
      */
     public $imGroupOpenSpaceModel;
 
     /**
-     * @description IM群聊场域信息
-     *
      * @var imRobotOpenSpaceModel
      */
     public $imRobotOpenSpaceModel;
 
     /**
-     * @description 唯一标识一张卡片的外部Id
+     * @example xxx_yyyy_123456
      *
      * @var string
      */
     public $outTrackId;
 
     /**
-     * @description 吊顶场域信息
-     *
      * @var topOpenSpaceModel
      */
     public $topOpenSpaceModel;

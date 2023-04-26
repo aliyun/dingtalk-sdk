@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class customfields extends Model
 {
     /**
-     * @description 自定义字段Id。
+     * @example 62c25e3bbxx0xxx
      *
      * @var string
      */

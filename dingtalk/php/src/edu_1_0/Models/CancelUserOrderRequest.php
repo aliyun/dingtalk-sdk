@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class CancelUserOrderRequest extends Model
 {
     /**
-     * @description 支付宝应用id。
+     * @example 123400
      *
      * @var string
      */
     public $alipayAppId;
 
     /**
-     * @description 商户id。
+     * @example 10000
      *
      * @var string
      */
     public $merchantId;
 
     /**
-     * @description 订单号。
+     * @example CM000001
      *
      * @var string
      */
     public $orderNo;
 
     /**
-     * @description 签名。
+     * @example WWrhziOLF/XuRd3IyKwLkLeSFgKnUfeg2yLEVD9Bw+8
      *
      * @var string
      */
     public $signature;
 
     /**
-     * @description 时间戳。
+     * @example 100000
      *
      * @var int
      */

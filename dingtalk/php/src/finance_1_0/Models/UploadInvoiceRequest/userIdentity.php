@@ -9,31 +9,43 @@ use AlibabaCloud\Tea\Model;
 class userIdentity extends Model
 {
     /**
+     * @example 95188
+     *
      * @var string
      */
     public $mobile;
 
     /**
+     * @example 86
+     *
      * @var string
      */
     public $mobileStateCode;
 
     /**
+     * @example dinng1123434
+     *
      * @var string
      */
     public $targetCorpId;
 
     /**
+     * @example STAFF_ID
+     *
      * @var string
      */
     public $type;
 
     /**
+     * @example akdfwiiw
+     *
      * @var string
      */
     public $unionId;
 
     /**
+     * @example 02734930
+     *
      * @var string
      */
     public $userId;

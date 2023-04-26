@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class UploadInvoiceByMobileResponseBody extends Model
 {
     /**
-     * @description 结果
-     *
      * @var result
      */
     public $result;

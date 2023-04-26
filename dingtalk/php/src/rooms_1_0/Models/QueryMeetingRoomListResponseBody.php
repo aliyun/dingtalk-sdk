@@ -10,22 +10,20 @@ use AlibabaCloud\Tea\Model;
 class QueryMeetingRoomListResponseBody extends Model
 {
     /**
-     * @description 是否有更多
+     * @example true
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下次查询分页标记
+     * @example 123
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 会议室列表
-     *
      * @var result[]
      */
     public $result;

@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetSignInListResponseBody extends Model
 {
     /**
-     * @description 翻页token
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 签到信息
-     *
      * @var users[]
      */
     public $users;

@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class GetFileUploadInfoRequest extends Model
 {
     /**
-     * @description 业务标识
+     * @example ddats
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 文件名称
+     * @example 张三的简历
      *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 文件大小（单位：字节）
+     * @example 1024
      *
      * @var int
      */
     public $fileSize;
 
     /**
-     * @description 文件MD5摘要
+     * @example xxx
      *
      * @var string
      */
     public $md5;
 
     /**
-     * @description 操作人员工标识，为空时默认以企业管理员身份进行操作
+     * @example manager5875
      *
      * @var string
      */

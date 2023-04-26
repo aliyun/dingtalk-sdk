@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryDentryRequest extends Model
 {
     /**
-     * @description 是否查询知识库信息。
+     * @example false
      *
      * @var bool
      */
     public $includeSpace;
 
     /**
-     * @description 操作用户unionId。
+     * @example abcd
      *
      * @var string
      */

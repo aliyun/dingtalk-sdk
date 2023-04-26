@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class GetUserAppVersionSummaryResponseBody extends Model
 {
     /**
-     * @description 用户版本分布情况列表
-     *
      * @var data[]
      */
     public $data;
 
     /**
-     * @description 是否有更多数据
+     * @example false
      *
      * @var bool
      */
     public $hasMore;
 
     /**
-     * @description 下一次请求的分页游标
+     * @example 10
      *
      * @var int
      */

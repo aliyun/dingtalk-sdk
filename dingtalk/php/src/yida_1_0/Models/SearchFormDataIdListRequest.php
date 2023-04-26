@@ -9,63 +9,61 @@ use AlibabaCloud\Tea\Model;
 class SearchFormDataIdListRequest extends Model
 {
     /**
-     * @description createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表
+     * @example 2018-01-01
      *
      * @var string
      */
     public $createFromTimeGMT;
 
     /**
-     * @description createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表。
+     * @example 2018-02-01
      *
      * @var string
      */
     public $createToTimeGMT;
 
     /**
-     * @description 语言
+     * @example zh_CN
      *
      * @var string
      */
     public $language;
 
     /**
-     * @description modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表
+     * @example 2018-01-01
      *
      * @var string
      */
     public $modifiedFromTimeGMT;
 
     /**
-     * @description modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。
+     * @example 2018-02-01
      *
      * @var string
      */
     public $modifiedToTimeGMT;
 
     /**
-     * @description 根据数据提交人工号查询
+     * @example dign1234
      *
      * @var string
      */
     public $originatorId;
 
     /**
-     * @description 根据表单内组件值查询
-     *
      * @var string
      */
     public $searchFieldJson;
 
     /**
-     * @description 应用秘钥
+     * @example hexxx
      *
      * @var string
      */
     public $systemToken;
 
     /**
-     * @description 钉钉的userId
+     * @example ding1234
      *
      * @var string
      */

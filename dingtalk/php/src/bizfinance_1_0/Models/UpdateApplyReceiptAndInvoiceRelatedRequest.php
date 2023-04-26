@@ -10,22 +10,18 @@ use AlibabaCloud\Tea\Model;
 class UpdateApplyReceiptAndInvoiceRelatedRequest extends Model
 {
     /**
-     * @description 发票模型
-     *
      * @var generalInvoiceVOList[]
      */
     public $generalInvoiceVOList;
 
     /**
-     * @description 审批单id
+     * @example abc
      *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description 操作员
-     *
      * @var string
      */
     public $operator;

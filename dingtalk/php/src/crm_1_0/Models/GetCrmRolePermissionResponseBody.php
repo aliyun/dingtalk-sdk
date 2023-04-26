@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetCrmRolePermissionResponseBody extends Model
 {
     /**
-     * @description CRM表单权限配置
-     *
      * @var permissions[]
      */
     public $permissions;

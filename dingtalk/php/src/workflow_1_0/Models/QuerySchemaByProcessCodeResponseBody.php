@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class QuerySchemaByProcessCodeResponseBody extends Model
 {
     /**
-     * @description 返回结果详情。
-     *
      * @var result
      */
     public $result;

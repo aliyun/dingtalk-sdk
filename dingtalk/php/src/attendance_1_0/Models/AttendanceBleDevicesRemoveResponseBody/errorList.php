@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class errorList extends Model
 {
     /**
-     * @description 错误code
+     * @example 400001
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 移除失败蓝牙设备Id列表
-     *
      * @var int[]
      */
     public $failureList;
 
     /**
-     * @description 错误信息
+     * @example error
      *
      * @var string
      */

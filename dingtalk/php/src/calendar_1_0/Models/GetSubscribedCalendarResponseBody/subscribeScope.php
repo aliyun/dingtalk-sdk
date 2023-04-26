@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class subscribeScope extends Model
 {
     /**
-     * @description 可订阅组织
-     *
      * @var string[]
      */
     public $corpIds;
 
     /**
-     * @description 可订阅群组
-     *
      * @var string[]
      */
     public $openConversationIds;
 
     /**
-     * @description 可订阅用户
-     *
      * @var string[]
      */
     public $unionIds;

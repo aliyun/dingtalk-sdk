@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class attachments extends Model
 {
     /**
-     * @description 文件名
+     * @example wahaha.txt
      *
      * @var string
      */
     public $fileName;
 
     /**
-     * @description 文件key
+     * @example ticket/image/44708069/43003/e27204b382c04832aec4243e940a1367_1625831640499.txt
      *
      * @var string
      */

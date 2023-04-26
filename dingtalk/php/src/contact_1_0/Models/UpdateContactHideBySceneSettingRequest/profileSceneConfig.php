@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class profileSceneConfig extends Model
 {
     /**
-     * @description 是否在用户详情页面生效，默认为true。如果为false，仍然允许查看个人资料页中的员工信息。
-     *
      * @var bool
      */
     public $active;

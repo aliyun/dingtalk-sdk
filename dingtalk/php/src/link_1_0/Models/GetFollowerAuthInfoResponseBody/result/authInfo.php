@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class authInfo extends Model
 {
     /**
-     * @description 用户主组织信息
-     * 需要用户授权给应用后返回此信息。
      * @var mainCorp
      */
     public $mainCorp;
 
     /**
-     * @description 手机号码授权详情。
-     * 需要用户授权给应用后返回此信息。
      * @var mobile
      */
     public $mobile;

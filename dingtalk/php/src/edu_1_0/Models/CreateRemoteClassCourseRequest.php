@@ -11,43 +11,39 @@ use AlibabaCloud\Tea\Model;
 class CreateRemoteClassCourseRequest extends Model
 {
     /**
-     * @description 听课设备列表
-     *
      * @var attendParticipants[]
      */
     public $attendParticipants;
 
     /**
-     * @description 免登码
+     * @example bab02f63c1e030fbbxxxx
      *
      * @var string
      */
     public $authCode;
 
     /**
-     * @description 课程名称
+     * @example 春天来了
      *
      * @var string
      */
     public $courseName;
 
     /**
-     * @description 结束时间
+     * @example 1634184000000
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 开始时间
+     * @example 1634176800000
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 授课设备
-     *
      * @var teachingParticipant
      */
     public $teachingParticipant;

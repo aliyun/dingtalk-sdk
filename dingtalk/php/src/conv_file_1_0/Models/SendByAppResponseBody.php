@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class SendByAppResponseBody extends Model
 {
     /**
-     * @description 发送到目标会话的文件信息
-     *
      * @var file
      */
     public $file;

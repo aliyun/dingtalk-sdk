@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class DeleteAppRoleResponseBody extends Model
 {
     /**
-     * @description 删除结果
+     * @example true
      *
      * @var bool
      */

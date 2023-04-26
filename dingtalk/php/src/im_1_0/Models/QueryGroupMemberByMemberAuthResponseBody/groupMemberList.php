@@ -9,29 +9,28 @@ use AlibabaCloud\Tea\Model;
 class groupMemberList extends Model
 {
     /**
-     * @description 群内昵称
-     *
+     * @example 张三
      *
      * @var string
      */
     public $groupNickName;
 
     /**
-     * @description 企业内成员姓名
+     * @example 张某某
      *
      * @var string
      */
     public $orgName;
 
     /**
-     * @description 头像url
+     * @example https://xxx
      *
      * @var string
      */
     public $profilePhotoUrl;
 
     /**
-     * @description 员工id
+     * @example xxx
      *
      * @var string
      */

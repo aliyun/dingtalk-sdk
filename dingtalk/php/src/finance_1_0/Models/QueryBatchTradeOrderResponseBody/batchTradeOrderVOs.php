@@ -9,98 +9,98 @@ use AlibabaCloud\Tea\Model;
 class batchTradeOrderVOs extends Model
 {
     /**
-     * @description 支付宝批次订单号
+     * @example 2021090102102122200002121
      *
      * @var string
      */
     public $alipayTransId;
 
     /**
-     * @description 明细处理失败的支付汇总金额
+     * @example 0
      *
      * @var string
      */
     public $failAmount;
 
     /**
-     * @description 失败笔数
+     * @example 0
      *
      * @var int
      */
     public $failCount;
 
     /**
-     * @description 失败原因
+     * @example 收款人不存在
      *
      * @var string
      */
     public $failReason;
 
     /**
-     * @description 批次完成交易时间
+     * @example 2021-09-01 12:00:00
      *
      * @var string
      */
     public $gmtFinish;
 
     /**
-     * @description 批次受理交易时间
+     * @example 2021-09-01 11:00:00
      *
      * @var string
      */
     public $gmtSubmit;
 
     /**
-     * @description 批次号
+     * @example 20210901001
      *
      * @var string
      */
     public $outBatchNo;
 
     /**
-     * @description 付款人staffId
+     * @example 213654465
      *
      * @var string
      */
     public $payerStaffId;
 
     /**
-     * @description 付款方需要支付的金额（元）
+     * @example 1.00
      *
      * @var string
      */
     public $paymentAmount;
 
     /**
-     * @description 支付币种
+     * @example CNY
      *
      * @var string
      */
     public $paymentCurrency;
 
     /**
-     * @description 状态
+     * @example SUCCESS
      *
      * @var string
      */
     public $status;
 
     /**
-     * @description 成功金额（元）
+     * @example 1.00
      *
      * @var string
      */
     public $successAmount;
 
     /**
-     * @description 成功笔数
+     * @example 1
      *
      * @var int
      */
     public $successCount;
 
     /**
-     * @description 批次的总金额（元）
+     * @example 1.00
      *
      * @var string
      */

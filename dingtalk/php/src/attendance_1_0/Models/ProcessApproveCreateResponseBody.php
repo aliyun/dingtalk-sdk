@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ProcessApproveCreateResponseBody extends Model
 {
     /**
-     * @description 审批单返回对象
-     *
      * @var result
      */
     public $result;

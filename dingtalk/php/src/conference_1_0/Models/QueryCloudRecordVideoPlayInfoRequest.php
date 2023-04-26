@@ -9,22 +9,16 @@ use AlibabaCloud\Tea\Model;
 class QueryCloudRecordVideoPlayInfoRequest extends Model
 {
     /**
-     * @description 媒体文件id
-     *
      * @var string
      */
     public $mediaId;
 
     /**
-     * @description 集群id
-     *
      * @var string
      */
     public $regionId;
 
     /**
-     * @description 用户id
-     *
      * @var string
      */
     public $unionId;

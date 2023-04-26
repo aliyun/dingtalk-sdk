@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CustomizeContactEmpListRequest extends Model
 {
     /**
-     * @description 部门Id
+     * @example 65722123
      *
      * @var int
      */

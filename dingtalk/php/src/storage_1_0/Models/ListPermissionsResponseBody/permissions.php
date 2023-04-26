@@ -11,56 +11,52 @@ use AlibabaCloud\Tea\Model;
 class permissions extends Model
 {
     /**
-     * @description 创建时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 文件id
+     * @example dentry_id
      *
      * @var string
      */
     public $dentryId;
 
     /**
-     * @description 有效时间
+     * @example 3600
      *
      * @var int
      */
     public $duration;
 
     /**
-     * @description 权限成员
-     *
      * @var member
      */
     public $member;
 
     /**
-     * @description 修改时间
+     * @example 2022-01-01T10:00:00Z
      *
      * @var string
      */
     public $modifiedTime;
 
     /**
-     * @description 操作人id
+     * @example operator_id
      *
      * @var string
      */
     public $operatorId;
 
     /**
-     * @description 权限角色
-     *
      * @var role
      */
     public $role;
 
     /**
-     * @description 空间id
+     * @example space_id
      *
      * @var string
      */

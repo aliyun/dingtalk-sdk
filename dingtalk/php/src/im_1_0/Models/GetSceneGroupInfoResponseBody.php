@@ -9,57 +9,43 @@ use AlibabaCloud\Tea\Model;
 class GetSceneGroupInfoResponseBody extends Model
 {
     /**
-     * @description 群url
-     *
      * @var string
      */
     public $groupUrl;
 
     /**
-     * @description 群头像mediaId
-     *
      * @var string
      */
     public $icon;
 
     /**
-     * @description 开放群id
+     * @example cidXXXXXXXXX==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 群主员工id
-     *
      * @var string
      */
     public $ownerUserId;
 
     /**
-     * @description 群状态。
-     * 2：已解散
      * @var int
      */
     public $status;
 
     /**
-     * @description result
-     *
      * @var bool
      */
     public $success;
 
     /**
-     * @description 场景群模板ID
-     *
      * @var string
      */
     public $templateId;
 
     /**
-     * @description 群名称
-     *
      * @var string
      */
     public $title;

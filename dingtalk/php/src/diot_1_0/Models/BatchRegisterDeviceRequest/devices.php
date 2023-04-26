@@ -10,70 +10,66 @@ use AlibabaCloud\Tea\Model;
 class devices extends Model
 {
     /**
-     * @description 设备ID。
+     * @example 002
      *
      * @var string
      */
     public $deviceId;
 
     /**
-     * @description 设备名称。
+     * @example 摄像头002
      *
      * @var string
      */
     public $deviceName;
 
     /**
-     * @description 设备状态  0:在线  1:离线
+     * @example 0
      *
      * @var int
      */
     public $deviceStatus;
 
     /**
-     * @description 设备类型，自定义传入，最多128个字节。
+     * @example Camera
      *
      * @var string
      */
     public $deviceType;
 
     /**
-     * @description 设备类型名称，自定义传入，最多128个字节，与deviceType一一对应。
+     * @example 摄像头
      *
      * @var string
      */
     public $deviceTypeName;
 
     /**
-     * @description 第三方平台定制参数，企业内部系统忽略。
-     *
      * @var mixed[]
      */
     public $extraData;
 
     /**
-     * @description 视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。
-     *
      * @var liveUrls
      */
     public $liveUrls;
 
     /**
-     * @description 设备地址。
+     * @example 社区南门
      *
      * @var string
      */
     public $location;
 
     /**
-     * @description 父设备ID。
+     * @example 001
      *
      * @var string
      */
     public $parentId;
 
     /**
-     * @description 产品类型 CAMERA：摄像头，可看直播 OTHERS：非摄像头
+     * @example CAMERA
      *
      * @var string
      */

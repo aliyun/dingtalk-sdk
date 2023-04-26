@@ -9,29 +9,21 @@ use AlibabaCloud\Tea\Model;
 class FileStorageActiveStorageResponseBody extends Model
 {
     /**
-     * @description oss开启时间
-     *
      * @var string
      */
     public $createDate;
 
     /**
-     * @description 是否开启专属存储 0开启1关闭
-     *
      * @var int
      */
     public $fileStorageOpenStatus;
 
     /**
-     * @description 存储状态 0正常1异常
-     *
      * @var int
      */
     public $storageStatus;
 
     /**
-     * @description 已经使用的容量Bytes
-     *
      * @var int
      */
     public $usedQuota;

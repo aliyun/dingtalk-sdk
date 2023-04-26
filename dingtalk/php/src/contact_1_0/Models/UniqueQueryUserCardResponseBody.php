@@ -9,70 +9,66 @@ use AlibabaCloud\Tea\Model;
 class UniqueQueryUserCardResponseBody extends Model
 {
     /**
-     * @description 图标
+     * @example @lADPD2sQxoYs677NAavNAao
      *
      * @var string
      */
     public $avatarUrl;
 
     /**
-     * @description 名片id
+     * @example CARD-6F0DA174-A0F4-4EBF-B24B-5FDFA648D25E
      *
      * @var string
      */
     public $cardId;
 
     /**
-     * @description 额外信息
-     *
      * @var mixed[]
      */
     public $extension;
 
     /**
-     * @description 工业名
+     * @example 工业
      *
      * @var string
      */
     public $industryName;
 
     /**
-     * @description 介绍
+     * @example 我是谁
      *
      * @var string
      */
     public $introduce;
 
     /**
-     * @description 名称
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 组织名
+     * @example 测试企业
      *
      * @var string
      */
     public $orgName;
 
     /**
-     * @description 用户设置
-     *
      * @var mixed[]
      */
     public $settings;
 
     /**
-     * @description 模版id
+     * @example 163520027_5FE66C522EA142C8r7Abf7VY
      *
      * @var string
      */
     public $templateId;
 
     /**
-     * @description 标题
+     * @example 标题
      *
      * @var string
      */

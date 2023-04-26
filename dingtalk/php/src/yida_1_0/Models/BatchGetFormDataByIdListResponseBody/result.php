@@ -11,105 +11,101 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 创建时间
+     * @example 2021-05-01
      *
      * @var string
      */
     public $createTimeGMT;
 
     /**
-     * @description 创建者的userId
+     * @example ding12345
      *
      * @var string
      */
     public $creatorUserId;
 
     /**
-     * @description 表单实例数据
+     * @example {"addressField_l0c1cwiy_id":"\"海南省/469027/国营红岗农场/111\"","associationFormField_l0c1hdz4_id":"\"[{\\\"formType\\\":\\\"receipt\\\",\\\"formUuid\\\":\\\"FORM-QQ866JB1QW8YM5XZZZ64VQB61OGM1MLWE1C0LG\\\",\\\"instanceId\\\":\\\"FINST-CC666Y6198RY0LAN39XGND212MSX3TFT95S0LN31\\\",\\\"subTitle\\\":\\\"{\\\\\\\"type\\\\\\\":\\\\\\\"div\\\\\\\",\\\\\\\"props\\\\\\\":{\\\\\\\"children\\\\\\\":{\\\\\\\"type\\\\\\\":\\\\\\\"a\\\\\\\",\\\\\\\"props\\\\\\\":{\\\\\\\"children\\\\\\\":\\\\\\\"查看签名\\\\\\\",\\\\\\\"className\\\\\\\":\\\\\\\"inst-cell-item-link\\\\\\\",\\\\\\\"style\\\\\\\":{\\\\\\\"cursor\\\\\\\":\\\\\\\"pointer\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"#0068ff\\\\\\\"}}},\\\\\\\"className\\\\\\\":\\\\\\\"inst-cell-item\\\\\\\"}}\\\",\\\"appType\\\":\\\"APP_K6IGJJ6PFAARLPDSWKXQ\\\",\\\"title\\\":\\\"1\\\"}]\"","countrySelectField_l0c1cwiu_id":["PG"]}
      *
      * @var mixed[]
      */
     public $formData;
 
     /**
-     * @description 表单实例id
+     * @example FINST-J8766S91O2UYN87ZX3XOF1MY8MBA2912BSV0L24
      *
      * @var string
      */
     public $formInstanceId;
 
     /**
-     * @description 表单编码
+     * @example FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
      *
      * @var string
      */
     public $formUuid;
 
     /**
-     * @description 数据库表记录主键id
+     * @example 12345
      *
      * @var int
      */
     public $id;
 
     /**
-     * @description 实例数据
+     * @example 符合宜搭表单实例格式的json数据
      *
      * @var string
      */
     public $instanceValue;
 
     /**
-     * @description 修改时间
+     * @example 2021-05-01
      *
      * @var string
      */
     public $modifiedTimeGMT;
 
     /**
-     * @description 修改者的钉钉userId
+     * @example manager123
      *
      * @var string
      */
     public $modifier;
 
     /**
-     * @description 修改者
-     *
      * @var modifyUser
      */
     public $modifyUser;
 
     /**
-     * @description 表单提交人
-     *
      * @var originator
      */
     public $originator;
 
     /**
-     * @description 该表单实例对应的批量导入的批次号(如果是通过批量导入创建的)
+     * @example IMPORT-388664B1BAUVB3AYZE1RIUE88TDM1QI9WIOWK2
      *
      * @var string
      */
     public $sequence;
 
     /**
-     * @description 流水号
+     * @example YIDA909202202250027
      *
      * @var string
      */
     public $serialNumber;
 
     /**
-     * @description 标题
+     * @example 李四发起的请购单
      *
      * @var string
      */
     public $title;
 
     /**
-     * @description 该表单实例对应的表单schema版本
+     * @example 1.0
      *
      * @var int
      */

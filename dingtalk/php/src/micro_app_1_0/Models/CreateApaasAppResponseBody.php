@@ -9,15 +9,13 @@ use AlibabaCloud\Tea\Model;
 class CreateApaasAppResponseBody extends Model
 {
     /**
-     * @description 钉钉侧应用id
+     * @example 1
      *
      * @var int
      */
     public $agentId;
 
     /**
-     * @description ISV侧应用id
-     *
      * @var string
      */
     public $bizAppId;

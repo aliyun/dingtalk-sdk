@@ -9,35 +9,35 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description gmtCreate
+     * @example 2021-12-22 15:30:31
      *
      * @var string
      */
     public $gmtCreate;
 
     /**
-     * @description 修改时间
+     * @example 2021-12-22 15:30:31
      *
      * @var string
      */
     public $gmtModified;
 
     /**
-     * @description 用户工号
+     * @example 2783939
      *
      * @var string
      */
     public $jobNumber;
 
     /**
-     * @description 角色编码
+     * @example sys_admin
      *
      * @var string
      */
     public $roleCode;
 
     /**
-     * @description 角色名称
+     * @example 管理员
      *
      * @var string
      */
@@ -49,14 +49,14 @@ class content extends Model
     public $status;
 
     /**
-     * @description 用户编码
+     * @example 7424792
      *
      * @var string
      */
     public $userCode;
 
     /**
-     * @description 用户名称
+     * @example 张三
      *
      * @var string
      */

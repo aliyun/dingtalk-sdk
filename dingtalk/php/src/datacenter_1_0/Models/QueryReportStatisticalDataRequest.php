@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class QueryReportStatisticalDataRequest extends Model
 {
     /**
-     * @description statDate
-     *
      * @var string
      */
     public $statDate;

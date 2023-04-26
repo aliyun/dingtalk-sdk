@@ -9,28 +9,24 @@ use AlibabaCloud\Tea\Model;
 class ConversationCreatedNotifyResponseBody extends Model
 {
     /**
-     * @description dingOpenErrcode
-     *
      * @var int
      */
     public $dingOpenErrcode;
 
     /**
-     * @description errorMsg
-     *
      * @var string
      */
     public $errorMsg;
 
     /**
-     * @description 回调是否执行成功
+     * @example true
      *
      * @var bool
      */
     public $result;
 
     /**
-     * @description 回调是否请求成
+     * @example true
      *
      * @var bool
      */

@@ -9,57 +9,41 @@ use AlibabaCloud\Tea\Model;
 class commodityVOList extends Model
 {
     /**
-     * @description accountDistributionNumber
-     *
      * @var int
      */
     public $accountDistributionNumber;
 
     /**
-     * @description accountNum
-     *
      * @var int
      */
     public $accountNumber;
 
     /**
-     * @description activationCode
-     *
      * @var string
      */
     public $activationCode;
 
     /**
-     * @description buyDate
-     *
      * @var string
      */
     public $buyDateGMT;
 
     /**
-     * @description expireDate
-     *
      * @var string
      */
     public $expireDateGMT;
 
     /**
-     * @description instanceId
-     *
      * @var string
      */
     public $instanceId;
 
     /**
-     * @description status
-     *
      * @var string
      */
     public $status;
 
     /**
-     * @description version
-     *
      * @var int
      */
     public $version;

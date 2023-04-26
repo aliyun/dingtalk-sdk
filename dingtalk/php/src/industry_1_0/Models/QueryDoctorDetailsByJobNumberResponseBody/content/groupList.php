@@ -9,50 +9,36 @@ use AlibabaCloud\Tea\Model;
 class groupList extends Model
 {
     /**
-     * @description 科室id
-     *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 科室名称
-     *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 医疗组id
-     *
      * @var int
      */
     public $groupId;
 
     /**
-     * @description 医疗组名称
-     *
      * @var string
      */
     public $groupName;
 
     /**
-     * @description 用户在该医疗组是否为考核医疗组
-     *
      * @var string
      */
     public $isAssessGroup;
 
     /**
-     * @description 用户在该医疗组是否为组长
-     *
      * @var bool
      */
     public $isLeader;
 
     /**
-     * @description 人组关系关联id
-     *
      * @var int
      */
     public $relationId;

@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class GetUserJoinedProjectResponseBody extends Model
 {
     /**
-     * @description 分页标。
+     * @example f279e812xxxxxx
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 项目 ID 列表。
-     *
      * @var string[]
      */
     public $result;
 
     /**
-     * @description 总数。
+     * @example 35
      *
      * @var int
      */

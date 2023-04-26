@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class FinishBeginnerTaskRequest extends Model
 {
     /**
-     * @description 任务范围
+     * @example advancedBeginnerTask
      *
      * @var string
      */
     public $scope;
 
     /**
-     * @description 员工标识
+     * @example manager5875
      *
      * @var string
      */

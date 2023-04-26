@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class ListSearchTabsByOrgIdResponseBody extends Model
 {
     /**
-     * @description 该企业拥有的所有数据源信息
-     *
      * @var searchTabResult[]
      */
     public $searchTabResult;

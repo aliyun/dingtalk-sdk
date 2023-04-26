@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class liveInfoPopModelList extends Model
 {
     /**
-     * @description 直播额外信息
-     *
      * @var extraInfo
      */
     public $extraInfo;
 
     /**
-     * @description 直播基础信息
-     *
      * @var liveBasicInfo
      */
     public $liveBasicInfo;

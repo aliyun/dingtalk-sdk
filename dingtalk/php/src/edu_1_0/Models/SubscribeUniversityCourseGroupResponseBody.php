@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SubscribeUniversityCourseGroupResponseBody extends Model
 {
     /**
-     * @description 订阅结果
+     * @example true
      *
      * @var bool
      */

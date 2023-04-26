@@ -10,15 +10,11 @@ use AlibabaCloud\Tea\Model;
 class GetOrgInfoResponseBody extends Model
 {
     /**
-     * @description 部门详情
-     *
      * @var content
      */
     public $content;
 
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $requestId;

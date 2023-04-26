@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CreateFeedResponseBody extends Model
 {
     /**
-     * @description 创建内容的内容Id
+     * @example c497****-8a89-****-bc9b-*****48610d3
      *
      * @var string
      */

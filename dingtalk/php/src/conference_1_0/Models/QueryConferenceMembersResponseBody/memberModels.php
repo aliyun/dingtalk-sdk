@@ -9,77 +9,63 @@ use AlibabaCloud\Tea\Model;
 class memberModels extends Model
 {
     /**
-     * @description 成员状态
-     * 6 离会
+     * @example 6
+     *
      * @var int
      */
     public $attendStatus;
 
     /**
-     * @description 是否为联席主持人
-     *
      * @var bool
      */
     public $coHost;
 
     /**
-     * @description 会议id
+     * @example 6323d7562b18000142ab9d10
      *
      * @var string
      */
     public $conferenceId;
 
     /**
-     * @description 在会时长
-     *
      * @var int
      */
     public $duration;
 
     /**
-     * @description 是否为主持人
-     *
      * @var bool
      */
     public $host;
 
     /**
-     * @description 入会时间
-     *
      * @var int
      */
     public $joinTime;
 
     /**
-     * @description 离会时间
-     *
      * @var int
      */
     public $leaveTime;
 
     /**
-     * @description 是否为非会议所属企业内成员
-     *
      * @var bool
      */
     public $outerOrgMember;
 
     /**
-     * @description 是否为pstn入会
-     *
      * @var bool
      */
     public $pstnJoin;
 
     /**
-     * @description 用户unionId
+     * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string
      */
     public $unionId;
 
     /**
-     * @description 成员昵称
+     * @example 昵称
      *
      * @var string
      */

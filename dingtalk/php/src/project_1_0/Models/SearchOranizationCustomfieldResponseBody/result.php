@@ -11,56 +11,52 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 高级自定义字段。
-     *
      * @var advancedCustomfield
      */
     public $advancedCustomfield;
 
     /**
-     * @description 如果是单选或多选字段，这里是可选项的值
-     *
      * @var choices[]
      */
     public $choices;
 
     /**
-     * @description 创建时间。
+     * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 创建人ID。
+     * @example 0715153011125xxxx
      *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @description 自定义字段ID。
+     * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $customfieldsId;
 
     /**
-     * @description 字段名称。
+     * @example 自定义字段
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 用户自定义数据载体，json格式类型任意数据。
+     * @example {"_appId":"5937b10b83963200444b1ff8","kanbanCardAddCustomfieldDisable":true,"locales":{"name":{"en":"Progress update time","zh":"进展更新时间"}}}
      *
      * @var mixed[]
      */
     public $payload;
 
     /**
-     * @description 字段类型。   'number', // 数字     'date', // 日期     'text', // 文本     'work',     'multipleChoice', // 多选     'dropDown', // 下拉,     'lookup',     'commongroup',     'cascading', // 层级字段     'rtf', // 多行文本/富文本 字段 'lookup2' // 新高级字段
+     * @example number
      *
      * @var string
      */

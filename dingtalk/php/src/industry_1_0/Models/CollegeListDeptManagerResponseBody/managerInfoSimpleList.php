@@ -9,21 +9,19 @@ use AlibabaCloud\Tea\Model;
 class managerInfoSimpleList extends Model
 {
     /**
-     * @description 账号是否激活
-     *
      * @var bool
      */
     public $isActive;
 
     /**
-     * @description 负责人姓名
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description userId
+     * @example 0324124
      *
      * @var string
      */

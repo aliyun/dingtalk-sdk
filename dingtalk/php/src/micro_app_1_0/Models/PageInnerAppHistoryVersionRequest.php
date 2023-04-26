@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class PageInnerAppHistoryVersionRequest extends Model
 {
     /**
-     * @description 当前页
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 本次读取的最大数据记录数量
+     * @example 1
      *
      * @var int
      */

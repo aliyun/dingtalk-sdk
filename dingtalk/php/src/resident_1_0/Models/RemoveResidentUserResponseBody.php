@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class RemoveResidentUserResponseBody extends Model
 {
     /**
-     * @description 是否移除成功
+     * @example true
      *
      * @var bool
      */

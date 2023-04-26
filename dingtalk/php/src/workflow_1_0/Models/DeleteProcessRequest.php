@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class DeleteProcessRequest extends Model
 {
     /**
-     * @description 是否清理正在运行的任务
-     *
      * @var bool
      */
     public $cleanRunningTask;
 
     /**
-     * @description 模板code
+     * @example proc-abc
      *
      * @var string
      */

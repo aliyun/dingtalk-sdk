@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 职务描述
+     * @example 职务描述
      *
      * @var string
      */
     public $jobDescription;
 
     /**
-     * @description 职务ID
+     * @example ac67286db74c48e28d787173ccc1a111
      *
      * @var string
      */
     public $jobId;
 
     /**
-     * @description 职务名称
+     * @example 总裁
      *
      * @var string
      */

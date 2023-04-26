@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class SendContractCardResponseBody extends Model
 {
     /**
-     * @description 成功
-     *
      * @var bool
      */
     public $success;

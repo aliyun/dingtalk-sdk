@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class PediaWordsDeleteResponseBody extends Model
 {
     /**
-     * @description 返回结果
-     * true，成功
      * @var bool
      */
     public $success;
 
     /**
-     * @description 删除成功，返回删除的uuid
+     * @example 123456789
      *
      * @var int
      */

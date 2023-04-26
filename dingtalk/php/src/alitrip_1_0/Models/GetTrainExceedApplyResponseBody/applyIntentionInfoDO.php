@@ -9,84 +9,84 @@ use AlibabaCloud\Tea\Model;
 class applyIntentionInfoDO extends Model
 {
     /**
-     * @description 到达城市三字码
+     * @example BJS
      *
      * @var string
      */
     public $arrCity;
 
     /**
-     * @description 到达城市名
+     * @example 北京
      *
      * @var string
      */
     public $arrCityName;
 
     /**
-     * @description 到达站点名称
+     * @example 上海南
      *
      * @var string
      */
     public $arrStation;
 
     /**
-     * @description 到达时间
+     * @example 2021-07-13 15:06:13
      *
      * @var string
      */
     public $arrTime;
 
     /**
-     * @description 出发城市三字码
+     * @example SHA
      *
      * @var string
      */
     public $depCity;
 
     /**
-     * @description 出发城市名
+     * @example 上海
      *
      * @var string
      */
     public $depCityName;
 
     /**
-     * @description 出发站点名称
+     * @example 北京南
      *
      * @var string
      */
     public $depStation;
 
     /**
-     * @description 出发时间
+     * @example 2021-07-13 15:06:13
      *
      * @var string
      */
     public $depTime;
 
     /**
-     * @description 意向坐席价格（分）
+     * @example 1000
      *
      * @var int
      */
     public $price;
 
     /**
-     * @description 意向坐席名称
+     * @example 一等座
      *
      * @var string
      */
     public $seatName;
 
     /**
-     * @description 意向车次号
+     * @example G39
      *
      * @var string
      */
     public $trainNo;
 
     /**
-     * @description 意向车次类型
+     * @example 高铁
      *
      * @var string
      */

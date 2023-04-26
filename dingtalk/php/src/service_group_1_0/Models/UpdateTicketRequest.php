@@ -10,36 +10,34 @@ use AlibabaCloud\Tea\Model;
 class UpdateTicketRequest extends Model
 {
     /**
-     * @description 自定义字段值JSON格式
+     * @example [{\"identifier\":\"input1\",\"value\":\"openAPI更新了值\"}]
      *
      * @var string
      */
     public $customFields;
 
     /**
-     * @description 团队ID
+     * @example eKWh3GBwsKEiE
      *
      * @var string
      */
     public $openTeamId;
 
     /**
-     * @description 工单开放id
+     * @example iPFWCyMGWPiiIiE
      *
      * @var string
      */
     public $openTicketId;
 
     /**
-     * @description 工单处理人unionId
+     * @example p8VdSjm884SvQ6l05nCe5wiEiE
      *
      * @var string
      */
     public $processorUnionId;
 
     /**
-     * @description 备注
-     *
      * @var ticketMemo
      */
     public $ticketMemo;

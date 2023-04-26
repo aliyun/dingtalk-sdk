@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class collegeDeptInfoSimpleList extends Model
 {
     /**
-     * @description 部门id
+     * @example 01123
      *
      * @var int
      */
     public $deptId;
 
     /**
-     * @description 部门名称
+     * @example 三年二班
      *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 部门类型
+     * @example class
      *
      * @var string
      */

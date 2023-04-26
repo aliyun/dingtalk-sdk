@@ -9,63 +9,63 @@ use AlibabaCloud\Tea\Model;
 class videoList extends Model
 {
     /**
-     * @description 录制持续时间
+     * @example 59886
      *
      * @var int
      */
     public $duration;
 
     /**
-     * @description 录制结束时间
+     * @example 1631172094000
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 文件大小
+     * @example 1127942
      *
      * @var int
      */
     public $fileSize;
 
     /**
-     * @description 媒体文件id，唯一
+     * @example faa1566c5bc24f21821ae2394f82db2e
      *
      * @var string
      */
     public $mediaId;
 
     /**
-     * @description 音视频云录制Id，多份视频recordId一样
+     * @example 290882268xxx1172033231
      *
      * @var string
      */
     public $recordId;
 
     /**
-     * @description 记录类型,0-普通录制，1-合成的文件
+     * @example 0
      *
      * @var int
      */
     public $recordType;
 
     /**
-     * @description 媒体文件所在集群id
+     * @example cn-shenzhen
      *
      * @var string
      */
     public $regionId;
 
     /**
-     * @description 录制开始时间
+     * @example 1631172094000
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 录制人UnionId
+     * @example WFBkgJvtxxxxtSaA1jK4sgiEiE
      *
      * @var string
      */

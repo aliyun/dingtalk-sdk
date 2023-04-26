@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class QueryInterviewsRequest extends Model
 {
     /**
-     * @description 业务标识
+     * @example ddats
      *
      * @var string
      */
     public $bizCode;
 
     /**
-     * @description 候选人标识
+     * @example xxx
      *
      * @var string
      */
     public $candidateId;
 
     /**
-     * @description 面试开始时间的查询起始时间（单位：毫秒）
+     * @example 1626796800000
      *
      * @var int
      */
     public $startTimeBeginMillis;
 
     /**
-     * @description 面试开始时间的查询结束时间（单位：毫秒）
+     * @example 1626883199000
      *
      * @var int
      */
     public $startTimeEndMillis;
 
     /**
-     * @description 分页游标，首次调用传空
+     * @example xxx
      *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 分页大小
+     * @example 10
      *
      * @var int
      */

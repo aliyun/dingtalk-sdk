@@ -9,49 +9,47 @@ use AlibabaCloud\Tea\Model;
 class setting extends Model
 {
     /**
-     * @description 表单类型：  0：一次性填表  1：周期性填表
+     * @example 0
      *
      * @var int
      */
     public $bizType;
 
     /**
-     * @description 创建时间。iso8601格式。
+     * @example 2022-07-27T18:53Z
      *
      * @var string
      */
     public $createTime;
 
     /**
-     * @description 截止时间。iso8601格式。
+     * @example 2022-07-27T18:53Z
      *
      * @var string
      */
     public $endTime;
 
     /**
-     * @description 表单类型：  0：一次性填表  1：周期性填表
+     * @example 0
      *
      * @var int
      */
     public $formType;
 
     /**
-     * @description 填表周期，周一到周日分别用1-7表示。
-     *
      * @var int[]
      */
     public $loopDays;
 
     /**
-     * @description 循环执行的时间点。
+     * @example 18:00
      *
      * @var string
      */
     public $loopTime;
 
     /**
-     * @description 填表是否终止的标记。
+     * @example true
      *
      * @var bool
      */

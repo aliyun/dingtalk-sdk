@@ -9,14 +9,12 @@ use AlibabaCloud\Tea\Model;
 class GetPersonalCarbonInfoResponseBody extends Model
 {
     /**
-     * @description 文案
-     *
      * @var string
      */
     public $content;
 
     /**
-     * @description 减碳数据
+     * @example 3.25
      *
      * @var float
      */

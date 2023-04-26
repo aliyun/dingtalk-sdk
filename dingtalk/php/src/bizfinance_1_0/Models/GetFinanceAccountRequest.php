@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetFinanceAccountRequest extends Model
 {
     /**
-     * @description 账户code
-     *
      * @var string
      */
     public $accountCode;

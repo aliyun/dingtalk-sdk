@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class DeleteKeyResultResponseBody extends Model
 {
     /**
-     * @description 返回的信息
+     * @example success
      *
      * @var bool
      */
     public $data;
 
     /**
-     * @description 请求成功的标识。
+     * @example true
      *
      * @var bool
      */

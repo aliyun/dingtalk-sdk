@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class QueryUserExtendValuesRequest extends Model
 {
     /**
-     * @description 用户拓展key
-     *
      * @var string
      */
     public $userExtendKey;
 
     /**
-     * @description userId列表
-     *
      * @var string[]
      */
     public $userIds;

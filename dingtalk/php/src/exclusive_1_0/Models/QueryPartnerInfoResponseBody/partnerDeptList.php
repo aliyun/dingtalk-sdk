@@ -10,36 +10,26 @@ use AlibabaCloud\Tea\Model;
 class partnerDeptList extends Model
 {
     /**
-     * @description 部门人数
-     *
      * @var int
      */
     public $memberCount;
 
     /**
-     * @description 一级伙伴类型
-     *
      * @var partnerLabelModelLevel1
      */
     public $partnerLabelModelLevel1;
 
     /**
-     * @description 伙伴编码
-     *
      * @var string
      */
     public $partnerNum;
 
     /**
-     * @description 部门名称
-     *
      * @var string
      */
     public $title;
 
     /**
-     * @description 部门id
-     *
      * @var string
      */
     public $value;

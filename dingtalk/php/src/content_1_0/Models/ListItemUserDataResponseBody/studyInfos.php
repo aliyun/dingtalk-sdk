@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class studyInfos extends Model
 {
     /**
-     * @description 时间持续长度，单位为毫秒
+     * @example 10000
      *
      * @var int
      */
     public $durationMillis;
 
     /**
-     * @description 用户id
+     * @example 16621*******284773
      *
      * @var string
      */

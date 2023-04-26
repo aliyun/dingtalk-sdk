@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class GetAllLabelableDeptsResponseBody extends Model
 {
     /**
-     * @description 伙伴钉可打标部门列表
-     *
      * @var data[]
      */
     public $data;

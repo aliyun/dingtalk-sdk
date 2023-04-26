@@ -10,91 +10,89 @@ use AlibabaCloud\Tea\Model;
 class IndustryManufactureMesProcessRequest extends Model
 {
     /**
-     * @description 本次操作的行为
+     * @example add
      *
      * @var string
      */
     public $action;
 
     /**
-     * @description 生态唯一标识,枚举:opsoft， 需要注册
+     * @example opsoft
      *
      * @var string
      */
     public $appKey;
 
     /**
-     * @description 主数据名称
+     * @example process
      *
      * @var string
      */
     public $baseDataName;
 
     /**
-     * @description 扩展字段
-     *
      * @var extendData[]
      */
     public $extendData;
 
     /**
-     * @description 工序名称
+     * @example 打磨
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 是否必须派工
+     * @example y
      *
      * @var string
      */
     public $needDispatch;
 
     /**
-     * @description 是否需要质检
+     * @example n
      *
      * @var string
      */
     public $needQualityTest;
 
     /**
-     * @description 工序代码
+     * @example 011354
      *
      * @var string
      */
     public $no;
 
     /**
-     * @description 单价
+     * @example 0.21
      *
      * @var string
      */
     public $price;
 
     /**
-     * @description 工序属性(自制/委外)
+     * @example 自制
      *
      * @var string
      */
     public $prop;
 
     /**
-     * @description 备注
+     * @example 这里是备注
      *
      * @var string
      */
     public $remark;
 
     /**
-     * @description 操作流程
+     * @example 止口面攻牙的操作方法
      *
      * @var string
      */
     public $sop;
 
     /**
-     * @description 工序唯一标识
+     * @example 39C1E213-86B2-706B-9615-5B957DF8C15D
      *
      * @var string
      */

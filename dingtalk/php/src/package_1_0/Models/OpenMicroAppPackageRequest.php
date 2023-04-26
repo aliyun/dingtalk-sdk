@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class OpenMicroAppPackageRequest extends Model
 {
     /**
-     * @description 企业自建应用agentId
+     * @example 0
      *
      * @var int
      */

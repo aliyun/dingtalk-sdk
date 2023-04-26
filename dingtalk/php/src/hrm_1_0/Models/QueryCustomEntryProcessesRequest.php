@@ -9,22 +9,20 @@ use AlibabaCloud\Tea\Model;
 class QueryCustomEntryProcessesRequest extends Model
 {
     /**
-     * @description 最大值
+     * @example 20，最大为100，不填默认为100
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 偏移量
+     * @example 默认为0
      *
      * @var int
      */
     public $nextToken;
 
     /**
-     * @description 操作人id
-     *
      * @var string
      */
     public $operateUserId;

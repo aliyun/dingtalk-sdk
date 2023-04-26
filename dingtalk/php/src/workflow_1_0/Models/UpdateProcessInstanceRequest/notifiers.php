@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class notifiers extends Model
 {
     /**
-     * @description 抄送接收人用户userId。
+     * @example manager001
      *
      * @var string
      */

@@ -9,8 +9,7 @@ use AlibabaCloud\Tea\Model;
 class picList extends Model
 {
     /**
-     * @description 图片的HTTP地址
-     *
+     * @example https://23987874.com
      *
      * @var string
      */

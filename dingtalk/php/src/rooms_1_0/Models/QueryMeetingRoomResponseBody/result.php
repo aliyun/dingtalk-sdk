@@ -12,35 +12,33 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 企业corpId
+     * @example ding994a046bca84545935c2f4657eb6378f
      *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description isv外部会议室id
+     * @example xxxIsvRoomId
      *
      * @var string
      */
     public $isvRoomId;
 
     /**
-     * @description 会议室容量
+     * @example 10
      *
      * @var int
      */
     public $roomCapacity;
 
     /**
-     * @description 会议室分组
-     *
      * @var roomGroup
      */
     public $roomGroup;
 
     /**
-     * @description 会议室id
+     * @example 0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed
      *
      * @var string
      */
@@ -52,35 +50,33 @@ class result extends Model
     public $roomLabels;
 
     /**
-     * @description 会议室位置
-     *
      * @var roomLocation
      */
     public $roomLocation;
 
     /**
-     * @description 会议室名称
+     * @example 测试会议室
      *
      * @var string
      */
     public $roomName;
 
     /**
-     * @description 会议室图片
+     * @example https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg
      *
      * @var string
      */
     public $roomPicture;
 
     /**
-     * @description 会议室staffId
+     * @example 01224148194623278976
      *
      * @var string
      */
     public $roomStaffId;
 
     /**
-     * @description 会议室状态
+     * @example 0.全员可用 1.仅管理员可用
      *
      * @var int
      */

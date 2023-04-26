@@ -9,98 +9,98 @@ use AlibabaCloud\Tea\Model;
 class content extends Model
 {
     /**
-     * @description 部门编码
+     * @example 123
      *
      * @var string
      */
     public $deptCode;
 
     /**
-     * @description 部门名称
+     * @example 开发部
      *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 邮箱
+     * @example 17********@qq.com
      *
      * @var string
      */
     public $email;
 
     /**
-     * @description 员工类型
+     * @example 1
      *
      * @var string
      */
     public $employType;
 
     /**
-     * @description 员工状态
+     * @example 1
      *
      * @var string
      */
     public $employeeStatus;
 
     /**
-     * @description 职级
+     * @example 1
      *
      * @var string
      */
     public $jobLevelName;
 
     /**
-     * @description 职位编码
+     * @example 1
      *
      * @var string
      */
     public $jobPositionCode;
 
     /**
-     * @description 职位名称
+     * @example Java开发
      *
      * @var string
      */
     public $jobPositionName;
 
     /**
-     * @description 职务编码
+     * @example 1
      *
      * @var string
      */
     public $jobPostCode;
 
     /**
-     * @description 职务名称
+     * @example 技术开发
      *
      * @var string
      */
     public $jobPostName;
 
     /**
-     * @description 手机号
+     * @example 151********
      *
      * @var string
      */
     public $mobile;
 
     /**
-     * @description 姓名
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 花名
+     * @example 花名
      *
      * @var string
      */
     public $nickName;
 
     /**
-     * @description 工号
+     * @example 123456
      *
      * @var string
      */

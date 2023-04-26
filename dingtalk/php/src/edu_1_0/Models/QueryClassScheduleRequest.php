@@ -9,42 +9,38 @@ use AlibabaCloud\Tea\Model;
 class QueryClassScheduleRequest extends Model
 {
     /**
-     * @description 查询课程的节次。
-     *
      * @var int[]
      */
     public $sectionIndexList;
 
     /**
-     * @description 订阅者的Id。
-     *
      * @var string[]
      */
     public $subscriberIds;
 
     /**
-     * @description 结束时间（unix时间戳）
+     * @example 168454674745
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 操作者UserId
+     * @example 234623456
      *
      * @var string
      */
     public $opUserId;
 
     /**
-     * @description 开始时间（unix时间戳）
+     * @example 168454674745
      *
      * @var int
      */
     public $startTime;
 
     /**
-     * @description 订阅者类型：  DEPARTMENT：班级订阅 USER：老师订阅
+     * @example USER
      *
      * @var string
      */

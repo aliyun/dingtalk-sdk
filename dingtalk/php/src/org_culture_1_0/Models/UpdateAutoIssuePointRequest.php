@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class UpdateAutoIssuePointRequest extends Model
 {
     /**
-     * @description 企业积分自动发放数量1-10000
+     * @example 100
      *
      * @var int
      */
     public $pointAutoNum;
 
     /**
-     * @description 企业积分自动发放状态
+     * @example true
      *
      * @var bool
      */
     public $pointAutoState;
 
     /**
-     * @description 企业积分自动发放时间 必须为每月的1号或15号，传入1时为1号，传入15时为15号。
+     * @example 15
      *
      * @var int
      */
     public $pointAutoTime;
 
     /**
-     * @description 操作人userId
+     * @example 11185568-1380470824
      *
      * @var string
      */

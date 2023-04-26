@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class cardRuleItemParamList extends Model
 {
     /**
-     * @description 扩展属性，存放配音难度、每日配音视频的url等
-     *
      * @var string
      */
     public $cardRuleAttr;
 
     /**
-     * @description 卡片taskCode
-     *
      * @var string
      */
     public $cardTaskCode;
 
     /**
-     * @description 每日配音数
-     *
      * @var int
      */
     public $dailyDubbing;
 
     /**
-     * @description 关联的外部Id
-     *
      * @var string
      */
     public $relationId;
 
     /**
-     * @description 关联内容标题（会在打卡详页页展示）
-     *
      * @var string
      */
     public $relationTitle;
 
     /**
-     * @description relationUrl（点击打卡内容后跳转的链接）（点击卡片内容后跳转的链接）
-     *
      * @var string
      */
     public $relationUrl;

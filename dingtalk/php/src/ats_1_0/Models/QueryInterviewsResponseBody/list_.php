@@ -10,49 +10,47 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 面试是否已取消
+     * @example false
      *
      * @var bool
      */
     public $cancelled;
 
     /**
-     * @description 面试创建人员工标识
+     * @example xxx
      *
      * @var string
      */
     public $creatorUserId;
 
     /**
-     * @description 面试结束时间（单位：毫秒）
+     * @example 1626861600000
      *
      * @var int
      */
     public $endTimeMillis;
 
     /**
-     * @description 面试标识
+     * @example xxx
      *
      * @var string
      */
     public $interviewId;
 
     /**
-     * @description 面试官列表
-     *
      * @var interviewers[]
      */
     public $interviewers;
 
     /**
-     * @description 职位标识
+     * @example xxx
      *
      * @var string
      */
     public $jobId;
 
     /**
-     * @description 面试开始时间（单位：毫秒）
+     * @example 1626858000000
      *
      * @var int
      */

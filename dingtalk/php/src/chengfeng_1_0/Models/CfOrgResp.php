@@ -9,42 +9,42 @@ use AlibabaCloud\Tea\Model;
 class CfOrgResp extends Model
 {
     /**
-     * @description 部门编码
+     * @example 01
      *
      * @var string
      */
     public $deptCode;
 
     /**
-     * @description 部门名称
+     * @example 一级部门
      *
      * @var string
      */
     public $deptName;
 
     /**
-     * @description 级别
+     * @example 1
      *
      * @var int
      */
     public $level;
 
     /**
-     * @description 部门编码路径
+     * @example 1/01
      *
      * @var string
      */
     public $organizationCodePath;
 
     /**
-     * @description 部门路径
+     * @example 公司/一级部门
      *
      * @var string
      */
     public $organizationPath;
 
     /**
-     * @description 父级部门编码
+     * @example 1
      *
      * @var string
      */

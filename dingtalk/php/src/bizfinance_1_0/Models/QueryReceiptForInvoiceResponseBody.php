@@ -10,21 +10,19 @@ use AlibabaCloud\Tea\Model;
 class QueryReceiptForInvoiceResponseBody extends Model
 {
     /**
-     * @description 是否还有数据
+     * @example true
      *
      * @var string
      */
     public $hasMore;
 
     /**
-     * @description 分页数据
-     *
      * @var list_[]
      */
     public $list;
 
     /**
-     * @description 总数
+     * @example 500
      *
      * @var int
      */

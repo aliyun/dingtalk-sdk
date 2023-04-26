@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class outOrgUserList extends Model
 {
     /**
-     * @description 姓名
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 观看直播时长
+     * @example 23440
      *
      * @var int
      */
     public $watchLiveTime;
 
     /**
-     * @description 观看回放时长
+     * @example 2330
      *
      * @var int
      */
     public $watchPlaybackTime;
 
     /**
-     * @description 回放观看进度
+     * @example 150
      *
      * @var int
      */

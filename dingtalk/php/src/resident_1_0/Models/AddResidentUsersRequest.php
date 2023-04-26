@@ -10,49 +10,47 @@ use AlibabaCloud\Tea\Model;
 class AddResidentUsersRequest extends Model
 {
     /**
-     * @description 家庭住址
+     * @example 美好社区创景街道万通公寓
      *
      * @var string
      */
     public $address;
 
     /**
-     * @description 户/租户部门id
+     * @example 12345
      *
      * @var int
      */
     public $departmentId;
 
     /**
-     * @description 扩展字段（包括身份证/性别/民族）
-     *
      * @var extField[]
      */
     public $extField;
 
     /**
-     * @description 是否是租客
+     * @example false
      *
      * @var bool
      */
     public $isLeaseholder;
 
     /**
-     * @description 手机号码
+     * @example 15612345678
      *
      * @var string
      */
     public $mobile;
 
     /**
-     * @description 与户主的关系
+     * @example SELF
      *
      * @var string
      */
     public $relateType;
 
     /**
-     * @description 居民名字
+     * @example 王建国
      *
      * @var string
      */

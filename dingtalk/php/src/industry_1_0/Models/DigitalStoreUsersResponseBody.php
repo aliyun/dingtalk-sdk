@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class DigitalStoreUsersResponseBody extends Model
 {
     /**
-     * @description 人员列表
-     *
      * @var content[]
      */
     public $content;

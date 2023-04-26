@@ -11,15 +11,11 @@ use AlibabaCloud\Tea\Model;
 class paragraph extends Model
 {
     /**
-     * @description 子节点
-     *
      * @var children[]
      */
     public $children;
 
     /**
-     * @description 段落样式
-     *
      * @var style
      */
     public $style;

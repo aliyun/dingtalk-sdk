@@ -9,36 +9,35 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
-     * @description 用户头像
+     * @example wwww.xxxxx.com/xxx.jpg
      *
      * @var string
      */
     public $avatarUrl;
 
     /**
-     * @description 用户名称
+     * @example 张三
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 收下数
+     * @example 5
      *
      * @var int
      */
     public $receiveCnt;
 
     /**
-     * @description 发送数
+     * @example 3
      *
      * @var int
      */
     public $sendCnt;
 
     /**
-     * @description 用户id
-     *
+     * @example RCsp7PJmmTUr7w0hbs9aKAiEiE
      *
      * @var string
      */

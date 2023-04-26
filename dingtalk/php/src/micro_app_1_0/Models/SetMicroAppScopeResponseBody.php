@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SetMicroAppScopeResponseBody extends Model
 {
     /**
-     * @description 结果
+     * @example true
      *
      * @var bool
      */

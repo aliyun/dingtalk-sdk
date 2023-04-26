@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetAppDispatchInfoRequest extends Model
 {
     /**
-     * @description 打包结束日期查询参数
+     * @example 1655709383307
      *
      * @var int
      */
     public $endTime;
 
     /**
-     * @description 打包开始日期查询参数
+     * @example 1655709383307
      *
      * @var int
      */

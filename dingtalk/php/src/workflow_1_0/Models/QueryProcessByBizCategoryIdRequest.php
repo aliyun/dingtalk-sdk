@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryProcessByBizCategoryIdRequest extends Model
 {
     /**
-     * @description 业务标识
+     * @example abc
      *
      * @var string
      */
     public $bizType;
 
     /**
-     * @description 用户id
+     * @example manager123
      *
      * @var string
      */

@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetOfficialAccountContactsRequest extends Model
 {
     /**
-     * @description 分页大小，最大不超过10
+     * @example 10
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 取数游标，第一次传0
+     * @example 123567
      *
      * @var string
      */

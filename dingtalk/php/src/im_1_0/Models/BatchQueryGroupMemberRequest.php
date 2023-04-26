@@ -9,28 +9,24 @@ use AlibabaCloud\Tea\Model;
 class BatchQueryGroupMemberRequest extends Model
 {
     /**
-     * @description 酷应用编码
-     *
      * @var string
      */
     public $coolAppCode;
 
     /**
-     * @description 本次读取的最大数据记录数量（该入参传入值小于钉钉阈值时返回全部）
+     * @example 200
      *
      * @var int
      */
     public $maxResults;
 
     /**
-     * @description 标记当前开始读取的位置，置空表示从头开始
-     *
      * @var string
      */
     public $nextToken;
 
     /**
-     * @description 开放群ID
+     * @example cidXXXXXXX
      *
      * @var string
      */

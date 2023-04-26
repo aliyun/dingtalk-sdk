@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class GetPluginRuleCheckInfoResponseBody extends Model
 {
     /**
-     * @description 权限包code
-     *
      * @var string
      */
     public $packCode;
 
     /**
-     * @description 校验规则
-     *
      * @var string
      */
     public $pluginRuleCheckDetail;

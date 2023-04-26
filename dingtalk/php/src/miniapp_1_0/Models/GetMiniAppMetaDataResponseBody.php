@@ -10,29 +10,21 @@ use AlibabaCloud\Tea\Model;
 class GetMiniAppMetaDataResponseBody extends Model
 {
     /**
-     * @description receiveTime
-     *
      * @var int
      */
     public $dingOpenErrcode;
 
     /**
-     * @description errorMsg
-     *
      * @var string
      */
     public $errorMsg;
 
     /**
-     * @description result
-     *
      * @var result
      */
     public $result;
 
     /**
-     * @description requestId
-     *
      * @var bool
      */
     public $success;

@@ -14,8 +14,6 @@ class GetAnalyzeDataResponseBody extends Model
     public $content;
 
     /**
-     * @description Id of the request
-     *
      * @var string
      */
     public $requestId;

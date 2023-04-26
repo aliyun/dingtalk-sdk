@@ -10,8 +10,6 @@ use AlibabaCloud\Tea\Model;
 class DeleteReceiptRequest extends Model
 {
     /**
-     * @description 单据列表，最长不超过10条
-     *
      * @var receipts[]
      */
     public $receipts;

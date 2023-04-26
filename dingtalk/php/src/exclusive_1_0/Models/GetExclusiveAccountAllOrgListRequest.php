@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetExclusiveAccountAllOrgListRequest extends Model
 {
     /**
-     * @description 用户unionId
+     * @example TBXK65QHiiorHvxxxxxxxxP6giEiE
      *
      * @var string
      */

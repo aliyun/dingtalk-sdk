@@ -11,36 +11,31 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceVerifyStatusRequest extends Model
 {
     /**
-     * @description 抵扣状态
-     *
+     * @example DEDUCTED
      *
      * @var string
      */
     public $deductStatus;
 
     /**
-     * @description 发票模型
-     *
      * @var generalInvoiceVOList[]
      */
     public $generalInvoiceVOList;
 
     /**
-     * @description 待更新
-     *
      * @var invoiceKeyVOList[]
      */
     public $invoiceKeyVOList;
 
     /**
-     * @description 操作员
+     * @example abc
      *
      * @var string
      */
     public $operator;
 
     /**
-     * @description 认证状态
+     * @example abc
      *
      * @var string
      */

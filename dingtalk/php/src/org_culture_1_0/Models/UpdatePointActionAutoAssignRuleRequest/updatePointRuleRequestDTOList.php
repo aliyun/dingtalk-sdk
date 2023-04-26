@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class updatePointRuleRequestDTOList extends Model
 {
     /**
-     * @description 奖励积分1～100
+     * @example 100
      *
      * @var int
      */
     public $awardScore;
 
     /**
-     * @description 行为名称 不支持修改
+     * @example POST_IS_COMMENT
      *
      * @var string
      */
     public $code;
 
     /**
-     * @description 单日计次上限 1～10
+     * @example 10
      *
      * @var int
      */
     public $dayLimitTimes;
 
     /**
-     * @description 生效状态：0无效，1有效
+     * @example 1
      *
      * @var int
      */

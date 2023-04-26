@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class advancedCustomfield extends Model
 {
     /**
-     * @description 字段类型ID。
+     * @example 63a5301e420637003f5dxxxx
      *
      * @var string
      */
     public $advancedCustomfieldId;
 
     /**
-     * @description 字段类型名称
+     * @example 所思文档
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 字段类型名称2
+     * @example thoughts.document
      *
      * @var string
      */

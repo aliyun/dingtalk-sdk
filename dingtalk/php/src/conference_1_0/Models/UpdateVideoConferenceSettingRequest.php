@@ -9,43 +9,31 @@ use AlibabaCloud\Tea\Model;
 class UpdateVideoConferenceSettingRequest extends Model
 {
     /**
-     * @description 允许参会人员取消静音
-     *
      * @var bool
      */
     public $allowUnmuteSelf;
 
     /**
-     * @description 主持人离会，是否自动转移主持人角色
-     *
      * @var bool
      */
     public $autoTransferHost;
 
     /**
-     * @description 禁止共享屏幕
-     *
      * @var bool
      */
     public $forbiddenShareScreen;
 
     /**
-     * @description 锁定会议，禁止邀请入会
-     *
      * @var bool
      */
     public $lockConference;
 
     /**
-     * @description 全员静音
-     *
      * @var bool
      */
     public $muteAll;
 
     /**
-     * @description 仅允许企业内员工加入会议
-     *
      * @var bool
      */
     public $onlyInternalEmployeesJoin;

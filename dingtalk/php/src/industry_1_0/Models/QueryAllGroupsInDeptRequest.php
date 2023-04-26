@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class QueryAllGroupsInDeptRequest extends Model
 {
     /**
-     * @description 分页查询页码
+     * @example 1
      *
      * @var int
      */
     public $pageNumber;
 
     /**
-     * @description 分页查询页容量
+     * @example 200
      *
      * @var int
      */

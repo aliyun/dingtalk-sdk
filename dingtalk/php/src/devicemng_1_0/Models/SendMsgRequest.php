@@ -9,36 +9,32 @@ use AlibabaCloud\Tea\Model;
 class SendMsgRequest extends Model
 {
     /**
-     * @description 消息内容
+     * @example text
      *
      * @var string
      */
     public $content;
 
     /**
-     * @description 设备业务标识
+     * @example xxxx
      *
      * @var string
      */
     public $deviceCode;
 
     /**
-     * @description 设备唯一系统标识
-     *
      * @var string
      */
     public $deviceUuid;
 
     /**
-     * @description 开放群唯一标识
+     * @example cidxxxxxxx==
      *
      * @var string
      */
     public $openConversationId;
 
     /**
-     * @description 用户列表，群聊时为被@的人，单聊时为目标对象
-     *
      * @var string[]
      */
     public $userList;

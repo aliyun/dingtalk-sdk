@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class CollegeActiveCollegeDeptGroupResponseBody extends Model
 {
     /**
-     * @description 调用时如果满足创建群条件，直接返回 openConversationId
+     * @example 0134124
      *
      * @var string
      */

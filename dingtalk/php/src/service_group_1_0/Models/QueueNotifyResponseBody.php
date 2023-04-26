@@ -9,28 +9,24 @@ use AlibabaCloud\Tea\Model;
 class QueueNotifyResponseBody extends Model
 {
     /**
-     * @description dingOpenErrcode
-     *
      * @var int
      */
     public $dingOpenErrcode;
 
     /**
-     * @description errorMsg
-     *
      * @var string
      */
     public $errorMsg;
 
     /**
-     * @description 执行是否成功
+     * @example true
      *
      * @var bool
      */
     public $result;
 
     /**
-     * @description 回调是否成功
+     * @example true
      *
      * @var bool
      */

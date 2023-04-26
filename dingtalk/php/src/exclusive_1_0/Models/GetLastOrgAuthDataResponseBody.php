@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class GetLastOrgAuthDataResponseBody extends Model
 {
     /**
-     * @description 未通过原因
+     * @example 营业执照照片不清晰
      *
      * @var string
      */
     public $authRemark;
 
     /**
-     * @description 审核状态 0 未提交， 1未审核 2 失败 3通过
+     * @example 2
      *
      * @var int
      */

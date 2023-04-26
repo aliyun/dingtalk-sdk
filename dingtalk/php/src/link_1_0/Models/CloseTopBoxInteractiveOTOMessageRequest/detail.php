@@ -9,21 +9,21 @@ use AlibabaCloud\Tea\Model;
 class detail extends Model
 {
     /**
-     * @description 唯一标识一张卡片的ID，卡片幂等ID
+     * @example service-card-20220824-001
      *
      * @var string
      */
     public $cardBizId;
 
     /**
-     * @description 卡片模板 ID
+     * @example 3erkfi-42b0-4c83-bc56-ffhssde43
      *
      * @var string
      */
     public $cardTemplateId;
 
     /**
-     * @description 用户 userId
+     * @example user001
      *
      * @var string
      */

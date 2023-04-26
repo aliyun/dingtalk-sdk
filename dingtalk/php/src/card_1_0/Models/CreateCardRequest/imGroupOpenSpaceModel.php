@@ -11,29 +11,21 @@ use AlibabaCloud\Tea\Model;
 class imGroupOpenSpaceModel extends Model
 {
     /**
-     * @description 支持国际化的LastMessage
-     * 越南语: VI_VN
      * @var string[]
      */
     public $lastMessageI18n;
 
     /**
-     * @description 卡片的通知属性信息
-     *
      * @var notification
      */
     public $notification;
 
     /**
-     * @description 支持卡片消息可被搜索字段
-     *
      * @var searchSupport
      */
     public $searchSupport;
 
     /**
-     * @description 是否支持转发, 默认 false
-     *
      * @var bool
      */
     public $supportForward;

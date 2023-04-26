@@ -9,28 +9,28 @@ use AlibabaCloud\Tea\Model;
 class GetUploadUrlRequest extends Model
 {
     /**
-     * @description 业务数据实例id
+     * @example 006f870b-4d1c-4cd0-85b3-2e866798e947
      *
      * @var string
      */
     public $bizObjectId;
 
     /**
-     * @description 文件上传至目标控件的字段名
+     * @example Image
      *
      * @var string
      */
     public $fieldName;
 
     /**
-     * @description 是否覆盖。false=添加，true=覆盖
+     * @example true
      *
      * @var bool
      */
     public $isOverwrite;
 
     /**
-     * @description 表单编码
+     * @example D0001833abb0fb61524487eb01848207bc89b47
      *
      * @var string
      */

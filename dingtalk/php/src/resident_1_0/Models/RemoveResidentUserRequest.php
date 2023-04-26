@@ -9,14 +9,14 @@ use AlibabaCloud\Tea\Model;
 class RemoveResidentUserRequest extends Model
 {
     /**
-     * @description 户/租户部门id
+     * @example 12345
      *
      * @var int
      */
     public $departmentId;
 
     /**
-     * @description 用户id
+     * @example 12345
      *
      * @var string
      */

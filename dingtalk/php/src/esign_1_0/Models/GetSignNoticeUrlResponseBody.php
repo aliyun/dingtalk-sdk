@@ -10,22 +10,16 @@ use AlibabaCloud\Tea\Model;
 class GetSignNoticeUrlResponseBody extends Model
 {
     /**
-     * @description 返回错误码
-     *
      * @var int
      */
     public $code;
 
     /**
-     * @description 返回数据
-     *
      * @var data
      */
     public $data;
 
     /**
-     * @description 返回结果信息
-     *
      * @var string
      */
     public $message;

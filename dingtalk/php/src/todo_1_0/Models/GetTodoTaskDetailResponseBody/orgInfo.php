@@ -9,15 +9,11 @@ use AlibabaCloud\Tea\Model;
 class orgInfo extends Model
 {
     /**
-     * @description 组织corpId
-     *
      * @var string
      */
     public $corpId;
 
     /**
-     * @description 组织名称
-     *
      * @var string
      */
     public $name;

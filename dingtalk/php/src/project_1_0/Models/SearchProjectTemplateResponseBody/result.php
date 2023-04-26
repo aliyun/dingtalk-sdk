@@ -9,63 +9,63 @@ use AlibabaCloud\Tea\Model;
 class result extends Model
 {
     /**
-     * @description 创建时间
+     * @example 2022-06-13T07:36:50.318Z
      *
      * @var string
      */
     public $created;
 
     /**
-     * @description 模板描述
+     * @example 我是描述内容
      *
      * @var string
      */
     public $description;
 
     /**
-     * @description 模板id
+     * @example 62e0a88c0axxxx
      *
      * @var string
      */
     public $id;
 
     /**
-     * @description 是否已删除
+     * @example false
      *
      * @var bool
      */
     public $isDeleted;
 
     /**
-     * @description 是否demo模板
+     * @example false
      *
      * @var bool
      */
     public $isDemo;
 
     /**
-     * @description 模板log地址
+     * @example https://www.xxx.com/xxxx
      *
      * @var string
      */
     public $logo;
 
     /**
-     * @description 模板名字
+     * @example 模板1
      *
      * @var string
      */
     public $name;
 
     /**
-     * @description 更新时间
+     * @example 2022-06-13T07:36:50.318Z
      *
      * @var string
      */
     public $updated;
 
     /**
-     * @description 模板可见性。organization 或者 involves
+     * @example organization
      *
      * @var string
      */

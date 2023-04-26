@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class style extends Model
 {
     /**
-     * @description 标题样式
-     *
      * @var string
      */
     public $headingLevel;

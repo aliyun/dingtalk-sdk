@@ -10,9 +10,6 @@ use AlibabaCloud\Tea\Model;
 class batchUpdateInvoiceResponse extends Model
 {
     /**
-     * @description 错误结果列表
-     *
-     *
      * @var invoiceKeyVOList[]
      */
     public $invoiceKeyVOList;

@@ -11,28 +11,24 @@ use AlibabaCloud\Tea\Model;
 class UpdateInvoiceAccountPeriodRequest extends Model
 {
     /**
-     * @description 认证状态
+     * @example abc
      *
      * @var string
      */
     public $accountPeriod;
 
     /**
-     * @description 发票模型
-     *
      * @var generalInvoiceVOList[]
      */
     public $generalInvoiceVOList;
 
     /**
-     * @description 发票主键列表
-     *
      * @var invoiceKeyVOList[]
      */
     public $invoiceKeyVOList;
 
     /**
-     * @description 操作员
+     * @example abc
      *
      * @var string
      */

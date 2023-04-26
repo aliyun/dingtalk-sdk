@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class AddHrmPreentryResponseBody extends Model
 {
     /**
-     * @description result
+     * @example manager123
      *
      * @var string
      */
