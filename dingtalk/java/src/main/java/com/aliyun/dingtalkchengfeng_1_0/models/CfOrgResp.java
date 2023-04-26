@@ -4,39 +4,21 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CfOrgResp extends TeaModel {
-    /**
-     * <p>部门编码</p>
-     */
     @NameInMap("deptCode")
     public String deptCode;
 
-    /**
-     * <p>部门名称</p>
-     */
     @NameInMap("deptName")
     public String deptName;
 
-    /**
-     * <p>级别</p>
-     */
     @NameInMap("level")
     public Long level;
 
-    /**
-     * <p>部门编码路径</p>
-     */
     @NameInMap("organizationCodePath")
     public String organizationCodePath;
 
-    /**
-     * <p>部门路径</p>
-     */
     @NameInMap("organizationPath")
     public String organizationPath;
 
-    /**
-     * <p>父级部门编码</p>
-     */
     @NameInMap("parentDeptCode")
     public String parentDeptCode;
 

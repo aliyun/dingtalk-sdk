@@ -4,9 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryFormByBizTypeResponseBody extends TeaModel {
-    /**
-     * <p>模板列表</p>
-     */
     @NameInMap("result")
     public java.util.List<QueryFormByBizTypeResponseBodyResult> result;
 
@@ -24,81 +21,42 @@ public class QueryFormByBizTypeResponseBody extends TeaModel {
     }
 
     public static class QueryFormByBizTypeResponseBodyResult extends TeaModel {
-        /**
-         * <p>表单类型，0为流程表单，1为数据表单</p>
-         */
         @NameInMap("appType")
         public Integer appType;
 
-        /**
-         * <p>应用搭建id</p>
-         */
         @NameInMap("appUuid")
         public String appUuid;
 
-        /**
-         * <p>业务标识</p>
-         */
         @NameInMap("bizType")
         public String bizType;
 
-        /**
-         * <p>表单控件描述</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createTime")
         public Long createTime;
 
-        /**
-         * <p>创建人</p>
-         */
         @NameInMap("creator")
         public String creator;
 
-        /**
-         * <p>模板code</p>
-         */
         @NameInMap("formCode")
         public String formCode;
 
-        /**
-         * <p>表单uuid</p>
-         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        /**
-         * <p>模板描述</p>
-         */
         @NameInMap("memo")
         public String memo;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("modifedTime")
         public Long modifedTime;
 
-        /**
-         * <p>模板名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>数据归属id</p>
-         */
         @NameInMap("ownerId")
         public String ownerId;
 
-        /**
-         * <p>模板状态</p>
-         */
         @NameInMap("status")
         public String status;
 

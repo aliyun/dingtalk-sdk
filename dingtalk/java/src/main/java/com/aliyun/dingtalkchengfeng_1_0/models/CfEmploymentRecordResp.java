@@ -4,87 +4,45 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CfEmploymentRecordResp extends TeaModel {
-    /**
-     * <p>部门编码</p>
-     */
     @NameInMap("deptCode")
     public String deptCode;
 
-    /**
-     * <p>部门名称</p>
-     */
     @NameInMap("deptName")
     public String deptName;
 
-    /**
-     * <p>人员状态(2:试用,3:正式)</p>
-     */
     @NameInMap("employeeStatus")
     public String employeeStatus;
 
-    /**
-     * <p>结束时间</p>
-     */
     @NameInMap("endDate")
     public String endDate;
 
-    /**
-     * <p>是否是最新任职</p>
-     */
     @NameInMap("isLatestRecord")
     public Boolean isLatestRecord;
 
-    /**
-     * <p>职级名称</p>
-     */
     @NameInMap("jobLevelName")
     public String jobLevelName;
 
-    /**
-     * <p>职位编码</p>
-     */
     @NameInMap("jobPositionCode")
     public String jobPositionCode;
 
-    /**
-     * <p>职位名称</p>
-     */
     @NameInMap("jobPositionName")
     public String jobPositionName;
 
-    /**
-     * <p>职务编码</p>
-     */
     @NameInMap("jobPostCode")
     public String jobPostCode;
 
-    /**
-     * <p>职务名称</p>
-     */
     @NameInMap("jobPostName")
     public String jobPostName;
 
-    /**
-     * <p>任职状态(1:任职中,2:任职结束)</p>
-     */
     @NameInMap("serviceStatus")
     public String serviceStatus;
 
-    /**
-     * <p>任职类型(5:主职, 6:兼职)</p>
-     */
     @NameInMap("serviceType")
     public String serviceType;
 
-    /**
-     * <p>开始时间</p>
-     */
     @NameInMap("startDate")
     public String startDate;
 
-    /**
-     * <p>工号</p>
-     */
     @NameInMap("workNumbers")
     public String workNumbers;
 

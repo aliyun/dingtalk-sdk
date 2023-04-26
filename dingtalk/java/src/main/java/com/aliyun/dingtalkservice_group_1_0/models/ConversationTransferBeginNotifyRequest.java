@@ -4,39 +4,21 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConversationTransferBeginNotifyRequest extends TeaModel {
-    /**
-     * <p>DT端会话ID</p>
-     */
     @NameInMap("conversationId")
     public String conversationId;
 
-    /**
-     * <p>转接备注</p>
-     */
     @NameInMap("memo")
     public String memo;
 
-    /**
-     * <p>团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>对应外部渠道的会话ID</p>
-     */
     @NameInMap("serviceToken")
     public String serviceToken;
 
-    /**
-     * <p>原始技能组ID</p>
-     */
     @NameInMap("sourceSkillGroupId")
     public String sourceSkillGroupId;
 
-    /**
-     * <p>目标技能组ID</p>
-     */
     @NameInMap("targetSkillGroupId")
     public String targetSkillGroupId;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteRowsRequest extends TeaModel {
-    /**
-     * <p>要删除的第一行的位置，从0开始。</p>
-     */
     @NameInMap("row")
     public Long row;
 
-    /**
-     * <p>要删除的行的数量。</p>
-     */
     @NameInMap("rowCount")
     public Long rowCount;
 
-    /**
-     * <p>操作人id</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 

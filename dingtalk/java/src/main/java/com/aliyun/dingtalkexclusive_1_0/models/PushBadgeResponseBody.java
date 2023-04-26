@@ -4,9 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushBadgeResponseBody extends TeaModel {
-    /**
-     * <p>是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

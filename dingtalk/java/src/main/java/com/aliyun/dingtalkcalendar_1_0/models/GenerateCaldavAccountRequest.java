@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class GenerateCaldavAccountRequest extends TeaModel {
-    /**
-     * <p>设备名称</p>
-     */
     @NameInMap("device")
     public String device;
 

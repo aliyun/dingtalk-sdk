@@ -4,21 +4,12 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class HPackageListGetRequest extends TeaModel {
-    /**
-     * <p>离线包ID</p>
-     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
-    /**
-     * <p>分页设置</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>每页内容数量</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 

@@ -4,123 +4,66 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetResidentInfoResponseBody extends TeaModel {
-    /**
-     * <p>小区地址</p>
-     */
     @NameInMap("address")
     public String address;
 
-    /**
-     * <p>全员群opencid</p>
-     */
     @NameInMap("allUserGroupOpenConversationId")
     public String allUserGroupOpenConversationId;
 
-    /**
-     * <p>全员群群主 userid</p>
-     */
     @NameInMap("allUserGroupOwnerUserId")
     public String allUserGroupOwnerUserId;
 
     @NameInMap("buildingArea")
     public Float buildingArea;
 
-    /**
-     * <p>小区归属的市的id</p>
-     */
     @NameInMap("cityId")
     public Integer cityId;
 
-    /**
-     * <p>通信录模式:0标准/1自定义</p>
-     */
     @NameInMap("contactMode")
     public Integer contactMode;
 
-    /**
-     * <p>小区归属的区/县的id</p>
-     */
     @NameInMap("countyId")
     public Integer countyId;
 
-    /**
-     * <p>交付时间</p>
-     */
     @NameInMap("deliveryTime")
     public Long deliveryTime;
 
-    /**
-     * <p>经纬度，格式：经度,纬度</p>
-     */
     @NameInMap("location")
     public String location;
 
-    /**
-     * <p>小区名称</p>
-     */
     @NameInMap("name")
     public String name;
 
     @NameInMap("projectManager")
     public GetResidentInfoResponseBodyProjectManager projectManager;
 
-    /**
-     * <p>物业部门群cid</p>
-     */
     @NameInMap("propertyDeptGroupOpenConversationId")
     public String propertyDeptGroupOpenConversationId;
 
-    /**
-     * <p>物业部门群主userid</p>
-     */
     @NameInMap("propertyDeptGroupOwnerUserId")
     public String propertyDeptGroupOwnerUserId;
 
-    /**
-     * <p>小区归属的省的id</p>
-     */
     @NameInMap("provId")
     public Long provId;
 
-    /**
-     * <p>物业管理范围-东</p>
-     */
     @NameInMap("scopeEast")
     public String scopeEast;
 
-    /**
-     * <p>物业管理范围-北</p>
-     */
     @NameInMap("scopeNorth")
     public String scopeNorth;
 
-    /**
-     * <p>物业管理范围-南</p>
-     */
     @NameInMap("scopeSouth")
     public String scopeSouth;
 
-    /**
-     * <p>物业管理范围-西</p>
-     */
     @NameInMap("scopeWest")
     public String scopeWest;
 
-    /**
-     * <p>物业电话</p>
-     */
     @NameInMap("telephone")
     public String telephone;
 
-    /**
-     * <p>小区归属的街道/镇的id</p>
-     */
     @NameInMap("townId")
     public Integer townId;
 
-    /**
-     * <p>1纯住宅；2:商住混合；3:办公；4:办公商业混合；5:商业；6:公共场所；7:其他</p>
-     */
     @NameInMap("type")
     public Integer type;
 
@@ -298,21 +241,12 @@ public class GetResidentInfoResponseBody extends TeaModel {
     }
 
     public static class GetResidentInfoResponseBodyProjectManager extends TeaModel {
-        /**
-         * <p>头像</p>
-         */
         @NameInMap("avatar")
         public String avatar;
 
-        /**
-         * <p>人员唯一标识</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>姓名</p>
-         */
         @NameInMap("userName")
         public String userName;
 

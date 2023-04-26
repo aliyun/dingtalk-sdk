@@ -4,21 +4,12 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMaxVersionRequest extends TeaModel {
-    /**
-     * <p>bundleId</p>
-     */
     @NameInMap("bundleId")
     public String bundleId;
 
-    /**
-     * <p>miniAppId</p>
-     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
-    /**
-     * <p>version</p>
-     */
     @NameInMap("version")
     public String version;
 

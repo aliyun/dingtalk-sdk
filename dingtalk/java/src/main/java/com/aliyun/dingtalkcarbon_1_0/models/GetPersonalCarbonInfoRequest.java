@@ -4,15 +4,9 @@ package com.aliyun.dingtalkcarbon_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPersonalCarbonInfoRequest extends TeaModel {
-    /**
-     * <p>参数类型</p>
-     */
     @NameInMap("actionType")
     public String actionType;
 
-    /**
-     * <p>钉钉unionId</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendInteractiveCardResponseBody extends TeaModel {
-    /**
-     * <p>创建卡片结果</p>
-     */
     @NameInMap("result")
     public SendInteractiveCardResponseBodyResult result;
 
-    /**
-     * <p>success</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,9 +32,6 @@ public class SendInteractiveCardResponseBody extends TeaModel {
     }
 
     public static class SendInteractiveCardResponseBodyResult extends TeaModel {
-        /**
-         * <p>用于业务方后续查看已读列表的查询key</p>
-         */
         @NameInMap("processQueryKey")
         public String processQueryKey;
 

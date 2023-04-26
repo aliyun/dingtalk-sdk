@@ -4,9 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOutsideAuditGroupMessageByPageResponseBody extends TeaModel {
-    /**
-     * <p>返回结构体</p>
-     */
     @NameInMap("responseBody")
     public GetOutsideAuditGroupMessageByPageResponseBodyResponseBody responseBody;
 
@@ -24,21 +21,12 @@ public class GetOutsideAuditGroupMessageByPageResponseBody extends TeaModel {
     }
 
     public static class GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageListSender extends TeaModel {
-        /**
-         * <p>根据id的类型决定是哪一种id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>发送者的id类型，可以是userId或者unionId</p>
-         */
         @NameInMap("idType")
         public String idType;
 
-        /**
-         * <p>用户-user 机器人-bot 系统账号-sys</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -74,33 +62,18 @@ public class GetOutsideAuditGroupMessageByPageResponseBody extends TeaModel {
     }
 
     public static class GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageList extends TeaModel {
-        /**
-         * <p>内容</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>内容类型 文本/语音/视频</p>
-         */
         @NameInMap("contentType")
         public String contentType;
 
-        /**
-         * <p>发送时间 格式:yyyy-MM-dd HH:mm:ss</p>
-         */
         @NameInMap("createAt")
         public String createAt;
 
-        /**
-         * <p>会话id</p>
-         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        /**
-         * <p>发送人</p>
-         */
         @NameInMap("sender")
         public GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageListSender sender;
 
@@ -152,15 +125,9 @@ public class GetOutsideAuditGroupMessageByPageResponseBody extends TeaModel {
     }
 
     public static class GetOutsideAuditGroupMessageByPageResponseBodyResponseBody extends TeaModel {
-        /**
-         * <p>消息列表</p>
-         */
         @NameInMap("messageList")
         public java.util.List<GetOutsideAuditGroupMessageByPageResponseBodyResponseBodyMessageList> messageList;
 
-        /**
-         * <p>下一次请求的token,无返回值则下一条消息不存在</p>
-         */
         @NameInMap("nextToken")
         public String nextToken;
 

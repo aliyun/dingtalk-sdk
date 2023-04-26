@@ -4,9 +4,6 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteOrgTextEmotionResponseBody extends TeaModel {
-    /**
-     * <p>返回结果</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

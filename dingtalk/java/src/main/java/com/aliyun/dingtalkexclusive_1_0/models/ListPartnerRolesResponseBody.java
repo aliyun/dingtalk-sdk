@@ -21,15 +21,9 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyListVisibleDepts extends TeaModel {
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("deptId")
         public Long deptId;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -57,15 +51,9 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyListVisibleUsers extends TeaModel {
-        /**
-         * <p>员工姓名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>员工id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -93,15 +81,9 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyListWarningDepts extends TeaModel {
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("deptId")
         public Long deptId;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -129,15 +111,9 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyListWarningUsers extends TeaModel {
-        /**
-         * <p>员工姓名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>员工id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -165,45 +141,24 @@ public class ListPartnerRolesResponseBody extends TeaModel {
     }
 
     public static class ListPartnerRolesResponseBodyList extends TeaModel {
-        /**
-         * <p>角色id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>是否必邀角色</p>
-         */
         @NameInMap("isNecessary")
         public Integer isNecessary;
 
-        /**
-         * <p>角色名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>可见部门</p>
-         */
         @NameInMap("visibleDepts")
         public java.util.List<ListPartnerRolesResponseBodyListVisibleDepts> visibleDepts;
 
-        /**
-         * <p>可见员工</p>
-         */
         @NameInMap("visibleUsers")
         public java.util.List<ListPartnerRolesResponseBodyListVisibleUsers> visibleUsers;
 
-        /**
-         * <p>预警部门</p>
-         */
         @NameInMap("warningDepts")
         public java.util.List<ListPartnerRolesResponseBodyListWarningDepts> warningDepts;
 
-        /**
-         * <p>预警成员</p>
-         */
         @NameInMap("warningUsers")
         public java.util.List<ListPartnerRolesResponseBodyListWarningUsers> warningUsers;
 

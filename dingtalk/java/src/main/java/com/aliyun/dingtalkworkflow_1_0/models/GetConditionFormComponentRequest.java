@@ -4,17 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetConditionFormComponentRequest extends TeaModel {
-    /**
-     * <p>应用ID (三方应用为AppID)，可在开发者管理后台后台的应用详情页面获取。</p>
-     */
     @NameInMap("agentId")
     public Long agentId;
 
-    /**
-     * <p>审批模板ID。</p>
-     * <br>
-     * <p>processCode需要OA管理后台，在编辑审批表单的URL中获取。</p>
-     */
     @NameInMap("processCode")
     public String processCode;
 

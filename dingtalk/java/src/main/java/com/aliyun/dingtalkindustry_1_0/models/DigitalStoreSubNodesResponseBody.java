@@ -24,27 +24,15 @@ public class DigitalStoreSubNodesResponseBody extends TeaModel {
         @NameInMap("dingDeptId")
         public Long dingDeptId;
 
-        /**
-         * <p>节点Id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>门店名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>上级节点id</p>
-         */
         @NameInMap("parentId")
         public Long parentId;
 
-        /**
-         * <p>节点类型</p>
-         */
         @NameInMap("type")
         public Long type;
 

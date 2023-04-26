@@ -4,45 +4,24 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddPointRequest extends TeaModel {
-    /**
-     * <p>增加积分的时间戳毫秒数，如果为空使用系统当前毫秒数</p>
-     */
     @NameInMap("actionTime")
     public Long actionTime;
 
-    /**
-     * <p>是否查询全员圈积分</p>
-     */
     @NameInMap("isCircle")
     public Boolean isCircle;
 
-    /**
-     * <p>规则代码（可空）,如果不为空的话，score值使用ruleCode对应的score增加分数</p>
-     */
     @NameInMap("ruleCode")
     public String ruleCode;
 
-    /**
-     * <p>规则名字</p>
-     */
     @NameInMap("ruleName")
     public String ruleName;
 
-    /**
-     * <p>本次增加积分：正数表示增加/负数表示扣减</p>
-     */
     @NameInMap("score")
     public Integer score;
 
-    /**
-     * <p>成员id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>加积分的唯一幂等标志</p>
-     */
     @NameInMap("uuid")
     public String uuid;
 

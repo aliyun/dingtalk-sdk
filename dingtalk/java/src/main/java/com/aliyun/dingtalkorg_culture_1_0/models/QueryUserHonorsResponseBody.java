@@ -32,15 +32,9 @@ public class QueryUserHonorsResponseBody extends TeaModel {
     }
 
     public static class QueryUserHonorsResponseBodyResultHonorsGrantHistory extends TeaModel {
-        /**
-         * <p>授予时间 时间戳</p>
-         */
         @NameInMap("grantTime")
         public Long grantTime;
 
-        /**
-         * <p>必须。荣誉发放人userid</p>
-         */
         @NameInMap("senderUserid")
         public String senderUserid;
 
@@ -68,33 +62,18 @@ public class QueryUserHonorsResponseBody extends TeaModel {
     }
 
     public static class QueryUserHonorsResponseBodyResultHonors extends TeaModel {
-        /**
-         * <p>有效期截止时间点，没有该属性则为永久生效</p>
-         */
         @NameInMap("expirationTime")
         public Long expirationTime;
 
-        /**
-         * <p>授予历史记录 包含用户及授予时间</p>
-         */
         @NameInMap("grantHistory")
         public java.util.List<QueryUserHonorsResponseBodyResultHonorsGrantHistory> grantHistory;
 
-        /**
-         * <p>荣誉含义</p>
-         */
         @NameInMap("honorDesc")
         public String honorDesc;
 
-        /**
-         * <p>必须。荣誉id</p>
-         */
         @NameInMap("honorId")
         public String honorId;
 
-        /**
-         * <p>必须。荣誉名字</p>
-         */
         @NameInMap("honorName")
         public String honorName;
 

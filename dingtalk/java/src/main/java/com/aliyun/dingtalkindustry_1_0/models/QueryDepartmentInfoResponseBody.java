@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDepartmentInfoResponseBody extends TeaModel {
-    /**
-     * <p>科室详情</p>
-     */
     @NameInMap("content")
     public QueryDepartmentInfoResponseBodyContent content;
 
@@ -24,75 +21,39 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
     }
 
     public static class QueryDepartmentInfoResponseBodyContentDepartment extends TeaModel {
-        /**
-         * <p>科室code</p>
-         */
         @NameInMap("deptCode")
         public String deptCode;
 
-        /**
-         * <p>科室名称</p>
-         */
         @NameInMap("deptName")
         public String deptName;
 
-        /**
-         * <p>顺序</p>
-         */
         @NameInMap("deptOrder")
         public Long deptOrder;
 
-        /**
-         * <p>状态</p>
-         */
         @NameInMap("deptStatus")
         public Integer deptStatus;
 
-        /**
-         * <p>类型</p>
-         */
         @NameInMap("deptType")
         public Integer deptType;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        /**
-         * <p>科室id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>科室名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>父code</p>
-         */
         @NameInMap("parentDeptCode")
         public String parentDeptCode;
 
-        /**
-         * <p>备注</p>
-         */
         @NameInMap("remark")
         public String remark;
 
-        /**
-         * <p>病区id</p>
-         */
         @NameInMap("wardIdList")
         public java.util.List<Long> wardIdList;
 
@@ -200,51 +161,27 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
     }
 
     public static class QueryDepartmentInfoResponseBodyContentExtendInfos extends TeaModel {
-        /**
-         * <p>部门code</p>
-         */
         @NameInMap("deptCode")
         public String deptCode;
 
-        /**
-         * <p>扩展属性描述</p>
-         */
         @NameInMap("deptExtendDisplayName")
         public String deptExtendDisplayName;
 
-        /**
-         * <p>扩展属性key</p>
-         */
         @NameInMap("deptExtendKey")
         public String deptExtendKey;
 
-        /**
-         * <p>扩展属性value</p>
-         */
         @NameInMap("deptExtendValue")
         public String deptExtendValue;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        /**
-         * <p>id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>状态</p>
-         */
         @NameInMap("status")
         public Integer status;
 
@@ -320,15 +257,9 @@ public class QueryDepartmentInfoResponseBody extends TeaModel {
     }
 
     public static class QueryDepartmentInfoResponseBodyContent extends TeaModel {
-        /**
-         * <p>科室列表</p>
-         */
         @NameInMap("department")
         public QueryDepartmentInfoResponseBodyContentDepartment department;
 
-        /**
-         * <p>科室扩展属性值</p>
-         */
         @NameInMap("extendInfos")
         public java.util.List<QueryDepartmentInfoResponseBodyContentExtendInfos> extendInfos;
 

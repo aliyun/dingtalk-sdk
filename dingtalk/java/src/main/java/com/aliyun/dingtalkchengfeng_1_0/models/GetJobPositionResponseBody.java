@@ -4,15 +4,9 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetJobPositionResponseBody extends TeaModel {
-    /**
-     * <p>职位详情</p>
-     */
     @NameInMap("content")
     public GetJobPositionResponseBodyContent content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
@@ -38,45 +32,24 @@ public class GetJobPositionResponseBody extends TeaModel {
     }
 
     public static class GetJobPositionResponseBodyContent extends TeaModel {
-        /**
-         * <p>职责描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("establishDate")
         public String establishDate;
 
-        /**
-         * <p>职位编码</p>
-         */
         @NameInMap("jobCode")
         public String jobCode;
 
-        /**
-         * <p>任职要求</p>
-         */
         @NameInMap("jobRequirements")
         public String jobRequirements;
 
-        /**
-         * <p>职位名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>生效时间</p>
-         */
         @NameInMap("startDate")
         public String startDate;
 
-        /**
-         * <p>失效时间</p>
-         */
         @NameInMap("stopDate")
         public String stopDate;
 

@@ -6,8 +6,11 @@ import com.aliyun.dingtalkhrbrain_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public SyncDataResponse syncData(SyncDataRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SyncDataHeaders headers = new SyncDataHeaders();
-        return this.syncDataWithOptions(request, headers, runtime);
-    }
 
     public SyncDataResponse syncDataWithOptions(SyncDataRequest request, SyncDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -58,6 +55,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("SyncData", "hrbrain_1.0", "HTTP", "POST", "AK", "/v1.0/hrbrain/datas", "json", req, runtime), new SyncDataResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SyncData"),
+            new TeaPair("version", "hrbrain_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrbrain/datas"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SyncDataResponse());
+    }
+
+    public SyncDataResponse syncData(SyncDataRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SyncDataHeaders headers = new SyncDataHeaders();
+        return this.syncDataWithOptions(request, headers, runtime);
     }
 }

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class AvaliableTemplate extends TeaModel {
-    /**
-     * <p>表单名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>表单模板processCode</p>
-     */
     @NameInMap("processCode")
     public String processCode;
 

@@ -7,9 +7,6 @@ public class QueryTemplateCategorysResponseBody extends TeaModel {
     @NameInMap("categoryList")
     public java.util.List<QueryTemplateCategorysResponseBodyCategoryList> categoryList;
 
-    /**
-     * <p>总数</p>
-     */
     @NameInMap("total")
     public String total;
 
@@ -35,15 +32,9 @@ public class QueryTemplateCategorysResponseBody extends TeaModel {
     }
 
     public static class QueryTemplateCategorysResponseBodyCategoryList extends TeaModel {
-        /**
-         * <p>分类编码</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>分类名称</p>
-         */
         @NameInMap("name")
         public String name;
 

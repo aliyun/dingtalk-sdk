@@ -4,126 +4,66 @@ package com.aliyun.dingtalktrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncTripOrderRequest extends TeaModel {
-    /**
-     * <p>订单渠道，枚举值：BUSINESS、CUSTOMER</p>
-     */
     @NameInMap("channelType")
     public String channelType;
 
-    /**
-     * <p>币种</p>
-     */
     @NameInMap("currency")
     public String currency;
 
-    /**
-     * <p>钉钉用户id</p>
-     */
     @NameInMap("dingUserId")
     public String dingUserId;
 
-    /**
-     * <p>优惠金额</p>
-     */
     @NameInMap("discountAmount")
     public String discountAmount;
 
-    /**
-     * <p>是否是改签单</p>
-     */
     @NameInMap("endorseFlag")
     public Boolean endorseFlag;
 
     @NameInMap("event")
     public SyncTripOrderRequestEvent event;
 
-    /**
-     * <p>下单时间</p>
-     */
     @NameInMap("gmtOrder")
     public String gmtOrder;
 
-    /**
-     * <p>付款时间</p>
-     */
     @NameInMap("gmtPay")
     public String gmtPay;
 
-    /**
-     * <p>退款时间</p>
-     */
     @NameInMap("gmtRefund")
     public String gmtRefund;
 
-    /**
-     * <p>发票申请链接</p>
-     */
     @NameInMap("invoiceApplyUrl")
     public String invoiceApplyUrl;
 
-    /**
-     * <p>行程单号</p>
-     */
     @NameInMap("journeyBizNo")
     public String journeyBizNo;
 
-    /**
-     * <p>订单详情列表</p>
-     */
     @NameInMap("orderDetails")
     public java.util.List<SyncTripOrderRequestOrderDetails> orderDetails;
 
-    /**
-     * <p>供应商订单号</p>
-     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    /**
-     * <p>订单详情链接</p>
-     */
     @NameInMap("orderUrl")
     public String orderUrl;
 
-    /**
-     * <p>实付金额</p>
-     */
     @NameInMap("realAmount")
     public String realAmount;
 
-    /**
-     * <p>退款金额</p>
-     */
     @NameInMap("refundAmount")
     public String refundAmount;
 
-    /**
-     * <p>供应商关联订单号</p>
-     */
     @NameInMap("relativeOrderNo")
     public String relativeOrderNo;
 
-    /**
-     * <p>来源埋点</p>
-     */
     @NameInMap("source")
     public String source;
 
-    /**
-     * <p>用户组织id</p>
-     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
-    /**
-     * <p>总金额</p>
-     */
     @NameInMap("totalAmount")
     public String totalAmount;
 
-    /**
-     * <p>订单类型</p>
-     */
     @NameInMap("type")
     public String type;
 
@@ -301,15 +241,9 @@ public class SyncTripOrderRequest extends TeaModel {
     }
 
     public static class SyncTripOrderRequestEvent extends TeaModel {
-        /**
-         * <p>订单事件</p>
-         */
         @NameInMap("action")
         public String action;
 
-        /**
-         * <p>事件时间</p>
-         */
         @NameInMap("gmtAction")
         public String gmtAction;
 
@@ -337,30 +271,15 @@ public class SyncTripOrderRequest extends TeaModel {
     }
 
     public static class SyncTripOrderRequestOrderDetailsHotelLocation extends TeaModel {
-        /**
-         * <p>纬度</p>
-         */
         @NameInMap("lat")
         public String lat;
 
-        /**
-         * <p>经度</p>
-         */
         @NameInMap("lon")
         public String lon;
 
-        /**
-         * <p>坐标数据源</p>
-         * <p>- BD09：来自百度地图的经纬坐标</p>
-         * <p>- GCJ02: 来自高德地图，腾讯地图，Apple地图的坐标</p>
-         * <p>- WGS84: 来自GPS的坐标</p>
-         */
         @NameInMap("source")
         public String source;
 
-        /**
-         * <p>定位url</p>
-         */
         @NameInMap("url")
         public String url;
 
@@ -404,162 +323,84 @@ public class SyncTripOrderRequest extends TeaModel {
     }
 
     public static class SyncTripOrderRequestOrderDetails extends TeaModel {
-        /**
-         * <p>到达时间</p>
-         */
         @NameInMap("arrivalTime")
         public String arrivalTime;
 
-        /**
-         * <p>车辆颜色</p>
-         */
         @NameInMap("carColor")
         public String carColor;
 
-        /**
-         * <p>车辆型号</p>
-         */
         @NameInMap("carModel")
         public String carModel;
 
-        /**
-         * <p>车牌号</p>
-         */
         @NameInMap("carNumber")
         public String carNumber;
 
-        /**
-         * <p>餐食描述</p>
-         */
         @NameInMap("cateringType")
         public String cateringType;
 
-        /**
-         * <p>入住时间</p>
-         */
         @NameInMap("checkInTime")
         public String checkInTime;
 
-        /**
-         * <p>离店时间</p>
-         */
         @NameInMap("checkOutTime")
         public String checkOutTime;
 
-        /**
-         * <p>出发时间</p>
-         */
         @NameInMap("departTime")
         public String departTime;
 
-        /**
-         * <p>目的地城市</p>
-         */
         @NameInMap("destinationCity")
         public String destinationCity;
 
-        /**
-         * <p>目的地城市码</p>
-         */
         @NameInMap("destinationCityCode")
         public String destinationCityCode;
 
-        /**
-         * <p>目的站名称</p>
-         */
         @NameInMap("destinationStation")
         public String destinationStation;
 
-        /**
-         * <p>酒店地址</p>
-         */
         @NameInMap("hotelAddress")
         public String hotelAddress;
 
         @NameInMap("hotelCity")
         public String hotelCity;
 
-        /**
-         * <p>酒店定位信息</p>
-         */
         @NameInMap("hotelLocation")
         public SyncTripOrderRequestOrderDetailsHotelLocation hotelLocation;
 
-        /**
-         * <p>酒店名称</p>
-         */
         @NameInMap("hotelName")
         public String hotelName;
 
-        /**
-         * <p>出发地城市</p>
-         */
         @NameInMap("originCity")
         public String originCity;
 
-        /**
-         * <p>出发地城市码</p>
-         */
         @NameInMap("originCityCode")
         public String originCityCode;
 
-        /**
-         * <p>出发站名称</p>
-         */
         @NameInMap("originStation")
         public String originStation;
 
-        /**
-         * <p>房间数</p>
-         */
         @NameInMap("roomCount")
         public Integer roomCount;
 
-        /**
-         * <p>舱位</p>
-         */
         @NameInMap("seatInfo")
         public String seatInfo;
 
-        /**
-         * <p>“服务类型”</p>
-         */
         @NameInMap("serviceType")
         public String serviceType;
 
-        /**
-         * <p>下游供应商logo</p>
-         */
         @NameInMap("subSupplyLogo")
         public String subSupplyLogo;
 
-        /**
-         * <p>下游供应商名称</p>
-         */
         @NameInMap("subSupplyName")
         public String subSupplyName;
 
-        /**
-         * <p>专车类型</p>
-         */
         @NameInMap("taxiType")
         public String taxiType;
 
-        /**
-         * <p>联系方式</p>
-         */
         @NameInMap("telephone")
         public String telephone;
 
-        /**
-         * <p>火车/航班班次</p>
-         */
         @NameInMap("transportNumber")
         public String transportNumber;
 
-        /**
-         * <p>房型描述</p>
-         */
         @NameInMap("typeDescription")
         public String typeDescription;
 

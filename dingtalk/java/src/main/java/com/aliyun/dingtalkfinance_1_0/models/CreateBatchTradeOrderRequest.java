@@ -4,57 +4,30 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateBatchTradeOrderRequest extends TeaModel {
-    /**
-     * <p>付款账号唯一id</p>
-     */
     @NameInMap("accountId")
     public String accountId;
 
-    /**
-     * <p>付款账号(注意：用户上送的是脱敏数据)</p>
-     */
     @NameInMap("accountNo")
     public String accountNo;
 
-    /**
-     * <p>批次备注</p>
-     */
     @NameInMap("batchRemark")
     public String batchRemark;
 
-    /**
-     * <p>交易明细列表</p>
-     */
     @NameInMap("batchTradeDetails")
     public java.util.List<CreateBatchTradeOrderRequestBatchTradeDetails> batchTradeDetails;
 
-    /**
-     * <p>外部商户批次号</p>
-     */
     @NameInMap("outBatchNo")
     public String outBatchNo;
 
-    /**
-     * <p>员工staffId</p>
-     */
     @NameInMap("staffId")
     public String staffId;
 
-    /**
-     * <p>总金额（必填，单位：元）</p>
-     */
     @NameInMap("totalAmount")
     public String totalAmount;
 
-    /**
-     * <p>总笔数（必填）</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
-    /**
-     * <p>交易抬头</p>
-     */
     @NameInMap("tradeTitle")
     public String tradeTitle;
 
@@ -136,39 +109,21 @@ public class CreateBatchTradeOrderRequest extends TeaModel {
     }
 
     public static class CreateBatchTradeOrderRequestBatchTradeDetails extends TeaModel {
-        /**
-         * <p>金额（必填，单位：元）</p>
-         */
         @NameInMap("amount")
         public String amount;
 
-        /**
-         * <p>备注（选填）</p>
-         */
         @NameInMap("memo")
         public String memo;
 
-        /**
-         * <p>收款方户名（必填）</p>
-         */
         @NameInMap("payeeAccountName")
         public String payeeAccountName;
 
-        /**
-         * <p>收款方账号（必填）</p>
-         */
         @NameInMap("payeeAccountNo")
         public String payeeAccountNo;
 
-        /**
-         * <p>收款方账号类型（必填）</p>
-         */
         @NameInMap("payeeAccountType")
         public String payeeAccountType;
 
-        /**
-         * <p>序号（必填）</p>
-         */
         @NameInMap("serialNo")
         public Long serialNo;
 

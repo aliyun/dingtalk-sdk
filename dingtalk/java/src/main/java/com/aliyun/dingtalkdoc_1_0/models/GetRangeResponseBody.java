@@ -4,27 +4,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRangeResponseBody extends TeaModel {
-    /**
-     * <p>背景颜色</p>
-     */
     @NameInMap("backgroundColors")
     public java.util.List<java.util.List<GetRangeResponseBodyBackgroundColors>> backgroundColors;
 
-    /**
-     * <p>展示值</p>
-     */
     @NameInMap("displayValues")
     public java.util.List<java.util.List<String>> displayValues;
 
-    /**
-     * <p>公式</p>
-     */
     @NameInMap("formulas")
     public java.util.List<java.util.List<String>> formulas;
 
-    /**
-     * <p>值</p>
-     */
     @NameInMap("values")
     public java.util.List<java.util.List<?>> values;
 
@@ -66,27 +54,15 @@ public class GetRangeResponseBody extends TeaModel {
     }
 
     public static class GetRangeResponseBodyBackgroundColors extends TeaModel {
-        /**
-         * <p>RGB值中的红色值</p>
-         */
         @NameInMap("red")
         public Integer red;
 
-        /**
-         * <p>RGB值中的绿色值</p>
-         */
         @NameInMap("green")
         public Integer green;
 
-        /**
-         * <p>RGB值中的蓝色值</p>
-         */
         @NameInMap("blue")
         public Integer blue;
 
-        /**
-         * <p>16进制表示的颜色</p>
-         */
         @NameInMap("hexString")
         public String hexString;
 

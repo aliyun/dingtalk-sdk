@@ -4,9 +4,6 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateInnerAppResponseBody extends TeaModel {
-    /**
-     * <p>应用id</p>
-     */
     @NameInMap("agentId")
     public Long agentId;
 

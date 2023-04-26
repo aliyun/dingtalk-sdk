@@ -4,9 +4,6 @@ package com.aliyun.dingtalktrajectory_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCollectingTraceTaskRequest extends TeaModel {
-    /**
-     * <p>员工用户ID列表</p>
-     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

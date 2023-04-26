@@ -4,45 +4,24 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateOrUpdateFormDataRequest extends TeaModel {
-    /**
-     * <p>宜搭应用编码</p>
-     */
     @NameInMap("appType")
     public String appType;
 
-    /**
-     * <p>宜搭表单实例数据 json格式，如果存在满足检索条件的表单实例数据则用此值增量更新满足检索条件的的表单实例数据，否则用此值创建一条表单实例。表单实例数据的结构请参考 https://www.yuque.com/yida/support/agb8im#f26a51f429f9f19aa0b5b3ee847ac556_h3_31</p>
-     */
     @NameInMap("formDataJson")
     public String formDataJson;
 
-    /**
-     * <p>表单编码</p>
-     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    /**
-     * <p>是否不触发校验规则、关联业务规则和第三方服务回调</p>
-     */
     @NameInMap("noExecuteExpression")
     public Boolean noExecuteExpression;
 
-    /**
-     * <p>用于检索表单实例数据的检索条件</p>
-     */
     @NameInMap("searchCondition")
     public String searchCondition;
 
-    /**
-     * <p>宜搭应用秘钥</p>
-     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    /**
-     * <p>钉钉userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

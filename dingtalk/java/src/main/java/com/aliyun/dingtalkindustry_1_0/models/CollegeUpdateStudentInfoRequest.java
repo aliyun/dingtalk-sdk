@@ -4,39 +4,21 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeUpdateStudentInfoRequest extends TeaModel {
-    /**
-     * <p>人员拓展信息</p>
-     */
     @NameInMap("empExtension")
     public java.util.Map<String, String> empExtension;
 
-    /**
-     * <p>性别</p>
-     */
     @NameInMap("gender")
     public String gender;
 
-    /**
-     * <p>身份证号</p>
-     */
     @NameInMap("identifyId")
     public String identifyId;
 
-    /**
-     * <p>入学年份</p>
-     */
     @NameInMap("startYear")
     public String startYear;
 
-    /**
-     * <p>studentId</p>
-     */
     @NameInMap("studentId")
     public Long studentId;
 
-    /**
-     * <p>学生姓名</p>
-     */
     @NameInMap("studentName")
     public String studentName;
 

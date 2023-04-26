@@ -4,17 +4,9 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteDentryRequest extends TeaModel {
-    /**
-     * <p>是否删除到回收站，默认不删除到回收站，直接删除</p>
-     * <p>默认值:</p>
-     * <p>	false</p>
-     */
     @NameInMap("toRecycleBin")
     public Boolean toRecycleBin;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -4,17 +4,9 @@ package com.aliyun.dingtalkpedia_1_0.models;
 import com.aliyun.tea.*;
 
 public class PediaWordsDeleteResponseBody extends TeaModel {
-    /**
-     * <p>返回结果</p>
-     * <p>false，失败</p>
-     * <p>true，成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
-    /**
-     * <p>删除成功，返回删除的uuid</p>
-     */
     @NameInMap("uuid")
     public Long uuid;
 

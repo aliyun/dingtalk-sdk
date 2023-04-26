@@ -21,99 +21,51 @@ public class BatchUpdateTemplateRequest extends TeaModel {
     }
 
     public static class BatchUpdateTemplateRequestTemplateList extends TeaModel {
-        /**
-         * <p>adaptEnv</p>
-         */
         @NameInMap("adaptEnv")
         public java.util.List<String> adaptEnv;
 
-        /**
-         * <p>appDesc</p>
-         */
         @NameInMap("appDesc")
         public String appDesc;
 
-        /**
-         * <p>appIcon</p>
-         */
         @NameInMap("appIcon")
         public String appIcon;
 
-        /**
-         * <p>caseVideoList</p>
-         */
         @NameInMap("caseVideoList")
         public java.util.List<String> caseVideoList;
 
-        /**
-         * <p>category</p>
-         */
         @NameInMap("categoryCode")
         public String categoryCode;
 
-        /**
-         * <p>coverImgList</p>
-         */
         @NameInMap("coverImgList")
         public java.util.List<String> coverImgList;
 
-        /**
-         * <p>expUrl</p>
-         */
         @NameInMap("expUrl")
         public String expUrl;
 
-        /**
-         * <p>industryLabelList</p>
-         */
         @NameInMap("industryLabelList")
         public java.util.List<String> industryLabelList;
 
-        /**
-         * <p>mobilePreviewMediaList</p>
-         */
         @NameInMap("mobilePreviewMediaList")
         public java.util.List<String> mobilePreviewMediaList;
 
-        /**
-         * <p>name</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>previewMediaList</p>
-         */
         @NameInMap("previewMediaList")
         public java.util.List<String> previewMediaList;
 
-        /**
-         * <p>providerName</p>
-         */
         @NameInMap("providerName")
         public String providerName;
 
-        /**
-         * <p>roleLabelList</p>
-         */
         @NameInMap("roleLabelList")
         public java.util.List<String> roleLabelList;
 
-        /**
-         * <p>simpleDesc</p>
-         */
         @NameInMap("simpleDesc")
         public String simpleDesc;
 
-        /**
-         * <p>templateKey</p>
-         */
         @NameInMap("templateKey")
         public String templateKey;
 
-        /**
-         * <p>useCasesMediaList</p>
-         */
         @NameInMap("useCasesMediaList")
         public java.util.List<String> useCasesMediaList;
 

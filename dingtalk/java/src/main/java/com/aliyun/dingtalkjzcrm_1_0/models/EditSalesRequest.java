@@ -4,27 +4,15 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditSalesRequest extends TeaModel {
-    /**
-     * <p>编辑数据</p>
-     */
     @NameInMap("data")
     public EditSalesRequestData data;
 
-    /**
-     * <p>数据类型，固定填写158</p>
-     */
     @NameInMap("datatype")
     public Long datatype;
 
-    /**
-     * <p>数据id，不填或者填0为新增数据</p>
-     */
     @NameInMap("msgid")
     public Long msgid;
 
-    /**
-     * <p>时间戳</p>
-     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -66,117 +54,60 @@ public class EditSalesRequest extends TeaModel {
     }
 
     public static class EditSalesRequestData extends TeaModel {
-        /**
-         * <p>创建人</p>
-         */
         @NameInMap("data_userid")
         public String dataUserid;
 
-        /**
-         * <p>对应客户</p>
-         */
         @NameInMap("xsh_customerid")
         public String xshCustomerid;
 
-        /**
-         * <p>发现时间</p>
-         */
         @NameInMap("xsh_date")
         public String xshDate;
 
-        /**
-         * <p>预计签单日</p>
-         */
         @NameInMap("xsh_expdate")
         public String xshExpdate;
 
-        /**
-         * <p>预期金额</p>
-         */
         @NameInMap("xsh_expmoney")
         public String xshExpmoney;
 
-        /**
-         * <p>来源</p>
-         */
         @NameInMap("xsh_from")
         public String xshFrom;
 
-        /**
-         * <p>可能性</p>
-         */
         @NameInMap("xsh_knx")
         public String xshKnx;
 
-        /**
-         * <p>联系方式</p>
-         */
         @NameInMap("xsh_lianxi")
         public String xshLianxi;
 
-        /**
-         * <p>联系人</p>
-         */
         @NameInMap("xsh_lxrid")
         public String xshLxrid;
 
-        /**
-         * <p>外币备注</p>
-         */
         @NameInMap("xsh_moneynote")
         public String xshMoneynote;
 
-        /**
-         * <p>机会编号</p>
-         */
         @NameInMap("xsh_number")
         public String xshNumber;
 
-        /**
-         * <p>阶段</p>
-         */
         @NameInMap("xsh_phase")
         public String xshPhase;
 
-        /**
-         * <p>阶段备注</p>
-         */
         @NameInMap("xsh_phasenote")
         public String xshPhasenote;
 
-        /**
-         * <p>所有者</p>
-         */
         @NameInMap("xsh_preside")
         public String xshPreside;
 
-        /**
-         * <p>提供人</p>
-         */
         @NameInMap("xsh_provider")
         public String xshProvider;
 
-        /**
-         * <p>客户需求</p>
-         */
         @NameInMap("xsh_require")
         public String xshRequire;
 
-        /**
-         * <p>状态</p>
-         */
         @NameInMap("xsh_state")
         public String xshState;
 
-        /**
-         * <p>主题</p>
-         */
         @NameInMap("xsh_title")
         public String xshTitle;
 
-        /**
-         * <p>类型</p>
-         */
         @NameInMap("xsh_type")
         public String xshType;
 

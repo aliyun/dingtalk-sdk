@@ -4,9 +4,6 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRecycleBinResponseBody extends TeaModel {
-    /**
-     * <p>回收站信息</p>
-     */
     @NameInMap("recycleBin")
     public GetRecycleBinResponseBodyRecycleBin recycleBin;
 
@@ -24,26 +21,12 @@ public class GetRecycleBinResponseBody extends TeaModel {
     }
 
     public static class GetRecycleBinResponseBodyRecycleBin extends TeaModel {
-        /**
-         * <p>回收站id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>回收站范围类型</p>
-         * <p>枚举值:</p>
-         * <p>	ORG: 企业</p>
-         * <p>	APP: 应用</p>
-         * <p>	SPACE: 空间</p>
-         */
         @NameInMap("scope")
         public String scope;
 
-        /**
-         * <p>回收站范围id</p>
-         * <p>根据recycleBinScope传入对应的企业、应用、空间ID</p>
-         */
         @NameInMap("scopeId")
         public String scopeId;
 

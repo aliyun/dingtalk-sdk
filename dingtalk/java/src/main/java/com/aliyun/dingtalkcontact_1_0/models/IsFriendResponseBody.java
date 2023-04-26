@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class IsFriendResponseBody extends TeaModel {
-    /**
-     * <p>是否有好友关系</p>
-     */
     @NameInMap("isFriend")
     public Boolean isFriend;
 

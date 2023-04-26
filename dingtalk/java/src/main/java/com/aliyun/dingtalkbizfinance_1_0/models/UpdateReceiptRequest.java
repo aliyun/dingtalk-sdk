@@ -4,9 +4,6 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateReceiptRequest extends TeaModel {
-    /**
-     * <p>单据列表 ，最长10</p>
-     */
     @NameInMap("receipts")
     public java.util.List<UpdateReceiptRequestReceipts> receipts;
 
@@ -24,87 +21,45 @@ public class UpdateReceiptRequest extends TeaModel {
     }
 
     public static class UpdateReceiptRequestReceipts extends TeaModel {
-        /**
-         * <p>总金额，传空代表不修改</p>
-         */
         @NameInMap("amount")
         public String amount;
 
-        /**
-         * <p>关联收支类别，传空代表不修改</p>
-         */
         @NameInMap("categoryCode")
         public String categoryCode;
 
-        /**
-         * <p>单据唯一编号</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>关联客户code，传空代表不修改</p>
-         */
         @NameInMap("customerCode")
         public String customerCode;
 
-        /**
-         * <p>关联企业账户code，传空代表不修改</p>
-         */
         @NameInMap("enterpriseAcountCode")
         public String enterpriseAcountCode;
 
-        /**
-         * <p>业务发生时间，传空代表不修改</p>
-         */
         @NameInMap("occurDate")
         public Long occurDate;
 
-        /**
-         * <p>负责人工号，传空代表不修改</p>
-         */
         @NameInMap("principalId")
         public String principalId;
 
-        /**
-         * <p>关联项目code，传空代表不修改</p>
-         */
         @NameInMap("projectCode")
         public String projectCode;
 
-        /**
-         * <p>单据类型：1付款单，2收款单</p>
-         */
         @NameInMap("receiptType")
         public Long receiptType;
 
-        /**
-         * <p>备注，传空代表不修改</p>
-         */
         @NameInMap("remark")
         public String remark;
 
-        /**
-         * <p>关联供应商code，传空代表不修改</p>
-         */
         @NameInMap("supplierCode")
         public String supplierCode;
 
-        /**
-         * <p>单据标题，传空代表不修改</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>单据更新时间</p>
-         */
         @NameInMap("updateTime")
         public Long updateTime;
 
-        /**
-         * <p>修改者工号</p>
-         */
         @NameInMap("updateUserId")
         public String updateUserId;
 

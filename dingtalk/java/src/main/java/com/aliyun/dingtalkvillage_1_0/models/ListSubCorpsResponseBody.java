@@ -4,9 +4,6 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSubCorpsResponseBody extends TeaModel {
-    /**
-     * <p>result</p>
-     */
     @NameInMap("corpList")
     public java.util.List<ListSubCorpsResponseBodyCorpList> corpList;
 
@@ -24,45 +21,24 @@ public class ListSubCorpsResponseBody extends TeaModel {
     }
 
     public static class ListSubCorpsResponseBodyCorpList extends TeaModel {
-        /**
-         * <p>组织corpid</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>组织名字</p>
-         */
         @NameInMap("corpName")
         public String corpName;
 
-        /**
-         * <p>组织行业名称</p>
-         */
         @NameInMap("industry")
         public String industry;
 
-        /**
-         * <p>组织行业码</p>
-         */
         @NameInMap("industryCode")
         public Integer industryCode;
 
-        /**
-         * <p>区域码</p>
-         */
         @NameInMap("regionId")
         public String regionId;
 
-        /**
-         * <p>区域详细信息</p>
-         */
         @NameInMap("regionLocation")
         public String regionLocation;
 
-        /**
-         * <p>区域类型，值为county,town,community,residential，依次为区/县、乡/镇/街道、社区/村、小区</p>
-         */
         @NameInMap("regionType")
         public String regionType;
 

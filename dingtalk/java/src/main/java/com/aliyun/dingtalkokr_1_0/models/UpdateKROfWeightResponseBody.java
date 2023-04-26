@@ -7,9 +7,6 @@ public class UpdateKROfWeightResponseBody extends TeaModel {
     @NameInMap("data")
     public UpdateKROfWeightResponseBodyData data;
 
-    /**
-     * <p>请求成功的标识。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -35,9 +32,6 @@ public class UpdateKROfWeightResponseBody extends TeaModel {
     }
 
     public static class UpdateKROfWeightResponseBodyDataObjectiveProgress extends TeaModel {
-        /**
-         * <p>目标百分比。</p>
-         */
         @NameInMap("percent")
         public Long percent;
 
@@ -60,9 +54,6 @@ public class UpdateKROfWeightResponseBody extends TeaModel {
         @NameInMap("objectiveProgress")
         public UpdateKROfWeightResponseBodyDataObjectiveProgress objectiveProgress;
 
-        /**
-         * <p>目标分数。</p>
-         */
         @NameInMap("objectiveScore")
         public Long objectiveScore;
 

@@ -4,33 +4,18 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCloudRecordVideoPlayInfoResponseBody extends TeaModel {
-    /**
-     * <p>时长</p>
-     */
     @NameInMap("duration")
     public Long duration;
 
-    /**
-     * <p>大小</p>
-     */
     @NameInMap("fileSize")
     public Long fileSize;
 
-    /**
-     * <p>MP4格式下载链接</p>
-     */
     @NameInMap("mp4FileUrl")
     public String mp4FileUrl;
 
-    /**
-     * <p>在线播放链接</p>
-     */
     @NameInMap("playUrl")
     public String playUrl;
 
-    /**
-     * <p>状态</p>
-     */
     @NameInMap("status")
     public Long status;
 

@@ -4,93 +4,48 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendRobotMessageRequest extends TeaModel {
-    /**
-     * <p>是否@全员</p>
-     */
     @NameInMap("atAll")
     public Boolean atAll;
 
-    /**
-     * <p>@人的appuid列表</p>
-     */
     @NameInMap("atAppUids")
     public java.util.List<String> atAppUids;
 
-    /**
-     * <p>@人的手机号列表</p>
-     */
     @NameInMap("atMobiles")
     public java.util.List<String> atMobiles;
 
-    /**
-     * <p>@人的unionid列表</p>
-     */
     @NameInMap("atUnionIds")
     public java.util.List<String> atUnionIds;
 
-    /**
-     * <p>@人的userid列表</p>
-     */
     @NameInMap("atUsers")
     public java.util.List<String> atUsers;
 
-    /**
-     * <p>租户channel</p>
-     */
     @NameInMap("channel")
     public String channel;
 
-    /**
-     * <p>消息模板内容替换参数，多媒体类型</p>
-     */
     @NameInMap("msgMediaIdParamMap")
     public java.util.Map<String, ?> msgMediaIdParamMap;
 
-    /**
-     * <p>消息模板内容替换参数，普通文本类型</p>
-     */
     @NameInMap("msgParamMap")
     public java.util.Map<String, ?> msgParamMap;
 
-    /**
-     * <p>消息模板id</p>
-     */
     @NameInMap("msgTemplateId")
     public String msgTemplateId;
 
-    /**
-     * <p>消息接收人appuid列表</p>
-     */
     @NameInMap("receiverAppUids")
     public java.util.List<String> receiverAppUids;
 
-    /**
-     * <p>消息接收人手机号列表</p>
-     */
     @NameInMap("receiverMobiles")
     public java.util.List<String> receiverMobiles;
 
-    /**
-     * <p>消息接收人unionId列表</p>
-     */
     @NameInMap("receiverUnionIds")
     public java.util.List<String> receiverUnionIds;
 
-    /**
-     * <p>消息接收人userId列表</p>
-     */
     @NameInMap("receiverUserIds")
     public java.util.List<String> receiverUserIds;
 
-    /**
-     * <p>用于发送卡片的机器人编码，与场景群模板中的机器人编码保持一致</p>
-     */
     @NameInMap("robotCode")
     public String robotCode;
 
-    /**
-     * <p>会话id</p>
-     */
     @NameInMap("targetOpenConversationId")
     public String targetOpenConversationId;
 

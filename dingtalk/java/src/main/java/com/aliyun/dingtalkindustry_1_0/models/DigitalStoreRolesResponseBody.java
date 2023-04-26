@@ -21,27 +21,15 @@ public class DigitalStoreRolesResponseBody extends TeaModel {
     }
 
     public static class DigitalStoreRolesResponseBodyContent extends TeaModel {
-        /**
-         * <p>优先级</p>
-         */
         @NameInMap("level")
         public Long level;
 
-        /**
-         * <p>角色Code</p>
-         */
         @NameInMap("roleCode")
         public String roleCode;
 
-        /**
-         * <p>角色Id</p>
-         */
         @NameInMap("roleId")
         public Long roleId;
 
-        /**
-         * <p>角色名称</p>
-         */
         @NameInMap("roleName")
         public String roleName;
 

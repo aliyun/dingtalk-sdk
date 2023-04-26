@@ -4,93 +4,48 @@ package com.aliyun.dingtalkmanufacturing_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustrializeManufactureQueryJobsRequest extends TeaModel {
-    /**
-     * <p>当前页序号(从1开始)</p>
-     */
     @NameInMap("currentPage")
     public Integer currentPage;
 
-    /**
-     * <p>工单编号</p>
-     */
     @NameInMap("instNo")
     public String instNo;
 
-    /**
-     * <p>生产日期</p>
-     */
     @NameInMap("manufactureDay")
     public String manufactureDay;
 
-    /**
-     * <p>MES系统唯一标识</p>
-     */
     @NameInMap("mesAppKey")
     public String mesAppKey;
 
-    /**
-     * <p>每页显示记录条数</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>工序名称</p>
-     */
     @NameInMap("processName")
     public String processName;
 
-    /**
-     * <p>产品唯一标识</p>
-     */
     @NameInMap("productCode")
     public String productCode;
 
-    /**
-     * <p>产品中文名称</p>
-     */
     @NameInMap("productName")
     public String productName;
 
-    /**
-     * <p>产品规格</p>
-     */
     @NameInMap("productSpecification")
     public String productSpecification;
 
-    /**
-     * <p>报工合格数量</p>
-     */
     @NameInMap("qualifiedQuantity")
     public String qualifiedQuantity;
 
-    /**
-     * <p>计件单价，单位：分</p>
-     */
     @NameInMap("unitPrice")
     public String unitPrice;
 
-    /**
-     * <p>员工钉钉userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>批量报工时多个人钉钉工号以英文逗号分隔</p>
-     */
     @NameInMap("userIdList")
     public String userIdList;
 
-    /**
-     * <p>员工姓名</p>
-     */
     @NameInMap("userName")
     public String userName;
 
-    /**
-     * <p>报工记录的唯一标识</p>
-     */
     @NameInMap("uuid")
     public String uuid;
 

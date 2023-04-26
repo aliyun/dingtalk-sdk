@@ -10,21 +10,12 @@ public class GetEventResponseBody extends TeaModel {
     @NameInMap("categories")
     public java.util.List<GetEventResponseBodyCategories> categories;
 
-    /**
-     * <p>创建时间</p>
-     */
     @NameInMap("createTime")
     public String createTime;
 
-    /**
-     * <p>日程描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>日程结束时间</p>
-     */
     @NameInMap("end")
     public GetEventResponseBodyEnd end;
 
@@ -34,9 +25,6 @@ public class GetEventResponseBody extends TeaModel {
     @NameInMap("id")
     public String id;
 
-    /**
-     * <p>是否为全天日程</p>
-     */
     @NameInMap("isAllDay")
     public Boolean isAllDay;
 
@@ -61,33 +49,18 @@ public class GetEventResponseBody extends TeaModel {
     @NameInMap("reminders")
     public java.util.List<GetEventResponseBodyReminders> reminders;
 
-    /**
-     * <p>重复日程的主日程id，非重复日程为空</p>
-     */
     @NameInMap("seriesMasterId")
     public String seriesMasterId;
 
-    /**
-     * <p>日程开始时间</p>
-     */
     @NameInMap("start")
     public GetEventResponseBodyStart start;
 
-    /**
-     * <p>日程状态</p>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <p>日程标题</p>
-     */
     @NameInMap("summary")
     public String summary;
 
-    /**
-     * <p>更新时间</p>
-     */
     @NameInMap("updateTime")
     public String updateTime;
 
@@ -257,9 +230,6 @@ public class GetEventResponseBody extends TeaModel {
     }
 
     public static class GetEventResponseBodyAttendees extends TeaModel {
-        /**
-         * <p>用户名</p>
-         */
         @NameInMap("displayName")
         public String displayName;
 
@@ -269,15 +239,9 @@ public class GetEventResponseBody extends TeaModel {
         @NameInMap("isOptional")
         public Boolean isOptional;
 
-        /**
-         * <p>回复状态</p>
-         */
         @NameInMap("responseStatus")
         public String responseStatus;
 
-        /**
-         * <p>是否是当前登陆用户</p>
-         */
         @NameInMap("self")
         public Boolean self;
 
@@ -561,24 +525,15 @@ public class GetEventResponseBody extends TeaModel {
     }
 
     public static class GetEventResponseBodyOrganizer extends TeaModel {
-        /**
-         * <p>用户名</p>
-         */
         @NameInMap("displayName")
         public String displayName;
 
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>回复状态</p>
-         */
         @NameInMap("responseStatus")
         public String responseStatus;
 
-        /**
-         * <p>是否是当前登陆用户</p>
-         */
         @NameInMap("self")
         public Boolean self;
 
@@ -653,9 +608,6 @@ public class GetEventResponseBody extends TeaModel {
         @NameInMap("interval")
         public Integer interval;
 
-        /**
-         * <p>循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -713,9 +665,6 @@ public class GetEventResponseBody extends TeaModel {
         @NameInMap("numberOfOccurrences")
         public Integer numberOfOccurrences;
 
-        /**
-         * <p>范围类型(endDate, noEnd, numbered)</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -751,15 +700,9 @@ public class GetEventResponseBody extends TeaModel {
     }
 
     public static class GetEventResponseBodyRecurrence extends TeaModel {
-        /**
-         * <p>重复模式</p>
-         */
         @NameInMap("pattern")
         public GetEventResponseBodyRecurrencePattern pattern;
 
-        /**
-         * <p>重复范围</p>
-         */
         @NameInMap("range")
         public GetEventResponseBodyRecurrenceRange range;
 
@@ -817,21 +760,12 @@ public class GetEventResponseBody extends TeaModel {
     }
 
     public static class GetEventResponseBodyStart extends TeaModel {
-        /**
-         * <p>日期，格式：yyyyMMdd</p>
-         */
         @NameInMap("date")
         public String date;
 
-        /**
-         * <p>时间戳，按照ISO 8601格式</p>
-         */
         @NameInMap("dateTime")
         public String dateTime;
 
-        /**
-         * <p>时区</p>
-         */
         @NameInMap("timeZone")
         public String timeZone;
 

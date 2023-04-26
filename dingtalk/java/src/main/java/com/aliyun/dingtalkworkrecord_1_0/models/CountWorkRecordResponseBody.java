@@ -4,9 +4,6 @@ package com.aliyun.dingtalkworkrecord_1_0.models;
 import com.aliyun.tea.*;
 
 public class CountWorkRecordResponseBody extends TeaModel {
-    /**
-     * <p>undoCount</p>
-     */
     @NameInMap("undoCount")
     public Long undoCount;
 

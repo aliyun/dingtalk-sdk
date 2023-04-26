@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTaskStageRequest extends TeaModel {
-    /**
-     * <p>任务列表Id。</p>
-     */
     @NameInMap("stageId")
     public String stageId;
 

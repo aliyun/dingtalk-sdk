@@ -4,93 +4,48 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class ECertQueryResponseBody extends TeaModel {
-    /**
-     * <p>身份证号码</p>
-     */
     @NameInMap("certNO")
     public String certNO;
 
-    /**
-     * <p>职务ID</p>
-     */
     @NameInMap("employJobId")
     public String employJobId;
 
-    /**
-     * <p>职务名称</p>
-     */
     @NameInMap("employJobIdLabel")
     public String employJobIdLabel;
 
-    /**
-     * <p>职位ID</p>
-     */
     @NameInMap("employPositionId")
     public String employPositionId;
 
-    /**
-     * <p>职位名称</p>
-     */
     @NameInMap("employPositionIdLabel")
     public String employPositionIdLabel;
 
-    /**
-     * <p>职级ID</p>
-     */
     @NameInMap("employPositionRankId")
     public String employPositionRankId;
 
-    /**
-     * <p>职级名称</p>
-     */
     @NameInMap("employPositionRankIdLabel")
     public String employPositionRankIdLabel;
 
-    /**
-     * <p>入职日期</p>
-     */
     @NameInMap("hiredDate")
     public String hiredDate;
 
-    /**
-     * <p>离职日期</p>
-     */
     @NameInMap("lastWorkDay")
     public String lastWorkDay;
 
-    /**
-     * <p>主部门ID</p>
-     */
     @NameInMap("mainDeptId")
     public Long mainDeptId;
 
-    /**
-     * <p>主部门</p>
-     */
     @NameInMap("mainDeptName")
     public String mainDeptName;
 
-    /**
-     * <p>姓名</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>身份证姓名</p>
-     */
     @NameInMap("realName")
     public String realName;
 
-    /**
-     * <p>被动离职原因</p>
-     */
     @NameInMap("terminationReasonPassive")
     public java.util.List<String> terminationReasonPassive;
 
-    /**
-     * <p>主动离职原因</p>
-     */
     @NameInMap("terminationReasonVoluntary")
     public java.util.List<String> terminationReasonVoluntary;
 

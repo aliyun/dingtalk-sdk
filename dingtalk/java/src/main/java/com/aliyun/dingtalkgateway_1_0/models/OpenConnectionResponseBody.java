@@ -4,15 +4,9 @@ package com.aliyun.dingtalkgateway_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenConnectionResponseBody extends TeaModel {
-    /**
-     * <p>长连接接入点</p>
-     */
     @NameInMap("endpoint")
     public String endpoint;
 
-    /**
-     * <p>连接ticket</p>
-     */
     @NameInMap("ticket")
     public String ticket;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCloudRecordVideoResponseBody extends TeaModel {
-    /**
-     * <p>视频列表</p>
-     */
     @NameInMap("videoList")
     public java.util.List<QueryCloudRecordVideoResponseBodyVideoList> videoList;
 
@@ -24,57 +21,30 @@ public class QueryCloudRecordVideoResponseBody extends TeaModel {
     }
 
     public static class QueryCloudRecordVideoResponseBodyVideoList extends TeaModel {
-        /**
-         * <p>录制持续时间</p>
-         */
         @NameInMap("duration")
         public Long duration;
 
-        /**
-         * <p>录制结束时间</p>
-         */
         @NameInMap("endTime")
         public Long endTime;
 
-        /**
-         * <p>文件大小</p>
-         */
         @NameInMap("fileSize")
         public Long fileSize;
 
-        /**
-         * <p>媒体文件id，唯一</p>
-         */
         @NameInMap("mediaId")
         public String mediaId;
 
-        /**
-         * <p>音视频云录制Id，多份视频recordId一样</p>
-         */
         @NameInMap("recordId")
         public String recordId;
 
-        /**
-         * <p>记录类型,0-普通录制，1-合成的文件</p>
-         */
         @NameInMap("recordType")
         public Long recordType;
 
-        /**
-         * <p>媒体文件所在集群id</p>
-         */
         @NameInMap("regionId")
         public String regionId;
 
-        /**
-         * <p>录制开始时间</p>
-         */
         @NameInMap("startTime")
         public Long startTime;
 
-        /**
-         * <p>录制人UnionId</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 

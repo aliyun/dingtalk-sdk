@@ -4,33 +4,18 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchActionsRequest extends TeaModel {
-    /**
-     * <p>连接器的ID</p>
-     */
     @NameInMap("connectorId")
     public String connectorId;
 
-    /**
-     * <p>连接器提供组织ID</p>
-     */
     @NameInMap("connectorProviderCorpId")
     public String connectorProviderCorpId;
 
-    /**
-     * <p>集成类型，默认只有basic-基础类型</p>
-     */
     @NameInMap("integrationTypes")
     public java.util.List<String> integrationTypes;
 
-    /**
-     * <p>最大返回记录数</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>查询位置，为空表示从头开始</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 

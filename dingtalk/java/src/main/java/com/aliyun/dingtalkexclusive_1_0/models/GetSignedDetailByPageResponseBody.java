@@ -4,27 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSignedDetailByPageResponseBody extends TeaModel {
-    /**
-     * <p>员工信息</p>
-     */
     @NameInMap("auditSignedDetailDTOList")
     public java.util.List<GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList> auditSignedDetailDTOList;
 
-    /**
-     * <p>当前页</p>
-     */
     @NameInMap("currentPage")
     public Long currentPage;
 
-    /**
-     * <p>一页数据量</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    /**
-     * <p>总数据量</p>
-     */
     @NameInMap("total")
     public Long total;
 
@@ -66,45 +54,24 @@ public class GetSignedDetailByPageResponseBody extends TeaModel {
     }
 
     public static class GetSignedDetailByPageResponseBodyAuditSignedDetailDTOList extends TeaModel {
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("deptName")
         public String deptName;
 
-        /**
-         * <p>邮件</p>
-         */
         @NameInMap("email")
         public String email;
 
-        /**
-         * <p>员工名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>手机号</p>
-         */
         @NameInMap("phone")
         public String phone;
 
-        /**
-         * <p>角色</p>
-         */
         @NameInMap("roles")
         public String roles;
 
-        /**
-         * <p>工号</p>
-         */
         @NameInMap("staffId")
         public String staffId;
 
-        /**
-         * <p>职位</p>
-         */
         @NameInMap("title")
         public String title;
 

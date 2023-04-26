@@ -4,57 +4,27 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveCustomWaterMarkTemplateRequest extends TeaModel {
-    /**
-     * <p>模板的业务码：</p>
-     * <p>- water_mark_checkin</p>
-     * <br>
-     * <br>
-     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    /**
-     * <p>模板的预览图片。</p>
-     */
     @NameInMap("icon")
     public String icon;
 
-    /**
-     * <p>模板的布局ID。</p>
-     */
     @NameInMap("layoutDesignId")
     public String layoutDesignId;
 
-    /**
-     * <p>模板的场景码：</p>
-     * <p>- water_mark_checkin_h3yun 开放场景码</p>
-     * <br>
-     * <br>
-     */
     @NameInMap("sceneCode")
     public String sceneCode;
 
-    /**
-     * <p>模板的内容。</p>
-     */
     @NameInMap("schemaContent")
     public String schemaContent;
 
-    /**
-     * <p>模板的标题。</p>
-     */
     @NameInMap("title")
     public String title;
 
-    /**
-     * <p>群会话ID。</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>用户的userid。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,51 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReportCustomerDetailRequest extends TeaModel {
-    /**
-     * <p>是否登录钉钉</p>
-     */
     @NameInMap("hasLogin")
     public Boolean hasLogin;
 
-    /**
-     * <p>是否打开群</p>
-     */
     @NameInMap("hasOpenConv")
     public Boolean hasOpenConv;
 
-    /**
-     * <p>截止日期</p>
-     */
     @NameInMap("maxDt")
     public String maxDt;
 
-    /**
-     * <p>起始日期</p>
-     */
     @NameInMap("minDt")
     public String minDt;
 
-    /**
-     * <p>开放群id</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>开发团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>页码</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>每页大小</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 

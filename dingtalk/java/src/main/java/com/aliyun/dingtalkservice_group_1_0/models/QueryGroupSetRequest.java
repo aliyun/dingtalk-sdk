@@ -4,9 +4,6 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupSetRequest extends TeaModel {
-    /**
-     * <p>openTeamId</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

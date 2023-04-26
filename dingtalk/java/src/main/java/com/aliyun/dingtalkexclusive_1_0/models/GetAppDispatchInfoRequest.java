@@ -4,15 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAppDispatchInfoRequest extends TeaModel {
-    /**
-     * <p>打包结束日期查询参数</p>
-     */
     @NameInMap("endTime")
     public Long endTime;
 
-    /**
-     * <p>打包开始日期查询参数</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class UninstallDeviceRobotResponseBody extends TeaModel {
-    /**
-     * <p>接口处理返回结果，内容为群的唯一标识。</p>
-     */
     @NameInMap("result")
     public String result;
 
-    /**
-     * <p>接口处理是否成功。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

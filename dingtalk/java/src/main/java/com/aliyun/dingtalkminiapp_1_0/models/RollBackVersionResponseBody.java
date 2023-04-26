@@ -4,9 +4,6 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class RollBackVersionResponseBody extends TeaModel {
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("result")
     public String result;
 

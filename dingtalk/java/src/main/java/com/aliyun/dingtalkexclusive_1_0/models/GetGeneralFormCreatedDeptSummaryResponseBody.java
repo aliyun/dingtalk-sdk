@@ -4,21 +4,12 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetGeneralFormCreatedDeptSummaryResponseBody extends TeaModel {
-    /**
-     * <p>用户版本分布情况列表</p>
-     */
     @NameInMap("data")
     public java.util.List<GetGeneralFormCreatedDeptSummaryResponseBodyData> data;
 
-    /**
-     * <p>是否有更多数据</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>下一次请 求的分页游标</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -52,27 +43,15 @@ public class GetGeneralFormCreatedDeptSummaryResponseBody extends TeaModel {
     }
 
     public static class GetGeneralFormCreatedDeptSummaryResponseBodyData extends TeaModel {
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("deptId")
         public String deptId;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("deptName")
         public String deptName;
 
-        /**
-         * <p>最近1天累计发布智能填表数</p>
-         */
         @NameInMap("generalFormCreateCnt1d")
         public String generalFormCreateCnt1d;
 
-        /**
-         * <p>最近1天使用智能填表人数</p>
-         */
         @NameInMap("useGeneralFormUserCnt1d")
         public String useGeneralFormUserCnt1d;
 

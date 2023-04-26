@@ -4,15 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOpenCoursesRequest extends TeaModel {
-    /**
-     * <p>分页起始, 起始值为0</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>分页大小</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 

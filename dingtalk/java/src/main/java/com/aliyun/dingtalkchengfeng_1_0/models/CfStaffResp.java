@@ -4,45 +4,24 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CfStaffResp extends TeaModel {
-    /**
-     * <p>部门编码</p>
-     */
     @NameInMap("deptCode")
     public String deptCode;
 
-    /**
-     * <p>部门名称</p>
-     */
     @NameInMap("deptName")
     public String deptName;
 
-    /**
-     * <p>邮箱</p>
-     */
     @NameInMap("email")
     public String email;
 
-    /**
-     * <p>手机号</p>
-     */
     @NameInMap("mobile")
     public String mobile;
 
-    /**
-     * <p>姓名</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>花名</p>
-     */
     @NameInMap("nickName")
     public String nickName;
 
-    /**
-     * <p>工号</p>
-     */
     @NameInMap("workNumbers")
     public String workNumbers;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateOrganizationTaskContentRequest extends TeaModel {
-    /**
-     * <p>任务标题</p>
-     */
     @NameInMap("content")
     public String content;
 
-    /**
-     * <p>是否禁止动态</p>
-     */
     @NameInMap("disableActivity")
     public Boolean disableActivity;
 
-    /**
-     * <p>是否禁止通知</p>
-     */
     @NameInMap("disableNotification")
     public Boolean disableNotification;
 

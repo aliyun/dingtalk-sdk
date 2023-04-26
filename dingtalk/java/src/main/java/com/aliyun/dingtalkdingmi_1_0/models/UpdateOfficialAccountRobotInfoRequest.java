@@ -4,39 +4,21 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateOfficialAccountRobotInfoRequest extends TeaModel {
-    /**
-     * <p>机器人头像</p>
-     */
     @NameInMap("avatar")
     public String avatar;
 
-    /**
-     * <p>机器人简介</p>
-     */
     @NameInMap("brief")
     public String brief;
 
-    /**
-     * <p>机器人描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>机器人名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>机器人预览图</p>
-     */
     @NameInMap("previewMediaUrl")
     public String previewMediaUrl;
 
-    /**
-     * <p>机器人类型参数</p>
-     */
     @NameInMap("type")
     public String type;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryBizOptLogResponseBody extends TeaModel {
-    /**
-     * <p>content</p>
-     */
     @NameInMap("content")
     public java.util.List<QueryBizOptLogResponseBodyContent> content;
 
-    /**
-     * <p>下次拉取数据的起始位置</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -38,105 +32,54 @@ public class QueryBizOptLogResponseBody extends TeaModel {
     }
 
     public static class QueryBizOptLogResponseBodyContent extends TeaModel {
-        /**
-         * <p>业务类型</p>
-         */
         @NameInMap("bizType")
         public Integer bizType;
 
-        /**
-         * <p>数据类型</p>
-         */
         @NameInMap("dataType")
         public Integer dataType;
 
-        /**
-         * <p>日志ID</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>操作后对象数据快照，json格式</p>
-         */
         @NameInMap("optAfterData")
         public String optAfterData;
 
-        /**
-         * <p>操作前对象数据快照，json格式</p>
-         */
         @NameInMap("optBeforeData")
         public String optBeforeData;
 
-        /**
-         * <p>操作业务类型</p>
-         */
         @NameInMap("optBizType")
         public Integer optBizType;
 
-        /**
-         * <p>扩展信息，map json格式</p>
-         */
         @NameInMap("optExtend")
         public String optExtend;
 
-        /**
-         * <p>操作者工号</p>
-         */
         @NameInMap("optJobNumber")
         public String optJobNumber;
 
-        /**
-         * <p>操作对象code，人员code，或者部门code</p>
-         */
         @NameInMap("optObjectCode")
         public String optObjectCode;
 
-        /**
-         * <p>操作对象名称</p>
-         */
         @NameInMap("optObjectName")
         public String optObjectName;
 
-        /**
-         * <p>操作对象人员工号</p>
-         */
         @NameInMap("optObjectUserJobNo")
         public String optObjectUserJobNo;
 
-        /**
-         * <p>操作是否成功</p>
-         */
         @NameInMap("optSuccess")
         public Integer optSuccess;
 
-        /**
-         * <p>操作时间 时间戳</p>
-         */
         @NameInMap("optTime")
         public Long optTime;
 
-        /**
-         * <p>操作类型</p>
-         */
         @NameInMap("optType")
         public Integer optType;
 
-        /**
-         * <p>操作用户code</p>
-         */
         @NameInMap("optUserCode")
         public String optUserCode;
 
-        /**
-         * <p>操作用户名称</p>
-         */
         @NameInMap("optUserName")
         public String optUserName;
 
-        /**
-         * <p>备注</p>
-         */
         @NameInMap("remark")
         public String remark;
 

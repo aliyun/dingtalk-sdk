@@ -4,27 +4,15 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMiniAppMetaDataResponseBody extends TeaModel {
-    /**
-     * <p>receiveTime</p>
-     */
     @NameInMap("dingOpenErrcode")
     public Long dingOpenErrcode;
 
-    /**
-     * <p>errorMsg</p>
-     */
     @NameInMap("errorMsg")
     public String errorMsg;
 
-    /**
-     * <p>result</p>
-     */
     @NameInMap("result")
     public GetMiniAppMetaDataResponseBodyResult result;
 
-    /**
-     * <p>requestId</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -66,9 +54,6 @@ public class GetMiniAppMetaDataResponseBody extends TeaModel {
     }
 
     public static class GetMiniAppMetaDataResponseBodyResult extends TeaModel {
-        /**
-         * <p>data</p>
-         */
         @NameInMap("data")
         public java.util.Map<String, ?> data;
 

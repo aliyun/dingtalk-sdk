@@ -4,39 +4,21 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ProcessApproveCreateRequest extends TeaModel {
-    /**
-     * <p>三方审批单id，全局唯一</p>
-     */
     @NameInMap("approveId")
     public String approveId;
 
-    /**
-     * <p>审批人员工userId</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    /**
-     * <p>审批单关联的打卡信息</p>
-     */
     @NameInMap("punchParam")
     public ProcessApproveCreateRequestPunchParam punchParam;
 
-    /**
-     * <p>审批单子类型名称：调店:shiftGroup</p>
-     */
     @NameInMap("subType")
     public String subType;
 
-    /**
-     * <p>审批单类型名称</p>
-     */
     @NameInMap("tagName")
     public String tagName;
 
-    /**
-     * <p>员工的userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 
@@ -94,27 +76,15 @@ public class ProcessApproveCreateRequest extends TeaModel {
     }
 
     public static class ProcessApproveCreateRequestPunchParam extends TeaModel {
-        /**
-         * <p>地理位置标识：wifi:ssid_macAddress ble: deviceId gps:longitude_latitude</p>
-         */
         @NameInMap("positionId")
         public String positionId;
 
-        /**
-         * <p>地理位置名称</p>
-         */
         @NameInMap("positionName")
         public String positionName;
 
-        /**
-         * <p>地理位置类型：wifi/ble/gps</p>
-         */
         @NameInMap("positionType")
         public String positionType;
 
-        /**
-         * <p>审批单关联的打卡时间，单位毫秒</p>
-         */
         @NameInMap("punchTime")
         public Long punchTime;
 

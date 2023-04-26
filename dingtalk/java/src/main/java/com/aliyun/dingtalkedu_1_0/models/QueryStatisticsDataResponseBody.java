@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryStatisticsDataResponseBody extends TeaModel {
-    /**
-     * <p>result</p>
-     */
     @NameInMap("result")
     public java.util.List<QueryStatisticsDataResponseBodyResult> result;
 
@@ -24,45 +21,24 @@ public class QueryStatisticsDataResponseBody extends TeaModel {
     }
 
     public static class QueryStatisticsDataResponseBodyResult extends TeaModel {
-        /**
-         * <p>班级id</p>
-         */
         @NameInMap("classId")
         public Long classId;
 
-        /**
-         * <p>总课程数</p>
-         */
         @NameInMap("courseCount")
         public Long courseCount;
 
-        /**
-         * <p>总学时</p>
-         */
         @NameInMap("courseHours")
         public Float courseHours;
 
-        /**
-         * <p>学科code</p>
-         */
         @NameInMap("subjectCode")
         public String subjectCode;
 
-        /**
-         * <p>学科名称</p>
-         */
         @NameInMap("subjectName")
         public Long subjectName;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>用户名称</p>
-         */
         @NameInMap("userName")
         public String userName;
 

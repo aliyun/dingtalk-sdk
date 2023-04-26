@@ -4,15 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserStayLengthResponseBody extends TeaModel {
-    /**
-     * <p>员工使用时长列表</p>
-     */
     @NameInMap("itemList")
     public java.util.List<GetUserStayLengthResponseBodyItemList> itemList;
 
-    /**
-     * <p>总数据量</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -38,33 +32,18 @@ public class GetUserStayLengthResponseBody extends TeaModel {
     }
 
     public static class GetUserStayLengthResponseBodyItemList extends TeaModel {
-        /**
-         * <p>员工名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>统计日期</p>
-         */
         @NameInMap("statDate")
         public String statDate;
 
-        /**
-         * <p>1日app使用时长（秒）</p>
-         */
         @NameInMap("stayTimeLenApp1d")
         public Long stayTimeLenApp1d;
 
-        /**
-         * <p>1日PC端使用时长（秒）</p>
-         */
         @NameInMap("stayTimeLenPc1d")
         public Long stayTimeLenPc1d;
 
-        /**
-         * <p>工号</p>
-         */
         @NameInMap("userId")
         public String userId;
 

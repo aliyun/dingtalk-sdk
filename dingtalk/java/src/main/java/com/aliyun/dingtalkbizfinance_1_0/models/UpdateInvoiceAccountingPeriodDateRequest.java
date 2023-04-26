@@ -4,15 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInvoiceAccountingPeriodDateRequest extends TeaModel {
-    /**
-     * <p>发票财务信息列表</p>
-     */
     @NameInMap("invoiceFinanceInfoVOList")
     public java.util.List<UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList> invoiceFinanceInfoVOList;
 
-    /**
-     * <p>员工id</p>
-     */
     @NameInMap("operator")
     public String operator;
 
@@ -38,27 +32,15 @@ public class UpdateInvoiceAccountingPeriodDateRequest extends TeaModel {
     }
 
     public static class UpdateInvoiceAccountingPeriodDateRequestInvoiceFinanceInfoVOList extends TeaModel {
-        /**
-         * <p>入账日期</p>
-         */
         @NameInMap("accountingPeriodData")
         public String accountingPeriodData;
 
-        /**
-         * <p>发票代码</p>
-         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
-        /**
-         * <p>发票号码</p>
-         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
-        /**
-         * <p>发票类型</p>
-         */
         @NameInMap("invoiceType")
         public String invoiceType;
 

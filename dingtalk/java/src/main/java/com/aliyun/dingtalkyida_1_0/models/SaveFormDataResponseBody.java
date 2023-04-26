@@ -4,9 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveFormDataResponseBody extends TeaModel {
-    /**
-     * <p>表单实例ID</p>
-     */
     @NameInMap("result")
     public String result;
 

@@ -4,51 +4,27 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class ProcessStartRequest extends TeaModel {
-    /**
-     * <p>是否自动发起</p>
-     */
     @NameInMap("autoStart")
     public String autoStart;
 
-    /**
-     * <p>抄送人列表</p>
-     */
     @NameInMap("ccs")
     public java.util.List<ProcessStartRequestCcs> ccs;
 
-    /**
-     * <p>文件列表</p>
-     */
     @NameInMap("files")
     public java.util.List<ProcessStartRequestFiles> files;
 
-    /**
-     * <p>发起方userId</p>
-     */
     @NameInMap("initiatorUserId")
     public String initiatorUserId;
 
-    /**
-     * <p>参与方列表</p>
-     */
     @NameInMap("participants")
     public java.util.List<ProcessStartRequestParticipants> participants;
 
-    /**
-     * <p>回跳地址</p>
-     */
     @NameInMap("redirectUrl")
     public String redirectUrl;
 
-    /**
-     * <p>来源信息(目前支持传入审批信息和跳转地址)</p>
-     */
     @NameInMap("sourceInfo")
     public ProcessStartRequestSourceInfo sourceInfo;
 
-    /**
-     * <p>任务名称（默认文件名）</p>
-     */
     @NameInMap("taskName")
     public String taskName;
 
@@ -122,33 +98,18 @@ public class ProcessStartRequest extends TeaModel {
     }
 
     public static class ProcessStartRequestCcs extends TeaModel {
-        /**
-         * <p>OUTER_USER必填</p>
-         */
         @NameInMap("account")
         public String account;
 
-        /**
-         * <p>OUTER_USER必填</p>
-         */
         @NameInMap("accountName")
         public String accountName;
 
-        /**
-         * <p>用户类型（"DING_USER":钉钉用户，"OUTER_USER":外部用户）</p>
-         */
         @NameInMap("accountType")
         public String accountType;
 
-        /**
-         * <p>发给企业方必填</p>
-         */
         @NameInMap("orgName")
         public String orgName;
 
-        /**
-         * <p>DING_USER必填</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -230,39 +191,21 @@ public class ProcessStartRequest extends TeaModel {
     }
 
     public static class ProcessStartRequestParticipants extends TeaModel {
-        /**
-         * <p>OUTER_USER必填</p>
-         */
         @NameInMap("account")
         public String account;
 
-        /**
-         * <p>OUTER_USER必填</p>
-         */
         @NameInMap("accountName")
         public String accountName;
 
-        /**
-         * <p>用户类型（"DING_USER":钉钉用户，"OUTER_USER":外部用户）</p>
-         */
         @NameInMap("accountType")
         public String accountType;
 
-        /**
-         * <p>OUTER_USER需要盖企业章必填(如果不传，默认会赋值当前企业名称)</p>
-         */
         @NameInMap("orgName")
         public String orgName;
 
-        /**
-         * <p>签署印章类型（1：企业章 2：个人章  1,2：个人和企业章）</p>
-         */
         @NameInMap("signRequirements")
         public String signRequirements;
 
-        /**
-         * <p>DING_USER必填</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -322,21 +265,12 @@ public class ProcessStartRequest extends TeaModel {
     }
 
     public static class ProcessStartRequestSourceInfo extends TeaModel {
-        /**
-         * <p>移动端跳转地址</p>
-         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
-        /**
-         * <p>pc端跳转地址</p>
-         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
-        /**
-         * <p>展示文案</p>
-         */
         @NameInMap("showText")
         public String showText;
 

@@ -4,123 +4,63 @@ package com.aliyun.dingtalkmanufacturing_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustrializeManufactureJobBookRequest extends TeaModel {
-    /**
-     * <p>钉钉组织id</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>扩展字段，用于增加自定义字段</p>
-     */
     @NameInMap("extend")
     public String extend;
 
-    /**
-     * <p>工单编号</p>
-     */
     @NameInMap("instNo")
     public String instNo;
 
-    /**
-     * <p>是否是批量报工(取值[n,y])</p>
-     */
     @NameInMap("isBatchJob")
     public String isBatchJob;
 
-    /**
-     * <p>生产日期时间(到时分秒)</p>
-     */
     @NameInMap("manufactureDate")
     public String manufactureDate;
 
-    /**
-     * <p>mes 系统唯一标识</p>
-     */
     @NameInMap("mesAppKey")
     public String mesAppKey;
 
-    /**
-     * <p>制程英文名称</p>
-     */
     @NameInMap("processEnName")
     public String processEnName;
 
-    /**
-     * <p>制程名称</p>
-     */
     @NameInMap("processName")
     public String processName;
 
-    /**
-     * <p>产品唯一标识</p>
-     */
     @NameInMap("productCode")
     public String productCode;
 
-    /**
-     * <p>产品英文名称</p>
-     */
     @NameInMap("productEnName")
     public String productEnName;
 
-    /**
-     * <p>产品名称，例如"双头螺柱001"</p>
-     */
     @NameInMap("productName")
     public String productName;
 
-    /**
-     * <p>产品规格</p>
-     */
     @NameInMap("productSpecification")
     public String productSpecification;
 
-    /**
-     * <p>合格数量</p>
-     */
     @NameInMap("qualifiedQuantity")
     public String qualifiedQuantity;
 
-    /**
-     * <p>可重工数量</p>
-     */
     @NameInMap("reworkableQuantity")
     public String reworkableQuantity;
 
-    /**
-     * <p>报废数量</p>
-     */
     @NameInMap("scrappedQuantity")
     public String scrappedQuantity;
 
-    /**
-     * <p>计件单价，单位：分</p>
-     */
     @NameInMap("unitPrice")
     public String unitPrice;
 
-    /**
-     * <p>批量报工时多个工人userId以英文逗号分隔</p>
-     */
     @NameInMap("userIdList")
     public String userIdList;
 
-    /**
-     * <p>员工姓名</p>
-     */
     @NameInMap("userName")
     public String userName;
 
-    /**
-     * <p>批量报工时多个人名以英文逗号分隔</p>
-     */
     @NameInMap("userNameList")
     public String userNameList;
 
-    /**
-     * <p>随机串，唯一标识(用于幂等及更新)</p>
-     */
     @NameInMap("uuid")
     public String uuid;
 

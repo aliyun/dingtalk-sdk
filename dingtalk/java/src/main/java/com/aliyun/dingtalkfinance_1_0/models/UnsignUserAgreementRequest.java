@@ -4,39 +4,21 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UnsignUserAgreementRequest extends TeaModel {
-    /**
-     * <p>协议编号</p>
-     */
     @NameInMap("agreementNo")
     public String agreementNo;
 
-    /**
-     * <p>业务代码</p>
-     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    /**
-     * <p>业务场景</p>
-     */
     @NameInMap("bizScene")
     public String bizScene;
 
-    /**
-     * <p>主机构编号</p>
-     */
     @NameInMap("instId")
     public String instId;
 
-    /**
-     * <p>子机构编号</p>
-     */
     @NameInMap("subInstId")
     public String subInstId;
 
-    /**
-     * <p>付款人staffId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

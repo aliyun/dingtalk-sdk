@@ -4,15 +4,9 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteTodoTaskResponseBody extends TeaModel {
-    /**
-     * <p>requestId</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
-    /**
-     * <p>删除结果</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

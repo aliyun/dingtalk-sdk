@@ -4,21 +4,12 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class CancelIntegratedTaskRequest extends TeaModel {
-    /**
-     * <p>待办组ID，需要在调用创建待办接口时，主动设置该值。</p>
-     */
     @NameInMap("activityId")
     public String activityId;
 
-    /**
-     * <p>待办组ID列表，用于批量取消。</p>
-     */
     @NameInMap("activityIds")
     public java.util.List<String> activityIds;
 
-    /**
-     * <p>OA审批流程实例ID</p>
-     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 

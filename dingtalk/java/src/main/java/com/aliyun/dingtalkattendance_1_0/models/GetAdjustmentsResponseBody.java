@@ -4,9 +4,6 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAdjustmentsResponseBody extends TeaModel {
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("result")
     public java.util.List<GetAdjustmentsResponseBodyResult> result;
 
@@ -24,15 +21,9 @@ public class GetAdjustmentsResponseBody extends TeaModel {
     }
 
     public static class GetAdjustmentsResponseBodyResultItems extends TeaModel {
-        /**
-         * <p>补卡规则id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>补卡规则名称</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -71,21 +62,12 @@ public class GetAdjustmentsResponseBody extends TeaModel {
     }
 
     public static class GetAdjustmentsResponseBodyResult extends TeaModel {
-        /**
-         * <p>补卡规则集合</p>
-         */
         @NameInMap("items")
         public java.util.List<GetAdjustmentsResponseBodyResultItems> items;
 
-        /**
-         * <p>当前页码</p>
-         */
         @NameInMap("pageNumber")
         public Long pageNumber;
 
-        /**
-         * <p>总页数</p>
-         */
         @NameInMap("totalPage")
         public Long totalPage;
 

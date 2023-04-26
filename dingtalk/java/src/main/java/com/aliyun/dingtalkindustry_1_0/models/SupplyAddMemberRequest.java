@@ -4,33 +4,18 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyAddMemberRequest extends TeaModel {
-    /**
-     * <p>是否为伙伴负责人</p>
-     */
     @NameInMap("isPartnerManager")
     public Boolean isPartnerManager;
 
-    /**
-     * <p>成员手机号</p>
-     */
     @NameInMap("memberMobile")
     public String memberMobile;
 
-    /**
-     * <p>成员名字</p>
-     */
     @NameInMap("memberName")
     public String memberName;
 
-    /**
-     * <p>成员编码/工号</p>
-     */
     @NameInMap("memberWorkNumber")
     public String memberWorkNumber;
 
-    /**
-     * <p>所属伙伴/子部门</p>
-     */
     @NameInMap("supplyDeptId")
     public Long supplyDeptId;
 

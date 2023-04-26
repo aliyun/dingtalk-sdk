@@ -7,99 +7,54 @@ public class QueryOrderResponseBody extends TeaModel {
     @NameInMap("actualAmount")
     public Long actualAmount;
 
-    /**
-     * <p>支付宝应用id。</p>
-     */
     @NameInMap("alipayAppId")
     public String alipayAppId;
 
-    /**
-     * <p>订单关闭时间</p>
-     */
     @NameInMap("closeTime")
     public String closeTime;
 
-    /**
-     * <p>订单关闭时间戳</p>
-     */
     @NameInMap("closeTimestamp")
     public Long closeTimestamp;
 
-    /**
-     * <p>订单创建时间</p>
-     */
     @NameInMap("createTime")
     public String createTime;
 
-    /**
-     * <p>订单创建时间戳</p>
-     */
     @NameInMap("createTimestamp")
     public Long createTimestamp;
 
     @NameInMap("labelAmount")
     public Long labelAmount;
 
-    /**
-     * <p>商户id。</p>
-     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    /**
-     * <p>商户聚合支付订单号。</p>
-     */
     @NameInMap("merchantMergeOrderNo")
     public String merchantMergeOrderNo;
 
-    /**
-     * <p>商户订单号。</p>
-     */
     @NameInMap("merchantOrderNo")
     public String merchantOrderNo;
 
-    /**
-     * <p>订单号。</p>
-     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    /**
-     * <p>订单类型。</p>
-     */
     @NameInMap("orderType")
     public String orderType;
 
-    /**
-     * <p>用户唯一id。</p>
-     */
     @NameInMap("outerUserId")
     public String outerUserId;
 
-    /**
-     * <p>买家支付登陆id。</p>
-     */
     @NameInMap("payLogonId")
     public String payLogonId;
 
     @NameInMap("payStatus")
     public Integer payStatus;
 
-    /**
-     * <p>订单支付时间</p>
-     */
     @NameInMap("payTime")
     public String payTime;
 
-    /**
-     * <p>订单支付时间戳</p>
-     */
     @NameInMap("payTimestamp")
     public Long payTimestamp;
 
-    /**
-     * <p>买家支付渠道类型。</p>
-     */
     @NameInMap("payType")
     public String payType;
 
@@ -109,27 +64,15 @@ public class QueryOrderResponseBody extends TeaModel {
     @NameInMap("refundStatus")
     public Integer refundStatus;
 
-    /**
-     * <p>订单退款时间</p>
-     */
     @NameInMap("refundTime")
     public String refundTime;
 
-    /**
-     * <p>订单退款时间戳</p>
-     */
     @NameInMap("refundTimestamp")
     public Long refundTimestamp;
 
-    /**
-     * <p>订单标题。</p>
-     */
     @NameInMap("subject")
     public String subject;
 
-    /**
-     * <p>交易流水号。</p>
-     */
     @NameInMap("tradeNo")
     public String tradeNo;
 

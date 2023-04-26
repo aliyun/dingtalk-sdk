@@ -4,27 +4,15 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUploadUrlRequest extends TeaModel {
-    /**
-     * <p>业务数据实例id</p>
-     */
     @NameInMap("bizObjectId")
     public String bizObjectId;
 
-    /**
-     * <p>文件上传至目标控件的字段名</p>
-     */
     @NameInMap("fieldName")
     public String fieldName;
 
-    /**
-     * <p>是否覆盖。false=添加，true=覆盖</p>
-     */
     @NameInMap("isOverwrite")
     public Boolean isOverwrite;
 
-    /**
-     * <p>表单编码</p>
-     */
     @NameInMap("schemaCode")
     public String schemaCode;
 

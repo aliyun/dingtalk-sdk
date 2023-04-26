@@ -4,15 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class RollbackMiniAppVersionResponseBody extends TeaModel {
-    /**
-     * <p>失败原因</p>
-     */
     @NameInMap("cause")
     public String cause;
 
-    /**
-     * <p>结果码</p>
-     */
     @NameInMap("code")
     public Long code;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkconv_file_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendByAppRequest extends TeaModel {
-    /**
-     * <p>文件id</p>
-     */
     @NameInMap("dentryId")
     public String dentryId;
 
-    /**
-     * <p>文件所在空间id</p>
-     */
     @NameInMap("spaceId")
     public String spaceId;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

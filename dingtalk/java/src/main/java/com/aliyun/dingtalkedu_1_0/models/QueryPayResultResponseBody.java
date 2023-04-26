@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPayResultResponseBody extends TeaModel {
-    /**
-     * <p>状态</p>
-     */
     @NameInMap("status")
     public Integer status;
 

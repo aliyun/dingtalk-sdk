@@ -4,33 +4,18 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListAuditLogRequest extends TeaModel {
-    /**
-     * <p>操作日志截止时间，unix时间戳，单位ms</p>
-     */
     @NameInMap("endDate")
     public Long endDate;
 
-    /**
-     * <p>操作记录文件id，作为分页偏移量，与nextGmtCreate一起使用，返回记录的bizId为nextBizId且gmtCreate为nextGmtCreate之后的操作列表，分页查询获取下一页时，传最后一条记录的bizId和gmtCreate。</p>
-     */
     @NameInMap("nextBizId")
     public Long nextBizId;
 
-    /**
-     * <p>操作记录生成时间，作为分页偏移量，分页查询时必传，unix时间戳，单位ms</p>
-     */
     @NameInMap("nextGmtCreate")
     public Long nextGmtCreate;
 
-    /**
-     * <p>操作列表长度，最大500</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>操作日志起始时间，unix时间戳，单位ms</p>
-     */
     @NameInMap("startDate")
     public Long startDate;
 

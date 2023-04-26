@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class RemoveUserFromGroupRequest extends TeaModel {
-    /**
-     * <p>开放群唯一标识</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>用户唯一标识列表</p>
-     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

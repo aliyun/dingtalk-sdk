@@ -4,9 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListJoinOrgInfoRequest extends TeaModel {
-    /**
-     * <p>手机号码，企业内必须唯一，不可重复。如果是国际号码，请使用+xx-xxxxxx的格式。</p>
-     */
     @NameInMap("mobile")
     public String mobile;
 

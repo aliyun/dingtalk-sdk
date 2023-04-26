@@ -4,27 +4,15 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CfJobLevelResp extends TeaModel {
-    /**
-     * <p>级别</p>
-     */
     @NameInMap("level")
     public Long level;
 
-    /**
-     * <p>名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>生效日期</p>
-     */
     @NameInMap("startDate")
     public String startDate;
 
-    /**
-     * <p>失效日期</p>
-     */
     @NameInMap("stopDate")
     public String stopDate;
 

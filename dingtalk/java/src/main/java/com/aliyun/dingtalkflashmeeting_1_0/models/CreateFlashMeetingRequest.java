@@ -4,21 +4,12 @@ package com.aliyun.dingtalkflashmeeting_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateFlashMeetingRequest extends TeaModel {
-    /**
-     * <p>创建人union id</p>
-     */
     @NameInMap("creator")
     public String creator;
 
-    /**
-     * <p>日程id</p>
-     */
     @NameInMap("eventId")
     public String eventId;
 
-    /**
-     * <p>钉闪会名称</p>
-     */
     @NameInMap("title")
     public String title;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkworkbench_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDingPortalDetailResponseBody extends TeaModel {
-    /**
-     * <p>工作台ID</p>
-     */
     @NameInMap("appUuid")
     public String appUuid;
 
-    /**
-     * <p>工作台名称</p>
-     */
     @NameInMap("dingPortalName")
     public String dingPortalName;
 
-    /**
-     * <p>工作台页面信息</p>
-     */
     @NameInMap("pages")
     public java.util.List<GetDingPortalDetailResponseBodyPages> pages;
 
@@ -52,39 +43,21 @@ public class GetDingPortalDetailResponseBody extends TeaModel {
     }
 
     public static class GetDingPortalDetailResponseBodyPages extends TeaModel {
-        /**
-         * <p>是否全公司可见</p>
-         */
         @NameInMap("allVisible")
         public Boolean allVisible;
 
-        /**
-         * <p>可见部门 ID 铺</p>
-         */
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
-        /**
-         * <p>页面名称</p>
-         */
         @NameInMap("pageName")
         public String pageName;
 
-        /**
-         * <p>页面ID</p>
-         */
         @NameInMap("pageUuid")
         public String pageUuid;
 
-        /**
-         * <p>可见角色列表</p>
-         */
         @NameInMap("roleIds")
         public java.util.List<Long> roleIds;
 
-        /**
-         * <p>可见员工 ID 列表</p>
-         */
         @NameInMap("userids")
         public java.util.List<String> userids;
 

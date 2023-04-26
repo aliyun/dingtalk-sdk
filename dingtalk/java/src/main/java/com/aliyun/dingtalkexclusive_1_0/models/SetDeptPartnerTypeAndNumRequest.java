@@ -4,21 +4,12 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetDeptPartnerTypeAndNumRequest extends TeaModel {
-    /**
-     * <p>部门id</p>
-     */
     @NameInMap("deptId")
     public String deptId;
 
-    /**
-     * <p>伙伴类型id列表</p>
-     */
     @NameInMap("labelIds")
     public java.util.List<String> labelIds;
 
-    /**
-     * <p>伙伴编码</p>
-     */
     @NameInMap("partnerNum")
     public String partnerNum;
 

@@ -4,39 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchCreateRequest extends TeaModel {
-    /**
-     * <p>卡片业务类型，打卡写死：industry_center</p>
-     */
     @NameInMap("cardBizCode")
     public String cardBizCode;
 
-    /**
-     * <p>卡片详细数据</p>
-     */
     @NameInMap("data")
     public BatchCreateRequestData data;
 
-    /**
-     * <p>卡片幂等唯一键</p>
-     */
     @NameInMap("identifier")
     public String identifier;
 
-    /**
-     * <p>小程序版本号</p>
-     */
     @NameInMap("jsVersion")
     public Integer jsVersion;
 
-    /**
-     * <p>isv业务类型</p>
-     */
     @NameInMap("sourceType")
     public String sourceType;
 
-    /**
-     * <p>老师用户id</p>
-     */
     @NameInMap("userid")
     public String userid;
 
@@ -94,39 +76,21 @@ public class BatchCreateRequest extends TeaModel {
     }
 
     public static class BatchCreateRequestDataCardRuleItemParamList extends TeaModel {
-        /**
-         * <p>扩展属性，存放配音难度、每日配音视频的url等</p>
-         */
         @NameInMap("cardRuleAttr")
         public String cardRuleAttr;
 
-        /**
-         * <p>卡片taskCode</p>
-         */
         @NameInMap("cardTaskCode")
         public String cardTaskCode;
 
-        /**
-         * <p>每日配音数</p>
-         */
         @NameInMap("dailyDubbing")
         public Integer dailyDubbing;
 
-        /**
-         * <p>关联的外部Id</p>
-         */
         @NameInMap("relationId")
         public String relationId;
 
-        /**
-         * <p>关联内容标题（会在打卡详页页展示）</p>
-         */
         @NameInMap("relationTitle")
         public String relationTitle;
 
-        /**
-         * <p>relationUrl（点击打卡内容后跳转的链接）（点击卡片内容后跳转的链接）</p>
-         */
         @NameInMap("relationUrl")
         public String relationUrl;
 
@@ -186,15 +150,9 @@ public class BatchCreateRequest extends TeaModel {
     }
 
     public static class BatchCreateRequestDataOrgClassStudentGroupListClassListStudents extends TeaModel {
-        /**
-         * <p>学生名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>学生id</p>
-         */
         @NameInMap("staffId")
         public String staffId;
 
@@ -222,21 +180,12 @@ public class BatchCreateRequest extends TeaModel {
     }
 
     public static class BatchCreateRequestDataOrgClassStudentGroupListClassList extends TeaModel {
-        /**
-         * <p>班级id</p>
-         */
         @NameInMap("classId")
         public Long classId;
 
-        /**
-         * <p>班级名称</p>
-         */
         @NameInMap("className")
         public String className;
 
-        /**
-         * <p>班级学生</p>
-         */
         @NameInMap("students")
         public java.util.List<BatchCreateRequestDataOrgClassStudentGroupListClassListStudents> students;
 
@@ -272,15 +221,9 @@ public class BatchCreateRequest extends TeaModel {
     }
 
     public static class BatchCreateRequestDataOrgClassStudentGroupList extends TeaModel {
-        /**
-         * <p>班级列表</p>
-         */
         @NameInMap("classList")
         public java.util.List<BatchCreateRequestDataOrgClassStudentGroupListClassList> classList;
 
-        /**
-         * <p>组织id</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
@@ -308,99 +251,54 @@ public class BatchCreateRequest extends TeaModel {
     }
 
     public static class BatchCreateRequestData extends TeaModel {
-        /**
-         * <p>是否可以补卡</p>
-         */
         @NameInMap("canReissueCard")
         public Boolean canReissueCard;
 
-        /**
-         * <p>打卡周期,单位为天</p>
-         */
         @NameInMap("cardCycle")
         public Integer cardCycle;
 
-        /**
-         * <p>打卡的频次设置："cardFrequency":[             1,//周天             2,//周一             3,//周二             4,//周三             5,//周四             6,//周五             7//周六         ]</p>
-         */
         @NameInMap("cardFrequency")
         public java.util.List<Integer> cardFrequency;
 
         @NameInMap("cardRuleItemParamList")
         public java.util.List<BatchCreateRequestDataCardRuleItemParamList> cardRuleItemParamList;
 
-        /**
-         * <p>班级列表</p>
-         */
         @NameInMap("classIds")
         public java.util.List<String> classIds;
 
-        /**
-         * <p>班级名称列表</p>
-         */
         @NameInMap("classNames")
         public java.util.List<String> classNames;
 
-        /**
-         * <p>打卡的内容</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>卡片生效时间</p>
-         */
         @NameInMap("effectDate")
         public Long effectDate;
 
-        /**
-         * <p>上传相册，图片，录音，盯盘的信息</p>
-         */
         @NameInMap("medias")
         public String medias;
 
-        /**
-         * <p>计量开启</p>
-         */
         @NameInMap("needMetering")
         public String needMetering;
 
         @NameInMap("orgClassStudentGroupList")
         public java.util.List<BatchCreateRequestDataOrgClassStudentGroupList> orgClassStudentGroupList;
 
-        /**
-         * <p>提醒时间（小时）</p>
-         */
         @NameInMap("remindHour")
         public Integer remindHour;
 
-        /**
-         * <p>提醒时间（分钟）</p>
-         */
         @NameInMap("remindMinute")
         public Integer remindMinute;
 
-        /**
-         * <p>默认：student_guardian</p>
-         */
         @NameInMap("targetRole")
         public String targetRole;
 
-        /**
-         * <p>打卡模板id</p>
-         */
         @NameInMap("templateId")
         public Long templateId;
 
-        /**
-         * <p>卡片标题</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>计量单位</p>
-         */
         @NameInMap("unitOfMeasurement")
         public String unitOfMeasurement;
 

@@ -21,15 +21,9 @@ public class QueryUserRoleListResponseBody extends TeaModel {
     }
 
     public static class QueryUserRoleListResponseBodyRoleVOList extends TeaModel {
-        /**
-         * <p>角色Code</p>
-         */
         @NameInMap("roleCode")
         public String roleCode;
 
-        /**
-         * <p>角色名字</p>
-         */
         @NameInMap("roleName")
         public String roleName;
 

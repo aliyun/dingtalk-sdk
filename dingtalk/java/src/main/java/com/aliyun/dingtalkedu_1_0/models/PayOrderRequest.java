@@ -4,45 +4,24 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class PayOrderRequest extends TeaModel {
-    /**
-     * <p>人脸id</p>
-     */
     @NameInMap("faceId")
     public String faceId;
 
-    /**
-     * <p>订单号</p>
-     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    /**
-     * <p>签名</p>
-     */
     @NameInMap("signature")
     public String signature;
 
-    /**
-     * <p>设备序列号</p>
-     */
     @NameInMap("sn")
     public String sn;
 
-    /**
-     * <p>utc时间戳</p>
-     */
     @NameInMap("timestamp")
     public Long timestamp;
 
-    /**
-     * <p>员工id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>版本号</p>
-     */
     @NameInMap("version")
     public String version;
 

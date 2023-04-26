@@ -21,46 +21,24 @@ public class GetInvoiceByPageRequest extends TeaModel {
     }
 
     public static class GetInvoiceByPageRequestRequest extends TeaModel {
-        /**
-         * <p>结束时间</p>
-         * <br>
-         */
         @NameInMap("endTime")
         public Long endTime;
 
-        /**
-         * <p>进项票/销项票</p>
-         */
         @NameInMap("financeType")
         public String financeType;
 
-        /**
-         * <p>分页参数</p>
-         */
         @NameInMap("pageNumber")
         public Long pageNumber;
 
-        /**
-         * <p>分页参数</p>
-         */
         @NameInMap("pageSize")
         public Long pageSize;
 
-        /**
-         * <p>开始时间</p>
-         */
         @NameInMap("startTime")
         public Long startTime;
 
-        /**
-         * <p>税号</p>
-         */
         @NameInMap("taxNo")
         public String taxNo;
 
-        /**
-         * <p>认证状态</p>
-         */
         @NameInMap("verifyStatus")
         public String verifyStatus;
 

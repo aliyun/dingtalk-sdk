@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserExtInfoResponseBody extends TeaModel {
-    /**
-     * <p>扩展属性</p>
-     */
     @NameInMap("content")
     public java.util.List<QueryUserExtInfoResponseBodyContent> content;
 
@@ -24,45 +21,24 @@ public class QueryUserExtInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserExtInfoResponseBodyContent extends TeaModel {
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        /**
-         * <p>状态：0-有效，1-无效</p>
-         */
         @NameInMap("status")
         public Integer status;
 
-        /**
-         * <p>用户标识</p>
-         */
         @NameInMap("userCode")
         public String userCode;
 
-        /**
-         * <p>扩展属性描述</p>
-         */
         @NameInMap("userExtendDisplayName")
         public String userExtendDisplayName;
 
-        /**
-         * <p>扩展属性Key</p>
-         */
         @NameInMap("userExtendKey")
         public String userExtendKey;
 
-        /**
-         * <p>扩展属性值</p>
-         */
         @NameInMap("userExtendValue")
         public String userExtendValue;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPartnerInfoResponseBody extends TeaModel {
-    /**
-     * <p>部门列表</p>
-     */
     @NameInMap("partnerDeptList")
     public java.util.List<QueryPartnerInfoResponseBodyPartnerDeptList> partnerDeptList;
 
-    /**
-     * <p>伙伴标签</p>
-     */
     @NameInMap("partnerLabelList")
     public java.util.List<QueryPartnerInfoResponseBodyPartnerLabelList> partnerLabelList;
 
-    /**
-     * <p>员工id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
@@ -52,15 +43,9 @@ public class QueryPartnerInfoResponseBody extends TeaModel {
     }
 
     public static class QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 extends TeaModel {
-        /**
-         * <p>标签id</p>
-         */
         @NameInMap("labelId")
         public Long labelId;
 
-        /**
-         * <p>标签名称</p>
-         */
         @NameInMap("labelname")
         public String labelname;
 
@@ -88,33 +73,18 @@ public class QueryPartnerInfoResponseBody extends TeaModel {
     }
 
     public static class QueryPartnerInfoResponseBodyPartnerDeptList extends TeaModel {
-        /**
-         * <p>部门人数</p>
-         */
         @NameInMap("memberCount")
         public Long memberCount;
 
-        /**
-         * <p>一级伙伴类型</p>
-         */
         @NameInMap("partnerLabelModelLevel1")
         public QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 partnerLabelModelLevel1;
 
-        /**
-         * <p>伙伴编码</p>
-         */
         @NameInMap("partnerNum")
         public String partnerNum;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -166,15 +136,9 @@ public class QueryPartnerInfoResponseBody extends TeaModel {
     }
 
     public static class QueryPartnerInfoResponseBodyPartnerLabelList extends TeaModel {
-        /**
-         * <p>label id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>label value</p>
-         */
         @NameInMap("name")
         public String name;
 

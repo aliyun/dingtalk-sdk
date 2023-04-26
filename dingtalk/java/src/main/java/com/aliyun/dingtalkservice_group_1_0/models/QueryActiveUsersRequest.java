@@ -4,21 +4,12 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryActiveUsersRequest extends TeaModel {
-    /**
-     * <p>开放群ID</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>查询topN的数据</p>
-     */
     @NameInMap("topN")
     public Long topN;
 

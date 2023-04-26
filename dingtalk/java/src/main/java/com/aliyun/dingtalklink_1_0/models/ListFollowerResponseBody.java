@@ -4,15 +4,9 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFollowerResponseBody extends TeaModel {
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
-    /**
-     * <p>响应结果</p>
-     */
     @NameInMap("result")
     public ListFollowerResponseBodyResult result;
 
@@ -38,21 +32,12 @@ public class ListFollowerResponseBody extends TeaModel {
     }
 
     public static class ListFollowerResponseBodyResultUserList extends TeaModel {
-        /**
-         * <p>关注者昵称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>关注时间 </p>
-         */
         @NameInMap("timestamp")
         public Long timestamp;
 
-        /**
-         * <p>关注者userId，可用于消息推送等场景。</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -88,17 +73,9 @@ public class ListFollowerResponseBody extends TeaModel {
     }
 
     public static class ListFollowerResponseBodyResult extends TeaModel {
-        /**
-         * <p>下一页查询位置</p>
-         * <p>当此返回值为空时，则说明全部数据查询完成。</p>
-         * <p>当此返回值不为空时，可以将此值设置为下一次查询的参数。</p>
-         */
         @NameInMap("nextToken")
         public String nextToken;
 
-        /**
-         * <p>用户列表</p>
-         */
         @NameInMap("userList")
         public java.util.List<ListFollowerResponseBodyResultUserList> userList;
 

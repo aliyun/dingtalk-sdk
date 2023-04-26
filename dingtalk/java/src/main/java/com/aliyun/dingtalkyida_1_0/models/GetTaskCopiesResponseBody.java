@@ -4,21 +4,12 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTaskCopiesResponseBody extends TeaModel {
-    /**
-     * <p>数据</p>
-     */
     @NameInMap("data")
     public java.util.List<GetTaskCopiesResponseBodyData> data;
 
-    /**
-     * <p>当前第几页</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>总数量</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -52,33 +43,18 @@ public class GetTaskCopiesResponseBody extends TeaModel {
     }
 
     public static class GetTaskCopiesResponseBodyDataCurrentActivityInstances extends TeaModel {
-        /**
-         * <p>节点id</p>
-         */
         @NameInMap("activityId")
         public String activityId;
 
-        /**
-         * <p>节点实例状态</p>
-         */
         @NameInMap("activityInstanceStatus")
         public String activityInstanceStatus;
 
-        /**
-         * <p>节点名称</p>
-         */
         @NameInMap("activityName")
         public String activityName;
 
-        /**
-         * <p>节点英文名称</p>
-         */
         @NameInMap("activityNameInEnglish")
         public String activityNameInEnglish;
 
-        /**
-         * <p>数据id</p>
-         */
         @NameInMap("id")
         public Long id;
 
@@ -130,165 +106,84 @@ public class GetTaskCopiesResponseBody extends TeaModel {
     }
 
     public static class GetTaskCopiesResponseBodyData extends TeaModel {
-        /**
-         * <p>actionerId</p>
-         */
         @NameInMap("actionExecutorId")
         public java.util.List<String> actionExecutorId;
 
-        /**
-         * <p>actionerName</p>
-         */
         @NameInMap("actionExecutorName")
         public java.util.List<String> actionExecutorName;
 
-        /**
-         * <p>appType</p>
-         */
         @NameInMap("appType")
         public String appType;
 
-        /**
-         * <p>carbonActivityId</p>
-         */
         @NameInMap("carbonActivityId")
         public String carbonActivityId;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        /**
-         * <p>currentActivityInstances</p>
-         */
         @NameInMap("currentActivityInstances")
         public java.util.List<GetTaskCopiesResponseBodyDataCurrentActivityInstances> currentActivityInstances;
 
-        /**
-         * <p>dataMap</p>
-         */
         @NameInMap("dataMap")
         public java.util.Map<String, ?> dataMap;
 
-        /**
-         * <p>dataType</p>
-         */
         @NameInMap("dataType")
         public String dataType;
 
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
-        /**
-         * <p>formInstanceId</p>
-         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
-        /**
-         * <p>formUuid</p>
-         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        /**
-         * <p>实例数据</p>
-         */
         @NameInMap("instanceValue")
         public String instanceValue;
 
-        /**
-         * <p>modifiedTime</p>
-         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
-        /**
-         * <p>originatorAvatar</p>
-         */
         @NameInMap("originatorAvatar")
         public String originatorAvatar;
 
-        /**
-         * <p>originatorDisplayName</p>
-         */
         @NameInMap("originatorDisplayName")
         public String originatorDisplayName;
 
-        /**
-         * <p>originatorId</p>
-         */
         @NameInMap("originatorId")
         public String originatorId;
 
-        /**
-         * <p>processApprovedResult</p>
-         */
         @NameInMap("processApprovedResult")
         public String processApprovedResult;
 
-        /**
-         * <p>processApprovedResultText</p>
-         */
         @NameInMap("processApprovedResultText")
         public String processApprovedResultText;
 
-        /**
-         * <p>processCode</p>
-         */
         @NameInMap("processCode")
         public String processCode;
 
-        /**
-         * <p>流程id</p>
-         */
         @NameInMap("processId")
         public Long processId;
 
-        /**
-         * <p>processInstanceId</p>
-         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        /**
-         * <p>processInstanceStatus</p>
-         */
         @NameInMap("processInstanceStatus")
         public String processInstanceStatus;
 
-        /**
-         * <p>processInstanceStatusText</p>
-         */
         @NameInMap("processInstanceStatusText")
         public String processInstanceStatusText;
 
-        /**
-         * <p>processName</p>
-         */
         @NameInMap("processName")
         public String processName;
 
-        /**
-         * <p>序列号</p>
-         */
         @NameInMap("serialNumber")
         public String serialNumber;
 
-        /**
-         * <p>标题</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>版本</p>
-         */
         @NameInMap("version")
         public Long version;
 

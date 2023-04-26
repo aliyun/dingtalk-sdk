@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReportDeviceLogResponseBody extends TeaModel {
-    /**
-     * <p>上传成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

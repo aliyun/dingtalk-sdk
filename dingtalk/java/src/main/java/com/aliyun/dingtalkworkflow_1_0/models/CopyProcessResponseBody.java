@@ -21,21 +21,12 @@ public class CopyProcessResponseBody extends TeaModel {
     }
 
     public static class CopyProcessResponseBodyResult extends TeaModel {
-        /**
-         * <p>业务标识</p>
-         */
         @NameInMap("bizType")
         public String bizType;
 
-        /**
-         * <p>模板名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>模板code</p>
-         */
         @NameInMap("processCode")
         public String processCode;
 

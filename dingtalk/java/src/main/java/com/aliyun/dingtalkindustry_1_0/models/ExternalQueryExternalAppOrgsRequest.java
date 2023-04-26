@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExternalQueryExternalAppOrgsRequest extends TeaModel {
-    /**
-     * <p>外部组织类型</p>
-     */
     @NameInMap("externalType")
     public String externalType;
 

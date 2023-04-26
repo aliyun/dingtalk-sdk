@@ -4,15 +4,9 @@ package com.aliyun.dingtalkoauth2_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSsoAccessTokenResponseBody extends TeaModel {
-    /**
-     * <p>accessToken</p>
-     */
     @NameInMap("accessToken")
     public String accessToken;
 
-    /**
-     * <p>超时时间</p>
-     */
     @NameInMap("expireIn")
     public Long expireIn;
 

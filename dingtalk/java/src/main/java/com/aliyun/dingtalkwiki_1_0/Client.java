@@ -6,8 +6,11 @@ import com.aliyun.dingtalkwiki_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public WikiWordsDetailResponse wikiWordsDetail(WikiWordsDetailRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        WikiWordsDetailHeaders headers = new WikiWordsDetailHeaders();
-        return this.wikiWordsDetailWithOptions(request, headers, runtime);
-    }
 
     public WikiWordsDetailResponse wikiWordsDetailWithOptions(WikiWordsDetailRequest request, WikiWordsDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -42,13 +39,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("WikiWordsDetail", "wiki_1.0", "HTTP", "GET", "AK", "/v1.0/wiki/words/details", "json", req, runtime), new WikiWordsDetailResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "WikiWordsDetail"),
+            new TeaPair("version", "wiki_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/wiki/words/details"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new WikiWordsDetailResponse());
     }
 
-    public WikiWordsParseResponse wikiWordsParse(WikiWordsParseRequest request) throws Exception {
+    public WikiWordsDetailResponse wikiWordsDetail(WikiWordsDetailRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        WikiWordsParseHeaders headers = new WikiWordsParseHeaders();
-        return this.wikiWordsParseWithOptions(request, headers, runtime);
+        WikiWordsDetailHeaders headers = new WikiWordsDetailHeaders();
+        return this.wikiWordsDetailWithOptions(request, headers, runtime);
     }
 
     public WikiWordsParseResponse wikiWordsParseWithOptions(WikiWordsParseRequest request, WikiWordsParseHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -71,6 +79,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("WikiWordsParse", "wiki_1.0", "HTTP", "POST", "AK", "/v1.0/wiki/words/parse", "json", req, runtime), new WikiWordsParseResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "WikiWordsParse"),
+            new TeaPair("version", "wiki_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/wiki/words/parse"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new WikiWordsParseResponse());
+    }
+
+    public WikiWordsParseResponse wikiWordsParse(WikiWordsParseRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        WikiWordsParseHeaders headers = new WikiWordsParseHeaders();
+        return this.wikiWordsParseWithOptions(request, headers, runtime);
     }
 }

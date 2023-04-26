@@ -4,33 +4,18 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryServiceGroupMessageReadStatusRequest extends TeaModel {
-    /**
-     * <p>本次读取的最大数据记录数量，此参数为可选参数，用户传入为空时，应该有默认值。应设置最大值限制，最大不超过100</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>用来标记当前开始读取的位置，置空表示从头开始。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>开放群ID</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>开放消息ID</p>
-     */
     @NameInMap("openMsgTaskId")
     public String openMsgTaskId;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

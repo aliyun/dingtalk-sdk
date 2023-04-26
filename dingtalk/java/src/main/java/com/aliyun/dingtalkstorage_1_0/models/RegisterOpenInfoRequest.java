@@ -4,23 +4,12 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterOpenInfoRequest extends TeaModel {
-    /**
-     * <p>注册打开信息</p>
-     */
     @NameInMap("openInfos")
     public java.util.List<RegisterOpenInfoRequestOpenInfos> openInfos;
 
-    /**
-     * <p>链接供应商名称</p>
-     * <p>枚举值:</p>
-     * <p>	MS_OFFICE: MS Office</p>
-     */
     @NameInMap("provider")
     public String provider;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -54,18 +43,9 @@ public class RegisterOpenInfoRequest extends TeaModel {
     }
 
     public static class RegisterOpenInfoRequestOpenInfos extends TeaModel {
-        /**
-         * <p>打开方式</p>
-         * <p>枚举值:</p>
-         * <p>	PREVIEW: 预览</p>
-         * <p>	EDIT: 编辑</p>
-         */
         @NameInMap("openType")
         public String openType;
 
-        /**
-         * <p>注册链接</p>
-         */
         @NameInMap("url")
         public String url;
 

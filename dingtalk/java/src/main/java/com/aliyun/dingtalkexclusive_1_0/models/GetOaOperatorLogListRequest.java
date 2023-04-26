@@ -4,39 +4,21 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOaOperatorLogListRequest extends TeaModel {
-    /**
-     * <p>操作分类（一级目录）</p>
-     */
     @NameInMap("categoryList")
     public java.util.List<String> categoryList;
 
-    /**
-     * <p>结束时间</p>
-     */
     @NameInMap("endTime")
     public Long endTime;
 
-    /**
-     * <p>操作员userId</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    /**
-     * <p>分页起始页</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>分页大小</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>起始时间</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 

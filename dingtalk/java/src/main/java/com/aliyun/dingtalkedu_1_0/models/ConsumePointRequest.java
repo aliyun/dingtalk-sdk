@@ -4,27 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConsumePointRequest extends TeaModel {
-    /**
-     * <p>扣减积分</p>
-     */
     @NameInMap("amount")
     public Long amount;
 
-    /**
-     * <p>业务id</p>
-     */
     @NameInMap("bizId")
     public String bizId;
 
-    /**
-     * <p>扣减描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>产品编码</p>
-     */
     @NameInMap("productCode")
     public String productCode;
 

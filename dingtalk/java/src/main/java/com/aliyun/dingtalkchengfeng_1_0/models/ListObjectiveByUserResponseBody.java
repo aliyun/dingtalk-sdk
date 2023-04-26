@@ -4,21 +4,12 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListObjectiveByUserResponseBody extends TeaModel {
-    /**
-     * <p>请求返回数据对象</p>
-     */
     @NameInMap("content")
     public ListObjectiveByUserResponseBodyContent content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
-    /**
-     * <p>接口请求是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -52,9 +43,6 @@ public class ListObjectiveByUserResponseBody extends TeaModel {
     }
 
     public static class ListObjectiveByUserResponseBodyContent extends TeaModel {
-        /**
-         * <p>总数</p>
-         */
         @NameInMap("count")
         public Integer count;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalksns_storage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSpaceResponseBody extends TeaModel {
-    /**
-     * <p>IM会话存储空间信息</p>
-     */
     @NameInMap("space")
     public GetSpaceResponseBodySpace space;
 
@@ -24,27 +21,15 @@ public class GetSpaceResponseBody extends TeaModel {
     }
 
     public static class GetSpaceResponseBodySpace extends TeaModel {
-        /**
-         * <p>空间归属企业的id</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createTime")
         public String createTime;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
-        /**
-         * <p>空间id</p>
-         */
         @NameInMap("spaceId")
         public String spaceId;
 

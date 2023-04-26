@@ -21,71 +21,30 @@ public class ListApproveByUsersResponseBody extends TeaModel {
     }
 
     public static class ListApproveByUsersResponseBodyResult extends TeaModel {
-        /**
-         * <p>审批单自定义id</p>
-         */
         @NameInMap("approveId")
         public String approveId;
 
-        /**
-         * <p>审批单开始时间原始格式</p>
-         */
         @NameInMap("beginTime")
         public String beginTime;
 
-        /**
-         * <p>审批单类型：</p>
-         * <p>● 1：加班</p>
-         * <p>● 2：出差、外出</p>
-         * <p>● 3：请假</p>
-         * <p>● 4:  补卡</p>
-         * <p>● 5：外勤审批</p>
-         */
         @NameInMap("bizType")
         public Integer bizType;
 
-        /**
-         * <p>计算方法：</p>
-         * <p>● 0：按自然日计算</p>
-         * <p>● 1：按工作日计算</p>
-         */
         @NameInMap("calculateModel")
         public Integer calculateModel;
 
-        /**
-         * <p>时长单位，支持格式如下：</p>
-         * <p>● day</p>
-         * <p>● halfDay</p>
-         * <p>● hour</p>
-         * <p>时间格式必须与时长单位对应：</p>
-         * <p>● 2019-08-15对应day</p>
-         * <p>● 2019-08-15 AM对应halfDay</p>
-         * <p>● 2019-08-15 12:43对应hour</p>
-         */
         @NameInMap("durationUnit")
         public String durationUnit;
 
-        /**
-         * <p>审批单结束时间原始格式</p>
-         */
         @NameInMap("endTime")
         public String endTime;
 
-        /**
-         * <p>子类型名称，最大长度20个字符</p>
-         */
         @NameInMap("subType")
         public String subType;
 
-        /**
-         * <p>审批单类型名称，最大长度20个字符</p>
-         */
         @NameInMap("tagName")
         public String tagName;
 
-        /**
-         * <p>用户userid</p>
-         */
         @NameInMap("userId")
         public String userId;
 

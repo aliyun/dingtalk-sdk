@@ -4,9 +4,6 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ModifyFeedWhiteListResponseBody extends TeaModel {
-    /**
-     * <p>是否修改成功</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

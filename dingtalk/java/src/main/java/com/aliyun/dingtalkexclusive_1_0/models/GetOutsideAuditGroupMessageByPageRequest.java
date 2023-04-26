@@ -4,21 +4,12 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOutsideAuditGroupMessageByPageRequest extends TeaModel {
-    /**
-     * <p>页大小，一次请求几条消息，合法区间[20,50]</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>毫秒时间戳，从该时间向过去拉消息</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    /**
-     * <p>会话</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

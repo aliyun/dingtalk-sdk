@@ -4,15 +4,9 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteKeyResultRequest extends TeaModel {
-    /**
-     * <p>当前 KR id。</p>
-     */
     @NameInMap("krId")
     public String krId;
 
-    /**
-     * <p>当前用户的userId。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

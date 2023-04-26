@@ -4,27 +4,15 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeviceConferenceRequest extends TeaModel {
-    /**
-     * <p>会议主题，最多不能超20个中文。</p>
-     */
     @NameInMap("confTitle")
     public String confTitle;
 
-    /**
-     * <p>钉钉会议ID，加入已存在的会议必填。</p>
-     */
     @NameInMap("conferenceId")
     public String conferenceId;
 
-    /**
-     * <p>钉钉会议密码，加入已存在的会议必填。</p>
-     */
     @NameInMap("conferencePassword")
     public String conferencePassword;
 
-    /**
-     * <p>需要邀请的设备ID，最多5个。</p>
-     */
     @NameInMap("deviceIds")
     public java.util.List<String> deviceIds;
 

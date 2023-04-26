@@ -4,15 +4,9 @@ package com.aliyun.dingtalkswform_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListFormSchemasByCreatorResponseBody extends TeaModel {
-    /**
-     * <p>返回结果对象。</p>
-     */
     @NameInMap("result")
     public ListFormSchemasByCreatorResponseBodyResult result;
 
-    /**
-     * <p>是否成功。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,45 +32,24 @@ public class ListFormSchemasByCreatorResponseBody extends TeaModel {
     }
 
     public static class ListFormSchemasByCreatorResponseBodyResultListSetting extends TeaModel {
-        /**
-         * <p>表单类型：  0：一次性填表  1：周期性填表</p>
-         */
         @NameInMap("bizType")
         public Integer bizType;
 
-        /**
-         * <p>创建时间。iso8601格式。</p>
-         */
         @NameInMap("createTime")
         public String createTime;
 
-        /**
-         * <p>截止时间。iso8601格式。</p>
-         */
         @NameInMap("endTime")
         public String endTime;
 
-        /**
-         * <p>表单类型：  0：一次性填表  1：周期性填表</p>
-         */
         @NameInMap("formType")
         public Integer formType;
 
-        /**
-         * <p>填表周期，周一到周日分别用1-7表示。</p>
-         */
         @NameInMap("loopDays")
         public java.util.List<Integer> loopDays;
 
-        /**
-         * <p>循环执行的时间点。</p>
-         */
         @NameInMap("loopTime")
         public String loopTime;
 
-        /**
-         * <p>填表是否终止的标记。</p>
-         */
         @NameInMap("stop")
         public Boolean stop;
 
@@ -144,33 +117,18 @@ public class ListFormSchemasByCreatorResponseBody extends TeaModel {
     }
 
     public static class ListFormSchemasByCreatorResponseBodyResultList extends TeaModel {
-        /**
-         * <p>创建人。</p>
-         */
         @NameInMap("creator")
         public String creator;
 
-        /**
-         * <p>填表code，用此code可调接口获取填表列表。</p>
-         */
         @NameInMap("formCode")
         public String formCode;
 
-        /**
-         * <p>填表提示。</p>
-         */
         @NameInMap("memo")
         public String memo;
 
-        /**
-         * <p>填表名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>填表设置。</p>
-         */
         @NameInMap("setting")
         public ListFormSchemasByCreatorResponseBodyResultListSetting setting;
 
@@ -222,21 +180,12 @@ public class ListFormSchemasByCreatorResponseBody extends TeaModel {
     }
 
     public static class ListFormSchemasByCreatorResponseBodyResult extends TeaModel {
-        /**
-         * <p>是否还有下一页数据。</p>
-         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
-        /**
-         * <p>创建的填表列表。</p>
-         */
         @NameInMap("list")
         public java.util.List<ListFormSchemasByCreatorResponseBodyResultList> list;
 
-        /**
-         * <p>下一次分页offset的值。</p>
-         */
         @NameInMap("nextToken")
         public Long nextToken;
 

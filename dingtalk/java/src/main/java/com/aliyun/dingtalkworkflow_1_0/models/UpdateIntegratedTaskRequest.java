@@ -4,9 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateIntegratedTaskRequest extends TeaModel {
-    /**
-     * <p>OA审批流程实例ID，过创建实例接口获取</p>
-     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
@@ -35,25 +32,12 @@ public class UpdateIntegratedTaskRequest extends TeaModel {
     }
 
     public static class UpdateIntegratedTaskRequestTasks extends TeaModel {
-        /**
-         * <p>当status为COMPLETED时，必须指定任务结果：</p>
-         * <p>AGREE：同意</p>
-         * <p>REFUSE：拒绝</p>
-         * <br>
-         * <p>说明 当status为CANCELED时，不需要传result。</p>
-         */
         @NameInMap("result")
         public String result;
 
-        /**
-         * <p>更新为目标任务状态，可选值 CANCELED、COMPLETED</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>OA审批任务ID</p>
-         */
         @NameInMap("taskId")
         public Long taskId;
 

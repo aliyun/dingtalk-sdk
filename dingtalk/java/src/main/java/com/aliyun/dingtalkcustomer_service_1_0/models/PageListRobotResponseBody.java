@@ -4,27 +4,15 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageListRobotResponseBody extends TeaModel {
-    /**
-     * <p>是否有更多结果</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>查询结果列表</p>
-     */
     @NameInMap("list")
     public java.util.List<PageListRobotResponseBodyList> list;
 
-    /**
-     * <p>下一次查询起始游标</p>
-     */
     @NameInMap("nextCursor")
     public Long nextCursor;
 
-    /**
-     * <p>查询结果总数</p>
-     */
     @NameInMap("total")
     public Long total;
 
@@ -66,33 +54,18 @@ public class PageListRobotResponseBody extends TeaModel {
     }
 
     public static class PageListRobotResponseBodyList extends TeaModel {
-        /**
-         * <p>机器人所在租户ID</p>
-         */
         @NameInMap("accountId")
         public Long accountId;
 
-        /**
-         * <p>机器人APPKEY</p>
-         */
         @NameInMap("appKey")
         public String appKey;
 
-        /**
-         * <p>机器人自增Id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>机器人名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>机器人状态</p>
-         */
         @NameInMap("status")
         public Integer status;
 

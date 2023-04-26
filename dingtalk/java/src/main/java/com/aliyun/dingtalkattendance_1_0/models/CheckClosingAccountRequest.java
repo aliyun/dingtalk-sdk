@@ -4,21 +4,12 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckClosingAccountRequest extends TeaModel {
-    /**
-     * <p>情景</p>
-     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    /**
-     * <p>员工列表</p>
-     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 
-    /**
-     * <p>时间段</p>
-     */
     @NameInMap("userTimeRange")
     public java.util.List<CheckClosingAccountRequestUserTimeRange> userTimeRange;
 

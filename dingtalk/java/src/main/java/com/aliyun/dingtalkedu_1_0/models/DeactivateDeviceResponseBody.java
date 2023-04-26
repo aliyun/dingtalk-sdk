@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeactivateDeviceResponseBody extends TeaModel {
-    /**
-     * <p>授权码已激活的次数</p>
-     */
     @NameInMap("activateTimes")
     public Integer activateTimes;
 

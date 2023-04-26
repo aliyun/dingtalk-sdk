@@ -4,21 +4,12 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserHolidaysRequest extends TeaModel {
-    /**
-     * <p>员工列表</p>
-     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 
-    /**
-     * <p>开始日期</p>
-     */
     @NameInMap("workDateFrom")
     public Long workDateFrom;
 
-    /**
-     * <p>结束日期</p>
-     */
     @NameInMap("workDateTo")
     public Long workDateTo;
 

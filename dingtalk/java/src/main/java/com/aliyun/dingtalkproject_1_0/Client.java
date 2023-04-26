@@ -6,8 +6,11 @@ import com.aliyun.dingtalkproject_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -16,16 +19,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
-    public AddProjectMemberResponse addProjectMember(String userId, String projectId, AddProjectMemberRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        AddProjectMemberHeaders headers = new AddProjectMemberHeaders();
-        return this.addProjectMemberWithOptions(userId, projectId, request, headers, runtime);
-    }
-
     public AddProjectMemberResponse addProjectMemberWithOptions(String userId, String projectId, AddProjectMemberRequest request, AddProjectMemberHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
             body.put("userIds", request.userIds);
@@ -44,7 +39,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("AddProjectMember", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/members", "json", req, runtime), new AddProjectMemberResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddProjectMember"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/members"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddProjectMemberResponse());
+    }
+
+    public AddProjectMemberResponse addProjectMember(String userId, String projectId, AddProjectMemberRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddProjectMemberHeaders headers = new AddProjectMemberHeaders();
+        return this.addProjectMemberWithOptions(userId, projectId, request, headers, runtime);
+    }
+
+    public ArchiveProjectResponse archiveProjectWithOptions(String userId, String projectId, ArchiveProjectHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ArchiveProject"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/archive"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ArchiveProjectResponse());
     }
 
     public ArchiveProjectResponse archiveProject(String userId, String projectId) throws Exception {
@@ -53,9 +92,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.archiveProjectWithOptions(userId, projectId, headers, runtime);
     }
 
-    public ArchiveProjectResponse archiveProjectWithOptions(String userId, String projectId, ArchiveProjectHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
+    public ArchiveTaskResponse archiveTaskWithOptions(String userId, String taskId, ArchiveTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -68,7 +105,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("ArchiveProject", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/archive", "json", req, runtime), new ArchiveProjectResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ArchiveTask"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/archive"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ArchiveTaskResponse());
     }
 
     public ArchiveTaskResponse archiveTask(String userId, String taskId) throws Exception {
@@ -77,33 +125,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.archiveTaskWithOptions(userId, taskId, headers, runtime);
     }
 
-    public ArchiveTaskResponse archiveTaskWithOptions(String userId, String taskId, ArchiveTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
-        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
-            realHeaders = headers.commonHeaders;
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
-        }
-
-        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
-        ));
-        return TeaModel.toModel(this.doROARequest("ArchiveTask", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/archive", "json", req, runtime), new ArchiveTaskResponse());
-    }
-
-    public CreateOrganizationTaskResponse createOrganizationTask(String userId, CreateOrganizationTaskRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateOrganizationTaskHeaders headers = new CreateOrganizationTaskHeaders();
-        return this.createOrganizationTaskWithOptions(userId, request, headers, runtime);
-    }
-
     public CreateOrganizationTaskResponse createOrganizationTaskWithOptions(String userId, CreateOrganizationTaskRequest request, CreateOrganizationTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.content)) {
             body.put("content", request.content);
@@ -158,18 +181,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateOrganizationTask", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks", "json", req, runtime), new CreateOrganizationTaskResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateOrganizationTask"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/tasks"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateOrganizationTaskResponse());
     }
 
-    public CreatePlanTimeResponse createPlanTime(String userId, CreatePlanTimeRequest request) throws Exception {
+    public CreateOrganizationTaskResponse createOrganizationTask(String userId, CreateOrganizationTaskRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreatePlanTimeHeaders headers = new CreatePlanTimeHeaders();
-        return this.createPlanTimeWithOptions(userId, request, headers, runtime);
+        CreateOrganizationTaskHeaders headers = new CreateOrganizationTaskHeaders();
+        return this.createOrganizationTaskWithOptions(userId, request, headers, runtime);
     }
 
     public CreatePlanTimeResponse createPlanTimeWithOptions(String userId, CreatePlanTimeRequest request, CreatePlanTimeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.tenantType)) {
             query.put("tenantType", request.tenantType);
@@ -226,18 +259,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreatePlanTime", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/planTimes", "json", req, runtime), new CreatePlanTimeResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreatePlanTime"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/planTimes"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreatePlanTimeResponse());
     }
 
-    public CreateProjectResponse createProject(String userId, CreateProjectRequest request) throws Exception {
+    public CreatePlanTimeResponse createPlanTime(String userId, CreatePlanTimeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateProjectHeaders headers = new CreateProjectHeaders();
-        return this.createProjectWithOptions(userId, request, headers, runtime);
+        CreatePlanTimeHeaders headers = new CreatePlanTimeHeaders();
+        return this.createPlanTimeWithOptions(userId, request, headers, runtime);
     }
 
     public CreateProjectResponse createProjectWithOptions(String userId, CreateProjectRequest request, CreateProjectHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
@@ -256,18 +299,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateProject", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/projects", "json", req, runtime), new CreateProjectResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateProject"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateProjectResponse());
     }
 
-    public CreateProjectByTemplateResponse createProjectByTemplate(String userId, CreateProjectByTemplateRequest request) throws Exception {
+    public CreateProjectResponse createProject(String userId, CreateProjectRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateProjectByTemplateHeaders headers = new CreateProjectByTemplateHeaders();
-        return this.createProjectByTemplateWithOptions(userId, request, headers, runtime);
+        CreateProjectHeaders headers = new CreateProjectHeaders();
+        return this.createProjectWithOptions(userId, request, headers, runtime);
     }
 
     public CreateProjectByTemplateResponse createProjectByTemplateWithOptions(String userId, CreateProjectByTemplateRequest request, CreateProjectByTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
@@ -290,19 +343,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateProjectByTemplate", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/templates/projects", "json", req, runtime), new CreateProjectByTemplateResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateProjectByTemplate"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/templates/projects"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateProjectByTemplateResponse());
     }
 
-    public CreateProjectCustomfieldStatusResponse createProjectCustomfieldStatus(String userId, String projectId, CreateProjectCustomfieldStatusRequest request) throws Exception {
+    public CreateProjectByTemplateResponse createProjectByTemplate(String userId, CreateProjectByTemplateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateProjectCustomfieldStatusHeaders headers = new CreateProjectCustomfieldStatusHeaders();
-        return this.createProjectCustomfieldStatusWithOptions(userId, projectId, request, headers, runtime);
+        CreateProjectByTemplateHeaders headers = new CreateProjectByTemplateHeaders();
+        return this.createProjectByTemplateWithOptions(userId, request, headers, runtime);
     }
 
     public CreateProjectCustomfieldStatusResponse createProjectCustomfieldStatusWithOptions(String userId, String projectId, CreateProjectCustomfieldStatusRequest request, CreateProjectCustomfieldStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.customfieldId)) {
             body.put("customfieldId", request.customfieldId);
@@ -333,18 +395,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateProjectCustomfieldStatus", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/customfields", "json", req, runtime), new CreateProjectCustomfieldStatusResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateProjectCustomfieldStatus"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/customfields"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateProjectCustomfieldStatusResponse());
     }
 
-    public CreateTaskResponse createTask(String userId, CreateTaskRequest request) throws Exception {
+    public CreateProjectCustomfieldStatusResponse createProjectCustomfieldStatus(String userId, String projectId, CreateProjectCustomfieldStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateTaskHeaders headers = new CreateTaskHeaders();
-        return this.createTaskWithOptions(userId, request, headers, runtime);
+        CreateProjectCustomfieldStatusHeaders headers = new CreateProjectCustomfieldStatusHeaders();
+        return this.createProjectCustomfieldStatusWithOptions(userId, projectId, request, headers, runtime);
     }
 
     public CreateTaskResponse createTaskWithOptions(String userId, CreateTaskRequest request, CreateTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.content)) {
             body.put("content", request.content);
@@ -407,19 +479,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateTask", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/tasks", "json", req, runtime), new CreateTaskResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateTask"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateTaskResponse());
     }
 
-    public CreateTaskObjectLinkResponse createTaskObjectLink(String userId, String taskId, CreateTaskObjectLinkRequest request) throws Exception {
+    public CreateTaskResponse createTask(String userId, CreateTaskRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateTaskObjectLinkHeaders headers = new CreateTaskObjectLinkHeaders();
-        return this.createTaskObjectLinkWithOptions(userId, taskId, request, headers, runtime);
+        CreateTaskHeaders headers = new CreateTaskHeaders();
+        return this.createTaskWithOptions(userId, request, headers, runtime);
     }
 
     public CreateTaskObjectLinkResponse createTaskObjectLinkWithOptions(String userId, String taskId, CreateTaskObjectLinkRequest request, CreateTaskObjectLinkHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.linkedData)) {
             body.put("linkedData", request.linkedData);
@@ -438,18 +519,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateTaskObjectLink", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/objectLinks", "json", req, runtime), new CreateTaskObjectLinkResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateTaskObjectLink"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/objectLinks"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateTaskObjectLinkResponse());
     }
 
-    public CreateWorkTimeResponse createWorkTime(String userId, CreateWorkTimeRequest request) throws Exception {
+    public CreateTaskObjectLinkResponse createTaskObjectLink(String userId, String taskId, CreateTaskObjectLinkRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateWorkTimeHeaders headers = new CreateWorkTimeHeaders();
-        return this.createWorkTimeWithOptions(userId, request, headers, runtime);
+        CreateTaskObjectLinkHeaders headers = new CreateTaskObjectLinkHeaders();
+        return this.createTaskObjectLinkWithOptions(userId, taskId, request, headers, runtime);
     }
 
     public CreateWorkTimeResponse createWorkTimeWithOptions(String userId, CreateWorkTimeRequest request, CreateWorkTimeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.tenantType)) {
             query.put("tenantType", request.tenantType);
@@ -506,19 +597,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateWorkTime", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/workTimes", "json", req, runtime), new CreateWorkTimeResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateWorkTime"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/workTimes"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateWorkTimeResponse());
     }
 
-    public DeleteProjectMemberResponse deleteProjectMember(String userId, String projectId, DeleteProjectMemberRequest request) throws Exception {
+    public CreateWorkTimeResponse createWorkTime(String userId, CreateWorkTimeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        DeleteProjectMemberHeaders headers = new DeleteProjectMemberHeaders();
-        return this.deleteProjectMemberWithOptions(userId, projectId, request, headers, runtime);
+        CreateWorkTimeHeaders headers = new CreateWorkTimeHeaders();
+        return this.createWorkTimeWithOptions(userId, request, headers, runtime);
+    }
+
+    public CreateWorkTimeApproveResponse createWorkTimeApproveWithOptions(String userId, CreateWorkTimeApproveRequest request, CreateWorkTimeApproveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.workTimeIds)) {
+            body.put("workTimeIds", request.workTimeIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateWorkTimeApprove"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/workTimes/approvals"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateWorkTimeApproveResponse());
+    }
+
+    public CreateWorkTimeApproveResponse createWorkTimeApprove(String userId, CreateWorkTimeApproveRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateWorkTimeApproveHeaders headers = new CreateWorkTimeApproveHeaders();
+        return this.createWorkTimeApproveWithOptions(userId, request, headers, runtime);
     }
 
     public DeleteProjectMemberResponse deleteProjectMemberWithOptions(String userId, String projectId, DeleteProjectMemberRequest request, DeleteProjectMemberHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
             body.put("userIds", request.userIds);
@@ -537,18 +677,27 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("DeleteProjectMember", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/members/remove", "json", req, runtime), new DeleteProjectMemberResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteProjectMember"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/members/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteProjectMemberResponse());
     }
 
-    public DeleteTaskResponse deleteTask(String userId, String taskId) throws Exception {
+    public DeleteProjectMemberResponse deleteProjectMember(String userId, String projectId, DeleteProjectMemberRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        DeleteTaskHeaders headers = new DeleteTaskHeaders();
-        return this.deleteTaskWithOptions(userId, taskId, headers, runtime);
+        DeleteProjectMemberHeaders headers = new DeleteProjectMemberHeaders();
+        return this.deleteProjectMemberWithOptions(userId, projectId, request, headers, runtime);
     }
 
     public DeleteTaskResponse deleteTaskWithOptions(String userId, String taskId, DeleteTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -561,13 +710,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("DeleteTask", "project_1.0", "HTTP", "DELETE", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "", "json", req, runtime), new DeleteTaskResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteTask"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/" + taskId + ""),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteTaskResponse());
     }
 
-    public GetDeptsByOrgIdResponse getDeptsByOrgId(GetDeptsByOrgIdRequest request) throws Exception {
+    public DeleteTaskResponse deleteTask(String userId, String taskId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetDeptsByOrgIdHeaders headers = new GetDeptsByOrgIdHeaders();
-        return this.getDeptsByOrgIdWithOptions(request, headers, runtime);
+        DeleteTaskHeaders headers = new DeleteTaskHeaders();
+        return this.deleteTaskWithOptions(userId, taskId, headers, runtime);
     }
 
     public GetDeptsByOrgIdResponse getDeptsByOrgIdWithOptions(GetDeptsByOrgIdRequest request, GetDeptsByOrgIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -602,13 +762,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetDeptsByOrgId", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/orgs/depts", "json", req, runtime), new GetDeptsByOrgIdResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetDeptsByOrgId"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/orgs/depts"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetDeptsByOrgIdResponse());
     }
 
-    public GetEmpsByOrgIdResponse getEmpsByOrgId(GetEmpsByOrgIdRequest request) throws Exception {
+    public GetDeptsByOrgIdResponse getDeptsByOrgId(GetDeptsByOrgIdRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetEmpsByOrgIdHeaders headers = new GetEmpsByOrgIdHeaders();
-        return this.getEmpsByOrgIdWithOptions(request, headers, runtime);
+        GetDeptsByOrgIdHeaders headers = new GetDeptsByOrgIdHeaders();
+        return this.getDeptsByOrgIdWithOptions(request, headers, runtime);
     }
 
     public GetEmpsByOrgIdResponse getEmpsByOrgIdWithOptions(GetEmpsByOrgIdRequest request, GetEmpsByOrgIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -647,18 +818,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetEmpsByOrgId", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/orgs/employees", "json", req, runtime), new GetEmpsByOrgIdResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetEmpsByOrgId"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/orgs/employees"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetEmpsByOrgIdResponse());
     }
 
-    public GetOrganizatioTaskByIdsResponse getOrganizatioTaskByIds(String userId, GetOrganizatioTaskByIdsRequest request) throws Exception {
+    public GetEmpsByOrgIdResponse getEmpsByOrgId(GetEmpsByOrgIdRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetOrganizatioTaskByIdsHeaders headers = new GetOrganizatioTaskByIdsHeaders();
-        return this.getOrganizatioTaskByIdsWithOptions(userId, request, headers, runtime);
+        GetEmpsByOrgIdHeaders headers = new GetEmpsByOrgIdHeaders();
+        return this.getEmpsByOrgIdWithOptions(request, headers, runtime);
     }
 
     public GetOrganizatioTaskByIdsResponse getOrganizatioTaskByIdsWithOptions(String userId, GetOrganizatioTaskByIdsRequest request, GetOrganizatioTaskByIdsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.taskIds)) {
             query.put("taskIds", request.taskIds);
@@ -677,7 +858,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetOrganizatioTaskByIds", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks", "json", req, runtime), new GetOrganizatioTaskByIdsResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetOrganizatioTaskByIds"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/tasks"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetOrganizatioTaskByIdsResponse());
+    }
+
+    public GetOrganizatioTaskByIdsResponse getOrganizatioTaskByIds(String userId, GetOrganizatioTaskByIdsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetOrganizatioTaskByIdsHeaders headers = new GetOrganizatioTaskByIdsHeaders();
+        return this.getOrganizatioTaskByIdsWithOptions(userId, request, headers, runtime);
+    }
+
+    public GetOrganizationPriorityListResponse getOrganizationPriorityListWithOptions(String userId, GetOrganizationPriorityListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetOrganizationPriorityList"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/priorities"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetOrganizationPriorityListResponse());
     }
 
     public GetOrganizationPriorityListResponse getOrganizationPriorityList(String userId) throws Exception {
@@ -686,8 +911,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.getOrganizationPriorityListWithOptions(userId, headers, runtime);
     }
 
-    public GetOrganizationPriorityListResponse getOrganizationPriorityListWithOptions(String userId, GetOrganizationPriorityListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+    public GetOrganizationTaskResponse getOrganizationTaskWithOptions(String taskId, String userId, GetOrganizationTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -700,7 +924,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetOrganizationPriorityList", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/organizations/users/" + userId + "/priorities", "json", req, runtime), new GetOrganizationPriorityListResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetOrganizationTask"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetOrganizationTaskResponse());
     }
 
     public GetOrganizationTaskResponse getOrganizationTask(String taskId, String userId) throws Exception {
@@ -709,33 +944,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.getOrganizationTaskWithOptions(taskId, userId, headers, runtime);
     }
 
-    public GetOrganizationTaskResponse getOrganizationTaskWithOptions(String taskId, String userId, GetOrganizationTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
-            realHeaders = headers.commonHeaders;
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
-        }
-
-        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
-        ));
-        return TeaModel.toModel(this.doROARequest("GetOrganizationTask", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "", "json", req, runtime), new GetOrganizationTaskResponse());
-    }
-
-    public GetProjectGroupResponse getProjectGroup(String userId, GetProjectGroupRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetProjectGroupHeaders headers = new GetProjectGroupHeaders();
-        return this.getProjectGroupWithOptions(userId, request, headers, runtime);
-    }
-
     public GetProjectGroupResponse getProjectGroupWithOptions(String userId, GetProjectGroupRequest request, GetProjectGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
             query.put("pageSize", request.pageSize);
@@ -758,19 +968,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetProjectGroup", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/organizations/users/" + userId + "/groups", "json", req, runtime), new GetProjectGroupResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetProjectGroup"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/groups"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetProjectGroupResponse());
     }
 
-    public GetProjectMemebersResponse getProjectMemebers(String userId, String projectId, GetProjectMemebersRequest request) throws Exception {
+    public GetProjectGroupResponse getProjectGroup(String userId, GetProjectGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetProjectMemebersHeaders headers = new GetProjectMemebersHeaders();
-        return this.getProjectMemebersWithOptions(userId, projectId, request, headers, runtime);
+        GetProjectGroupHeaders headers = new GetProjectGroupHeaders();
+        return this.getProjectGroupWithOptions(userId, request, headers, runtime);
     }
 
     public GetProjectMemebersResponse getProjectMemebersWithOptions(String userId, String projectId, GetProjectMemebersRequest request, GetProjectMemebersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
@@ -801,18 +1020,27 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetProjectMemebers", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/members", "json", req, runtime), new GetProjectMemebersResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetProjectMemebers"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/members"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetProjectMemebersResponse());
     }
 
-    public GetProjectStatusListResponse getProjectStatusList(String userId, String projectId) throws Exception {
+    public GetProjectMemebersResponse getProjectMemebers(String userId, String projectId, GetProjectMemebersRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetProjectStatusListHeaders headers = new GetProjectStatusListHeaders();
-        return this.getProjectStatusListWithOptions(userId, projectId, headers, runtime);
+        GetProjectMemebersHeaders headers = new GetProjectMemebersHeaders();
+        return this.getProjectMemebersWithOptions(userId, projectId, request, headers, runtime);
     }
 
     public GetProjectStatusListResponse getProjectStatusListWithOptions(String userId, String projectId, GetProjectStatusListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -825,18 +1053,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetProjectStatusList", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/statuses", "json", req, runtime), new GetProjectStatusListResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetProjectStatusList"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/statuses"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetProjectStatusListResponse());
     }
 
-    public GetTaskByIdsResponse getTaskByIds(String userId, GetTaskByIdsRequest request) throws Exception {
+    public GetProjectStatusListResponse getProjectStatusList(String userId, String projectId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetTaskByIdsHeaders headers = new GetTaskByIdsHeaders();
-        return this.getTaskByIdsWithOptions(userId, request, headers, runtime);
+        GetProjectStatusListHeaders headers = new GetProjectStatusListHeaders();
+        return this.getProjectStatusListWithOptions(userId, projectId, headers, runtime);
     }
 
     public GetTaskByIdsResponse getTaskByIdsWithOptions(String userId, GetTaskByIdsRequest request, GetTaskByIdsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.parentTaskId)) {
             query.put("parentTaskId", request.parentTaskId);
@@ -859,13 +1097,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetTaskByIds", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/users/" + userId + "/tasks", "json", req, runtime), new GetTaskByIdsResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetTaskByIds"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetTaskByIdsResponse());
     }
 
-    public GetTbOrgIdByDingOrgIdResponse getTbOrgIdByDingOrgId(GetTbOrgIdByDingOrgIdRequest request) throws Exception {
+    public GetTaskByIdsResponse getTaskByIds(String userId, GetTaskByIdsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetTbOrgIdByDingOrgIdHeaders headers = new GetTbOrgIdByDingOrgIdHeaders();
-        return this.getTbOrgIdByDingOrgIdWithOptions(request, headers, runtime);
+        GetTaskByIdsHeaders headers = new GetTaskByIdsHeaders();
+        return this.getTaskByIdsWithOptions(userId, request, headers, runtime);
     }
 
     public GetTbOrgIdByDingOrgIdResponse getTbOrgIdByDingOrgIdWithOptions(GetTbOrgIdByDingOrgIdRequest request, GetTbOrgIdByDingOrgIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -888,13 +1137,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetTbOrgIdByDingOrgId", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/teambition/organizations", "json", req, runtime), new GetTbOrgIdByDingOrgIdResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetTbOrgIdByDingOrgId"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/teambition/organizations"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetTbOrgIdByDingOrgIdResponse());
     }
 
-    public GetTbProjectGrayResponse getTbProjectGray(GetTbProjectGrayRequest request) throws Exception {
+    public GetTbOrgIdByDingOrgIdResponse getTbOrgIdByDingOrgId(GetTbOrgIdByDingOrgIdRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetTbProjectGrayHeaders headers = new GetTbProjectGrayHeaders();
-        return this.getTbProjectGrayWithOptions(request, headers, runtime);
+        GetTbOrgIdByDingOrgIdHeaders headers = new GetTbOrgIdByDingOrgIdHeaders();
+        return this.getTbOrgIdByDingOrgIdWithOptions(request, headers, runtime);
     }
 
     public GetTbProjectGrayResponse getTbProjectGrayWithOptions(GetTbProjectGrayRequest request, GetTbProjectGrayHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -937,13 +1197,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetTbProjectGray", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/projects/gray", "json", req, runtime), new GetTbProjectGrayResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetTbProjectGray"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/projects/gray"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetTbProjectGrayResponse());
     }
 
-    public GetTbProjectSourceResponse getTbProjectSource() throws Exception {
+    public GetTbProjectGrayResponse getTbProjectGray(GetTbProjectGrayRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetTbProjectSourceHeaders headers = new GetTbProjectSourceHeaders();
-        return this.getTbProjectSourceWithOptions(headers, runtime);
+        GetTbProjectGrayHeaders headers = new GetTbProjectGrayHeaders();
+        return this.getTbProjectGrayWithOptions(request, headers, runtime);
     }
 
     public GetTbProjectSourceResponse getTbProjectSourceWithOptions(GetTbProjectSourceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -979,13 +1250,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetTbProjectSource", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/projects/source", "json", req, runtime), new GetTbProjectSourceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetTbProjectSource"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/projects/source"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetTbProjectSourceResponse());
     }
 
-    public GetTbUserIdByStaffIdResponse getTbUserIdByStaffId(GetTbUserIdByStaffIdRequest request) throws Exception {
+    public GetTbProjectSourceResponse getTbProjectSource() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetTbUserIdByStaffIdHeaders headers = new GetTbUserIdByStaffIdHeaders();
-        return this.getTbUserIdByStaffIdWithOptions(request, headers, runtime);
+        GetTbProjectSourceHeaders headers = new GetTbProjectSourceHeaders();
+        return this.getTbProjectSourceWithOptions(headers, runtime);
     }
 
     public GetTbUserIdByStaffIdResponse getTbUserIdByStaffIdWithOptions(GetTbUserIdByStaffIdRequest request, GetTbUserIdByStaffIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1012,18 +1294,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetTbUserIdByStaffId", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/teambition/users", "json", req, runtime), new GetTbUserIdByStaffIdResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetTbUserIdByStaffId"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/teambition/users"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetTbUserIdByStaffIdResponse());
     }
 
-    public GetUserJoinedProjectResponse getUserJoinedProject(String userId, GetUserJoinedProjectRequest request) throws Exception {
+    public GetTbUserIdByStaffIdResponse getTbUserIdByStaffId(GetTbUserIdByStaffIdRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetUserJoinedProjectHeaders headers = new GetUserJoinedProjectHeaders();
-        return this.getUserJoinedProjectWithOptions(userId, request, headers, runtime);
+        GetTbUserIdByStaffIdHeaders headers = new GetTbUserIdByStaffIdHeaders();
+        return this.getTbUserIdByStaffIdWithOptions(request, headers, runtime);
     }
 
     public GetUserJoinedProjectResponse getUserJoinedProjectWithOptions(String userId, GetUserJoinedProjectRequest request, GetUserJoinedProjectHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
@@ -1046,18 +1338,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetUserJoinedProject", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/users/" + userId + "/joinProjects", "json", req, runtime), new GetUserJoinedProjectResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetUserJoinedProject"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/joinProjects"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetUserJoinedProjectResponse());
     }
 
-    public QueryProjectResponse queryProject(String userId, QueryProjectRequest request) throws Exception {
+    public GetUserJoinedProjectResponse getUserJoinedProject(String userId, GetUserJoinedProjectRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryProjectHeaders headers = new QueryProjectHeaders();
-        return this.queryProjectWithOptions(userId, request, headers, runtime);
+        GetUserJoinedProjectHeaders headers = new GetUserJoinedProjectHeaders();
+        return this.getUserJoinedProjectWithOptions(userId, request, headers, runtime);
     }
 
     public QueryProjectResponse queryProjectWithOptions(String userId, QueryProjectRequest request, QueryProjectHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
@@ -1092,19 +1394,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryProject", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/projects/query", "json", req, runtime), new QueryProjectResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryProject"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryProjectResponse());
     }
 
-    public QueryTaskOfProjectResponse queryTaskOfProject(String userId, String projectId, QueryTaskOfProjectRequest request) throws Exception {
+    public QueryProjectResponse queryProject(String userId, QueryProjectRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryTaskOfProjectHeaders headers = new QueryTaskOfProjectHeaders();
-        return this.queryTaskOfProjectWithOptions(userId, projectId, request, headers, runtime);
+        QueryProjectHeaders headers = new QueryProjectHeaders();
+        return this.queryProjectWithOptions(userId, request, headers, runtime);
     }
 
     public QueryTaskOfProjectResponse queryTaskOfProjectWithOptions(String userId, String projectId, QueryTaskOfProjectRequest request, QueryTaskOfProjectHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
@@ -1131,19 +1442,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryTaskOfProject", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/users/" + userId + "/projectIds/" + projectId + "/tasks", "json", req, runtime), new QueryTaskOfProjectResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryTaskOfProject"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projectIds/" + projectId + "/tasks"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryTaskOfProjectResponse());
     }
 
-    public SeachTaskStageResponse seachTaskStage(String userId, String projectId, SeachTaskStageRequest request) throws Exception {
+    public QueryTaskOfProjectResponse queryTaskOfProject(String userId, String projectId, QueryTaskOfProjectRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SeachTaskStageHeaders headers = new SeachTaskStageHeaders();
-        return this.seachTaskStageWithOptions(userId, projectId, request, headers, runtime);
+        QueryTaskOfProjectHeaders headers = new QueryTaskOfProjectHeaders();
+        return this.queryTaskOfProjectWithOptions(userId, projectId, request, headers, runtime);
     }
 
     public SeachTaskStageResponse seachTaskStageWithOptions(String userId, String projectId, SeachTaskStageRequest request, SeachTaskStageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
@@ -1178,18 +1498,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("SeachTaskStage", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/taskStages/search", "json", req, runtime), new SeachTaskStageResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SeachTaskStage"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/taskStages/search"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SeachTaskStageResponse());
     }
 
-    public SearchOranizationCustomfieldResponse searchOranizationCustomfield(String userId, SearchOranizationCustomfieldRequest request) throws Exception {
+    public SeachTaskStageResponse seachTaskStage(String userId, String projectId, SeachTaskStageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SearchOranizationCustomfieldHeaders headers = new SearchOranizationCustomfieldHeaders();
-        return this.searchOranizationCustomfieldWithOptions(userId, request, headers, runtime);
+        SeachTaskStageHeaders headers = new SeachTaskStageHeaders();
+        return this.seachTaskStageWithOptions(userId, projectId, request, headers, runtime);
     }
 
     public SearchOranizationCustomfieldResponse searchOranizationCustomfieldWithOptions(String userId, SearchOranizationCustomfieldRequest request, SearchOranizationCustomfieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.customfieldIds)) {
             query.put("customfieldIds", request.customfieldIds);
@@ -1232,19 +1562,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("SearchOranizationCustomfield", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/organizations/users/" + userId + "/customfields/search", "json", req, runtime), new SearchOranizationCustomfieldResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SearchOranizationCustomfield"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/customfields/search"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SearchOranizationCustomfieldResponse());
     }
 
-    public SearchProjectCustomfieldResponse searchProjectCustomfield(String userId, String projectId, SearchProjectCustomfieldRequest request) throws Exception {
+    public SearchOranizationCustomfieldResponse searchOranizationCustomfield(String userId, SearchOranizationCustomfieldRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SearchProjectCustomfieldHeaders headers = new SearchProjectCustomfieldHeaders();
-        return this.searchProjectCustomfieldWithOptions(userId, projectId, request, headers, runtime);
+        SearchOranizationCustomfieldHeaders headers = new SearchOranizationCustomfieldHeaders();
+        return this.searchOranizationCustomfieldWithOptions(userId, request, headers, runtime);
     }
 
     public SearchProjectCustomfieldResponse searchProjectCustomfieldWithOptions(String userId, String projectId, SearchProjectCustomfieldRequest request, SearchProjectCustomfieldHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.customfieldIds)) {
             query.put("customfieldIds", request.customfieldIds);
@@ -1287,18 +1626,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("SearchProjectCustomfield", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/customfields/search", "json", req, runtime), new SearchProjectCustomfieldResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SearchProjectCustomfield"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/customfields/search"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SearchProjectCustomfieldResponse());
     }
 
-    public SearchProjectTemplateResponse searchProjectTemplate(String userId, SearchProjectTemplateRequest request) throws Exception {
+    public SearchProjectCustomfieldResponse searchProjectCustomfield(String userId, String projectId, SearchProjectCustomfieldRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SearchProjectTemplateHeaders headers = new SearchProjectTemplateHeaders();
-        return this.searchProjectTemplateWithOptions(userId, request, headers, runtime);
+        SearchProjectCustomfieldHeaders headers = new SearchProjectCustomfieldHeaders();
+        return this.searchProjectCustomfieldWithOptions(userId, projectId, request, headers, runtime);
     }
 
     public SearchProjectTemplateResponse searchProjectTemplateWithOptions(String userId, SearchProjectTemplateRequest request, SearchProjectTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.keyword)) {
             query.put("keyword", request.keyword);
@@ -1317,19 +1666,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("SearchProjectTemplate", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/organizations/users/" + userId + "/templates", "json", req, runtime), new SearchProjectTemplateResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SearchProjectTemplate"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/templates"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SearchProjectTemplateResponse());
     }
 
-    public SearchTaskFlowResponse searchTaskFlow(String userId, String projectId, SearchTaskFlowRequest request) throws Exception {
+    public SearchProjectTemplateResponse searchProjectTemplate(String userId, SearchProjectTemplateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SearchTaskFlowHeaders headers = new SearchTaskFlowHeaders();
-        return this.searchTaskFlowWithOptions(userId, projectId, request, headers, runtime);
+        SearchProjectTemplateHeaders headers = new SearchProjectTemplateHeaders();
+        return this.searchProjectTemplateWithOptions(userId, request, headers, runtime);
     }
 
     public SearchTaskFlowResponse searchTaskFlowWithOptions(String userId, String projectId, SearchTaskFlowRequest request, SearchTaskFlowHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
@@ -1360,19 +1718,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("SearchTaskFlow", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/taskflows/search", "json", req, runtime), new SearchTaskFlowResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SearchTaskFlow"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/taskflows/search"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SearchTaskFlowResponse());
     }
 
-    public SearchTaskListResponse searchTaskList(String userId, String projectId, SearchTaskListRequest request) throws Exception {
+    public SearchTaskFlowResponse searchTaskFlow(String userId, String projectId, SearchTaskFlowRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SearchTaskListHeaders headers = new SearchTaskListHeaders();
-        return this.searchTaskListWithOptions(userId, projectId, request, headers, runtime);
+        SearchTaskFlowHeaders headers = new SearchTaskFlowHeaders();
+        return this.searchTaskFlowWithOptions(userId, projectId, request, headers, runtime);
     }
 
     public SearchTaskListResponse searchTaskListWithOptions(String userId, String projectId, SearchTaskListRequest request, SearchTaskListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
@@ -1403,19 +1770,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("SearchTaskList", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/taskLists/search", "json", req, runtime), new SearchTaskListResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SearchTaskList"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/taskLists/search"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SearchTaskListResponse());
     }
 
-    public SearchTaskflowStatusResponse searchTaskflowStatus(String userId, String projectId, SearchTaskflowStatusRequest request) throws Exception {
+    public SearchTaskListResponse searchTaskList(String userId, String projectId, SearchTaskListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SearchTaskflowStatusHeaders headers = new SearchTaskflowStatusHeaders();
-        return this.searchTaskflowStatusWithOptions(userId, projectId, request, headers, runtime);
+        SearchTaskListHeaders headers = new SearchTaskListHeaders();
+        return this.searchTaskListWithOptions(userId, projectId, request, headers, runtime);
     }
 
     public SearchTaskflowStatusResponse searchTaskflowStatusWithOptions(String userId, String projectId, SearchTaskflowStatusRequest request, SearchTaskflowStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
@@ -1450,18 +1826,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("SearchTaskflowStatus", "project_1.0", "HTTP", "GET", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/taskflowStatuses/search", "json", req, runtime), new SearchTaskflowStatusResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SearchTaskflowStatus"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/taskflowStatuses/search"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SearchTaskflowStatusResponse());
     }
 
-    public SearchUserTaskResponse searchUserTask(String userId, SearchUserTaskRequest request) throws Exception {
+    public SearchTaskflowStatusResponse searchTaskflowStatus(String userId, String projectId, SearchTaskflowStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SearchUserTaskHeaders headers = new SearchUserTaskHeaders();
-        return this.searchUserTaskWithOptions(userId, request, headers, runtime);
+        SearchTaskflowStatusHeaders headers = new SearchTaskflowStatusHeaders();
+        return this.searchTaskflowStatusWithOptions(userId, projectId, request, headers, runtime);
     }
 
     public SearchUserTaskResponse searchUserTaskWithOptions(String userId, SearchUserTaskRequest request, SearchUserTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
@@ -1488,7 +1874,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("SearchUserTask", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/tasks/search", "json", req, runtime), new SearchUserTaskResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SearchUserTask"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/search"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SearchUserTaskResponse());
+    }
+
+    public SearchUserTaskResponse searchUserTask(String userId, SearchUserTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SearchUserTaskHeaders headers = new SearchUserTaskHeaders();
+        return this.searchUserTaskWithOptions(userId, request, headers, runtime);
+    }
+
+    public SuspendProjectResponse suspendProjectWithOptions(String projectId, String userId, SuspendProjectHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SuspendProject"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/suspend"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SuspendProjectResponse());
     }
 
     public SuspendProjectResponse suspendProject(String projectId, String userId) throws Exception {
@@ -1497,9 +1927,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.suspendProjectWithOptions(projectId, userId, headers, runtime);
     }
 
-    public SuspendProjectResponse suspendProjectWithOptions(String projectId, String userId, SuspendProjectHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
+    public UnSuspendProjectResponse unSuspendProjectWithOptions(String projectId, String userId, UnSuspendProjectHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -1512,7 +1940,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("SuspendProject", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/suspend", "json", req, runtime), new SuspendProjectResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UnSuspendProject"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/unsuspend"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UnSuspendProjectResponse());
     }
 
     public UnSuspendProjectResponse unSuspendProject(String projectId, String userId) throws Exception {
@@ -1521,34 +1960,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.unSuspendProjectWithOptions(projectId, userId, headers, runtime);
     }
 
-    public UnSuspendProjectResponse unSuspendProjectWithOptions(String projectId, String userId, UnSuspendProjectHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
-            realHeaders = headers.commonHeaders;
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
-        }
-
-        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders)
-        ));
-        return TeaModel.toModel(this.doROARequest("UnSuspendProject", "project_1.0", "HTTP", "POST", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/unsuspend", "json", req, runtime), new UnSuspendProjectResponse());
-    }
-
-    public UpdateCustomfieldValueResponse updateCustomfieldValue(String userId, String taskId, UpdateCustomfieldValueRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateCustomfieldValueHeaders headers = new UpdateCustomfieldValueHeaders();
-        return this.updateCustomfieldValueWithOptions(userId, taskId, request, headers, runtime);
-    }
-
     public UpdateCustomfieldValueResponse updateCustomfieldValueWithOptions(String userId, String taskId, UpdateCustomfieldValueRequest request, UpdateCustomfieldValueHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.customfieldId)) {
             body.put("customfieldId", request.customfieldId);
@@ -1575,19 +1988,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateCustomfieldValue", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/customFields", "json", req, runtime), new UpdateCustomfieldValueResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateCustomfieldValue"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/customFields"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateCustomfieldValueResponse());
     }
 
-    public UpdateOrganizationTaskContentResponse updateOrganizationTaskContent(String taskId, String userId, UpdateOrganizationTaskContentRequest request) throws Exception {
+    public UpdateCustomfieldValueResponse updateCustomfieldValue(String userId, String taskId, UpdateCustomfieldValueRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateOrganizationTaskContentHeaders headers = new UpdateOrganizationTaskContentHeaders();
-        return this.updateOrganizationTaskContentWithOptions(taskId, userId, request, headers, runtime);
+        UpdateCustomfieldValueHeaders headers = new UpdateCustomfieldValueHeaders();
+        return this.updateCustomfieldValueWithOptions(userId, taskId, request, headers, runtime);
     }
 
     public UpdateOrganizationTaskContentResponse updateOrganizationTaskContentWithOptions(String taskId, String userId, UpdateOrganizationTaskContentRequest request, UpdateOrganizationTaskContentHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.content)) {
             body.put("content", request.content);
@@ -1614,19 +2036,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateOrganizationTaskContent", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/contents", "json", req, runtime), new UpdateOrganizationTaskContentResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateOrganizationTaskContent"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/contents"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateOrganizationTaskContentResponse());
     }
 
-    public UpdateOrganizationTaskDueDateResponse updateOrganizationTaskDueDate(String taskId, String userId, UpdateOrganizationTaskDueDateRequest request) throws Exception {
+    public UpdateOrganizationTaskContentResponse updateOrganizationTaskContent(String taskId, String userId, UpdateOrganizationTaskContentRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateOrganizationTaskDueDateHeaders headers = new UpdateOrganizationTaskDueDateHeaders();
-        return this.updateOrganizationTaskDueDateWithOptions(taskId, userId, request, headers, runtime);
+        UpdateOrganizationTaskContentHeaders headers = new UpdateOrganizationTaskContentHeaders();
+        return this.updateOrganizationTaskContentWithOptions(taskId, userId, request, headers, runtime);
     }
 
     public UpdateOrganizationTaskDueDateResponse updateOrganizationTaskDueDateWithOptions(String taskId, String userId, UpdateOrganizationTaskDueDateRequest request, UpdateOrganizationTaskDueDateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.disableActivity)) {
             body.put("disableActivity", request.disableActivity);
@@ -1653,19 +2084,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateOrganizationTaskDueDate", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/dueDates", "json", req, runtime), new UpdateOrganizationTaskDueDateResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateOrganizationTaskDueDate"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/dueDates"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateOrganizationTaskDueDateResponse());
     }
 
-    public UpdateOrganizationTaskExecutorResponse updateOrganizationTaskExecutor(String taskId, String userId, UpdateOrganizationTaskExecutorRequest request) throws Exception {
+    public UpdateOrganizationTaskDueDateResponse updateOrganizationTaskDueDate(String taskId, String userId, UpdateOrganizationTaskDueDateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateOrganizationTaskExecutorHeaders headers = new UpdateOrganizationTaskExecutorHeaders();
-        return this.updateOrganizationTaskExecutorWithOptions(taskId, userId, request, headers, runtime);
+        UpdateOrganizationTaskDueDateHeaders headers = new UpdateOrganizationTaskDueDateHeaders();
+        return this.updateOrganizationTaskDueDateWithOptions(taskId, userId, request, headers, runtime);
     }
 
     public UpdateOrganizationTaskExecutorResponse updateOrganizationTaskExecutorWithOptions(String taskId, String userId, UpdateOrganizationTaskExecutorRequest request, UpdateOrganizationTaskExecutorHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.disableActivity)) {
             body.put("disableActivity", request.disableActivity);
@@ -1692,19 +2132,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateOrganizationTaskExecutor", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/executors", "json", req, runtime), new UpdateOrganizationTaskExecutorResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateOrganizationTaskExecutor"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/executors"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateOrganizationTaskExecutorResponse());
     }
 
-    public UpdateOrganizationTaskInvolveMembersResponse updateOrganizationTaskInvolveMembers(String taskId, String userId, UpdateOrganizationTaskInvolveMembersRequest request) throws Exception {
+    public UpdateOrganizationTaskExecutorResponse updateOrganizationTaskExecutor(String taskId, String userId, UpdateOrganizationTaskExecutorRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateOrganizationTaskInvolveMembersHeaders headers = new UpdateOrganizationTaskInvolveMembersHeaders();
-        return this.updateOrganizationTaskInvolveMembersWithOptions(taskId, userId, request, headers, runtime);
+        UpdateOrganizationTaskExecutorHeaders headers = new UpdateOrganizationTaskExecutorHeaders();
+        return this.updateOrganizationTaskExecutorWithOptions(taskId, userId, request, headers, runtime);
     }
 
     public UpdateOrganizationTaskInvolveMembersResponse updateOrganizationTaskInvolveMembersWithOptions(String taskId, String userId, UpdateOrganizationTaskInvolveMembersRequest request, UpdateOrganizationTaskInvolveMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.addInvolvers)) {
             body.put("addInvolvers", request.addInvolvers);
@@ -1739,19 +2188,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateOrganizationTaskInvolveMembers", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/involveMembers", "json", req, runtime), new UpdateOrganizationTaskInvolveMembersResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateOrganizationTaskInvolveMembers"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/involveMembers"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateOrganizationTaskInvolveMembersResponse());
     }
 
-    public UpdateOrganizationTaskNoteResponse updateOrganizationTaskNote(String taskId, String userId, UpdateOrganizationTaskNoteRequest request) throws Exception {
+    public UpdateOrganizationTaskInvolveMembersResponse updateOrganizationTaskInvolveMembers(String taskId, String userId, UpdateOrganizationTaskInvolveMembersRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateOrganizationTaskNoteHeaders headers = new UpdateOrganizationTaskNoteHeaders();
-        return this.updateOrganizationTaskNoteWithOptions(taskId, userId, request, headers, runtime);
+        UpdateOrganizationTaskInvolveMembersHeaders headers = new UpdateOrganizationTaskInvolveMembersHeaders();
+        return this.updateOrganizationTaskInvolveMembersWithOptions(taskId, userId, request, headers, runtime);
     }
 
     public UpdateOrganizationTaskNoteResponse updateOrganizationTaskNoteWithOptions(String taskId, String userId, UpdateOrganizationTaskNoteRequest request, UpdateOrganizationTaskNoteHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.disableActivity)) {
             body.put("disableActivity", request.disableActivity);
@@ -1778,19 +2236,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateOrganizationTaskNote", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/notes", "json", req, runtime), new UpdateOrganizationTaskNoteResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateOrganizationTaskNote"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/notes"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateOrganizationTaskNoteResponse());
     }
 
-    public UpdateOrganizationTaskPriorityResponse updateOrganizationTaskPriority(String taskId, String userId, UpdateOrganizationTaskPriorityRequest request) throws Exception {
+    public UpdateOrganizationTaskNoteResponse updateOrganizationTaskNote(String taskId, String userId, UpdateOrganizationTaskNoteRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateOrganizationTaskPriorityHeaders headers = new UpdateOrganizationTaskPriorityHeaders();
-        return this.updateOrganizationTaskPriorityWithOptions(taskId, userId, request, headers, runtime);
+        UpdateOrganizationTaskNoteHeaders headers = new UpdateOrganizationTaskNoteHeaders();
+        return this.updateOrganizationTaskNoteWithOptions(taskId, userId, request, headers, runtime);
     }
 
     public UpdateOrganizationTaskPriorityResponse updateOrganizationTaskPriorityWithOptions(String taskId, String userId, UpdateOrganizationTaskPriorityRequest request, UpdateOrganizationTaskPriorityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.disableActivity)) {
             body.put("disableActivity", request.disableActivity);
@@ -1817,19 +2284,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateOrganizationTaskPriority", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/priorities", "json", req, runtime), new UpdateOrganizationTaskPriorityResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateOrganizationTaskPriority"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/priorities"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateOrganizationTaskPriorityResponse());
     }
 
-    public UpdateOrganizationTaskStatusResponse updateOrganizationTaskStatus(String taskId, String userId, UpdateOrganizationTaskStatusRequest request) throws Exception {
+    public UpdateOrganizationTaskPriorityResponse updateOrganizationTaskPriority(String taskId, String userId, UpdateOrganizationTaskPriorityRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateOrganizationTaskStatusHeaders headers = new UpdateOrganizationTaskStatusHeaders();
-        return this.updateOrganizationTaskStatusWithOptions(taskId, userId, request, headers, runtime);
+        UpdateOrganizationTaskPriorityHeaders headers = new UpdateOrganizationTaskPriorityHeaders();
+        return this.updateOrganizationTaskPriorityWithOptions(taskId, userId, request, headers, runtime);
     }
 
     public UpdateOrganizationTaskStatusResponse updateOrganizationTaskStatusWithOptions(String taskId, String userId, UpdateOrganizationTaskStatusRequest request, UpdateOrganizationTaskStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.disableActivity)) {
             body.put("disableActivity", request.disableActivity);
@@ -1856,19 +2332,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateOrganizationTaskStatus", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/states", "json", req, runtime), new UpdateOrganizationTaskStatusResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateOrganizationTaskStatus"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/organizations/users/" + userId + "/tasks/" + taskId + "/states"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateOrganizationTaskStatusResponse());
     }
 
-    public UpdateProjectGroupResponse updateProjectGroup(String userId, String projectId, UpdateProjectGroupRequest request) throws Exception {
+    public UpdateOrganizationTaskStatusResponse updateOrganizationTaskStatus(String taskId, String userId, UpdateOrganizationTaskStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateProjectGroupHeaders headers = new UpdateProjectGroupHeaders();
-        return this.updateProjectGroupWithOptions(userId, projectId, request, headers, runtime);
+        UpdateOrganizationTaskStatusHeaders headers = new UpdateOrganizationTaskStatusHeaders();
+        return this.updateOrganizationTaskStatusWithOptions(taskId, userId, request, headers, runtime);
     }
 
     public UpdateProjectGroupResponse updateProjectGroupWithOptions(String userId, String projectId, UpdateProjectGroupRequest request, UpdateProjectGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        projectId = com.aliyun.openapiutil.Client.getEncodeParam(projectId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.addProjectGroupIds)) {
             body.put("addProjectGroupIds", request.addProjectGroupIds);
@@ -1891,19 +2376,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateProjectGroup", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/groups", "json", req, runtime), new UpdateProjectGroupResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateProjectGroup"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/projects/" + projectId + "/groups"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateProjectGroupResponse());
     }
 
-    public UpdateTaskContentResponse updateTaskContent(String userId, String taskId, UpdateTaskContentRequest request) throws Exception {
+    public UpdateProjectGroupResponse updateProjectGroup(String userId, String projectId, UpdateProjectGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateTaskContentHeaders headers = new UpdateTaskContentHeaders();
-        return this.updateTaskContentWithOptions(userId, taskId, request, headers, runtime);
+        UpdateProjectGroupHeaders headers = new UpdateProjectGroupHeaders();
+        return this.updateProjectGroupWithOptions(userId, projectId, request, headers, runtime);
     }
 
     public UpdateTaskContentResponse updateTaskContentWithOptions(String userId, String taskId, UpdateTaskContentRequest request, UpdateTaskContentHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.content)) {
             body.put("content", request.content);
@@ -1922,19 +2416,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateTaskContent", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/contents", "json", req, runtime), new UpdateTaskContentResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateTaskContent"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/contents"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateTaskContentResponse());
     }
 
-    public UpdateTaskDueDateResponse updateTaskDueDate(String userId, String taskId, UpdateTaskDueDateRequest request) throws Exception {
+    public UpdateTaskContentResponse updateTaskContent(String userId, String taskId, UpdateTaskContentRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateTaskDueDateHeaders headers = new UpdateTaskDueDateHeaders();
-        return this.updateTaskDueDateWithOptions(userId, taskId, request, headers, runtime);
+        UpdateTaskContentHeaders headers = new UpdateTaskContentHeaders();
+        return this.updateTaskContentWithOptions(userId, taskId, request, headers, runtime);
     }
 
     public UpdateTaskDueDateResponse updateTaskDueDateWithOptions(String userId, String taskId, UpdateTaskDueDateRequest request, UpdateTaskDueDateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.dueDate)) {
             body.put("dueDate", request.dueDate);
@@ -1953,19 +2456,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateTaskDueDate", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/dueDates", "json", req, runtime), new UpdateTaskDueDateResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateTaskDueDate"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/dueDates"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateTaskDueDateResponse());
     }
 
-    public UpdateTaskExecutorResponse updateTaskExecutor(String userId, String taskId, UpdateTaskExecutorRequest request) throws Exception {
+    public UpdateTaskDueDateResponse updateTaskDueDate(String userId, String taskId, UpdateTaskDueDateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateTaskExecutorHeaders headers = new UpdateTaskExecutorHeaders();
-        return this.updateTaskExecutorWithOptions(userId, taskId, request, headers, runtime);
+        UpdateTaskDueDateHeaders headers = new UpdateTaskDueDateHeaders();
+        return this.updateTaskDueDateWithOptions(userId, taskId, request, headers, runtime);
     }
 
     public UpdateTaskExecutorResponse updateTaskExecutorWithOptions(String userId, String taskId, UpdateTaskExecutorRequest request, UpdateTaskExecutorHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.executorId)) {
             body.put("executorId", request.executorId);
@@ -1984,19 +2496,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateTaskExecutor", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/executors", "json", req, runtime), new UpdateTaskExecutorResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateTaskExecutor"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/executors"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateTaskExecutorResponse());
     }
 
-    public UpdateTaskInvolvemembersResponse updateTaskInvolvemembers(String userId, String taskId, UpdateTaskInvolvemembersRequest request) throws Exception {
+    public UpdateTaskExecutorResponse updateTaskExecutor(String userId, String taskId, UpdateTaskExecutorRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateTaskInvolvemembersHeaders headers = new UpdateTaskInvolvemembersHeaders();
-        return this.updateTaskInvolvemembersWithOptions(userId, taskId, request, headers, runtime);
+        UpdateTaskExecutorHeaders headers = new UpdateTaskExecutorHeaders();
+        return this.updateTaskExecutorWithOptions(userId, taskId, request, headers, runtime);
     }
 
     public UpdateTaskInvolvemembersResponse updateTaskInvolvemembersWithOptions(String userId, String taskId, UpdateTaskInvolvemembersRequest request, UpdateTaskInvolvemembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.addInvolvers)) {
             body.put("addInvolvers", request.addInvolvers);
@@ -2023,19 +2544,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateTaskInvolvemembers", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/involveMembers", "json", req, runtime), new UpdateTaskInvolvemembersResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateTaskInvolvemembers"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/involveMembers"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateTaskInvolvemembersResponse());
     }
 
-    public UpdateTaskNoteResponse updateTaskNote(String userId, String taskId, UpdateTaskNoteRequest request) throws Exception {
+    public UpdateTaskInvolvemembersResponse updateTaskInvolvemembers(String userId, String taskId, UpdateTaskInvolvemembersRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateTaskNoteHeaders headers = new UpdateTaskNoteHeaders();
-        return this.updateTaskNoteWithOptions(userId, taskId, request, headers, runtime);
+        UpdateTaskInvolvemembersHeaders headers = new UpdateTaskInvolvemembersHeaders();
+        return this.updateTaskInvolvemembersWithOptions(userId, taskId, request, headers, runtime);
     }
 
     public UpdateTaskNoteResponse updateTaskNoteWithOptions(String userId, String taskId, UpdateTaskNoteRequest request, UpdateTaskNoteHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.note)) {
             body.put("note", request.note);
@@ -2054,19 +2584,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateTaskNote", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/notes", "json", req, runtime), new UpdateTaskNoteResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateTaskNote"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/notes"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateTaskNoteResponse());
     }
 
-    public UpdateTaskPriorityResponse updateTaskPriority(String userId, String taskId, UpdateTaskPriorityRequest request) throws Exception {
+    public UpdateTaskNoteResponse updateTaskNote(String userId, String taskId, UpdateTaskNoteRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateTaskPriorityHeaders headers = new UpdateTaskPriorityHeaders();
-        return this.updateTaskPriorityWithOptions(userId, taskId, request, headers, runtime);
+        UpdateTaskNoteHeaders headers = new UpdateTaskNoteHeaders();
+        return this.updateTaskNoteWithOptions(userId, taskId, request, headers, runtime);
     }
 
     public UpdateTaskPriorityResponse updateTaskPriorityWithOptions(String userId, String taskId, UpdateTaskPriorityRequest request, UpdateTaskPriorityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.priority)) {
             body.put("priority", request.priority);
@@ -2085,19 +2624,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateTaskPriority", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/priorities", "json", req, runtime), new UpdateTaskPriorityResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateTaskPriority"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/priorities"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateTaskPriorityResponse());
     }
 
-    public UpdateTaskStageResponse updateTaskStage(String userId, String taskId, UpdateTaskStageRequest request) throws Exception {
+    public UpdateTaskPriorityResponse updateTaskPriority(String userId, String taskId, UpdateTaskPriorityRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateTaskStageHeaders headers = new UpdateTaskStageHeaders();
-        return this.updateTaskStageWithOptions(userId, taskId, request, headers, runtime);
+        UpdateTaskPriorityHeaders headers = new UpdateTaskPriorityHeaders();
+        return this.updateTaskPriorityWithOptions(userId, taskId, request, headers, runtime);
     }
 
     public UpdateTaskStageResponse updateTaskStageWithOptions(String userId, String taskId, UpdateTaskStageRequest request, UpdateTaskStageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.stageId)) {
             body.put("stageId", request.stageId);
@@ -2116,19 +2664,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateTaskStage", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/stages", "json", req, runtime), new UpdateTaskStageResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateTaskStage"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/stages"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateTaskStageResponse());
     }
 
-    public UpdateTaskStartdateResponse updateTaskStartdate(String userId, String taskId, UpdateTaskStartdateRequest request) throws Exception {
+    public UpdateTaskStageResponse updateTaskStage(String userId, String taskId, UpdateTaskStageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateTaskStartdateHeaders headers = new UpdateTaskStartdateHeaders();
-        return this.updateTaskStartdateWithOptions(userId, taskId, request, headers, runtime);
+        UpdateTaskStageHeaders headers = new UpdateTaskStageHeaders();
+        return this.updateTaskStageWithOptions(userId, taskId, request, headers, runtime);
     }
 
     public UpdateTaskStartdateResponse updateTaskStartdateWithOptions(String userId, String taskId, UpdateTaskStartdateRequest request, UpdateTaskStartdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.startDate)) {
             body.put("startDate", request.startDate);
@@ -2147,19 +2704,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateTaskStartdate", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/startDates", "json", req, runtime), new UpdateTaskStartdateResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateTaskStartdate"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/startDates"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateTaskStartdateResponse());
     }
 
-    public UpdateTaskTaskflowstatusResponse updateTaskTaskflowstatus(String userId, String taskId, UpdateTaskTaskflowstatusRequest request) throws Exception {
+    public UpdateTaskStartdateResponse updateTaskStartdate(String userId, String taskId, UpdateTaskStartdateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateTaskTaskflowstatusHeaders headers = new UpdateTaskTaskflowstatusHeaders();
-        return this.updateTaskTaskflowstatusWithOptions(userId, taskId, request, headers, runtime);
+        UpdateTaskStartdateHeaders headers = new UpdateTaskStartdateHeaders();
+        return this.updateTaskStartdateWithOptions(userId, taskId, request, headers, runtime);
     }
 
     public UpdateTaskTaskflowstatusResponse updateTaskTaskflowstatusWithOptions(String userId, String taskId, UpdateTaskTaskflowstatusRequest request, UpdateTaskTaskflowstatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.taskflowStatusId)) {
             body.put("taskflowStatusId", request.taskflowStatusId);
@@ -2182,6 +2748,83 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateTaskTaskflowstatus", "project_1.0", "HTTP", "PUT", "AK", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/taskflowStatuses", "json", req, runtime), new UpdateTaskTaskflowstatusResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateTaskTaskflowstatus"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/tasks/" + taskId + "/taskflowStatuses"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateTaskTaskflowstatusResponse());
+    }
+
+    public UpdateTaskTaskflowstatusResponse updateTaskTaskflowstatus(String userId, String taskId, UpdateTaskTaskflowstatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateTaskTaskflowstatusHeaders headers = new UpdateTaskTaskflowstatusHeaders();
+        return this.updateTaskTaskflowstatusWithOptions(userId, taskId, request, headers, runtime);
+    }
+
+    public UpdateWorkTimeApproveResponse updateWorkTimeApproveWithOptions(String userId, String approveOpenId, UpdateWorkTimeApproveRequest request, UpdateWorkTimeApproveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.finishTime)) {
+            body.put("finishTime", request.finishTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.instanceId)) {
+            body.put("instanceId", request.instanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.submitTime)) {
+            body.put("submitTime", request.submitTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.url)) {
+            body.put("url", request.url);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateWorkTimeApprove"),
+            new TeaPair("version", "project_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/project/users/" + userId + "/workTimes/approvals/" + approveOpenId + ""),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateWorkTimeApproveResponse());
+    }
+
+    public UpdateWorkTimeApproveResponse updateWorkTimeApprove(String userId, String approveOpenId, UpdateWorkTimeApproveRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateWorkTimeApproveHeaders headers = new UpdateWorkTimeApproveHeaders();
+        return this.updateWorkTimeApproveWithOptions(userId, approveOpenId, request, headers, runtime);
     }
 }

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetConversationUrlResponseBody extends TeaModel {
-    /**
-     * <p>ToB会话地址</p>
-     */
     @NameInMap("url")
     public String url;
 

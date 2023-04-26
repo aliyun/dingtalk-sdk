@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateCardRequest extends TeaModel {
-    /**
-     * <p>卡片实例唯一标识</p>
-     */
     @NameInMap("bizId")
     public String bizId;
 
-    /**
-     * <p>卡片变量赋值，json结构</p>
-     */
     @NameInMap("cardData")
     public String cardData;
 
-    /**
-     * <p>卡片更新群系统通知</p>
-     */
     @NameInMap("tips")
     public UpdateCardRequestTips tips;
 
@@ -52,21 +43,12 @@ public class UpdateCardRequest extends TeaModel {
     }
 
     public static class UpdateCardRequestTips extends TeaModel {
-        /**
-         * <p>系统通知的群组</p>
-         */
         @NameInMap("cids")
         public String cids;
 
-        /**
-         * <p>系统通知内容</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>发送人</p>
-         */
         @NameInMap("sender")
         public String sender;
 

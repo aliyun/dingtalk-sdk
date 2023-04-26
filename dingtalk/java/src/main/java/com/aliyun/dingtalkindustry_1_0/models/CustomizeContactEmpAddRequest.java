@@ -4,21 +4,12 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomizeContactEmpAddRequest extends TeaModel {
-    /**
-     * <p>自定义通讯录Code</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>部门Id</p>
-     */
     @NameInMap("deptId")
     public Long deptId;
 
-    /**
-     * <p>人员Id列表</p>
-     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

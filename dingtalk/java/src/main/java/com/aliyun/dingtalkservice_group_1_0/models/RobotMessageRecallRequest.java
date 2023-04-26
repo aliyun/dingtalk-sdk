@@ -4,21 +4,12 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class RobotMessageRecallRequest extends TeaModel {
-    /**
-     * <p>开放群id</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>开放消息ID</p>
-     */
     @NameInMap("openMsgId")
     public String openMsgId;
 
-    /**
-     * <p>开发团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

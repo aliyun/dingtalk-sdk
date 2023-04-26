@@ -10,15 +10,9 @@ public class RemovePermissionRequest extends TeaModel {
     @NameInMap("members")
     public java.util.List<RemovePermissionRequestMembers> members;
 
-    /**
-     * <p>任务的创建者uid</p>
-     */
     @NameInMap("taskCreator")
     public Long taskCreator;
 
-    /**
-     * <p>闪记任务的闪记ID</p>
-     */
     @NameInMap("taskId")
     public Long taskId;
 
@@ -60,31 +54,12 @@ public class RemovePermissionRequest extends TeaModel {
     }
 
     public static class RemovePermissionRequestMembers extends TeaModel {
-        /**
-         * <p>执行授权操作的闪记任务的任务Id</p>
-         */
         @NameInMap("memberId")
         public Long memberId;
 
-        /**
-         * <p>要赋予用户的权限名称。该字段表示要授予特定用户的权限名称，由开发者填写。</p>
-         * <br>
-         * <p>EDITOR：可编辑权限</p>
-         * <br>
-         * <p>READ_DOWNLOAD：仅可查看、下载</p>
-         * <br>
-         * <p>READ：只读权限</p>
-         */
         @NameInMap("memberType")
         public String memberType;
 
-        /**
-         * <p>要被移除的权限，枚举值类型。</p>
-         * <p>"EDITOR", //可编辑权限</p>
-         * <p>    "READ_DOWNLOAD", //仅可查看、下载的权限</p>
-         * <p>    "READ"//只读权限</p>
-         * <br>
-         */
         @NameInMap("policyType")
         public String policyType;
 

@@ -4,27 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchAddRelationDatasRequest extends TeaModel {
-    /**
-     * <p>操作人userId</p>
-     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
-    /**
-     * <p>关系数据列表。</p>
-     */
     @NameInMap("relationList")
     public java.util.List<BatchAddRelationDatasRequestRelationList> relationList;
 
-    /**
-     * <p>关系类型。</p>
-     */
     @NameInMap("relationType")
     public String relationType;
 
-    /**
-     * <p>是否跳过查重，默认不跳过。</p>
-     */
     @NameInMap("skipDuplicateCheck")
     public Boolean skipDuplicateCheck;
 
@@ -66,21 +54,12 @@ public class BatchAddRelationDatasRequest extends TeaModel {
     }
 
     public static class BatchAddRelationDatasRequestRelationListBizDataList extends TeaModel {
-        /**
-         * <p>模型字段extendValue。</p>
-         */
         @NameInMap("extendValue")
         public String extendValue;
 
-        /**
-         * <p>模型字段id。</p>
-         */
         @NameInMap("key")
         public String key;
 
-        /**
-         * <p>模型字段value。</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -116,15 +95,9 @@ public class BatchAddRelationDatasRequest extends TeaModel {
     }
 
     public static class BatchAddRelationDatasRequestRelationListRelationPermissionDTO extends TeaModel {
-        /**
-         * <p>协同人列表</p>
-         */
         @NameInMap("participantUserIds")
         public java.util.List<String> participantUserIds;
 
-        /**
-         * <p>负责人列表</p>
-         */
         @NameInMap("principalUserIds")
         public java.util.List<String> principalUserIds;
 
@@ -152,21 +125,12 @@ public class BatchAddRelationDatasRequest extends TeaModel {
     }
 
     public static class BatchAddRelationDatasRequestRelationList extends TeaModel {
-        /**
-         * <p>关系模型数据。</p>
-         */
         @NameInMap("bizDataList")
         public java.util.List<BatchAddRelationDatasRequestRelationListBizDataList> bizDataList;
 
-        /**
-         * <p>扩展业务字段。</p>
-         */
         @NameInMap("bizExtMap")
         public java.util.Map<String, String> bizExtMap;
 
-        /**
-         * <p>负责人、协同人信息。</p>
-         */
         @NameInMap("relationPermissionDTO")
         public BatchAddRelationDatasRequestRelationListRelationPermissionDTO relationPermissionDTO;
 

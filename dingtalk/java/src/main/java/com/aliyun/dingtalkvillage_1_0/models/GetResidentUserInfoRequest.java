@@ -4,9 +4,6 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetResidentUserInfoRequest extends TeaModel {
-    /**
-     * <p>下属组织的组织ID，比如下属镇、村的corpId</p>
-     */
     @NameInMap("subCorpId")
     public String subCorpId;
 

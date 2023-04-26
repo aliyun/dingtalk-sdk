@@ -4,21 +4,12 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateBizObjectRequest extends TeaModel {
-    /**
-     * <p>业务数据id</p>
-     */
     @NameInMap("bizObjectId")
     public String bizObjectId;
 
-    /**
-     * <p>待修改的json格式业务数据</p>
-     */
     @NameInMap("bizObjectJson")
     public String bizObjectJson;
 
-    /**
-     * <p>表单编码</p>
-     */
     @NameInMap("schemaCode")
     public String schemaCode;
 

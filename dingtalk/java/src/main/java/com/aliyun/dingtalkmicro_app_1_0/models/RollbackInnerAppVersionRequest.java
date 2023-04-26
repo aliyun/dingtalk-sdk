@@ -4,15 +4,9 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class RollbackInnerAppVersionRequest extends TeaModel {
-    /**
-     * <p>小程序版本id，用于唯一标识小程序版本信息。</p>
-     */
     @NameInMap("appVersionId")
     public Long appVersionId;
 
-    /**
-     * <p>操作人unionId</p>
-     */
     @NameInMap("opUnionId")
     public String opUnionId;
 

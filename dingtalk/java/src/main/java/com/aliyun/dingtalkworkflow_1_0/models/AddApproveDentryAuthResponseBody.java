@@ -4,15 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddApproveDentryAuthResponseBody extends TeaModel {
-    /**
-     * <p>返回结果。</p>
-     */
     @NameInMap("result")
     public Boolean result;
 
-    /**
-     * <p>接口调用是否成功。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

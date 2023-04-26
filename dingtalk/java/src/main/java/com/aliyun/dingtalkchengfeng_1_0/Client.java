@@ -6,8 +6,11 @@ import com.aliyun.dingtalkchengfeng_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public GetAllJobLevelResponse getAllJobLevel() throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetAllJobLevelHeaders headers = new GetAllJobLevelHeaders();
-        return this.getAllJobLevelWithOptions(headers, runtime);
-    }
 
     public GetAllJobLevelResponse getAllJobLevelWithOptions(GetAllJobLevelHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -35,13 +32,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetAllJobLevel", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobLevels", "json", req, runtime), new GetAllJobLevelResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetAllJobLevel"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/jobLevels"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetAllJobLevelResponse());
     }
 
-    public GetAllJobPositionResponse getAllJobPosition() throws Exception {
+    public GetAllJobLevelResponse getAllJobLevel() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetAllJobPositionHeaders headers = new GetAllJobPositionHeaders();
-        return this.getAllJobPositionWithOptions(headers, runtime);
+        GetAllJobLevelHeaders headers = new GetAllJobLevelHeaders();
+        return this.getAllJobLevelWithOptions(headers, runtime);
     }
 
     public GetAllJobPositionResponse getAllJobPositionWithOptions(GetAllJobPositionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -57,13 +65,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetAllJobPosition", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobPositions", "json", req, runtime), new GetAllJobPositionResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetAllJobPosition"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/jobPositions"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetAllJobPositionResponse());
     }
 
-    public GetAllJobPostResponse getAllJobPost() throws Exception {
+    public GetAllJobPositionResponse getAllJobPosition() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetAllJobPostHeaders headers = new GetAllJobPostHeaders();
-        return this.getAllJobPostWithOptions(headers, runtime);
+        GetAllJobPositionHeaders headers = new GetAllJobPositionHeaders();
+        return this.getAllJobPositionWithOptions(headers, runtime);
     }
 
     public GetAllJobPostResponse getAllJobPostWithOptions(GetAllJobPostHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -79,13 +98,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetAllJobPost", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobPosts", "json", req, runtime), new GetAllJobPostResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetAllJobPost"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/jobPosts"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetAllJobPostResponse());
     }
 
-    public GetAnalyzeDataResponse getAnalyzeData(GetAnalyzeDataRequest request) throws Exception {
+    public GetAllJobPostResponse getAllJobPost() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetAnalyzeDataHeaders headers = new GetAnalyzeDataHeaders();
-        return this.getAnalyzeDataWithOptions(request, headers, runtime);
+        GetAllJobPostHeaders headers = new GetAllJobPostHeaders();
+        return this.getAllJobPostWithOptions(headers, runtime);
     }
 
     public GetAnalyzeDataResponse getAnalyzeDataWithOptions(GetAnalyzeDataRequest request, GetAnalyzeDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -114,13 +144,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetAnalyzeData", "chengfeng_1.0", "HTTP", "POST", "AK", "/v1.0/chengfeng/okr/analyses/datas/query", "json", req, runtime), new GetAnalyzeDataResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetAnalyzeData"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/okr/analyses/datas/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetAnalyzeDataResponse());
     }
 
-    public GetChildOrgListResponse getChildOrgList(GetChildOrgListRequest request) throws Exception {
+    public GetAnalyzeDataResponse getAnalyzeData(GetAnalyzeDataRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetChildOrgListHeaders headers = new GetChildOrgListHeaders();
-        return this.getChildOrgListWithOptions(request, headers, runtime);
+        GetAnalyzeDataHeaders headers = new GetAnalyzeDataHeaders();
+        return this.getAnalyzeDataWithOptions(request, headers, runtime);
     }
 
     public GetChildOrgListResponse getChildOrgListWithOptions(GetChildOrgListRequest request, GetChildOrgListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -143,13 +184,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetChildOrgList", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/organizations", "json", req, runtime), new GetChildOrgListResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetChildOrgList"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/organizations"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetChildOrgListResponse());
     }
 
-    public GetEmployeeInfoByWorkNoResponse getEmployeeInfoByWorkNo(GetEmployeeInfoByWorkNoRequest request) throws Exception {
+    public GetChildOrgListResponse getChildOrgList(GetChildOrgListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetEmployeeInfoByWorkNoHeaders headers = new GetEmployeeInfoByWorkNoHeaders();
-        return this.getEmployeeInfoByWorkNoWithOptions(request, headers, runtime);
+        GetChildOrgListHeaders headers = new GetChildOrgListHeaders();
+        return this.getChildOrgListWithOptions(request, headers, runtime);
     }
 
     public GetEmployeeInfoByWorkNoResponse getEmployeeInfoByWorkNoWithOptions(GetEmployeeInfoByWorkNoRequest request, GetEmployeeInfoByWorkNoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -172,17 +224,27 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetEmployeeInfoByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/workNumbers/employees", "json", req, runtime), new GetEmployeeInfoByWorkNoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetEmployeeInfoByWorkNo"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/workNumbers/employees"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetEmployeeInfoByWorkNoResponse());
     }
 
-    public GetEmploymentRecordByWorkNoResponse getEmploymentRecordByWorkNo(String workNumbers) throws Exception {
+    public GetEmployeeInfoByWorkNoResponse getEmployeeInfoByWorkNo(GetEmployeeInfoByWorkNoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetEmploymentRecordByWorkNoHeaders headers = new GetEmploymentRecordByWorkNoHeaders();
-        return this.getEmploymentRecordByWorkNoWithOptions(workNumbers, headers, runtime);
+        GetEmployeeInfoByWorkNoHeaders headers = new GetEmployeeInfoByWorkNoHeaders();
+        return this.getEmployeeInfoByWorkNoWithOptions(request, headers, runtime);
     }
 
     public GetEmploymentRecordByWorkNoResponse getEmploymentRecordByWorkNoWithOptions(String workNumbers, GetEmploymentRecordByWorkNoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        workNumbers = com.aliyun.openapiutil.Client.getEncodeParam(workNumbers);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -195,13 +257,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetEmploymentRecordByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/users/workNumber/" + workNumbers + "employmentRecords", "json", req, runtime), new GetEmploymentRecordByWorkNoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetEmploymentRecordByWorkNo"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/users/workNumber/" + workNumbers + "employmentRecords"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetEmploymentRecordByWorkNoResponse());
     }
 
-    public GetJobPositionResponse getJobPosition(GetJobPositionRequest request) throws Exception {
+    public GetEmploymentRecordByWorkNoResponse getEmploymentRecordByWorkNo(String workNumbers) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetJobPositionHeaders headers = new GetJobPositionHeaders();
-        return this.getJobPositionWithOptions(request, headers, runtime);
+        GetEmploymentRecordByWorkNoHeaders headers = new GetEmploymentRecordByWorkNoHeaders();
+        return this.getEmploymentRecordByWorkNoWithOptions(workNumbers, headers, runtime);
     }
 
     public GetJobPositionResponse getJobPositionWithOptions(GetJobPositionRequest request, GetJobPositionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -224,13 +297,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetJobPosition", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobPositions/infos", "json", req, runtime), new GetJobPositionResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetJobPosition"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/jobPositions/infos"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetJobPositionResponse());
     }
 
-    public GetJobPostResponse getJobPost(GetJobPostRequest request) throws Exception {
+    public GetJobPositionResponse getJobPosition(GetJobPositionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetJobPostHeaders headers = new GetJobPostHeaders();
-        return this.getJobPostWithOptions(request, headers, runtime);
+        GetJobPositionHeaders headers = new GetJobPositionHeaders();
+        return this.getJobPositionWithOptions(request, headers, runtime);
     }
 
     public GetJobPostResponse getJobPostWithOptions(GetJobPostRequest request, GetJobPostHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -253,13 +337,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetJobPost", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/jobPosts/infos", "json", req, runtime), new GetJobPostResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetJobPost"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/jobPosts/infos"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetJobPostResponse());
     }
 
-    public GetOrgInfoResponse getOrgInfo(GetOrgInfoRequest request) throws Exception {
+    public GetJobPostResponse getJobPost(GetJobPostRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetOrgInfoHeaders headers = new GetOrgInfoHeaders();
-        return this.getOrgInfoWithOptions(request, headers, runtime);
+        GetJobPostHeaders headers = new GetJobPostHeaders();
+        return this.getJobPostWithOptions(request, headers, runtime);
     }
 
     public GetOrgInfoResponse getOrgInfoWithOptions(GetOrgInfoRequest request, GetOrgInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -282,13 +377,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetOrgInfo", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/organizations/infos", "json", req, runtime), new GetOrgInfoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetOrgInfo"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/organizations/infos"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetOrgInfoResponse());
     }
 
-    public GetStaffInfoByWorkNoResponse getStaffInfoByWorkNo(GetStaffInfoByWorkNoRequest request) throws Exception {
+    public GetOrgInfoResponse getOrgInfo(GetOrgInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetStaffInfoByWorkNoHeaders headers = new GetStaffInfoByWorkNoHeaders();
-        return this.getStaffInfoByWorkNoWithOptions(request, headers, runtime);
+        GetOrgInfoHeaders headers = new GetOrgInfoHeaders();
+        return this.getOrgInfoWithOptions(request, headers, runtime);
     }
 
     public GetStaffInfoByWorkNoResponse getStaffInfoByWorkNoWithOptions(GetStaffInfoByWorkNoRequest request, GetStaffInfoByWorkNoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -311,13 +417,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetStaffInfoByWorkNo", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/users", "json", req, runtime), new GetStaffInfoByWorkNoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetStaffInfoByWorkNo"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/users"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetStaffInfoByWorkNoResponse());
     }
 
-    public GetStaffPageQueryResponse getStaffPageQuery(GetStaffPageQueryRequest request) throws Exception {
+    public GetStaffInfoByWorkNoResponse getStaffInfoByWorkNo(GetStaffInfoByWorkNoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetStaffPageQueryHeaders headers = new GetStaffPageQueryHeaders();
-        return this.getStaffPageQueryWithOptions(request, headers, runtime);
+        GetStaffInfoByWorkNoHeaders headers = new GetStaffInfoByWorkNoHeaders();
+        return this.getStaffInfoByWorkNoWithOptions(request, headers, runtime);
     }
 
     public GetStaffPageQueryResponse getStaffPageQueryWithOptions(GetStaffPageQueryRequest request, GetStaffPageQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -356,13 +473,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetStaffPageQuery", "chengfeng_1.0", "HTTP", "POST", "AK", "/v1.0/chengfeng/users/query", "json", req, runtime), new GetStaffPageQueryResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetStaffPageQuery"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/users/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetStaffPageQueryResponse());
     }
 
-    public GetUserResponse getUser(GetUserRequest request) throws Exception {
+    public GetStaffPageQueryResponse getStaffPageQuery(GetStaffPageQueryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetUserHeaders headers = new GetUserHeaders();
-        return this.getUserWithOptions(request, headers, runtime);
+        GetStaffPageQueryHeaders headers = new GetStaffPageQueryHeaders();
+        return this.getStaffPageQueryWithOptions(request, headers, runtime);
     }
 
     public GetUserResponse getUserWithOptions(GetUserRequest request, GetUserHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -389,13 +517,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetUser", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/okr/users", "json", req, runtime), new GetUserResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetUser"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/okr/users"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetUserResponse());
     }
 
-    public ListAnalyzePeriodsResponse listAnalyzePeriods() throws Exception {
+    public GetUserResponse getUser(GetUserRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ListAnalyzePeriodsHeaders headers = new ListAnalyzePeriodsHeaders();
-        return this.listAnalyzePeriodsWithOptions(headers, runtime);
+        GetUserHeaders headers = new GetUserHeaders();
+        return this.getUserWithOptions(request, headers, runtime);
     }
 
     public ListAnalyzePeriodsResponse listAnalyzePeriodsWithOptions(ListAnalyzePeriodsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -411,13 +550,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("ListAnalyzePeriods", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/okr/analyses/periods", "json", req, runtime), new ListAnalyzePeriodsResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListAnalyzePeriods"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/okr/analyses/periods"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListAnalyzePeriodsResponse());
     }
 
-    public ListObjectiveByIdsResponse listObjectiveByIds(ListObjectiveByIdsRequest request) throws Exception {
+    public ListAnalyzePeriodsResponse listAnalyzePeriods() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ListObjectiveByIdsHeaders headers = new ListObjectiveByIdsHeaders();
-        return this.listObjectiveByIdsWithOptions(request, headers, runtime);
+        ListAnalyzePeriodsHeaders headers = new ListAnalyzePeriodsHeaders();
+        return this.listAnalyzePeriodsWithOptions(headers, runtime);
     }
 
     public ListObjectiveByIdsResponse listObjectiveByIdsWithOptions(ListObjectiveByIdsRequest request, ListObjectiveByIdsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -440,13 +590,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ListObjectiveByIds", "chengfeng_1.0", "HTTP", "POST", "AK", "/v1.0/chengfeng/okr/objectives/query", "json", req, runtime), new ListObjectiveByIdsResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListObjectiveByIds"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/okr/objectives/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListObjectiveByIdsResponse());
     }
 
-    public ListObjectiveByUserResponse listObjectiveByUser(ListObjectiveByUserRequest request) throws Exception {
+    public ListObjectiveByIdsResponse listObjectiveByIds(ListObjectiveByIdsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ListObjectiveByUserHeaders headers = new ListObjectiveByUserHeaders();
-        return this.listObjectiveByUserWithOptions(request, headers, runtime);
+        ListObjectiveByIdsHeaders headers = new ListObjectiveByIdsHeaders();
+        return this.listObjectiveByIdsWithOptions(request, headers, runtime);
     }
 
     public ListObjectiveByUserResponse listObjectiveByUserWithOptions(ListObjectiveByUserRequest request, ListObjectiveByUserHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -477,13 +638,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListObjectiveByUser", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/okr/users/objectives", "json", req, runtime), new ListObjectiveByUserResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListObjectiveByUser"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/okr/users/objectives"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListObjectiveByUserResponse());
     }
 
-    public ListProgressByIdsResponse listProgressByIds(ListProgressByIdsRequest request) throws Exception {
+    public ListObjectiveByUserResponse listObjectiveByUser(ListObjectiveByUserRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ListProgressByIdsHeaders headers = new ListProgressByIdsHeaders();
-        return this.listProgressByIdsWithOptions(request, headers, runtime);
+        ListObjectiveByUserHeaders headers = new ListObjectiveByUserHeaders();
+        return this.listObjectiveByUserWithOptions(request, headers, runtime);
     }
 
     public ListProgressByIdsResponse listProgressByIdsWithOptions(ListProgressByIdsRequest request, ListProgressByIdsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -506,13 +678,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ListProgressByIds", "chengfeng_1.0", "HTTP", "POST", "AK", "/v1.0/chengfeng/okr/objectives/progresses/query", "json", req, runtime), new ListProgressByIdsResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListProgressByIds"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/okr/objectives/progresses/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListProgressByIdsResponse());
     }
 
-    public PageListObjectiveProgressResponse pageListObjectiveProgress(PageListObjectiveProgressRequest request) throws Exception {
+    public ListProgressByIdsResponse listProgressByIds(ListProgressByIdsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PageListObjectiveProgressHeaders headers = new PageListObjectiveProgressHeaders();
-        return this.pageListObjectiveProgressWithOptions(request, headers, runtime);
+        ListProgressByIdsHeaders headers = new ListProgressByIdsHeaders();
+        return this.listProgressByIdsWithOptions(request, headers, runtime);
     }
 
     public PageListObjectiveProgressResponse pageListObjectiveProgressWithOptions(PageListObjectiveProgressRequest request, PageListObjectiveProgressHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -543,13 +726,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("PageListObjectiveProgress", "chengfeng_1.0", "HTTP", "GET", "AK", "/v1.0/chengfeng/okr/objectives/progresses/records", "json", req, runtime), new PageListObjectiveProgressResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PageListObjectiveProgress"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/okr/objectives/progresses/records"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PageListObjectiveProgressResponse());
     }
 
-    public TransferUserObjectiveResponse transferUserObjective(TransferUserObjectiveRequest request) throws Exception {
+    public PageListObjectiveProgressResponse pageListObjectiveProgress(PageListObjectiveProgressRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        TransferUserObjectiveHeaders headers = new TransferUserObjectiveHeaders();
-        return this.transferUserObjectiveWithOptions(request, headers, runtime);
+        PageListObjectiveProgressHeaders headers = new PageListObjectiveProgressHeaders();
+        return this.pageListObjectiveProgressWithOptions(request, headers, runtime);
     }
 
     public TransferUserObjectiveResponse transferUserObjectiveWithOptions(TransferUserObjectiveRequest request, TransferUserObjectiveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -576,6 +770,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("TransferUserObjective", "chengfeng_1.0", "HTTP", "POST", "AK", "/v1.0/chengfeng/okr/objectives/transfer", "json", req, runtime), new TransferUserObjectiveResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "TransferUserObjective"),
+            new TeaPair("version", "chengfeng_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/chengfeng/okr/objectives/transfer"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new TransferUserObjectiveResponse());
+    }
+
+    public TransferUserObjectiveResponse transferUserObjective(TransferUserObjectiveRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        TransferUserObjectiveHeaders headers = new TransferUserObjectiveHeaders();
+        return this.transferUserObjectiveWithOptions(request, headers, runtime);
     }
 }

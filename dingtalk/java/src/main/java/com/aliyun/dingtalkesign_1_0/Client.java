@@ -6,8 +6,11 @@ import com.aliyun.dingtalkesign_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public AuthUrlResponse authUrl(AuthUrlRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        AuthUrlHeaders headers = new AuthUrlHeaders();
-        return this.authUrlWithOptions(request, headers, runtime);
-    }
 
     public AuthUrlResponse authUrlWithOptions(AuthUrlRequest request, AuthUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -42,13 +39,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("AuthUrl", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/auths/url", "json", req, runtime), new AuthUrlResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AuthUrl"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/auths/url"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AuthUrlResponse());
     }
 
-    public CancelCorpAuthResponse cancelCorpAuth() throws Exception {
+    public AuthUrlResponse authUrl(AuthUrlRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CancelCorpAuthHeaders headers = new CancelCorpAuthHeaders();
-        return this.cancelCorpAuthWithOptions(headers, runtime);
+        AuthUrlHeaders headers = new AuthUrlHeaders();
+        return this.authUrlWithOptions(request, headers, runtime);
     }
 
     public CancelCorpAuthResponse cancelCorpAuthWithOptions(CancelCorpAuthHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -64,13 +72,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("CancelCorpAuth", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/corps/auth/cancel", "json", req, runtime), new CancelCorpAuthResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CancelCorpAuth"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/corps/auth/cancel"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CancelCorpAuthResponse());
     }
 
-    public ChannelOrderResponse channelOrder(ChannelOrderRequest request) throws Exception {
+    public CancelCorpAuthResponse cancelCorpAuth() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ChannelOrderHeaders headers = new ChannelOrderHeaders();
-        return this.channelOrderWithOptions(request, headers, runtime);
+        CancelCorpAuthHeaders headers = new CancelCorpAuthHeaders();
+        return this.cancelCorpAuthWithOptions(headers, runtime);
     }
 
     public ChannelOrderResponse channelOrderWithOptions(ChannelOrderRequest request, ChannelOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -113,13 +132,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ChannelOrder", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/orders/channel", "json", req, runtime), new ChannelOrderResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ChannelOrder"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/orders/channel"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ChannelOrderResponse());
     }
 
-    public ContractMarginResponse contractMargin() throws Exception {
+    public ChannelOrderResponse channelOrder(ChannelOrderRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ContractMarginHeaders headers = new ContractMarginHeaders();
-        return this.contractMarginWithOptions(headers, runtime);
+        ChannelOrderHeaders headers = new ChannelOrderHeaders();
+        return this.channelOrderWithOptions(request, headers, runtime);
     }
 
     public ContractMarginResponse contractMarginWithOptions(ContractMarginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -135,13 +165,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("ContractMargin", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/contracts/margin", "json", req, runtime), new ContractMarginResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ContractMargin"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/contracts/margin"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ContractMarginResponse());
     }
 
-    public CorpConsoleResponse corpConsole() throws Exception {
+    public ContractMarginResponse contractMargin() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CorpConsoleHeaders headers = new CorpConsoleHeaders();
-        return this.corpConsoleWithOptions(headers, runtime);
+        ContractMarginHeaders headers = new ContractMarginHeaders();
+        return this.contractMarginWithOptions(headers, runtime);
     }
 
     public CorpConsoleResponse corpConsoleWithOptions(CorpConsoleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -157,13 +198,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("CorpConsole", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/corps/console", "json", req, runtime), new CorpConsoleResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CorpConsole"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/corps/console"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CorpConsoleResponse());
     }
 
-    public CorpInfoResponse corpInfo() throws Exception {
+    public CorpConsoleResponse corpConsole() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CorpInfoHeaders headers = new CorpInfoHeaders();
-        return this.corpInfoWithOptions(headers, runtime);
+        CorpConsoleHeaders headers = new CorpConsoleHeaders();
+        return this.corpConsoleWithOptions(headers, runtime);
     }
 
     public CorpInfoResponse corpInfoWithOptions(CorpInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -179,13 +231,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("CorpInfo", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/corps/info", "json", req, runtime), new CorpInfoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CorpInfo"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/corps/info"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CorpInfoResponse());
     }
 
-    public CreateDeveloperResponse createDeveloper(CreateDeveloperRequest request) throws Exception {
+    public CorpInfoResponse corpInfo() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateDeveloperHeaders headers = new CreateDeveloperHeaders();
-        return this.createDeveloperWithOptions(request, headers, runtime);
+        CorpInfoHeaders headers = new CorpInfoHeaders();
+        return this.corpInfoWithOptions(headers, runtime);
     }
 
     public CreateDeveloperResponse createDeveloperWithOptions(CreateDeveloperRequest request, CreateDeveloperHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -208,13 +271,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateDeveloper", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/developers/create", "json", req, runtime), new CreateDeveloperResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateDeveloper"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/developers/create"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateDeveloperResponse());
     }
 
-    public GetCorpRealnameUrlResponse getCorpRealnameUrl(GetCorpRealnameUrlRequest request) throws Exception {
+    public CreateDeveloperResponse createDeveloper(CreateDeveloperRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetCorpRealnameUrlHeaders headers = new GetCorpRealnameUrlHeaders();
-        return this.getCorpRealnameUrlWithOptions(request, headers, runtime);
+        CreateDeveloperHeaders headers = new CreateDeveloperHeaders();
+        return this.createDeveloperWithOptions(request, headers, runtime);
     }
 
     public GetCorpRealnameUrlResponse getCorpRealnameUrlWithOptions(GetCorpRealnameUrlRequest request, GetCorpRealnameUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -237,13 +311,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetCorpRealnameUrl", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/corps/realname", "json", req, runtime), new GetCorpRealnameUrlResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetCorpRealnameUrl"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/corps/realname"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetCorpRealnameUrlResponse());
     }
 
-    public GetCropStatusResponse getCropStatus() throws Exception {
+    public GetCorpRealnameUrlResponse getCorpRealnameUrl(GetCorpRealnameUrlRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetCropStatusHeaders headers = new GetCropStatusHeaders();
-        return this.getCropStatusWithOptions(headers, runtime);
+        GetCorpRealnameUrlHeaders headers = new GetCorpRealnameUrlHeaders();
+        return this.getCorpRealnameUrlWithOptions(request, headers, runtime);
     }
 
     public GetCropStatusResponse getCropStatusWithOptions(GetCropStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -259,17 +344,27 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetCropStatus", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/corps/statuses", "json", req, runtime), new GetCropStatusResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetCropStatus"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/corps/statuses"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetCropStatusResponse());
     }
 
-    public GetFileResponse getFile(String fileId) throws Exception {
+    public GetCropStatusResponse getCropStatus() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetFileHeaders headers = new GetFileHeaders();
-        return this.getFileWithOptions(fileId, headers, runtime);
+        GetCropStatusHeaders headers = new GetCropStatusHeaders();
+        return this.getCropStatusWithOptions(headers, runtime);
     }
 
     public GetFileResponse getFileWithOptions(String fileId, GetFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -282,13 +377,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetFile", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/files/" + fileId + "", "json", req, runtime), new GetFileResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetFile"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/files/" + fileId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetFileResponse());
     }
 
-    public GetFlowDetailResponse getFlowDetail(GetFlowDetailRequest request) throws Exception {
+    public GetFileResponse getFile(String fileId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetFlowDetailHeaders headers = new GetFlowDetailHeaders();
-        return this.getFlowDetailWithOptions(request, headers, runtime);
+        GetFileHeaders headers = new GetFileHeaders();
+        return this.getFileWithOptions(fileId, headers, runtime);
     }
 
     public GetFlowDetailResponse getFlowDetailWithOptions(GetFlowDetailRequest request, GetFlowDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -311,13 +417,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetFlowDetail", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/flows/detail", "json", req, runtime), new GetFlowDetailResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetFlowDetail"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/flows/detail"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetFlowDetailResponse());
     }
 
-    public GetFlowSignDetailResponse getFlowSignDetail(GetFlowSignDetailRequest request) throws Exception {
+    public GetFlowDetailResponse getFlowDetail(GetFlowDetailRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetFlowSignDetailHeaders headers = new GetFlowSignDetailHeaders();
-        return this.getFlowSignDetailWithOptions(request, headers, runtime);
+        GetFlowDetailHeaders headers = new GetFlowDetailHeaders();
+        return this.getFlowDetailWithOptions(request, headers, runtime);
     }
 
     public GetFlowSignDetailResponse getFlowSignDetailWithOptions(GetFlowSignDetailRequest request, GetFlowSignDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -340,13 +457,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetFlowSignDetail", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/flows/sign/detail", "json", req, runtime), new GetFlowSignDetailResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetFlowSignDetail"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/flows/sign/detail"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetFlowSignDetailResponse());
     }
 
-    public GetProcessStartUrlResponse getProcessStartUrl(GetProcessStartUrlRequest request) throws Exception {
+    public GetFlowSignDetailResponse getFlowSignDetail(GetFlowSignDetailRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetProcessStartUrlHeaders headers = new GetProcessStartUrlHeaders();
-        return this.getProcessStartUrlWithOptions(request, headers, runtime);
+        GetFlowSignDetailHeaders headers = new GetFlowSignDetailHeaders();
+        return this.getFlowSignDetailWithOptions(request, headers, runtime);
     }
 
     public GetProcessStartUrlResponse getProcessStartUrlWithOptions(GetProcessStartUrlRequest request, GetProcessStartUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -393,13 +521,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetProcessStartUrl", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/process/start", "json", req, runtime), new GetProcessStartUrlResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetProcessStartUrl"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/process/start"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetProcessStartUrlResponse());
     }
 
-    public GetSignNoticeUrlResponse getSignNoticeUrl(GetSignNoticeUrlRequest request) throws Exception {
+    public GetProcessStartUrlResponse getProcessStartUrl(GetProcessStartUrlRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetSignNoticeUrlHeaders headers = new GetSignNoticeUrlHeaders();
-        return this.getSignNoticeUrlWithOptions(request, headers, runtime);
+        GetProcessStartUrlHeaders headers = new GetProcessStartUrlHeaders();
+        return this.getProcessStartUrlWithOptions(request, headers, runtime);
     }
 
     public GetSignNoticeUrlResponse getSignNoticeUrlWithOptions(GetSignNoticeUrlRequest request, GetSignNoticeUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -422,13 +561,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetSignNoticeUrl", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/signs/notice/url", "json", req, runtime), new GetSignNoticeUrlResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetSignNoticeUrl"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/signs/notice/url"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetSignNoticeUrlResponse());
     }
 
-    public GetUploadUrlResponse getUploadUrl(GetUploadUrlRequest request) throws Exception {
+    public GetSignNoticeUrlResponse getSignNoticeUrl(GetSignNoticeUrlRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetUploadUrlHeaders headers = new GetUploadUrlHeaders();
-        return this.getUploadUrlWithOptions(request, headers, runtime);
+        GetSignNoticeUrlHeaders headers = new GetSignNoticeUrlHeaders();
+        return this.getSignNoticeUrlWithOptions(request, headers, runtime);
     }
 
     public GetUploadUrlResponse getUploadUrlWithOptions(GetUploadUrlRequest request, GetUploadUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -467,17 +617,27 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetUploadUrl", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/files/getUploadUrl", "json", req, runtime), new GetUploadUrlResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetUploadUrl"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/files/getUploadUrl"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetUploadUrlResponse());
     }
 
-    public GetUserInfoResponse getUserInfo(String userId) throws Exception {
+    public GetUploadUrlResponse getUploadUrl(GetUploadUrlRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetUserInfoHeaders headers = new GetUserInfoHeaders();
-        return this.getUserInfoWithOptions(userId, headers, runtime);
+        GetUploadUrlHeaders headers = new GetUploadUrlHeaders();
+        return this.getUploadUrlWithOptions(request, headers, runtime);
     }
 
     public GetUserInfoResponse getUserInfoWithOptions(String userId, GetUserInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        userId = com.aliyun.openapiutil.Client.getEncodeParam(userId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -490,13 +650,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetUserInfo", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/users/" + userId + "", "json", req, runtime), new GetUserInfoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetUserInfo"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/users/" + userId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetUserInfoResponse());
     }
 
-    public GetUserRealnameUrlResponse getUserRealnameUrl(GetUserRealnameUrlRequest request) throws Exception {
+    public GetUserInfoResponse getUserInfo(String userId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetUserRealnameUrlHeaders headers = new GetUserRealnameUrlHeaders();
-        return this.getUserRealnameUrlWithOptions(request, headers, runtime);
+        GetUserInfoHeaders headers = new GetUserInfoHeaders();
+        return this.getUserInfoWithOptions(userId, headers, runtime);
     }
 
     public GetUserRealnameUrlResponse getUserRealnameUrlWithOptions(GetUserRealnameUrlRequest request, GetUserRealnameUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -523,13 +694,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetUserRealnameUrl", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/users/realname", "json", req, runtime), new GetUserRealnameUrlResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetUserRealnameUrl"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/users/realname"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetUserRealnameUrlResponse());
     }
 
-    public ListFlowDocsResponse listFlowDocs(ListFlowDocsRequest request) throws Exception {
+    public GetUserRealnameUrlResponse getUserRealnameUrl(GetUserRealnameUrlRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ListFlowDocsHeaders headers = new ListFlowDocsHeaders();
-        return this.listFlowDocsWithOptions(request, headers, runtime);
+        GetUserRealnameUrlHeaders headers = new GetUserRealnameUrlHeaders();
+        return this.getUserRealnameUrlWithOptions(request, headers, runtime);
     }
 
     public ListFlowDocsResponse listFlowDocsWithOptions(ListFlowDocsRequest request, ListFlowDocsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -552,13 +734,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListFlowDocs", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/flows/docs", "json", req, runtime), new ListFlowDocsResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListFlowDocs"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/flows/docs"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListFlowDocsResponse());
     }
 
-    public ListSealApprovalResponse listSealApproval(ListSealApprovalRequest request) throws Exception {
+    public ListFlowDocsResponse listFlowDocs(ListFlowDocsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ListSealApprovalHeaders headers = new ListSealApprovalHeaders();
-        return this.listSealApprovalWithOptions(request, headers, runtime);
+        ListFlowDocsHeaders headers = new ListFlowDocsHeaders();
+        return this.listFlowDocsWithOptions(request, headers, runtime);
     }
 
     public ListSealApprovalResponse listSealApprovalWithOptions(ListSealApprovalRequest request, ListSealApprovalHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -581,13 +774,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListSealApproval", "esign_1.0", "HTTP", "GET", "AK", "/v1.0/esign/seals/approval/list", "json", req, runtime), new ListSealApprovalResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListSealApproval"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/seals/approval/list"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListSealApprovalResponse());
     }
 
-    public OrderResaleResponse orderResale(OrderResaleRequest request) throws Exception {
+    public ListSealApprovalResponse listSealApproval(ListSealApprovalRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        OrderResaleHeaders headers = new OrderResaleHeaders();
-        return this.orderResaleWithOptions(request, headers, runtime);
+        ListSealApprovalHeaders headers = new ListSealApprovalHeaders();
+        return this.listSealApprovalWithOptions(request, headers, runtime);
     }
 
     public OrderResaleResponse orderResaleWithOptions(OrderResaleRequest request, OrderResaleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -626,6 +830,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("OrderResale", "esign_1.0", "HTTP", "POST", "AK", "/v1.0/esign/orders/resale", "json", req, runtime), new OrderResaleResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "OrderResale"),
+            new TeaPair("version", "esign_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/esign/orders/resale"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new OrderResaleResponse());
+    }
+
+    public OrderResaleResponse orderResale(OrderResaleRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        OrderResaleHeaders headers = new OrderResaleHeaders();
+        return this.orderResaleWithOptions(request, headers, runtime);
     }
 }

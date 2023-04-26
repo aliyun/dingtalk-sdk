@@ -4,21 +4,12 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartCloudRecordRequest extends TeaModel {
-    /**
-     * <p>录制模版</p>
-     */
     @NameInMap("mode")
     public String mode;
 
-    /**
-     * <p>小窗位置</p>
-     */
     @NameInMap("smallWindowPosition")
     public String smallWindowPosition;
 
-    /**
-     * <p>会议发起人UID</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

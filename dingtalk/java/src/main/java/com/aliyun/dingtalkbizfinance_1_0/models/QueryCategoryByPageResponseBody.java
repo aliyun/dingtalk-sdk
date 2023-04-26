@@ -4,15 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCategoryByPageResponseBody extends TeaModel {
-    /**
-     * <p>是否还有更多数据</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>resultList</p>
-     */
     @NameInMap("list")
     public java.util.List<QueryCategoryByPageResponseBodyList> list;
 
@@ -38,39 +32,21 @@ public class QueryCategoryByPageResponseBody extends TeaModel {
     }
 
     public static class QueryCategoryByPageResponseBodyList extends TeaModel {
-        /**
-         * <p>类别code</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>是否为目录</p>
-         */
         @NameInMap("isDir")
         public Boolean isDir;
 
-        /**
-         * <p>名字</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>父类别code</p>
-         */
         @NameInMap("parentCode")
         public String parentCode;
 
-        /**
-         * <p>状态:valid,invalid,deleted</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>类型:income收入，expense支出</p>
-         */
         @NameInMap("type")
         public String type;
 

@@ -4,18 +4,12 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class CopyProcessRequest extends TeaModel {
-    /**
-     * <p>复制选项</p>
-     */
     @NameInMap("copyOptions")
     public CopyProcessRequestCopyOptions copyOptions;
 
     @NameInMap("sourceCorpId")
     public String sourceCorpId;
 
-    /**
-     * <p>源模版列表</p>
-     */
     @NameInMap("sourceProcessVOList")
     public java.util.List<CopyProcessRequestSourceProcessVOList> sourceProcessVOList;
 
@@ -49,11 +43,6 @@ public class CopyProcessRequest extends TeaModel {
     }
 
     public static class CopyProcessRequestCopyOptions extends TeaModel {
-        /**
-         * <p>默认为1</p>
-         * <p>COPE_TYPE_DEFAULT = 1 默认会使用groupId进行隔离分组，审批首页不可见</p>
-         * <p>COPE_TYPE_INCLUDE_FLOW = 2 使用dingtalk 2作为隔离分组，审批首页可见</p>
-         */
         @NameInMap("copyType")
         public Integer copyType;
 
@@ -73,21 +62,12 @@ public class CopyProcessRequest extends TeaModel {
     }
 
     public static class CopyProcessRequestSourceProcessVOList extends TeaModel {
-        /**
-         * <p>套件业务标识</p>
-         */
         @NameInMap("bizType")
         public String bizType;
 
-        /**
-         * <p>模板名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>模板code</p>
-         */
         @NameInMap("processCode")
         public String processCode;
 

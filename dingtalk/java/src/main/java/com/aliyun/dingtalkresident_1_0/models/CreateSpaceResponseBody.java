@@ -4,9 +4,6 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSpaceResponseBody extends TeaModel {
-    /**
-     * <p>deptId</p>
-     */
     @NameInMap("deptId")
     public String deptId;
 

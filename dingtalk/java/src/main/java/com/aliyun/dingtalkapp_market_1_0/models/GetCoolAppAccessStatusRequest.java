@@ -4,21 +4,12 @@ package com.aliyun.dingtalkapp_market_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCoolAppAccessStatusRequest extends TeaModel {
-    /**
-     * <p>免登授权码</p>
-     */
     @NameInMap("authCode")
     public String authCode;
 
-    /**
-     * <p>酷应用的code</p>
-     */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
-    /**
-     * <p>加密的场域业务code</p>
-     */
     @NameInMap("encFieldBizCode")
     public String encFieldBizCode;
 

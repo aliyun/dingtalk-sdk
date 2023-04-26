@@ -10,9 +10,6 @@ public class GetGroupSetResponseBody extends TeaModel {
     @NameInMap("gmtModified")
     public String gmtModified;
 
-    /**
-     * <p>群组内群数量（不包含已解散的群）。</p>
-     */
     @NameInMap("groupChatCount")
     public Integer groupChatCount;
 

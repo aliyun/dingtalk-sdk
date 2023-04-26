@@ -4,21 +4,12 @@ package com.aliyun.dingtalkgroup_blackboard_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteGroupBlackboardRequest extends TeaModel {
-    /**
-     * <p>群公告 Id</p>
-     */
     @NameInMap("dataId")
     public String dataId;
 
-    /**
-     * <p>群会话的 Id</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>操作用户的 userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

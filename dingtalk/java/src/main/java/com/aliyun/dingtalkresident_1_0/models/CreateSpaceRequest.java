@@ -4,51 +4,27 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSpaceRequest extends TeaModel {
-    /**
-     * <p>仅当tag未房屋时有用</p>
-     */
     @NameInMap("billingArea")
     public Float billingArea;
 
-    /**
-     * <p>仅当tag未房屋时有用</p>
-     */
     @NameInMap("buildingArea")
     public Float buildingArea;
 
-    /**
-     * <p>仅当tag未房屋时有用</p>
-     */
     @NameInMap("floor")
     public String floor;
 
-    /**
-     * <p>仅当tag未房屋时有用</p>
-     */
     @NameInMap("houseState")
     public Long houseState;
 
-    /**
-     * <p>空间名称，如A栋，二单元，406室等</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>父节点id，根节点为-7</p>
-     */
     @NameInMap("parentDeptId")
     public String parentDeptId;
 
-    /**
-     * <p>空间tag标识，目前有House/Unit/Building/Partition</p>
-     */
     @NameInMap("tagCode")
     public String tagCode;
 
-    /**
-     * <p>* 空间类型为楼时，1住宅/2公寓/3排屋/4洋房/5叠墅/6别墅/7商铺/8办公用房/9经营用房/10其他      * 空间类型为房屋是，1普通住宅/2公寓/3排屋/4物业管理用房/5社区用房/6别墅/7商铺/8办公用房（商写）/9经营用房/10其他</p>
-     */
     @NameInMap("type")
     public String type;
 

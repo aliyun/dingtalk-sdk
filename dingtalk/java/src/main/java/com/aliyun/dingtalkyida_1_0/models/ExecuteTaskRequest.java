@@ -4,69 +4,36 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecuteTaskRequest extends TeaModel {
-    /**
-     * <p>应用ID</p>
-     */
     @NameInMap("appType")
     public String appType;
 
-    /**
-     * <p>电子签名</p>
-     */
     @NameInMap("digitalSignUrl")
     public String digitalSignUrl;
 
-    /**
-     * <p>更新的表单值</p>
-     */
     @NameInMap("formDataJson")
     public String formDataJson;
 
-    /**
-     * <p>语言</p>
-     */
     @NameInMap("language")
     public String language;
 
-    /**
-     * <p>是否不执行校验&关联操作</p>
-     */
     @NameInMap("noExecuteExpressions")
     public String noExecuteExpressions;
 
-    /**
-     * <p>审批结果</p>
-     */
     @NameInMap("outResult")
     public String outResult;
 
-    /**
-     * <p>实例ID</p>
-     */
     @NameInMap("processInstanceId")
     public String processInstanceId;
 
-    /**
-     * <p>审批意见</p>
-     */
     @NameInMap("remark")
     public String remark;
 
-    /**
-     * <p>应用秘钥</p>
-     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    /**
-     * <p>任务ID</p>
-     */
     @NameInMap("taskId")
     public Long taskId;
 
-    /**
-     * <p>钉钉的userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

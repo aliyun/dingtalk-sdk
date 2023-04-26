@@ -4,45 +4,24 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupRequest extends TeaModel {
-    /**
-     * <p>业务关联id</p>
-     */
     @NameInMap("groupBizId")
     public String groupBizId;
 
-    /**
-     * <p>群名称</p>
-     */
     @NameInMap("groupName")
     public String groupName;
 
-    /**
-     * <p>群标签</p>
-     */
     @NameInMap("groupTagNames")
     public java.util.List<String> groupTagNames;
 
-    /**
-     * <p>群成员员工ID列表</p>
-     */
     @NameInMap("memberStaffIds")
     public java.util.List<String> memberStaffIds;
 
-    /**
-     * <p>开放群组ID</p>
-     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>群主员工ID</p>
-     */
     @NameInMap("ownerStaffId")
     public String ownerStaffId;
 

@@ -7,15 +7,9 @@ public class ListObjectiveByIdsResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<OpenObjectiveDTO> content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
-    /**
-     * <p>是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusListCampusResponseBody extends TeaModel {
-    /**
-     * <p>返回信息</p>
-     */
     @NameInMap("result")
     public java.util.List<CampusListCampusResponseBodyResult> result;
 
@@ -24,105 +21,54 @@ public class CampusListCampusResponseBody extends TeaModel {
     }
 
     public static class CampusListCampusResponseBodyResult extends TeaModel {
-        /**
-         * <p>地址</p>
-         */
         @NameInMap("address")
         public String address;
 
-        /**
-         * <p>面积</p>
-         */
         @NameInMap("area")
         public Double area;
 
-        /**
-         * <p>项目组ID</p>
-         */
         @NameInMap("belongProjectGroupId")
         public Long belongProjectGroupId;
 
-        /**
-         * <p>园区组织ID</p>
-         */
         @NameInMap("campusCorpId")
         public String campusCorpId;
 
-        /**
-         * <p>园区部门ID</p>
-         */
         @NameInMap("campusDeptId")
         public Long campusDeptId;
 
-        /**
-         * <p>园区名称</p>
-         */
         @NameInMap("campusName")
         public String campusName;
 
-        /**
-         * <p>市</p>
-         */
         @NameInMap("cityId")
         public Integer cityId;
 
-        /**
-         * <p>国家</p>
-         */
         @NameInMap("country")
         public String country;
 
-        /**
-         * <p>区</p>
-         */
         @NameInMap("countyId")
         public Integer countyId;
 
-        /**
-         * <p>描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>扩展信息</p>
-         */
         @NameInMap("extend")
         public String extend;
 
-        /**
-         * <p>经纬度</p>
-         */
         @NameInMap("location")
         public String location;
 
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("orderEndTime")
         public Long orderEndTime;
 
-        /**
-         * <p>订购信息</p>
-         */
         @NameInMap("orderInfo")
         public String orderInfo;
 
-        /**
-         * <p>订购时间</p>
-         */
         @NameInMap("orderStartTime")
         public Long orderStartTime;
 
-        /**
-         * <p>省</p>
-         */
         @NameInMap("provId")
         public Integer provId;
 
-        /**
-         * <p>手机号</p>
-         */
         @NameInMap("telephone")
         public String telephone;
 

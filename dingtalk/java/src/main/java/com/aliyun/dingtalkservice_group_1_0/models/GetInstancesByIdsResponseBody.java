@@ -4,9 +4,6 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInstancesByIdsResponseBody extends TeaModel {
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("customFormInstanceResponseList")
     public java.util.List<GetInstancesByIdsResponseBodyCustomFormInstanceResponseList> customFormInstanceResponseList;
 

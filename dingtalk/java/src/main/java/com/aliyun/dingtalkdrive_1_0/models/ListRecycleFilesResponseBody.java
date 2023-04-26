@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListRecycleFilesResponseBody extends TeaModel {
-    /**
-     * <p>加载更多锚点, nextToken不为空表示有更多数据</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>回收站文件列表</p>
-     */
     @NameInMap("recycleItems")
     public java.util.List<ListRecycleFilesResponseBodyRecycleItems> recycleItems;
 
@@ -38,51 +32,27 @@ public class ListRecycleFilesResponseBody extends TeaModel {
     }
 
     public static class ListRecycleFilesResponseBodyRecycleItems extends TeaModel {
-        /**
-         * <p>文件内容类型</p>
-         */
         @NameInMap("contentType")
         public String contentType;
 
-        /**
-         * <p>删除员工工号</p>
-         */
         @NameInMap("deleteStaffId")
         public String deleteStaffId;
 
-        /**
-         * <p>删除时间</p>
-         */
         @NameInMap("deleteTime")
         public String deleteTime;
 
-        /**
-         * <p>文件名称</p>
-         */
         @NameInMap("fileName")
         public String fileName;
 
-        /**
-         * <p>文件路径</p>
-         */
         @NameInMap("filePath")
         public String filePath;
 
-        /**
-         * <p>文件大小</p>
-         */
         @NameInMap("fileSize")
         public Long fileSize;
 
-        /**
-         * <p>文件类型</p>
-         */
         @NameInMap("fileType")
         public String fileType;
 
-        /**
-         * <p>回收站item id</p>
-         */
         @NameInMap("recycleItemId")
         public String recycleItemId;
 

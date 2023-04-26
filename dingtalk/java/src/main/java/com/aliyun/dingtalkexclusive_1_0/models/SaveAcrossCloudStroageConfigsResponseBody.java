@@ -4,21 +4,12 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveAcrossCloudStroageConfigsResponseBody extends TeaModel {
-    /**
-     * <p>密匙ID</p>
-     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
-    /**
-     * <p>存储域名地址</p>
-     */
     @NameInMap("endpoint")
     public String endpoint;
 
-    /**
-     * <p>执行结果</p>
-     */
     @NameInMap("state")
     public Integer state;
 

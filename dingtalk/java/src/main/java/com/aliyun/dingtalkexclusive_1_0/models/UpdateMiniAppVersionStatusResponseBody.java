@@ -4,15 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateMiniAppVersionStatusResponseBody extends TeaModel {
-    /**
-     * <p>原因</p>
-     */
     @NameInMap("cause")
     public String cause;
 
-    /**
-     * <p>返回码</p>
-     */
     @NameInMap("code")
     public String code;
 

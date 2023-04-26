@@ -4,21 +4,12 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryJobsResponseBody extends TeaModel {
-    /**
-     * <p>是否有更多数据</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>职务列表</p>
-     */
     @NameInMap("list")
     public java.util.List<QueryJobsResponseBodyList> list;
 
-    /**
-     * <p>下次获取数据的起始游标</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -52,21 +43,12 @@ public class QueryJobsResponseBody extends TeaModel {
     }
 
     public static class QueryJobsResponseBodyList extends TeaModel {
-        /**
-         * <p>职务描述</p>
-         */
         @NameInMap("jobDescription")
         public String jobDescription;
 
-        /**
-         * <p>职务ID</p>
-         */
         @NameInMap("jobId")
         public String jobId;
 
-        /**
-         * <p>职务名称</p>
-         */
         @NameInMap("jobName")
         public String jobName;
 

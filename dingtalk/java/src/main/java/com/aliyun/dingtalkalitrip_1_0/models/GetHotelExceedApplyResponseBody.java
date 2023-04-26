@@ -4,69 +4,36 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetHotelExceedApplyResponseBody extends TeaModel {
-    /**
-     * <p>商旅超标审批单id</p>
-     */
     @NameInMap("applyId")
     public Long applyId;
 
-    /**
-     * <p>意向出行信息</p>
-     */
     @NameInMap("applyIntentionInfoDO")
     public GetHotelExceedApplyResponseBodyApplyIntentionInfoDO applyIntentionInfoDO;
 
-    /**
-     * <p>出差原因</p>
-     */
     @NameInMap("btripCause")
     public String btripCause;
 
-    /**
-     * <p>第三方企业id</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>超标原因</p>
-     */
     @NameInMap("exceedReason")
     public String exceedReason;
 
-    /**
-     * <p>超标类型，32：金额超标</p>
-     */
     @NameInMap("exceedType")
     public Integer exceedType;
 
-    /**
-     * <p>原差旅标准</p>
-     */
     @NameInMap("originStandard")
     public String originStandard;
 
-    /**
-     * <p>审批单状态 0:审批中 1:已同意 2:已拒绝</p>
-     */
     @NameInMap("status")
     public Integer status;
 
-    /**
-     * <p>审批单提交时间</p>
-     */
     @NameInMap("submitTime")
     public String submitTime;
 
-    /**
-     * <p>第三方出差审批单号</p>
-     */
     @NameInMap("thirdpartApplyId")
     public String thirdpartApplyId;
 
-    /**
-     * <p>第三方用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
@@ -164,45 +131,24 @@ public class GetHotelExceedApplyResponseBody extends TeaModel {
     }
 
     public static class GetHotelExceedApplyResponseBodyApplyIntentionInfoDO extends TeaModel {
-        /**
-         * <p>入住日期</p>
-         */
         @NameInMap("checkIn")
         public String checkIn;
 
-        /**
-         * <p>离店日期</p>
-         */
         @NameInMap("checkOut")
         public String checkOut;
 
-        /**
-         * <p>入住城市三字码</p>
-         */
         @NameInMap("cityCode")
         public String cityCode;
 
-        /**
-         * <p>入住城市名称</p>
-         */
         @NameInMap("cityName")
         public String cityName;
 
-        /**
-         * <p>意向酒店金额（分）</p>
-         */
         @NameInMap("price")
         public Long price;
 
-        /**
-         * <p>是否合住</p>
-         */
         @NameInMap("together")
         public Boolean together;
 
-        /**
-         * <p>超标类型，32：金额超标</p>
-         */
         @NameInMap("type")
         public Integer type;
 

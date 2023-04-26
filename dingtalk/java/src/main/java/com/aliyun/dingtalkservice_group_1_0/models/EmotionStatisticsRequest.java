@@ -4,45 +4,24 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class EmotionStatisticsRequest extends TeaModel {
-    /**
-     * <p>截止日期</p>
-     */
     @NameInMap("maxDt")
     public String maxDt;
 
-    /**
-     * <p>最大情绪值</p>
-     */
     @NameInMap("maxEmotion")
     public Double maxEmotion;
 
-    /**
-     * <p>起始日期</p>
-     */
     @NameInMap("minDt")
     public String minDt;
 
-    /**
-     * <p>最小情绪值</p>
-     */
     @NameInMap("minEmotion")
     public Double minEmotion;
 
-    /**
-     * <p>开放群ID列表（多个以逗号拼接）</p>
-     */
     @NameInMap("openConversationIds")
     public String openConversationIds;
 
-    /**
-     * <p>开放群分组ID</p>
-     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

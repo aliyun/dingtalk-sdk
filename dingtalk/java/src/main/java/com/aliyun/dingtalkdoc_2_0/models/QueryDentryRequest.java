@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDentryRequest extends TeaModel {
-    /**
-     * <p>是否查询知识库信息。</p>
-     */
     @NameInMap("includeSpace")
     public Boolean includeSpace;
 
-    /**
-     * <p>操作用户unionId。</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 

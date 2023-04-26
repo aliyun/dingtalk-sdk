@@ -4,51 +4,27 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ModifyWaterMarkTemplateRequest extends TeaModel {
-    /**
-     * <p>模板的表单Code。</p>
-     */
     @NameInMap("formCode")
     public String formCode;
 
-    /**
-     * <p>模板的预览图片。</p>
-     */
     @NameInMap("icon")
     public String icon;
 
-    /**
-     * <p>模板的布局ID。</p>
-     */
     @NameInMap("layoutDesignId")
     public String layoutDesignId;
 
-    /**
-     * <p>模板的内容。</p>
-     */
     @NameInMap("schemaContent")
     public String schemaContent;
 
-    /**
-     * <p>模板的标题。</p>
-     */
     @NameInMap("title")
     public String title;
 
-    /**
-     * <p>模板的水印ID。</p>
-     */
     @NameInMap("waterMarkId")
     public String waterMarkId;
 
-    /**
-     * <p>群会话ID。</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>用户的userid。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

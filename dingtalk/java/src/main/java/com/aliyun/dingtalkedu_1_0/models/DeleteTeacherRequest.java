@@ -4,15 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteTeacherRequest extends TeaModel {
-    /**
-     * <p>是否班主任；1:班主任；0:非班主任</p>
-     */
     @NameInMap("adviser")
     public Integer adviser;
 
-    /**
-     * <p>钉钉企业管理员员工ID</p>
-     */
     @NameInMap("operator")
     public String operator;
 

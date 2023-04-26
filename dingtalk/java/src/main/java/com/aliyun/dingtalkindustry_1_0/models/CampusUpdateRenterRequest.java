@@ -4,45 +4,24 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusUpdateRenterRequest extends TeaModel {
-    /**
-     * <p>企业信用代码</p>
-     */
     @NameInMap("creditCode")
     public String creditCode;
 
-    /**
-     * <p>租期开始时间</p>
-     */
     @NameInMap("endTime")
     public Long endTime;
 
-    /**
-     * <p>扩展字段</p>
-     */
     @NameInMap("extend")
     public String extend;
 
-    /**
-     * <p>租客名字</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>租客ID</p>
-     */
     @NameInMap("renterId")
     public Long renterId;
 
-    /**
-     * <p>租期结束时间</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 
-    /**
-     * <p>启用状态</p>
-     */
     @NameInMap("state")
     public Integer state;
 

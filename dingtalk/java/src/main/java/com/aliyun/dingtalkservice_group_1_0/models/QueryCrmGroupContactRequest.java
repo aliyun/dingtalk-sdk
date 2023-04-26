@@ -4,33 +4,18 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCrmGroupContactRequest extends TeaModel {
-    /**
-     * <p>条数</p>
-     */
     @NameInMap("minResult")
     public Long minResult;
 
-    /**
-     * <p>游标</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>群ID</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>检索条件</p>
-     */
     @NameInMap("searchFields")
     public String searchFields;
 

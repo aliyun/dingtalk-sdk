@@ -6,8 +6,11 @@ import com.aliyun.dingtalkdrive_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public AddCustomSpaceResponse addCustomSpace(AddCustomSpaceRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        AddCustomSpaceHeaders headers = new AddCustomSpaceHeaders();
-        return this.addCustomSpaceWithOptions(request, headers, runtime);
-    }
 
     public AddCustomSpaceResponse addCustomSpaceWithOptions(AddCustomSpaceRequest request, AddCustomSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -54,18 +51,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("AddCustomSpace", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/customSpaces", "json", req, runtime), new AddCustomSpaceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddCustomSpace"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/customSpaces"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddCustomSpaceResponse());
     }
 
-    public AddFileResponse addFile(String spaceId, AddFileRequest request) throws Exception {
+    public AddCustomSpaceResponse addCustomSpace(AddCustomSpaceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        AddFileHeaders headers = new AddFileHeaders();
-        return this.addFileWithOptions(spaceId, request, headers, runtime);
+        AddCustomSpaceHeaders headers = new AddCustomSpaceHeaders();
+        return this.addCustomSpaceWithOptions(request, headers, runtime);
     }
 
     public AddFileResponse addFileWithOptions(String spaceId, AddFileRequest request, AddFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.addConflictPolicy)) {
             body.put("addConflictPolicy", request.addConflictPolicy);
@@ -104,19 +111,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("AddFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files", "json", req, runtime), new AddFileResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddFile"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddFileResponse());
     }
 
-    public AddPermissionResponse addPermission(String spaceId, String fileId, AddPermissionRequest request) throws Exception {
+    public AddFileResponse addFile(String spaceId, AddFileRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        AddPermissionHeaders headers = new AddPermissionHeaders();
-        return this.addPermissionWithOptions(spaceId, fileId, request, headers, runtime);
+        AddFileHeaders headers = new AddFileHeaders();
+        return this.addFileWithOptions(spaceId, request, headers, runtime);
     }
 
     public AddPermissionResponse addPermissionWithOptions(String spaceId, String fileId, AddPermissionRequest request, AddPermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.members)) {
             body.put("members", request.members);
@@ -143,13 +159,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("AddPermission", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "none", req, runtime), new AddPermissionResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddPermission"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddPermissionResponse());
     }
 
-    public AddSpaceResponse addSpace(AddSpaceRequest request) throws Exception {
+    public AddPermissionResponse addPermission(String spaceId, String fileId, AddPermissionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        AddSpaceHeaders headers = new AddSpaceHeaders();
-        return this.addSpaceWithOptions(request, headers, runtime);
+        AddPermissionHeaders headers = new AddPermissionHeaders();
+        return this.addPermissionWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
     public AddSpaceResponse addSpaceWithOptions(AddSpaceRequest request, AddSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -176,13 +203,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("AddSpace", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces", "json", req, runtime), new AddSpaceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddSpace"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddSpaceResponse());
     }
 
-    public ClearRecycleFilesResponse clearRecycleFiles(ClearRecycleFilesRequest request) throws Exception {
+    public AddSpaceResponse addSpace(AddSpaceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ClearRecycleFilesHeaders headers = new ClearRecycleFilesHeaders();
-        return this.clearRecycleFilesWithOptions(request, headers, runtime);
+        AddSpaceHeaders headers = new AddSpaceHeaders();
+        return this.addSpaceWithOptions(request, headers, runtime);
     }
 
     public ClearRecycleFilesResponse clearRecycleFilesWithOptions(ClearRecycleFilesRequest request, ClearRecycleFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -209,19 +247,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ClearRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/recycleItems/clear", "none", req, runtime), new ClearRecycleFilesResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ClearRecycleFiles"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/recycleItems/clear"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ClearRecycleFilesResponse());
     }
 
-    public CopyFileResponse copyFile(String spaceId, String fileId, CopyFileRequest request) throws Exception {
+    public ClearRecycleFilesResponse clearRecycleFiles(ClearRecycleFilesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CopyFileHeaders headers = new CopyFileHeaders();
-        return this.copyFileWithOptions(spaceId, fileId, request, headers, runtime);
+        ClearRecycleFilesHeaders headers = new ClearRecycleFilesHeaders();
+        return this.clearRecycleFilesWithOptions(request, headers, runtime);
     }
 
     public CopyFileResponse copyFileWithOptions(String spaceId, String fileId, CopyFileRequest request, CopyFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.addConflictPolicy)) {
             body.put("addConflictPolicy", request.addConflictPolicy);
@@ -252,19 +299,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CopyFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/copy", "json", req, runtime), new CopyFileResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CopyFile"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/copy"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CopyFileResponse());
     }
 
-    public DeleteFileResponse deleteFile(String spaceId, String fileId, DeleteFileRequest request) throws Exception {
+    public CopyFileResponse copyFile(String spaceId, String fileId, CopyFileRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        DeleteFileHeaders headers = new DeleteFileHeaders();
-        return this.deleteFileWithOptions(spaceId, fileId, request, headers, runtime);
+        CopyFileHeaders headers = new CopyFileHeaders();
+        return this.copyFileWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
     public DeleteFileResponse deleteFileWithOptions(String spaceId, String fileId, DeleteFileRequest request, DeleteFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.deletePolicy)) {
             query.put("deletePolicy", request.deletePolicy);
@@ -287,18 +343,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("DeleteFile", "drive_1.0", "HTTP", "DELETE", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "", "json", req, runtime), new DeleteFileResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteFile"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + ""),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteFileResponse());
     }
 
-    public DeleteFilesResponse deleteFiles(String spaceId, DeleteFilesRequest request) throws Exception {
+    public DeleteFileResponse deleteFile(String spaceId, String fileId, DeleteFileRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        DeleteFilesHeaders headers = new DeleteFilesHeaders();
-        return this.deleteFilesWithOptions(spaceId, request, headers, runtime);
+        DeleteFileHeaders headers = new DeleteFileHeaders();
+        return this.deleteFileWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
     public DeleteFilesResponse deleteFilesWithOptions(String spaceId, DeleteFilesRequest request, DeleteFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.deletePolicy)) {
             body.put("deletePolicy", request.deletePolicy);
@@ -325,19 +391,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("DeleteFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/batchDelete", "json", req, runtime), new DeleteFilesResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteFiles"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/batchDelete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteFilesResponse());
     }
 
-    public DeletePermissionResponse deletePermission(String spaceId, String fileId, DeletePermissionRequest request) throws Exception {
+    public DeleteFilesResponse deleteFiles(String spaceId, DeleteFilesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        DeletePermissionHeaders headers = new DeletePermissionHeaders();
-        return this.deletePermissionWithOptions(spaceId, fileId, request, headers, runtime);
+        DeleteFilesHeaders headers = new DeleteFilesHeaders();
+        return this.deleteFilesWithOptions(spaceId, request, headers, runtime);
     }
 
     public DeletePermissionResponse deletePermissionWithOptions(String spaceId, String fileId, DeletePermissionRequest request, DeletePermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.members)) {
             body.put("members", request.members);
@@ -364,13 +439,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("DeletePermission", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions/delete", "none", req, runtime), new DeletePermissionResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeletePermission"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions/delete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeletePermissionResponse());
     }
 
-    public DeleteRecycleFilesResponse deleteRecycleFiles(DeleteRecycleFilesRequest request) throws Exception {
+    public DeletePermissionResponse deletePermission(String spaceId, String fileId, DeletePermissionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        DeleteRecycleFilesHeaders headers = new DeleteRecycleFilesHeaders();
-        return this.deleteRecycleFilesWithOptions(request, headers, runtime);
+        DeletePermissionHeaders headers = new DeletePermissionHeaders();
+        return this.deletePermissionWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
     public DeleteRecycleFilesResponse deleteRecycleFilesWithOptions(DeleteRecycleFilesRequest request, DeleteRecycleFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -401,7 +487,58 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("DeleteRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/recycleItems/delete", "none", req, runtime), new DeleteRecycleFilesResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteRecycleFiles"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/recycleItems/delete"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteRecycleFilesResponse());
+    }
+
+    public DeleteRecycleFilesResponse deleteRecycleFiles(DeleteRecycleFilesRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteRecycleFilesHeaders headers = new DeleteRecycleFilesHeaders();
+        return this.deleteRecycleFilesWithOptions(request, headers, runtime);
+    }
+
+    public DeleteSpaceResponse deleteSpaceWithOptions(String spaceId, DeleteSpaceRequest request, DeleteSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteSpace"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + ""),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteSpaceResponse());
     }
 
     public DeleteSpaceResponse deleteSpace(String spaceId, DeleteSpaceRequest request) throws Exception {
@@ -410,9 +547,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.deleteSpaceWithOptions(spaceId, request, headers, runtime);
     }
 
-    public DeleteSpaceResponse deleteSpaceWithOptions(String spaceId, DeleteSpaceRequest request, DeleteSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+    public GetAsyncTaskInfoResponse getAsyncTaskInfoWithOptions(String taskId, GetAsyncTaskInfoRequest request, GetAsyncTaskInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             query.put("unionId", request.unionId);
@@ -431,7 +567,18 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("DeleteSpace", "drive_1.0", "HTTP", "DELETE", "AK", "/v1.0/drive/spaces/" + spaceId + "", "none", req, runtime), new DeleteSpaceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetAsyncTaskInfo"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/tasks/" + taskId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetAsyncTaskInfoResponse());
     }
 
     public GetAsyncTaskInfoResponse getAsyncTaskInfo(String taskId, GetAsyncTaskInfoRequest request) throws Exception {
@@ -440,40 +587,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
         return this.getAsyncTaskInfoWithOptions(taskId, request, headers, runtime);
     }
 
-    public GetAsyncTaskInfoResponse getAsyncTaskInfoWithOptions(String taskId, GetAsyncTaskInfoRequest request, GetAsyncTaskInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
-        taskId = com.aliyun.openapiutil.Client.getEncodeParam(taskId);
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
-            query.put("unionId", request.unionId);
-        }
-
-        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
-            realHeaders = headers.commonHeaders;
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
-            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
-        }
-
-        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
-            new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
-        ));
-        return TeaModel.toModel(this.doROARequest("GetAsyncTaskInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/tasks/" + taskId + "", "json", req, runtime), new GetAsyncTaskInfoResponse());
-    }
-
-    public GetDownloadInfoResponse getDownloadInfo(String spaceId, String fileId, GetDownloadInfoRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetDownloadInfoHeaders headers = new GetDownloadInfoHeaders();
-        return this.getDownloadInfoWithOptions(spaceId, fileId, request, headers, runtime);
-    }
-
     public GetDownloadInfoResponse getDownloadInfoWithOptions(String spaceId, String fileId, GetDownloadInfoRequest request, GetDownloadInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             query.put("unionId", request.unionId);
@@ -500,19 +615,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetDownloadInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/downloadInfos", "json", req, runtime), new GetDownloadInfoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetDownloadInfo"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/downloadInfos"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetDownloadInfoResponse());
     }
 
-    public GetFileInfoResponse getFileInfo(String spaceId, String fileId, GetFileInfoRequest request) throws Exception {
+    public GetDownloadInfoResponse getDownloadInfo(String spaceId, String fileId, GetDownloadInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetFileInfoHeaders headers = new GetFileInfoHeaders();
-        return this.getFileInfoWithOptions(spaceId, fileId, request, headers, runtime);
+        GetDownloadInfoHeaders headers = new GetDownloadInfoHeaders();
+        return this.getDownloadInfoWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
     public GetFileInfoResponse getFileInfoWithOptions(String spaceId, String fileId, GetFileInfoRequest request, GetFileInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             query.put("unionId", request.unionId);
@@ -531,13 +655,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetFileInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "", "json", req, runtime), new GetFileInfoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetFileInfo"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetFileInfoResponse());
     }
 
-    public GetMySpaceInfoResponse getMySpaceInfo(GetMySpaceInfoRequest request) throws Exception {
+    public GetFileInfoResponse getFileInfo(String spaceId, String fileId, GetFileInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetMySpaceInfoHeaders headers = new GetMySpaceInfoHeaders();
-        return this.getMySpaceInfoWithOptions(request, headers, runtime);
+        GetFileInfoHeaders headers = new GetFileInfoHeaders();
+        return this.getFileInfoWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
     public GetMySpaceInfoResponse getMySpaceInfoWithOptions(GetMySpaceInfoRequest request, GetMySpaceInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -560,19 +695,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetMySpaceInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/mySpaces", "json", req, runtime), new GetMySpaceInfoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetMySpaceInfo"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/mySpaces"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetMySpaceInfoResponse());
     }
 
-    public GetPreviewInfoResponse getPreviewInfo(String spaceId, String fileId, GetPreviewInfoRequest request) throws Exception {
+    public GetMySpaceInfoResponse getMySpaceInfo(GetMySpaceInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetPreviewInfoHeaders headers = new GetPreviewInfoHeaders();
-        return this.getPreviewInfoWithOptions(spaceId, fileId, request, headers, runtime);
+        GetMySpaceInfoHeaders headers = new GetMySpaceInfoHeaders();
+        return this.getMySpaceInfoWithOptions(request, headers, runtime);
     }
 
     public GetPreviewInfoResponse getPreviewInfoWithOptions(String spaceId, String fileId, GetPreviewInfoRequest request, GetPreviewInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             query.put("unionId", request.unionId);
@@ -599,19 +743,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetPreviewInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/previewInfos", "json", req, runtime), new GetPreviewInfoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetPreviewInfo"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/previewInfos"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetPreviewInfoResponse());
     }
 
-    public GetPrivilegeInfoResponse getPrivilegeInfo(String spaceId, String fileId, GetPrivilegeInfoRequest request) throws Exception {
+    public GetPreviewInfoResponse getPreviewInfo(String spaceId, String fileId, GetPreviewInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetPrivilegeInfoHeaders headers = new GetPrivilegeInfoHeaders();
-        return this.getPrivilegeInfoWithOptions(spaceId, fileId, request, headers, runtime);
+        GetPreviewInfoHeaders headers = new GetPreviewInfoHeaders();
+        return this.getPreviewInfoWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
     public GetPrivilegeInfoResponse getPrivilegeInfoWithOptions(String spaceId, String fileId, GetPrivilegeInfoRequest request, GetPrivilegeInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             query.put("unionId", request.unionId);
@@ -630,13 +783,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetPrivilegeInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/privileges", "json", req, runtime), new GetPrivilegeInfoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetPrivilegeInfo"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/privileges"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetPrivilegeInfoResponse());
     }
 
-    public GetQuotaInfosResponse getQuotaInfos(GetQuotaInfosRequest request) throws Exception {
+    public GetPrivilegeInfoResponse getPrivilegeInfo(String spaceId, String fileId, GetPrivilegeInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetQuotaInfosHeaders headers = new GetQuotaInfosHeaders();
-        return this.getQuotaInfosWithOptions(request, headers, runtime);
+        GetPrivilegeInfoHeaders headers = new GetPrivilegeInfoHeaders();
+        return this.getPrivilegeInfoWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
     public GetQuotaInfosResponse getQuotaInfosWithOptions(GetQuotaInfosRequest request, GetQuotaInfosHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -667,19 +831,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetQuotaInfos", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/quotaInfos/query", "json", req, runtime), new GetQuotaInfosResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetQuotaInfos"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/quotaInfos/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetQuotaInfosResponse());
     }
 
-    public GetUploadInfoResponse getUploadInfo(String spaceId, String parentId, GetUploadInfoRequest request) throws Exception {
+    public GetQuotaInfosResponse getQuotaInfos(GetQuotaInfosRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetUploadInfoHeaders headers = new GetUploadInfoHeaders();
-        return this.getUploadInfoWithOptions(spaceId, parentId, request, headers, runtime);
+        GetQuotaInfosHeaders headers = new GetQuotaInfosHeaders();
+        return this.getQuotaInfosWithOptions(request, headers, runtime);
     }
 
     public GetUploadInfoResponse getUploadInfoWithOptions(String spaceId, String parentId, GetUploadInfoRequest request, GetUploadInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
-        parentId = com.aliyun.openapiutil.Client.getEncodeParam(parentId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.addConflictPolicy)) {
             query.put("addConflictPolicy", request.addConflictPolicy);
@@ -730,18 +903,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetUploadInfo", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + parentId + "/uploadInfos", "json", req, runtime), new GetUploadInfoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetUploadInfo"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/" + parentId + "/uploadInfos"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetUploadInfoResponse());
     }
 
-    public GrantPrivilegeOfCustomSpaceResponse grantPrivilegeOfCustomSpace(String spaceId, GrantPrivilegeOfCustomSpaceRequest request) throws Exception {
+    public GetUploadInfoResponse getUploadInfo(String spaceId, String parentId, GetUploadInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GrantPrivilegeOfCustomSpaceHeaders headers = new GrantPrivilegeOfCustomSpaceHeaders();
-        return this.grantPrivilegeOfCustomSpaceWithOptions(spaceId, request, headers, runtime);
+        GetUploadInfoHeaders headers = new GetUploadInfoHeaders();
+        return this.getUploadInfoWithOptions(spaceId, parentId, request, headers, runtime);
     }
 
     public GrantPrivilegeOfCustomSpaceResponse grantPrivilegeOfCustomSpaceWithOptions(String spaceId, GrantPrivilegeOfCustomSpaceRequest request, GrantPrivilegeOfCustomSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.duration)) {
             body.put("duration", request.duration);
@@ -776,18 +959,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GrantPrivilegeOfCustomSpace", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/customSpacePrivileges", "none", req, runtime), new GrantPrivilegeOfCustomSpaceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GrantPrivilegeOfCustomSpace"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/customSpacePrivileges"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GrantPrivilegeOfCustomSpaceResponse());
     }
 
-    public InfoSpaceResponse infoSpace(String spaceId, InfoSpaceRequest request) throws Exception {
+    public GrantPrivilegeOfCustomSpaceResponse grantPrivilegeOfCustomSpace(String spaceId, GrantPrivilegeOfCustomSpaceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        InfoSpaceHeaders headers = new InfoSpaceHeaders();
-        return this.infoSpaceWithOptions(spaceId, request, headers, runtime);
+        GrantPrivilegeOfCustomSpaceHeaders headers = new GrantPrivilegeOfCustomSpaceHeaders();
+        return this.grantPrivilegeOfCustomSpaceWithOptions(spaceId, request, headers, runtime);
     }
 
     public InfoSpaceResponse infoSpaceWithOptions(String spaceId, InfoSpaceRequest request, InfoSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             query.put("unionId", request.unionId);
@@ -806,18 +999,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("InfoSpace", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "", "json", req, runtime), new InfoSpaceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "InfoSpace"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new InfoSpaceResponse());
     }
 
-    public ListFilesResponse listFiles(String spaceId, ListFilesRequest request) throws Exception {
+    public InfoSpaceResponse infoSpace(String spaceId, InfoSpaceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ListFilesHeaders headers = new ListFilesHeaders();
-        return this.listFilesWithOptions(spaceId, request, headers, runtime);
+        InfoSpaceHeaders headers = new InfoSpaceHeaders();
+        return this.infoSpaceWithOptions(spaceId, request, headers, runtime);
     }
 
     public ListFilesResponse listFilesWithOptions(String spaceId, ListFilesRequest request, ListFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
@@ -856,19 +1059,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListFiles", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files", "json", req, runtime), new ListFilesResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListFiles"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListFilesResponse());
     }
 
-    public ListPermissionsResponse listPermissions(String spaceId, String fileId, ListPermissionsRequest request) throws Exception {
+    public ListFilesResponse listFiles(String spaceId, ListFilesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ListPermissionsHeaders headers = new ListPermissionsHeaders();
-        return this.listPermissionsWithOptions(spaceId, fileId, request, headers, runtime);
+        ListFilesHeaders headers = new ListFilesHeaders();
+        return this.listFilesWithOptions(spaceId, request, headers, runtime);
     }
 
     public ListPermissionsResponse listPermissionsWithOptions(String spaceId, String fileId, ListPermissionsRequest request, ListPermissionsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             query.put("unionId", request.unionId);
@@ -887,13 +1099,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListPermissions", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "json", req, runtime), new ListPermissionsResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListPermissions"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListPermissionsResponse());
     }
 
-    public ListRecycleFilesResponse listRecycleFiles(ListRecycleFilesRequest request) throws Exception {
+    public ListPermissionsResponse listPermissions(String spaceId, String fileId, ListPermissionsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ListRecycleFilesHeaders headers = new ListRecycleFilesHeaders();
-        return this.listRecycleFilesWithOptions(request, headers, runtime);
+        ListPermissionsHeaders headers = new ListPermissionsHeaders();
+        return this.listPermissionsWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
     public ListRecycleFilesResponse listRecycleFilesWithOptions(ListRecycleFilesRequest request, ListRecycleFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -932,13 +1155,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListRecycleFiles", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/recycleItems", "json", req, runtime), new ListRecycleFilesResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListRecycleFiles"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/recycleItems"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListRecycleFilesResponse());
     }
 
-    public ListSpacesResponse listSpaces(ListSpacesRequest request) throws Exception {
+    public ListRecycleFilesResponse listRecycleFiles(ListRecycleFilesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ListSpacesHeaders headers = new ListSpacesHeaders();
-        return this.listSpacesWithOptions(request, headers, runtime);
+        ListRecycleFilesHeaders headers = new ListRecycleFilesHeaders();
+        return this.listRecycleFilesWithOptions(request, headers, runtime);
     }
 
     public ListSpacesResponse listSpacesWithOptions(ListSpacesRequest request, ListSpacesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -973,13 +1207,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("ListSpaces", "drive_1.0", "HTTP", "GET", "AK", "/v1.0/drive/spaces", "json", req, runtime), new ListSpacesResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListSpaces"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListSpacesResponse());
     }
 
-    public ManagementBuyQuotaResponse managementBuyQuota(ManagementBuyQuotaRequest request) throws Exception {
+    public ListSpacesResponse listSpaces(ListSpacesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ManagementBuyQuotaHeaders headers = new ManagementBuyQuotaHeaders();
-        return this.managementBuyQuotaWithOptions(request, headers, runtime);
+        ListSpacesHeaders headers = new ListSpacesHeaders();
+        return this.listSpacesWithOptions(request, headers, runtime);
     }
 
     public ManagementBuyQuotaResponse managementBuyQuotaWithOptions(ManagementBuyQuotaRequest request, ManagementBuyQuotaHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1010,13 +1255,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ManagementBuyQuota", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/managements/quotas/buy", "none", req, runtime), new ManagementBuyQuotaResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ManagementBuyQuota"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/managements/quotas/buy"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ManagementBuyQuotaResponse());
     }
 
-    public ManagementListSpacesResponse managementListSpaces(ManagementListSpacesRequest request) throws Exception {
+    public ManagementBuyQuotaResponse managementBuyQuota(ManagementBuyQuotaRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ManagementListSpacesHeaders headers = new ManagementListSpacesHeaders();
-        return this.managementListSpacesWithOptions(request, headers, runtime);
+        ManagementBuyQuotaHeaders headers = new ManagementBuyQuotaHeaders();
+        return this.managementBuyQuotaWithOptions(request, headers, runtime);
     }
 
     public ManagementListSpacesResponse managementListSpacesWithOptions(ManagementListSpacesRequest request, ManagementListSpacesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1043,13 +1299,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ManagementListSpaces", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/managements/spaces/query", "json", req, runtime), new ManagementListSpacesResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ManagementListSpaces"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/managements/spaces/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ManagementListSpacesResponse());
     }
 
-    public ManagementModifySpaceResponse managementModifySpace(ManagementModifySpaceRequest request) throws Exception {
+    public ManagementListSpacesResponse managementListSpaces(ManagementListSpacesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ManagementModifySpaceHeaders headers = new ManagementModifySpaceHeaders();
-        return this.managementModifySpaceWithOptions(request, headers, runtime);
+        ManagementListSpacesHeaders headers = new ManagementListSpacesHeaders();
+        return this.managementListSpacesWithOptions(request, headers, runtime);
     }
 
     public ManagementModifySpaceResponse managementModifySpaceWithOptions(ManagementModifySpaceRequest request, ManagementModifySpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1080,19 +1347,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ManagementModifySpace", "drive_1.0", "HTTP", "PUT", "AK", "/v1.0/drive/managements/spaces", "json", req, runtime), new ManagementModifySpaceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ManagementModifySpace"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/managements/spaces"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ManagementModifySpaceResponse());
     }
 
-    public ModifyPermissionResponse modifyPermission(String spaceId, String fileId, ModifyPermissionRequest request) throws Exception {
+    public ManagementModifySpaceResponse managementModifySpace(ManagementModifySpaceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ModifyPermissionHeaders headers = new ModifyPermissionHeaders();
-        return this.modifyPermissionWithOptions(spaceId, fileId, request, headers, runtime);
+        ManagementModifySpaceHeaders headers = new ManagementModifySpaceHeaders();
+        return this.managementModifySpaceWithOptions(request, headers, runtime);
     }
 
     public ModifyPermissionResponse modifyPermissionWithOptions(String spaceId, String fileId, ModifyPermissionRequest request, ModifyPermissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.members)) {
             body.put("members", request.members);
@@ -1119,19 +1395,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ModifyPermission", "drive_1.0", "HTTP", "PUT", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions", "none", req, runtime), new ModifyPermissionResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ModifyPermission"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/permissions"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ModifyPermissionResponse());
     }
 
-    public MoveFileResponse moveFile(String spaceId, String fileId, MoveFileRequest request) throws Exception {
+    public ModifyPermissionResponse modifyPermission(String spaceId, String fileId, ModifyPermissionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        MoveFileHeaders headers = new MoveFileHeaders();
-        return this.moveFileWithOptions(spaceId, fileId, request, headers, runtime);
+        ModifyPermissionHeaders headers = new ModifyPermissionHeaders();
+        return this.modifyPermissionWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
     public MoveFileResponse moveFileWithOptions(String spaceId, String fileId, MoveFileRequest request, MoveFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.addConflictPolicy)) {
             body.put("addConflictPolicy", request.addConflictPolicy);
@@ -1162,18 +1447,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("MoveFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/move", "json", req, runtime), new MoveFileResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "MoveFile"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/move"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new MoveFileResponse());
     }
 
-    public MoveFilesResponse moveFiles(String spaceId, MoveFilesRequest request) throws Exception {
+    public MoveFileResponse moveFile(String spaceId, String fileId, MoveFileRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        MoveFilesHeaders headers = new MoveFilesHeaders();
-        return this.moveFilesWithOptions(spaceId, request, headers, runtime);
+        MoveFileHeaders headers = new MoveFileHeaders();
+        return this.moveFileWithOptions(spaceId, fileId, request, headers, runtime);
     }
 
     public MoveFilesResponse moveFilesWithOptions(String spaceId, MoveFilesRequest request, MoveFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.addConflictPolicy)) {
             body.put("addConflictPolicy", request.addConflictPolicy);
@@ -1208,13 +1503,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("MoveFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/batchMove", "json", req, runtime), new MoveFilesResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "MoveFiles"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/batchMove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new MoveFilesResponse());
     }
 
-    public RecoverRecycleFilesResponse recoverRecycleFiles(RecoverRecycleFilesRequest request) throws Exception {
+    public MoveFilesResponse moveFiles(String spaceId, MoveFilesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        RecoverRecycleFilesHeaders headers = new RecoverRecycleFilesHeaders();
-        return this.recoverRecycleFilesWithOptions(request, headers, runtime);
+        MoveFilesHeaders headers = new MoveFilesHeaders();
+        return this.moveFilesWithOptions(spaceId, request, headers, runtime);
     }
 
     public RecoverRecycleFilesResponse recoverRecycleFilesWithOptions(RecoverRecycleFilesRequest request, RecoverRecycleFilesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1245,19 +1551,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("RecoverRecycleFiles", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/recycleItems/recover", "none", req, runtime), new RecoverRecycleFilesResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RecoverRecycleFiles"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/recycleItems/recover"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RecoverRecycleFilesResponse());
     }
 
-    public RenameFileResponse renameFile(String spaceId, String fileId, RenameFileRequest request) throws Exception {
+    public RecoverRecycleFilesResponse recoverRecycleFiles(RecoverRecycleFilesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        RenameFileHeaders headers = new RenameFileHeaders();
-        return this.renameFileWithOptions(spaceId, fileId, request, headers, runtime);
+        RecoverRecycleFilesHeaders headers = new RecoverRecycleFilesHeaders();
+        return this.recoverRecycleFilesWithOptions(request, headers, runtime);
     }
 
     public RenameFileResponse renameFileWithOptions(String spaceId, String fileId, RenameFileRequest request, RenameFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        spaceId = com.aliyun.openapiutil.Client.getEncodeParam(spaceId);
-        fileId = com.aliyun.openapiutil.Client.getEncodeParam(fileId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.newFileName)) {
             body.put("newFileName", request.newFileName);
@@ -1280,6 +1595,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("RenameFile", "drive_1.0", "HTTP", "POST", "AK", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/rename", "json", req, runtime), new RenameFileResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RenameFile"),
+            new TeaPair("version", "drive_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/drive/spaces/" + spaceId + "/files/" + fileId + "/rename"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RenameFileResponse());
+    }
+
+    public RenameFileResponse renameFile(String spaceId, String fileId, RenameFileRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RenameFileHeaders headers = new RenameFileHeaders();
+        return this.renameFileWithOptions(spaceId, fileId, request, headers, runtime);
     }
 }

@@ -4,39 +4,21 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class LoadBizObjectsRequest extends TeaModel {
-    /**
-     * <p>json格式的动态条件过滤器参数</p>
-     */
     @NameInMap("matcherJson")
     public String matcherJson;
 
-    /**
-     * <p>分页页码</p>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>分页页大小。限制在1~500</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>返回的字段.仅支持传入主表的字段</p>
-     */
     @NameInMap("returnFields")
     public java.util.List<String> returnFields;
 
-    /**
-     * <p>表单编码</p>
-     */
     @NameInMap("schemaCode")
     public String schemaCode;
 
-    /**
-     * <p>排序字段结构数组</p>
-     */
     @NameInMap("sortByFields")
     public java.util.List<LoadBizObjectsRequestSortByFields> sortByFields;
 
@@ -94,15 +76,9 @@ public class LoadBizObjectsRequest extends TeaModel {
     }
 
     public static class LoadBizObjectsRequestSortByFields extends TeaModel {
-        /**
-         * <p>排序方向。Ascending=升序，Descending=降序</p>
-         */
         @NameInMap("direction")
         public String direction;
 
-        /**
-         * <p>排序字段名</p>
-         */
         @NameInMap("fieldName")
         public String fieldName;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOpenLibraryResponseBody extends TeaModel {
-    /**
-     * <p>返回结果</p>
-     */
     @NameInMap("result")
     public AddOpenLibraryResponseBodyResult result;
 
-    /**
-     * <p>请求是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,21 +32,12 @@ public class AddOpenLibraryResponseBody extends TeaModel {
     }
 
     public static class AddOpenLibraryResponseBodyResult extends TeaModel {
-        /**
-         * <p>知识库ID</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>失败时错误消息</p>
-         */
         @NameInMap("message")
         public String message;
 
-        /**
-         * <p>添加/修改知识库是否成功</p>
-         */
         @NameInMap("success")
         public Boolean success;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class SubscribeUniversityCourseGroupRequest extends TeaModel {
-    /**
-     * <p>课程组编号</p>
-     */
     @NameInMap("courseGroupCode")
     public String courseGroupCode;
 
-    /**
-     * <p>学生用户Id</p>
-     */
     @NameInMap("studentUserIds")
     public java.util.List<String> studentUserIds;
 
-    /**
-     * <p>操作人id</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 

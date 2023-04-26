@@ -4,63 +4,33 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreatWithholdingOrderAndPayRequest extends TeaModel {
-    /**
-     * <p>扣款金额</p>
-     */
     @NameInMap("amount")
     public String amount;
 
-    /**
-     * <p>主机构编号</p>
-     */
     @NameInMap("instId")
     public String instId;
 
-    /**
-     * <p>其他资金渠道付款明细</p>
-     */
     @NameInMap("otherPayChannelDetailInfoList")
     public java.util.List<CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList> otherPayChannelDetailInfoList;
 
-    /**
-     * <p>外部订单号</p>
-     */
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
-    /**
-     * <p>支付渠道</p>
-     */
     @NameInMap("payChannel")
     public String payChannel;
 
-    /**
-     * <p>付款人staffId</p>
-     */
     @NameInMap("payerUserId")
     public String payerUserId;
 
-    /**
-     * <p>代扣备注</p>
-     */
     @NameInMap("remark")
     public String remark;
 
-    /**
-     * <p>子机构编号</p>
-     */
     @NameInMap("subInstId")
     public String subInstId;
 
-    /**
-     * <p>代扣过期时间</p>
-     */
     @NameInMap("timeOutExpress")
     public String timeOutExpress;
 
-    /**
-     * <p>代扣标题</p>
-     */
     @NameInMap("title")
     public String title;
 
@@ -150,39 +120,21 @@ public class CreatWithholdingOrderAndPayRequest extends TeaModel {
     }
 
     public static class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoListFundToolDetailInfoList extends TeaModel {
-        /**
-         * <p>金额</p>
-         */
         @NameInMap("amount")
         public String amount;
 
-        /**
-         * <p>扩展信息</p>
-         */
         @NameInMap("extInfo")
         public String extInfo;
 
-        /**
-         * <p>资金工具名称</p>
-         */
         @NameInMap("fundToolName")
         public String fundToolName;
 
-        /**
-         * <p>资金明细创建时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>资金明细完成时间</p>
-         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
-        /**
-         * <p>是否是优惠工具</p>
-         */
         @NameInMap("promotionFundTool")
         public Boolean promotionFundTool;
 
@@ -242,39 +194,21 @@ public class CreatWithholdingOrderAndPayRequest extends TeaModel {
     }
 
     public static class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList extends TeaModel {
-        /**
-         * <p>渠道金额</p>
-         */
         @NameInMap("amount")
         public String amount;
 
-        /**
-         * <p>资金明细列表</p>
-         */
         @NameInMap("fundToolDetailInfoList")
         public java.util.List<CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoListFundToolDetailInfoList> fundToolDetailInfoList;
 
-        /**
-         * <p>渠道名称</p>
-         */
         @NameInMap("payChannelName")
         public String payChannelName;
 
-        /**
-         * <p>支付渠道单号</p>
-         */
         @NameInMap("payChannelOrderNo")
         public String payChannelOrderNo;
 
-        /**
-         * <p>渠道类型</p>
-         */
         @NameInMap("payChannelType")
         public String payChannelType;
 
-        /**
-         * <p>总优惠金额</p>
-         */
         @NameInMap("promotionAmount")
         public String promotionAmount;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPreviewInfoResponseBody extends TeaModel {
-    /**
-     * <p>预览信息</p>
-     */
     @NameInMap("info")
     public GetPreviewInfoResponseBodyInfo info;
 
@@ -24,9 +21,6 @@ public class GetPreviewInfoResponseBody extends TeaModel {
     }
 
     public static class GetPreviewInfoResponseBodyInfo extends TeaModel {
-        /**
-         * <p>预览url</p>
-         */
         @NameInMap("url")
         public String url;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSpaceIdByTypeResponseBody extends TeaModel {
-    /**
-     * <p>部门id</p>
-     */
     @NameInMap("referId")
     public Long referId;
 

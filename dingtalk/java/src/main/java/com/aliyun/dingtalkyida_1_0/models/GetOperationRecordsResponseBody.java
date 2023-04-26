@@ -4,9 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOperationRecordsResponseBody extends TeaModel {
-    /**
-     * <p>流程实例操作记录数组</p>
-     */
     @NameInMap("result")
     public java.util.List<GetOperationRecordsResponseBodyResult> result;
 
@@ -24,147 +21,75 @@ public class GetOperationRecordsResponseBody extends TeaModel {
     }
 
     public static class GetOperationRecordsResponseBodyResult extends TeaModel {
-        /**
-         * <p>action</p>
-         */
         @NameInMap("action")
         public String action;
 
-        /**
-         * <p>actionExt</p>
-         */
         @NameInMap("actionExit")
         public String actionExit;
 
-        /**
-         * <p>activeTime</p>
-         */
         @NameInMap("activeTimeGMT")
         public String activeTimeGMT;
 
-        /**
-         * <p>activityId</p>
-         */
         @NameInMap("activityId")
         public String activityId;
 
-        /**
-         * <p>id</p>
-         */
         @NameInMap("dataId")
         public Long dataId;
 
-        /**
-         * <p>digitalSign</p>
-         */
         @NameInMap("digitalSign")
         public String digitalSign;
 
-        /**
-         * <p>files</p>
-         */
         @NameInMap("files")
         public String files;
 
-        /**
-         * <p>operateTime</p>
-         */
         @NameInMap("operateTimeGMT")
         public String operateTimeGMT;
 
-        /**
-         * <p>operateType</p>
-         */
         @NameInMap("operateType")
         public String operateType;
 
-        /**
-         * <p>operatorDisplayName</p>
-         */
         @NameInMap("operatorDisplayName")
         public String operatorDisplayName;
 
-        /**
-         * <p>operatorName</p>
-         */
         @NameInMap("operatorName")
         public String operatorName;
 
-        /**
-         * <p>operatorNick</p>
-         */
         @NameInMap("operatorNickName")
         public String operatorNickName;
 
-        /**
-         * <p>operatorPhotoUrl</p>
-         */
         @NameInMap("operatorPhotoUrl")
         public String operatorPhotoUrl;
 
-        /**
-         * <p>operatorStatus</p>
-         */
         @NameInMap("operatorStatus")
         public String operatorStatus;
 
-        /**
-         * <p>operator</p>
-         */
         @NameInMap("operatorUserId")
         public String operatorUserId;
 
-        /**
-         * <p>processInstanceId</p>
-         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        /**
-         * <p>remark</p>
-         */
         @NameInMap("remark")
         public String remark;
 
-        /**
-         * <p>showName</p>
-         */
         @NameInMap("showName")
         public String showName;
 
-        /**
-         * <p>size</p>
-         */
         @NameInMap("size")
         public Integer size;
 
-        /**
-         * <p>taskExecuteType</p>
-         */
         @NameInMap("taskExecuteType")
         public String taskExecuteType;
 
-        /**
-         * <p>taskHoldTime</p>
-         */
         @NameInMap("taskHoldTimeGMT")
         public Long taskHoldTimeGMT;
 
-        /**
-         * <p>taskId</p>
-         */
         @NameInMap("taskId")
         public String taskId;
 
-        /**
-         * <p>taskType</p>
-         */
         @NameInMap("taskType")
         public String taskType;
 
-        /**
-         * <p>type</p>
-         */
         @NameInMap("type")
         public String type;
 

@@ -7,10 +7,6 @@ public class SyncSecretKeyResponseBody extends TeaModel {
     @NameInMap("result")
     public SyncSecretKeyResponseBodyResult result;
 
-    /**
-     * <p>是否成功</p>
-     * <br>
-     */
     @NameInMap("success")
     public String success;
 
@@ -36,33 +32,18 @@ public class SyncSecretKeyResponseBody extends TeaModel {
     }
 
     public static class SyncSecretKeyResponseBodyResult extends TeaModel {
-        /**
-         * <p>验签加密串</p>
-         */
         @NameInMap("secretString")
         public String secretString;
 
-        /**
-         * <p>钉钉侧对应的组织ID</p>
-         */
         @NameInMap("targetCorpId")
         public String targetCorpId;
 
-        /**
-         * <p>商旅侧对接key</p>
-         */
         @NameInMap("tripAppKey")
         public String tripAppKey;
 
-        /**
-         * <p>商旅侧对接密钥</p>
-         */
         @NameInMap("tripAppSecurity")
         public String tripAppSecurity;
 
-        /**
-         * <p>商旅侧对应的组织ID</p>
-         */
         @NameInMap("tripCorpId")
         public String tripCorpId;
 

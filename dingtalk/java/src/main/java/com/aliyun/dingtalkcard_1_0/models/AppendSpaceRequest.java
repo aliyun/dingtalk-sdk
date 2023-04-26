@@ -4,33 +4,18 @@ package com.aliyun.dingtalkcard_1_0.models;
 import com.aliyun.tea.*;
 
 public class AppendSpaceRequest extends TeaModel {
-    /**
-     * <p>协作场域信息</p>
-     */
     @NameInMap("coFeedOpenSpaceModel")
     public AppendSpaceRequestCoFeedOpenSpaceModel coFeedOpenSpaceModel;
 
-    /**
-     * <p>IM群聊场域信息</p>
-     */
     @NameInMap("imGroupOpenSpaceModel")
     public AppendSpaceRequestImGroupOpenSpaceModel imGroupOpenSpaceModel;
 
-    /**
-     * <p>IM群聊场域信息</p>
-     */
     @NameInMap("imRobotOpenSpaceModel")
     public AppendSpaceRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
 
-    /**
-     * <p>唯一标识一张卡片的外部Id</p>
-     */
     @NameInMap("outTrackId")
     public String outTrackId;
 
-    /**
-     * <p>吊顶场域信息</p>
-     */
     @NameInMap("topOpenSpaceModel")
     public AppendSpaceRequestTopOpenSpaceModel topOpenSpaceModel;
 
@@ -80,9 +65,6 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestCoFeedOpenSpaceModel extends TeaModel {
-        /**
-         * <p>【必填】标题</p>
-         */
         @NameInMap("title")
         public String title;
 
@@ -102,17 +84,9 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImGroupOpenSpaceModelNotification extends TeaModel {
-        /**
-         * <p>【条件必填】通知内容</p>
-         * <br>
-         * <p>【注意】若不填写则使用默认文案：如你收到1条新消息</p>
-         */
         @NameInMap("alertContent")
         public String alertContent;
 
-        /**
-         * <p>是否关闭推送通知，默认为false</p>
-         */
         @NameInMap("notificationOff")
         public Boolean notificationOff;
 
@@ -140,21 +114,12 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImGroupOpenSpaceModelSearchSupport extends TeaModel {
-        /**
-         * <p>卡片的具体描述</p>
-         */
         @NameInMap("searchDesc")
         public String searchDesc;
 
-        /**
-         * <p>类型的icon，供搜索展示使用</p>
-         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
-        /**
-         * <p>卡片类型名</p>
-         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -190,27 +155,15 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImGroupOpenSpaceModel extends TeaModel {
-        /**
-         * <p>支持国际化的LastMessage</p>
-         */
         @NameInMap("lastMessageI18n")
         public java.util.Map<String, String> lastMessageI18n;
 
-        /**
-         * <p>通知信息</p>
-         */
         @NameInMap("notification")
         public AppendSpaceRequestImGroupOpenSpaceModelNotification notification;
 
-        /**
-         * <p>支持卡片消息可被搜索字段</p>
-         */
         @NameInMap("searchSupport")
         public AppendSpaceRequestImGroupOpenSpaceModelSearchSupport searchSupport;
 
-        /**
-         * <p>是否支持转发, 默认false</p>
-         */
         @NameInMap("supportForward")
         public Boolean supportForward;
 
@@ -254,17 +207,9 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImRobotOpenSpaceModelNotification extends TeaModel {
-        /**
-         * <p>【条件必填】通知内容</p>
-         * <br>
-         * <p>【注意】若不填写则使用默认文案：如你收到1条新消息</p>
-         */
         @NameInMap("alertContent")
         public String alertContent;
 
-        /**
-         * <p>是否关闭推送通知，默认为false</p>
-         */
         @NameInMap("notificationOff")
         public Boolean notificationOff;
 
@@ -292,21 +237,12 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImRobotOpenSpaceModelSearchSupport extends TeaModel {
-        /**
-         * <p>卡片的具体描述</p>
-         */
         @NameInMap("searchDesc")
         public String searchDesc;
 
-        /**
-         * <p>类型的icon，供搜索展示使用</p>
-         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
-        /**
-         * <p>卡片类型名</p>
-         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -342,27 +278,15 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestImRobotOpenSpaceModel extends TeaModel {
-        /**
-         * <p>支持国际化的LastMessage</p>
-         */
         @NameInMap("lastMessageI18n")
         public java.util.Map<String, String> lastMessageI18n;
 
-        /**
-         * <p>通知信息</p>
-         */
         @NameInMap("notification")
         public AppendSpaceRequestImRobotOpenSpaceModelNotification notification;
 
-        /**
-         * <p>支持卡片消息可被搜索字段</p>
-         */
         @NameInMap("searchSupport")
         public AppendSpaceRequestImRobotOpenSpaceModelSearchSupport searchSupport;
 
-        /**
-         * <p>是否支持转发, 默认false</p>
-         */
         @NameInMap("supportForward")
         public Boolean supportForward;
 
@@ -406,11 +330,6 @@ public class AppendSpaceRequest extends TeaModel {
     }
 
     public static class AppendSpaceRequestTopOpenSpaceModel extends TeaModel {
-        /**
-         * <p>【必填】场域类型</p>
-         * <br>
-         * <p>吊顶无其他场域属性，通过设置spaeType为ONE_BOX使卡片支持吊顶场域</p>
-         */
         @NameInMap("spaceType")
         public String spaceType;
 

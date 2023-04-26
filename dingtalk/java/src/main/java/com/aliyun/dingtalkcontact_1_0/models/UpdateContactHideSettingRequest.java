@@ -4,75 +4,39 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateContactHideSettingRequest extends TeaModel {
-    /**
-     * <p>是否激活</p>
-     */
     @NameInMap("active")
     public Boolean active;
 
-    /**
-     * <p>设置描述信息</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>白名单部门列表</p>
-     */
     @NameInMap("excludeDeptIds")
     public java.util.List<Long> excludeDeptIds;
 
-    /**
-     * <p>白名单员工列表</p>
-     */
     @NameInMap("excludeStaffIds")
     public java.util.List<String> excludeStaffIds;
 
-    /**
-     * <p>白名单角色列表</p>
-     */
     @NameInMap("excludeTagIds")
     public java.util.List<Long> excludeTagIds;
 
-    /**
-     * <p>是否同时在被搜索时隐藏</p>
-     */
     @NameInMap("hideInSearch")
     public Boolean hideInSearch;
 
-    /**
-     * <p>是否同时在被查看个人资料页时隐藏</p>
-     */
     @NameInMap("hideInUserProfile")
     public Boolean hideInUserProfile;
 
-    /**
-     * <p>settingId</p>
-     */
     @NameInMap("id")
     public Long id;
 
-    /**
-     * <p>设置名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>影藏部门列表</p>
-     */
     @NameInMap("objectDeptIds")
     public java.util.List<Long> objectDeptIds;
 
-    /**
-     * <p>隐藏员工列表</p>
-     */
     @NameInMap("objectStaffIds")
     public java.util.List<String> objectStaffIds;
 
-    /**
-     * <p>影藏角色列表</p>
-     */
     @NameInMap("objectTagIds")
     public java.util.List<Long> objectTagIds;
 

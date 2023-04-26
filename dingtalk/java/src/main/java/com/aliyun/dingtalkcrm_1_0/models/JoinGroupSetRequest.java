@@ -4,27 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class JoinGroupSetRequest extends TeaModel {
-    /**
-     * <p>关系模型数据。</p>
-     */
     @NameInMap("bizDataList")
     public java.util.List<JoinGroupSetRequestBizDataList> bizDataList;
 
-    /**
-     * <p>组织id。</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>群组openGroupSetId。</p>
-     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
-    /**
-     * <p>unionId。</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -66,21 +54,12 @@ public class JoinGroupSetRequest extends TeaModel {
     }
 
     public static class JoinGroupSetRequestBizDataList extends TeaModel {
-        /**
-         * <p>关系模型数据字段扩展值。</p>
-         */
         @NameInMap("extendValue")
         public String extendValue;
 
-        /**
-         * <p>关系模型数据字段名。</p>
-         */
         @NameInMap("key")
         public String key;
 
-        /**
-         * <p>关系模型数据字段值。</p>
-         */
         @NameInMap("value")
         public String value;
 

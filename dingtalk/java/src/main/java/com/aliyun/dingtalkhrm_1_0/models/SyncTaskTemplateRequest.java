@@ -4,51 +4,27 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncTaskTemplateRequest extends TeaModel {
-    /**
-     * <p>是否删除任务模版，true删除，false不删除</p>
-     */
     @NameInMap("delete")
     public Boolean delete;
 
-    /**
-     * <p>任务模板描述</p>
-     */
     @NameInMap("des")
     public String des;
 
-    /**
-     * <p>扩展信息，json串</p>
-     */
     @NameInMap("ext")
     public String ext;
 
-    /**
-     * <p>模版名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>任务模版创建人staffId</p>
-     */
     @NameInMap("optUserId")
     public String optUserId;
 
-    /**
-     * <p>isv对应的任务模版唯一键</p>
-     */
     @NameInMap("outerId")
     public String outerId;
 
-    /**
-     * <p>圈人规则</p>
-     */
     @NameInMap("taskScopeVO")
     public SyncTaskTemplateRequestTaskScopeVO taskScopeVO;
 
-    /**
-     * <p>任务模版类型：TRAIN_TASK、PERFORMANCE_TASK</p>
-     */
     @NameInMap("taskType")
     public String taskType;
 
@@ -133,27 +109,15 @@ public class SyncTaskTemplateRequest extends TeaModel {
     }
 
     public static class SyncTaskTemplateRequestTaskScopeVO extends TeaModel {
-        /**
-         * <p>按照部门圈人</p>
-         */
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
-        /**
-         * <p>按照职位圈人</p>
-         */
         @NameInMap("positionIds")
         public java.util.List<String> positionIds;
 
-        /**
-         * <p>按照角色圈人</p>
-         */
         @NameInMap("roleIds")
         public java.util.List<String> roleIds;
 
-        /**
-         * <p>按照员工userId圈人</p>
-         */
         @NameInMap("userIds")
         public java.util.List<String> userIds;
 

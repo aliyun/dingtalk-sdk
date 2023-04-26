@@ -4,9 +4,6 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryHrmEmployeeDismissionInfoRequest extends TeaModel {
-    /**
-     * <p>员工 ids</p>
-     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

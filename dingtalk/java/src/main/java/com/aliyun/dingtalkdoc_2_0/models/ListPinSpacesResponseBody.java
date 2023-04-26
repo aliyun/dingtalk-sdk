@@ -4,18 +4,9 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListPinSpacesResponseBody extends TeaModel {
-    /**
-     * <p>分页游标</p>
-     * <p>不为空表示有更多数据</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>知识库置顶数据集合</p>
-     * <p>最大size:</p>
-     * <p>	20</p>
-     */
     @NameInMap("resultItems")
     public java.util.List<ListPinSpacesResponseBodyResultItems> resultItems;
 
@@ -41,15 +32,9 @@ public class ListPinSpacesResponseBody extends TeaModel {
     }
 
     public static class ListPinSpacesResponseBodyResultItemsSpaceInfoCreator extends TeaModel {
-        /**
-         * <p>用户名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -77,18 +62,9 @@ public class ListPinSpacesResponseBody extends TeaModel {
     }
 
     public static class ListPinSpacesResponseBodyResultItemsSpaceInfoIconVO extends TeaModel {
-        /**
-         * <p>图片存放地址</p>
-         */
         @NameInMap("icon")
         public String icon;
 
-        /**
-         * <p>图片存放类型</p>
-         * <p>枚举值:</p>
-         * <p>	UNICODE: unicode</p>
-         * <p>	URL: url</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -116,15 +92,9 @@ public class ListPinSpacesResponseBody extends TeaModel {
     }
 
     public static class ListPinSpacesResponseBodyResultItemsSpaceInfoModifier extends TeaModel {
-        /**
-         * <p>用户名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -152,69 +122,36 @@ public class ListPinSpacesResponseBody extends TeaModel {
     }
 
     public static class ListPinSpacesResponseBodyResultItemsSpaceInfo extends TeaModel {
-        /**
-         * <p>知识库封面路径</p>
-         */
         @NameInMap("cover")
         public String cover;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createTime")
         public String createTime;
 
-        /**
-         * <p>创建者信息</p>
-         */
         @NameInMap("creator")
         public ListPinSpacesResponseBodyResultItemsSpaceInfoCreator creator;
 
-        /**
-         * <p>知识库描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>知识库图标</p>
-         */
         @NameInMap("iconVO")
         public ListPinSpacesResponseBodyResultItemsSpaceInfoIconVO iconVO;
 
-        /**
-         * <p>知识库id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>Mobile 访问链接</p>
-         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
-        /**
-         * <p>修改者信息</p>
-         */
         @NameInMap("modifier")
         public ListPinSpacesResponseBodyResultItemsSpaceInfoModifier modifier;
 
-        /**
-         * <p>知识库名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>PC 访问链接</p>
-         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
@@ -314,15 +251,9 @@ public class ListPinSpacesResponseBody extends TeaModel {
     }
 
     public static class ListPinSpacesResponseBodyResultItemsTeamInfo extends TeaModel {
-        /**
-         * <p>小组id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>小组名称</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -350,40 +281,18 @@ public class ListPinSpacesResponseBody extends TeaModel {
     }
 
     public static class ListPinSpacesResponseBodyResultItems extends TeaModel {
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createTime")
         public String createTime;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
-        /**
-         * <p>知识库信息</p>
-         */
         @NameInMap("spaceInfo")
         public ListPinSpacesResponseBodyResultItemsSpaceInfo spaceInfo;
 
-        /**
-         * <p>知识库权限</p>
-         * <p>枚举值:</p>
-         * <p>	NO_PERMISSION: 无权限</p>
-         * <p>	READ_ONLY: 仅可查看</p>
-         * <p>	READ_AND_DOWNLOAD: 可查看/下载</p>
-         * <p>	EDIT: 可编辑</p>
-         * <p>	MANAGER: 可管理</p>
-         * <p>	OWNER: 所有者</p>
-         */
         @NameInMap("spacePermissionRole")
         public String spacePermissionRole;
 
-        /**
-         * <p>小组信息</p>
-         */
         @NameInMap("teamInfo")
         public ListPinSpacesResponseBodyResultItemsTeamInfo teamInfo;
 

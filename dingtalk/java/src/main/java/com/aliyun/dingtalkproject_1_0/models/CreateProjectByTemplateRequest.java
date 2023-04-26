@@ -4,15 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateProjectByTemplateRequest extends TeaModel {
-    /**
-     * <p>项目名字</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>模板ID</p>
-     */
     @NameInMap("templateId")
     public String templateId;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchAddInvoiceResponseBody extends TeaModel {
-    /**
-     * <p>错误信息</p>
-     */
     @NameInMap("errorResult")
     public java.util.List<BatchAddInvoiceResponseBodyErrorResult> errorResult;
 
-    /**
-     * <p>成功信息</p>
-     */
     @NameInMap("successResult")
     public java.util.List<BatchAddInvoiceResponseBodySuccessResult> successResult;
 
@@ -38,15 +32,9 @@ public class BatchAddInvoiceResponseBody extends TeaModel {
     }
 
     public static class BatchAddInvoiceResponseBodyErrorResult extends TeaModel {
-        /**
-         * <p>错误数据的key</p>
-         */
         @NameInMap("errorKey")
         public String errorKey;
 
-        /**
-         * <p>错误信息</p>
-         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
@@ -74,15 +62,9 @@ public class BatchAddInvoiceResponseBody extends TeaModel {
     }
 
     public static class BatchAddInvoiceResponseBodySuccessResult extends TeaModel {
-        /**
-         * <p>发票代码</p>
-         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
-        /**
-         * <p>发票号码</p>
-         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 

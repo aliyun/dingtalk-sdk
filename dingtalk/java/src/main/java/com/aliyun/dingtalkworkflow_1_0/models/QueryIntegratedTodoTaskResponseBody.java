@@ -21,51 +21,27 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
     }
 
     public static class QueryIntegratedTodoTaskResponseBodyResultList extends TeaModel {
-        /**
-         * <p>待办组ID，需要在调用创建流程中心集成任务接口时，主动设置该值。</p>
-         */
         @NameInMap("activityId")
         public String activityId;
 
-        /**
-         * <p>OA审批任务创建时间。</p>
-         */
         @NameInMap("createTime")
         public String createTime;
 
-        /**
-         * <p>OA审批任务完成时间。</p>
-         */
         @NameInMap("finishTime")
         public String finishTime;
 
-        /**
-         * <p>流程实例ID</p>
-         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        /**
-         * <p>任务处理结果：agree 或 refuse</p>
-         */
         @NameInMap("result")
         public String result;
 
-        /**
-         * <p>任务状态</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>OA审批任务ID</p>
-         */
         @NameInMap("taskId")
         public Long taskId;
 
-        /**
-         * <p>OA审批任务执行人的用户ID</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -141,9 +117,6 @@ public class QueryIntegratedTodoTaskResponseBody extends TeaModel {
     }
 
     public static class QueryIntegratedTodoTaskResponseBodyResult extends TeaModel {
-        /**
-         * <p>是否还有下一页</p>
-         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 

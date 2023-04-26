@@ -4,57 +4,30 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class DecodeBadgeCodeResponseBody extends TeaModel {
-    /**
-     * <p>支付宝付款码</p>
-     */
     @NameInMap("alipayCode")
     public String alipayCode;
 
-    /**
-     * <p>码ID，对于访客或会展码等静态码值返回</p>
-     */
     @NameInMap("codeId")
     public String codeId;
 
-    /**
-     * <p>码标识，工牌码：DT_IDENTITY，访客码：DT_VISITOR，会展码：DT_CONFERENCE</p>
-     */
     @NameInMap("codeIdentity")
     public String codeIdentity;
 
-    /**
-     * <p>码类型</p>
-     */
     @NameInMap("codeType")
     public String codeType;
 
-    /**
-     * <p>企业id</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>扩展信息</p>
-     */
     @NameInMap("extInfo")
     public String extInfo;
 
-    /**
-     * <p>外部业务ID，值为调用创建工牌码接口传入的requestId</p>
-     */
     @NameInMap("outBizId")
     public String outBizId;
 
-    /**
-     * <p>用户和企业关系</p>
-     */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
-    /**
-     * <p>员工id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

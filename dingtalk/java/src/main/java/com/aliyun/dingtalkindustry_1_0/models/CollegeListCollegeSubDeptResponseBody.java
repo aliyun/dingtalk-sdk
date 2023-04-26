@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeListCollegeSubDeptResponseBody extends TeaModel {
-    /**
-     * <p>部门信息列表</p>
-     */
     @NameInMap("collegeDeptInfoSimpleList")
     public java.util.List<CollegeListCollegeSubDeptResponseBodyCollegeDeptInfoSimpleList> collegeDeptInfoSimpleList;
 
@@ -24,21 +21,12 @@ public class CollegeListCollegeSubDeptResponseBody extends TeaModel {
     }
 
     public static class CollegeListCollegeSubDeptResponseBodyCollegeDeptInfoSimpleList extends TeaModel {
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("deptId")
         public Long deptId;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("deptName")
         public String deptName;
 
-        /**
-         * <p>部门类型</p>
-         */
         @NameInMap("deptType")
         public String deptType;
 

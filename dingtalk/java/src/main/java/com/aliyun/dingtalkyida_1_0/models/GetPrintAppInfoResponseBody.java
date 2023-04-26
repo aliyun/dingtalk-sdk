@@ -21,15 +21,9 @@ public class GetPrintAppInfoResponseBody extends TeaModel {
     }
 
     public static class GetPrintAppInfoResponseBodyResultFormInfoList extends TeaModel {
-        /**
-         * <p>formName</p>
-         */
         @NameInMap("formName")
         public String formName;
 
-        /**
-         * <p>formUuid</p>
-         */
         @NameInMap("formUuid")
         public String formUuid;
 
@@ -57,27 +51,15 @@ public class GetPrintAppInfoResponseBody extends TeaModel {
     }
 
     public static class GetPrintAppInfoResponseBodyResult extends TeaModel {
-        /**
-         * <p>应用名称</p>
-         */
         @NameInMap("appName")
         public String appName;
 
-        /**
-         * <p>appType</p>
-         */
         @NameInMap("appType")
         public String appType;
 
-        /**
-         * <p>formInfoList</p>
-         */
         @NameInMap("formInfoList")
         public java.util.List<GetPrintAppInfoResponseBodyResultFormInfoList> formInfoList;
 
-        /**
-         * <p>图标链接</p>
-         */
         @NameInMap("iconUrl")
         public String iconUrl;
 

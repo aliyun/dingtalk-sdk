@@ -4,21 +4,12 @@ package com.aliyun.dingtalkoauth2_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAuthInfoResponseBody extends TeaModel {
-    /**
-     * <p>授权应用信息</p>
-     */
     @NameInMap("authAppInfo")
     public GetAuthInfoResponseBodyAuthAppInfo authAppInfo;
 
-    /**
-     * <p>应用企业信息</p>
-     */
     @NameInMap("authCorpInfo")
     public GetAuthInfoResponseBodyAuthCorpInfo authCorpInfo;
 
-    /**
-     * <p>授权用户信息</p>
-     */
     @NameInMap("authUserInfo")
     public GetAuthInfoResponseBodyAuthUserInfo authUserInfo;
 
@@ -52,27 +43,15 @@ public class GetAuthInfoResponseBody extends TeaModel {
     }
 
     public static class GetAuthInfoResponseBodyAuthAppInfoAgentList extends TeaModel {
-        /**
-         * <p>对此微应用有管理权限的管理员列表</p>
-         */
         @NameInMap("adminList")
         public java.util.List<String> adminList;
 
-        /**
-         * <p>应用id</p>
-         */
         @NameInMap("agentId")
         public Long agentId;
 
-        /**
-         * <p>应用名称</p>
-         */
         @NameInMap("agentName")
         public String agentName;
 
-        /**
-         * <p>三方应用id</p>
-         */
         @NameInMap("appId")
         public Long appId;
 
@@ -135,57 +114,30 @@ public class GetAuthInfoResponseBody extends TeaModel {
     }
 
     public static class GetAuthInfoResponseBodyAuthCorpInfo extends TeaModel {
-        /**
-         * <p>渠道码。</p>
-         */
         @NameInMap("authChannel")
         public String authChannel;
 
-        /**
-         * <p>渠道类型。  为了避免渠道码重复，可与渠道码共同确认渠道。可能为空，非空时当前只有满天星类型，值为STAR_ACTIVITY。</p>
-         */
         @NameInMap("authChannelType")
         public String authChannelType;
 
-        /**
-         * <p>企业认证等级：  0：未认证  1：高级认证  2：中级认证  3：初级认证</p>
-         */
         @NameInMap("authLevel")
         public Long authLevel;
 
-        /**
-         * <p>企业logo。</p>
-         */
         @NameInMap("corpLogoUrl")
         public String corpLogoUrl;
 
-        /**
-         * <p>授权方企业名称。</p>
-         */
         @NameInMap("corpName")
         public String corpName;
 
-        /**
-         * <p>企业所属行业。</p>
-         */
         @NameInMap("industry")
         public String industry;
 
-        /**
-         * <p>邀请码，只有自己邀请的企业才会返回邀请码，可用该邀请码统计不同渠道的拉新，否则值为空字符串。</p>
-         */
         @NameInMap("inviteCode")
         public String inviteCode;
 
-        /**
-         * <p>企业邀请链接。</p>
-         */
         @NameInMap("inviteUrl")
         public String inviteUrl;
 
-        /**
-         * <p>序列号。</p>
-         */
         @NameInMap("licenseCode")
         public String licenseCode;
 
@@ -269,9 +221,6 @@ public class GetAuthInfoResponseBody extends TeaModel {
     }
 
     public static class GetAuthInfoResponseBodyAuthUserInfo extends TeaModel {
-        /**
-         * <p>授权管理员id</p>
-         */
         @NameInMap("userId")
         public String userId;
 

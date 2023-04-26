@@ -4,9 +4,6 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddResidentDepartmentResponseBody extends TeaModel {
-    /**
-     * <p>创建成功的deptId</p>
-     */
     @NameInMap("result")
     public Long result;
 

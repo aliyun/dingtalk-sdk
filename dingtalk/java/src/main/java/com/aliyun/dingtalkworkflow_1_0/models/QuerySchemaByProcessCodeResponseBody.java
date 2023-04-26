@@ -4,9 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
-    /**
-     * <p>返回结果详情。</p>
-     */
     @NameInMap("result")
     public QuerySchemaByProcessCodeResponseBodyResult result;
 
@@ -24,27 +21,15 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps extends TeaModel {
-        /**
-         * <p>控件业务别名</p>
-         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        /**
-         * <p>控件id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>控件名称</p>
-         */
         @NameInMap("label")
         public String label;
 
-        /**
-         * <p>是否必填</p>
-         */
         @NameInMap("required")
         public Boolean required;
 
@@ -88,15 +73,9 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren extends TeaModel {
-        /**
-         * <p>控件类型</p>
-         */
         @NameInMap("componentName")
         public String componentName;
 
-        /**
-         * <p>子控件属性</p>
-         */
         @NameInMap("props")
         public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildrenProps props;
 
@@ -124,15 +103,9 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets extends TeaModel {
-        /**
-         * <p>行为。</p>
-         */
         @NameInMap("behavior")
         public String behavior;
 
-        /**
-         * <p>字段 id。</p>
-         */
         @NameInMap("fieldId")
         public String fieldId;
 
@@ -160,15 +133,9 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage extends TeaModel {
-        /**
-         * <p>关联控件列表。</p>
-         */
         @NameInMap("targets")
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkageTargets> targets;
 
-        /**
-         * <p>控件值。</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -215,21 +182,12 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush extends TeaModel {
-        /**
-         * <p>考勤类型(1表示请假, 2表示出差, 3表示加班, 4表示外出)</p>
-         */
         @NameInMap("attendanceRule")
         public Integer attendanceRule;
 
-        /**
-         * <p>开启状态(1表示开启, 0表示关闭)</p>
-         */
         @NameInMap("pushSwitch")
         public Integer pushSwitch;
 
-        /**
-         * <p>状态显示名称</p>
-         */
         @NameInMap("pushTag")
         public String pushTag;
 
@@ -265,27 +223,15 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField extends TeaModel {
-        /**
-         * <p>id 值。</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>名称。</p>
-         */
         @NameInMap("label")
         public String label;
 
-        /**
-         * <p>单位。</p>
-         */
         @NameInMap("unit")
         public String unit;
 
-        /**
-         * <p>大写。</p>
-         */
         @NameInMap("upper")
         public Boolean upper;
 
@@ -329,273 +275,138 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps extends TeaModel {
-        /**
-         * <p>加班套件4.0新增 加班明细名称。</p>
-         */
         @NameInMap("actionName")
         public String actionName;
 
-        /**
-         * <p>textnote的样式，top|middle|bottom。</p>
-         */
         @NameInMap("align")
         public String align;
 
-        /**
-         * <p>ISV 微应用 appId，用于ISV身份权限识别，ISV可获得相应数据。</p>
-         */
         @NameInMap("appId")
         public Long appId;
 
-        /**
-         * <p>套件是否开启异步获取分条件规则，true：开启；false：不开启。</p>
-         */
         @NameInMap("asyncCondition")
         public Boolean asyncCondition;
 
-        /**
-         * <p>请假、出差、外出、加班类型标签。</p>
-         */
         @NameInMap("attendTypeLabel")
         public String attendTypeLabel;
 
-        /**
-         * <p>表单关联控件列表。</p>
-         */
         @NameInMap("behaviorLinkage")
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsBehaviorLinkage> behaviorLinkage;
 
-        /**
-         * <p>控件业务自定义别名。</p>
-         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        /**
-         * <p>业务套件类型。</p>
-         */
         @NameInMap("bizType")
         public String bizType;
 
-        /**
-         * <p>套件内子组件可见性</p>
-         */
         @NameInMap("childFieldVisible")
         public java.util.Map<String, Boolean> childFieldVisible;
 
-        /**
-         * <p>内部联系人choice，1表示多选，0表示单选。</p>
-         */
         @NameInMap("choice")
         public Integer choice;
 
-        /**
-         * <p>common field的commonBizType。</p>
-         */
         @NameInMap("commonBizType")
         public String commonBizType;
 
-        /**
-         * <p>是否可编辑。</p>
-         */
         @NameInMap("disabled")
         public Boolean disabled;
 
-        /**
-         * <p>是否自动计算时长。</p>
-         */
         @NameInMap("duration")
         public Boolean duration;
 
-        /**
-         * <p>兼容字段。</p>
-         */
         @NameInMap("durationLabel")
         public String durationLabel;
 
-        /**
-         * <p>e签宝专用标识。</p>
-         */
         @NameInMap("eSign")
         public Boolean eSign;
 
-        /**
-         * <p>套件值是否打平</p>
-         */
         @NameInMap("extract")
         public Boolean extract;
 
-        /**
-         * <p>关联表单中的fields存储</p>
-         */
         @NameInMap("fieldsInfo")
         public String fieldsInfo;
 
-        /**
-         * <p>时间格式(DDDateField和DDDateRangeField)。</p>
-         */
         @NameInMap("format")
         public String format;
 
-        /**
-         * <p>公式。</p>
-         */
         @NameInMap("formula")
         public String formula;
 
-        /**
-         * <p>加班套件4.0新增 加班明细是否隐藏。</p>
-         */
         @NameInMap("hidden")
         public Boolean hidden;
 
-        /**
-         * <p>textnote在详情页是否隐藏，true隐藏， false不隐藏</p>
-         */
         @NameInMap("hiddenInApprovalDetail")
         public Boolean hiddenInApprovalDetail;
 
-        /**
-         * <p>加班套件4.0新增 加班明细是否隐藏标签。</p>
-         */
         @NameInMap("hideLabel")
         public Boolean hideLabel;
 
-        /**
-         * <p>兼容出勤套件类型。</p>
-         */
         @NameInMap("holidayOptions")
         public java.util.List<java.util.Map<String, String>> holidayOptions;
 
-        /**
-         * <p>控件 id。</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>控件名称。</p>
-         */
         @NameInMap("label")
         public String label;
 
-        /**
-         * <p>label是否可修改 true：不可修改。</p>
-         */
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
 
-        /**
-         * <p>说明文案的链接地址。</p>
-         */
         @NameInMap("link")
         public String link;
 
-        /**
-         * <p>加班套件4.0新增 加班明细描述。</p>
-         */
         @NameInMap("mainTitle")
         public String mainTitle;
 
-        /**
-         * <p>是否参与打印(1表示不打印, 0表示打印)。</p>
-         */
         @NameInMap("notPrint")
         public String notPrint;
 
-        /**
-         * <p>是否需要大写 默认是需要; 1:不需要大写, 空或者0:需要大写。</p>
-         */
         @NameInMap("notUpper")
         public String notUpper;
 
-        /**
-         * <p>选项内容列表，提供给业务方更多的选择器操作。</p>
-         */
         @NameInMap("objOptions")
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsObjOptions> objOptions;
 
-        /**
-         * <p>单选框选项列表。</p>
-         */
         @NameInMap("options")
         public java.util.List<String> options;
 
-        /**
-         * <p>是否有支付属性。</p>
-         */
         @NameInMap("payEnable")
         public Boolean payEnable;
 
-        /**
-         * <p>占位符。</p>
-         */
         @NameInMap("placeholder")
         public String placeholder;
 
-        /**
-         * <p>同步到考勤, 表示是否设置为员工状态。</p>
-         */
         @NameInMap("push")
         public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsPush push;
 
-        /**
-         * <p>推送到考勤, 子类型(DDSelectField)。</p>
-         */
         @NameInMap("pushToAttendance")
         public Boolean pushToAttendance;
 
-        /**
-         * <p>是否推送管理日历(DDDateRangeField, 1表示推送, 0表示不推送, 该属性为兼容保留)。</p>
-         */
         @NameInMap("pushToCalendar")
         public Integer pushToCalendar;
 
-        /**
-         * <p>是否必填。</p>
-         */
         @NameInMap("required")
         public Boolean required;
 
-        /**
-         * <p>必填是否可修改 true：不可修改。</p>
-         */
         @NameInMap("requiredEditableFreeze")
         public Boolean requiredEditableFreeze;
 
-        /**
-         * <p>兼容出勤套件类型。</p>
-         */
         @NameInMap("showAttendOptions")
         public Boolean showAttendOptions;
 
-        /**
-         * <p>是否开启员工状态。</p>
-         */
         @NameInMap("staffStatusEnabled")
         public Boolean staffStatusEnabled;
 
-        /**
-         * <p>需要计算总和的明细组件</p>
-         */
         @NameInMap("statField")
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsPropsStatField> statField;
 
-        /**
-         * <p>数字组件/日期区间组件单位属性。</p>
-         */
         @NameInMap("unit")
         public String unit;
 
-        /**
-         * <p>是否使用考勤日历。</p>
-         */
         @NameInMap("useCalendar")
         public Boolean useCalendar;
 
-        /**
-         * <p>明细打印排版方式 false：横向 true：纵向。</p>
-         */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
 
@@ -967,21 +778,12 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems extends TeaModel {
-        /**
-         * <p>子控件列表</p>
-         */
         @NameInMap("children")
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsChildren> children;
 
-        /**
-         * <p>控件类型，取值：</p>
-         */
         @NameInMap("componentName")
         public String componentName;
 
-        /**
-         * <p>控件属性。</p>
-         */
         @NameInMap("props")
         public QuerySchemaByProcessCodeResponseBodyResultSchemaContentItemsProps props;
 
@@ -1017,21 +819,12 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResultSchemaContent extends TeaModel {
-        /**
-         * <p>图标</p>
-         */
         @NameInMap("icon")
         public String icon;
 
-        /**
-         * <p>控件列表</p>
-         */
         @NameInMap("items")
         public java.util.List<QuerySchemaByProcessCodeResponseBodyResultSchemaContentItems> items;
 
-        /**
-         * <p>表单名称。</p>
-         */
         @NameInMap("title")
         public String title;
 
@@ -1067,117 +860,60 @@ public class QuerySchemaByProcessCodeResponseBody extends TeaModel {
     }
 
     public static class QuerySchemaByProcessCodeResponseBodyResult extends TeaModel {
-        /**
-         * <p>表单类型。</p>
-         */
         @NameInMap("appType")
         public Integer appType;
 
-        /**
-         * <p>表单应用 uuid 或者 corpId。</p>
-         */
         @NameInMap("appUuid")
         public String appUuid;
 
-        /**
-         * <p>代表表单业务含义的类型。</p>
-         */
         @NameInMap("bizType")
         public String bizType;
 
-        /**
-         * <p>创建人 userId。</p>
-         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        /**
-         * <p>业务自定义设置数据。</p>
-         */
         @NameInMap("customSetting")
         public String customSetting;
 
-        /**
-         * <p>引擎类型，表单：0，页面：1</p>
-         */
         @NameInMap("engineType")
         public Integer engineType;
 
-        /**
-         * <p>表单的唯一码。</p>
-         */
         @NameInMap("formCode")
         public String formCode;
 
-        /**
-         * <p>表单 uuid。</p>
-         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        /**
-         * <p>创建时间的时间戳。</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>修改时间的时间戳。</p>
-         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        /**
-         * <p>图标。</p>
-         */
         @NameInMap("icon")
         public String icon;
 
-        /**
-         * <p>排序 id。</p>
-         */
         @NameInMap("listOrder")
         public Integer listOrder;
 
-        /**
-         * <p>说明文案。</p>
-         */
         @NameInMap("memo")
         public String memo;
 
-        /**
-         * <p>表单名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>数据归属者的 id 类型。企业(orgId), 群(cid), 人(uid)。</p>
-         */
         @NameInMap("ownerIdType")
         public String ownerIdType;
 
-        /**
-         * <p>目标类型: inner, outer, customer。</p>
-         */
         @NameInMap("procType")
         public String procType;
 
-        /**
-         * <p>表单 schema 详情。</p>
-         */
         @NameInMap("schemaContent")
         public QuerySchemaByProcessCodeResponseBodyResultSchemaContent schemaContent;
 
-        /**
-         * <p>状态, PUBLISHED(启用), INVALID(停用), SAVED(草稿)</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>可见范围类型。</p>
-         */
         @NameInMap("visibleRange")
         public String visibleRange;
 

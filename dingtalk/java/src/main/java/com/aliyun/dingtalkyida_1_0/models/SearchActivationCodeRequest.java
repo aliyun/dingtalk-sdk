@@ -4,15 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchActivationCodeRequest extends TeaModel {
-    /**
-     * <p>访问key</p>
-     */
     @NameInMap("accessKey")
     public String accessKey;
 
-    /**
-     * <p>用户的uid</p>
-     */
     @NameInMap("callerUid")
     public String callerUid;
 

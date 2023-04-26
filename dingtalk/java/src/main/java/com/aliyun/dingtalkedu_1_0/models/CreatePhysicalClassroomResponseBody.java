@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreatePhysicalClassroomResponseBody extends TeaModel {
-    /**
-     * <p>教室id</p>
-     */
     @NameInMap("classroomId")
     public Long classroomId;
 

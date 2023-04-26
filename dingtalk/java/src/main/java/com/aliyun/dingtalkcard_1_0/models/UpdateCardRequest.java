@@ -4,29 +4,15 @@ package com.aliyun.dingtalkcard_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateCardRequest extends TeaModel {
-    /**
-     * <p>卡片数据</p>
-     */
     @NameInMap("cardData")
     public UpdateCardRequestCardData cardData;
 
-    /**
-     * <p>卡片更新选项</p>
-     */
     @NameInMap("cardUpdateOptions")
     public UpdateCardRequestCardUpdateOptions cardUpdateOptions;
 
-    /**
-     * <p>【必填】外部卡片实例Id</p>
-     */
     @NameInMap("outTrackId")
     public String outTrackId;
 
-    /**
-     * <p>用户的私有数据。</p>
-     * <p>● key：userId</p>
-     * <p>● value：用户私有数据（cardData）</p>
-     */
     @NameInMap("privateData")
     public java.util.Map<String, PrivateDataValue> privateData;
 
@@ -79,11 +65,6 @@ public class UpdateCardRequest extends TeaModel {
     }
 
     public static class UpdateCardRequestCardData extends TeaModel {
-        /**
-         * <p>卡片模板内容替换参数，普通文本类型</p>
-         * <p>● key：参数名</p>
-         * <p>● value: 参数值</p>
-         */
         @NameInMap("cardParamMap")
         public java.util.Map<String, String> cardParamMap;
 
@@ -103,15 +84,9 @@ public class UpdateCardRequest extends TeaModel {
     }
 
     public static class UpdateCardRequestCardUpdateOptions extends TeaModel {
-        /**
-         * <p>按 key 更新 cardData 数据，不填默认覆盖更新。</p>
-         */
         @NameInMap("updateCardDataByKey")
         public Boolean updateCardDataByKey;
 
-        /**
-         * <p>【可选】按key更新privateData用户数据，不填默认覆盖更新。</p>
-         */
         @NameInMap("updatePrivateDataByKey")
         public Boolean updatePrivateDataByKey;
 

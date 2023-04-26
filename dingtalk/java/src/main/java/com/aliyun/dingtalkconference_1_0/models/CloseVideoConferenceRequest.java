@@ -4,9 +4,6 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class CloseVideoConferenceRequest extends TeaModel {
-    /**
-     * <p>员工在当前开发者企业账号范围内的唯一标识</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

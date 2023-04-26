@@ -4,60 +4,33 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateInnerAppRequest extends TeaModel {
-    /**
-     * <p>应用描述</p>
-     */
     @NameInMap("desc")
     public String desc;
 
     @NameInMap("developType")
     public Integer developType;
 
-    /**
-     * <p>应用首页地址</p>
-     */
     @NameInMap("homepageLink")
     public String homepageLink;
 
-    /**
-     * <p>应用图标</p>
-     */
     @NameInMap("icon")
     public String icon;
 
-    /**
-     * <p>服务器出口ip白名单</p>
-     */
     @NameInMap("ipWhiteList")
     public java.util.List<String> ipWhiteList;
 
-    /**
-     * <p>应用名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>应用管理后台地址</p>
-     */
     @NameInMap("ompLink")
     public String ompLink;
 
-    /**
-     * <p>创建人unionId</p>
-     */
     @NameInMap("opUnionId")
     public String opUnionId;
 
-    /**
-     * <p>应用PC端地址</p>
-     */
     @NameInMap("pcHomepageLink")
     public String pcHomepageLink;
 
-    /**
-     * <p>权限类型</p>
-     */
     @NameInMap("scopeType")
     public String scopeType;
 

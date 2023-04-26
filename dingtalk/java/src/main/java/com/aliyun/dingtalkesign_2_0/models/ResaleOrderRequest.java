@@ -4,33 +4,18 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class ResaleOrderRequest extends TeaModel {
-    /**
-     * <p>下单时间</p>
-     */
     @NameInMap("orderCreateTime")
     public Float orderCreateTime;
 
-    /**
-     * <p>isv方的订单Id（用于幂等，请保证唯一性）</p>
-     */
     @NameInMap("orderId")
     public String orderId;
 
-    /**
-     * <p>购买数量（电子合同份数）</p>
-     */
     @NameInMap("quantity")
     public Float quantity;
 
-    /**
-     * <p>合同生效起始时间</p>
-     */
     @NameInMap("serviceStartTime")
     public Float serviceStartTime;
 
-    /**
-     * <p>合同失效截止日期，默认有效时间一年</p>
-     */
     @NameInMap("serviceStopTime")
     public Float serviceStopTime;
 

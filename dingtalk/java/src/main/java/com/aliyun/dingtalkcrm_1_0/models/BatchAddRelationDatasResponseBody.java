@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchAddRelationDatasResponseBody extends TeaModel {
-    /**
-     * <p>批量插入结果列表，results的结果和要新增的数据是一一对应的，可以获取到每条数据分别是否成功。</p>
-     */
     @NameInMap("results")
     public java.util.List<BatchAddRelationDatasResponseBodyResults> results;
 
@@ -24,33 +21,18 @@ public class BatchAddRelationDatasResponseBody extends TeaModel {
     }
 
     public static class BatchAddRelationDatasResponseBodyResults extends TeaModel {
-        /**
-         * <p>如果因为查重导致失败，表示重复的关系数据id列表。</p>
-         */
         @NameInMap("duplicatedRelationIds")
         public java.util.List<String> duplicatedRelationIds;
 
-        /**
-         * <p>如果保存失败，则表示失败的错误码。</p>
-         */
         @NameInMap("errorCode")
         public String errorCode;
 
-        /**
-         * <p>如果保存失败，则表示失败的错误原因。</p>
-         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
-        /**
-         * <p>保存成功的关系id。</p>
-         */
         @NameInMap("relationId")
         public String relationId;
 
-        /**
-         * <p>数据是否保存成功。</p>
-         */
         @NameInMap("success")
         public Boolean success;
 

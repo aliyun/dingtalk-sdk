@@ -4,21 +4,12 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class InitAndGetLeaveALlocationQuotasRequest extends TeaModel {
-    /**
-     * <p>假期类型的标识。</p>
-     */
     @NameInMap("leaveCode")
     public String leaveCode;
 
-    /**
-     * <p>操作者的userId。</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    /**
-     * <p>用户id。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

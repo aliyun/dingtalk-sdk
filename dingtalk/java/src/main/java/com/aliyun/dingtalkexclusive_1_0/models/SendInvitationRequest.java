@@ -4,33 +4,18 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendInvitationRequest extends TeaModel {
-    /**
-     * <p>部门id</p>
-     */
     @NameInMap("deptId")
     public String deptId;
 
-    /**
-     * <p>组织别名</p>
-     */
     @NameInMap("orgAlias")
     public String orgAlias;
 
-    /**
-     * <p>伙伴标签id</p>
-     */
     @NameInMap("partnerLabelId")
     public Long partnerLabelId;
 
-    /**
-     * <p>伙伴编码</p>
-     */
     @NameInMap("partnerNum")
     public String partnerNum;
 
-    /**
-     * <p>手机号</p>
-     */
     @NameInMap("phone")
     public String phone;
 

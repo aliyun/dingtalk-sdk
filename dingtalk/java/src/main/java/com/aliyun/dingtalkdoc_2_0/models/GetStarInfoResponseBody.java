@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetStarInfoResponseBody extends TeaModel {
-    /**
-     * <p>是否已星标</p>
-     */
     @NameInMap("starred")
     public Boolean starred;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllTracksRequest extends TeaModel {
-    /**
-     * <p>分页size</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>分页游标</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>排序</p>
-     */
     @NameInMap("order")
     public String order;
 

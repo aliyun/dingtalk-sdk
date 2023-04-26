@@ -4,15 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class RemoveContactFromOrgRequest extends TeaModel {
-    /**
-     * <p>开放联系人uinionId</p>
-     */
     @NameInMap("contactUnionId")
     public String contactUnionId;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

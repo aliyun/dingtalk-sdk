@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTaskNoteRequest extends TeaModel {
-    /**
-     * <p>任务备注。</p>
-     */
     @NameInMap("note")
     public String note;
 

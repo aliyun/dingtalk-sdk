@@ -4,117 +4,60 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchOrgCreateHWRequest extends TeaModel {
-    /**
-     * <p>扩展属性</p>
-     */
     @NameInMap("attributes")
     public String attributes;
 
-    /**
-     * <p>业务编码</p>
-     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    /**
-     * <p>作业课程名称</p>
-     */
     @NameInMap("courseName")
     public String courseName;
 
-    /**
-     * <p>作业内容</p>
-     */
     @NameInMap("hwContent")
     public String hwContent;
 
-    /**
-     * <p>截止时间</p>
-     */
     @NameInMap("hwDeadline")
     public Long hwDeadline;
 
-    /**
-     * <p>截止时间开启</p>
-     */
     @NameInMap("hwDeadlineOpen")
     public String hwDeadlineOpen;
 
-    /**
-     * <p>作业视频</p>
-     */
     @NameInMap("hwMedia")
     public String hwMedia;
 
-    /**
-     * <p>作业图片</p>
-     */
     @NameInMap("hwPhoto")
     public String hwPhoto;
 
-    /**
-     * <p>作业标题</p>
-     */
     @NameInMap("hwTitle")
     public String hwTitle;
 
-    /**
-     * <p>作业类型</p>
-     */
     @NameInMap("hwType")
     public String hwType;
 
-    /**
-     * <p>作业音视频</p>
-     */
     @NameInMap("hwVideo")
     public String hwVideo;
 
-    /**
-     * <p>幂等ID字段</p>
-     */
     @NameInMap("identifier")
     public String identifier;
 
-    /**
-     * <p>选择跨组织班级</p>
-     */
     @NameInMap("openSelectItemList")
     public java.util.List<BatchOrgCreateHWRequestOpenSelectItemList> openSelectItemList;
 
-    /**
-     * <p>定时调度</p>
-     */
     @NameInMap("scheduledRelease")
     public String scheduledRelease;
 
-    /**
-     * <p>定时调度时间</p>
-     */
     @NameInMap("scheduledTime")
     public String scheduledTime;
 
-    /**
-     * <p>状态</p>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <p>发送对象</p>
-     */
     @NameInMap("targetRole")
     public String targetRole;
 
-    /**
-     * <p>老师名称</p>
-     */
     @NameInMap("teacherName")
     public String teacherName;
 
-    /**
-     * <p>老师userid</p>
-     */
     @NameInMap("teacherUserId")
     public String teacherUserId;
 
@@ -276,21 +219,12 @@ public class BatchOrgCreateHWRequest extends TeaModel {
     }
 
     public static class BatchOrgCreateHWRequestOpenSelectItemListClassListStudents extends TeaModel {
-        /**
-         * <p>学生头像</p>
-         */
         @NameInMap("avatar")
         public String avatar;
 
-        /**
-         * <p>学生姓名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>学生userid</p>
-         */
         @NameInMap("staffId")
         public String staffId;
 
@@ -326,27 +260,15 @@ public class BatchOrgCreateHWRequest extends TeaModel {
     }
 
     public static class BatchOrgCreateHWRequestOpenSelectItemListClassList extends TeaModel {
-        /**
-         * <p>是否全选</p>
-         */
         @NameInMap("all")
         public Boolean all;
 
-        /**
-         * <p>班级id</p>
-         */
         @NameInMap("classId")
         public String classId;
 
-        /**
-         * <p>班级名称</p>
-         */
         @NameInMap("className")
         public String className;
 
-        /**
-         * <p>学生列表</p>
-         */
         @NameInMap("students")
         public java.util.List<BatchOrgCreateHWRequestOpenSelectItemListClassListStudents> students;
 
@@ -390,21 +312,12 @@ public class BatchOrgCreateHWRequest extends TeaModel {
     }
 
     public static class BatchOrgCreateHWRequestOpenSelectItemList extends TeaModel {
-        /**
-         * <p>班级列表</p>
-         */
         @NameInMap("classList")
         public java.util.List<BatchOrgCreateHWRequestOpenSelectItemListClassList> classList;
 
-        /**
-         * <p>组织corpId</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>选择内容</p>
-         */
         @NameInMap("selectedClassesDesc")
         public String selectedClassesDesc;
 

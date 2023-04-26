@@ -4,21 +4,12 @@ package com.aliyun.dingtalkesign_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSignNoticeUrlResponseBody extends TeaModel {
-    /**
-     * <p>返回错误码</p>
-     */
     @NameInMap("code")
     public Integer code;
 
-    /**
-     * <p>返回数据</p>
-     */
     @NameInMap("data")
     public GetSignNoticeUrlResponseBodyData data;
 
-    /**
-     * <p>返回结果信息</p>
-     */
     @NameInMap("message")
     public String message;
 
@@ -52,15 +43,9 @@ public class GetSignNoticeUrlResponseBody extends TeaModel {
     }
 
     public static class GetSignNoticeUrlResponseBodyData extends TeaModel {
-        /**
-         * <p>移动端URL</p>
-         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
-        /**
-         * <p>PC端URL</p>
-         */
         @NameInMap("pcUrl")
         public String pcUrl;
 

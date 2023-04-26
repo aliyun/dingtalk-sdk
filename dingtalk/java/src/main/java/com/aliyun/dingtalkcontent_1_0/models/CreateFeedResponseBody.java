@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateFeedResponseBody extends TeaModel {
-    /**
-     * <p>创建内容的内容Id</p>
-     */
     @NameInMap("feedId")
     public String feedId;
 

@@ -4,39 +4,21 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListActivateDevicesRequest extends TeaModel {
-    /**
-     * <p>设备分类（0：设备，1 : 助手）</p>
-     */
     @NameInMap("deviceCategory")
     public Integer deviceCategory;
 
-    /**
-     * <p>deviceCode</p>
-     */
     @NameInMap("deviceCode")
     public String deviceCode;
 
-    /**
-     * <p>deviceTypeId</p>
-     */
     @NameInMap("deviceTypeId")
     public String deviceTypeId;
 
-    /**
-     * <p>groupId</p>
-     */
     @NameInMap("groupId")
     public String groupId;
 
-    /**
-     * <p>pageNo</p>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>pageSize</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

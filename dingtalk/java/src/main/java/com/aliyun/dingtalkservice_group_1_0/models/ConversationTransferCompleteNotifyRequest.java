@@ -4,45 +4,24 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConversationTransferCompleteNotifyRequest extends TeaModel {
-    /**
-     * <p>小二2088id</p>
-     */
     @NameInMap("alipayUserId")
     public String alipayUserId;
 
-    /**
-     * <p>DT端会话ID</p>
-     */
     @NameInMap("conversationId")
     public String conversationId;
 
-    /**
-     * <p>小二昵称</p>
-     */
     @NameInMap("nickName")
     public String nickName;
 
-    /**
-     * <p>开放团队id</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>对应外部渠道的会话ID</p>
-     */
     @NameInMap("serviceToken")
     public String serviceToken;
 
-    /**
-     * <p>小二id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>DT端定义的，标识唯一的访</p>
-     */
     @NameInMap("visitorToken")
     public String visitorToken;
 

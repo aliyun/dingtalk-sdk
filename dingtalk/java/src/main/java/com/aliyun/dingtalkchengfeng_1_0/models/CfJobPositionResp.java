@@ -4,15 +4,9 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class CfJobPositionResp extends TeaModel {
-    /**
-     * <p>职位编码</p>
-     */
     @NameInMap("jobPositionCode")
     public String jobPositionCode;
 
-    /**
-     * <p>职位名称</p>
-     */
     @NameInMap("name")
     public String name;
 

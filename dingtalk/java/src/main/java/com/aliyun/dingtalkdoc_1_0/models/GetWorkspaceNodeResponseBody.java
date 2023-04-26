@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetWorkspaceNodeResponseBody extends TeaModel {
-    /**
-     * <p>是否有权限</p>
-     */
     @NameInMap("hasPermission")
     public Boolean hasPermission;
 
-    /**
-     * <p>节点信息</p>
-     */
     @NameInMap("nodeBO")
     public GetWorkspaceNodeResponseBodyNodeBO nodeBO;
 
-    /**
-     * <p>节点所属知识库信息。</p>
-     */
     @NameInMap("workspaceBO")
     public GetWorkspaceNodeResponseBodyWorkspaceBO workspaceBO;
 
@@ -52,33 +43,18 @@ public class GetWorkspaceNodeResponseBody extends TeaModel {
     }
 
     public static class GetWorkspaceNodeResponseBodyNodeBO extends TeaModel {
-        /**
-         * <p>节点类型</p>
-         */
         @NameInMap("docType")
         public String docType;
 
-        /**
-         * <p>最后编辑时间</p>
-         */
         @NameInMap("lastEditTime")
         public Long lastEditTime;
 
-        /**
-         * <p>节点名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>节点Id</p>
-         */
         @NameInMap("nodeId")
         public String nodeId;
 
-        /**
-         * <p>节点打开url</p>
-         */
         @NameInMap("url")
         public String url;
 
@@ -130,15 +106,9 @@ public class GetWorkspaceNodeResponseBody extends TeaModel {
     }
 
     public static class GetWorkspaceNodeResponseBodyWorkspaceBO extends TeaModel {
-        /**
-         * <p>知识库名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>知识库id。</p>
-         */
         @NameInMap("workspaceId")
         public String workspaceId;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetProjectGroupResponseBody extends TeaModel {
-    /**
-     * <p>返回结果对象</p>
-     */
     @NameInMap("result")
     public java.util.List<GetProjectGroupResponseBodyResult> result;
 
@@ -24,33 +21,18 @@ public class GetProjectGroupResponseBody extends TeaModel {
     }
 
     public static class GetProjectGroupResponseBodyResult extends TeaModel {
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("created")
         public String created;
 
-        /**
-         * <p>分组ID</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>分组名字</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>更新时间</p>
-         */
         @NameInMap("updated")
         public String updated;
 
-        /**
-         * <p>分组可见性。organization 或者 involves</p>
-         */
         @NameInMap("visible")
         public String visible;
 

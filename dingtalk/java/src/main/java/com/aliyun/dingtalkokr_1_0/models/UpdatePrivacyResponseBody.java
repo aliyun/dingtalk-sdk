@@ -4,15 +4,9 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdatePrivacyResponseBody extends TeaModel {
-    /**
-     * <p>返回的数据。</p>
-     */
     @NameInMap("data")
     public UpdatePrivacyResponseBodyData data;
 
-    /**
-     * <p>请求成功的标识。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -123,21 +117,12 @@ public class UpdatePrivacyResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>权限列表</p>
-         */
         @NameInMap("policyList")
         public java.util.List<UpdatePrivacyResponseBodyDataPolicyList> policyList;
 
-        /**
-         * <p>是否可见的标识。</p>
-         */
         @NameInMap("privacy")
         public String privacy;
 
-        /**
-         * <p>哪种类型的权限。</p>
-         */
         @NameInMap("type")
         public String type;
 

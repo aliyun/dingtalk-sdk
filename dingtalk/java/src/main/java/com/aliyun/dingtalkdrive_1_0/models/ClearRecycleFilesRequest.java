@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ClearRecycleFilesRequest extends TeaModel {
-    /**
-     * <p>回收站类型</p>
-     */
     @NameInMap("recycleType")
     public String recycleType;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

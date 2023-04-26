@@ -4,33 +4,18 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetStaffPageQueryRequest extends TeaModel {
-    /**
-     * <p>部门编码</p>
-     */
     @NameInMap("deptCode")
     public String deptCode;
 
-    /**
-     * <p>员工名称,模糊查询</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>当前页码</p>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>分页条数</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>工号</p>
-     */
     @NameInMap("workNo")
     public String workNo;
 

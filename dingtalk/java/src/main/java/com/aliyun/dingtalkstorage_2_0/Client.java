@@ -6,8 +6,11 @@ import com.aliyun.dingtalkstorage_2_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -16,15 +19,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
     }
 
 
-    public CommitFileResponse commitFile(String parentDentryUuid, CommitFileRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CommitFileHeaders headers = new CommitFileHeaders();
-        return this.commitFileWithOptions(parentDentryUuid, request, headers, runtime);
-    }
-
     public CommitFileResponse commitFileWithOptions(String parentDentryUuid, CommitFileRequest request, CommitFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        parentDentryUuid = com.aliyun.openapiutil.Client.getEncodeParam(parentDentryUuid);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             query.put("unionId", request.unionId);
@@ -57,18 +53,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CommitFile", "storage_2.0", "HTTP", "POST", "AK", "/v2.0/storage/spaces/files/" + parentDentryUuid + "/commit", "json", req, runtime), new CommitFileResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CommitFile"),
+            new TeaPair("version", "storage_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/storage/spaces/files/" + parentDentryUuid + "/commit"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CommitFileResponse());
     }
 
-    public GetFileUploadInfoResponse getFileUploadInfo(String parentDentryUuid, GetFileUploadInfoRequest request) throws Exception {
+    public CommitFileResponse commitFile(String parentDentryUuid, CommitFileRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetFileUploadInfoHeaders headers = new GetFileUploadInfoHeaders();
-        return this.getFileUploadInfoWithOptions(parentDentryUuid, request, headers, runtime);
+        CommitFileHeaders headers = new CommitFileHeaders();
+        return this.commitFileWithOptions(parentDentryUuid, request, headers, runtime);
     }
 
     public GetFileUploadInfoResponse getFileUploadInfoWithOptions(String parentDentryUuid, GetFileUploadInfoRequest request, GetFileUploadInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        parentDentryUuid = com.aliyun.openapiutil.Client.getEncodeParam(parentDentryUuid);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             query.put("unionId", request.unionId);
@@ -97,6 +103,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetFileUploadInfo", "storage_2.0", "HTTP", "POST", "AK", "/v2.0/storage/spaces/files/" + parentDentryUuid + "/uploadInfos/query", "json", req, runtime), new GetFileUploadInfoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetFileUploadInfo"),
+            new TeaPair("version", "storage_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/storage/spaces/files/" + parentDentryUuid + "/uploadInfos/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetFileUploadInfoResponse());
+    }
+
+    public GetFileUploadInfoResponse getFileUploadInfo(String parentDentryUuid, GetFileUploadInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetFileUploadInfoHeaders headers = new GetFileUploadInfoHeaders();
+        return this.getFileUploadInfoWithOptions(parentDentryUuid, request, headers, runtime);
     }
 }

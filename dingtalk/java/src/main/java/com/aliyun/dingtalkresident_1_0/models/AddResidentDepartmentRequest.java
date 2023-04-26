@@ -4,21 +4,12 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddResidentDepartmentRequest extends TeaModel {
-    /**
-     * <p>部门名字</p>
-     */
     @NameInMap("departmentName")
     public String departmentName;
 
-    /**
-     * <p>是否为组</p>
-     */
     @NameInMap("isResidenceGroup")
     public Boolean isResidenceGroup;
 
-    /**
-     * <p>父部门id</p>
-     */
     @NameInMap("parentDepartmentId")
     public Long parentDepartmentId;
 

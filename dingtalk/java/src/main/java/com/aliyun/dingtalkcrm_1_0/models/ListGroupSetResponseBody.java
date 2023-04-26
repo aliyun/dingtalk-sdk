@@ -4,27 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListGroupSetResponseBody extends TeaModel {
-    /**
-     * <p>是否有下一页</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>下一页的游标</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>群组列表</p>
-     */
     @NameInMap("resultList")
     public java.util.List<ListGroupSetResponseBodyResultList> resultList;
 
-    /**
-     * <p>总条数，queryDsl入参为空时才会返回</p>
-     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -66,15 +54,9 @@ public class ListGroupSetResponseBody extends TeaModel {
     }
 
     public static class ListGroupSetResponseBodyResultListManager extends TeaModel {
-        /**
-         * <p>群管理员姓名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>群管理员userId</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -102,15 +84,9 @@ public class ListGroupSetResponseBody extends TeaModel {
     }
 
     public static class ListGroupSetResponseBodyResultListOwner extends TeaModel {
-        /**
-         * <p>群主姓名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>群主userId</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -138,99 +114,51 @@ public class ListGroupSetResponseBody extends TeaModel {
     }
 
     public static class ListGroupSetResponseBodyResultList extends TeaModel {
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        /**
-         * <p>群组内群数量（不包含已解散的群）。</p>
-         */
         @NameInMap("groupChatCount")
         public Integer groupChatCount;
 
-        /**
-         * <p>最新裂变群的群openConversationId</p>
-         */
         @NameInMap("lastOpenConversationId")
         public String lastOpenConversationId;
 
-        /**
-         * <p>群管理员列表</p>
-         */
         @NameInMap("manager")
         public java.util.List<ListGroupSetResponseBodyResultListManager> manager;
 
-        /**
-         * <p>群管理员userId列表，多个用逗号隔开，裂变出的新群会自动设置这些userId为群管理员</p>
-         */
         @NameInMap("managerUserIds")
         public String managerUserIds;
 
-        /**
-         * <p>群组内所有群的成员数量</p>
-         */
         @NameInMap("memberCount")
         public Integer memberCount;
 
-        /**
-         * <p>单个群的人数上限</p>
-         */
         @NameInMap("memberQuota")
         public Integer memberQuota;
 
-        /**
-         * <p>群组名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>群公告文本，裂变出的新群会自动设置上该群公告</p>
-         */
         @NameInMap("notice")
         public String notice;
 
-        /**
-         * <p>群公告是否置顶，0：不置顶，1：置顶。裂变出的新群会自动设置上该属性</p>
-         */
         @NameInMap("noticeToped")
         public Integer noticeToped;
 
-        /**
-         * <p>群组openGroupSetId</p>
-         */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
-        /**
-         * <p>群主</p>
-         */
         @NameInMap("owner")
         public ListGroupSetResponseBodyResultListOwner owner;
 
-        /**
-         * <p>群主userId，裂变出的新群会自动设置该userId为群主</p>
-         */
         @NameInMap("ownerUserId")
         public String ownerUserId;
 
-        /**
-         * <p>关系类型</p>
-         */
         @NameInMap("relationType")
         public String relationType;
 
-        /**
-         * <p>群模板id</p>
-         */
         @NameInMap("templateId")
         public String templateId;
 

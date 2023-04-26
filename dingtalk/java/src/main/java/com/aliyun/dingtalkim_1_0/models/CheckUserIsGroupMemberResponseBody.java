@@ -4,9 +4,6 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckUserIsGroupMemberResponseBody extends TeaModel {
-    /**
-     * <p>用户是否为群成员。</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

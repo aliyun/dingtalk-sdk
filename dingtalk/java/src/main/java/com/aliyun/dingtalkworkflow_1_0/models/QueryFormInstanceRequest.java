@@ -4,21 +4,12 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryFormInstanceRequest extends TeaModel {
-    /**
-     * <p>应用搭建id</p>
-     */
     @NameInMap("appUuid")
     public String appUuid;
 
-    /**
-     * <p>表单模板Code</p>
-     */
     @NameInMap("formCode")
     public String formCode;
 
-    /**
-     * <p>表单实例id</p>
-     */
     @NameInMap("formInstanceId")
     public String formInstanceId;
 

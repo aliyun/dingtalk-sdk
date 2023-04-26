@@ -4,21 +4,12 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTaskInvolvemembersRequest extends TeaModel {
-    /**
-     * <p>新增参与者列表。</p>
-     */
     @NameInMap("addInvolvers")
     public java.util.List<String> addInvolvers;
 
-    /**
-     * <p>移除参与者列表。</p>
-     */
     @NameInMap("delInvolvers")
     public java.util.List<String> delInvolvers;
 
-    /**
-     * <p>更新任务参与者列表。</p>
-     */
     @NameInMap("involveMembers")
     public java.util.List<String> involveMembers;
 

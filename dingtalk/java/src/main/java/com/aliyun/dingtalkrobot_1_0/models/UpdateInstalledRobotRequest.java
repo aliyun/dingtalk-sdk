@@ -4,41 +4,21 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInstalledRobotRequest extends TeaModel {
-    /**
-     * <p>机器人的简要描述。</p>
-     */
     @NameInMap("brief")
     public String brief;
 
-    /**
-     * <p>机器人的详细描述。</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>机器人图标的mediaId。</p>
-     */
     @NameInMap("icon")
     public String icon;
 
-    /**
-     * <p>机器人的名称。</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>机器人的robotCode。</p>
-     */
     @NameInMap("robotCode")
     public String robotCode;
 
-    /**
-     * <p>更新名字或头像时是否更新群里已添加机器人的名字或头像。</p>
-     * <p>0-不更新群里机器人名字或头像</p>
-     * <p>1-更新群里机器人名字或头像</p>
-     */
     @NameInMap("updateType")
     public Integer updateType;
 

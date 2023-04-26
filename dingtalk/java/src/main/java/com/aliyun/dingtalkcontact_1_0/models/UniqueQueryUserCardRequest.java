@@ -4,15 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UniqueQueryUserCardRequest extends TeaModel {
-    /**
-     * <p>名片模版id</p>
-     */
     @NameInMap("templateId")
     public String templateId;
 
-    /**
-     * <p>用户unionId</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

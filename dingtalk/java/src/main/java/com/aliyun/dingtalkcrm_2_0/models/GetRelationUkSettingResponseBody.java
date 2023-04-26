@@ -21,15 +21,9 @@ public class GetRelationUkSettingResponseBody extends TeaModel {
     }
 
     public static class GetRelationUkSettingResponseBodyResultFormUkSettingsFieldList extends TeaModel {
-        /**
-         * <p>查重字段的bizAlias。</p>
-         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        /**
-         * <p>查重字段的字段id。</p>
-         */
         @NameInMap("fieldId")
         public String fieldId;
 
@@ -79,9 +73,6 @@ public class GetRelationUkSettingResponseBody extends TeaModel {
         @NameInMap("formUkSettings")
         public java.util.List<GetRelationUkSettingResponseBodyResultFormUkSettings> formUkSettings;
 
-        /**
-         * <p>查重列表表头字段id列表。</p>
-         */
         @NameInMap("headerFieldIds")
         public java.util.List<String> headerFieldIds;
 

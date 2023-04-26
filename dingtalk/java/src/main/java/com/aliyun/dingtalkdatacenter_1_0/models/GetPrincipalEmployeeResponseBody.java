@@ -4,17 +4,9 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPrincipalEmployeeResponseBody extends TeaModel {
-    /**
-     * <p>返回结果</p>
-     * <p>Name:姓名</p>
-     * <p>JobTitle:职位</p>
-     */
     @NameInMap("data")
     public String data;
 
-    /**
-     * <p>总条数</p>
-     */
     @NameInMap("total")
     public Long total;
 

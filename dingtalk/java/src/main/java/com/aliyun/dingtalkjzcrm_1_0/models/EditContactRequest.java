@@ -4,27 +4,15 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditContactRequest extends TeaModel {
-    /**
-     * <p>编辑数据</p>
-     */
     @NameInMap("data")
     public EditContactRequestData data;
 
-    /**
-     * <p>数据类型，固定填写197</p>
-     */
     @NameInMap("datatype")
     public Long datatype;
 
-    /**
-     * <p>数据id，不填或者填0为新增数据</p>
-     */
     @NameInMap("msgid")
     public Long msgid;
 
-    /**
-     * <p>时间戳</p>
-     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -66,171 +54,87 @@ public class EditContactRequest extends TeaModel {
     }
 
     public static class EditContactRequestData extends TeaModel {
-        /**
-         * <p>创建人</p>
-         */
         @NameInMap("data_userid")
         public String dataUserid;
 
-        /**
-         * <p>住址</p>
-         */
         @NameInMap("lxr_address")
         public String lxrAddress;
 
-        /**
-         * <p>生日</p>
-         */
         @NameInMap("lxr_birthday")
         public String lxrBirthday;
 
-        /**
-         * <p>称谓</p>
-         */
         @NameInMap("lxr_chengwei")
         public String lxrChengwei;
 
-        /**
-         * <p>证件号码</p>
-         */
         @NameInMap("lxr_ctnumber")
         public String lxrCtnumber;
 
-        /**
-         * <p>证件类型</p>
-         */
         @NameInMap("lxr_cttype")
         public String lxrCttype;
 
-        /**
-         * <p>对应客户</p>
-         */
         @NameInMap("lxr_customerid")
         public String lxrCustomerid;
 
-        /**
-         * <p>部门</p>
-         */
         @NameInMap("lxr_department")
         public String lxrDepartment;
 
-        /**
-         * <p>钉钉号</p>
-         */
         @NameInMap("lxr_dingtalk")
         public String lxrDingtalk;
 
-        /**
-         * <p>Email</p>
-         */
         @NameInMap("lxr_email")
         public String lxrEmail;
 
-        /**
-         * <p>传真</p>
-         */
         @NameInMap("lxr_fax")
         public String lxrFax;
 
-        /**
-         * <p>分类</p>
-         */
         @NameInMap("lxr_group")
         public String lxrGroup;
 
-        /**
-         * <p>手机</p>
-         */
         @NameInMap("lxr_handset")
         public String lxrHandset;
 
-        /**
-         * <p>职务</p>
-         */
         @NameInMap("lxr_headship")
         public String lxrHeadship;
 
-        /**
-         * <p>爱好</p>
-         */
         @NameInMap("lxr_like")
         public String lxrLike;
 
-        /**
-         * <p>姓名</p>
-         */
         @NameInMap("lxr_name")
         public String lxrName;
 
-        /**
-         * <p>联系名片</p>
-         */
         @NameInMap("lxr_photo")
         public String lxrPhoto;
 
-        /**
-         * <p>负责业务</p>
-         */
         @NameInMap("lxr_preside")
         public String lxrPreside;
 
-        /**
-         * <p>邮编</p>
-         */
         @NameInMap("lxr_pst")
         public String lxrPst;
 
-        /**
-         * <p>QQ</p>
-         */
         @NameInMap("lxr_qq")
         public String lxrQq;
 
-        /**
-         * <p>备注</p>
-         */
         @NameInMap("lxr_remark")
         public String lxrRemark;
 
-        /**
-         * <p>性别（男，女）</p>
-         */
         @NameInMap("lxr_sex")
         public String lxrSex;
 
-        /**
-         * <p>Skype</p>
-         */
         @NameInMap("lxr_skype")
         public String lxrSkype;
 
-        /**
-         * <p>家庭电话</p>
-         */
         @NameInMap("lxr_tel")
         public String lxrTel;
 
-        /**
-         * <p>类型（联系人，主联系人）</p>
-         */
         @NameInMap("lxr_type")
         public String lxrType;
 
-        /**
-         * <p>旺旺</p>
-         */
         @NameInMap("lxr_wangwang")
         public String lxrWangwang;
 
-        /**
-         * <p>微信号</p>
-         */
         @NameInMap("lxr_weixin")
         public String lxrWeixin;
 
-        /**
-         * <p>工作电话</p>
-         */
         @NameInMap("lxr_worktel")
         public String lxrWorktel;
 

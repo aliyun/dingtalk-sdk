@@ -4,10 +4,6 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetBotListInGroupRequest extends TeaModel {
-    /**
-     * <p>群id。</p>
-     * <br>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

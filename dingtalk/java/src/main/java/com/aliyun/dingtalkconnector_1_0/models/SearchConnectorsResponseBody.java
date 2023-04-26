@@ -4,27 +4,15 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchConnectorsResponseBody extends TeaModel {
-    /**
-     * <p>是否有更多记录</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>连接器信息列表</p>
-     */
     @NameInMap("list")
     public java.util.List<SearchConnectorsResponseBodyList> list;
 
-    /**
-     * <p>下一页记录的查询位置</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>总记录数</p>
-     */
     @NameInMap("totalCount")
     public String totalCount;
 
@@ -66,33 +54,18 @@ public class SearchConnectorsResponseBody extends TeaModel {
     }
 
     public static class SearchConnectorsResponseBodyList extends TeaModel {
-        /**
-         * <p>连接器的描述信息</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>连接器的图标</p>
-         */
         @NameInMap("icon")
         public String icon;
 
-        /**
-         * <p>连接器的ID</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>连接器的名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>连接器的提供组织</p>
-         */
         @NameInMap("providerCorpId")
         public String providerCorpId;
 

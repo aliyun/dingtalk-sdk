@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDeviceRequest extends TeaModel {
-    /**
-     * <p>钉钉组织id</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>指定显示返回结果中的第几页的内容。默认值是 1</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>指定返回结果中每页显示的记录数量，最大值是50。默认值是10</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 

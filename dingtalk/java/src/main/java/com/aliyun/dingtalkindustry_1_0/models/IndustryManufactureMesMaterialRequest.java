@@ -4,69 +4,36 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureMesMaterialRequest extends TeaModel {
-    /**
-     * <p>本次操作的行为</p>
-     */
     @NameInMap("action")
     public String action;
 
-    /**
-     * <p>生态唯一标识</p>
-     */
     @NameInMap("appKey")
     public String appKey;
 
-    /**
-     * <p>主数据名称</p>
-     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
-    /**
-     * <p>物料品类</p>
-     */
     @NameInMap("category")
     public String category;
 
-    /**
-     * <p>扩展字段</p>
-     */
     @NameInMap("extendData")
     public java.util.List<IndustryManufactureMesMaterialRequestExtendData> extendData;
 
-    /**
-     * <p>物料编号</p>
-     */
     @NameInMap("productCode")
     public String productCode;
 
-    /**
-     * <p>物料名称</p>
-     */
     @NameInMap("productName")
     public String productName;
 
-    /**
-     * <p>物料规格</p>
-     */
     @NameInMap("productSpecification")
     public String productSpecification;
 
-    /**
-     * <p>物料属性，如原材料/成品/半成品</p>
-     */
     @NameInMap("prop")
     public String prop;
 
-    /**
-     * <p>物料单位</p>
-     */
     @NameInMap("unit")
     public String unit;
 
-    /**
-     * <p>物料唯一标识</p>
-     */
     @NameInMap("uuid")
     public String uuid;
 
@@ -164,27 +131,15 @@ public class IndustryManufactureMesMaterialRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesMaterialRequestExtendData extends TeaModel {
-        /**
-         * <p>字段唯一标识</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>字段中文描述</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>字段实际取值</p>
-         */
         @NameInMap("value")
         public String value;
 
-        /**
-         * <p>字段类型</p>
-         */
         @NameInMap("valueType")
         public String valueType;
 

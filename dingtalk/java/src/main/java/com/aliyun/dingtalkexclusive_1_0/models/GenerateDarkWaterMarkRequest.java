@@ -4,9 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GenerateDarkWaterMarkRequest extends TeaModel {
-    /**
-     * <p>工号列表</p>
-     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

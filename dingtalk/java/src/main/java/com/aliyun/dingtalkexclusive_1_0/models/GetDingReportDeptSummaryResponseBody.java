@@ -4,21 +4,12 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDingReportDeptSummaryResponseBody extends TeaModel {
-    /**
-     * <p>部门维度发布日志信息</p>
-     */
     @NameInMap("data")
     public java.util.List<GetDingReportDeptSummaryResponseBodyData> data;
 
-    /**
-     * <p>是否有更多数据</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>下一次请求的分页游标</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -52,27 +43,15 @@ public class GetDingReportDeptSummaryResponseBody extends TeaModel {
     }
 
     public static class GetDingReportDeptSummaryResponseBodyData extends TeaModel {
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("deptId")
         public String deptId;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("deptName")
         public String deptName;
 
-        /**
-         * <p>最近1天累计创建日志数</p>
-         */
         @NameInMap("dingReportSendCnt")
         public String dingReportSendCnt;
 
-        /**
-         * <p>最近1天累计创建日志人数</p>
-         */
         @NameInMap("dingReportSendUsrCnt")
         public String dingReportSendUsrCnt;
 

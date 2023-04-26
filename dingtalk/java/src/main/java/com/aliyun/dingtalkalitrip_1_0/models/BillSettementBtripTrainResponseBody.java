@@ -4,27 +4,15 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class BillSettementBtripTrainResponseBody extends TeaModel {
-    /**
-     * <p>module</p>
-     */
     @NameInMap("module")
     public BillSettementBtripTrainResponseBodyModule module;
 
-    /**
-     * <p>结果code</p>
-     */
     @NameInMap("resultCode")
     public Long resultCode;
 
-    /**
-     * <p>结果msg</p>
-     */
     @NameInMap("resultMsg")
     public String resultMsg;
 
-    /**
-     * <p>是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -66,297 +54,150 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
     }
 
     public static class BillSettementBtripTrainResponseBodyModuleDataList extends TeaModel {
-        /**
-         * <p>交易流水号</p>
-         */
         @NameInMap("alipayTradeNo")
         public String alipayTradeNo;
 
-        /**
-         * <p>审批单号</p>
-         */
         @NameInMap("applyId")
         public String applyId;
 
-        /**
-         * <p>到达日期</p>
-         */
         @NameInMap("arrDate")
         public String arrDate;
 
-        /**
-         * <p>到达站点</p>
-         */
         @NameInMap("arrStation")
         public String arrStation;
 
-        /**
-         * <p>到达时间</p>
-         */
         @NameInMap("arrTime")
         public String arrTime;
 
-        /**
-         * <p>入账时间</p>
-         */
         @NameInMap("billRecordTime")
         public String billRecordTime;
 
-        /**
-         * <p>预定时间</p>
-         */
         @NameInMap("bookTime")
         public String bookTime;
 
-        /**
-         * <p>预定人use id</p>
-         */
         @NameInMap("bookerId")
         public String bookerId;
 
-        /**
-         * <p>预订人工号</p>
-         */
         @NameInMap("bookerJobNo")
         public String bookerJobNo;
 
-        /**
-         * <p>预订人名称</p>
-         */
         @NameInMap("bookerName")
         public String bookerName;
 
-        /**
-         * <p>资金方向</p>
-         */
         @NameInMap("capitalDirection")
         public String capitalDirection;
 
-        /**
-         * <p>级联部门</p>
-         */
         @NameInMap("cascadeDepartment")
         public String cascadeDepartment;
 
-        /**
-         * <p>改签手续费</p>
-         */
         @NameInMap("changeFee")
         public Double changeFee;
 
-        /**
-         * <p>成本中心名称</p>
-         */
         @NameInMap("costCenter")
         public String costCenter;
 
-        /**
-         * <p>成本中心编码</p>
-         */
         @NameInMap("costCenterNumber")
         public String costCenterNumber;
 
-        /**
-         * <p>折扣率</p>
-         */
         @NameInMap("coupon")
         public Double coupon;
 
-        /**
-         * <p>末级部门</p>
-         */
         @NameInMap("department")
         public String department;
 
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("departmentId")
         public String departmentId;
 
-        /**
-         * <p>出发日期</p>
-         */
         @NameInMap("deptDate")
         public String deptDate;
 
-        /**
-         * <p>出发站</p>
-         */
         @NameInMap("deptStation")
         public String deptStation;
 
-        /**
-         * <p>出发时间</p>
-         */
         @NameInMap("deptTime")
         public String deptTime;
 
-        /**
-         * <p>费用类型</p>
-         */
         @NameInMap("feeType")
         public String feeType;
 
-        /**
-         * <p>序号</p>
-         */
         @NameInMap("index")
         public String index;
 
-        /**
-         * <p>发票抬头</p>
-         */
         @NameInMap("invoiceTitle")
         public String invoiceTitle;
 
-        /**
-         * <p>订单号</p>
-         */
         @NameInMap("orderId")
         public String orderId;
 
-        /**
-         * <p>订单金额</p>
-         */
         @NameInMap("orderPrice")
         public Double orderPrice;
 
-        /**
-         * <p>超标审批单号</p>
-         */
         @NameInMap("overApplyId")
         public String overApplyId;
 
-        /**
-         * <p>主键id</p>
-         */
         @NameInMap("primaryId")
         public Long primaryId;
 
-        /**
-         * <p>项目编号</p>
-         */
         @NameInMap("projectCode")
         public String projectCode;
 
-        /**
-         * <p>项目名称</p>
-         */
         @NameInMap("projectName")
         public String projectName;
 
-        /**
-         * <p>退款手续费</p>
-         */
         @NameInMap("refundFee")
         public Double refundFee;
 
-        /**
-         * <p>备注</p>
-         */
         @NameInMap("remark")
         public String remark;
 
-        /**
-         * <p>运行时长</p>
-         */
         @NameInMap("runTime")
         public String runTime;
 
-        /**
-         * <p>座位号</p>
-         */
         @NameInMap("seatNo")
         public String seatNo;
 
-        /**
-         * <p>坐席</p>
-         */
         @NameInMap("seatType")
         public String seatType;
 
-        /**
-         * <p>服务费，仅在feeType 6007、6008中展示</p>
-         */
         @NameInMap("serviceFee")
         public Double serviceFee;
 
-        /**
-         * <p>结算金额</p>
-         */
         @NameInMap("settlementFee")
         public Double settlementFee;
 
-        /**
-         * <p>预存赠送金额消费</p>
-         */
         @NameInMap("settlementGrantFee")
         public Double settlementGrantFee;
 
-        /**
-         * <p>结算时间</p>
-         */
         @NameInMap("settlementTime")
         public String settlementTime;
 
-        /**
-         * <p>结算类型</p>
-         */
         @NameInMap("settlementType")
         public String settlementType;
 
-        /**
-         * <p>入账状态</p>
-         */
         @NameInMap("status")
         public Long status;
 
-        /**
-         * <p>票面票号</p>
-         */
         @NameInMap("ticketNo")
         public String ticketNo;
 
-        /**
-         * <p>票价</p>
-         */
         @NameInMap("ticketPrice")
         public Double ticketPrice;
 
-        /**
-         * <p>车次号</p>
-         */
         @NameInMap("trainNo")
         public String trainNo;
 
-        /**
-         * <p>车次类型</p>
-         */
         @NameInMap("trainType")
         public String trainType;
 
-        /**
-         * <p>出行人useId</p>
-         */
         @NameInMap("travelerId")
         public String travelerId;
 
-        /**
-         * <p>出行人工号</p>
-         */
         @NameInMap("travelerJobNo")
         public String travelerJobNo;
 
-        /**
-         * <p>出行人名称</p>
-         */
         @NameInMap("travelerName")
         public String travelerName;
 
-        /**
-         * <p>发票类型</p>
-         */
         @NameInMap("voucherType")
         public Long voucherType;
 
@@ -760,39 +601,21 @@ public class BillSettementBtripTrainResponseBody extends TeaModel {
     }
 
     public static class BillSettementBtripTrainResponseBodyModule extends TeaModel {
-        /**
-         * <p>类目</p>
-         */
         @NameInMap("category")
         public Long category;
 
-        /**
-         * <p>企业id</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>数据集合</p>
-         */
         @NameInMap("dataList")
         public java.util.List<BillSettementBtripTrainResponseBodyModuleDataList> dataList;
 
-        /**
-         * <p>记账更新开始时间</p>
-         */
         @NameInMap("periodEnd")
         public String periodEnd;
 
-        /**
-         * <p>记账更新结束时间</p>
-         */
         @NameInMap("periodStart")
         public String periodStart;
 
-        /**
-         * <p>总数据量</p>
-         */
         @NameInMap("totalNum")
         public Long totalNum;
 

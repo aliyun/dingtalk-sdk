@@ -21,45 +21,24 @@ public class QueryLiveWatchUserListResponseBody extends TeaModel {
     }
 
     public static class QueryLiveWatchUserListResponseBodyResultOrgUsesList extends TeaModel {
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("deptName")
         public String deptName;
 
-        /**
-         * <p>姓名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 
-        /**
-         * <p>员工id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>观看直播时长</p>
-         */
         @NameInMap("watchLiveTime")
         public Long watchLiveTime;
 
-        /**
-         * <p>观看回放时长</p>
-         */
         @NameInMap("watchPlaybackTime")
         public Long watchPlaybackTime;
 
-        /**
-         * <p>回放观看进度</p>
-         */
         @NameInMap("watchProgressMs")
         public Long watchProgressMs;
 
@@ -127,27 +106,15 @@ public class QueryLiveWatchUserListResponseBody extends TeaModel {
     }
 
     public static class QueryLiveWatchUserListResponseBodyResultOutOrgUserList extends TeaModel {
-        /**
-         * <p>姓名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>观看直播时长</p>
-         */
         @NameInMap("watchLiveTime")
         public Long watchLiveTime;
 
-        /**
-         * <p>观看回放时长</p>
-         */
         @NameInMap("watchPlaybackTime")
         public Long watchPlaybackTime;
 
-        /**
-         * <p>回放观看进度</p>
-         */
         @NameInMap("watchProgressMs")
         public Long watchProgressMs;
 
@@ -191,15 +158,9 @@ public class QueryLiveWatchUserListResponseBody extends TeaModel {
     }
 
     public static class QueryLiveWatchUserListResponseBodyResult extends TeaModel {
-        /**
-         * <p>组织内的观看用户列表</p>
-         */
         @NameInMap("orgUsesList")
         public java.util.List<QueryLiveWatchUserListResponseBodyResultOrgUsesList> orgUsesList;
 
-        /**
-         * <p>组织外的观看用户列表</p>
-         */
         @NameInMap("outOrgUserList")
         public java.util.List<QueryLiveWatchUserListResponseBodyResultOutOrgUserList> outOrgUserList;
 

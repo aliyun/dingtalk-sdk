@@ -4,11 +4,6 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteDentriesResponseBody extends TeaModel {
-    /**
-     * <p>批量删除文件结果列表</p>
-     * <p>最大size:</p>
-     * <p>	50</p>
-     */
     @NameInMap("resultItems")
     public java.util.List<DeleteDentriesResponseBodyResultItems> resultItems;
 
@@ -26,40 +21,21 @@ public class DeleteDentriesResponseBody extends TeaModel {
     }
 
     public static class DeleteDentriesResponseBodyResultItems extends TeaModel {
-        /**
-         * <p>是否是异步任务</p>
-         * <p>如果操作对象有子节点，则会异步处理</p>
-         */
         @NameInMap("async")
         public Boolean async;
 
-        /**
-         * <p>源文件(夹)id</p>
-         */
         @NameInMap("dentryId")
         public String dentryId;
 
-        /**
-         * <p>错误原因, 如果为异步任务, 该字段为空</p>
-         */
         @NameInMap("errorCode")
         public String errorCode;
 
-        /**
-         * <p>源文件(夹)空间id</p>
-         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        /**
-         * <p>是否成功, 如果为异步任务, 该字段为空</p>
-         */
         @NameInMap("success")
         public Boolean success;
 
-        /**
-         * <p>异步任务id，用于查询任务执行状态</p>
-         */
         @NameInMap("taskId")
         public String taskId;
 

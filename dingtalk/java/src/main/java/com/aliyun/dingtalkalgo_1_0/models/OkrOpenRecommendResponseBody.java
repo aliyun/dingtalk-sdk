@@ -4,15 +4,9 @@ package com.aliyun.dingtalkalgo_1_0.models;
 import com.aliyun.tea.*;
 
 public class OkrOpenRecommendResponseBody extends TeaModel {
-    /**
-     * <p>okrRecommendItems</p>
-     */
     @NameInMap("okrRecommendItems")
     public java.util.List<OkrOpenRecommendResponseBodyOkrRecommendItems> okrRecommendItems;
 
-    /**
-     * <p>requestId</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
@@ -38,21 +32,12 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
     }
 
     public static class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults extends TeaModel {
-        /**
-         * <p>krId</p>
-         */
         @NameInMap("krId")
         public String krId;
 
-        /**
-         * <p>semanticLevel</p>
-         */
         @NameInMap("semanticLevel")
         public Long semanticLevel;
 
-        /**
-         * <p>words</p>
-         */
         @NameInMap("words")
         public java.util.List<String> words;
 
@@ -88,21 +73,12 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
     }
 
     public static class OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults extends TeaModel {
-        /**
-         * <p>objectiveId</p>
-         */
         @NameInMap("objectiveId")
         public String objectiveId;
 
-        /**
-         * <p>semanticLevel</p>
-         */
         @NameInMap("semanticLevel")
         public Long semanticLevel;
 
-        /**
-         * <p>words</p>
-         */
         @NameInMap("words")
         public java.util.List<String> words;
 
@@ -138,33 +114,18 @@ public class OkrOpenRecommendResponseBody extends TeaModel {
     }
 
     public static class OkrOpenRecommendResponseBodyOkrRecommendItems extends TeaModel {
-        /**
-         * <p>krResultRelatedResults</p>
-         */
         @NameInMap("krResultRelatedResults")
         public java.util.List<OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults> krResultRelatedResults;
 
-        /**
-         * <p>objectiveRelatedResults</p>
-         */
         @NameInMap("objectiveRelatedResults")
         public java.util.List<OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults> objectiveRelatedResults;
 
-        /**
-         * <p>relatedLevel</p>
-         */
         @NameInMap("relatedLevel")
         public Long relatedLevel;
 
-        /**
-         * <p>semanticLevel</p>
-         */
         @NameInMap("semanticLevel")
         public Long semanticLevel;
 
-        /**
-         * <p>userId</p>
-         */
         @NameInMap("userId")
         public String userId;
 

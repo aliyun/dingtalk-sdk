@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCrmGroupChatMultiRequest extends TeaModel {
-    /**
-     * <p>群openConversationId列表。</p>
-     */
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 

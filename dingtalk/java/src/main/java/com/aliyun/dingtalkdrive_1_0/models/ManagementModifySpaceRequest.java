@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ManagementModifySpaceRequest extends TeaModel {
-    /**
-     * <p>容量</p>
-     */
     @NameInMap("quota")
     public Long quota;
 
-    /**
-     * <p>空间id列表</p>
-     */
     @NameInMap("spaceIds")
     public java.util.List<String> spaceIds;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

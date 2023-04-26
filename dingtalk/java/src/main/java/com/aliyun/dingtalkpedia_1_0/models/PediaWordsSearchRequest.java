@@ -4,38 +4,18 @@ package com.aliyun.dingtalkpedia_1_0.models;
 import com.aliyun.tea.*;
 
 public class PediaWordsSearchRequest extends TeaModel {
-    /**
-     * <p>当前查询的页数，当超过总数后返回数据为空</p>
-     * <br>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>当前每页需要展示的数量，最大20</p>
-     * <br>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>当前搜索列表的状态0代表审核通过，1代表创建待审核，2代表更新待审核列表</p>
-     * <p>默认是0，代表获取所有审核完成的词条</p>
-     * <br>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <p>通过开放平台获取的员工编号userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>搜索关键词</p>
-     * <br>
-     */
     @NameInMap("wordName")
     public String wordName;
 

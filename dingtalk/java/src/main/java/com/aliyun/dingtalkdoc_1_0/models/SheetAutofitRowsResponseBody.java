@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class SheetAutofitRowsResponseBody extends TeaModel {
-    /**
-     * <p>当前工作表ID</p>
-     */
     @NameInMap("id")
     public String id;
 

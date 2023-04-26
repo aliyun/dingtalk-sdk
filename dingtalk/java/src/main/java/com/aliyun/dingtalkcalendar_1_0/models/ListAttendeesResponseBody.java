@@ -4,15 +4,9 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListAttendeesResponseBody extends TeaModel {
-    /**
-     * <p>参与人</p>
-     */
     @NameInMap("attendees")
     public java.util.List<ListAttendeesResponseBodyAttendees> attendees;
 
-    /**
-     * <p>翻页token</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -38,30 +32,18 @@ public class ListAttendeesResponseBody extends TeaModel {
     }
 
     public static class ListAttendeesResponseBodyAttendees extends TeaModel {
-        /**
-         * <p>用户名</p>
-         */
         @NameInMap("displayName")
         public String displayName;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("id")
         public String id;
 
         @NameInMap("isOptional")
         public Boolean isOptional;
 
-        /**
-         * <p>回复状态</p>
-         */
         @NameInMap("responseStatus")
         public String responseStatus;
 
-        /**
-         * <p>是否当前用户</p>
-         */
         @NameInMap("self")
         public Boolean self;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomizeContactEmpDeleteResponseBody extends TeaModel {
-    /**
-     * <p>操作结果</p>
-     */
     @NameInMap("content")
     public Boolean content;
 

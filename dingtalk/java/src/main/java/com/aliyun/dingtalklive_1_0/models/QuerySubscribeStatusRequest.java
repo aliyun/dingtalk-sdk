@@ -4,15 +4,9 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySubscribeStatusRequest extends TeaModel {
-    /**
-     * <p>post请求体, 开放平台建议以对象形式存储</p>
-     */
     @NameInMap("body")
     public QuerySubscribeStatusRequestBody body;
 
-    /**
-     * <p>用户id（主播id）</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -38,9 +32,6 @@ public class QuerySubscribeStatusRequest extends TeaModel {
     }
 
     public static class QuerySubscribeStatusRequestBody extends TeaModel {
-        /**
-         * <p>直播id列表</p>
-         */
         @NameInMap("liveIds")
         public java.util.List<String> liveIds;
 

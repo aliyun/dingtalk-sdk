@@ -4,15 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupMuteStatusRequest extends TeaModel {
-    /**
-     * <p>开放的会话ID</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>群成员的员工工号</p>
-     */
     @NameInMap("userId")
     public String userId;
 

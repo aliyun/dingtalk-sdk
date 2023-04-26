@@ -4,15 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class BanOrOpenGroupWordsRequest extends TeaModel {
-    /**
-     * <p>操作类型:0 不禁言;1:禁言</p>
-     */
     @NameInMap("banWordsType")
     public Integer banWordsType;
 
-    /**
-     * <p>群id</p>
-     */
     @NameInMap("openConverationId")
     public String openConverationId;
 

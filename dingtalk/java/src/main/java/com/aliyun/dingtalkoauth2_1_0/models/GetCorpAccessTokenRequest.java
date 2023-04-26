@@ -4,27 +4,15 @@ package com.aliyun.dingtalkoauth2_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCorpAccessTokenRequest extends TeaModel {
-    /**
-     * <p>OAuth 2.0 临时授权码</p>
-     */
     @NameInMap("authCorpId")
     public String authCorpId;
 
-    /**
-     * <p>应用id</p>
-     */
     @NameInMap("suiteKey")
     public String suiteKey;
 
-    /**
-     * <p>应用密码</p>
-     */
     @NameInMap("suiteSecret")
     public String suiteSecret;
 
-    /**
-     * <p>suiteTicket</p>
-     */
     @NameInMap("suiteTicket")
     public String suiteTicket;
 

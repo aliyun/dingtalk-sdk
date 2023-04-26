@@ -4,21 +4,12 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserByUnionIdRequest extends TeaModel {
-    /**
-     * <p>通讯录语言(默认zh_CN另外支持en_US)</p>
-     */
     @NameInMap("language")
     public String language;
 
-    /**
-     * <p>下属组织的组织ID，比如下属镇、村的corpId</p>
-     */
     @NameInMap("subCorpId")
     public String subCorpId;
 
-    /**
-     * <p>人员 id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

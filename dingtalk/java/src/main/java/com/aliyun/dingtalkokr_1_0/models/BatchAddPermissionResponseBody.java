@@ -4,15 +4,9 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchAddPermissionResponseBody extends TeaModel {
-    /**
-     * <p>返回的数据。</p>
-     */
     @NameInMap("data")
     public BatchAddPermissionResponseBodyData data;
 
-    /**
-     * <p>请求成功的标识。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -120,27 +114,15 @@ public class BatchAddPermissionResponseBody extends TeaModel {
     }
 
     public static class BatchAddPermissionResponseBodyDataPermissionTree extends TeaModel {
-        /**
-         * <p>权限 ID。</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>权限列表</p>
-         */
         @NameInMap("policyList")
         public java.util.List<BatchAddPermissionResponseBodyDataPermissionTreePolicyList> policyList;
 
-        /**
-         * <p>是否可见的标识。</p>
-         */
         @NameInMap("privacy")
         public String privacy;
 
-        /**
-         * <p>哪种类型的权限。</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -184,15 +166,9 @@ public class BatchAddPermissionResponseBody extends TeaModel {
     }
 
     public static class BatchAddPermissionResponseBodyData extends TeaModel {
-        /**
-         * <p>是否有无效的成员。</p>
-         */
         @NameInMap("hasInvalidUser")
         public Boolean hasInvalidUser;
 
-        /**
-         * <p>权限信息。</p>
-         */
         @NameInMap("permissionTree")
         public BatchAddPermissionResponseBodyDataPermissionTree permissionTree;
 

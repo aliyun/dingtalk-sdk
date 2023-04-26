@@ -4,21 +4,12 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDocCreatedDeptSummaryResponseBody extends TeaModel {
-    /**
-     * <p>部门维度用户创建文档数</p>
-     */
     @NameInMap("data")
     public java.util.List<GetDocCreatedDeptSummaryResponseBodyData> data;
 
-    /**
-     * <p>是否有更多数据</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>下一次请求的分页游标</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -52,27 +43,15 @@ public class GetDocCreatedDeptSummaryResponseBody extends TeaModel {
     }
 
     public static class GetDocCreatedDeptSummaryResponseBodyData extends TeaModel {
-        /**
-         * <p>最近1天创建文档人数</p>
-         */
         @NameInMap("createDocUserCnt1d")
         public String createDocUserCnt1d;
 
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("deptId")
         public String deptId;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("deptName")
         public String deptName;
 
-        /**
-         * <p>最近1天钉钉文档创建数</p>
-         */
         @NameInMap("docCreatedCnt")
         public String docCreatedCnt;
 

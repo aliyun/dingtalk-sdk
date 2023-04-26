@@ -4,141 +4,72 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTodoTaskResponseBody extends TeaModel {
-    /**
-     * <p>接入业务应用标识</p>
-     */
     @NameInMap("bizTag")
     public String bizTag;
 
-    /**
-     * <p>待办卡片类型id</p>
-     */
     @NameInMap("cardTypeId")
     public String cardTypeId;
 
-    /**
-     * <p>创建时间</p>
-     */
     @NameInMap("createdTime")
     public Long createdTime;
 
-    /**
-     * <p>创建者id（用户的unionId）</p>
-     */
     @NameInMap("creatorId")
     public String creatorId;
 
-    /**
-     * <p>描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>自定义详情页跳转配置</p>
-     */
     @NameInMap("detailUrl")
     public GetTodoTaskResponseBodyDetailUrl detailUrl;
 
-    /**
-     * <p>完成状态</p>
-     */
     @NameInMap("done")
     public Boolean done;
 
-    /**
-     * <p>截止时间</p>
-     */
     @NameInMap("dueTime")
     public Long dueTime;
 
-    /**
-     * <p>执行者列表（用户的unionId）</p>
-     */
     @NameInMap("executorIds")
     public java.util.List<String> executorIds;
 
-    /**
-     * <p>完成时间</p>
-     */
     @NameInMap("finishTime")
     public Long finishTime;
 
-    /**
-     * <p>id</p>
-     */
     @NameInMap("id")
     public String id;
 
-    /**
-     * <p>待办是否仅展示在执行人的待办列表中</p>
-     */
     @NameInMap("isOnlyShowExecutor")
     public Boolean isOnlyShowExecutor;
 
-    /**
-     * <p>更新时间</p>
-     */
     @NameInMap("modifiedTime")
     public Long modifiedTime;
 
-    /**
-     * <p>更新者id（用户的unionId）</p>
-     */
     @NameInMap("modifierId")
     public String modifierId;
 
-    /**
-     * <p>参与者列表（用户的unionId）</p>
-     */
     @NameInMap("participantIds")
     public java.util.List<String> participantIds;
 
-    /**
-     * <p>优先级, 较低:10, 普通:20, 紧急:30, 非常紧急:40</p>
-     */
     @NameInMap("priority")
     public Integer priority;
 
-    /**
-     * <p>requestId</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
-    /**
-     * <p>业务来源</p>
-     */
     @NameInMap("source")
     public String source;
 
-    /**
-     * <p>业务来源id</p>
-     */
     @NameInMap("sourceId")
     public String sourceId;
 
-    /**
-     * <p>开始时间</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 
-    /**
-     * <p>标题</p>
-     */
     @NameInMap("subject")
     public String subject;
 
-    /**
-     * <p>租户id(unionId/orgId/groupId)</p>
-     */
     @NameInMap("tenantId")
     public String tenantId;
 
-    /**
-     * <p>租户类型（user/org/group）</p>
-     */
     @NameInMap("tenantType")
     public String tenantType;
 
@@ -332,15 +263,9 @@ public class GetTodoTaskResponseBody extends TeaModel {
     }
 
     public static class GetTodoTaskResponseBodyDetailUrl extends TeaModel {
-        /**
-         * <p>app端详情页地址</p>
-         */
         @NameInMap("appUrl")
         public String appUrl;
 
-        /**
-         * <p>pc端详情页地址</p>
-         */
         @NameInMap("pcUrl")
         public String pcUrl;
 

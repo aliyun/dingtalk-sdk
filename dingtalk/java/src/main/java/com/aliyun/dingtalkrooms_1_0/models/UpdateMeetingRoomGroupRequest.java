@@ -4,21 +4,12 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateMeetingRoomGroupRequest extends TeaModel {
-    /**
-     * <p>分组id</p>
-     */
     @NameInMap("groupId")
     public Long groupId;
 
-    /**
-     * <p>分组名称</p>
-     */
     @NameInMap("groupName")
     public String groupName;
 
-    /**
-     * <p>操作人unionId</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

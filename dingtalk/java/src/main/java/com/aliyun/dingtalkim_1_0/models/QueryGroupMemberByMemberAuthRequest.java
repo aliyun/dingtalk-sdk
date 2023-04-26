@@ -4,15 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupMemberByMemberAuthRequest extends TeaModel {
-    /**
-     * <p>酷应用编码</p>
-     */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
-    /**
-     * <p>群的openConversationId</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

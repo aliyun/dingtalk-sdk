@@ -7,21 +7,12 @@ public class AskRobotRequest extends TeaModel {
     @NameInMap("dingUserId")
     public String dingUserId;
 
-    /**
-     * <p>问题</p>
-     */
     @NameInMap("question")
     public String question;
 
-    /**
-     * <p>机器人id</p>
-     */
     @NameInMap("robotAppKey")
     public String robotAppKey;
 
-    /**
-     * <p>sessionId(非必传)</p>
-     */
     @NameInMap("sessionUuid")
     public String sessionUuid;
 

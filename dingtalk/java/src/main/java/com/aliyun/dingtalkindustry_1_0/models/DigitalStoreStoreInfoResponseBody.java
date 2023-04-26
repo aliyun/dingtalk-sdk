@@ -4,84 +4,45 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreStoreInfoResponseBody extends TeaModel {
-    /**
-     * <p>门店地址</p>
-     */
     @NameInMap("address")
     public String address;
 
-    /**
-     * <p>营业时间</p>
-     */
     @NameInMap("businessHours")
     public String businessHours;
 
     @NameInMap("dingDeptId")
     public Long dingDeptId;
 
-    /**
-     * <p>纬度</p>
-     */
     @NameInMap("latitude")
     public String latitude;
 
-    /**
-     * <p>定位地址</p>
-     */
     @NameInMap("locationAddress")
     public String locationAddress;
 
-    /**
-     * <p>经度</p>
-     */
     @NameInMap("longitude")
     public String longitude;
 
-    /**
-     * <p>门店名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>上级节点id</p>
-     */
     @NameInMap("parentId")
     public Long parentId;
 
-    /**
-     * <p>门店状态</p>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <p>门店面积</p>
-     */
     @NameInMap("storeAcreage")
     public String storeAcreage;
 
-    /**
-     * <p>门店带宽</p>
-     */
     @NameInMap("storeBandwidth")
     public String storeBandwidth;
 
-    /**
-     * <p>门店编号</p>
-     */
     @NameInMap("storeCode")
     public String storeCode;
 
-    /**
-     * <p>门店Id</p>
-     */
     @NameInMap("storeId")
     public Long storeId;
 
-    /**
-     * <p>门店电话</p>
-     */
     @NameInMap("telephone")
     public String telephone;
 

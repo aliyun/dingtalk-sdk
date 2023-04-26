@@ -4,57 +4,30 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class SolutionTaskInitRequest extends TeaModel {
-    /**
-     * <p>任务业务模块，如training, performance等</p>
-     */
     @NameInMap("category")
     public String category;
 
-    /**
-     * <p>任务要求的截止时间</p>
-     */
     @NameInMap("claimTime")
     public Long claimTime;
 
-    /**
-     * <p>任务描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>任务完成时间</p>
-     */
     @NameInMap("finishTime")
     public Long finishTime;
 
-    /**
-     * <p>外部的任务唯一标识</p>
-     */
     @NameInMap("outerId")
     public String outerId;
 
-    /**
-     * <p>任务状态，如running,finished</p>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <p>任务名称</p>
-     */
     @NameInMap("title")
     public String title;
 
-    /**
-     * <p>任务执行人userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>解决方案类型</p>
-     */
     @NameInMap("solutionType")
     public String solutionType;
 

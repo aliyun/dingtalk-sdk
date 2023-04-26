@@ -4,9 +4,6 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class FinishBeginnerTaskResponseBody extends TeaModel {
-    /**
-     * <p>是否成功</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

@@ -4,39 +4,21 @@ package com.aliyun.dingtalktrajectory_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPageTraceDataRequest extends TeaModel {
-    /**
-     * <p>终止时间</p>
-     */
     @NameInMap("endTime")
     public Long endTime;
 
-    /**
-     * <p>查询数量</p>
-     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    /**
-     * <p>起始位置</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    /**
-     * <p>员工ID</p>
-     */
     @NameInMap("staffId")
     public String staffId;
 
-    /**
-     * <p>开始时间</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 
-    /**
-     * <p>traceId</p>
-     */
     @NameInMap("traceId")
     public String traceId;
 

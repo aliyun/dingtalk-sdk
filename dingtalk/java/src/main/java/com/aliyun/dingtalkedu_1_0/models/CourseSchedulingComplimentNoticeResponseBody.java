@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CourseSchedulingComplimentNoticeResponseBody extends TeaModel {
-    /**
-     * <p>通知课程导入完成是否成功。</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

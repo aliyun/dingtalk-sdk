@@ -4,27 +4,15 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListUncheckUsersRequest extends TeaModel {
-    /**
-     * <p>条目数</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>开始位置</p>
-     */
     @NameInMap("nextToken")
     public Integer nextToken;
 
-    /**
-     * <p>起始时间</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 
-    /**
-     * <p>状态</p>
-     */
     @NameInMap("status")
     public Integer status;
 

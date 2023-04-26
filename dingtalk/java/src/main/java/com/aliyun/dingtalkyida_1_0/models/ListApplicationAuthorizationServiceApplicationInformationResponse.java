@@ -8,6 +8,10 @@ public class ListApplicationAuthorizationServiceApplicationInformationResponse e
     @Validation(required = true)
     public java.util.Map<String, String> headers;
 
+    @NameInMap("statusCode")
+    @Validation(required = true)
+    public Integer statusCode;
+
     @NameInMap("body")
     @Validation(required = true)
     public ListApplicationAuthorizationServiceApplicationInformationResponseBody body;
@@ -23,6 +27,14 @@ public class ListApplicationAuthorizationServiceApplicationInformationResponse e
     }
     public java.util.Map<String, String> getHeaders() {
         return this.headers;
+    }
+
+    public ListApplicationAuthorizationServiceApplicationInformationResponse setStatusCode(Integer statusCode) {
+        this.statusCode = statusCode;
+        return this;
+    }
+    public Integer getStatusCode() {
+        return this.statusCode;
     }
 
     public ListApplicationAuthorizationServiceApplicationInformationResponse setBody(ListApplicationAuthorizationServiceApplicationInformationResponseBody body) {

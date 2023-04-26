@@ -4,15 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class AttendanceBleDevicesQueryRequest extends TeaModel {
-    /**
-     * <p>考勤组Id</p>
-     */
     @NameInMap("groupKey")
     public String groupKey;
 
-    /**
-     * <p>操作人Id</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 

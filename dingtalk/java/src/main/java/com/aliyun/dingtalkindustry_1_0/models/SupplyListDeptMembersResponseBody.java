@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyListDeptMembersResponseBody extends TeaModel {
-    /**
-     * <p>是否还有下一页</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
@@ -35,39 +32,21 @@ public class SupplyListDeptMembersResponseBody extends TeaModel {
     }
 
     public static class SupplyListDeptMembersResponseBodyList extends TeaModel {
-        /**
-         * <p>人员状态，已进组织 或 待接收邀请</p>
-         */
         @NameInMap("dingMemberStatus")
         public String dingMemberStatus;
 
-        /**
-         * <p>是否激活</p>
-         */
         @NameInMap("isActive")
         public Boolean isActive;
 
-        /**
-         * <p>名字</p>
-         */
         @NameInMap("memberName")
         public String memberName;
 
-        /**
-         * <p>人员在上下游中的工号</p>
-         */
         @NameInMap("memberWorkNumber")
         public String memberWorkNumber;
 
-        /**
-         * <p>应用层面的唯一id</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 
-        /**
-         * <p>人员组织内id</p>
-         */
         @NameInMap("userId")
         public String userId;
 

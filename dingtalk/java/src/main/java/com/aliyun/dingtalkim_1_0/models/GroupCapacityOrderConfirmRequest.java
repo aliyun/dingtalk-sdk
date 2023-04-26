@@ -4,15 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupCapacityOrderConfirmRequest extends TeaModel {
-    /**
-     * <p>操作人工号</p>
-     */
     @NameInMap("operator")
     public String operator;
 
-    /**
-     * <p>订单号</p>
-     */
     @NameInMap("orderId")
     public String orderId;
 

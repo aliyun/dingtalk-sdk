@@ -4,105 +4,54 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class NotifyPayCodePayResultRequest extends TeaModel {
-    /**
-     * <p>订单金额</p>
-     */
     @NameInMap("amount")
     public String amount;
 
-    /**
-     * <p>收费金额</p>
-     */
     @NameInMap("chargeAmount")
     public String chargeAmount;
 
-    /**
-     * <p>企业id</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>扩展信息</p>
-     */
     @NameInMap("extInfo")
     public String extInfo;
 
-    /**
-     * <p>交易开始时间</p>
-     */
     @NameInMap("gmtTradeCreate")
     public String gmtTradeCreate;
 
-    /**
-     * <p>交易结束时间</p>
-     */
     @NameInMap("gmtTradeFinish")
     public String gmtTradeFinish;
 
-    /**
-     * <p>merchantName</p>
-     */
     @NameInMap("merchantName")
     public String merchantName;
 
-    /**
-     * <p>支付渠道明细信息</p>
-     */
     @NameInMap("payChannelDetailList")
     public java.util.List<NotifyPayCodePayResultRequestPayChannelDetailList> payChannelDetailList;
 
-    /**
-     * <p>付款码值</p>
-     */
     @NameInMap("payCode")
     public String payCode;
 
-    /**
-     * <p>订单优惠金额</p>
-     */
     @NameInMap("promotionAmount")
     public String promotionAmount;
 
-    /**
-     * <p>备注</p>
-     */
     @NameInMap("remark")
     public String remark;
 
-    /**
-     * <p>订单标题</p>
-     */
     @NameInMap("title")
     public String title;
 
-    /**
-     * <p>支付失败错误码</p>
-     */
     @NameInMap("tradeErrorCode")
     public String tradeErrorCode;
 
-    /**
-     * <p>支付失败信息</p>
-     */
     @NameInMap("tradeErrorMsg")
     public String tradeErrorMsg;
 
-    /**
-     * <p>交易号</p>
-     */
     @NameInMap("tradeNo")
     public String tradeNo;
 
-    /**
-     * <p>交易状态</p>
-     */
     @NameInMap("tradeStatus")
     public String tradeStatus;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
@@ -248,39 +197,21 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
     }
 
     public static class NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList extends TeaModel {
-        /**
-         * <p>1.00</p>
-         */
         @NameInMap("amount")
         public String amount;
 
-        /**
-         * <p>扩展信息</p>
-         */
         @NameInMap("extInfo")
         public String extInfo;
 
-        /**
-         * <p>资金渠道名称</p>
-         */
         @NameInMap("fundToolName")
         public String fundToolName;
 
-        /**
-         * <p>开始时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
-        /**
-         * <p>是否是优惠工具</p>
-         */
         @NameInMap("promotionFundTool")
         public Boolean promotionFundTool;
 
@@ -340,51 +271,27 @@ public class NotifyPayCodePayResultRequest extends TeaModel {
     }
 
     public static class NotifyPayCodePayResultRequestPayChannelDetailList extends TeaModel {
-        /**
-         * <p>支付金额</p>
-         */
         @NameInMap("amount")
         public String amount;
 
-        /**
-         * <p>资金工具明细</p>
-         */
         @NameInMap("fundToolDetailList")
         public java.util.List<NotifyPayCodePayResultRequestPayChannelDetailListFundToolDetailList> fundToolDetailList;
 
-        /**
-         * <p>开始时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
-        /**
-         * <p>支付渠道名称</p>
-         */
         @NameInMap("payChannelName")
         public String payChannelName;
 
-        /**
-         * <p>支付渠道单号</p>
-         */
         @NameInMap("payChannelOrderNo")
         public String payChannelOrderNo;
 
-        /**
-         * <p>支付渠道类型</p>
-         */
         @NameInMap("payChannelType")
         public String payChannelType;
 
-        /**
-         * <p>优惠金额</p>
-         */
         @NameInMap("promotionAmount")
         public String promotionAmount;
 

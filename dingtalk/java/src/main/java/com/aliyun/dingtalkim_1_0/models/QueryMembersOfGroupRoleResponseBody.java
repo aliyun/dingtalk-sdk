@@ -4,9 +4,6 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMembersOfGroupRoleResponseBody extends TeaModel {
-    /**
-     * <p>userIds</p>
-     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

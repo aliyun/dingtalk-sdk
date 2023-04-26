@@ -4,15 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchAddContactsRequest extends TeaModel {
-    /**
-     * <p>操作人userId</p>
-     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
-    /**
-     * <p>关系数据列表。</p>
-     */
     @NameInMap("relationList")
     public java.util.List<BatchAddContactsRequestRelationList> relationList;
 
@@ -38,21 +32,12 @@ public class BatchAddContactsRequest extends TeaModel {
     }
 
     public static class BatchAddContactsRequestRelationListBizDataList extends TeaModel {
-        /**
-         * <p>模型字段extendValue。</p>
-         */
         @NameInMap("extendValue")
         public String extendValue;
 
-        /**
-         * <p>模型字段id。</p>
-         */
         @NameInMap("key")
         public String key;
 
-        /**
-         * <p>模型字段value。</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -88,15 +73,9 @@ public class BatchAddContactsRequest extends TeaModel {
     }
 
     public static class BatchAddContactsRequestRelationList extends TeaModel {
-        /**
-         * <p>关系模型数据。</p>
-         */
         @NameInMap("bizDataList")
         public java.util.List<BatchAddContactsRequestRelationListBizDataList> bizDataList;
 
-        /**
-         * <p>扩展业务字段。</p>
-         */
         @NameInMap("bizExtMap")
         public java.util.Map<String, String> bizExtMap;
 

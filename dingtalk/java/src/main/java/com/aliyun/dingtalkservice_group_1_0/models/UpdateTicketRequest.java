@@ -4,33 +4,18 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTicketRequest extends TeaModel {
-    /**
-     * <p>自定义字段值JSON格式</p>
-     */
     @NameInMap("customFields")
     public String customFields;
 
-    /**
-     * <p>团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>工单开放id</p>
-     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
-    /**
-     * <p>工单处理人unionId</p>
-     */
     @NameInMap("processorUnionId")
     public String processorUnionId;
 
-    /**
-     * <p>备注</p>
-     */
     @NameInMap("ticketMemo")
     public UpdateTicketRequestTicketMemo ticketMemo;
 
@@ -80,15 +65,9 @@ public class UpdateTicketRequest extends TeaModel {
     }
 
     public static class UpdateTicketRequestTicketMemoAttachments extends TeaModel {
-        /**
-         * <p>文件名</p>
-         */
         @NameInMap("fileName")
         public String fileName;
 
-        /**
-         * <p>文件key</p>
-         */
         @NameInMap("key")
         public String key;
 
@@ -116,15 +95,9 @@ public class UpdateTicketRequest extends TeaModel {
     }
 
     public static class UpdateTicketRequestTicketMemo extends TeaModel {
-        /**
-         * <p>备注相关的附件</p>
-         */
         @NameInMap("attachments")
         public java.util.List<UpdateTicketRequestTicketMemoAttachments> attachments;
 
-        /**
-         * <p>备注文字</p>
-         */
         @NameInMap("memo")
         public String memo;
 

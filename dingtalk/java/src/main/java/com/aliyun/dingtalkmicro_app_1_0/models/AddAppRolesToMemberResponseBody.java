@@ -21,15 +21,9 @@ public class AddAppRolesToMemberResponseBody extends TeaModel {
     }
 
     public static class AddAppRolesToMemberResponseBodyResult extends TeaModel {
-        /**
-         * <p>角色范围最新版本号</p>
-         */
         @NameInMap("latestScopeVersion")
         public Long latestScopeVersion;
 
-        /**
-         * <p>角色id</p>
-         */
         @NameInMap("roleId")
         public Long roleId;
 
@@ -39,9 +33,6 @@ public class AddAppRolesToMemberResponseBody extends TeaModel {
         @NameInMap("subErrorMsg")
         public String subErrorMsg;
 
-        /**
-         * <p>角色添加结果，true: 成功，false: 失败</p>
-         */
         @NameInMap("success")
         public Boolean success;
 

@@ -4,45 +4,24 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchProjectCustomfieldRequest extends TeaModel {
-    /**
-     * <p>自定义字段ID集合，逗号组合。</p>
-     */
     @NameInMap("customfieldIds")
     public String customfieldIds;
 
-    /**
-     * <p>字段InstanceId集合，用逗号组合。</p>
-     */
     @NameInMap("instanceIds")
     public String instanceIds;
 
-    /**
-     * <p>每页返回最大数量。默认10，最大500。</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>分页标。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>过滤字段名字。</p>
-     */
     @NameInMap("query")
     public String query;
 
-    /**
-     * <p>任务类型ID。</p>
-     */
     @NameInMap("scenariofieldconfigId")
     public String scenariofieldconfigId;
 
-    /**
-     * <p>字段应用场景, 可以是 taskTableHeader,searcherAdd,taskExportHeader,sfcAdd,kanbanCardAdd,all 其中一个。</p>
-     */
     @NameInMap("scope")
     public String scope;
 

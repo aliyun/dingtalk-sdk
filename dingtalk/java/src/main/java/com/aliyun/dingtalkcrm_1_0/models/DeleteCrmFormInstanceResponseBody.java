@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteCrmFormInstanceResponseBody extends TeaModel {
-    /**
-     * <p>被删除的实例id</p>
-     */
     @NameInMap("instanceId")
     public String instanceId;
 

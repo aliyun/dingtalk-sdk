@@ -4,21 +4,12 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReleaseGrayPercentSetRequest extends TeaModel {
-    /**
-     * <p>离线包ID</p>
-     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
-    /**
-     * <p>百分比值，范围为0.0.1~100</p>
-     */
     @NameInMap("value")
     public Double value;
 
-    /**
-     * <p>要设置的离线包版本号</p>
-     */
     @NameInMap("version")
     public String version;
 

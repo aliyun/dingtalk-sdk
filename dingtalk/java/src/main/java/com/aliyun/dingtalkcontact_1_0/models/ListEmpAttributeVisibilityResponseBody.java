@@ -4,21 +4,12 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListEmpAttributeVisibilityResponseBody extends TeaModel {
-    /**
-     * <p>是否还有数据</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>设置列表</p>
-     */
     @NameInMap("list")
     public java.util.List<ListEmpAttributeVisibilityResponseBodyList> list;
 
-    /**
-     * <p>下一次拉取时的offset</p>
-     */
     @NameInMap("nextCursor")
     public Long nextCursor;
 
@@ -52,81 +43,42 @@ public class ListEmpAttributeVisibilityResponseBody extends TeaModel {
     }
 
     public static class ListEmpAttributeVisibilityResponseBodyList extends TeaModel {
-        /**
-         * <p>是否生效</p>
-         */
         @NameInMap("active")
         public Boolean active;
 
-        /**
-         * <p>设置描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>白名单部门id列表</p>
-         */
         @NameInMap("excludeDeptIds")
         public java.util.List<Long> excludeDeptIds;
 
-        /**
-         * <p>白名单用户id列表</p>
-         */
         @NameInMap("excludeStaffIds")
         public java.util.List<String> excludeStaffIds;
 
-        /**
-         * <p>白名单角色id列表</p>
-         */
         @NameInMap("excludeTagIds")
         public java.util.List<Long> excludeTagIds;
 
-        /**
-         * <p>设置时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        /**
-         * <p>隐藏的字段id列表</p>
-         */
         @NameInMap("hideFields")
         public java.util.List<String> hideFields;
 
-        /**
-         * <p>id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>被查看的部门id列表</p>
-         */
         @NameInMap("objectDeptIds")
         public java.util.List<Long> objectDeptIds;
 
-        /**
-         * <p>被查看的用户id列表</p>
-         */
         @NameInMap("objectStaffIds")
         public java.util.List<String> objectStaffIds;
 
-        /**
-         * <p>被查看的角色id列表</p>
-         */
         @NameInMap("objectTagIds")
         public java.util.List<Long> objectTagIds;
 

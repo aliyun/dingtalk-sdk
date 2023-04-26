@@ -4,33 +4,18 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCompanyBasicInfoResponseBody extends TeaModel {
-    /**
-     * <p>code</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>data</p>
-     */
     @NameInMap("data")
     public java.util.List<java.util.Map<String, String>> data;
 
-    /**
-     * <p>message</p>
-     */
     @NameInMap("message")
     public String message;
 
-    /**
-     * <p>traceId</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
-    /**
-     * <p>total</p>
-     */
     @NameInMap("total")
     public Integer total;
 

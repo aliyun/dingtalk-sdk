@@ -4,25 +4,12 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListDentryVersionsRequest extends TeaModel {
-    /**
-     * <p>历史版本分页大小，默认100</p>
-     * <p>默认值:</p>
-     * <p>	100</p>
-     * <p>最大值:</p>
-     * <p>	100</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>下一页的游标位置</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

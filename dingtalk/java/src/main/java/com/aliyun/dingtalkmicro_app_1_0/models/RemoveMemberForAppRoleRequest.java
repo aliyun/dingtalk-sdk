@@ -4,27 +4,15 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class RemoveMemberForAppRoleRequest extends TeaModel {
-    /**
-     * <p>部门id列表</p>
-     */
     @NameInMap("deptIdList")
     public java.util.List<Long> deptIdList;
 
-    /**
-     * <p>执行用户userId</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    /**
-     * <p>角色范围版本号</p>
-     */
     @NameInMap("scopeVersion")
     public Long scopeVersion;
 
-    /**
-     * <p>员工userId列表</p>
-     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

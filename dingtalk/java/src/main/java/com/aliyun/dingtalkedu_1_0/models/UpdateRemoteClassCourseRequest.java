@@ -4,42 +4,24 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateRemoteClassCourseRequest extends TeaModel {
-    /**
-     * <p>听课设备</p>
-     */
     @NameInMap("attendParticipants")
     public java.util.List<UpdateRemoteClassCourseRequestAttendParticipants> attendParticipants;
 
     @NameInMap("authCode")
     public String authCode;
 
-    /**
-     * <p>课程码</p>
-     */
     @NameInMap("courseCode")
     public String courseCode;
 
-    /**
-     * <p>课程名称</p>
-     */
     @NameInMap("courseName")
     public String courseName;
 
-    /**
-     * <p>课程结束时间</p>
-     */
     @NameInMap("endTime")
     public Long endTime;
 
-    /**
-     * <p>课程开始时间</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 
-    /**
-     * <p>授课设备</p>
-     */
     @NameInMap("teachingParticipant")
     public UpdateRemoteClassCourseRequestTeachingParticipant teachingParticipant;
 
@@ -105,15 +87,9 @@ public class UpdateRemoteClassCourseRequest extends TeaModel {
     }
 
     public static class UpdateRemoteClassCourseRequestAttendParticipants extends TeaModel {
-        /**
-         * <p>组织ID</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>参与方ID</p>
-         */
         @NameInMap("participantId")
         public String participantId;
 
@@ -141,15 +117,9 @@ public class UpdateRemoteClassCourseRequest extends TeaModel {
     }
 
     public static class UpdateRemoteClassCourseRequestTeachingParticipant extends TeaModel {
-        /**
-         * <p>组织ID</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>参与方ID</p>
-         */
         @NameInMap("participantId")
         public String participantId;
 

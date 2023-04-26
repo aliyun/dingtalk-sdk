@@ -4,9 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class ProcessForecastResponseBody extends TeaModel {
-    /**
-     * <p>返回结果</p>
-     */
     @NameInMap("result")
     public ProcessForecastResponseBodyResult result;
 
@@ -24,15 +21,9 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals extends TeaModel {
-        /**
-         * <p>员工姓名</p>
-         */
         @NameInMap("userName")
         public String userName;
 
-        /**
-         * <p>员工 userId</p>
-         */
         @NameInMap("workNo")
         public String workNo;
 
@@ -60,15 +51,9 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels extends TeaModel {
-        /**
-         * <p>角色名字</p>
-         */
         @NameInMap("labelNames")
         public String labelNames;
 
-        /**
-         * <p>角色 id</p>
-         */
         @NameInMap("labels")
         public String labels;
 
@@ -96,15 +81,9 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange extends TeaModel {
-        /**
-         * <p>审批指定成员</p>
-         */
         @NameInMap("approvals")
         public java.util.List<ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeApprovals> approvals;
 
-        /**
-         * <p>审批指定角色</p>
-         */
         @NameInMap("labels")
         public java.util.List<ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRangeLabels> labels;
 
@@ -132,57 +111,30 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor extends TeaModel {
-        /**
-         * <p>节点激活类型</p>
-         */
         @NameInMap("actorActivateType")
         public String actorActivateType;
 
-        /**
-         * <p>节点操作人 key</p>
-         */
         @NameInMap("actorKey")
         public String actorKey;
 
-        /**
-         * <p>节点操作人选择范围</p>
-         */
         @NameInMap("actorSelectionRange")
         public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActorActorSelectionRange actorSelectionRange;
 
-        /**
-         * <p>节点操作人选择范围类型</p>
-         */
         @NameInMap("actorSelectionType")
         public String actorSelectionType;
 
-        /**
-         * <p>节点操作人类型</p>
-         */
         @NameInMap("actorType")
         public String actorType;
 
-        /**
-         * <p>是否允许多选，还是仅允许选一人</p>
-         */
         @NameInMap("allowedMulti")
         public Boolean allowedMulti;
 
-        /**
-         * <p>节点审批方式</p>
-         */
         @NameInMap("approvalMethod")
         public String approvalMethod;
 
-        /**
-         * <p>节点审批类型</p>
-         */
         @NameInMap("approvalType")
         public String approvalType;
 
-        /**
-         * <p>该审批人节点在发起审批时是否必填</p>
-         */
         @NameInMap("required")
         public Boolean required;
 
@@ -266,39 +218,21 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResultWorkflowActivityRules extends TeaModel {
-        /**
-         * <p>节点 id</p>
-         */
         @NameInMap("activityId")
         public String activityId;
 
-        /**
-         * <p>节点名称</p>
-         */
         @NameInMap("activityName")
         public String activityName;
 
-        /**
-         * <p>规则类型</p>
-         */
         @NameInMap("activityType")
         public String activityType;
 
-        /**
-         * <p>是否自选审批节点</p>
-         */
         @NameInMap("isTargetSelect")
         public Boolean isTargetSelect;
 
-        /**
-         * <p>流程中前一个节点的 id</p>
-         */
         @NameInMap("prevActivityId")
         public String prevActivityId;
 
-        /**
-         * <p>节点操作人信息</p>
-         */
         @NameInMap("workflowActor")
         public ProcessForecastResponseBodyResultWorkflowActivityRulesWorkflowActor workflowActor;
 
@@ -358,15 +292,9 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResultWorkflowForecastNodes extends TeaModel {
-        /**
-         * <p>节点 id</p>
-         */
         @NameInMap("activityId")
         public String activityId;
 
-        /**
-         * <p>节点出线 id</p>
-         */
         @NameInMap("outId")
         public String outId;
 
@@ -394,33 +322,18 @@ public class ProcessForecastResponseBody extends TeaModel {
     }
 
     public static class ProcessForecastResponseBodyResult extends TeaModel {
-        /**
-         * <p>是否预测成功</p>
-         */
         @NameInMap("isForecastSuccess")
         public Boolean isForecastSuccess;
 
-        /**
-         * <p>是否静态流程</p>
-         */
         @NameInMap("isStaticWorkflow")
         public Boolean isStaticWorkflow;
 
-        /**
-         * <p>流程 code</p>
-         */
         @NameInMap("processCode")
         public String processCode;
 
-        /**
-         * <p>流程 id</p>
-         */
         @NameInMap("processId")
         public Long processId;
 
-        /**
-         * <p>用户 id</p>
-         */
         @NameInMap("userId")
         public String userId;
 

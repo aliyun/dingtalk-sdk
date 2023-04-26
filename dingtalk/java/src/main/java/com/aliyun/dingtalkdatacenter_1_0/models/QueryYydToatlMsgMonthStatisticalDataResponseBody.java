@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryYydToatlMsgMonthStatisticalDataResponseBody extends TeaModel {
-    /**
-     * <p>指标数据</p>
-     */
     @NameInMap("dataList")
     public java.util.List<java.util.Map<String, ?>> dataList;
 
-    /**
-     * <p>指标元数据</p>
-     */
     @NameInMap("metaList")
     public java.util.List<QueryYydToatlMsgMonthStatisticalDataResponseBodyMetaList> metaList;
 
@@ -38,33 +32,18 @@ public class QueryYydToatlMsgMonthStatisticalDataResponseBody extends TeaModel {
     }
 
     public static class QueryYydToatlMsgMonthStatisticalDataResponseBodyMetaList extends TeaModel {
-        /**
-         * <p>指标口径</p>
-         */
         @NameInMap("kpiCaliber")
         public String kpiCaliber;
 
-        /**
-         * <p>指标ID</p>
-         */
         @NameInMap("kpiId")
         public String kpiId;
 
-        /**
-         * <p>指标名称</p>
-         */
         @NameInMap("kpiName")
         public String kpiName;
 
-        /**
-         * <p>指标周期</p>
-         */
         @NameInMap("period")
         public String period;
 
-        /**
-         * <p>指标单位</p>
-         */
         @NameInMap("unit")
         public String unit;
 

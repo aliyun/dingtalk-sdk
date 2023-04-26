@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class SearchResponseBody extends TeaModel {
-    /**
-     * <p>节点搜索结果。</p>
-     */
     @NameInMap("dentryResult")
     public SearchResponseBodyDentryResult dentryResult;
 
-    /**
-     * <p>知识库搜索结果。</p>
-     */
     @NameInMap("spaceResult")
     public SearchResponseBodySpaceResult spaceResult;
 
@@ -38,93 +32,48 @@ public class SearchResponseBody extends TeaModel {
     }
 
     public static class SearchResponseBodyDentryResultItems extends TeaModel {
-        /**
-         * <p>如果内容命中了关键词，会返回该部分内容，带高亮。</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>创建信息。</p>
-         */
         @NameInMap("creation")
         public OpenActionModel creation;
 
-        /**
-         * <p>节点id。</p>
-         */
         @NameInMap("dentryId")
         public String dentryId;
 
-        /**
-         * <p>节点唯一标识。</p>
-         */
         @NameInMap("dentryUuid")
         public String dentryUuid;
 
-        /**
-         * <p>文件名扩展。</p>
-         */
         @NameInMap("extension")
         public String extension;
 
-        /**
-         * <p>节点图标url。</p>
-         */
         @NameInMap("iconUrl")
         public String iconUrl;
 
-        /**
-         * <p>最后修改信息。</p>
-         */
         @NameInMap("lastEdition")
         public OpenActionModel lastEdition;
 
-        /**
-         * <p>节点名称，如果命中了关键词，会带有高亮。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>节点原始名称，不带高亮。</p>
-         */
         @NameInMap("originName")
         public String originName;
 
-        /**
-         * <p>节点的路径。</p>
-         */
         @NameInMap("path")
         public String path;
 
-        /**
-         * <p>节点所属的业务场景。可选值有：1-知识库；2-我的文档；5-群聊。</p>
-         */
         @NameInMap("sceneType")
         public Integer sceneType;
 
-        /**
-         * <p>文件类型。1-文档；2-表格；3-脑图；4-演示；5-白板；6-office文字；7-office表格；8-office ppt；10-多维表格；11-文本；12-图片；13-视频；14-音频；15-压缩文件；16-其他。</p>
-         */
         @NameInMap("searchFileType")
         public Integer searchFileType;
 
-        /**
-         * <p>节点所属的知识库id。</p>
-         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        /**
-         * <p>文档缩略图url。</p>
-         */
         @NameInMap("thumbnailUrl")
         public String thumbnailUrl;
 
-        /**
-         * <p>节点访问url。</p>
-         */
         @NameInMap("url")
         public String url;
 
@@ -256,21 +205,12 @@ public class SearchResponseBody extends TeaModel {
     }
 
     public static class SearchResponseBodyDentryResult extends TeaModel {
-        /**
-         * <p>是否还有更多数据。</p>
-         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
-        /**
-         * <p>搜索命中的节点列表。</p>
-         */
         @NameInMap("items")
         public java.util.List<SearchResponseBodyDentryResultItems> items;
 
-        /**
-         * <p>分页游标。</p>
-         */
         @NameInMap("nextToken")
         public String nextToken;
 
@@ -306,15 +246,9 @@ public class SearchResponseBody extends TeaModel {
     }
 
     public static class SearchResponseBodySpaceResultItemsIconVO extends TeaModel {
-        /**
-         * <p>图标信息。</p>
-         */
         @NameInMap("icon")
         public String icon;
 
-        /**
-         * <p>知识库图标的类型。</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -342,15 +276,9 @@ public class SearchResponseBody extends TeaModel {
     }
 
     public static class SearchResponseBodySpaceResultItemsTeamVO extends TeaModel {
-        /**
-         * <p>知识小组id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>知识小组名称</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -378,15 +306,9 @@ public class SearchResponseBody extends TeaModel {
     }
 
     public static class SearchResponseBodySpaceResultItemsUserLastOperation extends TeaModel {
-        /**
-         * <p>操作人名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>操作的时间戳（ms）。</p>
-         */
         @NameInMap("time")
         public Long time;
 
@@ -414,45 +336,24 @@ public class SearchResponseBody extends TeaModel {
     }
 
     public static class SearchResponseBodySpaceResultItems extends TeaModel {
-        /**
-         * <p>知识库图标。</p>
-         */
         @NameInMap("iconVO")
         public SearchResponseBodySpaceResultItemsIconVO iconVO;
 
-        /**
-         * <p>知识库名称，如果命中了关键词，会带有高亮。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>知识库原始名称，不带高亮。</p>
-         */
         @NameInMap("originName")
         public String originName;
 
-        /**
-         * <p>知识库id。</p>
-         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        /**
-         * <p>知识小组信息</p>
-         */
         @NameInMap("teamVO")
         public SearchResponseBodySpaceResultItemsTeamVO teamVO;
 
-        /**
-         * <p>知识库访问url。</p>
-         */
         @NameInMap("url")
         public String url;
 
-        /**
-         * <p>用户最后一次操作信息。</p>
-         */
         @NameInMap("userLastOperation")
         public SearchResponseBodySpaceResultItemsUserLastOperation userLastOperation;
 
@@ -520,21 +421,12 @@ public class SearchResponseBody extends TeaModel {
     }
 
     public static class SearchResponseBodySpaceResult extends TeaModel {
-        /**
-         * <p>是否还有更多数据。</p>
-         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
-        /**
-         * <p>搜索命中的知识库列表。</p>
-         */
         @NameInMap("items")
         public java.util.List<SearchResponseBodySpaceResultItems> items;
 
-        /**
-         * <p>分页游标。</p>
-         */
         @NameInMap("nextToken")
         public String nextToken;
 

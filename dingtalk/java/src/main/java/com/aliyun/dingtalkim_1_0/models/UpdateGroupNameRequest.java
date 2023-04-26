@@ -4,15 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateGroupNameRequest extends TeaModel {
-    /**
-     * <p>群名称。</p>
-     */
     @NameInMap("groupName")
     public String groupName;
 
-    /**
-     * <p>群会话id。</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateUniversityTeacherResponseBody extends TeaModel {
-    /**
-     * <p>返回结果</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

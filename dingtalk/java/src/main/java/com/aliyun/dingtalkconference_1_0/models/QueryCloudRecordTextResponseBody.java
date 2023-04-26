@@ -4,15 +4,9 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCloudRecordTextResponseBody extends TeaModel {
-    /**
-     * <p>是否有更多</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>段落列表</p>
-     */
     @NameInMap("paragraphList")
     public java.util.List<QueryCloudRecordTextResponseBodyParagraphList> paragraphList;
 
@@ -38,27 +32,15 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
     }
 
     public static class QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList extends TeaModel {
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("endTime")
         public Long endTime;
 
-        /**
-         * <p>开始时间</p>
-         */
         @NameInMap("startTime")
         public Long startTime;
 
-        /**
-         * <p>单词</p>
-         */
         @NameInMap("word")
         public String word;
 
-        /**
-         * <p>单词id</p>
-         */
         @NameInMap("wordId")
         public String wordId;
 
@@ -102,33 +84,18 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
     }
 
     public static class QueryCloudRecordTextResponseBodyParagraphListSentenceList extends TeaModel {
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("endTime")
         public Long endTime;
 
-        /**
-         * <p>句子</p>
-         */
         @NameInMap("sentence")
         public String sentence;
 
-        /**
-         * <p>开始时间</p>
-         */
         @NameInMap("startTime")
         public Long startTime;
 
-        /**
-         * <p>用户unionId</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 
-        /**
-         * <p>单词列表</p>
-         */
         @NameInMap("wordList")
         public java.util.List<QueryCloudRecordTextResponseBodyParagraphListSentenceListWordList> wordList;
 
@@ -180,57 +147,30 @@ public class QueryCloudRecordTextResponseBody extends TeaModel {
     }
 
     public static class QueryCloudRecordTextResponseBodyParagraphList extends TeaModel {
-        /**
-         * <p>结束时间，毫秒</p>
-         */
         @NameInMap("endTime")
         public Long endTime;
 
-        /**
-         * <p>游标，下次查询时使用</p>
-         */
         @NameInMap("nextTtoken")
         public Long nextTtoken;
 
-        /**
-         * <p>发言人昵称</p>
-         */
         @NameInMap("nickName")
         public String nickName;
 
-        /**
-         * <p>段落内容</p>
-         */
         @NameInMap("paragraph")
         public String paragraph;
 
-        /**
-         * <p>云录制id</p>
-         */
         @NameInMap("recordId")
         public Long recordId;
 
-        /**
-         * <p>句子列表</p>
-         */
         @NameInMap("sentenceList")
         public java.util.List<QueryCloudRecordTextResponseBodyParagraphListSentenceList> sentenceList;
 
-        /**
-         * <p>开始时间，毫秒</p>
-         */
         @NameInMap("startTime")
         public Long startTime;
 
-        /**
-         * <p>状态，暂不解析</p>
-         */
         @NameInMap("status")
         public Long status;
 
-        /**
-         * <p>发言人unionId</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 

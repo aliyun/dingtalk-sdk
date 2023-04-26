@@ -7,21 +7,12 @@ public class CancelTicketRequest extends TeaModel {
     @NameInMap("notify")
     public CancelTicketRequestNotify notify;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>工单开放ID</p>
-     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
-    /**
-     * <p>操作人unionId</p>
-     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
@@ -77,9 +68,6 @@ public class CancelTicketRequest extends TeaModel {
         @NameInMap("groupNoticeReceiverUnionIds")
         public java.util.List<String> groupNoticeReceiverUnionIds;
 
-        /**
-         * <p>是否向群内推送一个全员可见工单通知卡片</p>
-         */
         @NameInMap("noticeAllGroupMember")
         public Boolean noticeAllGroupMember;
 
@@ -118,15 +106,9 @@ public class CancelTicketRequest extends TeaModel {
     }
 
     public static class CancelTicketRequestTicketMemoAttachments extends TeaModel {
-        /**
-         * <p>文件名</p>
-         */
         @NameInMap("fileName")
         public String fileName;
 
-        /**
-         * <p>文件key</p>
-         */
         @NameInMap("key")
         public String key;
 
@@ -157,9 +139,6 @@ public class CancelTicketRequest extends TeaModel {
         @NameInMap("attachments")
         public java.util.List<CancelTicketRequestTicketMemoAttachments> attachments;
 
-        /**
-         * <p>备注</p>
-         */
         @NameInMap("memo")
         public String memo;
 

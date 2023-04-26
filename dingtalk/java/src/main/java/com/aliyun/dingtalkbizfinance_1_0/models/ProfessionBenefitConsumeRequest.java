@@ -4,23 +4,12 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ProfessionBenefitConsumeRequest extends TeaModel {
-    /**
-     * <p>权益编码</p>
-     * <br>
-     */
     @NameInMap("benefitCode")
     public String benefitCode;
 
-    /**
-     * <p>幂等ID</p>
-     * <br>
-     */
     @NameInMap("bizRequestId")
     public String bizRequestId;
 
-    /**
-     * <p>核销数量</p>
-     */
     @NameInMap("quota")
     public Long quota;
 

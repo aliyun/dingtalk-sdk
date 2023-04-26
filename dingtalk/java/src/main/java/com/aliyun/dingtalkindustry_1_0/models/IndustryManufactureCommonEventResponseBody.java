@@ -7,9 +7,6 @@ public class IndustryManufactureCommonEventResponseBody extends TeaModel {
     @NameInMap("errorMsg")
     public String errorMsg;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
@@ -46,15 +43,9 @@ public class IndustryManufactureCommonEventResponseBody extends TeaModel {
     }
 
     public static class IndustryManufactureCommonEventResponseBodyResult extends TeaModel {
-        /**
-         * <p>返回内容</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>状态码</p>
-         */
         @NameInMap("httpCode")
         public String httpCode;
 

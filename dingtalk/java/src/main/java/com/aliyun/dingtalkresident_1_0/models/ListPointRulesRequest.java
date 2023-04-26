@@ -4,9 +4,6 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListPointRulesRequest extends TeaModel {
-    /**
-     * <p>是否查询全员圈积分</p>
-     */
     @NameInMap("isCircle")
     public Boolean isCircle;
 

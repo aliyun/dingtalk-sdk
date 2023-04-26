@@ -4,21 +4,12 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageListActionResponseBody extends TeaModel {
-    /**
-     * <p>list</p>
-     */
     @NameInMap("list")
     public java.util.List<PageListActionResponseBodyList> list;
 
-    /**
-     * <p>nextCursor</p>
-     */
     @NameInMap("nextCursor")
     public Long nextCursor;
 
-    /**
-     * <p>total</p>
-     */
     @NameInMap("total")
     public Long total;
 
@@ -52,33 +43,18 @@ public class PageListActionResponseBody extends TeaModel {
     }
 
     public static class PageListActionResponseBodyListActionContent extends TeaModel {
-        /**
-         * <p>displayName</p>
-         */
         @NameInMap("displayName")
         public String displayName;
 
-        /**
-         * <p>displayValue</p>
-         */
         @NameInMap("displayValue")
         public String displayValue;
 
-        /**
-         * <p>name</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>value</p>
-         */
         @NameInMap("value")
         public String value;
 
-        /**
-         * <p>valueType</p>
-         */
         @NameInMap("valueType")
         public String valueType;
 
@@ -130,33 +106,18 @@ public class PageListActionResponseBody extends TeaModel {
     }
 
     public static class PageListActionResponseBodyList extends TeaModel {
-        /**
-         * <p>actionCode</p>
-         */
         @NameInMap("actionCode")
         public String actionCode;
 
-        /**
-         * <p>actionContent</p>
-         */
         @NameInMap("actionContent")
         public java.util.List<PageListActionResponseBodyListActionContent> actionContent;
 
-        /**
-         * <p>operator</p>
-         */
         @NameInMap("operator")
         public String operator;
 
-        /**
-         * <p>operatorId</p>
-         */
         @NameInMap("operatorId")
         public String operatorId;
 
-        /**
-         * <p>operatorRole</p>
-         */
         @NameInMap("operatorRole")
         public String operatorRole;
 

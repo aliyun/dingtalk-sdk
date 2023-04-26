@@ -4,9 +4,6 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UploadInvoiceResponseBody extends TeaModel {
-    /**
-     * <p>结果</p>
-     */
     @NameInMap("result")
     public UploadInvoiceResponseBodyResult result;
 
@@ -24,33 +21,18 @@ public class UploadInvoiceResponseBody extends TeaModel {
     }
 
     public static class UploadInvoiceResponseBodyResultResults extends TeaModel {
-        /**
-         * <p>业务错误码</p>
-         */
         @NameInMap("errCode")
         public String errCode;
 
-        /**
-         * <p>发票代码</p>
-         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
-        /**
-         * <p>发票号码</p>
-         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
-        /**
-         * <p>失败原因</p>
-         */
         @NameInMap("reason")
         public String reason;
 
-        /**
-         * <p>是否成功</p>
-         */
         @NameInMap("success")
         public Boolean success;
 
@@ -102,9 +84,6 @@ public class UploadInvoiceResponseBody extends TeaModel {
     }
 
     public static class UploadInvoiceResponseBodyResult extends TeaModel {
-        /**
-         * <p>上传结果</p>
-         */
         @NameInMap("results")
         public java.util.List<UploadInvoiceResponseBodyResultResults> results;
 

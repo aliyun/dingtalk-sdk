@@ -4,27 +4,15 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFieldDefByUuidRequest extends TeaModel {
-    /**
-     * <p>应用编码。应用唯一标识。如：APP_XXX</p>
-     */
     @NameInMap("appType")
     public String appType;
 
-    /**
-     * <p>表单唯一标识</p>
-     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    /**
-     * <p>应用秘钥。在应用设置-部署运维-应用密钥中获取。</p>
-     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    /**
-     * <p>操作人userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

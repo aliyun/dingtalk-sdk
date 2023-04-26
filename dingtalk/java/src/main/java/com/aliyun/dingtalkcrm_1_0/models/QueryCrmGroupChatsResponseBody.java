@@ -4,27 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCrmGroupChatsResponseBody extends TeaModel {
-    /**
-     * <p>是否还有下一页</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>下一页的游标</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>数据列表</p>
-     */
     @NameInMap("resultList")
     public java.util.List<QueryCrmGroupChatsResponseBodyResultList> resultList;
 
-    /**
-     * <p>总条数，queryDsl入参为空时才会返回</p>
-     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -66,45 +54,24 @@ public class QueryCrmGroupChatsResponseBody extends TeaModel {
     }
 
     public static class QueryCrmGroupChatsResponseBodyResultList extends TeaModel {
-        /**
-         * <p>创建时间(时间戳)</p>
-         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        /**
-         * <p>客户群成员数</p>
-         */
         @NameInMap("memberCount")
         public Integer memberCount;
 
-        /**
-         * <p>客户群名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>客户群openConversationId</p>
-         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        /**
-         * <p>群组openGroupSetId</p>
-         */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
-        /**
-         * <p>群主userId</p>
-         */
         @NameInMap("ownerUserId")
         public String ownerUserId;
 
-        /**
-         * <p>群主userName</p>
-         */
         @NameInMap("ownerUserName")
         public String ownerUserName;
 

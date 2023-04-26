@@ -4,15 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class RemoveResidentUserRequest extends TeaModel {
-    /**
-     * <p>户/租户部门id</p>
-     */
     @NameInMap("departmentId")
     public Long departmentId;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

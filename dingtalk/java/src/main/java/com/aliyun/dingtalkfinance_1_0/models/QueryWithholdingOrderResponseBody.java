@@ -4,81 +4,42 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryWithholdingOrderResponseBody extends TeaModel {
-    /**
-     * <p>代扣金额（元）</p>
-     */
     @NameInMap("amount")
     public String amount;
 
-    /**
-     * <p>订单创建日期</p>
-     */
     @NameInMap("gmtCreate")
     public String gmtCreate;
 
-    /**
-     * <p>付款完成日期</p>
-     */
     @NameInMap("gmtPay")
     public String gmtPay;
 
-    /**
-     * <p>主机构编号</p>
-     */
     @NameInMap("instId")
     public String instId;
 
-    /**
-     * <p>钉钉订单号</p>
-     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    /**
-     * <p>外部订单号</p>
-     */
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
-    /**
-     * <p>支付渠道</p>
-     */
     @NameInMap("payChannel")
     public String payChannel;
 
-    /**
-     * <p>支付渠道支付账号（脱敏后返回）</p>
-     */
     @NameInMap("payChannelAccountNo")
     public String payChannelAccountNo;
 
-    /**
-     * <p>付款人userId</p>
-     */
     @NameInMap("payerUserId")
     public String payerUserId;
 
-    /**
-     * <p>代扣备注</p>
-     */
     @NameInMap("remark")
     public String remark;
 
-    /**
-     * <p>状态</p>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <p>子机构编号</p>
-     */
     @NameInMap("subInstId")
     public String subInstId;
 
-    /**
-     * <p>代扣标题</p>
-     */
     @NameInMap("title")
     public String title;
 

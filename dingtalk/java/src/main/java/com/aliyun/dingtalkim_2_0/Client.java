@@ -6,8 +6,11 @@ import com.aliyun.dingtalkim_2_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public CloseTopboxResponse closeTopbox(CloseTopboxRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CloseTopboxHeaders headers = new CloseTopboxHeaders();
-        return this.closeTopboxWithOptions(request, headers, runtime);
-    }
 
     public CloseTopboxResponse closeTopboxWithOptions(CloseTopboxRequest request, CloseTopboxHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -70,13 +67,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CloseTopbox", "im_2.0", "HTTP", "POST", "AK", "/v2.0/im/topBoxes/close", "json", req, runtime), new CloseTopboxResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CloseTopbox"),
+            new TeaPair("version", "im_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/im/topBoxes/close"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CloseTopboxResponse());
     }
 
-    public CreateTopboxResponse createTopbox(CreateTopboxRequest request) throws Exception {
+    public CloseTopboxResponse closeTopbox(CloseTopboxRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateTopboxHeaders headers = new CreateTopboxHeaders();
-        return this.createTopboxWithOptions(request, headers, runtime);
+        CloseTopboxHeaders headers = new CloseTopboxHeaders();
+        return this.closeTopboxWithOptions(request, headers, runtime);
     }
 
     public CreateTopboxResponse createTopboxWithOptions(CreateTopboxRequest request, CreateTopboxHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -167,6 +175,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateTopbox", "im_2.0", "HTTP", "POST", "AK", "/v2.0/im/topBoxes", "json", req, runtime), new CreateTopboxResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateTopbox"),
+            new TeaPair("version", "im_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/im/topBoxes"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateTopboxResponse());
+    }
+
+    public CreateTopboxResponse createTopbox(CreateTopboxRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateTopboxHeaders headers = new CreateTopboxHeaders();
+        return this.createTopboxWithOptions(request, headers, runtime);
     }
 }

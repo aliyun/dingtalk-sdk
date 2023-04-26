@@ -4,9 +4,6 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetNewestInnerGroupsRequest extends TeaModel {
-    /**
-     * <p>用户userId。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

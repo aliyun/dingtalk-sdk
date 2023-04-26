@@ -4,9 +4,6 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCategoryRequest extends TeaModel {
-    /**
-     * <p>类别code</p>
-     */
     @NameInMap("code")
     public String code;
 

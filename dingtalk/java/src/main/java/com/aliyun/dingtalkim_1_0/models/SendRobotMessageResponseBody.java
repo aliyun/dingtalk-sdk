@@ -4,9 +4,6 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendRobotMessageResponseBody extends TeaModel {
-    /**
-     * <p>本次操作是否成功。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

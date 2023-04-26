@@ -4,15 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteCrmFormInstanceRequest extends TeaModel {
-    /**
-     * <p>当前操作人id</p>
-     */
     @NameInMap("currentOperatorUserId")
     public String currentOperatorUserId;
 
-    /**
-     * <p>模版名称</p>
-     */
     @NameInMap("name")
     public String name;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class OpenActionModel extends TeaModel {
-    /**
-     * <p>操作人名称。</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>操作时间戳。</p>
-     */
     @NameInMap("timestamp")
     public Long timestamp;
 

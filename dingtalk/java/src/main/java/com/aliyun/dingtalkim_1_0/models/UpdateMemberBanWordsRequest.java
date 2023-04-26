@@ -4,27 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateMemberBanWordsRequest extends TeaModel {
-    /**
-     * <p>禁言持续时长（单位：毫秒）</p>
-     */
     @NameInMap("muteDuration")
     public Long muteDuration;
 
-    /**
-     * <p>禁言状态(0表示取消禁言，1表示禁言)</p>
-     */
     @NameInMap("muteStatus")
     public Integer muteStatus;
 
-    /**
-     * <p>开放群id</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>需要禁言或取消禁言的群成员列表</p>
-     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

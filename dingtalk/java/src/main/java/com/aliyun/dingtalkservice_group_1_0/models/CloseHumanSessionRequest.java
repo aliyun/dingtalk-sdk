@@ -4,15 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CloseHumanSessionRequest extends TeaModel {
-    /**
-     * <p>开放会话id</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>开放团队id</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

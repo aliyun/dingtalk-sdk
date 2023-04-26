@@ -4,39 +4,21 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateReceiptVoucherStatusRequest extends TeaModel {
-    /**
-     * <p>账期</p>
-     */
     @NameInMap("accountPeriod")
     public String accountPeriod;
 
-    /**
-     * <p>操作类型 add 添加凭证关系、delete 删除凭证关系</p>
-     */
     @NameInMap("actionType")
     public String actionType;
 
-    /**
-     * <p>操作人工号</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    /**
-     * <p>审批单据ID</p>
-     */
     @NameInMap("receiptId")
     public String receiptId;
 
-    /**
-     * <p>凭证CODE</p>
-     */
     @NameInMap("voucherCode")
     public String voucherCode;
 
-    /**
-     * <p>凭证ID</p>
-     */
     @NameInMap("voucherId")
     public String voucherId;
 

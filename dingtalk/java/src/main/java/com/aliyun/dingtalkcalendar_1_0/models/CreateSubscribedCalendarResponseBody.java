@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSubscribedCalendarResponseBody extends TeaModel {
-    /**
-     * <p>日历id</p>
-     */
     @NameInMap("calendarId")
     public String calendarId;
 

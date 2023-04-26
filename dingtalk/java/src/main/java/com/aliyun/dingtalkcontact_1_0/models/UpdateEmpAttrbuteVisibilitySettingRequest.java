@@ -4,69 +4,36 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateEmpAttrbuteVisibilitySettingRequest extends TeaModel {
-    /**
-     * <p>是否生效</p>
-     */
     @NameInMap("active")
     public Boolean active;
 
-    /**
-     * <p>描述信息</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>例外部门id列表</p>
-     */
     @NameInMap("excludeDeptIds")
     public java.util.List<Long> excludeDeptIds;
 
-    /**
-     * <p>例外员工id列表</p>
-     */
     @NameInMap("excludeStaffIds")
     public java.util.List<String> excludeStaffIds;
 
-    /**
-     * <p>例外角色id列表</p>
-     */
     @NameInMap("excludeTagIds")
     public java.util.List<Long> excludeTagIds;
 
-    /**
-     * <p>隐藏字段id列表</p>
-     */
     @NameInMap("hideFields")
     public java.util.List<String> hideFields;
 
-    /**
-     * <p>id</p>
-     */
     @NameInMap("id")
     public Long id;
 
-    /**
-     * <p>名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>object部门id列表</p>
-     */
     @NameInMap("objectDeptIds")
     public java.util.List<Long> objectDeptIds;
 
-    /**
-     * <p>object员工id列表</p>
-     */
     @NameInMap("objectStaffIds")
     public java.util.List<String> objectStaffIds;
 
-    /**
-     * <p>object角色id列表</p>
-     */
     @NameInMap("objectTagIds")
     public java.util.List<Long> objectTagIds;
 

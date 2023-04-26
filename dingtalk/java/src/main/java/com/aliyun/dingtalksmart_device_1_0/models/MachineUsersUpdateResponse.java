@@ -8,6 +8,10 @@ public class MachineUsersUpdateResponse extends TeaModel {
     @Validation(required = true)
     public java.util.Map<String, String> headers;
 
+    @NameInMap("statusCode")
+    @Validation(required = true)
+    public Integer statusCode;
+
     public static MachineUsersUpdateResponse build(java.util.Map<String, ?> map) throws Exception {
         MachineUsersUpdateResponse self = new MachineUsersUpdateResponse();
         return TeaModel.build(map, self);
@@ -19,6 +23,14 @@ public class MachineUsersUpdateResponse extends TeaModel {
     }
     public java.util.Map<String, String> getHeaders() {
         return this.headers;
+    }
+
+    public MachineUsersUpdateResponse setStatusCode(Integer statusCode) {
+        this.statusCode = statusCode;
+        return this;
+    }
+    public Integer getStatusCode() {
+        return this.statusCode;
     }
 
 }

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCorpCardStyleListResponseBody extends TeaModel {
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("result")
     public java.util.List<java.util.Map<String, ?>> result;
 

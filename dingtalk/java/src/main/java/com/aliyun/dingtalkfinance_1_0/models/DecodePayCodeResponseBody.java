@@ -4,63 +4,33 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class DecodePayCodeResponseBody extends TeaModel {
-    /**
-     * <p>支付宝付款码</p>
-     */
     @NameInMap("alipayCode")
     public String alipayCode;
 
-    /**
-     * <p>码ID，对于访客或会展码等静态码值返回</p>
-     */
     @NameInMap("codeId")
     public String codeId;
 
-    /**
-     * <p>工牌码：DT_IDENTITY，访客码：DT_VISITOR，会展码：DT_CONFERENCE</p>
-     */
     @NameInMap("codeIdentity")
     public String codeIdentity;
 
-    /**
-     * <p>码类型</p>
-     */
     @NameInMap("codeType")
     public String codeType;
 
-    /**
-     * <p>企业id</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>扩展信息</p>
-     */
     @NameInMap("extInfo")
     public String extInfo;
 
-    /**
-     * <p>外部业务ID,其值为调用创建用户码接口传入的requestId</p>
-     */
     @NameInMap("outBizId")
     public String outBizId;
 
-    /**
-     * <p>用户和企业关系</p>
-     */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
-    /**
-     * <p>员工id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>用户是否还在组织内</p>
-     */
     @NameInMap("userInCorp")
     public Boolean userInCorp;
 

@@ -21,27 +21,15 @@ public class SearchTeachersResponseBody extends TeaModel {
     }
 
     public static class SearchTeachersResponseBodyUsers extends TeaModel {
-        /**
-         * <p>所在其中一个班级ID</p>
-         */
         @NameInMap("classId")
         public Long classId;
 
-        /**
-         * <p>所在其中一个班级名称</p>
-         */
         @NameInMap("deptName")
         public String deptName;
 
-        /**
-         * <p>名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户ID</p>
-         */
         @NameInMap("userId")
         public String userId;
 

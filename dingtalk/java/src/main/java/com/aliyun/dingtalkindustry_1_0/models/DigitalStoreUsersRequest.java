@@ -4,15 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreUsersRequest extends TeaModel {
-    /**
-     * <p>门店通通讯录Cod</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>节点Id</p>
-     */
     @NameInMap("nodeId")
     public Long nodeId;
 

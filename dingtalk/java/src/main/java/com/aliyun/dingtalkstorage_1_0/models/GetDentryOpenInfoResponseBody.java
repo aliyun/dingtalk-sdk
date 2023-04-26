@@ -4,15 +4,9 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDentryOpenInfoResponseBody extends TeaModel {
-    /**
-     * <p>是否支持水印</p>
-     */
     @NameInMap("hasWaterMark")
     public Boolean hasWaterMark;
 
-    /**
-     * <p>链接, 用于编辑或预览</p>
-     */
     @NameInMap("url")
     public String url;
 

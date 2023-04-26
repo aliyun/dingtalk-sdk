@@ -4,27 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateObjectiveRequest extends TeaModel {
-    /**
-     * <p>创建Objective 的内容</p>
-     */
     @NameInMap("content")
     public String content;
 
-    /**
-     * <p>当前周期 ID。</p>
-     */
     @NameInMap("periodId")
     public String periodId;
 
-    /**
-     * <p>上一个 Objective 的位置。</p>
-     */
     @NameInMap("prevPosition")
     public String prevPosition;
 
-    /**
-     * <p>当前用户的 userId。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

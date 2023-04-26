@@ -4,9 +4,6 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartCloudFeedResponseBody extends TeaModel {
-    /**
-     * <p>状态更改是否成功</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

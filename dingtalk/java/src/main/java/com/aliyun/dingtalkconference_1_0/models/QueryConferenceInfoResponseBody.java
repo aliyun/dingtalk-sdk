@@ -4,9 +4,6 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryConferenceInfoResponseBody extends TeaModel {
-    /**
-     * <p>会议信息结构体</p>
-     */
     @NameInMap("confInfo")
     public QueryConferenceInfoResponseBodyConfInfo confInfo;
 
@@ -24,84 +21,42 @@ public class QueryConferenceInfoResponseBody extends TeaModel {
     }
 
     public static class QueryConferenceInfoResponseBodyConfInfo extends TeaModel {
-        /**
-         * <p>当前在会人数</p>
-         */
         @NameInMap("activeNum")
         public Integer activeNum;
 
-        /**
-         * <p>累积入会人数</p>
-         */
         @NameInMap("attendNum")
         public Integer attendNum;
 
-        /**
-         * <p>会议时长</p>
-         */
         @NameInMap("confDuration")
         public Long confDuration;
 
-        /**
-         * <p>会议id</p>
-         */
         @NameInMap("conferenceId")
         public String conferenceId;
 
-        /**
-         * <p>会议创建人unionId</p>
-         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        /**
-         * <p>会议创建人昵称</p>
-         */
         @NameInMap("creatorNick")
         public String creatorNick;
 
-        /**
-         * <p>会议结束时间</p>
-         */
         @NameInMap("endTime")
         public Long endTime;
 
-        /**
-         * <p>会议web入会链接</p>
-         */
         @NameInMap("externalLinkUrl")
         public String externalLinkUrl;
 
-        /**
-         * <p>邀请人数</p>
-         */
         @NameInMap("invitedNum")
         public Integer invitedNum;
 
-        /**
-         * <p>会议码</p>
-         */
         @NameInMap("roomCode")
         public String roomCode;
 
-        /**
-         * <p>会议开始时间</p>
-         */
         @NameInMap("startTime")
         public Long startTime;
 
-        /**
-         * <p>会议状态</p>
-         * <p>0 初始化</p>
-         * <p>1 开始</p>
-         * <p>2 结束</p>
-         */
         @NameInMap("status")
         public Integer status;
 
-        /**
-         * <p>会议标题</p>
-         */
         @NameInMap("title")
         public String title;
 

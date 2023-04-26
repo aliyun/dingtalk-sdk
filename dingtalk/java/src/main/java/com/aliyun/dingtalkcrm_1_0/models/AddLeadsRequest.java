@@ -4,33 +4,18 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddLeadsRequest extends TeaModel {
-    /**
-     * <p>分配时间戳，如果不传则默认为当前时间。</p>
-     */
     @NameInMap("assignTimestamp")
     public Long assignTimestamp;
 
-    /**
-     * <p>分配线索的员工userId。</p>
-     */
     @NameInMap("assignUserId")
     public String assignUserId;
 
-    /**
-     * <p>被分配线索的员工userId。</p>
-     */
     @NameInMap("assignedUserId")
     public String assignedUserId;
 
-    /**
-     * <p>线索。</p>
-     */
     @NameInMap("leads")
     public java.util.List<AddLeadsRequestLeads> leads;
 
-    /**
-     * <p>任务ID，用于幂等控制。</p>
-     */
     @NameInMap("outTaskId")
     public String outTaskId;
 
@@ -80,15 +65,9 @@ public class AddLeadsRequest extends TeaModel {
     }
 
     public static class AddLeadsRequestLeads extends TeaModel {
-        /**
-         * <p>线索名称。</p>
-         */
         @NameInMap("leadsName")
         public String leadsName;
 
-        /**
-         * <p>线索id。</p>
-         */
         @NameInMap("outLeadsId")
         public String outLeadsId;
 

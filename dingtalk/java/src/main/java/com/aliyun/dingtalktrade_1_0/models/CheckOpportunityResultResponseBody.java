@@ -4,9 +4,6 @@ package com.aliyun.dingtalktrade_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckOpportunityResultResponseBody extends TeaModel {
-    /**
-     * <p>success</p>
-     */
     @NameInMap("bizSuccess")
     public Boolean bizSuccess;
 

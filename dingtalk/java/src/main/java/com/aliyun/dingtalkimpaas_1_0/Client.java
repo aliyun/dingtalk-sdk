@@ -6,8 +6,11 @@ import com.aliyun.dingtalkimpaas_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public AddGroupMembersResponse addGroupMembers(AddGroupMembersRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        AddGroupMembersHeaders headers = new AddGroupMembersHeaders();
-        return this.addGroupMembersWithOptions(request, headers, runtime);
-    }
 
     public AddGroupMembersResponse addGroupMembersWithOptions(AddGroupMembersRequest request, AddGroupMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -54,13 +51,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("AddGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups/members/batchAdd", "json", req, runtime), new AddGroupMembersResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddGroupMembers"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/groups/members/batchAdd"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddGroupMembersResponse());
     }
 
-    public AddProfileResponse addProfile(AddProfileRequest request) throws Exception {
+    public AddGroupMembersResponse addGroupMembers(AddGroupMembersRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        AddProfileHeaders headers = new AddProfileHeaders();
-        return this.addProfileWithOptions(request, headers, runtime);
+        AddGroupMembersHeaders headers = new AddGroupMembersHeaders();
+        return this.addGroupMembersWithOptions(request, headers, runtime);
     }
 
     public AddProfileResponse addProfileWithOptions(AddProfileRequest request, AddProfileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -95,13 +103,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("AddProfile", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/users/profiles", "none", req, runtime), new AddProfileResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddProfile"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/users/profiles"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddProfileResponse());
     }
 
-    public BatchSendResponse batchSend(BatchSendRequest request) throws Exception {
+    public AddProfileResponse addProfile(AddProfileRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        BatchSendHeaders headers = new BatchSendHeaders();
-        return this.batchSendWithOptions(request, headers, runtime);
+        AddProfileHeaders headers = new AddProfileHeaders();
+        return this.addProfileWithOptions(request, headers, runtime);
     }
 
     public BatchSendResponse batchSendWithOptions(BatchSendRequest request, BatchSendHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -136,13 +155,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("BatchSend", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/messages/batchSend", "json", req, runtime), new BatchSendResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BatchSend"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/messages/batchSend"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BatchSendResponse());
     }
 
-    public CreateGroupResponse createGroup(CreateGroupRequest request) throws Exception {
+    public BatchSendResponse batchSend(BatchSendRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateGroupHeaders headers = new CreateGroupHeaders();
-        return this.createGroupWithOptions(request, headers, runtime);
+        BatchSendHeaders headers = new BatchSendHeaders();
+        return this.batchSendWithOptions(request, headers, runtime);
     }
 
     public CreateGroupResponse createGroupWithOptions(CreateGroupRequest request, CreateGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -189,13 +219,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateGroup", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups", "json", req, runtime), new CreateGroupResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateGroup"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/groups"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateGroupResponse());
     }
 
-    public CreateTrustGroupResponse createTrustGroup(CreateTrustGroupRequest request) throws Exception {
+    public CreateGroupResponse createGroup(CreateGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateTrustGroupHeaders headers = new CreateTrustGroupHeaders();
-        return this.createTrustGroupWithOptions(request, headers, runtime);
+        CreateGroupHeaders headers = new CreateGroupHeaders();
+        return this.createGroupWithOptions(request, headers, runtime);
     }
 
     public CreateTrustGroupResponse createTrustGroupWithOptions(CreateTrustGroupRequest request, CreateTrustGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -246,13 +287,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateTrustGroup", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups/trusts", "json", req, runtime), new CreateTrustGroupResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateTrustGroup"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/groups/trusts"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateTrustGroupResponse());
     }
 
-    public DismissGroupResponse dismissGroup(DismissGroupRequest request) throws Exception {
+    public CreateTrustGroupResponse createTrustGroup(CreateTrustGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        DismissGroupHeaders headers = new DismissGroupHeaders();
-        return this.dismissGroupWithOptions(request, headers, runtime);
+        CreateTrustGroupHeaders headers = new CreateTrustGroupHeaders();
+        return this.createTrustGroupWithOptions(request, headers, runtime);
     }
 
     public DismissGroupResponse dismissGroupWithOptions(DismissGroupRequest request, DismissGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -283,13 +335,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("DismissGroup", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups/dismiss", "none", req, runtime), new DismissGroupResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DismissGroup"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/groups/dismiss"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DismissGroupResponse());
     }
 
-    public GetConversationIdResponse getConversationId(GetConversationIdRequest request) throws Exception {
+    public DismissGroupResponse dismissGroup(DismissGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetConversationIdHeaders headers = new GetConversationIdHeaders();
-        return this.getConversationIdWithOptions(request, headers, runtime);
+        DismissGroupHeaders headers = new DismissGroupHeaders();
+        return this.dismissGroupWithOptions(request, headers, runtime);
     }
 
     public GetConversationIdResponse getConversationIdWithOptions(GetConversationIdRequest request, GetConversationIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -316,13 +379,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetConversationId", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/conversations", "json", req, runtime), new GetConversationIdResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetConversationId"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/conversations"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetConversationIdResponse());
     }
 
-    public GetMediaUrlResponse getMediaUrl(GetMediaUrlRequest request) throws Exception {
+    public GetConversationIdResponse getConversationId(GetConversationIdRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetMediaUrlHeaders headers = new GetMediaUrlHeaders();
-        return this.getMediaUrlWithOptions(request, headers, runtime);
+        GetConversationIdHeaders headers = new GetConversationIdHeaders();
+        return this.getConversationIdWithOptions(request, headers, runtime);
     }
 
     public GetMediaUrlResponse getMediaUrlWithOptions(GetMediaUrlRequest request, GetMediaUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -349,13 +423,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetMediaUrl", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/medium/urls", "json", req, runtime), new GetMediaUrlResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetMediaUrl"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/medium/urls"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetMediaUrlResponse());
     }
 
-    public GetMediaUrlsResponse getMediaUrls(GetMediaUrlsRequest request) throws Exception {
+    public GetMediaUrlResponse getMediaUrl(GetMediaUrlRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetMediaUrlsHeaders headers = new GetMediaUrlsHeaders();
-        return this.getMediaUrlsWithOptions(request, headers, runtime);
+        GetMediaUrlHeaders headers = new GetMediaUrlHeaders();
+        return this.getMediaUrlWithOptions(request, headers, runtime);
     }
 
     public GetMediaUrlsResponse getMediaUrlsWithOptions(GetMediaUrlsRequest request, GetMediaUrlsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -382,13 +467,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetMediaUrls", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/mediaUrls/query", "json", req, runtime), new GetMediaUrlsResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetMediaUrls"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/mediaUrls/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetMediaUrlsResponse());
     }
 
-    public GetSpaceFileUrlResponse getSpaceFileUrl(GetSpaceFileUrlRequest request) throws Exception {
+    public GetMediaUrlsResponse getMediaUrls(GetMediaUrlsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetSpaceFileUrlHeaders headers = new GetSpaceFileUrlHeaders();
-        return this.getSpaceFileUrlWithOptions(request, headers, runtime);
+        GetMediaUrlsHeaders headers = new GetMediaUrlsHeaders();
+        return this.getMediaUrlsWithOptions(request, headers, runtime);
     }
 
     public GetSpaceFileUrlResponse getSpaceFileUrlWithOptions(GetSpaceFileUrlRequest request, GetSpaceFileUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -419,13 +515,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetSpaceFileUrl", "impaas_1.0", "HTTP", "GET", "AK", "/v1.0/impaas/interconnections/spaces/files/urls", "json", req, runtime), new GetSpaceFileUrlResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetSpaceFileUrl"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/spaces/files/urls"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetSpaceFileUrlResponse());
     }
 
-    public ListGroupStaffMembersResponse listGroupStaffMembers(ListGroupStaffMembersRequest request) throws Exception {
+    public GetSpaceFileUrlResponse getSpaceFileUrl(GetSpaceFileUrlRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ListGroupStaffMembersHeaders headers = new ListGroupStaffMembersHeaders();
-        return this.listGroupStaffMembersWithOptions(request, headers, runtime);
+        GetSpaceFileUrlHeaders headers = new GetSpaceFileUrlHeaders();
+        return this.getSpaceFileUrlWithOptions(request, headers, runtime);
     }
 
     public ListGroupStaffMembersResponse listGroupStaffMembersWithOptions(ListGroupStaffMembersRequest request, ListGroupStaffMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -448,13 +555,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ListGroupStaffMembers", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups/staffMemers/query", "json", req, runtime), new ListGroupStaffMembersResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListGroupStaffMembers"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/groups/staffMemers/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListGroupStaffMembersResponse());
     }
 
-    public QueryBatchSendResultResponse queryBatchSendResult(QueryBatchSendResultRequest request) throws Exception {
+    public ListGroupStaffMembersResponse listGroupStaffMembers(ListGroupStaffMembersRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryBatchSendResultHeaders headers = new QueryBatchSendResultHeaders();
-        return this.queryBatchSendResultWithOptions(request, headers, runtime);
+        ListGroupStaffMembersHeaders headers = new ListGroupStaffMembersHeaders();
+        return this.listGroupStaffMembersWithOptions(request, headers, runtime);
     }
 
     public QueryBatchSendResultResponse queryBatchSendResultWithOptions(QueryBatchSendResultRequest request, QueryBatchSendResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -481,13 +599,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryBatchSendResult", "impaas_1.0", "HTTP", "GET", "AK", "/v1.0/impaas/interconnections/messages/batchSendResults", "json", req, runtime), new QueryBatchSendResultResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryBatchSendResult"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/messages/batchSendResults"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryBatchSendResultResponse());
     }
 
-    public ReadMessageResponse readMessage(ReadMessageRequest request) throws Exception {
+    public QueryBatchSendResultResponse queryBatchSendResult(QueryBatchSendResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ReadMessageHeaders headers = new ReadMessageHeaders();
-        return this.readMessageWithOptions(request, headers, runtime);
+        QueryBatchSendResultHeaders headers = new QueryBatchSendResultHeaders();
+        return this.queryBatchSendResultWithOptions(request, headers, runtime);
     }
 
     public ReadMessageResponse readMessageWithOptions(ReadMessageRequest request, ReadMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -518,13 +647,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ReadMessage", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/messages/read", "none", req, runtime), new ReadMessageResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ReadMessage"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/messages/read"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ReadMessageResponse());
     }
 
-    public RecallMessageResponse recallMessage(RecallMessageRequest request) throws Exception {
+    public ReadMessageResponse readMessage(ReadMessageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        RecallMessageHeaders headers = new RecallMessageHeaders();
-        return this.recallMessageWithOptions(request, headers, runtime);
+        ReadMessageHeaders headers = new ReadMessageHeaders();
+        return this.readMessageWithOptions(request, headers, runtime);
     }
 
     public RecallMessageResponse recallMessageWithOptions(RecallMessageRequest request, RecallMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -559,13 +699,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("RecallMessage", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/messages/recall", "none", req, runtime), new RecallMessageResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RecallMessage"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/messages/recall"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RecallMessageResponse());
     }
 
-    public RemoveGroupMembersResponse removeGroupMembers(RemoveGroupMembersRequest request) throws Exception {
+    public RecallMessageResponse recallMessage(RecallMessageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        RemoveGroupMembersHeaders headers = new RemoveGroupMembersHeaders();
-        return this.removeGroupMembersWithOptions(request, headers, runtime);
+        RecallMessageHeaders headers = new RecallMessageHeaders();
+        return this.recallMessageWithOptions(request, headers, runtime);
     }
 
     public RemoveGroupMembersResponse removeGroupMembersWithOptions(RemoveGroupMembersRequest request, RemoveGroupMembersHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -600,13 +751,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("RemoveGroupMembers", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/groups/members/batchRemove", "none", req, runtime), new RemoveGroupMembersResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RemoveGroupMembers"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/groups/members/batchRemove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RemoveGroupMembersResponse());
     }
 
-    public SendMessageResponse sendMessage(SendMessageRequest request) throws Exception {
+    public RemoveGroupMembersResponse removeGroupMembers(RemoveGroupMembersRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SendMessageHeaders headers = new SendMessageHeaders();
-        return this.sendMessageWithOptions(request, headers, runtime);
+        RemoveGroupMembersHeaders headers = new RemoveGroupMembersHeaders();
+        return this.removeGroupMembersWithOptions(request, headers, runtime);
     }
 
     public SendMessageResponse sendMessageWithOptions(SendMessageRequest request, SendMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -653,13 +815,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("SendMessage", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/messages/send", "json", req, runtime), new SendMessageResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SendMessage"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/messages/send"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SendMessageResponse());
     }
 
-    public SendRobotMessageResponse sendRobotMessage(SendRobotMessageRequest request) throws Exception {
+    public SendMessageResponse sendMessage(SendMessageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SendRobotMessageHeaders headers = new SendRobotMessageHeaders();
-        return this.sendRobotMessageWithOptions(request, headers, runtime);
+        SendMessageHeaders headers = new SendMessageHeaders();
+        return this.sendMessageWithOptions(request, headers, runtime);
     }
 
     public SendRobotMessageResponse sendRobotMessageWithOptions(SendRobotMessageRequest request, SendRobotMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -738,13 +911,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("SendRobotMessage", "impaas_1.0", "HTTP", "POST", "AK", "/v1.0/impaas/interconnections/robots/messages/send", "json", req, runtime), new SendRobotMessageResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SendRobotMessage"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/robots/messages/send"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SendRobotMessageResponse());
     }
 
-    public UpdateGroupNameResponse updateGroupName(UpdateGroupNameRequest request) throws Exception {
+    public SendRobotMessageResponse sendRobotMessage(SendRobotMessageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateGroupNameHeaders headers = new UpdateGroupNameHeaders();
-        return this.updateGroupNameWithOptions(request, headers, runtime);
+        SendRobotMessageHeaders headers = new SendRobotMessageHeaders();
+        return this.sendRobotMessageWithOptions(request, headers, runtime);
     }
 
     public UpdateGroupNameResponse updateGroupNameWithOptions(UpdateGroupNameRequest request, UpdateGroupNameHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -779,13 +963,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateGroupName", "impaas_1.0", "HTTP", "PUT", "AK", "/v1.0/impaas/interconnections/groups/names", "none", req, runtime), new UpdateGroupNameResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateGroupName"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/groups/names"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateGroupNameResponse());
     }
 
-    public UpdateGroupOwnerResponse updateGroupOwner(UpdateGroupOwnerRequest request) throws Exception {
+    public UpdateGroupNameResponse updateGroupName(UpdateGroupNameRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateGroupOwnerHeaders headers = new UpdateGroupOwnerHeaders();
-        return this.updateGroupOwnerWithOptions(request, headers, runtime);
+        UpdateGroupNameHeaders headers = new UpdateGroupNameHeaders();
+        return this.updateGroupNameWithOptions(request, headers, runtime);
     }
 
     public UpdateGroupOwnerResponse updateGroupOwnerWithOptions(UpdateGroupOwnerRequest request, UpdateGroupOwnerHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -816,6 +1011,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateGroupOwner", "impaas_1.0", "HTTP", "PUT", "AK", "/v1.0/impaas/interconnections/groups/owners", "json", req, runtime), new UpdateGroupOwnerResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateGroupOwner"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/groups/owners"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateGroupOwnerResponse());
+    }
+
+    public UpdateGroupOwnerResponse updateGroupOwner(UpdateGroupOwnerRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateGroupOwnerHeaders headers = new UpdateGroupOwnerHeaders();
+        return this.updateGroupOwnerWithOptions(request, headers, runtime);
     }
 }

@@ -4,27 +4,15 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class MoveDentryRequest extends TeaModel {
-    /**
-     * <p>可选参数</p>
-     */
     @NameInMap("option")
     public MoveDentryRequestOption option;
 
-    /**
-     * <p>目标文件夹ID</p>
-     */
     @NameInMap("targetFolderId")
     public String targetFolderId;
 
-    /**
-     * <p>目标文件(夹)空间id</p>
-     */
     @NameInMap("targetSpaceId")
     public String targetSpaceId;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -66,24 +54,9 @@ public class MoveDentryRequest extends TeaModel {
     }
 
     public static class MoveDentryRequestOption extends TeaModel {
-        /**
-         * <p>文件(夹)名称冲突策略</p>
-         * <p>枚举值:</p>
-         * <p>	AUTO_RENAME: 自动重命名</p>
-         * <p>	OVERWRITE: 覆盖</p>
-         * <p>	RETURN_DENTRY_IF_EXISTS: 返回已存在文件</p>
-         * <p>	RETURN_ERROR_IF_EXISTS: 文件已存在时报错</p>
-         * <p>默认值:</p>
-         * <p>	AUTO_RENAME</p>
-         */
         @NameInMap("conflictStrategy")
         public String conflictStrategy;
 
-        /**
-         * <p>移动后，是否保留权限</p>
-         * <p>默认值:</p>
-         * <p>	false</p>
-         */
         @NameInMap("presevePermissions")
         public Boolean presevePermissions;
 

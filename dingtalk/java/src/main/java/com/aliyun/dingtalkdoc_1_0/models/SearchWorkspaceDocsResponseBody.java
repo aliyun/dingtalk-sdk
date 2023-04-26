@@ -7,9 +7,6 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
     @NameInMap("docs")
     public java.util.List<SearchWorkspaceDocsResponseBodyDocs> docs;
 
-    /**
-     * <p>是否还有可搜索内容</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
@@ -46,39 +43,21 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
     }
 
     public static class SearchWorkspaceDocsResponseBodyDocsNodeBO extends TeaModel {
-        /**
-         * <p>节点类型</p>
-         */
         @NameInMap("docType")
         public String docType;
 
-        /**
-         * <p>最近编辑时间</p>
-         */
         @NameInMap("lastEditTime")
         public Long lastEditTime;
 
-        /**
-         * <p>节点名称，如果命中了搜索关键词会包含高亮标签</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>节点Id</p>
-         */
         @NameInMap("nodeId")
         public String nodeId;
 
-        /**
-         * <p>节点原始名称</p>
-         */
         @NameInMap("originName")
         public String originName;
 
-        /**
-         * <p>节点打开url</p>
-         */
         @NameInMap("url")
         public String url;
 
@@ -138,15 +117,9 @@ public class SearchWorkspaceDocsResponseBody extends TeaModel {
     }
 
     public static class SearchWorkspaceDocsResponseBodyDocsWorkspaceBO extends TeaModel {
-        /**
-         * <p>知识库名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>知识库id。</p>
-         */
         @NameInMap("workspaceId")
         public String workspaceId;
 

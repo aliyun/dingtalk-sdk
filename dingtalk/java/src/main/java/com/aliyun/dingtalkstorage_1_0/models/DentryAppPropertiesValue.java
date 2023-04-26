@@ -4,24 +4,12 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class DentryAppPropertiesValue extends TeaModel {
-    /**
-     * <p>属性名称 该属性名称在当前app下需要保证唯一，不同app间同名属性互不影响</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>属性值</p>
-     */
     @NameInMap("value")
     public String value;
 
-    /**
-     * <p>属性可见范围</p>
-     * <p>枚举值:</p>
-     * <p>	PUBLIC: 该属性所有App可见</p>
-     * <p>	PRIVATE: 该属性仅其归属App可见</p>
-     */
     @NameInMap("visibility")
     public String visibility;
 

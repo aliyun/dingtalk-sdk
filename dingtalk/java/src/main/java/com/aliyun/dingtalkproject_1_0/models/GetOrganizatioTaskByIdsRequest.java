@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOrganizatioTaskByIdsRequest extends TeaModel {
-    /**
-     * <p>多个任务id</p>
-     */
     @NameInMap("taskIds")
     public String taskIds;
 

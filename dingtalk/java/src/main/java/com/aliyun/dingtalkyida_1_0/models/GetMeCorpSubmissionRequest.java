@@ -4,63 +4,33 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMeCorpSubmissionRequest extends TeaModel {
-    /**
-     * <p>应用标识列表</p>
-     */
     @NameInMap("appTypes")
     public String appTypes;
 
-    /**
-     * <p>企业ID</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>创建时间开始</p>
-     */
     @NameInMap("createFromTimeGMT")
     public Long createFromTimeGMT;
 
-    /**
-     * <p>创建时间结束</p>
-     */
     @NameInMap("createToTimeGMT")
     public Long createToTimeGMT;
 
-    /**
-     * <p>关键词</p>
-     */
     @NameInMap("keyword")
     public String keyword;
 
-    /**
-     * <p>语言环境</p>
-     */
     @NameInMap("language")
     public String language;
 
-    /**
-     * <p>当前页</p>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>每页记录数</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>流程code列表</p>
-     */
     @NameInMap("processCodes")
     public String processCodes;
 
-    /**
-     * <p>验权token</p>
-     */
     @NameInMap("token")
     public String token;
 

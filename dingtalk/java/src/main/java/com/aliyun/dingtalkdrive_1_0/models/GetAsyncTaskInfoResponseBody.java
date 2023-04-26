@@ -4,45 +4,24 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAsyncTaskInfoResponseBody extends TeaModel {
-    /**
-     * <p>任务开始时间</p>
-     */
     @NameInMap("beginTime")
     public String beginTime;
 
-    /**
-     * <p>任务结束时间</p>
-     */
     @NameInMap("endTime")
     public String endTime;
 
-    /**
-     * <p>失败个数</p>
-     */
     @NameInMap("failed")
     public Integer failed;
 
-    /**
-     * <p>任务状态</p>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <p>完成个数</p>
-     */
     @NameInMap("success")
     public Integer success;
 
-    /**
-     * <p>异步任务id</p>
-     */
     @NameInMap("taskId")
     public String taskId;
 
-    /**
-     * <p>任务总数</p>
-     */
     @NameInMap("total")
     public Integer total;
 

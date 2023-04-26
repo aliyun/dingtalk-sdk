@@ -4,27 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteInstanceRequest extends TeaModel {
-    /**
-     * <p>表单CODE</p>
-     */
     @NameInMap("formCode")
     public String formCode;
 
-    /**
-     * <p>开放数据实例ID</p>
-     */
     @NameInMap("openDataInstanceId")
     public String openDataInstanceId;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>操作人unionid</p>
-     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 

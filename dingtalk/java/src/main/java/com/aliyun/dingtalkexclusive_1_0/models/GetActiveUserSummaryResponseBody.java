@@ -4,9 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetActiveUserSummaryResponseBody extends TeaModel {
-    /**
-     * <p>月活跃人数</p>
-     */
     @NameInMap("actUsrCnt1m")
     public String actUsrCnt1m;
 

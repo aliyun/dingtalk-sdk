@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConvertLegacyEventIdResponseBody extends TeaModel {
-    /**
-     * <p>legacyEventIdMap</p>
-     */
     @NameInMap("legacyEventIdMap")
     public java.util.Map<String, ?> legacyEventIdMap;
 

@@ -4,63 +4,33 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushEventRequest extends TeaModel {
-    /**
-     * <p>钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>触发事件设备ID。</p>
-     */
     @NameInMap("deviceId")
     public String deviceId;
 
-    /**
-     * <p>事件ID。</p>
-     */
     @NameInMap("eventId")
     public String eventId;
 
-    /**
-     * <p>事件名称，长度4-20个字符，一个中文汉字算2个字符。</p>
-     */
     @NameInMap("eventName")
     public String eventName;
 
-    /**
-     * <p>事件类型，最长20个字符。</p>
-     */
     @NameInMap("eventType")
     public String eventType;
 
-    /**
-     * <p>第三方平台定制参数，企业内部系统忽略。</p>
-     */
     @NameInMap("extraData")
     public java.util.Map<String, ?> extraData;
 
-    /**
-     * <p>事件发生地点。</p>
-     */
     @NameInMap("location")
     public String location;
 
-    /**
-     * <p>事件文字信息。</p>
-     */
     @NameInMap("msg")
     public String msg;
 
-    /**
-     * <p>事件发生事件，Unix时间戳，单位毫秒。</p>
-     */
     @NameInMap("occurrenceTime")
     public Long occurrenceTime;
 
-    /**
-     * <p>事件图片地址列表。</p>
-     */
     @NameInMap("picUrls")
     public java.util.List<String> picUrls;
 

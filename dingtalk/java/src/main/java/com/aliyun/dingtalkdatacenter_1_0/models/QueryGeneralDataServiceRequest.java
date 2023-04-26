@@ -4,45 +4,24 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGeneralDataServiceRequest extends TeaModel {
-    /**
-     * <p>部门ID</p>
-     */
     @NameInMap("deptId")
     public String deptId;
 
-    /**
-     * <p>结束日期</p>
-     */
     @NameInMap("endDate")
     public String endDate;
 
-    /**
-     * <p>分页页码</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>每页大小</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    /**
-     * <p>服务编码</p>
-     */
     @NameInMap("serviceId")
     public String serviceId;
 
-    /**
-     * <p>statDate</p>
-     */
     @NameInMap("startDate")
     public String startDate;
 
-    /**
-     * <p>员工ID</p>
-     */
     @NameInMap("userId")
     public String userId;
 

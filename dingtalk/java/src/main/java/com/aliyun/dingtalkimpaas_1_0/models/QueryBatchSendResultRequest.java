@@ -4,15 +4,9 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryBatchSendResultRequest extends TeaModel {
-    /**
-     * <p>发送者，必须是B端用户</p>
-     */
     @NameInMap("senderUserId")
     public String senderUserId;
 
-    /**
-     * <p>batchSend返回的taskId</p>
-     */
     @NameInMap("taskId")
     public String taskId;
 

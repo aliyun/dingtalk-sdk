@@ -4,27 +4,15 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditProductionRequest extends TeaModel {
-    /**
-     * <p>编辑数据</p>
-     */
     @NameInMap("data")
     public EditProductionRequestData data;
 
-    /**
-     * <p>数据类型，固定填写156</p>
-     */
     @NameInMap("datatype")
     public Long datatype;
 
-    /**
-     * <p>数据id，不填或者填0为新增数据</p>
-     */
     @NameInMap("msgid")
     public Long msgid;
 
-    /**
-     * <p>时间戳</p>
-     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -66,81 +54,42 @@ public class EditProductionRequest extends TeaModel {
     }
 
     public static class EditProductionRequestData extends TeaModel {
-        /**
-         * <p>创建人</p>
-         */
         @NameInMap("data_userid")
         public String dataUserid;
 
-        /**
-         * <p>对应客户</p>
-         */
         @NameInMap("sch_customerid")
         public String schCustomerid;
 
-        /**
-         * <p>完成日期</p>
-         */
         @NameInMap("sch_endtime")
         public String schEndtime;
 
-        /**
-         * <p>状态（未生产，生产中，生产中止，生产完成）</p>
-         */
         @NameInMap("sch_finished")
         public String schFinished;
 
-        /**
-         * <p>订单</p>
-         */
         @NameInMap("sch_htid")
         public String schHtid;
 
-        /**
-         * <p>生产人员</p>
-         */
         @NameInMap("sch_makeemp")
         public String schMakeemp;
 
-        /**
-         * <p>单号</p>
-         */
         @NameInMap("sch_number")
         public String schNumber;
 
-        /**
-         * <p>计划完成</p>
-         */
         @NameInMap("sch_planendtime")
         public String schPlanendtime;
 
-        /**
-         * <p>负责人</p>
-         */
         @NameInMap("sch_principal")
         public String schPrincipal;
 
-        /**
-         * <p>备注</p>
-         */
         @NameInMap("sch_remark")
         public String schRemark;
 
-        /**
-         * <p>开始日期</p>
-         */
         @NameInMap("sch_starttime")
         public String schStarttime;
 
-        /**
-         * <p>阶段（计划，审核，领料，生产，验收，入库/退料，结单，取消）</p>
-         */
         @NameInMap("sch_statesstr")
         public String schStatesstr;
 
-        /**
-         * <p>主题</p>
-         */
         @NameInMap("sch_title")
         public String schTitle;
 

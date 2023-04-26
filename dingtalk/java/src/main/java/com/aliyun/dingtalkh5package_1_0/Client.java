@@ -6,8 +6,11 @@ import com.aliyun.dingtalkh5package_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public CreatePackageResponse createPackage(CreatePackageRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreatePackageHeaders headers = new CreatePackageHeaders();
-        return this.createPackageWithOptions(request, headers, runtime);
-    }
 
     public CreatePackageResponse createPackageWithOptions(CreatePackageRequest request, CreatePackageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -54,13 +51,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreatePackage", "h5package_1.0", "HTTP", "POST", "AK", "/v1.0/h5package/asyncUpload", "json", req, runtime), new CreatePackageResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreatePackage"),
+            new TeaPair("version", "h5package_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/h5package/asyncUpload"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreatePackageResponse());
     }
 
-    public GetAccessTokenResponse getAccessToken(GetAccessTokenRequest request) throws Exception {
+    public CreatePackageResponse createPackage(CreatePackageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetAccessTokenHeaders headers = new GetAccessTokenHeaders();
-        return this.getAccessTokenWithOptions(request, headers, runtime);
+        CreatePackageHeaders headers = new CreatePackageHeaders();
+        return this.createPackageWithOptions(request, headers, runtime);
     }
 
     public GetAccessTokenResponse getAccessTokenWithOptions(GetAccessTokenRequest request, GetAccessTokenHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -87,13 +95,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetAccessToken", "h5package_1.0", "HTTP", "GET", "AK", "/v1.0/h5package/uploadTokens", "json", req, runtime), new GetAccessTokenResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetAccessToken"),
+            new TeaPair("version", "h5package_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/h5package/uploadTokens"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetAccessTokenResponse());
     }
 
-    public GetCreateStatusResponse getCreateStatus(GetCreateStatusRequest request) throws Exception {
+    public GetAccessTokenResponse getAccessToken(GetAccessTokenRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetCreateStatusHeaders headers = new GetCreateStatusHeaders();
-        return this.getCreateStatusWithOptions(request, headers, runtime);
+        GetAccessTokenHeaders headers = new GetAccessTokenHeaders();
+        return this.getAccessTokenWithOptions(request, headers, runtime);
     }
 
     public GetCreateStatusResponse getCreateStatusWithOptions(GetCreateStatusRequest request, GetCreateStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -116,13 +135,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetCreateStatus", "h5package_1.0", "HTTP", "GET", "AK", "/v1.0/h5package/uploadStatus", "json", req, runtime), new GetCreateStatusResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetCreateStatus"),
+            new TeaPair("version", "h5package_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/h5package/uploadStatus"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetCreateStatusResponse());
     }
 
-    public PublishPackageResponse publishPackage(PublishPackageRequest request) throws Exception {
+    public GetCreateStatusResponse getCreateStatus(GetCreateStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PublishPackageHeaders headers = new PublishPackageHeaders();
-        return this.publishPackageWithOptions(request, headers, runtime);
+        GetCreateStatusHeaders headers = new GetCreateStatusHeaders();
+        return this.getCreateStatusWithOptions(request, headers, runtime);
     }
 
     public PublishPackageResponse publishPackageWithOptions(PublishPackageRequest request, PublishPackageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -153,6 +183,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("PublishPackage", "h5package_1.0", "HTTP", "POST", "AK", "/v1.0/h5package/publish", "json", req, runtime), new PublishPackageResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PublishPackage"),
+            new TeaPair("version", "h5package_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/h5package/publish"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PublishPackageResponse());
+    }
+
+    public PublishPackageResponse publishPackage(PublishPackageRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PublishPackageHeaders headers = new PublishPackageHeaders();
+        return this.publishPackageWithOptions(request, headers, runtime);
     }
 }

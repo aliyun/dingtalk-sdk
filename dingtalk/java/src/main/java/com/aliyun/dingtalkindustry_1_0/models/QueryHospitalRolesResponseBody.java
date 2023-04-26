@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryHospitalRolesResponseBody extends TeaModel {
-    /**
-     * <p>角色列表</p>
-     */
     @NameInMap("content")
     public java.util.List<QueryHospitalRolesResponseBodyContent> content;
 
@@ -24,51 +21,27 @@ public class QueryHospitalRolesResponseBody extends TeaModel {
     }
 
     public static class QueryHospitalRolesResponseBodyContent extends TeaModel {
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>主键</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>是否已删除，默认0未删除，1已删除</p>
-         */
         @NameInMap("isDeleted")
         public Long isDeleted;
 
-        /**
-         * <p>角色关联权限点是否只读</p>
-         */
         @NameInMap("readOnly")
         public Long readOnly;
 
-        /**
-         * <p>备注</p>
-         */
         @NameInMap("remark")
         public String remark;
 
-        /**
-         * <p>角色编码</p>
-         */
         @NameInMap("roleCode")
         public String roleCode;
 
-        /**
-         * <p>角色名称</p>
-         */
         @NameInMap("roleName")
         public String roleName;
 
-        /**
-         * <p>排序，数字越小越靠前，默认0</p>
-         */
         @NameInMap("sort")
         public Long sort;
 

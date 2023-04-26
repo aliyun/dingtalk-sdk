@@ -4,21 +4,12 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchConnectorsRequest extends TeaModel {
-    /**
-     * <p>最大返回记录数，最多50</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>查询指定位置的记录，为空则从头开始</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>查询连接器的类型</p>
-     */
     @NameInMap("type")
     public String type;
 

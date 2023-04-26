@@ -4,33 +4,18 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetGroupActiveInfoRequest extends TeaModel {
-    /**
-     * <p>钉钉群组id</p>
-     */
     @NameInMap("dingGroupId")
     public String dingGroupId;
 
-    /**
-     * <p>群类型：1-全员群，2-部门群，3-（其他）内部群，4-场景群</p>
-     */
     @NameInMap("groupType")
     public Long groupType;
 
-    /**
-     * <p>分页起始页</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>分页大小</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    /**
-     * <p>统计日期</p>
-     */
     @NameInMap("statDate")
     public String statDate;
 

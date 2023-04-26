@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListEventsInstancesResponseBody extends TeaModel {
-    /**
-     * <p>日程</p>
-     */
     @NameInMap("events")
     public java.util.List<ListEventsInstancesResponseBodyEvents> events;
 
@@ -24,30 +21,18 @@ public class ListEventsInstancesResponseBody extends TeaModel {
     }
 
     public static class ListEventsInstancesResponseBodyEventsAttendees extends TeaModel {
-        /**
-         * <p>用户名</p>
-         */
         @NameInMap("displayName")
         public String displayName;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("id")
         public String id;
 
         @NameInMap("isOptional")
         public Boolean isOptional;
 
-        /**
-         * <p>回复状态</p>
-         */
         @NameInMap("responseStatus")
         public String responseStatus;
 
-        /**
-         * <p>是否是当前登陆用户</p>
-         */
         @NameInMap("self")
         public Boolean self;
 
@@ -99,21 +84,12 @@ public class ListEventsInstancesResponseBody extends TeaModel {
     }
 
     public static class ListEventsInstancesResponseBodyEventsEnd extends TeaModel {
-        /**
-         * <p>日期，格式：yyyyMMdd</p>
-         */
         @NameInMap("date")
         public String date;
 
-        /**
-         * <p>时间戳，按照ISO 8601格式</p>
-         */
         @NameInMap("dateTime")
         public String dateTime;
 
-        /**
-         * <p>时区</p>
-         */
         @NameInMap("timeZone")
         public String timeZone;
 
@@ -187,9 +163,6 @@ public class ListEventsInstancesResponseBody extends TeaModel {
     }
 
     public static class ListEventsInstancesResponseBodyEventsLocation extends TeaModel {
-        /**
-         * <p>展示名称</p>
-         */
         @NameInMap("displayName")
         public String displayName;
 
@@ -220,21 +193,12 @@ public class ListEventsInstancesResponseBody extends TeaModel {
     }
 
     public static class ListEventsInstancesResponseBodyEventsOnlineMeetingInfo extends TeaModel {
-        /**
-         * <p>会议ID</p>
-         */
         @NameInMap("conferenceId")
         public String conferenceId;
 
-        /**
-         * <p>线上会议类型，目前支持：  dingtalk：钉钉视频会议</p>
-         */
         @NameInMap("type")
         public String type;
 
-        /**
-         * <p>会议url</p>
-         */
         @NameInMap("url")
         public String url;
 
@@ -270,27 +234,15 @@ public class ListEventsInstancesResponseBody extends TeaModel {
     }
 
     public static class ListEventsInstancesResponseBodyEventsOrganizer extends TeaModel {
-        /**
-         * <p>用户名</p>
-         */
         @NameInMap("displayName")
         public String displayName;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>回复状态</p>
-         */
         @NameInMap("responseStatus")
         public String responseStatus;
 
-        /**
-         * <p>是否是当前登陆用户</p>
-         */
         @NameInMap("self")
         public Boolean self;
 
@@ -334,33 +286,18 @@ public class ListEventsInstancesResponseBody extends TeaModel {
     }
 
     public static class ListEventsInstancesResponseBodyEventsRecurrencePattern extends TeaModel {
-        /**
-         * <p>每月的第几天</p>
-         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        /**
-         * <p>每周的第几天</p>
-         */
         @NameInMap("daysOfWeek")
         public String daysOfWeek;
 
-        /**
-         * <p>指定事件发生在daysOfsWeek中指定的允许天数的哪个实例上，从该月的第一个实例开始计算。取值为:first, second, third, fourth, last。默认是first。如果类型是relativMonthly或relativeYear，则可选并使用</p>
-         */
         @NameInMap("index")
         public String index;
 
-        /**
-         * <p>循环间隔</p>
-         */
         @NameInMap("interval")
         public Integer interval;
 
-        /**
-         * <p>循环模式类型(type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly)</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -412,21 +349,12 @@ public class ListEventsInstancesResponseBody extends TeaModel {
     }
 
     public static class ListEventsInstancesResponseBodyEventsRecurrenceRange extends TeaModel {
-        /**
-         * <p>循环终止日期</p>
-         */
         @NameInMap("endDate")
         public String endDate;
 
-        /**
-         * <p>循环出现次数</p>
-         */
         @NameInMap("numberOfOccurrences")
         public Integer numberOfOccurrences;
 
-        /**
-         * <p>范围类型(endDate, noEnd, numbered)</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -462,15 +390,9 @@ public class ListEventsInstancesResponseBody extends TeaModel {
     }
 
     public static class ListEventsInstancesResponseBodyEventsRecurrence extends TeaModel {
-        /**
-         * <p>重复模式</p>
-         */
         @NameInMap("pattern")
         public ListEventsInstancesResponseBodyEventsRecurrencePattern pattern;
 
-        /**
-         * <p>重复范围</p>
-         */
         @NameInMap("range")
         public ListEventsInstancesResponseBodyEventsRecurrenceRange range;
 
@@ -498,15 +420,9 @@ public class ListEventsInstancesResponseBody extends TeaModel {
     }
 
     public static class ListEventsInstancesResponseBodyEventsReminders extends TeaModel {
-        /**
-         * <p>提醒方式</p>
-         */
         @NameInMap("method")
         public String method;
 
-        /**
-         * <p>在日程开始前N分钟发出提醒</p>
-         */
         @NameInMap("minutes")
         public String minutes;
 
@@ -534,21 +450,12 @@ public class ListEventsInstancesResponseBody extends TeaModel {
     }
 
     public static class ListEventsInstancesResponseBodyEventsStart extends TeaModel {
-        /**
-         * <p>日期，格式：yyyyMMdd</p>
-         */
         @NameInMap("date")
         public String date;
 
-        /**
-         * <p>时间戳，按照ISO 8601格式</p>
-         */
         @NameInMap("dateTime")
         public String dateTime;
 
-        /**
-         * <p>时区</p>
-         */
         @NameInMap("timeZone")
         public String timeZone;
 
@@ -584,102 +491,54 @@ public class ListEventsInstancesResponseBody extends TeaModel {
     }
 
     public static class ListEventsInstancesResponseBodyEvents extends TeaModel {
-        /**
-         * <p>日程参与人</p>
-         */
         @NameInMap("attendees")
         public java.util.List<ListEventsInstancesResponseBodyEventsAttendees> attendees;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createTime")
         public String createTime;
 
-        /**
-         * <p>日程描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>日程结束时间</p>
-         */
         @NameInMap("end")
         public ListEventsInstancesResponseBodyEventsEnd end;
 
         @NameInMap("extendedProperties")
         public ListEventsInstancesResponseBodyEventsExtendedProperties extendedProperties;
 
-        /**
-         * <p>日程事件id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>是否为全天日程</p>
-         */
         @NameInMap("isAllDay")
         public Boolean isAllDay;
 
-        /**
-         * <p>日程地点</p>
-         */
         @NameInMap("location")
         public ListEventsInstancesResponseBodyEventsLocation location;
 
-        /**
-         * <p>线上会议</p>
-         */
         @NameInMap("onlineMeetingInfo")
         public ListEventsInstancesResponseBodyEventsOnlineMeetingInfo onlineMeetingInfo;
 
-        /**
-         * <p>日程组织人</p>
-         */
         @NameInMap("organizer")
         public ListEventsInstancesResponseBodyEventsOrganizer organizer;
 
-        /**
-         * <p>日程重复规则</p>
-         */
         @NameInMap("recurrence")
         public ListEventsInstancesResponseBodyEventsRecurrence recurrence;
 
-        /**
-         * <p>日程提醒</p>
-         */
         @NameInMap("reminders")
         public java.util.List<ListEventsInstancesResponseBodyEventsReminders> reminders;
 
-        /**
-         * <p>重复日程的主日程id，非重复日程为空</p>
-         */
         @NameInMap("seriesMasterId")
         public String seriesMasterId;
 
-        /**
-         * <p>日程开始时间</p>
-         */
         @NameInMap("start")
         public ListEventsInstancesResponseBodyEventsStart start;
 
-        /**
-         * <p>日程状态</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>日程标题</p>
-         */
         @NameInMap("summary")
         public String summary;
 
-        /**
-         * <p>更新时间</p>
-         */
         @NameInMap("updateTime")
         public String updateTime;
 

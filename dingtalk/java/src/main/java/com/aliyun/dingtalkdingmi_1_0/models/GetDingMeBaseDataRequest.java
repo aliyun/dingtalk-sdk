@@ -4,27 +4,15 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDingMeBaseDataRequest extends TeaModel {
-    /**
-     * <p>机器人ID</p>
-     */
     @NameInMap("appKey")
     public String appKey;
 
-    /**
-     * <p>是否按天分组</p>
-     */
     @NameInMap("byDay")
     public Boolean byDay;
 
-    /**
-     * <p>结束时间</p>
-     */
     @NameInMap("endDay")
     public String endDay;
 
-    /**
-     * <p>开始时间</p>
-     */
     @NameInMap("startDay")
     public String startDay;
 

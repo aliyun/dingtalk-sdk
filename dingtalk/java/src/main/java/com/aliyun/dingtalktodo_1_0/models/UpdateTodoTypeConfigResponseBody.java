@@ -4,9 +4,6 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTodoTypeConfigResponseBody extends TeaModel {
-    /**
-     * <p>更新结果</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

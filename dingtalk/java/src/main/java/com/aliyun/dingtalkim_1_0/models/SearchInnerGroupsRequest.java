@@ -4,21 +4,12 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchInnerGroupsRequest extends TeaModel {
-    /**
-     * <p>查询最大数量。</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>关键词。</p>
-     */
     @NameInMap("searchKey")
     public String searchKey;
 
-    /**
-     * <p>用户userId。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

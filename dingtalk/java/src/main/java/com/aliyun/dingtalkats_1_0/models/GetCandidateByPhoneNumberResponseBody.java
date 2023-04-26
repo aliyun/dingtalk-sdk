@@ -4,15 +4,9 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCandidateByPhoneNumberResponseBody extends TeaModel {
-    /**
-     * <p>候选人标识</p>
-     */
     @NameInMap("candidateId")
     public String candidateId;
 
-    /**
-     * <p>候选人姓名</p>
-     */
     @NameInMap("name")
     public String name;
 

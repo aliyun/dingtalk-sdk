@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRelatedWorkspacesRequest extends TeaModel {
-    /**
-     * <p>是否查询最近访问文档列表</p>
-     */
     @NameInMap("includeRecent")
     public Boolean includeRecent;
 
-    /**
-     * <p>发起操作用户unionId</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserFaceRequest extends TeaModel {
-    /**
-     * <p>人脸id</p>
-     */
     @NameInMap("faceId")
     public String faceId;
 
-    /**
-     * <p>设备序列号</p>
-     */
     @NameInMap("sn")
     public String sn;
 

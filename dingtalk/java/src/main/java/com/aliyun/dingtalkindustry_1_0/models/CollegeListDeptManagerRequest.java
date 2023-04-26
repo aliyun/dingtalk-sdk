@@ -4,21 +4,12 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeListDeptManagerRequest extends TeaModel {
-    /**
-     * <p>部门id</p>
-     */
     @NameInMap("deptId")
     public Long deptId;
 
-    /**
-     * <p>页码</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>单页的条目数</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 

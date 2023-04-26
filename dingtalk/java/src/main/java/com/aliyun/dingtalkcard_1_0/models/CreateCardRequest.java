@@ -4,71 +4,36 @@ package com.aliyun.dingtalkcard_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCardRequest extends TeaModel {
-    /**
-     * <p>卡片回调时的路由 Key，用于查询注册的 callbackUrl</p>
-     */
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
-    /**
-     * <p>卡片数据</p>
-     */
     @NameInMap("cardData")
     public CreateCardRequestCardData cardData;
 
-    /**
-     * <p>卡片的模版 Id</p>
-     */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
-    /**
-     * <p>协作场域信息</p>
-     */
     @NameInMap("coFeedOpenSpaceModel")
     public CreateCardRequestCoFeedOpenSpaceModel coFeedOpenSpaceModel;
 
-    /**
-     * <p>IM 群聊场域信息</p>
-     */
     @NameInMap("imGroupOpenSpaceModel")
     public CreateCardRequestImGroupOpenSpaceModel imGroupOpenSpaceModel;
 
-    /**
-     * <p>IM 单聊场域信息</p>
-     */
     @NameInMap("imRobotOpenSpaceModel")
     public CreateCardRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
 
-    /**
-     * <p>动态数据源配置</p>
-     */
     @NameInMap("openDynamicDataConfig")
     public CreateCardRequestOpenDynamicDataConfig openDynamicDataConfig;
 
-    /**
-     * <p>唯一标示卡片的外部编码</p>
-     */
     @NameInMap("outTrackId")
     public String outTrackId;
 
-    /**
-     * <p>用户的私有数据。</p>
-     * <p>● key：userId</p>
-     * <p>● value：用户私有数据（cardData）</p>
-     */
     @NameInMap("privateData")
     public java.util.Map<String, PrivateDataValue> privateData;
 
-    /**
-     * <p>吊顶场域信息</p>
-     */
     @NameInMap("topOpenSpaceModel")
     public CreateCardRequestTopOpenSpaceModel topOpenSpaceModel;
 
-    /**
-     * <p>卡片创建者的 userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 
@@ -177,11 +142,6 @@ public class CreateCardRequest extends TeaModel {
     }
 
     public static class CreateCardRequestCardData extends TeaModel {
-        /**
-         * <p>卡片模板内容替换参数，普通文本类型</p>
-         * <p>● key：参数名</p>
-         * <p>● value: 参数值</p>
-         */
         @NameInMap("cardParamMap")
         public java.util.Map<String, String> cardParamMap;
 
@@ -201,9 +161,6 @@ public class CreateCardRequest extends TeaModel {
     }
 
     public static class CreateCardRequestCoFeedOpenSpaceModel extends TeaModel {
-        /**
-         * <p>卡片标题</p>
-         */
         @NameInMap("title")
         public String title;
 
@@ -223,16 +180,9 @@ public class CreateCardRequest extends TeaModel {
     }
 
     public static class CreateCardRequestImGroupOpenSpaceModelNotification extends TeaModel {
-        /**
-         * <p>【条件必填】通知内容</p>
-         * <p>若不填写则使用默认文案：如你收到1条新消息</p>
-         */
         @NameInMap("alertContent")
         public String alertContent;
 
-        /**
-         * <p>是否推送通知，默认为 false</p>
-         */
         @NameInMap("notificationOff")
         public Boolean notificationOff;
 
@@ -260,22 +210,12 @@ public class CreateCardRequest extends TeaModel {
     }
 
     public static class CreateCardRequestImGroupOpenSpaceModelSearchSupport extends TeaModel {
-        /**
-         * <p> 【条件必填】供消息展示与搜索的字段</p>
-         * <p> 【注意】最大限制200个字符，超过存储截断200</p>
-         */
         @NameInMap("searchDesc")
         public String searchDesc;
 
-        /**
-         * <p>类型的icon，供搜索展示使用</p>
-         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
-        /**
-         * <p>卡片类型名</p>
-         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -311,34 +251,15 @@ public class CreateCardRequest extends TeaModel {
     }
 
     public static class CreateCardRequestImGroupOpenSpaceModel extends TeaModel {
-        /**
-         * <p>支持国际化的LastMessage</p>
-         * <p>key为语言枚举值，value为lastMessage内容</p>
-         * <p>目前支持的语言枚举值：</p>
-         * <p>简体中文: ZH_CN</p>
-         * <p>繁体中文: ZH_TW</p>
-         * <p>英文： EN_US</p>
-         * <p>日语: JA_JP</p>
-         * <p>越南语: VI_VN</p>
-         */
         @NameInMap("lastMessageI18n")
         public java.util.Map<String, String> lastMessageI18n;
 
-        /**
-         * <p>卡片的通知属性信息</p>
-         */
         @NameInMap("notification")
         public CreateCardRequestImGroupOpenSpaceModelNotification notification;
 
-        /**
-         * <p>支持卡片消息可被搜索字段</p>
-         */
         @NameInMap("searchSupport")
         public CreateCardRequestImGroupOpenSpaceModelSearchSupport searchSupport;
 
-        /**
-         * <p>是否支持转发, 默认 false</p>
-         */
         @NameInMap("supportForward")
         public Boolean supportForward;
 
@@ -382,16 +303,9 @@ public class CreateCardRequest extends TeaModel {
     }
 
     public static class CreateCardRequestImRobotOpenSpaceModelNotification extends TeaModel {
-        /**
-         * <p>【条件必填】通知内容</p>
-         * <p>若不填写则使用默认文案：如你收到1条新消息</p>
-         */
         @NameInMap("alertContent")
         public String alertContent;
 
-        /**
-         * <p>是否推送通知，默认为 false</p>
-         */
         @NameInMap("notificationOff")
         public Boolean notificationOff;
 
@@ -419,22 +333,12 @@ public class CreateCardRequest extends TeaModel {
     }
 
     public static class CreateCardRequestImRobotOpenSpaceModelSearchSupport extends TeaModel {
-        /**
-         * <p>【条件必填】供消息展示与搜索的字段</p>
-         * <p> 【注意】最大限制200个字符，超过存储截断200</p>
-         */
         @NameInMap("searchDesc")
         public String searchDesc;
 
-        /**
-         * <p>类型的icon，供搜索展示使用</p>
-         */
         @NameInMap("searchIcon")
         public String searchIcon;
 
-        /**
-         * <p>卡片类型名</p>
-         */
         @NameInMap("searchTypeName")
         public String searchTypeName;
 
@@ -470,34 +374,15 @@ public class CreateCardRequest extends TeaModel {
     }
 
     public static class CreateCardRequestImRobotOpenSpaceModel extends TeaModel {
-        /**
-         * <p>支持国际化的LastMessage</p>
-         * <p>key为语言枚举值，value为lastMessage内容</p>
-         * <p>目前支持的语言枚举值：</p>
-         * <p>简体中文: ZH_CN</p>
-         * <p>繁体中文: ZH_TW</p>
-         * <p>英文： EN_US</p>
-         * <p>日语: JA_JP</p>
-         * <p>越南语: VI_VN</p>
-         */
         @NameInMap("lastMessageI18n")
         public java.util.Map<String, String> lastMessageI18n;
 
-        /**
-         * <p>卡片的通知属性信息</p>
-         */
         @NameInMap("notification")
         public CreateCardRequestImRobotOpenSpaceModelNotification notification;
 
-        /**
-         * <p>支持卡片消息可被搜索字段</p>
-         */
         @NameInMap("searchSupport")
         public CreateCardRequestImRobotOpenSpaceModelSearchSupport searchSupport;
 
-        /**
-         * <p>是否支持转发, 默认 false</p>
-         */
         @NameInMap("supportForward")
         public Boolean supportForward;
 
@@ -541,28 +426,12 @@ public class CreateCardRequest extends TeaModel {
     }
 
     public static class CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig extends TeaModel {
-        /**
-         * <p>拉取的间隔时间，只在将 pullStrategy 设置为 INTERVAL 的时候生效</p>
-         */
         @NameInMap("interval")
         public Integer interval;
 
-        /**
-         * <p>【条件必填】拉取策略，可选值：</p>
-         * <p>● NONE：不拉取，无动态数据</p>
-         * <p>● INTERVAL：间隔拉取</p>
-         * <p>● ONCE：只拉取一次</p>
-         */
         @NameInMap("pullStrategy")
         public String pullStrategy;
 
-        /**
-         * <p>拉取的间隔时间的单位，只在将 pullStrategy 设置为 INTERVAL 的时候生效。 可选值：</p>
-         * <p>● SECONDS</p>
-         * <p>● MINUTES</p>
-         * <p>● HOURS</p>
-         * <p>● DAYS</p>
-         */
         @NameInMap("timeUnit")
         public String timeUnit;
 
@@ -598,21 +467,12 @@ public class CreateCardRequest extends TeaModel {
     }
 
     public static class CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigs extends TeaModel {
-        /**
-         * <p>回调数据源的常量参数</p>
-         */
         @NameInMap("constParams")
         public java.util.Map<String, String> constParams;
 
-        /**
-         * <p>【条件必填】数据源的唯一 ID</p>
-         */
         @NameInMap("dynamicDataSourceId")
         public String dynamicDataSourceId;
 
-        /**
-         * <p>【条件必填】数据源拉取配置</p>
-         */
         @NameInMap("pullConfig")
         public CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig pullConfig;
 
@@ -648,9 +508,6 @@ public class CreateCardRequest extends TeaModel {
     }
 
     public static class CreateCardRequestOpenDynamicDataConfig extends TeaModel {
-        /**
-         * <p>动态数据源配置列表</p>
-         */
         @NameInMap("dynamicDataSourceConfigs")
         public java.util.List<CreateCardRequestOpenDynamicDataConfigDynamicDataSourceConfigs> dynamicDataSourceConfigs;
 
@@ -670,9 +527,6 @@ public class CreateCardRequest extends TeaModel {
     }
 
     public static class CreateCardRequestTopOpenSpaceModel extends TeaModel {
-        /**
-         * <p>吊顶无其他场域属性，通过增加spaeType使卡片支持吊顶场域；吊顶对应spaceType为: ONE_BOX</p>
-         */
         @NameInMap("spaceType")
         public String spaceType;
 

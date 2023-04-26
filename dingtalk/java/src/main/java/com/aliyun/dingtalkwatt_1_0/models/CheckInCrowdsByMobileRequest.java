@@ -4,15 +4,9 @@ package com.aliyun.dingtalkwatt_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckInCrowdsByMobileRequest extends TeaModel {
-    /**
-     * <p>人群id</p>
-     */
     @NameInMap("crowdIds")
     public byte[] crowdIds;
 
-    /**
-     * <p>要校验的用户手机号，AES256+Base64方式加密</p>
-     */
     @NameInMap("mobile")
     public String mobile;
 

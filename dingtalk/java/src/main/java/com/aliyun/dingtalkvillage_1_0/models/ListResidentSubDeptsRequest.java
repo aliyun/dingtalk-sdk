@@ -4,21 +4,12 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListResidentSubDeptsRequest extends TeaModel {
-    /**
-     * <p>游标，不传默认1</p>
-     */
     @NameInMap("cursor")
     public Long cursor;
 
-    /**
-     * <p>大小</p>
-     */
     @NameInMap("size")
     public Integer size;
 
-    /**
-     * <p>下属组织的组织ID，比如下属镇、村的corpId</p>
-     */
     @NameInMap("subCorpId")
     public String subCorpId;
 

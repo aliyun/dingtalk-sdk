@@ -4,15 +4,9 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateApaasAppResponseBody extends TeaModel {
-    /**
-     * <p>钉钉侧应用id</p>
-     */
     @NameInMap("agentId")
     public Long agentId;
 
-    /**
-     * <p>ISV侧应用id</p>
-     */
     @NameInMap("bizAppId")
     public String bizAppId;
 

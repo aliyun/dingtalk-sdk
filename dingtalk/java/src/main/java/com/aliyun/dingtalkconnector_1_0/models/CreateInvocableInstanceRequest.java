@@ -4,15 +4,9 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateInvocableInstanceRequest extends TeaModel {
-    /**
-     * <p>连接资产标识</p>
-     */
     @NameInMap("connectAssetUri")
     public String connectAssetUri;
 
-    /**
-     * <p>关联实例标识</p>
-     */
     @NameInMap("instanceKey")
     public String instanceKey;
 

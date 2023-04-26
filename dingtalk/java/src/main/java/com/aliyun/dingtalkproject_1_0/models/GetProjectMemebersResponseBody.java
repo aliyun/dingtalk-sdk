@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetProjectMemebersResponseBody extends TeaModel {
-    /**
-     * <p>项目成员列表。</p>
-     */
     @NameInMap("result")
     public java.util.List<GetProjectMemebersResponseBodyResult> result;
 
@@ -24,27 +21,16 @@ public class GetProjectMemebersResponseBody extends TeaModel {
     }
 
     public static class GetProjectMemebersResponseBodyResult extends TeaModel {
-        /**
-         * <p>项目成员ID。</p>
-         */
         @NameInMap("memberId")
+        @Deprecated
         public String memberId;
 
-        /**
-         * <p>项目角色，0=成员；1=管理员；2=拥有者。</p>
-         */
         @NameInMap("role")
         public Integer role;
 
-        /**
-         * <p>项目角色ID列表。</p>
-         */
         @NameInMap("roleIds")
         public java.util.List<String> roleIds;
 
-        /**
-         * <p>用户ID。</p>
-         */
         @NameInMap("userId")
         public String userId;
 

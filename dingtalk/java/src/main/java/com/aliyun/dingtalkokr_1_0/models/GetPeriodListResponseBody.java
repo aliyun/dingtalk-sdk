@@ -4,15 +4,9 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPeriodListResponseBody extends TeaModel {
-    /**
-     * <p>data</p>
-     */
     @NameInMap("data")
     public GetPeriodListResponseBodyData data;
 
-    /**
-     * <p>success</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

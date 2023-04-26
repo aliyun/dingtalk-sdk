@@ -4,63 +4,33 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateMeetingRoomRequest extends TeaModel {
-    /**
-     * <p>会议室所属分组id</p>
-     */
     @NameInMap("groupId")
     public Long groupId;
 
-    /**
-     * <p>isv外部会议室id</p>
-     */
     @NameInMap("isvRoomId")
     public String isvRoomId;
 
-    /**
-     * <p>会议室容量</p>
-     */
     @NameInMap("roomCapacity")
     public Integer roomCapacity;
 
-    /**
-     * <p>会议室id</p>
-     */
     @NameInMap("roomId")
     public String roomId;
 
-    /**
-     * <p>会议室标签</p>
-     */
     @NameInMap("roomLabelIds")
     public java.util.List<Long> roomLabelIds;
 
-    /**
-     * <p>会议室位置</p>
-     */
     @NameInMap("roomLocation")
     public UpdateMeetingRoomRequestRoomLocation roomLocation;
 
-    /**
-     * <p>会议室名称</p>
-     */
     @NameInMap("roomName")
     public String roomName;
 
-    /**
-     * <p>会议室图片</p>
-     */
     @NameInMap("roomPicture")
     public String roomPicture;
 
-    /**
-     * <p>会议室状态</p>
-     */
     @NameInMap("roomStatus")
     public Integer roomStatus;
 
-    /**
-     * <p>操作人unionId</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -150,15 +120,9 @@ public class UpdateMeetingRoomRequest extends TeaModel {
     }
 
     public static class UpdateMeetingRoomRequestRoomLocation extends TeaModel {
-        /**
-         * <p>位置详细信息</p>
-         */
         @NameInMap("desc")
         public String desc;
 
-        /**
-         * <p>位置标题</p>
-         */
         @NameInMap("title")
         public String title;
 

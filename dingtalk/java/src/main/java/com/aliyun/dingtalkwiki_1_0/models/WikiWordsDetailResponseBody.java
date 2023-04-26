@@ -4,21 +4,12 @@ package com.aliyun.dingtalkwiki_1_0.models;
 import com.aliyun.tea.*;
 
 public class WikiWordsDetailResponseBody extends TeaModel {
-    /**
-     * <p>返回的参数</p>
-     */
     @NameInMap("data")
     public java.util.List<WikiWordsDetailResponseBodyData> data;
 
-    /**
-     * <p>返回的错误信息</p>
-     */
     @NameInMap("errMsg")
     public String errMsg;
 
-    /**
-     * <p>查询是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -52,33 +43,18 @@ public class WikiWordsDetailResponseBody extends TeaModel {
     }
 
     public static class WikiWordsDetailResponseBodyDataAppLink extends TeaModel {
-        /**
-         * <p>应用编号</p>
-         */
         @NameInMap("appId")
         public Long appId;
 
-        /**
-         * <p>应用名称</p>
-         */
         @NameInMap("appName")
         public String appName;
 
-        /**
-         * <p>应用图片链接</p>
-         */
         @NameInMap("iconLink")
         public String iconLink;
 
-        /**
-         * <p>应用PC端链接</p>
-         */
         @NameInMap("pcLink")
         public String pcLink;
 
-        /**
-         * <p>应用手机端链接</p>
-         */
         @NameInMap("phoneLink")
         public String phoneLink;
 
@@ -130,21 +106,12 @@ public class WikiWordsDetailResponseBody extends TeaModel {
     }
 
     public static class WikiWordsDetailResponseBodyDataRelatedDoc extends TeaModel {
-        /**
-         * <p>链接</p>
-         */
         @NameInMap("link")
         public String link;
 
-        /**
-         * <p>名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>文档类型doc或者sheet</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -180,21 +147,12 @@ public class WikiWordsDetailResponseBody extends TeaModel {
     }
 
     public static class WikiWordsDetailResponseBodyDataRelatedLink extends TeaModel {
-        /**
-         * <p>链接</p>
-         */
         @NameInMap("link")
         public String link;
 
-        /**
-         * <p>链接名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>链接类型</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -230,120 +188,63 @@ public class WikiWordsDetailResponseBody extends TeaModel {
     }
 
     public static class WikiWordsDetailResponseBodyData extends TeaModel {
-        /**
-         * <p>应用对象</p>
-         */
         @NameInMap("appLink")
         public java.util.List<WikiWordsDetailResponseBodyDataAppLink> appLink;
 
-        /**
-         * <p>审批人</p>
-         */
         @NameInMap("approveName")
         public String approveName;
 
-        /**
-         * <p>联系人</p>
-         */
         @NameInMap("contacts")
         public java.util.List<String> contacts;
 
-        /**
-         * <p>创建人</p>
-         */
         @NameInMap("creatorName")
         public String creatorName;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtModify")
         public Long gmtModify;
 
         @NameInMap("highLightWordAlias")
         public java.util.List<String> highLightWordAlias;
 
-        /**
-         * <p>内部群是否高亮</p>
-         */
         @NameInMap("imHighLight")
         public Boolean imHighLight;
 
-        /**
-         * <p>组织名称</p>
-         */
         @NameInMap("orgName")
         public String orgName;
 
-        /**
-         * <p>相关文档</p>
-         */
         @NameInMap("relatedDoc")
         public java.util.List<WikiWordsDetailResponseBodyDataRelatedDoc> relatedDoc;
 
-        /**
-         * <p>相关链接</p>
-         */
         @NameInMap("relatedLink")
         public java.util.List<WikiWordsDetailResponseBodyDataRelatedLink> relatedLink;
 
-        /**
-         * <p>服务群是否高亮</p>
-         */
         @NameInMap("simHighLight")
         public Boolean simHighLight;
 
-        /**
-         * <p>抹除文本格式后的释义</p>
-         */
         @NameInMap("simpleWordParaphrase")
         public String simpleWordParaphrase;
 
-        /**
-         * <p>标签列表</p>
-         */
         @NameInMap("tagsList")
         public java.util.List<String> tagsList;
 
-        /**
-         * <p>更新人</p>
-         */
         @NameInMap("updaterName")
         public String updaterName;
 
-        /**
-         * <p>唯一编号</p>
-         */
         @NameInMap("uuid")
         public Long uuid;
 
-        /**
-         * <p>别名</p>
-         */
         @NameInMap("wordAlias")
         public java.util.List<String> wordAlias;
 
-        /**
-         * <p>全名</p>
-         */
         @NameInMap("wordFullName")
         public String wordFullName;
 
-        /**
-         * <p>词条名称</p>
-         */
         @NameInMap("wordName")
         public String wordName;
 
-        /**
-         * <p>原始释义(带格式数据的释义）</p>
-         */
         @NameInMap("wordParaphrase")
         public String wordParaphrase;
 

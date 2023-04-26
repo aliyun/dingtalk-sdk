@@ -4,33 +4,18 @@ package com.aliyun.dingtalkoauth2_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserTokenRequest extends TeaModel {
-    /**
-     * <p>应用id</p>
-     */
     @NameInMap("clientId")
     public String clientId;
 
-    /**
-     * <p>应用密码</p>
-     */
     @NameInMap("clientSecret")
     public String clientSecret;
 
-    /**
-     * <p>OAuth 2.0 临时授权码</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>分为authorization_code和refresh_token。使用授权码换token，传authorization_code；使用刷新token换用户token，传refresh_token</p>
-     */
     @NameInMap("grantType")
     public String grantType;
 
-    /**
-     * <p>OAuth 2.0 刷新令牌</p>
-     */
     @NameInMap("refreshToken")
     public String refreshToken;
 

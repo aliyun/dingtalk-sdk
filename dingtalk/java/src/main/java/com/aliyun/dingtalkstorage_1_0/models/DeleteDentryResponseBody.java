@@ -4,16 +4,9 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteDentryResponseBody extends TeaModel {
-    /**
-     * <p>是否是异步任务</p>
-     * <p>如果操作对象有子节点，则会异步处理</p>
-     */
     @NameInMap("async")
     public Boolean async;
 
-    /**
-     * <p>任务id，用于查询任务执行状态</p>
-     */
     @NameInMap("taskId")
     public String taskId;
 

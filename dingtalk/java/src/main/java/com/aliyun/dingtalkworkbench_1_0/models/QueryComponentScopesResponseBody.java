@@ -7,9 +7,6 @@ public class QueryComponentScopesResponseBody extends TeaModel {
     @NameInMap("deptVisibleScopes")
     public java.util.List<Long> deptVisibleScopes;
 
-    /**
-     * <p>scopes</p>
-     */
     @NameInMap("userVisibleScopes")
     public java.util.List<String> userVisibleScopes;
 

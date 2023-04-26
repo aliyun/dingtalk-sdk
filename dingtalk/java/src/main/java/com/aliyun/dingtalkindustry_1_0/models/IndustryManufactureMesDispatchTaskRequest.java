@@ -4,153 +4,78 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureMesDispatchTaskRequest extends TeaModel {
-    /**
-     * <p>本次操作的行为</p>
-     */
     @NameInMap("action")
     public String action;
 
-    /**
-     * <p>生态唯一标识, 需要注册</p>
-     */
     @NameInMap("appKey")
     public String appKey;
 
-    /**
-     * <p>主数据名称</p>
-     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
-    /**
-     * <p>不良品总数(多次报工)</p>
-     */
     @NameInMap("defectsAmount")
     public String defectsAmount;
 
-    /**
-     * <p>派工人名称</p>
-     */
     @NameInMap("dispatchStaffName")
     public String dispatchStaffName;
 
-    /**
-     * <p>派工人ID</p>
-     */
     @NameInMap("dispatchStaffNo")
     public String dispatchStaffNo;
 
-    /**
-     * <p>良品总数(多次报工)</p>
-     */
     @NameInMap("fineAmount")
     public String fineAmount;
 
-    /**
-     * <p>任务逾期</p>
-     */
     @NameInMap("overdue")
     public Integer overdue;
 
-    /**
-     * <p>派工(总)数</p>
-     */
     @NameInMap("planQuantity")
     public Long planQuantity;
 
-    /**
-     * <p>是否加急</p>
-     */
     @NameInMap("priority")
     public Integer priority;
 
-    /**
-     * <p>工序名称</p>
-     */
     @NameInMap("processName")
     public String processName;
 
-    /**
-     * <p>工序业务唯一标识</p>
-     */
     @NameInMap("processUuid")
     public String processUuid;
 
-    /**
-     * <p>产品编号(物料编号)</p>
-     */
     @NameInMap("productCode")
     public String productCode;
 
-    /**
-     * <p>产品名称</p>
-     */
     @NameInMap("productName")
     public String productName;
 
-    /**
-     * <p>产品(物料)规格</p>
-     */
     @NameInMap("productSpecification")
     public String productSpecification;
 
-    /**
-     * <p>工单编号(生产任务单)</p>
-     */
     @NameInMap("projectCode")
     public String projectCode;
 
-    /**
-     * <p>工单(生产计划单)</p>
-     */
     @NameInMap("projectId")
     public String projectId;
 
-    /**
-     * <p>工单状态</p>
-     */
     @NameInMap("projectStatus")
     public String projectStatus;
 
-    /**
-     * <p>任务分配员工列表(生产人员)</p>
-     */
     @NameInMap("taskOperators")
     public String taskOperators;
 
-    /**
-     * <p>任务计划结束(完成)时间</p>
-     */
     @NameInMap("taskPlanEndTime")
     public String taskPlanEndTime;
 
-    /**
-     * <p>任务计划开始时间</p>
-     */
     @NameInMap("taskPlanStartTime")
     public String taskPlanStartTime;
 
-    /**
-     * <p>派工任务状态</p>
-     */
     @NameInMap("taskStatus")
     public String taskStatus;
 
-    /**
-     * <p>任务类型(正常和委外)</p>
-     */
     @NameInMap("taskType")
     public String taskType;
 
-    /**
-     * <p>负责班组id</p>
-     */
     @NameInMap("teamId")
     public String teamId;
 
-    /**
-     * <p>本次记录唯一标识</p>
-     */
     @NameInMap("uuid")
     public String uuid;
 

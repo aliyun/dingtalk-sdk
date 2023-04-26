@@ -4,33 +4,18 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateRobotInteractiveCardRequest extends TeaModel {
-    /**
-     * <p>唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）【备注：同一个outTrackId重复创建，卡片数据不覆盖更新】</p>
-     */
     @NameInMap("cardBizId")
     public String cardBizId;
 
-    /**
-     * <p>卡片模板-文本内容参数（卡片json结构体）</p>
-     */
     @NameInMap("cardData")
     public String cardData;
 
-    /**
-     * <p>卡片模板-userId差异用户参数（json结构体）</p>
-     */
     @NameInMap("unionIdPrivateDataMap")
     public String unionIdPrivateDataMap;
 
-    /**
-     * <p>互动卡片更新选项</p>
-     */
     @NameInMap("updateOptions")
     public UpdateRobotInteractiveCardRequestUpdateOptions updateOptions;
 
-    /**
-     * <p>卡片模板-userId差异用户参数（json结构体）</p>
-     */
     @NameInMap("userIdPrivateDataMap")
     public String userIdPrivateDataMap;
 
@@ -80,15 +65,9 @@ public class UpdateRobotInteractiveCardRequest extends TeaModel {
     }
 
     public static class UpdateRobotInteractiveCardRequestUpdateOptions extends TeaModel {
-        /**
-         * <p>按key更新数据(默认全量更新)</p>
-         */
         @NameInMap("updateCardDataByKey")
         public Boolean updateCardDataByKey;
 
-        /**
-         * <p>按key更新用户数据(默认全量更新)</p>
-         */
         @NameInMap("updatePrivateDataByKey")
         public Boolean updatePrivateDataByKey;
 

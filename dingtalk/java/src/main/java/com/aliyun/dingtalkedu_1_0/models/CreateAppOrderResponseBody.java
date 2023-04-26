@@ -4,39 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateAppOrderResponseBody extends TeaModel {
-    /**
-     * <p>实际金额，单位分。</p>
-     */
     @NameInMap("actualAmount")
     public Long actualAmount;
 
-    /**
-     * <p>支付宝应用id。</p>
-     */
     @NameInMap("alipayAppId")
     public String alipayAppId;
 
-    /**
-     * <p>订单信息。</p>
-     */
     @NameInMap("body")
     public String body;
 
-    /**
-     * <p>商户id。</p>
-     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    /**
-     * <p>商户订单号。</p>
-     */
     @NameInMap("merchantOrderNo")
     public String merchantOrderNo;
 
-    /**
-     * <p>订单号。</p>
-     */
     @NameInMap("orderNo")
     public String orderNo;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQueryObjectiveResponseBody extends TeaModel {
-    /**
-     * <p>data</p>
-     */
     @NameInMap("data")
     public java.util.List<BatchQueryObjectiveResponseBodyData> data;
 
-    /**
-     * <p>请求成功的标识。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,9 +32,6 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
     }
 
     public static class BatchQueryObjectiveResponseBodyDataKrListProgress extends TeaModel {
-        /**
-         * <p>百分比。</p>
-         */
         @NameInMap("percent")
         public Integer percent;
 
@@ -60,63 +51,33 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
     }
 
     public static class BatchQueryObjectiveResponseBodyDataKrList extends TeaModel {
-        /**
-         * <p>KR 内容。</p>
-         */
         @NameInMap("content")
         public java.io.InputStream content;
 
-        /**
-         * <p>创建时间。时间戳</p>
-         */
         @NameInMap("gmtCreate")
         public Float gmtCreate;
 
-        /**
-         * <p>更新时间。时间戳</p>
-         */
         @NameInMap("gmtModified")
         public Float gmtModified;
 
-        /**
-         * <p>KR 的 ID。</p>
-         */
         @NameInMap("id")
         public java.io.InputStream id;
 
-        /**
-         * <p>所属 Objective ID。</p>
-         */
         @NameInMap("objectiveId")
         public java.io.InputStream objectiveId;
 
-        /**
-         * <p>KR 权限。</p>
-         */
         @NameInMap("permission")
         public java.util.List<Float> permission;
 
-        /**
-         * <p>所处位置。</p>
-         */
         @NameInMap("position")
         public Long position;
 
-        /**
-         * <p>KR 进度。</p>
-         */
         @NameInMap("progress")
         public BatchQueryObjectiveResponseBodyDataKrListProgress progress;
 
-        /**
-         * <p>所占分数。</p>
-         */
         @NameInMap("score")
         public Float score;
 
-        /**
-         * <p>所占权重。</p>
-         */
         @NameInMap("weight")
         public Float weight;
 
@@ -208,33 +169,18 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
     }
 
     public static class BatchQueryObjectiveResponseBodyDataOwner extends TeaModel {
-        /**
-         * <p>所属者头像。 ID</p>
-         */
         @NameInMap("avatarMediaId")
         public java.io.InputStream avatarMediaId;
 
-        /**
-         * <p>所属者组织 I。D</p>
-         */
         @NameInMap("corpId")
         public java.io.InputStream corpId;
 
-        /**
-         * <p>所属者在 OKR 系统中的 ID。</p>
-         */
         @NameInMap("id")
         public java.io.InputStream id;
 
-        /**
-         * <p>所属者昵称。</p>
-         */
         @NameInMap("nickname")
         public java.io.InputStream nickname;
 
-        /**
-         * <p>所属者 userId。</p>
-         */
         @NameInMap("userId")
         public java.io.InputStream userId;
 
@@ -286,9 +232,6 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
     }
 
     public static class BatchQueryObjectiveResponseBodyDataProgress extends TeaModel {
-        /**
-         * <p>百分比。</p>
-         */
         @NameInMap("percent")
         public Integer percent;
 
@@ -308,111 +251,57 @@ public class BatchQueryObjectiveResponseBody extends TeaModel {
     }
 
     public static class BatchQueryObjectiveResponseBodyData extends TeaModel {
-        /**
-         * <p>被对齐的 Objective。</p>
-         */
         @NameInMap("alignFromIds")
         public java.util.List<java.io.InputStream> alignFromIds;
 
-        /**
-         * <p>对齐的 Objective。</p>
-         */
         @NameInMap("alignToIds")
         public java.util.List<java.io.InputStream> alignToIds;
 
-        /**
-         * <p>Objective 内容。</p>
-         */
         @NameInMap("content")
         public java.io.InputStream content;
 
-        /**
-         * <p>创建时间。时间戳</p>
-         */
         @NameInMap("gmtCreate")
         public Float gmtCreate;
 
-        /**
-         * <p>更新时间。时间戳</p>
-         */
         @NameInMap("gmtModified")
         public Float gmtModified;
 
-        /**
-         * <p>objective。</p>
-         */
         @NameInMap("id")
         public java.io.InputStream id;
 
-        /**
-         * <p>KR 详情列表。</p>
-         */
         @NameInMap("krList")
         public java.util.List<BatchQueryObjectiveResponseBodyDataKrList> krList;
 
-        /**
-         * <p>所属者信息。</p>
-         */
         @NameInMap("owner")
         public BatchQueryObjectiveResponseBodyDataOwner owner;
 
-        /**
-         * <p>周期 ID。</p>
-         */
         @NameInMap("periodId")
         public java.io.InputStream periodId;
 
-        /**
-         * <p>权限值。</p>
-         */
         @NameInMap("permission")
         public java.util.List<Float> permission;
 
-        /**
-         * <p>所在位置。</p>
-         */
         @NameInMap("position")
         public Integer position;
 
-        /**
-         * <p>进度值。</p>
-         */
         @NameInMap("progress")
         public BatchQueryObjectiveResponseBodyDataProgress progress;
 
-        /**
-         * <p>百分比值。</p>
-         */
         @NameInMap("progressPercent")
         public Float progressPercent;
 
-        /**
-         * <p>是否已发布。</p>
-         */
         @NameInMap("published")
         public Boolean published;
 
-        /**
-         * <p>分数值。</p>
-         */
         @NameInMap("score")
         public Float score;
 
-        /**
-         * <p>当前内容状态。</p>
-         */
         @NameInMap("status")
         public Integer status;
 
-        /**
-         * <p>用户 ID。</p>
-         */
         @NameInMap("userId")
         public java.io.InputStream userId;
 
-        /**
-         * <p>权重值。</p>
-         */
         @NameInMap("weight")
         public Float weight;
 

@@ -4,53 +4,27 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSceneGroupInfoResponseBody extends TeaModel {
-    /**
-     * <p>群url</p>
-     */
     @NameInMap("groupUrl")
     public String groupUrl;
 
-    /**
-     * <p>群头像mediaId</p>
-     */
     @NameInMap("icon")
     public String icon;
 
-    /**
-     * <p>开放群id</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>群主员工id</p>
-     */
     @NameInMap("ownerUserId")
     public String ownerUserId;
 
-    /**
-     * <p>群状态。</p>
-     * <p> 1：正常</p>
-     * <p> 2：已解散</p>
-     */
     @NameInMap("status")
     public Integer status;
 
-    /**
-     * <p>result</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
-    /**
-     * <p>场景群模板ID</p>
-     */
     @NameInMap("templateId")
     public String templateId;
 
-    /**
-     * <p>群名称</p>
-     */
     @NameInMap("title")
     public String title;
 

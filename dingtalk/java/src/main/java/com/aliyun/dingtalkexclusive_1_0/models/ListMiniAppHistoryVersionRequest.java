@@ -4,21 +4,12 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListMiniAppHistoryVersionRequest extends TeaModel {
-    /**
-     * <p>小程序id</p>
-     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
-    /**
-     * <p>分页码</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>分页大小</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 

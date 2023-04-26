@@ -7,9 +7,6 @@ public class QueryDeviceListByCorpIdResponseBody extends TeaModel {
     @NameInMap("result")
     public QueryDeviceListByCorpIdResponseBodyResult result;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

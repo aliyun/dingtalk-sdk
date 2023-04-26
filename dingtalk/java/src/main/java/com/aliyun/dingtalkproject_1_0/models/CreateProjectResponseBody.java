@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateProjectResponseBody extends TeaModel {
-    /**
-     * <p>返回结果。</p>
-     */
     @NameInMap("result")
     public CreateProjectResponseBodyResult result;
 
@@ -24,21 +21,12 @@ public class CreateProjectResponseBody extends TeaModel {
     }
 
     public static class CreateProjectResponseBodyResultCustomfieldsValue extends TeaModel {
-        /**
-         * <p>自定义字段值ID。</p>
-         */
         @NameInMap("fieldvalueId")
         public String fieldvalueId;
 
-        /**
-         * <p>自定义字段值元属性。</p>
-         */
         @NameInMap("metaString")
         public String metaString;
 
-        /**
-         * <p>自定义字段值内容。</p>
-         */
         @NameInMap("title")
         public String title;
 
@@ -74,21 +62,12 @@ public class CreateProjectResponseBody extends TeaModel {
     }
 
     public static class CreateProjectResponseBodyResultCustomfields extends TeaModel {
-        /**
-         * <p>自定义字段ID。</p>
-         */
         @NameInMap("customfieldId")
         public String customfieldId;
 
-        /**
-         * <p>自定义字段类型。</p>
-         */
         @NameInMap("type")
         public String type;
 
-        /**
-         * <p>自定义字段值列表。</p>
-         */
         @NameInMap("value")
         public java.util.List<CreateProjectResponseBodyResultCustomfieldsValue> value;
 
@@ -124,99 +103,51 @@ public class CreateProjectResponseBody extends TeaModel {
     }
 
     public static class CreateProjectResponseBodyResult extends TeaModel {
-        /**
-         * <p>创建时间。</p>
-         */
         @NameInMap("created")
         public String created;
 
-        /**
-         * <p>创建人ID。</p>
-         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        /**
-         * <p>自定义字段值集合。</p>
-         */
         @NameInMap("customfields")
         public java.util.List<CreateProjectResponseBodyResultCustomfields> customfields;
 
-        /**
-         * <p>项目默认文件夹ID。</p>
-         */
         @NameInMap("defaultCollectionId")
         public String defaultCollectionId;
 
-        /**
-         * <p>是否在回收站。</p>
-         */
         @NameInMap("isArchived")
         public Boolean isArchived;
 
-        /**
-         * <p>是否归档。</p>
-         */
         @NameInMap("isSuspended")
         public Boolean isSuspended;
 
-        /**
-         * <p>是否为模版项目。</p>
-         */
         @NameInMap("isTemplate")
         public Boolean isTemplate;
 
-        /**
-         * <p>项目封面。</p>
-         */
         @NameInMap("logo")
         public String logo;
 
-        /**
-         * <p>项目名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>项目类型。</p>
-         */
         @NameInMap("normalType")
         public String normalType;
 
-        /**
-         * <p>项目ID。</p>
-         */
         @NameInMap("projectId")
         public String projectId;
 
-        /**
-         * <p>项目根文件夹ID。</p>
-         */
         @NameInMap("rootCollectionId")
         public String rootCollectionId;
 
-        /**
-         * <p>来源项目ID。</p>
-         */
         @NameInMap("sourceId")
         public String sourceId;
 
-        /**
-         * <p>任务ID前缀。</p>
-         */
         @NameInMap("uniqueIdPrefix")
         public String uniqueIdPrefix;
 
-        /**
-         * <p>更新时间。</p>
-         */
         @NameInMap("updated")
         public String updated;
 
-        /**
-         * <p>项目可见性。</p>
-         */
         @NameInMap("visibility")
         public String visibility;
 

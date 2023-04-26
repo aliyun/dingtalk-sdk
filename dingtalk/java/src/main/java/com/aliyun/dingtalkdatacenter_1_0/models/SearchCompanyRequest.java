@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchCompanyRequest extends TeaModel {
-    /**
-     * <p>起始页</p>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>页面大小</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>关键词</p>
-     */
     @NameInMap("searchKey")
     public String searchKey;
 

@@ -4,33 +4,18 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryStatisticsDataRequest extends TeaModel {
-    /**
-     * <p>课程节次列表</p>
-     */
     @NameInMap("sectionIndexList")
     public java.util.List<Long> sectionIndexList;
 
-    /**
-     * <p>老师UserIds</p>
-     */
     @NameInMap("teacherUserIds")
     public java.util.List<String> teacherUserIds;
 
-    /**
-     * <p>endTime</p>
-     */
     @NameInMap("endTime")
     public Long endTime;
 
-    /**
-     * <p>opUserId</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    /**
-     * <p>startTime</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 

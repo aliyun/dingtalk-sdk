@@ -4,9 +4,6 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListUserTeamsResponseBody extends TeaModel {
-    /**
-     * <p>teams</p>
-     */
     @NameInMap("teams")
     public java.util.List<ListUserTeamsResponseBodyTeams> teams;
 
@@ -24,15 +21,9 @@ public class ListUserTeamsResponseBody extends TeaModel {
     }
 
     public static class ListUserTeamsResponseBodyTeams extends TeaModel {
-        /**
-         * <p>开放团队ID</p>
-         */
         @NameInMap("openTeamId")
         public String openTeamId;
 
-        /**
-         * <p>团队名称</p>
-         */
         @NameInMap("teamName")
         public String teamName;
 

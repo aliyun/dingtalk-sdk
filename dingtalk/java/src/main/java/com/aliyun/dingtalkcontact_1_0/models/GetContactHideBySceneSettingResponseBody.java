@@ -4,75 +4,39 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetContactHideBySceneSettingResponseBody extends TeaModel {
-    /**
-     * <p>设置描述信息</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>允许查看的部门列表</p>
-     */
     @NameInMap("excludeDeptIds")
     public java.util.List<Long> excludeDeptIds;
 
-    /**
-     * <p>允许查看的角色列表</p>
-     */
     @NameInMap("excludeTagIds")
     public java.util.List<Long> excludeTagIds;
 
-    /**
-     * <p>允许查看的员工列表</p>
-     */
     @NameInMap("excludeUserIds")
     public java.util.List<String> excludeUserIds;
 
-    /**
-     * <p>设置id</p>
-     */
     @NameInMap("id")
     public Long id;
 
-    /**
-     * <p>设置名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>浏览组织架构与选人组件场景下的配置</p>
-     */
     @NameInMap("nodeListSceneConfig")
     public GetContactHideBySceneSettingResponseBodyNodeListSceneConfig nodeListSceneConfig;
 
-    /**
-     * <p>被隐藏的部门列表</p>
-     */
     @NameInMap("objectDeptIds")
     public java.util.List<Long> objectDeptIds;
 
-    /**
-     * <p>被隐藏的角色列表</p>
-     */
     @NameInMap("objectTagIds")
     public java.util.List<Long> objectTagIds;
 
-    /**
-     * <p>被隐藏的员工UserId列表</p>
-     */
     @NameInMap("objectUserIds")
     public java.util.List<String> objectUserIds;
 
-    /**
-     * <p>用户详情场景下的配置</p>
-     */
     @NameInMap("profileSceneConfig")
     public GetContactHideBySceneSettingResponseBodyProfileSceneConfig profileSceneConfig;
 
-    /**
-     * <p>搜索的场景配置（包括搜索部门、搜索员工）</p>
-     */
     @NameInMap("searchSceneConfig")
     public GetContactHideBySceneSettingResponseBodySearchSceneConfig searchSceneConfig;
 
@@ -178,15 +142,9 @@ public class GetContactHideBySceneSettingResponseBody extends TeaModel {
     }
 
     public static class GetContactHideBySceneSettingResponseBodyNodeListSceneConfig extends TeaModel {
-        /**
-         * <p>是否生效</p>
-         */
         @NameInMap("active")
         public Boolean active;
 
-        /**
-         * <p>是否同时隐藏被隐藏部门下的员工，默认为true。如果为false，仅部门不可见，但是允许跳转到被隐藏部门查看部门下员工。</p>
-         */
         @NameInMap("deptObjectIncludeEmp")
         public Boolean deptObjectIncludeEmp;
 
@@ -214,9 +172,6 @@ public class GetContactHideBySceneSettingResponseBody extends TeaModel {
     }
 
     public static class GetContactHideBySceneSettingResponseBodyProfileSceneConfig extends TeaModel {
-        /**
-         * <p>是否生效</p>
-         */
         @NameInMap("active")
         public Boolean active;
 
@@ -236,15 +191,9 @@ public class GetContactHideBySceneSettingResponseBody extends TeaModel {
     }
 
     public static class GetContactHideBySceneSettingResponseBodySearchSceneConfig extends TeaModel {
-        /**
-         * <p>是否生效</p>
-         */
         @NameInMap("active")
         public Boolean active;
 
-        /**
-         * <p>是否同时隐藏被隐藏的部门下的员工，默认为true。如果为false，objectDeptIds中的部门无法被搜索，但是员工仍然可以被搜索</p>
-         */
         @NameInMap("deptObjectIncludeEmp")
         public Boolean deptObjectIncludeEmp;
 

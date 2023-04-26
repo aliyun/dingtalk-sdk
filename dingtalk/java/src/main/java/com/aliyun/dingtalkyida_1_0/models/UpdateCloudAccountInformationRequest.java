@@ -4,27 +4,15 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateCloudAccountInformationRequest extends TeaModel {
-    /**
-     * <p>访问秘钥</p>
-     */
     @NameInMap("accessKey")
     public String accessKey;
 
-    /**
-     * <p>账户号</p>
-     */
     @NameInMap("accountNumber")
     public String accountNumber;
 
-    /**
-     * <p>调用者unionId</p>
-     */
     @NameInMap("callerUnionId")
     public String callerUnionId;
 
-    /**
-     * <p>商品类型</p>
-     */
     @NameInMap("commodityType")
     public String commodityType;
 

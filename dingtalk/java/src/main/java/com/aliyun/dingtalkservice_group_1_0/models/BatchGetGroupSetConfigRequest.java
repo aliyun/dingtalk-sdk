@@ -4,21 +4,12 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchGetGroupSetConfigRequest extends TeaModel {
-    /**
-     * <p>配置项key列表</p>
-     */
     @NameInMap("configKeys")
     public java.util.List<String> configKeys;
 
-    /**
-     * <p>开放群组id</p>
-     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
-    /**
-     * <p>开放团队id</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

@@ -4,27 +4,15 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateBadgeNotifyRequest extends TeaModel {
-    /**
-     * <p>通知内容</p>
-     */
     @NameInMap("content")
     public String content;
 
-    /**
-     * <p>消息ID</p>
-     */
     @NameInMap("msgId")
     public String msgId;
 
-    /**
-     * <p>消息类型</p>
-     */
     @NameInMap("msgType")
     public String msgType;
 
-    /**
-     * <p>员工ID</p>
-     */
     @NameInMap("userId")
     public String userId;
 

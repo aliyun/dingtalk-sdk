@@ -7,9 +7,6 @@ public class ListProgressByIdsResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<OpenProgressDTO> content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReplyRobotRequest extends TeaModel {
-    /**
-     * <p>回复消息内容的json string</p>
-     */
     @NameInMap("proxyMessageStr")
     public String proxyMessageStr;
 

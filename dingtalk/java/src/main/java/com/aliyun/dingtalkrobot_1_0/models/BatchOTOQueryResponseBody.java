@@ -4,15 +4,9 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchOTOQueryResponseBody extends TeaModel {
-    /**
-     * <p>消息已读情况</p>
-     */
     @NameInMap("messageReadInfoList")
     public java.util.List<BatchOTOQueryResponseBodyMessageReadInfoList> messageReadInfoList;
 
-    /**
-     * <p>消息发送状态</p>
-     */
     @NameInMap("sendStatus")
     public String sendStatus;
 
@@ -38,27 +32,15 @@ public class BatchOTOQueryResponseBody extends TeaModel {
     }
 
     public static class BatchOTOQueryResponseBodyMessageReadInfoList extends TeaModel {
-        /**
-         * <p>姓名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>已读状态</p>
-         */
         @NameInMap("readStatus")
         public String readStatus;
 
-        /**
-         * <p>已读时间</p>
-         */
         @NameInMap("readTimestamp")
         public Long readTimestamp;
 
-        /**
-         * <p>工号</p>
-         */
         @NameInMap("userId")
         public String userId;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryOrgTodoByUserResponseBody extends TeaModel {
-    /**
-     * <p>每页数量</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>翻页token</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>待办卡片列表</p>
-     */
     @NameInMap("todoCards")
     public java.util.List<QueryOrgTodoByUserResponseBodyTodoCards> todoCards;
 
@@ -52,15 +43,9 @@ public class QueryOrgTodoByUserResponseBody extends TeaModel {
     }
 
     public static class QueryOrgTodoByUserResponseBodyTodoCardsDetailUrl extends TeaModel {
-        /**
-         * <p>移动端url地址</p>
-         */
         @NameInMap("appUrl")
         public String appUrl;
 
-        /**
-         * <p>pc端url地址</p>
-         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
@@ -88,69 +73,36 @@ public class QueryOrgTodoByUserResponseBody extends TeaModel {
     }
 
     public static class QueryOrgTodoByUserResponseBodyTodoCards extends TeaModel {
-        /**
-         * <p>所属应用</p>
-         */
         @NameInMap("bizTag")
         public String bizTag;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createdTime")
         public Long createdTime;
 
-        /**
-         * <p>创建者id</p>
-         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        /**
-         * <p>详情页链接</p>
-         */
         @NameInMap("detailUrl")
         public QueryOrgTodoByUserResponseBodyTodoCardsDetailUrl detailUrl;
 
-        /**
-         * <p>待办截止时间</p>
-         */
         @NameInMap("dueTime")
         public Long dueTime;
 
-        /**
-         * <p>待办完成状态</p>
-         */
         @NameInMap("isDone")
         public Boolean isDone;
 
-        /**
-         * <p>更新时间</p>
-         */
         @NameInMap("modifiedTime")
         public Long modifiedTime;
 
-        /**
-         * <p>优先级</p>
-         */
         @NameInMap("priority")
         public Integer priority;
 
-        /**
-         * <p>来源id</p>
-         */
         @NameInMap("sourceId")
         public String sourceId;
 
-        /**
-         * <p>待办标题</p>
-         */
         @NameInMap("subject")
         public String subject;
 
-        /**
-         * <p>待办id</p>
-         */
         @NameInMap("taskId")
         public String taskId;
 

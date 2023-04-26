@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteRangeProtectionResponseBody extends TeaModel {
-    /**
-     * <p>Range地址</p>
-     */
     @NameInMap("a1Notation")
     public String a1Notation;
 

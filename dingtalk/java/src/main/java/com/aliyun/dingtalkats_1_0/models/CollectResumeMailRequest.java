@@ -4,75 +4,39 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollectResumeMailRequest extends TeaModel {
-    /**
-     * <p>业务标识</p>
-     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    /**
-     * <p>渠道编码</p>
-     */
     @NameInMap("channelCode")
     public String channelCode;
 
-    /**
-     * <p>候选人投递职位标识</p>
-     */
     @NameInMap("deliverJobId")
     public String deliverJobId;
 
-    /**
-     * <p>邮件来源地址</p>
-     */
     @NameInMap("fromMailAddress")
     public String fromMailAddress;
 
-    /**
-     * <p>邮件唯一标识</p>
-     */
     @NameInMap("mailId")
     public String mailId;
 
-    /**
-     * <p>邮件标题</p>
-     */
     @NameInMap("mailTitle")
     public String mailTitle;
 
-    /**
-     * <p>操作人userId</p>
-     */
     @NameInMap("optUserId")
     public String optUserId;
 
-    /**
-     * <p>收件邮箱地址</p>
-     */
     @NameInMap("receiveMailAddress")
     public String receiveMailAddress;
 
-    /**
-     * <p>收件邮箱类型</p>
-     */
     @NameInMap("receiveMailType")
     public Integer receiveMailType;
 
-    /**
-     * <p>收件时间</p>
-     */
     @NameInMap("receivedTime")
     public Long receivedTime;
 
-    /**
-     * <p>渠道简历跳转链接</p>
-     */
     @NameInMap("resumeChannelUrl")
     public String resumeChannelUrl;
 
-    /**
-     * <p>简历原始文件</p>
-     */
     @NameInMap("resumeFile")
     public CollectResumeMailRequestResumeFile resumeFile;
 
@@ -178,21 +142,12 @@ public class CollectResumeMailRequest extends TeaModel {
     }
 
     public static class CollectResumeMailRequestResumeFile extends TeaModel {
-        /**
-         * <p>文件下载地址</p>
-         */
         @NameInMap("downloadUrl")
         public String downloadUrl;
 
-        /**
-         * <p>文件名称</p>
-         */
         @NameInMap("fileName")
         public String fileName;
 
-        /**
-         * <p>文件类型</p>
-         */
         @NameInMap("fileType")
         public String fileType;
 

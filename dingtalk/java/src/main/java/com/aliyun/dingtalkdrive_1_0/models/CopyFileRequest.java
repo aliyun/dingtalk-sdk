@@ -4,27 +4,15 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class CopyFileRequest extends TeaModel {
-    /**
-     * <p>文件名冲突策略</p>
-     */
     @NameInMap("addConflictPolicy")
     public String addConflictPolicy;
 
-    /**
-     * <p>目标父目录id</p>
-     */
     @NameInMap("targetParentId")
     public String targetParentId;
 
-    /**
-     * <p>目标空间id</p>
-     */
     @NameInMap("targetSpaceId")
     public String targetSpaceId;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

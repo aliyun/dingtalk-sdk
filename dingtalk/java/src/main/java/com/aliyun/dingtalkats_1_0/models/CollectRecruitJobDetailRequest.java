@@ -4,48 +4,27 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollectRecruitJobDetailRequest extends TeaModel {
-    /**
-     * <p>业务标识，目前固定为ddats</p>
-     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    /**
-     * <p>渠道ID</p>
-     */
     @NameInMap("channel")
     public String channel;
 
     @NameInMap("jobInfo")
     public CollectRecruitJobDetailRequestJobInfo jobInfo;
 
-    /**
-     * <p>渠道侧外部企业唯一ID</p>
-     */
     @NameInMap("outCorpId")
     public String outCorpId;
 
-    /**
-     * <p>企业名称</p>
-     */
     @NameInMap("outCorpName")
     public String outCorpName;
 
-    /**
-     * <p>招聘人信息</p>
-     */
     @NameInMap("recruitUserInfo")
     public CollectRecruitJobDetailRequestRecruitUserInfo recruitUserInfo;
 
-    /**
-     * <p>来源</p>
-     */
     @NameInMap("source")
     public String source;
 
-    /**
-     * <p>数据源更新时间</p>
-     */
     @NameInMap("updateTime")
     public Long updateTime;
 
@@ -119,45 +98,24 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
     }
 
     public static class CollectRecruitJobDetailRequestJobInfoAddress extends TeaModel {
-        /**
-         * <p>城市编码</p>
-         */
         @NameInMap("cityCode")
         public String cityCode;
 
-        /**
-         * <p>位置详情描述</p>
-         */
         @NameInMap("detail")
         public String detail;
 
-        /**
-         * <p>区县编码</p>
-         */
         @NameInMap("districtCode")
         public String districtCode;
 
-        /**
-         * <p>经度（高德地图选点）</p>
-         */
         @NameInMap("latitude")
         public String latitude;
 
-        /**
-         * <p>纬度（高德地图选点）</p>
-         */
         @NameInMap("longitude")
         public String longitude;
 
-        /**
-         * <p>位置名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>省份编码</p>
-         */
         @NameInMap("provinceCode")
         public String provinceCode;
 
@@ -225,21 +183,12 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
     }
 
     public static class CollectRecruitJobDetailRequestJobInfoFullTimeInfo extends TeaModel {
-        /**
-         * <p>工作经验要求最高年限</p>
-         */
         @NameInMap("maxJobExperience")
         public String maxJobExperience;
 
-        /**
-         * <p>工作经验要求最低年限</p>
-         */
         @NameInMap("minJobExperience")
         public String minJobExperience;
 
-        /**
-         * <p>薪资发放月数</p>
-         */
         @NameInMap("salaryMonth")
         public String salaryMonth;
 
@@ -275,63 +224,33 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
     }
 
     public static class CollectRecruitJobDetailRequestJobInfoPartTimeInfo extends TeaModel {
-        /**
-         * <p>联系电话</p>
-         */
         @NameInMap("contactNumber")
         public String contactNumber;
 
-        /**
-         * <p>薪资发放周期</p>
-         */
         @NameInMap("salaryPeriod")
         public String salaryPeriod;
 
-        /**
-         * <p>薪资结算类型</p>
-         */
         @NameInMap("settleType")
         public String settleType;
 
-        /**
-         * <p>是否指定工作日期</p>
-         */
         @NameInMap("specifyWorkDate")
         public String specifyWorkDate;
 
-        /**
-         * <p>是否指定工作时间</p>
-         */
         @NameInMap("specifyWorkTime")
         public String specifyWorkTime;
 
-        /**
-         * <p>工作开始时间</p>
-         */
         @NameInMap("workBeginTimeMin")
         public String workBeginTimeMin;
 
-        /**
-         * <p>工作日期类型</p>
-         */
         @NameInMap("workDateType")
         public String workDateType;
 
-        /**
-         * <p>工作结束日期</p>
-         */
         @NameInMap("workEndDate")
         public String workEndDate;
 
-        /**
-         * <p>工作结束时间</p>
-         */
         @NameInMap("workEndTimeMin")
         public String workEndTimeMin;
 
-        /**
-         * <p>工作开始日期</p>
-         */
         @NameInMap("workStartDate")
         public String workStartDate;
 
@@ -423,84 +342,45 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
     }
 
     public static class CollectRecruitJobDetailRequestJobInfo extends TeaModel {
-        /**
-         * <p>地址信息</p>
-         */
         @NameInMap("address")
         public CollectRecruitJobDetailRequestJobInfoAddress address;
 
-        /**
-         * <p>职位分类编码</p>
-         */
         @NameInMap("category")
         public String category;
 
-        /**
-         * <p>职位描述</p>
-         */
         @NameInMap("description")
         public String description;
 
         @NameInMap("extInfo")
         public String extInfo;
 
-        /**
-         * <p>全职信息</p>
-         */
         @NameInMap("fullTimeInfo")
         public CollectRecruitJobDetailRequestJobInfoFullTimeInfo fullTimeInfo;
 
-        /**
-         * <p>招聘人数</p>
-         */
         @NameInMap("headCount")
         public String headCount;
 
-        /**
-         * <p>职位性质</p>
-         */
         @NameInMap("jobNature")
         public String jobNature;
 
-        /**
-         * <p>职位标签，字符串列表</p>
-         */
         @NameInMap("jobTags")
         public java.util.List<String> jobTags;
 
-        /**
-         * <p>最高薪资</p>
-         */
         @NameInMap("maxSalary")
         public String maxSalary;
 
-        /**
-         * <p>最低薪资</p>
-         */
         @NameInMap("minSalary")
         public String minSalary;
 
-        /**
-         * <p>职位名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>渠道职位ID</p>
-         */
         @NameInMap("outJobId")
         public String outJobId;
 
-        /**
-         * <p>兼职信息</p>
-         */
         @NameInMap("partTimeInfo")
         public CollectRecruitJobDetailRequestJobInfoPartTimeInfo partTimeInfo;
 
-        /**
-         * <p>学历要求</p>
-         */
         @NameInMap("requiredEdu")
         public String requiredEdu;
 
@@ -624,27 +504,15 @@ public class CollectRecruitJobDetailRequest extends TeaModel {
     }
 
     public static class CollectRecruitJobDetailRequestRecruitUserInfo extends TeaModel {
-        /**
-         * <p>额外信息</p>
-         */
         @NameInMap("extInfo")
         public String extInfo;
 
-        /**
-         * <p>招聘员工唯一ID</p>
-         */
         @NameInMap("outUserId")
         public String outUserId;
 
-        /**
-         * <p>招聘员工手机号码</p>
-         */
         @NameInMap("userMobile")
         public String userMobile;
 
-        /**
-         * <p>招聘员工姓名</p>
-         */
         @NameInMap("userName")
         public String userName;
 

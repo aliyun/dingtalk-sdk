@@ -4,30 +4,18 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreUserInfoResponseBody extends TeaModel {
-    /**
-     * <p>人员名称</p>
-     */
     @NameInMap("name")
     public String name;
 
     @NameInMap("roleIdList")
     public java.util.List<Long> roleIdList;
 
-    /**
-     * <p>管理范围</p>
-     */
     @NameInMap("scopeList")
     public java.util.List<Long> scopeList;
 
-    /**
-     * <p>所在节点列表</p>
-     */
     @NameInMap("storeList")
     public java.util.List<Long> storeList;
 
-    /**
-     * <p>人员Id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

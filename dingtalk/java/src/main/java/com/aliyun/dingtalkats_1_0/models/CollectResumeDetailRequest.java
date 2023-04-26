@@ -4,54 +4,30 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollectResumeDetailRequest extends TeaModel {
-    /**
-     * <p>业务标识，目前固定为ddats</p>
-     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    /**
-     * <p>渠道编码</p>
-     */
     @NameInMap("channelCode")
     public String channelCode;
 
-    /**
-     * <p>渠道侧简历标识</p>
-     */
     @NameInMap("channelOuterId")
     public String channelOuterId;
 
-    /**
-     * <p>渠道侧候选人标识。</p>
-     */
     @NameInMap("channelTalentId")
     public String channelTalentId;
 
-    /**
-     * <p>简历投递职位标识</p>
-     */
     @NameInMap("deliverJobId")
     public String deliverJobId;
 
     @NameInMap("optUserId")
     public String optUserId;
 
-    /**
-     * <p>渠道简历链接</p>
-     */
     @NameInMap("resumeChannelUrl")
     public String resumeChannelUrl;
 
-    /**
-     * <p>简历详情信息</p>
-     */
     @NameInMap("resumeData")
     public CollectResumeDetailRequestResumeData resumeData;
 
-    /**
-     * <p>原始简历文件</p>
-     */
     @NameInMap("resumeFile")
     public CollectResumeDetailRequestResumeFile resumeFile;
 
@@ -133,129 +109,66 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataBaseInfo extends TeaModel {
-        /**
-         * <p>年龄</p>
-         */
         @NameInMap("age")
         public Integer age;
 
-        /**
-         * <p>头像cdn地址，http链接</p>
-         */
         @NameInMap("avatar")
         public String avatar;
 
-        /**
-         * <p>初次工作时间</p>
-         */
         @NameInMap("beginWorkTime")
         public String beginWorkTime;
 
-        /**
-         * <p>生日</p>
-         */
         @NameInMap("birthday")
         public String birthday;
 
-        /**
-         * <p>邮箱地址</p>
-         */
         @NameInMap("email")
         public String email;
 
-        /**
-         * <p>英文名称</p>
-         */
         @NameInMap("englishName")
         public String englishName;
 
-        /**
-         * <p>毕业时间</p>
-         */
         @NameInMap("graduateTime")
         public String graduateTime;
 
-        /**
-         * <p>最高学历</p>
-         */
         @NameInMap("highestEducation")
         public Integer highestEducation;
 
-        /**
-         * <p>当前工作职位名称</p>
-         */
         @NameInMap("jobTitle")
         public String jobTitle;
 
-        /**
-         * <p>最高学历毕业院校名称</p>
-         */
         @NameInMap("lastSchoolName")
         public String lastSchoolName;
 
-        /**
-         * <p>婚姻状况</p>
-         */
         @NameInMap("married")
         public Integer married;
 
-        /**
-         * <p>名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>籍贯地址</p>
-         */
         @NameInMap("nativePlace")
         public String nativePlace;
 
-        /**
-         * <p>现居住地址</p>
-         */
         @NameInMap("nowLocation")
         public String nowLocation;
 
-        /**
-         * <p>个人荣誉</p>
-         */
         @NameInMap("personalHonor")
         public String personalHonor;
 
-        /**
-         * <p>手机号</p>
-         */
         @NameInMap("phoneNum")
         public String phoneNum;
 
-        /**
-         * <p>政治面貌</p>
-         */
         @NameInMap("politicalStatus")
         public Integer politicalStatus;
 
-        /**
-         * <p>自我评价</p>
-         */
         @NameInMap("selfEvaluation")
         public String selfEvaluation;
 
-        /**
-         * <p>性别</p>
-         */
         @NameInMap("sex")
         public Integer sex;
 
-        /**
-         * <p>虚拟手机号</p>
-         */
         @NameInMap("virtualPhoneNum")
         public String virtualPhoneNum;
 
-        /**
-         * <p>工作年限</p>
-         */
         @NameInMap("workingYears")
         public Integer workingYears;
 
@@ -435,15 +348,9 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataCertificates extends TeaModel {
-        /**
-         * <p>证书名称</p>
-         */
         @NameInMap("certificateName")
         public String certificateName;
 
-        /**
-         * <p>证书授予时间</p>
-         */
         @NameInMap("grantTime")
         public String grantTime;
 
@@ -471,45 +378,24 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataEducationExperiences extends TeaModel {
-        /**
-         * <p>学历</p>
-         */
         @NameInMap("degree")
         public Integer degree;
 
-        /**
-         * <p>院系</p>
-         */
         @NameInMap("department")
         public String department;
 
-        /**
-         * <p>详细描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("endDate")
         public String endDate;
 
-        /**
-         * <p>专业</p>
-         */
         @NameInMap("major")
         public String major;
 
-        /**
-         * <p>学校名称</p>
-         */
         @NameInMap("schoolName")
         public String schoolName;
 
-        /**
-         * <p>开始时间</p>
-         */
         @NameInMap("startDate")
         public String startDate;
 
@@ -577,33 +463,18 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataJobExpect extends TeaModel {
-        /**
-         * <p>期望职位名称</p>
-         */
         @NameInMap("jobName")
         public String jobName;
 
-        /**
-         * <p>期望工作地</p>
-         */
         @NameInMap("locations")
         public java.util.List<String> locations;
 
-        /**
-         * <p>最高期望工资</p>
-         */
         @NameInMap("maxSalary")
         public String maxSalary;
 
-        /**
-         * <p>最低期望工资</p>
-         */
         @NameInMap("minSalary")
         public String minSalary;
 
-        /**
-         * <p>期望入职时间</p>
-         */
         @NameInMap("onboardTime")
         public String onboardTime;
 
@@ -655,15 +526,9 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataLanguageSkill extends TeaModel {
-        /**
-         * <p>证书名称</p>
-         */
         @NameInMap("certificateName")
         public String certificateName;
 
-        /**
-         * <p>语言名称</p>
-         */
         @NameInMap("languageName")
         public String languageName;
 
@@ -691,39 +556,21 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataTrainingExperiences extends TeaModel {
-        /**
-         * <p>详细内容描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("endDate")
         public String endDate;
 
-        /**
-         * <p>培训机构名称</p>
-         */
         @NameInMap("institutionName")
         public String institutionName;
 
-        /**
-         * <p>培训地点</p>
-         */
         @NameInMap("location")
         public String location;
 
-        /**
-         * <p>培训名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>开始时间</p>
-         */
         @NameInMap("startDate")
         public String startDate;
 
@@ -783,42 +630,24 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeDataWorkExperiences extends TeaModel {
-        /**
-         * <p>公司名称</p>
-         */
         @NameInMap("companyName")
         public String companyName;
 
-        /**
-         * <p>部门</p>
-         */
         @NameInMap("department")
         public String department;
 
-        /**
-         * <p>工作详情描述</p>
-         */
         @NameInMap("description")
         public String description;
 
         @NameInMap("endDate")
         public String endDate;
 
-        /**
-         * <p>职位名称</p>
-         */
         @NameInMap("jobTitle")
         public String jobTitle;
 
-        /**
-         * <p>工作地点</p>
-         */
         @NameInMap("location")
         public String location;
 
-        /**
-         * <p>工作职责</p>
-         */
         @NameInMap("responsibility")
         public String responsibility;
 
@@ -897,45 +726,24 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeData extends TeaModel {
-        /**
-         * <p>简历基础信息</p>
-         */
         @NameInMap("baseInfo")
         public CollectResumeDetailRequestResumeDataBaseInfo baseInfo;
 
-        /**
-         * <p>证书信息</p>
-         */
         @NameInMap("certificates")
         public java.util.List<CollectResumeDetailRequestResumeDataCertificates> certificates;
 
-        /**
-         * <p>教育经历</p>
-         */
         @NameInMap("educationExperiences")
         public java.util.List<CollectResumeDetailRequestResumeDataEducationExperiences> educationExperiences;
 
-        /**
-         * <p>期望职位信息</p>
-         */
         @NameInMap("jobExpect")
         public CollectResumeDetailRequestResumeDataJobExpect jobExpect;
 
-        /**
-         * <p>语言能力</p>
-         */
         @NameInMap("languageSkill")
         public java.util.List<CollectResumeDetailRequestResumeDataLanguageSkill> languageSkill;
 
-        /**
-         * <p>培训经历</p>
-         */
         @NameInMap("trainingExperiences")
         public java.util.List<CollectResumeDetailRequestResumeDataTrainingExperiences> trainingExperiences;
 
-        /**
-         * <p>工作经历</p>
-         */
         @NameInMap("workExperiences")
         public java.util.List<CollectResumeDetailRequestResumeDataWorkExperiences> workExperiences;
 
@@ -1003,21 +811,12 @@ public class CollectResumeDetailRequest extends TeaModel {
     }
 
     public static class CollectResumeDetailRequestResumeFile extends TeaModel {
-        /**
-         * <p>简历文件下载链接</p>
-         */
         @NameInMap("downloadUrl")
         public String downloadUrl;
 
-        /**
-         * <p>文件名称</p>
-         */
         @NameInMap("fileName")
         public String fileName;
 
-        /**
-         * <p>文件类型</p>
-         */
         @NameInMap("fileType")
         public String fileType;
 

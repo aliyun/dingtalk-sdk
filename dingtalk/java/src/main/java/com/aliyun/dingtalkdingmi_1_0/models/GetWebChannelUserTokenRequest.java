@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetWebChannelUserTokenRequest extends TeaModel {
-    /**
-     * <p>登录用户在业务账号体系内的用户id</p>
-     */
     @NameInMap("foreignId")
     public String foreignId;
 
-    /**
-     * <p>登录用户在业务账号体系内的昵称</p>
-     */
     @NameInMap("nick")
     public String nick;
 
-    /**
-     * <p>调用方在小蜜客服平台申请的业务账号体系的id</p>
-     */
     @NameInMap("source")
     public Long source;
 

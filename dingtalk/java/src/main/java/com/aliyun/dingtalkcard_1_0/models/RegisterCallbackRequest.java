@@ -4,27 +4,15 @@ package com.aliyun.dingtalkcard_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterCallbackRequest extends TeaModel {
-    /**
-     * <p>加密密钥用于校验来源</p>
-     */
     @NameInMap("apiSecret")
     public String apiSecret;
 
-    /**
-     * <p>callbackUrl 的路由 Key，一个 callbackRouteKey 可以映射一个 callbackUrl</p>
-     */
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
-    /**
-     * <p>注册的回调 URL</p>
-     */
     @NameInMap("callbackUrl")
     public String callbackUrl;
 
-    /**
-     * <p>是否强制覆盖更新，默认 false</p>
-     */
     @NameInMap("forceUpdate")
     public Boolean forceUpdate;
 

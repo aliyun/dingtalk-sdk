@@ -4,75 +4,39 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateOrderRequest extends TeaModel {
-    /**
-     * <p>实付金额，单位分（优惠计算后）</p>
-     */
     @NameInMap("actualAmount")
     public Long actualAmount;
 
-    /**
-     * <p>开单时间</p>
-     */
     @NameInMap("createTime")
     public Long createTime;
 
-    /**
-     * <p>订单明细信息</p>
-     */
     @NameInMap("detailList")
     public java.util.List<CreateOrderRequestDetailList> detailList;
 
-    /**
-     * <p>人脸id</p>
-     */
     @NameInMap("faceId")
     public String faceId;
 
-    /**
-     * <p>刷脸token</p>
-     */
     @NameInMap("ftoken")
     public String ftoken;
 
-    /**
-     * <p>签名</p>
-     */
     @NameInMap("signature")
     public String signature;
 
-    /**
-     * <p>设备号</p>
-     */
     @NameInMap("sn")
     public String sn;
 
-    /**
-     * <p>交易加签</p>
-     */
     @NameInMap("terminalParams")
     public String terminalParams;
 
-    /**
-     * <p>utc时间戳</p>
-     */
     @NameInMap("timestamp")
     public Long timestamp;
 
-    /**
-     * <p>应付价格，单位分</p>
-     */
     @NameInMap("totalAmount")
     public Long totalAmount;
 
-    /**
-     * <p>员工id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>版本号</p>
-     */
     @NameInMap("version")
     public String version;
 
@@ -178,27 +142,15 @@ public class CreateOrderRequest extends TeaModel {
     }
 
     public static class CreateOrderRequestDetailList extends TeaModel {
-        /**
-         * <p>计算优惠后的实付金额，单位为分</p>
-         */
         @NameInMap("actualAmount")
         public Long actualAmount;
 
-        /**
-         * <p>应付金额，单位为分</p>
-         */
         @NameInMap("itemAmount")
         public Long itemAmount;
 
-        /**
-         * <p>商品名</p>
-         */
         @NameInMap("itemName")
         public String itemName;
 
-        /**
-         * <p>场景</p>
-         */
         @NameInMap("scene")
         public Long scene;
 

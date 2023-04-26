@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class SheetFindAllRequest extends TeaModel {
-    /**
-     * <p>查找选项</p>
-     */
     @NameInMap("findOptions")
     public SheetFindAllRequestFindOptions findOptions;
 
-    /**
-     * <p>要查找的文本</p>
-     */
     @NameInMap("text")
     public String text;
 
-    /**
-     * <p>操作人unionId</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -66,21 +57,12 @@ public class SheetFindAllRequest extends TeaModel {
         @NameInMap("includeHidden")
         public Boolean includeHidden;
 
-        /**
-         * <p>匹配大小写</p>
-         */
         @NameInMap("matchCase")
         public Boolean matchCase;
 
-        /**
-         * <p>匹配整个单元格</p>
-         */
         @NameInMap("matchEntireCell")
         public Boolean matchEntireCell;
 
-        /**
-         * <p>在公式内搜索</p>
-         */
         @NameInMap("matchFormulaText")
         public Boolean matchFormulaText;
 
@@ -90,9 +72,6 @@ public class SheetFindAllRequest extends TeaModel {
         @NameInMap("unionCells")
         public Boolean unionCells;
 
-        /**
-         * <p>text是正则表达式</p>
-         */
         @NameInMap("useRegExp")
         public Boolean useRegExp;
 

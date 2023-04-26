@@ -16,9 +16,6 @@ public class AddHrmPreentryRequest extends TeaModel {
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>是否需要发送完善入职登记表的入职IM消息给员工本人</p>
-     */
     @NameInMap("needSendPreEntryMsg")
     public Boolean needSendPreEntryMsg;
 

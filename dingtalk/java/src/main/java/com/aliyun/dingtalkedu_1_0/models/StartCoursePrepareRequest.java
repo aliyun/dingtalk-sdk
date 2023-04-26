@@ -4,51 +4,27 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartCoursePrepareRequest extends TeaModel {
-    /**
-     * <p>上课日期</p>
-     */
     @NameInMap("courseDate")
     public String courseDate;
 
-    /**
-     * <p>课程组编号</p>
-     */
     @NameInMap("courseGroupCode")
     public String courseGroupCode;
 
-    /**
-     * <p>设备id</p>
-     */
     @NameInMap("deviceId")
     public String deviceId;
 
-    /**
-     * <p>拓展信息</p>
-     */
     @NameInMap("ext")
     public String ext;
 
-    /**
-     * <p>isv编号</p>
-     */
     @NameInMap("isvCode")
     public String isvCode;
 
-    /**
-     * <p>封面url</p>
-     */
     @NameInMap("liveCoverImage")
     public String liveCoverImage;
 
-    /**
-     * <p>课节信息</p>
-     */
     @NameInMap("sectionIndex")
     public java.util.List<Integer> sectionIndex;
 
-    /**
-     * <p>操作人</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 

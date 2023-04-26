@@ -4,69 +4,36 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeQueryStudentInfoByMobileResponseBody extends TeaModel {
-    /**
-     * <p>部门拓展信息列表</p>
-     */
     @NameInMap("deptStudentInfoList")
     public java.util.List<CollegeQueryStudentInfoByMobileResponseBodyDeptStudentInfoList> deptStudentInfoList;
 
-    /**
-     * <p>学生在组织状态</p>
-     */
     @NameInMap("dingMemberStatus")
     public String dingMemberStatus;
 
-    /**
-     * <p>人员拓展信息</p>
-     */
     @NameInMap("empExtension")
     public java.util.Map<String, ?> empExtension;
 
-    /**
-     * <p>性别</p>
-     */
     @NameInMap("gender")
     public String gender;
 
-    /**
-     * <p>身份证号</p>
-     */
     @NameInMap("identifyId")
     public String identifyId;
 
-    /**
-     * <p>账号是否激活</p>
-     */
     @NameInMap("isActive")
     public Boolean isActive;
 
-    /**
-     * <p>入学年月</p>
-     */
     @NameInMap("startYear")
     public String startYear;
 
-    /**
-     * <p>学生id</p>
-     */
     @NameInMap("studentId")
     public Long studentId;
 
-    /**
-     * <p>学生姓名</p>
-     */
     @NameInMap("studentName")
     public String studentName;
 
-    /**
-     * <p>unionId</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 
-    /**
-     * <p>userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 
@@ -164,21 +131,12 @@ public class CollegeQueryStudentInfoByMobileResponseBody extends TeaModel {
     }
 
     public static class CollegeQueryStudentInfoByMobileResponseBodyDeptStudentInfoList extends TeaModel {
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("deptId")
         public Long deptId;
 
-        /**
-         * <p>人员类别</p>
-         */
         @NameInMap("memberType")
         public String memberType;
 
-        /**
-         * <p>学生学号</p>
-         */
         @NameInMap("studentNumber")
         public String studentNumber;
 

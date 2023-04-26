@@ -7,9 +7,6 @@ public class QueryRemoteClassCourseResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<QueryRemoteClassCourseResponseBodyResult> result;
 
-    /**
-     * <p>是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -35,27 +32,15 @@ public class QueryRemoteClassCourseResponseBody extends TeaModel {
     }
 
     public static class QueryRemoteClassCourseResponseBodyResultAttendParticipants extends TeaModel {
-        /**
-         * <p>组织ID</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>组织名称</p>
-         */
         @NameInMap("orgName")
         public String orgName;
 
-        /**
-         * <p>参与方ID</p>
-         */
         @NameInMap("participantId")
         public String participantId;
 
-        /**
-         * <p>参与方名称</p>
-         */
         @NameInMap("participantName")
         public String participantName;
 
@@ -99,27 +84,15 @@ public class QueryRemoteClassCourseResponseBody extends TeaModel {
     }
 
     public static class QueryRemoteClassCourseResponseBodyResultTeachingParticipant extends TeaModel {
-        /**
-         * <p>组织ID</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>组织名称</p>
-         */
         @NameInMap("orgName")
         public String orgName;
 
-        /**
-         * <p>参与方ID</p>
-         */
         @NameInMap("participantId")
         public String participantId;
 
-        /**
-         * <p>参与方名称</p>
-         */
         @NameInMap("participantName")
         public String participantName;
 
@@ -163,57 +136,30 @@ public class QueryRemoteClassCourseResponseBody extends TeaModel {
     }
 
     public static class QueryRemoteClassCourseResponseBodyResult extends TeaModel {
-        /**
-         * <p>听课设备列表</p>
-         */
         @NameInMap("attendParticipants")
         public java.util.List<QueryRemoteClassCourseResponseBodyResultAttendParticipants> attendParticipants;
 
-        /**
-         * <p>课程是否可以编辑或删除</p>
-         */
         @NameInMap("canEdit")
         public Boolean canEdit;
 
-        /**
-         * <p>课程code</p>
-         */
         @NameInMap("courseCode")
         public String courseCode;
 
-        /**
-         * <p>课程名称</p>
-         */
         @NameInMap("courseName")
         public String courseName;
 
-        /**
-         * <p>当前组织在课程中的角色列表：TEACHING：授课方；ATTEND：听课方</p>
-         */
         @NameInMap("courseWays")
         public java.util.List<String> courseWays;
 
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("endTime")
         public Long endTime;
 
-        /**
-         * <p>开始时间</p>
-         */
         @NameInMap("startTime")
         public Long startTime;
 
-        /**
-         * <p>课程状态：0: 未开始；1: 已开始；2: 已结束</p>
-         */
         @NameInMap("status")
         public Integer status;
 
-        /**
-         * <p>授课设备</p>
-         */
         @NameInMap("teachingParticipant")
         public QueryRemoteClassCourseResponseBodyResultTeachingParticipant teachingParticipant;
 

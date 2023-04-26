@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDepartmentExtendInfoResponseBody extends TeaModel {
-    /**
-     * <p>扩展属性列表</p>
-     */
     @NameInMap("content")
     public java.util.List<QueryDepartmentExtendInfoResponseBodyContent> content;
 
@@ -24,51 +21,27 @@ public class QueryDepartmentExtendInfoResponseBody extends TeaModel {
     }
 
     public static class QueryDepartmentExtendInfoResponseBodyContent extends TeaModel {
-        /**
-         * <p>科室或医疗组code</p>
-         */
         @NameInMap("deptCode")
         public String deptCode;
 
-        /**
-         * <p>扩展属性显示名称</p>
-         */
         @NameInMap("deptExtendDisplayName")
         public String deptExtendDisplayName;
 
-        /**
-         * <p>扩展属性key</p>
-         */
         @NameInMap("deptExtendKey")
         public String deptExtendKey;
 
-        /**
-         * <p>扩展属性value</p>
-         */
         @NameInMap("deptExtendValue")
         public String deptExtendValue;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        /**
-         * <p>id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>删除标识</p>
-         */
         @NameInMap("status")
         public Integer status;
 

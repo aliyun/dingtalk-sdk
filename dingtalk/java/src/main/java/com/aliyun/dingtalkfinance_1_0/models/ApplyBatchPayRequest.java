@@ -4,51 +4,27 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ApplyBatchPayRequest extends TeaModel {
-    /**
-     * <p>支付账号唯一id</p>
-     */
     @NameInMap("accountId")
     public String accountId;
 
-    /**
-     * <p>钉钉订单号(和商户批次号一一对应)</p>
-     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    /**
-     * <p>公用回传参数，如果请求时传递了该参数，则异步通知商户时会回传该参数</p>
-     */
     @NameInMap("passBackParams")
     public java.util.Map<String, ?> passBackParams;
 
-    /**
-     * <p>支付终端</p>
-     */
     @NameInMap("payTerminal")
     public String payTerminal;
 
-    /**
-     * <p>回调url</p>
-     */
     @NameInMap("returnUrl")
     public String returnUrl;
 
-    /**
-     * <p>支付发起人staffId</p>
-     */
     @NameInMap("staffId")
     public String staffId;
 
-    /**
-     * <p>订单总金额（必填）, 单位为：元</p>
-     */
     @NameInMap("transAmount")
     public String transAmount;
 
-    /**
-     * <p>转账过期时间</p>
-     */
     @NameInMap("transExpireTime")
     public String transExpireTime;
 

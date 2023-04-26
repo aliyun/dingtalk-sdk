@@ -4,18 +4,9 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListStarsResponseBody extends TeaModel {
-    /**
-     * <p>分页游标</p>
-     * <p>不为空表示有更多数据</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>星标数据集合</p>
-     * <p>最大size:</p>
-     * <p>	20</p>
-     */
     @NameInMap("starList")
     public java.util.List<ListStarsResponseBodyStarList> starList;
 
@@ -41,15 +32,9 @@ public class ListStarsResponseBody extends TeaModel {
     }
 
     public static class ListStarsResponseBodyStarListDentryInfoCreator extends TeaModel {
-        /**
-         * <p>用户名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -77,15 +62,9 @@ public class ListStarsResponseBody extends TeaModel {
     }
 
     public static class ListStarsResponseBodyStarListDentryInfoModifier extends TeaModel {
-        /**
-         * <p>用户名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -113,88 +92,42 @@ public class ListStarsResponseBody extends TeaModel {
     }
 
     public static class ListStarsResponseBodyStarListDentryInfo extends TeaModel {
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createTime")
         public String createTime;
 
-        /**
-         * <p>创建者信息</p>
-         */
         @NameInMap("creator")
         public ListStarsResponseBodyStarListDentryInfoCreator creator;
 
-        /**
-         * <p>后缀</p>
-         */
         @NameInMap("extension")
         public String extension;
 
-        /**
-         * <p>id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>Mobile访问链接</p>
-         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
-        /**
-         * <p>修改者信息</p>
-         */
         @NameInMap("modifier")
         public ListStarsResponseBodyStarListDentryInfoModifier modifier;
 
-        /**
-         * <p>名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>PC 访问链接</p>
-         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
-        /**
-         * <p>所在空间id</p>
-         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        /**
-         * <p>状态</p>
-         * <p>枚举值:</p>
-         * <p>	NORMAL: 正常</p>
-         * <p>	DELETED: 已删除</p>
-         * <p>	EXPIRED: 已过期</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>类型，目录或文件</p>
-         * <p>枚举值:</p>
-         * <p>	FILE: 文件</p>
-         * <p>	FOLDER: 文件夹</p>
-         */
         @NameInMap("type")
         public String type;
 
-        /**
-         * <p>uuid，如移动文件，此字段不变</p>
-         */
         @NameInMap("uuid")
         public String uuid;
 
@@ -310,15 +243,9 @@ public class ListStarsResponseBody extends TeaModel {
     }
 
     public static class ListStarsResponseBodyStarListSpaceInfo extends TeaModel {
-        /**
-         * <p>空间id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>空间名称</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -346,15 +273,9 @@ public class ListStarsResponseBody extends TeaModel {
     }
 
     public static class ListStarsResponseBodyStarListTeamInfo extends TeaModel {
-        /**
-         * <p>小组id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>小组名称</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -382,80 +303,33 @@ public class ListStarsResponseBody extends TeaModel {
     }
 
     public static class ListStarsResponseBodyStarList extends TeaModel {
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createTime")
         public String createTime;
 
-        /**
-         * <p>资源实体数据</p>
-         */
         @NameInMap("dentryInfo")
         public ListStarsResponseBodyStarListDentryInfo dentryInfo;
 
-        /**
-         * <p>文档权限</p>
-         * <p>枚举值:</p>
-         * <p>	NO_PERMISSION: 无权限</p>
-         * <p>	READ_ONLY: 仅可查看</p>
-         * <p>	READ_AND_DOWNLOAD: 可查看/下载</p>
-         * <p>	EDIT: 可编辑</p>
-         * <p>	MANAGER: 可管理</p>
-         * <p>	OWNER: 所有者</p>
-         */
         @NameInMap("dentryPermissionRole")
         public String dentryPermissionRole;
 
-        /**
-         * <p>星标id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>是否已经删除</p>
-         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("modifiedTime")
         public String modifiedTime;
 
-        /**
-         * <p>知识库信息</p>
-         */
         @NameInMap("spaceInfo")
         public ListStarsResponseBodyStarListSpaceInfo spaceInfo;
 
-        /**
-         * <p>知识库权限</p>
-         * <p>枚举值:</p>
-         * <p>	NO_PERMISSION: 无权限</p>
-         * <p>	READ_ONLY: 仅可查看</p>
-         * <p>	READ_AND_DOWNLOAD: 可查看/下载</p>
-         * <p>	EDIT: 可编辑</p>
-         * <p>	MANAGER: 可管理</p>
-         * <p>	OWNER: 所有者</p>
-         */
         @NameInMap("spacePermissionRole")
         public String spacePermissionRole;
 
-        /**
-         * <p>星标类型</p>
-         * <p>枚举值:</p>
-         * <p>	TOP: 置顶星标</p>
-         * <p>	COMMON: 普通星标</p>
-         */
         @NameInMap("starType")
         public String starType;
 
-        /**
-         * <p>小组信息</p>
-         */
         @NameInMap("teamInfo")
         public ListStarsResponseBodyStarListTeamInfo teamInfo;
 

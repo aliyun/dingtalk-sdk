@@ -4,9 +4,6 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupSetResponseBody extends TeaModel {
-    /**
-     * <p>records</p>
-     */
     @NameInMap("records")
     public java.util.List<QueryGroupSetResponseBodyRecords> records;
 

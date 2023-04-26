@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTaskPriorityRequest extends TeaModel {
-    /**
-     * <p>优先级。</p>
-     */
     @NameInMap("priority")
     public Integer priority;
 

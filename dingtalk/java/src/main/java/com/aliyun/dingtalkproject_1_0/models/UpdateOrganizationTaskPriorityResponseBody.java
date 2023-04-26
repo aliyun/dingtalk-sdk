@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateOrganizationTaskPriorityResponseBody extends TeaModel {
-    /**
-     * <p>返回对象</p>
-     */
     @NameInMap("result")
     public UpdateOrganizationTaskPriorityResponseBodyResult result;
 
@@ -24,15 +21,9 @@ public class UpdateOrganizationTaskPriorityResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskPriorityResponseBodyResult extends TeaModel {
-        /**
-         * <p>优先级【-10,0,1,2】中的一个</p>
-         */
         @NameInMap("priority")
         public Integer priority;
 
-        /**
-         * <p>更新时间</p>
-         */
         @NameInMap("updated")
         public String updated;
 

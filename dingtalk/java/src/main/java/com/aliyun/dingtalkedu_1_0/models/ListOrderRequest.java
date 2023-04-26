@@ -4,63 +4,33 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListOrderRequest extends TeaModel {
-    /**
-     * <p>开单结束时间</p>
-     */
     @NameInMap("createTimeEnd")
     public Long createTimeEnd;
 
-    /**
-     * <p>开单开始时间，utc</p>
-     */
     @NameInMap("createTimeStart")
     public Long createTimeStart;
 
-    /**
-     * <p>商户id</p>
-     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    /**
-     * <p>订单号</p>
-     */
     @NameInMap("orderNo")
     public String orderNo;
 
-    /**
-     * <p>分页下标</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>分页大小</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    /**
-     * <p>场景</p>
-     */
     @NameInMap("scene")
     public Long scene;
 
-    /**
-     * <p>状态</p>
-     */
     @NameInMap("status")
     public Long status;
 
-    /**
-     * <p>交易单号</p>
-     */
     @NameInMap("tradeNo")
     public String tradeNo;
 
-    /**
-     * <p>员工id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

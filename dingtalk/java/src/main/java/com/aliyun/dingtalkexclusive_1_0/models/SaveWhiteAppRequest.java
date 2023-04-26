@@ -4,15 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveWhiteAppRequest extends TeaModel {
-    /**
-     * <p>微应用白名单AgentID</p>
-     */
     @NameInMap("agentIdList")
     public java.util.List<Long> agentIdList;
 
-    /**
-     * <p>操作符</p>
-     */
     @NameInMap("operation")
     public String operation;
 

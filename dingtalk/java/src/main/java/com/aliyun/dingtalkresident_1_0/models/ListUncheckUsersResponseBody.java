@@ -4,21 +4,12 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListUncheckUsersResponseBody extends TeaModel {
-    /**
-     * <p>是否仍有数据</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>下一个数据序号</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    /**
-     * <p>result</p>
-     */
     @NameInMap("values")
     public java.util.List<ListUncheckUsersResponseBodyValues> values;
 
@@ -52,51 +43,27 @@ public class ListUncheckUsersResponseBody extends TeaModel {
     }
 
     public static class ListUncheckUsersResponseBodyValues extends TeaModel {
-        /**
-         * <p>部门ID</p>
-         */
         @NameInMap("deptId")
         public Long deptId;
 
-        /**
-         * <p>扩展信息</p>
-         */
         @NameInMap("extension")
         public String extension;
 
-        /**
-         * <p>邀请时间</p>
-         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        /**
-         * <p>邀请更新时间</p>
-         */
         @NameInMap("gmtModified")
         public Long gmtModified;
 
-        /**
-         * <p>是否产权人</p>
-         */
         @NameInMap("isPropertyOwner")
         public Boolean isPropertyOwner;
 
-        /**
-         * <p>用户名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>状态</p>
-         */
         @NameInMap("status")
         public Integer status;
 
-        /**
-         * <p>用户ID</p>
-         */
         @NameInMap("unionId")
         public Long unionId;
 

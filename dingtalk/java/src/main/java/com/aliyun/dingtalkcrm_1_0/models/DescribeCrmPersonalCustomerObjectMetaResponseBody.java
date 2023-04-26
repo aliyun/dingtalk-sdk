@@ -4,33 +4,18 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class DescribeCrmPersonalCustomerObjectMetaResponseBody extends TeaModel {
-    /**
-     * <p>表单code</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>是否自定义对象</p>
-     */
     @NameInMap("customized")
     public Boolean customized;
 
-    /**
-     * <p>字段列表</p>
-     */
     @NameInMap("fields")
     public java.util.List<DescribeCrmPersonalCustomerObjectMetaResponseBodyFields> fields;
 
-    /**
-     * <p>对象名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>表单状态</p>
-     */
     @NameInMap("status")
     public String status;
 

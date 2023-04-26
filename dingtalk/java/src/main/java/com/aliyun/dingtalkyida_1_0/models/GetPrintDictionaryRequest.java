@@ -4,27 +4,15 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPrintDictionaryRequest extends TeaModel {
-    /**
-     * <p>应用代码</p>
-     */
     @NameInMap("appType")
     public String appType;
 
-    /**
-     * <p>表单id</p>
-     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>版本</p>
-     */
     @NameInMap("version")
     public Long version;
 

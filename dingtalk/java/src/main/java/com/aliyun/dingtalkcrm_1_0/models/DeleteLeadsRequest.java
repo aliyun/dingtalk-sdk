@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteLeadsRequest extends TeaModel {
-    /**
-     * <p>线索ID列表。</p>
-     */
     @NameInMap("outLeadsIds")
     public java.util.List<String> outLeadsIds;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkh5package_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCreateStatusRequest extends TeaModel {
-    /**
-     * <p>创建离线包接口返回的taskId</p>
-     */
     @NameInMap("taskId")
     public String taskId;
 

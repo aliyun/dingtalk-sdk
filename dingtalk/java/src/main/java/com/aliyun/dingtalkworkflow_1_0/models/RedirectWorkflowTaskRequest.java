@@ -4,39 +4,21 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class RedirectWorkflowTaskRequest extends TeaModel {
-    /**
-     * <p>操作节点名</p>
-     */
     @NameInMap("actionName")
     public String actionName;
 
-    /**
-     * <p>文件。</p>
-     */
     @NameInMap("file")
     public RedirectWorkflowTaskRequestFile file;
 
-    /**
-     * <p>操作人的用户ID，需要跟任务的当前执行人保持一致，否则无法通过校验</p>
-     */
     @NameInMap("operateUserId")
     public String operateUserId;
 
-    /**
-     * <p>转交备注信息</p>
-     */
     @NameInMap("remark")
     public String remark;
 
-    /**
-     * <p>OA审批任务ID</p>
-     */
     @NameInMap("taskId")
     public Long taskId;
 
-    /**
-     * <p>OA审批任务被转交对象的用户ID</p>
-     */
     @NameInMap("toUserId")
     public String toUserId;
 
@@ -94,33 +76,18 @@ public class RedirectWorkflowTaskRequest extends TeaModel {
     }
 
     public static class RedirectWorkflowTaskRequestFileAttachments extends TeaModel {
-        /**
-         * <p>文件ID。</p>
-         */
         @NameInMap("fileId")
         public String fileId;
 
-        /**
-         * <p>文件名称。</p>
-         */
         @NameInMap("fileName")
         public String fileName;
 
-        /**
-         * <p>文件大小。</p>
-         */
         @NameInMap("fileSize")
         public String fileSize;
 
-        /**
-         * <p>文件类型。</p>
-         */
         @NameInMap("fileType")
         public String fileType;
 
-        /**
-         * <p>钉盘空间ID。</p>
-         */
         @NameInMap("spaceId")
         public String spaceId;
 
@@ -172,15 +139,9 @@ public class RedirectWorkflowTaskRequest extends TeaModel {
     }
 
     public static class RedirectWorkflowTaskRequestFile extends TeaModel {
-        /**
-         * <p>附件列表。</p>
-         */
         @NameInMap("attachments")
         public java.util.List<RedirectWorkflowTaskRequestFileAttachments> attachments;
 
-        /**
-         * <p>图片URL地址。</p>
-         */
         @NameInMap("photos")
         public java.util.List<String> photos;
 

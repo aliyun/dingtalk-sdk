@@ -4,15 +4,9 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetEmploymentRecordByWorkNoResponseBody extends TeaModel {
-    /**
-     * <p>任职记录</p>
-     */
     @NameInMap("content")
     public java.util.List<CfEmploymentRecordResp> content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 

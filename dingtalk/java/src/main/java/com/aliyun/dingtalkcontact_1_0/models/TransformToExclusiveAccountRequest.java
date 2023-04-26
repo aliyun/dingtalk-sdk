@@ -4,33 +4,18 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class TransformToExclusiveAccountRequest extends TeaModel {
-    /**
-     * <p>idpDingTalk</p>
-     */
     @NameInMap("idpDingTalk")
     public Boolean idpDingTalk;
 
-    /**
-     * <p>initPassword</p>
-     */
     @NameInMap("initPassword")
     public String initPassword;
 
-    /**
-     * <p>loginId</p>
-     */
     @NameInMap("loginId")
     public String loginId;
 
-    /**
-     * <p>transformType</p>
-     */
     @NameInMap("transformType")
     public String transformType;
 
-    /**
-     * <p>userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

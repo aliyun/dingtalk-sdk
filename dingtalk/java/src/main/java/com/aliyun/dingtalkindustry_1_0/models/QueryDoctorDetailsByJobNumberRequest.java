@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDoctorDetailsByJobNumberRequest extends TeaModel {
-    /**
-     * <p>按月安排</p>
-     */
     @NameInMap("monthMark")
     public String monthMark;
 

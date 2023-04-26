@@ -4,15 +4,9 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddApplicationRegFormTemplateResponseBody extends TeaModel {
-    /**
-     * <p>模板标识</p>
-     */
     @NameInMap("templateId")
     public String templateId;
 
-    /**
-     * <p>模板版本</p>
-     */
     @NameInMap("version")
     public Integer version;
 

@@ -4,27 +4,15 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateFinanceCompanyInfoRequest extends TeaModel {
-    /**
-     * <p>公司名字</p>
-     */
     @NameInMap("companyName")
     public String companyName;
 
-    /**
-     * <p>纳税性质 小规模纳税人 一般纳税人</p>
-     */
     @NameInMap("taxNature")
     public String taxNature;
 
-    /**
-     * <p>税号</p>
-     */
     @NameInMap("taxNo")
     public String taxNo;
 
-    /**
-     * <p>用户ID</p>
-     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListFeedsResponseBody extends TeaModel {
-    /**
-     * <p>是否还有更多数据。</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>动态列表。</p>
-     */
     @NameInMap("items")
     public java.util.List<ListFeedsResponseBodyItems> items;
 
-    /**
-     * <p>分页游标。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -52,21 +43,12 @@ public class ListFeedsResponseBody extends TeaModel {
     }
 
     public static class ListFeedsResponseBodyItems extends TeaModel {
-        /**
-         * <p>动态内容。</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>动态时间。</p>
-         */
         @NameInMap("time")
         public Long time;
 
-        /**
-         * <p>动态类型。</p>
-         */
         @NameInMap("type")
         public Integer type;
 

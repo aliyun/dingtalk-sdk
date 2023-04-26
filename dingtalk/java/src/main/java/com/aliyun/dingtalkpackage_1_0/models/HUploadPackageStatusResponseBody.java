@@ -4,39 +4,21 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class HUploadPackageStatusResponseBody extends TeaModel {
-    /**
-     * <p>创建时间</p>
-     */
     @NameInMap("buildTime")
     public Long buildTime;
 
-    /**
-     * <p>任务是否已结束</p>
-     */
     @NameInMap("finished")
     public Boolean finished;
 
-    /**
-     * <p>H5离线包体积，单位Byte</p>
-     */
     @NameInMap("packageSize")
     public Long packageSize;
 
-    /**
-     * <p>任务状态。1：构建中；2：成功；3：失败；5：超时。</p>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <p>创建离线包接口返回的taskId</p>
-     */
     @NameInMap("taskId")
     public String taskId;
 
-    /**
-     * <p>H5离线包版本号</p>
-     */
     @NameInMap("version")
     public String version;
 

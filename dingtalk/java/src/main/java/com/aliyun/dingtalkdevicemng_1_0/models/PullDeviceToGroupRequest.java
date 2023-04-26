@@ -4,27 +4,15 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class PullDeviceToGroupRequest extends TeaModel {
-    /**
-     * <p>设备业务标识</p>
-     */
     @NameInMap("deviceCodes")
     public java.util.List<String> deviceCodes;
 
-    /**
-     * <p>设备uuid，系统唯一标识</p>
-     */
     @NameInMap("deviceUuids")
     public java.util.List<String> deviceUuids;
 
-    /**
-     * <p>群id，群的唯一标识</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>操作人userId</p>
-     */
     @NameInMap("operator")
     public String operator;
 

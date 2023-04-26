@@ -4,9 +4,6 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CardTemplateBuildActionResponseBody extends TeaModel {
-    /**
-     * <p>模板构建的dto对象</p>
-     */
     @NameInMap("cardTemplateJson")
     public String cardTemplateJson;
 

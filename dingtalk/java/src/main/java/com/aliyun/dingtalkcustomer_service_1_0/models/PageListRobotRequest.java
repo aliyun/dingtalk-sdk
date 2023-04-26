@@ -4,33 +4,18 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageListRobotRequest extends TeaModel {
-    /**
-     * <p>查询的企业Id</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>本次读取的最大数据记录数量</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>用来标记当前开始读取的位置，置空表示从头开始</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    /**
-     * <p>多实例ID</p>
-     */
     @NameInMap("openInstanceId")
     public String openInstanceId;
 
-    /**
-     * <p>产品类型</p>
-     */
     @NameInMap("productionType")
     public Integer productionType;
 

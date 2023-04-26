@@ -4,27 +4,15 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class RemoveDeviceFromGroupRequest extends TeaModel {
-    /**
-     * <p>设备编号列表（与设备唯一标识列表二选一）</p>
-     */
     @NameInMap("deviceCodes")
     public java.util.List<String> deviceCodes;
 
-    /**
-     * <p>设备唯一标识列表（与设备编码列表二选一）</p>
-     */
     @NameInMap("deviceUuids")
     public java.util.List<String> deviceUuids;
 
-    /**
-     * <p>开放群唯一标识</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>操作人唯一标识</p>
-     */
     @NameInMap("operator")
     public String operator;
 

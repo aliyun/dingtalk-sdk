@@ -32,36 +32,21 @@ public class QueryGroupMemberResponseBody extends TeaModel {
     }
 
     public static class QueryGroupMemberResponseBodyResultGroupMemberList extends TeaModel {
-        /**
-         * <p>头像mediaId</p>
-         */
         @NameInMap("avatarMediaId")
         public String avatarMediaId;
 
-        /**
-         * <p>是否企业员工</p>
-         */
         @NameInMap("isUser")
         public Boolean isUser;
 
-        /**
-         * <p>昵称</p>
-         */
         @NameInMap("nickName")
         public String nickName;
 
-        /**
-         * <p>是否群主</p>
-         */
         @NameInMap("owner")
         public Boolean owner;
 
         @NameInMap("unionId")
         public String unionId;
 
-        /**
-         * <p>企业员工id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -121,15 +106,9 @@ public class QueryGroupMemberResponseBody extends TeaModel {
     }
 
     public static class QueryGroupMemberResponseBodyResult extends TeaModel {
-        /**
-         * <p>群成员列表</p>
-         */
         @NameInMap("groupMemberList")
         public java.util.List<QueryGroupMemberResponseBodyResultGroupMemberList> groupMemberList;
 
-        /**
-         * <p>群开放id</p>
-         */
         @NameInMap("openConversationId")
         public String openConversationId;
 

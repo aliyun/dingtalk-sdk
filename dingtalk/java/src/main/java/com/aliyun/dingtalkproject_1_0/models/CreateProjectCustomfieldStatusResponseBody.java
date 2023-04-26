@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateProjectCustomfieldStatusResponseBody extends TeaModel {
-    /**
-     * <p>结果。</p>
-     */
     @NameInMap("result")
     public CreateProjectCustomfieldStatusResponseBodyResult result;
 
@@ -24,21 +21,12 @@ public class CreateProjectCustomfieldStatusResponseBody extends TeaModel {
     }
 
     public static class CreateProjectCustomfieldStatusResponseBodyResultValue extends TeaModel {
-        /**
-         * <p>字段值id。</p>
-         */
         @NameInMap("fieldvalueId")
         public String fieldvalueId;
 
-        /**
-         * <p>自定义字段值元属性。</p>
-         */
         @NameInMap("metaString")
         public String metaString;
 
-        /**
-         * <p>自定义字段值。</p>
-         */
         @NameInMap("title")
         public String title;
 
@@ -74,39 +62,21 @@ public class CreateProjectCustomfieldStatusResponseBody extends TeaModel {
     }
 
     public static class CreateProjectCustomfieldStatusResponseBodyResult extends TeaModel {
-        /**
-         * <p>高级字段类型名(冗余)。</p>
-         */
         @NameInMap("advCfObjectType")
         public String advCfObjectType;
 
-        /**
-         * <p>自定义字段ID。</p>
-         */
         @NameInMap("customfieldId")
         public String customfieldId;
 
-        /**
-         * <p>字段名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>如果是企业字段，返回企业字段ID。</p>
-         */
         @NameInMap("originalId")
         public String originalId;
 
-        /**
-         * <p>字段类型。</p>
-         */
         @NameInMap("type")
         public String type;
 
-        /**
-         * <p>字段值集合。</p>
-         */
         @NameInMap("value")
         public java.util.List<CreateProjectCustomfieldStatusResponseBodyResultValue> value;
 

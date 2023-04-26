@@ -7,9 +7,6 @@ public class PageListObjectiveProgressResponseBody extends TeaModel {
     @NameInMap("content")
     public PageListObjectiveProgressResponseBodyContent content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 

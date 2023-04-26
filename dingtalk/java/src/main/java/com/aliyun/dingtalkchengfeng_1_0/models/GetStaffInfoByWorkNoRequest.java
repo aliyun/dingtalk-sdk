@@ -4,9 +4,6 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetStaffInfoByWorkNoRequest extends TeaModel {
-    /**
-     * <p>员工工号</p>
-     */
     @NameInMap("workNumbers")
     public String workNumbers;
 

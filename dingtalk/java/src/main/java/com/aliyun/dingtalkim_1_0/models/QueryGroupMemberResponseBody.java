@@ -4,15 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupMemberResponseBody extends TeaModel {
-    /**
-     * <p>群成员列表。</p>
-     */
     @NameInMap("groupMembers")
     public java.util.List<QueryGroupMemberResponseBodyGroupMembers> groupMembers;
 
-    /**
-     * <p>群会话Id。</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
@@ -38,33 +32,18 @@ public class QueryGroupMemberResponseBody extends TeaModel {
     }
 
     public static class QueryGroupMemberResponseBodyGroupMembers extends TeaModel {
-        /**
-         * <p>群成员头像地址。</p>
-         */
         @NameInMap("groupMemberAvatar")
         public String groupMemberAvatar;
 
-        /**
-         * <p>群成员动态信息。</p>
-         */
         @NameInMap("groupMemberDynamics")
         public String groupMemberDynamics;
 
-        /**
-         * <p>群成员Id。</p>
-         */
         @NameInMap("groupMemberId")
         public String groupMemberId;
 
-        /**
-         * <p>群成员名称。</p>
-         */
         @NameInMap("groupMemberName")
         public String groupMemberName;
 
-        /**
-         * <p>群成员类型。</p>
-         */
         @NameInMap("groupMemberType")
         public Integer groupMemberType;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeUpdateStudentDeptInfoRequest extends TeaModel {
-    /**
-     * <p>部门id</p>
-     */
     @NameInMap("deptId")
     public Long deptId;
 
-    /**
-     * <p>学生id</p>
-     */
     @NameInMap("studentId")
     public Long studentId;
 
-    /**
-     * <p>学号</p>
-     */
     @NameInMap("studentNumber")
     public String studentNumber;
 

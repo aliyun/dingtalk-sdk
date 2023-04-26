@@ -4,57 +4,30 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryTodoTasksRequest extends TeaModel {
-    /**
-     * <p>所属分类</p>
-     */
     @NameInMap("category")
     public String category;
 
-    /**
-     * <p>查询从计划完成时间开始</p>
-     */
     @NameInMap("fromDueTime")
     public Long fromDueTime;
 
-    /**
-     * <p>待办完成状态。</p>
-     */
     @NameInMap("isDone")
     public Boolean isDone;
 
-    /**
-     * <p>待办回收状态</p>
-     */
     @NameInMap("isRecycled")
     public Boolean isRecycled;
 
-    /**
-     * <p>分页游标。如果一个查询条件一次无法全部返回结果，会返回分页token，下次查询带上该token后会返回后续数据，直到分页token为null表示数据已经全部查询完毕。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>排序字段。枚举值 默认为截止时间 dueTime。created | modified | finished | startTime | dueTime 创建时间 | 更新时间 | 完成时间 | 开始时间 | 截止时间</p>
-     */
     @NameInMap("orderBy")
     public String orderBy;
 
-    /**
-     * <p>排序方向。枚举值asc | desc 默认 asc</p>
-     */
     @NameInMap("orderDirection")
     public String orderDirection;
 
-    /**
-     * <p>查询目标用户角色类型，执行人 | 创建人 | 参与人，可以同时传多个值。如：[["executor"], ["creator"],["participant"]] 或 [["executor", "creator"]]</p>
-     */
     @NameInMap("roleTypes")
     public java.util.List<java.util.List<String>> roleTypes;
 
-    /**
-     * <p>查询到计划完成时间结束</p>
-     */
     @NameInMap("toDueTime")
     public Long toDueTime;
 

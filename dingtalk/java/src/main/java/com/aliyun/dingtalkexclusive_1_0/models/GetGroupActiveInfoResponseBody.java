@@ -32,69 +32,36 @@ public class GetGroupActiveInfoResponseBody extends TeaModel {
     }
 
     public static class GetGroupActiveInfoResponseBodyData extends TeaModel {
-        /**
-         * <p>群组id</p>
-         */
         @NameInMap("dingGroupId")
         public String dingGroupId;
 
-        /**
-         * <p>群组创建时间</p>
-         */
         @NameInMap("groupCreateTime")
         public String groupCreateTime;
 
-        /**
-         * <p>群组创建用户id</p>
-         */
         @NameInMap("groupCreateUserId")
         public String groupCreateUserId;
 
-        /**
-         * <p>群组创建用户姓名</p>
-         */
         @NameInMap("groupCreateUserName")
         public String groupCreateUserName;
 
-        /**
-         * <p>群名称</p>
-         */
         @NameInMap("groupName")
         public String groupName;
 
-        /**
-         * <p>群类型：1-全员群，2-部门群，3-（其他）内部群，4-场景群</p>
-         */
         @NameInMap("groupType")
         public Long groupType;
 
-        /**
-         * <p>最近1天群人数</p>
-         */
         @NameInMap("groupUserCnt1d")
         public Integer groupUserCnt1d;
 
-        /**
-         * <p>最近1天打开群人数</p>
-         */
         @NameInMap("openConvUv1d")
         public Integer openConvUv1d;
 
-        /**
-         * <p>最近1天发消息次数</p>
-         */
         @NameInMap("sendMessageCnt1d")
         public Long sendMessageCnt1d;
 
-        /**
-         * <p>最近1天发消息人数</p>
-         */
         @NameInMap("sendMessageUserCnt1d")
         public Long sendMessageUserCnt1d;
 
-        /**
-         * <p>统计时间</p>
-         */
         @NameInMap("statDate")
         public String statDate;
 

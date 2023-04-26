@@ -4,21 +4,12 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySchoolUserFaceResponseBody extends TeaModel {
-    /**
-     * <p>组织id</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>是否还有下一页</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>用户人脸列表</p>
-     */
     @NameInMap("userFaceList")
     public java.util.List<QuerySchoolUserFaceResponseBodyUserFaceList> userFaceList;
 
@@ -52,27 +43,15 @@ public class QuerySchoolUserFaceResponseBody extends TeaModel {
     }
 
     public static class QuerySchoolUserFaceResponseBodyUserFaceList extends TeaModel {
-        /**
-         * <p>人脸id</p>
-         */
         @NameInMap("faceId")
         public String faceId;
 
-        /**
-         * <p>员工名字</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>员工状态</p>
-         */
         @NameInMap("status")
         public Integer status;
 
-        /**
-         * <p>员工id</p>
-         */
         @NameInMap("userId")
         public String userId;
 

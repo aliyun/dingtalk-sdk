@@ -4,9 +4,6 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class EmotionStatisticsResponseBody extends TeaModel {
-    /**
-     * <p>情感统计</p>
-     */
     @NameInMap("emotionStatisticsRecords")
     public java.util.List<EmotionStatisticsResponseBodyEmotionStatisticsRecords> emotionStatisticsRecords;
 
@@ -24,21 +21,12 @@ public class EmotionStatisticsResponseBody extends TeaModel {
     }
 
     public static class EmotionStatisticsResponseBodyEmotionStatisticsRecords extends TeaModel {
-        /**
-         * <p>心声数量</p>
-         */
         @NameInMap("count")
         public Long count;
 
-        /**
-         * <p>日期</p>
-         */
         @NameInMap("dt")
         public String dt;
 
-        /**
-         * <p>负面情绪值（0-1,越大越负面)</p>
-         */
         @NameInMap("emotionScore")
         public Double emotionScore;
 

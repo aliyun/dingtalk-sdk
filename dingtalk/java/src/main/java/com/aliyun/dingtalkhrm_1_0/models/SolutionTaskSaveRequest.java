@@ -4,27 +4,15 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class SolutionTaskSaveRequest extends TeaModel {
-    /**
-     * <p>任务要求的截止时间</p>
-     */
     @NameInMap("claimTime")
     public Long claimTime;
 
-    /**
-     * <p>任务描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>任务完成时间</p>
-     */
     @NameInMap("finishTime")
     public Long finishTime;
 
-    /**
-     * <p>外部的任务唯一标识</p>
-     */
     @NameInMap("outerId")
     public String outerId;
 
@@ -34,36 +22,21 @@ public class SolutionTaskSaveRequest extends TeaModel {
     @NameInMap("startTime")
     public Long startTime;
 
-    /**
-     * <p>任务状态，如running,finished</p>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <p>任务业务模块，如training, performance等</p>
-     */
     @NameInMap("taskType")
     public String taskType;
 
     @NameInMap("templateOuterId")
     public String templateOuterId;
 
-    /**
-     * <p>任务名称</p>
-     */
     @NameInMap("title")
     public String title;
 
-    /**
-     * <p>任务执行人userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>解决方案类型</p>
-     */
     @NameInMap("solutionType")
     public String solutionType;
 

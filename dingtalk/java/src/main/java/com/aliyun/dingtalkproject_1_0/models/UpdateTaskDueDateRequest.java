@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTaskDueDateRequest extends TeaModel {
-    /**
-     * <p>截止时间。</p>
-     */
     @NameInMap("dueDate")
     public String dueDate;
 

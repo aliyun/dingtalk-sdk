@@ -21,45 +21,24 @@ public class UpdateTaskStageResponseBody extends TeaModel {
     }
 
     public static class UpdateTaskStageResponseBodyResult extends TeaModel {
-        /**
-         * <p>任务完成时间(UTC)。</p>
-         */
         @NameInMap("accomplishTime")
         public String accomplishTime;
 
-        /**
-         * <p>是否任务已完成。</p>
-         */
         @NameInMap("isDone")
         public Boolean isDone;
 
-        /**
-         * <p>项目ID。</p>
-         */
         @NameInMap("projectId")
         public String projectId;
 
-        /**
-         * <p>任务列ID。</p>
-         */
         @NameInMap("stageId")
         public String stageId;
 
-        /**
-         * <p>任务ID。</p>
-         */
         @NameInMap("taskId")
         public String taskId;
 
-        /**
-         * <p>任务分组ID。</p>
-         */
         @NameInMap("taskListId")
         public String taskListId;
 
-        /**
-         * <p>更新时间(UTC)。</p>
-         */
         @NameInMap("updated")
         public String updated;
 

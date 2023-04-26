@@ -4,21 +4,12 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserPayInfoRequest extends TeaModel {
-    /**
-     * <p>人脸id</p>
-     */
     @NameInMap("faceId")
     public String faceId;
 
-    /**
-     * <p>设备id</p>
-     */
     @NameInMap("sn")
     public String sn;
 
-    /**
-     * <p>员工id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

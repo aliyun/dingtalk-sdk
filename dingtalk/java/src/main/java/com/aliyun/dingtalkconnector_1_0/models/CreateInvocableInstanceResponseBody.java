@@ -4,15 +4,9 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateInvocableInstanceResponseBody extends TeaModel {
-    /**
-     * <p>资产标识</p>
-     */
     @NameInMap("connectAssetUri")
     public String connectAssetUri;
 
-    /**
-     * <p>连接实例版本ID</p>
-     */
     @NameInMap("versionId")
     public String versionId;
 

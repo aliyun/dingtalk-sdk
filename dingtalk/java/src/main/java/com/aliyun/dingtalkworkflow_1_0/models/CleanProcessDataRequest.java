@@ -4,15 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class CleanProcessDataRequest extends TeaModel {
-    /**
-     * <p>企业的corpId。</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>模板唯一码。</p>
-     */
     @NameInMap("processCode")
     public String processCode;
 

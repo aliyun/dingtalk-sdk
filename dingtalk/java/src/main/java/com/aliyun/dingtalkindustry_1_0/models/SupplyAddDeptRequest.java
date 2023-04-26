@@ -4,27 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyAddDeptRequest extends TeaModel {
-    /**
-     * <p>部门名字</p>
-     */
     @NameInMap("deptName")
     public String deptName;
 
-    /**
-     * <p>供应商编号</p>
-     */
     @NameInMap("partnerNumber")
     public String partnerNumber;
 
-    /**
-     * <p>上级部门id</p>
-     */
     @NameInMap("superDeptId")
     public Long superDeptId;
 
-    /**
-     * <p>供应链部门类型</p>
-     */
     @NameInMap("supplyDeptType")
     public String supplyDeptType;
 

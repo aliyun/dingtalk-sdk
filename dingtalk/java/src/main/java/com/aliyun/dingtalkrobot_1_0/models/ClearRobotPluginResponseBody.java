@@ -4,9 +4,6 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class ClearRobotPluginResponseBody extends TeaModel {
-    /**
-     * <p>是否成功清除机器人快捷入口</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

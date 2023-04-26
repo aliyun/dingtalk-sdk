@@ -4,21 +4,12 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateApplicationRegFormRequest extends TeaModel {
-    /**
-     * <p>业务标识</p>
-     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    /**
-     * <p>应聘登记表的表单内容</p>
-     */
     @NameInMap("content")
     public String content;
 
-    /**
-     * <p>钉盘文件信息</p>
-     */
     @NameInMap("dingPanFile")
     public UpdateApplicationRegFormRequestDingPanFile dingPanFile;
 
@@ -52,33 +43,18 @@ public class UpdateApplicationRegFormRequest extends TeaModel {
     }
 
     public static class UpdateApplicationRegFormRequestDingPanFile extends TeaModel {
-        /**
-         * <p>钉盘文件标识</p>
-         */
         @NameInMap("fileId")
         public String fileId;
 
-        /**
-         * <p>文件名</p>
-         */
         @NameInMap("fileName")
         public String fileName;
 
-        /**
-         * <p>文件大小（单位：字节）</p>
-         */
         @NameInMap("fileSize")
         public Long fileSize;
 
-        /**
-         * <p>文件类型（支持：pdf，doc，docx，ppt，pptx，jpg等）</p>
-         */
         @NameInMap("fileType")
         public String fileType;
 
-        /**
-         * <p>钉盘空间标识</p>
-         */
         @NameInMap("spaceId")
         public Long spaceId;
 

@@ -4,17 +4,9 @@ package com.aliyun.dingtalksns_storage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDentryThumbnailsRequest extends TeaModel {
-    /**
-     * <p>文件id列表</p>
-     * <p>最大size:</p>
-     * <p>	30</p>
-     */
     @NameInMap("dentryIds")
     public java.util.List<String> dentryIds;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -4,61 +4,30 @@ package com.aliyun.dingtalkpedia_1_0.models;
 import com.aliyun.tea.*;
 
 public class PediaWordsAddRequest extends TeaModel {
-    /**
-     * <p>联系人列表</p>
-     * <br>
-     */
     @NameInMap("contactList")
     public java.util.List<PediaWordsAddRequestContactList> contactList;
 
-    /**
-     * <p>高亮的别名，从别名中选取，不在别名列表中不展示</p>
-     */
     @NameInMap("highLightWordAlias")
     public java.util.List<String> highLightWordAlias;
 
-    /**
-     * <p>相关图片</p>
-     * <br>
-     */
     @NameInMap("picList")
     public java.util.List<PediaWordsAddRequestPicList> picList;
 
-    /**
-     * <p>相关文档，支持钉钉在线文档</p>
-     */
     @NameInMap("relatedDoc")
     public java.util.List<PediaWordsAddRequestRelatedDoc> relatedDoc;
 
-    /**
-     * <p>相关链接</p>
-     */
     @NameInMap("relatedLink")
     public java.util.List<PediaWordsAddRequestRelatedLink> relatedLink;
 
-    /**
-     * <p>组织对应的员工编号</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>词条的别名，多个名字的时候可以添加</p>
-     * <br>
-     */
     @NameInMap("wordAlias")
     public java.util.List<String> wordAlias;
 
-    /**
-     * <p>新增词条的名称</p>
-     */
     @NameInMap("wordName")
     public String wordName;
 
-    /**
-     * <p>词条释义，针对词条的描述内容</p>
-     * <br>
-     */
     @NameInMap("wordParaphrase")
     public String wordParaphrase;
 
@@ -140,21 +109,12 @@ public class PediaWordsAddRequest extends TeaModel {
     }
 
     public static class PediaWordsAddRequestContactList extends TeaModel {
-        /**
-         * <p>头像地址也可以忽略</p>
-         */
         @NameInMap("avatarMediaId")
         public String avatarMediaId;
 
-        /**
-         * <p>名称可以忽略</p>
-         */
         @NameInMap("nickName")
         public String nickName;
 
-        /**
-         * <p>联系人的组织员工编号，开放平台员工信息接口获取userId</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -190,10 +150,6 @@ public class PediaWordsAddRequest extends TeaModel {
     }
 
     public static class PediaWordsAddRequestPicList extends TeaModel {
-        /**
-         * <p>图片的HTTP地址</p>
-         * <br>
-         */
         @NameInMap("mediaIdUrl")
         public String mediaIdUrl;
 
@@ -213,22 +169,12 @@ public class PediaWordsAddRequest extends TeaModel {
     }
 
     public static class PediaWordsAddRequestRelatedDoc extends TeaModel {
-        /**
-         * <p>文档地址</p>
-         * <br>
-         */
         @NameInMap("link")
         public String link;
 
-        /**
-         * <p>文档名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>文档类型，adoc或者asheet字段</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -264,16 +210,9 @@ public class PediaWordsAddRequest extends TeaModel {
     }
 
     public static class PediaWordsAddRequestRelatedLink extends TeaModel {
-        /**
-         * <p>链接地址</p>
-         * <br>
-         */
         @NameInMap("link")
         public String link;
 
-        /**
-         * <p>链接名称</p>
-         */
         @NameInMap("name")
         public String name;
 

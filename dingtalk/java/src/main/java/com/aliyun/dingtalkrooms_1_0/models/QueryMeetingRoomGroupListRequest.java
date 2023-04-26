@@ -4,9 +4,6 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMeetingRoomGroupListRequest extends TeaModel {
-    /**
-     * <p>操作人unionId</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

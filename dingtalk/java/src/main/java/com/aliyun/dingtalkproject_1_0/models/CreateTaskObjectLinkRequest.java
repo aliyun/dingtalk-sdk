@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTaskObjectLinkRequest extends TeaModel {
-    /**
-     * <p>关联链接对象</p>
-     */
     @NameInMap("linkedData")
     public CreateTaskObjectLinkRequestLinkedData linkedData;
 
@@ -24,27 +21,15 @@ public class CreateTaskObjectLinkRequest extends TeaModel {
     }
 
     public static class CreateTaskObjectLinkRequestLinkedData extends TeaModel {
-        /**
-         * <p>关联对象描述</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>关联对象头像url</p>
-         */
         @NameInMap("thumbnailUrl")
         public String thumbnailUrl;
 
-        /**
-         * <p>关联对象标题</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>关联对象链接url</p>
-         */
         @NameInMap("url")
         public String url;
 

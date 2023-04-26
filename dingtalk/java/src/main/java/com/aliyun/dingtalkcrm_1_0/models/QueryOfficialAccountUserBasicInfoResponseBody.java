@@ -4,15 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryOfficialAccountUserBasicInfoResponseBody extends TeaModel {
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
-    /**
-     * <p>响应结果</p>
-     */
     @NameInMap("result")
     public QueryOfficialAccountUserBasicInfoResponseBodyResult result;
 
@@ -38,9 +32,6 @@ public class QueryOfficialAccountUserBasicInfoResponseBody extends TeaModel {
     }
 
     public static class QueryOfficialAccountUserBasicInfoResponseBodyResult extends TeaModel {
-        /**
-         * <p>关注状态</p>
-         */
         @NameInMap("status")
         public String status;
 

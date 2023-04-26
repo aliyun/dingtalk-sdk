@@ -4,51 +4,27 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMediaCerficateResponseBody extends TeaModel {
-    /**
-     * <p>媒体文件ID</p>
-     */
     @NameInMap("mediaId")
     public String mediaId;
 
-    /**
-     * <p>上传授权密钥ID</p>
-     */
     @NameInMap("ossAccessKeyId")
     public String ossAccessKeyId;
 
-    /**
-     * <p>上传授权密钥</p>
-     */
     @NameInMap("ossAccessKeySecret")
     public String ossAccessKeySecret;
 
-    /**
-     * <p>OSS Bucket名称</p>
-     */
     @NameInMap("ossBucketName")
     public String ossBucketName;
 
-    /**
-     * <p>OSS区域地址</p>
-     */
     @NameInMap("ossEndpoint")
     public String ossEndpoint;
 
-    /**
-     * <p>凭证有效时间(单位秒)，当上传凭证过期时，需要重新使用本次返回的videoId重新调用接口进行凭证刷新</p>
-     */
     @NameInMap("ossExpiration")
     public String ossExpiration;
 
-    /**
-     * <p>分配的媒体文件名</p>
-     */
     @NameInMap("ossFileName")
     public String ossFileName;
 
-    /**
-     * <p>上传授权安全令牌</p>
-     */
     @NameInMap("ossSecurityToken")
     public String ossSecurityToken;
 

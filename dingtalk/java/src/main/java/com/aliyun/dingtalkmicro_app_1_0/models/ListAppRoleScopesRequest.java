@@ -4,15 +4,9 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListAppRoleScopesRequest extends TeaModel {
-    /**
-     * <p>起始点，默认0</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    /**
-     * <p>数据量，默认20，最大50</p>
-     */
     @NameInMap("size")
     public Long size;
 

@@ -4,69 +4,36 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateUniversityCourseGroupRequest extends TeaModel {
-    /**
-     * <p>课程组介绍</p>
-     */
     @NameInMap("courseGroupIntroduce")
     public String courseGroupIntroduce;
 
-    /**
-     * <p>课程组名称</p>
-     */
     @NameInMap("courseGroupName")
     public String courseGroupName;
 
-    /**
-     * <p>课程详细</p>
-     */
     @NameInMap("courserGroupItemModels")
     public java.util.List<CreateUniversityCourseGroupRequestCourserGroupItemModels> courserGroupItemModels;
 
-    /**
-     * <p>扩展参数</p>
-     */
     @NameInMap("ext")
     public String ext;
 
-    /**
-     * <p>合作方课程组code</p>
-     */
     @NameInMap("isvCourseGroupCode")
     public String isvCourseGroupCode;
 
-    /**
-     * <p>学段code</p>
-     */
     @NameInMap("periodCode")
     public String periodCode;
 
-    /**
-     * <p>学年</p>
-     */
     @NameInMap("schoolYear")
     public String schoolYear;
 
-    /**
-     * <p>学期</p>
-     */
     @NameInMap("semester")
     public Integer semester;
 
-    /**
-     * <p>学科</p>
-     */
     @NameInMap("subjectName")
     public String subjectName;
 
-    /**
-     * <p>教师信息</p>
-     */
     @NameInMap("teacherInfos")
     public java.util.List<CreateUniversityCourseGroupRequestTeacherInfos> teacherInfos;
 
-    /**
-     * <p>操作人</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -164,21 +131,12 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate extends TeaModel {
-        /**
-         * <p>一月的第几天</p>
-         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        /**
-         * <p>月</p>
-         */
         @NameInMap("month")
         public Integer month;
 
-        /**
-         * <p>年</p>
-         */
         @NameInMap("year")
         public Integer year;
 
@@ -214,21 +172,12 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate extends TeaModel {
-        /**
-         * <p>一月的第几天</p>
-         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        /**
-         * <p>月</p>
-         */
         @NameInMap("month")
         public Integer month;
 
-        /**
-         * <p>年</p>
-         */
         @NameInMap("year")
         public Integer year;
 
@@ -264,45 +213,24 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupRequestCourserGroupItemModels extends TeaModel {
-        /**
-         * <p>上课周期</p>
-         */
         @NameInMap("classPeriodType")
         public Integer classPeriodType;
 
-        /**
-         * <p>教室id</p>
-         */
         @NameInMap("classroomId")
         public Long classroomId;
 
-        /**
-         * <p>课程类型</p>
-         */
         @NameInMap("courseType")
         public Integer courseType;
 
-        /**
-         * <p>课程组详细结束时间</p>
-         */
         @NameInMap("courserGroupItemEndDate")
         public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate courserGroupItemEndDate;
 
-        /**
-         * <p>课程组详细开始时间</p>
-         */
         @NameInMap("courserGroupItemStartDate")
         public CreateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate courserGroupItemStartDate;
 
-        /**
-         * <p>一周的第几天</p>
-         */
         @NameInMap("dayOfWeek")
         public Integer dayOfWeek;
 
-        /**
-         * <p>课节</p>
-         */
         @NameInMap("sectionIndex")
         public java.util.List<Integer> sectionIndex;
 
@@ -370,15 +298,9 @@ public class CreateUniversityCourseGroupRequest extends TeaModel {
     }
 
     public static class CreateUniversityCourseGroupRequestTeacherInfos extends TeaModel {
-        /**
-         * <p>角色类型</p>
-         */
         @NameInMap("participantRole")
         public String participantRole;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("userId")
         public String userId;
 

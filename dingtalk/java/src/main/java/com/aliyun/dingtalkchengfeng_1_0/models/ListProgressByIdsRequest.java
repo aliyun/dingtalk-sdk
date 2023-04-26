@@ -4,9 +4,6 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListProgressByIdsRequest extends TeaModel {
-    /**
-     * <p>进展ID列表</p>
-     */
     @NameInMap("progressIds")
     public java.util.List<String> progressIds;
 

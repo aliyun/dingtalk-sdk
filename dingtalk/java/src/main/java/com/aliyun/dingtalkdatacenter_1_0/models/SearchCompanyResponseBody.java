@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchCompanyResponseBody extends TeaModel {
-    /**
-     * <p>返回数据结果</p>
-     */
     @NameInMap("data")
     public String data;
 
-    /**
-     * <p>总条数</p>
-     */
     @NameInMap("total")
     public Long total;
 

@@ -4,39 +4,21 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class BillSettementFlightRequest extends TeaModel {
-    /**
-     * <p>类目：机酒火车 1：机票； 2：酒店； 4：用车 6：商旅火车票</p>
-     */
     @NameInMap("category")
     public Long category;
 
-    /**
-     * <p>第三方企业ID</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>页数，从1开始</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>每页数据量，默认100，最高500</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    /**
-     * <p>记账更新结束日期</p>
-     */
     @NameInMap("periodEnd")
     public String periodEnd;
 
-    /**
-     * <p>记账更新开始日期</p>
-     */
     @NameInMap("periodStart")
     public String periodStart;
 

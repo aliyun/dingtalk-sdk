@@ -4,66 +4,36 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ResubmitTicketRequest extends TeaModel {
-    /**
-     * <p>工单创建人UnionId</p>
-     */
     @NameInMap("creatorUnionId")
     public String creatorUnionId;
 
-    /**
-     * <p>自定义组件字段值(JSON格式)</p>
-     */
     @NameInMap("customFields")
     public String customFields;
 
     @NameInMap("notify")
     public ResubmitTicketRequestNotify notify;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>工单模板业务ID</p>
-     */
     @NameInMap("openTemplateBizId")
     public String openTemplateBizId;
 
-    /**
-     * <p>工单开放ID</p>
-     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
-    /**
-     * <p>工单处理人UnionId列表</p>
-     */
     @NameInMap("processorUnionIds")
     public java.util.List<String> processorUnionIds;
 
-    /**
-     * <p>工单场景 SG 或 VOC</p>
-     */
     @NameInMap("scene")
     public String scene;
 
-    /**
-     * <p>工单场景信息</p>
-     */
     @NameInMap("sceneContext")
     public ResubmitTicketRequestSceneContext sceneContext;
 
-    /**
-     * <p>备注</p>
-     */
     @NameInMap("ticketMemo")
     public ResubmitTicketRequestTicketMemo ticketMemo;
 
-    /**
-     * <p>工单标题</p>
-     */
     @NameInMap("title")
     public String title;
 
@@ -161,21 +131,12 @@ public class ResubmitTicketRequest extends TeaModel {
     }
 
     public static class ResubmitTicketRequestNotify extends TeaModel {
-        /**
-         * <p>服务群通知接收人（钉钉UnionId）</p>
-         */
         @NameInMap("groupNoticeReceiverUnionIds")
         public java.util.List<String> groupNoticeReceiverUnionIds;
 
-        /**
-         * <p>是否向群内推送一个全员可见工单通知卡片</p>
-         */
         @NameInMap("noticeAllGroupMember")
         public Boolean noticeAllGroupMember;
 
-        /**
-         * <p>企业工作通知接收人（钉钉UnionId）</p>
-         */
         @NameInMap("workNoticeReceiverUnionIds")
         public java.util.List<String> workNoticeReceiverUnionIds;
 
@@ -214,9 +175,6 @@ public class ResubmitTicketRequest extends TeaModel {
         @NameInMap("anchor")
         public Boolean anchor;
 
-        /**
-         * <p>勾选消息openMsgId</p>
-         */
         @NameInMap("openMsgId")
         public String openMsgId;
 
@@ -258,15 +216,9 @@ public class ResubmitTicketRequest extends TeaModel {
         @NameInMap("groupMsgs")
         public java.util.List<ResubmitTicketRequestSceneContextGroupMsgs> groupMsgs;
 
-        /**
-         * <p>服务群openConversationId</p>
-         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        /**
-         * <p>工单相关人UnionId列表</p>
-         */
         @NameInMap("relevantorUnionIds")
         public java.util.List<String> relevantorUnionIds;
 
@@ -302,15 +254,9 @@ public class ResubmitTicketRequest extends TeaModel {
     }
 
     public static class ResubmitTicketRequestTicketMemoAttachments extends TeaModel {
-        /**
-         * <p>文件名</p>
-         */
         @NameInMap("fileName")
         public String fileName;
 
-        /**
-         * <p>文件key</p>
-         */
         @NameInMap("key")
         public String key;
 
@@ -341,9 +287,6 @@ public class ResubmitTicketRequest extends TeaModel {
         @NameInMap("attachments")
         public java.util.List<ResubmitTicketRequestTicketMemoAttachments> attachments;
 
-        /**
-         * <p>备注文字</p>
-         */
         @NameInMap("memo")
         public String memo;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteBizObjectResponseBody extends TeaModel {
-    /**
-     * <p>状态码</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>提示信息</p>
-     */
     @NameInMap("message")
     public String message;
 

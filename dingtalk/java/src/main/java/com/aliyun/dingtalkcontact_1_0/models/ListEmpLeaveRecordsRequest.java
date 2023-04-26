@@ -4,27 +4,15 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListEmpLeaveRecordsRequest extends TeaModel {
-    /**
-     * <p>结束时间，YYYY-MM-DDTHH:mm:ssZ (ISO 8601/RFC 3339)</p>
-     */
     @NameInMap("endTime")
     public String endTime;
 
-    /**
-     * <p>分页大小</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>分页token</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>开始时间，YYYY-MM-DDTHH:mm:ssZ (ISO 8601/RFC 3339)</p>
-     */
     @NameInMap("startTime")
     public String startTime;
 

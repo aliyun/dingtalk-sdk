@@ -7,9 +7,6 @@ public class DeletePermissionResponseBody extends TeaModel {
     @NameInMap("data")
     public DeletePermissionResponseBodyData data;
 
-    /**
-     * <p>请求成功的标识。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -120,21 +117,12 @@ public class DeletePermissionResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>权限列表</p>
-         */
         @NameInMap("policyList")
         public java.util.List<DeletePermissionResponseBodyDataPolicyList> policyList;
 
-        /**
-         * <p>是否可见的标识。</p>
-         */
         @NameInMap("privacy")
         public String privacy;
 
-        /**
-         * <p>哪种类型的权限。</p>
-         */
         @NameInMap("type")
         public String type;
 

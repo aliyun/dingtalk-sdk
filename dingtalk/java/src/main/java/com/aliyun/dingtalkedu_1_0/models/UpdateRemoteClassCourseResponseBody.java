@@ -4,15 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateRemoteClassCourseResponseBody extends TeaModel {
-    /**
-     * <p>result</p>
-     */
     @NameInMap("result")
     public String result;
 
-    /**
-     * <p>success</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

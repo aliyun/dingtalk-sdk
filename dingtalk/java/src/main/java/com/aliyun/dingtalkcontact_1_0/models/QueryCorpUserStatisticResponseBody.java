@@ -4,24 +4,15 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCorpUserStatisticResponseBody extends TeaModel {
-    /**
-     * <p>是否还有更多数据</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     @NameInMap("list")
     public java.util.List<QueryCorpUserStatisticResponseBodyList> list;
 
-    /**
-     * <p>下一游标</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    /**
-     * <p>总数</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -63,34 +54,18 @@ public class QueryCorpUserStatisticResponseBody extends TeaModel {
     }
 
     public static class QueryCorpUserStatisticResponseBodyList extends TeaModel {
-        /**
-         * <p>用户头像</p>
-         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
-        /**
-         * <p>用户名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>收下数</p>
-         */
         @NameInMap("receiveCnt")
         public Long receiveCnt;
 
-        /**
-         * <p>发送数</p>
-         */
         @NameInMap("sendCnt")
         public Long sendCnt;
 
-        /**
-         * <p>用户id</p>
-         * <br>
-         */
         @NameInMap("unionId")
         public String unionId;
 

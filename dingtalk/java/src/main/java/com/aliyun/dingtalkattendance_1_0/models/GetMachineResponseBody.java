@@ -4,9 +4,6 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMachineResponseBody extends TeaModel {
-    /**
-     * <p>查询结果</p>
-     */
     @NameInMap("result")
     public GetMachineResponseBodyResult result;
 
@@ -24,63 +21,33 @@ public class GetMachineResponseBody extends TeaModel {
     }
 
     public static class GetMachineResponseBodyResultMachineBluetoothVO extends TeaModel {
-        /**
-         * <p>地址位置描述</p>
-         */
         @NameInMap("address")
         public String address;
 
-        /**
-         * <p>蓝牙打卡人脸识别开关值</p>
-         */
         @NameInMap("bluetoothCheckWithFace")
         public Boolean bluetoothCheckWithFace;
 
-        /**
-         * <p>蓝牙打卡范围</p>
-         */
         @NameInMap("bluetoothDistanceMode")
         public String bluetoothDistanceMode;
 
-        /**
-         * <p>蓝牙打卡范围描述</p>
-         */
         @NameInMap("bluetoothDistanceModeDesc")
         public String bluetoothDistanceModeDesc;
 
-        /**
-         * <p>蓝牙打卡开关</p>
-         */
         @NameInMap("bluetoothValue")
         public Boolean bluetoothValue;
 
-        /**
-         * <p>纬度</p>
-         */
         @NameInMap("latitude")
         public Double latitude;
 
-        /**
-         * <p>是否限制员工常用手机</p>
-         */
         @NameInMap("limitUserDeviceCount")
         public Boolean limitUserDeviceCount;
 
-        /**
-         * <p>经度</p>
-         */
         @NameInMap("longitude")
         public Double longitude;
 
-        /**
-         * <p>是否打开位置异常监控</p>
-         */
         @NameInMap("monitorLocationAbnormal")
         public Boolean monitorLocationAbnormal;
 
-        /**
-         * <p>员工常用手机数量</p>
-         */
         @NameInMap("userDeviceCount")
         public Integer userDeviceCount;
 
@@ -172,69 +139,36 @@ public class GetMachineResponseBody extends TeaModel {
     }
 
     public static class GetMachineResponseBodyResult extends TeaModel {
-        /**
-         * <p>设备管理员列表</p>
-         */
         @NameInMap("atmManagerList")
         public java.util.List<String> atmManagerList;
 
-        /**
-         * <p>设备id (deviceId)</p>
-         */
         @NameInMap("devId")
         public Long devId;
 
-        /**
-         * <p>设备id (deviceUid加密之后)</p>
-         */
         @NameInMap("deviceId")
         public String deviceId;
 
-        /**
-         * <p>设备名称</p>
-         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        /**
-         * <p>设备sn号</p>
-         */
         @NameInMap("deviceSn")
         public String deviceSn;
 
-        /**
-         * <p>考勤机蓝牙相关设置信息</p>
-         */
         @NameInMap("machineBluetoothVO")
         public GetMachineResponseBodyResultMachineBluetoothVO machineBluetoothVO;
 
-        /**
-         * <p>人脸容量</p>
-         */
         @NameInMap("maxFace")
         public Integer maxFace;
 
-        /**
-         * <p>网络状态</p>
-         */
         @NameInMap("netStatus")
         public String netStatus;
 
-        /**
-         * <p>设备类型名称</p>
-         */
         @NameInMap("productName")
         public String productName;
 
-        /**
-         * <p>固件版本</p>
-         */
         @NameInMap("productVersion")
         public String productVersion;
 
-        /**
-         * <p>音量模式</p>
-         */
         @NameInMap("voiceMode")
         public Integer voiceMode;
 

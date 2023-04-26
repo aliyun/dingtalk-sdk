@@ -4,17 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class AppendRowsRequest extends TeaModel {
-    /**
-     * <p>要追加的值(二维数组)</p>
-     * <p>最大size:</p>
-     * <p>	1000</p>
-     */
     @NameInMap("values")
     public java.util.List<java.util.List<String>> values;
 
-    /**
-     * <p>操作人id</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryBatchTradeOrderRequest extends TeaModel {
-    /**
-     * <p>外部商户批次号列表</p>
-     */
     @NameInMap("outBatchNos")
     public java.util.List<String> outBatchNos;
 

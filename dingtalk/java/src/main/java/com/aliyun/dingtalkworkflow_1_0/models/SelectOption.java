@@ -4,15 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class SelectOption extends TeaModel {
-    /**
-     * <p>每一个选项的唯一键</p>
-     */
     @NameInMap("key")
     public String key;
 
-    /**
-     * <p>每一个选项的值</p>
-     */
     @NameInMap("value")
     public String value;
 

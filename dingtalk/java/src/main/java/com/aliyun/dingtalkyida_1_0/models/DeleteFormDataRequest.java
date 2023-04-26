@@ -4,33 +4,18 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteFormDataRequest extends TeaModel {
-    /**
-     * <p>应用ID</p>
-     */
     @NameInMap("appType")
     public String appType;
 
-    /**
-     * <p>要删除的表单数据ID</p>
-     */
     @NameInMap("formInstanceId")
     public String formInstanceId;
 
-    /**
-     * <p>语言</p>
-     */
     @NameInMap("language")
     public String language;
 
-    /**
-     * <p>应用秘钥</p>
-     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    /**
-     * <p>钉钉的userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

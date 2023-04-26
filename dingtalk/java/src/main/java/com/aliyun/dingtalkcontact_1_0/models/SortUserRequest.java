@@ -4,15 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class SortUserRequest extends TeaModel {
-    /**
-     * <p>0 根据姓名拼音升序排列 1 根据姓名拼音降序排列</p>
-     */
     @NameInMap("sortType")
     public Integer sortType;
 
-    /**
-     * <p>用户id列表</p>
-     */
     @NameInMap("userIdList")
     public java.util.List<String> userIdList;
 

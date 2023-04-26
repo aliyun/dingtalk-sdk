@@ -4,9 +4,6 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTaskResponseBody extends TeaModel {
-    /**
-     * <p>任务信息</p>
-     */
     @NameInMap("task")
     public GetTaskResponseBodyTask task;
 
@@ -24,56 +21,27 @@ public class GetTaskResponseBody extends TeaModel {
     }
 
     public static class GetTaskResponseBodyTask extends TeaModel {
-        /**
-         * <p>任务开始时间</p>
-         */
         @NameInMap("beginTime")
         public String beginTime;
 
-        /**
-         * <p>任务结束时间</p>
-         */
         @NameInMap("endTime")
         public String endTime;
 
-        /**
-         * <p>子任务失败总数</p>
-         */
         @NameInMap("failCount")
         public Long failCount;
 
-        /**
-         * <p>任务失败原因</p>
-         */
         @NameInMap("failMessage")
         public String failMessage;
 
-        /**
-         * <p>任务id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>任务状态</p>
-         * <p>枚举值:</p>
-         * <p>	INIT: 初始化</p>
-         * <p>	IN_PROGRESS: 进行中</p>
-         * <p>	SUCCESS: 成功</p>
-         * <p>	FAIL: 失败</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>子任务成功总数</p>
-         */
         @NameInMap("successCount")
         public Long successCount;
 
-        /**
-         * <p>子任务总数</p>
-         */
         @NameInMap("totalCount")
         public Long totalCount;
 

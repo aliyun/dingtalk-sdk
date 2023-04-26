@@ -4,21 +4,12 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateManagementGroupRequest extends TeaModel {
-    /**
-     * <p>管理组名称</p>
-     */
     @NameInMap("groupName")
     public String groupName;
 
-    /**
-     * <p>管理组成员</p>
-     */
     @NameInMap("members")
     public java.util.List<UpdateManagementGroupRequestMembers> members;
 
-    /**
-     * <p>资源列表</p>
-     */
     @NameInMap("resourceIds")
     public java.util.List<String> resourceIds;
 
@@ -63,15 +54,9 @@ public class UpdateManagementGroupRequest extends TeaModel {
     }
 
     public static class UpdateManagementGroupRequestMembers extends TeaModel {
-        /**
-         * <p>成员id</p>
-         */
         @NameInMap("memberId")
         public String memberId;
 
-        /**
-         * <p>成员类型</p>
-         */
         @NameInMap("memberType")
         public String memberType;
 
@@ -99,15 +84,9 @@ public class UpdateManagementGroupRequest extends TeaModel {
     }
 
     public static class UpdateManagementGroupRequestScope extends TeaModel {
-        /**
-         * <p>部门列表，只在scopeType=3 生效</p>
-         */
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
-        /**
-         * <p>范围类型</p>
-         */
         @NameInMap("scopeType")
         public Integer scopeType;
 

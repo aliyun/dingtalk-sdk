@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserInfoByOpenTokenResponseBody extends TeaModel {
-    /**
-     * <p>用户的 unionId。</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 
-    /**
-     * <p>用户的userId。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

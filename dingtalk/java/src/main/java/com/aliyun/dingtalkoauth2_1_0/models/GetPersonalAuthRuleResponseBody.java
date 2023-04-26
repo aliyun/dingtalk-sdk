@@ -4,9 +4,6 @@ package com.aliyun.dingtalkoauth2_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPersonalAuthRuleResponseBody extends TeaModel {
-    /**
-     * <p>list</p>
-     */
     @NameInMap("result")
     public java.util.List<GetPersonalAuthRuleResponseBodyResult> result;
 
@@ -24,15 +21,9 @@ public class GetPersonalAuthRuleResponseBody extends TeaModel {
     }
 
     public static class GetPersonalAuthRuleResponseBodyResult extends TeaModel {
-        /**
-         * <p>authItems</p>
-         */
         @NameInMap("authItems")
         public java.util.List<String> authItems;
 
-        /**
-         * <p>resource</p>
-         */
         @NameInMap("resource")
         public String resource;
 

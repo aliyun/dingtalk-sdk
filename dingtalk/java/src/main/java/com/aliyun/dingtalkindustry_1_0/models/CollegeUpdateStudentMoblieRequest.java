@@ -4,21 +4,12 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeUpdateStudentMoblieRequest extends TeaModel {
-    /**
-     * <p>是否直接更换</p>
-     */
     @NameInMap("isForce")
     public Boolean isForce;
 
-    /**
-     * <p>修改后的手机号</p>
-     */
     @NameInMap("newMobile")
     public String newMobile;
 
-    /**
-     * <p>学生id</p>
-     */
     @NameInMap("studentId")
     public Long studentId;
 

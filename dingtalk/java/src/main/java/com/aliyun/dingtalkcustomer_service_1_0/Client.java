@@ -6,8 +6,11 @@ import com.aliyun.dingtalkcustomer_service_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public CreateTicketResponse createTicket(CreateTicketRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateTicketHeaders headers = new CreateTicketHeaders();
-        return this.createTicketWithOptions(request, headers, runtime);
-    }
 
     public CreateTicketResponse createTicketWithOptions(CreateTicketRequest request, CreateTicketHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -70,18 +67,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateTicket", "customerService_1.0", "HTTP", "POST", "AK", "/v1.0/customerService/tickets", "json", req, runtime), new CreateTicketResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateTicket"),
+            new TeaPair("version", "customerService_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/customerService/tickets"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateTicketResponse());
     }
 
-    public ExecuteActivityResponse executeActivity(String ticketId, ExecuteActivityRequest request) throws Exception {
+    public CreateTicketResponse createTicket(CreateTicketRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ExecuteActivityHeaders headers = new ExecuteActivityHeaders();
-        return this.executeActivityWithOptions(ticketId, request, headers, runtime);
+        CreateTicketHeaders headers = new CreateTicketHeaders();
+        return this.createTicketWithOptions(request, headers, runtime);
     }
 
     public ExecuteActivityResponse executeActivityWithOptions(String ticketId, ExecuteActivityRequest request, ExecuteActivityHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        ticketId = com.aliyun.openapiutil.Client.getEncodeParam(ticketId);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.activityCode)) {
             body.put("activityCode", request.activityCode);
@@ -124,13 +131,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ExecuteActivity", "customerService_1.0", "HTTP", "PUT", "AK", "/v1.0/customerService/tickets/" + ticketId + "", "json", req, runtime), new ExecuteActivityResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ExecuteActivity"),
+            new TeaPair("version", "customerService_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/customerService/tickets/" + ticketId + ""),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ExecuteActivityResponse());
     }
 
-    public GetUserSourceListResponse getUserSourceList(GetUserSourceListRequest request) throws Exception {
+    public ExecuteActivityResponse executeActivity(String ticketId, ExecuteActivityRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetUserSourceListHeaders headers = new GetUserSourceListHeaders();
-        return this.getUserSourceListWithOptions(request, headers, runtime);
+        ExecuteActivityHeaders headers = new ExecuteActivityHeaders();
+        return this.executeActivityWithOptions(ticketId, request, headers, runtime);
     }
 
     public GetUserSourceListResponse getUserSourceListWithOptions(GetUserSourceListRequest request, GetUserSourceListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -173,18 +191,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetUserSourceList", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/customers/sources", "json", req, runtime), new GetUserSourceListResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetUserSourceList"),
+            new TeaPair("version", "customerService_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/customerService/customers/sources"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetUserSourceListResponse());
     }
 
-    public PageListActionResponse pageListAction(String ticketId, PageListActionRequest request) throws Exception {
+    public GetUserSourceListResponse getUserSourceList(GetUserSourceListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PageListActionHeaders headers = new PageListActionHeaders();
-        return this.pageListActionWithOptions(ticketId, request, headers, runtime);
+        GetUserSourceListHeaders headers = new GetUserSourceListHeaders();
+        return this.getUserSourceListWithOptions(request, headers, runtime);
     }
 
     public PageListActionResponse pageListActionWithOptions(String ticketId, PageListActionRequest request, PageListActionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        ticketId = com.aliyun.openapiutil.Client.getEncodeParam(ticketId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
             query.put("maxResults", request.maxResults);
@@ -215,13 +243,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("PageListAction", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/tickets/" + ticketId + "/actions", "json", req, runtime), new PageListActionResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PageListAction"),
+            new TeaPair("version", "customerService_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/customerService/tickets/" + ticketId + "/actions"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PageListActionResponse());
     }
 
-    public PageListRobotResponse pageListRobot(PageListRobotRequest request) throws Exception {
+    public PageListActionResponse pageListAction(String ticketId, PageListActionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PageListRobotHeaders headers = new PageListRobotHeaders();
-        return this.pageListRobotWithOptions(request, headers, runtime);
+        PageListActionHeaders headers = new PageListActionHeaders();
+        return this.pageListActionWithOptions(ticketId, request, headers, runtime);
     }
 
     public PageListRobotResponse pageListRobotWithOptions(PageListRobotRequest request, PageListRobotHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -260,13 +299,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("PageListRobot", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/robots", "json", req, runtime), new PageListRobotResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PageListRobot"),
+            new TeaPair("version", "customerService_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/customerService/robots"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PageListRobotResponse());
     }
 
-    public PageListTicketResponse pageListTicket(PageListTicketRequest request) throws Exception {
+    public PageListRobotResponse pageListRobot(PageListRobotRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PageListTicketHeaders headers = new PageListTicketHeaders();
-        return this.pageListTicketWithOptions(request, headers, runtime);
+        PageListRobotHeaders headers = new PageListRobotHeaders();
+        return this.pageListRobotWithOptions(request, headers, runtime);
     }
 
     public PageListTicketResponse pageListTicketWithOptions(PageListTicketRequest request, PageListTicketHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -329,6 +379,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("PageListTicket", "customerService_1.0", "HTTP", "GET", "AK", "/v1.0/customerService/tickets", "json", req, runtime), new PageListTicketResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PageListTicket"),
+            new TeaPair("version", "customerService_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/customerService/tickets"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PageListTicketResponse());
+    }
+
+    public PageListTicketResponse pageListTicket(PageListTicketRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PageListTicketHeaders headers = new PageListTicketHeaders();
+        return this.pageListTicketWithOptions(request, headers, runtime);
     }
 }

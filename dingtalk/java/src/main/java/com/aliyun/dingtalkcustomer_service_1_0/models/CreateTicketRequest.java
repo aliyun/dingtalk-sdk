@@ -4,51 +4,27 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTicketRequest extends TeaModel {
-    /**
-     * <p>第三方会员ID</p>
-     */
     @NameInMap("foreignId")
     public String foreignId;
 
-    /**
-     * <p>第三方会员名称</p>
-     */
     @NameInMap("foreignName")
     public String foreignName;
 
-    /**
-     * <p>实例ID</p>
-     */
     @NameInMap("openInstanceId")
     public String openInstanceId;
 
-    /**
-     * <p>智能客服产品</p>
-     */
     @NameInMap("productionType")
     public Integer productionType;
 
-    /**
-     * <p>工单表单</p>
-     */
     @NameInMap("properties")
     public java.util.List<CreateTicketRequestProperties> properties;
 
-    /**
-     * <p>会员来源</p>
-     */
     @NameInMap("sourceId")
     public String sourceId;
 
-    /**
-     * <p>工单模板ID</p>
-     */
     @NameInMap("templateId")
     public String templateId;
 
-    /**
-     * <p>工单标题</p>
-     */
     @NameInMap("title")
     public String title;
 

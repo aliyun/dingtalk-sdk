@@ -4,27 +4,15 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class RenewApplicationAuthorizationServiceOrderRequest extends TeaModel {
-    /**
-     * <p>访问秘钥</p>
-     */
     @NameInMap("accessKey")
     public String accessKey;
 
-    /**
-     * <p>调用者unionId</p>
-     */
     @NameInMap("callerUnionId")
     public String callerUnionId;
 
-    /**
-     * <p>结束时间</p>
-     */
     @NameInMap("endTimeGMT")
     public Long endTimeGMT;
 
-    /**
-     * <p>实例id</p>
-     */
     @NameInMap("instanceId")
     public String instanceId;
 

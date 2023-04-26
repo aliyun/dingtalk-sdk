@@ -7,9 +7,6 @@ public class GetFieldDefByUuidResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<GetFieldDefByUuidResponseBodyResult> result;
 
-    /**
-     * <p>是否成功，true代表成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -35,40 +32,21 @@ public class GetFieldDefByUuidResponseBody extends TeaModel {
     }
 
     public static class GetFieldDefByUuidResponseBodyResult extends TeaModel {
-        /**
-         * <p>组件展示状态 </p>
-         * <p>普通NORMAL/禁用DISABLED/只读READONLY/隐藏HIDDEN</p>
-         */
         @NameInMap("behavior")
         public String behavior;
 
-        /**
-         * <p>子组件信息</p>
-         */
         @NameInMap("children")
         public String children;
 
-        /**
-         * <p>组件类型，如文本类型：TextField</p>
-         */
         @NameInMap("componentName")
         public String componentName;
 
-        /**
-         * <p>字段ID，字段唯一标识</p>
-         */
         @NameInMap("fieldId")
         public String fieldId;
 
-        /**
-         * <p>字段名称。符合国际化标准。</p>
-         */
         @NameInMap("label")
         public Object label;
 
-        /**
-         * <p> 组件属性</p>
-         */
         @NameInMap("props")
         public Object props;
 

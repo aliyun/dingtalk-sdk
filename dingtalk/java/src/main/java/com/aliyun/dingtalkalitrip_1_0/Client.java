@@ -6,8 +6,11 @@ import com.aliyun.dingtalkalitrip_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public AddCityCarApplyResponse addCityCarApply(AddCityCarApplyRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        AddCityCarApplyHeaders headers = new AddCityCarApplyHeaders();
-        return this.addCityCarApplyWithOptions(request, headers, runtime);
-    }
 
     public AddCityCarApplyResponse addCityCarApplyWithOptions(AddCityCarApplyRequest request, AddCityCarApplyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -102,13 +99,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("AddCityCarApply", "alitrip_1.0", "HTTP", "POST", "AK", "/v1.0/alitrip/cityCarApprovals", "json", req, runtime), new AddCityCarApplyResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddCityCarApply"),
+            new TeaPair("version", "alitrip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/alitrip/cityCarApprovals"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddCityCarApplyResponse());
     }
 
-    public ApproveCityCarApplyResponse approveCityCarApply(ApproveCityCarApplyRequest request) throws Exception {
+    public AddCityCarApplyResponse addCityCarApply(AddCityCarApplyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ApproveCityCarApplyHeaders headers = new ApproveCityCarApplyHeaders();
-        return this.approveCityCarApplyWithOptions(request, headers, runtime);
+        AddCityCarApplyHeaders headers = new AddCityCarApplyHeaders();
+        return this.addCityCarApplyWithOptions(request, headers, runtime);
     }
 
     public ApproveCityCarApplyResponse approveCityCarApplyWithOptions(ApproveCityCarApplyRequest request, ApproveCityCarApplyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -151,13 +159,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ApproveCityCarApply", "alitrip_1.0", "HTTP", "PUT", "AK", "/v1.0/alitrip/cityCarApprovals", "json", req, runtime), new ApproveCityCarApplyResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ApproveCityCarApply"),
+            new TeaPair("version", "alitrip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/alitrip/cityCarApprovals"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ApproveCityCarApplyResponse());
     }
 
-    public BillSettementBtripTrainResponse billSettementBtripTrain(BillSettementBtripTrainRequest request) throws Exception {
+    public ApproveCityCarApplyResponse approveCityCarApply(ApproveCityCarApplyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        BillSettementBtripTrainHeaders headers = new BillSettementBtripTrainHeaders();
-        return this.billSettementBtripTrainWithOptions(request, headers, runtime);
+        ApproveCityCarApplyHeaders headers = new ApproveCityCarApplyHeaders();
+        return this.approveCityCarApplyWithOptions(request, headers, runtime);
     }
 
     public BillSettementBtripTrainResponse billSettementBtripTrainWithOptions(BillSettementBtripTrainRequest request, BillSettementBtripTrainHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -200,13 +219,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("BillSettementBtripTrain", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/billSettlements/btripTrains", "json", req, runtime), new BillSettementBtripTrainResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BillSettementBtripTrain"),
+            new TeaPair("version", "alitrip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/alitrip/billSettlements/btripTrains"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BillSettementBtripTrainResponse());
     }
 
-    public BillSettementCarResponse billSettementCar(BillSettementCarRequest request) throws Exception {
+    public BillSettementBtripTrainResponse billSettementBtripTrain(BillSettementBtripTrainRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        BillSettementCarHeaders headers = new BillSettementCarHeaders();
-        return this.billSettementCarWithOptions(request, headers, runtime);
+        BillSettementBtripTrainHeaders headers = new BillSettementBtripTrainHeaders();
+        return this.billSettementBtripTrainWithOptions(request, headers, runtime);
     }
 
     public BillSettementCarResponse billSettementCarWithOptions(BillSettementCarRequest request, BillSettementCarHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -249,13 +279,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("BillSettementCar", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/billSettlements/cars", "json", req, runtime), new BillSettementCarResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BillSettementCar"),
+            new TeaPair("version", "alitrip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/alitrip/billSettlements/cars"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BillSettementCarResponse());
     }
 
-    public BillSettementFlightResponse billSettementFlight(BillSettementFlightRequest request) throws Exception {
+    public BillSettementCarResponse billSettementCar(BillSettementCarRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        BillSettementFlightHeaders headers = new BillSettementFlightHeaders();
-        return this.billSettementFlightWithOptions(request, headers, runtime);
+        BillSettementCarHeaders headers = new BillSettementCarHeaders();
+        return this.billSettementCarWithOptions(request, headers, runtime);
     }
 
     public BillSettementFlightResponse billSettementFlightWithOptions(BillSettementFlightRequest request, BillSettementFlightHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -298,13 +339,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("BillSettementFlight", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/billSettlements/flights", "json", req, runtime), new BillSettementFlightResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BillSettementFlight"),
+            new TeaPair("version", "alitrip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/alitrip/billSettlements/flights"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BillSettementFlightResponse());
     }
 
-    public BillSettementHotelResponse billSettementHotel(BillSettementHotelRequest request) throws Exception {
+    public BillSettementFlightResponse billSettementFlight(BillSettementFlightRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        BillSettementHotelHeaders headers = new BillSettementHotelHeaders();
-        return this.billSettementHotelWithOptions(request, headers, runtime);
+        BillSettementFlightHeaders headers = new BillSettementFlightHeaders();
+        return this.billSettementFlightWithOptions(request, headers, runtime);
     }
 
     public BillSettementHotelResponse billSettementHotelWithOptions(BillSettementHotelRequest request, BillSettementHotelHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -347,13 +399,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("BillSettementHotel", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/billSettlements/hotels", "json", req, runtime), new BillSettementHotelResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BillSettementHotel"),
+            new TeaPair("version", "alitrip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/alitrip/billSettlements/hotels"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BillSettementHotelResponse());
     }
 
-    public GetFlightExceedApplyResponse getFlightExceedApply(GetFlightExceedApplyRequest request) throws Exception {
+    public BillSettementHotelResponse billSettementHotel(BillSettementHotelRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetFlightExceedApplyHeaders headers = new GetFlightExceedApplyHeaders();
-        return this.getFlightExceedApplyWithOptions(request, headers, runtime);
+        BillSettementHotelHeaders headers = new BillSettementHotelHeaders();
+        return this.billSettementHotelWithOptions(request, headers, runtime);
     }
 
     public GetFlightExceedApplyResponse getFlightExceedApplyWithOptions(GetFlightExceedApplyRequest request, GetFlightExceedApplyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -380,13 +443,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetFlightExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/exceedapply/getFlight", "json", req, runtime), new GetFlightExceedApplyResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetFlightExceedApply"),
+            new TeaPair("version", "alitrip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/alitrip/exceedapply/getFlight"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetFlightExceedApplyResponse());
     }
 
-    public GetHotelExceedApplyResponse getHotelExceedApply(GetHotelExceedApplyRequest request) throws Exception {
+    public GetFlightExceedApplyResponse getFlightExceedApply(GetFlightExceedApplyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetHotelExceedApplyHeaders headers = new GetHotelExceedApplyHeaders();
-        return this.getHotelExceedApplyWithOptions(request, headers, runtime);
+        GetFlightExceedApplyHeaders headers = new GetFlightExceedApplyHeaders();
+        return this.getFlightExceedApplyWithOptions(request, headers, runtime);
     }
 
     public GetHotelExceedApplyResponse getHotelExceedApplyWithOptions(GetHotelExceedApplyRequest request, GetHotelExceedApplyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -413,13 +487,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetHotelExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/exceedapply/getHotel", "json", req, runtime), new GetHotelExceedApplyResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetHotelExceedApply"),
+            new TeaPair("version", "alitrip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/alitrip/exceedapply/getHotel"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetHotelExceedApplyResponse());
     }
 
-    public GetTrainExceedApplyResponse getTrainExceedApply(GetTrainExceedApplyRequest request) throws Exception {
+    public GetHotelExceedApplyResponse getHotelExceedApply(GetHotelExceedApplyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetTrainExceedApplyHeaders headers = new GetTrainExceedApplyHeaders();
-        return this.getTrainExceedApplyWithOptions(request, headers, runtime);
+        GetHotelExceedApplyHeaders headers = new GetHotelExceedApplyHeaders();
+        return this.getHotelExceedApplyWithOptions(request, headers, runtime);
     }
 
     public GetTrainExceedApplyResponse getTrainExceedApplyWithOptions(GetTrainExceedApplyRequest request, GetTrainExceedApplyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -446,13 +531,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetTrainExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/exceedapply/getTrain", "json", req, runtime), new GetTrainExceedApplyResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetTrainExceedApply"),
+            new TeaPair("version", "alitrip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/alitrip/exceedapply/getTrain"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetTrainExceedApplyResponse());
     }
 
-    public QueryCityCarApplyResponse queryCityCarApply(QueryCityCarApplyRequest request) throws Exception {
+    public GetTrainExceedApplyResponse getTrainExceedApply(GetTrainExceedApplyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryCityCarApplyHeaders headers = new QueryCityCarApplyHeaders();
-        return this.queryCityCarApplyWithOptions(request, headers, runtime);
+        GetTrainExceedApplyHeaders headers = new GetTrainExceedApplyHeaders();
+        return this.getTrainExceedApplyWithOptions(request, headers, runtime);
     }
 
     public QueryCityCarApplyResponse queryCityCarApplyWithOptions(QueryCityCarApplyRequest request, QueryCityCarApplyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -499,13 +595,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryCityCarApply", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/cityCarApprovals", "json", req, runtime), new QueryCityCarApplyResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryCityCarApply"),
+            new TeaPair("version", "alitrip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/alitrip/cityCarApprovals"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryCityCarApplyResponse());
     }
 
-    public QueryUnionOrderResponse queryUnionOrder(QueryUnionOrderRequest request) throws Exception {
+    public QueryCityCarApplyResponse queryCityCarApply(QueryCityCarApplyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryUnionOrderHeaders headers = new QueryUnionOrderHeaders();
-        return this.queryUnionOrderWithOptions(request, headers, runtime);
+        QueryCityCarApplyHeaders headers = new QueryCityCarApplyHeaders();
+        return this.queryCityCarApplyWithOptions(request, headers, runtime);
     }
 
     public QueryUnionOrderResponse queryUnionOrderWithOptions(QueryUnionOrderRequest request, QueryUnionOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -536,13 +643,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryUnionOrder", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/unionOrders", "json", req, runtime), new QueryUnionOrderResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryUnionOrder"),
+            new TeaPair("version", "alitrip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/alitrip/unionOrders"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryUnionOrderResponse());
     }
 
-    public SyncExceedApplyResponse syncExceedApply(SyncExceedApplyRequest request) throws Exception {
+    public QueryUnionOrderResponse queryUnionOrder(QueryUnionOrderRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SyncExceedApplyHeaders headers = new SyncExceedApplyHeaders();
-        return this.syncExceedApplyWithOptions(request, headers, runtime);
+        QueryUnionOrderHeaders headers = new QueryUnionOrderHeaders();
+        return this.queryUnionOrderWithOptions(request, headers, runtime);
     }
 
     public SyncExceedApplyResponse syncExceedApplyWithOptions(SyncExceedApplyRequest request, SyncExceedApplyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -585,6 +703,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("SyncExceedApply", "alitrip_1.0", "HTTP", "POST", "AK", "/v1.0/alitrip/exceedapply/sync", "json", req, runtime), new SyncExceedApplyResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SyncExceedApply"),
+            new TeaPair("version", "alitrip_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/alitrip/exceedapply/sync"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SyncExceedApplyResponse());
+    }
+
+    public SyncExceedApplyResponse syncExceedApply(SyncExceedApplyRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SyncExceedApplyHeaders headers = new SyncExceedApplyHeaders();
+        return this.syncExceedApplyWithOptions(request, headers, runtime);
     }
 }

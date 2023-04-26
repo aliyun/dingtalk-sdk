@@ -4,15 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusCreateCampusResponseBody extends TeaModel {
-    /**
-     * <p>园区组织ID</p>
-     */
     @NameInMap("campusCorpId")
     public String campusCorpId;
 
-    /**
-     * <p>园区部门ID</p>
-     */
     @NameInMap("campusDeptId")
     public String campusDeptId;
 

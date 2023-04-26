@@ -4,69 +4,36 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class SpaceModel extends TeaModel {
-    /**
-     * <p>封面</p>
-     */
     @NameInMap("cover")
     public String cover;
 
-    /**
-     * <p>空间描述信息</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>知识库高清图标</p>
-     */
     @NameInMap("hdIconVO")
     public SpaceModelHdIconVO hdIconVO;
 
-    /**
-     * <p>知识库图标</p>
-     */
     @NameInMap("iconVO")
     public SpaceModelIconVO iconVO;
 
-    /**
-     * <p>知识库id。</p>
-     */
     @NameInMap("id")
     public String id;
 
-    /**
-     * <p>知识库名称。</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>知识库所有者。</p>
-     */
     @NameInMap("owner")
     public SpaceModelOwner owner;
 
-    /**
-     * <p>知识库中最近编辑的三篇文档。</p>
-     */
     @NameInMap("recentList")
     public java.util.List<DentryModel> recentList;
 
-    /**
-     * <p>知识库类型。</p>
-     */
     @NameInMap("type")
     public Integer type;
 
-    /**
-     * <p>知识库访问url。</p>
-     */
     @NameInMap("url")
     public String url;
 
-    /**
-     * <p>访问者对当前知识库的权限等信息。</p>
-     */
     @NameInMap("visitorInfo")
     public SpaceModelVisitorInfo visitorInfo;
 
@@ -164,15 +131,9 @@ public class SpaceModel extends TeaModel {
     }
 
     public static class SpaceModelHdIconVO extends TeaModel {
-        /**
-         * <p>图标</p>
-         */
         @NameInMap("icon")
         public String icon;
 
-        /**
-         * <p>图标类型</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -200,15 +161,9 @@ public class SpaceModel extends TeaModel {
     }
 
     public static class SpaceModelIconVO extends TeaModel {
-        /**
-         * <p>图标</p>
-         */
         @NameInMap("icon")
         public String icon;
 
-        /**
-         * <p>图标类型</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -236,15 +191,9 @@ public class SpaceModel extends TeaModel {
     }
 
     public static class SpaceModelOwner extends TeaModel {
-        /**
-         * <p>用户名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户unionId。</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -272,21 +221,12 @@ public class SpaceModel extends TeaModel {
     }
 
     public static class SpaceModelVisitorInfo extends TeaModel {
-        /**
-         * <p>节点的操作列表。</p>
-         */
         @NameInMap("dentryActions")
         public java.util.List<String> dentryActions;
 
-        /**
-         * <p>权限</p>
-         */
         @NameInMap("roleCode")
         public String roleCode;
 
-        /**
-         * <p>空间的操作列表。</p>
-         */
         @NameInMap("spaceActions")
         public java.util.List<String> spaceActions;
 

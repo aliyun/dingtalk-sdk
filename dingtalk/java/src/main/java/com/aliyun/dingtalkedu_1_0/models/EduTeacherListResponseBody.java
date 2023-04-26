@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class EduTeacherListResponseBody extends TeaModel {
-    /**
-     * <p>返回结果</p>
-     */
     @NameInMap("result")
     public EduTeacherListResponseBodyResult result;
 
@@ -24,27 +21,15 @@ public class EduTeacherListResponseBody extends TeaModel {
     }
 
     public static class EduTeacherListResponseBodyResultTeacherDetails extends TeaModel {
-        /**
-         * <p>用户名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>角色</p>
-         */
         @NameInMap("role")
         public String role;
 
-        /**
-         * <p>PiiiPyQqBxxx</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 
-        /**
-         * <p>用户ID</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -88,15 +73,9 @@ public class EduTeacherListResponseBody extends TeaModel {
     }
 
     public static class EduTeacherListResponseBodyResult extends TeaModel {
-        /**
-         * <p>是否还有下一页</p>
-         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
-        /**
-         * <p>教师信息</p>
-         */
         @NameInMap("teacherDetails")
         public java.util.List<EduTeacherListResponseBodyResultTeacherDetails> teacherDetails;
 

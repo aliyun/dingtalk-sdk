@@ -4,9 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetProcessConfigRequest extends TeaModel {
-    /**
-     * <p>模板code</p>
-     */
     @NameInMap("procCode")
     public String procCode;
 

@@ -6,8 +6,12 @@ import com.aliyun.dingtalkminiapp_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
+        this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +19,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public CreateMiniAppResponse createMiniApp(CreateMiniAppRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateMiniAppHeaders headers = new CreateMiniAppHeaders();
-        return this.createMiniAppWithOptions(request, headers, runtime);
-    }
 
     public CreateMiniAppResponse createMiniAppWithOptions(CreateMiniAppRequest request, CreateMiniAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -62,13 +60,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateMiniApp", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/apps", "json", req, runtime), new CreateMiniAppResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateMiniApp"),
+            new TeaPair("version", "miniapp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/miniapp/apps"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateMiniAppResponse());
     }
 
-    public CreateMiniAppPluginResponse createMiniAppPlugin(CreateMiniAppPluginRequest request) throws Exception {
+    public CreateMiniAppResponse createMiniApp(CreateMiniAppRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateMiniAppPluginHeaders headers = new CreateMiniAppPluginHeaders();
-        return this.createMiniAppPluginWithOptions(request, headers, runtime);
+        CreateMiniAppHeaders headers = new CreateMiniAppHeaders();
+        return this.createMiniAppWithOptions(request, headers, runtime);
     }
 
     public CreateMiniAppPluginResponse createMiniAppPluginWithOptions(CreateMiniAppPluginRequest request, CreateMiniAppPluginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -111,13 +120,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateMiniAppPlugin", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/plugins", "json", req, runtime), new CreateMiniAppPluginResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateMiniAppPlugin"),
+            new TeaPair("version", "miniapp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/miniapp/plugins"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateMiniAppPluginResponse());
     }
 
-    public CreateVersionAcrossBundleResponse createVersionAcrossBundle(CreateVersionAcrossBundleRequest request) throws Exception {
+    public CreateMiniAppPluginResponse createMiniAppPlugin(CreateMiniAppPluginRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateVersionAcrossBundleHeaders headers = new CreateVersionAcrossBundleHeaders();
-        return this.createVersionAcrossBundleWithOptions(request, headers, runtime);
+        CreateMiniAppPluginHeaders headers = new CreateMiniAppPluginHeaders();
+        return this.createMiniAppPluginWithOptions(request, headers, runtime);
     }
 
     public CreateVersionAcrossBundleResponse createVersionAcrossBundleWithOptions(CreateVersionAcrossBundleRequest request, CreateVersionAcrossBundleHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -156,13 +176,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateVersionAcrossBundle", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/versions/createAcrossBundle", "json", req, runtime), new CreateVersionAcrossBundleResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateVersionAcrossBundle"),
+            new TeaPair("version", "miniapp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/miniapp/versions/createAcrossBundle"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateVersionAcrossBundleResponse());
     }
 
-    public GetMaxVersionResponse getMaxVersion(GetMaxVersionRequest request) throws Exception {
+    public CreateVersionAcrossBundleResponse createVersionAcrossBundle(CreateVersionAcrossBundleRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetMaxVersionHeaders headers = new GetMaxVersionHeaders();
-        return this.getMaxVersionWithOptions(request, headers, runtime);
+        CreateVersionAcrossBundleHeaders headers = new CreateVersionAcrossBundleHeaders();
+        return this.createVersionAcrossBundleWithOptions(request, headers, runtime);
     }
 
     public GetMaxVersionResponse getMaxVersionWithOptions(GetMaxVersionRequest request, GetMaxVersionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -193,13 +224,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetMaxVersion", "miniapp_1.0", "HTTP", "GET", "AK", "/v1.0/miniapp/apps/maxVersions", "json", req, runtime), new GetMaxVersionResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetMaxVersion"),
+            new TeaPair("version", "miniapp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/miniapp/apps/maxVersions"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetMaxVersionResponse());
     }
 
-    public GetMiniAppMetaDataResponse getMiniAppMetaData(GetMiniAppMetaDataRequest request) throws Exception {
+    public GetMaxVersionResponse getMaxVersion(GetMaxVersionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetMiniAppMetaDataHeaders headers = new GetMiniAppMetaDataHeaders();
-        return this.getMiniAppMetaDataWithOptions(request, headers, runtime);
+        GetMaxVersionHeaders headers = new GetMaxVersionHeaders();
+        return this.getMaxVersionWithOptions(request, headers, runtime);
     }
 
     public GetMiniAppMetaDataResponse getMiniAppMetaDataWithOptions(GetMiniAppMetaDataRequest request, GetMiniAppMetaDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -234,17 +276,27 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetMiniAppMetaData", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/apps/metadata", "json", req, runtime), new GetMiniAppMetaDataResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetMiniAppMetaData"),
+            new TeaPair("version", "miniapp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/miniapp/apps/metadata"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetMiniAppMetaDataResponse());
     }
 
-    public GetSettingByMiniAppIdResponse getSettingByMiniAppId(String miniAppId) throws Exception {
+    public GetMiniAppMetaDataResponse getMiniAppMetaData(GetMiniAppMetaDataRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetSettingByMiniAppIdHeaders headers = new GetSettingByMiniAppIdHeaders();
-        return this.getSettingByMiniAppIdWithOptions(miniAppId, headers, runtime);
+        GetMiniAppMetaDataHeaders headers = new GetMiniAppMetaDataHeaders();
+        return this.getMiniAppMetaDataWithOptions(request, headers, runtime);
     }
 
     public GetSettingByMiniAppIdResponse getSettingByMiniAppIdWithOptions(String miniAppId, GetSettingByMiniAppIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        miniAppId = com.aliyun.openapiutil.Client.getEncodeParam(miniAppId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -257,13 +309,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("GetSettingByMiniAppId", "miniapp_1.0", "HTTP", "GET", "AK", "/v1.0/miniapp/apps/settings", "json", req, runtime), new GetSettingByMiniAppIdResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetSettingByMiniAppId"),
+            new TeaPair("version", "miniapp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/miniapp/apps/settings"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetSettingByMiniAppIdResponse());
     }
 
-    public InvokeHtmlBundleBuildResponse invokeHtmlBundleBuild(InvokeHtmlBundleBuildRequest request) throws Exception {
+    public GetSettingByMiniAppIdResponse getSettingByMiniAppId(String miniAppId) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        InvokeHtmlBundleBuildHeaders headers = new InvokeHtmlBundleBuildHeaders();
-        return this.invokeHtmlBundleBuildWithOptions(request, headers, runtime);
+        GetSettingByMiniAppIdHeaders headers = new GetSettingByMiniAppIdHeaders();
+        return this.getSettingByMiniAppIdWithOptions(miniAppId, headers, runtime);
     }
 
     public InvokeHtmlBundleBuildResponse invokeHtmlBundleBuildWithOptions(InvokeHtmlBundleBuildRequest request, InvokeHtmlBundleBuildHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -294,13 +357,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("InvokeHtmlBundleBuild", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/h5Bundles/build", "json", req, runtime), new InvokeHtmlBundleBuildResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "InvokeHtmlBundleBuild"),
+            new TeaPair("version", "miniapp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/miniapp/h5Bundles/build"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new InvokeHtmlBundleBuildResponse());
     }
 
-    public ListAvaiableVersionResponse listAvaiableVersion(ListAvaiableVersionRequest request) throws Exception {
+    public InvokeHtmlBundleBuildResponse invokeHtmlBundleBuild(InvokeHtmlBundleBuildRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ListAvaiableVersionHeaders headers = new ListAvaiableVersionHeaders();
-        return this.listAvaiableVersionWithOptions(request, headers, runtime);
+        InvokeHtmlBundleBuildHeaders headers = new InvokeHtmlBundleBuildHeaders();
+        return this.invokeHtmlBundleBuildWithOptions(request, headers, runtime);
     }
 
     public ListAvaiableVersionResponse listAvaiableVersionWithOptions(ListAvaiableVersionRequest request, ListAvaiableVersionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -339,13 +413,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ListAvaiableVersion", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/apps/versions/query", "json", req, runtime), new ListAvaiableVersionResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListAvaiableVersion"),
+            new TeaPair("version", "miniapp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/miniapp/apps/versions/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListAvaiableVersionResponse());
     }
 
-    public QueryHtmlBundleBuildResponse queryHtmlBundleBuild(QueryHtmlBundleBuildRequest request) throws Exception {
+    public ListAvaiableVersionResponse listAvaiableVersion(ListAvaiableVersionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryHtmlBundleBuildHeaders headers = new QueryHtmlBundleBuildHeaders();
-        return this.queryHtmlBundleBuildWithOptions(request, headers, runtime);
+        ListAvaiableVersionHeaders headers = new ListAvaiableVersionHeaders();
+        return this.listAvaiableVersionWithOptions(request, headers, runtime);
     }
 
     public QueryHtmlBundleBuildResponse queryHtmlBundleBuildWithOptions(QueryHtmlBundleBuildRequest request, QueryHtmlBundleBuildHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -376,13 +461,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryHtmlBundleBuild", "miniapp_1.0", "HTTP", "GET", "AK", "/v1.0/miniapp/h5Bundles/buildResults", "json", req, runtime), new QueryHtmlBundleBuildResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryHtmlBundleBuild"),
+            new TeaPair("version", "miniapp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/miniapp/h5Bundles/buildResults"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryHtmlBundleBuildResponse());
     }
 
-    public RollBackVersionResponse rollBackVersion(RollBackVersionRequest request) throws Exception {
+    public QueryHtmlBundleBuildResponse queryHtmlBundleBuild(QueryHtmlBundleBuildRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        java.util.Map<String, String> headers = new java.util.HashMap<>();
-        return this.rollBackVersionWithOptions(request, headers, runtime);
+        QueryHtmlBundleBuildHeaders headers = new QueryHtmlBundleBuildHeaders();
+        return this.queryHtmlBundleBuildWithOptions(request, headers, runtime);
     }
 
     public RollBackVersionResponse rollBackVersionWithOptions(RollBackVersionRequest request, java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -408,13 +504,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", headers),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("RollBackVersion", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/versions/rollback", "json", req, runtime), new RollBackVersionResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RollBackVersion"),
+            new TeaPair("version", "miniapp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/miniapp/versions/rollback"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "Anonymous"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RollBackVersionResponse());
     }
 
-    public SetExtendSettingResponse setExtendSetting(SetExtendSettingRequest request) throws Exception {
+    public RollBackVersionResponse rollBackVersion(RollBackVersionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SetExtendSettingHeaders headers = new SetExtendSettingHeaders();
-        return this.setExtendSettingWithOptions(request, headers, runtime);
+        java.util.Map<String, String> headers = new java.util.HashMap<>();
+        return this.rollBackVersionWithOptions(request, headers, runtime);
     }
 
     public SetExtendSettingResponse setExtendSettingWithOptions(SetExtendSettingRequest request, SetExtendSettingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -441,13 +548,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("SetExtendSetting", "miniapp_1.0", "HTTP", "PUT", "AK", "/v1.0/miniapp/apps/settings", "json", req, runtime), new SetExtendSettingResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SetExtendSetting"),
+            new TeaPair("version", "miniapp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/miniapp/apps/settings"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SetExtendSettingResponse());
     }
 
-    public UpdateVersionStatusResponse updateVersionStatus(UpdateVersionStatusRequest request) throws Exception {
+    public SetExtendSettingResponse setExtendSetting(SetExtendSettingRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateVersionStatusHeaders headers = new UpdateVersionStatusHeaders();
-        return this.updateVersionStatusWithOptions(request, headers, runtime);
+        SetExtendSettingHeaders headers = new SetExtendSettingHeaders();
+        return this.setExtendSettingWithOptions(request, headers, runtime);
     }
 
     public UpdateVersionStatusResponse updateVersionStatusWithOptions(UpdateVersionStatusRequest request, UpdateVersionStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -482,6 +600,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateVersionStatus", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/versions/status", "json", req, runtime), new UpdateVersionStatusResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateVersionStatus"),
+            new TeaPair("version", "miniapp_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/miniapp/versions/status"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateVersionStatusResponse());
+    }
+
+    public UpdateVersionStatusResponse updateVersionStatus(UpdateVersionStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateVersionStatusHeaders headers = new UpdateVersionStatusHeaders();
+        return this.updateVersionStatusWithOptions(request, headers, runtime);
     }
 }

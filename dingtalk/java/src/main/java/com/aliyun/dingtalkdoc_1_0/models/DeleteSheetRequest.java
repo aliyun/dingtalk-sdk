@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteSheetRequest extends TeaModel {
-    /**
-     * <p>操作人id</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchUpdateProcessInstanceResponseBody extends TeaModel {
-    /**
-     * <p>成功标识</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

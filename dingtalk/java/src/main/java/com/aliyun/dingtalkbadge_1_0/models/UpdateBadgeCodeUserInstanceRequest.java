@@ -4,63 +4,33 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateBadgeCodeUserInstanceRequest extends TeaModel {
-    /**
-     * <p>有效时间列表，对于连续时间段，只需传入一个对象即可，注意过期时间必须晚于最晚结束时间</p>
-     */
     @NameInMap("availableTimes")
     public java.util.List<UpdateBadgeCodeUserInstanceRequestAvailableTimes> availableTimes;
 
-    /**
-     * <p>用户码ID</p>
-     */
     @NameInMap("codeId")
     public String codeId;
 
-    /**
-     * <p>码标识</p>
-     */
     @NameInMap("codeIdentity")
     public String codeIdentity;
 
-    /**
-     * <p>码值</p>
-     */
     @NameInMap("codeValue")
     public String codeValue;
 
-    /**
-     * <p>企业ID</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>扩展参数</p>
-     */
     @NameInMap("extInfo")
     public java.util.Map<String, ?> extInfo;
 
-    /**
-     * <p>临时码，传入过期时间</p>
-     */
     @NameInMap("gmtExpired")
     public String gmtExpired;
 
-    /**
-     * <p>状态</p>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <p>用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户</p>
-     */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
-    /**
-     * <p>用户身份标识，取值和用户企业关系类型相关，如果企业无关，传入手机号</p>
-     */
     @NameInMap("userIdentity")
     public String userIdentity;
 
@@ -150,15 +120,9 @@ public class UpdateBadgeCodeUserInstanceRequest extends TeaModel {
     }
 
     public static class UpdateBadgeCodeUserInstanceRequestAvailableTimes extends TeaModel {
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("gmtEnd")
         public String gmtEnd;
 
-        /**
-         * <p>开始时间</p>
-         */
         @NameInMap("gmtStart")
         public String gmtStart;
 

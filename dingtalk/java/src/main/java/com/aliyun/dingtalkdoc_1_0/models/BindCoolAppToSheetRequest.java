@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class BindCoolAppToSheetRequest extends TeaModel {
-    /**
-     * <p>酷应用编码</p>
-     */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
-    /**
-     * <p>操作人id</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 

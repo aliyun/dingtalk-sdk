@@ -4,21 +4,12 @@ package com.aliyun.dingtalktrajectory_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAppActiveUsersRequest extends TeaModel {
-    /**
-     * <p>本次读取的最大数据记录数量</p>
-     */
     @NameInMap("maxResults")
     public Long maxResults;
 
-    /**
-     * <p>是否需要返回位置信息</p>
-     */
     @NameInMap("needPositionInfo")
     public Boolean needPositionInfo;
 
-    /**
-     * <p>标记当前开始读取的位置，置空表示从头开始</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 

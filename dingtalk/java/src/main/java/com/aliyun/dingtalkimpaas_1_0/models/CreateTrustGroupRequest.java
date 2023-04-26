@@ -4,45 +4,24 @@ package com.aliyun.dingtalkimpaas_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTrustGroupRequest extends TeaModel {
-    /**
-     * <p>IMPASS渠道编码</p>
-     */
     @NameInMap("channel")
     public String channel;
 
-    /**
-     * <p>素材ID</p>
-     */
     @NameInMap("iconMediaId")
     public String iconMediaId;
 
-    /**
-     * <p>群成员列表</p>
-     */
     @NameInMap("members")
     public java.util.List<CreateTrustGroupRequestMembers> members;
 
-    /**
-     * <p>群名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>其他扩展参数</p>
-     */
     @NameInMap("properties")
     public java.util.Map<String, String> properties;
 
-    /**
-     * <p>系统消息</p>
-     */
     @NameInMap("systemMsg")
     public String systemMsg;
 
-    /**
-     * <p>外部系统映射唯一标识</p>
-     */
     @NameInMap("uuid")
     public String uuid;
 
@@ -108,15 +87,9 @@ public class CreateTrustGroupRequest extends TeaModel {
     }
 
     public static class CreateTrustGroupRequestMembers extends TeaModel {
-        /**
-         * <p>昵称</p>
-         */
         @NameInMap("nick")
         public String nick;
 
-        /**
-         * <p>互通账号ID</p>
-         */
         @NameInMap("uid")
         public String uid;
 

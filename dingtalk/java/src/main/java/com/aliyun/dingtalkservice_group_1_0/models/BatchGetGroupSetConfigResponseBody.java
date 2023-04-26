@@ -4,9 +4,6 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchGetGroupSetConfigResponseBody extends TeaModel {
-    /**
-     * <p>群粗配置列表</p>
-     */
     @NameInMap("groupSetConfigs")
     public java.util.List<BatchGetGroupSetConfigResponseBodyGroupSetConfigs> groupSetConfigs;
 
@@ -24,15 +21,9 @@ public class BatchGetGroupSetConfigResponseBody extends TeaModel {
     }
 
     public static class BatchGetGroupSetConfigResponseBodyGroupSetConfigs extends TeaModel {
-        /**
-         * <p>配置项key</p>
-         */
         @NameInMap("configKey")
         public String configKey;
 
-        /**
-         * <p>配置项值</p>
-         */
         @NameInMap("configValue")
         public String configValue;
 

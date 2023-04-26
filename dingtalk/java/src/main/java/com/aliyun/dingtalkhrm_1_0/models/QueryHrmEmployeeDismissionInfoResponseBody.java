@@ -4,9 +4,6 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryHrmEmployeeDismissionInfoResponseBody extends TeaModel {
-    /**
-     * <p>名称列表</p>
-     */
     @NameInMap("result")
     public java.util.List<QueryHrmEmployeeDismissionInfoResponseBodyResult> result;
 
@@ -24,15 +21,9 @@ public class QueryHrmEmployeeDismissionInfoResponseBody extends TeaModel {
     }
 
     public static class QueryHrmEmployeeDismissionInfoResponseBodyResultDeptList extends TeaModel {
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("dept_id")
         public Long deptId;
 
-        /**
-         * <p>部门路径</p>
-         */
         @NameInMap("dept_path")
         public String deptPath;
 
@@ -60,69 +51,36 @@ public class QueryHrmEmployeeDismissionInfoResponseBody extends TeaModel {
     }
 
     public static class QueryHrmEmployeeDismissionInfoResponseBodyResult extends TeaModel {
-        /**
-         * <p>离职部门列表</p>
-         */
         @NameInMap("deptList")
         public java.util.List<QueryHrmEmployeeDismissionInfoResponseBodyResultDeptList> deptList;
 
-        /**
-         * <p>离职交接人</p>
-         */
         @NameInMap("handoverUserId")
         public String handoverUserId;
 
-        /**
-         * <p>最后工作日</p>
-         */
         @NameInMap("lastWorkDay")
         public Long lastWorkDay;
 
-        /**
-         * <p>离职前主部门id</p>
-         */
         @NameInMap("mainDeptId")
         public Long mainDeptId;
 
-        /**
-         * <p>离职前主部门名称</p>
-         */
         @NameInMap("mainDeptName")
         public String mainDeptName;
 
-        /**
-         * <p>离职原因-被动</p>
-         */
         @NameInMap("passiveReason")
         public java.util.List<String> passiveReason;
 
-        /**
-         * <p>离职前工作状态：1，待入职；2，试用期；3，正式</p>
-         */
         @NameInMap("preStatus")
         public Integer preStatus;
 
-        /**
-         * <p>离职原因备注</p>
-         */
         @NameInMap("reasonMemo")
         public String reasonMemo;
 
-        /**
-         * <p>离职状态：1，待离职；2，已离职</p>
-         */
         @NameInMap("status")
         public Integer status;
 
-        /**
-         * <p>员工id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>离职原因-主动</p>
-         */
         @NameInMap("voluntaryReason")
         public java.util.List<String> voluntaryReason;
 

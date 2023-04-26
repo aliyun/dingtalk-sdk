@@ -4,27 +4,15 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDeviceResponseBody extends TeaModel {
-    /**
-     * <p>结果数据</p>
-     */
     @NameInMap("data")
     public java.util.List<QueryDeviceResponseBodyData> data;
 
-    /**
-     * <p>当前页码</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>页面大小</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    /**
-     * <p>总数</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -66,21 +54,12 @@ public class QueryDeviceResponseBody extends TeaModel {
     }
 
     public static class QueryDeviceResponseBodyDataLiveUrls extends TeaModel {
-        /**
-         * <p>flv格式直播地址</p>
-         */
         @NameInMap("flv")
         public String flv;
 
-        /**
-         * <p>hls格式直播地址</p>
-         */
         @NameInMap("hls")
         public String hls;
 
-        /**
-         * <p>rtmp格式直播地址</p>
-         */
         @NameInMap("rtmp")
         public String rtmp;
 
@@ -116,57 +95,30 @@ public class QueryDeviceResponseBody extends TeaModel {
     }
 
     public static class QueryDeviceResponseBodyData extends TeaModel {
-        /**
-         * <p>设备id</p>
-         */
         @NameInMap("deviceId")
         public String deviceId;
 
-        /**
-         * <p>设备昵称</p>
-         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        /**
-         * <p>设备状态 0:在线 1:离线</p>
-         */
         @NameInMap("deviceStatus")
         public Long deviceStatus;
 
-        /**
-         * <p>设备类型</p>
-         */
         @NameInMap("deviceType")
         public String deviceType;
 
-        /**
-         * <p>设备类型名称</p>
-         */
         @NameInMap("deviceTypeName")
         public String deviceTypeName;
 
-        /**
-         * <p>直播地址</p>
-         */
         @NameInMap("liveUrls")
         public QueryDeviceResponseBodyDataLiveUrls liveUrls;
 
-        /**
-         * <p>设备地址</p>
-         */
         @NameInMap("location")
         public String location;
 
-        /**
-         * <p>设备父节点id</p>
-         */
         @NameInMap("parentId")
         public String parentId;
 
-        /**
-         * <p>产品类型 摄像头:CAMERA 其它:OTHERS</p>
-         */
         @NameInMap("productType")
         public String productType;
 

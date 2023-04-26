@@ -4,27 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExclusiveCreateDingPortalRequest extends TeaModel {
-    /**
-     * <p>工作台名称。</p>
-     */
     @NameInMap("dingPortalName")
     public String dingPortalName;
 
-    /**
-     * <p>被操纵企业ID。</p>
-     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
-    /**
-     * <p>模版id。</p>
-     */
     @NameInMap("templateAppUuid")
     public String templateAppUuid;
 
-    /**
-     * <p>模版所属的组织id。</p>
-     */
     @NameInMap("templateCorpId")
     public String templateCorpId;
 

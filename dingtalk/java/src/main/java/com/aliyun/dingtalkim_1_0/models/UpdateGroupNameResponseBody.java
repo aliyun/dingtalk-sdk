@@ -4,9 +4,6 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateGroupNameResponseBody extends TeaModel {
-    /**
-     * <p>新群名称</p>
-     */
     @NameInMap("newGroupName")
     public String newGroupName;
 

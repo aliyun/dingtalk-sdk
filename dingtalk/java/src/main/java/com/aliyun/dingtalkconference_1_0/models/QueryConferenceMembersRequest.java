@@ -4,15 +4,9 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryConferenceMembersRequest extends TeaModel {
-    /**
-     * <p>返回的最大结果数</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>分页token</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 

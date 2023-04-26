@@ -4,33 +4,18 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class EndCourseRequest extends TeaModel {
-    /**
-     * <p>课程编码</p>
-     */
     @NameInMap("courseCode")
     public String courseCode;
 
-    /**
-     * <p>拓展字段</p>
-     */
     @NameInMap("ext")
     public String ext;
 
-    /**
-     * <p>isv编码</p>
-     */
     @NameInMap("isvCode")
     public String isvCode;
 
-    /**
-     * <p>直播流信息</p>
-     */
     @NameInMap("livePlayInfoList")
     public java.util.List<EndCourseRequestLivePlayInfoList> livePlayInfoList;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -80,33 +65,18 @@ public class EndCourseRequest extends TeaModel {
     }
 
     public static class EndCourseRequestLivePlayInfoList extends TeaModel {
-        /**
-         * <p>直播推流地址</p>
-         */
         @NameInMap("liveInputUrl")
         public String liveInputUrl;
 
-        /**
-         * <p>Flv直播拉回地址</p>
-         */
         @NameInMap("liveOutputFlvUrl")
         public String liveOutputFlvUrl;
 
-        /**
-         * <p>Hls直播拉流地址</p>
-         */
         @NameInMap("liveOutputHlsUrl")
         public String liveOutputHlsUrl;
 
-        /**
-         * <p>直播流类型</p>
-         */
         @NameInMap("liveType")
         public Integer liveType;
 
-        /**
-         * <p>回放视频地址</p>
-         */
         @NameInMap("replayUrl")
         public String replayUrl;
 

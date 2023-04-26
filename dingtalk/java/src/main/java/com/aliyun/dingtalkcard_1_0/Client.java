@@ -6,8 +6,11 @@ import com.aliyun.dingtalkcard_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public AppendSpaceResponse appendSpace(AppendSpaceRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        AppendSpaceHeaders headers = new AppendSpaceHeaders();
-        return this.appendSpaceWithOptions(request, headers, runtime);
-    }
 
     public AppendSpaceResponse appendSpaceWithOptions(AppendSpaceRequest request, AppendSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -58,13 +55,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("AppendSpace", "card_1.0", "HTTP", "PUT", "AK", "/v1.0/card/instances/spaces", "json", req, runtime), new AppendSpaceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AppendSpace"),
+            new TeaPair("version", "card_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/card/instances/spaces"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AppendSpaceResponse());
     }
 
-    public CreateAndDeliverResponse createAndDeliver(CreateAndDeliverRequest request) throws Exception {
+    public AppendSpaceResponse appendSpace(AppendSpaceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateAndDeliverHeaders headers = new CreateAndDeliverHeaders();
-        return this.createAndDeliverWithOptions(request, headers, runtime);
+        AppendSpaceHeaders headers = new AppendSpaceHeaders();
+        return this.appendSpaceWithOptions(request, headers, runtime);
     }
 
     public CreateAndDeliverResponse createAndDeliverWithOptions(CreateAndDeliverRequest request, CreateAndDeliverHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -155,13 +163,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateAndDeliver", "card_1.0", "HTTP", "POST", "AK", "/v1.0/card/instances/createAndDeliver", "json", req, runtime), new CreateAndDeliverResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateAndDeliver"),
+            new TeaPair("version", "card_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/card/instances/createAndDeliver"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateAndDeliverResponse());
     }
 
-    public CreateCardResponse createCard(CreateCardRequest request) throws Exception {
+    public CreateAndDeliverResponse createAndDeliver(CreateAndDeliverRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateCardHeaders headers = new CreateCardHeaders();
-        return this.createCardWithOptions(request, headers, runtime);
+        CreateAndDeliverHeaders headers = new CreateAndDeliverHeaders();
+        return this.createAndDeliverWithOptions(request, headers, runtime);
     }
 
     public CreateCardResponse createCardWithOptions(CreateCardRequest request, CreateCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -228,13 +247,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateCard", "card_1.0", "HTTP", "POST", "AK", "/v1.0/card/instances", "json", req, runtime), new CreateCardResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateCard"),
+            new TeaPair("version", "card_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/card/instances"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateCardResponse());
     }
 
-    public DeliverCardResponse deliverCard(DeliverCardRequest request) throws Exception {
+    public CreateCardResponse createCard(CreateCardRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        DeliverCardHeaders headers = new DeliverCardHeaders();
-        return this.deliverCardWithOptions(request, headers, runtime);
+        CreateCardHeaders headers = new CreateCardHeaders();
+        return this.createCardWithOptions(request, headers, runtime);
     }
 
     public DeliverCardResponse deliverCardWithOptions(DeliverCardRequest request, DeliverCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -285,13 +315,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("DeliverCard", "card_1.0", "HTTP", "POST", "AK", "/v1.0/card/instances/deliver", "json", req, runtime), new DeliverCardResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeliverCard"),
+            new TeaPair("version", "card_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/card/instances/deliver"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeliverCardResponse());
     }
 
-    public RegisterCallbackResponse registerCallback(RegisterCallbackRequest request) throws Exception {
+    public DeliverCardResponse deliverCard(DeliverCardRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        RegisterCallbackHeaders headers = new RegisterCallbackHeaders();
-        return this.registerCallbackWithOptions(request, headers, runtime);
+        DeliverCardHeaders headers = new DeliverCardHeaders();
+        return this.deliverCardWithOptions(request, headers, runtime);
     }
 
     public RegisterCallbackResponse registerCallbackWithOptions(RegisterCallbackRequest request, RegisterCallbackHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -326,13 +367,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("RegisterCallback", "card_1.0", "HTTP", "POST", "AK", "/v1.0/card/callbacks/register", "json", req, runtime), new RegisterCallbackResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RegisterCallback"),
+            new TeaPair("version", "card_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/card/callbacks/register"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RegisterCallbackResponse());
     }
 
-    public UpdateCardResponse updateCard(UpdateCardRequest request) throws Exception {
+    public RegisterCallbackResponse registerCallback(RegisterCallbackRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateCardHeaders headers = new UpdateCardHeaders();
-        return this.updateCardWithOptions(request, headers, runtime);
+        RegisterCallbackHeaders headers = new RegisterCallbackHeaders();
+        return this.registerCallbackWithOptions(request, headers, runtime);
     }
 
     public UpdateCardResponse updateCardWithOptions(UpdateCardRequest request, UpdateCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -371,6 +423,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateCard", "card_1.0", "HTTP", "PUT", "AK", "/v1.0/card/instances", "json", req, runtime), new UpdateCardResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateCard"),
+            new TeaPair("version", "card_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/card/instances"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateCardResponse());
+    }
+
+    public UpdateCardResponse updateCard(UpdateCardRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateCardHeaders headers = new UpdateCardHeaders();
+        return this.updateCardWithOptions(request, headers, runtime);
     }
 }

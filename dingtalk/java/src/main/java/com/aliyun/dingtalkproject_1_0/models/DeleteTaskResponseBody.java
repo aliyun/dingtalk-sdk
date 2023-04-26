@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteTaskResponseBody extends TeaModel {
-    /**
-     * <p>删除的任务Id</p>
-     */
     @NameInMap("result")
     public java.util.Map<String, String> result;
 

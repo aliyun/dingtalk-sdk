@@ -4,39 +4,21 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeployFunctionCallbackRequest extends TeaModel {
-    /**
-     * <p>云应用id</p>
-     */
     @NameInMap("appId")
     public String appId;
 
-    /**
-     * <p>自定义域名</p>
-     */
     @NameInMap("customDomain")
     public String customDomain;
 
-    /**
-     * <p>部署阶段</p>
-     */
     @NameInMap("deployStage")
     public String deployStage;
 
-    /**
-     * <p>api网关实例的AppKey</p>
-     */
     @NameInMap("gateWayAppKey")
     public String gateWayAppKey;
 
-    /**
-     * <p>api网关实例的APPSecret</p>
-     */
     @NameInMap("gateWayAppSecret")
     public String gateWayAppSecret;
 
-    /**
-     * <p>api网关二级域名</p>
-     */
     @NameInMap("gateWayDomain")
     public String gateWayDomain;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetNotifyMeResponseBody extends TeaModel {
-    /**
-     * <p>data</p>
-     */
     @NameInMap("data")
     public java.util.List<GetNotifyMeResponseBodyData> data;
 
-    /**
-     * <p>当前第几页</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>总数量</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -52,81 +43,42 @@ public class GetNotifyMeResponseBody extends TeaModel {
     }
 
     public static class GetNotifyMeResponseBodyData extends TeaModel {
-        /**
-         * <p>activityId</p>
-         */
         @NameInMap("activityId")
         public String activityId;
 
-        /**
-         * <p>appType</p>
-         */
         @NameInMap("appType")
         public String appType;
 
-        /**
-         * <p>corpId</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        /**
-         * <p>创建者的userId</p>
-         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        /**
-         * <p>流程实例id</p>
-         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
-        /**
-         * <p>instStatus</p>
-         */
         @NameInMap("instStatus")
         public String instStatus;
 
-        /**
-         * <p>mobileUrl</p>
-         */
         @NameInMap("mobileUrl")
         public String mobileUrl;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
-        /**
-         * <p>processCode</p>
-         */
         @NameInMap("processCode")
         public String processCode;
 
-        /**
-         * <p>title</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>titleEn</p>
-         */
         @NameInMap("titleInEnglish")
         public String titleInEnglish;
 
-        /**
-         * <p>url</p>
-         */
         @NameInMap("url")
         public String url;
 

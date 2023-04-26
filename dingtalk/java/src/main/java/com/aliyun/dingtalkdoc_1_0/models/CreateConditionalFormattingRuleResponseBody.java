@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateConditionalFormattingRuleResponseBody extends TeaModel {
-    /**
-     * <p>条件格式ID</p>
-     */
     @NameInMap("id")
     public String id;
 

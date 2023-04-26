@@ -4,21 +4,12 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInstancesByIdsRequest extends TeaModel {
-    /**
-     * <p>表单CODE</p>
-     */
     @NameInMap("formCode")
     public String formCode;
 
-    /**
-     * <p>开放数据实例ID集合</p>
-     */
     @NameInMap("openDataInstanceIdList")
     public java.util.List<String> openDataInstanceIdList;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

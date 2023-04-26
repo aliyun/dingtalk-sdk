@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetIntelligentRobotInfoRequest extends TeaModel {
-    /**
-     * <p>机器人业务标识</p>
-     */
     @NameInMap("robotAppKey")
     public String robotAppKey;
 

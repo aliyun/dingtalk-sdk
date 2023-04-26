@@ -4,9 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListTodoWorkRecordsResponseBody extends TeaModel {
-    /**
-     * <p>查询结果。</p>
-     */
     @NameInMap("result")
     public ListTodoWorkRecordsResponseBodyResult result;
 
@@ -24,15 +21,9 @@ public class ListTodoWorkRecordsResponseBody extends TeaModel {
     }
 
     public static class ListTodoWorkRecordsResponseBodyResultListForms extends TeaModel {
-        /**
-         * <p>表单内容。</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>表单标题。</p>
-         */
         @NameInMap("title")
         public String title;
 
@@ -60,33 +51,18 @@ public class ListTodoWorkRecordsResponseBody extends TeaModel {
     }
 
     public static class ListTodoWorkRecordsResponseBodyResultList extends TeaModel {
-        /**
-         * <p>表单列表。</p>
-         */
         @NameInMap("forms")
         public java.util.List<ListTodoWorkRecordsResponseBodyResultListForms> forms;
 
-        /**
-         * <p>实例ID。</p>
-         */
         @NameInMap("instanceId")
         public String instanceId;
 
-        /**
-         * <p>待办任务ID。</p>
-         */
         @NameInMap("taskId")
         public Long taskId;
 
-        /**
-         * <p>待办标题。</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>待办跳转链接。</p>
-         */
         @NameInMap("url")
         public String url;
 
@@ -138,15 +114,9 @@ public class ListTodoWorkRecordsResponseBody extends TeaModel {
     }
 
     public static class ListTodoWorkRecordsResponseBodyResult extends TeaModel {
-        /**
-         * <p>待办事项列表。</p>
-         */
         @NameInMap("list")
         public java.util.List<ListTodoWorkRecordsResponseBodyResultList> list;
 
-        /**
-         * <p>分页游标。不为空表示有数据。</p>
-         */
         @NameInMap("nextToken")
         public Long nextToken;
 

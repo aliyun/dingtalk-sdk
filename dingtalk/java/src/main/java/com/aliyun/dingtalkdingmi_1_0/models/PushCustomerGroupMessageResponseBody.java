@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushCustomerGroupMessageResponseBody extends TeaModel {
-    /**
-     * <p>推送queryKey</p>
-     */
     @NameInMap("result")
     public String result;
 

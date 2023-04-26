@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateCrmPersonalCustomerRequest extends TeaModel {
-    /**
-     * <p>公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）</p>
-     */
     @NameInMap("action")
     public String action;
 
@@ -31,9 +28,6 @@ public class UpdateCrmPersonalCustomerRequest extends TeaModel {
     @NameInMap("relationType")
     public String relationType;
 
-    /**
-     * <p>跳过uk查重</p>
-     */
     @NameInMap("skipDuplicateCheck")
     public Boolean skipDuplicateCheck;
 

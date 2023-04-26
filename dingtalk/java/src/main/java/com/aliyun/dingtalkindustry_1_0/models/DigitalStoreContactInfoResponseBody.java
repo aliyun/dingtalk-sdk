@@ -4,24 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreContactInfoResponseBody extends TeaModel {
-    /**
-     * <p>门店通通讯录Code</p>
-     */
     @NameInMap("code")
     public String code;
 
     @NameInMap("dingDeptId")
     public Long dingDeptId;
 
-    /**
-     * <p>门店通通讯录名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>门店通通讯录根节点Id</p>
-     */
     @NameInMap("rootDeptId")
     public Long rootDeptId;
 

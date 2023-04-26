@@ -7,15 +7,9 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     @NameInMap("courses")
     public java.util.List<UpdateCoursesOfClassRequestCourses> courses;
 
-    /**
-     * <p>节次设置</p>
-     */
     @NameInMap("sectionConfig")
     public UpdateCoursesOfClassRequestSectionConfig sectionConfig;
 
-    /**
-     * <p>操作者id</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -49,21 +43,12 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestCoursesDateModel extends TeaModel {
-        /**
-         * <p>dayOfMonth</p>
-         */
         @NameInMap("dayOfMonth")
         public Integer dayOfMonth;
 
-        /**
-         * <p>month</p>
-         */
         @NameInMap("month")
         public Integer month;
 
-        /**
-         * <p>year</p>
-         */
         @NameInMap("year")
         public Integer year;
 
@@ -99,21 +84,12 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestCoursesSectionModel extends TeaModel {
-        /**
-         * <p>节次index</p>
-         */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
-        /**
-         * <p>节次名称</p>
-         */
         @NameInMap("sectionName")
         public String sectionName;
 
-        /**
-         * <p>sectionType</p>
-         */
         @NameInMap("sectionType")
         public String sectionType;
 
@@ -149,57 +125,30 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestCourses extends TeaModel {
-        /**
-         * <p>课程code：删除/更新必填</p>
-         */
         @NameInMap("courseCode")
         public String courseCode;
 
-        /**
-         * <p>课组code</p>
-         */
         @NameInMap("courseGroupCode")
         public String courseGroupCode;
 
-        /**
-         * <p>课程名称</p>
-         */
         @NameInMap("courseName")
         public String courseName;
 
-        /**
-         * <p>创建者名字</p>
-         */
         @NameInMap("creatorName")
         public String creatorName;
 
-        /**
-         * <p>上课日期</p>
-         */
         @NameInMap("dateModel")
         public UpdateCoursesOfClassRequestCoursesDateModel dateModel;
 
-        /**
-         * <p>删除标记：要删除为ture</p>
-         */
         @NameInMap("deleteTag")
         public Boolean deleteTag;
 
-        /**
-         * <p>上课地点</p>
-         */
         @NameInMap("location")
         public String location;
 
-        /**
-         * <p>节次模型</p>
-         */
         @NameInMap("sectionModel")
         public UpdateCoursesOfClassRequestCoursesSectionModel sectionModel;
 
-        /**
-         * <p>老师Staffid</p>
-         */
         @NameInMap("teacherStaffIds")
         public java.util.List<String> teacherStaffIds;
 
@@ -283,15 +232,9 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd extends TeaModel {
-        /**
-         * <p>小时</p>
-         */
         @NameInMap("hour")
         public Integer hour;
 
-        /**
-         * <p>分钟</p>
-         */
         @NameInMap("min")
         public Integer min;
 
@@ -319,15 +262,9 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestSectionConfigSectionModelsStart extends TeaModel {
-        /**
-         * <p>小时</p>
-         */
         @NameInMap("hour")
         public Integer hour;
 
-        /**
-         * <p>分钟</p>
-         */
         @NameInMap("min")
         public Integer min;
 
@@ -355,27 +292,15 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestSectionConfigSectionModels extends TeaModel {
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("end")
         public UpdateCoursesOfClassRequestSectionConfigSectionModelsEnd end;
 
-        /**
-         * <p>第几节。</p>
-         */
         @NameInMap("sectionIndex")
         public Integer sectionIndex;
 
-        /**
-         * <p>节次类型枚举：COURSE/REST</p>
-         */
         @NameInMap("sectionType")
         public String sectionType;
 
-        /**
-         * <p>开始时间</p>
-         */
         @NameInMap("start")
         public UpdateCoursesOfClassRequestSectionConfigSectionModelsStart start;
 
@@ -419,9 +344,6 @@ public class UpdateCoursesOfClassRequest extends TeaModel {
     }
 
     public static class UpdateCoursesOfClassRequestSectionConfig extends TeaModel {
-        /**
-         * <p>节次模型</p>
-         */
         @NameInMap("sectionModels")
         public java.util.List<UpdateCoursesOfClassRequestSectionConfigSectionModels> sectionModels;
 

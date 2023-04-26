@@ -4,63 +4,33 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SavePrintTplDetailInfoRequest extends TeaModel {
-    /**
-     * <p>应用代码</p>
-     */
     @NameInMap("appType")
     public String appType;
 
-    /**
-     * <p>模板描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>文件名配置</p>
-     */
     @NameInMap("fileNameConfig")
     public String fileNameConfig;
 
-    /**
-     * <p>表单id</p>
-     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    /**
-     * <p>表单版本</p>
-     */
     @NameInMap("formVersion")
     public Integer formVersion;
 
-    /**
-     * <p>模板的其他配置信息</p>
-     */
     @NameInMap("setting")
     public String setting;
 
-    /**
-     * <p>打印模板id</p>
-     */
     @NameInMap("templateId")
     public Long templateId;
 
-    /**
-     * <p>模板标题</p>
-     */
     @NameInMap("title")
     public String title;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>模板的VM</p>
-     */
     @NameInMap("vm")
     public String vm;
 

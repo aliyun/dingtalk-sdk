@@ -4,15 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryPermissionByUserIdResponseBody extends TeaModel {
-    /**
-     * <p>权限信息列表</p>
-     */
     @NameInMap("permissionDTOList")
     public java.util.List<QueryPermissionByUserIdResponseBodyPermissionDTOList> permissionDTOList;
 
-    /**
-     * <p>用户ID</p>
-     */
     @NameInMap("userId")
     public String userId;
 

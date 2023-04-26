@@ -7,9 +7,6 @@ public class BatchBindingGroupBizIdsRequest extends TeaModel {
     @NameInMap("bindingGroupBizIds")
     public java.util.List<BatchBindingGroupBizIdsRequestBindingGroupBizIds> bindingGroupBizIds;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
@@ -35,15 +32,9 @@ public class BatchBindingGroupBizIdsRequest extends TeaModel {
     }
 
     public static class BatchBindingGroupBizIdsRequestBindingGroupBizIds extends TeaModel {
-        /**
-         * <p>业务ID</p>
-         */
         @NameInMap("bizId")
         public String bizId;
 
-        /**
-         * <p>群会话ID</p>
-         */
         @NameInMap("openConversationId")
         public String openConversationId;
 

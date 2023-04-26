@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchCreateResponseBody extends TeaModel {
-    /**
-     * <p>result</p>
-     */
     @NameInMap("result")
     public BatchCreateResponseBodyResult result;
 

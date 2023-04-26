@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTaskStartdateRequest extends TeaModel {
-    /**
-     * <p>任务开始时间。</p>
-     */
     @NameInMap("startDate")
     public String startDate;
 

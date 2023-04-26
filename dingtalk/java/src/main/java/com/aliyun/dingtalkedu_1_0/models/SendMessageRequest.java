@@ -4,33 +4,18 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendMessageRequest extends TeaModel {
-    /**
-     * <p>消息的唯一id</p>
-     */
     @NameInMap("bizId")
     public String bizId;
 
-    /**
-     * <p>发送者</p>
-     */
     @NameInMap("fromUserId")
     public String fromUserId;
 
-    /**
-     * <p>设备sn</p>
-     */
     @NameInMap("sn")
     public String sn;
 
-    /**
-     * <p>接收者</p>
-     */
     @NameInMap("toUserIdList")
     public java.util.List<String> toUserIdList;
 
-    /**
-     * <p>发送消息的类型</p>
-     */
     @NameInMap("type")
     public Long type;
 

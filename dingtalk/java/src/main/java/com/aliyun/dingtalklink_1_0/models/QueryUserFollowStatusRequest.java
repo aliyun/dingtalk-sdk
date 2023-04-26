@@ -4,15 +4,9 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserFollowStatusRequest extends TeaModel {
-    /**
-     * <p>服务窗帐号ID，此ID可以通过服务窗帐号信息查询接口获取。</p>
-     */
     @NameInMap("accountId")
     public String accountId;
 
-    /**
-     * <p>待查询的服务窗关注者unionId。</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

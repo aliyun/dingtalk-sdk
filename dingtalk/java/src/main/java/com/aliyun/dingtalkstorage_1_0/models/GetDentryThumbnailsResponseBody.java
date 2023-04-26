@@ -4,11 +4,6 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDentryThumbnailsResponseBody extends TeaModel {
-    /**
-     * <p>缩略图获取结果列表</p>
-     * <p>最大size:</p>
-     * <p>	30</p>
-     */
     @NameInMap("resultItems")
     public java.util.List<GetDentryThumbnailsResponseBodyResultItems> resultItems;
 
@@ -26,21 +21,12 @@ public class GetDentryThumbnailsResponseBody extends TeaModel {
     }
 
     public static class GetDentryThumbnailsResponseBodyResultItemsThumbnail extends TeaModel {
-        /**
-         * <p>缩略图高度</p>
-         */
         @NameInMap("height")
         public Integer height;
 
-        /**
-         * <p>缩略图url</p>
-         */
         @NameInMap("url")
         public String url;
 
-        /**
-         * <p>缩略图宽度</p>
-         */
         @NameInMap("width")
         public Integer width;
 
@@ -76,33 +62,18 @@ public class GetDentryThumbnailsResponseBody extends TeaModel {
     }
 
     public static class GetDentryThumbnailsResponseBodyResultItems extends TeaModel {
-        /**
-         * <p>源文件(夹)id</p>
-         */
         @NameInMap("dentryId")
         public String dentryId;
 
-        /**
-         * <p>错误原因</p>
-         */
         @NameInMap("errorCode")
         public String errorCode;
 
-        /**
-         * <p>源文件(夹)空间id</p>
-         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        /**
-         * <p>是否成功获取到缩略图</p>
-         */
         @NameInMap("success")
         public Boolean success;
 
-        /**
-         * <p>缩略图信息</p>
-         */
         @NameInMap("thumbnail")
         public GetDentryThumbnailsResponseBodyResultItemsThumbnail thumbnail;
 

@@ -21,57 +21,30 @@ public class WriteUserCarbonEnergyRequest extends TeaModel {
     }
 
     public static class WriteUserCarbonEnergyRequestUserDetailsList extends TeaModel {
-        /**
-         * <p>行为结束时间</p>
-         */
         @NameInMap("actionEndTime")
         public String actionEndTime;
 
-        /**
-         * <p>系统唯一id，生成格式：userId+日期20230302</p>
-         */
         @NameInMap("actionId")
         public String actionId;
 
-        /**
-         * <p>行为起始时间</p>
-         */
         @NameInMap("actionStartTime")
         public String actionStartTime;
 
-        /**
-         * <p>碳能量行为类型，需要联系管理员添加</p>
-         */
         @NameInMap("actionType")
         public String actionType;
 
-        /**
-         * <p>碳能量数据</p>
-         */
         @NameInMap("carbonAmount")
         public String carbonAmount;
 
-        /**
-         * <p>钉钉组织id</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>钉钉部门id</p>
-         */
         @NameInMap("deptId")
         public Long deptId;
 
-        /**
-         * <p>钉钉用户id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>版本，默认为1</p>
-         */
         @NameInMap("version")
         public Integer version;
 

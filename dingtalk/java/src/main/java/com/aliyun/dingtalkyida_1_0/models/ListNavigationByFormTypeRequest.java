@@ -4,33 +4,18 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListNavigationByFormTypeRequest extends TeaModel {
-    /**
-     * <p>应用ID</p>
-     */
     @NameInMap("appType")
     public String appType;
 
-    /**
-     * <p>页面类型</p>
-     */
     @NameInMap("formType")
     public String formType;
 
-    /**
-     * <p>语言</p>
-     */
     @NameInMap("language")
     public String language;
 
-    /**
-     * <p>应用秘钥</p>
-     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    /**
-     * <p>评论人钉钉的userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

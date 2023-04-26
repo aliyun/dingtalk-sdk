@@ -4,9 +4,6 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserFollowStatusResponseBody extends TeaModel {
-    /**
-     * <p>响应结果</p>
-     */
     @NameInMap("result")
     public QueryUserFollowStatusResponseBodyResult result;
 
@@ -24,11 +21,6 @@ public class QueryUserFollowStatusResponseBody extends TeaModel {
     }
 
     public static class QueryUserFollowStatusResponseBodyResult extends TeaModel {
-        /**
-         * <p>用户关注服务窗的状态:</p>
-         * <p>FOLLOWED：已关注。</p>
-         * <p>UNFOLLOW：未关注。</p>
-         */
         @NameInMap("status")
         public String status;
 

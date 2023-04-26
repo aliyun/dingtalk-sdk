@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddRobotInstanceToGroupRequest extends TeaModel {
-    /**
-     * <p>机器人id</p>
-     */
     @NameInMap("chatbotId")
     public String chatbotId;
 
-    /**
-     * <p>对话id</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

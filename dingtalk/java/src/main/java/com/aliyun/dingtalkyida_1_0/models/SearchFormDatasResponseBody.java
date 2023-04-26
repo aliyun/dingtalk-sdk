@@ -4,21 +4,12 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchFormDatasResponseBody extends TeaModel {
-    /**
-     * <p>当前页</p>
-     */
     @NameInMap("currentPage")
     public Long currentPage;
 
-    /**
-     * <p>实例详情列表</p>
-     */
     @NameInMap("data")
     public java.util.List<SearchFormDatasResponseBodyData> data;
 
-    /**
-     * <p>符合条件的实例总数</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -52,21 +43,12 @@ public class SearchFormDatasResponseBody extends TeaModel {
     }
 
     public static class SearchFormDatasResponseBodyDataModifyUserUserName extends TeaModel {
-        /**
-         * <p>中文名称</p>
-         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        /**
-         * <p>英文名称</p>
-         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
-        /**
-         * <p>国际化</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -102,15 +84,9 @@ public class SearchFormDatasResponseBody extends TeaModel {
     }
 
     public static class SearchFormDatasResponseBodyDataModifyUser extends TeaModel {
-        /**
-         * <p>用户工号</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>用户名</p>
-         */
         @NameInMap("userName")
         public SearchFormDatasResponseBodyDataModifyUserUserName userName;
 
@@ -138,21 +114,12 @@ public class SearchFormDatasResponseBody extends TeaModel {
     }
 
     public static class SearchFormDatasResponseBodyDataOriginatorUserName extends TeaModel {
-        /**
-         * <p>中文名称</p>
-         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        /**
-         * <p>英文名称</p>
-         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
-        /**
-         * <p>国际化</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -188,15 +155,9 @@ public class SearchFormDatasResponseBody extends TeaModel {
     }
 
     public static class SearchFormDatasResponseBodyDataOriginator extends TeaModel {
-        /**
-         * <p>用户工号</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>用户名</p>
-         */
         @NameInMap("userName")
         public SearchFormDatasResponseBodyDataOriginatorUserName userName;
 
@@ -224,99 +185,51 @@ public class SearchFormDatasResponseBody extends TeaModel {
     }
 
     public static class SearchFormDatasResponseBodyData extends TeaModel {
-        /**
-         * <p>数据创建时间</p>
-         */
         @NameInMap("createdTimeGMT")
         public String createdTimeGMT;
 
-        /**
-         * <p>创建人</p>
-         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        /**
-         * <p>实体主键id</p>
-         */
         @NameInMap("dataId")
         public Long dataId;
 
-        /**
-         * <p>表单数据</p>
-         */
         @NameInMap("formData")
         public java.util.Map<String, ?> formData;
 
-        /**
-         * <p>表单实例ID</p>
-         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
-        /**
-         * <p>表单id</p>
-         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        /**
-         * <p>表单实例原始格式值</p>
-         */
         @NameInMap("instanceValue")
         public String instanceValue;
 
-        /**
-         * <p>模型id</p>
-         */
         @NameInMap("modelUuid")
         public String modelUuid;
 
-        /**
-         * <p>最近修改时间</p>
-         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
-        /**
-         * <p>修改人</p>
-         */
         @NameInMap("modifierUserId")
         public String modifierUserId;
 
-        /**
-         * <p>修改者</p>
-         */
         @NameInMap("modifyUser")
         public SearchFormDatasResponseBodyDataModifyUser modifyUser;
 
-        /**
-         * <p>发起人</p>
-         */
         @NameInMap("originator")
         public SearchFormDatasResponseBodyDataOriginator originator;
 
-        /**
-         * <p>批次号</p>
-         */
         @NameInMap("sequence")
         public String sequence;
 
-        /**
-         * <p>流水号</p>
-         */
         @NameInMap("serialNo")
         public String serialNo;
 
-        /**
-         * <p>标题</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>数据版本</p>
-         */
         @NameInMap("version")
         public Long version;
 

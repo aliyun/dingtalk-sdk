@@ -4,57 +4,30 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOpenCourseDetailResponseBody extends TeaModel {
-    /**
-     * <p>课程id</p>
-     */
     @NameInMap("courseId")
     public String courseId;
 
-    /**
-     * <p>课程类型: 0-直播 2-视频内容</p>
-     */
     @NameInMap("courseType")
     public Long courseType;
 
-    /**
-     * <p>封面图片地址</p>
-     */
     @NameInMap("coverUrl")
     public String coverUrl;
 
-    /**
-     * <p>课程介绍</p>
-     */
     @NameInMap("introduction")
     public String introduction;
 
-    /**
-     * <p>发布详情model</p>
-     */
     @NameInMap("pushModel")
     public GetOpenCourseDetailResponseBodyPushModel pushModel;
 
-    /**
-     * <p>课程开始时间</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 
-    /**
-     * <p>老师的userId</p>
-     */
     @NameInMap("teacherId")
     public String teacherId;
 
-    /**
-     * <p>老师名称</p>
-     */
     @NameInMap("teacherName")
     public String teacherName;
 
-    /**
-     * <p>课程标题</p>
-     */
     @NameInMap("title")
     public String title;
 
@@ -136,15 +109,9 @@ public class GetOpenCourseDetailResponseBody extends TeaModel {
     }
 
     public static class GetOpenCourseDetailResponseBodyPushModel extends TeaModel {
-        /**
-         * <p>参与学校的名称列表</p>
-         */
         @NameInMap("pushOrgNameList")
         public java.util.List<String> pushOrgNameList;
 
-        /**
-         * <p>参与角色的名称列表</p>
-         */
         @NameInMap("pushRoleNameList")
         public java.util.List<String> pushRoleNameList;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryLiveWatchDetailRequest extends TeaModel {
-    /**
-     * <p>直播id</p>
-     */
     @NameInMap("liveId")
     public String liveId;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

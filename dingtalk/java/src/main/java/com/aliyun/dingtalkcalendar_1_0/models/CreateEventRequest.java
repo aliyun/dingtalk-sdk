@@ -7,27 +7,15 @@ public class CreateEventRequest extends TeaModel {
     @NameInMap("attendees")
     public java.util.List<CreateEventRequestAttendees> attendees;
 
-    /**
-     * <p>日程描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>日程结束时间</p>
-     */
     @NameInMap("end")
     public CreateEventRequestEnd end;
 
-    /**
-     * <p>扩展信息</p>
-     */
     @NameInMap("extra")
     public java.util.Map<String, String> extra;
 
-    /**
-     * <p>是否为全天日程</p>
-     */
     @NameInMap("isAllDay")
     public Boolean isAllDay;
 
@@ -37,24 +25,15 @@ public class CreateEventRequest extends TeaModel {
     @NameInMap("onlineMeetingInfo")
     public CreateEventRequestOnlineMeetingInfo onlineMeetingInfo;
 
-    /**
-     * <p>日程循环规则</p>
-     */
     @NameInMap("recurrence")
     public CreateEventRequestRecurrence recurrence;
 
     @NameInMap("reminders")
     public java.util.List<CreateEventRequestReminders> reminders;
 
-    /**
-     * <p>日程开始时间</p>
-     */
     @NameInMap("start")
     public CreateEventRequestStart start;
 
-    /**
-     * <p>日程标题</p>
-     */
     @NameInMap("summary")
     public String summary;
 
@@ -182,21 +161,12 @@ public class CreateEventRequest extends TeaModel {
     }
 
     public static class CreateEventRequestEnd extends TeaModel {
-        /**
-         * <p>日程结束日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd</p>
-         */
         @NameInMap("date")
         public String date;
 
-        /**
-         * <p>日程结束时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式</p>
-         */
         @NameInMap("dateTime")
         public String dateTime;
 
-        /**
-         * <p>日程结束时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</p>
-         */
         @NameInMap("timeZone")
         public String timeZone;
 
@@ -282,10 +252,6 @@ public class CreateEventRequest extends TeaModel {
         @NameInMap("interval")
         public Integer interval;
 
-        /**
-         * <p>循环规则类型：  daily：每interval天 weekly：每interval周的第daysOfWeek天 absoluteMonthly：每interval月的第dayOfMonth天 relativeMonthly：每interval月的第index周的第daysOfWeek天 absoluteYearly：每interval年</p>
-         * <br>
-         */
         @NameInMap("type")
         public String type;
 
@@ -378,9 +344,6 @@ public class CreateEventRequest extends TeaModel {
     }
 
     public static class CreateEventRequestRecurrence extends TeaModel {
-        /**
-         * <p>循环规则</p>
-         */
         @NameInMap("pattern")
         public CreateEventRequestRecurrencePattern pattern;
 
@@ -441,21 +404,12 @@ public class CreateEventRequest extends TeaModel {
     }
 
     public static class CreateEventRequestStart extends TeaModel {
-        /**
-         * <p>日程开始日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd</p>
-         */
         @NameInMap("date")
         public String date;
 
-        /**
-         * <p>日程开始时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式</p>
-         */
         @NameInMap("dateTime")
         public String dateTime;
 
-        /**
-         * <p>日程开始时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</p>
-         */
         @NameInMap("timeZone")
         public String timeZone;
 

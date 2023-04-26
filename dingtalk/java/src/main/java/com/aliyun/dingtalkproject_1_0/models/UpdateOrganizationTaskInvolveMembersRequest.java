@@ -4,33 +4,18 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateOrganizationTaskInvolveMembersRequest extends TeaModel {
-    /**
-     * <p>增加的参与者uid</p>
-     */
     @NameInMap("addInvolvers")
     public java.util.List<String> addInvolvers;
 
-    /**
-     * <p>删除的参与者uid</p>
-     */
     @NameInMap("delInvolvers")
     public java.util.List<String> delInvolvers;
 
-    /**
-     * <p>是否禁用动态</p>
-     */
     @NameInMap("disableActivity")
     public Boolean disableActivity;
 
-    /**
-     * <p>是否禁用通知</p>
-     */
     @NameInMap("disableNotification")
     public Boolean disableNotification;
 
-    /**
-     * <p>所有参与者uid</p>
-     */
     @NameInMap("involveMembers")
     public java.util.List<String> involveMembers;
 

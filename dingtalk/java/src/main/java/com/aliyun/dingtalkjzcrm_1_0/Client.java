@@ -6,8 +6,11 @@ import com.aliyun.dingtalkjzcrm_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public EditContactResponse editContact(EditContactRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        EditContactHeaders headers = new EditContactHeaders();
-        return this.editContactWithOptions(request, headers, runtime);
-    }
 
     public EditContactResponse editContactWithOptions(EditContactRequest request, EditContactHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -54,13 +51,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditContact", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/contacts", "json", req, runtime), new EditContactResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditContact"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/contacts"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditContactResponse());
     }
 
-    public EditCustomerResponse editCustomer(EditCustomerRequest request) throws Exception {
+    public EditContactResponse editContact(EditContactRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        EditCustomerHeaders headers = new EditCustomerHeaders();
-        return this.editCustomerWithOptions(request, headers, runtime);
+        EditContactHeaders headers = new EditContactHeaders();
+        return this.editContactWithOptions(request, headers, runtime);
     }
 
     public EditCustomerResponse editCustomerWithOptions(EditCustomerRequest request, EditCustomerHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -95,13 +103,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditCustomer", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/customers", "json", req, runtime), new EditCustomerResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditCustomer"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/customers"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditCustomerResponse());
     }
 
-    public EditCustomerPoolResponse editCustomerPool(EditCustomerPoolRequest request) throws Exception {
+    public EditCustomerResponse editCustomer(EditCustomerRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        EditCustomerPoolHeaders headers = new EditCustomerPoolHeaders();
-        return this.editCustomerPoolWithOptions(request, headers, runtime);
+        EditCustomerHeaders headers = new EditCustomerHeaders();
+        return this.editCustomerWithOptions(request, headers, runtime);
     }
 
     public EditCustomerPoolResponse editCustomerPoolWithOptions(EditCustomerPoolRequest request, EditCustomerPoolHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -136,13 +155,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditCustomerPool", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/customerPools", "json", req, runtime), new EditCustomerPoolResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditCustomerPool"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/customerPools"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditCustomerPoolResponse());
     }
 
-    public EditExchangeResponse editExchange(EditExchangeRequest request) throws Exception {
+    public EditCustomerPoolResponse editCustomerPool(EditCustomerPoolRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        EditExchangeHeaders headers = new EditExchangeHeaders();
-        return this.editExchangeWithOptions(request, headers, runtime);
+        EditCustomerPoolHeaders headers = new EditCustomerPoolHeaders();
+        return this.editCustomerPoolWithOptions(request, headers, runtime);
     }
 
     public EditExchangeResponse editExchangeWithOptions(EditExchangeRequest request, EditExchangeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -177,13 +207,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditExchange", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/exchanges", "json", req, runtime), new EditExchangeResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditExchange"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/exchanges"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditExchangeResponse());
     }
 
-    public EditGoodsResponse editGoods(EditGoodsRequest request) throws Exception {
+    public EditExchangeResponse editExchange(EditExchangeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        EditGoodsHeaders headers = new EditGoodsHeaders();
-        return this.editGoodsWithOptions(request, headers, runtime);
+        EditExchangeHeaders headers = new EditExchangeHeaders();
+        return this.editExchangeWithOptions(request, headers, runtime);
     }
 
     public EditGoodsResponse editGoodsWithOptions(EditGoodsRequest request, EditGoodsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -218,13 +259,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditGoods", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/goods", "json", req, runtime), new EditGoodsResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditGoods"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/goods"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditGoodsResponse());
     }
 
-    public EditIntostockResponse editIntostock(EditIntostockRequest request) throws Exception {
+    public EditGoodsResponse editGoods(EditGoodsRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        EditIntostockHeaders headers = new EditIntostockHeaders();
-        return this.editIntostockWithOptions(request, headers, runtime);
+        EditGoodsHeaders headers = new EditGoodsHeaders();
+        return this.editGoodsWithOptions(request, headers, runtime);
     }
 
     public EditIntostockResponse editIntostockWithOptions(EditIntostockRequest request, EditIntostockHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -259,13 +311,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditIntostock", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/intostocks", "json", req, runtime), new EditIntostockResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditIntostock"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/intostocks"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditIntostockResponse());
     }
 
-    public EditInvoiceResponse editInvoice(EditInvoiceRequest request) throws Exception {
+    public EditIntostockResponse editIntostock(EditIntostockRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        EditInvoiceHeaders headers = new EditInvoiceHeaders();
-        return this.editInvoiceWithOptions(request, headers, runtime);
+        EditIntostockHeaders headers = new EditIntostockHeaders();
+        return this.editIntostockWithOptions(request, headers, runtime);
     }
 
     public EditInvoiceResponse editInvoiceWithOptions(EditInvoiceRequest request, EditInvoiceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -300,13 +363,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditInvoice", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/invoices", "json", req, runtime), new EditInvoiceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditInvoice"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/invoices"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditInvoiceResponse());
     }
 
-    public EditOrderResponse editOrder(EditOrderRequest request) throws Exception {
+    public EditInvoiceResponse editInvoice(EditInvoiceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        EditOrderHeaders headers = new EditOrderHeaders();
-        return this.editOrderWithOptions(request, headers, runtime);
+        EditInvoiceHeaders headers = new EditInvoiceHeaders();
+        return this.editInvoiceWithOptions(request, headers, runtime);
     }
 
     public EditOrderResponse editOrderWithOptions(EditOrderRequest request, EditOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -341,13 +415,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditOrder", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/orders", "json", req, runtime), new EditOrderResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditOrder"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/orders"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditOrderResponse());
     }
 
-    public EditOutstockResponse editOutstock(EditOutstockRequest request) throws Exception {
+    public EditOrderResponse editOrder(EditOrderRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        EditOutstockHeaders headers = new EditOutstockHeaders();
-        return this.editOutstockWithOptions(request, headers, runtime);
+        EditOrderHeaders headers = new EditOrderHeaders();
+        return this.editOrderWithOptions(request, headers, runtime);
     }
 
     public EditOutstockResponse editOutstockWithOptions(EditOutstockRequest request, EditOutstockHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -382,13 +467,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditOutstock", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/outstocks", "json", req, runtime), new EditOutstockResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditOutstock"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/outstocks"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditOutstockResponse());
     }
 
-    public EditProductionResponse editProduction(EditProductionRequest request) throws Exception {
+    public EditOutstockResponse editOutstock(EditOutstockRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        EditProductionHeaders headers = new EditProductionHeaders();
-        return this.editProductionWithOptions(request, headers, runtime);
+        EditOutstockHeaders headers = new EditOutstockHeaders();
+        return this.editOutstockWithOptions(request, headers, runtime);
     }
 
     public EditProductionResponse editProductionWithOptions(EditProductionRequest request, EditProductionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -423,13 +519,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditProduction", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/productions", "json", req, runtime), new EditProductionResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditProduction"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/productions"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditProductionResponse());
     }
 
-    public EditPurchaseResponse editPurchase(EditPurchaseRequest request) throws Exception {
+    public EditProductionResponse editProduction(EditProductionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        EditPurchaseHeaders headers = new EditPurchaseHeaders();
-        return this.editPurchaseWithOptions(request, headers, runtime);
+        EditProductionHeaders headers = new EditProductionHeaders();
+        return this.editProductionWithOptions(request, headers, runtime);
     }
 
     public EditPurchaseResponse editPurchaseWithOptions(EditPurchaseRequest request, EditPurchaseHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -464,13 +571,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditPurchase", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/purchases", "json", req, runtime), new EditPurchaseResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditPurchase"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/purchases"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditPurchaseResponse());
     }
 
-    public EditQuotationRecordResponse editQuotationRecord(EditQuotationRecordRequest request) throws Exception {
+    public EditPurchaseResponse editPurchase(EditPurchaseRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        EditQuotationRecordHeaders headers = new EditQuotationRecordHeaders();
-        return this.editQuotationRecordWithOptions(request, headers, runtime);
+        EditPurchaseHeaders headers = new EditPurchaseHeaders();
+        return this.editPurchaseWithOptions(request, headers, runtime);
     }
 
     public EditQuotationRecordResponse editQuotationRecordWithOptions(EditQuotationRecordRequest request, EditQuotationRecordHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -505,13 +623,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditQuotationRecord", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/quotationRecords", "json", req, runtime), new EditQuotationRecordResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditQuotationRecord"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/quotationRecords"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditQuotationRecordResponse());
     }
 
-    public EditSalesResponse editSales(EditSalesRequest request) throws Exception {
+    public EditQuotationRecordResponse editQuotationRecord(EditQuotationRecordRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        EditSalesHeaders headers = new EditSalesHeaders();
-        return this.editSalesWithOptions(request, headers, runtime);
+        EditQuotationRecordHeaders headers = new EditQuotationRecordHeaders();
+        return this.editQuotationRecordWithOptions(request, headers, runtime);
     }
 
     public EditSalesResponse editSalesWithOptions(EditSalesRequest request, EditSalesHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -546,13 +675,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("EditSales", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/sales", "json", req, runtime), new EditSalesResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EditSales"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/sales"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EditSalesResponse());
     }
 
-    public GetDataListResponse getDataList(GetDataListRequest request) throws Exception {
+    public EditSalesResponse editSales(EditSalesRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetDataListHeaders headers = new GetDataListHeaders();
-        return this.getDataListWithOptions(request, headers, runtime);
+        EditSalesHeaders headers = new EditSalesHeaders();
+        return this.editSalesWithOptions(request, headers, runtime);
     }
 
     public GetDataListResponse getDataListWithOptions(GetDataListRequest request, GetDataListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -583,13 +723,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetDataList", "jzcrm_1.0", "HTTP", "GET", "AK", "/v1.0/jzcrm/data", "json", req, runtime), new GetDataListResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetDataList"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/data"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetDataListResponse());
     }
 
-    public GetDataViewResponse getDataView(GetDataViewRequest request) throws Exception {
+    public GetDataListResponse getDataList(GetDataListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetDataViewHeaders headers = new GetDataViewHeaders();
-        return this.getDataViewWithOptions(request, headers, runtime);
+        GetDataListHeaders headers = new GetDataListHeaders();
+        return this.getDataListWithOptions(request, headers, runtime);
     }
 
     public GetDataViewResponse getDataViewWithOptions(GetDataViewRequest request, GetDataViewHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -616,6 +767,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetDataView", "jzcrm_1.0", "HTTP", "GET", "AK", "/v1.0/jzcrm/dataView", "json", req, runtime), new GetDataViewResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetDataView"),
+            new TeaPair("version", "jzcrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/jzcrm/dataView"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetDataViewResponse());
+    }
+
+    public GetDataViewResponse getDataView(GetDataViewRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetDataViewHeaders headers = new GetDataViewHeaders();
+        return this.getDataViewWithOptions(request, headers, runtime);
     }
 }

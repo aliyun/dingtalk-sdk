@@ -4,15 +4,9 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUsersRequest extends TeaModel {
-    /**
-     * <p>部门id。</p>
-     */
     @NameInMap("departmentId")
     public String departmentId;
 
-    /**
-     * <p>是否递归获取子级部门下的用户。默认值为false</p>
-     */
     @NameInMap("isRecursive")
     public Boolean isRecursive;
 

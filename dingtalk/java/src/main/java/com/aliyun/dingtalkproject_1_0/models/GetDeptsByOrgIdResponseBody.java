@@ -4,24 +4,15 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDeptsByOrgIdResponseBody extends TeaModel {
-    /**
-     * <p>deptList</p>
-     */
     @NameInMap("deptList")
     public java.util.List<GetDeptsByOrgIdResponseBodyDeptList> deptList;
 
-    /**
-     * <p>hasMore</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>nextCursor</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -63,21 +54,12 @@ public class GetDeptsByOrgIdResponseBody extends TeaModel {
     }
 
     public static class GetDeptsByOrgIdResponseBodyDeptList extends TeaModel {
-        /**
-         * <p>id</p>
-         */
         @NameInMap("dept_id")
         public Long deptId;
 
-        /**
-         * <p>name</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>parentId</p>
-         */
         @NameInMap("parent_id")
         public Long parentId;
 

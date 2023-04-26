@@ -4,33 +4,18 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListTemplateRequest extends TeaModel {
-    /**
-     * <p>查询模版数量</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>翻页token</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>操作用户unionId</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    /**
-     * <p>模版类型</p>
-     */
     @NameInMap("templateType")
     public String templateType;
 
-    /**
-     * <p>知识库id。</p>
-     */
     @NameInMap("workspaceId")
     public String workspaceId;
 

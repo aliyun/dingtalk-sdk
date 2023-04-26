@@ -4,39 +4,21 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupIdResponseBody extends TeaModel {
-    /**
-     * <p>组织id</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>人脸库id</p>
-     */
     @NameInMap("groupId")
     public String groupId;
 
-    /**
-     * <p>商户id</p>
-     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    /**
-     * <p>商户名称</p>
-     */
     @NameInMap("merchantName")
     public String merchantName;
 
-    /**
-     * <p>开发者名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>开发者pid</p>
-     */
     @NameInMap("pid")
     public String pid;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCrmGroupChatSingleRequest extends TeaModel {
-    /**
-     * <p>客户群openConversationId</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

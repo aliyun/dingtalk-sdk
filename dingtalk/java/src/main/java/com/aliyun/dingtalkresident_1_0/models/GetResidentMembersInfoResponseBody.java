@@ -4,9 +4,6 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetResidentMembersInfoResponseBody extends TeaModel {
-    /**
-     * <p>result</p>
-     */
     @NameInMap("residenceList")
     public java.util.List<GetResidentMembersInfoResponseBodyResidenceList> residenceList;
 
@@ -24,30 +21,18 @@ public class GetResidentMembersInfoResponseBody extends TeaModel {
     }
 
     public static class GetResidentMembersInfoResponseBodyResidenceList extends TeaModel {
-        /**
-         * <p>是否激活</p>
-         */
         @NameInMap("active")
         public Boolean active;
 
-        /**
-         * <p>扩展字段，如果是租客存起止时间</p>
-         */
         @NameInMap("extField")
         public String extField;
 
-        /**
-         * <p>是否是产权人</p>
-         */
         @NameInMap("isPropertyOwner")
         public Boolean isPropertyOwner;
 
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>业主/租客/亲友等</p>
-         */
         @NameInMap("relateType")
         public String relateType;
 

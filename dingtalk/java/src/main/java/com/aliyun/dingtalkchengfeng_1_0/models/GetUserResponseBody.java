@@ -7,9 +7,6 @@ public class GetUserResponseBody extends TeaModel {
     @NameInMap("content")
     public OpenUserDTO content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class LoadBizObjectsResponseBody extends TeaModel {
-    /**
-     * <p>状态码</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>返回结果</p>
-     */
     @NameInMap("data")
     public LoadBizObjectsResponseBodyData data;
 
-    /**
-     * <p>提示信息</p>
-     */
     @NameInMap("message")
     public String message;
 
@@ -52,27 +43,15 @@ public class LoadBizObjectsResponseBody extends TeaModel {
     }
 
     public static class LoadBizObjectsResponseBodyData extends TeaModel {
-        /**
-         * <p>业务数据实例数组</p>
-         */
         @NameInMap("bizObjects")
         public java.util.List<java.util.Map<String, ?>> bizObjects;
 
-        /**
-         * <p>页码</p>
-         */
         @NameInMap("pageNumber")
         public Integer pageNumber;
 
-        /**
-         * <p>页大小</p>
-         */
         @NameInMap("pageSize")
         public Integer pageSize;
 
-        /**
-         * <p>匹配条件的结果总数量</p>
-         */
         @NameInMap("totalCount")
         public Integer totalCount;
 

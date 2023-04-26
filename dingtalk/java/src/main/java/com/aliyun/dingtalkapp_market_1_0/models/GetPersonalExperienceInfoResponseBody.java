@@ -4,9 +4,6 @@ package com.aliyun.dingtalkapp_market_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPersonalExperienceInfoResponseBody extends TeaModel {
-    /**
-     * <p>数据对象</p>
-     */
     @NameInMap("result")
     public GetPersonalExperienceInfoResponseBodyResult result;
 
@@ -24,9 +21,6 @@ public class GetPersonalExperienceInfoResponseBody extends TeaModel {
     }
 
     public static class GetPersonalExperienceInfoResponseBodyResult extends TeaModel {
-        /**
-         * <p>主组织corpId</p>
-         */
         @NameInMap("mainCorpId")
         public String mainCorpId;
 

@@ -7,9 +7,6 @@ public class UpdateKROfScoreResponseBody extends TeaModel {
     @NameInMap("data")
     public UpdateKROfScoreResponseBodyData data;
 
-    /**
-     * <p>请求成功的标识。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -35,9 +32,6 @@ public class UpdateKROfScoreResponseBody extends TeaModel {
     }
 
     public static class UpdateKROfScoreResponseBodyData extends TeaModel {
-        /**
-         * <p>目标分数。</p>
-         */
         @NameInMap("objectiveScore")
         public Long objectiveScore;
 

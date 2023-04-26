@@ -4,9 +4,6 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CloseLoanEntranceRequest extends TeaModel {
-    /**
-     * <p>请求id唯一</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 

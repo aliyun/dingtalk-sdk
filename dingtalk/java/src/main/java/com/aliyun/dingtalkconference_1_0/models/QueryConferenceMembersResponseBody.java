@@ -4,21 +4,12 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryConferenceMembersResponseBody extends TeaModel {
-    /**
-     * <p>成员列表</p>
-     */
     @NameInMap("memberModels")
     public java.util.List<QueryConferenceMembersResponseBodyMemberModels> memberModels;
 
-    /**
-     * <p>分页查询下一页token</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>本次返回结果数</p>
-     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -52,75 +43,36 @@ public class QueryConferenceMembersResponseBody extends TeaModel {
     }
 
     public static class QueryConferenceMembersResponseBodyMemberModels extends TeaModel {
-        /**
-         * <p>成员状态 </p>
-         * <p>1 初始化 </p>
-         * <p>2 呼叫中</p>
-         * <p>3 活跃（在会）</p>
-         * <p>4 入会失败（拒接等）</p>
-         * <p>5 被踢</p>
-         * <p>6 离会</p>
-         */
         @NameInMap("attendStatus")
         public Integer attendStatus;
 
-        /**
-         * <p>是否为联席主持人</p>
-         */
         @NameInMap("coHost")
         public Boolean coHost;
 
-        /**
-         * <p>会议id</p>
-         */
         @NameInMap("conferenceId")
         public String conferenceId;
 
-        /**
-         * <p>在会时长</p>
-         */
         @NameInMap("duration")
         public Long duration;
 
-        /**
-         * <p>是否为主持人</p>
-         */
         @NameInMap("host")
         public Boolean host;
 
-        /**
-         * <p>入会时间</p>
-         */
         @NameInMap("joinTime")
         public Long joinTime;
 
-        /**
-         * <p>离会时间</p>
-         */
         @NameInMap("leaveTime")
         public Long leaveTime;
 
-        /**
-         * <p>是否为非会议所属企业内成员</p>
-         */
         @NameInMap("outerOrgMember")
         public Boolean outerOrgMember;
 
-        /**
-         * <p>是否为pstn入会</p>
-         */
         @NameInMap("pstnJoin")
         public Boolean pstnJoin;
 
-        /**
-         * <p>用户unionId</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 
-        /**
-         * <p>成员昵称</p>
-         */
         @NameInMap("userNick")
         public String userNick;
 

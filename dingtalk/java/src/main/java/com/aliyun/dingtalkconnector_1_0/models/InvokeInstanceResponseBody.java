@@ -4,33 +4,18 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class InvokeInstanceResponseBody extends TeaModel {
-    /**
-     * <p>本次执行耗时</p>
-     */
     @NameInMap("cost")
     public Long cost;
 
-    /**
-     * <p>连接器错误码</p>
-     */
     @NameInMap("errorCode")
     public String errorCode;
 
-    /**
-     * <p>连接器错误信息</p>
-     */
     @NameInMap("errorMessage")
     public String errorMessage;
 
-    /**
-     * <p>调用记录的ID</p>
-     */
     @NameInMap("instanceId")
     public String instanceId;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("outputJson")
     public String outputJson;
 

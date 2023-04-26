@@ -4,9 +4,6 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReleaseGrayUserIdGetResponseBody extends TeaModel {
-    /**
-     * <p>灰度用户的工号列表</p>
-     */
     @NameInMap("value")
     public java.util.List<String> value;
 

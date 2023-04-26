@@ -4,33 +4,18 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddDeviceResponseBody extends TeaModel {
-    /**
-     * <p>组织id</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>设备id</p>
-     */
     @NameInMap("id")
     public Long id;
 
-    /**
-     * <p>商户id</p>
-     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    /**
-     * <p>设备sn码</p>
-     */
     @NameInMap("sn")
     public String sn;
 
-    /**
-     * <p>状态</p>
-     */
     @NameInMap("status")
     public Long status;
 

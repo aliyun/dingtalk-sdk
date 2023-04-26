@@ -4,15 +4,9 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class HPackageListGetResponseBody extends TeaModel {
-    /**
-     * <p>离线包列表</p>
-     */
     @NameInMap("list")
     public java.util.List<HPackageListGetResponseBodyList> list;
 
-    /**
-     * <p>总数量</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -38,51 +32,27 @@ public class HPackageListGetResponseBody extends TeaModel {
     }
 
     public static class HPackageListGetResponseBodyList extends TeaModel {
-        /**
-         * <p>版本是否可用</p>
-         */
         @NameInMap("avaliable")
         public Long avaliable;
 
-        /**
-         * <p>上传者</p>
-         */
         @NameInMap("creator")
         public String creator;
 
-        /**
-         * <p>上传是否已完成</p>
-         */
         @NameInMap("finished")
         public Boolean finished;
 
-        /**
-         * <p>上传时间</p>
-         */
         @NameInMap("operationTime")
         public Long operationTime;
 
-        /**
-         * <p>离线包大小，单位byte</p>
-         */
         @NameInMap("packageSize")
         public Long packageSize;
 
-        /**
-         * <p>版本状态</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>上传任务ID</p>
-         */
         @NameInMap("taskId")
         public String taskId;
 
-        /**
-         * <p>版本号</p>
-         */
         @NameInMap("version")
         public String version;
 

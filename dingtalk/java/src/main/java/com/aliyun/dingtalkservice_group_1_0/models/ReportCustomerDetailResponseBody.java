@@ -4,27 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReportCustomerDetailResponseBody extends TeaModel {
-    /**
-     * <p>页码</p>
-     */
     @NameInMap("currentPage")
     public Long currentPage;
 
-    /**
-     * <p>每页大小</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    /**
-     * <p>数据列表</p>
-     */
     @NameInMap("records")
     public java.util.List<ReportCustomerDetailResponseBodyRecords> records;
 
-    /**
-     * <p>总数目</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -66,51 +54,27 @@ public class ReportCustomerDetailResponseBody extends TeaModel {
     }
 
     public static class ReportCustomerDetailResponseBodyRecords extends TeaModel {
-        /**
-         * <p>at机器人消息数</p>
-         */
         @NameInMap("atRobotCnt")
         public Long atRobotCnt;
 
-        /**
-         * <p>客户名称</p>
-         */
         @NameInMap("customerName")
         public String customerName;
 
-        /**
-         * <p>群名称</p>
-         */
         @NameInMap("groupName")
         public String groupName;
 
-        /**
-         * <p>是否登录钉钉</p>
-         */
         @NameInMap("hasLogin")
         public Boolean hasLogin;
 
-        /**
-         * <p>是否打开群</p>
-         */
         @NameInMap("hasOpenConv")
         public Boolean hasOpenConv;
 
-        /**
-         * <p>发送消息数</p>
-         */
         @NameInMap("sendMsgCnt")
         public Long sendMsgCnt;
 
-        /**
-         * <p>开放用户ID</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 
-        /**
-         * <p>用户ID</p>
-         */
         @NameInMap("userId")
         public String userId;
 

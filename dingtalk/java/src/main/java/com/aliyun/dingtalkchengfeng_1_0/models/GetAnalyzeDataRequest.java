@@ -4,15 +4,9 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAnalyzeDataRequest extends TeaModel {
-    /**
-     * <p>周期ID列表</p>
-     */
     @NameInMap("periodIds")
     public java.util.List<String> periodIds;
 
-    /**
-     * <p>部门编号(钉钉部门号)</p>
-     */
     @NameInMap("deptId")
     public String deptId;
 

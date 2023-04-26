@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTbProjectSourceResponseBody extends TeaModel {
-    /**
-     * <p>应用安装来源，"0"：来自应用中心，”6“：预安装</p>
-     */
     @NameInMap("installSource")
     public String installSource;
 

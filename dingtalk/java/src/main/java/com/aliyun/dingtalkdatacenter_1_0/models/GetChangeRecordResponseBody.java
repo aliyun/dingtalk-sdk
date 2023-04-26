@@ -4,19 +4,9 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetChangeRecordResponseBody extends TeaModel {
-    /**
-     * <p>返回结果</p>
-     * <p>Type:变更事项</p>
-     * <p>ChangeDate:变更日期</p>
-     * <p>BeforeContent:变更前</p>
-     * <p>AfterContent:变更后</p>
-     */
     @NameInMap("data")
     public String data;
 
-    /**
-     * <p>总条数</p>
-     */
     @NameInMap("total")
     public Long total;
 

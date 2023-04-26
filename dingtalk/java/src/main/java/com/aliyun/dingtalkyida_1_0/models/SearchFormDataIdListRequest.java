@@ -4,57 +4,30 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchFormDataIdListRequest extends TeaModel {
-    /**
-     * <p>createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表</p>
-     */
     @NameInMap("createFromTimeGMT")
     public String createFromTimeGMT;
 
-    /**
-     * <p>createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表。</p>
-     */
     @NameInMap("createToTimeGMT")
     public String createToTimeGMT;
 
-    /**
-     * <p>语言</p>
-     */
     @NameInMap("language")
     public String language;
 
-    /**
-     * <p>modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表</p>
-     */
     @NameInMap("modifiedFromTimeGMT")
     public String modifiedFromTimeGMT;
 
-    /**
-     * <p>modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。</p>
-     */
     @NameInMap("modifiedToTimeGMT")
     public String modifiedToTimeGMT;
 
-    /**
-     * <p>根据数据提交人工号查询</p>
-     */
     @NameInMap("originatorId")
     public String originatorId;
 
-    /**
-     * <p>根据表单内组件值查询</p>
-     */
     @NameInMap("searchFieldJson")
     public String searchFieldJson;
 
-    /**
-     * <p>应用秘钥</p>
-     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    /**
-     * <p>钉钉的userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

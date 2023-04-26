@@ -6,8 +6,11 @@ import com.aliyun.dingtalkfinance_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public ApplyBatchPayResponse applyBatchPay(ApplyBatchPayRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ApplyBatchPayHeaders headers = new ApplyBatchPayHeaders();
-        return this.applyBatchPayWithOptions(request, headers, runtime);
-    }
 
     public ApplyBatchPayResponse applyBatchPayWithOptions(ApplyBatchPayRequest request, ApplyBatchPayHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -70,13 +67,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ApplyBatchPay", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/batchTrades/orders/pay", "json", req, runtime), new ApplyBatchPayResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ApplyBatchPay"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/batchTrades/orders/pay"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ApplyBatchPayResponse());
     }
 
-    public CloseLoanEntranceResponse closeLoanEntrance(CloseLoanEntranceRequest request) throws Exception {
+    public ApplyBatchPayResponse applyBatchPay(ApplyBatchPayRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CloseLoanEntranceHeaders headers = new CloseLoanEntranceHeaders();
-        return this.closeLoanEntranceWithOptions(request, headers, runtime);
+        ApplyBatchPayHeaders headers = new ApplyBatchPayHeaders();
+        return this.applyBatchPayWithOptions(request, headers, runtime);
     }
 
     public CloseLoanEntranceResponse closeLoanEntranceWithOptions(CloseLoanEntranceRequest request, CloseLoanEntranceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -99,13 +107,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CloseLoanEntrance", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/loans/entrances/close", "json", req, runtime), new CloseLoanEntranceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CloseLoanEntrance"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/loans/entrances/close"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CloseLoanEntranceResponse());
     }
 
-    public ConsultCreateSubInstitutionResponse consultCreateSubInstitution(ConsultCreateSubInstitutionRequest request) throws Exception {
+    public CloseLoanEntranceResponse closeLoanEntrance(CloseLoanEntranceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ConsultCreateSubInstitutionHeaders headers = new ConsultCreateSubInstitutionHeaders();
-        return this.consultCreateSubInstitutionWithOptions(request, headers, runtime);
+        CloseLoanEntranceHeaders headers = new CloseLoanEntranceHeaders();
+        return this.closeLoanEntranceWithOptions(request, headers, runtime);
     }
 
     public ConsultCreateSubInstitutionResponse consultCreateSubInstitutionWithOptions(ConsultCreateSubInstitutionRequest request, ConsultCreateSubInstitutionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -192,13 +211,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ConsultCreateSubInstitution", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/institutions/subInstitutions/consult", "json", req, runtime), new ConsultCreateSubInstitutionResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ConsultCreateSubInstitution"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/institutions/subInstitutions/consult"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ConsultCreateSubInstitutionResponse());
     }
 
-    public CreatWithholdingOrderAndPayResponse creatWithholdingOrderAndPay(CreatWithholdingOrderAndPayRequest request) throws Exception {
+    public ConsultCreateSubInstitutionResponse consultCreateSubInstitution(ConsultCreateSubInstitutionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreatWithholdingOrderAndPayHeaders headers = new CreatWithholdingOrderAndPayHeaders();
-        return this.creatWithholdingOrderAndPayWithOptions(request, headers, runtime);
+        ConsultCreateSubInstitutionHeaders headers = new ConsultCreateSubInstitutionHeaders();
+        return this.consultCreateSubInstitutionWithOptions(request, headers, runtime);
     }
 
     public CreatWithholdingOrderAndPayResponse creatWithholdingOrderAndPayWithOptions(CreatWithholdingOrderAndPayRequest request, CreatWithholdingOrderAndPayHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -257,13 +287,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreatWithholdingOrderAndPay", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/withholdingOrders", "json", req, runtime), new CreatWithholdingOrderAndPayResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreatWithholdingOrderAndPay"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/withholdingOrders"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreatWithholdingOrderAndPayResponse());
     }
 
-    public CreateAcquireRefundOrderResponse createAcquireRefundOrder(CreateAcquireRefundOrderRequest request) throws Exception {
+    public CreatWithholdingOrderAndPayResponse creatWithholdingOrderAndPay(CreatWithholdingOrderAndPayRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateAcquireRefundOrderHeaders headers = new CreateAcquireRefundOrderHeaders();
-        return this.createAcquireRefundOrderWithOptions(request, headers, runtime);
+        CreatWithholdingOrderAndPayHeaders headers = new CreatWithholdingOrderAndPayHeaders();
+        return this.creatWithholdingOrderAndPayWithOptions(request, headers, runtime);
     }
 
     public CreateAcquireRefundOrderResponse createAcquireRefundOrderWithOptions(CreateAcquireRefundOrderRequest request, CreateAcquireRefundOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -318,13 +359,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateAcquireRefundOrder", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/acquireOrders/refund", "json", req, runtime), new CreateAcquireRefundOrderResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateAcquireRefundOrder"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/acquireOrders/refund"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateAcquireRefundOrderResponse());
     }
 
-    public CreateBatchTradeOrderResponse createBatchTradeOrder(CreateBatchTradeOrderRequest request) throws Exception {
+    public CreateAcquireRefundOrderResponse createAcquireRefundOrder(CreateAcquireRefundOrderRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateBatchTradeOrderHeaders headers = new CreateBatchTradeOrderHeaders();
-        return this.createBatchTradeOrderWithOptions(request, headers, runtime);
+        CreateAcquireRefundOrderHeaders headers = new CreateAcquireRefundOrderHeaders();
+        return this.createAcquireRefundOrderWithOptions(request, headers, runtime);
     }
 
     public CreateBatchTradeOrderResponse createBatchTradeOrderWithOptions(CreateBatchTradeOrderRequest request, CreateBatchTradeOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -379,13 +431,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateBatchTradeOrder", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/batchTrades/orders", "json", req, runtime), new CreateBatchTradeOrderResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateBatchTradeOrder"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/batchTrades/orders"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateBatchTradeOrderResponse());
     }
 
-    public CreateSubInstitutionResponse createSubInstitution(CreateSubInstitutionRequest request) throws Exception {
+    public CreateBatchTradeOrderResponse createBatchTradeOrder(CreateBatchTradeOrderRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateSubInstitutionHeaders headers = new CreateSubInstitutionHeaders();
-        return this.createSubInstitutionWithOptions(request, headers, runtime);
+        CreateBatchTradeOrderHeaders headers = new CreateBatchTradeOrderHeaders();
+        return this.createBatchTradeOrderWithOptions(request, headers, runtime);
     }
 
     public CreateSubInstitutionResponse createSubInstitutionWithOptions(CreateSubInstitutionRequest request, CreateSubInstitutionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -472,13 +535,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateSubInstitution", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/institutions/subInstitutions", "json", req, runtime), new CreateSubInstitutionResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateSubInstitution"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/institutions/subInstitutions"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateSubInstitutionResponse());
     }
 
-    public CreateUserCodeInstanceResponse createUserCodeInstance(CreateUserCodeInstanceRequest request) throws Exception {
+    public CreateSubInstitutionResponse createSubInstitution(CreateSubInstitutionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateUserCodeInstanceHeaders headers = new CreateUserCodeInstanceHeaders();
-        return this.createUserCodeInstanceWithOptions(request, headers, runtime);
+        CreateSubInstitutionHeaders headers = new CreateSubInstitutionHeaders();
+        return this.createSubInstitutionWithOptions(request, headers, runtime);
     }
 
     public CreateUserCodeInstanceResponse createUserCodeInstanceWithOptions(CreateUserCodeInstanceRequest request, CreateUserCodeInstanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -541,13 +615,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateUserCodeInstance", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/payCodes/userInstances", "json", req, runtime), new CreateUserCodeInstanceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateUserCodeInstance"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/payCodes/userInstances"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateUserCodeInstanceResponse());
     }
 
-    public DecodePayCodeResponse decodePayCode(DecodePayCodeRequest request) throws Exception {
+    public CreateUserCodeInstanceResponse createUserCodeInstance(CreateUserCodeInstanceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        DecodePayCodeHeaders headers = new DecodePayCodeHeaders();
-        return this.decodePayCodeWithOptions(request, headers, runtime);
+        CreateUserCodeInstanceHeaders headers = new CreateUserCodeInstanceHeaders();
+        return this.createUserCodeInstanceWithOptions(request, headers, runtime);
     }
 
     public DecodePayCodeResponse decodePayCodeWithOptions(DecodePayCodeRequest request, DecodePayCodeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -574,13 +659,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("DecodePayCode", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/payCodes/decode", "json", req, runtime), new DecodePayCodeResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DecodePayCode"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/payCodes/decode"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DecodePayCodeResponse());
     }
 
-    public ModifySubInstitutionResponse modifySubInstitution(ModifySubInstitutionRequest request) throws Exception {
+    public DecodePayCodeResponse decodePayCode(DecodePayCodeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ModifySubInstitutionHeaders headers = new ModifySubInstitutionHeaders();
-        return this.modifySubInstitutionWithOptions(request, headers, runtime);
+        DecodePayCodeHeaders headers = new DecodePayCodeHeaders();
+        return this.decodePayCodeWithOptions(request, headers, runtime);
     }
 
     public ModifySubInstitutionResponse modifySubInstitutionWithOptions(ModifySubInstitutionRequest request, ModifySubInstitutionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -663,13 +759,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ModifySubInstitution", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/institutions/subInstitutions/modify", "json", req, runtime), new ModifySubInstitutionResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ModifySubInstitution"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/institutions/subInstitutions/modify"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ModifySubInstitutionResponse());
     }
 
-    public NotifyPayCodePayResultResponse notifyPayCodePayResult(NotifyPayCodePayResultRequest request) throws Exception {
+    public ModifySubInstitutionResponse modifySubInstitution(ModifySubInstitutionRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        NotifyPayCodePayResultHeaders headers = new NotifyPayCodePayResultHeaders();
-        return this.notifyPayCodePayResultWithOptions(request, headers, runtime);
+        ModifySubInstitutionHeaders headers = new ModifySubInstitutionHeaders();
+        return this.modifySubInstitutionWithOptions(request, headers, runtime);
     }
 
     public NotifyPayCodePayResultResponse notifyPayCodePayResultWithOptions(NotifyPayCodePayResultRequest request, NotifyPayCodePayResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -756,13 +863,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("NotifyPayCodePayResult", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/payCodes/payResults/notify", "json", req, runtime), new NotifyPayCodePayResultResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "NotifyPayCodePayResult"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/payCodes/payResults/notify"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new NotifyPayCodePayResultResponse());
     }
 
-    public NotifyPayCodeRefundResultResponse notifyPayCodeRefundResult(NotifyPayCodeRefundResultRequest request) throws Exception {
+    public NotifyPayCodePayResultResponse notifyPayCodePayResult(NotifyPayCodePayResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        NotifyPayCodeRefundResultHeaders headers = new NotifyPayCodeRefundResultHeaders();
-        return this.notifyPayCodeRefundResultWithOptions(request, headers, runtime);
+        NotifyPayCodePayResultHeaders headers = new NotifyPayCodePayResultHeaders();
+        return this.notifyPayCodePayResultWithOptions(request, headers, runtime);
     }
 
     public NotifyPayCodeRefundResultResponse notifyPayCodeRefundResultWithOptions(NotifyPayCodeRefundResultRequest request, NotifyPayCodeRefundResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -821,13 +939,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("NotifyPayCodeRefundResult", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/payCodes/refundResults/notify", "json", req, runtime), new NotifyPayCodeRefundResultResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "NotifyPayCodeRefundResult"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/payCodes/refundResults/notify"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new NotifyPayCodeRefundResultResponse());
     }
 
-    public NotifyVerifyResultResponse notifyVerifyResult(NotifyVerifyResultRequest request) throws Exception {
+    public NotifyPayCodeRefundResultResponse notifyPayCodeRefundResult(NotifyPayCodeRefundResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        NotifyVerifyResultHeaders headers = new NotifyVerifyResultHeaders();
-        return this.notifyVerifyResultWithOptions(request, headers, runtime);
+        NotifyPayCodeRefundResultHeaders headers = new NotifyPayCodeRefundResultHeaders();
+        return this.notifyPayCodeRefundResultWithOptions(request, headers, runtime);
     }
 
     public NotifyVerifyResultResponse notifyVerifyResultWithOptions(NotifyVerifyResultRequest request, NotifyVerifyResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -886,13 +1015,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("NotifyVerifyResult", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/payCodes/verifyResults/notify", "json", req, runtime), new NotifyVerifyResultResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "NotifyVerifyResult"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/payCodes/verifyResults/notify"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new NotifyVerifyResultResponse());
     }
 
-    public QueryAcquireRefundOrderResponse queryAcquireRefundOrder(QueryAcquireRefundOrderRequest request) throws Exception {
+    public NotifyVerifyResultResponse notifyVerifyResult(NotifyVerifyResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryAcquireRefundOrderHeaders headers = new QueryAcquireRefundOrderHeaders();
-        return this.queryAcquireRefundOrderWithOptions(request, headers, runtime);
+        NotifyVerifyResultHeaders headers = new NotifyVerifyResultHeaders();
+        return this.notifyVerifyResultWithOptions(request, headers, runtime);
     }
 
     public QueryAcquireRefundOrderResponse queryAcquireRefundOrderWithOptions(QueryAcquireRefundOrderRequest request, QueryAcquireRefundOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -915,13 +1055,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryAcquireRefundOrder", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/acquireOrders/refunds", "json", req, runtime), new QueryAcquireRefundOrderResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryAcquireRefundOrder"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/acquireOrders/refunds"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryAcquireRefundOrderResponse());
     }
 
-    public QueryBatchTradeDetailListResponse queryBatchTradeDetailList(QueryBatchTradeDetailListRequest request) throws Exception {
+    public QueryAcquireRefundOrderResponse queryAcquireRefundOrder(QueryAcquireRefundOrderRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryBatchTradeDetailListHeaders headers = new QueryBatchTradeDetailListHeaders();
-        return this.queryBatchTradeDetailListWithOptions(request, headers, runtime);
+        QueryAcquireRefundOrderHeaders headers = new QueryAcquireRefundOrderHeaders();
+        return this.queryAcquireRefundOrderWithOptions(request, headers, runtime);
     }
 
     public QueryBatchTradeDetailListResponse queryBatchTradeDetailListWithOptions(QueryBatchTradeDetailListRequest request, QueryBatchTradeDetailListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -952,13 +1103,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryBatchTradeDetailList", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/batchTrades/details", "json", req, runtime), new QueryBatchTradeDetailListResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryBatchTradeDetailList"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/batchTrades/details"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryBatchTradeDetailListResponse());
     }
 
-    public QueryBatchTradeOrderResponse queryBatchTradeOrder(QueryBatchTradeOrderRequest request) throws Exception {
+    public QueryBatchTradeDetailListResponse queryBatchTradeDetailList(QueryBatchTradeDetailListRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryBatchTradeOrderHeaders headers = new QueryBatchTradeOrderHeaders();
-        return this.queryBatchTradeOrderWithOptions(request, headers, runtime);
+        QueryBatchTradeDetailListHeaders headers = new QueryBatchTradeDetailListHeaders();
+        return this.queryBatchTradeDetailListWithOptions(request, headers, runtime);
     }
 
     public QueryBatchTradeOrderResponse queryBatchTradeOrderWithOptions(QueryBatchTradeOrderRequest request, QueryBatchTradeOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -981,13 +1143,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryBatchTradeOrder", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/batchTrades/orders/query", "json", req, runtime), new QueryBatchTradeOrderResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryBatchTradeOrder"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/batchTrades/orders/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryBatchTradeOrderResponse());
     }
 
-    public QueryPayAccountListResponse queryPayAccountList() throws Exception {
+    public QueryBatchTradeOrderResponse queryBatchTradeOrder(QueryBatchTradeOrderRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryPayAccountListHeaders headers = new QueryPayAccountListHeaders();
-        return this.queryPayAccountListWithOptions(headers, runtime);
+        QueryBatchTradeOrderHeaders headers = new QueryBatchTradeOrderHeaders();
+        return this.queryBatchTradeOrderWithOptions(request, headers, runtime);
     }
 
     public QueryPayAccountListResponse queryPayAccountListWithOptions(QueryPayAccountListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1003,13 +1176,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("QueryPayAccountList", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/payAccounts", "json", req, runtime), new QueryPayAccountListResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryPayAccountList"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/payAccounts"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryPayAccountListResponse());
     }
 
-    public QueryRegisterOrderResponse queryRegisterOrder(QueryRegisterOrderRequest request) throws Exception {
+    public QueryPayAccountListResponse queryPayAccountList() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryRegisterOrderHeaders headers = new QueryRegisterOrderHeaders();
-        return this.queryRegisterOrderWithOptions(request, headers, runtime);
+        QueryPayAccountListHeaders headers = new QueryPayAccountListHeaders();
+        return this.queryPayAccountListWithOptions(headers, runtime);
     }
 
     public QueryRegisterOrderResponse queryRegisterOrderWithOptions(QueryRegisterOrderRequest request, QueryRegisterOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1044,13 +1228,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryRegisterOrder", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/institutions/subInstitutions/orders", "json", req, runtime), new QueryRegisterOrderResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryRegisterOrder"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/institutions/subInstitutions/orders"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryRegisterOrderResponse());
     }
 
-    public QueryUserAgreementResponse queryUserAgreement(QueryUserAgreementRequest request) throws Exception {
+    public QueryRegisterOrderResponse queryRegisterOrder(QueryRegisterOrderRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryUserAgreementHeaders headers = new QueryUserAgreementHeaders();
-        return this.queryUserAgreementWithOptions(request, headers, runtime);
+        QueryRegisterOrderHeaders headers = new QueryRegisterOrderHeaders();
+        return this.queryRegisterOrderWithOptions(request, headers, runtime);
     }
 
     public QueryUserAgreementResponse queryUserAgreementWithOptions(QueryUserAgreementRequest request, QueryUserAgreementHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1089,13 +1284,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryUserAgreement", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/userAgreements", "json", req, runtime), new QueryUserAgreementResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryUserAgreement"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/userAgreements"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryUserAgreementResponse());
     }
 
-    public QueryUserAlipayAccountResponse queryUserAlipayAccount() throws Exception {
+    public QueryUserAgreementResponse queryUserAgreement(QueryUserAgreementRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryUserAlipayAccountHeaders headers = new QueryUserAlipayAccountHeaders();
-        return this.queryUserAlipayAccountWithOptions(headers, runtime);
+        QueryUserAgreementHeaders headers = new QueryUserAgreementHeaders();
+        return this.queryUserAgreementWithOptions(request, headers, runtime);
     }
 
     public QueryUserAlipayAccountResponse queryUserAlipayAccountWithOptions(QueryUserAlipayAccountHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1111,13 +1317,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders)
         ));
-        return TeaModel.toModel(this.doROARequest("QueryUserAlipayAccount", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/userAlipayAccounts", "json", req, runtime), new QueryUserAlipayAccountResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryUserAlipayAccount"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/userAlipayAccounts"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryUserAlipayAccountResponse());
     }
 
-    public QueryWithholdingOrderResponse queryWithholdingOrder(QueryWithholdingOrderRequest request) throws Exception {
+    public QueryUserAlipayAccountResponse queryUserAlipayAccount() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryWithholdingOrderHeaders headers = new QueryWithholdingOrderHeaders();
-        return this.queryWithholdingOrderWithOptions(request, headers, runtime);
+        QueryUserAlipayAccountHeaders headers = new QueryUserAlipayAccountHeaders();
+        return this.queryUserAlipayAccountWithOptions(headers, runtime);
     }
 
     public QueryWithholdingOrderResponse queryWithholdingOrderWithOptions(QueryWithholdingOrderRequest request, QueryWithholdingOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1140,13 +1357,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryWithholdingOrder", "finance_1.0", "HTTP", "GET", "AK", "/v1.0/finance/withholdingOrders", "json", req, runtime), new QueryWithholdingOrderResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryWithholdingOrder"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/withholdingOrders"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryWithholdingOrderResponse());
     }
 
-    public SaveCorpPayCodeResponse saveCorpPayCode(SaveCorpPayCodeRequest request) throws Exception {
+    public QueryWithholdingOrderResponse queryWithholdingOrder(QueryWithholdingOrderRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SaveCorpPayCodeHeaders headers = new SaveCorpPayCodeHeaders();
-        return this.saveCorpPayCodeWithOptions(request, headers, runtime);
+        QueryWithholdingOrderHeaders headers = new QueryWithholdingOrderHeaders();
+        return this.queryWithholdingOrderWithOptions(request, headers, runtime);
     }
 
     public SaveCorpPayCodeResponse saveCorpPayCodeWithOptions(SaveCorpPayCodeRequest request, SaveCorpPayCodeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1181,13 +1409,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("SaveCorpPayCode", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/payCodes/corpSettings", "json", req, runtime), new SaveCorpPayCodeResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SaveCorpPayCode"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/payCodes/corpSettings"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SaveCorpPayCodeResponse());
     }
 
-    public UnsignUserAgreementResponse unsignUserAgreement(UnsignUserAgreementRequest request) throws Exception {
+    public SaveCorpPayCodeResponse saveCorpPayCode(SaveCorpPayCodeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UnsignUserAgreementHeaders headers = new UnsignUserAgreementHeaders();
-        return this.unsignUserAgreementWithOptions(request, headers, runtime);
+        SaveCorpPayCodeHeaders headers = new SaveCorpPayCodeHeaders();
+        return this.saveCorpPayCodeWithOptions(request, headers, runtime);
     }
 
     public UnsignUserAgreementResponse unsignUserAgreementWithOptions(UnsignUserAgreementRequest request, UnsignUserAgreementHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1230,13 +1469,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UnsignUserAgreement", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/userAgreements/unsign", "none", req, runtime), new UnsignUserAgreementResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UnsignUserAgreement"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/userAgreements/unsign"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "none")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UnsignUserAgreementResponse());
     }
 
-    public UpateUserCodeInstanceResponse upateUserCodeInstance(UpateUserCodeInstanceRequest request) throws Exception {
+    public UnsignUserAgreementResponse unsignUserAgreement(UnsignUserAgreementRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpateUserCodeInstanceHeaders headers = new UpateUserCodeInstanceHeaders();
-        return this.upateUserCodeInstanceWithOptions(request, headers, runtime);
+        UnsignUserAgreementHeaders headers = new UnsignUserAgreementHeaders();
+        return this.unsignUserAgreementWithOptions(request, headers, runtime);
     }
 
     public UpateUserCodeInstanceResponse upateUserCodeInstanceWithOptions(UpateUserCodeInstanceRequest request, UpateUserCodeInstanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1295,13 +1545,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpateUserCodeInstance", "finance_1.0", "HTTP", "PUT", "AK", "/v1.0/finance/payCodes/userInstances", "json", req, runtime), new UpateUserCodeInstanceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpateUserCodeInstance"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/payCodes/userInstances"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpateUserCodeInstanceResponse());
     }
 
-    public UpdateInvoiceVerifyStatusResponse updateInvoiceVerifyStatus(UpdateInvoiceVerifyStatusRequest request) throws Exception {
+    public UpateUserCodeInstanceResponse upateUserCodeInstance(UpateUserCodeInstanceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateInvoiceVerifyStatusHeaders headers = new UpdateInvoiceVerifyStatusHeaders();
-        return this.updateInvoiceVerifyStatusWithOptions(request, headers, runtime);
+        UpateUserCodeInstanceHeaders headers = new UpateUserCodeInstanceHeaders();
+        return this.upateUserCodeInstanceWithOptions(request, headers, runtime);
     }
 
     public UpdateInvoiceVerifyStatusResponse updateInvoiceVerifyStatusWithOptions(UpdateInvoiceVerifyStatusRequest request, UpdateInvoiceVerifyStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1368,13 +1629,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateInvoiceVerifyStatus", "finance_1.0", "HTTP", "PUT", "AK", "/v1.0/finance/invoices/verifyStatus", "json", req, runtime), new UpdateInvoiceVerifyStatusResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateInvoiceVerifyStatus"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/invoices/verifyStatus"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateInvoiceVerifyStatusResponse());
     }
 
-    public UploadInvoiceResponse uploadInvoice(UploadInvoiceRequest request) throws Exception {
+    public UpdateInvoiceVerifyStatusResponse updateInvoiceVerifyStatus(UpdateInvoiceVerifyStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UploadInvoiceHeaders headers = new UploadInvoiceHeaders();
-        return this.uploadInvoiceWithOptions(request, headers, runtime);
+        UpdateInvoiceVerifyStatusHeaders headers = new UpdateInvoiceVerifyStatusHeaders();
+        return this.updateInvoiceVerifyStatusWithOptions(request, headers, runtime);
     }
 
     public UploadInvoiceResponse uploadInvoiceWithOptions(UploadInvoiceRequest request, UploadInvoiceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1405,13 +1677,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UploadInvoice", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/invoices/upload", "json", req, runtime), new UploadInvoiceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UploadInvoice"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/invoices/upload"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UploadInvoiceResponse());
     }
 
-    public UploadInvoiceByAuthResponse uploadInvoiceByAuth(UploadInvoiceByAuthRequest request) throws Exception {
+    public UploadInvoiceResponse uploadInvoice(UploadInvoiceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UploadInvoiceByAuthHeaders headers = new UploadInvoiceByAuthHeaders();
-        return this.uploadInvoiceByAuthWithOptions(request, headers, runtime);
+        UploadInvoiceHeaders headers = new UploadInvoiceHeaders();
+        return this.uploadInvoiceWithOptions(request, headers, runtime);
     }
 
     public UploadInvoiceByAuthResponse uploadInvoiceByAuthWithOptions(UploadInvoiceByAuthRequest request, UploadInvoiceByAuthHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1438,13 +1721,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UploadInvoiceByAuth", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/invoices/authorizations/upload", "json", req, runtime), new UploadInvoiceByAuthResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UploadInvoiceByAuth"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/invoices/authorizations/upload"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UploadInvoiceByAuthResponse());
     }
 
-    public UploadInvoiceByMobileResponse uploadInvoiceByMobile(UploadInvoiceByMobileRequest request) throws Exception {
+    public UploadInvoiceByAuthResponse uploadInvoiceByAuth(UploadInvoiceByAuthRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UploadInvoiceByMobileHeaders headers = new UploadInvoiceByMobileHeaders();
-        return this.uploadInvoiceByMobileWithOptions(request, headers, runtime);
+        UploadInvoiceByAuthHeaders headers = new UploadInvoiceByAuthHeaders();
+        return this.uploadInvoiceByAuthWithOptions(request, headers, runtime);
     }
 
     public UploadInvoiceByMobileResponse uploadInvoiceByMobileWithOptions(UploadInvoiceByMobileRequest request, UploadInvoiceByMobileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1475,13 +1769,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UploadInvoiceByMobile", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/invoices/mobiles/upload", "json", req, runtime), new UploadInvoiceByMobileResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UploadInvoiceByMobile"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/invoices/mobiles/upload"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UploadInvoiceByMobileResponse());
     }
 
-    public UploadRegisterImageResponse uploadRegisterImage(UploadRegisterImageRequest request) throws Exception {
+    public UploadInvoiceByMobileResponse uploadInvoiceByMobile(UploadInvoiceByMobileRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UploadRegisterImageHeaders headers = new UploadRegisterImageHeaders();
-        return this.uploadRegisterImageWithOptions(request, headers, runtime);
+        UploadInvoiceByMobileHeaders headers = new UploadInvoiceByMobileHeaders();
+        return this.uploadInvoiceByMobileWithOptions(request, headers, runtime);
     }
 
     public UploadRegisterImageResponse uploadRegisterImageWithOptions(UploadRegisterImageRequest request, UploadRegisterImageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1520,13 +1825,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UploadRegisterImage", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/institutions/images", "json", req, runtime), new UploadRegisterImageResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UploadRegisterImage"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/institutions/images"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UploadRegisterImageResponse());
     }
 
-    public UserAgreementPageSignResponse userAgreementPageSign(UserAgreementPageSignRequest request) throws Exception {
+    public UploadRegisterImageResponse uploadRegisterImage(UploadRegisterImageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UserAgreementPageSignHeaders headers = new UserAgreementPageSignHeaders();
-        return this.userAgreementPageSignWithOptions(request, headers, runtime);
+        UploadRegisterImageHeaders headers = new UploadRegisterImageHeaders();
+        return this.uploadRegisterImageWithOptions(request, headers, runtime);
     }
 
     public UserAgreementPageSignResponse userAgreementPageSignWithOptions(UserAgreementPageSignRequest request, UserAgreementPageSignHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -1593,6 +1909,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UserAgreementPageSign", "finance_1.0", "HTTP", "POST", "AK", "/v1.0/finance/userAgreements", "json", req, runtime), new UserAgreementPageSignResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UserAgreementPageSign"),
+            new TeaPair("version", "finance_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/finance/userAgreements"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UserAgreementPageSignResponse());
+    }
+
+    public UserAgreementPageSignResponse userAgreementPageSign(UserAgreementPageSignRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UserAgreementPageSignHeaders headers = new UserAgreementPageSignHeaders();
+        return this.userAgreementPageSignWithOptions(request, headers, runtime);
     }
 }

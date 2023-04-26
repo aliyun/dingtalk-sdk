@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddContactHideBySceneSettingResponseBody extends TeaModel {
-    /**
-     * <p>settingId</p>
-     */
     @NameInMap("settingId")
     public Long settingId;
 

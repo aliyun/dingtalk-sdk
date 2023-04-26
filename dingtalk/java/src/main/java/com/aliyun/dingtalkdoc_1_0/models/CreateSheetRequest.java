@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSheetRequest extends TeaModel {
-    /**
-     * <p>工作表名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>操作人id</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 

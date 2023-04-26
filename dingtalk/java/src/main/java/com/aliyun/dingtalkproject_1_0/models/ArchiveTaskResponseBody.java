@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class ArchiveTaskResponseBody extends TeaModel {
-    /**
-     * <p>结果</p>
-     */
     @NameInMap("result")
     public ArchiveTaskResponseBodyResult result;
 
@@ -24,9 +21,6 @@ public class ArchiveTaskResponseBody extends TeaModel {
     }
 
     public static class ArchiveTaskResponseBodyResult extends TeaModel {
-        /**
-         * <p>更新时间。</p>
-         */
         @NameInMap("updated")
         public String updated;
 

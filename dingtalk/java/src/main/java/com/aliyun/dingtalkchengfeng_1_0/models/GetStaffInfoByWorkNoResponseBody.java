@@ -4,15 +4,9 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetStaffInfoByWorkNoResponseBody extends TeaModel {
-    /**
-     * <p>员工详情</p>
-     */
     @NameInMap("content")
     public GetStaffInfoByWorkNoResponseBodyContent content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
@@ -38,87 +32,45 @@ public class GetStaffInfoByWorkNoResponseBody extends TeaModel {
     }
 
     public static class GetStaffInfoByWorkNoResponseBodyContent extends TeaModel {
-        /**
-         * <p>部门编码</p>
-         */
         @NameInMap("deptCode")
         public String deptCode;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("deptName")
         public String deptName;
 
-        /**
-         * <p>邮箱</p>
-         */
         @NameInMap("email")
         public String email;
 
-        /**
-         * <p>员工类型</p>
-         */
         @NameInMap("employType")
         public String employType;
 
-        /**
-         * <p>员工状态</p>
-         */
         @NameInMap("employeeStatus")
         public String employeeStatus;
 
-        /**
-         * <p>职级</p>
-         */
         @NameInMap("jobLevelName")
         public String jobLevelName;
 
-        /**
-         * <p>职位编码</p>
-         */
         @NameInMap("jobPositionCode")
         public String jobPositionCode;
 
-        /**
-         * <p>职位名称</p>
-         */
         @NameInMap("jobPositionName")
         public String jobPositionName;
 
-        /**
-         * <p>职务编码</p>
-         */
         @NameInMap("jobPostCode")
         public String jobPostCode;
 
-        /**
-         * <p>职务名称</p>
-         */
         @NameInMap("jobPostName")
         public String jobPostName;
 
-        /**
-         * <p>手机号</p>
-         */
         @NameInMap("mobile")
         public String mobile;
 
-        /**
-         * <p>姓名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>花名</p>
-         */
         @NameInMap("nickName")
         public String nickName;
 
-        /**
-         * <p>工号</p>
-         */
         @NameInMap("workNumbers")
         public String workNumbers;
 

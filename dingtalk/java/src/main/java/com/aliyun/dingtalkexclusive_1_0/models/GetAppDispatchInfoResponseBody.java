@@ -4,27 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAppDispatchInfoResponseBody extends TeaModel {
-    /**
-     * <p>android打包记录</p>
-     */
     @NameInMap("android")
     public java.util.List<GetAppDispatchInfoResponseBodyAndroid> android;
 
-    /**
-     * <p>iOS打包记录</p>
-     */
     @NameInMap("iOS")
     public java.util.List<GetAppDispatchInfoResponseBodyIOS> iOS;
 
-    /**
-     * <p>mac打包记录</p>
-     */
     @NameInMap("mac")
     public java.util.List<GetAppDispatchInfoResponseBodyMac> mac;
 
-    /**
-     * <p>windows打包记录</p>
-     */
     @NameInMap("windows")
     public java.util.List<GetAppDispatchInfoResponseBodyWindows> windows;
 
@@ -66,39 +54,21 @@ public class GetAppDispatchInfoResponseBody extends TeaModel {
     }
 
     public static class GetAppDispatchInfoResponseBodyAndroid extends TeaModel {
-        /**
-         * <p>基线版本</p>
-         */
         @NameInMap("baseLineVersion")
         public String baseLineVersion;
 
-        /**
-         * <p>下载地址</p>
-         */
         @NameInMap("downloadUrl")
         public String downloadUrl;
 
-        /**
-         * <p>是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布</p>
-         */
         @NameInMap("inGray")
         public Boolean inGray;
 
-        /**
-         * <p>打包时间</p>
-         */
         @NameInMap("packTime")
         public Long packTime;
 
-        /**
-         * <p>客户端类型</p>
-         */
         @NameInMap("platform")
         public String platform;
 
-        /**
-         * <p>版本号</p>
-         */
         @NameInMap("version")
         public String version;
 
@@ -158,9 +128,6 @@ public class GetAppDispatchInfoResponseBody extends TeaModel {
     }
 
     public static class GetAppDispatchInfoResponseBodyIOSExt extends TeaModel {
-        /**
-         * <p>plist下载地址</p>
-         */
         @NameInMap("plist")
         public String plist;
 
@@ -180,42 +147,24 @@ public class GetAppDispatchInfoResponseBody extends TeaModel {
     }
 
     public static class GetAppDispatchInfoResponseBodyIOS extends TeaModel {
-        /**
-         * <p>基线版本</p>
-         */
         @NameInMap("baseLineVersion")
         public String baseLineVersion;
 
-        /**
-         * <p>下载地址</p>
-         */
         @NameInMap("downloadUrl")
         public String downloadUrl;
 
         @NameInMap("ext")
         public GetAppDispatchInfoResponseBodyIOSExt ext;
 
-        /**
-         * <p>是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布</p>
-         */
         @NameInMap("inGray")
         public Boolean inGray;
 
-        /**
-         * <p>打包时间</p>
-         */
         @NameInMap("packTime")
         public Long packTime;
 
-        /**
-         * <p>客户端类型</p>
-         */
         @NameInMap("platform")
         public String platform;
 
-        /**
-         * <p>版本号</p>
-         */
         @NameInMap("version")
         public String version;
 
@@ -283,39 +232,21 @@ public class GetAppDispatchInfoResponseBody extends TeaModel {
     }
 
     public static class GetAppDispatchInfoResponseBodyMac extends TeaModel {
-        /**
-         * <p>基线版本</p>
-         */
         @NameInMap("baseLineVersion")
         public String baseLineVersion;
 
-        /**
-         * <p>下载地址</p>
-         */
         @NameInMap("downloadUrl")
         public String downloadUrl;
 
-        /**
-         * <p>是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布</p>
-         */
         @NameInMap("inGray")
         public Boolean inGray;
 
-        /**
-         * <p>打包时间</p>
-         */
         @NameInMap("packTime")
         public Long packTime;
 
-        /**
-         * <p>客户端类型</p>
-         */
         @NameInMap("platform")
         public String platform;
 
-        /**
-         * <p>版本号</p>
-         */
         @NameInMap("version")
         public String version;
 
@@ -375,39 +306,21 @@ public class GetAppDispatchInfoResponseBody extends TeaModel {
     }
 
     public static class GetAppDispatchInfoResponseBodyWindows extends TeaModel {
-        /**
-         * <p>基线版本</p>
-         */
         @NameInMap("baseLineVersion")
         public String baseLineVersion;
 
-        /**
-         * <p>下载地址</p>
-         */
         @NameInMap("downloadUrl")
         public String downloadUrl;
 
-        /**
-         * <p>是否灰度。true 灰度发布中 | false 全量灰度发布。为空则为未发布</p>
-         */
         @NameInMap("inGray")
         public Boolean inGray;
 
-        /**
-         * <p>打包时间</p>
-         */
         @NameInMap("packTime")
         public Long packTime;
 
-        /**
-         * <p>客户端类型</p>
-         */
         @NameInMap("platform")
         public String platform;
 
-        /**
-         * <p>版本号</p>
-         */
         @NameInMap("version")
         public String version;
 

@@ -4,27 +4,15 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConsumeUserPointsRequest extends TeaModel {
-    /**
-     * <p>扣减积分数量，1～1000000</p>
-     */
     @NameInMap("amount")
     public Long amount;
 
-    /**
-     * <p>幂等外部ID，最大长度32个字符</p>
-     */
     @NameInMap("outId")
     public String outId;
 
-    /**
-     * <p>备注，最长32个字符</p>
-     */
     @NameInMap("remark")
     public String remark;
 
-    /**
-     * <p>用途，可用值：OPEN_EMP_POINT_CONSUME_DEFAULT-默认扣减，OPEN_EMP_POINT_PUNISH_CONSUME-惩罚扣减；默认为: OPEN_EMP_POINT_CONSUME_DEFAULT</p>
-     */
     @NameInMap("usage")
     public String usage;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRecycleItemResponseBody extends TeaModel {
-    /**
-     * <p>回收项信息</p>
-     */
     @NameInMap("item")
     public GetRecycleItemResponseBodyItem item;
 
@@ -24,60 +21,30 @@ public class GetRecycleItemResponseBody extends TeaModel {
     }
 
     public static class GetRecycleItemResponseBodyItem extends TeaModel {
-        /**
-         * <p>原文件(夹)id</p>
-         */
         @NameInMap("dentryId")
         public String dentryId;
 
-        /**
-         * <p>回收项id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>操作人id</p>
-         */
         @NameInMap("operatorId")
         public String operatorId;
 
-        /**
-         * <p>删除时间</p>
-         */
         @NameInMap("operatorTime")
         public String operatorTime;
 
-        /**
-         * <p>原文件(夹)名称</p>
-         */
         @NameInMap("originalName")
         public String originalName;
 
-        /**
-         * <p>原文件(夹)路径</p>
-         */
         @NameInMap("originalPath")
         public String originalPath;
 
-        /**
-         * <p>原文件(夹)大小</p>
-         */
         @NameInMap("size")
         public Long size;
 
-        /**
-         * <p>原文件(夹)所在空间id</p>
-         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        /**
-         * <p>类型，目录或文件</p>
-         * <p>枚举值:</p>
-         * <p>	FILE: 文件</p>
-         * <p>	FOLDER: 文件夹</p>
-         */
         @NameInMap("type")
         public String type;
 

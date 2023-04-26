@@ -4,21 +4,12 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class TitleMention extends TeaModel {
-    /**
-     * <p>结束位置</p>
-     */
     @NameInMap("length")
     public Integer length;
 
-    /**
-     * <p>开始位置</p>
-     */
     @NameInMap("offset")
     public Integer offset;
 
-    /**
-     * <p>“@人员”对象信息</p>
-     */
     @NameInMap("user")
     public OpenUserDTO user;
 

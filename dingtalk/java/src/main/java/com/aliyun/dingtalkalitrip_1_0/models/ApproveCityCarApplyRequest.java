@@ -4,39 +4,21 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class ApproveCityCarApplyRequest extends TeaModel {
-    /**
-     * <p>第三方企业ID</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>审批时间</p>
-     */
     @NameInMap("operateTime")
     public String operateTime;
 
-    /**
-     * <p>审批备注</p>
-     */
     @NameInMap("remark")
     public String remark;
 
-    /**
-     * <p>审批结果：1-同意，2-拒绝</p>
-     */
     @NameInMap("status")
     public Long status;
 
-    /**
-     * <p>第三方审批单ID</p>
-     */
     @NameInMap("thirdPartApplyId")
     public String thirdPartApplyId;
 
-    /**
-     * <p>审批的第三方员工ID</p>
-     */
     @NameInMap("userId")
     public String userId;
 

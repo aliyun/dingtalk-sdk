@@ -10,9 +10,6 @@ public class GetTranscribeBriefResponseBody extends TeaModel {
     @NameInMap("statusCode")
     public Integer statusCode;
 
-    /**
-     * <p>用于描述本次请求是否成功的字段</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

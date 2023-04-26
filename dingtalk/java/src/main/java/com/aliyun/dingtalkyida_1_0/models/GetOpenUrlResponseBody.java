@@ -4,9 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOpenUrlResponseBody extends TeaModel {
-    /**
-     * <p>临时免登地址url</p>
-     */
     @NameInMap("result")
     public String result;
 

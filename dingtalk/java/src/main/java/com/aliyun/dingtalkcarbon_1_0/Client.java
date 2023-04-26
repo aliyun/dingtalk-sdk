@@ -6,8 +6,11 @@ import com.aliyun.dingtalkcarbon_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public GetPersonalCarbonInfoResponse getPersonalCarbonInfo(GetPersonalCarbonInfoRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetPersonalCarbonInfoHeaders headers = new GetPersonalCarbonInfoHeaders();
-        return this.getPersonalCarbonInfoWithOptions(request, headers, runtime);
-    }
 
     public GetPersonalCarbonInfoResponse getPersonalCarbonInfoWithOptions(GetPersonalCarbonInfoRequest request, GetPersonalCarbonInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -46,13 +43,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetPersonalCarbonInfo", "carbon_1.0", "HTTP", "GET", "AK", "/v1.0/carbon/personals/infos", "json", req, runtime), new GetPersonalCarbonInfoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetPersonalCarbonInfo"),
+            new TeaPair("version", "carbon_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/carbon/personals/infos"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetPersonalCarbonInfoResponse());
     }
 
-    public WriteAlibabaOrgCarbonResponse writeAlibabaOrgCarbon(WriteAlibabaOrgCarbonRequest request) throws Exception {
+    public GetPersonalCarbonInfoResponse getPersonalCarbonInfo(GetPersonalCarbonInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        WriteAlibabaOrgCarbonHeaders headers = new WriteAlibabaOrgCarbonHeaders();
-        return this.writeAlibabaOrgCarbonWithOptions(request, headers, runtime);
+        GetPersonalCarbonInfoHeaders headers = new GetPersonalCarbonInfoHeaders();
+        return this.getPersonalCarbonInfoWithOptions(request, headers, runtime);
     }
 
     public WriteAlibabaOrgCarbonResponse writeAlibabaOrgCarbonWithOptions(WriteAlibabaOrgCarbonRequest request, WriteAlibabaOrgCarbonHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -75,13 +83,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("WriteAlibabaOrgCarbon", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/alibabaOrgDetails/write", "json", req, runtime), new WriteAlibabaOrgCarbonResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "WriteAlibabaOrgCarbon"),
+            new TeaPair("version", "carbon_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/carbon/alibabaOrgDetails/write"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new WriteAlibabaOrgCarbonResponse());
     }
 
-    public WriteAlibabaUserCarbonResponse writeAlibabaUserCarbon(WriteAlibabaUserCarbonRequest request) throws Exception {
+    public WriteAlibabaOrgCarbonResponse writeAlibabaOrgCarbon(WriteAlibabaOrgCarbonRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        WriteAlibabaUserCarbonHeaders headers = new WriteAlibabaUserCarbonHeaders();
-        return this.writeAlibabaUserCarbonWithOptions(request, headers, runtime);
+        WriteAlibabaOrgCarbonHeaders headers = new WriteAlibabaOrgCarbonHeaders();
+        return this.writeAlibabaOrgCarbonWithOptions(request, headers, runtime);
     }
 
     public WriteAlibabaUserCarbonResponse writeAlibabaUserCarbonWithOptions(WriteAlibabaUserCarbonRequest request, WriteAlibabaUserCarbonHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -104,13 +123,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("WriteAlibabaUserCarbon", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/alibabaUserDetails/write", "json", req, runtime), new WriteAlibabaUserCarbonResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "WriteAlibabaUserCarbon"),
+            new TeaPair("version", "carbon_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/carbon/alibabaUserDetails/write"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new WriteAlibabaUserCarbonResponse());
     }
 
-    public WriteIsvStateResponse writeIsvState(WriteIsvStateRequest request) throws Exception {
+    public WriteAlibabaUserCarbonResponse writeAlibabaUserCarbon(WriteAlibabaUserCarbonRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        WriteIsvStateHeaders headers = new WriteIsvStateHeaders();
-        return this.writeIsvStateWithOptions(request, headers, runtime);
+        WriteAlibabaUserCarbonHeaders headers = new WriteAlibabaUserCarbonHeaders();
+        return this.writeAlibabaUserCarbonWithOptions(request, headers, runtime);
     }
 
     public WriteIsvStateResponse writeIsvStateWithOptions(WriteIsvStateRequest request, WriteIsvStateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -137,13 +167,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("WriteIsvState", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/datas/states/write", "json", req, runtime), new WriteIsvStateResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "WriteIsvState"),
+            new TeaPair("version", "carbon_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/carbon/datas/states/write"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new WriteIsvStateResponse());
     }
 
-    public WriteOrgCarbonResponse writeOrgCarbon(WriteOrgCarbonRequest request) throws Exception {
+    public WriteIsvStateResponse writeIsvState(WriteIsvStateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        WriteOrgCarbonHeaders headers = new WriteOrgCarbonHeaders();
-        return this.writeOrgCarbonWithOptions(request, headers, runtime);
+        WriteIsvStateHeaders headers = new WriteIsvStateHeaders();
+        return this.writeIsvStateWithOptions(request, headers, runtime);
     }
 
     public WriteOrgCarbonResponse writeOrgCarbonWithOptions(WriteOrgCarbonRequest request, WriteOrgCarbonHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -166,13 +207,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("WriteOrgCarbon", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/orgDetails/write", "json", req, runtime), new WriteOrgCarbonResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "WriteOrgCarbon"),
+            new TeaPair("version", "carbon_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/carbon/orgDetails/write"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new WriteOrgCarbonResponse());
     }
 
-    public WriteUserCarbonResponse writeUserCarbon(WriteUserCarbonRequest request) throws Exception {
+    public WriteOrgCarbonResponse writeOrgCarbon(WriteOrgCarbonRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        WriteUserCarbonHeaders headers = new WriteUserCarbonHeaders();
-        return this.writeUserCarbonWithOptions(request, headers, runtime);
+        WriteOrgCarbonHeaders headers = new WriteOrgCarbonHeaders();
+        return this.writeOrgCarbonWithOptions(request, headers, runtime);
     }
 
     public WriteUserCarbonResponse writeUserCarbonWithOptions(WriteUserCarbonRequest request, WriteUserCarbonHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -195,13 +247,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("WriteUserCarbon", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/userDetails/write", "json", req, runtime), new WriteUserCarbonResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "WriteUserCarbon"),
+            new TeaPair("version", "carbon_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/carbon/userDetails/write"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new WriteUserCarbonResponse());
     }
 
-    public WriteUserCarbonEnergyResponse writeUserCarbonEnergy(WriteUserCarbonEnergyRequest request) throws Exception {
+    public WriteUserCarbonResponse writeUserCarbon(WriteUserCarbonRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        WriteUserCarbonEnergyHeaders headers = new WriteUserCarbonEnergyHeaders();
-        return this.writeUserCarbonEnergyWithOptions(request, headers, runtime);
+        WriteUserCarbonHeaders headers = new WriteUserCarbonHeaders();
+        return this.writeUserCarbonWithOptions(request, headers, runtime);
     }
 
     public WriteUserCarbonEnergyResponse writeUserCarbonEnergyWithOptions(WriteUserCarbonEnergyRequest request, WriteUserCarbonEnergyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -224,6 +287,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("WriteUserCarbonEnergy", "carbon_1.0", "HTTP", "POST", "AK", "/v1.0/carbon/userDetails/energies/write", "json", req, runtime), new WriteUserCarbonEnergyResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "WriteUserCarbonEnergy"),
+            new TeaPair("version", "carbon_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/carbon/userDetails/energies/write"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new WriteUserCarbonEnergyResponse());
+    }
+
+    public WriteUserCarbonEnergyResponse writeUserCarbonEnergy(WriteUserCarbonEnergyRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        WriteUserCarbonEnergyHeaders headers = new WriteUserCarbonEnergyHeaders();
+        return this.writeUserCarbonEnergyWithOptions(request, headers, runtime);
     }
 }

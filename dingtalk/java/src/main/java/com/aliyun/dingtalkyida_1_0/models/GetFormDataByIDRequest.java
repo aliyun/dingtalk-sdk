@@ -4,27 +4,15 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFormDataByIDRequest extends TeaModel {
-    /**
-     * <p>应用编码</p>
-     */
     @NameInMap("appType")
     public String appType;
 
-    /**
-     * <p>语言。可选值：zh_CN/en_US 默认：zh_CN</p>
-     */
     @NameInMap("language")
     public String language;
 
-    /**
-     * <p>应用秘钥。在应用数据中获取。</p>
-     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    /**
-     * <p>钉钉userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

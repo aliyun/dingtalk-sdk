@@ -7,33 +7,18 @@ public class TransferTicketRequest extends TeaModel {
     @NameInMap("notify")
     public TransferTicketRequestNotify notify;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>工单开放ID</p>
-     */
     @NameInMap("openTicketId")
     public String openTicketId;
 
-    /**
-     * <p>工单处理人</p>
-     */
     @NameInMap("processorUnionId")
     public String processorUnionId;
 
-    /**
-     * <p>被转单人UnionId列表</p>
-     */
     @NameInMap("processorUnionIds")
     public java.util.List<String> processorUnionIds;
 
-    /**
-     * <p>工单备注</p>
-     */
     @NameInMap("ticketMemo")
     public TransferTicketRequestTicketMemo ticketMemo;
 
@@ -91,21 +76,12 @@ public class TransferTicketRequest extends TeaModel {
     }
 
     public static class TransferTicketRequestNotify extends TeaModel {
-        /**
-         * <p>群中通知接收人（钉钉UnionId）</p>
-         */
         @NameInMap("groupNoticeReceiverUnionIds")
         public java.util.List<String> groupNoticeReceiverUnionIds;
 
-        /**
-         * <p>是否向群内推送一个全员可见工单通知卡片</p>
-         */
         @NameInMap("noticeAllGroupMember")
         public Boolean noticeAllGroupMember;
 
-        /**
-         * <p>企业工作通知接收人（钉钉UnionId）</p>
-         */
         @NameInMap("workNoticeReceiverUnionIds")
         public java.util.List<String> workNoticeReceiverUnionIds;
 
@@ -171,15 +147,9 @@ public class TransferTicketRequest extends TeaModel {
     }
 
     public static class TransferTicketRequestTicketMemo extends TeaModel {
-        /**
-         * <p>备注相关的附件</p>
-         */
         @NameInMap("attachments")
         public java.util.List<TransferTicketRequestTicketMemoAttachments> attachments;
 
-        /**
-         * <p>文字备注</p>
-         */
         @NameInMap("memo")
         public String memo;
 

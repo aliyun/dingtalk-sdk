@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeActiveCollegeDeptGroupResponseBody extends TeaModel {
-    /**
-     * <p>调用时如果满足创建群条件，直接返回 openConversationId</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class TopicStatisticsResponseBody extends TeaModel {
-    /**
-     * <p>话题趋势</p>
-     */
     @NameInMap("topicStatisticsRecords")
     public java.util.List<TopicStatisticsResponseBodyTopicStatisticsRecords> topicStatisticsRecords;
 
@@ -24,27 +21,15 @@ public class TopicStatisticsResponseBody extends TeaModel {
     }
 
     public static class TopicStatisticsResponseBodyTopicStatisticsRecords extends TeaModel {
-        /**
-         * <p>日期</p>
-         */
         @NameInMap("dt")
         public String dt;
 
-        /**
-         * <p>消息量</p>
-         */
         @NameInMap("msgCount")
         public Long msgCount;
 
-        /**
-         * <p>参与人数</p>
-         */
         @NameInMap("participantsNum")
         public Long participantsNum;
 
-        /**
-         * <p>话题数量</p>
-         */
         @NameInMap("topicNum")
         public Long topicNum;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkcarbon_1_0.models;
 import com.aliyun.tea.*;
 
 public class WriteUserCarbonResponseBody extends TeaModel {
-    /**
-     * <p>返回请求成功个数</p>
-     */
     @NameInMap("result")
     public Integer result;
 
-    /**
-     * <p>请求是否写入成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupManageQueryResponseBody extends TeaModel {
-    /**
-     * <p>群信息列表</p>
-     */
     @NameInMap("groupInfoList")
     public java.util.List<GroupManageQueryResponseBodyGroupInfoList> groupInfoList;
 
-    /**
-     * <p>分页拉取时, 是否还有更多</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>分页拉取游标, 请求下一页时回传</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -52,60 +43,33 @@ public class GroupManageQueryResponseBody extends TeaModel {
     }
 
     public static class GroupManageQueryResponseBodyGroupInfoList extends TeaModel {
-        /**
-         * <p>禁言模式</p>
-         */
         @NameInMap("banWordsMode")
         public Integer banWordsMode;
 
-        /**
-         * <p>群容量</p>
-         */
         @NameInMap("capacity")
         public Integer capacity;
 
-        /**
-         * <p>群创建时间</p>
-         */
         @NameInMap("createdAt")
         public Long createdAt;
 
-        /**
-         * <p>扩展信息</p>
-         */
         @NameInMap("extInfo")
         public java.util.Map<String, ?> extInfo;
 
         @NameInMap("groupAdminList")
         public java.util.List<String> groupAdminList;
 
-        /**
-         * <p>群主userid</p>
-         */
         @NameInMap("groupOwner")
         public String groupOwner;
 
-        /**
-         * <p>群标题</p>
-         */
         @NameInMap("groupTitle")
         public String groupTitle;
 
-        /**
-         * <p>当前群人数</p>
-         */
         @NameInMap("memberCount")
         public Integer memberCount;
 
-        /**
-         * <p>开放的群id</p>
-         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        /**
-         * <p>群类型</p>
-         */
         @NameInMap("type")
         public String type;
 

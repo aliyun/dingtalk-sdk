@@ -4,21 +4,12 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCooperateOrgRequest extends TeaModel {
-    /**
-     * <p>行业code</p>
-     */
     @NameInMap("industryCode")
     public Long industryCode;
 
-    /**
-     * <p>合作空间的logo</p>
-     */
     @NameInMap("logoMediaId")
     public String logoMediaId;
 
-    /**
-     * <p>合作空间组织名称</p>
-     */
     @NameInMap("orgName")
     public String orgName;
 

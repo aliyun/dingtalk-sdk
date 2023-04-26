@@ -4,21 +4,12 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteTrustedDeviceRequest extends TeaModel {
-    /**
-     * <p>是否踢下线</p>
-     */
     @NameInMap("kickOff")
     public Boolean kickOff;
 
-    /**
-     * <p>mac地址</p>
-     */
     @NameInMap("macAddress")
     public String macAddress;
 
-    /**
-     * <p>员工userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

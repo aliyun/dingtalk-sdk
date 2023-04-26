@@ -4,33 +4,18 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateLiveFeedRequest extends TeaModel {
-    /**
-     * <p>封面图url</p>
-     */
     @NameInMap("coverUrl")
     public String coverUrl;
 
-    /**
-     * <p>课程简介</p>
-     */
     @NameInMap("introduction")
     public String introduction;
 
-    /**
-     * <p>预计开始时间（毫秒值）（课程必须预告状态才可以修改该项）</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 
-    /**
-     * <p>课程标题</p>
-     */
     @NameInMap("title")
     public String title;
 
-    /**
-     * <p>操作者id（修改者的组织内id）</p>
-     */
     @NameInMap("userId")
     public String userId;
 

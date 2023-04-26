@@ -4,18 +4,12 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class RelatedSpacesResponseBody extends TeaModel {
-    /**
-     * <p>是否还有更多数据。</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
     @NameInMap("items")
     public java.util.List<RelatedSpacesResponseBodyItems> items;
 
-    /**
-     * <p>分页游标。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
@@ -49,15 +43,9 @@ public class RelatedSpacesResponseBody extends TeaModel {
     }
 
     public static class RelatedSpacesResponseBodyItemsHdIconVO extends TeaModel {
-        /**
-         * <p>图标</p>
-         */
         @NameInMap("icon")
         public String icon;
 
-        /**
-         * <p>图标类型</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -85,15 +73,9 @@ public class RelatedSpacesResponseBody extends TeaModel {
     }
 
     public static class RelatedSpacesResponseBodyItemsIconVO extends TeaModel {
-        /**
-         * <p>图标</p>
-         */
         @NameInMap("icon")
         public String icon;
 
-        /**
-         * <p>图标类型</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -121,15 +103,9 @@ public class RelatedSpacesResponseBody extends TeaModel {
     }
 
     public static class RelatedSpacesResponseBodyItemsOwner extends TeaModel {
-        /**
-         * <p>用户名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户unionId。</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -157,27 +133,15 @@ public class RelatedSpacesResponseBody extends TeaModel {
     }
 
     public static class RelatedSpacesResponseBodyItemsVisitorInfo extends TeaModel {
-        /**
-         * <p>节点的操作列表。</p>
-         */
         @NameInMap("dentryActions")
         public java.util.List<String> dentryActions;
 
-        /**
-         * <p>是否置顶</p>
-         */
         @NameInMap("pinned")
         public Boolean pinned;
 
-        /**
-         * <p>权限</p>
-         */
         @NameInMap("roleCode")
         public String roleCode;
 
-        /**
-         * <p>空间的操作列表。</p>
-         */
         @NameInMap("spaceActions")
         public java.util.List<String> spaceActions;
 
@@ -221,69 +185,36 @@ public class RelatedSpacesResponseBody extends TeaModel {
     }
 
     public static class RelatedSpacesResponseBodyItems extends TeaModel {
-        /**
-         * <p>封面</p>
-         */
         @NameInMap("cover")
         public String cover;
 
-        /**
-         * <p>空间描述信息</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>知识库高清图标</p>
-         */
         @NameInMap("hdIconVO")
         public RelatedSpacesResponseBodyItemsHdIconVO hdIconVO;
 
-        /**
-         * <p>知识库图标</p>
-         */
         @NameInMap("iconVO")
         public RelatedSpacesResponseBodyItemsIconVO iconVO;
 
-        /**
-         * <p>知识库id。</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>知识库名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>知识库所有者。</p>
-         */
         @NameInMap("owner")
         public RelatedSpacesResponseBodyItemsOwner owner;
 
-        /**
-         * <p>知识库中最近编辑的三篇文档。</p>
-         */
         @NameInMap("recentList")
         public java.util.List<DentryModel> recentList;
 
-        /**
-         * <p>知识库类型。</p>
-         */
         @NameInMap("type")
         public Integer type;
 
-        /**
-         * <p>知识库访问url。</p>
-         */
         @NameInMap("url")
         public String url;
 
-        /**
-         * <p>访问者对当前知识库的权限等信息。</p>
-         */
         @NameInMap("visitorInfo")
         public RelatedSpacesResponseBodyItemsVisitorInfo visitorInfo;
 

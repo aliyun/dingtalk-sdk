@@ -4,33 +4,18 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryJobRanksRequest extends TeaModel {
-    /**
-     * <p>本次读取的最大数据记录数量</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>标记当前开始读取的位置</p>
-     */
     @NameInMap("nextToken")
     public Integer nextToken;
 
-    /**
-     * <p>职级序列</p>
-     */
     @NameInMap("rankCategoryId")
     public String rankCategoryId;
 
-    /**
-     * <p>职级编码</p>
-     */
     @NameInMap("rankCode")
     public String rankCode;
 
-    /**
-     * <p>职级名称</p>
-     */
     @NameInMap("rankName")
     public String rankName;
 

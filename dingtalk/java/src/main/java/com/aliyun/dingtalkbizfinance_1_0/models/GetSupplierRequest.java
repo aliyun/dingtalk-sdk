@@ -4,9 +4,6 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSupplierRequest extends TeaModel {
-    /**
-     * <p>供应商code</p>
-     */
     @NameInMap("code")
     public String code;
 

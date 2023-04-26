@@ -4,27 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllTracksResponseBody extends TeaModel {
-    /**
-     * <p>是否还有数据</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>翻页size</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>下页翻页起始游标</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>客户动态分页数据</p>
-     */
     @NameInMap("values")
     public java.util.List<QueryAllTracksResponseBodyValues> values;
 
@@ -66,45 +54,24 @@ public class QueryAllTracksResponseBody extends TeaModel {
     }
 
     public static class QueryAllTracksResponseBodyValues extends TeaModel {
-        /**
-         * <p>动态外键</p>
-         */
         @NameInMap("bizId")
         public String bizId;
 
-        /**
-         * <p>创建人userId</p>
-         */
         @NameInMap("creator")
         public String creator;
 
-        /**
-         * <p>客户id</p>
-         */
         @NameInMap("customerId")
         public String customerId;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        /**
-         * <p>动态加密主键</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>动态子类型</p>
-         */
         @NameInMap("subType")
         public Integer subType;
 
-        /**
-         * <p>动态类型</p>
-         */
         @NameInMap("type")
         public Integer type;
 

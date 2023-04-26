@@ -4,15 +4,9 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReleaseGrayUserIdGetRequest extends TeaModel {
-    /**
-     * <p>离线包ID</p>
-     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
-    /**
-     * <p>离线包版本</p>
-     */
     @NameInMap("version")
     public String version;
 

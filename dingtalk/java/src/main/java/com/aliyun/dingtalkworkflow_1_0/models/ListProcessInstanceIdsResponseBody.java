@@ -4,15 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListProcessInstanceIdsResponseBody extends TeaModel {
-    /**
-     * <p>返回结果。</p>
-     */
     @NameInMap("result")
     public ListProcessInstanceIdsResponseBodyResult result;
 
-    /**
-     * <p>接口请求是否成功。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,15 +32,9 @@ public class ListProcessInstanceIdsResponseBody extends TeaModel {
     }
 
     public static class ListProcessInstanceIdsResponseBodyResult extends TeaModel {
-        /**
-         * <p>审批实例ID列表。</p>
-         */
         @NameInMap("list")
         public java.util.List<String> list;
 
-        /**
-         * <p>表示下次查询的游标，当返回结果没有该字段时表示没有更多数据了。</p>
-         */
         @NameInMap("nextToken")
         public String nextToken;
 

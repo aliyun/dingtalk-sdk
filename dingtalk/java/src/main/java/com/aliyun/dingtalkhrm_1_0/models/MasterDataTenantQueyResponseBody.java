@@ -21,39 +21,21 @@ public class MasterDataTenantQueyResponseBody extends TeaModel {
     }
 
     public static class MasterDataTenantQueyResponseBodyResult extends TeaModel {
-        /**
-         * <p>该租户是否已向主数据同步数据</p>
-         */
         @NameInMap("hasData")
         public Boolean hasData;
 
-        /**
-         * <p>该租户是否有向主数据写数据的权限</p>
-         */
         @NameInMap("integrateDataAuth")
         public Boolean integrateDataAuth;
 
-        /**
-         * <p>租户名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>调用方是否有读该租户数据的权限</p>
-         */
         @NameInMap("readAuth")
         public Boolean readAuth;
 
-        /**
-         * <p>租户 id</p>
-         */
         @NameInMap("tenantId")
         public Long tenantId;
 
-        /**
-         * <p>租户类型</p>
-         */
         @NameInMap("type")
         public Integer type;
 

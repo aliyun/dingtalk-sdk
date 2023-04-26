@@ -4,9 +4,6 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryFeedWhiteListResponseBody extends TeaModel {
-    /**
-     * <p>是否在白名单内</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

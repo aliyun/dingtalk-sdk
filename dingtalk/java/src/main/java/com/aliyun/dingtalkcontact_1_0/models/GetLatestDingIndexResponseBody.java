@@ -4,33 +4,18 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetLatestDingIndexResponseBody extends TeaModel {
-    /**
-     * <p>绿色指数</p>
-     */
     @NameInMap("idxCarbon")
     public Float idxCarbon;
 
-    /**
-     * <p>效率指数</p>
-     */
     @NameInMap("idxEfficiency")
     public Float idxEfficiency;
 
-    /**
-     * <p>钉钉指数月均分</p>
-     */
     @NameInMap("idxMonthlyAvg")
     public Float idxMonthlyAvg;
 
-    /**
-     * <p>钉钉指数</p>
-     */
     @NameInMap("idxTotal")
     public Float idxTotal;
 
-    /**
-     * <p>日期</p>
-     */
     @NameInMap("statDate")
     public String statDate;
 

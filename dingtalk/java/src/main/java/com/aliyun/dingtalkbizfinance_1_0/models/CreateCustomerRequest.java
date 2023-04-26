@@ -4,69 +4,36 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCustomerRequest extends TeaModel {
-    /**
-     * <p>创建人userId</p>
-     */
     @NameInMap("creator")
     public String creator;
 
-    /**
-     * <p>客户描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>开票人邮箱</p>
-     */
     @NameInMap("drawerEmail")
     public String drawerEmail;
 
-    /**
-     * <p>开票人手机号</p>
-     */
     @NameInMap("drawerTelephone")
     public String drawerTelephone;
 
-    /**
-     * <p>客户名字</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>购方账户</p>
-     */
     @NameInMap("purchaserAccount")
     public String purchaserAccount;
 
-    /**
-     * <p>购房地址</p>
-     */
     @NameInMap("purchaserAddress")
     public String purchaserAddress;
 
-    /**
-     * <p>购方银行</p>
-     */
     @NameInMap("purchaserBankName")
     public String purchaserBankName;
 
-    /**
-     * <p>购方名字</p>
-     */
     @NameInMap("purchaserName")
     public String purchaserName;
 
-    /**
-     * <p>购方税号</p>
-     */
     @NameInMap("purchaserTaxNo")
     public String purchaserTaxNo;
 
-    /**
-     * <p>购方电话</p>
-     */
     @NameInMap("purchaserTel")
     public String purchaserTel;
 

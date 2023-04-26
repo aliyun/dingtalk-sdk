@@ -4,33 +4,18 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class DingTalkSecurityCheckRequest extends TeaModel {
-    /**
-     * <p>客户端版本号</p>
-     */
     @NameInMap("clientVer")
     public String clientVer;
 
-    /**
-     * <p>客户端平台类型(iOS,Android)</p>
-     */
     @NameInMap("platform")
     public String platform;
 
-    /**
-     * <p>客户端平台平台版本</p>
-     */
     @NameInMap("platformVer")
     public String platformVer;
 
-    /**
-     * <p>加密字符</p>
-     */
     @NameInMap("sec")
     public String sec;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

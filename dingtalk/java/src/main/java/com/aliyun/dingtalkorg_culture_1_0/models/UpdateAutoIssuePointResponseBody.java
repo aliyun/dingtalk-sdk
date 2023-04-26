@@ -7,9 +7,6 @@ public class UpdateAutoIssuePointResponseBody extends TeaModel {
     @NameInMap("result")
     public UpdateAutoIssuePointResponseBodyResult result;
 
-    /**
-     * <p>调用是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -35,9 +32,6 @@ public class UpdateAutoIssuePointResponseBody extends TeaModel {
     }
 
     public static class UpdateAutoIssuePointResponseBodyResult extends TeaModel {
-        /**
-         * <p>下次自动发放时间</p>
-         */
         @NameInMap("nextAutoIssuePointTime")
         public Long nextAutoIssuePointTime;
 

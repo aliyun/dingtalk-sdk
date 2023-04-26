@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchGetWorkspacesResponseBody extends TeaModel {
-    /**
-     * <p>workspace信息</p>
-     */
     @NameInMap("workspaces")
     public java.util.List<BatchGetWorkspacesResponseBodyWorkspaces> workspaces;
 
@@ -24,27 +21,15 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
     }
 
     public static class BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList extends TeaModel {
-        /**
-         * <p>最近编辑时间</p>
-         */
         @NameInMap("lastEditTime")
         public String lastEditTime;
 
-        /**
-         * <p>文档名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>文档Id</p>
-         */
         @NameInMap("nodeId")
         public String nodeId;
 
-        /**
-         * <p>文档打开url</p>
-         */
         @NameInMap("url")
         public String url;
 
@@ -88,39 +73,21 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
     }
 
     public static class BatchGetWorkspacesResponseBodyWorkspacesWorkspace extends TeaModel {
-        /**
-         * <p>知识库创建时间。</p>
-         */
         @NameInMap("createTime")
         public Long createTime;
 
-        /**
-         * <p>知识库名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>是否全员公开</p>
-         */
         @NameInMap("orgPublished")
         public Boolean orgPublished;
 
-        /**
-         * <p>最近访问列表</p>
-         */
         @NameInMap("recentList")
         public java.util.List<BatchGetWorkspacesResponseBodyWorkspacesWorkspaceRecentList> recentList;
 
-        /**
-         * <p>知识库打开url。</p>
-         */
         @NameInMap("url")
         public String url;
 
-        /**
-         * <p>知识库id。</p>
-         */
         @NameInMap("workspaceId")
         public String workspaceId;
 
@@ -180,15 +147,9 @@ public class BatchGetWorkspacesResponseBody extends TeaModel {
     }
 
     public static class BatchGetWorkspacesResponseBodyWorkspaces extends TeaModel {
-        /**
-         * <p>是否有访问知识库权限。</p>
-         */
         @NameInMap("hasPermission")
         public Boolean hasPermission;
 
-        /**
-         * <p>知识库信息。</p>
-         */
         @NameInMap("workspace")
         public BatchGetWorkspacesResponseBodyWorkspacesWorkspace workspace;
 

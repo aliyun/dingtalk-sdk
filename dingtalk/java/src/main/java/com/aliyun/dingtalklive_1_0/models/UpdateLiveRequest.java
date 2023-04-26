@@ -4,45 +4,24 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateLiveRequest extends TeaModel {
-    /**
-     * <p>直播封面</p>
-     */
     @NameInMap("coverUrl")
     public String coverUrl;
 
-    /**
-     * <p>简介</p>
-     */
     @NameInMap("introduction")
     public String introduction;
 
-    /**
-     * <p>直播id</p>
-     */
     @NameInMap("liveId")
     public String liveId;
 
-    /**
-     * <p>预计结束时间</p>
-     */
     @NameInMap("preEndTime")
     public Long preEndTime;
 
-    /**
-     * <p>预计开播时间</p>
-     */
     @NameInMap("preStartTime")
     public Long preStartTime;
 
-    /**
-     * <p>标题</p>
-     */
     @NameInMap("title")
     public String title;
 
-    /**
-     * <p>用户id（主播id）</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

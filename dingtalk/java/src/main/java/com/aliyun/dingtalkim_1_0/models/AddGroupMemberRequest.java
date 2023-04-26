@@ -4,27 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddGroupMemberRequest extends TeaModel {
-    /**
-     * <p>钉外成员列表。</p>
-     */
     @NameInMap("appUserIds")
     public java.util.List<String> appUserIds;
 
-    /**
-     * <p>群会话Id。</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>操作者在业务系统内的唯一标识。</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    /**
-     * <p>钉内成员列表。</p>
-     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

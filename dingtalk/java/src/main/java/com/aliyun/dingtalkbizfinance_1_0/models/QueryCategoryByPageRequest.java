@@ -4,21 +4,12 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCategoryByPageRequest extends TeaModel {
-    /**
-     * <p>分页，从1开始</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>分页大小，默认10</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    /**
-     * <p>类型：income收入，expense支出</p>
-     */
     @NameInMap("type")
     public String type;
 

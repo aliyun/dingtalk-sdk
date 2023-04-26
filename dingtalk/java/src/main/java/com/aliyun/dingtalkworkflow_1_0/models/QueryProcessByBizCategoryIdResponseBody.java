@@ -21,33 +21,15 @@ public class QueryProcessByBizCategoryIdResponseBody extends TeaModel {
     }
 
     public static class QueryProcessByBizCategoryIdResponseBodyResult extends TeaModel {
-        /**
-         * <p>模板描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>模板名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>模板code</p>
-         */
         @NameInMap("processCode")
         public String processCode;
 
-        /**
-         * <p>模版发布状态。</p>
-         * <br>
-         * <p>- PUBLISHED：已启用</p>
-         * <br>
-         * <p>- INVALID：停用</p>
-         * <br>
-         * <p>- SAVED：已保存</p>
-         */
         @NameInMap("status")
         public String status;
 

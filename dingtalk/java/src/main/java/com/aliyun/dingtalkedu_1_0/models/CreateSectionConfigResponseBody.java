@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSectionConfigResponseBody extends TeaModel {
-    /**
-     * <p>初始化是否成功。</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

@@ -4,27 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInnerGroupMembersRequest extends TeaModel {
-    /**
-     * <p>分页大小。</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>分页游标。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>会话id。</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>用户userId。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

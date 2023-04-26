@@ -4,18 +4,12 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRecentOpenDocsRequest extends TeaModel {
-    /**
-     * <p>查询size</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>发起操作用户unionId</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 

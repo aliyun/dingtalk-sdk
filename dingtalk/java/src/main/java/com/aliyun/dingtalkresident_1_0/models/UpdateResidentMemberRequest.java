@@ -4,15 +4,9 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateResidentMemberRequest extends TeaModel {
-    /**
-     * <p>人员更新信息</p>
-     */
     @NameInMap("residentUpdateInfo")
     public UpdateResidentMemberRequestResidentUpdateInfo residentUpdateInfo;
 
-    /**
-     * <p>unionId</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -38,45 +32,24 @@ public class UpdateResidentMemberRequest extends TeaModel {
     }
 
     public static class UpdateResidentMemberRequestResidentUpdateInfo extends TeaModel {
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("deptId")
         public Long deptId;
 
-        /**
-         * <p>是否是产权人</p>
-         */
         @NameInMap("isPropertyOwner")
         public Boolean isPropertyOwner;
 
-        /**
-         * <p>人员扩展信息，目前只有租客的起止时间</p>
-         */
         @NameInMap("memberDeptExtension")
         public java.util.Map<String, String> memberDeptExtension;
 
-        /**
-         * <p>姓名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>旧部门id</p>
-         */
         @NameInMap("oldDeptId")
         public Long oldDeptId;
 
-        /**
-         * <p>身份，1：业主，2：租客，3：亲友</p>
-         */
         @NameInMap("relateType")
         public String relateType;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("userId")
         public String userId;
 

@@ -4,57 +4,30 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReportCustomerStatisticsRequest extends TeaModel {
-    /**
-     * <p>群主列表</p>
-     */
     @NameInMap("groupOwnerUserIds")
     public java.util.List<String> groupOwnerUserIds;
 
-    /**
-     * <p>群标签列表</p>
-     */
     @NameInMap("groupTags")
     public java.util.List<String> groupTags;
 
-    /**
-     * <p>截止日期</p>
-     */
     @NameInMap("maxDt")
     public String maxDt;
 
-    /**
-     * <p>起始日期</p>
-     */
     @NameInMap("minDt")
     public String minDt;
 
-    /**
-     * <p>开放群id列表</p>
-     */
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 
-    /**
-     * <p>开放群组id</p>
-     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
-    /**
-     * <p>开发团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>页码</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>每页大小</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 

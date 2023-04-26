@@ -4,15 +4,9 @@ package com.aliyun.dingtalksmart_device_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDeviceVideoConferenceBookResponseBody extends TeaModel {
-    /**
-     * <p>入会口令</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>会议id</p>
-     */
     @NameInMap("conferenceId")
     public String conferenceId;
 

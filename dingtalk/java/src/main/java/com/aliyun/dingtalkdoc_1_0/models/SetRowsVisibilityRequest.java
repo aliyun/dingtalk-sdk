@@ -4,30 +4,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetRowsVisibilityRequest extends TeaModel {
-    /**
-     * <p>要显示、隐藏的第一行的位置，从0开始。</p>
-     */
     @NameInMap("row")
     public Long row;
 
-    /**
-     * <p>要显示、隐藏的行的数量。</p>
-     */
     @NameInMap("rowCount")
     public Long rowCount;
 
-    /**
-     * <p>行可见性</p>
-     * <p>枚举值:</p>
-     * <p>	visible: 可见</p>
-     * <p>	hidden: 隐藏</p>
-     */
     @NameInMap("visibility")
     public String visibility;
 
-    /**
-     * <p>操作人id</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 

@@ -4,111 +4,57 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureMesOutPlanRequest extends TeaModel {
-    /**
-     * <p>审批状态</p>
-     */
     @NameInMap("approvalStatus")
     public String approvalStatus;
 
-    /**
-     * <p>审批人</p>
-     */
     @NameInMap("approver")
     public String approver;
 
-    /**
-     * <p>主数据名称</p>
-     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
-    /**
-     * <p>委外计划单号</p>
-     */
     @NameInMap("outSourceProjectCode")
     public String outSourceProjectCode;
 
-    /**
-     * <p>委外群</p>
-     */
     @NameInMap("outSourceTeamId")
     public String outSourceTeamId;
 
-    /**
-     * <p>单价（元）</p>
-     */
     @NameInMap("price")
     public String price;
 
-    /**
-     * <p>工序识别码</p>
-     */
     @NameInMap("processIdentificationCode")
     public String processIdentificationCode;
 
-    /**
-     * <p>委外的工序列表(多个)</p>
-     */
     @NameInMap("processUuids")
     public String processUuids;
 
-    /**
-     * <p>产品代码(物料编号)</p>
-     */
     @NameInMap("productCode")
     public String productCode;
 
-    /**
-     * <p>产品名称</p>
-     */
     @NameInMap("productName")
     public String productName;
 
-    /**
-     * <p>规格型号</p>
-     */
     @NameInMap("productSpecification")
     public String productSpecification;
 
-    /**
-     * <p>工单编号(生产任务单)</p>
-     */
     @NameInMap("projectCode")
     public String projectCode;
 
-    /**
-     * <p>工单(生产计划单)ID</p>
-     */
     @NameInMap("projectId")
     public String projectId;
 
-    /**
-     * <p>委外计划数</p>
-     */
     @NameInMap("sendPlanQuantity")
     public String sendPlanQuantity;
 
-    /**
-     * <p>供应商代码</p>
-     */
     @NameInMap("supplierCode")
     public String supplierCode;
 
-    /**
-     * <p>供应商名称</p>
-     */
     @NameInMap("supplierName")
     public String supplierName;
 
-    /**
-     * <p>金额（元）</p>
-     */
     @NameInMap("totalWage")
     public String totalWage;
 
-    /**
-     * <p>记录唯一标识</p>
-     */
     @NameInMap("uuid")
     public String uuid;
 

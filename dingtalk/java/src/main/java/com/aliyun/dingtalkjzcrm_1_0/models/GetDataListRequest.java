@@ -4,21 +4,12 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDataListRequest extends TeaModel {
-    /**
-     * <p>数据类型，参考数据类型ID对照表</p>
-     */
     @NameInMap("datatype")
     public String datatype;
 
-    /**
-     * <p>页码</p>
-     */
     @NameInMap("page")
     public Long page;
 
-    /**
-     * <p>分页条数</p>
-     */
     @NameInMap("pagesize")
     public Long pagesize;
 

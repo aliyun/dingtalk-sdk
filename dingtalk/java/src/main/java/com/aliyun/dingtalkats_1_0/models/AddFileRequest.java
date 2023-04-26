@@ -4,27 +4,15 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddFileRequest extends TeaModel {
-    /**
-     * <p>业务标识</p>
-     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    /**
-     * <p>文件名称</p>
-     */
     @NameInMap("fileName")
     public String fileName;
 
-    /**
-     * <p>文件mediaId</p>
-     */
     @NameInMap("mediaId")
     public String mediaId;
 
-    /**
-     * <p>操作人员工标识，为空时默认以企业管理员身份进行操作</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 

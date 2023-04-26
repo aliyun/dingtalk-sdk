@@ -4,9 +4,6 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetIndustryTypeResponseBody extends TeaModel {
-    /**
-     * <p>行业类型</p>
-     */
     @NameInMap("industryType")
     public String industryType;
 

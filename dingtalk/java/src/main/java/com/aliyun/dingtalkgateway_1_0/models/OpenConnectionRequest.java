@@ -4,17 +4,9 @@ package com.aliyun.dingtalkgateway_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenConnectionRequest extends TeaModel {
-    /**
-     * <p>企业三方应用为suiteKey</p>
-     * <p>企业自建应用为appKey</p>
-     */
     @NameInMap("clientId")
     public String clientId;
 
-    /**
-     * <p>企业三方应用为suiteSecret</p>
-     * <p>企业自己应用为appSecret</p>
-     */
     @NameInMap("clientSecret")
     public String clientSecret;
 
@@ -51,15 +43,9 @@ public class OpenConnectionRequest extends TeaModel {
     }
 
     public static class OpenConnectionRequestSubscriptions extends TeaModel {
-        /**
-         * <p>订阅的TOPIC</p>
-         */
         @NameInMap("topic")
         public String topic;
 
-        /**
-         * <p>订阅类型</p>
-         */
         @NameInMap("type")
         public String type;
 

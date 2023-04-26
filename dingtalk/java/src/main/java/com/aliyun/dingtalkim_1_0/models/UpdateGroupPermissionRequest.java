@@ -4,21 +4,12 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateGroupPermissionRequest extends TeaModel {
-    /**
-     * <p>开放群ID</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>群权限项</p>
-     */
     @NameInMap("permissionGroup")
     public String permissionGroup;
 
-    /**
-     * <p>状态,0-关闭，1-开启</p>
-     */
     @NameInMap("status")
     public String status;
 

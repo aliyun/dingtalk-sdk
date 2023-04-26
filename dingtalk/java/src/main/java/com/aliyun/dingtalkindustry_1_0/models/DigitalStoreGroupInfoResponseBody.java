@@ -4,21 +4,12 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreGroupInfoResponseBody extends TeaModel {
-    /**
-     * <p>分组Id</p>
-     */
     @NameInMap("groupId")
     public Long groupId;
 
-    /**
-     * <p>分组名称</p>
-     */
     @NameInMap("groupName")
     public String groupName;
 
-    /**
-     * <p>分组中门店Id列表</p>
-     */
     @NameInMap("storeIdList")
     public java.util.List<Long> storeIdList;
 

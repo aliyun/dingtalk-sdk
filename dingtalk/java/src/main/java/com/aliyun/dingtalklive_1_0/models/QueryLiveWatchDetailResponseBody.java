@@ -21,51 +21,27 @@ public class QueryLiveWatchDetailResponseBody extends TeaModel {
     }
 
     public static class QueryLiveWatchDetailResponseBodyResult extends TeaModel {
-        /**
-         * <p>平均观看时长</p>
-         */
         @NameInMap("avgWatchTime")
         public Long avgWatchTime;
 
-        /**
-         * <p>观看直播人数</p>
-         */
         @NameInMap("liveUv")
         public Integer liveUv;
 
-        /**
-         * <p>消息数</p>
-         */
         @NameInMap("msgCount")
         public Integer msgCount;
 
-        /**
-         * <p>观看回放人数</p>
-         */
         @NameInMap("playbackUv")
         public Integer playbackUv;
 
-        /**
-         * <p>点赞数</p>
-         */
         @NameInMap("praiseCount")
         public Integer praiseCount;
 
-        /**
-         * <p>观看次数</p>
-         */
         @NameInMap("pv")
         public Integer pv;
 
-        /**
-         * <p>观看总时长</p>
-         */
         @NameInMap("totalWatchTime")
         public Long totalWatchTime;
 
-        /**
-         * <p>观看人数</p>
-         */
         @NameInMap("uv")
         public Integer uv;
 

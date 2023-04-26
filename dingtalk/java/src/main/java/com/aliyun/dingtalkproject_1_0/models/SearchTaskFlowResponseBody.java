@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchTaskFlowResponseBody extends TeaModel {
-    /**
-     * <p>工作流列表。</p>
-     */
     @NameInMap("result")
     public java.util.List<SearchTaskFlowResponseBodyResult> result;
 
@@ -24,51 +21,27 @@ public class SearchTaskFlowResponseBody extends TeaModel {
     }
 
     public static class SearchTaskFlowResponseBodyResult extends TeaModel {
-        /**
-         * <p>绑定对象Id，此接口为项目id。</p>
-         */
         @NameInMap("boundToObjectId")
         public String boundToObjectId;
 
-        /**
-         * <p>绑定类型，增加项目成员默认是project。</p>
-         */
         @NameInMap("boundToObjectType")
         public String boundToObjectType;
 
-        /**
-         * <p>创建时间。</p>
-         */
         @NameInMap("created")
         public String created;
 
-        /**
-         * <p>创建者id。</p>
-         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        /**
-         * <p>是否已删除。</p>
-         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
-        /**
-         * <p>工作流名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>工作流ID。</p>
-         */
         @NameInMap("taskflowId")
         public String taskflowId;
 
-        /**
-         * <p>更新时间。</p>
-         */
         @NameInMap("updated")
         public String updated;
 

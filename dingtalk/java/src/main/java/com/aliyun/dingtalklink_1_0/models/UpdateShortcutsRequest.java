@@ -4,21 +4,12 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateShortcutsRequest extends TeaModel {
-    /**
-     * <p>配置详情</p>
-     */
     @NameInMap("details")
     public java.util.List<UpdateShortcutsRequestDetails> details;
 
-    /**
-     * <p>会话id</p>
-     */
     @NameInMap("sessionId")
     public String sessionId;
 
-    /**
-     * <p>用户信息</p>
-     */
     @NameInMap("userId")
     public String userId;
 
@@ -52,45 +43,24 @@ public class UpdateShortcutsRequest extends TeaModel {
     }
 
     public static class UpdateShortcutsRequestDetails extends TeaModel {
-        /**
-         * <p>用户点快捷入口时的跳转链接，此参数与callbackKey二选一。</p>
-         */
         @NameInMap("actionUrl")
         public String actionUrl;
 
-        /**
-         * <p>快捷入口点击回调Key,可通过回调注册接口获得。此参数与actionUrl二选一。</p>
-         */
         @NameInMap("callbackKey")
         public String callbackKey;
 
-        /**
-         * <p>windows侧边栏图标的unicode</p>
-         */
         @NameInMap("iconFont")
         public String iconFont;
 
-        /**
-         * <p>移动端图标</p>
-         */
         @NameInMap("iconMediaId")
         public String iconMediaId;
 
-        /**
-         * <p>插件唯一标识</p>
-         */
         @NameInMap("shortcutId")
         public String shortcutId;
 
-        /**
-         * <p>适配mac端侧边栏图标的mediaId</p>
-         */
         @NameInMap("slideIconMediaId")
         public String slideIconMediaId;
 
-        /**
-         * <p>插件标题</p>
-         */
         @NameInMap("title")
         public String title;
 

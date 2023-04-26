@@ -4,15 +4,9 @@ package com.aliyun.dingtalkmanufacturing_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustrializeManufactureQueryJobsResponseBody extends TeaModel {
-    /**
-     * <p>查询的数据结果</p>
-     */
     @NameInMap("content")
     public IndustrializeManufactureQueryJobsResponseBodyContent content;
 
-    /**
-     * <p>httpCode</p>
-     */
     @NameInMap("httpCode")
     public String httpCode;
 
@@ -38,105 +32,54 @@ public class IndustrializeManufactureQueryJobsResponseBody extends TeaModel {
     }
 
     public static class IndustrializeManufactureQueryJobsResponseBodyContent extends TeaModel {
-        /**
-         * <p>组织id</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        /**
-         * <p>数据库id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>工单id</p>
-         */
         @NameInMap("instNo")
         public String instNo;
 
-        /**
-         * <p>是否是批量报工，即一次报工由多个工人一起分担，取值[n,y],y表示是批量，批量时多个人名以英文逗号分隔</p>
-         */
         @NameInMap("isBatchJob")
         public String isBatchJob;
 
-        /**
-         * <p>生产日期时间(到时分秒),格式:2021-07-05 08:00:21</p>
-         */
         @NameInMap("manufactureDate")
         public String manufactureDate;
 
-        /**
-         * <p>生产日期(到天)</p>
-         */
         @NameInMap("manufactureDay")
         public String manufactureDay;
 
-        /**
-         * <p>分配给mes系统的appkey</p>
-         */
         @NameInMap("mesAppKey")
         public String mesAppKey;
 
-        /**
-         * <p>工序名称</p>
-         */
         @NameInMap("processName")
         public String processName;
 
-        /**
-         * <p>合格数</p>
-         */
         @NameInMap("qualifiedQuantity")
         public String qualifiedQuantity;
 
-        /**
-         * <p>不合格数</p>
-         */
         @NameInMap("scrappedQuantity")
         public String scrappedQuantity;
 
-        /**
-         * <p>计件单价，单位：分</p>
-         */
         @NameInMap("unitPrice")
         public String unitPrice;
 
-        /**
-         * <p>工人工号(isBatchJob=='n'时)</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>批量报工时多个人钉钉工号以英文逗号分隔</p>
-         */
         @NameInMap("userIdList")
         public String userIdList;
 
-        /**
-         * <p>批量报工时多个人名以英文逗号分隔</p>
-         */
         @NameInMap("userNameList")
         public String userNameList;
 
-        /**
-         * <p>报工记录的唯一标识</p>
-         */
         @NameInMap("uuid")
         public String uuid;
 

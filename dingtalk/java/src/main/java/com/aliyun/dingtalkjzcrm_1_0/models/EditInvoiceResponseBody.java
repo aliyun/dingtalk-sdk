@@ -4,15 +4,9 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditInvoiceResponseBody extends TeaModel {
-    /**
-     * <p>编辑数据的id</p>
-     */
     @NameInMap("msgid")
     public Long msgid;
 
-    /**
-     * <p>响应时间</p>
-     */
     @NameInMap("time")
     public String time;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetNegativeWordCloudResponseBody extends TeaModel {
-    /**
-     * <p>词列表</p>
-     */
     @NameInMap("words")
     public java.util.List<GetNegativeWordCloudResponseBodyWords> words;
 
@@ -24,15 +21,9 @@ public class GetNegativeWordCloudResponseBody extends TeaModel {
     }
 
     public static class GetNegativeWordCloudResponseBodyWords extends TeaModel {
-        /**
-         * <p>词数量</p>
-         */
         @NameInMap("count")
         public Long count;
 
-        /**
-         * <p>词名</p>
-         */
         @NameInMap("word")
         public String word;
 

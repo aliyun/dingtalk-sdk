@@ -4,27 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeUpdateCollegeDeptRequest extends TeaModel {
-    /**
-     * <p>部门id</p>
-     */
     @NameInMap("deptId")
     public Long deptId;
 
-    /**
-     * <p>部门名称</p>
-     */
     @NameInMap("deptName")
     public String deptName;
 
-    /**
-     * <p>排序因子</p>
-     */
     @NameInMap("sortFactor")
     public Long sortFactor;
 
-    /**
-     * <p>父部门id</p>
-     */
     @NameInMap("superId")
     public Long superId;
 

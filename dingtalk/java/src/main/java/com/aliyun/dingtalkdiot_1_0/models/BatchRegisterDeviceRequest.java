@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRegisterDeviceRequest extends TeaModel {
-    /**
-     * <p>钉钉物联组织ID, 第三方平台必填，企业内部系统忽略。</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>设备列表。</p>
-     */
     @NameInMap("devices")
     public java.util.List<BatchRegisterDeviceRequestDevices> devices;
 
@@ -38,21 +32,12 @@ public class BatchRegisterDeviceRequest extends TeaModel {
     }
 
     public static class BatchRegisterDeviceRequestDevicesLiveUrls extends TeaModel {
-        /**
-         * <p>flv格式视频流地址</p>
-         */
         @NameInMap("flv")
         public String flv;
 
-        /**
-         * <p>hls格式视频流地址</p>
-         */
         @NameInMap("hls")
         public String hls;
 
-        /**
-         * <p>rtmp格式视频流地址</p>
-         */
         @NameInMap("rtmp")
         public String rtmp;
 
@@ -88,63 +73,33 @@ public class BatchRegisterDeviceRequest extends TeaModel {
     }
 
     public static class BatchRegisterDeviceRequestDevices extends TeaModel {
-        /**
-         * <p>设备ID。</p>
-         */
         @NameInMap("deviceId")
         public String deviceId;
 
-        /**
-         * <p>设备名称。</p>
-         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        /**
-         * <p>设备状态  0:在线  1:离线</p>
-         */
         @NameInMap("deviceStatus")
         public Integer deviceStatus;
 
-        /**
-         * <p>设备类型，自定义传入，最多128个字节。</p>
-         */
         @NameInMap("deviceType")
         public String deviceType;
 
-        /**
-         * <p>设备类型名称，自定义传入，最多128个字节，与deviceType一一对应。</p>
-         */
         @NameInMap("deviceTypeName")
         public String deviceTypeName;
 
-        /**
-         * <p>第三方平台定制参数，企业内部系统忽略。</p>
-         */
         @NameInMap("extraData")
         public java.util.Map<String, ?> extraData;
 
-        /**
-         * <p>视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。</p>
-         */
         @NameInMap("liveUrls")
         public BatchRegisterDeviceRequestDevicesLiveUrls liveUrls;
 
-        /**
-         * <p>设备地址。</p>
-         */
         @NameInMap("location")
         public String location;
 
-        /**
-         * <p>父设备ID。</p>
-         */
         @NameInMap("parentId")
         public String parentId;
 
-        /**
-         * <p>产品类型 CAMERA：摄像头，可看直播 OTHERS：非摄像头</p>
-         */
         @NameInMap("productType")
         public String productType;
 

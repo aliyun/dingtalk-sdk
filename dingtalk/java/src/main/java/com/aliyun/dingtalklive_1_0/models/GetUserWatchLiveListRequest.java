@@ -4,27 +4,15 @@ package com.aliyun.dingtalklive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserWatchLiveListRequest extends TeaModel {
-    /**
-     * <p>过滤类型，0：不过滤， 1：过滤已经看完的</p>
-     */
     @NameInMap("filterType")
     public Integer filterType;
 
-    /**
-     * <p>单次拉去上限，默认40个</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>分页游标 第一次可不填， 后面填回包的值</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>用户uid</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

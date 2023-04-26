@@ -4,9 +4,6 @@ package com.aliyun.dingtalkworkrecord_1_0.models;
 import com.aliyun.tea.*;
 
 public class CountWorkRecordRequest extends TeaModel {
-    /**
-     * <p>userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

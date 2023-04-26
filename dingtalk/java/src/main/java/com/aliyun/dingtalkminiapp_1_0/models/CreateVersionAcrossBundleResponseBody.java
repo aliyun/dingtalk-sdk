@@ -4,9 +4,6 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateVersionAcrossBundleResponseBody extends TeaModel {
-    /**
-     * <p>result</p>
-     */
     @NameInMap("result")
     public String result;
 

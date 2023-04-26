@@ -4,21 +4,12 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTrustedDeviceBatchRequest extends TeaModel {
-    /**
-     * <p>mac地址列表</p>
-     */
     @NameInMap("macAddressList")
     public java.util.List<String> macAddressList;
 
-    /**
-     * <p>平台</p>
-     */
     @NameInMap("platform")
     public String platform;
 
-    /**
-     * <p>员工id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

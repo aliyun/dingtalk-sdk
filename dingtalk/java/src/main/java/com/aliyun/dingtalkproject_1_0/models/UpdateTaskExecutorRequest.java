@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTaskExecutorRequest extends TeaModel {
-    /**
-     * <p>执行者用户ID。</p>
-     */
     @NameInMap("executorId")
     public String executorId;
 

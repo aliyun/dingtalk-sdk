@@ -4,27 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateKROfContentRequest extends TeaModel {
-    /**
-     * <p>KR的内容。</p>
-     */
     @NameInMap("content")
     public String content;
 
-    /**
-     * <p>待更新的划词 ID 列表。</p>
-     */
     @NameInMap("updateQuoteList")
     public java.util.List<String> updateQuoteList;
 
-    /**
-     * <p>当前 KR ID。</p>
-     */
     @NameInMap("krId")
     public String krId;
 
-    /**
-     * <p>当前用户的userId。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

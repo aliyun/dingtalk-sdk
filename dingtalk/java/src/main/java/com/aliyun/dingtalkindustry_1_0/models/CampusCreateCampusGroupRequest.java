@@ -4,15 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusCreateCampusGroupRequest extends TeaModel {
-    /**
-     * <p>扩展信息</p>
-     */
     @NameInMap("extend")
     public String extend;
 
-    /**
-     * <p>园区项目组</p>
-     */
     @NameInMap("name")
     public String name;
 

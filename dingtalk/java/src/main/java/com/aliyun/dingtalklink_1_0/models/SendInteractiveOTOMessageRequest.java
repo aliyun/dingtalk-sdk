@@ -4,9 +4,6 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendInteractiveOTOMessageRequest extends TeaModel {
-    /**
-     * <p>消息详情</p>
-     */
     @NameInMap("detail")
     public SendInteractiveOTOMessageRequestDetail detail;
 
@@ -24,44 +21,21 @@ public class SendInteractiveOTOMessageRequest extends TeaModel {
     }
 
     public static class SendInteractiveOTOMessageRequestDetail extends TeaModel {
-        /**
-         * <p>卡片回调的URL地址，不传此参数则无回调。</p>
-         * <p>回调URL暂不支持query参数。</p>
-         */
         @NameInMap("callbackUrl")
         public String callbackUrl;
 
-        /**
-         * <p>唯一标识一张卡片的ID，卡片幂等ID，可用于后续卡片更新。</p>
-         * <p>> 该参数由开发者传入，确保唯一。</p>
-         */
         @NameInMap("cardBizId")
         public String cardBizId;
 
-        /**
-         * <p>卡片模板内容参数，JsonObject结构型。</p>
-         * <p>卡片数据结构需要与卡片搭建平台上定义的参数结构一致。</p>
-         */
         @NameInMap("cardData")
         public String cardData;
 
-        /**
-         * <p>卡片搭建平台模板ID，详情可查阅 [创建消息模板](https://open.dingtalk.com/document/group/create-message-template) 。</p>
-         */
         @NameInMap("cardTemplateId")
         public String cardTemplateId;
 
-        /**
-         * <p>消息接收人id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>卡片模板userId差异用户参数，json结构体。</p>
-         * <p>用户对应的数据结构需要与卡片搭建平台上定义的参数结构一致。</p>
-         * <br>
-         */
         @NameInMap("userIdPrivateDataMap")
         public String userIdPrivateDataMap;
 

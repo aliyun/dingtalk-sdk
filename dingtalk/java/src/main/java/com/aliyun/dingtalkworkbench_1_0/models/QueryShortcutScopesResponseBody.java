@@ -7,9 +7,6 @@ public class QueryShortcutScopesResponseBody extends TeaModel {
     @NameInMap("deptVisibleScopes")
     public java.util.List<Long> deptVisibleScopes;
 
-    /**
-     * <p>errorMsg</p>
-     */
     @NameInMap("userVisibleScopes")
     public java.util.List<String> userVisibleScopes;
 

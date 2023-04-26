@@ -4,87 +4,45 @@ package com.aliyun.dingtalkapp_market_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMarketOrderResponseBody extends TeaModel {
-    /**
-     * <p>订单ID</p>
-     */
     @NameInMap("bizOrderId")
     public Long bizOrderId;
 
-    /**
-     * <p>组织ID</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>创建时间戳</p>
-     */
     @NameInMap("createTimestamp")
     public Long createTimestamp;
 
-    /**
-     * <p>生效结束时间</p>
-     */
     @NameInMap("endTimestamp")
     public Long endTimestamp;
 
-    /**
-     * <p>商品Code</p>
-     */
     @NameInMap("goodsCode")
     public String goodsCode;
 
-    /**
-     * <p>商品名称</p>
-     */
     @NameInMap("goodsName")
     public String goodsName;
 
-    /**
-     * <p>是否内购订单</p>
-     */
     @NameInMap("inAppOrder")
     public Boolean inAppOrder;
 
-    /**
-     * <p>规格编码</p>
-     */
     @NameInMap("itemCode")
     public String itemCode;
 
-    /**
-     * <p>规格名称</p>
-     */
     @NameInMap("itemName")
     public String itemName;
 
-    /**
-     * <p>支付时间戳</p>
-     */
     @NameInMap("paidTimestamp")
     public Long paidTimestamp;
 
-    /**
-     * <p>购买数量</p>
-     */
     @NameInMap("quantity")
     public Long quantity;
 
-    /**
-     * <p>开始生效时间</p>
-     */
     @NameInMap("startTimestamp")
     public Long startTimestamp;
 
-    /**
-     * <p>订单状态(0:订单关闭； 3：订单支付；4：订单创建)</p>
-     */
     @NameInMap("status")
     public Long status;
 
-    /**
-     * <p>订单实付金额(单位分)</p>
-     */
     @NameInMap("totalActualPayFee")
     public Long totalActualPayFee;
 

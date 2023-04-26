@@ -4,27 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQueryGroupMemberResponseBody extends TeaModel {
-    /**
-     * <p>是否还有更多数据</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>群成员员工号</p>
-     */
     @NameInMap("memberUserIds")
     public java.util.List<String> memberUserIds;
 
-    /**
-     * <p>下一次请求的游标</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>result</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

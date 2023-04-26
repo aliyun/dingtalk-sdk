@@ -4,9 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartInstanceResponseBody extends TeaModel {
-    /**
-     * <p>流程实例ID</p>
-     */
     @NameInMap("result")
     public String result;
 

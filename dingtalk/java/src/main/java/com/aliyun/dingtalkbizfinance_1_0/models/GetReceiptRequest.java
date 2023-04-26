@@ -4,15 +4,9 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetReceiptRequest extends TeaModel {
-    /**
-     * <p>单据号</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>模型id</p>
-     */
     @NameInMap("modelId")
     public String modelId;
 

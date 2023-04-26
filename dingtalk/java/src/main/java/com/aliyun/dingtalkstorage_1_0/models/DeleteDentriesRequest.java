@@ -4,23 +4,12 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteDentriesRequest extends TeaModel {
-    /**
-     * <p>文件(夹)id列表</p>
-     * <p>最大size:</p>
-     * <p>	50</p>
-     */
     @NameInMap("dentryIds")
     public java.util.List<String> dentryIds;
 
-    /**
-     * <p>可选参数</p>
-     */
     @NameInMap("option")
     public DeleteDentriesRequestOption option;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -54,11 +43,6 @@ public class DeleteDentriesRequest extends TeaModel {
     }
 
     public static class DeleteDentriesRequestOption extends TeaModel {
-        /**
-         * <p>是否删除到回收站，默认不删除到回收站，直接删除</p>
-         * <p>默认值:</p>
-         * <p>	false</p>
-         */
         @NameInMap("toRecycleBin")
         public Boolean toRecycleBin;
 

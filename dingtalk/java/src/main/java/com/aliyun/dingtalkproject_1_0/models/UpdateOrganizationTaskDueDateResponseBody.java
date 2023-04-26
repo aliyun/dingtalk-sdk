@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateOrganizationTaskDueDateResponseBody extends TeaModel {
-    /**
-     * <p>返回对象</p>
-     */
     @NameInMap("result")
     public UpdateOrganizationTaskDueDateResponseBodyResult result;
 
@@ -24,15 +21,9 @@ public class UpdateOrganizationTaskDueDateResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskDueDateResponseBodyResult extends TeaModel {
-        /**
-         * <p>任务截止时间</p>
-         */
         @NameInMap("dueDate")
         public String dueDate;
 
-        /**
-         * <p>更新时间</p>
-         */
         @NameInMap("updateTime")
         public String updateTime;
 

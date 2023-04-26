@@ -4,18 +4,12 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchQueryFamilySchoolMessageRequest extends TeaModel {
-    /**
-     * <p>接收卡片的群的openConversationId</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
     @NameInMap("openMessageIds")
     public java.util.List<String> openMessageIds;
 
-    /**
-     * <p>用户唯一标识</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateMiniAppVersionStatusRequest extends TeaModel {
-    /**
-     * <p>小程序id</p>
-     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
-    /**
-     * <p>版本</p>
-     */
     @NameInMap("version")
     public String version;
 
-    /**
-     * <p>版本类型</p>
-     */
     @NameInMap("versionType")
     public Integer versionType;
 

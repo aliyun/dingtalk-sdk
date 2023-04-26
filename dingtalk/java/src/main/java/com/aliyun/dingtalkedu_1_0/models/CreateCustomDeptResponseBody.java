@@ -4,15 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCustomDeptResponseBody extends TeaModel {
-    /**
-     * <p>result</p>
-     */
     @NameInMap("result")
     public CreateCustomDeptResponseBodyResult result;
 
-    /**
-     * <p>success</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,9 +32,6 @@ public class CreateCustomDeptResponseBody extends TeaModel {
     }
 
     public static class CreateCustomDeptResponseBodyResult extends TeaModel {
-        /**
-         * <p>部门ID</p>
-         */
         @NameInMap("deptId")
         public Long deptId;
 

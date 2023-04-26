@@ -4,24 +4,9 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSoftwareCopyrightResponseBody extends TeaModel {
-    /**
-     * <p>返回结果</p>
-     * <p>EntName:企业名称</p>
-     * <p>CopyNum:登记号</p>
-     * <p>TypeNum:分类号</p>
-     * <p>ShortName:作品简称</p>
-     * <p>CopyName:作品全称</p>
-     * <p>Version:版本号</p>
-     * <p>SuccessDate:创作完成日期</p>
-     * <p>FirstDate:首次发表日期</p>
-     * <p>ApprovalDate:登记批准日期</p>
-     */
     @NameInMap("data")
     public String data;
 
-    /**
-     * <p>总条数</p>
-     */
     @NameInMap("total")
     public Long total;
 

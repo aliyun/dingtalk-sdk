@@ -4,45 +4,24 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterDeviceRequest extends TeaModel {
-    /**
-     * <p>协助者userId列表</p>
-     */
     @NameInMap("collaborators")
     public String collaborators;
 
-    /**
-     * <p>部门id</p>
-     */
     @NameInMap("departmentId")
     public Long departmentId;
 
-    /**
-     * <p>设备描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>设备标识</p>
-     */
     @NameInMap("deviceKey")
     public String deviceKey;
 
-    /**
-     * <p>设备名称</p>
-     */
     @NameInMap("deviceName")
     public String deviceName;
 
-    /**
-     * <p>管理员userId列表</p>
-     */
     @NameInMap("managers")
     public String managers;
 
-    /**
-     * <p>创建者userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

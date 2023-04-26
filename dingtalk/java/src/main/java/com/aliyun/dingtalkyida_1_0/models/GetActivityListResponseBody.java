@@ -4,9 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetActivityListResponseBody extends TeaModel {
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("result")
     public java.util.List<GetActivityListResponseBodyResult> result;
 
@@ -24,21 +21,12 @@ public class GetActivityListResponseBody extends TeaModel {
     }
 
     public static class GetActivityListResponseBodyResult extends TeaModel {
-        /**
-         * <p>activityId</p>
-         */
         @NameInMap("activityId")
         public String activityId;
 
-        /**
-         * <p>activityName</p>
-         */
         @NameInMap("activityName")
         public String activityName;
 
-        /**
-         * <p>activityNameEn</p>
-         */
         @NameInMap("activityNameInEnglish")
         public String activityNameInEnglish;
 

@@ -4,16 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetLeaveRecordsResponseBody extends TeaModel {
-    /**
-     * <p>返回结果。</p>
-     * <br>
-     */
     @NameInMap("result")
     public GetLeaveRecordsResponseBodyResult result;
 
-    /**
-     * <p>是否正确访问。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -39,99 +32,51 @@ public class GetLeaveRecordsResponseBody extends TeaModel {
     }
 
     public static class GetLeaveRecordsResponseBodyResultLeaveRecords extends TeaModel {
-        /**
-         * <p>计算类型。</p>
-         */
         @NameInMap("calType")
         public String calType;
 
-        /**
-         * <p>额度有效期结束时间或请假结束时间，毫秒级时间戳。</p>
-         */
         @NameInMap("endTime")
         public Long endTime;
 
-        /**
-         * <p>记录创建时间。</p>
-         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        /**
-         * <p>记录修改时间。</p>
-         */
         @NameInMap("gmtModified")
         public Long gmtModified;
 
-        /**
-         * <p>假期类型唯一标识。</p>
-         */
         @NameInMap("leaveCode")
         public String leaveCode;
 
-        /**
-         * <p>原因。</p>
-         */
         @NameInMap("leaveReason")
         public String leaveReason;
 
-        /**
-         * <p>假期记录类型。</p>
-         */
         @NameInMap("leaveRecordType")
         public String leaveRecordType;
 
-        /**
-         * <p>请假状态。</p>
-         */
         @NameInMap("leaveStatus")
         public String leaveStatus;
 
-        /**
-         * <p>显示单位。</p>
-         */
         @NameInMap("leaveViewUnit")
         public String leaveViewUnit;
 
-        /**
-         * <p>操作人userId。</p>
-         */
         @NameInMap("opUserId")
         public String opUserId;
 
-        /**
-         * <p>额度唯一标识。</p>
-         */
         @NameInMap("quotaId")
         public String quotaId;
 
-        /**
-         * <p>假期记录唯一标识。</p>
-         */
         @NameInMap("recordId")
         public String recordId;
 
-        /**
-         * <p>以天计算的消费额度。</p>
-         */
         @NameInMap("recordNumPerDay")
         public Long recordNumPerDay;
 
-        /**
-         * <p>以小时计算的消费额度。</p>
-         */
         @NameInMap("recordNumPerHour")
         public Long recordNumPerHour;
 
-        /**
-         * <p>额度有效期开始时间或请假开始时间，毫秒级时间戳。</p>
-         */
         @NameInMap("startTime")
         public Long startTime;
 
-        /**
-         * <p>员工userId。</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -271,15 +216,9 @@ public class GetLeaveRecordsResponseBody extends TeaModel {
     }
 
     public static class GetLeaveRecordsResponseBodyResult extends TeaModel {
-        /**
-         * <p>是否有更多结果。</p>
-         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
-        /**
-         * <p>假期消费记录列表。</p>
-         */
         @NameInMap("leaveRecords")
         public java.util.List<GetLeaveRecordsResponseBodyResultLeaveRecords> leaveRecords;
 

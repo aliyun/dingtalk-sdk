@@ -4,15 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class FileStorageUpdateStorageResponseBody extends TeaModel {
-    /**
-     * <p>密匙ID</p>
-     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
-    /**
-     * <p>OSS链接</p>
-     */
     @NameInMap("oss")
     public String oss;
 

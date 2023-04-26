@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryOfficialDatasetListRequest extends TeaModel {
-    /**
-     * <p>关键词搜索</p>
-     */
     @NameInMap("keyword")
     public String keyword;
 
-    /**
-     * <p>起始页，从1开始</p>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>单页大小，最大100</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

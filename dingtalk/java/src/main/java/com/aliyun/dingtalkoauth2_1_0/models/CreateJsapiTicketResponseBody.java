@@ -4,15 +4,9 @@ package com.aliyun.dingtalkoauth2_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateJsapiTicketResponseBody extends TeaModel {
-    /**
-     * <p>超时时间</p>
-     */
     @NameInMap("expireIn")
     public Long expireIn;
 
-    /**
-     * <p>jsapi ticket</p>
-     */
     @NameInMap("jsapiTicket")
     public String jsapiTicket;
 

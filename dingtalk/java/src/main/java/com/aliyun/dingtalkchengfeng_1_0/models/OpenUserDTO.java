@@ -4,21 +4,12 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenUserDTO extends TeaModel {
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("id")
     public String id;
 
-    /**
-     * <p>用户名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>钉钉用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

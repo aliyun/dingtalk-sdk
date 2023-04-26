@@ -4,15 +4,9 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteKeyResultResponseBody extends TeaModel {
-    /**
-     * <p>返回的信息</p>
-     */
     @NameInMap("data")
     public Boolean data;
 
-    /**
-     * <p>请求成功的标识。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

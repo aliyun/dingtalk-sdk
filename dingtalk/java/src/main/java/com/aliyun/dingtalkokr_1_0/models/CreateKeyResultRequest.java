@@ -4,39 +4,21 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateKeyResultRequest extends TeaModel {
-    /**
-     * <p>KR 内容。</p>
-     */
     @NameInMap("content")
     public String content;
 
-    /**
-     * <p>所属 Objective ID。</p>
-     */
     @NameInMap("objectiveId")
     public String objectiveId;
 
-    /**
-     * <p>周期 ID。</p>
-     */
     @NameInMap("periodId")
     public String periodId;
 
-    /**
-     * <p>上一个 KR 的位置。</p>
-     */
     @NameInMap("prevPosition")
     public Long prevPosition;
 
-    /**
-     * <p>KR 的权重比。</p>
-     */
     @NameInMap("weight")
     public Long weight;
 
-    /**
-     * <p>当前用户的 user ID。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

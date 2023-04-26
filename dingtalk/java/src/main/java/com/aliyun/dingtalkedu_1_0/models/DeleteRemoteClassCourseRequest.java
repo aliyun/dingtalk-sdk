@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteRemoteClassCourseRequest extends TeaModel {
-    /**
-     * <p>免登码</p>
-     */
     @NameInMap("authCode")
     public String authCode;
 

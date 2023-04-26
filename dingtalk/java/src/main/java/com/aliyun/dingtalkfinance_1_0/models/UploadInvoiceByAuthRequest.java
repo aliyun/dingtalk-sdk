@@ -7,9 +7,6 @@ public class UploadInvoiceByAuthRequest extends TeaModel {
     @NameInMap("extension")
     public UploadInvoiceByAuthRequestExtension extension;
 
-    /**
-     * <p>上传发票列表</p>
-     */
     @NameInMap("invoices")
     public java.util.List<UploadInvoiceByAuthRequestInvoices> invoices;
 
@@ -76,87 +73,45 @@ public class UploadInvoiceByAuthRequest extends TeaModel {
     }
 
     public static class UploadInvoiceByAuthRequestInvoices extends TeaModel {
-        /**
-         * <p>发票总金额</p>
-         */
         @NameInMap("invoiceAmount")
         public String invoiceAmount;
 
-        /**
-         * <p>发票代码</p>
-         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
-        /**
-         * <p>开票时间</p>
-         */
         @NameInMap("invoiceDate")
         public String invoiceDate;
 
-        /**
-         * <p>发票号码</p>
-         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
-        /**
-         * <p>发票类型</p>
-         */
         @NameInMap("invoiceType")
         public String invoiceType;
 
-        /**
-         * <p>发票logo地址</p>
-         */
         @NameInMap("logoUrl")
         public String logoUrl;
 
-        /**
-         * <p>收款方名称</p>
-         */
         @NameInMap("payeeName")
         public String payeeName;
 
-        /**
-         * <p>收款方税号</p>
-         */
         @NameInMap("payeeTaxNo")
         public String payeeTaxNo;
 
-        /**
-         * <p>付款方名称</p>
-         */
         @NameInMap("payerName")
         public String payerName;
 
-        /**
-         * <p>付款方税号</p>
-         */
         @NameInMap("payerTaxNo")
         public String payerTaxNo;
 
-        /**
-         * <p>发票pdf原件下载链接</p>
-         */
         @NameInMap("pdfUrl")
         public String pdfUrl;
 
-        /**
-         * <p>税金额</p>
-         */
         @NameInMap("taxAmount")
         public String taxAmount;
 
-        /**
-         * <p>发票校验码</p>
-         */
         @NameInMap("verifyCode")
         public String verifyCode;
 
-        /**
-         * <p>不含税金额</p>
-         */
         @NameInMap("withoutTaxAmount")
         public String withoutTaxAmount;
 

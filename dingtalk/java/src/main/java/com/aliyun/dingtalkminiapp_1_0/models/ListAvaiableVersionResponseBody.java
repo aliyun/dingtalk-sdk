@@ -4,9 +4,6 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListAvaiableVersionResponseBody extends TeaModel {
-    /**
-     * <p>result</p>
-     */
     @NameInMap("versions")
     public java.util.List<ListAvaiableVersionResponseBodyVersions> versions;
 

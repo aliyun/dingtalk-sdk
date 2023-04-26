@@ -4,15 +4,9 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UnAlignObjectiveResponseBody extends TeaModel {
-    /**
-     * <p>data</p>
-     */
     @NameInMap("data")
     public UnAlignObjectiveResponseBodyData data;
 
-    /**
-     * <p>success</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,15 +32,9 @@ public class UnAlignObjectiveResponseBody extends TeaModel {
     }
 
     public static class UnAlignObjectiveResponseBodyData extends TeaModel {
-        /**
-         * <p>对齐的 Objective ID。</p>
-         */
         @NameInMap("alignId")
         public java.io.InputStream alignId;
 
-        /**
-         * <p>当前 Objective ID。</p>
-         */
         @NameInMap("id")
         public java.io.InputStream id;
 

@@ -4,51 +4,27 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetProductResponseBody extends TeaModel {
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>创建时间</p>
-     */
     @NameInMap("createTime")
     public Long createTime;
 
-    /**
-     * <p>商品备注</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>商品名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>规格型号</p>
-     */
     @NameInMap("specification")
     public String specification;
 
-    /**
-     * <p>商品状态</p>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <p>商品单位</p>
-     */
     @NameInMap("unit")
     public String unit;
 
-    /**
-     * <p>商品用户自定义码</p>
-     */
     @NameInMap("userDefineCode")
     public String userDefineCode;
 

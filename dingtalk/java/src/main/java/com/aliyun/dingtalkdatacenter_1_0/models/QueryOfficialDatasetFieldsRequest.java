@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryOfficialDatasetFieldsRequest extends TeaModel {
-    /**
-     * <p>数据集id</p>
-     */
     @NameInMap("dsId")
     public String dsId;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

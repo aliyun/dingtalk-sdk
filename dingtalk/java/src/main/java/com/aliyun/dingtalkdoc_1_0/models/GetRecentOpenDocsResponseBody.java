@@ -7,9 +7,6 @@ public class GetRecentOpenDocsResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>查询结果</p>
-     */
     @NameInMap("recentList")
     public java.util.List<GetRecentOpenDocsResponseBodyRecentList> recentList;
 
@@ -35,51 +32,27 @@ public class GetRecentOpenDocsResponseBody extends TeaModel {
     }
 
     public static class GetRecentOpenDocsResponseBodyRecentListNodeBO extends TeaModel {
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createTime")
         public Long createTime;
 
-        /**
-         * <p>节点类型</p>
-         */
         @NameInMap("docType")
         public String docType;
 
-        /**
-         * <p>是否被删除</p>
-         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
-        /**
-         * <p>最后编辑时间</p>
-         */
         @NameInMap("lastOpenTime")
         public Long lastOpenTime;
 
-        /**
-         * <p>文档Id</p>
-         */
         @NameInMap("nodeId")
         public String nodeId;
 
-        /**
-         * <p>文档名称</p>
-         */
         @NameInMap("nodeName")
         public String nodeName;
 
-        /**
-         * <p>文档更新时间，包括重命名、移动、内容编辑等操作都会刷新更新时间</p>
-         */
         @NameInMap("updateTime")
         public Long updateTime;
 
-        /**
-         * <p>文档打开url</p>
-         */
         @NameInMap("url")
         public String url;
 
@@ -155,21 +128,12 @@ public class GetRecentOpenDocsResponseBody extends TeaModel {
     }
 
     public static class GetRecentOpenDocsResponseBodyRecentListWorkspaceBO extends TeaModel {
-        /**
-         * <p>知识库打开url。</p>
-         */
         @NameInMap("url")
         public String url;
 
-        /**
-         * <p>知识库id。</p>
-         */
         @NameInMap("workspaceId")
         public String workspaceId;
 
-        /**
-         * <p>知识库名称。</p>
-         */
         @NameInMap("workspaceName")
         public String workspaceName;
 
@@ -205,15 +169,9 @@ public class GetRecentOpenDocsResponseBody extends TeaModel {
     }
 
     public static class GetRecentOpenDocsResponseBodyRecentList extends TeaModel {
-        /**
-         * <p>文档信息</p>
-         */
         @NameInMap("nodeBO")
         public GetRecentOpenDocsResponseBodyRecentListNodeBO nodeBO;
 
-        /**
-         * <p>知识库信息。</p>
-         */
         @NameInMap("workspaceBO")
         public GetRecentOpenDocsResponseBodyRecentListWorkspaceBO workspaceBO;
 

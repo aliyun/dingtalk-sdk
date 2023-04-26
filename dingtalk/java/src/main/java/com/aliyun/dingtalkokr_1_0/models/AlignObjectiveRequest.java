@@ -4,21 +4,12 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class AlignObjectiveRequest extends TeaModel {
-    /**
-     * <p>周期 ID。</p>
-     */
     @NameInMap("periodId")
     public String periodId;
 
-    /**
-     * <p>对齐目标的 ID。</p>
-     */
     @NameInMap("targetId")
     public String targetId;
 
-    /**
-     * <p>当前用户的 user ID。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

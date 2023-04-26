@@ -4,15 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SupplyGetMemberRequest extends TeaModel {
-    /**
-     * <p>isv下钉钉唯一账号ID</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 
-    /**
-     * <p>组织内钉钉员工ID</p>
-     */
     @NameInMap("userId")
     public String userId;
 

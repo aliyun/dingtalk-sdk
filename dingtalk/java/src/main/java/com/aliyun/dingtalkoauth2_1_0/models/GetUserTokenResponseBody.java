@@ -4,27 +4,15 @@ package com.aliyun.dingtalkoauth2_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserTokenResponseBody extends TeaModel {
-    /**
-     * <p>accessToken</p>
-     */
     @NameInMap("accessToken")
     public String accessToken;
 
-    /**
-     * <p>所选企业corpId</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>超时时间</p>
-     */
     @NameInMap("expireIn")
     public Long expireIn;
 
-    /**
-     * <p>refreshToken</p>
-     */
     @NameInMap("refreshToken")
     public String refreshToken;
 

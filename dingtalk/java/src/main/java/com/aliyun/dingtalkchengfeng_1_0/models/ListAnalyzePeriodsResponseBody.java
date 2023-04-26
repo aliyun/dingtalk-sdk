@@ -7,9 +7,6 @@ public class ListAnalyzePeriodsResponseBody extends TeaModel {
     @NameInMap("content")
     public java.util.List<OpenPeriodDTO> content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 

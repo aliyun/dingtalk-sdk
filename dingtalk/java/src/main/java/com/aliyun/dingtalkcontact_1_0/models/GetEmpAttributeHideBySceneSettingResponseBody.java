@@ -4,92 +4,42 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetEmpAttributeHideBySceneSettingResponseBody extends TeaModel {
-    /**
-     * <p>单聊副标题场景配置，开启时单聊中相关的员工字段不显示</p>
-     */
     @NameInMap("chatSubtitleConfig")
     public GetEmpAttributeHideBySceneSettingResponseBodyChatSubtitleConfig chatSubtitleConfig;
 
-    /**
-     * <p>设置描述信息</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>允许查看的部门列表</p>
-     */
     @NameInMap("excludeDeptIds")
     public java.util.List<Long> excludeDeptIds;
 
-    /**
-     * <p>允许查看的角色列表</p>
-     */
     @NameInMap("excludeTagIds")
     public java.util.List<Long> excludeTagIds;
 
-    /**
-     * <p>允许查看的员工列表</p>
-     */
     @NameInMap("excludeUserIds")
     public java.util.List<String> excludeUserIds;
 
-    /**
-     * <p>隐藏字段id列表</p>
-     * <p>枚举列表：</p>
-     * <p>        department：部门</p>
-     * <p>        email：邮箱</p>
-     * <p>        manager：直属主管</p>
-     * <p>        title：职位</p>
-     * <p>        mobile：手机号</p>
-     * <p>        ext_number：分机号</p>
-     * <p>        work_station：办公地点</p>
-     * <p>        remark：备注</p>
-     * <p>        hire_date：入职时间</p>
-     * <p>        job_number：工号</p>
-     */
     @NameInMap("hideFields")
     public java.util.List<String> hideFields;
 
-    /**
-     * <p>设置id</p>
-     */
     @NameInMap("id")
     public Long id;
 
-    /**
-     * <p>设置名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>被隐藏的部门列表</p>
-     */
     @NameInMap("objectDeptIds")
     public java.util.List<Long> objectDeptIds;
 
-    /**
-     * <p>被隐藏的角色列表</p>
-     */
     @NameInMap("objectTagIds")
     public java.util.List<Long> objectTagIds;
 
-    /**
-     * <p>被隐藏的员工UserId列表</p>
-     */
     @NameInMap("objectUserIds")
     public java.util.List<String> objectUserIds;
 
-    /**
-     * <p>用户资料页场景配置，开启时相关的员工字段不在资料页中显示</p>
-     */
     @NameInMap("profileSceneConfig")
     public GetEmpAttributeHideBySceneSettingResponseBodyProfileSceneConfig profileSceneConfig;
 
-    /**
-     * <p>搜索场景配置，开启时隐藏的字段不在搜索结果中展示，并且不允许根据这些字段搜索到。</p>
-     */
     @NameInMap("searchSceneConfig")
     public GetEmpAttributeHideBySceneSettingResponseBodySearchSceneConfig searchSceneConfig;
 
@@ -203,9 +153,6 @@ public class GetEmpAttributeHideBySceneSettingResponseBody extends TeaModel {
     }
 
     public static class GetEmpAttributeHideBySceneSettingResponseBodyChatSubtitleConfig extends TeaModel {
-        /**
-         * <p>是否生效</p>
-         */
         @NameInMap("active")
         public Boolean active;
 
@@ -225,9 +172,6 @@ public class GetEmpAttributeHideBySceneSettingResponseBody extends TeaModel {
     }
 
     public static class GetEmpAttributeHideBySceneSettingResponseBodyProfileSceneConfig extends TeaModel {
-        /**
-         * <p>是否生效</p>
-         */
         @NameInMap("active")
         public Boolean active;
 
@@ -247,9 +191,6 @@ public class GetEmpAttributeHideBySceneSettingResponseBody extends TeaModel {
     }
 
     public static class GetEmpAttributeHideBySceneSettingResponseBodySearchSceneConfig extends TeaModel {
-        /**
-         * <p>是否生效</p>
-         */
         @NameInMap("active")
         public Boolean active;
 

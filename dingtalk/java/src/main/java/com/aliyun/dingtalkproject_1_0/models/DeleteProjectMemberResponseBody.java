@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteProjectMemberResponseBody extends TeaModel {
-    /**
-     * <p>项目成员列表。</p>
-     */
     @NameInMap("result")
     public java.util.List<String> result;
 

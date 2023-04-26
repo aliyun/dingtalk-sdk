@@ -4,27 +4,15 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditQuotationRecordRequest extends TeaModel {
-    /**
-     * <p>编辑数据</p>
-     */
     @NameInMap("data")
     public EditQuotationRecordRequestData data;
 
-    /**
-     * <p>数据类型，固定填写161</p>
-     */
     @NameInMap("datatype")
     public Long datatype;
 
-    /**
-     * <p>数据id，不填或者填0为新增数据</p>
-     */
     @NameInMap("msgid")
     public Long msgid;
 
-    /**
-     * <p>时间戳</p>
-     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -66,123 +54,63 @@ public class EditQuotationRecordRequest extends TeaModel {
     }
 
     public static class EditQuotationRecordRequestData extends TeaModel {
-        /**
-         * <p>报价人</p>
-         */
         @NameInMap("bj_bjren")
         public String bjBjren;
 
-        /**
-         * <p>包装运输</p>
-         */
         @NameInMap("bj_bzremark")
         public String bjBzremark;
 
-        /**
-         * <p>对应客户</p>
-         */
         @NameInMap("bj_customerid")
         public String bjCustomerid;
 
-        /**
-         * <p>报价日期</p>
-         */
         @NameInMap("bj_date")
         public String bjDate;
 
-        /**
-         * <p>附加费用金额</p>
-         */
         @NameInMap("bj_fjmoney")
         public String bjFjmoney;
 
-        /**
-         * <p>附加费用分类</p>
-         */
         @NameInMap("bj_fjmoneylx")
         public String bjFjmoneylx;
 
-        /**
-         * <p>付款说明</p>
-         */
         @NameInMap("bj_fkremark")
         public String bjFkremark;
 
-        /**
-         * <p>交付说明</p>
-         */
         @NameInMap("bj_jfremark")
         public String bjJfremark;
 
-        /**
-         * <p>接收人</p>
-         */
         @NameInMap("bj_jshren")
         public String bjJshren;
 
-        /**
-         * <p>优惠抹零金额</p>
-         */
         @NameInMap("bj_kjmoney")
         public String bjKjmoney;
 
-        /**
-         * <p>联系方式</p>
-         */
         @NameInMap("bj_lianxi")
         public String bjLianxi;
 
-        /**
-         * <p>优惠折扣率</p>
-         */
         @NameInMap("bj_moneyzhekou")
         public String bjMoneyzhekou;
 
-        /**
-         * <p>报价单号</p>
-         */
         @NameInMap("bj_number")
         public String bjNumber;
 
-        /**
-         * <p>报价(总)</p>
-         */
         @NameInMap("bj_price")
         public String bjPrice;
 
-        /**
-         * <p>备注</p>
-         */
         @NameInMap("bj_remark")
         public String bjRemark;
 
-        /**
-         * <p>转成订单</p>
-         */
         @NameInMap("bj_state")
         public String bjState;
 
-        /**
-         * <p>主题</p>
-         */
         @NameInMap("bj_title")
         public String bjTitle;
 
-        /**
-         * <p>对应机会</p>
-         */
         @NameInMap("bj_xshid")
         public String bjXshid;
 
-        /**
-         * <p>产品明细，json格式</p>
-         */
         @NameInMap("child_mx")
         public String childMx;
 
-        /**
-         * <p>创建人</p>
-         */
         @NameInMap("data_userid")
         public String dataUserid;
 

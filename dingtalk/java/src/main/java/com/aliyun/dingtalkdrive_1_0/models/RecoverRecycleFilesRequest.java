@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class RecoverRecycleFilesRequest extends TeaModel {
-    /**
-     * <p>回收站item id列表</p>
-     */
     @NameInMap("recycleItemIdList")
     public java.util.List<Long> recycleItemIdList;
 
-    /**
-     * <p>回收站类型</p>
-     */
     @NameInMap("recycleType")
     public String recycleType;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

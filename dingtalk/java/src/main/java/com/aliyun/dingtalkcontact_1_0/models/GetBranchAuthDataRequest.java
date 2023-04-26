@@ -4,21 +4,12 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetBranchAuthDataRequest extends TeaModel {
-    /**
-     * <p>查询条件</p>
-     */
     @NameInMap("body")
     public java.util.Map<String, String> body;
 
-    /**
-     * <p>分支组织corpId</p>
-     */
     @NameInMap("branchCorpId")
     public String branchCorpId;
 
-    /**
-     * <p>数据编码</p>
-     */
     @NameInMap("code")
     public String code;
 

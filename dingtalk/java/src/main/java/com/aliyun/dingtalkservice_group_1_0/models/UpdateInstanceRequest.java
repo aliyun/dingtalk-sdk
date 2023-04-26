@@ -4,45 +4,24 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateInstanceRequest extends TeaModel {
-    /**
-     * <p>外部业务ID</p>
-     */
     @NameInMap("externalBizId")
     public String externalBizId;
 
-    /**
-     * <p>表单CODE</p>
-     */
     @NameInMap("formCode")
     public String formCode;
 
-    /**
-     * <p>数据表单实例数据，JSON格式</p>
-     */
     @NameInMap("formDataList")
     public String formDataList;
 
-    /**
-     * <p>开放数据实例ID</p>
-     */
     @NameInMap("openDataInstanceId")
     public String openDataInstanceId;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>操作人unionId</p>
-     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 
-    /**
-     * <p>拥有人unionId</p>
-     */
     @NameInMap("ownerUnionId")
     public String ownerUnionId;
 

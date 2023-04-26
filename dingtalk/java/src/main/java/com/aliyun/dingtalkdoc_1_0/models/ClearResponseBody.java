@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class ClearResponseBody extends TeaModel {
-    /**
-     * <p>使用A1表示法的Range地址</p>
-     */
     @NameInMap("a1Notation")
     public String a1Notation;
 

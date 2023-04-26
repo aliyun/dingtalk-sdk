@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateContactRestrictSettingResponseBody extends TeaModel {
-    /**
-     * <p>settingId</p>
-     */
     @NameInMap("result")
     public Long result;
 

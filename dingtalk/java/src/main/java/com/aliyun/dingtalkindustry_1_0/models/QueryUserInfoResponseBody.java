@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserInfoResponseBody extends TeaModel {
-    /**
-     * <p>人员详情</p>
-     */
     @NameInMap("content")
     public QueryUserInfoResponseBodyContent content;
 
@@ -24,33 +21,18 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContentDept extends TeaModel {
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        /**
-         * <p>科室Id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>科室名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>人科关联id</p>
-         */
         @NameInMap("relId")
         public Long relId;
 
@@ -102,15 +84,9 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContentGroup extends TeaModel {
-        /**
-         * <p>医疗组所在科室Id</p>
-         */
         @NameInMap("deptId")
         public Long deptId;
 
-        /**
-         * <p>医疗组所在科室名称</p>
-         */
         @NameInMap("deptName")
         public String deptName;
 
@@ -120,15 +96,9 @@ public class QueryUserInfoResponseBody extends TeaModel {
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        /**
-         * <p>医疗组Id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>医疗组名称</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -199,27 +169,15 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContentJob extends TeaModel {
-        /**
-         * <p>标签类型</p>
-         */
         @NameInMap("bizType")
         public String bizType;
 
-        /**
-         * <p>分类</p>
-         */
         @NameInMap("category")
         public String category;
 
-        /**
-         * <p>标签Code</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>展示名称</p>
-         */
         @NameInMap("displayName")
         public String displayName;
 
@@ -263,27 +221,15 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContentJobStatus extends TeaModel {
-        /**
-         * <p>标签类型</p>
-         */
         @NameInMap("bizType")
         public String bizType;
 
-        /**
-         * <p>分类</p>
-         */
         @NameInMap("category")
         public String category;
 
-        /**
-         * <p>标签Code</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>展示名称</p>
-         */
         @NameInMap("displayName")
         public String displayName;
 
@@ -327,27 +273,15 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContentJobStatusList extends TeaModel {
-        /**
-         * <p>标签类型</p>
-         */
         @NameInMap("bizType")
         public String bizType;
 
-        /**
-         * <p>分类</p>
-         */
         @NameInMap("category")
         public String category;
 
-        /**
-         * <p>标签Code</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>展示名称</p>
-         */
         @NameInMap("displayName")
         public String displayName;
 
@@ -391,27 +325,15 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContentUserProb extends TeaModel {
-        /**
-         * <p>标签类型</p>
-         */
         @NameInMap("bizType")
         public String bizType;
 
-        /**
-         * <p>分类</p>
-         */
         @NameInMap("category")
         public String category;
 
-        /**
-         * <p>标签Code</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>展示名称</p>
-         */
         @NameInMap("displayName")
         public String displayName;
 
@@ -455,63 +377,33 @@ public class QueryUserInfoResponseBody extends TeaModel {
     }
 
     public static class QueryUserInfoResponseBodyContent extends TeaModel {
-        /**
-         * <p>comments</p>
-         */
         @NameInMap("comments")
         public String comments;
 
-        /**
-         * <p>所在科室</p>
-         */
         @NameInMap("dept")
         public java.util.List<QueryUserInfoResponseBodyContentDept> dept;
 
-        /**
-         * <p>所在医疗组</p>
-         */
         @NameInMap("group")
         public java.util.List<QueryUserInfoResponseBodyContentGroup> group;
 
-        /**
-         * <p>职称标签</p>
-         */
         @NameInMap("job")
         public QueryUserInfoResponseBodyContentJob job;
 
-        /**
-         * <p>工号</p>
-         */
         @NameInMap("jobNum")
         public String jobNum;
 
-        /**
-         * <p>工作状态标签, 已废弃, 请使用jobStatusList字段</p>
-         */
         @NameInMap("jobStatus")
         public QueryUserInfoResponseBodyContentJobStatus jobStatus;
 
-        /**
-         * <p>工作状态标签</p>
-         */
         @NameInMap("jobStatusList")
         public java.util.List<QueryUserInfoResponseBodyContentJobStatusList> jobStatusList;
 
-        /**
-         * <p>用户Id</p>
-         */
         @NameInMap("uid")
         public String uid;
 
-        /**
-         * <p>用户名称</p>
-         */
         @NameInMap("userName")
         public String userName;
 
-        /**
-         * <p>人员属性标签</p>
-         */
         @NameInMap("userProb")
         public QueryUserInfoResponseBodyContentUserProb userProb;
 

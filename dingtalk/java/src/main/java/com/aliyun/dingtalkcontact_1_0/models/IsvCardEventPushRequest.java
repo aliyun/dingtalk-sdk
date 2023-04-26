@@ -4,33 +4,18 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class IsvCardEventPushRequest extends TeaModel {
-    /**
-     * <p>事件参数</p>
-     */
     @NameInMap("eventParams")
     public java.util.Map<String, ?> eventParams;
 
-    /**
-     * <p>事件类型</p>
-     */
     @NameInMap("eventType")
     public String eventType;
 
-    /**
-     * <p>ISV名片ID</p>
-     */
     @NameInMap("isvCardId")
     public String isvCardId;
 
-    /**
-     * <p>ISV用户TOKEN</p>
-     */
     @NameInMap("isvToken")
     public String isvToken;
 
-    /**
-     * <p>ISV用户iD</p>
-     */
     @NameInMap("isvUid")
     public String isvUid;
 

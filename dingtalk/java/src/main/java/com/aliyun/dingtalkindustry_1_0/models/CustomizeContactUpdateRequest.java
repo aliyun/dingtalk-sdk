@@ -4,27 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomizeContactUpdateRequest extends TeaModel {
-    /**
-     * <p>自定义通讯录Code</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>通讯录管理员UserId</p>
-     */
     @NameInMap("managerIdList")
     public java.util.List<String> managerIdList;
 
-    /**
-     * <p>自定义通讯录名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>在自定义通讯录列表中的排序</p>
-     */
     @NameInMap("order")
     public Long order;
 

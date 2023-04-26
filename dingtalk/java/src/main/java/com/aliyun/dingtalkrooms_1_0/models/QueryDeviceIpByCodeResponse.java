@@ -8,6 +8,10 @@ public class QueryDeviceIpByCodeResponse extends TeaModel {
     @Validation(required = true)
     public java.util.Map<String, String> headers;
 
+    @NameInMap("statusCode")
+    @Validation(required = true)
+    public Integer statusCode;
+
     @NameInMap("body")
     @Validation(required = true)
     public QueryDeviceIpByCodeResponseBody body;
@@ -23,6 +27,14 @@ public class QueryDeviceIpByCodeResponse extends TeaModel {
     }
     public java.util.Map<String, String> getHeaders() {
         return this.headers;
+    }
+
+    public QueryDeviceIpByCodeResponse setStatusCode(Integer statusCode) {
+        this.statusCode = statusCode;
+        return this;
+    }
+    public Integer getStatusCode() {
+        return this.statusCode;
     }
 
     public QueryDeviceIpByCodeResponse setBody(QueryDeviceIpByCodeResponseBody body) {

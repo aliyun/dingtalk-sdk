@@ -4,9 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SavePrintTplDetailInfoResponseBody extends TeaModel {
-    /**
-     * <p>模板id</p>
-     */
     @NameInMap("result")
     public Long result;
 

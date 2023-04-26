@@ -4,9 +4,6 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptDetailForInvoiceRequest extends TeaModel {
-    /**
-     * <p>审批单id</p>
-     */
     @NameInMap("instanceId")
     public String instanceId;
 

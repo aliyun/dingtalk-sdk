@@ -4,81 +4,42 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchOrgInnerGroupInfoRequest extends TeaModel {
-    /**
-     * <p>createTimeEnd</p>
-     */
     @NameInMap("createTimeEnd")
     public Long createTimeEnd;
 
-    /**
-     * <p>createTimeStart</p>
-     */
     @NameInMap("createTimeStart")
     public Long createTimeStart;
 
-    /**
-     * <p>groupMembersCntEnd</p>
-     */
     @NameInMap("groupMembersCountEnd")
     public Integer groupMembersCountEnd;
 
-    /**
-     * <p>groupMembersCntStart</p>
-     */
     @NameInMap("groupMembersCountStart")
     public Integer groupMembersCountStart;
 
-    /**
-     * <p>groupName</p>
-     */
     @NameInMap("groupName")
     public String groupName;
 
-    /**
-     * <p>groupOwner</p>
-     */
     @NameInMap("groupOwner")
     public String groupOwner;
 
-    /**
-     * <p>lastActiveTimeEnd</p>
-     */
     @NameInMap("lastActiveTimeEnd")
     public Long lastActiveTimeEnd;
 
-    /**
-     * <p>lastActiveTimeStart</p>
-     */
     @NameInMap("lastActiveTimeStart")
     public Long lastActiveTimeStart;
 
-    /**
-     * <p>operatorUserId</p>
-     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
-    /**
-     * <p>pageSize</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>pageStart</p>
-     */
     @NameInMap("pageStart")
     public Integer pageStart;
 
-    /**
-     * <p>syncToDingpan</p>
-     */
     @NameInMap("syncToDingpan")
     public Integer syncToDingpan;
 
-    /**
-     * <p>uuid</p>
-     */
     @NameInMap("uuid")
     public String uuid;
 

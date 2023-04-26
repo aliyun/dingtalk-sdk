@@ -4,21 +4,12 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class HrmProcessUpdateTerminationInfoRequest extends TeaModel {
-    /**
-     * <p>离职备注</p>
-     */
     @NameInMap("dismissionMemo")
     public String dismissionMemo;
 
-    /**
-     * <p>最后工作日(离职日期)</p>
-     */
     @NameInMap("lastWorkDate")
     public Long lastWorkDate;
 
-    /**
-     * <p>员工id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

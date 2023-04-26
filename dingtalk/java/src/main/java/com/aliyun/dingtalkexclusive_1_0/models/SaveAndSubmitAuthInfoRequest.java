@@ -4,111 +4,57 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveAndSubmitAuthInfoRequest extends TeaModel {
-    /**
-     * <p>申请说明</p>
-     */
     @NameInMap("applyRemark")
     public String applyRemark;
 
-    /**
-     * <p>认证书图片mediaId</p>
-     */
     @NameInMap("authorizeMediaId")
     public String authorizeMediaId;
 
-    /**
-     * <p>行业</p>
-     */
     @NameInMap("industry")
     public String industry;
 
-    /**
-     * <p>企业法人</p>
-     */
     @NameInMap("legalPerson")
     public String legalPerson;
 
-    /**
-     * <p>企业法人身份证</p>
-     */
     @NameInMap("legalPersonIdCard")
     public String legalPersonIdCard;
 
-    /**
-     * <p>营业执照图片mediaId</p>
-     */
     @NameInMap("licenseMediaId")
     public String licenseMediaId;
 
-    /**
-     * <p>城市编码</p>
-     */
     @NameInMap("locCity")
     public Long locCity;
 
-    /**
-     * <p>城市名字</p>
-     */
     @NameInMap("locCityName")
     public String locCityName;
 
-    /**
-     * <p>省份编码</p>
-     */
     @NameInMap("locProvince")
     public Long locProvince;
 
-    /**
-     * <p>省份名字</p>
-     */
     @NameInMap("locProvinceName")
     public String locProvinceName;
 
-    /**
-     * <p>申请人手机号（需要实名认证）</p>
-     */
     @NameInMap("mobileNum")
     public String mobileNum;
 
-    /**
-     * <p>组织名，提交认证的时候可以修改</p>
-     */
     @NameInMap("orgName")
     public String orgName;
 
-    /**
-     * <p>组织机构代码证号（格式11111111-1）</p>
-     */
     @NameInMap("organizationCode")
     public String organizationCode;
 
-    /**
-     * <p>组织机构代码证图片mediaId</p>
-     */
     @NameInMap("organizationCodeMediaId")
     public String organizationCodeMediaId;
 
-    /**
-     * <p>认证企业详细地址</p>
-     */
     @NameInMap("registLocation")
     public String registLocation;
 
-    /**
-     * <p>营业执照注册号（一般15位）</p>
-     */
     @NameInMap("registNum")
     public String registNum;
 
-    /**
-     * <p>企业id</p>
-     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 
-    /**
-     * <p>社会统一信用代码（固定18位）</p>
-     */
     @NameInMap("unifiedSocialCredit")
     public String unifiedSocialCredit;
 

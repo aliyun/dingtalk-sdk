@@ -4,21 +4,12 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchUserTaskRequest extends TeaModel {
-    /**
-     * <p>每页返回最大数量。默认10，最大300。</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>分页标，从上一次请求结果中获取。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>企业下任务搜索TQL语句。</p>
-     */
     @NameInMap("tql")
     public String tql;
 

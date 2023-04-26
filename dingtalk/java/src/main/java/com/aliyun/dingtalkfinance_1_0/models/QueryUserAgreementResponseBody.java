@@ -4,75 +4,39 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserAgreementResponseBody extends TeaModel {
-    /**
-     * <p>协议编号</p>
-     */
     @NameInMap("agreementNo")
     public String agreementNo;
 
-    /**
-     * <p>组织id</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>实际过期日期</p>
-     */
     @NameInMap("gmtExpire")
     public String gmtExpire;
 
-    /**
-     * <p>实际签约日期</p>
-     */
     @NameInMap("gmtSign")
     public String gmtSign;
 
-    /**
-     * <p>实际生效日期</p>
-     */
     @NameInMap("gmtValid")
     public String gmtValid;
 
-    /**
-     * <p>主机构id</p>
-     */
     @NameInMap("instId")
     public String instId;
 
-    /**
-     * <p>支付渠道</p>
-     */
     @NameInMap("payChannel")
     public String payChannel;
 
-    /**
-     * <p>实际支付账户名（脱敏）</p>
-     */
     @NameInMap("payChannelAccountName")
     public String payChannelAccountName;
 
-    /**
-     * <p>实际支付账号（脱敏）</p>
-     */
     @NameInMap("payChannelAccountNo")
     public String payChannelAccountNo;
 
-    /**
-     * <p>签约状态</p>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <p>子机构id</p>
-     */
     @NameInMap("subInstId")
     public String subInstId;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

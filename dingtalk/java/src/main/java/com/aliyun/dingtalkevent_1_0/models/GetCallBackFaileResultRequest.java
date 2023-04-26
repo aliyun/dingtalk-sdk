@@ -4,15 +4,9 @@ package com.aliyun.dingtalkevent_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCallBackFaileResultRequest extends TeaModel {
-    /**
-     * <p>大于等于时间戳</p>
-     */
     @NameInMap("beginTime")
     public Long beginTime;
 
-    /**
-     * <p>小于等于时间戳</p>
-     */
     @NameInMap("endTime")
     public Long endTime;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusGetCampusRequest extends TeaModel {
-    /**
-     * <p>园区部门ID</p>
-     */
     @NameInMap("campusDeptId")
     public Long campusDeptId;
 

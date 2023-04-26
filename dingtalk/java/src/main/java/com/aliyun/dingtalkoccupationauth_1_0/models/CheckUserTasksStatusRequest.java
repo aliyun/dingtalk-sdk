@@ -4,9 +4,6 @@ package com.aliyun.dingtalkoccupationauth_1_0.models;
 import com.aliyun.tea.*;
 
 public class CheckUserTasksStatusRequest extends TeaModel {
-    /**
-     * <p>省级任务对接入</p>
-     */
     @NameInMap("provinceCode")
     public String provinceCode;
 

@@ -4,39 +4,21 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSubscribedCalendarResponseBody extends TeaModel {
-    /**
-     * <p>日历作者</p>
-     */
     @NameInMap("author")
     public String author;
 
-    /**
-     * <p>订阅日历id</p>
-     */
     @NameInMap("calendarId")
     public String calendarId;
 
-    /**
-     * <p>日历描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>可管理人群</p>
-     */
     @NameInMap("managers")
     public java.util.List<String> managers;
 
-    /**
-     * <p>日历名</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>可订阅范围</p>
-     */
     @NameInMap("subscribeScope")
     public GetSubscribedCalendarResponseBodySubscribeScope subscribeScope;
 
@@ -94,21 +76,12 @@ public class GetSubscribedCalendarResponseBody extends TeaModel {
     }
 
     public static class GetSubscribedCalendarResponseBodySubscribeScope extends TeaModel {
-        /**
-         * <p>可订阅组织</p>
-         */
         @NameInMap("corpIds")
         public java.util.List<String> corpIds;
 
-        /**
-         * <p>可订阅群组</p>
-         */
         @NameInMap("openConversationIds")
         public java.util.List<String> openConversationIds;
 
-        /**
-         * <p>可订阅用户</p>
-         */
         @NameInMap("unionIds")
         public java.util.List<String> unionIds;
 

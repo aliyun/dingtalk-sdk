@@ -4,15 +4,9 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteBizObjectRequest extends TeaModel {
-    /**
-     * <p>业务数据id</p>
-     */
     @NameInMap("bizObjectId")
     public String bizObjectId;
 
-    /**
-     * <p>表单编码</p>
-     */
     @NameInMap("schemaCode")
     public String schemaCode;
 

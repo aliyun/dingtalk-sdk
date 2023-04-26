@@ -4,9 +4,6 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class CloseTopBoxInteractiveOTOMessageRequest extends TeaModel {
-    /**
-     * <p>卡片参数</p>
-     */
     @NameInMap("detail")
     public CloseTopBoxInteractiveOTOMessageRequestDetail detail;
 
@@ -24,21 +21,12 @@ public class CloseTopBoxInteractiveOTOMessageRequest extends TeaModel {
     }
 
     public static class CloseTopBoxInteractiveOTOMessageRequestDetail extends TeaModel {
-        /**
-         * <p>唯一标识一张卡片的ID，卡片幂等ID</p>
-         */
         @NameInMap("cardBizId")
         public String cardBizId;
 
-        /**
-         * <p>卡片模板 ID</p>
-         */
         @NameInMap("cardTemplateId")
         public String cardTemplateId;
 
-        /**
-         * <p>用户 userId</p>
-         */
         @NameInMap("userId")
         public String userId;
 

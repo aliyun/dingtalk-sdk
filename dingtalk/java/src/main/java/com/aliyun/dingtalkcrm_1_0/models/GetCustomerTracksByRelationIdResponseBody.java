@@ -4,21 +4,12 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
-    /**
-     * <p>是否还有下一页。</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>下一页的游标。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>数据列表。</p>
-     */
     @NameInMap("resultList")
     public java.util.List<GetCustomerTracksByRelationIdResponseBodyResultList> resultList;
 
@@ -52,15 +43,9 @@ public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
     }
 
     public static class GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo extends TeaModel {
-        /**
-         * <p>写入动态的三方应用所属应用名。</p>
-         */
         @NameInMap("appName")
         public String appName;
 
-        /**
-         * <p>写入动态的三方应用所属组织名。</p>
-         */
         @NameInMap("orgName")
         public String orgName;
 
@@ -88,57 +73,30 @@ public class GetCustomerTracksByRelationIdResponseBody extends TeaModel {
     }
 
     public static class GetCustomerTracksByRelationIdResponseBodyResultList extends TeaModel {
-        /**
-         * <p>动态内容。</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>操作人姓名。</p>
-         */
         @NameInMap("creatorName")
         public String creatorName;
 
-        /**
-         * <p>动态详情。</p>
-         */
         @NameInMap("detail")
         public java.util.Map<String, String> detail;
 
-        /**
-         * <p>动态格式：markdown表示markdown格式，为空表示老格式</p>
-         */
         @NameInMap("format")
         public String format;
 
-        /**
-         * <p>创建时间。</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>写入动态的三方应用身份信息。</p>
-         */
         @NameInMap("isvInfo")
         public GetCustomerTracksByRelationIdResponseBodyResultListIsvInfo isvInfo;
 
-        /**
-         * <p>动态标题。</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>动态类型。</p>
-         */
         @NameInMap("type")
         public Integer type;
 
-        /**
-         * <p>动态类型分组。</p>
-         */
         @NameInMap("typeGroup")
         public Integer typeGroup;
 

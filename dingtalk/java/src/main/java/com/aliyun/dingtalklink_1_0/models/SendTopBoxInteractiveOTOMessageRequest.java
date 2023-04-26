@@ -4,9 +4,6 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendTopBoxInteractiveOTOMessageRequest extends TeaModel {
-    /**
-     * <p>卡片信息</p>
-     */
     @NameInMap("detail")
     public SendTopBoxInteractiveOTOMessageRequestDetail detail;
 
@@ -24,15 +21,9 @@ public class SendTopBoxInteractiveOTOMessageRequest extends TeaModel {
     }
 
     public static class SendTopBoxInteractiveOTOMessageRequestDetailCardData extends TeaModel {
-        /**
-         * <p>富媒体卡片数据</p>
-         */
         @NameInMap("cardMediaIdParamMap")
         public java.util.Map<String, ?> cardMediaIdParamMap;
 
-        /**
-         * <p>普通文本卡片数据</p>
-         */
         @NameInMap("cardParamMap")
         public java.util.Map<String, ?> cardParamMap;
 
@@ -60,45 +51,24 @@ public class SendTopBoxInteractiveOTOMessageRequest extends TeaModel {
     }
 
     public static class SendTopBoxInteractiveOTOMessageRequestDetail extends TeaModel {
-        /**
-         * <p>卡片回调 URL 地址，不填则无回调</p>
-         */
         @NameInMap("callbackUrl")
         public String callbackUrl;
 
-        /**
-         * <p>唯一标识一张卡片的ID，卡片幂等ID</p>
-         */
         @NameInMap("cardBizId")
         public String cardBizId;
 
-        /**
-         * <p>卡片数据</p>
-         */
         @NameInMap("cardData")
         public SendTopBoxInteractiveOTOMessageRequestDetailCardData cardData;
 
-        /**
-         * <p>卡片模板 ID</p>
-         */
         @NameInMap("cardTemplateId")
         public String cardTemplateId;
 
-        /**
-         * <p>失效时间，时间戳（毫秒），最长时间不超过 90 天</p>
-         */
         @NameInMap("expiredTime")
         public Long expiredTime;
 
-        /**
-         * <p>接收人 userId</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>卡片用户差异化数据</p>
-         */
         @NameInMap("userIdPrivateDataMap")
         public java.util.Map<String, DetailUserIdPrivateDataMapValue> userIdPrivateDataMap;
 

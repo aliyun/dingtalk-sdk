@@ -4,15 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetProjectGroupRequest extends TeaModel {
-    /**
-     * <p>分页大小，最小1，默认10，最大1000</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>查看者ID</p>
-     */
     @NameInMap("viewerId")
     public String viewerId;
 

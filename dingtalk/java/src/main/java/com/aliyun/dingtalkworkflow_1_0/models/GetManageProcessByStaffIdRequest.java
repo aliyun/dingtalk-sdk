@@ -4,9 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetManageProcessByStaffIdRequest extends TeaModel {
-    /**
-     * <p>用户的userid。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

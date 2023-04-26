@@ -4,27 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOssTempUrlRequest extends TeaModel {
-    /**
-     * <p>访问模式 AUTO(自动，例如在浏览器中如果是图片，PDF等可以在线直接查看，不能在线看时自动下载)、DOWNLOAD（直接下载）</p>
-     */
     @NameInMap("fetchMode")
     public String fetchMode;
 
-    /**
-     * <p>文件名</p>
-     */
     @NameInMap("fileName")
     public String fileName;
 
-    /**
-     * <p>oss文件key</p>
-     */
     @NameInMap("key")
     public String key;
 
-    /**
-     * <p>团队开放ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCorpStatisticDataResponseBody extends TeaModel {
-    /**
-     * <p>查询结果</p>
-     */
     @NameInMap("result")
     public java.util.List<QueryCorpStatisticDataResponseBodyResult> result;
 
@@ -24,45 +21,24 @@ public class QueryCorpStatisticDataResponseBody extends TeaModel {
     }
 
     public static class QueryCorpStatisticDataResponseBodyResult extends TeaModel {
-        /**
-         * <p>被收下名片数</p>
-         */
         @NameInMap("cardBeReceivedTotalCnt")
         public Long cardBeReceivedTotalCnt;
 
-        /**
-         * <p>收下名片数</p>
-         */
         @NameInMap("cardReceiveTotalCnt")
         public Long cardReceiveTotalCnt;
 
-        /**
-         * <p>被访问数</p>
-         */
         @NameInMap("cardTotalBeVisitedCnt")
         public Long cardTotalBeVisitedCnt;
 
-        /**
-         * <p>日期</p>
-         */
         @NameInMap("dataDate")
         public String dataDate;
 
-        /**
-         * <p>钉钉发送数</p>
-         */
         @NameInMap("dingTotalShareCnt")
         public Long dingTotalShareCnt;
 
-        /**
-         * <p>总发送数</p>
-         */
         @NameInMap("totalSendCnt")
         public Long totalSendCnt;
 
-        /**
-         * <p>微信发送数</p>
-         */
         @NameInMap("wechatTotalShareCnt")
         public Long wechatTotalShareCnt;
 

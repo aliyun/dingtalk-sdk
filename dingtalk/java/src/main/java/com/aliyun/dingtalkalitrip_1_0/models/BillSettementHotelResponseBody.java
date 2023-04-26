@@ -4,27 +4,15 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class BillSettementHotelResponseBody extends TeaModel {
-    /**
-     * <p>module</p>
-     */
     @NameInMap("module")
     public BillSettementHotelResponseBodyModule module;
 
-    /**
-     * <p>结果code</p>
-     */
     @NameInMap("resultCode")
     public Long resultCode;
 
-    /**
-     * <p>结果msg</p>
-     */
     @NameInMap("resultMsg")
     public String resultMsg;
 
-    /**
-     * <p>是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -66,321 +54,162 @@ public class BillSettementHotelResponseBody extends TeaModel {
     }
 
     public static class BillSettementHotelResponseBodyModuleDataList extends TeaModel {
-        /**
-         * <p>交易流水号</p>
-         */
         @NameInMap("alipayTradeNo")
         public String alipayTradeNo;
 
-        /**
-         * <p>审批单号</p>
-         */
         @NameInMap("applyId")
         public String applyId;
 
-        /**
-         * <p>入账时间</p>
-         */
         @NameInMap("billRecordTime")
         public String billRecordTime;
 
-        /**
-         * <p>预定时间</p>
-         */
         @NameInMap("bookTime")
         public String bookTime;
 
-        /**
-         * <p>预定人use id</p>
-         */
         @NameInMap("bookerId")
         public String bookerId;
 
-        /**
-         * <p>预订人工号</p>
-         */
         @NameInMap("bookerJobNo")
         public String bookerJobNo;
 
-        /**
-         * <p>预订人名称</p>
-         */
         @NameInMap("bookerName")
         public String bookerName;
 
-        /**
-         * <p>资金方向</p>
-         */
         @NameInMap("capitalDirection")
         public String capitalDirection;
 
-        /**
-         * <p>级联部门</p>
-         */
         @NameInMap("cascadeDepartment")
         public String cascadeDepartment;
 
-        /**
-         * <p>入住时间</p>
-         */
         @NameInMap("checkInDate")
         public String checkInDate;
 
-        /**
-         * <p>离店时间</p>
-         */
         @NameInMap("checkoutDate")
         public String checkoutDate;
 
-        /**
-         * <p>入住城市</p>
-         */
         @NameInMap("city")
         public String city;
 
-        /**
-         * <p>城市编码</p>
-         */
         @NameInMap("cityCode")
         public String cityCode;
 
-        /**
-         * <p>企业退款金额</p>
-         */
         @NameInMap("corpRefundFee")
         public Double corpRefundFee;
 
-        /**
-         * <p>企业支付金额</p>
-         */
         @NameInMap("corpTotalFee")
         public Double corpTotalFee;
 
-        /**
-         * <p>成本中心名称</p>
-         */
         @NameInMap("costCenter")
         public String costCenter;
 
-        /**
-         * <p>成本中心编码</p>
-         */
         @NameInMap("costCenterNumber")
         public String costCenterNumber;
 
-        /**
-         * <p>末级部门</p>
-         */
         @NameInMap("department")
         public String department;
 
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("departmentId")
         public String departmentId;
 
-        /**
-         * <p>费用类型</p>
-         */
         @NameInMap("feeType")
         public String feeType;
 
-        /**
-         * <p>杂费</p>
-         */
         @NameInMap("fees")
         public Double fees;
 
-        /**
-         * <p>福豆支付</p>
-         */
         @NameInMap("fuPointFee")
         public Double fuPointFee;
 
-        /**
-         * <p>酒店名称</p>
-         */
         @NameInMap("hotelName")
         public String hotelName;
 
-        /**
-         * <p>序号</p>
-         */
         @NameInMap("index")
         public String index;
 
-        /**
-         * <p>发票抬头</p>
-         */
         @NameInMap("invoiceTitle")
         public String invoiceTitle;
 
-        /**
-         * <p>是否协议价</p>
-         */
         @NameInMap("isNegotiation")
         public Boolean isNegotiation;
 
-        /**
-         * <p>是否合住</p>
-         */
         @NameInMap("isShareStr")
         public String isShareStr;
 
-        /**
-         * <p>入住天数</p>
-         */
         @NameInMap("nights")
         public Long nights;
 
-        /**
-         * <p>订单号</p>
-         */
         @NameInMap("orderId")
         public String orderId;
 
-        /**
-         * <p>订单金额</p>
-         */
         @NameInMap("orderPrice")
         public Double orderPrice;
 
-        /**
-         * <p>订单类型</p>
-         */
         @NameInMap("orderType")
         public String orderType;
 
-        /**
-         * <p>超标审批单号</p>
-         */
         @NameInMap("overApplyId")
         public String overApplyId;
 
-        /**
-         * <p>个人退款金额</p>
-         */
         @NameInMap("personRefundFee")
         public Double personRefundFee;
 
-        /**
-         * <p>个人支付金额</p>
-         */
         @NameInMap("personSettlePrice")
         public Double personSettlePrice;
 
-        /**
-         * <p>主键id</p>
-         */
         @NameInMap("primaryId")
         public Long primaryId;
 
-        /**
-         * <p>项目编码</p>
-         */
         @NameInMap("projectCode")
         public String projectCode;
 
-        /**
-         * <p>项目名称</p>
-         */
         @NameInMap("projectName")
         public String projectName;
 
-        /**
-         * <p>优惠券</p>
-         */
         @NameInMap("promotionFee")
         public Double promotionFee;
 
-        /**
-         * <p>备注</p>
-         */
         @NameInMap("remark")
         public String remark;
 
-        /**
-         * <p>房间数</p>
-         */
         @NameInMap("roomNumber")
         public Long roomNumber;
 
-        /**
-         * <p>房价</p>
-         */
         @NameInMap("roomPrice")
         public Double roomPrice;
 
-        /**
-         * <p>房间类型</p>
-         */
         @NameInMap("roomType")
         public String roomType;
 
-        /**
-         * <p>服务费,仅在 feeType 20111、20112中展示</p>
-         */
         @NameInMap("serviceFee")
         public Double serviceFee;
 
-        /**
-         * <p>结算金额</p>
-         */
         @NameInMap("settlementFee")
         public Double settlementFee;
 
-        /**
-         * <p>预存赠送金额消费</p>
-         */
         @NameInMap("settlementGrantFee")
         public Double settlementGrantFee;
 
-        /**
-         * <p>结算时间</p>
-         */
         @NameInMap("settlementTime")
         public String settlementTime;
 
-        /**
-         * <p>结算类型</p>
-         */
         @NameInMap("settlementType")
         public String settlementType;
 
-        /**
-         * <p>入账状态</p>
-         */
         @NameInMap("status")
         public Long status;
 
-        /**
-         * <p>总间夜数</p>
-         */
         @NameInMap("totalNights")
         public Long totalNights;
 
-        /**
-         * <p>出行人use id</p>
-         */
         @NameInMap("travelerId")
         public String travelerId;
 
-        /**
-         * <p>出行人工号</p>
-         */
         @NameInMap("travelerJobNo")
         public String travelerJobNo;
 
-        /**
-         * <p>出行人名称</p>
-         */
         @NameInMap("travelerName")
         public String travelerName;
 
-        /**
-         * <p>发票类型</p>
-         */
         @NameInMap("voucherType")
         public Long voucherType;
 
@@ -816,39 +645,21 @@ public class BillSettementHotelResponseBody extends TeaModel {
     }
 
     public static class BillSettementHotelResponseBodyModule extends TeaModel {
-        /**
-         * <p>类目</p>
-         */
         @NameInMap("category")
         public Long category;
 
-        /**
-         * <p>企业id</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>数据集合</p>
-         */
         @NameInMap("dataList")
         public java.util.List<BillSettementHotelResponseBodyModuleDataList> dataList;
 
-        /**
-         * <p>记账更新结束日期</p>
-         */
         @NameInMap("periodEnd")
         public String periodEnd;
 
-        /**
-         * <p>记账更新开始日期</p>
-         */
         @NameInMap("periodStart")
         public String periodStart;
 
-        /**
-         * <p>总数据量</p>
-         */
         @NameInMap("totalNum")
         public Long totalNum;
 

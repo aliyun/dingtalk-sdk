@@ -4,15 +4,9 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDepartmentExtendInfoRequest extends TeaModel {
-    /**
-     * <p>科室或医疗组code</p>
-     */
     @NameInMap("deptCode")
     public Long deptCode;
 
-    /**
-     * <p>扩展属性code</p>
-     */
     @NameInMap("propCode")
     public String propCode;
 

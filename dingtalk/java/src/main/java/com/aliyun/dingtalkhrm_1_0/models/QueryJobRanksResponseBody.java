@@ -4,21 +4,12 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryJobRanksResponseBody extends TeaModel {
-    /**
-     * <p>是否有更多数据</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>职级列表</p>
-     */
     @NameInMap("list")
     public java.util.List<QueryJobRanksResponseBodyList> list;
 
-    /**
-     * <p>表示当前调用返回读取到的位置，空代表数据已经读取完毕</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
@@ -52,45 +43,24 @@ public class QueryJobRanksResponseBody extends TeaModel {
     }
 
     public static class QueryJobRanksResponseBodyList extends TeaModel {
-        /**
-         * <p>最大等级</p>
-         */
         @NameInMap("maxJobGrade")
         public Integer maxJobGrade;
 
-        /**
-         * <p>最小等级</p>
-         */
         @NameInMap("minJobGrade")
         public Integer minJobGrade;
 
-        /**
-         * <p>职级序列ID</p>
-         */
         @NameInMap("rankCategoryId")
         public String rankCategoryId;
 
-        /**
-         * <p>职级编码</p>
-         */
         @NameInMap("rankCode")
         public String rankCode;
 
-        /**
-         * <p>职级描述</p>
-         */
         @NameInMap("rankDescription")
         public String rankDescription;
 
-        /**
-         * <p>职级ID</p>
-         */
         @NameInMap("rankId")
         public String rankId;
 
-        /**
-         * <p>职级名称</p>
-         */
         @NameInMap("rankName")
         public String rankName;
 

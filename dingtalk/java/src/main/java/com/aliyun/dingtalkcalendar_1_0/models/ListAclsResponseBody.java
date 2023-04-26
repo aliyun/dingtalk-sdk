@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListAclsResponseBody extends TeaModel {
-    /**
-     * <p>访问控制列表</p>
-     */
     @NameInMap("acls")
     public java.util.List<ListAclsResponseBodyAcls> acls;
 
@@ -24,15 +21,9 @@ public class ListAclsResponseBody extends TeaModel {
     }
 
     public static class ListAclsResponseBodyAclsScope extends TeaModel {
-        /**
-         * <p>权限类型</p>
-         */
         @NameInMap("scopeType")
         public String scopeType;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -60,21 +51,12 @@ public class ListAclsResponseBody extends TeaModel {
     }
 
     public static class ListAclsResponseBodyAcls extends TeaModel {
-        /**
-         * <p>acl资源ID</p>
-         */
         @NameInMap("aclId")
         public String aclId;
 
-        /**
-         * <p>权限信息</p>
-         */
         @NameInMap("privilege")
         public String privilege;
 
-        /**
-         * <p>权限范围</p>
-         */
         @NameInMap("scope")
         public ListAclsResponseBodyAclsScope scope;
 

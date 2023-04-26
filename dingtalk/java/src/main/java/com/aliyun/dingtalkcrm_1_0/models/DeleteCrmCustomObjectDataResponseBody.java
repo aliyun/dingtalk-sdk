@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteCrmCustomObjectDataResponseBody extends TeaModel {
-    /**
-     * <p>删除成功的CRM自定义对象数据ID。</p>
-     */
     @NameInMap("instanceId")
     public String instanceId;
 

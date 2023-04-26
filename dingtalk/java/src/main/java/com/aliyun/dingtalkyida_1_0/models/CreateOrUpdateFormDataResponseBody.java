@@ -4,9 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateOrUpdateFormDataResponseBody extends TeaModel {
-    /**
-     * <p>新增的或者更新的表单实例id列表</p>
-     */
     @NameInMap("result")
     public java.util.List<String> result;
 

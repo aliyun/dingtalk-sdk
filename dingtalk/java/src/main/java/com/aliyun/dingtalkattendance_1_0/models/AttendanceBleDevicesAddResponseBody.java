@@ -4,15 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class AttendanceBleDevicesAddResponseBody extends TeaModel {
-    /**
-     * <p>添加错误列表</p>
-     */
     @NameInMap("errorList")
     public java.util.List<AttendanceBleDevicesAddResponseBodyErrorList> errorList;
 
-    /**
-     * <p>添加成功蓝牙设备列表</p>
-     */
     @NameInMap("successList")
     public java.util.List<AttendanceBleDevicesAddResponseBodySuccessList> successList;
 
@@ -38,21 +32,12 @@ public class AttendanceBleDevicesAddResponseBody extends TeaModel {
     }
 
     public static class AttendanceBleDevicesAddResponseBodyErrorListFailureList extends TeaModel {
-        /**
-         * <p>蓝牙设备Id</p>
-         */
         @NameInMap("deviceId")
         public Long deviceId;
 
-        /**
-         * <p>蓝牙设备名称</p>
-         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        /**
-         * <p>sn</p>
-         */
         @NameInMap("sn")
         public String sn;
 
@@ -88,21 +73,12 @@ public class AttendanceBleDevicesAddResponseBody extends TeaModel {
     }
 
     public static class AttendanceBleDevicesAddResponseBodyErrorList extends TeaModel {
-        /**
-         * <p>错误code</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>失败蓝牙设备列表</p>
-         */
         @NameInMap("failureList")
         public java.util.List<AttendanceBleDevicesAddResponseBodyErrorListFailureList> failureList;
 
-        /**
-         * <p>errorMsg</p>
-         */
         @NameInMap("msg")
         public String msg;
 
@@ -138,21 +114,12 @@ public class AttendanceBleDevicesAddResponseBody extends TeaModel {
     }
 
     public static class AttendanceBleDevicesAddResponseBodySuccessList extends TeaModel {
-        /**
-         * <p>蓝牙设备Id</p>
-         */
         @NameInMap("deviceId")
         public Long deviceId;
 
-        /**
-         * <p>蓝牙设备名称</p>
-         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        /**
-         * <p>sn</p>
-         */
         @NameInMap("sn")
         public String sn;
 

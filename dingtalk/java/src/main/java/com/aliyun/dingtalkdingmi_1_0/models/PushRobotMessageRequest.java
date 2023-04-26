@@ -4,27 +4,15 @@ package com.aliyun.dingtalkdingmi_1_0.models;
 import com.aliyun.tea.*;
 
 public class PushRobotMessageRequest extends TeaModel {
-    /**
-     * <p>机器人id</p>
-     */
     @NameInMap("chatbotId")
     public String chatbotId;
 
-    /**
-     * <p>消息类型</p>
-     */
     @NameInMap("msgKey")
     public String msgKey;
 
-    /**
-     * <p>消息模板替换参数</p>
-     */
     @NameInMap("msgParam")
     public String msgParam;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

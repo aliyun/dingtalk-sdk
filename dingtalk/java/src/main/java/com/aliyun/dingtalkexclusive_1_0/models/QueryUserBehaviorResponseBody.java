@@ -4,9 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryUserBehaviorResponseBody extends TeaModel {
-    /**
-     * <p>数据列表</p>
-     */
     @NameInMap("data")
     public java.util.List<QueryUserBehaviorResponseBodyData> data;
 

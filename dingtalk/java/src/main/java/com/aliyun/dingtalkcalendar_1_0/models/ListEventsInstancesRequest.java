@@ -4,27 +4,15 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListEventsInstancesRequest extends TeaModel {
-    /**
-     * <p>listInstances每个日程的参与者查询个数，默认100，最大100。</p>
-     */
     @NameInMap("maxAttendees")
     public Integer maxAttendees;
 
-    /**
-     * <p>listInstances返回的最大日程数，最大100个，默认100个。</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>循环主日程id。</p>
-     */
     @NameInMap("seriesMasterId")
     public String seriesMasterId;
 
-    /**
-     * <p>大于等于次序列id的所有实例</p>
-     */
     @NameInMap("startRecurrenceId")
     public String startRecurrenceId;
 

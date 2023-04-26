@@ -4,9 +4,6 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOrgInfoRequest extends TeaModel {
-    /**
-     * <p>部门编码</p>
-     */
     @NameInMap("deptCode")
     public String deptCode;
 

@@ -10,9 +10,6 @@ public class QueryBotInstanceInGroupInfoRequest extends TeaModel {
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>钉钉开放平台后台机器人的robotCode</p>
-     */
     @NameInMap("robotCode")
     public String robotCode;
 

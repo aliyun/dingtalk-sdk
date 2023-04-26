@@ -4,21 +4,12 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserJoinedProjectResponseBody extends TeaModel {
-    /**
-     * <p>分页标。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>项目 ID 列表。</p>
-     */
     @NameInMap("result")
     public java.util.List<String> result;
 
-    /**
-     * <p>总数。</p>
-     */
     @NameInMap("totalCount")
     public Integer totalCount;
 

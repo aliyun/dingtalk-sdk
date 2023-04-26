@@ -4,21 +4,12 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryEduAssetSpacesResponseBody extends TeaModel {
-    /**
-     * <p>是否还有数据</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>表示当前调用返回读取到的位置，空代表数据已经读取完毕</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>空间结果集</p>
-     */
     @NameInMap("spaces")
     public java.util.List<QueryEduAssetSpacesResponseBodySpaces> spaces;
 
@@ -52,51 +43,27 @@ public class QueryEduAssetSpacesResponseBody extends TeaModel {
     }
 
     public static class QueryEduAssetSpacesResponseBodySpaces extends TeaModel {
-        /**
-         * <p>创建时间的时间戳</p>
-         */
         @NameInMap("createTimeMillis")
         public Long createTimeMillis;
 
-        /**
-         * <p>修改时间的时间戳</p>
-         */
         @NameInMap("modifyTimeMillis")
         public Long modifyTimeMillis;
 
-        /**
-         * <p>权限类型acl：acl授权；custom：自定义授权</p>
-         */
         @NameInMap("permissionMode")
         public String permissionMode;
 
-        /**
-         * <p>空间容量</p>
-         */
         @NameInMap("quota")
         public Long quota;
 
-        /**
-         * <p>空间id</p>
-         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        /**
-         * <p>空间名称</p>
-         */
         @NameInMap("spaceName")
         public String spaceName;
 
-        /**
-         * <p>空间类型</p>
-         */
         @NameInMap("spaceType")
         public String spaceType;
 
-        /**
-         * <p>已使用容量</p>
-         */
         @NameInMap("usedQuota")
         public Long usedQuota;
 

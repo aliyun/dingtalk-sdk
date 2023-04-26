@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListMaintainInfoResponseBody extends TeaModel {
-    /**
-     * <p>结果集</p>
-     */
     @NameInMap("result")
     public java.util.List<ListMaintainInfoResponseBodyResult> result;
 
-    /**
-     * <p>是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
-    /**
-     * <p>总共的数量</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -52,45 +43,24 @@ public class ListMaintainInfoResponseBody extends TeaModel {
     }
 
     public static class ListMaintainInfoResponseBodyResult extends TeaModel {
-        /**
-         * <p>报修设备码</p>
-         */
         @NameInMap("deviceCode")
         public String deviceCode;
 
-        /**
-         * <p>设备名称</p>
-         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        /**
-         * <p>报修时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>处理时间</p>
-         */
         @NameInMap("handleTime")
         public String handleTime;
 
-        /**
-         * <p>报修人</p>
-         */
         @NameInMap("maintenanceStaff")
         public java.util.List<String> maintenanceStaff;
 
-        /**
-         * <p>处理结果，0:同意，1:拒绝，2:终止，3:删除，4:进行中</p>
-         */
         @NameInMap("processState")
         public Integer processState;
 
-        /**
-         * <p>异常描述</p>
-         */
         @NameInMap("remark")
         public String remark;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
-    /**
-     * <p>关系数据。</p>
-     */
     @NameInMap("relations")
     public java.util.List<QueryRelationDatasByTargetIdResponseBodyRelations> relations;
 
@@ -24,21 +21,12 @@ public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
     }
 
     public static class QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList extends TeaModel {
-        /**
-         * <p>关系模型数据字段扩展值。</p>
-         */
         @NameInMap("extendValue")
         public String extendValue;
 
-        /**
-         * <p>关系模型数据字段名。</p>
-         */
         @NameInMap("key")
         public String key;
 
-        /**
-         * <p>关系模型数据字段值。</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -74,27 +62,15 @@ public class QueryRelationDatasByTargetIdResponseBody extends TeaModel {
     }
 
     public static class QueryRelationDatasByTargetIdResponseBodyRelations extends TeaModel {
-        /**
-         * <p>关系模型。</p>
-         */
         @NameInMap("bizDataList")
         public java.util.List<QueryRelationDatasByTargetIdResponseBodyRelationsBizDataList> bizDataList;
 
-        /**
-         * <p>关系所在的群ID，加密形式。</p>
-         */
         @NameInMap("openConversationIds")
         public java.util.List<String> openConversationIds;
 
-        /**
-         * <p>关系实例ID。</p>
-         */
         @NameInMap("relationId")
         public String relationId;
 
-        /**
-         * <p>关系类型。</p>
-         */
         @NameInMap("relationType")
         public String relationType;
 

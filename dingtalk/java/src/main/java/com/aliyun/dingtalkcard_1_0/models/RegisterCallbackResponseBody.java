@@ -32,15 +32,9 @@ public class RegisterCallbackResponseBody extends TeaModel {
     }
 
     public static class RegisterCallbackResponseBodyResult extends TeaModel {
-        /**
-         * <p>api 签名密钥</p>
-         */
         @NameInMap("apiSecret")
         public String apiSecret;
 
-        /**
-         * <p>ISV 接受动态卡片点击的回调地址</p>
-         */
         @NameInMap("callbackUrl")
         public String callbackUrl;
 

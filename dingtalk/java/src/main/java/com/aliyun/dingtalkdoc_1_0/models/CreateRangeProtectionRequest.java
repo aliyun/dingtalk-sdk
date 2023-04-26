@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateRangeProtectionRequest extends TeaModel {
-    /**
-     * <p>对于拥有「可编辑」权限的用户的细化权限配置。</p>
-     */
     @NameInMap("editableSetting")
     public CreateRangeProtectionRequestEditableSetting editableSetting;
 
-    /**
-     * <p>其它用户的权限</p>
-     */
     @NameInMap("otherUserPermission")
     public String otherUserPermission;
 
-    /**
-     * <p>操作人unionId</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -52,51 +43,27 @@ public class CreateRangeProtectionRequest extends TeaModel {
     }
 
     public static class CreateRangeProtectionRequestEditableSetting extends TeaModel {
-        /**
-         * <p>是否可删除列</p>
-         */
         @NameInMap("deleteColumns")
         public Boolean deleteColumns;
 
-        /**
-         * <p>是否可删除行</p>
-         */
         @NameInMap("deleteRows")
         public Boolean deleteRows;
 
-        /**
-         * <p>是否可修改单元格的值</p>
-         */
         @NameInMap("editCells")
         public Boolean editCells;
 
-        /**
-         * <p>是否可修改单元格样式</p>
-         */
         @NameInMap("formatCells")
         public Boolean formatCells;
 
-        /**
-         * <p>是否可插入列</p>
-         */
         @NameInMap("insertColumns")
         public Boolean insertColumns;
 
-        /**
-         * <p>是否可插入行</p>
-         */
         @NameInMap("insertRows")
         public Boolean insertRows;
 
-        /**
-         * <p>是否可显示、隐藏列</p>
-         */
         @NameInMap("toggleColumnsVisibility")
         public Boolean toggleColumnsVisibility;
 
-        /**
-         * <p>是否可显示、隐藏行</p>
-         */
         @NameInMap("toggleRowsVisibility")
         public Boolean toggleRowsVisibility;
 

@@ -21,21 +21,12 @@ public class RosterMetaAvailableFieldListResponseBody extends TeaModel {
     }
 
     public static class RosterMetaAvailableFieldListResponseBodyResult extends TeaModel {
-        /**
-         * <p>字段标识</p>
-         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
-        /**
-         * <p>字段名称</p>
-         */
         @NameInMap("fieldName")
         public String fieldName;
 
-        /**
-         * <p>字段类型</p>
-         */
         @NameInMap("fieldType")
         public String fieldType;
 

@@ -4,27 +4,15 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryRegisterOrderRequest extends TeaModel {
-    /**
-     * <p>主机构编号</p>
-     */
     @NameInMap("instId")
     public String instId;
 
-    /**
-     * <p>申请单号，和外部流水号至少一个必填</p>
-     */
     @NameInMap("orderId")
     public String orderId;
 
-    /**
-     * <p>外部流水号，和申请单编号至少一个必填</p>
-     */
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
-    /**
-     * <p>子机构编号</p>
-     */
     @NameInMap("subInstId")
     public String subInstId;
 

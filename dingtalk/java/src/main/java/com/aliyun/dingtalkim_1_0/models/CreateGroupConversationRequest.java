@@ -4,51 +4,27 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupConversationRequest extends TeaModel {
-    /**
-     * <p>钉外成员列表。</p>
-     */
     @NameInMap("appUserIds")
     public java.util.List<String> appUserIds;
 
-    /**
-     * <p>群头像地址。</p>
-     */
     @NameInMap("groupAvatar")
     public String groupAvatar;
 
-    /**
-     * <p>群名称。</p>
-     */
     @NameInMap("groupName")
     public String groupName;
 
-    /**
-     * <p>群主在业务系统内的唯一标识</p>
-     */
     @NameInMap("groupOwnerId")
     public String groupOwnerId;
 
-    /**
-     * <p>群主类型<2.钉内用户类型 3.钉外用户类型>，如果不指定的话，默认是钉钉用户类型</p>
-     */
     @NameInMap("groupOwnerType")
     public Integer groupOwnerType;
 
-    /**
-     * <p>群模板Id。</p>
-     */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
-    /**
-     * <p>操作者在业务系统内的唯一标识。</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    /**
-     * <p>钉内成员列表。</p>
-     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

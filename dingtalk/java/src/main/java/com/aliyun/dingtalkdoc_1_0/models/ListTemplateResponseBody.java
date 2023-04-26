@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListTemplateResponseBody extends TeaModel {
-    /**
-     * <p>是否还有更多模版</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>后续结果的偏移</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>模版信息列表</p>
-     */
     @NameInMap("templateList")
     public java.util.List<ListTemplateResponseBodyTemplateList> templateList;
 
@@ -52,51 +43,27 @@ public class ListTemplateResponseBody extends TeaModel {
     }
 
     public static class ListTemplateResponseBodyTemplateList extends TeaModel {
-        /**
-         * <p>模版预览url</p>
-         */
         @NameInMap("coverUrl")
         public String coverUrl;
 
-        /**
-         * <p>模版创建时间</p>
-         */
         @NameInMap("createTime")
         public Long createTime;
 
-        /**
-         * <p>模版对应文档类型</p>
-         */
         @NameInMap("docType")
         public String docType;
 
-        /**
-         * <p>模版Id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>模版类型</p>
-         */
         @NameInMap("templateType")
         public String templateType;
 
-        /**
-         * <p>模版标题</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>模版修改时间</p>
-         */
         @NameInMap("updateTime")
         public Long updateTime;
 
-        /**
-         * <p>模版归属知识库id。</p>
-         */
         @NameInMap("workspaceId")
         public String workspaceId;
 

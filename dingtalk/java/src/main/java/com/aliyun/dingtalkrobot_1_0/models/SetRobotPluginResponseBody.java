@@ -4,9 +4,6 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class SetRobotPluginResponseBody extends TeaModel {
-    /**
-     * <p>是否成功设置机器人插件</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

@@ -21,27 +21,15 @@ public class PollingConfirmStatusResponseBody extends TeaModel {
     }
 
     public static class PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponseLivePlayInfoList extends TeaModel {
-        /**
-         * <p>推流地址</p>
-         */
         @NameInMap("liveInputUrl")
         public String liveInputUrl;
 
-        /**
-         * <p>直播拉流地址</p>
-         */
         @NameInMap("liveOutputUrl")
         public String liveOutputUrl;
 
-        /**
-         * <p>视频流类型</p>
-         */
         @NameInMap("liveType")
         public Long liveType;
 
-        /**
-         * <p>视频回放地址</p>
-         */
         @NameInMap("replayUrl")
         public String replayUrl;
 
@@ -85,15 +73,9 @@ public class PollingConfirmStatusResponseBody extends TeaModel {
     }
 
     public static class PollingConfirmStatusResponseBodyUniversityPollingCourseStatusResponse extends TeaModel {
-        /**
-         * <p>确认状态</p>
-         */
         @NameInMap("confirmStatus")
         public Boolean confirmStatus;
 
-        /**
-         * <p>课程编码</p>
-         */
         @NameInMap("courseCode")
         public String courseCode;
 

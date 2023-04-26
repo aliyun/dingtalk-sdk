@@ -4,93 +4,48 @@ package com.aliyun.dingtalktrade_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryTradeOrderResponseBody extends TeaModel {
-    /**
-     * <p>商品编码</p>
-     */
     @NameInMap("articleCode")
     public String articleCode;
 
-    /**
-     * <p>规格编码</p>
-     */
     @NameInMap("articleItemCode")
     public String articleItemCode;
 
-    /**
-     * <p>规格名称</p>
-     */
     @NameInMap("articleItemName")
     public String articleItemName;
 
-    /**
-     * <p>商品名称</p>
-     */
     @NameInMap("articleName")
     public String articleName;
 
-    /**
-     * <p>订单关闭时间（单位：ms）</p>
-     */
     @NameInMap("closeTime")
     public Long closeTime;
 
-    /**
-     * <p>订单创建时间（单位：ms）</p>
-     */
     @NameInMap("createTime")
     public Long createTime;
 
-    /**
-     * <p>原价（单位：分）</p>
-     */
     @NameInMap("fee")
     public Long fee;
 
-    /**
-     * <p>ISV的组织ID</p>
-     */
     @NameInMap("isvCropId")
     public String isvCropId;
 
-    /**
-     * <p>内部订单号</p>
-     */
     @NameInMap("orderId")
     public Long orderId;
 
-    /**
-     * <p>外部订单号</p>
-     */
     @NameInMap("outerOrderId")
     public String outerOrderId;
 
-    /**
-     * <p>实际支付的价格（单位：分）</p>
-     */
     @NameInMap("payFee")
     public Long payFee;
 
-    /**
-     * <p>订单支付时间（单位：ms）</p>
-     */
     @NameInMap("payTime")
     public Long payTime;
 
-    /**
-     * <p>商品数量</p>
-     */
     @NameInMap("quantity")
     public Long quantity;
 
-    /**
-     * <p>订单退款时间（单位：ms）</p>
-     */
     @NameInMap("refundTime")
     public Long refundTime;
 
-    /**
-     * <p>订单状态：-1表示已关闭、0表示未支付、1表示已支付、2表示已退款</p>
-     */
     @NameInMap("status")
     public Integer status;
 

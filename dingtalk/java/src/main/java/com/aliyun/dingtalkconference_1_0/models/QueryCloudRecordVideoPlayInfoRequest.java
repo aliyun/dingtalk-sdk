@@ -4,21 +4,12 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCloudRecordVideoPlayInfoRequest extends TeaModel {
-    /**
-     * <p>媒体文件id</p>
-     */
     @NameInMap("mediaId")
     public String mediaId;
 
-    /**
-     * <p>集群id</p>
-     */
     @NameInMap("regionId")
     public String regionId;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

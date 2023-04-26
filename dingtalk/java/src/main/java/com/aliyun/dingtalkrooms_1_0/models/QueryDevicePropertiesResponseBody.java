@@ -4,9 +4,6 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDevicePropertiesResponseBody extends TeaModel {
-    /**
-     * <p>响应结果</p>
-     */
     @NameInMap("result")
     public java.util.List<QueryDevicePropertiesResponseBodyResult> result;
 
@@ -24,15 +21,9 @@ public class QueryDevicePropertiesResponseBody extends TeaModel {
     }
 
     public static class QueryDevicePropertiesResponseBodyResult extends TeaModel {
-        /**
-         * <p>设备属性名称</p>
-         */
         @NameInMap("propertyName")
         public String propertyName;
 
-        /**
-         * <p>设备属性值</p>
-         */
         @NameInMap("propertyValue")
         public String propertyValue;
 

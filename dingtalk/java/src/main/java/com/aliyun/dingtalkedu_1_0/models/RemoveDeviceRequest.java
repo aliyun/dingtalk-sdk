@@ -4,15 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class RemoveDeviceRequest extends TeaModel {
-    /**
-     * <p>商户id</p>
-     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    /**
-     * <p>设备sn</p>
-     */
     @NameInMap("sn")
     public String sn;
 

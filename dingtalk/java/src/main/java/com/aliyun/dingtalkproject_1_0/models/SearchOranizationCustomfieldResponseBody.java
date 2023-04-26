@@ -4,21 +4,12 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchOranizationCustomfieldResponseBody extends TeaModel {
-    /**
-     * <p>供分页使用，下一页token，从当前页结果中获取。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>自定义字段列表。</p>
-     */
     @NameInMap("result")
     public java.util.List<SearchOranizationCustomfieldResponseBodyResult> result;
 
-    /**
-     * <p>总数。</p>
-     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -52,21 +43,12 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
     }
 
     public static class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield extends TeaModel {
-        /**
-         * <p>字段类型ID。</p>
-         */
         @NameInMap("advancedCustomfieldId")
         public String advancedCustomfieldId;
 
-        /**
-         * <p>字段类型名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>字段类型名称2</p>
-         */
         @NameInMap("objectType")
         public String objectType;
 
@@ -102,15 +84,9 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
     }
 
     public static class SearchOranizationCustomfieldResponseBodyResultChoices extends TeaModel {
-        /**
-         * <p>选项ID。</p>
-         */
         @NameInMap("choiceId")
         public String choiceId;
 
-        /**
-         * <p>选项值。</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -138,51 +114,27 @@ public class SearchOranizationCustomfieldResponseBody extends TeaModel {
     }
 
     public static class SearchOranizationCustomfieldResponseBodyResult extends TeaModel {
-        /**
-         * <p>高级自定义字段。</p>
-         */
         @NameInMap("advancedCustomfield")
         public SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield advancedCustomfield;
 
-        /**
-         * <p>如果是单选或多选字段，这里是可选项的值</p>
-         */
         @NameInMap("choices")
         public java.util.List<SearchOranizationCustomfieldResponseBodyResultChoices> choices;
 
-        /**
-         * <p>创建时间。</p>
-         */
         @NameInMap("created")
         public String created;
 
-        /**
-         * <p>创建人ID。</p>
-         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        /**
-         * <p>自定义字段ID。</p>
-         */
         @NameInMap("customfieldsId")
         public String customfieldsId;
 
-        /**
-         * <p>字段名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户自定义数据载体，json格式类型任意数据。</p>
-         */
         @NameInMap("payload")
         public java.util.Map<String, ?> payload;
 
-        /**
-         * <p>字段类型。   'number', // 数字     'date', // 日期     'text', // 文本     'work',     'multipleChoice', // 多选     'dropDown', // 下拉,     'lookup',     'commongroup',     'cascading', // 层级字段     'rtf', // 多行文本/富文本 字段 'lookup2' // 新高级字段</p>
-         */
         @NameInMap("type")
         public String type;
 

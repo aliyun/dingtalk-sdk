@@ -7,9 +7,6 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     @NameInMap("result")
     public QueryEmpPointDetailsResponseBodyResult result;
 
-    /**
-     * <p>调用是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -35,23 +32,12 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource extends TeaModel {
-        /**
-         * <p>积分账号的类型</p>
-         * <p>企业账号：ORG, 员工账号：EMP</p>
-         */
         @NameInMap("accountType")
         public String accountType;
 
-        /**
-         * <p>企业内名字</p>
-         */
         @NameInMap("empName")
         public String empName;
 
-        /**
-         * <p>用户userId</p>
-         * <br>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -87,22 +73,12 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountTarget extends TeaModel {
-        /**
-         * <p>积分账号的类型</p>
-         * <p>企业账号：ORG, 员工账号：EMP</p>
-         */
         @NameInMap("accountType")
         public String accountType;
 
-        /**
-         * <p>企业内名字</p>
-         */
         @NameInMap("empName")
         public String empName;
 
-        /**
-         * <p>用户useId</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -138,28 +114,15 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTO extends TeaModel {
-        /**
-         * <p>来源账户</p>
-         */
         @NameInMap("accountSource")
         public QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource accountSource;
 
-        /**
-         * <p>目标账户</p>
-         * <br>
-         */
         @NameInMap("accountTarget")
         public QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountTarget accountTarget;
 
-        /**
-         * <p>备注信息，在明细中展示</p>
-         */
         @NameInMap("remark")
         public String remark;
 
-        /**
-         * <p>来源/用途，一般是系统固定的场景</p>
-         */
         @NameInMap("usage")
         public String usage;
 
@@ -203,33 +166,18 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryEmpPointDetailsResponseBodyResultDetails extends TeaModel {
-        /**
-         * <p>积分数量 发放时为负。 扣减时为正</p>
-         */
         @NameInMap("amount")
         public Long amount;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        /**
-         * <p>积分交易单号</p>
-         * <br>
-         */
         @NameInMap("outId")
         public String outId;
 
         @NameInMap("pointOperateFeatureResponseDTO")
         public QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTO pointOperateFeatureResponseDTO;
 
-        /**
-         * <p>源账户积分bizCode.</p>
-         * <p>个人可用积分:personal</p>
-         * <p>额度:credit</p>
-         */
         @NameInMap("sourceBizCode")
         public String sourceBizCode;
 
@@ -281,15 +229,9 @@ public class QueryEmpPointDetailsResponseBody extends TeaModel {
     }
 
     public static class QueryEmpPointDetailsResponseBodyResult extends TeaModel {
-        /**
-         * <p>个人积分明细列表</p>
-         */
         @NameInMap("details")
         public java.util.List<QueryEmpPointDetailsResponseBodyResultDetails> details;
 
-        /**
-         * <p>是否有下一页</p>
-         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 

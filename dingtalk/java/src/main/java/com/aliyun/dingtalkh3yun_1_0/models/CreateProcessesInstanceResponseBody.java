@@ -4,21 +4,12 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateProcessesInstanceResponseBody extends TeaModel {
-    /**
-     * <p>状态码</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>业务响应结果</p>
-     */
     @NameInMap("data")
     public CreateProcessesInstanceResponseBodyData data;
 
-    /**
-     * <p>提示信息</p>
-     */
     @NameInMap("message")
     public String message;
 
@@ -52,9 +43,6 @@ public class CreateProcessesInstanceResponseBody extends TeaModel {
     }
 
     public static class CreateProcessesInstanceResponseBodyData extends TeaModel {
-        /**
-         * <p>流程实例ID</p>
-         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 

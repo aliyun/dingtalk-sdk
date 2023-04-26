@@ -4,9 +4,6 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTeamResponseBody extends TeaModel {
-    /**
-     * <p>团队id</p>
-     */
     @NameInMap("result")
     public String result;
 

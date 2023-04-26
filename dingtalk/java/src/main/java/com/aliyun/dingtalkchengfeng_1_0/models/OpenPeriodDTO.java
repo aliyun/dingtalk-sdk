@@ -4,33 +4,18 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenPeriodDTO extends TeaModel {
-    /**
-     * <p>结束日期</p>
-     */
     @NameInMap("endDate")
     public Long endDate;
 
-    /**
-     * <p>周期id</p>
-     */
     @NameInMap("id")
     public String id;
 
-    /**
-     * <p>周期名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>周期类型</p>
-     */
     @NameInMap("periodBizType")
     public String periodBizType;
 
-    /**
-     * <p>开始日期</p>
-     */
     @NameInMap("startDate")
     public Long startDate;
 

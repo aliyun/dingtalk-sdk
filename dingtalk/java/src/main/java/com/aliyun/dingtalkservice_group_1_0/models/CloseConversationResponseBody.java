@@ -4,27 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CloseConversationResponseBody extends TeaModel {
-    /**
-     * <p>dingOpenErrcode</p>
-     */
     @NameInMap("dingOpenErrcode")
     public Integer dingOpenErrcode;
 
-    /**
-     * <p>errorMsg</p>
-     */
     @NameInMap("errorMsg")
     public String errorMsg;
 
-    /**
-     * <p>result</p>
-     */
     @NameInMap("result")
     public Boolean result;
 
-    /**
-     * <p>success</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdatacenter_1_0.models;
 import com.aliyun.tea.*;
 
 public class QuerySingleMessageStatisticalDataRequest extends TeaModel {
-    /**
-     * <p>statDate</p>
-     */
     @NameInMap("statDate")
     public String statDate;
 

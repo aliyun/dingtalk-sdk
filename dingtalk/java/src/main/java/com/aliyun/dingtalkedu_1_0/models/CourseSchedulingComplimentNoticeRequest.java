@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CourseSchedulingComplimentNoticeRequest extends TeaModel {
-    /**
-     * <p>opUserId</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 

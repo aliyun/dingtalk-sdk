@@ -4,15 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddKnowledgeRequest extends TeaModel {
-    /**
-     * <p>附件列表</p>
-     */
     @NameInMap("attachmentList")
     public java.util.List<AddKnowledgeRequestAttachmentList> attachmentList;
 
-    /**
-     * <p>知识点内容</p>
-     */
     @NameInMap("content")
     public String content;
 
@@ -22,69 +16,36 @@ public class AddKnowledgeRequest extends TeaModel {
     @NameInMap("effectTimestart")
     public Long effectTimestart;
 
-    /**
-     * <p>知识点扩展问(多个用英文逗号隔开)</p>
-     */
     @NameInMap("extTitle")
     public String extTitle;
 
-    /**
-     * <p>关键字(多个用英文逗号隔开)</p>
-     */
     @NameInMap("keyword")
     public String keyword;
 
-    /**
-     * <p>知识库的唯一标识</p>
-     */
     @NameInMap("libraryKey")
     public String libraryKey;
 
-    /**
-     * <p>CCM的知识点外链</p>
-     */
     @NameInMap("linkUrl")
     public String linkUrl;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>关联问题id</p>
-     */
     @NameInMap("questionIds")
     public java.util.List<Long> questionIds;
 
-    /**
-     * <p>知识点来源</p>
-     */
     @NameInMap("source")
     public String source;
 
-    /**
-     * <p>知识点唯一标识</p>
-     */
     @NameInMap("sourcePrimaryKey")
     public String sourcePrimaryKey;
 
-    /**
-     * <p>知识点名称</p>
-     */
     @NameInMap("title")
     public String title;
 
-    /**
-     * <p>知识点类型 NORMAL：普通型 CARD：卡片 CONDITION：条件</p>
-     */
     @NameInMap("type")
     public String type;
 
-    /**
-     * <p>知识点版本号</p>
-     */
     @NameInMap("version")
     public String version;
 
@@ -214,33 +175,18 @@ public class AddKnowledgeRequest extends TeaModel {
     }
 
     public static class AddKnowledgeRequestAttachmentList extends TeaModel {
-        /**
-         * <p>多媒体类型</p>
-         */
         @NameInMap("mime_type")
         public String mimeType;
 
-        /**
-         * <p>附件URL</p>
-         */
         @NameInMap("path")
         public String path;
 
-        /**
-         * <p>附件大小</p>
-         */
         @NameInMap("size")
         public Long size;
 
-        /**
-         * <p>附件扩展名</p>
-         */
         @NameInMap("suffix")
         public String suffix;
 
-        /**
-         * <p>附件名称</p>
-         */
         @NameInMap("title")
         public String title;
 

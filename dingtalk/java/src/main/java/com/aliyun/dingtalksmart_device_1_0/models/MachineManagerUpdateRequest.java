@@ -4,27 +4,15 @@ package com.aliyun.dingtalksmart_device_1_0.models;
 import com.aliyun.tea.*;
 
 public class MachineManagerUpdateRequest extends TeaModel {
-    /**
-     * <p>设备管理员权限点。</p>
-     */
     @NameInMap("atmManagerRightMap")
     public MachineManagerUpdateRequestAtmManagerRightMap atmManagerRightMap;
 
-    /**
-     * <p>设备id。</p>
-     */
     @NameInMap("deviceId")
     public Long deviceId;
 
-    /**
-     * <p>权限范围：可管理的部门id列表，-1表示全公司</p>
-     */
     @NameInMap("scopeDeptIds")
     public java.util.List<Long> scopeDeptIds;
 
-    /**
-     * <p>设备管理员的userId。</p>
-     */
     @NameInMap("userId")
     public String userId;
 
@@ -66,39 +54,21 @@ public class MachineManagerUpdateRequest extends TeaModel {
     }
 
     public static class MachineManagerUpdateRequestAtmManagerRightMap extends TeaModel {
-        /**
-         * <p>添加/删除考勤人员。</p>
-         */
         @NameInMap("attendancePersonManage")
         public Boolean attendancePersonManage;
 
-        /**
-         * <p>蓝牙打卡管理。</p>
-         */
         @NameInMap("bluetoothPunchManage")
         public Boolean bluetoothPunchManage;
 
-        /**
-         * <p>设备解绑并重置。</p>
-         */
         @NameInMap("deviceReset")
         public Boolean deviceReset;
 
-        /**
-         * <p>设备设置。</p>
-         */
         @NameInMap("deviceSettings")
         public Boolean deviceSettings;
 
-        /**
-         * <p>人脸打卡管理。</p>
-         */
         @NameInMap("facePunchManage")
         public Boolean facePunchManage;
 
-        /**
-         * <p>指纹打卡管理。</p>
-         */
         @NameInMap("fingerPunchManage")
         public Boolean fingerPunchManage;
 

@@ -4,33 +4,18 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSecondaryManagementGroupRequest extends TeaModel {
-    /**
-     * <p>管理组名称</p>
-     */
     @NameInMap("groupName")
     public String groupName;
 
-    /**
-     * <p>管理组成员列表</p>
-     */
     @NameInMap("members")
     public java.util.List<CreateSecondaryManagementGroupRequestMembers> members;
 
-    /**
-     * <p>资源id列表</p>
-     */
     @NameInMap("resourceIds")
     public java.util.List<String> resourceIds;
 
-    /**
-     * <p>管理组权限范围信息</p>
-     */
     @NameInMap("scope")
     public CreateSecondaryManagementGroupRequestScope scope;
 
-    /**
-     * <p>员工id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
@@ -80,15 +65,9 @@ public class CreateSecondaryManagementGroupRequest extends TeaModel {
     }
 
     public static class CreateSecondaryManagementGroupRequestMembers extends TeaModel {
-        /**
-         * <p>员工id</p>
-         */
         @NameInMap("memberId")
         public String memberId;
 
-        /**
-         * <p>员工类型</p>
-         */
         @NameInMap("memberType")
         public String memberType;
 
@@ -116,15 +95,9 @@ public class CreateSecondaryManagementGroupRequest extends TeaModel {
     }
 
     public static class CreateSecondaryManagementGroupRequestScope extends TeaModel {
-        /**
-         * <p>部门id列表</p>
-         */
         @NameInMap("deptIds")
         public java.util.List<Long> deptIds;
 
-        /**
-         * <p>权限范围</p>
-         */
         @NameInMap("scopeType")
         public Integer scopeType;
 

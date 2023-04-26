@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryOrgTypeResponseBody extends TeaModel {
-    /**
-     * <p>组织类型</p>
-     */
     @NameInMap("orgType")
     public Long orgType;
 

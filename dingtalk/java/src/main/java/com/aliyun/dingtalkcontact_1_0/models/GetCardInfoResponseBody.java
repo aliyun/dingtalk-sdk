@@ -4,69 +4,36 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCardInfoResponseBody extends TeaModel {
-    /**
-     * <p>用户角色</p>
-     */
     @NameInMap("adminRole")
     public Long adminRole;
 
-    /**
-     * <p>头像</p>
-     */
     @NameInMap("avatarUrl")
     public String avatarUrl;
 
-    /**
-     * <p>名片ID</p>
-     */
     @NameInMap("cardId")
     public String cardId;
 
-    /**
-     * <p>扩展信息</p>
-     */
     @NameInMap("extension")
     public GetCardInfoResponseBodyExtension extension;
 
-    /**
-     * <p>行业</p>
-     */
     @NameInMap("industryName")
     public String industryName;
 
-    /**
-     * <p>个人介绍</p>
-     */
     @NameInMap("introduce")
     public java.util.Map<String, ?> introduce;
 
-    /**
-     * <p>名字</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>组织名称</p>
-     */
     @NameInMap("orgName")
     public String orgName;
 
-    /**
-     * <p>用户名片信息设置</p>
-     */
     @NameInMap("settings")
     public java.util.Map<String, ?> settings;
 
-    /**
-     * <p>模板ID</p>
-     */
     @NameInMap("templateId")
     public String templateId;
 
-    /**
-     * <p>职位</p>
-     */
     @NameInMap("title")
     public String title;
 
@@ -164,15 +131,9 @@ public class GetCardInfoResponseBody extends TeaModel {
     }
 
     public static class GetCardInfoResponseBodyExtensionCardContactInfoAddressArea extends TeaModel {
-        /**
-         * <p>地区</p>
-         */
         @NameInMap("region")
         public String region;
 
-        /**
-         * <p>地区详细数据</p>
-         */
         @NameInMap("regionFullName")
         public String regionFullName;
 
@@ -200,15 +161,9 @@ public class GetCardInfoResponseBody extends TeaModel {
     }
 
     public static class GetCardInfoResponseBodyExtensionCardContactInfoAddress extends TeaModel {
-        /**
-         * <p>区域</p>
-         */
         @NameInMap("area")
         public GetCardInfoResponseBodyExtensionCardContactInfoAddressArea area;
 
-        /**
-         * <p>详细地址</p>
-         */
         @NameInMap("detail")
         public String detail;
 
@@ -356,27 +311,15 @@ public class GetCardInfoResponseBody extends TeaModel {
     }
 
     public static class GetCardInfoResponseBodyExtensionCardContactInfo extends TeaModel {
-        /**
-         * <p>地址</p>
-         */
         @NameInMap("address")
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoAddress> address;
 
-        /**
-         * <p>邮箱</p>
-         */
         @NameInMap("email")
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoEmail> email;
 
-        /**
-         * <p>微信</p>
-         */
         @NameInMap("link")
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoLink> link;
 
-        /**
-         * <p>电话</p>
-         */
         @NameInMap("telephone")
         public java.util.List<GetCardInfoResponseBodyExtensionCardContactInfoTelephone> telephone;
 
@@ -431,69 +374,36 @@ public class GetCardInfoResponseBody extends TeaModel {
     }
 
     public static class GetCardInfoResponseBodyExtension extends TeaModel {
-        /**
-         * <p>联系信息</p>
-         */
         @NameInMap("cardContactInfo")
         public GetCardInfoResponseBodyExtensionCardContactInfo cardContactInfo;
 
-        /**
-         * <p>企业corpId</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>拍名片部门</p>
-         */
         @NameInMap("department")
         public String department;
 
-        /**
-         * <p>企业是否认证</p>
-         */
         @NameInMap("orgAuthed")
         public Boolean orgAuthed;
 
-        /**
-         * <p>企业LOGO</p>
-         */
         @NameInMap("orgLogo")
         public String orgLogo;
 
-        /**
-         * <p>拍名片图片链接</p>
-         */
         @NameInMap("originCardUrl")
         public String originCardUrl;
 
-        /**
-         * <p>分享文案</p>
-         */
         @NameInMap("shareContent")
         public String shareContent;
 
-        /**
-         * <p>视频缩略图</p>
-         */
         @NameInMap("thumbnailUrl")
         public String thumbnailUrl;
 
-        /**
-         * <p>视频文件名称</p>
-         */
         @NameInMap("videoFileName")
         public String videoFileName;
 
-        /**
-         * <p>视频标题</p>
-         */
         @NameInMap("videoTitle")
         public String videoTitle;
 
-        /**
-         * <p>视频链接</p>
-         */
         @NameInMap("videoUrl")
         public String videoUrl;
 

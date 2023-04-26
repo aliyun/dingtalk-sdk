@@ -4,33 +4,18 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class MasterDataQueryResponseBody extends TeaModel {
-    /**
-     * <p>是否还有更多</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>分页游标</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    /**
-     * <p>结果</p>
-     */
     @NameInMap("result")
     public java.util.List<MasterDataQueryResponseBodyResult> result;
 
-    /**
-     * <p>是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
-    /**
-     * <p>总条目数</p>
-     */
     @NameInMap("total")
     public Long total;
 
@@ -80,15 +65,9 @@ public class MasterDataQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO extends TeaModel {
-        /**
-         * <p>字段值的key</p>
-         */
         @NameInMap("key")
         public String key;
 
-        /**
-         * <p>字段值的文本</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -116,27 +95,15 @@ public class MasterDataQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDataQueryResponseBodyResultViewEntityFieldVOList extends TeaModel {
-        /**
-         * <p>字段code</p>
-         */
         @NameInMap("fieldCode")
         public String fieldCode;
 
-        /**
-         * <p>字段值</p>
-         */
         @NameInMap("fieldDataVO")
         public MasterDataQueryResponseBodyResultViewEntityFieldVOListFieldDataVO fieldDataVO;
 
-        /**
-         * <p>字段名称</p>
-         */
         @NameInMap("fieldName")
         public String fieldName;
 
-        /**
-         * <p>字段类型</p>
-         */
         @NameInMap("fieldType")
         public String fieldType;
 
@@ -180,33 +147,18 @@ public class MasterDataQueryResponseBody extends TeaModel {
     }
 
     public static class MasterDataQueryResponseBodyResult extends TeaModel {
-        /**
-         * <p>唯一id</p>
-         */
         @NameInMap("outerId")
         public String outerId;
 
-        /**
-         * <p>关联id列表，一般为userId</p>
-         */
         @NameInMap("relationId")
         public String relationId;
 
-        /**
-         * <p>领域</p>
-         */
         @NameInMap("scopeCode")
         public String scopeCode;
 
-        /**
-         * <p>编码</p>
-         */
         @NameInMap("viewEntityCode")
         public String viewEntityCode;
 
-        /**
-         * <p>字段列表</p>
-         */
         @NameInMap("viewEntityFieldVOList")
         public java.util.List<MasterDataQueryResponseBodyResultViewEntityFieldVOList> viewEntityFieldVOList;
 

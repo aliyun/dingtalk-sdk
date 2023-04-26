@@ -4,15 +4,9 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetLeaveTypeRequest extends TeaModel {
-    /**
-     * <p>操作者ID</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    /**
-     * <p>空:开放接口定义假期类型;all:所有假期类型</p>
-     */
     @NameInMap("vacationSource")
     public String vacationSource;
 

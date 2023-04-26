@@ -21,21 +21,12 @@ public class SupplyAddMemberResponseBody extends TeaModel {
     }
 
     public static class SupplyAddMemberResponseBodyResult extends TeaModel {
-        /**
-         * <p>成员在钉钉组织的状态</p>
-         */
         @NameInMap("dingMemberStatus")
         public String dingMemberStatus;
 
-        /**
-         * <p>isv内用户唯一id</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 
-        /**
-         * <p>已经进组织的用户唯一id</p>
-         */
         @NameInMap("userId")
         public String userId;
 

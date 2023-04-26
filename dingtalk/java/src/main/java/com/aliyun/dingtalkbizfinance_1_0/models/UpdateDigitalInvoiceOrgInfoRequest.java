@@ -4,27 +4,15 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateDigitalInvoiceOrgInfoRequest extends TeaModel {
-    /**
-     * <p>支持的全电票种</p>
-     */
     @NameInMap("digitalInvoiceType")
     public java.util.List<String> digitalInvoiceType;
 
-    /**
-     * <p>是否为全电企业</p>
-     */
     @NameInMap("isDigitalOrg")
     public Boolean isDigitalOrg;
 
-    /**
-     * <p>报税地点</p>
-     */
     @NameInMap("location")
     public String location;
 
-    /**
-     * <p>员工id</p>
-     */
     @NameInMap("operator")
     public String operator;
 

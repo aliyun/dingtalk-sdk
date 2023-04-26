@@ -4,9 +4,6 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetNewestInnerGroupsResponseBody extends TeaModel {
-    /**
-     * <p>群列表</p>
-     */
     @NameInMap("groupInfos")
     public java.util.List<GetNewestInnerGroupsResponseBodyGroupInfos> groupInfos;
 
@@ -24,27 +21,15 @@ public class GetNewestInnerGroupsResponseBody extends TeaModel {
     }
 
     public static class GetNewestInnerGroupsResponseBodyGroupInfos extends TeaModel {
-        /**
-         * <p>群头像。</p>
-         */
         @NameInMap("icon")
         public String icon;
 
-        /**
-         * <p>群成员人数。</p>
-         */
         @NameInMap("memberAmount")
         public String memberAmount;
 
-        /**
-         * <p>群聊会话id。</p>
-         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        /**
-         * <p>群名称。</p>
-         */
         @NameInMap("title")
         public String title;
 

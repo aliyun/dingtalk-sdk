@@ -21,15 +21,9 @@ public class GetShareRoleMembersResponseBody extends TeaModel {
     }
 
     public static class GetShareRoleMembersResponseBodyResult extends TeaModel {
-        /**
-         * <p>分支组织corpId</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>角色成员在主干组织中的userId列表</p>
-         */
         @NameInMap("memberUserIdListInTrunkOrg")
         public java.util.List<String> memberUserIdListInTrunkOrg;
 

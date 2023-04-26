@@ -4,15 +4,9 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetChildOrgListResponseBody extends TeaModel {
-    /**
-     * <p>返回内容</p>
-     */
     @NameInMap("content")
     public java.util.List<CfOrgResp> content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 

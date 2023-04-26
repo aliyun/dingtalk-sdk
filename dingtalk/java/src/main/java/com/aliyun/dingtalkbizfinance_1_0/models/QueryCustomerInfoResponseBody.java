@@ -4,21 +4,12 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCustomerInfoResponseBody extends TeaModel {
-    /**
-     * <p>是否还有数据</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>客户分页数据</p>
-     */
     @NameInMap("list")
     public java.util.List<QueryCustomerInfoResponseBodyList> list;
 
-    /**
-     * <p>总数</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -52,9 +43,6 @@ public class QueryCustomerInfoResponseBody extends TeaModel {
     }
 
     public static class QueryCustomerInfoResponseBodyList extends TeaModel {
-        /**
-         * <p>客户code</p>
-         */
         @NameInMap("code")
         public String code;
 
@@ -73,75 +61,39 @@ public class QueryCustomerInfoResponseBody extends TeaModel {
         @NameInMap("contactTelephone")
         public String contactTelephone;
 
-        /**
-         * <p>客户描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>开票人邮箱</p>
-         */
         @NameInMap("drawerEmail")
         public String drawerEmail;
 
-        /**
-         * <p>开票人手机号</p>
-         */
         @NameInMap("drawerTelephone")
         public String drawerTelephone;
 
-        /**
-         * <p>客户名字</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>购方账户</p>
-         */
         @NameInMap("purchaserAccount")
         public String purchaserAccount;
 
-        /**
-         * <p>购方地址</p>
-         */
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
-        /**
-         * <p>购方姓名</p>
-         */
         @NameInMap("purchaserName")
         public String purchaserName;
 
-        /**
-         * <p>购方税号</p>
-         */
         @NameInMap("purchaserTaxNo")
         public String purchaserTaxNo;
 
-        /**
-         * <p>购方电话</p>
-         */
         @NameInMap("purchaserTel")
         public String purchaserTel;
 
-        /**
-         * <p>购方银行</p>
-         */
         @NameInMap("purchaserrBankName")
         public String purchaserrBankName;
 
-        /**
-         * <p>状态</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>用户自定义code</p>
-         */
         @NameInMap("userDefineCode")
         public String userDefineCode;
 

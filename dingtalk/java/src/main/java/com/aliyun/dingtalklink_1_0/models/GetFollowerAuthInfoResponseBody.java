@@ -4,9 +4,6 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFollowerAuthInfoResponseBody extends TeaModel {
-    /**
-     * <p>响应结果</p>
-     */
     @NameInMap("result")
     public GetFollowerAuthInfoResponseBodyResult result;
 
@@ -24,16 +21,9 @@ public class GetFollowerAuthInfoResponseBody extends TeaModel {
     }
 
     public static class GetFollowerAuthInfoResponseBodyResultAuthInfoMainCorp extends TeaModel {
-        /**
-         * <p>是否授权主组织信息。</p>
-         * <p>当且仅当此值为true时返回用户主组织信息。</p>
-         */
         @NameInMap("authorized")
         public Boolean authorized;
 
-        /**
-         * <p>主组织名</p>
-         */
         @NameInMap("corpName")
         public String corpName;
 
@@ -61,22 +51,12 @@ public class GetFollowerAuthInfoResponseBody extends TeaModel {
     }
 
     public static class GetFollowerAuthInfoResponseBodyResultAuthInfoMobile extends TeaModel {
-        /**
-         * <p>用户是否授权手机号码信息。</p>
-         * <p>当且仅当此值为true时返回手机号码信息。</p>
-         */
         @NameInMap("authorized")
         public Boolean authorized;
 
-        /**
-         * <p>手机号码</p>
-         */
         @NameInMap("mobile")
         public String mobile;
 
-        /**
-         * <p>地区码</p>
-         */
         @NameInMap("stateCode")
         public String stateCode;
 
@@ -112,17 +92,9 @@ public class GetFollowerAuthInfoResponseBody extends TeaModel {
     }
 
     public static class GetFollowerAuthInfoResponseBodyResultAuthInfo extends TeaModel {
-        /**
-         * <p>用户主组织信息</p>
-         * <p>需要用户授权给应用后返回此信息。</p>
-         */
         @NameInMap("mainCorp")
         public GetFollowerAuthInfoResponseBodyResultAuthInfoMainCorp mainCorp;
 
-        /**
-         * <p>手机号码授权详情。</p>
-         * <p>需要用户授权给应用后返回此信息。</p>
-         */
         @NameInMap("mobile")
         public GetFollowerAuthInfoResponseBodyResultAuthInfoMobile mobile;
 
@@ -150,9 +122,6 @@ public class GetFollowerAuthInfoResponseBody extends TeaModel {
     }
 
     public static class GetFollowerAuthInfoResponseBodyResult extends TeaModel {
-        /**
-         * <p>授权详情</p>
-         */
         @NameInMap("authInfo")
         public GetFollowerAuthInfoResponseBodyResultAuthInfo authInfo;
 

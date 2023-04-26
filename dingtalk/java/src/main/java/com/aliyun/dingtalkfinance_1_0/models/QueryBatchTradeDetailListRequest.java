@@ -4,21 +4,12 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryBatchTradeDetailListRequest extends TeaModel {
-    /**
-     * <p>外部商户批次号</p>
-     */
     @NameInMap("outBatchNo")
     public String outBatchNo;
 
-    /**
-     * <p>当前页数</p>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>每页记录数</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

@@ -6,8 +6,11 @@ import com.aliyun.dingtalkrobot_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public BatchOTOQueryResponse batchOTOQuery(BatchOTOQueryRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        BatchOTOQueryHeaders headers = new BatchOTOQueryHeaders();
-        return this.batchOTOQueryWithOptions(request, headers, runtime);
-    }
 
     public BatchOTOQueryResponse batchOTOQueryWithOptions(BatchOTOQueryRequest request, BatchOTOQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -46,13 +43,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("BatchOTOQuery", "robot_1.0", "HTTP", "GET", "AK", "/v1.0/robot/oToMessages/readStatus", "json", req, runtime), new BatchOTOQueryResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BatchOTOQuery"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/oToMessages/readStatus"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BatchOTOQueryResponse());
     }
 
-    public BatchRecallGroupResponse batchRecallGroup(BatchRecallGroupRequest request) throws Exception {
+    public BatchOTOQueryResponse batchOTOQuery(BatchOTOQueryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        BatchRecallGroupHeaders headers = new BatchRecallGroupHeaders();
-        return this.batchRecallGroupWithOptions(request, headers, runtime);
+        BatchOTOQueryHeaders headers = new BatchOTOQueryHeaders();
+        return this.batchOTOQueryWithOptions(request, headers, runtime);
     }
 
     public BatchRecallGroupResponse batchRecallGroupWithOptions(BatchRecallGroupRequest request, BatchRecallGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -83,13 +91,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("BatchRecallGroup", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/groupMessages/batchRecall", "json", req, runtime), new BatchRecallGroupResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BatchRecallGroup"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/groupMessages/batchRecall"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BatchRecallGroupResponse());
     }
 
-    public BatchRecallOTOResponse batchRecallOTO(BatchRecallOTORequest request) throws Exception {
+    public BatchRecallGroupResponse batchRecallGroup(BatchRecallGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        BatchRecallOTOHeaders headers = new BatchRecallOTOHeaders();
-        return this.batchRecallOTOWithOptions(request, headers, runtime);
+        BatchRecallGroupHeaders headers = new BatchRecallGroupHeaders();
+        return this.batchRecallGroupWithOptions(request, headers, runtime);
     }
 
     public BatchRecallOTOResponse batchRecallOTOWithOptions(BatchRecallOTORequest request, BatchRecallOTOHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -116,13 +135,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("BatchRecallOTO", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/otoMessages/batchRecall", "json", req, runtime), new BatchRecallOTOResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BatchRecallOTO"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/otoMessages/batchRecall"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BatchRecallOTOResponse());
     }
 
-    public BatchRecallPrivateChatResponse batchRecallPrivateChat(BatchRecallPrivateChatRequest request) throws Exception {
+    public BatchRecallOTOResponse batchRecallOTO(BatchRecallOTORequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        BatchRecallPrivateChatHeaders headers = new BatchRecallPrivateChatHeaders();
-        return this.batchRecallPrivateChatWithOptions(request, headers, runtime);
+        BatchRecallOTOHeaders headers = new BatchRecallOTOHeaders();
+        return this.batchRecallOTOWithOptions(request, headers, runtime);
     }
 
     public BatchRecallPrivateChatResponse batchRecallPrivateChatWithOptions(BatchRecallPrivateChatRequest request, BatchRecallPrivateChatHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -153,13 +183,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("BatchRecallPrivateChat", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/privateChatMessages/batchRecall", "json", req, runtime), new BatchRecallPrivateChatResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BatchRecallPrivateChat"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/privateChatMessages/batchRecall"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BatchRecallPrivateChatResponse());
     }
 
-    public BatchSendOTOResponse batchSendOTO(BatchSendOTORequest request) throws Exception {
+    public BatchRecallPrivateChatResponse batchRecallPrivateChat(BatchRecallPrivateChatRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        BatchSendOTOHeaders headers = new BatchSendOTOHeaders();
-        return this.batchSendOTOWithOptions(request, headers, runtime);
+        BatchRecallPrivateChatHeaders headers = new BatchRecallPrivateChatHeaders();
+        return this.batchRecallPrivateChatWithOptions(request, headers, runtime);
     }
 
     public BatchSendOTOResponse batchSendOTOWithOptions(BatchSendOTORequest request, BatchSendOTOHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -194,13 +235,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("BatchSendOTO", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/oToMessages/batchSend", "json", req, runtime), new BatchSendOTOResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BatchSendOTO"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/oToMessages/batchSend"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BatchSendOTOResponse());
     }
 
-    public ClearRobotPluginResponse clearRobotPlugin(ClearRobotPluginRequest request) throws Exception {
+    public BatchSendOTOResponse batchSendOTO(BatchSendOTORequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ClearRobotPluginHeaders headers = new ClearRobotPluginHeaders();
-        return this.clearRobotPluginWithOptions(request, headers, runtime);
+        BatchSendOTOHeaders headers = new BatchSendOTOHeaders();
+        return this.batchSendOTOWithOptions(request, headers, runtime);
     }
 
     public ClearRobotPluginResponse clearRobotPluginWithOptions(ClearRobotPluginRequest request, ClearRobotPluginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -223,13 +275,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ClearRobotPlugin", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/plugins/clear", "json", req, runtime), new ClearRobotPluginResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ClearRobotPlugin"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/plugins/clear"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ClearRobotPluginResponse());
     }
 
-    public GetBotListInGroupResponse getBotListInGroup(GetBotListInGroupRequest request) throws Exception {
+    public ClearRobotPluginResponse clearRobotPlugin(ClearRobotPluginRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetBotListInGroupHeaders headers = new GetBotListInGroupHeaders();
-        return this.getBotListInGroupWithOptions(request, headers, runtime);
+        ClearRobotPluginHeaders headers = new ClearRobotPluginHeaders();
+        return this.clearRobotPluginWithOptions(request, headers, runtime);
     }
 
     public GetBotListInGroupResponse getBotListInGroupWithOptions(GetBotListInGroupRequest request, GetBotListInGroupHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -252,13 +315,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("GetBotListInGroup", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/groups/robots/query", "json", req, runtime), new GetBotListInGroupResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetBotListInGroup"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/groups/robots/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetBotListInGroupResponse());
     }
 
-    public ManageSingleChatRobotStatusResponse manageSingleChatRobotStatus(ManageSingleChatRobotStatusRequest request) throws Exception {
+    public GetBotListInGroupResponse getBotListInGroup(GetBotListInGroupRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ManageSingleChatRobotStatusHeaders headers = new ManageSingleChatRobotStatusHeaders();
-        return this.manageSingleChatRobotStatusWithOptions(request, headers, runtime);
+        GetBotListInGroupHeaders headers = new GetBotListInGroupHeaders();
+        return this.getBotListInGroupWithOptions(request, headers, runtime);
     }
 
     public ManageSingleChatRobotStatusResponse manageSingleChatRobotStatusWithOptions(ManageSingleChatRobotStatusRequest request, ManageSingleChatRobotStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -285,13 +359,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("ManageSingleChatRobotStatus", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/statuses/manage", "json", req, runtime), new ManageSingleChatRobotStatusResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ManageSingleChatRobotStatus"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/statuses/manage"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ManageSingleChatRobotStatusResponse());
     }
 
-    public OrgGroupQueryResponse orgGroupQuery(OrgGroupQueryRequest request) throws Exception {
+    public ManageSingleChatRobotStatusResponse manageSingleChatRobotStatus(ManageSingleChatRobotStatusRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        OrgGroupQueryHeaders headers = new OrgGroupQueryHeaders();
-        return this.orgGroupQueryWithOptions(request, headers, runtime);
+        ManageSingleChatRobotStatusHeaders headers = new ManageSingleChatRobotStatusHeaders();
+        return this.manageSingleChatRobotStatusWithOptions(request, headers, runtime);
     }
 
     public OrgGroupQueryResponse orgGroupQueryWithOptions(OrgGroupQueryRequest request, OrgGroupQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -334,13 +419,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("OrgGroupQuery", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/groupMessages/query", "json", req, runtime), new OrgGroupQueryResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "OrgGroupQuery"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/groupMessages/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new OrgGroupQueryResponse());
     }
 
-    public OrgGroupRecallResponse orgGroupRecall(OrgGroupRecallRequest request) throws Exception {
+    public OrgGroupQueryResponse orgGroupQuery(OrgGroupQueryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        OrgGroupRecallHeaders headers = new OrgGroupRecallHeaders();
-        return this.orgGroupRecallWithOptions(request, headers, runtime);
+        OrgGroupQueryHeaders headers = new OrgGroupQueryHeaders();
+        return this.orgGroupQueryWithOptions(request, headers, runtime);
     }
 
     public OrgGroupRecallResponse orgGroupRecallWithOptions(OrgGroupRecallRequest request, OrgGroupRecallHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -371,13 +467,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("OrgGroupRecall", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/groupMessages/recall", "json", req, runtime), new OrgGroupRecallResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "OrgGroupRecall"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/groupMessages/recall"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new OrgGroupRecallResponse());
     }
 
-    public OrgGroupSendResponse orgGroupSend(OrgGroupSendRequest request) throws Exception {
+    public OrgGroupRecallResponse orgGroupRecall(OrgGroupRecallRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        OrgGroupSendHeaders headers = new OrgGroupSendHeaders();
-        return this.orgGroupSendWithOptions(request, headers, runtime);
+        OrgGroupRecallHeaders headers = new OrgGroupRecallHeaders();
+        return this.orgGroupRecallWithOptions(request, headers, runtime);
     }
 
     public OrgGroupSendResponse orgGroupSendWithOptions(OrgGroupSendRequest request, OrgGroupSendHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -420,13 +527,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("OrgGroupSend", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/groupMessages/send", "json", req, runtime), new OrgGroupSendResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "OrgGroupSend"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/groupMessages/send"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new OrgGroupSendResponse());
     }
 
-    public PrivateChatQueryResponse privateChatQuery(PrivateChatQueryRequest request) throws Exception {
+    public OrgGroupSendResponse orgGroupSend(OrgGroupSendRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PrivateChatQueryHeaders headers = new PrivateChatQueryHeaders();
-        return this.privateChatQueryWithOptions(request, headers, runtime);
+        OrgGroupSendHeaders headers = new OrgGroupSendHeaders();
+        return this.orgGroupSendWithOptions(request, headers, runtime);
     }
 
     public PrivateChatQueryResponse privateChatQueryWithOptions(PrivateChatQueryRequest request, PrivateChatQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -465,13 +583,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("PrivateChatQuery", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/privateChatMessages/query", "json", req, runtime), new PrivateChatQueryResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PrivateChatQuery"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/privateChatMessages/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PrivateChatQueryResponse());
     }
 
-    public PrivateChatSendResponse privateChatSend(PrivateChatSendRequest request) throws Exception {
+    public PrivateChatQueryResponse privateChatQuery(PrivateChatQueryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PrivateChatSendHeaders headers = new PrivateChatSendHeaders();
-        return this.privateChatSendWithOptions(request, headers, runtime);
+        PrivateChatQueryHeaders headers = new PrivateChatQueryHeaders();
+        return this.privateChatQueryWithOptions(request, headers, runtime);
     }
 
     public PrivateChatSendResponse privateChatSendWithOptions(PrivateChatSendRequest request, PrivateChatSendHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -510,13 +639,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("PrivateChatSend", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/privateChatMessages/send", "json", req, runtime), new PrivateChatSendResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PrivateChatSend"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/privateChatMessages/send"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PrivateChatSendResponse());
     }
 
-    public QueryBotInstanceInGroupInfoResponse queryBotInstanceInGroupInfo(QueryBotInstanceInGroupInfoRequest request) throws Exception {
+    public PrivateChatSendResponse privateChatSend(PrivateChatSendRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryBotInstanceInGroupInfoHeaders headers = new QueryBotInstanceInGroupInfoHeaders();
-        return this.queryBotInstanceInGroupInfoWithOptions(request, headers, runtime);
+        PrivateChatSendHeaders headers = new PrivateChatSendHeaders();
+        return this.privateChatSendWithOptions(request, headers, runtime);
     }
 
     public QueryBotInstanceInGroupInfoResponse queryBotInstanceInGroupInfoWithOptions(QueryBotInstanceInGroupInfoRequest request, QueryBotInstanceInGroupInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -547,13 +687,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryBotInstanceInGroupInfo", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/groups/query", "json", req, runtime), new QueryBotInstanceInGroupInfoResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryBotInstanceInGroupInfo"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/groups/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryBotInstanceInGroupInfoResponse());
     }
 
-    public QueryRobotPluginResponse queryRobotPlugin(QueryRobotPluginRequest request) throws Exception {
+    public QueryBotInstanceInGroupInfoResponse queryBotInstanceInGroupInfo(QueryBotInstanceInGroupInfoRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        QueryRobotPluginHeaders headers = new QueryRobotPluginHeaders();
-        return this.queryRobotPluginWithOptions(request, headers, runtime);
+        QueryBotInstanceInGroupInfoHeaders headers = new QueryBotInstanceInGroupInfoHeaders();
+        return this.queryBotInstanceInGroupInfoWithOptions(request, headers, runtime);
     }
 
     public QueryRobotPluginResponse queryRobotPluginWithOptions(QueryRobotPluginRequest request, QueryRobotPluginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -576,13 +727,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("QueryRobotPlugin", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/plugins/query", "json", req, runtime), new QueryRobotPluginResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryRobotPlugin"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/plugins/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryRobotPluginResponse());
     }
 
-    public RobotMessageFileDownloadResponse robotMessageFileDownload(RobotMessageFileDownloadRequest request) throws Exception {
+    public QueryRobotPluginResponse queryRobotPlugin(QueryRobotPluginRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        RobotMessageFileDownloadHeaders headers = new RobotMessageFileDownloadHeaders();
-        return this.robotMessageFileDownloadWithOptions(request, headers, runtime);
+        QueryRobotPluginHeaders headers = new QueryRobotPluginHeaders();
+        return this.queryRobotPluginWithOptions(request, headers, runtime);
     }
 
     public RobotMessageFileDownloadResponse robotMessageFileDownloadWithOptions(RobotMessageFileDownloadRequest request, RobotMessageFileDownloadHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -609,13 +771,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("RobotMessageFileDownload", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/messageFiles/download", "json", req, runtime), new RobotMessageFileDownloadResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RobotMessageFileDownload"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/messageFiles/download"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RobotMessageFileDownloadResponse());
     }
 
-    public SendRobotDingMessageResponse sendRobotDingMessage(SendRobotDingMessageRequest request) throws Exception {
+    public RobotMessageFileDownloadResponse robotMessageFileDownload(RobotMessageFileDownloadRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SendRobotDingMessageHeaders headers = new SendRobotDingMessageHeaders();
-        return this.sendRobotDingMessageWithOptions(request, headers, runtime);
+        RobotMessageFileDownloadHeaders headers = new RobotMessageFileDownloadHeaders();
+        return this.robotMessageFileDownloadWithOptions(request, headers, runtime);
     }
 
     public SendRobotDingMessageResponse sendRobotDingMessageWithOptions(SendRobotDingMessageRequest request, SendRobotDingMessageHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -654,13 +827,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("SendRobotDingMessage", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/dingMessages/send", "json", req, runtime), new SendRobotDingMessageResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SendRobotDingMessage"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/dingMessages/send"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SendRobotDingMessageResponse());
     }
 
-    public SetRobotPluginResponse setRobotPlugin(SetRobotPluginRequest request) throws Exception {
+    public SendRobotDingMessageResponse sendRobotDingMessage(SendRobotDingMessageRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SetRobotPluginHeaders headers = new SetRobotPluginHeaders();
-        return this.setRobotPluginWithOptions(request, headers, runtime);
+        SendRobotDingMessageHeaders headers = new SendRobotDingMessageHeaders();
+        return this.sendRobotDingMessageWithOptions(request, headers, runtime);
     }
 
     public SetRobotPluginResponse setRobotPluginWithOptions(SetRobotPluginRequest request, SetRobotPluginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -687,13 +871,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("SetRobotPlugin", "robot_1.0", "HTTP", "POST", "AK", "/v1.0/robot/plugins/set", "json", req, runtime), new SetRobotPluginResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SetRobotPlugin"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/plugins/set"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SetRobotPluginResponse());
     }
 
-    public UpdateInstalledRobotResponse updateInstalledRobot(UpdateInstalledRobotRequest request) throws Exception {
+    public SetRobotPluginResponse setRobotPlugin(SetRobotPluginRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateInstalledRobotHeaders headers = new UpdateInstalledRobotHeaders();
-        return this.updateInstalledRobotWithOptions(request, headers, runtime);
+        SetRobotPluginHeaders headers = new SetRobotPluginHeaders();
+        return this.setRobotPluginWithOptions(request, headers, runtime);
     }
 
     public UpdateInstalledRobotResponse updateInstalledRobotWithOptions(UpdateInstalledRobotRequest request, UpdateInstalledRobotHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -736,6 +931,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateInstalledRobot", "robot_1.0", "HTTP", "PUT", "AK", "/v1.0/robot/managements/infos", "json", req, runtime), new UpdateInstalledRobotResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateInstalledRobot"),
+            new TeaPair("version", "robot_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/robot/managements/infos"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateInstalledRobotResponse());
+    }
+
+    public UpdateInstalledRobotResponse updateInstalledRobot(UpdateInstalledRobotRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateInstalledRobotHeaders headers = new UpdateInstalledRobotHeaders();
+        return this.updateInstalledRobotWithOptions(request, headers, runtime);
     }
 }

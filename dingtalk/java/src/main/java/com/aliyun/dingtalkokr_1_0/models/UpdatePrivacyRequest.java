@@ -4,27 +4,15 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdatePrivacyRequest extends TeaModel {
-    /**
-     * <p>权限修改的类型</p>
-     */
     @NameInMap("privacy")
     public String privacy;
 
-    /**
-     * <p>当前目标的 ID</p>
-     */
     @NameInMap("targetId")
     public String targetId;
 
-    /**
-     * <p>当前目标的权限类型。</p>
-     */
     @NameInMap("targetType")
     public String targetType;
 
-    /**
-     * <p>当前用户的userId。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

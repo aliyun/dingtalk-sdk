@@ -4,27 +4,15 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllFormInstancesRequest extends TeaModel {
-    /**
-     * <p>应用搭建id</p>
-     */
     @NameInMap("appUuid")
     public String appUuid;
 
-    /**
-     * <p>表单模板id</p>
-     */
     @NameInMap("formCode")
     public String formCode;
 
-    /**
-     * <p>翻页size</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>分页游标，第一次调用传空或者null</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 

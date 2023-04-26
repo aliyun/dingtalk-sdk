@@ -4,9 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchGetFormDataByIdListResponseBody extends TeaModel {
-    /**
-     * <p>表单实例数据</p>
-     */
     @NameInMap("result")
     public java.util.List<BatchGetFormDataByIdListResponseBodyResult> result;
 
@@ -24,15 +21,9 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
     }
 
     public static class BatchGetFormDataByIdListResponseBodyResultModifyUserName extends TeaModel {
-        /**
-         * <p>中文名称</p>
-         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        /**
-         * <p>英文名称</p>
-         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -60,15 +51,9 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
     }
 
     public static class BatchGetFormDataByIdListResponseBodyResultModifyUser extends TeaModel {
-        /**
-         * <p>名称</p>
-         */
         @NameInMap("name")
         public BatchGetFormDataByIdListResponseBodyResultModifyUserName name;
 
-        /**
-         * <p>钉钉userId</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -96,15 +81,9 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
     }
 
     public static class BatchGetFormDataByIdListResponseBodyResultOriginatorName extends TeaModel {
-        /**
-         * <p>中文名称</p>
-         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        /**
-         * <p>英文名称</p>
-         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
@@ -132,15 +111,9 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
     }
 
     public static class BatchGetFormDataByIdListResponseBodyResultOriginator extends TeaModel {
-        /**
-         * <p>名称</p>
-         */
         @NameInMap("name")
         public BatchGetFormDataByIdListResponseBodyResultOriginatorName name;
 
-        /**
-         * <p>钉钉userId</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -168,93 +141,48 @@ public class BatchGetFormDataByIdListResponseBody extends TeaModel {
     }
 
     public static class BatchGetFormDataByIdListResponseBodyResult extends TeaModel {
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        /**
-         * <p>创建者的userId</p>
-         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        /**
-         * <p>表单实例数据</p>
-         */
         @NameInMap("formData")
         public java.util.Map<String, ?> formData;
 
-        /**
-         * <p>表单实例id</p>
-         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
-        /**
-         * <p>表单编码</p>
-         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        /**
-         * <p>数据库表记录主键id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>实例数据</p>
-         */
         @NameInMap("instanceValue")
         public String instanceValue;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("modifiedTimeGMT")
         public String modifiedTimeGMT;
 
-        /**
-         * <p>修改者的钉钉userId</p>
-         */
         @NameInMap("modifier")
         public String modifier;
 
-        /**
-         * <p>修改者</p>
-         */
         @NameInMap("modifyUser")
         public BatchGetFormDataByIdListResponseBodyResultModifyUser modifyUser;
 
-        /**
-         * <p>表单提交人</p>
-         */
         @NameInMap("originator")
         public BatchGetFormDataByIdListResponseBodyResultOriginator originator;
 
-        /**
-         * <p>该表单实例对应的批量导入的批次号(如果是通过批量导入创建的)</p>
-         */
         @NameInMap("sequence")
         public String sequence;
 
-        /**
-         * <p>流水号</p>
-         */
         @NameInMap("serialNumber")
         public String serialNumber;
 
-        /**
-         * <p>标题</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>该表单实例对应的表单schema版本</p>
-         */
         @NameInMap("version")
         public Long version;
 

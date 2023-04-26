@@ -4,9 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class FileStorageGetStorageStateRequest extends TeaModel {
-    /**
-     * <p>企业的corpId</p>
-     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

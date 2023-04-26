@@ -4,9 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetExclusiveAccountAllOrgListRequest extends TeaModel {
-    /**
-     * <p>用户unionId</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

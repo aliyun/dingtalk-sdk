@@ -7,9 +7,6 @@ public class GetAnalyzeDataResponseBody extends TeaModel {
     @NameInMap("content")
     public OpenAnalyzeDataDTO content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRecallGroupRequest extends TeaModel {
-    /**
-     * <p>机器人的robotCode</p>
-     */
     @NameInMap("chatbotId")
     public String chatbotId;
 
-    /**
-     * <p>开放的群id</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>消息id</p>
-     */
     @NameInMap("processQueryKeys")
     public java.util.List<String> processQueryKeys;
 

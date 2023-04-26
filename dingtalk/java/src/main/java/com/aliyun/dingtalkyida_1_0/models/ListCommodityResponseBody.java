@@ -4,27 +4,15 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListCommodityResponseBody extends TeaModel {
-    /**
-     * <p>commodityVOList</p>
-     */
     @NameInMap("commodityVOList")
     public java.util.List<ListCommodityResponseBodyCommodityVOList> commodityVOList;
 
-    /**
-     * <p>当前第几页</p>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>分页大小</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>总数量</p>
-     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -66,51 +54,27 @@ public class ListCommodityResponseBody extends TeaModel {
     }
 
     public static class ListCommodityResponseBodyCommodityVOList extends TeaModel {
-        /**
-         * <p>accountDistributionNumber</p>
-         */
         @NameInMap("accountDistributionNumber")
         public Integer accountDistributionNumber;
 
-        /**
-         * <p>accountNum</p>
-         */
         @NameInMap("accountNumber")
         public Integer accountNumber;
 
-        /**
-         * <p>activationCode</p>
-         */
         @NameInMap("activationCode")
         public String activationCode;
 
-        /**
-         * <p>buyDate</p>
-         */
         @NameInMap("buyDateGMT")
         public String buyDateGMT;
 
-        /**
-         * <p>expireDate</p>
-         */
         @NameInMap("expireDateGMT")
         public String expireDateGMT;
 
-        /**
-         * <p>instanceId</p>
-         */
         @NameInMap("instanceId")
         public String instanceId;
 
-        /**
-         * <p>status</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>version</p>
-         */
         @NameInMap("version")
         public Integer version;
 

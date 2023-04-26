@@ -4,15 +4,9 @@ package com.aliyun.dingtalkswform_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFormInstanceResponseBody extends TeaModel {
-    /**
-     * <p>返回结果对象。</p>
-     */
     @NameInMap("result")
     public GetFormInstanceResponseBodyResult result;
 
-    /**
-     * <p>是否成功。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,21 +32,12 @@ public class GetFormInstanceResponseBody extends TeaModel {
     }
 
     public static class GetFormInstanceResponseBodyResultForms extends TeaModel {
-        /**
-         * <p>表单控件key。</p>
-         */
         @NameInMap("key")
         public String key;
 
-        /**
-         * <p>表单主题。  当label字段为空或不存在时，忽略这个label和value。</p>
-         */
         @NameInMap("label")
         public String label;
 
-        /**
-         * <p>表单的值。</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -88,39 +73,21 @@ public class GetFormInstanceResponseBody extends TeaModel {
     }
 
     public static class GetFormInstanceResponseBodyResult extends TeaModel {
-        /**
-         * <p>创建时间。iso8601格式。</p>
-         */
         @NameInMap("createTime")
         public String createTime;
 
-        /**
-         * <p>创建者userid</p>
-         */
         @NameInMap("creator")
         public String creator;
 
-        /**
-         * <p>填表code，用此code可调接口获取填表实例列表。</p>
-         */
         @NameInMap("formCode")
         public String formCode;
 
-        /**
-         * <p>表单内容列表。</p>
-         */
         @NameInMap("forms")
         public java.util.List<GetFormInstanceResponseBodyResultForms> forms;
 
-        /**
-         * <p>更新时间。iso8601格式。</p>
-         */
         @NameInMap("modifyTime")
         public String modifyTime;
 
-        /**
-         * <p>填表名称。</p>
-         */
         @NameInMap("title")
         public String title;
 

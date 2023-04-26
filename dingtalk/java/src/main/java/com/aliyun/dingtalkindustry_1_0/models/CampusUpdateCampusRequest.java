@@ -4,99 +4,51 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CampusUpdateCampusRequest extends TeaModel {
-    /**
-     * <p>所在具体地址</p>
-     */
     @NameInMap("address")
     public String address;
 
-    /**
-     * <p>面积</p>
-     */
     @NameInMap("area")
     public Double area;
 
-    /**
-     * <p>归属项目组</p>
-     */
     @NameInMap("belongProjectGroupId")
     public Long belongProjectGroupId;
 
-    /**
-     * <p>项目部门id</p>
-     */
     @NameInMap("campusDeptId")
     public Long campusDeptId;
 
-    /**
-     * <p>园区项目名</p>
-     */
     @NameInMap("campusName")
     public String campusName;
 
-    /**
-     * <p>容量</p>
-     */
     @NameInMap("capacity")
     public Integer capacity;
 
-    /**
-     * <p>所在市行政编码</p>
-     */
     @NameInMap("cityId")
     public Integer cityId;
 
-    /**
-     * <p>国家</p>
-     */
     @NameInMap("country")
     public String country;
 
-    /**
-     * <p>所在区行政编码</p>
-     */
     @NameInMap("countyId")
     public Integer countyId;
 
-    /**
-     * <p>园区项目描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>扩展信息</p>
-     */
     @NameInMap("extend")
     public String extend;
 
-    /**
-     * <p>项目订阅到期时间</p>
-     */
     @NameInMap("orderEndTime")
     public Long orderEndTime;
 
-    /**
-     * <p>购买信息</p>
-     */
     @NameInMap("orderInfo")
     public Long orderInfo;
 
-    /**
-     * <p>项目订阅开始时间</p>
-     */
     @NameInMap("orderStartTime")
     public Long orderStartTime;
 
-    /**
-     * <p>所在省行政编码</p>
-     */
     @NameInMap("provId")
     public Integer provId;
 
-    /**
-     * <p>联系电话</p>
-     */
     @NameInMap("telephone")
     public String telephone;
 

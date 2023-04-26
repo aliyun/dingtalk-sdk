@@ -4,9 +4,6 @@ package com.aliyun.dingtalkesign_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetAttachsApprovalResponseBody extends TeaModel {
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("data")
     public java.util.List<GetAttachsApprovalResponseBodyData> data;
 

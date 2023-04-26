@@ -7,39 +7,21 @@ public class SyncChannelMessageRequest extends TeaModel {
     @NameInMap("bizCode")
     public String bizCode;
 
-    /**
-     * <p>渠道标识。</p>
-     */
     @NameInMap("channel")
     public String channel;
 
-    /**
-     * <p>消息内容。</p>
-     */
     @NameInMap("content")
     public String content;
 
-    /**
-     * <p>消息创建时间。</p>
-     */
     @NameInMap("createTime")
     public Long createTime;
 
-    /**
-     * <p>消息接收者ID。</p>
-     */
     @NameInMap("receiverUserId")
     public String receiverUserId;
 
-    /**
-     * <p>消息发送者用户ID。</p>
-     */
     @NameInMap("senderUserId")
     public String senderUserId;
 
-    /**
-     * <p>消息UUID，业务方产生用于去重。</p>
-     */
     @NameInMap("uuid")
     public String uuid;
 

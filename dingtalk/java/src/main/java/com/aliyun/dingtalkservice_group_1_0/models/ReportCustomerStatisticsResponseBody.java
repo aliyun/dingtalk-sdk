@@ -4,27 +4,15 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReportCustomerStatisticsResponseBody extends TeaModel {
-    /**
-     * <p>页码</p>
-     */
     @NameInMap("currentPage")
     public Long currentPage;
 
-    /**
-     * <p>每页大小</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    /**
-     * <p>数据列表</p>
-     */
     @NameInMap("records")
     public java.util.List<ReportCustomerStatisticsResponseBodyRecords> records;
 
-    /**
-     * <p>总数目</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -66,69 +54,36 @@ public class ReportCustomerStatisticsResponseBody extends TeaModel {
     }
 
     public static class ReportCustomerStatisticsResponseBodyRecords extends TeaModel {
-        /**
-         * <p>at机器人消息数</p>
-         */
         @NameInMap("atRobotCnt")
         public Long atRobotCnt;
 
-        /**
-         * <p>业务ID</p>
-         */
         @NameInMap("bizId")
         public String bizId;
 
-        /**
-         * <p>客户数</p>
-         */
         @NameInMap("customerCnt")
         public Long customerCnt;
 
-        /**
-         * <p>群名称</p>
-         */
         @NameInMap("groupName")
         public String groupName;
 
-        /**
-         * <p>群分组名称</p>
-         */
         @NameInMap("groupSetName")
         public String groupSetName;
 
-        /**
-         * <p>打开钉钉客户数</p>
-         */
         @NameInMap("loginCnt")
         public Long loginCnt;
 
-        /**
-         * <p>打开群客户数</p>
-         */
         @NameInMap("openConvCnt")
         public Long openConvCnt;
 
-        /**
-         * <p>开放群ID</p>
-         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        /**
-         * <p>开放群分组ID</p>
-         */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
-        /**
-         * <p>发送消息数</p>
-         */
         @NameInMap("sendMsgCnt")
         public Long sendMsgCnt;
 
-        /**
-         * <p>发消息的客户数</p>
-         */
         @NameInMap("senderCnt")
         public Long senderCnt;
 

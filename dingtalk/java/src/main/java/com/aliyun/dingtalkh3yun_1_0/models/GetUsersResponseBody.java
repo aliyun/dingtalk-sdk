@@ -4,21 +4,12 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUsersResponseBody extends TeaModel {
-    /**
-     * <p>状态码</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>返回结果</p>
-     */
     @NameInMap("data")
     public java.util.List<GetUsersResponseBodyData> data;
 
-    /**
-     * <p>提示信息</p>
-     */
     @NameInMap("message")
     public String message;
 
@@ -52,75 +43,39 @@ public class GetUsersResponseBody extends TeaModel {
     }
 
     public static class GetUsersResponseBodyData extends TeaModel {
-        /**
-         * <p>用户编码</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>直属组织id</p>
-         */
         @NameInMap("departmentId")
         public String departmentId;
 
-        /**
-         * <p>直属组织名称</p>
-         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        /**
-         * <p>描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>作用域类型。Unspecified=未指定、Internal=内部组织机构、External=外部组织机构</p>
-         */
         @NameInMap("domainType")
         public String domainType;
 
-        /**
-         * <p>邮箱</p>
-         */
         @NameInMap("email")
         public String email;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>电话</p>
-         */
         @NameInMap("mobile")
         public String mobile;
 
-        /**
-         * <p>用户姓名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>兼职部门id</p>
-         */
         @NameInMap("partDepartmentIds")
         public java.util.List<String> partDepartmentIds;
 
-        /**
-         * <p>性别.None=未指定，Man=男性，Female=女性</p>
-         */
         @NameInMap("sex")
         public String sex;
 
-        /**
-         * <p>排序号</p>
-         */
         @NameInMap("sortKey")
         public Long sortKey;
 

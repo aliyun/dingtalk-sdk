@@ -7,9 +7,6 @@ public class GetRemoteClassCourseResponseBody extends TeaModel {
     @NameInMap("result")
     public GetRemoteClassCourseResponseBodyResult result;
 
-    /**
-     * <p>是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -35,27 +32,15 @@ public class GetRemoteClassCourseResponseBody extends TeaModel {
     }
 
     public static class GetRemoteClassCourseResponseBodyResultAttendParticipants extends TeaModel {
-        /**
-         * <p>组织ID</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>组织名称</p>
-         */
         @NameInMap("orgName")
         public String orgName;
 
-        /**
-         * <p>参与方ID</p>
-         */
         @NameInMap("participantId")
         public String participantId;
 
-        /**
-         * <p>参与方名称</p>
-         */
         @NameInMap("participantName")
         public String participantName;
 
@@ -99,21 +84,12 @@ public class GetRemoteClassCourseResponseBody extends TeaModel {
     }
 
     public static class GetRemoteClassCourseResponseBodyResultRecordInfos extends TeaModel {
-        /**
-         * <p>录制开始时间（UTC/GMT格式）</p>
-         */
         @NameInMap("startTime")
         public String startTime;
 
-        /**
-         * <p>录制结束时间（UTC/GMT格式）</p>
-         */
         @NameInMap("stopTime")
         public String stopTime;
 
-        /**
-         * <p>录制文件地址（文件有效期7天）</p>
-         */
         @NameInMap("url")
         public String url;
 
@@ -149,27 +125,15 @@ public class GetRemoteClassCourseResponseBody extends TeaModel {
     }
 
     public static class GetRemoteClassCourseResponseBodyResultTeachingParticipant extends TeaModel {
-        /**
-         * <p>组织ID</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>组织名称</p>
-         */
         @NameInMap("orgName")
         public String orgName;
 
-        /**
-         * <p>参与方ID</p>
-         */
         @NameInMap("participantId")
         public String participantId;
 
-        /**
-         * <p>参与方名称</p>
-         */
         @NameInMap("participantName")
         public String participantName;
 
@@ -213,69 +177,36 @@ public class GetRemoteClassCourseResponseBody extends TeaModel {
     }
 
     public static class GetRemoteClassCourseResponseBodyResult extends TeaModel {
-        /**
-         * <p>听课设备列表</p>
-         */
         @NameInMap("attendParticipants")
         public java.util.List<GetRemoteClassCourseResponseBodyResultAttendParticipants> attendParticipants;
 
-        /**
-         * <p>课程是否可以编辑或删除</p>
-         */
         @NameInMap("canEdit")
         public Boolean canEdit;
 
-        /**
-         * <p>课程code</p>
-         */
         @NameInMap("courseCode")
         public String courseCode;
 
-        /**
-         * <p>课程名称</p>
-         */
         @NameInMap("courseName")
         public String courseName;
 
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("endTime")
         public Long endTime;
 
-        /**
-         * <p>直播观看URL（如果有）</p>
-         */
         @NameInMap("liveUrl")
         public String liveUrl;
 
-        /**
-         * <p>录制信息列表（如果有）。根据录制端的不同，有不同时长的延迟</p>
-         */
         @NameInMap("recordInfos")
         public java.util.List<GetRemoteClassCourseResponseBodyResultRecordInfos> recordInfos;
 
-        /**
-         * <p>课堂当前状态：0: 未进行；1: 进行中</p>
-         */
         @NameInMap("roomStatus")
         public Integer roomStatus;
 
-        /**
-         * <p>开始时间</p>
-         */
         @NameInMap("startTime")
         public Long startTime;
 
-        /**
-         * <p>课程状态：0: 未开始；1: 已开始；2: 已结束</p>
-         */
         @NameInMap("status")
         public Integer status;
 
-        /**
-         * <p>授课设备</p>
-         */
         @NameInMap("teachingParticipant")
         public GetRemoteClassCourseResponseBodyResultTeachingParticipant teachingParticipant;
 

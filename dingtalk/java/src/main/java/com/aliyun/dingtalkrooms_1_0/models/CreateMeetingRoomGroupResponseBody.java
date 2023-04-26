@@ -4,9 +4,6 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateMeetingRoomGroupResponseBody extends TeaModel {
-    /**
-     * <p>创建的分组id</p>
-     */
     @NameInMap("result")
     public Long result;
 

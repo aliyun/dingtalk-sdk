@@ -4,9 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInstancesByIdListResponseBody extends TeaModel {
-    /**
-     * <p>流程实例列表</p>
-     */
     @NameInMap("result")
     public java.util.List<GetInstancesByIdListResponseBodyResult> result;
 
@@ -24,21 +21,12 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
     }
 
     public static class GetInstancesByIdListResponseBodyResultActionExecutorName extends TeaModel {
-        /**
-         * <p>中文名称</p>
-         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        /**
-         * <p>英文名称</p>
-         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
-        /**
-         * <p>国际化</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -74,27 +62,15 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
     }
 
     public static class GetInstancesByIdListResponseBodyResultActionExecutor extends TeaModel {
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        /**
-         * <p>邮箱</p>
-         */
         @NameInMap("email")
         public String email;
 
-        /**
-         * <p>用户名</p>
-         */
         @NameInMap("name")
         public GetInstancesByIdListResponseBodyResultActionExecutorName name;
 
-        /**
-         * <p>用户工号</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -138,21 +114,12 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
     }
 
     public static class GetInstancesByIdListResponseBodyResultOriginatorName extends TeaModel {
-        /**
-         * <p>中文名称</p>
-         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        /**
-         * <p>英文名称</p>
-         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
-        /**
-         * <p>国际化</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -188,27 +155,15 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
     }
 
     public static class GetInstancesByIdListResponseBodyResultOriginator extends TeaModel {
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        /**
-         * <p>邮箱</p>
-         */
         @NameInMap("email")
         public String email;
 
-        /**
-         * <p>用户名</p>
-         */
         @NameInMap("name")
         public GetInstancesByIdListResponseBodyResultOriginatorName name;
 
-        /**
-         * <p>用户工号</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -252,57 +207,30 @@ public class GetInstancesByIdListResponseBody extends TeaModel {
     }
 
     public static class GetInstancesByIdListResponseBodyResult extends TeaModel {
-        /**
-         * <p>流程实例当前任务执行人列表</p>
-         */
         @NameInMap("actionExecutor")
         public java.util.List<GetInstancesByIdListResponseBodyResultActionExecutor> actionExecutor;
 
-        /**
-         * <p>流程结束时的审批结论</p>
-         */
         @NameInMap("approvedResult")
         public String approvedResult;
 
-        /**
-         * <p>表单数据</p>
-         */
         @NameInMap("data")
         public java.util.Map<String, ?> data;
 
-        /**
-         * <p>流程表单ID</p>
-         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        /**
-         * <p>实例状态</p>
-         */
         @NameInMap("instanceStatus")
         public String instanceStatus;
 
-        /**
-         * <p>发起人信息</p>
-         */
         @NameInMap("originator")
         public GetInstancesByIdListResponseBodyResultOriginator originator;
 
-        /**
-         * <p>流程Code</p>
-         */
         @NameInMap("processCode")
         public String processCode;
 
-        /**
-         * <p>实例ID</p>
-         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        /**
-         * <p>实例标题</p>
-         */
         @NameInMap("title")
         public String title;
 

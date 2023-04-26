@@ -6,8 +6,11 @@ import com.aliyun.dingtalkpedia_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public PediaWordsAddResponse pediaWordsAdd(PediaWordsAddRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PediaWordsAddHeaders headers = new PediaWordsAddHeaders();
-        return this.pediaWordsAddWithOptions(request, headers, runtime);
-    }
 
     public PediaWordsAddResponse pediaWordsAddWithOptions(PediaWordsAddRequest request, PediaWordsAddHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -74,13 +71,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("PediaWordsAdd", "pedia_1.0", "HTTP", "POST", "AK", "/v1.0/pedia/words", "json", req, runtime), new PediaWordsAddResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PediaWordsAdd"),
+            new TeaPair("version", "pedia_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/pedia/words"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PediaWordsAddResponse());
     }
 
-    public PediaWordsApproveResponse pediaWordsApprove(PediaWordsApproveRequest request) throws Exception {
+    public PediaWordsAddResponse pediaWordsAdd(PediaWordsAddRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PediaWordsApproveHeaders headers = new PediaWordsApproveHeaders();
-        return this.pediaWordsApproveWithOptions(request, headers, runtime);
+        PediaWordsAddHeaders headers = new PediaWordsAddHeaders();
+        return this.pediaWordsAddWithOptions(request, headers, runtime);
     }
 
     public PediaWordsApproveResponse pediaWordsApproveWithOptions(PediaWordsApproveRequest request, PediaWordsApproveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -123,13 +131,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("PediaWordsApprove", "pedia_1.0", "HTTP", "POST", "AK", "/v1.0/pedia/words/approve", "json", req, runtime), new PediaWordsApproveResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PediaWordsApprove"),
+            new TeaPair("version", "pedia_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/pedia/words/approve"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PediaWordsApproveResponse());
     }
 
-    public PediaWordsDeleteResponse pediaWordsDelete(PediaWordsDeleteRequest request) throws Exception {
+    public PediaWordsApproveResponse pediaWordsApprove(PediaWordsApproveRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PediaWordsDeleteHeaders headers = new PediaWordsDeleteHeaders();
-        return this.pediaWordsDeleteWithOptions(request, headers, runtime);
+        PediaWordsApproveHeaders headers = new PediaWordsApproveHeaders();
+        return this.pediaWordsApproveWithOptions(request, headers, runtime);
     }
 
     public PediaWordsDeleteResponse pediaWordsDeleteWithOptions(PediaWordsDeleteRequest request, PediaWordsDeleteHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -156,13 +175,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("PediaWordsDelete", "pedia_1.0", "HTTP", "DELETE", "AK", "/v1.0/pedia/words", "json", req, runtime), new PediaWordsDeleteResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PediaWordsDelete"),
+            new TeaPair("version", "pedia_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/pedia/words"),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PediaWordsDeleteResponse());
     }
 
-    public PediaWordsQueryResponse pediaWordsQuery(PediaWordsQueryRequest request) throws Exception {
+    public PediaWordsDeleteResponse pediaWordsDelete(PediaWordsDeleteRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PediaWordsQueryHeaders headers = new PediaWordsQueryHeaders();
-        return this.pediaWordsQueryWithOptions(request, headers, runtime);
+        PediaWordsDeleteHeaders headers = new PediaWordsDeleteHeaders();
+        return this.pediaWordsDeleteWithOptions(request, headers, runtime);
     }
 
     public PediaWordsQueryResponse pediaWordsQueryWithOptions(PediaWordsQueryRequest request, PediaWordsQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -189,13 +219,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("PediaWordsQuery", "pedia_1.0", "HTTP", "POST", "AK", "/v1.0/pedia/words/query", "json", req, runtime), new PediaWordsQueryResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PediaWordsQuery"),
+            new TeaPair("version", "pedia_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/pedia/words/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PediaWordsQueryResponse());
     }
 
-    public PediaWordsSearchResponse pediaWordsSearch(PediaWordsSearchRequest request) throws Exception {
+    public PediaWordsQueryResponse pediaWordsQuery(PediaWordsQueryRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PediaWordsSearchHeaders headers = new PediaWordsSearchHeaders();
-        return this.pediaWordsSearchWithOptions(request, headers, runtime);
+        PediaWordsQueryHeaders headers = new PediaWordsQueryHeaders();
+        return this.pediaWordsQueryWithOptions(request, headers, runtime);
     }
 
     public PediaWordsSearchResponse pediaWordsSearchWithOptions(PediaWordsSearchRequest request, PediaWordsSearchHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -234,13 +275,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("PediaWordsSearch", "pedia_1.0", "HTTP", "POST", "AK", "/v1.0/pedia/words/search", "json", req, runtime), new PediaWordsSearchResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PediaWordsSearch"),
+            new TeaPair("version", "pedia_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/pedia/words/search"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PediaWordsSearchResponse());
     }
 
-    public PediaWordsUpdateResponse pediaWordsUpdate(PediaWordsUpdateRequest request) throws Exception {
+    public PediaWordsSearchResponse pediaWordsSearch(PediaWordsSearchRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PediaWordsUpdateHeaders headers = new PediaWordsUpdateHeaders();
-        return this.pediaWordsUpdateWithOptions(request, headers, runtime);
+        PediaWordsSearchHeaders headers = new PediaWordsSearchHeaders();
+        return this.pediaWordsSearchWithOptions(request, headers, runtime);
     }
 
     public PediaWordsUpdateResponse pediaWordsUpdateWithOptions(PediaWordsUpdateRequest request, PediaWordsUpdateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -303,6 +355,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("PediaWordsUpdate", "pedia_1.0", "HTTP", "PUT", "AK", "/v1.0/pedia/words", "json", req, runtime), new PediaWordsUpdateResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PediaWordsUpdate"),
+            new TeaPair("version", "pedia_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/pedia/words"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PediaWordsUpdateResponse());
+    }
+
+    public PediaWordsUpdateResponse pediaWordsUpdate(PediaWordsUpdateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PediaWordsUpdateHeaders headers = new PediaWordsUpdateHeaders();
+        return this.pediaWordsUpdateWithOptions(request, headers, runtime);
     }
 }

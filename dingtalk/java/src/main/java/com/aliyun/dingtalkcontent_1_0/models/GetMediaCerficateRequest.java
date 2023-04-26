@@ -4,45 +4,24 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMediaCerficateRequest extends TeaModel {
-    /**
-     * <p>视频的文件名称,必须带扩展名,支持的扩展名参考:https://help.aliyun.com/document_detail/55396.htm?spm=a2c4g.11186623.2.11.2d385d4aG2IkCZ#title-j7o-gr4-c7a</p>
-     */
     @NameInMap("fileName")
     public String fileName;
 
-    /**
-     * <p>入驻账号Id(请联系钉钉接口同学获取)</p>
-     */
     @NameInMap("mcnId")
     public String mcnId;
 
-    /**
-     * <p>如果传入该值，表示续订该mediaId对应的上传凭证 ;否则将视为新建一个视频上传连接和凭证</p>
-     */
     @NameInMap("mediaId")
     public String mediaId;
 
-    /**
-     * <p>视频介绍</p>
-     */
     @NameInMap("mediaIntroduction")
     public String mediaIntroduction;
 
-    /**
-     * <p>视频的标题</p>
-     */
     @NameInMap("mediaTitle")
     public String mediaTitle;
 
-    /**
-     * <p>自定义视频封面的URL地址</p>
-     */
     @NameInMap("thumbUrl")
     public String thumbUrl;
 
-    /**
-     * <p>操作人的用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

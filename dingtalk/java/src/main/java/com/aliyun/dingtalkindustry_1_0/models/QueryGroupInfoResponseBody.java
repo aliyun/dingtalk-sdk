@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupInfoResponseBody extends TeaModel {
-    /**
-     * <p>医疗组详情</p>
-     */
     @NameInMap("content")
     public QueryGroupInfoResponseBodyContent content;
 
@@ -24,51 +21,27 @@ public class QueryGroupInfoResponseBody extends TeaModel {
     }
 
     public static class QueryGroupInfoResponseBodyContentExtendInfos extends TeaModel {
-        /**
-         * <p>医疗组code</p>
-         */
         @NameInMap("deptCode")
         public String deptCode;
 
-        /**
-         * <p>扩展属性显示名称</p>
-         */
         @NameInMap("deptExtendDisplayName")
         public String deptExtendDisplayName;
 
-        /**
-         * <p>扩展属性key</p>
-         */
         @NameInMap("deptExtendKey")
         public String deptExtendKey;
 
-        /**
-         * <p>扩展属性value</p>
-         */
         @NameInMap("deptExtendValue")
         public String deptExtendValue;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        /**
-         * <p>id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>状态</p>
-         */
         @NameInMap("status")
         public Integer status;
 
@@ -144,21 +117,12 @@ public class QueryGroupInfoResponseBody extends TeaModel {
     }
 
     public static class QueryGroupInfoResponseBodyContentGroupLeader extends TeaModel {
-        /**
-         * <p>工号</p>
-         */
         @NameInMap("jobNumber")
         public String jobNumber;
 
-        /**
-         * <p>组长名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -194,57 +158,30 @@ public class QueryGroupInfoResponseBody extends TeaModel {
     }
 
     public static class QueryGroupInfoResponseBodyContentGroup extends TeaModel {
-        /**
-         * <p>医疗组id</p>
-         */
         @NameInMap("deptId")
         public Long deptId;
 
-        /**
-         * <p>医疗组状态</p>
-         */
         @NameInMap("deptStatus")
         public Integer deptStatus;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        /**
-         * <p>id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>组长</p>
-         */
         @NameInMap("leader")
         public QueryGroupInfoResponseBodyContentGroupLeader leader;
 
-        /**
-         * <p>医疗组名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>父code</p>
-         */
         @NameInMap("parentDeptCode")
         public String parentDeptCode;
 
-        /**
-         * <p>备注</p>
-         */
         @NameInMap("remark")
         public String remark;
 
@@ -328,15 +265,9 @@ public class QueryGroupInfoResponseBody extends TeaModel {
     }
 
     public static class QueryGroupInfoResponseBodyContent extends TeaModel {
-        /**
-         * <p>扩展信息</p>
-         */
         @NameInMap("extendInfos")
         public java.util.List<QueryGroupInfoResponseBodyContentExtendInfos> extendInfos;
 
-        /**
-         * <p>医疗组</p>
-         */
         @NameInMap("group")
         public QueryGroupInfoResponseBodyContentGroup group;
 

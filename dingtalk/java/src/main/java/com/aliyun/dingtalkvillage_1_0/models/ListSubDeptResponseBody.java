@@ -4,9 +4,6 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSubDeptResponseBody extends TeaModel {
-    /**
-     * <p>返回列表</p>
-     */
     @NameInMap("result")
     public java.util.List<ListSubDeptResponseBodyResult> result;
 
@@ -24,15 +21,9 @@ public class ListSubDeptResponseBody extends TeaModel {
     }
 
     public static class ListSubDeptResponseBodyResult extends TeaModel {
-        /**
-         * <p>下属组织的部门ID</p>
-         */
         @NameInMap("departmentId")
         public Long departmentId;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("name")
         public String name;
 

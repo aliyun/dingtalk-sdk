@@ -21,75 +21,39 @@ public class GetRunningTasksResponseBody extends TeaModel {
     }
 
     public static class GetRunningTasksResponseBodyResult extends TeaModel {
-        /**
-         * <p>activeTime</p>
-         */
         @NameInMap("activeTimeGMT")
         public String activeTimeGMT;
 
-        /**
-         * <p>activityId</p>
-         */
         @NameInMap("activityId")
         public String activityId;
 
-        /**
-         * <p>actualActionerId</p>
-         */
         @NameInMap("actualActionerId")
         public String actualActionerId;
 
-        /**
-         * <p>createTime</p>
-         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        /**
-         * <p>finishTime</p>
-         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
-        /**
-         * <p>originatorId</p>
-         */
         @NameInMap("originatorId")
         public String originatorId;
 
-        /**
-         * <p>processInstanceId</p>
-         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        /**
-         * <p>status</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>taskId</p>
-         */
         @NameInMap("taskId")
         public String taskId;
 
-        /**
-         * <p>taskType</p>
-         */
         @NameInMap("taskType")
         public String taskType;
 
-        /**
-         * <p>title</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>titleEn</p>
-         */
         @NameInMap("titleInEnglish")
         public String titleInEnglish;
 

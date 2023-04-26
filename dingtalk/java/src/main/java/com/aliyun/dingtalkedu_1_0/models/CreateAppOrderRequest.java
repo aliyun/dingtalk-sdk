@@ -4,69 +4,36 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateAppOrderRequest extends TeaModel {
-    /**
-     * <p>实际金额，单位分。</p>
-     */
     @NameInMap("actualAmount")
     public Long actualAmount;
 
-    /**
-     * <p>支付宝应用id。</p>
-     */
     @NameInMap("alipayAppId")
     public String alipayAppId;
 
-    /**
-     * <p>业务编码。</p>
-     */
     @NameInMap("bizCode")
     public Integer bizCode;
 
-    /**
-     * <p>订单明细列表。</p>
-     */
     @NameInMap("detailList")
     public java.util.List<CreateAppOrderRequestDetailList> detailList;
 
-    /**
-     * <p>标签金额，单位分。</p>
-     */
     @NameInMap("labelAmount")
     public Long labelAmount;
 
-    /**
-     * <p>商户id。</p>
-     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    /**
-     * <p>商户订单号。</p>
-     */
     @NameInMap("merchantOrderNo")
     public String merchantOrderNo;
 
-    /**
-     * <p>用户唯一id。</p>
-     */
     @NameInMap("outerUserId")
     public String outerUserId;
 
-    /**
-     * <p>签名。</p>
-     */
     @NameInMap("signature")
     public String signature;
 
-    /**
-     * <p>订单标题。</p>
-     */
     @NameInMap("subject")
     public String subject;
 
-    /**
-     * <p>时间戳。</p>
-     */
     @NameInMap("timestamp")
     public Long timestamp;
 
@@ -164,27 +131,15 @@ public class CreateAppOrderRequest extends TeaModel {
     }
 
     public static class CreateAppOrderRequestDetailList extends TeaModel {
-        /**
-         * <p>商品id。</p>
-         */
         @NameInMap("goodsId")
         public String goodsId;
 
-        /**
-         * <p>商品名称。</p>
-         */
         @NameInMap("goodsName")
         public String goodsName;
 
-        /**
-         * <p>商品价格，单位分。</p>
-         */
         @NameInMap("goodsPrice")
         public Long goodsPrice;
 
-        /**
-         * <p>商品数量。</p>
-         */
         @NameInMap("goodsQuantity")
         public Integer goodsQuantity;
 

@@ -4,27 +4,15 @@ package com.aliyun.dingtalkapp_market_1_0.models;
 import com.aliyun.tea.*;
 
 public class UserTaskReportRequest extends TeaModel {
-    /**
-     * <p>业务的幂等ID</p>
-     */
     @NameInMap("bizNo")
     public String bizNo;
 
-    /**
-     * <p>operateDate</p>
-     */
     @NameInMap("operateDate")
     public String operateDate;
 
-    /**
-     * <p>taskTag</p>
-     */
     @NameInMap("taskTag")
     public String taskTag;
 
-    /**
-     * <p>staffId</p>
-     */
     @NameInMap("userid")
     public String userid;
 

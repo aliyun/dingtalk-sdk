@@ -4,27 +4,15 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchActionsResponseBody extends TeaModel {
-    /**
-     * <p>是否有更多记录</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>执行动作列表</p>
-     */
     @NameInMap("list")
     public java.util.List<SearchActionsResponseBodyList> list;
 
-    /**
-     * <p>下一页位置</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>总记录数</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -66,63 +54,33 @@ public class SearchActionsResponseBody extends TeaModel {
     }
 
     public static class SearchActionsResponseBodyList extends TeaModel {
-        /**
-         * <p>授权页地址</p>
-         */
         @NameInMap("authorityUrl")
         public String authorityUrl;
 
-        /**
-         * <p>是否已授权</p>
-         */
         @NameInMap("authorized")
         public Boolean authorized;
 
-        /**
-         * <p>连接资产唯一标识</p>
-         */
         @NameInMap("connectAssetUri")
         public String connectAssetUri;
 
-        /**
-         * <p>执行动作所属连接器ID</p>
-         */
         @NameInMap("connectorId")
         public String connectorId;
 
-        /**
-         * <p>描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>图标</p>
-         */
         @NameInMap("icon")
         public String icon;
 
-        /**
-         * <p>执行动作的ID</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>集成类型</p>
-         */
         @NameInMap("integrationType")
         public String integrationType;
 
-        /**
-         * <p>名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>提供组织</p>
-         */
         @NameInMap("providerCorpId")
         public String providerCorpId;
 

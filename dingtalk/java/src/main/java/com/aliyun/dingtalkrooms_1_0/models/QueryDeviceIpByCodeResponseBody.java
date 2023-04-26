@@ -4,9 +4,6 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDeviceIpByCodeResponseBody extends TeaModel {
-    /**
-     * <p>结果</p>
-     */
     @NameInMap("result")
     public QueryDeviceIpByCodeResponseBodyResult result;
 
@@ -35,9 +32,6 @@ public class QueryDeviceIpByCodeResponseBody extends TeaModel {
     }
 
     public static class QueryDeviceIpByCodeResponseBodyResult extends TeaModel {
-        /**
-         * <p>设备内网ip</p>
-         */
         @NameInMap("deviceIp")
         public String deviceIp;
 

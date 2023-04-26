@@ -4,9 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserFaceStateRequest extends TeaModel {
-    /**
-     * <p>userIds</p>
-     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

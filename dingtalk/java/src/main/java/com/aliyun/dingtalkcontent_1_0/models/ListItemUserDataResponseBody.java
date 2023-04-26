@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcontent_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListItemUserDataResponseBody extends TeaModel {
-    /**
-     * <p>学习的时长记录</p>
-     */
     @NameInMap("studyInfos")
     public java.util.List<ListItemUserDataResponseBodyStudyInfos> studyInfos;
 
@@ -24,15 +21,9 @@ public class ListItemUserDataResponseBody extends TeaModel {
     }
 
     public static class ListItemUserDataResponseBodyStudyInfos extends TeaModel {
-        /**
-         * <p>时间持续长度，单位为毫秒</p>
-         */
         @NameInMap("durationMillis")
         public Long durationMillis;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("uid")
         public String uid;
 

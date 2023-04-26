@@ -62,21 +62,12 @@ public class UpdateActionRequest extends TeaModel {
     }
 
     public static class UpdateActionRequestActionInfoOutputDataRules extends TeaModel {
-        /**
-         * <p>规则的预期值。</p>
-         */
         @NameInMap("expectValue")
         public String expectValue;
 
-        /**
-         * <p>操作类型。</p>
-         */
         @NameInMap("operate")
         public String operate;
 
-        /**
-         * <p>规则的属性路径。</p>
-         */
         @NameInMap("propertyPath")
         public String propertyPath;
 
@@ -142,69 +133,39 @@ public class UpdateActionRequest extends TeaModel {
     }
 
     public static class UpdateActionRequestActionInfo extends TeaModel {
-        /**
-         * <p>api请求url path，结合Connector上的apiDomain使用</p>
-         */
         @NameInMap("apiPath")
         public String apiPath;
 
-        /**
-         * <p>描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>连接平台的执行动作唯一标识。</p>
-         */
         @NameInMap("dingActionId")
         public String dingActionId;
 
-        /**
-         * <p>连接平台连接器id</p>
-         */
         @NameInMap("dingConnectorId")
         public String dingConnectorId;
 
         @NameInMap("inputMappingConfig")
         public UpdateActionRequestActionInfoInputMappingConfig inputMappingConfig;
 
-        /**
-         * <p>入参schema</p>
-         */
         @NameInMap("inputSchema")
         public String inputSchema;
 
-        /**
-         * <p>服务商的执行事件Id</p>
-         */
         @NameInMap("integratorActionId")
         public String integratorActionId;
 
-        /**
-         * <p>服务商的连接器Id</p>
-         */
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
 
-        /**
-         * <p>名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>执行动作接口成功调用规则。</p>
-         */
         @NameInMap("outputDataRules")
         public java.util.List<UpdateActionRequestActionInfoOutputDataRules> outputDataRules;
 
         @NameInMap("outputMappingConfig")
         public UpdateActionRequestActionInfoOutputMappingConfig outputMappingConfig;
 
-        /**
-         * <p>出参schema</p>
-         */
         @NameInMap("outputSchema")
         public String outputSchema;
 

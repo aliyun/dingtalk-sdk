@@ -4,81 +4,42 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchFormDataSecondGenerationRequest extends TeaModel {
-    /**
-     * <p>宜搭应用编码</p>
-     */
     @NameInMap("appType")
     public String appType;
 
-    /**
-     * <p>创建时间起始值</p>
-     */
     @NameInMap("createFromTimeGMT")
     public String createFromTimeGMT;
 
-    /**
-     * <p>创建时间终止值</p>
-     */
     @NameInMap("createToTimeGMT")
     public String createToTimeGMT;
 
-    /**
-     * <p>表单编码</p>
-     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    /**
-     * <p>修改时间起始值</p>
-     */
     @NameInMap("modifiedFromTimeGMT")
     public String modifiedFromTimeGMT;
 
-    /**
-     * <p>修改时间终止值</p>
-     */
     @NameInMap("modifiedToTimeGMT")
     public String modifiedToTimeGMT;
 
-    /**
-     * <p>排序规则</p>
-     */
     @NameInMap("orderConfigJson")
     public String orderConfigJson;
 
-    /**
-     * <p>表单提交人的钉钉userId</p>
-     */
     @NameInMap("originatorId")
     public String originatorId;
 
-    /**
-     * <p>当前第几页</p>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>分页大小</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>用于检索表单实例数据的检索条件</p>
-     */
     @NameInMap("searchCondition")
     public String searchCondition;
 
-    /**
-     * <p>宜搭应用秘钥</p>
-     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    /**
-     * <p>钉钉userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

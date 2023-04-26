@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTbOrgIdByDingOrgIdResponseBody extends TeaModel {
-    /**
-     * <p>结果对象</p>
-     */
     @NameInMap("result")
     public GetTbOrgIdByDingOrgIdResponseBodyResult result;
 
@@ -24,9 +21,6 @@ public class GetTbOrgIdByDingOrgIdResponseBody extends TeaModel {
     }
 
     public static class GetTbOrgIdByDingOrgIdResponseBodyResult extends TeaModel {
-        /**
-         * <p>Teambition企业Id</p>
-         */
         @NameInMap("tbOrganizationId")
         public String tbOrganizationId;
 

@@ -4,81 +4,42 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTodoTypeConfigResponseBody extends TeaModel {
-    /**
-     * <p>待办卡片操作区按钮配置</p>
-     */
     @NameInMap("actionList")
     public java.util.List<CreateTodoTypeConfigResponseBodyActionList> actionList;
 
-    /**
-     * <p>接入应用标识</p>
-     */
     @NameInMap("bizTag")
     public String bizTag;
 
-    /**
-     * <p>卡片类型（取值为：1-标准卡片，2-自定义卡片）</p>
-     */
     @NameInMap("cardType")
     public Integer cardType;
 
-    /**
-     * <p>待办卡片内容区表单自定义字段配置</p>
-     */
     @NameInMap("contentFieldList")
     public java.util.List<CreateTodoTypeConfigResponseBodyContentFieldList> contentFieldList;
 
-    /**
-     * <p>创建时间</p>
-     */
     @NameInMap("createdTime")
     public Long createdTime;
 
-    /**
-     * <p>创建者（用户的unionId）</p>
-     */
     @NameInMap("creatorId")
     public String creatorId;
 
-    /**
-     * <p>待办卡片类型描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>卡片类型icon，用于在待办列表展示</p>
-     */
     @NameInMap("icon")
     public String icon;
 
-    /**
-     * <p>id</p>
-     */
     @NameInMap("id")
     public String id;
 
-    /**
-     * <p>更新时间</p>
-     */
     @NameInMap("modifiedTime")
     public Long modifiedTime;
 
-    /**
-     * <p>更新者（用户的unionId）</p>
-     */
     @NameInMap("modifierId")
     public String modifierId;
 
-    /**
-     * <p>详情页链接在PC端的打开方式，取值为：「PC_SLIDE」-PC端侧边栏打开，「PC_BROWSER」-浏览器打开</p>
-     */
     @NameInMap("pcDetailUrlOpenMode")
     public String pcDetailUrlOpenMode;
 
-    /**
-     * <p>requestId</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
@@ -192,33 +153,18 @@ public class CreateTodoTypeConfigResponseBody extends TeaModel {
     }
 
     public static class CreateTodoTypeConfigResponseBodyActionList extends TeaModel {
-        /**
-         * <p>操作按钮的唯一标识</p>
-         */
         @NameInMap("actionKey")
         public String actionKey;
 
-        /**
-         * <p>按钮类型（1：有操作的，2：直接跳转）</p>
-         */
         @NameInMap("actionType")
         public Integer actionType;
 
-        /**
-         * <p>按钮样式类型（101：蓝色线型主按钮样式，例如「同意」，102：黑色线型副按钮样式，例如「拒绝」）</p>
-         */
         @NameInMap("buttonStyleType")
         public Integer buttonStyleType;
 
-        /**
-         * <p>按钮操作的显示名称（支持国际化）</p>
-         */
         @NameInMap("nameI18n")
         public java.util.Map<String, ?> nameI18n;
 
-        /**
-         * <p>按钮类型为直接跳转时，对应的跳转url</p>
-         */
         @NameInMap("url")
         public String url;
 
@@ -270,21 +216,12 @@ public class CreateTodoTypeConfigResponseBody extends TeaModel {
     }
 
     public static class CreateTodoTypeConfigResponseBodyContentFieldList extends TeaModel {
-        /**
-         * <p>字段唯一标识</p>
-         */
         @NameInMap("fieldKey")
         public String fieldKey;
 
-        /**
-         * <p>字段类型（取值为：text-文本，url-链接）</p>
-         */
         @NameInMap("fieldType")
         public String fieldType;
 
-        /**
-         * <p>字段的显示名称（支持国际化）</p>
-         */
         @NameInMap("nameI18n")
         public java.util.Map<String, ?> nameI18n;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class TransferUserObjectiveRequest extends TeaModel {
-    /**
-     * <p>目标ID</p>
-     */
     @NameInMap("objectiveId")
     public String objectiveId;
 
-    /**
-     * <p>目标钉钉userId</p>
-     */
     @NameInMap("targetUserId")
     public String targetUserId;
 

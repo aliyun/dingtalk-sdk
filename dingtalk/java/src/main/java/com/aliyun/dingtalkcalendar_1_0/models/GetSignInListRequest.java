@@ -4,18 +4,12 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSignInListRequest extends TeaModel {
-    /**
-     * <p>查询返回结果数（上限200）</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>签到信息类型（check_in，not_yet_check_in)</p>
-     */
     @NameInMap("type")
     public String type;
 

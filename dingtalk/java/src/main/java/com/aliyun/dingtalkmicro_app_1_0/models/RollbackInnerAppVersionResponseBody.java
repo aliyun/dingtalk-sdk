@@ -4,9 +4,6 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class RollbackInnerAppVersionResponseBody extends TeaModel {
-    /**
-     * <p>小程序回滚结果</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

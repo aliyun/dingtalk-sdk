@@ -4,27 +4,15 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class AbandonCustomerRequest extends TeaModel {
-    /**
-     * <p>自定义动态描述</p>
-     */
     @NameInMap("customTrackDesc")
     public String customTrackDesc;
 
-    /**
-     * <p>客户实例 id 数组</p>
-     */
     @NameInMap("instanceIdList")
     public java.util.List<String> instanceIdList;
 
-    /**
-     * <p>操作人staffId，一般为企业员工</p>
-     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
-    /**
-     * <p>释放类型：returnPool-退回公海（默认），innerAbandon-仅清除负责人</p>
-     */
     @NameInMap("optType")
     public String optType;
 

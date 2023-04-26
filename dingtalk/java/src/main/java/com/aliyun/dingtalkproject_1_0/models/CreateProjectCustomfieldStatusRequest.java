@@ -4,27 +4,15 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateProjectCustomfieldStatusRequest extends TeaModel {
-    /**
-     * <p>自定义字段ID。</p>
-     */
     @NameInMap("customfieldId")
     public String customfieldId;
 
-    /**
-     * <p>自定义字段InstanceId(如果提供自定义字段ID 或者 自定义字段名称 则忽略)。</p>
-     */
     @NameInMap("customfieldInstanceId")
     public String customfieldInstanceId;
 
-    /**
-     * <p>自定义字段名称(如果提供自定义字段ID 则忽略)。</p>
-     */
     @NameInMap("customfieldName")
     public String customfieldName;
 
-    /**
-     * <p>字段值集合。</p>
-     */
     @NameInMap("value")
     public java.util.List<CreateProjectCustomfieldStatusRequestValue> value;
 
@@ -66,21 +54,12 @@ public class CreateProjectCustomfieldStatusRequest extends TeaModel {
     }
 
     public static class CreateProjectCustomfieldStatusRequestValue extends TeaModel {
-        /**
-         * <p>字段值id,当自定义字段是work类型该id表示文件id，当自定义字段是commongroup类型该id表示分类id，其他类型无意义。</p>
-         */
         @NameInMap("fieldvalueId")
         public String fieldvalueId;
 
-        /**
-         * <p>字段值元信息(json格式)。</p>
-         */
         @NameInMap("metaString")
         public String metaString;
 
-        /**
-         * <p>字段值渲染值。</p>
-         */
         @NameInMap("title")
         public String title;
 

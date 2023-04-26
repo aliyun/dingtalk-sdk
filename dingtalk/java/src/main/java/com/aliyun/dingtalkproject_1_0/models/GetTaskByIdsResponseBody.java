@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTaskByIdsResponseBody extends TeaModel {
-    /**
-     * <p>任务详情集合。</p>
-     */
     @NameInMap("result")
     public java.util.List<GetTaskByIdsResponseBodyResult> result;
 
@@ -24,21 +21,12 @@ public class GetTaskByIdsResponseBody extends TeaModel {
     }
 
     public static class GetTaskByIdsResponseBodyResultCustomfieldsValue extends TeaModel {
-        /**
-         * <p>字段值ID。</p>
-         */
         @NameInMap("fieldvalueId")
         public String fieldvalueId;
 
-        /**
-         * <p>字段值元属性。</p>
-         */
         @NameInMap("metaString")
         public String metaString;
 
-        /**
-         * <p>字段值内容。</p>
-         */
         @NameInMap("title")
         public String title;
 
@@ -74,21 +62,12 @@ public class GetTaskByIdsResponseBody extends TeaModel {
     }
 
     public static class GetTaskByIdsResponseBodyResultCustomfields extends TeaModel {
-        /**
-         * <p>自定义字段ID。</p>
-         */
         @NameInMap("customfieldId")
         public String customfieldId;
 
-        /**
-         * <p>自定义字段类型。</p>
-         */
         @NameInMap("type")
         public String type;
 
-        /**
-         * <p>字段值集合。</p>
-         */
         @NameInMap("value")
         public java.util.List<GetTaskByIdsResponseBodyResultCustomfieldsValue> value;
 
@@ -124,171 +103,87 @@ public class GetTaskByIdsResponseBody extends TeaModel {
     }
 
     public static class GetTaskByIdsResponseBodyResult extends TeaModel {
-        /**
-         * <p>任务完成时间(UTC)。</p>
-         */
         @NameInMap("accomplishTime")
         public String accomplishTime;
 
-        /**
-         * <p>祖先任务ID列表。</p>
-         */
         @NameInMap("ancestorIds")
         public java.util.List<String> ancestorIds;
 
-        /**
-         * <p>任务标题。</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>创建时间(UTC)。</p>
-         */
         @NameInMap("created")
         public String created;
 
-        /**
-         * <p>创建人ID。</p>
-         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        /**
-         * <p>自定义字段值集合。</p>
-         */
         @NameInMap("customfields")
         public java.util.List<GetTaskByIdsResponseBodyResultCustomfields> customfields;
 
-        /**
-         * <p>任务截止时间(UTC)。</p>
-         */
         @NameInMap("dueDate")
         public String dueDate;
 
-        /**
-         * <p>执行人ID。</p>
-         */
         @NameInMap("executorId")
         public String executorId;
 
-        /**
-         * <p>参与者ID集合。</p>
-         */
         @NameInMap("involveMembers")
         public java.util.List<String> involveMembers;
 
-        /**
-         * <p>是否任务放入回收站。</p>
-         */
         @NameInMap("isArchived")
         public Boolean isArchived;
 
-        /**
-         * <p>是否任务已完成。</p>
-         */
         @NameInMap("isDone")
         public Boolean isDone;
 
-        /**
-         * <p>任务备注。</p>
-         */
         @NameInMap("note")
         public String note;
 
-        /**
-         * <p>父任务ID。</p>
-         */
         @NameInMap("parentTaskId")
         public String parentTaskId;
 
-        /**
-         * <p>任务优先级。</p>
-         */
         @NameInMap("priority")
         public Integer priority;
 
-        /**
-         * <p>项目ID。</p>
-         */
         @NameInMap("projectId")
         public String projectId;
 
-        /**
-         * <p>重复规则列表。</p>
-         */
         @NameInMap("recurrence")
         public java.util.List<String> recurrence;
 
-        /**
-         * <p>任务类型ID。</p>
-         */
         @NameInMap("scenariofieldconfigId")
         public String scenariofieldconfigId;
 
-        /**
-         * <p>迭代ID。</p>
-         */
         @NameInMap("sprintId")
         public String sprintId;
 
-        /**
-         * <p>任务列ID。</p>
-         */
         @NameInMap("stageId")
         public String stageId;
 
-        /**
-         * <p>任务开始时间(UTC)。</p>
-         */
         @NameInMap("startDate")
         public String startDate;
 
-        /**
-         * <p>StoryPoint。</p>
-         */
         @NameInMap("storyPoint")
         public String storyPoint;
 
-        /**
-         * <p>标签ID集合。</p>
-         */
         @NameInMap("tagIds")
         public java.util.List<String> tagIds;
 
-        /**
-         * <p>任务ID。</p>
-         */
         @NameInMap("taskId")
         public String taskId;
 
-        /**
-         * <p>任务分组ID。</p>
-         */
         @NameInMap("taskListId")
         public String taskListId;
 
-        /**
-         * <p>任务状态ID。</p>
-         */
         @NameInMap("taskflowstatusId")
         public String taskflowstatusId;
 
-        /**
-         * <p>任务数字ID。</p>
-         */
         @NameInMap("uniqueId")
         public String uniqueId;
 
-        /**
-         * <p>更新时间(UTC)。</p>
-         */
         @NameInMap("updated")
         public String updated;
 
-        /**
-         * <p>任务隐私性，'involves'表达仅参与者可见; 'members'表达项目成员可见。</p>
-         */
         @NameInMap("visible")
         public String visible;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ValidateUserRoleRequest extends TeaModel {
-    /**
-     * <p>时间阈值，查询在此时间之前的用户角色信息</p>
-     */
     @NameInMap("timeThreshold")
     public Long timeThreshold;
 
-    /**
-     * <p>用户的uionId</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

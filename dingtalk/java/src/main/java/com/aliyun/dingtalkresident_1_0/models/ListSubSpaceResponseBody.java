@@ -4,9 +4,6 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListSubSpaceResponseBody extends TeaModel {
-    /**
-     * <p>result</p>
-     */
     @NameInMap("spaceList")
     public java.util.List<ListSubSpaceResponseBodySpaceList> spaceList;
 
@@ -33,9 +30,6 @@ public class ListSubSpaceResponseBody extends TeaModel {
         @NameInMap("floor")
         public String floor;
 
-        /**
-         * <p>房屋状态：0空置/1未领/2入住/3空关/4装修</p>
-         */
         @NameInMap("houseState")
         public Integer houseState;
 
@@ -54,9 +48,6 @@ public class ListSubSpaceResponseBody extends TeaModel {
         @NameInMap("tagCode")
         public String tagCode;
 
-        /**
-         * <p>空间类型为楼时，1高层/2低层/3别墅/4其他，空间类型为房屋是，1住宅/2公寓/3排屋/4洋房/5叠墅/6别墅/7商铺/8办公用房/9经营用房/10其他</p>
-         */
         @NameInMap("type")
         public String type;
 

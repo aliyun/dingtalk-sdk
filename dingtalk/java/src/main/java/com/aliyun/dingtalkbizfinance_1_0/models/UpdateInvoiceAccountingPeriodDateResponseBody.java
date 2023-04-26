@@ -21,27 +21,15 @@ public class UpdateInvoiceAccountingPeriodDateResponseBody extends TeaModel {
     }
 
     public static class UpdateInvoiceAccountingPeriodDateResponseBodyResultFailInvoices extends TeaModel {
-        /**
-         * <p>错误码</p>
-         */
         @NameInMap("errorCode")
         public String errorCode;
 
-        /**
-         * <p>错误信息</p>
-         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
-        /**
-         * <p>发票代码</p>
-         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
-        /**
-         * <p>发票号码</p>
-         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
@@ -85,21 +73,12 @@ public class UpdateInvoiceAccountingPeriodDateResponseBody extends TeaModel {
     }
 
     public static class UpdateInvoiceAccountingPeriodDateResponseBodyResult extends TeaModel {
-        /**
-         * <p>失败发票数</p>
-         */
         @NameInMap("failCount")
         public Long failCount;
 
-        /**
-         * <p>失败发票列表</p>
-         */
         @NameInMap("failInvoices")
         public java.util.List<UpdateInvoiceAccountingPeriodDateResponseBodyResultFailInvoices> failInvoices;
 
-        /**
-         * <p>是否成功</p>
-         */
         @NameInMap("success")
         public Boolean success;
 

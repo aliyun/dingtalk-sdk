@@ -4,51 +4,27 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetActionDetailResponseBody extends TeaModel {
-    /**
-     * <p>连接资产标识</p>
-     */
     @NameInMap("connectAssetUri")
     public String connectAssetUri;
 
-    /**
-     * <p>调用时以JsonSchema描述的入参格式</p>
-     */
     @NameInMap("inputSchema")
     public String inputSchema;
 
-    /**
-     * <p>执行动作集成配置信息</p>
-     */
     @NameInMap("integrationConfig")
     public GetActionDetailResponseBodyIntegrationConfig integrationConfig;
 
-    /**
-     * <p>执行动作的名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>调用时以JsonSchema描述的出参格式</p>
-     */
     @NameInMap("outputSchema")
     public String outputSchema;
 
-    /**
-     * <p>执行动作的ID</p>
-     */
     @NameInMap("refId")
     public String refId;
 
-    /**
-     * <p>执行动作提供组织</p>
-     */
     @NameInMap("refProviderCorpId")
     public String refProviderCorpId;
 
-    /**
-     * <p>连接资产类型</p>
-     */
     @NameInMap("refType")
     public String refType;
 
@@ -122,9 +98,6 @@ public class GetActionDetailResponseBody extends TeaModel {
     }
 
     public static class GetActionDetailResponseBodyIntegrationConfigCategoryNames extends TeaModel {
-        /**
-         * <p>类目名称</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -144,15 +117,9 @@ public class GetActionDetailResponseBody extends TeaModel {
     }
 
     public static class GetActionDetailResponseBodyIntegrationConfigProps extends TeaModel {
-        /**
-         * <p>配置的KEY值</p>
-         */
         @NameInMap("key")
         public String key;
 
-        /**
-         * <p>配置的属性值</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -180,21 +147,12 @@ public class GetActionDetailResponseBody extends TeaModel {
     }
 
     public static class GetActionDetailResponseBodyIntegrationConfig extends TeaModel {
-        /**
-         * <p>类目配置</p>
-         */
         @NameInMap("categoryNames")
         public java.util.List<GetActionDetailResponseBodyIntegrationConfigCategoryNames> categoryNames;
 
-        /**
-         * <p>集成对象的名称</p>
-         */
         @NameInMap("entityName")
         public String entityName;
 
-        /**
-         * <p>其它额外属性</p>
-         */
         @NameInMap("props")
         public java.util.List<GetActionDetailResponseBodyIntegrationConfigProps> props;
 

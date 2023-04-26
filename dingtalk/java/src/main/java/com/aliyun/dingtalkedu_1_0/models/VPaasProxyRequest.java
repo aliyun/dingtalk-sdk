@@ -4,21 +4,12 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class VPaasProxyRequest extends TeaModel {
-    /**
-     * <p>代理操作码</p>
-     */
     @NameInMap("actionCode")
     public String actionCode;
 
-    /**
-     * <p>调用参数</p>
-     */
     @NameInMap("params")
     public String params;
 
-    /**
-     * <p>Base64加密的公钥</p>
-     */
     @NameInMap("publicKey")
     public String publicKey;
 

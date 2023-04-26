@@ -21,9 +21,6 @@ public class SupplyAddDeptResponseBody extends TeaModel {
     }
 
     public static class SupplyAddDeptResponseBodyResult extends TeaModel {
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("deptId")
         public Long deptId;
 

@@ -4,27 +4,15 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchUserTaskResponseBody extends TeaModel {
-    /**
-     * <p>分页标，供分页使用，下一页token。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>请求 ID，请求异常时可提供此 ID，进行问题排查。</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
-    /**
-     * <p>任务ID列表。</p>
-     */
     @NameInMap("result")
     public java.util.List<String> result;
 
-    /**
-     * <p>任务总数。</p>
-     */
     @NameInMap("totalSize")
     public Integer totalSize;
 

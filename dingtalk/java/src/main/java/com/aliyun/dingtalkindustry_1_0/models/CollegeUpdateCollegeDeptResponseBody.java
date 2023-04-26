@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeUpdateCollegeDeptResponseBody extends TeaModel {
-    /**
-     * <p>更新部门信息是否成功</p>
-     */
     @NameInMap("isSuccessful")
     public Boolean isSuccessful;
 

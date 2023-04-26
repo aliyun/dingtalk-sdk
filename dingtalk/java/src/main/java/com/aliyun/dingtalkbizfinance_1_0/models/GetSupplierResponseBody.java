@@ -4,39 +4,21 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSupplierResponseBody extends TeaModel {
-    /**
-     * <p>供应商Code</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>创建时间(单位MS)</p>
-     */
     @NameInMap("createTime")
     public Long createTime;
 
-    /**
-     * <p>供应商描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>供应商名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>状态：启用(valid), 停用(invalid), 删除(deleted)</p>
-     */
     @NameInMap("status")
     public String status;
 
-    /**
-     * <p>用户自定义code</p>
-     */
     @NameInMap("userDefineCode")
     public String userDefineCode;
 

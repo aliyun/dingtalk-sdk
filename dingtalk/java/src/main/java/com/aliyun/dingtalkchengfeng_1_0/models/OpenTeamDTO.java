@@ -4,21 +4,12 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenTeamDTO extends TeaModel {
-    /**
-     * <p>部门id</p>
-     */
     @NameInMap("id")
     public String id;
 
-    /**
-     * <p>部门名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>钉钉对应部门编号</p>
-     */
     @NameInMap("openId")
     public String openId;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetProjectStatusListResponseBody extends TeaModel {
-    /**
-     * <p>项目状态历史列表。</p>
-     */
     @NameInMap("result")
     public java.util.List<GetProjectStatusListResponseBodyResult> result;
 
@@ -24,39 +21,21 @@ public class GetProjectStatusListResponseBody extends TeaModel {
     }
 
     public static class GetProjectStatusListResponseBodyResult extends TeaModel {
-        /**
-         * <p>项目状态内容。</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>创建时间。</p>
-         */
         @NameInMap("created")
         public String created;
 
-        /**
-         * <p>项目状态创建人ID。</p>
-         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        /**
-         * <p>项目状态指标：'normal','risky','urgent'。</p>
-         */
         @NameInMap("degree")
         public String degree;
 
-        /**
-         * <p>项目状态名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>项目ID。</p>
-         */
         @NameInMap("projectId")
         public String projectId;
 

@@ -4,30 +4,18 @@ package com.aliyun.dingtalkminiapp_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateVersionAcrossBundleRequest extends TeaModel {
-    /**
-     * <p>bundleId</p>
-     */
     @NameInMap("bundleId")
     public String bundleId;
 
     @NameInMap("miniAppId")
     public String miniAppId;
 
-    /**
-     * <p>sourceBundleId</p>
-     */
     @NameInMap("sourceBundleId")
     public String sourceBundleId;
 
-    /**
-     * <p>sourceVersion</p>
-     */
     @NameInMap("sourceVersion")
     public String sourceVersion;
 
-    /**
-     * <p>version</p>
-     */
     @NameInMap("version")
     public String version;
 

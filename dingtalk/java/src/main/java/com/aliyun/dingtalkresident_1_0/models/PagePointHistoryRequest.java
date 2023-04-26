@@ -4,39 +4,21 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class PagePointHistoryRequest extends TeaModel {
-    /**
-     * <p>结束时间Unix时间戳（不包含），可空</p>
-     */
     @NameInMap("endTime")
     public Long endTime;
 
-    /**
-     * <p>是否查询全员圈积分</p>
-     */
     @NameInMap("isCircle")
     public Boolean isCircle;
 
-    /**
-     * <p>本次读取的最大数据记录数量，最大20</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>用来标记当前开始读取的位置</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    /**
-     * <p>起始时间Unix时间戳，可空</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 
-    /**
-     * <p>用户userid，可空，不传表示查询组织内所有用户的流水数据</p>
-     */
     @NameInMap("userId")
     public String userId;
 

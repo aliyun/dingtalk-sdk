@@ -4,21 +4,12 @@ package com.aliyun.dingtalktodo_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryTodoTasksResponseBody extends TeaModel {
-    /**
-     * <p>翻页token</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>待办卡片列表</p>
-     */
     @NameInMap("todoCards")
     public java.util.List<QueryTodoTasksResponseBodyTodoCards> todoCards;
 
-    /**
-     * <p>数据总量</p>
-     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -52,15 +43,9 @@ public class QueryTodoTasksResponseBody extends TeaModel {
     }
 
     public static class QueryTodoTasksResponseBodyTodoCardsDetailUrl extends TeaModel {
-        /**
-         * <p>移动端url地址</p>
-         */
         @NameInMap("appUrl")
         public String appUrl;
 
-        /**
-         * <p>pc端url地址</p>
-         */
         @NameInMap("pcUrl")
         public String pcUrl;
 
@@ -88,15 +73,9 @@ public class QueryTodoTasksResponseBody extends TeaModel {
     }
 
     public static class QueryTodoTasksResponseBodyTodoCardsOrgInfo extends TeaModel {
-        /**
-         * <p>组织corpId</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>组织名称</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -124,9 +103,6 @@ public class QueryTodoTasksResponseBody extends TeaModel {
     }
 
     public static class QueryTodoTasksResponseBodyTodoCardsOriginalSource extends TeaModel {
-        /**
-         * <p>业务来源展示名称</p>
-         */
         @NameInMap("sourceTitle")
         public String sourceTitle;
 
@@ -146,15 +122,9 @@ public class QueryTodoTasksResponseBody extends TeaModel {
     }
 
     public static class QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList extends TeaModel {
-        /**
-         * <p>自定义表单内容名字</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>自定义表单内容值</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -182,42 +152,24 @@ public class QueryTodoTasksResponseBody extends TeaModel {
     }
 
     public static class QueryTodoTasksResponseBodyTodoCardsTodoCardView extends TeaModel {
-        /**
-         * <p>link, button, 操作区类型，是链接类型，或者按钮类型</p>
-         */
         @NameInMap("actionType")
         public String actionType;
 
-        /**
-         * <p>卡片类型</p>
-         */
         @NameInMap("cardType")
         public String cardType;
 
-        /**
-         * <p>卡片左上角 区域类型是 icon, 或者checkbox 类型的</p>
-         */
         @NameInMap("circleELType")
         public String circleELType;
 
-        /**
-         * <p>icon, name ,内容区域类型是 icon+value, 或者name+value 类型的</p>
-         */
         @NameInMap("contentType")
         public String contentType;
 
-        /**
-         * <p>卡片icon</p>
-         */
         @NameInMap("icon")
         public String icon;
 
         @NameInMap("todoCardContentList")
         public java.util.List<QueryTodoTasksResponseBodyTodoCardsTodoCardViewTodoCardContentList> todoCardContentList;
 
-        /**
-         * <p>卡片标题</p>
-         */
         @NameInMap("todoCardTitle")
         public String todoCardTitle;
 
@@ -285,99 +237,51 @@ public class QueryTodoTasksResponseBody extends TeaModel {
     }
 
     public static class QueryTodoTasksResponseBodyTodoCards extends TeaModel {
-        /**
-         * <p>所属应用</p>
-         */
         @NameInMap("bizTag")
         public String bizTag;
 
-        /**
-         * <p>所属分类</p>
-         */
         @NameInMap("category")
         public String category;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createdTime")
         public Long createdTime;
 
-        /**
-         * <p>创建者id</p>
-         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        /**
-         * <p>详情页链接</p>
-         */
         @NameInMap("detailUrl")
         public QueryTodoTasksResponseBodyTodoCardsDetailUrl detailUrl;
 
-        /**
-         * <p>待办截止时间</p>
-         */
         @NameInMap("dueTime")
         public Long dueTime;
 
-        /**
-         * <p>待办完成状态</p>
-         */
         @NameInMap("isDone")
         public Boolean isDone;
 
-        /**
-         * <p>更新时间</p>
-         */
         @NameInMap("modifiedTime")
         public Long modifiedTime;
 
-        /**
-         * <p>所属组织信息</p>
-         */
         @NameInMap("orgInfo")
         public QueryTodoTasksResponseBodyTodoCardsOrgInfo orgInfo;
 
-        /**
-         * <p>业务来源信息</p>
-         */
         @NameInMap("originalSource")
         public QueryTodoTasksResponseBodyTodoCardsOriginalSource originalSource;
 
-        /**
-         * <p>优先级</p>
-         */
         @NameInMap("priority")
         public Integer priority;
 
-        /**
-         * <p>来源id</p>
-         */
         @NameInMap("sourceId")
         public String sourceId;
 
-        /**
-         * <p>待办标题</p>
-         */
         @NameInMap("subject")
         public String subject;
 
-        /**
-         * <p>待办id</p>
-         */
         @NameInMap("taskId")
         public String taskId;
 
-        /**
-         * <p>待办卡片视图模型</p>
-         */
         @NameInMap("todoCardView")
         public QueryTodoTasksResponseBodyTodoCardsTodoCardView todoCardView;
 
-        /**
-         * <p>待办状态</p>
-         */
         @NameInMap("todoStatus")
         public String todoStatus;
 

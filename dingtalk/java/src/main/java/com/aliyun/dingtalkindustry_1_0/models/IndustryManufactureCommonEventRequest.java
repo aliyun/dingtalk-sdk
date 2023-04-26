@@ -4,24 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureCommonEventRequest extends TeaModel {
-    /**
-     * <p>add 创建事件/update 更新事件</p>
-     */
     @NameInMap("action")
     public String action;
 
-    /**
-     * <p>应用appkey</p>
-     */
     @NameInMap("appKey")
     public String appKey;
 
     @NameInMap("bizData")
     public java.util.Map<String, ?> bizData;
 
-    /**
-     * <p>事件集合，目前仅1个有效</p>
-     */
     @NameInMap("eventType")
     public java.util.List<String> eventType;
 

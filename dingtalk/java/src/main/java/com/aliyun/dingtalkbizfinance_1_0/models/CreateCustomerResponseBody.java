@@ -4,9 +4,6 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateCustomerResponseBody extends TeaModel {
-    /**
-     * <p>客户CODE</p>
-     */
     @NameInMap("customerCode")
     public String customerCode;
 

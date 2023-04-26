@@ -4,33 +4,18 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAuthTokenRequest extends TeaModel {
-    /**
-     * <p>渠道DT/LINKS</p>
-     */
     @NameInMap("channel")
     public String channel;
 
-    /**
-     * <p>token有效时间（秒）-可不传</p>
-     */
     @NameInMap("effectiveTime")
     public Long effectiveTime;
 
-    /**
-     * <p>团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>小二id</p>
-     */
     @NameInMap("serverId")
     public String serverId;
 
-    /**
-     * <p>小二名称</p>
-     */
     @NameInMap("serverName")
     public String serverName;
 

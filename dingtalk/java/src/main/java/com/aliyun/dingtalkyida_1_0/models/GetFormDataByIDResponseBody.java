@@ -4,27 +4,15 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFormDataByIDResponseBody extends TeaModel {
-    /**
-     * <p>表单数据详情</p>
-     */
     @NameInMap("formData")
     public java.util.Map<String, ?> formData;
 
-    /**
-     * <p>表单实例ID</p>
-     */
     @NameInMap("formInstId")
     public String formInstId;
 
-    /**
-     * <p>最后修改时间</p>
-     */
     @NameInMap("modifiedTimeGMT")
     public String modifiedTimeGMT;
 
-    /**
-     * <p>发起人详情</p>
-     */
     @NameInMap("originator")
     public GetFormDataByIDResponseBodyOriginator originator;
 
@@ -66,21 +54,12 @@ public class GetFormDataByIDResponseBody extends TeaModel {
     }
 
     public static class GetFormDataByIDResponseBodyOriginatorName extends TeaModel {
-        /**
-         * <p>中文名称</p>
-         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        /**
-         * <p>英文名称</p>
-         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
-        /**
-         * <p>国际化</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -116,27 +95,15 @@ public class GetFormDataByIDResponseBody extends TeaModel {
     }
 
     public static class GetFormDataByIDResponseBodyOriginator extends TeaModel {
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        /**
-         * <p>邮箱</p>
-         */
         @NameInMap("email")
         public String email;
 
-        /**
-         * <p>用户名</p>
-         */
         @NameInMap("name")
         public GetFormDataByIDResponseBodyOriginatorName name;
 
-        /**
-         * <p>用户工号</p>
-         */
         @NameInMap("userId")
         public String userId;
 

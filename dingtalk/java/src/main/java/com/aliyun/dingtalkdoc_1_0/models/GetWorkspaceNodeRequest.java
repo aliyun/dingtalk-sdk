@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetWorkspaceNodeRequest extends TeaModel {
-    /**
-     * <p>操作用户unionId</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 

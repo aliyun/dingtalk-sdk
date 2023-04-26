@@ -4,21 +4,12 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterCustomAppRoleRequest extends TeaModel {
-    /**
-     * <p>是否拥有管理角色的权限，可不传，默认false</p>
-     */
     @NameInMap("canManageRole")
     public Boolean canManageRole;
 
-    /**
-     * <p>执行用户userId</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    /**
-     * <p>角色名称</p>
-     */
     @NameInMap("roleName")
     public String roleName;
 

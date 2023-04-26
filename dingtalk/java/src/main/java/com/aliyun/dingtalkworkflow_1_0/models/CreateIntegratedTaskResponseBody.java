@@ -7,9 +7,6 @@ public class CreateIntegratedTaskResponseBody extends TeaModel {
     @NameInMap("result")
     public java.util.List<CreateIntegratedTaskResponseBodyResult> result;
 
-    /**
-     * <p>是否创建成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -35,15 +32,9 @@ public class CreateIntegratedTaskResponseBody extends TeaModel {
     }
 
     public static class CreateIntegratedTaskResponseBodyResult extends TeaModel {
-        /**
-         * <p>OA审批任务ID</p>
-         */
         @NameInMap("taskId")
         public Long taskId;
 
-        /**
-         * <p>OA审批任务执行人用户ID</p>
-         */
         @NameInMap("userId")
         public String userId;
 

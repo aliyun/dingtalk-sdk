@@ -4,9 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAllLabelableDeptsResponseBody extends TeaModel {
-    /**
-     * <p>伙伴钉可打标部门列表</p>
-     */
     @NameInMap("data")
     public java.util.List<GetAllLabelableDeptsResponseBodyData> data;
 
@@ -24,21 +21,12 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     }
 
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1 extends TeaModel {
-        /**
-         * <p>伙伴类型id</p>
-         */
         @NameInMap("labelId")
         public Long labelId;
 
-        /**
-         * <p>伙伴类型</p>
-         */
         @NameInMap("labelName")
         public String labelName;
 
-        /**
-         * <p>伙伴类型层级</p>
-         */
         @NameInMap("levelNum")
         public Long levelNum;
 
@@ -74,21 +62,12 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     }
 
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel2 extends TeaModel {
-        /**
-         * <p>伙伴类型id</p>
-         */
         @NameInMap("labelId")
         public Long labelId;
 
-        /**
-         * <p>伙伴类型</p>
-         */
         @NameInMap("labelName")
         public String labelName;
 
-        /**
-         * <p>伙伴类型层级</p>
-         */
         @NameInMap("levelNum")
         public Long levelNum;
 
@@ -124,21 +103,12 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     }
 
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel3 extends TeaModel {
-        /**
-         * <p>伙伴类型id</p>
-         */
         @NameInMap("labelId")
         public Long labelId;
 
-        /**
-         * <p>伙伴类型</p>
-         */
         @NameInMap("labelName")
         public String labelName;
 
-        /**
-         * <p>伙伴类型层级</p>
-         */
         @NameInMap("levelNum")
         public Long levelNum;
 
@@ -174,21 +144,12 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     }
 
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel4 extends TeaModel {
-        /**
-         * <p>伙伴类型id</p>
-         */
         @NameInMap("labelId")
         public Long labelId;
 
-        /**
-         * <p>伙伴类型</p>
-         */
         @NameInMap("labelName")
         public String labelName;
 
-        /**
-         * <p>伙伴类型层级</p>
-         */
         @NameInMap("levelNum")
         public Long levelNum;
 
@@ -224,21 +185,12 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     }
 
     public static class GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel5 extends TeaModel {
-        /**
-         * <p>伙伴类型id</p>
-         */
         @NameInMap("labelId")
         public Long labelId;
 
-        /**
-         * <p>伙伴类型</p>
-         */
         @NameInMap("labelName")
         public String labelName;
 
-        /**
-         * <p>伙伴类型层级</p>
-         */
         @NameInMap("levelNum")
         public Long levelNum;
 
@@ -274,63 +226,33 @@ public class GetAllLabelableDeptsResponseBody extends TeaModel {
     }
 
     public static class GetAllLabelableDeptsResponseBodyData extends TeaModel {
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("deptId")
         public String deptId;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("deptName")
         public String deptName;
 
-        /**
-         * <p>部门人数</p>
-         */
         @NameInMap("memberCount")
         public Long memberCount;
 
-        /**
-         * <p>部门一级伙伴类型</p>
-         */
         @NameInMap("partnerLabelVOLevel1")
         public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel1 partnerLabelVOLevel1;
 
-        /**
-         * <p>部门二级伙伴类型</p>
-         */
         @NameInMap("partnerLabelVOLevel2")
         public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel2 partnerLabelVOLevel2;
 
-        /**
-         * <p>部门三级伙伴类型</p>
-         */
         @NameInMap("partnerLabelVOLevel3")
         public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel3 partnerLabelVOLevel3;
 
-        /**
-         * <p>部门四级伙伴类型</p>
-         */
         @NameInMap("partnerLabelVOLevel4")
         public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel4 partnerLabelVOLevel4;
 
-        /**
-         * <p>部门五级伙伴类型</p>
-         */
         @NameInMap("partnerLabelVOLevel5")
         public GetAllLabelableDeptsResponseBodyDataPartnerLabelVOLevel5 partnerLabelVOLevel5;
 
-        /**
-         * <p>部门伙伴编码</p>
-         */
         @NameInMap("partnerNum")
         public String partnerNum;
 
-        /**
-         * <p>父部门id</p>
-         */
         @NameInMap("superDeptId")
         public String superDeptId;
 

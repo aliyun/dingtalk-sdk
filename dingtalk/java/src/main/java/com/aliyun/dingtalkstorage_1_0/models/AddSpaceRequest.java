@@ -4,15 +4,9 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddSpaceRequest extends TeaModel {
-    /**
-     * <p>可选参数</p>
-     */
     @NameInMap("option")
     public AddSpaceRequestOption option;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -38,27 +32,12 @@ public class AddSpaceRequest extends TeaModel {
     }
 
     public static class AddSpaceRequestOptionCapabilities extends TeaModel {
-        /**
-         * <p>是否进最近使用, 默认不支持</p>
-         * <p>默认值:</p>
-         * <p>	false</p>
-         */
         @NameInMap("canRecordRecentFile")
         public Boolean canRecordRecentFile;
 
-        /**
-         * <p>是否支持重命名空间名称, 默认不支持</p>
-         * <p>默认值:</p>
-         * <p>	false</p>
-         */
         @NameInMap("canRename")
         public Boolean canRename;
 
-        /**
-         * <p>是否支持搜索, 默认不支持</p>
-         * <p>默认值:</p>
-         * <p>	false</p>
-         */
         @NameInMap("canSearch")
         public Boolean canSearch;
 
@@ -94,51 +73,21 @@ public class AddSpaceRequest extends TeaModel {
     }
 
     public static class AddSpaceRequestOption extends TeaModel {
-        /**
-         * <p>空间能力项, 默认表示不设置拓展能力项</p>
-         */
         @NameInMap("capabilities")
         public AddSpaceRequestOptionCapabilities capabilities;
 
-        /**
-         * <p>空间名称，默认无空间名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>owner类型, 空间Owner可以是用户或应用</p>
-         * <p>如果是应用类型，需要单独授权</p>
-         * <p>枚举值:</p>
-         * <p>	USER: 用户类型</p>
-         * <p>	APP: App类型</p>
-         * <p>默认值:</p>
-         * <p>	USER</p>
-         */
         @NameInMap("ownerType")
         public String ownerType;
 
-        /**
-         * <p>空间能使用最大容量, 默认表示无最大容量</p>
-         */
         @NameInMap("quota")
         public Long quota;
 
-        /**
-         * <p>空间场景，详见 Space.scene 字段. 不指定默认值是default</p>
-         * <p>只能由数字和字母组成</p>
-         * <p>默认值:</p>
-         * <p>	default</p>
-         */
         @NameInMap("scene")
         public String scene;
 
-        /**
-         * <p>空间场景Id，详见 Space.sceneId 字段. 不指定默认值是0</p>
-         * <p>只能由数字和字母组成</p>
-         * <p>默认值:</p>
-         * <p>	0</p>
-         */
         @NameInMap("sceneId")
         public String sceneId;
 

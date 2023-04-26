@@ -21,15 +21,9 @@ public class DigitalStoreGroupsResponseBody extends TeaModel {
     }
 
     public static class DigitalStoreGroupsResponseBodyContent extends TeaModel {
-        /**
-         * <p>分组Id</p>
-         */
         @NameInMap("groupId")
         public Long groupId;
 
-        /**
-         * <p>分组名称</p>
-         */
         @NameInMap("groupName")
         public String groupName;
 

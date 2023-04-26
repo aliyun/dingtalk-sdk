@@ -4,15 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendOfficialAccountOTOMessageResponseBody extends TeaModel {
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
-    /**
-     * <p>推送结果</p>
-     */
     @NameInMap("result")
     public SendOfficialAccountOTOMessageResponseBodyResult result;
 
@@ -38,9 +32,6 @@ public class SendOfficialAccountOTOMessageResponseBody extends TeaModel {
     }
 
     public static class SendOfficialAccountOTOMessageResponseBodyResult extends TeaModel {
-        /**
-         * <p>推送ID</p>
-         */
         @NameInMap("openPushId")
         public String openPushId;
 

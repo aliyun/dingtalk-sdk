@@ -4,27 +4,15 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateConditionalFormattingRuleRequest extends TeaModel {
-    /**
-     * <p>设定当前配置的规则的单元格样式</p>
-     */
     @NameInMap("cellStyle")
     public CreateConditionalFormattingRuleRequestCellStyle cellStyle;
 
-    /**
-     * <p>重复值规则</p>
-     */
     @NameInMap("duplicateCondition")
     public CreateConditionalFormattingRuleRequestDuplicateCondition duplicateCondition;
 
-    /**
-     * <p>条件格式生效的区域。</p>
-     */
     @NameInMap("ranges")
     public java.util.List<String> ranges;
 
-    /**
-     * <p>操作人unionId</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 
@@ -66,9 +54,6 @@ public class CreateConditionalFormattingRuleRequest extends TeaModel {
     }
 
     public static class CreateConditionalFormattingRuleRequestCellStyle extends TeaModel {
-        /**
-         * <p>背景色，使用十六进制颜色表示法，如#ff0000</p>
-         */
         @NameInMap("backgroundColor")
         public String backgroundColor;
 

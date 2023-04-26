@@ -7,9 +7,6 @@ public class ListSubSpaceRequest extends TeaModel {
     @NameInMap("referId")
     public Long referId;
 
-    /**
-     * <p>A short description of struct</p>
-     */
     @NameInMap("residentCorpId")
     public String residentCorpId;
 

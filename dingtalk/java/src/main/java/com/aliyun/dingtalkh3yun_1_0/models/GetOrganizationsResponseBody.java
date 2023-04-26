@@ -4,21 +4,12 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOrganizationsResponseBody extends TeaModel {
-    /**
-     * <p>状态码。success=成功</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>返回结果</p>
-     */
     @NameInMap("data")
     public java.util.List<GetOrganizationsResponseBodyData> data;
 
-    /**
-     * <p>提示信息</p>
-     */
     @NameInMap("message")
     public String message;
 
@@ -52,45 +43,24 @@ public class GetOrganizationsResponseBody extends TeaModel {
     }
 
     public static class GetOrganizationsResponseBodyData extends TeaModel {
-        /**
-         * <p>部门编码</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>父级部门id</p>
-         */
         @NameInMap("parentId")
         public String parentId;
 
-        /**
-         * <p>排序值</p>
-         */
         @NameInMap("sortKey")
         public Long sortKey;
 
-        /**
-         * <p>组织类型。Company=公司，OrganizationUnit=组织单元</p>
-         */
         @NameInMap("unitType")
         public String unitType;
 

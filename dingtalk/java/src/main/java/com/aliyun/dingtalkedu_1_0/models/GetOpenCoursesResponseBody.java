@@ -7,9 +7,6 @@ public class GetOpenCoursesResponseBody extends TeaModel {
     @NameInMap("courseList")
     public java.util.List<GetOpenCoursesResponseBodyCourseList> courseList;
 
-    /**
-     * <p>总记录数</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -35,51 +32,27 @@ public class GetOpenCoursesResponseBody extends TeaModel {
     }
 
     public static class GetOpenCoursesResponseBodyCourseList extends TeaModel {
-        /**
-         * <p>课程id</p>
-         */
         @NameInMap("courseId")
         public String courseId;
 
-        /**
-         * <p>封面图片地址</p>
-         */
         @NameInMap("coverUrl")
         public String coverUrl;
 
-        /**
-         * <p>课程类型: 0-直播 2-视频内容</p>
-         */
         @NameInMap("feedType")
         public Long feedType;
 
-        /**
-         * <p>课程观看地址</p>
-         */
         @NameInMap("jumpUrl")
         public String jumpUrl;
 
-        /**
-         * <p>课程开始时间</p>
-         */
         @NameInMap("startTime")
         public Long startTime;
 
-        /**
-         * <p>老师的userId</p>
-         */
         @NameInMap("teacherId")
         public String teacherId;
 
-        /**
-         * <p>老师名称</p>
-         */
         @NameInMap("teacherName")
         public String teacherName;
 
-        /**
-         * <p>课程标题</p>
-         */
         @NameInMap("title")
         public String title;
 

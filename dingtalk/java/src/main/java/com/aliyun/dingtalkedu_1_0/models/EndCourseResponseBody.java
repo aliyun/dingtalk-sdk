@@ -21,15 +21,9 @@ public class EndCourseResponseBody extends TeaModel {
     }
 
     public static class EndCourseResponseBodyUniversityCourseCommonResponse extends TeaModel {
-        /**
-         * <p>课程编码</p>
-         */
         @NameInMap("courseCode")
         public String courseCode;
 
-        /**
-         * <p>调用是否成功</p>
-         */
         @NameInMap("success")
         public Boolean success;
 

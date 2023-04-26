@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcustomer_service_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecuteActivityResponseBody extends TeaModel {
-    /**
-     * <p>任务id</p>
-     */
     @NameInMap("taskId")
     public String taskId;
 

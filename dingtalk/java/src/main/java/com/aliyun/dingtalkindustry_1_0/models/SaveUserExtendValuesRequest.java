@@ -4,21 +4,12 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveUserExtendValuesRequest extends TeaModel {
-    /**
-     * <p>字段展示名称</p>
-     */
     @NameInMap("userDisplayName")
     public String userDisplayName;
 
-    /**
-     * <p>用户拓展字段key</p>
-     */
     @NameInMap("userExtendKey")
     public String userExtendKey;
 
-    /**
-     * <p>用户扩展字段value</p>
-     */
     @NameInMap("userExtendValue")
     public String userExtendValue;
 

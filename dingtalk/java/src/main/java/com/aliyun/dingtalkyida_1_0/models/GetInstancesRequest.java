@@ -4,105 +4,54 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetInstancesRequest extends TeaModel {
-    /**
-     * <p>应用编码</p>
-     */
     @NameInMap("appType")
     public String appType;
 
-    /**
-     * <p>审批结果。可选值为：agree, disagree。 分别表示：同意， 拒绝。</p>
-     */
     @NameInMap("approvedResult")
     public String approvedResult;
 
-    /**
-     * <p>createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表, 字符串格式，且为yyyy-MM-DD格式</p>
-     */
     @NameInMap("createFromTimeGMT")
     public String createFromTimeGMT;
 
-    /**
-     * <p>createFrom和createTo两个时间构造一个时间段。查询在该时间段创建的数据列表。字符串格式，且为yyyy-MM-DD格式。 和createFrom一起，相当于查询在 2018-01-01到2018-01-31之间(包含01和31号)创建的数据。</p>
-     */
     @NameInMap("createToTimeGMT")
     public String createToTimeGMT;
 
-    /**
-     * <p>表单ID</p>
-     */
     @NameInMap("formUuid")
     public String formUuid;
 
-    /**
-     * <p>实例状态, 可选值为：RUNNING,TERMINATED,COMPLETED,ERROR。 分别代表：运行中，已终止，已完成，异常。</p>
-     */
     @NameInMap("instanceStatus")
     public String instanceStatus;
 
-    /**
-     * <p>语言。可选值：zh_CN/en_US 默认：zh_CN</p>
-     */
     @NameInMap("language")
     public String language;
 
-    /**
-     * <p>modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。字符串格式，且为yyyy-MM-DD格式</p>
-     */
     @NameInMap("modifiedFromTimeGMT")
     public String modifiedFromTimeGMT;
 
-    /**
-     * <p>modifiedFrom和modifiedTo构成一个时间段，查询在该时间段有修改的数据列表。字符串格式，且为yyyy-MM-DD格式。 和modifiedFrom一起，相当于查询在 2018-01-01到2018-01-31之间(包含01和31号)被修改的数据。</p>
-     */
     @NameInMap("modifiedToTimeGMT")
     public String modifiedToTimeGMT;
 
-    /**
-     * <p>排序规则</p>
-     */
     @NameInMap("orderConfigJson")
     public String orderConfigJson;
 
-    /**
-     * <p>数据提交人的钉钉userId</p>
-     */
     @NameInMap("originatorId")
     public String originatorId;
 
-    /**
-     * <p>查询过滤条件，支持2种模式的过滤规则</p>
-     */
     @NameInMap("searchFieldJson")
     public String searchFieldJson;
 
-    /**
-     * <p>应用秘钥。在应用数据中获取。</p>
-     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    /**
-     * <p>任务ID。一般用不到。</p>
-     */
     @NameInMap("taskId")
     public String taskId;
 
-    /**
-     * <p>钉钉userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>当前第几页</p>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>每页多少条数据</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

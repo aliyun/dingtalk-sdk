@@ -4,9 +4,6 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class SyncExceedApplyResponseBody extends TeaModel {
-    /**
-     * <p>是否同步成功</p>
-     */
     @NameInMap("module")
     public Boolean module;
 

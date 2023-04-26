@@ -4,102 +4,54 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConsultCreateSubInstitutionRequest extends TeaModel {
-    /**
-     * <p>签约支付宝账户，用于协议确认</p>
-     */
     @NameInMap("bindingAlipayLogonId")
     public String bindingAlipayLogonId;
 
-    /**
-     * <p>联系人</p>
-     */
     @NameInMap("contactInfo")
     public ConsultCreateSubInstitutionRequestContactInfo contactInfo;
 
-    /**
-     * <p>主机构编号</p>
-     */
     @NameInMap("instId")
     public String instId;
 
     @NameInMap("legalPersonCertInfo")
     public ConsultCreateSubInstitutionRequestLegalPersonCertInfo legalPersonCertInfo;
 
-    /**
-     * <p>进件创建外部流水号</p>
-     */
     @NameInMap("outTradeNo")
     public String outTradeNo;
 
-    /**
-     * <p>进件渠道</p>
-     */
     @NameInMap("payChannel")
     public String payChannel;
 
-    /**
-     * <p>资质信息</p>
-     */
     @NameInMap("qualificationInfos")
     public java.util.List<ConsultCreateSubInstitutionRequestQualificationInfos> qualificationInfos;
 
-    /**
-     * <p>开通的服务类型</p>
-     */
     @NameInMap("services")
     public java.util.List<String> services;
 
-    /**
-     * <p>资金账户信息</p>
-     */
     @NameInMap("settleInfo")
     public ConsultCreateSubInstitutionRequestSettleInfo settleInfo;
 
-    /**
-     * <p>解决方案，包含清算、费率规则</p>
-     */
     @NameInMap("solution")
     public String solution;
 
-    /**
-     * <p>子机构地址信息</p>
-     */
     @NameInMap("subInstAddressInfo")
     public ConsultCreateSubInstitutionRequestSubInstAddressInfo subInstAddressInfo;
 
-    /**
-     * <p>授权信息</p>
-     */
     @NameInMap("subInstAuthInfo")
     public ConsultCreateSubInstitutionRequestSubInstAuthInfo subInstAuthInfo;
 
-    /**
-     * <p>子机构基本信息</p>
-     */
     @NameInMap("subInstBasicInfo")
     public ConsultCreateSubInstitutionRequestSubInstBasicInfo subInstBasicInfo;
 
-    /**
-     * <p>子机构认证信息</p>
-     */
     @NameInMap("subInstCertifyInfo")
     public ConsultCreateSubInstitutionRequestSubInstCertifyInfo subInstCertifyInfo;
 
-    /**
-     * <p>子机构编号</p>
-     */
     @NameInMap("subInstId")
     public String subInstId;
 
-    /**
-     * <p>开票信息</p>
-     */
     @NameInMap("subInstInvoiceInfo")
     public ConsultCreateSubInstitutionRequestSubInstInvoiceInfo subInstInvoiceInfo;
 
-    /**
-     * <p>子机构门店信息</p>
-     */
     @NameInMap("subInstShopInfo")
     public ConsultCreateSubInstitutionRequestSubInstShopInfo subInstShopInfo;
 
@@ -245,15 +197,9 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestContactInfo extends TeaModel {
-        /**
-         * <p>联系人姓名</p>
-         */
         @NameInMap("contactName")
         public String contactName;
 
-        /**
-         * <p>联系人手机号</p>
-         */
         @NameInMap("mobile")
         public String mobile;
 
@@ -281,33 +227,18 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestLegalPersonCertInfo extends TeaModel {
-        /**
-         * <p>法人证件反面url</p>
-         */
         @NameInMap("certBackImage")
         public String certBackImage;
 
-        /**
-         * <p>法人证件正面url</p>
-         */
         @NameInMap("certFrontImage")
         public String certFrontImage;
 
-        /**
-         * <p>法人姓名</p>
-         */
         @NameInMap("certName")
         public String certName;
 
-        /**
-         * <p>法人证件类型 不填默认为身份证</p>
-         */
         @NameInMap("certType")
         public String certType;
 
-        /**
-         * <p>法人证件号</p>
-         */
         @NameInMap("idCardNo")
         public String idCardNo;
 
@@ -359,15 +290,9 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestQualificationInfos extends TeaModel {
-        /**
-         * <p>子机构行业资质图片</p>
-         */
         @NameInMap("qualificationImage")
         public String qualificationImage;
 
-        /**
-         * <p>子机构行业资质类型</p>
-         */
         @NameInMap("qualificationType")
         public String qualificationType;
 
@@ -395,69 +320,36 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSettleInfo extends TeaModel {
-        /**
-         * <p>账户账号</p>
-         */
         @NameInMap("accountId")
         public String accountId;
 
-        /**
-         * <p>账户名称 账号类型银行卡时为卡户名</p>
-         */
         @NameInMap("accountName")
         public String accountName;
 
-        /**
-         * <p>卡类型</p>
-         */
         @NameInMap("accountType")
         public String accountType;
 
-        /**
-         * <p>支行名称</p>
-         */
         @NameInMap("bankBranchName")
         public String bankBranchName;
 
-        /**
-         * <p>开户行所在地 市</p>
-         */
         @NameInMap("bankCity")
         public String bankCity;
 
-        /**
-         * <p>联行号</p>
-         */
         @NameInMap("bankCode")
         public String bankCode;
 
-        /**
-         * <p>银行名称</p>
-         */
         @NameInMap("bankName")
         public String bankName;
 
-        /**
-         * <p>开户行所在地 省</p>
-         */
         @NameInMap("bankProvince")
         public String bankProvince;
 
-        /**
-         * <p>开户行简称缩写</p>
-         */
         @NameInMap("bankShortNameCode")
         public String bankShortNameCode;
 
-        /**
-         * <p>账号类型</p>
-         */
         @NameInMap("type")
         public String type;
 
-        /**
-         * <p>账户使用类型</p>
-         */
         @NameInMap("usageType")
         public String usageType;
 
@@ -557,27 +449,15 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSubInstAddressInfo extends TeaModel {
-        /**
-         * <p>详细地址</p>
-         */
         @NameInMap("address")
         public String address;
 
-        /**
-         * <p>市码</p>
-         */
         @NameInMap("cityCode")
         public String cityCode;
 
-        /**
-         * <p>区码</p>
-         */
         @NameInMap("districtCode")
         public String districtCode;
 
-        /**
-         * <p>省码</p>
-         */
         @NameInMap("provinceCode")
         public String provinceCode;
 
@@ -621,9 +501,6 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSubInstAuthInfo extends TeaModel {
-        /**
-         * <p>授权函图片url</p>
-         */
         @NameInMap("authorizationLetterUrl")
         public String authorizationLetterUrl;
 
@@ -643,27 +520,15 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSubInstBasicInfo extends TeaModel {
-        /**
-         * <p>别名</p>
-         */
         @NameInMap("aliasName")
         public String aliasName;
 
-        /**
-         * <p>机构识别码</p>
-         */
         @NameInMap("mcc")
         public String mcc;
 
-        /**
-         * <p>名称</p>
-         */
         @NameInMap("subInstName")
         public String subInstName;
 
-        /**
-         * <p>类型</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -707,21 +572,12 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSubInstCertifyInfo extends TeaModel {
-        /**
-         * <p>证件图片, 如果是特殊行业必填</p>
-         */
         @NameInMap("certImage")
         public String certImage;
 
-        /**
-         * <p>证件号码</p>
-         */
         @NameInMap("certNo")
         public String certNo;
 
-        /**
-         * <p>证件类型</p>
-         */
         @NameInMap("certType")
         public String certType;
 
@@ -757,27 +613,15 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSubInstInvoiceInfoMailAddress extends TeaModel {
-        /**
-         * <p>详细地址</p>
-         */
         @NameInMap("address")
         public String address;
 
-        /**
-         * <p>市码</p>
-         */
         @NameInMap("cityCode")
         public String cityCode;
 
-        /**
-         * <p>区码</p>
-         */
         @NameInMap("districtCode")
         public String districtCode;
 
-        /**
-         * <p>省码</p>
-         */
         @NameInMap("provinceCode")
         public String provinceCode;
 
@@ -821,81 +665,42 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSubInstInvoiceInfo extends TeaModel {
-        /**
-         * <p>是否接受电票</p>
-         */
         @NameInMap("acceptElectronic")
         public Boolean acceptElectronic;
 
-        /**
-         * <p>开票地址</p>
-         */
         @NameInMap("address")
         public String address;
 
-        /**
-         * <p>是否自动开票</p>
-         */
         @NameInMap("autoInvoice")
         public Boolean autoInvoice;
 
-        /**
-         * <p>银行账户</p>
-         */
         @NameInMap("bankAccount")
         public String bankAccount;
 
-        /**
-         * <p>银行名称</p>
-         */
         @NameInMap("bankName")
         public String bankName;
 
-        /**
-         * <p>收件地址</p>
-         */
         @NameInMap("mailAddress")
         public ConsultCreateSubInstitutionRequestSubInstInvoiceInfoMailAddress mailAddress;
 
-        /**
-         * <p>收件人名称</p>
-         */
         @NameInMap("mailName")
         public String mailName;
 
-        /**
-         * <p>收件人号码</p>
-         */
         @NameInMap("mailPhone")
         public String mailPhone;
 
-        /**
-         * <p>纳税人识别号</p>
-         */
         @NameInMap("taxNo")
         public String taxNo;
 
-        /**
-         * <p>纳税人资质</p>
-         */
         @NameInMap("taxPayerQualification")
         public String taxPayerQualification;
 
-        /**
-         * <p>纳税人资格开始时间</p>
-         */
         @NameInMap("taxPayerValidDate")
         public String taxPayerValidDate;
 
-        /**
-         * <p>开票电话</p>
-         */
         @NameInMap("telephone")
         public String telephone;
 
-        /**
-         * <p>纳税人抬头</p>
-         */
         @NameInMap("title")
         public String title;
 
@@ -1011,15 +816,9 @@ public class ConsultCreateSubInstitutionRequest extends TeaModel {
     }
 
     public static class ConsultCreateSubInstitutionRequestSubInstShopInfo extends TeaModel {
-        /**
-         * <p>内景照</p>
-         */
         @NameInMap("inDoorImages")
         public java.util.List<String> inDoorImages;
 
-        /**
-         * <p>外景照</p>
-         */
         @NameInMap("outDoorImages")
         public java.util.List<String> outDoorImages;
 

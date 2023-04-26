@@ -4,15 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOrgTextEmotionResponseBody extends TeaModel {
-    /**
-     * <p>添加企业文字表情结果</p>
-     */
     @NameInMap("result")
     public AddOrgTextEmotionResponseBodyResult result;
 
-    /**
-     * <p>返回结果</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,9 +32,6 @@ public class AddOrgTextEmotionResponseBody extends TeaModel {
     }
 
     public static class AddOrgTextEmotionResponseBodyResult extends TeaModel {
-        /**
-         * <p>表情Id，用于唯一标识每个企业文字表情</p>
-         */
         @NameInMap("emotionId")
         public String emotionId;
 

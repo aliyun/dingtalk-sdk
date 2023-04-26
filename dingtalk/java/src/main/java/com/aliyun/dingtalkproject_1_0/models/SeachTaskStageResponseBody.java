@@ -4,21 +4,12 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SeachTaskStageResponseBody extends TeaModel {
-    /**
-     * <p>分页标，供分页使用，下一页token。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>任务列表列表。</p>
-     */
     @NameInMap("result")
     public java.util.List<SeachTaskStageResponseBodyResult> result;
 
-    /**
-     * <p>总数。</p>
-     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -52,51 +43,27 @@ public class SeachTaskStageResponseBody extends TeaModel {
     }
 
     public static class SeachTaskStageResponseBodyResult extends TeaModel {
-        /**
-         * <p>创建时间。</p>
-         */
         @NameInMap("created")
         public String created;
 
-        /**
-         * <p>创建者用户 ID。</p>
-         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        /**
-         * <p>任务列表名称。</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>任务列表名称。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>项目 ID。</p>
-         */
         @NameInMap("projectId")
         public String projectId;
 
-        /**
-         * <p>任务分组 ID。</p>
-         */
         @NameInMap("taskListId")
         public String taskListId;
 
-        /**
-         * <p>任务列表 ID。</p>
-         */
         @NameInMap("taskStageId")
         public String taskStageId;
 
-        /**
-         * <p>更新时间。</p>
-         */
         @NameInMap("updated")
         public String updated;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryServiceRecordResponseBody extends TeaModel {
-    /**
-     * <p>总数量</p>
-     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
-    /**
-     * <p>服务调用记录数组</p>
-     */
     @NameInMap("values")
     public java.util.List<QueryServiceRecordResponseBodyValues> values;
 
@@ -38,81 +32,42 @@ public class QueryServiceRecordResponseBody extends TeaModel {
     }
 
     public static class QueryServiceRecordResponseBodyValues extends TeaModel {
-        /**
-         * <p>表单实例id</p>
-         */
         @NameInMap("formInstanceId")
         public String formInstanceId;
 
-        /**
-         * <p>表单编码</p>
-         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        /**
-         * <p>服务类型</p>
-         */
         @NameInMap("hookType")
         public String hookType;
 
-        /**
-         * <p>本次服务调用的唯一ID</p>
-         */
         @NameInMap("hookUuid")
         public String hookUuid;
 
-        /**
-         * <p>服务调用的实际入参</p>
-         */
         @NameInMap("invokeParameter")
         public String invokeParameter;
 
-        /**
-         * <p>服务调用的返回结果</p>
-         */
         @NameInMap("invokeResult")
         public String invokeResult;
 
-        /**
-         * <p>服务调用状态</p>
-         */
         @NameInMap("invokeStatus")
         public String invokeStatus;
 
-        /**
-         * <p>服务调用是否成功</p>
-         */
         @NameInMap("invokeSuccess")
         public String invokeSuccess;
 
-        /**
-         * <p>服务调用地址</p>
-         */
         @NameInMap("invokeUrl")
         public String invokeUrl;
 
-        /**
-         * <p>宜搭调用目标服务时传的实际参数</p>
-         */
         @NameInMap("serviceContent")
         public String serviceContent;
 
-        /**
-         * <p>服务名称</p>
-         */
         @NameInMap("serviceName")
         public String serviceName;
 
-        /**
-         * <p>服务调用的实际入参</p>
-         */
         @NameInMap("serviceParameter")
         public String serviceParameter;
 
-        /**
-         * <p>重试的服务调用唯一ID(此次服务调用是重试哪个执行失败的服务调用)</p>
-         */
         @NameInMap("sourceUuid")
         public String sourceUuid;
 

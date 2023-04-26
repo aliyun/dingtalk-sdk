@@ -4,9 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class CleanProcessDataResponseBody extends TeaModel {
-    /**
-     * <p>是否调用成功。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

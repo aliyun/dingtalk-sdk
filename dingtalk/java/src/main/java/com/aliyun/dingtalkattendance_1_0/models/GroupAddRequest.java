@@ -4,306 +4,132 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupAddRequest extends TeaModel {
-    /**
-     * <p>补卡规则settingId。</p>
-     */
     @NameInMap("adjustmentSettingId")
     public Long adjustmentSettingId;
 
-    /**
-     * <p>蓝牙打卡相关配置信息。</p>
-     */
     @NameInMap("bleDeviceList")
     public java.util.List<GroupAddRequestBleDeviceList> bleDeviceList;
 
-    /**
-     * <p>打卡是否需要健康码：</p>
-     * <br>
-     * <p>true：开启</p>
-     * <br>
-     * <p>false：关闭（默认值）</p>
-     */
     @NameInMap("checkNeedHealthyCode")
     public Boolean checkNeedHealthyCode;
 
-    /**
-     * <p>默认班次ID。</p>
-     * <br>
-     * <p>说明 固定班制必填，可通过获取班次摘要信息接口获取</p>
-     */
     @NameInMap("defaultClassId")
     public Long defaultClassId;
 
-    /**
-     * <p>休息日打卡是否需审批：</p>
-     * <br>
-     * <p>true：需要</p>
-     * <br>
-     * <p>false：不需要</p>
-     */
     @NameInMap("disableCheckWhenRest")
     public Boolean disableCheckWhenRest;
 
-    /**
-     * <p>未排班时是否禁止员工打卡。</p>
-     */
     @NameInMap("disableCheckWithoutSchedule")
     public Boolean disableCheckWithoutSchedule;
 
-    /**
-     * <p>是否开启拍照打卡。</p>
-     * <br>
-     * <p>true：开启</p>
-     * <br>
-     * <p>false：关闭（默认值）</p>
-     */
     @NameInMap("enableCameraCheck")
     public Boolean enableCameraCheck;
 
-    /**
-     * <p>未排班时是否允许员工选择班次打卡。</p>
-     */
     @NameInMap("enableEmpSelectClass")
     public Boolean enableEmpSelectClass;
 
-    /**
-     * <p>是否开启人脸检测。</p>
-     * <br>
-     * <p>true：开启</p>
-     * <br>
-     * <p>false：关闭（默认值）</p>
-     */
     @NameInMap("enableFaceCheck")
     public Boolean enableFaceCheck;
 
-    /**
-     * <p>是否开启真人验证。</p>
-     */
     @NameInMap("enableFaceStrictMode")
     public Boolean enableFaceStrictMode;
 
-    /**
-     * <p>是否第二天生效。</p>
-     * <p>true：是</p>
-     * <p>false：否</p>
-     */
     @NameInMap("enableNextDay")
     public Boolean enableNextDay;
 
-    /**
-     * <p>是否允许外勤卡更新内勤卡。</p>
-     */
     @NameInMap("enableOutSideUpdateNormalCheck")
     public Boolean enableOutSideUpdateNormalCheck;
 
-    /**
-     * <p>外勤打卡是否需要审批。</p>
-     */
     @NameInMap("enableOutsideApply")
     public Boolean enableOutsideApply;
 
-    /**
-     * <p>是否开启外勤打卡必须拍照。</p>
-     * <br>
-     * <p>true：开启</p>
-     * <br>
-     * <p>false：关闭（默认值）</p>
-     */
     @NameInMap("enableOutsideCameraCheck")
     public Boolean enableOutsideCameraCheck;
 
-    /**
-     * <p>是否可以外勤打卡。</p>
-     * <br>
-     * <p>true：允许（默认值）</p>
-     * <br>
-     * <p>false：不允许</p>
-     */
     @NameInMap("enableOutsideCheck")
     public Boolean enableOutsideCheck;
 
-    /**
-     * <p>外勤打卡是否需要拍照备注。</p>
-     */
     @NameInMap("enableOutsideRemark")
     public Boolean enableOutsideRemark;
 
-    /**
-     * <p>是否启用蓝牙定位。</p>
-     */
     @NameInMap("enablePositionBle")
     public Boolean enablePositionBle;
 
-    /**
-     * <p>是否允许地点微调距离。</p>
-     */
     @NameInMap("enableTrimDistance")
     public Boolean enableTrimDistance;
 
-    /**
-     * <p>是否禁止员工隐藏详细地址。</p>
-     */
     @NameInMap("forbidHideOutSideAddress")
     public Boolean forbidHideOutSideAddress;
 
-    /**
-     * <p>休息日打卡规则。</p>
-     */
     @NameInMap("freeCheckSetting")
     public GroupAddRequestFreeCheckSetting freeCheckSetting;
 
-    /**
-     * <p>休息日打卡方式。</p>
-     * <p>0严格打卡模式 </p>
-     * <p>1标准打卡模式</p>
-     */
     @NameInMap("freeCheckTypeId")
     public Integer freeCheckTypeId;
 
-    /**
-     * <p>自由工时考勤组考勤开始时间与当天0点偏移分钟数。</p>
-     * <br>
-     * <p>例如：540表示9:00</p>
-     */
     @NameInMap("freecheckDayStartMinOffset")
     public Integer freecheckDayStartMinOffset;
 
-    /**
-     * <p>自由工时考勤组工作日。</p>
-     * <p>说明</p>
-     * <p>0表示休息。</p>
-     * <p>数组内的值，从左到右依次代表周日到周六，每日的排班情况。</p>
-     */
     @NameInMap("freecheckWorkDays")
     public java.util.List<Long> freecheckWorkDays;
 
-    /**
-     * <p>考勤组ID。</p>
-     */
     @NameInMap("groupId")
     public Long groupId;
 
-    /**
-     * <p>考勤组名。</p>
-     */
     @NameInMap("groupName")
     public String groupName;
 
-    /**
-     * <p>考勤组子管理员userid列表。</p>
-     */
     @NameInMap("managerList")
     public java.util.List<String> managerList;
 
-    /**
-     * <p>考勤组成员相关设置信息。</p>
-     */
     @NameInMap("members")
     public java.util.List<GroupAddRequestMembers> members;
 
-    /**
-     * <p>是否有修改考勤组成员相关信息。</p>
-     */
     @NameInMap("modifyMember")
     public Boolean modifyMember;
 
-    /**
-     * <p>考勤范围。</p>
-     */
     @NameInMap("offset")
     public Integer offset;
 
-    /**
-     * <p>是否开启人脸打卡。</p>
-     */
     @NameInMap("openFaceCheck")
     public Boolean openFaceCheck;
 
-    /**
-     * <p>外勤打卡审批模式-1无需审批，0先审批后打卡是1先打卡后审批</p>
-     */
     @NameInMap("outsideCheckApproveModeId")
     public Integer outsideCheckApproveModeId;
 
-    /**
-     * <p>加班规则settingId。</p>
-     */
     @NameInMap("overtimeSettingId")
     public Long overtimeSettingId;
 
-    /**
-     * <p>考勤组负责人。</p>
-     */
     @NameInMap("owner")
     public String owner;
 
-    /**
-     * <p>考勤地点相关设置信息。</p>
-     */
     @NameInMap("positions")
     public java.util.List<GroupAddRequestPositions> positions;
 
     @NameInMap("resourcePermissionMap")
     public java.util.Map<String, ?> resourcePermissionMap;
 
-    /**
-     * <p>班次相关配置信息。</p>
-     */
     @NameInMap("shiftVOList")
     public java.util.List<GroupAddRequestShiftVOList> shiftVOList;
 
-    /**
-     * <p>是否跳过节假日。</p>
-     * <br>
-     * <p>true：跳过（默认值）</p>
-     * <br>
-     * <p>false：不跳过</p>
-     */
     @NameInMap("skipHolidays")
     public Boolean skipHolidays;
 
-    /**
-     * <p>特殊日期配置。</p>
-     */
     @NameInMap("specialDays")
     public String specialDays;
 
-    /**
-     * <p>地点微调范围（单位米）。</p>
-     */
     @NameInMap("trimDistance")
     public Integer trimDistance;
 
-    /**
-     * <p>考勤组类型：</p>
-     * <br>
-     * <p>FIXED：固定班制考勤组</p>
-     * <br>
-     * <p>TURN：排班制考勤组</p>
-     * <br>
-     * <p>NONE：自由工时考勤组</p>
-     */
     @NameInMap("type")
     public String type;
 
-    /**
-     * <p>考勤wifi打卡相关配置信息。</p>
-     */
     @NameInMap("wifis")
     public java.util.List<GroupAddRequestWifis> wifis;
 
-    /**
-     * <p>周班次列表。</p>
-     * <p>说明</p>
-     * <p>固定班制必填，0表示休息。</p>
-     * <p>数组内的值，从左到右依次代表周日到周六，每日的排班情况。</p>
-     */
     @NameInMap("workdayClassList")
     public java.util.List<Long> workdayClassList;
 
-    /**
-     * <p>操作人的userid。</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
@@ -657,9 +483,6 @@ public class GroupAddRequest extends TeaModel {
     }
 
     public static class GroupAddRequestBleDeviceList extends TeaModel {
-        /**
-         * <p>设备ID，调用查询员工智能考勤机列表获取。</p>
-         */
         @NameInMap("deviceId")
         public Long deviceId;
 
@@ -679,15 +502,9 @@ public class GroupAddRequest extends TeaModel {
     }
 
     public static class GroupAddRequestFreeCheckSettingFreeCheckGap extends TeaModel {
-        /**
-         * <p>下班打卡最小打卡间隔（单位分钟）。</p>
-         */
         @NameInMap("offOnCheckGapMinutes")
         public Integer offOnCheckGapMinutes;
 
-        /**
-         * <p>上班打卡最小打卡间隔（单位分钟）。</p>
-         */
         @NameInMap("onOffCheckGapMinutes")
         public Integer onOffCheckGapMinutes;
 
@@ -715,17 +532,9 @@ public class GroupAddRequest extends TeaModel {
     }
 
     public static class GroupAddRequestFreeCheckSetting extends TeaModel {
-        /**
-         * <p>自由工时考勤组考勤开始时间与当天0点偏移分钟数。</p>
-         * <br>
-         * <p>例如：540表示9:00</p>
-         */
         @NameInMap("delimitOffsetMinutesBetweenDays")
         public Integer delimitOffsetMinutesBetweenDays;
 
-        /**
-         * <p>休息日打卡间隔设置。</p>
-         */
         @NameInMap("freeCheckGap")
         public GroupAddRequestFreeCheckSettingFreeCheckGap freeCheckGap;
 
@@ -753,21 +562,12 @@ public class GroupAddRequest extends TeaModel {
     }
 
     public static class GroupAddRequestMembers extends TeaModel {
-        /**
-         * <p>角色，固定值Attendance。</p>
-         */
         @NameInMap("role")
         public String role;
 
-        /**
-         * <p>类型，固定值StaffMember。</p>
-         */
         @NameInMap("type")
         public String type;
 
-        /**
-         * <p>用户userid。</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -803,33 +603,18 @@ public class GroupAddRequest extends TeaModel {
     }
 
     public static class GroupAddRequestPositions extends TeaModel {
-        /**
-         * <p>考勤地址。</p>
-         */
         @NameInMap("address")
         public String address;
 
-        /**
-         * <p>纬度。</p>
-         */
         @NameInMap("latitude")
         public String latitude;
 
-        /**
-         * <p>经度。</p>
-         */
         @NameInMap("longitude")
         public String longitude;
 
-        /**
-         * <p>考勤范围。</p>
-         */
         @NameInMap("offset")
         public Integer offset;
 
-        /**
-         * <p>考勤标题。</p>
-         */
         @NameInMap("title")
         public String title;
 
@@ -881,9 +666,6 @@ public class GroupAddRequest extends TeaModel {
     }
 
     public static class GroupAddRequestShiftVOList extends TeaModel {
-        /**
-         * <p>班次ID，可通过获取班次摘要信息接口获取。</p>
-         */
         @NameInMap("shiftId")
         public Long shiftId;
 
@@ -903,15 +685,9 @@ public class GroupAddRequest extends TeaModel {
     }
 
     public static class GroupAddRequestWifis extends TeaModel {
-        /**
-         * <p>mac地址。</p>
-         */
         @NameInMap("macAddr")
         public String macAddr;
 
-        /**
-         * <p>wifi的ssid。</p>
-         */
         @NameInMap("ssid")
         public String ssid;
 

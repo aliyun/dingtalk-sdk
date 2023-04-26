@@ -4,9 +4,6 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class RecallHonorRequest extends TeaModel {
-    /**
-     * <p>要取消荣誉的员工userid 必填</p>
-     */
     @NameInMap("userId")
     public String userId;
 

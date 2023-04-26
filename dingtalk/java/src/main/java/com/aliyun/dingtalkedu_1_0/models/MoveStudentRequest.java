@@ -4,27 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class MoveStudentRequest extends TeaModel {
-    /**
-     * <p>管理员id</p>
-     */
     @NameInMap("operator")
     public String operator;
 
-    /**
-     * <p>愿班级id</p>
-     */
     @NameInMap("originClassId")
     public Long originClassId;
 
-    /**
-     * <p>目标班级id</p>
-     */
     @NameInMap("targetClassId")
     public Long targetClassId;
 
-    /**
-     * <p>学生id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

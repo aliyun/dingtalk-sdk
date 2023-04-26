@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteFilesResponseBody extends TeaModel {
-    /**
-     * <p>是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
-    /**
-     * <p>异步任务id</p>
-     */
     @NameInMap("taskId")
     public String taskId;
 

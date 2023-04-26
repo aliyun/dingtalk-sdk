@@ -4,27 +4,15 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCorpStatisticDataRequest extends TeaModel {
-    /**
-     * <p>结束时间（yyyymmdd）</p>
-     */
     @NameInMap("endTime")
     public String endTime;
 
-    /**
-     * <p>开始时间（yyyymmdd）</p>
-     */
     @NameInMap("startTime")
     public String startTime;
 
-    /**
-     * <p>模版id列表</p>
-     */
     @NameInMap("templateIds")
     public java.util.List<String> templateIds;
 
-    /**
-     * <p>操作者id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

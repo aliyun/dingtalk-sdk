@@ -4,63 +4,33 @@ package com.aliyun.dingtalkbadge_1_0.models;
 import com.aliyun.tea.*;
 
 public class NotifyBadgeCodeVerifyResultRequest extends TeaModel {
-    /**
-     * <p>企业ID</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>码值</p>
-     */
     @NameInMap("payCode")
     public String payCode;
 
-    /**
-     * <p>备注信息</p>
-     */
     @NameInMap("remark")
     public String remark;
 
-    /**
-     * <p>用户和企业的关系类型，区分内部员工，外部联系人，无关系普通用户</p>
-     */
     @NameInMap("userCorpRelationType")
     public String userCorpRelationType;
 
-    /**
-     * <p>用户身份标识</p>
-     */
     @NameInMap("userIdentity")
     public String userIdentity;
 
-    /**
-     * <p>验证事件，长度不超过8个中文</p>
-     */
     @NameInMap("verifyEvent")
     public String verifyEvent;
 
-    /**
-     * <p>验证地点，调用时请务必传入，以便生成工牌使用记录</p>
-     */
     @NameInMap("verifyLocation")
     public String verifyLocation;
 
-    /**
-     * <p>验证流水号，长度不超过32位，用户下唯一，调用时请务必传入，以便生成工牌使用记录</p>
-     */
     @NameInMap("verifyNo")
     public String verifyNo;
 
-    /**
-     * <p>验证结果</p>
-     */
     @NameInMap("verifyResult")
     public Boolean verifyResult;
 
-    /**
-     * <p>验证时间</p>
-     */
     @NameInMap("verifyTime")
     public String verifyTime;
 

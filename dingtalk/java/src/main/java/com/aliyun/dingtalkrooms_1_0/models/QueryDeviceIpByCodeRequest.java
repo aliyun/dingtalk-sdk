@@ -4,9 +4,6 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryDeviceIpByCodeRequest extends TeaModel {
-    /**
-     * <p>设备sn号</p>
-     */
     @NameInMap("deviceSn")
     public String deviceSn;
 

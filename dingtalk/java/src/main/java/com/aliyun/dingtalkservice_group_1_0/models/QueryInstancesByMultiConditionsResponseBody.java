@@ -7,9 +7,6 @@ public class QueryInstancesByMultiConditionsResponseBody extends TeaModel {
     @NameInMap("maxResults")
     public Long maxResults;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 

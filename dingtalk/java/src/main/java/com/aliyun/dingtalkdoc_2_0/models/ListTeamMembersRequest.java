@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class ListTeamMembersRequest extends TeaModel {
-    /**
-     * <p>操作用户unionId。</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 

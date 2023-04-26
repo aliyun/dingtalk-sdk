@@ -4,27 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CancelSnsOrderResponseBody extends TeaModel {
-    /**
-     * <p>支付宝应用id。</p>
-     */
     @NameInMap("alipayAppId")
     public String alipayAppId;
 
-    /**
-     * <p>商户id。</p>
-     */
     @NameInMap("merchantId")
     public String merchantId;
 
-    /**
-     * <p>商户订单号。</p>
-     */
     @NameInMap("merchantOrderNo")
     public String merchantOrderNo;
 
-    /**
-     * <p>订单号。</p>
-     */
     @NameInMap("orderNo")
     public String orderNo;
 

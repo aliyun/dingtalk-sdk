@@ -4,27 +4,15 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class PollingConfirmStatusRequest extends TeaModel {
-    /**
-     * <p>courseCode</p>
-     */
     @NameInMap("courseCode")
     public String courseCode;
 
-    /**
-     * <p>ext</p>
-     */
     @NameInMap("ext")
     public String ext;
 
-    /**
-     * <p>isvCode</p>
-     */
     @NameInMap("isvCode")
     public String isvCode;
 
-    /**
-     * <p>opUserId</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 

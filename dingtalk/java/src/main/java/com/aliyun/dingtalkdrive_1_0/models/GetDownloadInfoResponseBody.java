@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDownloadInfoResponseBody extends TeaModel {
-    /**
-     * <p>下载加签url信息</p>
-     */
     @NameInMap("downloadInfo")
     public GetDownloadInfoResponseBodyDownloadInfo downloadInfo;
 
-    /**
-     * <p>文件所存储的区域</p>
-     */
     @NameInMap("region")
     public String region;
 
@@ -38,27 +32,15 @@ public class GetDownloadInfoResponseBody extends TeaModel {
     }
 
     public static class GetDownloadInfoResponseBodyDownloadInfo extends TeaModel {
-        /**
-         * <p>加签url过期时间</p>
-         */
         @NameInMap("expirationSeconds")
         public Integer expirationSeconds;
 
-        /**
-         * <p>headers</p>
-         */
         @NameInMap("headers")
         public java.util.Map<String, ?> headers;
 
-        /**
-         * <p>内网加签url</p>
-         */
         @NameInMap("internalResourceUrl")
         public String internalResourceUrl;
 
-        /**
-         * <p>加签url</p>
-         */
         @NameInMap("resourceUrl")
         public String resourceUrl;
 

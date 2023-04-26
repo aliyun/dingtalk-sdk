@@ -4,15 +4,9 @@ package com.aliyun.dingtalkwms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGoodsListResponseBody extends TeaModel {
-    /**
-     * <p>result</p>
-     */
     @NameInMap("result")
     public QueryGoodsListResponseBodyResult result;
 
-    /**
-     * <p>success</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,33 +32,18 @@ public class QueryGoodsListResponseBody extends TeaModel {
     }
 
     public static class QueryGoodsListResponseBodyResultList extends TeaModel {
-        /**
-         * <p>物料名称</p>
-         */
         @NameInMap("goodsName")
         public String goodsName;
 
-        /**
-         * <p>物料编号</p>
-         */
         @NameInMap("goodsNo")
         public String goodsNo;
 
-        /**
-         * <p>物料ID</p>
-         */
         @NameInMap("instanceId")
         public String instanceId;
 
-        /**
-         * <p>规格</p>
-         */
         @NameInMap("productSpecs")
         public String productSpecs;
 
-        /**
-         * <p>计量单位</p>
-         */
         @NameInMap("unit")
         public String unit;
 
@@ -116,24 +95,15 @@ public class QueryGoodsListResponseBody extends TeaModel {
     }
 
     public static class QueryGoodsListResponseBodyResult extends TeaModel {
-        /**
-         * <p>下次获取数据的游标</p>
-         */
         @NameInMap("hasMore")
         public Boolean hasMore;
 
         @NameInMap("list")
         public java.util.List<QueryGoodsListResponseBodyResultList> list;
 
-        /**
-         * <p>总数</p>
-         */
         @NameInMap("maxResults")
         public Long maxResults;
 
-        /**
-         * <p>下次获取数据的游标</p>
-         */
         @NameInMap("nextToken")
         public String nextToken;
 

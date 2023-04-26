@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateOrganizationTaskExecutorResponseBody extends TeaModel {
-    /**
-     * <p>返回对象</p>
-     */
     @NameInMap("result")
     public UpdateOrganizationTaskExecutorResponseBodyResult result;
 
@@ -24,21 +21,12 @@ public class UpdateOrganizationTaskExecutorResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskExecutorResponseBodyResultExecutor extends TeaModel {
-        /**
-         * <p>头像</p>
-         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
-        /**
-         * <p>名字</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户uid</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -74,21 +62,12 @@ public class UpdateOrganizationTaskExecutorResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskExecutorResponseBodyResultInvolvers extends TeaModel {
-        /**
-         * <p>头像</p>
-         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
-        /**
-         * <p>名字</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户uid</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -124,27 +103,15 @@ public class UpdateOrganizationTaskExecutorResponseBody extends TeaModel {
     }
 
     public static class UpdateOrganizationTaskExecutorResponseBodyResult extends TeaModel {
-        /**
-         * <p>执行者信息</p>
-         */
         @NameInMap("executor")
         public UpdateOrganizationTaskExecutorResponseBodyResultExecutor executor;
 
-        /**
-         * <p>执行者id</p>
-         */
         @NameInMap("executorId")
         public String executorId;
 
-        /**
-         * <p>参与者列表</p>
-         */
         @NameInMap("involvers")
         public java.util.List<UpdateOrganizationTaskExecutorResponseBodyResultInvolvers> involvers;
 
-        /**
-         * <p>更新时间</p>
-         */
         @NameInMap("updated")
         public String updated;
 

@@ -4,27 +4,15 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAllDoctorsResponseBody extends TeaModel {
-    /**
-     * <p>人员列表</p>
-     */
     @NameInMap("content")
     public java.util.List<QueryAllDoctorsResponseBodyContent> content;
 
-    /**
-     * <p>当前页码</p>
-     */
     @NameInMap("currentPage")
     public Integer currentPage;
 
-    /**
-     * <p>数据总量</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
-    /**
-     * <p>总页数</p>
-     */
     @NameInMap("totalPages")
     public Integer totalPages;
 
@@ -66,75 +54,39 @@ public class QueryAllDoctorsResponseBody extends TeaModel {
     }
 
     public static class QueryAllDoctorsResponseBodyContent extends TeaModel {
-        /**
-         * <p>考核医疗组id</p>
-         */
         @NameInMap("assessGroupId")
         public String assessGroupId;
 
-        /**
-         * <p>考核医疗组名称</p>
-         */
         @NameInMap("assessGroupName")
         public String assessGroupName;
 
-        /**
-         * <p>关联的部门id</p>
-         */
         @NameInMap("deptCode")
         public String deptCode;
 
-        /**
-         * <p>科室医疗组标识</p>
-         */
         @NameInMap("deptType")
         public String deptType;
 
-        /**
-         * <p>用户创建时间</p>
-         */
         @NameInMap("gmtCreateStr")
         public String gmtCreateStr;
 
-        /**
-         * <p>用户最后修改时间</p>
-         */
         @NameInMap("gmtModifiedStr")
         public String gmtModifiedStr;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>工号</p>
-         */
         @NameInMap("jobNum")
         public String jobNum;
 
-        /**
-         * <p>状态0-有效，1-删除</p>
-         */
         @NameInMap("status")
         public Integer status;
 
-        /**
-         * <p>租户下staffId</p>
-         */
         @NameInMap("uid")
         public String uid;
 
-        /**
-         * <p>租户内staffId</p>
-         */
         @NameInMap("userCode")
         public String userCode;
 
-        /**
-         * <p>用户名称</p>
-         */
         @NameInMap("userName")
         public String userName;
 

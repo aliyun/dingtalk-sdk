@@ -4,9 +4,6 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryActiveUsersResponseBody extends TeaModel {
-    /**
-     * <p>活跃用户列表</p>
-     */
     @NameInMap("activeUserInfos")
     public java.util.List<QueryActiveUsersResponseBodyActiveUserInfos> activeUserInfos;
 
@@ -24,45 +21,24 @@ public class QueryActiveUsersResponseBody extends TeaModel {
     }
 
     public static class QueryActiveUsersResponseBodyActiveUserInfos extends TeaModel {
-        /**
-         * <p>最近二周的行为指数</p>
-         */
         @NameInMap("actionIndexL14d")
         public Double actionIndexL14d;
 
-        /**
-         * <p>最近一个月的行为指数</p>
-         */
         @NameInMap("actionIndexL30d")
         public Double actionIndexL30d;
 
-        /**
-         * <p>最近一周的行为指数</p>
-         */
         @NameInMap("actionIndexL7d")
         public Double actionIndexL7d;
 
-        /**
-         * <p>活跃度</p>
-         */
         @NameInMap("activeScore")
         public Double activeScore;
 
-        /**
-         * <p>昵称</p>
-         */
         @NameInMap("nickName")
         public String nickName;
 
-        /**
-         * <p>排名</p>
-         */
         @NameInMap("ranking")
         public Long ranking;
 
-        /**
-         * <p>钉钉用户unionId</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 

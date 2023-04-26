@@ -4,45 +4,24 @@ package com.aliyun.dingtalkoauth2_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSsoUserInfoResponseBody extends TeaModel {
-    /**
-     * <p>用户头像链接</p>
-     */
     @NameInMap("avatar")
     public String avatar;
 
-    /**
-     * <p>微应用免登用户所在企业id</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>微应用免登用户所在企业名称</p>
-     */
     @NameInMap("corpName")
     public String corpName;
 
-    /**
-     * <p>用户邮箱</p>
-     */
     @NameInMap("email")
     public String email;
 
-    /**
-     * <p>是否为企业管理员</p>
-     */
     @NameInMap("isAdmin")
     public Boolean isAdmin;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>用户名称</p>
-     */
     @NameInMap("userName")
     public String userName;
 

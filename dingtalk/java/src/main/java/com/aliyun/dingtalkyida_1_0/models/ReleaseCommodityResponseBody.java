@@ -4,15 +4,9 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReleaseCommodityResponseBody extends TeaModel {
-    /**
-     * <p>message</p>
-     */
     @NameInMap("message")
     public String message;
 
-    /**
-     * <p>success</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

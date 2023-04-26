@@ -4,15 +4,9 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetEmployeeInfoByWorkNoResponseBody extends TeaModel {
-    /**
-     * <p>请求返回数据对象</p>
-     */
     @NameInMap("content")
     public GetEmployeeInfoByWorkNoResponseBodyContent content;
 
-    /**
-     * <p>接口请求成功标识,成功为true,失败为false</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,15 +32,9 @@ public class GetEmployeeInfoByWorkNoResponseBody extends TeaModel {
     }
 
     public static class GetEmployeeInfoByWorkNoResponseBodyContent extends TeaModel {
-        /**
-         * <p>员工姓名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>员工工号</p>
-         */
         @NameInMap("workNo")
         public String workNo;
 

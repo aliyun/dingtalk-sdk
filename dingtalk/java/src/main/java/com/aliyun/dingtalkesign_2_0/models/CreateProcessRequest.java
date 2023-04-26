@@ -202,9 +202,6 @@ public class CreateProcessRequest extends TeaModel {
     }
 
     public static class CreateProcessRequestParticipantsSignPosListSignDate extends TeaModel {
-        /**
-         * <p>签署区时间格式， 支持yyyy/MM/dd, yyyy-MM-dd, yyyy年MM月dd日</p>
-         */
         @NameInMap("format")
         public String format;
 
@@ -224,48 +221,27 @@ public class CreateProcessRequest extends TeaModel {
     }
 
     public static class CreateProcessRequestParticipantsSignPosList extends TeaModel {
-        /**
-         * <p>文件id</p>
-         */
         @NameInMap("fileId")
         public String fileId;
 
-        /**
-         * <p>是否为骑缝章</p>
-         */
         @NameInMap("isCrossPage")
         public Boolean isCrossPage;
 
-        /**
-         * <p>是否需要显示签署时间</p>
-         */
         @NameInMap("needSignDate")
         public Boolean needSignDate;
 
-        /**
-         * <p>签署区页码</p>
-         */
         @NameInMap("page")
         public String page;
 
         @NameInMap("signDate")
         public CreateProcessRequestParticipantsSignPosListSignDate signDate;
 
-        /**
-         * <p>签署要求,1-企业章 2-经办人</p>
-         */
         @NameInMap("signRequirement")
         public String signRequirement;
 
-        /**
-         * <p>签署区x坐标</p>
-         */
         @NameInMap("x")
         public Double x;
 
-        /**
-         * <p>签署区y坐标</p>
-         */
         @NameInMap("y")
         public Double y;
 
@@ -356,9 +332,6 @@ public class CreateProcessRequest extends TeaModel {
         @NameInMap("signOrder")
         public Integer signOrder;
 
-        /**
-         * <p>参与方签署位置信息列表</p>
-         */
         @NameInMap("signPosList")
         public java.util.List<CreateProcessRequestParticipantsSignPosList> signPosList;
 

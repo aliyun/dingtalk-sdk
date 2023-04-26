@@ -21,15 +21,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsAvailableTemplates extends TeaModel {
-        /**
-         * <p>PROC-BFA563D4-BBC7-4B1F-8F72-886A302665FC</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>补卡申请</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -903,15 +897,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelatePropsOptions extends TeaModel {
-        /**
-         * <p>选项数据主键</p>
-         */
         @NameInMap("key")
         public String key;
 
-        /**
-         * <p>选项显示内容</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -991,135 +979,75 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelateProps extends TeaModel {
-        /**
-         * <p>textnote的样式</p>
-         */
         @NameInMap("align")
         public String align;
 
-        /**
-         * <p>字段别名</p>
-         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        /**
-         * <p>内部联系人choice</p>
-         */
         @NameInMap("choice")
         public Long choice;
 
-        /**
-         * <p>说明文字内容</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>是否可编辑</p>
-         */
         @NameInMap("disabled")
         public Boolean disabled;
 
-        /**
-         * <p>是否自动计算时长</p>
-         */
         @NameInMap("duration")
         public String duration;
 
-        /**
-         * <p>字段id</p>
-         */
         @NameInMap("fieldId")
         public String fieldId;
 
-        /**
-         * <p>时间格式</p>
-         */
         @NameInMap("format")
         public String format;
 
-        /**
-         * <p>公式</p>
-         */
         @NameInMap("formula")
         public String formula;
 
-        /**
-         * <p>隐藏字段</p>
-         */
         @NameInMap("invisible")
         public Boolean invisible;
 
-        /**
-         * <p>字段标题</p>
-         */
         @NameInMap("label")
         public String label;
 
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
 
-        /**
-         * <p>说明文案的链接地址</p>
-         */
         @NameInMap("link")
         public String link;
 
         @NameInMap("multi")
         public Long multi;
 
-        /**
-         * <p>是否需要大写 默认是需要</p>
-         */
         @NameInMap("notUpper")
         public String notUpper;
 
-        /**
-         * <p>选项内容列表</p>
-         */
         @NameInMap("options")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelatePropsOptions> options;
 
-        /**
-         * <p>是否有支付属性</p>
-         */
         @NameInMap("payEnable")
         public Boolean payEnable;
 
-        /**
-         * <p>界面空值提示占位符 前后端统一用placeholder</p>
-         */
         @NameInMap("placeholder")
         public String placeholder;
 
         @NameInMap("quote")
         public Long quote;
 
-        /**
-         * <p>字段是否必填</p>
-         */
         @NameInMap("required")
         public Boolean required;
 
         @NameInMap("requiredEditableFreeze")
         public Boolean requiredEditableFreeze;
 
-        /**
-         * <p>需要计算总和的明细组件</p>
-         */
         @NameInMap("statField")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelatePropsStatField> statField;
 
-        /**
-         * <p>数字组件/日期区间组件单位属性</p>
-         */
         @NameInMap("unit")
         public String unit;
 
-        /**
-         * <p>明细打印排版方式</p>
-         */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
 
@@ -1323,15 +1251,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFields extends TeaModel {
-        /**
-         * <p>字段类型</p>
-         */
         @NameInMap("componentName")
         public String componentName;
 
-        /**
-         * <p>字段属性</p>
-         */
         @NameInMap("relateProps")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFieldsRelateProps relateProps;
 
@@ -1365,9 +1287,6 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("dataSource")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceDataSource dataSource;
 
-        /**
-         * <p>关联表单的关联控件显示</p>
-         */
         @NameInMap("fields")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsRelateSourceFields> fields;
 
@@ -1506,9 +1425,6 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("dataSource")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildrenPropsDataSource dataSource;
 
-        /**
-         * <p>标签字段 颜色属性</p>
-         */
         @NameInMap("defaultColor")
         public String defaultColor;
 
@@ -1551,9 +1467,6 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("mode")
         public String mode;
 
-        /**
-         * <p>支持选择多个部门</p>
-         */
         @NameInMap("multiple")
         public Boolean multiple;
 
@@ -1969,15 +1882,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates extends TeaModel {
-        /**
-         * <p>PROC-BFA563D4-BBC7-4B1F-8F72-886A302665FC</p>
-         */
         @NameInMap("id")
         public String id;
 
-        /**
-         * <p>补卡申请</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -2076,27 +1983,15 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget extends TeaModel {
-        /**
-         * <p>应用类型</p>
-         */
         @NameInMap("appType")
         public Long appType;
 
-        /**
-         * <p>应用搭建id</p>
-         */
         @NameInMap("appUuid")
         public String appUuid;
 
-        /**
-         * <p>表单业务标识</p>
-         */
         @NameInMap("bizType")
         public String bizType;
 
-        /**
-         * <p>被关联表单的formCode</p>
-         */
         @NameInMap("formCode")
         public String formCode;
 
@@ -2143,15 +2038,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("params")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceParams params;
 
-        /**
-         * <p>关联表单的业务标识</p>
-         */
         @NameInMap("target")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSourceTarget target;
 
-        /**
-         * <p>关联类型{ "form": 关联表单 }</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -2209,15 +2098,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("extension")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptionsExtension extension;
 
-        /**
-         * <p>选项数据主键</p>
-         */
         @NameInMap("key")
         public String key;
 
-        /**
-         * <p>选项显示内容</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -2305,72 +2188,39 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps extends TeaModel {
-        /**
-         * <p>textnote的样式</p>
-         */
         @NameInMap("align")
         public String align;
 
-        /**
-         * <p>字段别名</p>
-         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        /**
-         * <p>内部联系人choice</p>
-         */
         @NameInMap("choice")
         public Long choice;
 
-        /**
-         * <p>说明文字内容</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>是否可编辑</p>
-         */
         @NameInMap("disabled")
         public Boolean disabled;
 
-        /**
-         * <p>是否自动计算时长</p>
-         */
         @NameInMap("duration")
         public String duration;
 
         @NameInMap("durationLabel")
         public String durationLabel;
 
-        /**
-         * <p>字段id</p>
-         */
         @NameInMap("fieldId")
         public String fieldId;
 
-        /**
-         * <p>时间格式</p>
-         */
         @NameInMap("format")
         public String format;
 
-        /**
-         * <p>公式</p>
-         */
         @NameInMap("formula")
         public String formula;
 
-        /**
-         * <p>隐藏字段</p>
-         */
         @NameInMap("invisible")
         public Boolean invisible;
 
-        /**
-         * <p>字段标题</p>
-         */
         @NameInMap("label")
         public String label;
 
@@ -2380,45 +2230,27 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("limit")
         public Long limit;
 
-        /**
-         * <p>说明文案的链接地址</p>
-         */
         @NameInMap("link")
         public String link;
 
         @NameInMap("mode")
         public String mode;
 
-        /**
-         * <p>是否需要大写 默认是需要</p>
-         */
         @NameInMap("notUpper")
         public String notUpper;
 
-        /**
-         * <p>选项内容列表</p>
-         */
         @NameInMap("options")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsOptions> options;
 
-        /**
-         * <p>是否有支付属性</p>
-         */
         @NameInMap("payEnable")
         public Boolean payEnable;
 
-        /**
-         * <p>界面空值提示占位符 前后端统一用placeholder</p>
-         */
         @NameInMap("placeholder")
         public String placeholder;
 
         @NameInMap("ratio")
         public Long ratio;
 
-        /**
-         * <p>字段是否必填</p>
-         */
         @NameInMap("required")
         public Boolean required;
 
@@ -2428,21 +2260,12 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("spread")
         public Boolean spread;
 
-        /**
-         * <p>需要计算总和的明细组件</p>
-         */
         @NameInMap("statField")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelatePropsStatField> statField;
 
-        /**
-         * <p>数字组件/日期区间组件单位属性</p>
-         */
         @NameInMap("unit")
         public String unit;
 
-        /**
-         * <p>明细打印排版方式</p>
-         */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
 
@@ -2681,15 +2504,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields extends TeaModel {
-        /**
-         * <p>字段类型</p>
-         */
         @NameInMap("componentName")
         public String componentName;
 
-        /**
-         * <p>字段属性</p>
-         */
         @NameInMap("relateProps")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFieldsRelateProps relateProps;
 
@@ -2717,9 +2534,6 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptionsExtension extends TeaModel {
-        /**
-         * <p>true</p>
-         */
         @NameInMap("editFreeze")
         public Boolean editFreeze;
 
@@ -2742,21 +2556,12 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("extension")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptionsExtension extension;
 
-        /**
-         * <p>选项数据主键</p>
-         */
         @NameInMap("key")
         public String key;
 
-        /**
-         * <p>选项显示内容</p>
-         */
         @NameInMap("value")
         public String value;
 
-        /**
-         * <p>false</p>
-         */
         @NameInMap("warn")
         public Boolean warn;
 
@@ -2986,15 +2791,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("extension")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsOptionsExtension extension;
 
-        /**
-         * <p>选项数据主键</p>
-         */
         @NameInMap("key")
         public String key;
 
-        /**
-         * <p>选项显示内容</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -3082,135 +2881,75 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelateProps extends TeaModel {
-        /**
-         * <p>textnote的样式</p>
-         */
         @NameInMap("align")
         public String align;
 
-        /**
-         * <p>字段别名</p>
-         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        /**
-         * <p>内部联系人choice</p>
-         */
         @NameInMap("choice")
         public Long choice;
 
-        /**
-         * <p>说明文字内容</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>是否可编辑</p>
-         */
         @NameInMap("disabled")
         public Boolean disabled;
 
-        /**
-         * <p>是否自动计算时长</p>
-         */
         @NameInMap("duration")
         public String duration;
 
-        /**
-         * <p>字段id</p>
-         */
         @NameInMap("fieldId")
         public String fieldId;
 
-        /**
-         * <p>时间格式</p>
-         */
         @NameInMap("format")
         public String format;
 
-        /**
-         * <p>公式</p>
-         */
         @NameInMap("formula")
         public String formula;
 
-        /**
-         * <p>隐藏字段</p>
-         */
         @NameInMap("invisible")
         public Boolean invisible;
 
-        /**
-         * <p>字段标题</p>
-         */
         @NameInMap("label")
         public String label;
 
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
 
-        /**
-         * <p>说明文案的链接地址</p>
-         */
         @NameInMap("link")
         public String link;
 
         @NameInMap("multi")
         public Long multi;
 
-        /**
-         * <p>是否需要大写 默认是需要</p>
-         */
         @NameInMap("notUpper")
         public String notUpper;
 
-        /**
-         * <p>选项内容列表</p>
-         */
         @NameInMap("options")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsOptions> options;
 
-        /**
-         * <p>是否有支付属性</p>
-         */
         @NameInMap("payEnable")
         public Boolean payEnable;
 
-        /**
-         * <p>界面空值提示占位符 前后端统一用placeholder</p>
-         */
         @NameInMap("placeholder")
         public String placeholder;
 
         @NameInMap("quote")
         public Long quote;
 
-        /**
-         * <p>字段是否必填</p>
-         */
         @NameInMap("required")
         public Boolean required;
 
         @NameInMap("requiredEditableFreeze")
         public Boolean requiredEditableFreeze;
 
-        /**
-         * <p>需要计算总和的明细组件</p>
-         */
         @NameInMap("statField")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelatePropsStatField> statField;
 
-        /**
-         * <p>数字组件/日期区间组件单位属性</p>
-         */
         @NameInMap("unit")
         public String unit;
 
-        /**
-         * <p>明细打印排版方式</p>
-         */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
 
@@ -3414,15 +3153,9 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFields extends TeaModel {
-        /**
-         * <p>字段类型</p>
-         */
         @NameInMap("componentName")
         public String componentName;
 
-        /**
-         * <p>字段属性</p>
-         */
         @NameInMap("relateProps")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFieldsRelateProps relateProps;
 
@@ -3456,9 +3189,6 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("dataSource")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceDataSource dataSource;
 
-        /**
-         * <p>关联表单的关联控件显示</p>
-         */
         @NameInMap("fields")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSourceFields> fields;
 
@@ -3579,231 +3309,126 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
         @NameInMap("actionName")
         public String actionName;
 
-        /**
-         * <p>textnote的样式</p>
-         */
         @NameInMap("align")
         public String align;
 
         @NameInMap("availableTemplates")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsAvailableTemplates> availableTemplates;
 
-        /**
-         * <p>字段别名</p>
-         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        /**
-         * <p>内部联系人choice</p>
-         */
         @NameInMap("choice")
         public Long choice;
 
-        /**
-         * <p>说明文字内容</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>关联表单的数据源配置</p>
-         */
         @NameInMap("dataSource")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsDataSource dataSource;
 
-        /**
-         * <p>标签字段 颜色属性</p>
-         */
         @NameInMap("defaultColor")
         public String defaultColor;
 
-        /**
-         * <p>是否可编辑</p>
-         */
         @NameInMap("disabled")
         public Boolean disabled;
 
-        /**
-         * <p>是否自动计算时长</p>
-         */
         @NameInMap("duration")
         public Boolean duration;
 
         @NameInMap("durationLabel")
         public String durationLabel;
 
-        /**
-         * <p>字段id</p>
-         */
         @NameInMap("fieldId")
         public String fieldId;
 
-        /**
-         * <p>关联表单的关联控件显示</p>
-         */
         @NameInMap("fields")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsFields> fields;
 
-        /**
-         * <p>时间格式</p>
-         */
         @NameInMap("format")
         public String format;
 
-        /**
-         * <p>公式</p>
-         */
         @NameInMap("formula")
         public String formula;
 
-        /**
-         * <p>隐藏字段</p>
-         */
         @NameInMap("invisible")
         public Boolean invisible;
 
-        /**
-         * <p>字段标题</p>
-         */
         @NameInMap("label")
         public String label;
 
-        /**
-         * <p>字段标题是否可修改</p>
-         */
         @NameInMap("labelEditableFreeze")
         public Boolean labelEditableFreeze;
 
-        /**
-         * <p>5</p>
-         */
         @NameInMap("limit")
         public Long limit;
 
-        /**
-         * <p>说明文案的链接地址</p>
-         */
         @NameInMap("link")
         public String link;
 
-        /**
-         * <p>phone</p>
-         */
         @NameInMap("mode")
         public String mode;
 
         @NameInMap("multi")
         public Long multi;
 
-        /**
-         * <p>支持选择多个部门</p>
-         */
         @NameInMap("multiple")
         public Boolean multiple;
 
         @NameInMap("needDetail")
         public String needDetail;
 
-        /**
-         * <p>是否参与打印</p>
-         */
         @NameInMap("notPrint")
         public String notPrint;
 
-        /**
-         * <p>是否需要大写 默认是需要</p>
-         */
         @NameInMap("notUpper")
         public String notUpper;
 
-        /**
-         * <p>选项内容列表</p>
-         */
         @NameInMap("options")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsOptions> options;
 
-        /**
-         * <p>是否有支付属性</p>
-         */
         @NameInMap("payEnable")
         public Boolean payEnable;
 
-        /**
-         * <p>界面空值提示占位符 前后端统一用placeholder</p>
-         */
         @NameInMap("placeholder")
         public String placeholder;
 
-        /**
-         * <p>1</p>
-         */
         @NameInMap("quote")
         public Long quote;
 
-        /**
-         * <p>50</p>
-         */
         @NameInMap("ratio")
         public Long ratio;
 
         @NameInMap("relateSource")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRelateSource> relateSource;
 
-        /**
-         * <p>字段是否必填</p>
-         */
         @NameInMap("required")
         public Boolean required;
 
-        /**
-         * <p>字段必填是否修改</p>
-         */
         @NameInMap("requiredEditableFreeze")
         public Boolean requiredEditableFreeze;
 
-        /**
-         * <p>流水号控件规则</p>
-         */
         @NameInMap("rule")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsRule> rule;
 
         @NameInMap("sortable")
         public Boolean sortable;
 
-        /**
-         * <p>true</p>
-         */
         @NameInMap("spread")
         public Boolean spread;
 
-        /**
-         * <p>需要计算总和的明细组件</p>
-         */
         @NameInMap("statField")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsPropsStatField> statField;
 
-        /**
-         * <p>table</p>
-         */
         @NameInMap("tableViewMode")
         public String tableViewMode;
 
-        /**
-         * <p>数字组件/日期区间组件单位属性</p>
-         */
         @NameInMap("unit")
         public String unit;
 
-        /**
-         * <p>明细打印排版方式</p>
-         */
         @NameInMap("verticalPrint")
         public Boolean verticalPrint;
 
-        /**
-         * <p>true</p>
-         */
         @NameInMap("watermark")
         public Boolean watermark;
 
@@ -4151,21 +3776,12 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOListItems extends TeaModel {
-        /**
-         * <p>子字段列表</p>
-         */
         @NameInMap("children")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItemsChildren> children;
 
-        /**
-         * <p>字段类型</p>
-         */
         @NameInMap("componentName")
         public String componentName;
 
-        /**
-         * <p>字段属性</p>
-         */
         @NameInMap("props")
         public DescribeRelationMetaResponseBodyRelationMetaDTOListItemsProps props;
 
@@ -4201,57 +3817,30 @@ public class DescribeRelationMetaResponseBody extends TeaModel {
     }
 
     public static class DescribeRelationMetaResponseBodyRelationMetaDTOList extends TeaModel {
-        /**
-         * <p>创建者userId</p>
-         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        /**
-         * <p>模型结构描述</p>
-         */
         @NameInMap("desc")
         public String desc;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        /**
-         * <p>模型结构字段集合</p>
-         */
         @NameInMap("items")
         public java.util.List<DescribeRelationMetaResponseBodyRelationMetaDTOListItems> items;
 
-        /**
-         * <p>模型结构名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>模型结构code</p>
-         */
         @NameInMap("relationMetaCode")
         public String relationMetaCode;
 
-        /**
-         * <p>模型结构状态</p>
-         */
         @NameInMap("relationMetaStatus")
         public String relationMetaStatus;
 
-        /**
-         * <p>关系类型</p>
-         */
         @NameInMap("relationType")
         public String relationType;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCheckInSchemaTemplateResponseBody extends TeaModel {
-    /**
-     * <p>返回对象。</p>
-     */
     @NameInMap("result")
     public GetCheckInSchemaTemplateResponseBodyResult result;
 
@@ -24,63 +21,33 @@ public class GetCheckInSchemaTemplateResponseBody extends TeaModel {
     }
 
     public static class GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels extends TeaModel {
-        /**
-         * <p>是否可以修改。</p>
-         */
         @NameInMap("canModify")
         public Boolean canModify;
 
-        /**
-         * <p>模板的表单Code。</p>
-         */
         @NameInMap("formCode")
         public String formCode;
 
-        /**
-         * <p>模板的预览图片。</p>
-         */
         @NameInMap("icon")
         public String icon;
 
-        /**
-         * <p>模板的布局信息。</p>
-         */
         @NameInMap("layoutDesign")
         public String layoutDesign;
 
-        /**
-         * <p>模板的场景码。</p>
-         */
         @NameInMap("sceneCode")
         public String sceneCode;
 
-        /**
-         * <p>模板的内容。</p>
-         */
         @NameInMap("schemaContent")
         public String schemaContent;
 
-        /**
-         * <p>suiteKey。</p>
-         */
         @NameInMap("suiteKey")
         public String suiteKey;
 
-        /**
-         * <p>是否系统模板。</p>
-         */
         @NameInMap("systemTemplate")
         public Boolean systemTemplate;
 
-        /**
-         * <p>模板的标题。</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>模板的水印ID。</p>
-         */
         @NameInMap("waterMarkId")
         public String waterMarkId;
 
@@ -172,51 +139,27 @@ public class GetCheckInSchemaTemplateResponseBody extends TeaModel {
     }
 
     public static class GetCheckInSchemaTemplateResponseBodyResult extends TeaModel {
-        /**
-         * <p>业务码。</p>
-         */
         @NameInMap("bizCode")
         public String bizCode;
 
-        /**
-         * <p>是否可以操作模板。</p>
-         */
         @NameInMap("canModifyAndAddTemplate")
         public Boolean canModifyAndAddTemplate;
 
-        /**
-         * <p>是否群管理员。</p>
-         */
         @NameInMap("conversationAdmin")
         public Boolean conversationAdmin;
 
-        /**
-         * <p>自定义模板的最大数量。</p>
-         */
         @NameInMap("customTemplateMaxSize")
         public Integer customTemplateMaxSize;
 
-        /**
-         * <p>群会话ID。</p>
-         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        /**
-         * <p>是否展示统计入口。</p>
-         */
         @NameInMap("showStat")
         public Boolean showStat;
 
-        /**
-         * <p>是否开启水印模板降级。</p>
-         */
         @NameInMap("templateDegrade")
         public Boolean templateDegrade;
 
-        /**
-         * <p>模板列表。</p>
-         */
         @NameInMap("waterMarkTemplateModels")
         public java.util.List<GetCheckInSchemaTemplateResponseBodyResultWaterMarkTemplateModels> waterMarkTemplateModels;
 

@@ -4,93 +4,48 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOpenKnowledgeRequest extends TeaModel {
-    /**
-     * <p>附件列表</p>
-     */
     @NameInMap("attachments")
     public java.util.List<AddOpenKnowledgeRequestAttachments> attachments;
 
-    /**
-     * <p>知识点所属类目ID</p>
-     */
     @NameInMap("categoryId")
     public Long categoryId;
 
-    /**
-     * <p>知识点正文</p>
-     */
     @NameInMap("content")
     public String content;
 
-    /**
-     * <p>生效结束时间(默认2100-01-01 23:59:59)</p>
-     */
     @NameInMap("effectTimeend")
     public String effectTimeend;
 
-    /**
-     * <p>生效开始时间(默认1980-01-01 00:00:00)</p>
-     */
     @NameInMap("effectTimestart")
     public String effectTimestart;
 
-    /**
-     * <p>扩展问法(多个英文逗号隔开)</p>
-     */
     @NameInMap("extTitle")
     public String extTitle;
 
-    /**
-     * <p>关键词(多个逗号隔开)</p>
-     */
     @NameInMap("keyword")
     public String keyword;
 
-    /**
-     * <p>所属知识库唯一标识id</p>
-     */
     @NameInMap("libraryId")
     public Long libraryId;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>知识点来源</p>
-     */
     @NameInMap("source")
     public String source;
 
-    /**
-     * <p>标签(多个可逗号隔开)</p>
-     */
     @NameInMap("tags")
     public String tags;
 
-    /**
-     * <p>知识点标准问</p>
-     */
     @NameInMap("title")
     public String title;
 
-    /**
-     * <p>知识点类型()</p>
-     */
     @NameInMap("type")
     public String type;
 
-    /**
-     * <p>用户/员工ID</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>用户昵称或姓名</p>
-     */
     @NameInMap("userName")
     public String userName;
 
@@ -220,33 +175,18 @@ public class AddOpenKnowledgeRequest extends TeaModel {
     }
 
     public static class AddOpenKnowledgeRequestAttachments extends TeaModel {
-        /**
-         * <p>媒体类型(扩展名大写)</p>
-         */
         @NameInMap("mimeType")
         public String mimeType;
 
-        /**
-         * <p>附件URL</p>
-         */
         @NameInMap("path")
         public String path;
 
-        /**
-         * <p>附件大小</p>
-         */
         @NameInMap("size")
         public Double size;
 
-        /**
-         * <p>扩展名</p>
-         */
         @NameInMap("suffix")
         public String suffix;
 
-        /**
-         * <p>附件名称</p>
-         */
         @NameInMap("title")
         public String title;
 

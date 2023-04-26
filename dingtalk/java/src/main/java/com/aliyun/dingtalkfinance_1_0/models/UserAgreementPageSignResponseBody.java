@@ -4,9 +4,6 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UserAgreementPageSignResponseBody extends TeaModel {
-    /**
-     * <p>拉起签约页的字符串</p>
-     */
     @NameInMap("pageData")
     public String pageData;
 

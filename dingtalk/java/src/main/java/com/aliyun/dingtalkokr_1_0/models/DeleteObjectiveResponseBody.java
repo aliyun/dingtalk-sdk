@@ -4,15 +4,9 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteObjectiveResponseBody extends TeaModel {
-    /**
-     * <p>data</p>
-     */
     @NameInMap("data")
     public DeleteObjectiveResponseBodyData data;
 
-    /**
-     * <p>请求成功的标识。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,9 +32,6 @@ public class DeleteObjectiveResponseBody extends TeaModel {
     }
 
     public static class DeleteObjectiveResponseBodyData extends TeaModel {
-        /**
-         * <p>当前 Objective ID。</p>
-         */
         @NameInMap("id")
         public String id;
 

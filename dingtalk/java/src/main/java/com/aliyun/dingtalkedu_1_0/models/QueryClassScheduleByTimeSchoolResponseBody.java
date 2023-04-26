@@ -21,15 +21,9 @@ public class QueryClassScheduleByTimeSchoolResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleByTimeSchoolResponseBodyResultClassrooms extends TeaModel {
-        /**
-         * <p>交互信息</p>
-         */
         @NameInMap("interactInfo")
         public String interactInfo;
 
-        /**
-         * <p>课堂唯一标识</p>
-         */
         @NameInMap("targetId")
         public String targetId;
 
@@ -60,15 +54,9 @@ public class QueryClassScheduleByTimeSchoolResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户uid</p>
-         */
         @NameInMap("uid")
         public Long uid;
 
-        /**
-         * <p>用户userid</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -104,135 +92,69 @@ public class QueryClassScheduleByTimeSchoolResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleByTimeSchoolResponseBodyResult extends TeaModel {
-        /**
-         * <p>业务唯一键</p>
-         */
         @NameInMap("bizKey")
         public String bizKey;
 
-        /**
-         * <p>课程所在班级id</p>
-         */
         @NameInMap("classId")
         public Long classId;
 
-        /**
-         * <p>课堂列表</p>
-         */
         @NameInMap("classrooms")
         public java.util.List<QueryClassScheduleByTimeSchoolResponseBodyResultClassrooms> classrooms;
 
-        /**
-         * <p>课程编码</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>课程组编码</p>
-         */
         @NameInMap("courseGroupCode")
         public String courseGroupCode;
 
-        /**
-         * <p>课程封面地址</p>
-         */
         @NameInMap("coverUrl")
         public String coverUrl;
 
-        /**
-         * <p>创建者组织id</p>
-         */
         @NameInMap("creatorCorpId")
         public String creatorCorpId;
 
-        /**
-         * <p>创建者UserId</p>
-         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        /**
-         * <p>创建者UserName</p>
-         */
         @NameInMap("creatorUserName")
         public String creatorUserName;
 
-        /**
-         * <p>课程参与人列表</p>
-         */
         @NameInMap("eduUserModels")
         public java.util.List<QueryClassScheduleByTimeSchoolResponseBodyResultEduUserModels> eduUserModels;
 
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("endTime")
         public Long endTime;
 
-        /**
-         * <p>课程扩展信息</p>
-         */
         @NameInMap("extInfo")
         public String extInfo;
 
-        /**
-         * <p>课程介绍</p>
-         */
         @NameInMap("introduce")
         public String introduce;
 
-        /**
-         * <p>课程名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>课程所在节次序列号</p>
-         */
         @NameInMap("sectionIndex")
         public Long sectionIndex;
 
-        /**
-         * <p>课程编码</p>
-         */
         @NameInMap("sectionName")
         public String sectionName;
 
-        /**
-         * <p>开始时间</p>
-         */
         @NameInMap("startTime")
         public Long startTime;
 
-        /**
-         * <p>课程状态</p>
-         */
         @NameInMap("status")
         public Long status;
 
-        /**
-         * <p>学科编码</p>
-         */
         @NameInMap("subjectCode")
         public String subjectCode;
 
-        /**
-         * <p>老师CorpId</p>
-         */
         @NameInMap("teacherCorpId")
         public String teacherCorpId;
 
-        /**
-         * <p>老师UserId</p>
-         */
         @NameInMap("teacherUserId")
         public String teacherUserId;
 
-        /**
-         * <p>老师UserName</p>
-         */
         @NameInMap("teacherUserName")
         public String teacherUserName;
 

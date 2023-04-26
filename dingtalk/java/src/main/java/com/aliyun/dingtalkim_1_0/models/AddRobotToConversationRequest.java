@@ -4,27 +4,15 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddRobotToConversationRequest extends TeaModel {
-    /**
-     * <p>机器人meidaId</p>
-     */
     @NameInMap("icon")
     public String icon;
 
-    /**
-     * <p>机器人名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>会话id</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>机器人编码</p>
-     */
     @NameInMap("robotCode")
     public String robotCode;
 

@@ -32,27 +32,15 @@ public class CreateAndDeliverResponseBody extends TeaModel {
     }
 
     public static class CreateAndDeliverResponseBodyResultDeliverResults extends TeaModel {
-        /**
-         * <p>错误信息</p>
-         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
-        /**
-         * <p>场域Id</p>
-         */
         @NameInMap("spaceId")
         public String spaceId;
 
-        /**
-         * <p>场域类型 (IM: IM类型，包括群聊和单聊，仅供返回结果使用, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)</p>
-         */
         @NameInMap("spaceType")
         public String spaceType;
 
-        /**
-         * <p>投放成功</p>
-         */
         @NameInMap("success")
         public Boolean success;
 
@@ -96,15 +84,9 @@ public class CreateAndDeliverResponseBody extends TeaModel {
     }
 
     public static class CreateAndDeliverResponseBodyResult extends TeaModel {
-        /**
-         * <p>投放结果</p>
-         */
         @NameInMap("deliverResults")
         public java.util.List<CreateAndDeliverResponseBodyResultDeliverResults> deliverResults;
 
-        /**
-         * <p>外部卡片实例Id</p>
-         */
         @NameInMap("outTrackId")
         public String outTrackId;
 

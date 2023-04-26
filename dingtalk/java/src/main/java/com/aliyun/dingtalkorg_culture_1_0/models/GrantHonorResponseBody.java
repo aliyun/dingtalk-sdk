@@ -32,15 +32,9 @@ public class GrantHonorResponseBody extends TeaModel {
     }
 
     public static class GrantHonorResponseBodyResult extends TeaModel {
-        /**
-         * <p>失败的userId</p>
-         */
         @NameInMap("failedUserIds")
         public java.util.List<String> failedUserIds;
 
-        /**
-         * <p>成功的userId</p>
-         */
         @NameInMap("successUserIds")
         public java.util.List<String> successUserIds;
 

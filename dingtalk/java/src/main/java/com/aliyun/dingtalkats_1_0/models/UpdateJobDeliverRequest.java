@@ -4,57 +4,30 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateJobDeliverRequest extends TeaModel {
-    /**
-     * <p>招聘业务标识，目前固定ddats</p>
-     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    /**
-     * <p>渠道侧职位唯一标识</p>
-     */
     @NameInMap("channelOuterId")
     public String channelOuterId;
 
-    /**
-     * <p>职位投递人userId</p>
-     */
     @NameInMap("deliverUserId")
     public String deliverUserId;
 
-    /**
-     * <p>渠道侧错误码</p>
-     */
     @NameInMap("errorCode")
     public String errorCode;
 
-    /**
-     * <p>渠道侧错误信息</p>
-     */
     @NameInMap("errorMsg")
     public String errorMsg;
 
-    /**
-     * <p>操作时间</p>
-     */
     @NameInMap("opTime")
     public Long opTime;
 
-    /**
-     * <p>操作人userId</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    /**
-     * <p>职位投递状态</p>
-     */
     @NameInMap("status")
     public Integer status;
 
-    /**
-     * <p>钉钉侧职位唯一标识</p>
-     */
     @NameInMap("jobId")
     public String jobId;
 

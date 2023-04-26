@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTaskResponseBody extends TeaModel {
-    /**
-     * <p>返回结果对象</p>
-     */
     @NameInMap("result")
     public CreateTaskResponseBodyResult result;
 
@@ -24,9 +21,6 @@ public class CreateTaskResponseBody extends TeaModel {
     }
 
     public static class CreateTaskResponseBodyResultCustomfieldsValue extends TeaModel {
-        /**
-         * <p>自定义字段显示值</p>
-         */
         @NameInMap("title")
         public String title;
 
@@ -46,15 +40,9 @@ public class CreateTaskResponseBody extends TeaModel {
     }
 
     public static class CreateTaskResponseBodyResultCustomfields extends TeaModel {
-        /**
-         * <p>自定义字段id</p>
-         */
         @NameInMap("customfieldId")
         public String customfieldId;
 
-        /**
-         * <p>自定义字段值</p>
-         */
         @NameInMap("value")
         public java.util.List<CreateTaskResponseBodyResultCustomfieldsValue> value;
 
@@ -82,75 +70,39 @@ public class CreateTaskResponseBody extends TeaModel {
     }
 
     public static class CreateTaskResponseBodyResult extends TeaModel {
-        /**
-         * <p>任务标题</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("created")
         public String created;
 
-        /**
-         * <p>任务创建者userId</p>
-         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        /**
-         * <p>自定义字段列表</p>
-         */
         @NameInMap("customfields")
         public java.util.List<CreateTaskResponseBodyResultCustomfields> customfields;
 
-        /**
-         * <p>任务截止时间</p>
-         */
         @NameInMap("dueDate")
         public String dueDate;
 
-        /**
-         * <p>任务执行者userId</p>
-         */
         @NameInMap("executorId")
         public String executorId;
 
-        /**
-         * <p>任务参与者列表</p>
-         */
         @NameInMap("involveMembers")
         public java.util.List<String> involveMembers;
 
-        /**
-         * <p>任务备注</p>
-         */
         @NameInMap("note")
         public String note;
 
-        /**
-         * <p>任务优先级</p>
-         */
         @NameInMap("priority")
         public Integer priority;
 
-        /**
-         * <p>项目id</p>
-         */
         @NameInMap("projectId")
         public String projectId;
 
-        /**
-         * <p>任务id</p>
-         */
         @NameInMap("taskId")
         public String taskId;
 
-        /**
-         * <p>更新时间</p>
-         */
         @NameInMap("updated")
         public String updated;
 

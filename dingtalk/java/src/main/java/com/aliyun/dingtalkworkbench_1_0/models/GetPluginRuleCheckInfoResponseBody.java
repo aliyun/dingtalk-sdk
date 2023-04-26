@@ -4,15 +4,9 @@ package com.aliyun.dingtalkworkbench_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPluginRuleCheckInfoResponseBody extends TeaModel {
-    /**
-     * <p>权限包code</p>
-     */
     @NameInMap("packCode")
     public String packCode;
 
-    /**
-     * <p>校验规则</p>
-     */
     @NameInMap("pluginRuleCheckDetail")
     public String pluginRuleCheckDetail;
 

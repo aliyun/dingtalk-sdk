@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterDeviceResponseBody extends TeaModel {
-    /**
-     * <p>设备id</p>
-     */
     @NameInMap("deviceId")
     public String deviceId;
 

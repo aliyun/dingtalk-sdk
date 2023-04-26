@@ -4,15 +4,9 @@ package com.aliyun.dingtalkconference_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateVideoConferenceSettingResponseBody extends TeaModel {
-    /**
-     * <p>结果详情</p>
-     */
     @NameInMap("case")
     public String _case;
 
-    /**
-     * <p>返回编码</p>
-     */
     @NameInMap("code")
     public String code;
 

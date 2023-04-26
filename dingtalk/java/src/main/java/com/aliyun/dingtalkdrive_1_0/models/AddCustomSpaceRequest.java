@@ -4,27 +4,15 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddCustomSpaceRequest extends TeaModel {
-    /**
-     * <p>业务类型</p>
-     */
     @NameInMap("bizType")
     public String bizType;
 
-    /**
-     * <p>空间标识</p>
-     */
     @NameInMap("identifier")
     public String identifier;
 
-    /**
-     * <p>授权模式</p>
-     */
     @NameInMap("permissionMode")
     public String permissionMode;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

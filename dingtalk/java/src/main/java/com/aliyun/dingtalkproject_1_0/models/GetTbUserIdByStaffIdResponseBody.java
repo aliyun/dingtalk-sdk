@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetTbUserIdByStaffIdResponseBody extends TeaModel {
-    /**
-     * <p>结果对象</p>
-     */
     @NameInMap("result")
     public GetTbUserIdByStaffIdResponseBodyResult result;
 
@@ -24,9 +21,6 @@ public class GetTbUserIdByStaffIdResponseBody extends TeaModel {
     }
 
     public static class GetTbUserIdByStaffIdResponseBodyResult extends TeaModel {
-        /**
-         * <p>Teambition用户id</p>
-         */
         @NameInMap("tbUserId")
         public String tbUserId;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchProjectTemplateRequest extends TeaModel {
-    /**
-     * <p>项目模板名关键词</p>
-     */
     @NameInMap("keyword")
     public String keyword;
 

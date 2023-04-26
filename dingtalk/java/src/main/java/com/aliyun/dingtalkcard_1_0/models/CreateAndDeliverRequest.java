@@ -4,102 +4,54 @@ package com.aliyun.dingtalkcard_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateAndDeliverRequest extends TeaModel {
-    /**
-     * <p>卡片回调时的路由 key</p>
-     */
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
-    /**
-     * <p>卡片数据</p>
-     */
     @NameInMap("cardData")
     public CreateAndDeliverRequestCardData cardData;
 
-    /**
-     * <p>卡片内容模板ID</p>
-     */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
-    /**
-     * <p>协作投放参数</p>
-     */
     @NameInMap("coFeedOpenDeliverModel")
     public CreateAndDeliverRequestCoFeedOpenDeliverModel coFeedOpenDeliverModel;
 
-    /**
-     * <p>协作场域信息</p>
-     */
     @NameInMap("coFeedOpenSpaceModel")
     public CreateAndDeliverRequestCoFeedOpenSpaceModel coFeedOpenSpaceModel;
 
-    /**
-     * <p>文档投放参数</p>
-     */
     @NameInMap("docOpenDeliverModel")
     public CreateAndDeliverRequestDocOpenDeliverModel docOpenDeliverModel;
 
-    /**
-     * <p>群聊投放参数</p>
-     */
     @NameInMap("imGroupOpenDeliverModel")
     public CreateAndDeliverRequestImGroupOpenDeliverModel imGroupOpenDeliverModel;
 
-    /**
-     * <p>IM群聊场域信息</p>
-     */
     @NameInMap("imGroupOpenSpaceModel")
     public CreateAndDeliverRequestImGroupOpenSpaceModel imGroupOpenSpaceModel;
 
-    /**
-     * <p>单聊场域投放参数</p>
-     */
     @NameInMap("imRobotOpenDeliverModel")
     public CreateAndDeliverRequestImRobotOpenDeliverModel imRobotOpenDeliverModel;
 
-    /**
-     * <p>IM单聊场域信息</p>
-     */
     @NameInMap("imRobotOpenSpaceModel")
     public CreateAndDeliverRequestImRobotOpenSpaceModel imRobotOpenSpaceModel;
 
-    /**
-     * <p>动态数据源配置</p>
-     */
     @NameInMap("openDynamicDataConfig")
     public CreateAndDeliverRequestOpenDynamicDataConfig openDynamicDataConfig;
 
-    /**
-     * <p>dt.card//spaceType.spaceId;spaceType.spaceId</p>
-     */
     @NameInMap("openSpaceId")
     public String openSpaceId;
 
-    /**
-     * <p>外部业务标识符</p>
-     */
     @NameInMap("outTrackId")
     public String outTrackId;
 
     @NameInMap("privateData")
     public java.util.Map<String, PrivateDataValue> privateData;
 
-    /**
-     * <p>吊顶投放参数</p>
-     */
     @NameInMap("topOpenDeliverModel")
     public CreateAndDeliverRequestTopOpenDeliverModel topOpenDeliverModel;
 
-    /**
-     * <p>吊顶场域信息</p>
-     */
     @NameInMap("topOpenSpaceModel")
     public CreateAndDeliverRequestTopOpenSpaceModel topOpenSpaceModel;
 
-    /**
-     * <p>卡片创建者 id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
@@ -256,9 +208,6 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestCardData extends TeaModel {
-        /**
-         * <p>卡片模板-文本内容参数</p>
-         */
         @NameInMap("cardParamMap")
         public java.util.Map<String, String> cardParamMap;
 
@@ -278,15 +227,9 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestCoFeedOpenDeliverModel extends TeaModel {
-        /**
-         * <p>【必填】业务标识</p>
-         */
         @NameInMap("bizTag")
         public String bizTag;
 
-        /**
-         * <p>【必填】协作场域下的排序时间</p>
-         */
         @NameInMap("gmtTimeLine")
         public Long gmtTimeLine;
 
@@ -317,9 +260,6 @@ public class CreateAndDeliverRequest extends TeaModel {
         @NameInMap("coolAppCode")
         public String coolAppCode;
 
-        /**
-         * <p>【必填】标题</p>
-         */
         @NameInMap("title")
         public String title;
 
@@ -347,9 +287,6 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestDocOpenDeliverModel extends TeaModel {
-        /**
-         * <p>【必填】员工id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -369,21 +306,12 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestImGroupOpenDeliverModel extends TeaModel {
-        /**
-         * <p>消息@人，</p>
-         */
         @NameInMap("atUserIds")
         public java.util.Map<String, String> atUserIds;
 
-        /**
-         * <p>指定接收者</p>
-         */
         @NameInMap("recipients")
         public java.util.List<String> recipients;
 
-        /**
-         * <p>机器人的code</p>
-         */
         @NameInMap("robotCode")
         public String robotCode;
 
@@ -490,27 +418,15 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestImGroupOpenSpaceModel extends TeaModel {
-        /**
-         * <p>支持国际化的LastMessage</p>
-         */
         @NameInMap("lastMessageI18n")
         public java.util.Map<String, String> lastMessageI18n;
 
-        /**
-         * <p>通知信息</p>
-         */
         @NameInMap("notification")
         public CreateAndDeliverRequestImGroupOpenSpaceModelNotification notification;
 
-        /**
-         * <p>支持卡片消息可被搜索字段</p>
-         */
         @NameInMap("searchSupport")
         public CreateAndDeliverRequestImGroupOpenSpaceModelSearchSupport searchSupport;
 
-        /**
-         * <p>是否支持转发, 默认false</p>
-         */
         @NameInMap("supportForward")
         public Boolean supportForward;
 
@@ -644,27 +560,15 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestImRobotOpenSpaceModel extends TeaModel {
-        /**
-         * <p>支持国际化的LastMessage</p>
-         */
         @NameInMap("lastMessageI18n")
         public java.util.Map<String, String> lastMessageI18n;
 
-        /**
-         * <p>通知信息</p>
-         */
         @NameInMap("notification")
         public CreateAndDeliverRequestImRobotOpenSpaceModelNotification notification;
 
-        /**
-         * <p>支持卡片消息可被搜索字段</p>
-         */
         @NameInMap("searchSupport")
         public CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport searchSupport;
 
-        /**
-         * <p>是否支持转发, 默认false</p>
-         */
         @NameInMap("supportForward")
         public Boolean supportForward;
 
@@ -708,21 +612,12 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig extends TeaModel {
-        /**
-         * <p>间隔</p>
-         */
         @NameInMap("interval")
         public Integer interval;
 
-        /**
-         * <p>拉取策略 (NONE: 不拉取,无动态数据, INTERVAL: 间隔拉取, ONCE: 只拉取一次)</p>
-         */
         @NameInMap("pullStrategy")
         public String pullStrategy;
 
-        /**
-         * <p>间隔的时间单位 (SECONDS, MINUTES, HOURS, DAYS)</p>
-         */
         @NameInMap("timeUnit")
         public String timeUnit;
 
@@ -758,21 +653,12 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigs extends TeaModel {
-        /**
-         * <p>回调数据源的常量参数</p>
-         */
         @NameInMap("constParams")
         public java.util.Map<String, String> constParams;
 
-        /**
-         * <p>数据源配置id</p>
-         */
         @NameInMap("dynamicDataSourceId")
         public String dynamicDataSourceId;
 
-        /**
-         * <p>数据源拉取配置</p>
-         */
         @NameInMap("pullConfig")
         public CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigsPullConfig pullConfig;
 
@@ -808,9 +694,6 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestOpenDynamicDataConfig extends TeaModel {
-        /**
-         * <p>动态数据源配置列表</p>
-         */
         @NameInMap("dynamicDataSourceConfigs")
         public java.util.List<CreateAndDeliverRequestOpenDynamicDataConfigDynamicDataSourceConfigs> dynamicDataSourceConfigs;
 
@@ -830,21 +713,12 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestTopOpenDeliverModel extends TeaModel {
-        /**
-         * <p>【必填】过期时间戳</p>
-         */
         @NameInMap("expiredTimeMillis")
         public Long expiredTimeMillis;
 
-        /**
-         * <p>可以查看该吊顶卡片的设备</p>
-         */
         @NameInMap("platforms")
         public java.util.List<String> platforms;
 
-        /**
-         * <p>可以查看该吊顶卡片的staffId</p>
-         */
         @NameInMap("userIds")
         public java.util.List<String> userIds;
 
@@ -880,9 +754,6 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
 
     public static class CreateAndDeliverRequestTopOpenSpaceModel extends TeaModel {
-        /**
-         * <p>【必填】场域类型 (IM: IM, IM_SINGLE: IM单聊, IM_GROUP: IM群聊, ONE_BOX: 群吊顶, COOPERATION_FEED: 协作, WORK_BENCH: 工作台)</p>
-         */
         @NameInMap("spaceType")
         public String spaceType;
 

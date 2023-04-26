@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchTaskflowStatusResponseBody extends TeaModel {
-    /**
-     * <p>任务工作流状态列表。</p>
-     */
     @NameInMap("result")
     public java.util.List<SearchTaskflowStatusResponseBodyResult> result;
 
@@ -24,69 +21,36 @@ public class SearchTaskflowStatusResponseBody extends TeaModel {
     }
 
     public static class SearchTaskflowStatusResponseBodyResult extends TeaModel {
-        /**
-         * <p>创建时间。</p>
-         */
         @NameInMap("created")
         public String created;
 
-        /**
-         * <p>创建者ID。</p>
-         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        /**
-         * <p>是否已删除。</p>
-         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
-        /**
-         * <p>是否特定任务角色才能流转该工作流状态。</p>
-         */
         @NameInMap("isTaskflowstatusruleexector")
         public Boolean isTaskflowstatusruleexector;
 
-        /**
-         * <p>任务工作流状态类型。  start: 开始  end: 结束  unset: 未设置</p>
-         */
         @NameInMap("kind")
         public String kind;
 
-        /**
-         * <p>任务工作流状态名字。</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>任务工作流状态位置。</p>
-         */
         @NameInMap("pos")
         public Integer pos;
 
-        /**
-         * <p>拒绝的工作流状态Id。</p>
-         */
         @NameInMap("rejectStatusIds")
         public java.util.List<String> rejectStatusIds;
 
-        /**
-         * <p>任务工作流ID。</p>
-         */
         @NameInMap("taskflowId")
         public String taskflowId;
 
-        /**
-         * <p>任务工作流状态ID。</p>
-         */
         @NameInMap("taskflowStatusId")
         public String taskflowStatusId;
 
-        /**
-         * <p>更新时间。</p>
-         */
         @NameInMap("updated")
         public String updated;
 

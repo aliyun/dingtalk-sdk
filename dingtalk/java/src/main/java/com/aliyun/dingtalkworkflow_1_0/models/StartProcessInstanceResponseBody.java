@@ -4,9 +4,6 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class StartProcessInstanceResponseBody extends TeaModel {
-    /**
-     * <p>审批实例id</p>
-     */
     @NameInMap("instanceId")
     public String instanceId;
 

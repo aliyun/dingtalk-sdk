@@ -7,9 +7,6 @@ public class GetUploadInfoResponseBody extends TeaModel {
     @NameInMap("headerSignatureUploadInfo")
     public GetUploadInfoResponseBodyHeaderSignatureUploadInfo headerSignatureUploadInfo;
 
-    /**
-     * <p>文件所存储的区域</p>
-     */
     @NameInMap("region")
     public String region;
 
@@ -46,33 +43,18 @@ public class GetUploadInfoResponseBody extends TeaModel {
     }
 
     public static class GetUploadInfoResponseBodyHeaderSignatureUploadInfo extends TeaModel {
-        /**
-         * <p>过期秒数</p>
-         */
         @NameInMap("expirationSeconds")
         public Integer expirationSeconds;
 
-        /**
-         * <p>header加签信息</p>
-         */
         @NameInMap("headers")
         public java.util.Map<String, ?> headers;
 
-        /**
-         * <p>内网上传地址</p>
-         */
         @NameInMap("internalResourceUrl")
         public String internalResourceUrl;
 
-        /**
-         * <p>mediaId</p>
-         */
         @NameInMap("mediaId")
         public String mediaId;
 
-        /**
-         * <p>上传地址</p>
-         */
         @NameInMap("resourceUrl")
         public String resourceUrl;
 
@@ -124,51 +106,27 @@ public class GetUploadInfoResponseBody extends TeaModel {
     }
 
     public static class GetUploadInfoResponseBodyStsUploadInfo extends TeaModel {
-        /**
-         * <p>accessKeyId</p>
-         */
         @NameInMap("accessKeyId")
         public String accessKeyId;
 
-        /**
-         * <p>accessKeySecret</p>
-         */
         @NameInMap("accessKeySecret")
         public String accessKeySecret;
 
-        /**
-         * <p>accessToken</p>
-         */
         @NameInMap("accessToken")
         public String accessToken;
 
-        /**
-         * <p>accessTokenExpiration</p>
-         */
         @NameInMap("accessTokenExpirationMillis")
         public Long accessTokenExpirationMillis;
 
-        /**
-         * <p>bucket</p>
-         */
         @NameInMap("bucket")
         public String bucket;
 
-        /**
-         * <p>endPoint</p>
-         */
         @NameInMap("endPoint")
         public String endPoint;
 
-        /**
-         * <p>内网endPoint</p>
-         */
         @NameInMap("internalEndPoint")
         public String internalEndPoint;
 
-        /**
-         * <p>mediaId</p>
-         */
         @NameInMap("mediaId")
         public String mediaId;
 

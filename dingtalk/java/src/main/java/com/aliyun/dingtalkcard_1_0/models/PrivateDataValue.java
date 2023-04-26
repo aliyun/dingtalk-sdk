@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcard_1_0.models;
 import com.aliyun.tea.*;
 
 public class PrivateDataValue extends TeaModel {
-    /**
-     * <p>卡片模板-文本内容参数</p>
-     */
     @NameInMap("cardParamMap")
     public java.util.Map<String, String> cardParamMap;
 

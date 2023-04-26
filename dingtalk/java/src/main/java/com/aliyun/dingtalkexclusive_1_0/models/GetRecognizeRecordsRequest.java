@@ -4,45 +4,24 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRecognizeRecordsRequest extends TeaModel {
-    /**
-     * <p>应用唯一标识</p>
-     */
     @NameInMap("agentId")
     public Long agentId;
 
-    /**
-     * <p>人脸对比结果 1-成功 2-失败</p>
-     */
     @NameInMap("faceCompareResult")
     public Integer faceCompareResult;
 
-    /**
-     * <p>记录开始时间(毫秒时间戳)</p>
-     */
     @NameInMap("fromTime")
     public Long fromTime;
 
-    /**
-     * <p>一页最大值（最大50）</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>查询数据的起始位置，0表示从头开始。</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    /**
-     * <p>记录结束时间(毫秒时间戳)</p>
-     */
     @NameInMap("toTime")
     public Long toTime;
 
-    /**
-     * <p>员工userIds</p>
-     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

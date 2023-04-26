@@ -4,45 +4,24 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptsBaseInfoRequest extends TeaModel {
-    /**
-     * <p>结束时间</p>
-     */
     @NameInMap("endTime")
     public Long endTime;
 
-    /**
-     * <p>分页参数，从1 开始</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>分页参数，每页查询个数</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    /**
-     * <p>开始时间</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 
-    /**
-     * <p>时间筛选条件 gmt_create / record_time</p>
-     */
     @NameInMap("timeFilterField")
     public String timeFilterField;
 
-    /**
-     * <p>单据标题</p>
-     */
     @NameInMap("title")
     public String title;
 
-    /**
-     * <p>凭证状态</p>
-     */
     @NameInMap("voucherStatus")
     public String voucherStatus;
 

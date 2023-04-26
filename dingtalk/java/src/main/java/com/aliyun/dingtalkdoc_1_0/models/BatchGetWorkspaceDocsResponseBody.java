@@ -24,15 +24,9 @@ public class BatchGetWorkspaceDocsResponseBody extends TeaModel {
         @NameInMap("deleted")
         public Boolean deleted;
 
-        /**
-         * <p>节点类型</p>
-         */
         @NameInMap("docType")
         public String docType;
 
-        /**
-         * <p>最后编辑时间</p>
-         */
         @NameInMap("lastEditTime")
         public Long lastEditTime;
 

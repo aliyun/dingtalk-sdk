@@ -4,27 +4,15 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchTaskListRequest extends TeaModel {
-    /**
-     * <p>每页返回最大数量。默认10，最大300。</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>分页标，从上一次请求结果中获取。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>模糊任务分组名字。</p>
-     */
     @NameInMap("query")
     public String query;
 
-    /**
-     * <p>任务分组ID集合，逗号组合。</p>
-     */
     @NameInMap("taskListIds")
     public String taskListIds;
 

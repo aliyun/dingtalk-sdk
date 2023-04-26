@@ -4,9 +4,6 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMeetingRoomDeviceResponseBody extends TeaModel {
-    /**
-     * <p>响应结果</p>
-     */
     @NameInMap("result")
     public QueryMeetingRoomDeviceResponseBodyResult result;
 
@@ -24,75 +21,39 @@ public class QueryMeetingRoomDeviceResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomDeviceResponseBodyResultControllers extends TeaModel {
-        /**
-         * <p>企业corpId</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>控制器设备id</p>
-         */
         @NameInMap("deviceId")
         public String deviceId;
 
-        /**
-         * <p>控制器mac地址</p>
-         */
         @NameInMap("deviceMac")
         public String deviceMac;
 
-        /**
-         * <p>控制器型号</p>
-         */
         @NameInMap("deviceModel")
         public String deviceModel;
 
-        /**
-         * <p>控制器名称</p>
-         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        /**
-         * <p>控制器注册serviceId</p>
-         */
         @NameInMap("deviceServiceId")
         public Integer deviceServiceId;
 
-        /**
-         * <p>控制器sn</p>
-         */
         @NameInMap("deviceSn")
         public String deviceSn;
 
-        /**
-         * <p>控制器状态</p>
-         */
         @NameInMap("deviceStatus")
         public String deviceStatus;
 
-        /**
-         * <p>设备类型</p>
-         */
         @NameInMap("deviceType")
         public String deviceType;
 
-        /**
-         * <p>控制器unionId</p>
-         */
         @NameInMap("deviceUnionId")
         public String deviceUnionId;
 
-        /**
-         * <p>控制器绑定会议室id</p>
-         */
         @NameInMap("openRoomId")
         public String openRoomId;
 
-        /**
-         * <p>控制器投屏码</p>
-         */
         @NameInMap("shareCode")
         public String shareCode;
 
@@ -200,81 +161,42 @@ public class QueryMeetingRoomDeviceResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomDeviceResponseBodyResult extends TeaModel {
-        /**
-         * <p>设备控制器</p>
-         */
         @NameInMap("controllers")
         public java.util.List<QueryMeetingRoomDeviceResponseBodyResultControllers> controllers;
 
-        /**
-         * <p>企业corpId</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>设备id</p>
-         */
         @NameInMap("deviceId")
         public String deviceId;
 
-        /**
-         * <p>设备mac地址</p>
-         */
         @NameInMap("deviceMac")
         public String deviceMac;
 
-        /**
-         * <p>设备型号</p>
-         */
         @NameInMap("deviceModel")
         public String deviceModel;
 
-        /**
-         * <p>设备名称</p>
-         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        /**
-         * <p>设备注册serviceId</p>
-         */
         @NameInMap("deviceServiceId")
         public Integer deviceServiceId;
 
-        /**
-         * <p>设备sn</p>
-         */
         @NameInMap("deviceSn")
         public String deviceSn;
 
-        /**
-         * <p>设备状态</p>
-         */
         @NameInMap("deviceStatus")
         public String deviceStatus;
 
-        /**
-         * <p>设备类型</p>
-         */
         @NameInMap("deviceType")
         public String deviceType;
 
-        /**
-         * <p>设备unionId</p>
-         */
         @NameInMap("deviceUnionId")
         public String deviceUnionId;
 
-        /**
-         * <p>设备绑定会议室id</p>
-         */
         @NameInMap("openRoomId")
         public String openRoomId;
 
-        /**
-         * <p>设备投屏码</p>
-         */
         @NameInMap("shareCode")
         public String shareCode;
 

@@ -4,33 +4,18 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class InitDeviceRequest extends TeaModel {
-    /**
-     * <p>公钥密文</p>
-     */
     @NameInMap("encryptPubKey")
     public String encryptPubKey;
 
-    /**
-     * <p>签名</p>
-     */
     @NameInMap("signature")
     public String signature;
 
-    /**
-     * <p>设备sn号</p>
-     */
     @NameInMap("sn")
     public String sn;
 
-    /**
-     * <p>时间戳，utc时间</p>
-     */
     @NameInMap("timestamp")
     public Long timestamp;
 
-    /**
-     * <p>版本号</p>
-     */
     @NameInMap("version")
     public String version;
 

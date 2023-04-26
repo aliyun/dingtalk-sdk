@@ -4,21 +4,12 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ReleaseGrayOrgSetRequest extends TeaModel {
-    /**
-     * <p>离线包ID</p>
-     */
     @NameInMap("miniAppId")
     public String miniAppId;
 
-    /**
-     * <p>灰度企业corpId列表</p>
-     */
     @NameInMap("value")
     public java.util.List<String> value;
 
-    /**
-     * <p>离线包版本号</p>
-     */
     @NameInMap("version")
     public String version;
 

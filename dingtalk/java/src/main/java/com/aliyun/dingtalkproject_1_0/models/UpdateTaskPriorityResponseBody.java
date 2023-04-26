@@ -21,15 +21,9 @@ public class UpdateTaskPriorityResponseBody extends TeaModel {
     }
 
     public static class UpdateTaskPriorityResponseBodyResult extends TeaModel {
-        /**
-         * <p>优先级，默认的优先级包含：-10、0、1、2，含义分别为较低、普通、紧急、非常紧急。</p>
-         */
         @NameInMap("priority")
         public Integer priority;
 
-        /**
-         * <p>更新时间。</p>
-         */
         @NameInMap("updated")
         public String updated;
 

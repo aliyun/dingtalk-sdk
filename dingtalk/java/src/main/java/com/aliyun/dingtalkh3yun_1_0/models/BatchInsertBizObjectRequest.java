@@ -4,27 +4,15 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchInsertBizObjectRequest extends TeaModel {
-    /**
-     * <p>待新增的业对象json数组</p>
-     */
     @NameInMap("bizObjectJsonArray")
     public java.util.List<String> bizObjectJsonArray;
 
-    /**
-     * <p>是否是草稿数据。true=创建草稿数据，false=创建生效数据</p>
-     */
     @NameInMap("isDraft")
     public Boolean isDraft;
 
-    /**
-     * <p>操作用户id</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    /**
-     * <p>表单编码</p>
-     */
     @NameInMap("schemaCode")
     public String schemaCode;
 

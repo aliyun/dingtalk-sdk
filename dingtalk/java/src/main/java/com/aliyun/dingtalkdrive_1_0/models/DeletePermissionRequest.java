@@ -7,15 +7,9 @@ public class DeletePermissionRequest extends TeaModel {
     @NameInMap("members")
     public java.util.List<DeletePermissionRequestMembers> members;
 
-    /**
-     * <p>权限角色</p>
-     */
     @NameInMap("role")
     public String role;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 
@@ -49,21 +43,12 @@ public class DeletePermissionRequest extends TeaModel {
     }
 
     public static class DeletePermissionRequestMembers extends TeaModel {
-        /**
-         * <p>企业corpId</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>成员id</p>
-         */
         @NameInMap("memberId")
         public String memberId;
 
-        /**
-         * <p>成员类型</p>
-         */
         @NameInMap("memberType")
         public String memberType;
 

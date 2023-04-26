@@ -4,75 +4,39 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class UserAgreementPageSignRequest extends TeaModel {
-    /**
-     * <p>业务编码</p>
-     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    /**
-     * <p>业务场景</p>
-     */
     @NameInMap("bizScene")
     public String bizScene;
 
-    /**
-     * <p>主机构编号</p>
-     */
     @NameInMap("instId")
     public String instId;
 
-    /**
-     * <p>支付渠道</p>
-     */
     @NameInMap("payChannel")
     public String payChannel;
 
-    /**
-     * <p>备注</p>
-     */
     @NameInMap("remark")
     public String remark;
 
-    /**
-     * <p>签约后页面返回url</p>
-     */
     @NameInMap("returnUrl")
     public String returnUrl;
 
-    /**
-     * <p>签约场景</p>
-     */
     @NameInMap("signScene")
     public String signScene;
 
-    /**
-     * <p>子机构编号</p>
-     */
     @NameInMap("subInstId")
     public String subInstId;
 
-    /**
-     * <p>子商户商户名称</p>
-     */
     @NameInMap("subMerchantName")
     public String subMerchantName;
 
-    /**
-     * <p>子商户服务描述</p>
-     */
     @NameInMap("subMerchantServiceDesc")
     public String subMerchantServiceDesc;
 
-    /**
-     * <p>子商户服务名称</p>
-     */
     @NameInMap("subMerchantServiceName")
     public String subMerchantServiceName;
 
-    /**
-     * <p>付款人staffId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

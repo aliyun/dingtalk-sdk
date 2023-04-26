@@ -4,9 +4,6 @@ package com.aliyun.dingtalkmicro_app_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteInnerAppRequest extends TeaModel {
-    /**
-     * <p>操作人unionId</p>
-     */
     @NameInMap("opUnionId")
     public String opUnionId;
 

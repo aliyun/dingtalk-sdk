@@ -4,21 +4,12 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class TransferUserObjectiveResponseBody extends TeaModel {
-    /**
-     * <p>转交是否成功</p>
-     */
     @NameInMap("content")
     public Boolean content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
-    /**
-     * <p>返回结果</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

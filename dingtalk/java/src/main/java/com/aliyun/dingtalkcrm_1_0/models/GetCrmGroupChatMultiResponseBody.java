@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCrmGroupChatMultiResponseBody extends TeaModel {
-    /**
-     * <p>客户群列表。</p>
-     */
     @NameInMap("result")
     public java.util.List<GetCrmGroupChatMultiResponseBodyResult> result;
 
@@ -24,51 +21,27 @@ public class GetCrmGroupChatMultiResponseBody extends TeaModel {
     }
 
     public static class GetCrmGroupChatMultiResponseBodyResult extends TeaModel {
-        /**
-         * <p>创建时间(时间戳)。</p>
-         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        /**
-         * <p>群头像地址。</p>
-         */
         @NameInMap("iconUrl")
         public String iconUrl;
 
-        /**
-         * <p>客户群成员数。</p>
-         */
         @NameInMap("memberCount")
         public Integer memberCount;
 
-        /**
-         * <p>客户群名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>客户群openConversationId。</p>
-         */
         @NameInMap("openConversationId")
         public String openConversationId;
 
-        /**
-         * <p>群组openGroupSetId。</p>
-         */
         @NameInMap("openGroupSetId")
         public String openGroupSetId;
 
-        /**
-         * <p>群主userId。</p>
-         */
         @NameInMap("ownerUserId")
         public String ownerUserId;
 
-        /**
-         * <p>群主userName。</p>
-         */
         @NameInMap("ownerUserName")
         public String ownerUserName;
 

@@ -4,33 +4,18 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetFamilySchoolConversationMsgResponseBody extends TeaModel {
-    /**
-     * <p>企业名称，corp123</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>是否有更多数据</p>
-     */
     @NameInMap("hasMore")
     public String hasMore;
 
-    /**
-     * <p>消息数据</p>
-     */
     @NameInMap("messages")
     public java.util.List<GetFamilySchoolConversationMsgResponseBodyMessages> messages;
 
-    /**
-     * <p>查询下次消息的游标,时间毫秒值</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>开放群Id</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
@@ -80,39 +65,21 @@ public class GetFamilySchoolConversationMsgResponseBody extends TeaModel {
     }
 
     public static class GetFamilySchoolConversationMsgResponseBodyMessagesMediaModels extends TeaModel {
-        /**
-         * <p>消息mediaId文件名称</p>
-         */
         @NameInMap("fileName")
         public String fileName;
 
-        /**
-         * <p>消息mediaId文件类型</p>
-         */
         @NameInMap("fileType")
         public String fileType;
 
-        /**
-         * <p>消息mediaId</p>
-         */
         @NameInMap("mediaId")
         public String mediaId;
 
-        /**
-         * <p>消息mediaId文件大小</p>
-         */
         @NameInMap("size")
         public String size;
 
-        /**
-         * <p>消息mediaId对应的下载地址</p>
-         */
         @NameInMap("url")
         public String url;
 
-        /**
-         * <p>视频文件缩略图mediaId</p>
-         */
         @NameInMap("videoPicMediaId")
         public String videoPicMediaId;
 
@@ -172,27 +139,15 @@ public class GetFamilySchoolConversationMsgResponseBody extends TeaModel {
     }
 
     public static class GetFamilySchoolConversationMsgResponseBodyMessages extends TeaModel {
-        /**
-         * <p>消息类型，2-图片、202视频、3100富文本消息</p>
-         */
         @NameInMap("contentType")
         public Integer contentType;
 
-        /**
-         * <p>消息的创建时间</p>
-         */
         @NameInMap("createAt")
         public Long createAt;
 
-        /**
-         * <p>media文件对象列表</p>
-         */
         @NameInMap("mediaModels")
         public java.util.List<GetFamilySchoolConversationMsgResponseBodyMessagesMediaModels> mediaModels;
 
-        /**
-         * <p>消息的唯一标识</p>
-         */
         @NameInMap("openMsgId")
         public String openMsgId;
 

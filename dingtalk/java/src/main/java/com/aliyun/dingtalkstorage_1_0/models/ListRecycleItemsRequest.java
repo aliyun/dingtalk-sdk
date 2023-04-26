@@ -4,25 +4,12 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListRecycleItemsRequest extends TeaModel {
-    /**
-     * <p>分页大小, 不保证全量返回</p>
-     * <p>默认值:</p>
-     * <p>	50</p>
-     * <p>最大值:</p>
-     * <p>	50</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>分页游标，首次拉取nextToken传空</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

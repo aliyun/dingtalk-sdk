@@ -6,8 +6,11 @@ import com.aliyun.dingtalkbadge_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public CreateBadgeCodeUserInstanceResponse createBadgeCodeUserInstance(CreateBadgeCodeUserInstanceRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateBadgeCodeUserInstanceHeaders headers = new CreateBadgeCodeUserInstanceHeaders();
-        return this.createBadgeCodeUserInstanceWithOptions(request, headers, runtime);
-    }
 
     public CreateBadgeCodeUserInstanceResponse createBadgeCodeUserInstanceWithOptions(CreateBadgeCodeUserInstanceRequest request, CreateBadgeCodeUserInstanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -82,13 +79,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateBadgeCodeUserInstance", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/userInstances", "json", req, runtime), new CreateBadgeCodeUserInstanceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateBadgeCodeUserInstance"),
+            new TeaPair("version", "badge_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/badge/codes/userInstances"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateBadgeCodeUserInstanceResponse());
     }
 
-    public CreateBadgeNotifyResponse createBadgeNotify(CreateBadgeNotifyRequest request) throws Exception {
+    public CreateBadgeCodeUserInstanceResponse createBadgeCodeUserInstance(CreateBadgeCodeUserInstanceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateBadgeNotifyHeaders headers = new CreateBadgeNotifyHeaders();
-        return this.createBadgeNotifyWithOptions(request, headers, runtime);
+        CreateBadgeCodeUserInstanceHeaders headers = new CreateBadgeCodeUserInstanceHeaders();
+        return this.createBadgeCodeUserInstanceWithOptions(request, headers, runtime);
     }
 
     public CreateBadgeNotifyResponse createBadgeNotifyWithOptions(CreateBadgeNotifyRequest request, CreateBadgeNotifyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -123,13 +131,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateBadgeNotify", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/notices", "json", req, runtime), new CreateBadgeNotifyResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateBadgeNotify"),
+            new TeaPair("version", "badge_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/badge/notices"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateBadgeNotifyResponse());
     }
 
-    public DecodeBadgeCodeResponse decodeBadgeCode(DecodeBadgeCodeRequest request) throws Exception {
+    public CreateBadgeNotifyResponse createBadgeNotify(CreateBadgeNotifyRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        DecodeBadgeCodeHeaders headers = new DecodeBadgeCodeHeaders();
-        return this.decodeBadgeCodeWithOptions(request, headers, runtime);
+        CreateBadgeNotifyHeaders headers = new CreateBadgeNotifyHeaders();
+        return this.createBadgeNotifyWithOptions(request, headers, runtime);
     }
 
     public DecodeBadgeCodeResponse decodeBadgeCodeWithOptions(DecodeBadgeCodeRequest request, DecodeBadgeCodeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -156,13 +175,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("DecodeBadgeCode", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/decode", "json", req, runtime), new DecodeBadgeCodeResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DecodeBadgeCode"),
+            new TeaPair("version", "badge_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/badge/codes/decode"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DecodeBadgeCodeResponse());
     }
 
-    public NotifyBadgeCodePayResultResponse notifyBadgeCodePayResult(NotifyBadgeCodePayResultRequest request) throws Exception {
+    public DecodeBadgeCodeResponse decodeBadgeCode(DecodeBadgeCodeRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        NotifyBadgeCodePayResultHeaders headers = new NotifyBadgeCodePayResultHeaders();
-        return this.notifyBadgeCodePayResultWithOptions(request, headers, runtime);
+        DecodeBadgeCodeHeaders headers = new DecodeBadgeCodeHeaders();
+        return this.decodeBadgeCodeWithOptions(request, headers, runtime);
     }
 
     public NotifyBadgeCodePayResultResponse notifyBadgeCodePayResultWithOptions(NotifyBadgeCodePayResultRequest request, NotifyBadgeCodePayResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -249,13 +279,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("NotifyBadgeCodePayResult", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/payResults", "json", req, runtime), new NotifyBadgeCodePayResultResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "NotifyBadgeCodePayResult"),
+            new TeaPair("version", "badge_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/badge/codes/payResults"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new NotifyBadgeCodePayResultResponse());
     }
 
-    public NotifyBadgeCodeRefundResultResponse notifyBadgeCodeRefundResult(NotifyBadgeCodeRefundResultRequest request) throws Exception {
+    public NotifyBadgeCodePayResultResponse notifyBadgeCodePayResult(NotifyBadgeCodePayResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        NotifyBadgeCodeRefundResultHeaders headers = new NotifyBadgeCodeRefundResultHeaders();
-        return this.notifyBadgeCodeRefundResultWithOptions(request, headers, runtime);
+        NotifyBadgeCodePayResultHeaders headers = new NotifyBadgeCodePayResultHeaders();
+        return this.notifyBadgeCodePayResultWithOptions(request, headers, runtime);
     }
 
     public NotifyBadgeCodeRefundResultResponse notifyBadgeCodeRefundResultWithOptions(NotifyBadgeCodeRefundResultRequest request, NotifyBadgeCodeRefundResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -314,13 +355,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("NotifyBadgeCodeRefundResult", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/refundResults", "json", req, runtime), new NotifyBadgeCodeRefundResultResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "NotifyBadgeCodeRefundResult"),
+            new TeaPair("version", "badge_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/badge/codes/refundResults"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new NotifyBadgeCodeRefundResultResponse());
     }
 
-    public NotifyBadgeCodeVerifyResultResponse notifyBadgeCodeVerifyResult(NotifyBadgeCodeVerifyResultRequest request) throws Exception {
+    public NotifyBadgeCodeRefundResultResponse notifyBadgeCodeRefundResult(NotifyBadgeCodeRefundResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        NotifyBadgeCodeVerifyResultHeaders headers = new NotifyBadgeCodeVerifyResultHeaders();
-        return this.notifyBadgeCodeVerifyResultWithOptions(request, headers, runtime);
+        NotifyBadgeCodeRefundResultHeaders headers = new NotifyBadgeCodeRefundResultHeaders();
+        return this.notifyBadgeCodeRefundResultWithOptions(request, headers, runtime);
     }
 
     public NotifyBadgeCodeVerifyResultResponse notifyBadgeCodeVerifyResultWithOptions(NotifyBadgeCodeVerifyResultRequest request, NotifyBadgeCodeVerifyResultHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -379,13 +431,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("NotifyBadgeCodeVerifyResult", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/verifyResults", "json", req, runtime), new NotifyBadgeCodeVerifyResultResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "NotifyBadgeCodeVerifyResult"),
+            new TeaPair("version", "badge_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/badge/codes/verifyResults"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new NotifyBadgeCodeVerifyResultResponse());
     }
 
-    public SaveBadgeCodeCorpInstanceResponse saveBadgeCodeCorpInstance(SaveBadgeCodeCorpInstanceRequest request) throws Exception {
+    public NotifyBadgeCodeVerifyResultResponse notifyBadgeCodeVerifyResult(NotifyBadgeCodeVerifyResultRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        SaveBadgeCodeCorpInstanceHeaders headers = new SaveBadgeCodeCorpInstanceHeaders();
-        return this.saveBadgeCodeCorpInstanceWithOptions(request, headers, runtime);
+        NotifyBadgeCodeVerifyResultHeaders headers = new NotifyBadgeCodeVerifyResultHeaders();
+        return this.notifyBadgeCodeVerifyResultWithOptions(request, headers, runtime);
     }
 
     public SaveBadgeCodeCorpInstanceResponse saveBadgeCodeCorpInstanceWithOptions(SaveBadgeCodeCorpInstanceRequest request, SaveBadgeCodeCorpInstanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -420,13 +483,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("SaveBadgeCodeCorpInstance", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/corpInstances", "json", req, runtime), new SaveBadgeCodeCorpInstanceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SaveBadgeCodeCorpInstance"),
+            new TeaPair("version", "badge_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/badge/codes/corpInstances"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SaveBadgeCodeCorpInstanceResponse());
     }
 
-    public UpdateBadgeCodeUserInstanceResponse updateBadgeCodeUserInstance(UpdateBadgeCodeUserInstanceRequest request) throws Exception {
+    public SaveBadgeCodeCorpInstanceResponse saveBadgeCodeCorpInstance(SaveBadgeCodeCorpInstanceRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        UpdateBadgeCodeUserInstanceHeaders headers = new UpdateBadgeCodeUserInstanceHeaders();
-        return this.updateBadgeCodeUserInstanceWithOptions(request, headers, runtime);
+        SaveBadgeCodeCorpInstanceHeaders headers = new SaveBadgeCodeCorpInstanceHeaders();
+        return this.saveBadgeCodeCorpInstanceWithOptions(request, headers, runtime);
     }
 
     public UpdateBadgeCodeUserInstanceResponse updateBadgeCodeUserInstanceWithOptions(UpdateBadgeCodeUserInstanceRequest request, UpdateBadgeCodeUserInstanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -485,6 +559,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("UpdateBadgeCodeUserInstance", "badge_1.0", "HTTP", "PUT", "AK", "/v1.0/badge/codes/userInstances", "json", req, runtime), new UpdateBadgeCodeUserInstanceResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateBadgeCodeUserInstance"),
+            new TeaPair("version", "badge_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/badge/codes/userInstances"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateBadgeCodeUserInstanceResponse());
+    }
+
+    public UpdateBadgeCodeUserInstanceResponse updateBadgeCodeUserInstance(UpdateBadgeCodeUserInstanceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateBadgeCodeUserInstanceHeaders headers = new UpdateBadgeCodeUserInstanceHeaders();
+        return this.updateBadgeCodeUserInstanceWithOptions(request, headers, runtime);
     }
 }

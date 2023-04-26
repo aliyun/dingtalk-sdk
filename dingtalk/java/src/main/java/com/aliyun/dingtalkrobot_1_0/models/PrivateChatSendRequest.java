@@ -4,33 +4,18 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class PrivateChatSendRequest extends TeaModel {
-    /**
-     * <p>酷应用的code</p>
-     */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
-    /**
-     * <p>消息类型的key</p>
-     */
     @NameInMap("msgKey")
     public String msgKey;
 
-    /**
-     * <p>消息体</p>
-     */
     @NameInMap("msgParam")
     public String msgParam;
 
-    /**
-     * <p>开放会话ID</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>机器人robotCode</p>
-     */
     @NameInMap("robotCode")
     public String robotCode;
 

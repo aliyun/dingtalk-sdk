@@ -4,15 +4,9 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserByUnionIdResponseBody extends TeaModel {
-    /**
-     * <p>联系类型，0表示企业内部员工，1表示企业外部联系人</p>
-     */
     @NameInMap("contactType")
     public Integer contactType;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 

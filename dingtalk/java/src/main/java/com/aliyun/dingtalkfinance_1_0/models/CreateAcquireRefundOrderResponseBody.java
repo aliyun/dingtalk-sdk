@@ -4,21 +4,12 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateAcquireRefundOrderResponseBody extends TeaModel {
-    /**
-     * <p>外部退款单号</p>
-     */
     @NameInMap("outRefundNo")
     public String outRefundNo;
 
-    /**
-     * <p>钉钉退款单号</p>
-     */
     @NameInMap("refundOrderNo")
     public String refundOrderNo;
 
-    /**
-     * <p>退款状态</p>
-     */
     @NameInMap("status")
     public String status;
 

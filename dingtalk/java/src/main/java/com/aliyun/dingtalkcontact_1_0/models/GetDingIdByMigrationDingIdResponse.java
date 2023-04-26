@@ -8,6 +8,10 @@ public class GetDingIdByMigrationDingIdResponse extends TeaModel {
     @Validation(required = true)
     public java.util.Map<String, String> headers;
 
+    @NameInMap("statusCode")
+    @Validation(required = true)
+    public Integer statusCode;
+
     @NameInMap("body")
     @Validation(required = true)
     public GetDingIdByMigrationDingIdResponseBody body;
@@ -23,6 +27,14 @@ public class GetDingIdByMigrationDingIdResponse extends TeaModel {
     }
     public java.util.Map<String, String> getHeaders() {
         return this.headers;
+    }
+
+    public GetDingIdByMigrationDingIdResponse setStatusCode(Integer statusCode) {
+        this.statusCode = statusCode;
+        return this;
+    }
+    public Integer getStatusCode() {
+        return this.statusCode;
     }
 
     public GetDingIdByMigrationDingIdResponse setBody(GetDingIdByMigrationDingIdResponseBody body) {

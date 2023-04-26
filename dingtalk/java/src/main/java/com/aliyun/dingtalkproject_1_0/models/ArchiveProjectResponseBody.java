@@ -21,15 +21,9 @@ public class ArchiveProjectResponseBody extends TeaModel {
     }
 
     public static class ArchiveProjectResponseBodyResult extends TeaModel {
-        /**
-         * <p>是否已放入回收站。</p>
-         */
         @NameInMap("isArchived")
         public Boolean isArchived;
 
-        /**
-         * <p>更新时间。</p>
-         */
         @NameInMap("updated")
         public String updated;
 

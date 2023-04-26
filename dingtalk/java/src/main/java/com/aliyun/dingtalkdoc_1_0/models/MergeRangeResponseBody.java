@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class MergeRangeResponseBody extends TeaModel {
-    /**
-     * <p>合并的单元格地址</p>
-     */
     @NameInMap("a1Notation")
     public String a1Notation;
 

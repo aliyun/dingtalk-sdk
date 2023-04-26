@@ -4,21 +4,12 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSignedDetailByPageRequest extends TeaModel {
-    /**
-     * <p>pageStart</p>
-     */
     @NameInMap("pageNumber")
     public Long pageNumber;
 
-    /**
-     * <p>pageSize</p>
-     */
     @NameInMap("pageSize")
     public Long pageSize;
 
-    /**
-     * <p>signStatus</p>
-     */
     @NameInMap("signStatus")
     public Long signStatus;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListMiniAppHistoryVersionResponseBody extends TeaModel {
-    /**
-     * <p>result</p>
-     */
     @NameInMap("list")
     public java.util.List<ListMiniAppHistoryVersionResponseBodyList> list;
 
@@ -24,33 +21,18 @@ public class ListMiniAppHistoryVersionResponseBody extends TeaModel {
     }
 
     public static class ListMiniAppHistoryVersionResponseBodyList extends TeaModel {
-        /**
-         * <p>构建状态</p>
-         */
         @NameInMap("buildStatus")
         public Long buildStatus;
 
-        /**
-         * <p>h5Bundle地址</p>
-         */
         @NameInMap("h5Bundle")
         public String h5Bundle;
 
-        /**
-         * <p>包大小</p>
-         */
         @NameInMap("packageSize")
         public String packageSize;
 
-        /**
-         * <p>包url</p>
-         */
         @NameInMap("packageUrl")
         public String packageUrl;
 
-        /**
-         * <p>版本</p>
-         */
         @NameInMap("version")
         public String version;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExecuteBatchTaskResponseBody extends TeaModel {
-    /**
-     * <p>审批失败的任务数</p>
-     */
     @NameInMap("failNumber")
     public Integer failNumber;
 
-    /**
-     * <p>审批成功的任务数</p>
-     */
     @NameInMap("successNumber")
     public Integer successNumber;
 
-    /**
-     * <p>总任务数</p>
-     */
     @NameInMap("total")
     public Integer total;
 

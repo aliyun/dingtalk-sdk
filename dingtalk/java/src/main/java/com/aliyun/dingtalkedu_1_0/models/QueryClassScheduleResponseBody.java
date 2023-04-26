@@ -4,15 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryClassScheduleResponseBody extends TeaModel {
-    /**
-     * <p>课表时间节次配置。</p>
-     */
     @NameInMap("config")
     public QueryClassScheduleResponseBodyConfig config;
 
-    /**
-     * <p>课程列表</p>
-     */
     @NameInMap("courseDTOS")
     public java.util.List<QueryClassScheduleResponseBodyCourseDTOS> courseDTOS;
 
@@ -38,21 +32,12 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigEnd extends TeaModel {
-        /**
-         * <p>一个月中第几天</p>
-         */
         @NameInMap("dayOfMonth")
         public Long dayOfMonth;
 
-        /**
-         * <p>月份。</p>
-         */
         @NameInMap("month")
         public Long month;
 
-        /**
-         * <p>年份。</p>
-         */
         @NameInMap("year")
         public Long year;
 
@@ -88,15 +73,9 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigSectionModelsEnd extends TeaModel {
-        /**
-         * <p>小时。</p>
-         */
         @NameInMap("hour")
         public Long hour;
 
-        /**
-         * <p>分钟。</p>
-         */
         @NameInMap("min")
         public Long min;
 
@@ -124,15 +103,9 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigSectionModelsStart extends TeaModel {
-        /**
-         * <p>小时。</p>
-         */
         @NameInMap("hour")
         public Long hour;
 
-        /**
-         * <p>分钟</p>
-         */
         @NameInMap("min")
         public Long min;
 
@@ -160,33 +133,18 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigSectionModels extends TeaModel {
-        /**
-         * <p>结束时间（时分级别）</p>
-         */
         @NameInMap("end")
         public QueryClassScheduleResponseBodyConfigSectionModelsEnd end;
 
-        /**
-         * <p>节次序列。</p>
-         */
         @NameInMap("sectionIndex")
         public Long sectionIndex;
 
-        /**
-         * <p>节次名称。</p>
-         */
         @NameInMap("sectionName")
         public String sectionName;
 
-        /**
-         * <p>节次类型：  COURSE：上课节次 REST：休息节次</p>
-         */
         @NameInMap("sectionType")
         public String sectionType;
 
-        /**
-         * <p>开始时间（时分级别）。</p>
-         */
         @NameInMap("start")
         public QueryClassScheduleResponseBodyConfigSectionModelsStart start;
 
@@ -238,21 +196,12 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfigStart extends TeaModel {
-        /**
-         * <p>一个月中第几天</p>
-         */
         @NameInMap("dayOfMonth")
         public Long dayOfMonth;
 
-        /**
-         * <p>月份。</p>
-         */
         @NameInMap("month")
         public Long month;
 
-        /**
-         * <p>年份。</p>
-         */
         @NameInMap("year")
         public Long year;
 
@@ -288,21 +237,12 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyConfig extends TeaModel {
-        /**
-         * <p>开始时间（到日）。</p>
-         */
         @NameInMap("end")
         public QueryClassScheduleResponseBodyConfigEnd end;
 
-        /**
-         * <p>节次模型。</p>
-         */
         @NameInMap("sectionModels")
         public java.util.List<QueryClassScheduleResponseBodyConfigSectionModels> sectionModels;
 
-        /**
-         * <p>开始时间（到日）。</p>
-         */
         @NameInMap("start")
         public QueryClassScheduleResponseBodyConfigStart start;
 
@@ -338,15 +278,9 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyCourseDTOSClassrooms extends TeaModel {
-        /**
-         * <p>交互信息</p>
-         */
         @NameInMap("interactInfo")
         public String interactInfo;
 
-        /**
-         * <p>课堂唯一标识</p>
-         */
         @NameInMap("targetId")
         public String targetId;
 
@@ -377,15 +311,9 @@ public class QueryClassScheduleResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>用户uid</p>
-         */
         @NameInMap("uid")
         public Long uid;
 
-        /**
-         * <p>用户userid</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -421,129 +349,66 @@ public class QueryClassScheduleResponseBody extends TeaModel {
     }
 
     public static class QueryClassScheduleResponseBodyCourseDTOS extends TeaModel {
-        /**
-         * <p>课程所在班级id</p>
-         */
         @NameInMap("classId")
         public Long classId;
 
-        /**
-         * <p>课堂列表</p>
-         */
         @NameInMap("classrooms")
         public java.util.List<QueryClassScheduleResponseBodyCourseDTOSClassrooms> classrooms;
 
-        /**
-         * <p>课程编码</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>课程组编码</p>
-         */
         @NameInMap("courseGroupCode")
         public String courseGroupCode;
 
-        /**
-         * <p>课程封面地址</p>
-         */
         @NameInMap("coverUrl")
         public String coverUrl;
 
-        /**
-         * <p>创建者组织id</p>
-         */
         @NameInMap("creatorCorpId")
         public String creatorCorpId;
 
-        /**
-         * <p>创建者UserId</p>
-         */
         @NameInMap("creatorUserId")
         public String creatorUserId;
 
-        /**
-         * <p>创建者UserName</p>
-         */
         @NameInMap("creatorUserName")
         public String creatorUserName;
 
-        /**
-         * <p>课程参与人列表</p>
-         */
         @NameInMap("eduUserModels")
         public java.util.List<QueryClassScheduleResponseBodyCourseDTOSEduUserModels> eduUserModels;
 
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("endTime")
         public Long endTime;
 
-        /**
-         * <p>课程扩展信息</p>
-         */
         @NameInMap("extInfo")
         public String extInfo;
 
-        /**
-         * <p>课程介绍</p>
-         */
         @NameInMap("introduce")
         public String introduce;
 
-        /**
-         * <p>课程名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>课程所在节次序列号</p>
-         */
         @NameInMap("sectionIndex")
         public Long sectionIndex;
 
-        /**
-         * <p>课程名称</p>
-         */
         @NameInMap("sectionName")
         public String sectionName;
 
-        /**
-         * <p>开始时间</p>
-         */
         @NameInMap("startTime")
         public Long startTime;
 
-        /**
-         * <p>课程状态</p>
-         */
         @NameInMap("status")
         public Long status;
 
-        /**
-         * <p>学科编码</p>
-         */
         @NameInMap("subjectCode")
         public String subjectCode;
 
-        /**
-         * <p>老师CorpId</p>
-         */
         @NameInMap("teacherCorpId")
         public String teacherCorpId;
 
-        /**
-         * <p>老师UserId</p>
-         */
         @NameInMap("teacherUserId")
         public String teacherUserId;
 
-        /**
-         * <p>老师UserName</p>
-         */
         @NameInMap("teacherUserName")
         public String teacherUserName;
 

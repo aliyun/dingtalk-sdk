@@ -4,39 +4,21 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListDeptSimpleUsersRequest extends TeaModel {
-    /**
-     * <p>containAccessLimit</p>
-     */
     @NameInMap("containAccessLimit")
     public Boolean containAccessLimit;
 
-    /**
-     * <p>cursor</p>
-     */
     @NameInMap("cursor")
     public Long cursor;
 
-    /**
-     * <p>language</p>
-     */
     @NameInMap("language")
     public String language;
 
-    /**
-     * <p>orderField</p>
-     */
     @NameInMap("orderField")
     public String orderField;
 
-    /**
-     * <p>size</p>
-     */
     @NameInMap("size")
     public Integer size;
 
-    /**
-     * <p>下属组织的组织ID，比如下属镇、村的corpId</p>
-     */
     @NameInMap("subCorpId")
     public String subCorpId;
 

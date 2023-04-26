@@ -7,9 +7,6 @@ public class ServiceWindowMessageBatchPushResponseBody extends TeaModel {
     @NameInMap("requestId")
     public String requestId;
 
-    /**
-     * <p>result</p>
-     */
     @NameInMap("result")
     public ServiceWindowMessageBatchPushResponseBodyResult result;
 

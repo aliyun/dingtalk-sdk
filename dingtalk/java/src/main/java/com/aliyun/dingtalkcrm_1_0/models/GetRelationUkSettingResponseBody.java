@@ -21,15 +21,9 @@ public class GetRelationUkSettingResponseBody extends TeaModel {
     }
 
     public static class GetRelationUkSettingResponseBodyResult extends TeaModel {
-        /**
-         * <p>查重字段的bizAlias</p>
-         */
         @NameInMap("bizAlias")
         public String bizAlias;
 
-        /**
-         * <p>查重字段的字段id</p>
-         */
         @NameInMap("fieldId")
         public String fieldId;
 

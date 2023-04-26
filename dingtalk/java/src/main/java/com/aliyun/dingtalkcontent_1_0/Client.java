@@ -6,8 +6,11 @@ import com.aliyun.dingtalkcontent_1_0.models.*;
 
 public class Client extends com.aliyun.teaopenapi.Client {
 
+    public com.aliyun.gateway.spi.Client _client;
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._client = new com.aliyun.gateway.dingtalk.Client();
+        this._spi = _client;
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -15,12 +18,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     }
 
-
-    public CreateFeedResponse createFeed(CreateFeedRequest request) throws Exception {
-        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        CreateFeedHeaders headers = new CreateFeedHeaders();
-        return this.createFeedWithOptions(request, headers, runtime);
-    }
 
     public CreateFeedResponse createFeedWithOptions(CreateFeedRequest request, CreateFeedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
@@ -50,18 +47,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
-        return TeaModel.toModel(this.doROARequest("CreateFeed", "content_1.0", "HTTP", "POST", "AK", "/v1.0/content/feeds", "json", req, runtime), new CreateFeedResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateFeed"),
+            new TeaPair("version", "content_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/content/feeds"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateFeedResponse());
     }
 
-    public GetFeedResponse getFeed(String feedId, GetFeedRequest request) throws Exception {
+    public CreateFeedResponse createFeed(CreateFeedRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetFeedHeaders headers = new GetFeedHeaders();
-        return this.getFeedWithOptions(feedId, request, headers, runtime);
+        CreateFeedHeaders headers = new CreateFeedHeaders();
+        return this.createFeedWithOptions(request, headers, runtime);
     }
 
     public GetFeedResponse getFeedWithOptions(String feedId, GetFeedRequest request, GetFeedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        feedId = com.aliyun.openapiutil.Client.getEncodeParam(feedId);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.mcnId)) {
             query.put("mcnId", request.mcnId);
@@ -80,13 +87,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetFeed", "content_1.0", "HTTP", "GET", "AK", "/v1.0/content/feeds/" + feedId + "", "json", req, runtime), new GetFeedResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetFeed"),
+            new TeaPair("version", "content_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/content/feeds/" + feedId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetFeedResponse());
     }
 
-    public GetMediaCerficateResponse getMediaCerficate(GetMediaCerficateRequest request) throws Exception {
+    public GetFeedResponse getFeed(String feedId, GetFeedRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        GetMediaCerficateHeaders headers = new GetMediaCerficateHeaders();
-        return this.getMediaCerficateWithOptions(request, headers, runtime);
+        GetFeedHeaders headers = new GetFeedHeaders();
+        return this.getFeedWithOptions(feedId, request, headers, runtime);
     }
 
     public GetMediaCerficateResponse getMediaCerficateWithOptions(GetMediaCerficateRequest request, GetMediaCerficateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -133,18 +151,28 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
-        return TeaModel.toModel(this.doROARequest("GetMediaCerficate", "content_1.0", "HTTP", "GET", "AK", "/v1.0/content/media/cerficates", "json", req, runtime), new GetMediaCerficateResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetMediaCerficate"),
+            new TeaPair("version", "content_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/content/media/cerficates"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetMediaCerficateResponse());
     }
 
-    public ListItemUserDataResponse listItemUserData(String itemId, ListItemUserDataRequest request) throws Exception {
+    public GetMediaCerficateResponse getMediaCerficate(GetMediaCerficateRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        ListItemUserDataHeaders headers = new ListItemUserDataHeaders();
-        return this.listItemUserDataWithOptions(itemId, request, headers, runtime);
+        GetMediaCerficateHeaders headers = new GetMediaCerficateHeaders();
+        return this.getMediaCerficateWithOptions(request, headers, runtime);
     }
 
     public ListItemUserDataResponse listItemUserDataWithOptions(String itemId, ListItemUserDataRequest request, ListItemUserDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        itemId = com.aliyun.openapiutil.Client.getEncodeParam(itemId);
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -158,13 +186,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("headers", realHeaders),
             new TeaPair("body", request.body)
         ));
-        return TeaModel.toModel(this.doROARequest("ListItemUserData", "content_1.0", "HTTP", "POST", "AK", "/v1.0/content/feeds/items/" + itemId + "/userStatistics/query", "json", req, runtime), new ListItemUserDataResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListItemUserData"),
+            new TeaPair("version", "content_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/content/feeds/items/" + itemId + "/userStatistics/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListItemUserDataResponse());
     }
 
-    public PageFeedResponse pageFeed(PageFeedRequest request) throws Exception {
+    public ListItemUserDataResponse listItemUserData(String itemId, ListItemUserDataRequest request) throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
-        PageFeedHeaders headers = new PageFeedHeaders();
-        return this.pageFeedWithOptions(request, headers, runtime);
+        ListItemUserDataHeaders headers = new ListItemUserDataHeaders();
+        return this.listItemUserDataWithOptions(itemId, request, headers, runtime);
     }
 
     public PageFeedResponse pageFeedWithOptions(PageFeedRequest request, PageFeedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
@@ -196,6 +235,23 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
             new TeaPair("body", request.body)
         ));
-        return TeaModel.toModel(this.doROARequest("PageFeed", "content_1.0", "HTTP", "POST", "AK", "/v1.0/content/feeds/query", "json", req, runtime), new PageFeedResponse());
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PageFeed"),
+            new TeaPair("version", "content_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/content/feeds/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "json"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PageFeedResponse());
+    }
+
+    public PageFeedResponse pageFeed(PageFeedRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PageFeedHeaders headers = new PageFeedHeaders();
+        return this.pageFeedWithOptions(request, headers, runtime);
     }
 }

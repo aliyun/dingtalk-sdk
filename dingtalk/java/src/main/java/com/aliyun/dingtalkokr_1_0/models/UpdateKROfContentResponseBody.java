@@ -7,9 +7,6 @@ public class UpdateKROfContentResponseBody extends TeaModel {
     @NameInMap("data")
     public Boolean data;
 
-    /**
-     * <p>请求成功的标识。</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkcalendar_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetMeetingRoomsScheduleRequest extends TeaModel {
-    /**
-     * <p>查询结束时间</p>
-     */
     @NameInMap("endTime")
     public String endTime;
 
-    /**
-     * <p>待查询的用户列表</p>
-     */
     @NameInMap("roomIds")
     public java.util.List<String> roomIds;
 
-    /**
-     * <p>查询开始时间</p>
-     */
     @NameInMap("startTime")
     public String startTime;
 

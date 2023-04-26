@@ -4,18 +4,12 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class InitVPaasDeviceRequest extends TeaModel {
-    /**
-     * <p>设备sn码</p>
-     */
     @NameInMap("sn")
     public String sn;
 
     @NameInMap("timestamp")
     public Long timestamp;
 
-    /**
-     * <p>设备类型</p>
-     */
     @NameInMap("type")
     public String type;
 

@@ -4,27 +4,15 @@ package com.aliyun.dingtalktrajectory_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAppActiveUsersResponseBody extends TeaModel {
-    /**
-     * <p>是否存在更多数据需要获取</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>数据集合</p>
-     */
     @NameInMap("list")
     public java.util.List<QueryAppActiveUsersResponseBodyList> list;
 
-    /**
-     * <p>下一次获取开始位置</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    /**
-     * <p>总数</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -66,39 +54,21 @@ public class QueryAppActiveUsersResponseBody extends TeaModel {
     }
 
     public static class QueryAppActiveUsersResponseBodyList extends TeaModel {
-        /**
-         * <p>应用轨迹ID</p>
-         */
         @NameInMap("appTraceId")
         public String appTraceId;
 
-        /**
-         * <p>纬度</p>
-         */
         @NameInMap("latitude")
         public Float latitude;
 
-        /**
-         * <p>经度</p>
-         */
         @NameInMap("longitude")
         public Float longitude;
 
-        /**
-         * <p>该位置采集时间</p>
-         */
         @NameInMap("reportTime")
         public Long reportTime;
 
-        /**
-         * <p>轨迹采集开启时间</p>
-         */
         @NameInMap("startTime")
         public Long startTime;
 
-        /**
-         * <p>员工Id</p>
-         */
         @NameInMap("userId")
         public String userId;
 

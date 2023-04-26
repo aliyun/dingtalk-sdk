@@ -4,9 +4,6 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class PrivateChatSendResponseBody extends TeaModel {
-    /**
-     * <p>加密消息id</p>
-     */
     @NameInMap("processQueryKey")
     public String processQueryKey;
 

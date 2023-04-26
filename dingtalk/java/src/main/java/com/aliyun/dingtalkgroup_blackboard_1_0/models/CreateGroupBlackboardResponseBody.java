@@ -4,15 +4,9 @@ package com.aliyun.dingtalkgroup_blackboard_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupBlackboardResponseBody extends TeaModel {
-    /**
-     * <p>群公告Id</p>
-     */
     @NameInMap("dataId")
     public String dataId;
 
-    /**
-     * <p>请求是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteAcrossCloudStroageConfigsResponseBody extends TeaModel {
-    /**
-     * <p>执行结果</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

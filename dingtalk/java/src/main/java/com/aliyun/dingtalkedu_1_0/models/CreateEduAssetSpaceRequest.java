@@ -4,33 +4,18 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateEduAssetSpaceRequest extends TeaModel {
-    /**
-     * <p>业务类型编码</p>
-     */
     @NameInMap("bizCode")
     public String bizCode;
 
-    /**
-     * <p>空间描述</p>
-     */
     @NameInMap("spaceDesc")
     public String spaceDesc;
 
-    /**
-     * <p>空间图标</p>
-     */
     @NameInMap("spaceIcon")
     public String spaceIcon;
 
-    /**
-     * <p>空间名称</p>
-     */
     @NameInMap("spaceName")
     public String spaceName;
 
-    /**
-     * <p>用户staffId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

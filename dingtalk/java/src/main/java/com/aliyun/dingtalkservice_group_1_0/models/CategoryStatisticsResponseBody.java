@@ -4,15 +4,9 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CategoryStatisticsResponseBody extends TeaModel {
-    /**
-     * <p>分类统计</p>
-     */
     @NameInMap("categoryStatisticsRecords")
     public java.util.List<CategoryStatisticsResponseBodyCategoryStatisticsRecords> categoryStatisticsRecords;
 
-    /**
-     * <p>分类趋势</p>
-     */
     @NameInMap("categoryTrend")
     public java.util.List<CategoryStatisticsResponseBodyCategoryTrend> categoryTrend;
 
@@ -38,21 +32,12 @@ public class CategoryStatisticsResponseBody extends TeaModel {
     }
 
     public static class CategoryStatisticsResponseBodyCategoryStatisticsRecords extends TeaModel {
-        /**
-         * <p>心声数量</p>
-         */
         @NameInMap("count")
         public Long count;
 
-        /**
-         * <p>上期心声数量</p>
-         */
         @NameInMap("lastCount")
         public Long lastCount;
 
-        /**
-         * <p>分类名称</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -88,21 +73,12 @@ public class CategoryStatisticsResponseBody extends TeaModel {
     }
 
     public static class CategoryStatisticsResponseBodyCategoryTrend extends TeaModel {
-        /**
-         * <p>心声数量</p>
-         */
         @NameInMap("count")
         public Long count;
 
-        /**
-         * <p>日期</p>
-         */
         @NameInMap("dt")
         public String dt;
 
-        /**
-         * <p>分类名称</p>
-         */
         @NameInMap("name")
         public String name;
 

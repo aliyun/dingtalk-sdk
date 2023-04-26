@@ -7,9 +7,6 @@ public class QueryPointAutoIssueSettingResponseBody extends TeaModel {
     @NameInMap("result")
     public QueryPointAutoIssueSettingResponseBodyResult result;
 
-    /**
-     * <p>调用是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -35,21 +32,12 @@ public class QueryPointAutoIssueSettingResponseBody extends TeaModel {
     }
 
     public static class QueryPointAutoIssueSettingResponseBodyResult extends TeaModel {
-        /**
-         * <p>企业每月额度自动发放给每个人的数量</p>
-         */
         @NameInMap("pointAutoNum")
         public Long pointAutoNum;
 
-        /**
-         * <p>企业积分自动发放状态</p>
-         */
         @NameInMap("pointAutoState")
         public Boolean pointAutoState;
 
-        /**
-         * <p>企业积分自动发放时间 指定的是每月1号或15号</p>
-         */
         @NameInMap("pointAutoTime")
         public Long pointAutoTime;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateFulfilRecordResponseBody extends TeaModel {
-    /**
-     * <p>成功信息</p>
-     */
     @NameInMap("successInfo")
     public String successInfo;
 

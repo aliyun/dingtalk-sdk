@@ -4,9 +4,6 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class HrmProcessUpdateTerminationInfoResponseBody extends TeaModel {
-    /**
-     * <p>是否更新成功</p>
-     */
     @NameInMap("result")
     public Boolean result;
 

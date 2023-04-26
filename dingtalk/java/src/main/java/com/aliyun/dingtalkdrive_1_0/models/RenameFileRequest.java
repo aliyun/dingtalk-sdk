@@ -4,15 +4,9 @@ package com.aliyun.dingtalkdrive_1_0.models;
 import com.aliyun.tea.*;
 
 public class RenameFileRequest extends TeaModel {
-    /**
-     * <p>新文件名称</p>
-     */
     @NameInMap("newFileName")
     public String newFileName;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

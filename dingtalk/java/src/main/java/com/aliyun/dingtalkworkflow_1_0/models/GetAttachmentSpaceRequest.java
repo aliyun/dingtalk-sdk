@@ -4,15 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAttachmentSpaceRequest extends TeaModel {
-    /**
-     * <p>应用的agentid。</p>
-     */
     @NameInMap("agentId")
     public Long agentId;
 
-    /**
-     * <p>用户的userid</p>
-     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CustomizeContactListResponseBody extends TeaModel {
-    /**
-     * <p>content</p>
-     */
     @NameInMap("content")
     public java.util.List<CustomizeContactListResponseBodyContent> content;
 
@@ -24,27 +21,15 @@ public class CustomizeContactListResponseBody extends TeaModel {
     }
 
     public static class CustomizeContactListResponseBodyContent extends TeaModel {
-        /**
-         * <p>自定义通讯录Code</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>自定义通讯录名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>自定义通讯录排序</p>
-         */
         @NameInMap("order")
         public Long order;
 
-        /**
-         * <p>跟部门Id</p>
-         */
         @NameInMap("rootDeptId")
         public Long rootDeptId;
 

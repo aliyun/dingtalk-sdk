@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcontract_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendContractCardResponseBody extends TeaModel {
-    /**
-     * <p>成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateSecondaryManagementGroupResponseBody extends TeaModel {
-    /**
-     * <p>管理组id</p>
-     */
     @NameInMap("groupId")
     public String groupId;
 

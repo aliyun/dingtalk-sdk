@@ -4,15 +4,9 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDataViewRequest extends TeaModel {
-    /**
-     * <p>数据类型，参考数据类型ID对照表</p>
-     */
     @NameInMap("datatype")
     public String datatype;
 
-    /**
-     * <p>数据id</p>
-     */
     @NameInMap("msgid")
     public Long msgid;
 

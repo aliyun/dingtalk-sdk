@@ -4,26 +4,12 @@ package com.aliyun.dingtalkstorage_1_0.models;
 import com.aliyun.tea.*;
 
 public class UnsubscribeEventRequest extends TeaModel {
-    /**
-     * <p>订阅范围</p>
-     * <p>枚举值:</p>
-     * <p>	ORG: 企业</p>
-     * <p>	SPACE: 空间</p>
-     */
     @NameInMap("scope")
     public String scope;
 
-    /**
-     * <p>订阅范围对应的id</p>
-     * <p>scope为ORG时，scopeId对应的是企业id</p>
-     * <p>scope为SPACE时，scopeId对应的是空间id</p>
-     */
     @NameInMap("scopeId")
     public String scopeId;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 

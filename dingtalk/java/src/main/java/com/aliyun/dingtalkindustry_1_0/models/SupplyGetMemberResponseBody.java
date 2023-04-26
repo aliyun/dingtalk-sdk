@@ -21,27 +21,15 @@ public class SupplyGetMemberResponseBody extends TeaModel {
     }
 
     public static class SupplyGetMemberResponseBodyResult extends TeaModel {
-        /**
-         * <p>成员状态，已进组织或者待接收邀请</p>
-         */
         @NameInMap("dingMemberStatus")
         public String dingMemberStatus;
 
-        /**
-         * <p>成员是否激活</p>
-         */
         @NameInMap("isActive")
         public Boolean isActive;
 
-        /**
-         * <p>成员名字</p>
-         */
         @NameInMap("memberName")
         public String memberName;
 
-        /**
-         * <p>成员在上下游中的工号</p>
-         */
         @NameInMap("memberWorkNumber")
         public String memberWorkNumber;
 

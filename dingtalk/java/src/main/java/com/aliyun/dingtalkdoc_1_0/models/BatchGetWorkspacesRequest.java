@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchGetWorkspacesRequest extends TeaModel {
-    /**
-     * <p>是否查询最近访问文档</p>
-     */
     @NameInMap("includeRecent")
     public Boolean includeRecent;
 
-    /**
-     * <p>操作用户unionId</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    /**
-     * <p>待查询知识库id。</p>
-     */
     @NameInMap("workspaceIds")
     public java.util.List<String> workspaceIds;
 

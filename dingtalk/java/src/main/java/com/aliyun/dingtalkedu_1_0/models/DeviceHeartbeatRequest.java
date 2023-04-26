@@ -4,9 +4,6 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeviceHeartbeatRequest extends TeaModel {
-    /**
-     * <p>设备序列号</p>
-     */
     @NameInMap("sn")
     public String sn;
 

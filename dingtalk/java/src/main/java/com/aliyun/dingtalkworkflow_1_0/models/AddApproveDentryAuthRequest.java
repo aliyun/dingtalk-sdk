@@ -4,15 +4,9 @@ package com.aliyun.dingtalkworkflow_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddApproveDentryAuthRequest extends TeaModel {
-    /**
-     * <p>授权的钉盘文件信息列表。支持批量授权，最大列表长度：10。</p>
-     */
     @NameInMap("fileInfos")
     public java.util.List<AddApproveDentryAuthRequestFileInfos> fileInfos;
 
-    /**
-     * <p>授权的用户userid。</p>
-     */
     @NameInMap("userId")
     public String userId;
 
@@ -38,15 +32,9 @@ public class AddApproveDentryAuthRequest extends TeaModel {
     }
 
     public static class AddApproveDentryAuthRequestFileInfos extends TeaModel {
-        /**
-         * <p>文件ID。</p>
-         */
         @NameInMap("fileId")
         public String fileId;
 
-        /**
-         * <p>钉盘空间spaceId。</p>
-         */
         @NameInMap("spaceId")
         public Long spaceId;
 

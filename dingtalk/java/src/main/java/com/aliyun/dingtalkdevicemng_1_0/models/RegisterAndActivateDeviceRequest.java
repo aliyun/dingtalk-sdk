@@ -7,9 +7,6 @@ public class RegisterAndActivateDeviceRequest extends TeaModel {
     @NameInMap("deviceCallbackUrl")
     public String deviceCallbackUrl;
 
-    /**
-     * <p>设备分类（0：设备，1 : 助手）</p>
-     */
     @NameInMap("deviceCategory")
     public Integer deviceCategory;
 

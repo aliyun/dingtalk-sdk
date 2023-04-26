@@ -4,9 +4,6 @@ package com.aliyun.dingtalklink_1_0.models;
 import com.aliyun.tea.*;
 
 public class CallbackRegiesterResponseBody extends TeaModel {
-    /**
-     * <p>注册结果详情</p>
-     */
     @NameInMap("result")
     public CallbackRegiesterResponseBodyResult result;
 
@@ -24,15 +21,9 @@ public class CallbackRegiesterResponseBody extends TeaModel {
     }
 
     public static class CallbackRegiesterResponseBodyResult extends TeaModel {
-        /**
-         * <p>成功注册的api secret</p>
-         */
         @NameInMap("apiSecret")
         public String apiSecret;
 
-        /**
-         * <p>成功注册的url</p>
-         */
         @NameInMap("callbackUrl")
         public String callbackUrl;
 

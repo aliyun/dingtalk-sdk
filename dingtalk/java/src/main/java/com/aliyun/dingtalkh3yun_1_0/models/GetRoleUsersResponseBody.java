@@ -4,21 +4,12 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetRoleUsersResponseBody extends TeaModel {
-    /**
-     * <p>状态码</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>返回结果</p>
-     */
     @NameInMap("data")
     public java.util.List<GetRoleUsersResponseBodyData> data;
 
-    /**
-     * <p>提示信息</p>
-     */
     @NameInMap("message")
     public String message;
 
@@ -52,75 +43,39 @@ public class GetRoleUsersResponseBody extends TeaModel {
     }
 
     public static class GetRoleUsersResponseBodyData extends TeaModel {
-        /**
-         * <p>用户编码</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>所属部门id</p>
-         */
         @NameInMap("departmentId")
         public String departmentId;
 
-        /**
-         * <p>所属部门名称</p>
-         */
         @NameInMap("departmentName")
         public String departmentName;
 
-        /**
-         * <p>描述</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>所属范围。Internal=内部，External=外部</p>
-         */
         @NameInMap("domainType")
         public String domainType;
 
-        /**
-         * <p>邮箱</p>
-         */
         @NameInMap("email")
         public String email;
 
-        /**
-         * <p>手机号码</p>
-         */
         @NameInMap("mobile")
         public String mobile;
 
-        /**
-         * <p>用户名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>兼职部门id集合（含主部门id）</p>
-         */
         @NameInMap("partDepartmentIds")
         public java.util.List<String> partDepartmentIds;
 
-        /**
-         * <p>性别.None=未指定，Man=男性，Female=女性</p>
-         */
         @NameInMap("sex")
         public String sex;
 
-        /**
-         * <p>排序值</p>
-         */
         @NameInMap("sortKey")
         public Long sortKey;
 
-        /**
-         * <p>用户id</p>
-         */
         @NameInMap("userId")
         public String userId;
 

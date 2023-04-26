@@ -4,63 +4,33 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class NotifyPayCodeRefundResultRequest extends TeaModel {
-    /**
-     * <p>企业id</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>退款时间</p>
-     */
     @NameInMap("gmtRefund")
     public String gmtRefund;
 
-    /**
-     * <p>支付渠道信息</p>
-     */
     @NameInMap("payChannelDetailList")
     public java.util.List<NotifyPayCodeRefundResultRequestPayChannelDetailList> payChannelDetailList;
 
-    /**
-     * <p>支付时使用的付款码</p>
-     */
     @NameInMap("payCode")
     public String payCode;
 
-    /**
-     * <p>退款金额</p>
-     */
     @NameInMap("refundAmount")
     public String refundAmount;
 
-    /**
-     * <p>本次退款订单号</p>
-     */
     @NameInMap("refundOrderNo")
     public String refundOrderNo;
 
-    /**
-     * <p>退款的优惠金额</p>
-     */
     @NameInMap("refundPromotionAmount")
     public String refundPromotionAmount;
 
-    /**
-     * <p>备注</p>
-     */
     @NameInMap("remark")
     public String remark;
 
-    /**
-     * <p>交易订单号</p>
-     */
     @NameInMap("tradeNo")
     public String tradeNo;
 
-    /**
-     * <p>用户id</p>
-     */
     @NameInMap("userId")
     public String userId;
 
@@ -150,39 +120,21 @@ public class NotifyPayCodeRefundResultRequest extends TeaModel {
     }
 
     public static class NotifyPayCodeRefundResultRequestPayChannelDetailListFundToolDetailList extends TeaModel {
-        /**
-         * <p>金额</p>
-         */
         @NameInMap("amount")
         public String amount;
 
-        /**
-         * <p>扩展信息</p>
-         */
         @NameInMap("extInfo")
         public String extInfo;
 
-        /**
-         * <p>资金工具名称</p>
-         */
         @NameInMap("fundToolName")
         public String fundToolName;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>完成时间</p>
-         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
-        /**
-         * <p>是否是优惠工具</p>
-         */
         @NameInMap("promotionFundTool")
         public Boolean promotionFundTool;
 
@@ -242,45 +194,24 @@ public class NotifyPayCodeRefundResultRequest extends TeaModel {
     }
 
     public static class NotifyPayCodeRefundResultRequestPayChannelDetailList extends TeaModel {
-        /**
-         * <p>金额</p>
-         */
         @NameInMap("amount")
         public String amount;
 
-        /**
-         * <p>支付资金列表</p>
-         */
         @NameInMap("fundToolDetailList")
         public java.util.List<NotifyPayCodeRefundResultRequestPayChannelDetailListFundToolDetailList> fundToolDetailList;
 
-        /**
-         * <p>支付渠道名称</p>
-         */
         @NameInMap("payChannelName")
         public String payChannelName;
 
-        /**
-         * <p>支付渠道号</p>
-         */
         @NameInMap("payChannelOrderNo")
         public String payChannelOrderNo;
 
-        /**
-         * <p>支付渠道退款号</p>
-         */
         @NameInMap("payChannelRefundOrderNo")
         public String payChannelRefundOrderNo;
 
-        /**
-         * <p>支付渠道类型</p>
-         */
         @NameInMap("payChannelType")
         public String payChannelType;
 
-        /**
-         * <p>优惠金额</p>
-         */
         @NameInMap("promotionAmount")
         public String promotionAmount;
 

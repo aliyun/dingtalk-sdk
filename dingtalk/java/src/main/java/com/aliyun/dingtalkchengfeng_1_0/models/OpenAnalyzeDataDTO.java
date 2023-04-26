@@ -4,75 +4,39 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class OpenAnalyzeDataDTO extends TeaModel {
-    /**
-     * <p>部门总人数</p>
-     */
     @NameInMap("deptCount")
     public Integer deptCount;
 
-    /**
-     * <p>无对齐O人数</p>
-     */
     @NameInMap("noAlignObjectiveCount")
     public Integer noAlignObjectiveCount;
 
-    /**
-     * <p>未关联关键行动人数</p>
-     */
     @NameInMap("noKeyActionCount")
     public Integer noKeyActionCount;
 
-    /**
-     * <p>目标对齐率</p>
-     */
     @NameInMap("objectiveAlignRate")
     public Double objectiveAlignRate;
 
-    /**
-     * <p>目标未设定人数</p>
-     */
     @NameInMap("objectiveNoSetCount")
     public Integer objectiveNoSetCount;
 
-    /**
-     * <p>有风险O的人数</p>
-     */
     @NameInMap("objectiveRiskCount")
     public Integer objectiveRiskCount;
 
-    /**
-     * <p>目标设定率</p>
-     */
     @NameInMap("objectiveSetRate")
     public Double objectiveSetRate;
 
-    /**
-     * <p>只有1个KR的人数</p>
-     */
     @NameInMap("onlyOneKeyResultCount")
     public Integer onlyOneKeyResultCount;
 
-    /**
-     * <p>只有1个O的人数</p>
-     */
     @NameInMap("onlyOneObjectiveCount")
     public Integer onlyOneObjectiveCount;
 
-    /**
-     * <p>近15天进展更新率</p>
-     */
     @NameInMap("progressUpdateRateLast15Days")
     public Double progressUpdateRateLast15Days;
 
-    /**
-     * <p>近30天进展更新率</p>
-     */
     @NameInMap("progressUpdateRateLast30Days")
     public Double progressUpdateRateLast30Days;
 
-    /**
-     * <p>近7天进展更新率</p>
-     */
     @NameInMap("progressUpdateRateLast7Days")
     public Double progressUpdateRateLast7Days;
 

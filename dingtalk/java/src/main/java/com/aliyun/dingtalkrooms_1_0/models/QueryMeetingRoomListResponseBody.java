@@ -4,21 +4,12 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMeetingRoomListResponseBody extends TeaModel {
-    /**
-     * <p>是否有更多</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>下次查询分页标记</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    /**
-     * <p>会议室列表</p>
-     */
     @NameInMap("result")
     public java.util.List<QueryMeetingRoomListResponseBodyResult> result;
 
@@ -52,21 +43,12 @@ public class QueryMeetingRoomListResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomListResponseBodyResultRoomGroup extends TeaModel {
-        /**
-         * <p>分组id</p>
-         */
         @NameInMap("groupId")
         public Long groupId;
 
-        /**
-         * <p>分组名称</p>
-         */
         @NameInMap("groupName")
         public String groupName;
 
-        /**
-         * <p>父分组id</p>
-         */
         @NameInMap("parentId")
         public Long parentId;
 
@@ -132,15 +114,9 @@ public class QueryMeetingRoomListResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomListResponseBodyResultRoomLocation extends TeaModel {
-        /**
-         * <p>位置详细信息</p>
-         */
         @NameInMap("desc")
         public String desc;
 
-        /**
-         * <p>位置名称</p>
-         */
         @NameInMap("title")
         public String title;
 
@@ -168,66 +144,36 @@ public class QueryMeetingRoomListResponseBody extends TeaModel {
     }
 
     public static class QueryMeetingRoomListResponseBodyResult extends TeaModel {
-        /**
-         * <p>企业corpId</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>isv外部会议室id</p>
-         */
         @NameInMap("isvRoomId")
         public String isvRoomId;
 
-        /**
-         * <p>会议室容量</p>
-         */
         @NameInMap("roomCapacity")
         public Integer roomCapacity;
 
-        /**
-         * <p>会议室分组</p>
-         */
         @NameInMap("roomGroup")
         public QueryMeetingRoomListResponseBodyResultRoomGroup roomGroup;
 
-        /**
-         * <p>会议室id</p>
-         */
         @NameInMap("roomId")
         public String roomId;
 
         @NameInMap("roomLabels")
         public java.util.List<QueryMeetingRoomListResponseBodyResultRoomLabels> roomLabels;
 
-        /**
-         * <p>会议室位置</p>
-         */
         @NameInMap("roomLocation")
         public QueryMeetingRoomListResponseBodyResultRoomLocation roomLocation;
 
-        /**
-         * <p>会议室名称</p>
-         */
         @NameInMap("roomName")
         public String roomName;
 
-        /**
-         * <p>会议室图片</p>
-         */
         @NameInMap("roomPicture")
         public String roomPicture;
 
-        /**
-         * <p>会议室staffId</p>
-         */
         @NameInMap("roomStaffId")
         public String roomStaffId;
 
-        /**
-         * <p>会议室状态</p>
-         */
         @NameInMap("roomStatus")
         public Integer roomStatus;
 

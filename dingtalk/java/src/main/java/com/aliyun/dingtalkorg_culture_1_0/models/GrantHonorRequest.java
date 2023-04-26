@@ -4,48 +4,27 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class GrantHonorRequest extends TeaModel {
-    /**
-     * <p>有效期到期时间 时间戳. 会处理成到期那天的23:59:59秒的时间戳</p>
-     */
     @NameInMap("expirationTime")
     public Long expirationTime;
 
-    /**
-     * <p>颁奖词，最多可以填50字</p>
-     */
     @NameInMap("grantReason")
     public String grantReason;
 
-    /**
-     * <p>颁奖人名字，最多15个字</p>
-     */
     @NameInMap("granterName")
     public String granterName;
 
-    /**
-     * <p>是否使用官宣号发送内网动态</p>
-     */
     @NameInMap("noticeAnnouncer")
     public Boolean noticeAnnouncer;
 
-    /**
-     * <p>是否触达单聊会话通知</p>
-     */
     @NameInMap("noticeSingle")
     public Boolean noticeSingle;
 
     @NameInMap("openConversationIds")
     public java.util.List<String> openConversationIds;
 
-    /**
-     * <p>接受人userId</p>
-     */
     @NameInMap("receiverUserIds")
     public java.util.List<String> receiverUserIds;
 
-    /**
-     * <p>发送人userId</p>
-     */
     @NameInMap("senderUserId")
     public String senderUserId;
 

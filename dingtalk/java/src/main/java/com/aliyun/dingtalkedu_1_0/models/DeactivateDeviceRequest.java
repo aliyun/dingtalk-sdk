@@ -4,21 +4,12 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeactivateDeviceRequest extends TeaModel {
-    /**
-     * <p>设备型号</p>
-     */
     @NameInMap("model")
     public String model;
 
-    /**
-     * <p>设备sn码</p>
-     */
     @NameInMap("sn")
     public String sn;
 
-    /**
-     * <p>设备类型</p>
-     */
     @NameInMap("type")
     public String type;
 

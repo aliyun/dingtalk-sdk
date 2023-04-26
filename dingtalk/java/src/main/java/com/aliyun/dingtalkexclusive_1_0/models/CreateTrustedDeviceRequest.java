@@ -4,33 +4,18 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTrustedDeviceRequest extends TeaModel {
-    /**
-     * <p>支持SDK集成的设备唯一标识。</p>
-     */
     @NameInMap("did")
     public String did;
 
-    /**
-     * <p>mac地址</p>
-     */
     @NameInMap("macAddress")
     public String macAddress;
 
-    /**
-     * <p>平台类型</p>
-     */
     @NameInMap("platform")
     public String platform;
 
-    /**
-     * <p>设备状态</p>
-     */
     @NameInMap("status")
     public Integer status;
 
-    /**
-     * <p>员工userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

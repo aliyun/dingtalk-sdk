@@ -4,15 +4,9 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class MultiOrgPermissionGrantRequest extends TeaModel {
-    /**
-     * <p>被授权的部门，如果不填则默认全组织</p>
-     */
     @NameInMap("grantDeptIdList")
     public java.util.List<Long> grantDeptIdList;
 
-    /**
-     * <p>授权加入的组织corpId</p>
-     */
     @NameInMap("joinCorpId")
     public String joinCorpId;
 

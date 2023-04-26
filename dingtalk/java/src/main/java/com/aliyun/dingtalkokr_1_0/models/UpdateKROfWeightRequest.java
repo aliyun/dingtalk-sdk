@@ -4,21 +4,12 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateKROfWeightRequest extends TeaModel {
-    /**
-     * <p>权重比。</p>
-     */
     @NameInMap("weight")
     public Long weight;
 
-    /**
-     * <p>当前 KR ID。</p>
-     */
     @NameInMap("krId")
     public String krId;
 
-    /**
-     * <p>当前用户的userId。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class MarkStarResponseBody extends TeaModel {
-    /**
-     * <p>本次操作是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkapp_market_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPersonalExperienceInfoRequest extends TeaModel {
-    /**
-     * <p>A short description of struct</p>
-     */
     @NameInMap("userId")
     public String userId;
 

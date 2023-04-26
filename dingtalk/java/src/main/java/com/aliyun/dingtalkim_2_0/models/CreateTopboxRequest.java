@@ -4,111 +4,57 @@ package com.aliyun.dingtalkim_2_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTopboxRequest extends TeaModel {
-    /**
-     * <p>可控制卡片回调时的路由Key，用于指定特定的callbackUrl。</p>
-     */
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
-    /**
-     * <p>卡片数据。</p>
-     */
     @NameInMap("cardData")
     public CreateTopboxRequestCardData cardData;
 
-    /**
-     * <p>卡片设置项。</p>
-     */
     @NameInMap("cardSettings")
     public CreateTopboxRequestCardSettings cardSettings;
 
-    /**
-     * <p>互动卡片的消息模板ID</p>
-     */
     @NameInMap("cardTemplateId")
     public String cardTemplateId;
 
-    /**
-     * <p>会话类型。</p>
-     */
     @NameInMap("conversationType")
     public Integer conversationType;
 
-    /**
-     * <p>酷应用编码。</p>
-     */
     @NameInMap("coolAppCode")
     public String coolAppCode;
 
-    /**
-     * <p>吊顶的过期时间，绝对时间。</p>
-     */
     @NameInMap("expiredTime")
     public Long expiredTime;
 
-    /**
-     * <p>群模板id。</p>
-     */
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
-    /**
-     * <p>会话id。</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>唯一标识一张卡片的外部ID。</p>
-     */
     @NameInMap("outTrackId")
     public String outTrackId;
 
-    /**
-     * <p>期望吊顶的端，如果有多个用“｜”分隔。 例如：ios|mac|android|win表示iOS、MAC、安卓和windows端。</p>
-     */
     @NameInMap("platforms")
     public String platforms;
 
-    /**
-     * <p>吊顶可见者unionId，最多可传100个unionId。</p>
-     */
     @NameInMap("receiverUnionIdList")
     public java.util.List<String> receiverUnionIdList;
 
-    /**
-     * <p>吊顶可见者userId，最多可传100个userId。</p>
-     */
     @NameInMap("receiverUserIdList")
     public java.util.List<String> receiverUserIdList;
 
-    /**
-     * <p>单聊助手会话，机器人编码。</p>
-     */
     @NameInMap("robotCode")
     public String robotCode;
 
-    /**
-     * <p>卡片模板unionId差异用户参数。</p>
-     */
     @NameInMap("unionIdPrivateDataMap")
     public java.util.Map<String, UnionIdPrivateDataMapValue> unionIdPrivateDataMap;
 
-    /**
-     * <p>单聊助手会话，用户unionId。</p>
-     */
     @NameInMap("unoinId")
     public String unoinId;
 
-    /**
-     * <p>单聊助手会话，用户userId。</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>卡片模板userId差异用户参数。</p>
-     */
     @NameInMap("userIdPrivateDataMap")
     public java.util.Map<String, UserIdPrivateDataMapValue> userIdPrivateDataMap;
 
@@ -262,9 +208,6 @@ public class CreateTopboxRequest extends TeaModel {
     }
 
     public static class CreateTopboxRequestCardData extends TeaModel {
-        /**
-         * <p>卡片模板内容替换参数，包含普通文本类型和多媒体类型。</p>
-         */
         @NameInMap("cardParamMap")
         public java.util.Map<String, String> cardParamMap;
 
@@ -284,9 +227,6 @@ public class CreateTopboxRequest extends TeaModel {
     }
 
     public static class CreateTopboxRequestCardSettings extends TeaModel {
-        /**
-         * <p>是否开启卡片纯拉模式。</p>
-         */
         @NameInMap("pullStrategy")
         public Boolean pullStrategy;
 

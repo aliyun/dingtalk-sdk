@@ -4,37 +4,18 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeleteWaterMarkTemplateRequest extends TeaModel {
-    /**
-     * <p>模板的表单Code。</p>
-     */
     @NameInMap("formCode")
     public String formCode;
 
-    /**
-     * <p>模板的内容。</p>
-     */
     @NameInMap("formContent")
     public String formContent;
 
-    /**
-     * <p>群会话ID。</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>是否是系统模板。</p>
-     * <p>- true：是</p>
-     * <p>- false：否</p>
-     * <br>
-     * <br>
-     */
     @NameInMap("systemTemplate")
     public Boolean systemTemplate;
 
-    /**
-     * <p>用户的userid。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

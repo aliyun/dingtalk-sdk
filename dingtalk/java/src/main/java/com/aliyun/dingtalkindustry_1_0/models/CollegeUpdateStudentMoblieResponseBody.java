@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeUpdateStudentMoblieResponseBody extends TeaModel {
-    /**
-     * <p>修改结果</p>
-     */
     @NameInMap("updateResult")
     public String updateResult;
 

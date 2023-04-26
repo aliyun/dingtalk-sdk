@@ -4,15 +4,9 @@ package com.aliyun.dingtalkats_1_0.models;
 import com.aliyun.tea.*;
 
 public class FinishBeginnerTaskRequest extends TeaModel {
-    /**
-     * <p>任务范围</p>
-     */
     @NameInMap("scope")
     public String scope;
 
-    /**
-     * <p>员工标识</p>
-     */
     @NameInMap("userId")
     public String userId;
 

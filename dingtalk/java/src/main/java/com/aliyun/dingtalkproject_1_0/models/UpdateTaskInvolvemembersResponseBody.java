@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateTaskInvolvemembersResponseBody extends TeaModel {
-    /**
-     * <p>结果</p>
-     */
     @NameInMap("result")
     public UpdateTaskInvolvemembersResponseBodyResult result;
 
@@ -24,15 +21,9 @@ public class UpdateTaskInvolvemembersResponseBody extends TeaModel {
     }
 
     public static class UpdateTaskInvolvemembersResponseBodyResult extends TeaModel {
-        /**
-         * <p>参与者列表。</p>
-         */
         @NameInMap("involveMembers")
         public java.util.List<String> involveMembers;
 
-        /**
-         * <p>更新时间。</p>
-         */
         @NameInMap("updated")
         public String updated;
 

@@ -4,33 +4,18 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDeptResponseBody extends TeaModel {
-    /**
-     * <p>下属组织的部门ID</p>
-     */
     @NameInMap("departmentId")
     public Long departmentId;
 
-    /**
-     * <p>部门名称</p>
-     */
     @NameInMap("departmentName")
     public String departmentName;
 
-    /**
-     * <p>部门是否来自关联组织</p>
-     */
     @NameInMap("fromUnionOrg")
     public Boolean fromUnionOrg;
 
-    /**
-     * <p>在父部门中的次序值</p>
-     */
     @NameInMap("order")
     public Long order;
 
-    /**
-     * <p>父部门id</p>
-     */
     @NameInMap("parentDepartmentId")
     public Long parentDepartmentId;
 

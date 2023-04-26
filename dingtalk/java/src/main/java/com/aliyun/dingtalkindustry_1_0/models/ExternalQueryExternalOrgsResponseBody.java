@@ -4,9 +4,6 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class ExternalQueryExternalOrgsResponseBody extends TeaModel {
-    /**
-     * <p>返回项目组</p>
-     */
     @NameInMap("result")
     public java.util.List<ExternalQueryExternalOrgsResponseBodyResult> result;
 
@@ -24,15 +21,9 @@ public class ExternalQueryExternalOrgsResponseBody extends TeaModel {
     }
 
     public static class ExternalQueryExternalOrgsResponseBodyResult extends TeaModel {
-        /**
-         * <p>外部合作组织ID</p>
-         */
         @NameInMap("corpId")
         public String corpId;
 
-        /**
-         * <p>外部合作组织名称</p>
-         */
         @NameInMap("corpName")
         public String corpName;
 

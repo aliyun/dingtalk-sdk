@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class QueryItemByUrlRequest extends TeaModel {
-    /**
-     * <p>操作用户unionId。</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 
-    /**
-     * <p>链接url。</p>
-     */
     @NameInMap("url")
     public String url;
 
-    /**
-     * <p>是否查询统计信息</p>
-     */
     @NameInMap("withStatisticalInfo")
     public Boolean withStatisticalInfo;
 

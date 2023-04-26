@@ -7,15 +7,9 @@ public class GetPublicDevicesResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetPublicDevicesResponseBodyData> data;
 
-    /**
-     * <p>当前页条目数</p>
-     */
     @NameInMap("dataCnt")
     public Integer dataCnt;
 
-    /**
-     * <p>总条目数</p>
-     */
     @NameInMap("totalCnt")
     public Long totalCnt;
 
@@ -49,15 +43,9 @@ public class GetPublicDevicesResponseBody extends TeaModel {
     }
 
     public static class GetPublicDevicesResponseBodyDataDeviceDepts extends TeaModel {
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("id")
         public Long id;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -85,15 +73,9 @@ public class GetPublicDevicesResponseBody extends TeaModel {
     }
 
     public static class GetPublicDevicesResponseBodyDataDeviceRoles extends TeaModel {
-        /**
-         * <p>角色名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>角色code</p>
-         */
         @NameInMap("tagCode")
         public String tagCode;
 
@@ -121,15 +103,9 @@ public class GetPublicDevicesResponseBody extends TeaModel {
     }
 
     public static class GetPublicDevicesResponseBodyDataDeviceStaffs extends TeaModel {
-        /**
-         * <p>员工姓名</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>员工id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -157,57 +133,30 @@ public class GetPublicDevicesResponseBody extends TeaModel {
     }
 
     public static class GetPublicDevicesResponseBodyData extends TeaModel {
-        /**
-         * <p>部门列表，仅生效范围是部分生效时有效</p>
-         */
         @NameInMap("deviceDepts")
         public java.util.List<GetPublicDevicesResponseBodyDataDeviceDepts> deviceDepts;
 
-        /**
-         * <p>角色列表，仅生效范围是部分生效时有效</p>
-         */
         @NameInMap("deviceRoles")
         public java.util.List<GetPublicDevicesResponseBodyDataDeviceRoles> deviceRoles;
 
-        /**
-         * <p>生效范围</p>
-         */
         @NameInMap("deviceScopeType")
         public Integer deviceScopeType;
 
-        /**
-         * <p>员工列表，仅生效范围是部分生效时有效</p>
-         */
         @NameInMap("deviceStaffs")
         public java.util.List<GetPublicDevicesResponseBodyDataDeviceStaffs> deviceStaffs;
 
-        /**
-         * <p>创建时间时间戳</p>
-         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        /**
-         * <p>修改时间时间戳</p>
-         */
         @NameInMap("gmtModified")
         public Long gmtModified;
 
-        /**
-         * <p>设备mac地址</p>
-         */
         @NameInMap("macAddress")
         public String macAddress;
 
-        /**
-         * <p>系统</p>
-         */
         @NameInMap("platform")
         public String platform;
 
-        /**
-         * <p>设备标题</p>
-         */
         @NameInMap("title")
         public String title;
 

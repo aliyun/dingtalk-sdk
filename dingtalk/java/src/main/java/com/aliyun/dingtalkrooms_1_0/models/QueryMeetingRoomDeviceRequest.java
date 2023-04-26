@@ -4,21 +4,12 @@ package com.aliyun.dingtalkrooms_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryMeetingRoomDeviceRequest extends TeaModel {
-    /**
-     * <p>查询设备id</p>
-     */
     @NameInMap("deviceId")
     public String deviceId;
 
-    /**
-     * <p>查询设备unionId</p>
-     */
     @NameInMap("deviceUnionId")
     public String deviceUnionId;
 
-    /**
-     * <p>查询人unionId</p>
-     */
     @NameInMap("operatorUnionId")
     public String operatorUnionId;
 

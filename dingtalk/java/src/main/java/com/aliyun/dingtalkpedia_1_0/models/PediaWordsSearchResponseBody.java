@@ -4,15 +4,9 @@ package com.aliyun.dingtalkpedia_1_0.models;
 import com.aliyun.tea.*;
 
 public class PediaWordsSearchResponseBody extends TeaModel {
-    /**
-     * <p>词条详情对象</p>
-     */
     @NameInMap("data")
     public java.util.List<PediaWordsSearchResponseBodyData> data;
 
-    /**
-     * <p>是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,27 +32,15 @@ public class PediaWordsSearchResponseBody extends TeaModel {
     }
 
     public static class PediaWordsSearchResponseBodyDataAppLink extends TeaModel {
-        /**
-         * <p>应用名称</p>
-         */
         @NameInMap("appName")
         public String appName;
 
-        /**
-         * <p>应用图标</p>
-         */
         @NameInMap("iconLink")
         public String iconLink;
 
-        /**
-         * <p>PC端链接地址</p>
-         */
         @NameInMap("pcLink")
         public String pcLink;
 
-        /**
-         * <p>手机端地址</p>
-         */
         @NameInMap("phoneLink")
         public String phoneLink;
 
@@ -102,21 +84,12 @@ public class PediaWordsSearchResponseBody extends TeaModel {
     }
 
     public static class PediaWordsSearchResponseBodyDataContactList extends TeaModel {
-        /**
-         * <p>员工头像</p>
-         */
         @NameInMap("avatarMediaId")
         public String avatarMediaId;
 
-        /**
-         * <p>员工的名字</p>
-         */
         @NameInMap("nickName")
         public String nickName;
 
-        /**
-         * <p>员工的userId</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -152,9 +125,6 @@ public class PediaWordsSearchResponseBody extends TeaModel {
     }
 
     public static class PediaWordsSearchResponseBodyDataPicList extends TeaModel {
-        /**
-         * <p>相关图片地址</p>
-         */
         @NameInMap("mediaIdUrl")
         public String mediaIdUrl;
 
@@ -174,22 +144,12 @@ public class PediaWordsSearchResponseBody extends TeaModel {
     }
 
     public static class PediaWordsSearchResponseBodyDataRelatedDoc extends TeaModel {
-        /**
-         * <p>当前在线文档链接地址</p>
-         */
         @NameInMap("link")
         public String link;
 
-        /**
-         * <p>在线文档的名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>在线文档的类型，分别为adoc和asheet两个值获取文档图标</p>
-         * <br>
-         */
         @NameInMap("type")
         public String type;
 
@@ -225,21 +185,12 @@ public class PediaWordsSearchResponseBody extends TeaModel {
     }
 
     public static class PediaWordsSearchResponseBodyDataRelatedLink extends TeaModel {
-        /**
-         * <p>具体链接</p>
-         */
         @NameInMap("link")
         public String link;
 
-        /**
-         * <p>链接名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>空</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -275,136 +226,69 @@ public class PediaWordsSearchResponseBody extends TeaModel {
     }
 
     public static class PediaWordsSearchResponseBodyData extends TeaModel {
-        /**
-         * <p>相关应用列表</p>
-         */
         @NameInMap("appLink")
         public java.util.List<PediaWordsSearchResponseBodyDataAppLink> appLink;
 
-        /**
-         * <p>审核者名称</p>
-         */
         @NameInMap("approveName")
         public String approveName;
 
-        /**
-         * <p>相关联系人</p>
-         */
         @NameInMap("contactList")
         public java.util.List<PediaWordsSearchResponseBodyDataContactList> contactList;
 
-        /**
-         * <p>联系人列表</p>
-         */
         @NameInMap("contacts")
         public java.util.List<String> contacts;
 
-        /**
-         * <p>创建者的名称</p>
-         */
         @NameInMap("creatorName")
         public String creatorName;
 
-        /**
-         * <p>词条创建时间</p>
-         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        /**
-         * <p>词条修改时间</p>
-         */
         @NameInMap("gmtModify")
         public Long gmtModify;
 
-        /**
-         * <p>词条中需要在聊天中被分词的别名</p>
-         */
         @NameInMap("highLightWordAlias")
         public java.util.List<String> highLightWordAlias;
 
-        /**
-         * <p>该词条内部群是否分词</p>
-         */
         @NameInMap("imHighLight")
         public Boolean imHighLight;
 
-        /**
-         * <p>当前词条的父类ID，审核通过的该字段为空</p>
-         */
         @NameInMap("parentUuid")
         public Long parentUuid;
 
-        /**
-         * <p>相关图片</p>
-         */
         @NameInMap("picList")
         public java.util.List<PediaWordsSearchResponseBodyDataPicList> picList;
 
-        /**
-         * <p>相关文档链接，这里只针对钉钉在线文档，没有则忽略</p>
-         */
         @NameInMap("relatedDoc")
         public java.util.List<PediaWordsSearchResponseBodyDataRelatedDoc> relatedDoc;
 
-        /**
-         * <p>相关链接</p>
-         * <br>
-         */
         @NameInMap("relatedLink")
         public java.util.List<PediaWordsSearchResponseBodyDataRelatedLink> relatedLink;
 
-        /**
-         * <p>该词条服务群是否分词</p>
-         */
         @NameInMap("simHighLight")
         public Boolean simHighLight;
 
-        /**
-         * <p>词条非富文本释义</p>
-         */
         @NameInMap("simpleWordParaphrase")
         public String simpleWordParaphrase;
 
-        /**
-         * <p>分类列表</p>
-         */
         @NameInMap("tagsList")
         public java.util.List<String> tagsList;
 
-        /**
-         * <p>更新者名称</p>
-         */
         @NameInMap("updaterName")
         public String updaterName;
 
-        /**
-         * <p>员工的userId</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>当前词条对应的主键ID</p>
-         */
         @NameInMap("uuid")
         public Long uuid;
 
-        /**
-         * <p>词条别名</p>
-         */
         @NameInMap("wordAlias")
         public java.util.List<String> wordAlias;
 
-        /**
-         * <p>词条名称</p>
-         */
         @NameInMap("wordName")
         public String wordName;
 
-        /**
-         * <p>词条富文本释义</p>
-         */
         @NameInMap("wordParaphrase")
         public String wordParaphrase;
 

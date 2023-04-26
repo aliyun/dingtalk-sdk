@@ -4,57 +4,30 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class CollegeAddStudentRequest extends TeaModel {
-    /**
-     * <p>部门编号</p>
-     */
     @NameInMap("deptId")
     public Long deptId;
 
-    /**
-     * <p>人员拓展信息</p>
-     */
     @NameInMap("empExtension")
     public java.util.Map<String, String> empExtension;
 
-    /**
-     * <p>性别</p>
-     */
     @NameInMap("gender")
     public String gender;
 
-    /**
-     * <p>身份证号</p>
-     */
     @NameInMap("identifyId")
     public String identifyId;
 
-    /**
-     * <p>手机号</p>
-     */
     @NameInMap("mobile")
     public String mobile;
 
-    /**
-     * <p>入学年月</p>
-     */
     @NameInMap("startYear")
     public String startYear;
 
-    /**
-     * <p>学生姓名</p>
-     */
     @NameInMap("studentName")
     public String studentName;
 
-    /**
-     * <p>学生学号</p>
-     */
     @NameInMap("studentNumber")
     public String studentNumber;
 
-    /**
-     * <p>userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

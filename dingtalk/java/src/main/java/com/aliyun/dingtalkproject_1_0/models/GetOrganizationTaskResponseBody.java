@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOrganizationTaskResponseBody extends TeaModel {
-    /**
-     * <p>返回结构体</p>
-     */
     @NameInMap("result")
     public GetOrganizationTaskResponseBodyResult result;
 
@@ -24,99 +21,51 @@ public class GetOrganizationTaskResponseBody extends TeaModel {
     }
 
     public static class GetOrganizationTaskResponseBodyResult extends TeaModel {
-        /**
-         * <p>父任务id</p>
-         */
         @NameInMap("ancestorIds")
         public java.util.List<String> ancestorIds;
 
-        /**
-         * <p>任务标题</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("created")
         public String created;
 
-        /**
-         * <p>创建者id</p>
-         */
         @NameInMap("creatorId")
         public String creatorId;
 
-        /**
-         * <p>任务截止时间</p>
-         */
         @NameInMap("dueDate")
         public String dueDate;
 
-        /**
-         * <p>执行者id</p>
-         */
         @NameInMap("executorId")
         public String executorId;
 
-        /**
-         * <p>参与者列表</p>
-         */
         @NameInMap("involveMembers")
         public java.util.List<String> involveMembers;
 
-        /**
-         * <p>任务是否已删除</p>
-         */
         @NameInMap("isDeleted")
         public Boolean isDeleted;
 
-        /**
-         * <p>任务是否已完成</p>
-         */
         @NameInMap("isDone")
         public Boolean isDone;
 
-        /**
-         * <p>任务自定义标记</p>
-         */
         @NameInMap("labels")
         public java.util.List<String> labels;
 
-        /**
-         * <p>任务备注</p>
-         */
         @NameInMap("note")
         public String note;
 
-        /**
-         * <p>优先级【-10,0,1,2】中选一个</p>
-         */
         @NameInMap("priority")
         public Integer priority;
 
-        /**
-         * <p>任务开始时间</p>
-         */
         @NameInMap("startDate")
         public String startDate;
 
-        /**
-         * <p>任务id</p>
-         */
         @NameInMap("taskId")
         public String taskId;
 
-        /**
-         * <p>更新时间</p>
-         */
         @NameInMap("updated")
         public String updated;
 
-        /**
-         * <p>任务可见性。involves：仅参与者可见。members:所有人可见</p>
-         */
         @NameInMap("visible")
         public String visible;
 

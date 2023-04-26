@@ -4,21 +4,12 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class SearchDepartmentRequest extends TeaModel {
-    /**
-     * <p>分页查询锚点</p>
-     */
     @NameInMap("offset")
     public Integer offset;
 
-    /**
-     * <p>部门名称或者部门名称拼音</p>
-     */
     @NameInMap("queryWord")
     public String queryWord;
 
-    /**
-     * <p>分页长度</p>
-     */
     @NameInMap("size")
     public Integer size;
 

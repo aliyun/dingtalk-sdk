@@ -4,39 +4,21 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendDingMessageRequest extends TeaModel {
-    /**
-     * <p>钉内用户oauth2.0授权码。</p>
-     */
     @NameInMap("code")
     public String code;
 
-    /**
-     * <p>消息内容。</p>
-     */
     @NameInMap("message")
     public String message;
 
-    /**
-     * <p>消息类型</p>
-     */
     @NameInMap("messageType")
     public String messageType;
 
-    /**
-     * <p>群会话Id。</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>钉外账号在业务系统内的唯一标志。</p>
-     */
     @NameInMap("receiverId")
     public String receiverId;
 
-    /**
-     * <p>钉内账号userId。</p>
-     */
     @NameInMap("senderId")
     public String senderId;
 

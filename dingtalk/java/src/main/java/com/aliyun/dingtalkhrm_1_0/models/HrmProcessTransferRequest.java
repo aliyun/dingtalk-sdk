@@ -4,57 +4,30 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class HrmProcessTransferRequest extends TeaModel {
-    /**
-     * <p>员工调岗后的部门id列表</p>
-     */
     @NameInMap("deptIdsAfterTransfer")
     public java.util.List<Long> deptIdsAfterTransfer;
 
-    /**
-     * <p>员工调岗后的职务id</p>
-     */
     @NameInMap("jobIdAfterTransfer")
     public String jobIdAfterTransfer;
 
-    /**
-     * <p>员工调岗后的人事主部门id</p>
-     */
     @NameInMap("mainDeptIdAfterTransfer")
     public Long mainDeptIdAfterTransfer;
 
-    /**
-     * <p>操作人</p>
-     */
     @NameInMap("operateUserId")
     public String operateUserId;
 
-    /**
-     * <p>员工调岗后的职位id，参数同时有职位名称以及id，以id为准</p>
-     */
     @NameInMap("positionIdAfterTransfer")
     public String positionIdAfterTransfer;
 
-    /**
-     * <p>员工调岗后的职级名称，长度不超过64，参数同时有职级名称以及id，以id为准</p>
-     */
     @NameInMap("positionLevelAfterTransfer")
     public String positionLevelAfterTransfer;
 
-    /**
-     * <p>员工调岗后的职位名称，长度不超过124，参数同时有职位名称以及id，以id为准</p>
-     */
     @NameInMap("positionNameAfterTransfer")
     public String positionNameAfterTransfer;
 
-    /**
-     * <p>员工调岗后的职级id，参数同时有职级名称以及id，以id为准</p>
-     */
     @NameInMap("rankIdAfterTransfer")
     public String rankIdAfterTransfer;
 
-    /**
-     * <p>被调岗员工userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

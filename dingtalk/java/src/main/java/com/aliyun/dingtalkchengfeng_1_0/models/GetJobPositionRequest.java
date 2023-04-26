@@ -4,9 +4,6 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetJobPositionRequest extends TeaModel {
-    /**
-     * <p>职位编码</p>
-     */
     @NameInMap("jobPositionCode")
     public String jobPositionCode;
 

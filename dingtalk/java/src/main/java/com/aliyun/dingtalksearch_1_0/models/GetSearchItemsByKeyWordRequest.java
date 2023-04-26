@@ -4,21 +4,12 @@ package com.aliyun.dingtalksearch_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetSearchItemsByKeyWordRequest extends TeaModel {
-    /**
-     * <p>搜索关键词</p>
-     */
     @NameInMap("keyWord")
     public String keyWord;
 
-    /**
-     * <p>一次性请求的item数量</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>加密偏移量，第一次请求取“0”值，后续请求根据接口返回的nextToken值进行填写</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 

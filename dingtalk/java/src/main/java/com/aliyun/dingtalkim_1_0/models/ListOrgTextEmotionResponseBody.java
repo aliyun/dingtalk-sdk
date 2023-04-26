@@ -4,15 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListOrgTextEmotionResponseBody extends TeaModel {
-    /**
-     * <p>拉取企业文字表情结果</p>
-     */
     @NameInMap("result")
     public ListOrgTextEmotionResponseBodyResult result;
 
-    /**
-     * <p>返回结果</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -38,44 +32,21 @@ public class ListOrgTextEmotionResponseBody extends TeaModel {
     }
 
     public static class ListOrgTextEmotionResponseBodyResultEmotions extends TeaModel {
-        /**
-         * <p>展示在消息气泡中的文字表情的mediaId</p>
-         */
         @NameInMap("backgroundMediaId")
         public String backgroundMediaId;
 
-        /**
-         * <p>展示在消息长按菜单中的文字表情的mediaId</p>
-         */
         @NameInMap("backgroundMediaIdForPanel")
         public String backgroundMediaIdForPanel;
 
-        /**
-         * <p>表情所属部门Id：</p>
-         * <p>-1：该表情为企业层面的文字表情</p>
-         * <p>一级部门Id：该表情为一级部门层面的文字表情</p>
-         */
         @NameInMap("deptId")
         public Long deptId;
 
-        /**
-         * <p>表情Id</p>
-         */
         @NameInMap("emotionId")
         public String emotionId;
 
-        /**
-         * <p>表情名称，对用户不可见</p>
-         */
         @NameInMap("emotionName")
         public String emotionName;
 
-        /**
-         * <p>表情状态</p>
-         * <p>0：已删除</p>
-         * <p>1：可用</p>
-         * <p>2：安全审核不通过</p>
-         */
         @NameInMap("status")
         public Integer status;
 
@@ -135,9 +106,6 @@ public class ListOrgTextEmotionResponseBody extends TeaModel {
     }
 
     public static class ListOrgTextEmotionResponseBodyResult extends TeaModel {
-        /**
-         * <p>企业文字表情列表</p>
-         */
         @NameInMap("emotions")
         public java.util.List<ListOrgTextEmotionResponseBodyResultEmotions> emotions;
 

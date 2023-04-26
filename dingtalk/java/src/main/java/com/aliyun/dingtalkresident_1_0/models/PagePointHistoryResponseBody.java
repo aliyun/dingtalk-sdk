@@ -4,27 +4,15 @@ package com.aliyun.dingtalkresident_1_0.models;
 import com.aliyun.tea.*;
 
 public class PagePointHistoryResponseBody extends TeaModel {
-    /**
-     * <p>是否有下一页</p>
-     */
     @NameInMap("hasMore")
     public Boolean hasMore;
 
-    /**
-     * <p>下一个游标值</p>
-     */
     @NameInMap("nextToken")
     public Long nextToken;
 
-    /**
-     * <p>查询所得积分流水集合</p>
-     */
     @NameInMap("pointRecordList")
     public java.util.List<PagePointHistoryResponseBodyPointRecordList> pointRecordList;
 
-    /**
-     * <p>总数，如果为-1则不计算总数</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -66,39 +54,21 @@ public class PagePointHistoryResponseBody extends TeaModel {
     }
 
     public static class PagePointHistoryResponseBodyPointRecordList extends TeaModel {
-        /**
-         * <p>创建时间（精确到毫秒数）</p>
-         */
         @NameInMap("createAt")
         public Long createAt;
 
-        /**
-         * <p>对应的行为代码（可空）</p>
-         */
         @NameInMap("ruleCode")
         public String ruleCode;
 
-        /**
-         * <p>对应的行为名字</p>
-         */
         @NameInMap("ruleName")
         public String ruleName;
 
-        /**
-         * <p>增加或减少的分数（增加为正数，减少为负数）</p>
-         */
         @NameInMap("score")
         public Integer score;
 
-        /**
-         * <p>成员id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>幂等键</p>
-         */
         @NameInMap("uuid")
         public String uuid;
 

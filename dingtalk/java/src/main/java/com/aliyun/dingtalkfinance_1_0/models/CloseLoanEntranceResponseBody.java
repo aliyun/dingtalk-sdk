@@ -4,15 +4,9 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class CloseLoanEntranceResponseBody extends TeaModel {
-    /**
-     * <p>请求id与传入保持一致</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
-    /**
-     * <p>结果：Y 成功, N 失败</p>
-     */
     @NameInMap("result")
     public String result;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateInterconnectionRequest extends TeaModel {
-    /**
-     * <p>要创建的钉外账号列表。</p>
-     */
     @NameInMap("interconnections")
     public java.util.List<CreateInterconnectionRequestInterconnections> interconnections;
 
@@ -24,52 +21,27 @@ public class CreateInterconnectionRequest extends TeaModel {
     }
 
     public static class CreateInterconnectionRequestInterconnections extends TeaModel {
-        /**
-         * <p>钉外账号头像链接。</p>
-         */
         @NameInMap("appUserAvatar")
         public String appUserAvatar;
 
-        /**
-         * <p>钉外账号头像类型，取值：</p>
-         * <p>1（http类型）</p>
-         */
         @NameInMap("appUserAvatarMediaType")
         public Integer appUserAvatarMediaType;
 
-        /**
-         * <p>钉外账号用户动态，例如：认真工作，快乐生活。</p>
-         */
         @NameInMap("appUserDynamics")
         public String appUserDynamics;
 
-        /**
-         * <p>钉外账号在业务系统内的唯一标识。</p>
-         */
         @NameInMap("appUserId")
         public String appUserId;
 
-        /**
-         * <p>钉外账号手机号，例如：188****8655。</p>
-         */
         @NameInMap("appUserMobile")
         public String appUserMobile;
 
-        /**
-         * <p>钉外账号名称。</p>
-         */
         @NameInMap("appUserName")
         public String appUserName;
 
-        /**
-         * <p>渠道code。</p>
-         */
         @NameInMap("channelCode")
         public String channelCode;
 
-        /**
-         * <p>钉内账号userId。</p>
-         */
         @NameInMap("userId")
         public String userId;
 

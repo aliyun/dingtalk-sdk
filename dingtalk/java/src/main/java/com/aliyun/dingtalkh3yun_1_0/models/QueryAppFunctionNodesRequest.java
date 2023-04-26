@@ -4,9 +4,6 @@ package com.aliyun.dingtalkh3yun_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryAppFunctionNodesRequest extends TeaModel {
-    /**
-     * <p>应用编码</p>
-     */
     @NameInMap("appCode")
     public String appCode;
 

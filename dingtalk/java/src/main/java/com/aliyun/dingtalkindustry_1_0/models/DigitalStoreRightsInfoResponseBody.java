@@ -4,33 +4,18 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class DigitalStoreRightsInfoResponseBody extends TeaModel {
-    /**
-     * <p>权益过期时间</p>
-     */
     @NameInMap("endTime")
     public Long endTime;
 
-    /**
-     * <p>门店通通讯录根节点Id</p>
-     */
     @NameInMap("quantity")
     public Long quantity;
 
-    /**
-     * <p>门店通通讯录名称</p>
-     */
     @NameInMap("rightsCode")
     public String rightsCode;
 
-    /**
-     * <p>门店通通讯录Code</p>
-     */
     @NameInMap("rightsName")
     public String rightsName;
 
-    /**
-     * <p>权益开始时间</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 

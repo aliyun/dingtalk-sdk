@@ -4,57 +4,27 @@ package com.aliyun.dingtalkcard_1_0.models;
 import com.aliyun.tea.*;
 
 public class DeliverCardRequest extends TeaModel {
-    /**
-     * <p>协作投放参数</p>
-     */
     @NameInMap("coFeedOpenDeliverModel")
     public DeliverCardRequestCoFeedOpenDeliverModel coFeedOpenDeliverModel;
 
-    /**
-     * <p>文档投放参数</p>
-     */
     @NameInMap("docOpenDeliverModel")
     public DeliverCardRequestDocOpenDeliverModel docOpenDeliverModel;
 
-    /**
-     * <p>群聊投放参数</p>
-     */
     @NameInMap("imGroupOpenDeliverModel")
     public DeliverCardRequestImGroupOpenDeliverModel imGroupOpenDeliverModel;
 
-    /**
-     * <p>单聊机器人场域投放参数</p>
-     * <br>
-     * <p>【注意】 机器人与人的单聊，直接用支持机器人单聊的应用来发送</p>
-     */
     @NameInMap("imRobotOpenDeliverModel")
     public DeliverCardRequestImRobotOpenDeliverModel imRobotOpenDeliverModel;
 
-    /**
-     * <p>dt.card//spaceType.spaceId;spaceType.spaceId</p>
-     */
     @NameInMap("openSpaceId")
     public String openSpaceId;
 
-    /**
-     * <p>外部卡片实例Id</p>
-     */
     @NameInMap("outTrackId")
     public String outTrackId;
 
-    /**
-     * <p>吊顶投放参数</p>
-     */
     @NameInMap("topOpenDeliverModel")
     public DeliverCardRequestTopOpenDeliverModel topOpenDeliverModel;
 
-    /**
-     * <p>用户id类型：</p>
-     * <br>
-     * <p>1（默认）：userid模式</p>
-     * <br>
-     * <p>2：unionId模式</p>
-     */
     @NameInMap("userIdType")
     public Integer userIdType;
 
@@ -128,15 +98,9 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestCoFeedOpenDeliverModel extends TeaModel {
-        /**
-         * <p>【必填】业务标识</p>
-         */
         @NameInMap("bizTag")
         public String bizTag;
 
-        /**
-         * <p>【必填】协作场域下的排序时间</p>
-         */
         @NameInMap("gmtTimeLine")
         public Long gmtTimeLine;
 
@@ -164,9 +128,6 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestDocOpenDeliverModel extends TeaModel {
-        /**
-         * <p>【必填】员工id</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -186,21 +147,12 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestImGroupOpenDeliverModel extends TeaModel {
-        /**
-         * <p>消息@人，</p>
-         */
         @NameInMap("atUserIds")
         public java.util.Map<String, String> atUserIds;
 
-        /**
-         * <p>指定接收者</p>
-         */
         @NameInMap("recipients")
         public java.util.List<String> recipients;
 
-        /**
-         * <p>机器人的code</p>
-         */
         @NameInMap("robotCode")
         public String robotCode;
 
@@ -236,9 +188,6 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestImRobotOpenDeliverModel extends TeaModel {
-        /**
-         * <p>【条件必填】IM机器人单聊暂无其他投放属性，仅需设置spaeType为IM_ROBOT</p>
-         */
         @NameInMap("spaceType")
         public String spaceType;
 
@@ -258,21 +207,12 @@ public class DeliverCardRequest extends TeaModel {
     }
 
     public static class DeliverCardRequestTopOpenDeliverModel extends TeaModel {
-        /**
-         * <p>【必填】过期时间戳</p>
-         */
         @NameInMap("expiredTimeMillis")
         public Long expiredTimeMillis;
 
-        /**
-         * <p>可以查看该吊顶卡片的设备</p>
-         */
         @NameInMap("platforms")
         public java.util.List<String> platforms;
 
-        /**
-         * <p>可以查看该吊顶卡片的staffId</p>
-         */
         @NameInMap("userIds")
         public java.util.List<String> userIds;
 

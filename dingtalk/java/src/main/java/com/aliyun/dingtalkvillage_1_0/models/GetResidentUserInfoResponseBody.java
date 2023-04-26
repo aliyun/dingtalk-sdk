@@ -4,33 +4,18 @@ package com.aliyun.dingtalkvillage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetResidentUserInfoResponseBody extends TeaModel {
-    /**
-     * <p>员工特征</p>
-     */
     @NameInMap("feature")
     public String feature;
 
-    /**
-     * <p>员工名字</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>标签列表</p>
-     */
     @NameInMap("roles")
     public java.util.List<GetResidentUserInfoResponseBodyRoles> roles;
 
-    /**
-     * <p>钉钉唯一标识</p>
-     */
     @NameInMap("unionId")
     public String unionId;
 
-    /**
-     * <p>员工id</p>
-     */
     @NameInMap("userid")
     public String userid;
 
@@ -80,21 +65,12 @@ public class GetResidentUserInfoResponseBody extends TeaModel {
     }
 
     public static class GetResidentUserInfoResponseBodyRoles extends TeaModel {
-        /**
-         * <p>标签id</p>
-         */
         @NameInMap("roleId")
         public Long roleId;
 
-        /**
-         * <p>标签名称</p>
-         */
         @NameInMap("roleName")
         public String roleName;
 
-        /**
-         * <p>标签名称 tagCode</p>
-         */
         @NameInMap("tagCode")
         public String tagCode;
 

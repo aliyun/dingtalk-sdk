@@ -4,15 +4,9 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserRequest extends TeaModel {
-    /**
-     * <p>OKR系统内部用户id</p>
-     */
     @NameInMap("okrUserId")
     public String okrUserId;
 
-    /**
-     * <p>钉钉UserId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkworkbench_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetPluginPermissionPointRequest extends TeaModel {
-    /**
-     * <p>插件id</p>
-     */
     @NameInMap("miniAppId")
     public String miniAppId;
 

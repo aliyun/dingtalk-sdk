@@ -4,33 +4,18 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryBatchTradeDetailListResponseBody extends TeaModel {
-    /**
-     * <p>明细列表</p>
-     */
     @NameInMap("batchTradeDetailList")
     public java.util.List<QueryBatchTradeDetailListResponseBodyBatchTradeDetailList> batchTradeDetailList;
 
-    /**
-     * <p>当前页数</p>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>单页条数</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>总记录数</p>
-     */
     @NameInMap("total")
     public Integer total;
 
-    /**
-     * <p>总页数</p>
-     */
     @NameInMap("totalPageNumber")
     public Integer totalPageNumber;
 
@@ -80,63 +65,33 @@ public class QueryBatchTradeDetailListResponseBody extends TeaModel {
     }
 
     public static class QueryBatchTradeDetailListResponseBodyBatchTradeDetailList extends TeaModel {
-        /**
-         * <p>金额</p>
-         */
         @NameInMap("amount")
         public String amount;
 
-        /**
-         * <p>明细单号</p>
-         */
         @NameInMap("detailNo")
         public String detailNo;
 
-        /**
-         * <p>订单时间时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>支付完成时间</p>
-         */
         @NameInMap("gmtFinish")
         public String gmtFinish;
 
-        /**
-         * <p>备注</p>
-         */
         @NameInMap("memo")
         public String memo;
 
-        /**
-         * <p>收款方电子钱包持有者姓名</p>
-         */
         @NameInMap("payeeAccountName")
         public String payeeAccountName;
 
-        /**
-         * <p>收款人账号</p>
-         */
         @NameInMap("payeeAccountNo")
         public String payeeAccountNo;
 
-        /**
-         * <p>收款账号类型</p>
-         */
         @NameInMap("payeeAccountType")
         public String payeeAccountType;
 
-        /**
-         * <p>序号</p>
-         */
         @NameInMap("serialNo")
         public Long serialNo;
 
-        /**
-         * <p>状态</p>
-         */
         @NameInMap("status")
         public String status;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkim_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateGroupAvatarRequest extends TeaModel {
-    /**
-     * <p>群头像地址。</p>
-     */
     @NameInMap("groupAvatar")
     public String groupAvatar;
 
-    /**
-     * <p>群会话id。</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 

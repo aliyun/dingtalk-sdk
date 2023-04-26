@@ -4,15 +4,9 @@ package com.aliyun.dingtalkpedia_1_0.models;
 import com.aliyun.tea.*;
 
 public class PediaWordsDeleteRequest extends TeaModel {
-    /**
-     * <p>当前操作用户编号</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>当前需要删除的词条主键编号</p>
-     */
     @NameInMap("uuid")
     public Long uuid;
 

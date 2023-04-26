@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddProjectMemberRequest extends TeaModel {
-    /**
-     * <p>用户ID列表，建议一次不超过10个</p>
-     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

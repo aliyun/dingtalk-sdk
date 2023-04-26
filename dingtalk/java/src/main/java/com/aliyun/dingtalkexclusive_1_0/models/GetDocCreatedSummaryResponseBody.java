@@ -4,15 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetDocCreatedSummaryResponseBody extends TeaModel {
-    /**
-     * <p>最近1天创建文档人数</p>
-     */
     @NameInMap("docCreateUserCnt1d")
     public String docCreateUserCnt1d;
 
-    /**
-     * <p>最近1天创建文档数</p>
-     */
     @NameInMap("docCreatedCnt")
     public String docCreatedCnt;
 

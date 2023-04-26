@@ -4,87 +4,45 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class TeamModel extends TeaModel {
-    /**
-     * <p>封面</p>
-     */
     @NameInMap("cover")
     public String cover;
 
-    /**
-     * <p>创建时间</p>
-     */
     @NameInMap("createdTime")
     public Long createdTime;
 
-    /**
-     * <p>创建人</p>
-     */
     @NameInMap("creator")
     public TeamModelCreator creator;
 
-    /**
-     * <p>团队描述</p>
-     */
     @NameInMap("description")
     public String description;
 
-    /**
-     * <p>图标</p>
-     */
     @NameInMap("icon")
     public String icon;
 
-    /**
-     * <p>团队ID</p>
-     */
     @NameInMap("id")
     public String id;
 
-    /**
-     * <p>团队名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>关联部门信息</p>
-     */
     @NameInMap("relatedDeptInfo")
     public TeamModelRelatedDeptInfo relatedDeptInfo;
 
-    /**
-     * <p>团队状态</p>
-     */
     @NameInMap("status")
     public Integer status;
 
-    /**
-     * <p>团队类型</p>
-     */
     @NameInMap("type")
     public Integer type;
 
-    /**
-     * <p>更新时间</p>
-     */
     @NameInMap("updatedTime")
     public Long updatedTime;
 
-    /**
-     * <p>更新人</p>
-     */
     @NameInMap("updater")
     public TeamModelUpdater updater;
 
-    /**
-     * <p>团队链接</p>
-     */
     @NameInMap("url")
     public String url;
 
-    /**
-     * <p>用户对这个团队的访问情况</p>
-     */
     @NameInMap("visitInfo")
     public TeamModelVisitInfo visitInfo;
 
@@ -206,15 +164,9 @@ public class TeamModel extends TeaModel {
     }
 
     public static class TeamModelCreator extends TeaModel {
-        /**
-         * <p>名字</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>unionId</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -242,15 +194,9 @@ public class TeamModel extends TeaModel {
     }
 
     public static class TeamModelRelatedDeptInfo extends TeaModel {
-        /**
-         * <p>部门id</p>
-         */
         @NameInMap("deptId")
         public String deptId;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("deptName")
         public String deptName;
 
@@ -278,15 +224,9 @@ public class TeamModel extends TeaModel {
     }
 
     public static class TeamModelUpdater extends TeaModel {
-        /**
-         * <p>名字</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>unionId</p>
-         */
         @NameInMap("unionId")
         public String unionId;
 
@@ -314,15 +254,9 @@ public class TeamModel extends TeaModel {
     }
 
     public static class TeamModelVisitInfo extends TeaModel {
-        /**
-         * <p>加入团队时间</p>
-         */
         @NameInMap("joinTime")
         public String joinTime;
 
-        /**
-         * <p>用户对这个团队的访问情况</p>
-         */
         @NameInMap("roleCode")
         public String roleCode;
 

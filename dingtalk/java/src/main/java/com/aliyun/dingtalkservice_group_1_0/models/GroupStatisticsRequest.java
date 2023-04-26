@@ -4,21 +4,12 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class GroupStatisticsRequest extends TeaModel {
-    /**
-     * <p>截止日期</p>
-     */
     @NameInMap("maxDt")
     public String maxDt;
 
-    /**
-     * <p>起始日期</p>
-     */
     @NameInMap("minDt")
     public String minDt;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

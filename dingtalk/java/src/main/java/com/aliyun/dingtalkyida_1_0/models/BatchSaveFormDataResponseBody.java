@@ -4,9 +4,6 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchSaveFormDataResponseBody extends TeaModel {
-    /**
-     * <p>新增的表单实例的id列表</p>
-     */
     @NameInMap("result")
     public java.util.List<String> result;
 

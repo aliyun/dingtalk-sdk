@@ -21,21 +21,12 @@ public class ListNavigationByFormTypeResponseBody extends TeaModel {
     }
 
     public static class ListNavigationByFormTypeResponseBodyResultTitle extends TeaModel {
-        /**
-         * <p>中文名称</p>
-         */
         @NameInMap("nameInChinese")
         public String nameInChinese;
 
-        /**
-         * <p>英文名称</p>
-         */
         @NameInMap("nameInEnglish")
         public String nameInEnglish;
 
-        /**
-         * <p>type</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -71,21 +62,12 @@ public class ListNavigationByFormTypeResponseBody extends TeaModel {
     }
 
     public static class ListNavigationByFormTypeResponseBodyResult extends TeaModel {
-        /**
-         * <p>formUuid</p>
-         */
         @NameInMap("formUuid")
         public String formUuid;
 
-        /**
-         * <p>processCode</p>
-         */
         @NameInMap("processCode")
         public String processCode;
 
-        /**
-         * <p>title</p>
-         */
         @NameInMap("title")
         public ListNavigationByFormTypeResponseBodyResultTitle title;
 

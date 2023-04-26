@@ -4,9 +4,6 @@ package com.aliyun.dingtalkconnector_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateActionResponseBody extends TeaModel {
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("item")
     public java.util.List<CreateActionResponseBodyItem> item;
 
@@ -24,45 +21,24 @@ public class CreateActionResponseBody extends TeaModel {
     }
 
     public static class CreateActionResponseBodyItem extends TeaModel {
-        /**
-         * <p>连接平台执行事件id</p>
-         */
         @NameInMap("dingActionId")
         public String dingActionId;
 
-        /**
-         * <p>连接平台连接器id</p>
-         */
         @NameInMap("dingConnectorId")
         public String dingConnectorId;
 
-        /**
-         * <p>服务商的执行事件id</p>
-         */
         @NameInMap("integratorActionId")
         public String integratorActionId;
 
-        /**
-         * <p>服务商的连接器Id</p>
-         */
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
 
-        /**
-         * <p>错误码</p>
-         */
         @NameInMap("subErrCode")
         public String subErrCode;
 
-        /**
-         * <p>错误信息</p>
-         */
         @NameInMap("subErrMsg")
         public String subErrMsg;
 
-        /**
-         * <p>是否执行成功</p>
-         */
         @NameInMap("success")
         public String success;
 

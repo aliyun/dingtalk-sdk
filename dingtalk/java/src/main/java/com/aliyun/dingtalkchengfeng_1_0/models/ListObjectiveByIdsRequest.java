@@ -4,9 +4,6 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListObjectiveByIdsRequest extends TeaModel {
-    /**
-     * <p>目标ID列表</p>
-     */
     @NameInMap("objectiveIds")
     public java.util.List<String> objectiveIds;
 

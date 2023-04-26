@@ -4,9 +4,6 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateCustomfieldValueResponseBody extends TeaModel {
-    /**
-     * <p>返回对象</p>
-     */
     @NameInMap("result")
     public UpdateCustomfieldValueResponseBodyResult result;
 
@@ -24,9 +21,6 @@ public class UpdateCustomfieldValueResponseBody extends TeaModel {
     }
 
     public static class UpdateCustomfieldValueResponseBodyResultCustomfieldsValue extends TeaModel {
-        /**
-         * <p>自定义字段显示值</p>
-         */
         @NameInMap("title")
         public String title;
 
@@ -46,15 +40,9 @@ public class UpdateCustomfieldValueResponseBody extends TeaModel {
     }
 
     public static class UpdateCustomfieldValueResponseBodyResultCustomfields extends TeaModel {
-        /**
-         * <p>自定义字段id</p>
-         */
         @NameInMap("customfieldId")
         public String customfieldId;
 
-        /**
-         * <p>自定义字段值对象</p>
-         */
         @NameInMap("value")
         public java.util.List<UpdateCustomfieldValueResponseBodyResultCustomfieldsValue> value;
 
@@ -82,9 +70,6 @@ public class UpdateCustomfieldValueResponseBody extends TeaModel {
     }
 
     public static class UpdateCustomfieldValueResponseBodyResult extends TeaModel {
-        /**
-         * <p>自定义字段数组</p>
-         */
         @NameInMap("customfields")
         public java.util.List<UpdateCustomfieldValueResponseBodyResultCustomfields> customfields;
 

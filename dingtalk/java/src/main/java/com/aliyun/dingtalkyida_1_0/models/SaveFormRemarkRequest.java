@@ -4,51 +4,27 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveFormRemarkRequest extends TeaModel {
-    /**
-     * <p>应用ID</p>
-     */
     @NameInMap("appType")
     public String appType;
 
-    /**
-     * <p>将评论内容通过钉钉发给指定用户, 逗号分隔</p>
-     */
     @NameInMap("atUserId")
     public String atUserId;
 
-    /**
-     * <p>评论内容</p>
-     */
     @NameInMap("content")
     public String content;
 
-    /**
-     * <p>实例ID</p>
-     */
     @NameInMap("formInstanceId")
     public String formInstanceId;
 
-    /**
-     * <p>语言</p>
-     */
     @NameInMap("language")
     public String language;
 
-    /**
-     * <p>对评论进行回复</p>
-     */
     @NameInMap("replyId")
     public Long replyId;
 
-    /**
-     * <p>应用秘钥</p>
-     */
     @NameInMap("systemToken")
     public String systemToken;
 
-    /**
-     * <p>评论人钉钉的userId</p>
-     */
     @NameInMap("userId")
     public String userId;
 

@@ -4,21 +4,12 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryClassScheduleByTimeSchoolRequest extends TeaModel {
-    /**
-     * <p>1621676000000</p>
-     */
     @NameInMap("endTime")
     public Long endTime;
 
-    /**
-     * <p>1621566000000</p>
-     */
     @NameInMap("opUserId")
     public String opUserId;
 
-    /**
-     * <p>开始时间</p>
-     */
     @NameInMap("startTime")
     public Long startTime;
 

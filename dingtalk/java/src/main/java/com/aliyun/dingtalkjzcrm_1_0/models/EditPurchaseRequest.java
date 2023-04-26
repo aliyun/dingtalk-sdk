@@ -4,27 +4,15 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditPurchaseRequest extends TeaModel {
-    /**
-     * <p>编辑数据</p>
-     */
     @NameInMap("data")
     public EditPurchaseRequestData data;
 
-    /**
-     * <p>数据类型，固定填写153</p>
-     */
     @NameInMap("datatype")
     public Long datatype;
 
-    /**
-     * <p>数据id，不填或者填0为新增数据</p>
-     */
     @NameInMap("msgid")
     public Long msgid;
 
-    /**
-     * <p>时间戳</p>
-     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -66,123 +54,63 @@ public class EditPurchaseRequest extends TeaModel {
     }
 
     public static class EditPurchaseRequestData extends TeaModel {
-        /**
-         * <p>附加费用金额</p>
-         */
         @NameInMap("cg_fjmoney")
         public String cgFjmoney;
 
-        /**
-         * <p>附加费用分类</p>
-         */
         @NameInMap("cg_fjmoneylx")
         public String cgFjmoneylx;
 
-        /**
-         * <p>优惠抹零金额</p>
-         */
         @NameInMap("cg_kjmoney")
         public String cgKjmoney;
 
-        /**
-         * <p>优惠折扣率</p>
-         */
         @NameInMap("cg_moneyzhekou")
         public String cgMoneyzhekou;
 
-        /**
-         * <p>执行状态</p>
-         */
         @NameInMap("cg_zxstate")
         public String cgZxstate;
 
-        /**
-         * <p>采购日期</p>
-         */
         @NameInMap("cgdate")
         public String cgdate;
 
-        /**
-         * <p>采购主题</p>
-         */
         @NameInMap("cgname")
         public String cgname;
 
-        /**
-         * <p>采购单号</p>
-         */
         @NameInMap("cgno")
         public String cgno;
 
-        /**
-         * <p>采购摘要</p>
-         */
         @NameInMap("cgremark")
         public String cgremark;
 
-        /**
-         * <p>采购分类</p>
-         */
         @NameInMap("cgtype")
         public String cgtype;
 
-        /**
-         * <p>产品明细，json格式</p>
-         */
         @NameInMap("child_mx")
         public String childMx;
 
-        /**
-         * <p>创建人</p>
-         */
         @NameInMap("data_userid")
         public String dataUserid;
 
-        /**
-         * <p>我方代表</p>
-         */
         @NameInMap("empid")
         public String empid;
 
-        /**
-         * <p>供应商联系人</p>
-         */
         @NameInMap("gys_lxrid")
         public String gysLxrid;
 
-        /**
-         * <p>联系方式</p>
-         */
         @NameInMap("gys_lxrinfo")
         public String gysLxrinfo;
 
-        /**
-         * <p>供应商</p>
-         */
         @NameInMap("gysid")
         public String gysid;
 
-        /**
-         * <p>供应商代表</p>
-         */
         @NameInMap("gysjingban")
         public String gysjingban;
 
-        /**
-         * <p>关联订单</p>
-         */
         @NameInMap("order_htid")
         public String orderHtid;
 
-        /**
-         * <p>关联订单客户</p>
-         */
         @NameInMap("order_khid")
         public String orderKhid;
 
-        /**
-         * <p>采购金额</p>
-         */
         @NameInMap("summoney")
         public String summoney;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetConfBaseInfoByLogicalIdRequest extends TeaModel {
-    /**
-     * <p>会议id</p>
-     */
     @NameInMap("logicalConferenceId")
     public String logicalConferenceId;
 

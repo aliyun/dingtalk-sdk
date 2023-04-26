@@ -4,9 +4,6 @@ package com.aliyun.dingtalkattendance_1_0.models;
 import com.aliyun.tea.*;
 
 public class DingTalkSecurityCheckResponseBody extends TeaModel {
-    /**
-     * <p>返回参数</p>
-     */
     @NameInMap("result")
     public DingTalkSecurityCheckResponseBodyResult result;
 
@@ -24,15 +21,9 @@ public class DingTalkSecurityCheckResponseBody extends TeaModel {
     }
 
     public static class DingTalkSecurityCheckResponseBodyResult extends TeaModel {
-        /**
-         * <p>是否有风险</p>
-         */
         @NameInMap("hasRisk")
         public Boolean hasRisk;
 
-        /**
-         * <p>风险信息</p>
-         */
         @NameInMap("riskInfo")
         public java.util.Map<String, String> riskInfo;
 

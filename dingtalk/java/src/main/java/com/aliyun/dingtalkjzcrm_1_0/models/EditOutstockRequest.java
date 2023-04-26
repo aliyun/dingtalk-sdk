@@ -4,27 +4,15 @@ package com.aliyun.dingtalkjzcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class EditOutstockRequest extends TeaModel {
-    /**
-     * <p>编辑数据</p>
-     */
     @NameInMap("data")
     public EditOutstockRequestData data;
 
-    /**
-     * <p>数据类型，固定填写191</p>
-     */
     @NameInMap("datatype")
     public Long datatype;
 
-    /**
-     * <p>数据id，不填或者填0为新增数据</p>
-     */
     @NameInMap("msgid")
     public Long msgid;
 
-    /**
-     * <p>时间戳</p>
-     */
     @NameInMap("stamp")
     public Long stamp;
 
@@ -66,87 +54,45 @@ public class EditOutstockRequest extends TeaModel {
     }
 
     public static class EditOutstockRequestData extends TeaModel {
-        /**
-         * <p>申请人</p>
-         */
         @NameInMap("askempid")
         public String askempid;
 
-        /**
-         * <p>出库备注</p>
-         */
         @NameInMap("auditreson")
         public String auditreson;
 
-        /**
-         * <p>出库单号</p>
-         */
         @NameInMap("billno")
         public String billno;
 
-        /**
-         * <p>产品明细，json格式</p>
-         */
         @NameInMap("child_mx")
         public String childMx;
 
-        /**
-         * <p>对应客户</p>
-         */
         @NameInMap("customerid")
         public String customerid;
 
-        /**
-         * <p>创建人</p>
-         */
         @NameInMap("data_userid")
         public String dataUserid;
 
-        /**
-         * <p>经办人</p>
-         */
         @NameInMap("empid")
         public String empid;
 
-        /**
-         * <p>单据类型</p>
-         */
         @NameInMap("inorout")
         public String inorout;
 
-        /**
-         * <p>出库日期</p>
-         */
         @NameInMap("libiodate")
         public String libiodate;
 
-        /**
-         * <p>出库主题</p>
-         */
         @NameInMap("libioname")
         public String libioname;
 
-        /**
-         * <p>出库状态</p>
-         */
         @NameInMap("libiostate")
         public String libiostate;
 
-        /**
-         * <p>对应订单</p>
-         */
         @NameInMap("orderid")
         public String orderid;
 
-        /**
-         * <p>申请备注</p>
-         */
         @NameInMap("remark")
         public String remark;
 
-        /**
-         * <p>出库仓库</p>
-         */
         @NameInMap("stocklibid")
         public String stocklibid;
 

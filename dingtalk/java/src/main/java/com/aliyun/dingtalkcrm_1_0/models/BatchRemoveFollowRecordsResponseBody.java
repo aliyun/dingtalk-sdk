@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchRemoveFollowRecordsResponseBody extends TeaModel {
-    /**
-     * <p>批量插入结果列表，results的结果和要新增的数据是一一对应的，可以获取到每条数据分别是否成功。</p>
-     */
     @NameInMap("results")
     public java.util.List<BatchRemoveFollowRecordsResponseBodyResults> results;
 
@@ -24,27 +21,15 @@ public class BatchRemoveFollowRecordsResponseBody extends TeaModel {
     }
 
     public static class BatchRemoveFollowRecordsResponseBodyResults extends TeaModel {
-        /**
-         * <p>如果保存失败，则表示失败的错误码。</p>
-         */
         @NameInMap("errorCode")
         public String errorCode;
 
-        /**
-         * <p>如果保存失败，则表示失败的错误原因。</p>
-         */
         @NameInMap("errorMsg")
         public String errorMsg;
 
-        /**
-         * <p>保存成功的关系id。</p>
-         */
         @NameInMap("instanceId")
         public String instanceId;
 
-        /**
-         * <p>数据是否保存成功。</p>
-         */
         @NameInMap("success")
         public Boolean success;
 

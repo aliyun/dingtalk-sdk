@@ -4,15 +4,9 @@ package com.aliyun.dingtalkokr_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateObjectiveRequest extends TeaModel {
-    /**
-     * <p>当前 Objective 的内容。</p>
-     */
     @NameInMap("content")
     public String content;
 
-    /**
-     * <p>当前用户的 userId。</p>
-     */
     @NameInMap("userId")
     public String userId;
 

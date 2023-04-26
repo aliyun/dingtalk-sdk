@@ -4,21 +4,12 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddMemberToServiceGroupRequest extends TeaModel {
-    /**
-     * <p>钉群ID</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>服务群团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>员工在钉钉组织内的工号</p>
-     */
     @NameInMap("userIds")
     public java.util.List<String> userIds;
 

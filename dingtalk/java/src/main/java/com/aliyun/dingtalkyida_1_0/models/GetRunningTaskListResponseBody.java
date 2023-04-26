@@ -21,123 +21,63 @@ public class GetRunningTaskListResponseBody extends TeaModel {
     }
 
     public static class GetRunningTaskListResponseBodyResult extends TeaModel {
-        /**
-         * <p>激活时间</p>
-         */
         @NameInMap("activeTimeGMT")
         public String activeTimeGMT;
 
-        /**
-         * <p>实际执行人id</p>
-         */
         @NameInMap("actualActionExecutorId")
         public String actualActionExecutorId;
 
-        /**
-         * <p>appType</p>
-         */
         @NameInMap("appType")
         public String appType;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createTimeGMT")
         public String createTimeGMT;
 
-        /**
-         * <p>结束时间</p>
-         */
         @NameInMap("finishTimeGMT")
         public String finishTimeGMT;
 
-        /**
-         * <p>originatorEmail</p>
-         */
         @NameInMap("originatorEmail")
         public String originatorEmail;
 
-        /**
-         * <p>originatorId</p>
-         */
         @NameInMap("originatorId")
         public String originatorId;
 
-        /**
-         * <p>originatorName</p>
-         */
         @NameInMap("originatorName")
         public String originatorName;
 
-        /**
-         * <p>originatorNameEn</p>
-         */
         @NameInMap("originatorNameInEnglish")
         public String originatorNameInEnglish;
 
-        /**
-         * <p>originatorNickName</p>
-         */
         @NameInMap("originatorNickName")
         public String originatorNickName;
 
-        /**
-         * <p>originatorNickNameEn</p>
-         */
         @NameInMap("originatorNickNameInEnglish")
         public String originatorNickNameInEnglish;
 
-        /**
-         * <p>originatorPhoto</p>
-         */
         @NameInMap("originatorPhoto")
         public String originatorPhoto;
 
-        /**
-         * <p>outResult</p>
-         */
         @NameInMap("outResult")
         public String outResult;
 
-        /**
-         * <p>outResultName</p>
-         */
         @NameInMap("outResultName")
         public String outResultName;
 
-        /**
-         * <p>processInstanceId</p>
-         */
         @NameInMap("processInstanceId")
         public String processInstanceId;
 
-        /**
-         * <p>状态</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>任务id</p>
-         */
         @NameInMap("taskId")
         public String taskId;
 
-        /**
-         * <p>任务类型</p>
-         */
         @NameInMap("taskType")
         public String taskType;
 
-        /**
-         * <p>标题</p>
-         */
         @NameInMap("title")
         public String title;
 
-        /**
-         * <p>标题英文</p>
-         */
         @NameInMap("titleInEnglish")
         public String titleInEnglish;
 

@@ -4,9 +4,6 @@ package com.aliyun.dingtalkrobot_1_0.models;
 import com.aliyun.tea.*;
 
 public class SendRobotDingMessageResponseBody extends TeaModel {
-    /**
-     * <p>返回的ding消息id</p>
-     */
     @NameInMap("dingSendResultId")
     public String dingSendResultId;
 

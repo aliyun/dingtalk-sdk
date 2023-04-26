@@ -4,15 +4,9 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOrgInfoResponseBody extends TeaModel {
-    /**
-     * <p>部门详情</p>
-     */
     @NameInMap("content")
     public GetOrgInfoResponseBodyContent content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
@@ -38,63 +32,33 @@ public class GetOrgInfoResponseBody extends TeaModel {
     }
 
     public static class GetOrgInfoResponseBodyContent extends TeaModel {
-        /**
-         * <p>部门编码</p>
-         */
         @NameInMap("deptCode")
         public String deptCode;
 
-        /**
-         * <p>部门名称</p>
-         */
         @NameInMap("deptName")
         public String deptName;
 
-        /**
-         * <p>部门人数</p>
-         */
         @NameInMap("deptNum")
         public String deptNum;
 
-        /**
-         * <p>部门层级</p>
-         */
         @NameInMap("level")
         public String level;
 
-        /**
-         * <p>部门编码路径</p>
-         */
         @NameInMap("organizationCodePath")
         public String organizationCodePath;
 
-        /**
-         * <p>部门路径</p>
-         */
         @NameInMap("organizationPath")
         public String organizationPath;
 
-        /**
-         * <p>父级部门编码</p>
-         */
         @NameInMap("parentDeptCode")
         public String parentDeptCode;
 
-        /**
-         * <p>部门简称</p>
-         */
         @NameInMap("shortName")
         public String shortName;
 
-        /**
-         * <p>生效日期</p>
-         */
         @NameInMap("startDate")
         public String startDate;
 
-        /**
-         * <p>失效日期</p>
-         */
         @NameInMap("stopDate")
         public String stopDate;
 

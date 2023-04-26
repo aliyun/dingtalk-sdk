@@ -4,9 +4,6 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetOrgAuthInfoRequest extends TeaModel {
-    /**
-     * <p>需要获取的企业认证信息的企业corpId</p>
-     */
     @NameInMap("targetCorpId")
     public String targetCorpId;
 

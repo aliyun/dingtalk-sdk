@@ -4,15 +4,9 @@ package com.aliyun.dingtalkalitrip_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCityCarApplyResponseBody extends TeaModel {
-    /**
-     * <p>审批单列表</p>
-     */
     @NameInMap("applyList")
     public java.util.List<QueryCityCarApplyResponseBodyApplyList> applyList;
 
-    /**
-     * <p>总数</p>
-     */
     @NameInMap("total")
     public Long total;
 
@@ -38,45 +32,24 @@ public class QueryCityCarApplyResponseBody extends TeaModel {
     }
 
     public static class QueryCityCarApplyResponseBodyApplyListApproverList extends TeaModel {
-        /**
-         * <p>审批备注</p>
-         */
         @NameInMap("note")
         public String note;
 
-        /**
-         * <p>审批时间</p>
-         */
         @NameInMap("operateTime")
         public String operateTime;
 
-        /**
-         * <p>审批人排序值</p>
-         */
         @NameInMap("order")
         public Long order;
 
-        /**
-         * <p>审批状态枚举：审批状态：0-审批中，1-已同意，2-已拒绝</p>
-         */
         @NameInMap("status")
         public Long status;
 
-        /**
-         * <p>审批状态描述</p>
-         */
         @NameInMap("statusDesc")
         public String statusDesc;
 
-        /**
-         * <p>审批员工ID</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>审批员工名</p>
-         */
         @NameInMap("userName")
         public String userName;
 
@@ -144,87 +117,45 @@ public class QueryCityCarApplyResponseBody extends TeaModel {
     }
 
     public static class QueryCityCarApplyResponseBodyApplyListItineraryList extends TeaModel {
-        /**
-         * <p>目的地城市</p>
-         */
         @NameInMap("arrCity")
         public String arrCity;
 
-        /**
-         * <p>目的地城市三字码</p>
-         */
         @NameInMap("arrCityCode")
         public String arrCityCode;
 
-        /**
-         * <p>到达目的地城市时间</p>
-         */
         @NameInMap("arrDate")
         public String arrDate;
 
-        /**
-         * <p>商旅内部成本中心ID</p>
-         */
         @NameInMap("costCenterId")
         public Long costCenterId;
 
-        /**
-         * <p>成本中心名称</p>
-         */
         @NameInMap("costCenterName")
         public String costCenterName;
 
-        /**
-         * <p>出发城市</p>
-         */
         @NameInMap("depCity")
         public String depCity;
 
-        /**
-         * <p>出发城市三字码</p>
-         */
         @NameInMap("depCityCode")
         public String depCityCode;
 
-        /**
-         * <p>出发时间</p>
-         */
         @NameInMap("depDate")
         public String depDate;
 
-        /**
-         * <p>商旅内部发票抬头ID</p>
-         */
         @NameInMap("invoiceId")
         public Long invoiceId;
 
-        /**
-         * <p>发票抬头名称</p>
-         */
         @NameInMap("invoiceName")
         public String invoiceName;
 
-        /**
-         * <p>商旅内部行程单ID</p>
-         */
         @NameInMap("itineraryId")
         public String itineraryId;
 
-        /**
-         * <p>项目code</p>
-         */
         @NameInMap("projectCode")
         public String projectCode;
 
-        /**
-         * <p>项目名称</p>
-         */
         @NameInMap("projectTitle")
         public String projectTitle;
 
-        /**
-         * <p>交通方式：4-市内交通</p>
-         */
         @NameInMap("trafficType")
         public Long trafficType;
 
@@ -348,81 +279,42 @@ public class QueryCityCarApplyResponseBody extends TeaModel {
     }
 
     public static class QueryCityCarApplyResponseBodyApplyList extends TeaModel {
-        /**
-         * <p>审批单列表</p>
-         */
         @NameInMap("approverList")
         public java.util.List<QueryCityCarApplyResponseBodyApplyListApproverList> approverList;
 
-        /**
-         * <p>员工所在部门ID</p>
-         */
         @NameInMap("departId")
         public String departId;
 
-        /**
-         * <p>员工所在部门名</p>
-         */
         @NameInMap("departName")
         public String departName;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>最近修改时间</p>
-         */
         @NameInMap("gmtModified")
         public String gmtModified;
 
-        /**
-         * <p>审批单关联的行程</p>
-         */
         @NameInMap("itineraryList")
         public java.util.List<QueryCityCarApplyResponseBodyApplyListItineraryList> itineraryList;
 
-        /**
-         * <p>审批单状态：0-申请，1-同意，2-拒绝</p>
-         */
         @NameInMap("status")
         public Long status;
 
-        /**
-         * <p>审批单状态：0-申请，1-同意，2-拒绝</p>
-         */
         @NameInMap("statusDesc")
         public String statusDesc;
 
-        /**
-         * <p>三方审批单ID</p>
-         */
         @NameInMap("thirdPartApplyId")
         public String thirdPartApplyId;
 
-        /**
-         * <p>申请事由</p>
-         */
         @NameInMap("tripCause")
         public String tripCause;
 
-        /**
-         * <p>审批单标题</p>
-         */
         @NameInMap("tripTitle")
         public String tripTitle;
 
-        /**
-         * <p>发起审批员工ID</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>发起审批员工名</p>
-         */
         @NameInMap("userName")
         public String userName;
 

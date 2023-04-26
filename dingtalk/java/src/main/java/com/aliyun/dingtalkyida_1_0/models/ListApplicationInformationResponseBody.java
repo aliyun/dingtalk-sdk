@@ -4,27 +4,15 @@ package com.aliyun.dingtalkyida_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListApplicationInformationResponseBody extends TeaModel {
-    /**
-     * <p>applicationInformation</p>
-     */
     @NameInMap("applicationInformation")
     public java.util.List<ListApplicationInformationResponseBodyApplicationInformation> applicationInformation;
 
-    /**
-     * <p>当前第几页</p>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>分页大小</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 
-    /**
-     * <p>总数量</p>
-     */
     @NameInMap("totalCount")
     public Integer totalCount;
 
@@ -66,15 +54,9 @@ public class ListApplicationInformationResponseBody extends TeaModel {
     }
 
     public static class ListApplicationInformationResponseBodyApplicationInformationUsagePlugins extends TeaModel {
-        /**
-         * <p>iconUrl</p>
-         */
         @NameInMap("iconUrl")
         public String iconUrl;
 
-        /**
-         * <p>pluginName</p>
-         */
         @NameInMap("pluginName")
         public String pluginName;
 
@@ -102,33 +84,18 @@ public class ListApplicationInformationResponseBody extends TeaModel {
     }
 
     public static class ListApplicationInformationResponseBodyApplicationInformation extends TeaModel {
-        /**
-         * <p>appName</p>
-         */
         @NameInMap("appName")
         public String appName;
 
-        /**
-         * <p>appType</p>
-         */
         @NameInMap("appType")
         public String appType;
 
-        /**
-         * <p>attachmentUsageAmount</p>
-         */
         @NameInMap("attachmentUsageAmount")
         public Long attachmentUsageAmount;
 
-        /**
-         * <p>instanceUsageAmount</p>
-         */
         @NameInMap("instanceUsageAmount")
         public Long instanceUsageAmount;
 
-        /**
-         * <p>usagePlugins</p>
-         */
         @NameInMap("usagePlugins")
         public java.util.List<ListApplicationInformationResponseBodyApplicationInformationUsagePlugins> usagePlugins;
 

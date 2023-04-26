@@ -4,69 +4,36 @@ package com.aliyun.dingtalkdiot_1_0.models;
 import com.aliyun.tea.*;
 
 public class RegisterDeviceRequest extends TeaModel {
-    /**
-     * <p>钉钉物联组织ID, 第三方平台必填，企业内部系统忽略</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>设备名称</p>
-     */
     @NameInMap("deviceName")
     public String deviceName;
 
-    /**
-     * <p>设备状态 0:在线 1:离线</p>
-     */
     @NameInMap("deviceStatus")
     public Integer deviceStatus;
 
-    /**
-     * <p>设备类型</p>
-     */
     @NameInMap("deviceType")
     public String deviceType;
 
-    /**
-     * <p>设备类型名称</p>
-     */
     @NameInMap("deviceTypeName")
     public String deviceTypeName;
 
-    /**
-     * <p>设备id</p>
-     */
     @NameInMap("id")
     public String id;
 
-    /**
-     * <p>视频流地址直播流地址，支持rtmp、flv、hls等格式，需要https协议。</p>
-     */
     @NameInMap("liveUrls")
     public RegisterDeviceRequestLiveUrls liveUrls;
 
-    /**
-     * <p>设备地址</p>
-     */
     @NameInMap("location")
     public String location;
 
-    /**
-     * <p>设备昵称</p>
-     */
     @NameInMap("nickName")
     public String nickName;
 
-    /**
-     * <p>设备父节点id</p>
-     */
     @NameInMap("parentId")
     public String parentId;
 
-    /**
-     * <p>设备类型 摄像头:CAMERA 其它:OTHERS</p>
-     */
     @NameInMap("productType")
     public String productType;
 
@@ -164,21 +131,12 @@ public class RegisterDeviceRequest extends TeaModel {
     }
 
     public static class RegisterDeviceRequestLiveUrls extends TeaModel {
-        /**
-         * <p>flv格式视频流</p>
-         */
         @NameInMap("flv")
         public String flv;
 
-        /**
-         * <p>hls格式视频流地址</p>
-         */
         @NameInMap("hls")
         public String hls;
 
-        /**
-         * <p>rtmp格式视频流</p>
-         */
         @NameInMap("rtmp")
         public String rtmp;
 

@@ -4,33 +4,18 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpgradeCloudGroupRequest extends TeaModel {
-    /**
-     * <p>云客服租户id</p>
-     */
     @NameInMap("ccsInstanceId")
     public String ccsInstanceId;
 
-    /**
-     * <p>钉钉群id</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>升级的目标群组id</p>
-     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
-    /**
-     * <p>升级的目标团队id</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>升级的目标模板id</p>
-     */
     @NameInMap("templateId")
     public String templateId;
 

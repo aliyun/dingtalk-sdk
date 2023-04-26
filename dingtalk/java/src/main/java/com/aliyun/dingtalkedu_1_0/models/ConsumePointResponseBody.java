@@ -4,15 +4,9 @@ package com.aliyun.dingtalkedu_1_0.models;
 import com.aliyun.tea.*;
 
 public class ConsumePointResponseBody extends TeaModel {
-    /**
-     * <p>结果</p>
-     */
     @NameInMap("result")
     public Boolean result;
 
-    /**
-     * <p>操作是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 

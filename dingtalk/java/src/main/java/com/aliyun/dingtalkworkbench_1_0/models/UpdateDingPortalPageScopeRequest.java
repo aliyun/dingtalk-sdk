@@ -4,27 +4,15 @@ package com.aliyun.dingtalkworkbench_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateDingPortalPageScopeRequest extends TeaModel {
-    /**
-     * <p>是否全员可见</p>
-     */
     @NameInMap("allVisible")
     public Boolean allVisible;
 
-    /**
-     * <p>可见部门列表</p>
-     */
     @NameInMap("deptIds")
     public java.util.List<Long> deptIds;
 
-    /**
-     * <p>可见角色列表</p>
-     */
     @NameInMap("roleIds")
     public java.util.List<Long> roleIds;
 
-    /**
-     * <p>可见用户列表</p>
-     */
     @NameInMap("userids")
     public java.util.List<String> userids;
 

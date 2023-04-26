@@ -7,9 +7,6 @@ public class GetOaOperatorLogListResponseBody extends TeaModel {
     @NameInMap("data")
     public java.util.List<GetOaOperatorLogListResponseBodyData> data;
 
-    /**
-     * <p>当前获取记录数</p>
-     */
     @NameInMap("itemCount")
     public Long itemCount;
 
@@ -35,39 +32,21 @@ public class GetOaOperatorLogListResponseBody extends TeaModel {
     }
 
     public static class GetOaOperatorLogListResponseBodyData extends TeaModel {
-        /**
-         * <p>操作分类（一级）</p>
-         */
         @NameInMap("category1Name")
         public String category1Name;
 
-        /**
-         * <p>操作分类（二级）</p>
-         */
         @NameInMap("category2Name")
         public String category2Name;
 
-        /**
-         * <p>操作详情</p>
-         */
         @NameInMap("content")
         public String content;
 
-        /**
-         * <p>操作员名字</p>
-         */
         @NameInMap("opName")
         public String opName;
 
-        /**
-         * <p>操作时间</p>
-         */
         @NameInMap("opTime")
         public Long opTime;
 
-        /**
-         * <p>操作员userId</p>
-         */
         @NameInMap("opUserId")
         public String opUserId;
 

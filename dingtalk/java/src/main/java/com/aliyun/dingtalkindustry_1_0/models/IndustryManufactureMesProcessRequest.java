@@ -4,81 +4,42 @@ package com.aliyun.dingtalkindustry_1_0.models;
 import com.aliyun.tea.*;
 
 public class IndustryManufactureMesProcessRequest extends TeaModel {
-    /**
-     * <p>本次操作的行为</p>
-     */
     @NameInMap("action")
     public String action;
 
-    /**
-     * <p>生态唯一标识,枚举:opsoft， 需要注册</p>
-     */
     @NameInMap("appKey")
     public String appKey;
 
-    /**
-     * <p>主数据名称</p>
-     */
     @NameInMap("baseDataName")
     public String baseDataName;
 
-    /**
-     * <p>扩展字段</p>
-     */
     @NameInMap("extendData")
     public java.util.List<IndustryManufactureMesProcessRequestExtendData> extendData;
 
-    /**
-     * <p>工序名称</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>是否必须派工</p>
-     */
     @NameInMap("needDispatch")
     public String needDispatch;
 
-    /**
-     * <p>是否需要质检</p>
-     */
     @NameInMap("needQualityTest")
     public String needQualityTest;
 
-    /**
-     * <p>工序代码</p>
-     */
     @NameInMap("no")
     public String no;
 
-    /**
-     * <p>单价</p>
-     */
     @NameInMap("price")
     public String price;
 
-    /**
-     * <p>工序属性(自制/委外)</p>
-     */
     @NameInMap("prop")
     public String prop;
 
-    /**
-     * <p>备注</p>
-     */
     @NameInMap("remark")
     public String remark;
 
-    /**
-     * <p>操作流程</p>
-     */
     @NameInMap("sop")
     public String sop;
 
-    /**
-     * <p>工序唯一标识</p>
-     */
     @NameInMap("uuid")
     public String uuid;
 
@@ -192,27 +153,15 @@ public class IndustryManufactureMesProcessRequest extends TeaModel {
     }
 
     public static class IndustryManufactureMesProcessRequestExtendData extends TeaModel {
-        /**
-         * <p>扩展字段唯一标识(英文)</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>扩展字段中文描述</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>扩展字段实际取值</p>
-         */
         @NameInMap("value")
         public String value;
 
-        /**
-         * <p>扩展字段类型,例如string</p>
-         */
         @NameInMap("valueType")
         public String valueType;
 

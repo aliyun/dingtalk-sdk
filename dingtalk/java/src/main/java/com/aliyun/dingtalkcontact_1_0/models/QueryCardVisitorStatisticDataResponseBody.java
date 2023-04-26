@@ -4,57 +4,30 @@ package com.aliyun.dingtalkcontact_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryCardVisitorStatisticDataResponseBody extends TeaModel {
-    /**
-     * <p>发送名片数</p>
-     */
     @NameInMap("cardSendCnt")
     public Long cardSendCnt;
 
-    /**
-     * <p>今日访客增加数</p>
-     */
     @NameInMap("todayVisitAddCnt")
     public Long todayVisitAddCnt;
 
-    /**
-     * <p>今日访客数</p>
-     */
     @NameInMap("todayVisitCnt")
     public Long todayVisitCnt;
 
-    /**
-     * <p>总访客新增数</p>
-     */
     @NameInMap("totalVisitAddCnt")
     public Long totalVisitAddCnt;
 
-    /**
-     * <p>总访客数</p>
-     */
     @NameInMap("totalVisitCnt")
     public Long totalVisitCnt;
 
-    /**
-     * <p>微信今日访客新增数</p>
-     */
     @NameInMap("wechatTodayVisitAddCnt")
     public Long wechatTodayVisitAddCnt;
 
-    /**
-     * <p>微信今日访客数</p>
-     */
     @NameInMap("wechatTodayVisitCnt")
     public Long wechatTodayVisitCnt;
 
-    /**
-     * <p>微信今日访客增加数</p>
-     */
     @NameInMap("wechatTotalVisitAddCnt")
     public Long wechatTotalVisitAddCnt;
 
-    /**
-     * <p>微信访客数</p>
-     */
     @NameInMap("wechatTotalVisitCnt")
     public Long wechatTotalVisitCnt;
 

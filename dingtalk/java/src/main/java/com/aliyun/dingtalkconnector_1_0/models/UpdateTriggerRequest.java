@@ -32,45 +32,24 @@ public class UpdateTriggerRequest extends TeaModel {
     }
 
     public static class UpdateTriggerRequestTriggerInfo extends TeaModel {
-        /**
-         * <p>触发事件描述。</p>
-         */
         @NameInMap("description")
         public String description;
 
-        /**
-         * <p>连接平台连接器唯一标识。</p>
-         */
         @NameInMap("dingConnectorId")
         public String dingConnectorId;
 
-        /**
-         * <p>连接平台触发事件唯一标识。</p>
-         */
         @NameInMap("dingTriggerId")
         public String dingTriggerId;
 
-        /**
-         * <p>入参属性描述。</p>
-         */
         @NameInMap("inputSchema")
         public String inputSchema;
 
-        /**
-         * <p>服务商的连接器唯一标识。</p>
-         */
         @NameInMap("integratorConnectorId")
         public String integratorConnectorId;
 
-        /**
-         * <p>服务商的触发事件唯一标识。</p>
-         */
         @NameInMap("integratorTriggerId")
         public String integratorTriggerId;
 
-        /**
-         * <p>触发事件名称。</p>
-         */
         @NameInMap("name")
         public String name;
 

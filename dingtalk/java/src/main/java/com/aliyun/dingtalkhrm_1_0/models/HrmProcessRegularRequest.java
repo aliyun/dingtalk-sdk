@@ -4,27 +4,15 @@ package com.aliyun.dingtalkhrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class HrmProcessRegularRequest extends TeaModel {
-    /**
-     * <p>操作人用户ID</p>
-     */
     @NameInMap("operationId")
     public String operationId;
 
-    /**
-     * <p>转正时间</p>
-     */
     @NameInMap("regularDate")
     public Long regularDate;
 
-    /**
-     * <p>备注</p>
-     */
     @NameInMap("remark")
     public String remark;
 
-    /**
-     * <p>用户ID</p>
-     */
     @NameInMap("userId")
     public String userId;
 

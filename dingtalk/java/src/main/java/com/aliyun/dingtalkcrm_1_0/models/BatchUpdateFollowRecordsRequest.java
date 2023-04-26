@@ -4,15 +4,9 @@ package com.aliyun.dingtalkcrm_1_0.models;
 import com.aliyun.tea.*;
 
 public class BatchUpdateFollowRecordsRequest extends TeaModel {
-    /**
-     * <p>关系数据列表。</p>
-     */
     @NameInMap("instanceList")
     public java.util.List<BatchUpdateFollowRecordsRequestInstanceList> instanceList;
 
-    /**
-     * <p>操作人userId</p>
-     */
     @NameInMap("operatorUserId")
     public String operatorUserId;
 
@@ -38,21 +32,12 @@ public class BatchUpdateFollowRecordsRequest extends TeaModel {
     }
 
     public static class BatchUpdateFollowRecordsRequestInstanceListDataArray extends TeaModel {
-        /**
-         * <p>模型字段extendValue。</p>
-         */
         @NameInMap("extendValue")
         public String extendValue;
 
-        /**
-         * <p>模型字段id。</p>
-         */
         @NameInMap("key")
         public String key;
 
-        /**
-         * <p>模型字段value。</p>
-         */
         @NameInMap("value")
         public String value;
 
@@ -88,9 +73,6 @@ public class BatchUpdateFollowRecordsRequest extends TeaModel {
     }
 
     public static class BatchUpdateFollowRecordsRequestInstanceList extends TeaModel {
-        /**
-         * <p>关系模型数据。</p>
-         */
         @NameInMap("dataArray")
         public java.util.List<BatchUpdateFollowRecordsRequestInstanceListDataArray> dataArray;
 

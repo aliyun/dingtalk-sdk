@@ -21,21 +21,12 @@ public class CreateWorkTimeResponseBody extends TeaModel {
     }
 
     public static class CreateWorkTimeResponseBodyResultBody extends TeaModel {
-        /**
-         * <p>工时所属日期</p>
-         */
         @NameInMap("date")
         public String date;
 
-        /**
-         * <p>工时关联的数据 ID</p>
-         */
         @NameInMap("taskId")
         public String taskId;
 
-        /**
-         * <p>实际工时</p>
-         */
         @NameInMap("workTime")
         public Long workTime;
 
@@ -74,9 +65,6 @@ public class CreateWorkTimeResponseBody extends TeaModel {
         @NameInMap("body")
         public java.util.List<CreateWorkTimeResponseBodyResultBody> body;
 
-        /**
-         * <p>执行结果描述</p>
-         */
         @NameInMap("message")
         public String message;
 

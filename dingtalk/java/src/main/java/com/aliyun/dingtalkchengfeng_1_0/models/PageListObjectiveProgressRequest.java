@@ -4,21 +4,12 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class PageListObjectiveProgressRequest extends TeaModel {
-    /**
-     * <p>目标id</p>
-     */
     @NameInMap("objectiveId")
     public String objectiveId;
 
-    /**
-     * <p>页数</p>
-     */
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
-    /**
-     * <p>页大小</p>
-     */
     @NameInMap("pageSize")
     public Integer pageSize;
 

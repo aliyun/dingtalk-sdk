@@ -4,21 +4,12 @@ package com.aliyun.dingtalkdevicemng_1_0.models;
 import com.aliyun.tea.*;
 
 public class ListInspectInfoResponseBody extends TeaModel {
-    /**
-     * <p>结果集</p>
-     */
     @NameInMap("result")
     public java.util.List<ListInspectInfoResponseBodyResult> result;
 
-    /**
-     * <p>是否成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
-    /**
-     * <p>总共数量</p>
-     */
     @NameInMap("totalCount")
     public Long totalCount;
 
@@ -52,63 +43,33 @@ public class ListInspectInfoResponseBody extends TeaModel {
     }
 
     public static class ListInspectInfoResponseBodyResult extends TeaModel {
-        /**
-         * <p>设备码</p>
-         */
         @NameInMap("deviceCode")
         public String deviceCode;
 
-        /**
-         * <p>设备名称</p>
-         */
         @NameInMap("deviceName")
         public String deviceName;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
-        /**
-         * <p>处理时间</p>
-         */
         @NameInMap("handleTime")
         public String handleTime;
 
-        /**
-         * <p>维修人员</p>
-         */
         @NameInMap("maintenanceStaff")
         public java.util.List<String> maintenanceStaff;
 
-        /**
-         * <p>巡检表名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>巡检/保养内容</p>
-         */
         @NameInMap("remark")
         public String remark;
 
-        /**
-         * <p>处理结果（1:未修复，2:已修复）</p>
-         */
         @NameInMap("repairStatus")
         public Integer repairStatus;
 
-        /**
-         * <p>巡检/保养结果：0:正常，1:异常</p>
-         */
         @NameInMap("status")
         public Integer status;
 
-        /**
-         * <p>类型（inspect：巡检，protect：保养）</p>
-         */
         @NameInMap("type")
         public String type;
 

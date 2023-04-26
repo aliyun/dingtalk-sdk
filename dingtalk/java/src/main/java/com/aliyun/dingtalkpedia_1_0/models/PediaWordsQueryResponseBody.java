@@ -4,18 +4,9 @@ package com.aliyun.dingtalkpedia_1_0.models;
 import com.aliyun.tea.*;
 
 public class PediaWordsQueryResponseBody extends TeaModel {
-    /**
-     * <p>返回词条具体对象</p>
-     * <br>
-     */
     @NameInMap("data")
     public PediaWordsQueryResponseBodyData data;
 
-    /**
-     * <p>返回结果</p>
-     * <p>false，失败</p>
-     * <p>trur，成功</p>
-     */
     @NameInMap("success")
     public Boolean success;
 
@@ -41,27 +32,15 @@ public class PediaWordsQueryResponseBody extends TeaModel {
     }
 
     public static class PediaWordsQueryResponseBodyDataAppLink extends TeaModel {
-        /**
-         * <p>应用名称</p>
-         */
         @NameInMap("appName")
         public String appName;
 
-        /**
-         * <p>应用icon</p>
-         */
         @NameInMap("iconLink")
         public String iconLink;
 
-        /**
-         * <p>桌面端链接</p>
-         */
         @NameInMap("pcLink")
         public String pcLink;
 
-        /**
-         * <p>手机端链接</p>
-         */
         @NameInMap("phoneLink")
         public String phoneLink;
 
@@ -105,22 +84,12 @@ public class PediaWordsQueryResponseBody extends TeaModel {
     }
 
     public static class PediaWordsQueryResponseBodyDataContactList extends TeaModel {
-        /**
-         * <p>联系人图片办好</p>
-         */
         @NameInMap("avatarMediaId")
         public String avatarMediaId;
 
-        /**
-         * <p>联系人名称</p>
-         */
         @NameInMap("nickName")
         public String nickName;
 
-        /**
-         * <p>联系人员工编号</p>
-         * <br>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -156,9 +125,6 @@ public class PediaWordsQueryResponseBody extends TeaModel {
     }
 
     public static class PediaWordsQueryResponseBodyDataPicList extends TeaModel {
-        /**
-         * <p>图片HTTP地址</p>
-         */
         @NameInMap("mediaIdUrl")
         public String mediaIdUrl;
 
@@ -181,15 +147,9 @@ public class PediaWordsQueryResponseBody extends TeaModel {
         @NameInMap("link")
         public String link;
 
-        /**
-         * <p>文档名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>文档类型，分别为adoc或者asheet</p>
-         */
         @NameInMap("type")
         public String type;
 
@@ -225,15 +185,9 @@ public class PediaWordsQueryResponseBody extends TeaModel {
     }
 
     public static class PediaWordsQueryResponseBodyDataRelatedLink extends TeaModel {
-        /**
-         * <p>链接地址</p>
-         */
         @NameInMap("link")
         public String link;
 
-        /**
-         * <p>链接名称</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -261,134 +215,69 @@ public class PediaWordsQueryResponseBody extends TeaModel {
     }
 
     public static class PediaWordsQueryResponseBodyData extends TeaModel {
-        /**
-         * <p>相关应用</p>
-         */
         @NameInMap("appLink")
         public java.util.List<PediaWordsQueryResponseBodyDataAppLink> appLink;
 
-        /**
-         * <p>审核人</p>
-         */
         @NameInMap("approveName")
         public String approveName;
 
-        /**
-         * <p>联系人列表</p>
-         */
         @NameInMap("contactList")
         public java.util.List<PediaWordsQueryResponseBodyDataContactList> contactList;
 
-        /**
-         * <p>相关联系人</p>
-         */
         @NameInMap("contacts")
         public java.util.List<String> contacts;
 
-        /**
-         * <p>创建者</p>
-         */
         @NameInMap("creatorName")
         public String creatorName;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("gmtCreate")
         public Long gmtCreate;
 
-        /**
-         * <p>修改时间</p>
-         */
         @NameInMap("gmtModify")
         public Long gmtModify;
 
-        /**
-         * <p>高亮的词条别名</p>
-         * <br>
-         */
         @NameInMap("highLightWordAlias")
         public java.util.List<String> highLightWordAlias;
 
-        /**
-         * <p>内部群是否高亮</p>
-         */
         @NameInMap("imHighLight")
         public Boolean imHighLight;
 
-        /**
-         * <p>当为待审核词条的时候的父编号</p>
-         */
         @NameInMap("parentUuid")
         public Long parentUuid;
 
         @NameInMap("picList")
         public java.util.List<PediaWordsQueryResponseBodyDataPicList> picList;
 
-        /**
-         * <p>相关文档</p>
-         */
         @NameInMap("relatedDoc")
         public java.util.List<PediaWordsQueryResponseBodyDataRelatedDoc> relatedDoc;
 
-        /**
-         * <p>相关链接</p>
-         */
         @NameInMap("relatedLink")
         public java.util.List<PediaWordsQueryResponseBodyDataRelatedLink> relatedLink;
 
-        /**
-         * <p>服务群是否高亮</p>
-         */
         @NameInMap("simHighLight")
         public Boolean simHighLight;
 
-        /**
-         * <p>词条释义非富文本</p>
-         */
         @NameInMap("simpleWordParaphrase")
         public String simpleWordParaphrase;
 
-        /**
-         * <p>分类名称</p>
-         */
         @NameInMap("tagsList")
         public java.util.List<String> tagsList;
 
-        /**
-         * <p>更新人</p>
-         */
         @NameInMap("updaterName")
         public String updaterName;
 
-        /**
-         * <p>操作员工userId</p>
-         */
         @NameInMap("userId")
         public String userId;
 
-        /**
-         * <p>词条主键ID</p>
-         */
         @NameInMap("uuid")
         public Long uuid;
 
-        /**
-         * <p>词条别名</p>
-         */
         @NameInMap("wordAlias")
         public java.util.List<String> wordAlias;
 
-        /**
-         * <p>词条名称</p>
-         * <br>
-         */
         @NameInMap("wordName")
         public String wordName;
 
-        /**
-         * <p>词条释义，富文本</p>
-         */
         @NameInMap("wordParaphrase")
         public String wordParaphrase;
 

@@ -4,27 +4,15 @@ package com.aliyun.dingtalkdoc_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetSpaceDirectoriesRequest extends TeaModel {
-    /**
-     * <p>知识库节点id。</p>
-     */
     @NameInMap("dentryId")
     public String dentryId;
 
-    /**
-     * <p>查询数量，最大500。</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>分页token，第一页可不传。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 
-    /**
-     * <p>操作用户unionId。</p>
-     */
     @NameInMap("operatorId")
     public String operatorId;
 

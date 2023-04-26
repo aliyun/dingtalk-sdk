@@ -54,69 +54,36 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
     }
 
     public static class GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList extends TeaModel {
-        /**
-         * <p>金额</p>
-         */
         @NameInMap("amount")
         public String amount;
 
-        /**
-         * <p>商品名称</p>
-         */
         @NameInMap("goodsName")
         public String goodsName;
 
-        /**
-         * <p>数量</p>
-         */
         @NameInMap("quantity")
         public String quantity;
 
-        /**
-         * <p>税收分类编码</p>
-         */
         @NameInMap("revenueCode")
         public String revenueCode;
 
-        /**
-         * <p>行号</p>
-         */
         @NameInMap("rowNo")
         public String rowNo;
 
-        /**
-         * <p>规格型号</p>
-         */
         @NameInMap("specification")
         public String specification;
 
-        /**
-         * <p>税额</p>
-         */
         @NameInMap("taxAmount")
         public String taxAmount;
 
-        /**
-         * <p>是否享受税收优惠：0-不享受，1-享受</p>
-         */
         @NameInMap("taxPre")
         public String taxPre;
 
-        /**
-         * <p>税率</p>
-         */
         @NameInMap("taxRate")
         public String taxRate;
 
-        /**
-         * <p>单位</p>
-         */
         @NameInMap("unit")
         public String unit;
 
-        /**
-         * <p>单价</p>
-         */
         @NameInMap("unitPrice")
         public String unitPrice;
 
@@ -216,63 +183,33 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
     }
 
     public static class GetInvoiceByPageResponseBodyResultListTransportFeeDetailVOList extends TeaModel {
-        /**
-         * <p>金额</p>
-         */
         @NameInMap("amount")
         public String amount;
 
-        /**
-         * <p>车牌号</p>
-         */
         @NameInMap("cardNo")
         public String cardNo;
 
-        /**
-         * <p>通行日期止</p>
-         */
         @NameInMap("endDate")
         public String endDate;
 
-        /**
-         * <p>商品名称</p>
-         */
         @NameInMap("goodsName")
         public String goodsName;
 
-        /**
-         * <p>税收分类编码</p>
-         */
         @NameInMap("revenueCode")
         public String revenueCode;
 
-        /**
-         * <p>行号</p>
-         */
         @NameInMap("rowNo")
         public String rowNo;
 
-        /**
-         * <p>通行日期起</p>
-         */
         @NameInMap("startDate")
         public String startDate;
 
-        /**
-         * <p>税额</p>
-         */
         @NameInMap("taxAmount")
         public String taxAmount;
 
-        /**
-         * <p>税率</p>
-         */
         @NameInMap("taxRate")
         public String taxRate;
 
-        /**
-         * <p>类型</p>
-         */
         @NameInMap("vehicleType")
         public String vehicleType;
 
@@ -364,99 +301,51 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
     }
 
     public static class GetInvoiceByPageResponseBodyResultListUsedVehicleSaleDetailVOList extends TeaModel {
-        /**
-         * <p>经营、拍卖单位</p>
-         */
         @NameInMap("auctionUnit")
         public String auctionUnit;
 
-        /**
-         * <p>经营、拍卖单位地址</p>
-         */
         @NameInMap("auctionUnitAddress")
         public String auctionUnitAddress;
 
-        /**
-         * <p>经营、拍卖单位银行</p>
-         */
         @NameInMap("auctionUnitBank")
         public String auctionUnitBank;
 
-        /**
-         * <p>经营、拍卖单位税号</p>
-         */
         @NameInMap("auctionUnitTaxNo")
         public String auctionUnitTaxNo;
 
-        /**
-         * <p>经营、拍卖单位电话</p>
-         */
         @NameInMap("auctionUtilTel")
         public String auctionUtilTel;
 
-        /**
-         * <p>厂牌型号</p>
-         */
         @NameInMap("carModel")
         public String carModel;
 
-        /**
-         * <p>车牌照号</p>
-         */
         @NameInMap("cardNo")
         public String cardNo;
 
-        /**
-         * <p>登记证号</p>
-         */
         @NameInMap("registration")
         public String registration;
 
-        /**
-         * <p>转入地车辆管理所名称</p>
-         */
         @NameInMap("transferVehicle")
         public String transferVehicle;
 
-        /**
-         * <p>二手车市场地址</p>
-         */
         @NameInMap("usedCarAddress")
         public String usedCarAddress;
 
-        /**
-         * <p>二手车市场</p>
-         */
         @NameInMap("usedCarMarket")
         public String usedCarMarket;
 
-        /**
-         * <p>二手车市场开户银行、账号</p>
-         */
         @NameInMap("usedCarMarketBank")
         public String usedCarMarketBank;
 
-        /**
-         * <p>二手车市场电话</p>
-         */
         @NameInMap("usedCarMarketPhone")
         public String usedCarMarketPhone;
 
-        /**
-         * <p>二手车市场纳税人识别号</p>
-         */
         @NameInMap("usedCarMarketTaxNo")
         public String usedCarMarketTaxNo;
 
-        /**
-         * <p>车架号/车辆识别号</p>
-         */
         @NameInMap("vehicleNo")
         public String vehicleNo;
 
-        /**
-         * <p>车辆类型</p>
-         */
         @NameInMap("vehicleType")
         public String vehicleType;
 
@@ -596,87 +485,45 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
     }
 
     public static class GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList extends TeaModel {
-        /**
-         * <p>品牌</p>
-         */
         @NameInMap("brand")
         public String brand;
 
-        /**
-         * <p>合格证号</p>
-         */
         @NameInMap("certificateNo")
         public String certificateNo;
 
-        /**
-         * <p>发动机号</p>
-         */
         @NameInMap("engineNo")
         public String engineNo;
 
-        /**
-         * <p>身份证号/组织机构代码</p>
-         */
         @NameInMap("idCardNo")
         public String idCardNo;
 
-        /**
-         * <p>进口证书号</p>
-         */
         @NameInMap("importCertificateNo")
         public String importCertificateNo;
 
-        /**
-         * <p>限乘人数</p>
-         */
         @NameInMap("maxPassengers")
         public String maxPassengers;
 
-        /**
-         * <p>产地</p>
-         */
         @NameInMap("originPlace")
         public String originPlace;
 
-        /**
-         * <p>完税凭证号码</p>
-         */
         @NameInMap("paymentVoucherNo")
         public String paymentVoucherNo;
 
-        /**
-         * <p>主管税务机关名称</p>
-         */
         @NameInMap("taxAuthorityName")
         public String taxAuthorityName;
 
-        /**
-         * <p>主管税务机关代码</p>
-         */
         @NameInMap("taxAuthorityNo")
         public String taxAuthorityNo;
 
-        /**
-         * <p>税率</p>
-         */
         @NameInMap("taxRate")
         public String taxRate;
 
-        /**
-         * <p>吨位</p>
-         */
         @NameInMap("tonnage")
         public String tonnage;
 
-        /**
-         * <p>车架号码</p>
-         */
         @NameInMap("vehicleNo")
         public String vehicleNo;
 
-        /**
-         * <p>车辆类型</p>
-         */
         @NameInMap("vehicleType")
         public String vehicleType;
 
@@ -800,201 +647,102 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
     }
 
     public static class GetInvoiceByPageResponseBodyResultList extends TeaModel {
-        /**
-         * <p>账期时间</p>
-         */
         @NameInMap("accountPeriod")
         public String accountPeriod;
 
-        /**
-         * <p>不含税金额</p>
-         */
         @NameInMap("amount")
         public String amount;
 
-        /**
-         * <p>含税金额</p>
-         */
         @NameInMap("amountWithTax")
         public String amountWithTax;
 
-        /**
-         * <p>校验码</p>
-         */
         @NameInMap("checkCode")
         public String checkCode;
 
-        /**
-         * <p>查验时间</p>
-         */
         @NameInMap("checkTime")
         public String checkTime;
 
-        /**
-         * <p>开票日期</p>
-         */
         @NameInMap("drewDate")
         public String drewDate;
 
-        /**
-         * <p>电票版式文件下载地址</p>
-         */
         @NameInMap("electronicUrl")
         public String electronicUrl;
 
-        /**
-         * <p>财务类型，INPUT-VAT(进项),OUTPUT_VAT(销项)</p>
-         */
         @NameInMap("financeType")
         public String financeType;
 
-        /**
-         * <p>资金类型 ，RED（红票），（BLUE）蓝票</p>
-         */
         @NameInMap("fundType")
         public String fundType;
 
-        /**
-         * <p>常规发票明细</p>
-         */
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<GetInvoiceByPageResponseBodyResultListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
 
-        /**
-         * <p>发票代码</p>
-         */
         @NameInMap("invoiceCode")
         public String invoiceCode;
 
-        /**
-         * <p>发票号码</p>
-         */
         @NameInMap("invoiceNo")
         public String invoiceNo;
 
-        /**
-         * <p>发票状态</p>
-         */
         @NameInMap("invoiceStatus")
         public String invoiceStatus;
 
-        /**
-         * <p>发票类型</p>
-         */
         @NameInMap("invoiceType")
         public String invoiceType;
 
-        /**
-         * <p>机器码</p>
-         */
         @NameInMap("machineCode")
         public String machineCode;
 
-        /**
-         * <p>成品油标识</p>
-         */
         @NameInMap("oilFlag")
         public String oilFlag;
 
-        /**
-         * <p>收款人</p>
-         */
         @NameInMap("payee")
         public String payee;
 
-        /**
-         * <p>审批单实例</p>
-         */
         @NameInMap("processInstCode")
         public String processInstCode;
 
-        /**
-         * <p>审批单类型</p>
-         */
         @NameInMap("processInstType")
         public String processInstType;
 
-        /**
-         * <p>购方地址</p>
-         */
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
-        /**
-         * <p>购方银行</p>
-         */
         @NameInMap("purchaserBankNameAccount")
         public String purchaserBankNameAccount;
 
-        /**
-         * <p>购方名称</p>
-         */
         @NameInMap("purchaserName")
         public String purchaserName;
 
-        /**
-         * <p>购方税号</p>
-         */
         @NameInMap("purchaserTaxNo")
         public String purchaserTaxNo;
 
-        /**
-         * <p>购方电话</p>
-         */
         @NameInMap("purchaserTel")
         public String purchaserTel;
 
-        /**
-         * <p>备注</p>
-         */
         @NameInMap("remark")
         public String remark;
 
-        /**
-         * <p>销方地址</p>
-         */
         @NameInMap("sellerAddress")
         public String sellerAddress;
 
-        /**
-         * <p>销方银行</p>
-         */
         @NameInMap("sellerBankNameAccount")
         public String sellerBankNameAccount;
 
-        /**
-         * <p>销方名称</p>
-         */
         @NameInMap("sellerName")
         public String sellerName;
 
-        /**
-         * <p>销方税号</p>
-         */
         @NameInMap("sellerTaxNo")
         public String sellerTaxNo;
 
-        /**
-         * <p>销方电话</p>
-         */
         @NameInMap("sellerTel")
         public String sellerTel;
 
-        /**
-         * <p>发票状态</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>代开发票标识 1-自开，2-代开</p>
-         */
         @NameInMap("supplySign")
         public String supplySign;
 
-        /**
-         * <p>税额</p>
-         */
         @NameInMap("taxAmount")
         public String taxAmount;
 
@@ -1007,21 +755,12 @@ public class GetInvoiceByPageResponseBody extends TeaModel {
         @NameInMap("vehicleSaleDetailVOList")
         public java.util.List<GetInvoiceByPageResponseBodyResultListVehicleSaleDetailVOList> vehicleSaleDetailVOList;
 
-        /**
-         * <p>发票查验状态</p>
-         */
         @NameInMap("verifyStatus")
         public String verifyStatus;
 
-        /**
-         * <p>凭证code</p>
-         */
         @NameInMap("voucherCode")
         public String voucherCode;
 
-        /**
-         * <p>生成凭证状态</p>
-         */
         @NameInMap("voucherStatus")
         public String voucherStatus;
 

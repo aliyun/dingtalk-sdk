@@ -4,51 +4,27 @@ package com.aliyun.dingtalkpackage_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUploadTokenResponseBody extends TeaModel {
-    /**
-     * <p>阿里云OSS SDK初始化配置项</p>
-     */
     @NameInMap("accessKeyId")
     public String accessKeyId;
 
-    /**
-     * <p>阿里云OSS SDK初始化配置项</p>
-     */
     @NameInMap("accessKeySecret")
     public String accessKeySecret;
 
-    /**
-     * <p>阿里云OSS SDK初始化配置项</p>
-     */
     @NameInMap("bucket")
     public String bucket;
 
-    /**
-     * <p>阿里云OSS SDK初始化配置项</p>
-     */
     @NameInMap("endpoint")
     public String endpoint;
 
-    /**
-     * <p>阿里云OSS SDK初始化配置项</p>
-     */
     @NameInMap("expiration")
     public String expiration;
 
-    /**
-     * <p>阿里云OSS SDK初始化配置项</p>
-     */
     @NameInMap("name")
     public String name;
 
-    /**
-     * <p>阿里云OSS SDK初始化配置项</p>
-     */
     @NameInMap("region")
     public String region;
 
-    /**
-     * <p>阿里云OSS SDK初始化配置项</p>
-     */
     @NameInMap("stsToken")
     public String stsToken;
 

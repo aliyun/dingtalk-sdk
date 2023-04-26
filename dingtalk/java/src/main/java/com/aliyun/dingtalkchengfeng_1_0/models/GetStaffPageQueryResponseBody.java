@@ -4,15 +4,9 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetStaffPageQueryResponseBody extends TeaModel {
-    /**
-     * <p>查询数据返回</p>
-     */
     @NameInMap("content")
     public GetStaffPageQueryResponseBodyContent content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
@@ -38,27 +32,15 @@ public class GetStaffPageQueryResponseBody extends TeaModel {
     }
 
     public static class GetStaffPageQueryResponseBodyContent extends TeaModel {
-        /**
-         * <p>员工列表</p>
-         */
         @NameInMap("data")
         public java.util.List<CfStaffResp> data;
 
-        /**
-         * <p>当前页码</p>
-         */
         @NameInMap("pageNumber")
         public Integer pageNumber;
 
-        /**
-         * <p>分页条数</p>
-         */
         @NameInMap("pageSize")
         public Integer pageSize;
 
-        /**
-         * <p>总数量</p>
-         */
         @NameInMap("totalCount")
         public Long totalCount;
 

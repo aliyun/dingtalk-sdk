@@ -4,18 +4,12 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateGroupSetRequest extends TeaModel {
-    /**
-     * <p>groupSetName</p>
-     */
     @NameInMap("groupSetName")
     public String groupSetName;
 
     @NameInMap("groupTemplateId")
     public String groupTemplateId;
 
-    /**
-     * <p>openTeamId</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 

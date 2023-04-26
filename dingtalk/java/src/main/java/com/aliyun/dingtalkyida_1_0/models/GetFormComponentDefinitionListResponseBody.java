@@ -21,27 +21,15 @@ public class GetFormComponentDefinitionListResponseBody extends TeaModel {
     }
 
     public static class GetFormComponentDefinitionListResponseBodyResult extends TeaModel {
-        /**
-         * <p>componentName</p>
-         */
         @NameInMap("componentName")
         public String componentName;
 
-        /**
-         * <p>key</p>
-         */
         @NameInMap("fieldId")
         public String fieldId;
 
-        /**
-         * <p>label</p>
-         */
         @NameInMap("label")
         public String label;
 
-        /**
-         * <p>parentId</p>
-         */
         @NameInMap("parentId")
         public String parentId;
 

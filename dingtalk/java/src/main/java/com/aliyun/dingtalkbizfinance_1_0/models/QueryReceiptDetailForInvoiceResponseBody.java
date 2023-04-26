@@ -4,9 +4,6 @@ package com.aliyun.dingtalkbizfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
-    /**
-     * <p>结果</p>
-     */
     @NameInMap("result")
     public QueryReceiptDetailForInvoiceResponseBodyResult result;
 
@@ -24,21 +21,12 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptDetailForInvoiceResponseBodyResultCreator extends TeaModel {
-        /**
-         * <p>创建人头像</p>
-         */
         @NameInMap("avatarUrl")
         public String avatarUrl;
 
-        /**
-         * <p>创建人昵称</p>
-         */
         @NameInMap("nick")
         public String nick;
 
-        /**
-         * <p>创建人工号</p>
-         */
         @NameInMap("userId")
         public String userId;
 
@@ -74,15 +62,9 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptDetailForInvoiceResponseBodyResultCustomer extends TeaModel {
-        /**
-         * <p>客户code</p>
-         */
         @NameInMap("code")
         public String code;
 
-        /**
-         * <p>客户名字</p>
-         */
         @NameInMap("name")
         public String name;
 
@@ -110,45 +92,24 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList extends TeaModel {
-        /**
-         * <p>含税金额</p>
-         */
         @NameInMap("amountWithTax")
         public String amountWithTax;
 
-        /**
-         * <p>商品名称</p>
-         */
         @NameInMap("name")
         public String name;
 
-        /**
-         * <p>数量</p>
-         */
         @NameInMap("quantity")
         public String quantity;
 
-        /**
-         * <p>规格型号</p>
-         */
         @NameInMap("specification")
         public String specification;
 
-        /**
-         * <p>税率</p>
-         */
         @NameInMap("taxRate")
         public String taxRate;
 
-        /**
-         * <p>计量单位</p>
-         */
         @NameInMap("unit")
         public String unit;
 
-        /**
-         * <p>含税单价</p>
-         */
         @NameInMap("unitPriceWithTax")
         public String unitPriceWithTax;
 
@@ -216,135 +177,69 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
     }
 
     public static class QueryReceiptDetailForInvoiceResponseBodyResult extends TeaModel {
-        /**
-         * <p>金额</p>
-         */
         @NameInMap("amount")
         public String amount;
 
-        /**
-         * <p>开票状态</p>
-         */
         @NameInMap("applyStatus")
         public String applyStatus;
 
-        /**
-         * <p>创建时间</p>
-         */
         @NameInMap("createTime")
         public String createTime;
 
-        /**
-         * <p>创建人</p>
-         */
         @NameInMap("creator")
         public QueryReceiptDetailForInvoiceResponseBodyResultCreator creator;
 
-        /**
-         * <p>客户</p>
-         */
         @NameInMap("customer")
         public QueryReceiptDetailForInvoiceResponseBodyResultCustomer customer;
 
-        /**
-         * <p>开票人邮箱</p>
-         */
         @NameInMap("drawerEmail")
         public String drawerEmail;
 
-        /**
-         * <p>开票人手机号码</p>
-         */
         @NameInMap("drawerTelephone")
         public String drawerTelephone;
 
-        /**
-         * <p>发票种类</p>
-         */
         @NameInMap("invoiceType")
         public String invoiceType;
 
-        /**
-         * <p>主数据modelId</p>
-         */
         @NameInMap("modelId")
         public String modelId;
 
-        /**
-         * <p>商品列表</p>
-         */
         @NameInMap("productInfoList")
         public java.util.List<QueryReceiptDetailForInvoiceResponseBodyResultProductInfoList> productInfoList;
 
-        /**
-         * <p>购方账户</p>
-         */
         @NameInMap("purchaserAccount")
         public String purchaserAccount;
 
-        /**
-         * <p>购方地址</p>
-         */
         @NameInMap("purchaserAddress")
         public String purchaserAddress;
 
-        /**
-         * <p>购方银行</p>
-         */
         @NameInMap("purchaserBankName")
         public String purchaserBankName;
 
-        /**
-         * <p>购方抬头</p>
-         */
         @NameInMap("purchaserName")
         public String purchaserName;
 
-        /**
-         * <p>购方税号</p>
-         */
         @NameInMap("purchaserTaxNo")
         public String purchaserTaxNo;
 
-        /**
-         * <p>购方电话</p>
-         */
         @NameInMap("purchaserTel")
         public String purchaserTel;
 
-        /**
-         * <p>单据ID</p>
-         */
         @NameInMap("receiptId")
         public String receiptId;
 
-        /**
-         * <p>记录时间，默认为审批通过时间</p>
-         */
         @NameInMap("recordTime")
         public String recordTime;
 
-        /**
-         * <p>备注</p>
-         */
         @NameInMap("remark")
         public String remark;
 
-        /**
-         * <p>来源</p>
-         */
         @NameInMap("source")
         public String source;
 
-        /**
-         * <p>状态 agree running</p>
-         */
         @NameInMap("status")
         public String status;
 
-        /**
-         * <p>单据标题</p>
-         */
         @NameInMap("title")
         public String title;
 

@@ -4,15 +4,9 @@ package com.aliyun.dingtalkorg_culture_1_0.models;
 import com.aliyun.tea.*;
 
 public class WearOrgHonorRequest extends TeaModel {
-    /**
-     * <p>员工userid</p>
-     */
     @NameInMap("userId")
     public String userId;
 
-    /**
-     * <p>佩戴true，卸下false</p>
-     */
     @NameInMap("wear")
     public Boolean wear;
 

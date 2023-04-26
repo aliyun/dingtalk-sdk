@@ -4,27 +4,15 @@ package com.aliyun.dingtalkfinance_1_0.models;
 import com.aliyun.tea.*;
 
 public class SaveCorpPayCodeRequest extends TeaModel {
-    /**
-     * <p>码标识，由钉钉颁发</p>
-     */
     @NameInMap("codeIdentity")
     public String codeIdentity;
 
-    /**
-     * <p>开通的企业ID</p>
-     */
     @NameInMap("corpId")
     public String corpId;
 
-    /**
-     * <p>扩展参数</p>
-     */
     @NameInMap("extInfo")
     public java.util.Map<String, String> extInfo;
 
-    /**
-     * <p>状态，OPEN或CLOSED</p>
-     */
     @NameInMap("status")
     public String status;
 

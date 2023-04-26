@@ -4,15 +4,9 @@ package com.aliyun.dingtalkproject_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetUserJoinedProjectRequest extends TeaModel {
-    /**
-     * <p>分页大小。</p>
-     */
     @NameInMap("maxResults")
     public Integer maxResults;
 
-    /**
-     * <p>分页标。</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 

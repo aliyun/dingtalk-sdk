@@ -4,51 +4,27 @@ package com.aliyun.dingtalkservice_group_1_0.models;
 import com.aliyun.tea.*;
 
 public class QueryGroupResponseBody extends TeaModel {
-    /**
-     * <p>群bizId</p>
-     */
     @NameInMap("bizId")
     public String bizId;
 
-    /**
-     * <p>群名称</p>
-     */
     @NameInMap("groupName")
     public String groupName;
 
-    /**
-     * <p>入群URL</p>
-     */
     @NameInMap("groupUrl")
     public String groupUrl;
 
-    /**
-     * <p>开放群ID</p>
-     */
     @NameInMap("openConversationId")
     public String openConversationId;
 
-    /**
-     * <p>开放群组ID</p>
-     */
     @NameInMap("openGroupSetId")
     public String openGroupSetId;
 
-    /**
-     * <p>开放团队ID</p>
-     */
     @NameInMap("openTeamId")
     public String openTeamId;
 
-    /**
-     * <p>服务群机器人code</p>
-     */
     @NameInMap("robotCode")
     public String robotCode;
 
-    /**
-     * <p>服务群机器人名称</p>
-     */
     @NameInMap("robotName")
     public String robotName;
 

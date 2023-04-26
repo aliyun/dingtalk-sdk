@@ -4,15 +4,9 @@ package com.aliyun.dingtalkchengfeng_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetAllJobPostResponseBody extends TeaModel {
-    /**
-     * <p>返回数据</p>
-     */
     @NameInMap("content")
     public java.util.List<CfJobPostResp> content;
 
-    /**
-     * <p>Id of the request</p>
-     */
     @NameInMap("requestId")
     public String requestId;
 
