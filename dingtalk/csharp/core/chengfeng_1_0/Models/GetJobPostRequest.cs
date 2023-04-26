@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
 {
     public class GetJobPostRequest : TeaModel {
-        /// <summary>
-        /// 职务编码
-        /// </summary>
         [NameInMap("jobPostCode")]
         [Validation(Required=false)]
         public string JobPostCode { get; set; }

@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             }
         }
 
-
-        public AppendSpaceResponse AppendSpace(AppendSpaceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AppendSpaceHeaders headers = new AppendSpaceHeaders();
-            return AppendSpaceWithOptions(request, headers, runtime);
-        }
-
-        public async Task<AppendSpaceResponse> AppendSpaceAsync(AppendSpaceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AppendSpaceHeaders headers = new AppendSpaceHeaders();
-            return await AppendSpaceWithOptionsAsync(request, headers, runtime);
-        }
 
         public AppendSpaceResponse AppendSpaceWithOptions(AppendSpaceRequest request, AppendSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -78,7 +67,19 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AppendSpaceResponse>(DoROARequest("AppendSpace", "card_1.0", "HTTP", "PUT", "AK", "/v1.0/card/instances/spaces", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AppendSpace",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/instances/spaces",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AppendSpaceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<AppendSpaceResponse> AppendSpaceWithOptionsAsync(AppendSpaceRequest request, AppendSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -119,21 +120,33 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AppendSpaceResponse>(await DoROARequestAsync("AppendSpace", "card_1.0", "HTTP", "PUT", "AK", "/v1.0/card/instances/spaces", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AppendSpace",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/instances/spaces",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AppendSpaceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CreateAndDeliverResponse CreateAndDeliver(CreateAndDeliverRequest request)
+        public AppendSpaceResponse AppendSpace(AppendSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateAndDeliverHeaders headers = new CreateAndDeliverHeaders();
-            return CreateAndDeliverWithOptions(request, headers, runtime);
+            AppendSpaceHeaders headers = new AppendSpaceHeaders();
+            return AppendSpaceWithOptions(request, headers, runtime);
         }
 
-        public async Task<CreateAndDeliverResponse> CreateAndDeliverAsync(CreateAndDeliverRequest request)
+        public async Task<AppendSpaceResponse> AppendSpaceAsync(AppendSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateAndDeliverHeaders headers = new CreateAndDeliverHeaders();
-            return await CreateAndDeliverWithOptionsAsync(request, headers, runtime);
+            AppendSpaceHeaders headers = new AppendSpaceHeaders();
+            return await AppendSpaceWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateAndDeliverResponse CreateAndDeliverWithOptions(CreateAndDeliverRequest request, CreateAndDeliverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -226,7 +239,19 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateAndDeliverResponse>(DoROARequest("CreateAndDeliver", "card_1.0", "HTTP", "POST", "AK", "/v1.0/card/instances/createAndDeliver", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateAndDeliver",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/instances/createAndDeliver",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateAndDeliverResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateAndDeliverResponse> CreateAndDeliverWithOptionsAsync(CreateAndDeliverRequest request, CreateAndDeliverHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -319,21 +344,33 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateAndDeliverResponse>(await DoROARequestAsync("CreateAndDeliver", "card_1.0", "HTTP", "POST", "AK", "/v1.0/card/instances/createAndDeliver", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateAndDeliver",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/instances/createAndDeliver",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateAndDeliverResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CreateCardResponse CreateCard(CreateCardRequest request)
+        public CreateAndDeliverResponse CreateAndDeliver(CreateAndDeliverRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateCardHeaders headers = new CreateCardHeaders();
-            return CreateCardWithOptions(request, headers, runtime);
+            CreateAndDeliverHeaders headers = new CreateAndDeliverHeaders();
+            return CreateAndDeliverWithOptions(request, headers, runtime);
         }
 
-        public async Task<CreateCardResponse> CreateCardAsync(CreateCardRequest request)
+        public async Task<CreateAndDeliverResponse> CreateAndDeliverAsync(CreateAndDeliverRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateCardHeaders headers = new CreateCardHeaders();
-            return await CreateCardWithOptionsAsync(request, headers, runtime);
+            CreateAndDeliverHeaders headers = new CreateAndDeliverHeaders();
+            return await CreateAndDeliverWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateCardResponse CreateCardWithOptions(CreateCardRequest request, CreateCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -402,7 +439,19 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateCardResponse>(DoROARequest("CreateCard", "card_1.0", "HTTP", "POST", "AK", "/v1.0/card/instances", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateCard",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/instances",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateCardResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateCardResponse> CreateCardWithOptionsAsync(CreateCardRequest request, CreateCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -471,21 +520,33 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateCardResponse>(await DoROARequestAsync("CreateCard", "card_1.0", "HTTP", "POST", "AK", "/v1.0/card/instances", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateCard",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/instances",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateCardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public DeliverCardResponse DeliverCard(DeliverCardRequest request)
+        public CreateCardResponse CreateCard(CreateCardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeliverCardHeaders headers = new DeliverCardHeaders();
-            return DeliverCardWithOptions(request, headers, runtime);
+            CreateCardHeaders headers = new CreateCardHeaders();
+            return CreateCardWithOptions(request, headers, runtime);
         }
 
-        public async Task<DeliverCardResponse> DeliverCardAsync(DeliverCardRequest request)
+        public async Task<CreateCardResponse> CreateCardAsync(CreateCardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeliverCardHeaders headers = new DeliverCardHeaders();
-            return await DeliverCardWithOptionsAsync(request, headers, runtime);
+            CreateCardHeaders headers = new CreateCardHeaders();
+            return await CreateCardWithOptionsAsync(request, headers, runtime);
         }
 
         public DeliverCardResponse DeliverCardWithOptions(DeliverCardRequest request, DeliverCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -538,7 +599,19 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeliverCardResponse>(DoROARequest("DeliverCard", "card_1.0", "HTTP", "POST", "AK", "/v1.0/card/instances/deliver", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeliverCard",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/instances/deliver",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeliverCardResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<DeliverCardResponse> DeliverCardWithOptionsAsync(DeliverCardRequest request, DeliverCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -591,21 +664,33 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeliverCardResponse>(await DoROARequestAsync("DeliverCard", "card_1.0", "HTTP", "POST", "AK", "/v1.0/card/instances/deliver", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeliverCard",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/instances/deliver",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeliverCardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public RegisterCallbackResponse RegisterCallback(RegisterCallbackRequest request)
+        public DeliverCardResponse DeliverCard(DeliverCardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RegisterCallbackHeaders headers = new RegisterCallbackHeaders();
-            return RegisterCallbackWithOptions(request, headers, runtime);
+            DeliverCardHeaders headers = new DeliverCardHeaders();
+            return DeliverCardWithOptions(request, headers, runtime);
         }
 
-        public async Task<RegisterCallbackResponse> RegisterCallbackAsync(RegisterCallbackRequest request)
+        public async Task<DeliverCardResponse> DeliverCardAsync(DeliverCardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RegisterCallbackHeaders headers = new RegisterCallbackHeaders();
-            return await RegisterCallbackWithOptionsAsync(request, headers, runtime);
+            DeliverCardHeaders headers = new DeliverCardHeaders();
+            return await DeliverCardWithOptionsAsync(request, headers, runtime);
         }
 
         public RegisterCallbackResponse RegisterCallbackWithOptions(RegisterCallbackRequest request, RegisterCallbackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -642,7 +727,19 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RegisterCallbackResponse>(DoROARequest("RegisterCallback", "card_1.0", "HTTP", "POST", "AK", "/v1.0/card/callbacks/register", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RegisterCallback",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/callbacks/register",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RegisterCallbackResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<RegisterCallbackResponse> RegisterCallbackWithOptionsAsync(RegisterCallbackRequest request, RegisterCallbackHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -679,21 +776,33 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RegisterCallbackResponse>(await DoROARequestAsync("RegisterCallback", "card_1.0", "HTTP", "POST", "AK", "/v1.0/card/callbacks/register", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RegisterCallback",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/callbacks/register",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RegisterCallbackResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateCardResponse UpdateCard(UpdateCardRequest request)
+        public RegisterCallbackResponse RegisterCallback(RegisterCallbackRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateCardHeaders headers = new UpdateCardHeaders();
-            return UpdateCardWithOptions(request, headers, runtime);
+            RegisterCallbackHeaders headers = new RegisterCallbackHeaders();
+            return RegisterCallbackWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateCardResponse> UpdateCardAsync(UpdateCardRequest request)
+        public async Task<RegisterCallbackResponse> RegisterCallbackAsync(RegisterCallbackRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateCardHeaders headers = new UpdateCardHeaders();
-            return await UpdateCardWithOptionsAsync(request, headers, runtime);
+            RegisterCallbackHeaders headers = new RegisterCallbackHeaders();
+            return await RegisterCallbackWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateCardResponse UpdateCardWithOptions(UpdateCardRequest request, UpdateCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -734,7 +843,19 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateCardResponse>(DoROARequest("UpdateCard", "card_1.0", "HTTP", "PUT", "AK", "/v1.0/card/instances", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCard",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/instances",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCardResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateCardResponse> UpdateCardWithOptionsAsync(UpdateCardRequest request, UpdateCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -775,7 +896,33 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateCardResponse>(await DoROARequestAsync("UpdateCard", "card_1.0", "HTTP", "PUT", "AK", "/v1.0/card/instances", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCard",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/instances",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCardResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpdateCardResponse UpdateCard(UpdateCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCardHeaders headers = new UpdateCardHeaders();
+            return UpdateCardWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateCardResponse> UpdateCardAsync(UpdateCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCardHeaders headers = new UpdateCardHeaders();
+            return await UpdateCardWithOptionsAsync(request, headers, runtime);
         }
 
     }

@@ -9,32 +9,20 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
 {
     public class GetUploadUrlResponseBody : TeaModel {
-        /// <summary>
-        /// 状态码
-        /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }
 
-        /// <summary>
-        /// 返回结果
-        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public GetUploadUrlResponseBodyData Data { get; set; }
         public class GetUploadUrlResponseBodyData : TeaModel {
-            /// <summary>
-            /// 附件上传地址
-            /// </summary>
             [NameInMap("uploadUrl")]
             [Validation(Required=false)]
             public string UploadUrl { get; set; }
 
         }
 
-        /// <summary>
-        /// 提示信息
-        /// </summary>
         [NameInMap("message")]
         [Validation(Required=false)]
         public string Message { get; set; }

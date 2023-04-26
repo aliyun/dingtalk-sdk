@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class GetInterconnectionUrlResponseBody : TeaModel {
-        /// <summary>
-        /// 会话url
-        /// </summary>
         [NameInMap("url")]
         [Validation(Required=false)]
         public string Url { get; set; }

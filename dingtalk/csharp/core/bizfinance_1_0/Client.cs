@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             }
         }
 
-
-        public BatchAddInvoiceResponse BatchAddInvoice(BatchAddInvoiceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchAddInvoiceHeaders headers = new BatchAddInvoiceHeaders();
-            return BatchAddInvoiceWithOptions(request, headers, runtime);
-        }
-
-        public async Task<BatchAddInvoiceResponse> BatchAddInvoiceAsync(BatchAddInvoiceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchAddInvoiceHeaders headers = new BatchAddInvoiceHeaders();
-            return await BatchAddInvoiceWithOptionsAsync(request, headers, runtime);
-        }
 
         public BatchAddInvoiceResponse BatchAddInvoiceWithOptions(BatchAddInvoiceRequest request, BatchAddInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -66,7 +55,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchAddInvoiceResponse>(DoROARequest("BatchAddInvoice", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/invoices/batch", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchAddInvoice",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/batch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchAddInvoiceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<BatchAddInvoiceResponse> BatchAddInvoiceWithOptionsAsync(BatchAddInvoiceRequest request, BatchAddInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -95,21 +96,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchAddInvoiceResponse>(await DoROARequestAsync("BatchAddInvoice", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/invoices/batch", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchAddInvoice",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/batch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchAddInvoiceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public BatchCreateCustomerResponse BatchCreateCustomer(BatchCreateCustomerRequest request)
+        public BatchAddInvoiceResponse BatchAddInvoice(BatchAddInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchCreateCustomerHeaders headers = new BatchCreateCustomerHeaders();
-            return BatchCreateCustomerWithOptions(request, headers, runtime);
+            BatchAddInvoiceHeaders headers = new BatchAddInvoiceHeaders();
+            return BatchAddInvoiceWithOptions(request, headers, runtime);
         }
 
-        public async Task<BatchCreateCustomerResponse> BatchCreateCustomerAsync(BatchCreateCustomerRequest request)
+        public async Task<BatchAddInvoiceResponse> BatchAddInvoiceAsync(BatchAddInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchCreateCustomerHeaders headers = new BatchCreateCustomerHeaders();
-            return await BatchCreateCustomerWithOptionsAsync(request, headers, runtime);
+            BatchAddInvoiceHeaders headers = new BatchAddInvoiceHeaders();
+            return await BatchAddInvoiceWithOptionsAsync(request, headers, runtime);
         }
 
         public BatchCreateCustomerResponse BatchCreateCustomerWithOptions(BatchCreateCustomerRequest request, BatchCreateCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -138,7 +151,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchCreateCustomerResponse>(DoROARequest("BatchCreateCustomer", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/auxiliaries/batch", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchCreateCustomer",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/auxiliaries/batch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchCreateCustomerResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<BatchCreateCustomerResponse> BatchCreateCustomerWithOptionsAsync(BatchCreateCustomerRequest request, BatchCreateCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -167,21 +192,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchCreateCustomerResponse>(await DoROARequestAsync("BatchCreateCustomer", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/auxiliaries/batch", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchCreateCustomer",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/auxiliaries/batch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchCreateCustomerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CheckVoucherStatusResponse CheckVoucherStatus(CheckVoucherStatusRequest request)
+        public BatchCreateCustomerResponse BatchCreateCustomer(BatchCreateCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CheckVoucherStatusHeaders headers = new CheckVoucherStatusHeaders();
-            return CheckVoucherStatusWithOptions(request, headers, runtime);
+            BatchCreateCustomerHeaders headers = new BatchCreateCustomerHeaders();
+            return BatchCreateCustomerWithOptions(request, headers, runtime);
         }
 
-        public async Task<CheckVoucherStatusResponse> CheckVoucherStatusAsync(CheckVoucherStatusRequest request)
+        public async Task<BatchCreateCustomerResponse> BatchCreateCustomerAsync(BatchCreateCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CheckVoucherStatusHeaders headers = new CheckVoucherStatusHeaders();
-            return await CheckVoucherStatusWithOptionsAsync(request, headers, runtime);
+            BatchCreateCustomerHeaders headers = new BatchCreateCustomerHeaders();
+            return await BatchCreateCustomerWithOptionsAsync(request, headers, runtime);
         }
 
         public CheckVoucherStatusResponse CheckVoucherStatusWithOptions(CheckVoucherStatusRequest request, CheckVoucherStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -238,7 +275,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CheckVoucherStatusResponse>(DoROARequest("CheckVoucherStatus", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/invoices/checkVoucherStatus/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CheckVoucherStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/checkVoucherStatus/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CheckVoucherStatusResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CheckVoucherStatusResponse> CheckVoucherStatusWithOptionsAsync(CheckVoucherStatusRequest request, CheckVoucherStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -295,21 +344,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CheckVoucherStatusResponse>(await DoROARequestAsync("CheckVoucherStatus", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/invoices/checkVoucherStatus/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CheckVoucherStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/checkVoucherStatus/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CheckVoucherStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CreateCustomerResponse CreateCustomer(CreateCustomerRequest request)
+        public CheckVoucherStatusResponse CheckVoucherStatus(CheckVoucherStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateCustomerHeaders headers = new CreateCustomerHeaders();
-            return CreateCustomerWithOptions(request, headers, runtime);
+            CheckVoucherStatusHeaders headers = new CheckVoucherStatusHeaders();
+            return CheckVoucherStatusWithOptions(request, headers, runtime);
         }
 
-        public async Task<CreateCustomerResponse> CreateCustomerAsync(CreateCustomerRequest request)
+        public async Task<CheckVoucherStatusResponse> CheckVoucherStatusAsync(CheckVoucherStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateCustomerHeaders headers = new CreateCustomerHeaders();
-            return await CreateCustomerWithOptionsAsync(request, headers, runtime);
+            CheckVoucherStatusHeaders headers = new CheckVoucherStatusHeaders();
+            return await CheckVoucherStatusWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateCustomerResponse CreateCustomerWithOptions(CreateCustomerRequest request, CreateCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -374,7 +435,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateCustomerResponse>(DoROARequest("CreateCustomer", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/auxiliaries/customers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateCustomer",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/auxiliaries/customers",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateCustomerResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateCustomerResponse> CreateCustomerWithOptionsAsync(CreateCustomerRequest request, CreateCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -439,21 +512,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateCustomerResponse>(await DoROARequestAsync("CreateCustomer", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/auxiliaries/customers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateCustomer",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/auxiliaries/customers",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateCustomerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CreateReceiptResponse CreateReceipt(CreateReceiptRequest request)
+        public CreateCustomerResponse CreateCustomer(CreateCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateReceiptHeaders headers = new CreateReceiptHeaders();
-            return CreateReceiptWithOptions(request, headers, runtime);
+            CreateCustomerHeaders headers = new CreateCustomerHeaders();
+            return CreateCustomerWithOptions(request, headers, runtime);
         }
 
-        public async Task<CreateReceiptResponse> CreateReceiptAsync(CreateReceiptRequest request)
+        public async Task<CreateCustomerResponse> CreateCustomerAsync(CreateCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateReceiptHeaders headers = new CreateReceiptHeaders();
-            return await CreateReceiptWithOptionsAsync(request, headers, runtime);
+            CreateCustomerHeaders headers = new CreateCustomerHeaders();
+            return await CreateCustomerWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateReceiptResponse CreateReceiptWithOptions(CreateReceiptRequest request, CreateReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -478,7 +563,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateReceiptResponse>(DoROARequest("CreateReceipt", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/receipts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateReceipt",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/receipts",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateReceiptResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateReceiptResponse> CreateReceiptWithOptionsAsync(CreateReceiptRequest request, CreateReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -503,21 +600,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateReceiptResponse>(await DoROARequestAsync("CreateReceipt", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/receipts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateReceipt",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/receipts",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateReceiptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public DeleteReceiptResponse DeleteReceipt(DeleteReceiptRequest request)
+        public CreateReceiptResponse CreateReceipt(CreateReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeleteReceiptHeaders headers = new DeleteReceiptHeaders();
-            return DeleteReceiptWithOptions(request, headers, runtime);
+            CreateReceiptHeaders headers = new CreateReceiptHeaders();
+            return CreateReceiptWithOptions(request, headers, runtime);
         }
 
-        public async Task<DeleteReceiptResponse> DeleteReceiptAsync(DeleteReceiptRequest request)
+        public async Task<CreateReceiptResponse> CreateReceiptAsync(CreateReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeleteReceiptHeaders headers = new DeleteReceiptHeaders();
-            return await DeleteReceiptWithOptionsAsync(request, headers, runtime);
+            CreateReceiptHeaders headers = new CreateReceiptHeaders();
+            return await CreateReceiptWithOptionsAsync(request, headers, runtime);
         }
 
         public DeleteReceiptResponse DeleteReceiptWithOptions(DeleteReceiptRequest request, DeleteReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -542,7 +651,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteReceiptResponse>(DoROARequest("DeleteReceipt", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/receipts/remove", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteReceipt",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/receipts/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteReceiptResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<DeleteReceiptResponse> DeleteReceiptWithOptionsAsync(DeleteReceiptRequest request, DeleteReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -567,21 +688,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteReceiptResponse>(await DoROARequestAsync("DeleteReceipt", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/receipts/remove", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteReceipt",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/receipts/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteReceiptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetBookkeepingUserListResponse GetBookkeepingUserList()
+        public DeleteReceiptResponse DeleteReceipt(DeleteReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetBookkeepingUserListHeaders headers = new GetBookkeepingUserListHeaders();
-            return GetBookkeepingUserListWithOptions(headers, runtime);
+            DeleteReceiptHeaders headers = new DeleteReceiptHeaders();
+            return DeleteReceiptWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetBookkeepingUserListResponse> GetBookkeepingUserListAsync()
+        public async Task<DeleteReceiptResponse> DeleteReceiptAsync(DeleteReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetBookkeepingUserListHeaders headers = new GetBookkeepingUserListHeaders();
-            return await GetBookkeepingUserListWithOptionsAsync(headers, runtime);
+            DeleteReceiptHeaders headers = new DeleteReceiptHeaders();
+            return await DeleteReceiptWithOptionsAsync(request, headers, runtime);
         }
 
         public GetBookkeepingUserListResponse GetBookkeepingUserListWithOptions(GetBookkeepingUserListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -599,7 +732,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetBookkeepingUserListResponse>(DoROARequest("GetBookkeepingUserList", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/bookkeeping/users", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetBookkeepingUserList",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/bookkeeping/users",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetBookkeepingUserListResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetBookkeepingUserListResponse> GetBookkeepingUserListWithOptionsAsync(GetBookkeepingUserListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -617,21 +762,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetBookkeepingUserListResponse>(await DoROARequestAsync("GetBookkeepingUserList", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/bookkeeping/users", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetBookkeepingUserList",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/bookkeeping/users",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetBookkeepingUserListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetCategoryResponse GetCategory(GetCategoryRequest request)
+        public GetBookkeepingUserListResponse GetBookkeepingUserList()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetCategoryHeaders headers = new GetCategoryHeaders();
-            return GetCategoryWithOptions(request, headers, runtime);
+            GetBookkeepingUserListHeaders headers = new GetBookkeepingUserListHeaders();
+            return GetBookkeepingUserListWithOptions(headers, runtime);
         }
 
-        public async Task<GetCategoryResponse> GetCategoryAsync(GetCategoryRequest request)
+        public async Task<GetBookkeepingUserListResponse> GetBookkeepingUserListAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetCategoryHeaders headers = new GetCategoryHeaders();
-            return await GetCategoryWithOptionsAsync(request, headers, runtime);
+            GetBookkeepingUserListHeaders headers = new GetBookkeepingUserListHeaders();
+            return await GetBookkeepingUserListWithOptionsAsync(headers, runtime);
         }
 
         public GetCategoryResponse GetCategoryWithOptions(GetCategoryRequest request, GetCategoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -656,7 +813,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetCategoryResponse>(DoROARequest("GetCategory", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/categories/get", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCategory",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/categories/get",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCategoryResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetCategoryResponse> GetCategoryWithOptionsAsync(GetCategoryRequest request, GetCategoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -681,21 +850,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetCategoryResponse>(await DoROARequestAsync("GetCategory", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/categories/get", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCategory",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/categories/get",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCategoryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetCustomerResponse GetCustomer(GetCustomerRequest request)
+        public GetCategoryResponse GetCategory(GetCategoryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetCustomerHeaders headers = new GetCustomerHeaders();
-            return GetCustomerWithOptions(request, headers, runtime);
+            GetCategoryHeaders headers = new GetCategoryHeaders();
+            return GetCategoryWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetCustomerResponse> GetCustomerAsync(GetCustomerRequest request)
+        public async Task<GetCategoryResponse> GetCategoryAsync(GetCategoryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetCustomerHeaders headers = new GetCustomerHeaders();
-            return await GetCustomerWithOptionsAsync(request, headers, runtime);
+            GetCategoryHeaders headers = new GetCategoryHeaders();
+            return await GetCategoryWithOptionsAsync(request, headers, runtime);
         }
 
         public GetCustomerResponse GetCustomerWithOptions(GetCustomerRequest request, GetCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -720,7 +901,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetCustomerResponse>(DoROARequest("GetCustomer", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/customers/details", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCustomer",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/customers/details",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCustomerResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetCustomerResponse> GetCustomerWithOptionsAsync(GetCustomerRequest request, GetCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -745,21 +938,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetCustomerResponse>(await DoROARequestAsync("GetCustomer", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/customers/details", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCustomer",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/customers/details",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCustomerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetFinanceAccountResponse GetFinanceAccount(GetFinanceAccountRequest request)
+        public GetCustomerResponse GetCustomer(GetCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetFinanceAccountHeaders headers = new GetFinanceAccountHeaders();
-            return GetFinanceAccountWithOptions(request, headers, runtime);
+            GetCustomerHeaders headers = new GetCustomerHeaders();
+            return GetCustomerWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetFinanceAccountResponse> GetFinanceAccountAsync(GetFinanceAccountRequest request)
+        public async Task<GetCustomerResponse> GetCustomerAsync(GetCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetFinanceAccountHeaders headers = new GetFinanceAccountHeaders();
-            return await GetFinanceAccountWithOptionsAsync(request, headers, runtime);
+            GetCustomerHeaders headers = new GetCustomerHeaders();
+            return await GetCustomerWithOptionsAsync(request, headers, runtime);
         }
 
         public GetFinanceAccountResponse GetFinanceAccountWithOptions(GetFinanceAccountRequest request, GetFinanceAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -784,7 +989,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetFinanceAccountResponse>(DoROARequest("GetFinanceAccount", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/financeAccounts/get", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFinanceAccount",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/financeAccounts/get",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFinanceAccountResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetFinanceAccountResponse> GetFinanceAccountWithOptionsAsync(GetFinanceAccountRequest request, GetFinanceAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -809,21 +1026,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetFinanceAccountResponse>(await DoROARequestAsync("GetFinanceAccount", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/financeAccounts/get", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFinanceAccount",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/financeAccounts/get",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFinanceAccountResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetInvoiceByPageResponse GetInvoiceByPage(GetInvoiceByPageRequest request)
+        public GetFinanceAccountResponse GetFinanceAccount(GetFinanceAccountRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetInvoiceByPageHeaders headers = new GetInvoiceByPageHeaders();
-            return GetInvoiceByPageWithOptions(request, headers, runtime);
+            GetFinanceAccountHeaders headers = new GetFinanceAccountHeaders();
+            return GetFinanceAccountWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetInvoiceByPageResponse> GetInvoiceByPageAsync(GetInvoiceByPageRequest request)
+        public async Task<GetFinanceAccountResponse> GetFinanceAccountAsync(GetFinanceAccountRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetInvoiceByPageHeaders headers = new GetInvoiceByPageHeaders();
-            return await GetInvoiceByPageWithOptionsAsync(request, headers, runtime);
+            GetFinanceAccountHeaders headers = new GetFinanceAccountHeaders();
+            return await GetFinanceAccountWithOptionsAsync(request, headers, runtime);
         }
 
         public GetInvoiceByPageResponse GetInvoiceByPageWithOptions(GetInvoiceByPageRequest tmpReq, GetInvoiceByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -854,7 +1083,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetInvoiceByPageResponse>(DoROARequest("GetInvoiceByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/invoices", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetInvoiceByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetInvoiceByPageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetInvoiceByPageResponse> GetInvoiceByPageWithOptionsAsync(GetInvoiceByPageRequest tmpReq, GetInvoiceByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -885,21 +1126,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetInvoiceByPageResponse>(await DoROARequestAsync("GetInvoiceByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/invoices", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetInvoiceByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetInvoiceByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetIsNewVersionResponse GetIsNewVersion()
+        public GetInvoiceByPageResponse GetInvoiceByPage(GetInvoiceByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetIsNewVersionHeaders headers = new GetIsNewVersionHeaders();
-            return GetIsNewVersionWithOptions(headers, runtime);
+            GetInvoiceByPageHeaders headers = new GetInvoiceByPageHeaders();
+            return GetInvoiceByPageWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetIsNewVersionResponse> GetIsNewVersionAsync()
+        public async Task<GetInvoiceByPageResponse> GetInvoiceByPageAsync(GetInvoiceByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetIsNewVersionHeaders headers = new GetIsNewVersionHeaders();
-            return await GetIsNewVersionWithOptionsAsync(headers, runtime);
+            GetInvoiceByPageHeaders headers = new GetInvoiceByPageHeaders();
+            return await GetInvoiceByPageWithOptionsAsync(request, headers, runtime);
         }
 
         public GetIsNewVersionResponse GetIsNewVersionWithOptions(GetIsNewVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -917,7 +1170,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetIsNewVersionResponse>(DoROARequest("GetIsNewVersion", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/accounts/uses", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetIsNewVersion",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/accounts/uses",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetIsNewVersionResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetIsNewVersionResponse> GetIsNewVersionWithOptionsAsync(GetIsNewVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -935,21 +1200,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetIsNewVersionResponse>(await DoROARequestAsync("GetIsNewVersion", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/accounts/uses", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetIsNewVersion",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/accounts/uses",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetIsNewVersionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetProductResponse GetProduct(GetProductRequest request)
+        public GetIsNewVersionResponse GetIsNewVersion()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetProductHeaders headers = new GetProductHeaders();
-            return GetProductWithOptions(request, headers, runtime);
+            GetIsNewVersionHeaders headers = new GetIsNewVersionHeaders();
+            return GetIsNewVersionWithOptions(headers, runtime);
         }
 
-        public async Task<GetProductResponse> GetProductAsync(GetProductRequest request)
+        public async Task<GetIsNewVersionResponse> GetIsNewVersionAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetProductHeaders headers = new GetProductHeaders();
-            return await GetProductWithOptionsAsync(request, headers, runtime);
+            GetIsNewVersionHeaders headers = new GetIsNewVersionHeaders();
+            return await GetIsNewVersionWithOptionsAsync(headers, runtime);
         }
 
         public GetProductResponse GetProductWithOptions(GetProductRequest request, GetProductHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -974,7 +1251,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetProductResponse>(DoROARequest("GetProduct", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/products", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetProduct",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/products",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetProductResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetProductResponse> GetProductWithOptionsAsync(GetProductRequest request, GetProductHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -999,21 +1288,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetProductResponse>(await DoROARequestAsync("GetProduct", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/products", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetProduct",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/products",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetProductResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetProjectResponse GetProject(GetProjectRequest request)
+        public GetProductResponse GetProduct(GetProductRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetProjectHeaders headers = new GetProjectHeaders();
-            return GetProjectWithOptions(request, headers, runtime);
+            GetProductHeaders headers = new GetProductHeaders();
+            return GetProductWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetProjectResponse> GetProjectAsync(GetProjectRequest request)
+        public async Task<GetProductResponse> GetProductAsync(GetProductRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetProjectHeaders headers = new GetProjectHeaders();
-            return await GetProjectWithOptionsAsync(request, headers, runtime);
+            GetProductHeaders headers = new GetProductHeaders();
+            return await GetProductWithOptionsAsync(request, headers, runtime);
         }
 
         public GetProjectResponse GetProjectWithOptions(GetProjectRequest request, GetProjectHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1038,7 +1339,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetProjectResponse>(DoROARequest("GetProject", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/projects/get", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetProject",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/projects/get",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetProjectResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetProjectResponse> GetProjectWithOptionsAsync(GetProjectRequest request, GetProjectHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1063,21 +1376,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetProjectResponse>(await DoROARequestAsync("GetProject", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/projects/get", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetProject",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/projects/get",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetProjectResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetReceiptResponse GetReceipt(GetReceiptRequest request)
+        public GetProjectResponse GetProject(GetProjectRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetReceiptHeaders headers = new GetReceiptHeaders();
-            return GetReceiptWithOptions(request, headers, runtime);
+            GetProjectHeaders headers = new GetProjectHeaders();
+            return GetProjectWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetReceiptResponse> GetReceiptAsync(GetReceiptRequest request)
+        public async Task<GetProjectResponse> GetProjectAsync(GetProjectRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetReceiptHeaders headers = new GetReceiptHeaders();
-            return await GetReceiptWithOptionsAsync(request, headers, runtime);
+            GetProjectHeaders headers = new GetProjectHeaders();
+            return await GetProjectWithOptionsAsync(request, headers, runtime);
         }
 
         public GetReceiptResponse GetReceiptWithOptions(GetReceiptRequest request, GetReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1106,7 +1431,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetReceiptResponse>(DoROARequest("GetReceipt", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/receipts/details", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetReceipt",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/receipts/details",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetReceiptResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetReceiptResponse> GetReceiptWithOptionsAsync(GetReceiptRequest request, GetReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1135,21 +1472,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetReceiptResponse>(await DoROARequestAsync("GetReceipt", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/receipts/details", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetReceipt",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/receipts/details",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetReceiptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetSupplierResponse GetSupplier(GetSupplierRequest request)
+        public GetReceiptResponse GetReceipt(GetReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetSupplierHeaders headers = new GetSupplierHeaders();
-            return GetSupplierWithOptions(request, headers, runtime);
+            GetReceiptHeaders headers = new GetReceiptHeaders();
+            return GetReceiptWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetSupplierResponse> GetSupplierAsync(GetSupplierRequest request)
+        public async Task<GetReceiptResponse> GetReceiptAsync(GetReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetSupplierHeaders headers = new GetSupplierHeaders();
-            return await GetSupplierWithOptionsAsync(request, headers, runtime);
+            GetReceiptHeaders headers = new GetReceiptHeaders();
+            return await GetReceiptWithOptionsAsync(request, headers, runtime);
         }
 
         public GetSupplierResponse GetSupplierWithOptions(GetSupplierRequest request, GetSupplierHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1174,7 +1523,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetSupplierResponse>(DoROARequest("GetSupplier", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/suppliers/details", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSupplier",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/suppliers/details",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSupplierResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetSupplierResponse> GetSupplierWithOptionsAsync(GetSupplierRequest request, GetSupplierHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1199,21 +1560,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetSupplierResponse>(await DoROARequestAsync("GetSupplier", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/suppliers/details", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSupplier",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/suppliers/details",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSupplierResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public ProfessionBenefitConsumeResponse ProfessionBenefitConsume(ProfessionBenefitConsumeRequest request)
+        public GetSupplierResponse GetSupplier(GetSupplierRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ProfessionBenefitConsumeHeaders headers = new ProfessionBenefitConsumeHeaders();
-            return ProfessionBenefitConsumeWithOptions(request, headers, runtime);
+            GetSupplierHeaders headers = new GetSupplierHeaders();
+            return GetSupplierWithOptions(request, headers, runtime);
         }
 
-        public async Task<ProfessionBenefitConsumeResponse> ProfessionBenefitConsumeAsync(ProfessionBenefitConsumeRequest request)
+        public async Task<GetSupplierResponse> GetSupplierAsync(GetSupplierRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ProfessionBenefitConsumeHeaders headers = new ProfessionBenefitConsumeHeaders();
-            return await ProfessionBenefitConsumeWithOptionsAsync(request, headers, runtime);
+            GetSupplierHeaders headers = new GetSupplierHeaders();
+            return await GetSupplierWithOptionsAsync(request, headers, runtime);
         }
 
         public ProfessionBenefitConsumeResponse ProfessionBenefitConsumeWithOptions(ProfessionBenefitConsumeRequest request, ProfessionBenefitConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1246,7 +1619,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ProfessionBenefitConsumeResponse>(DoROARequest("ProfessionBenefitConsume", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/professions/benefits/consume", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ProfessionBenefitConsume",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/professions/benefits/consume",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ProfessionBenefitConsumeResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<ProfessionBenefitConsumeResponse> ProfessionBenefitConsumeWithOptionsAsync(ProfessionBenefitConsumeRequest request, ProfessionBenefitConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1279,21 +1664,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ProfessionBenefitConsumeResponse>(await DoROARequestAsync("ProfessionBenefitConsume", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/professions/benefits/consume", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ProfessionBenefitConsume",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/professions/benefits/consume",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ProfessionBenefitConsumeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryCategoryByPageResponse QueryCategoryByPage(QueryCategoryByPageRequest request)
+        public ProfessionBenefitConsumeResponse ProfessionBenefitConsume(ProfessionBenefitConsumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCategoryByPageHeaders headers = new QueryCategoryByPageHeaders();
-            return QueryCategoryByPageWithOptions(request, headers, runtime);
+            ProfessionBenefitConsumeHeaders headers = new ProfessionBenefitConsumeHeaders();
+            return ProfessionBenefitConsumeWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryCategoryByPageResponse> QueryCategoryByPageAsync(QueryCategoryByPageRequest request)
+        public async Task<ProfessionBenefitConsumeResponse> ProfessionBenefitConsumeAsync(ProfessionBenefitConsumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCategoryByPageHeaders headers = new QueryCategoryByPageHeaders();
-            return await QueryCategoryByPageWithOptionsAsync(request, headers, runtime);
+            ProfessionBenefitConsumeHeaders headers = new ProfessionBenefitConsumeHeaders();
+            return await ProfessionBenefitConsumeWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryCategoryByPageResponse QueryCategoryByPageWithOptions(QueryCategoryByPageRequest request, QueryCategoryByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1326,7 +1723,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryCategoryByPageResponse>(DoROARequest("QueryCategoryByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/categories/list", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCategoryByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/categories/list",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCategoryByPageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryCategoryByPageResponse> QueryCategoryByPageWithOptionsAsync(QueryCategoryByPageRequest request, QueryCategoryByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1359,21 +1768,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryCategoryByPageResponse>(await DoROARequestAsync("QueryCategoryByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/categories/list", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCategoryByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/categories/list",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCategoryByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryCustomerByPageResponse QueryCustomerByPage(QueryCustomerByPageRequest request)
+        public QueryCategoryByPageResponse QueryCategoryByPage(QueryCategoryByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCustomerByPageHeaders headers = new QueryCustomerByPageHeaders();
-            return QueryCustomerByPageWithOptions(request, headers, runtime);
+            QueryCategoryByPageHeaders headers = new QueryCategoryByPageHeaders();
+            return QueryCategoryByPageWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryCustomerByPageResponse> QueryCustomerByPageAsync(QueryCustomerByPageRequest request)
+        public async Task<QueryCategoryByPageResponse> QueryCategoryByPageAsync(QueryCategoryByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCustomerByPageHeaders headers = new QueryCustomerByPageHeaders();
-            return await QueryCustomerByPageWithOptionsAsync(request, headers, runtime);
+            QueryCategoryByPageHeaders headers = new QueryCategoryByPageHeaders();
+            return await QueryCategoryByPageWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryCustomerByPageResponse QueryCustomerByPageWithOptions(QueryCustomerByPageRequest request, QueryCustomerByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1402,7 +1823,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryCustomerByPageResponse>(DoROARequest("QueryCustomerByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/customers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCustomerByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/customers",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCustomerByPageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryCustomerByPageResponse> QueryCustomerByPageWithOptionsAsync(QueryCustomerByPageRequest request, QueryCustomerByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1431,21 +1864,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryCustomerByPageResponse>(await DoROARequestAsync("QueryCustomerByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/customers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCustomerByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/customers",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCustomerByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryCustomerInfoResponse QueryCustomerInfo(QueryCustomerInfoRequest request)
+        public QueryCustomerByPageResponse QueryCustomerByPage(QueryCustomerByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCustomerInfoHeaders headers = new QueryCustomerInfoHeaders();
-            return QueryCustomerInfoWithOptions(request, headers, runtime);
+            QueryCustomerByPageHeaders headers = new QueryCustomerByPageHeaders();
+            return QueryCustomerByPageWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryCustomerInfoResponse> QueryCustomerInfoAsync(QueryCustomerInfoRequest request)
+        public async Task<QueryCustomerByPageResponse> QueryCustomerByPageAsync(QueryCustomerByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCustomerInfoHeaders headers = new QueryCustomerInfoHeaders();
-            return await QueryCustomerInfoWithOptionsAsync(request, headers, runtime);
+            QueryCustomerByPageHeaders headers = new QueryCustomerByPageHeaders();
+            return await QueryCustomerByPageWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryCustomerInfoResponse QueryCustomerInfoWithOptions(QueryCustomerInfoRequest request, QueryCustomerInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1478,7 +1923,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryCustomerInfoResponse>(DoROARequest("QueryCustomerInfo", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/auxiliaries/customers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCustomerInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/auxiliaries/customers",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCustomerInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryCustomerInfoResponse> QueryCustomerInfoWithOptionsAsync(QueryCustomerInfoRequest request, QueryCustomerInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1511,21 +1968,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryCustomerInfoResponse>(await DoROARequestAsync("QueryCustomerInfo", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/auxiliaries/customers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCustomerInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/auxiliaries/customers",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCustomerInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryEnterpriseAccountByPageResponse QueryEnterpriseAccountByPage(QueryEnterpriseAccountByPageRequest request)
+        public QueryCustomerInfoResponse QueryCustomerInfo(QueryCustomerInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryEnterpriseAccountByPageHeaders headers = new QueryEnterpriseAccountByPageHeaders();
-            return QueryEnterpriseAccountByPageWithOptions(request, headers, runtime);
+            QueryCustomerInfoHeaders headers = new QueryCustomerInfoHeaders();
+            return QueryCustomerInfoWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryEnterpriseAccountByPageResponse> QueryEnterpriseAccountByPageAsync(QueryEnterpriseAccountByPageRequest request)
+        public async Task<QueryCustomerInfoResponse> QueryCustomerInfoAsync(QueryCustomerInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryEnterpriseAccountByPageHeaders headers = new QueryEnterpriseAccountByPageHeaders();
-            return await QueryEnterpriseAccountByPageWithOptionsAsync(request, headers, runtime);
+            QueryCustomerInfoHeaders headers = new QueryCustomerInfoHeaders();
+            return await QueryCustomerInfoWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryEnterpriseAccountByPageResponse QueryEnterpriseAccountByPageWithOptions(QueryEnterpriseAccountByPageRequest request, QueryEnterpriseAccountByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1554,7 +2023,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryEnterpriseAccountByPageResponse>(DoROARequest("QueryEnterpriseAccountByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/financeAccounts/list", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryEnterpriseAccountByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/financeAccounts/list",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryEnterpriseAccountByPageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryEnterpriseAccountByPageResponse> QueryEnterpriseAccountByPageWithOptionsAsync(QueryEnterpriseAccountByPageRequest request, QueryEnterpriseAccountByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1583,21 +2064,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryEnterpriseAccountByPageResponse>(await DoROARequestAsync("QueryEnterpriseAccountByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/financeAccounts/list", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryEnterpriseAccountByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/financeAccounts/list",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryEnterpriseAccountByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryFinanceCompanyInfoResponse QueryFinanceCompanyInfo()
+        public QueryEnterpriseAccountByPageResponse QueryEnterpriseAccountByPage(QueryEnterpriseAccountByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryFinanceCompanyInfoHeaders headers = new QueryFinanceCompanyInfoHeaders();
-            return QueryFinanceCompanyInfoWithOptions(headers, runtime);
+            QueryEnterpriseAccountByPageHeaders headers = new QueryEnterpriseAccountByPageHeaders();
+            return QueryEnterpriseAccountByPageWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryFinanceCompanyInfoResponse> QueryFinanceCompanyInfoAsync()
+        public async Task<QueryEnterpriseAccountByPageResponse> QueryEnterpriseAccountByPageAsync(QueryEnterpriseAccountByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryFinanceCompanyInfoHeaders headers = new QueryFinanceCompanyInfoHeaders();
-            return await QueryFinanceCompanyInfoWithOptionsAsync(headers, runtime);
+            QueryEnterpriseAccountByPageHeaders headers = new QueryEnterpriseAccountByPageHeaders();
+            return await QueryEnterpriseAccountByPageWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryFinanceCompanyInfoResponse QueryFinanceCompanyInfoWithOptions(QueryFinanceCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1615,7 +2108,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<QueryFinanceCompanyInfoResponse>(DoROARequest("QueryFinanceCompanyInfo", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/companies", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryFinanceCompanyInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/companies",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryFinanceCompanyInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryFinanceCompanyInfoResponse> QueryFinanceCompanyInfoWithOptionsAsync(QueryFinanceCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1633,21 +2138,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<QueryFinanceCompanyInfoResponse>(await DoROARequestAsync("QueryFinanceCompanyInfo", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/companies", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryFinanceCompanyInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/companies",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryFinanceCompanyInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryInvoiceRelationCountResponse QueryInvoiceRelationCount()
+        public QueryFinanceCompanyInfoResponse QueryFinanceCompanyInfo()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryInvoiceRelationCountHeaders headers = new QueryInvoiceRelationCountHeaders();
-            return QueryInvoiceRelationCountWithOptions(headers, runtime);
+            QueryFinanceCompanyInfoHeaders headers = new QueryFinanceCompanyInfoHeaders();
+            return QueryFinanceCompanyInfoWithOptions(headers, runtime);
         }
 
-        public async Task<QueryInvoiceRelationCountResponse> QueryInvoiceRelationCountAsync()
+        public async Task<QueryFinanceCompanyInfoResponse> QueryFinanceCompanyInfoAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryInvoiceRelationCountHeaders headers = new QueryInvoiceRelationCountHeaders();
-            return await QueryInvoiceRelationCountWithOptionsAsync(headers, runtime);
+            QueryFinanceCompanyInfoHeaders headers = new QueryFinanceCompanyInfoHeaders();
+            return await QueryFinanceCompanyInfoWithOptionsAsync(headers, runtime);
         }
 
         public QueryInvoiceRelationCountResponse QueryInvoiceRelationCountWithOptions(QueryInvoiceRelationCountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1665,7 +2182,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<QueryInvoiceRelationCountResponse>(DoROARequest("QueryInvoiceRelationCount", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/invoices/relationReceipts/counts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryInvoiceRelationCount",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/relationReceipts/counts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryInvoiceRelationCountResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryInvoiceRelationCountResponse> QueryInvoiceRelationCountWithOptionsAsync(QueryInvoiceRelationCountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1683,21 +2212,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<QueryInvoiceRelationCountResponse>(await DoROARequestAsync("QueryInvoiceRelationCount", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/invoices/relationReceipts/counts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryInvoiceRelationCount",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/relationReceipts/counts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryInvoiceRelationCountResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryPermissionByUserIdResponse QueryPermissionByUserId(QueryPermissionByUserIdRequest request)
+        public QueryInvoiceRelationCountResponse QueryInvoiceRelationCount()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryPermissionByUserIdHeaders headers = new QueryPermissionByUserIdHeaders();
-            return QueryPermissionByUserIdWithOptions(request, headers, runtime);
+            QueryInvoiceRelationCountHeaders headers = new QueryInvoiceRelationCountHeaders();
+            return QueryInvoiceRelationCountWithOptions(headers, runtime);
         }
 
-        public async Task<QueryPermissionByUserIdResponse> QueryPermissionByUserIdAsync(QueryPermissionByUserIdRequest request)
+        public async Task<QueryInvoiceRelationCountResponse> QueryInvoiceRelationCountAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryPermissionByUserIdHeaders headers = new QueryPermissionByUserIdHeaders();
-            return await QueryPermissionByUserIdWithOptionsAsync(request, headers, runtime);
+            QueryInvoiceRelationCountHeaders headers = new QueryInvoiceRelationCountHeaders();
+            return await QueryInvoiceRelationCountWithOptionsAsync(headers, runtime);
         }
 
         public QueryPermissionByUserIdResponse QueryPermissionByUserIdWithOptions(QueryPermissionByUserIdRequest request, QueryPermissionByUserIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1722,7 +2263,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryPermissionByUserIdResponse>(DoROARequest("QueryPermissionByUserId", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/permissions", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPermissionByUserId",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/permissions",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPermissionByUserIdResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryPermissionByUserIdResponse> QueryPermissionByUserIdWithOptionsAsync(QueryPermissionByUserIdRequest request, QueryPermissionByUserIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1747,21 +2300,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryPermissionByUserIdResponse>(await DoROARequestAsync("QueryPermissionByUserId", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/permissions", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPermissionByUserId",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/permissions",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPermissionByUserIdResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryPermissionRoleMemberResponse QueryPermissionRoleMember(QueryPermissionRoleMemberRequest request)
+        public QueryPermissionByUserIdResponse QueryPermissionByUserId(QueryPermissionByUserIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryPermissionRoleMemberHeaders headers = new QueryPermissionRoleMemberHeaders();
-            return QueryPermissionRoleMemberWithOptions(request, headers, runtime);
+            QueryPermissionByUserIdHeaders headers = new QueryPermissionByUserIdHeaders();
+            return QueryPermissionByUserIdWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryPermissionRoleMemberResponse> QueryPermissionRoleMemberAsync(QueryPermissionRoleMemberRequest request)
+        public async Task<QueryPermissionByUserIdResponse> QueryPermissionByUserIdAsync(QueryPermissionByUserIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryPermissionRoleMemberHeaders headers = new QueryPermissionRoleMemberHeaders();
-            return await QueryPermissionRoleMemberWithOptionsAsync(request, headers, runtime);
+            QueryPermissionByUserIdHeaders headers = new QueryPermissionByUserIdHeaders();
+            return await QueryPermissionByUserIdWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryPermissionRoleMemberResponse QueryPermissionRoleMemberWithOptions(QueryPermissionRoleMemberRequest request, QueryPermissionRoleMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1786,7 +2351,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryPermissionRoleMemberResponse>(DoROARequest("QueryPermissionRoleMember", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/roles/members/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPermissionRoleMember",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/roles/members/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPermissionRoleMemberResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryPermissionRoleMemberResponse> QueryPermissionRoleMemberWithOptionsAsync(QueryPermissionRoleMemberRequest request, QueryPermissionRoleMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1811,21 +2388,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryPermissionRoleMemberResponse>(await DoROARequestAsync("QueryPermissionRoleMember", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/roles/members/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPermissionRoleMember",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/roles/members/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPermissionRoleMemberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryProductByPageResponse QueryProductByPage(QueryProductByPageRequest request)
+        public QueryPermissionRoleMemberResponse QueryPermissionRoleMember(QueryPermissionRoleMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryProductByPageHeaders headers = new QueryProductByPageHeaders();
-            return QueryProductByPageWithOptions(request, headers, runtime);
+            QueryPermissionRoleMemberHeaders headers = new QueryPermissionRoleMemberHeaders();
+            return QueryPermissionRoleMemberWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryProductByPageResponse> QueryProductByPageAsync(QueryProductByPageRequest request)
+        public async Task<QueryPermissionRoleMemberResponse> QueryPermissionRoleMemberAsync(QueryPermissionRoleMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryProductByPageHeaders headers = new QueryProductByPageHeaders();
-            return await QueryProductByPageWithOptionsAsync(request, headers, runtime);
+            QueryPermissionRoleMemberHeaders headers = new QueryPermissionRoleMemberHeaders();
+            return await QueryPermissionRoleMemberWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryProductByPageResponse QueryProductByPageWithOptions(QueryProductByPageRequest request, QueryProductByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1854,7 +2443,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryProductByPageResponse>(DoROARequest("QueryProductByPage", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/products/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryProductByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/products/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryProductByPageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryProductByPageResponse> QueryProductByPageWithOptionsAsync(QueryProductByPageRequest request, QueryProductByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1883,21 +2484,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryProductByPageResponse>(await DoROARequestAsync("QueryProductByPage", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/products/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryProductByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/products/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryProductByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryProjectByPageResponse QueryProjectByPage(QueryProjectByPageRequest request)
+        public QueryProductByPageResponse QueryProductByPage(QueryProductByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryProjectByPageHeaders headers = new QueryProjectByPageHeaders();
-            return QueryProjectByPageWithOptions(request, headers, runtime);
+            QueryProductByPageHeaders headers = new QueryProductByPageHeaders();
+            return QueryProductByPageWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryProjectByPageResponse> QueryProjectByPageAsync(QueryProjectByPageRequest request)
+        public async Task<QueryProductByPageResponse> QueryProductByPageAsync(QueryProductByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryProjectByPageHeaders headers = new QueryProjectByPageHeaders();
-            return await QueryProjectByPageWithOptionsAsync(request, headers, runtime);
+            QueryProductByPageHeaders headers = new QueryProductByPageHeaders();
+            return await QueryProductByPageWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryProjectByPageResponse QueryProjectByPageWithOptions(QueryProjectByPageRequest request, QueryProjectByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1926,7 +2539,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryProjectByPageResponse>(DoROARequest("QueryProjectByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/projects/list", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryProjectByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/projects/list",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryProjectByPageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryProjectByPageResponse> QueryProjectByPageWithOptionsAsync(QueryProjectByPageRequest request, QueryProjectByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1955,21 +2580,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryProjectByPageResponse>(await DoROARequestAsync("QueryProjectByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/projects/list", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryProjectByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/projects/list",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryProjectByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryReceiptDetailForInvoiceResponse QueryReceiptDetailForInvoice(QueryReceiptDetailForInvoiceRequest request)
+        public QueryProjectByPageResponse QueryProjectByPage(QueryProjectByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryReceiptDetailForInvoiceHeaders headers = new QueryReceiptDetailForInvoiceHeaders();
-            return QueryReceiptDetailForInvoiceWithOptions(request, headers, runtime);
+            QueryProjectByPageHeaders headers = new QueryProjectByPageHeaders();
+            return QueryProjectByPageWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryReceiptDetailForInvoiceResponse> QueryReceiptDetailForInvoiceAsync(QueryReceiptDetailForInvoiceRequest request)
+        public async Task<QueryProjectByPageResponse> QueryProjectByPageAsync(QueryProjectByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryReceiptDetailForInvoiceHeaders headers = new QueryReceiptDetailForInvoiceHeaders();
-            return await QueryReceiptDetailForInvoiceWithOptionsAsync(request, headers, runtime);
+            QueryProjectByPageHeaders headers = new QueryProjectByPageHeaders();
+            return await QueryProjectByPageWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryReceiptDetailForInvoiceResponse QueryReceiptDetailForInvoiceWithOptions(QueryReceiptDetailForInvoiceRequest request, QueryReceiptDetailForInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1994,7 +2631,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryReceiptDetailForInvoiceResponse>(DoROARequest("QueryReceiptDetailForInvoice", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/invoices/receipts/details", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryReceiptDetailForInvoice",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/receipts/details",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryReceiptDetailForInvoiceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryReceiptDetailForInvoiceResponse> QueryReceiptDetailForInvoiceWithOptionsAsync(QueryReceiptDetailForInvoiceRequest request, QueryReceiptDetailForInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2019,21 +2668,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryReceiptDetailForInvoiceResponse>(await DoROARequestAsync("QueryReceiptDetailForInvoice", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/invoices/receipts/details", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryReceiptDetailForInvoice",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/receipts/details",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryReceiptDetailForInvoiceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryReceiptForInvoiceResponse QueryReceiptForInvoice(QueryReceiptForInvoiceRequest request)
+        public QueryReceiptDetailForInvoiceResponse QueryReceiptDetailForInvoice(QueryReceiptDetailForInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryReceiptForInvoiceHeaders headers = new QueryReceiptForInvoiceHeaders();
-            return QueryReceiptForInvoiceWithOptions(request, headers, runtime);
+            QueryReceiptDetailForInvoiceHeaders headers = new QueryReceiptDetailForInvoiceHeaders();
+            return QueryReceiptDetailForInvoiceWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryReceiptForInvoiceResponse> QueryReceiptForInvoiceAsync(QueryReceiptForInvoiceRequest request)
+        public async Task<QueryReceiptDetailForInvoiceResponse> QueryReceiptDetailForInvoiceAsync(QueryReceiptDetailForInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryReceiptForInvoiceHeaders headers = new QueryReceiptForInvoiceHeaders();
-            return await QueryReceiptForInvoiceWithOptionsAsync(request, headers, runtime);
+            QueryReceiptDetailForInvoiceHeaders headers = new QueryReceiptDetailForInvoiceHeaders();
+            return await QueryReceiptDetailForInvoiceWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryReceiptForInvoiceResponse QueryReceiptForInvoiceWithOptions(QueryReceiptForInvoiceRequest request, QueryReceiptForInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2082,7 +2743,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryReceiptForInvoiceResponse>(DoROARequest("QueryReceiptForInvoice", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/invoices/receipts/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryReceiptForInvoice",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/receipts/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryReceiptForInvoiceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryReceiptForInvoiceResponse> QueryReceiptForInvoiceWithOptionsAsync(QueryReceiptForInvoiceRequest request, QueryReceiptForInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2131,21 +2804,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryReceiptForInvoiceResponse>(await DoROARequestAsync("QueryReceiptForInvoice", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/invoices/receipts/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryReceiptForInvoice",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/receipts/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryReceiptForInvoiceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryReceiptsBaseInfoResponse QueryReceiptsBaseInfo(QueryReceiptsBaseInfoRequest request)
+        public QueryReceiptForInvoiceResponse QueryReceiptForInvoice(QueryReceiptForInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryReceiptsBaseInfoHeaders headers = new QueryReceiptsBaseInfoHeaders();
-            return QueryReceiptsBaseInfoWithOptions(request, headers, runtime);
+            QueryReceiptForInvoiceHeaders headers = new QueryReceiptForInvoiceHeaders();
+            return QueryReceiptForInvoiceWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryReceiptsBaseInfoResponse> QueryReceiptsBaseInfoAsync(QueryReceiptsBaseInfoRequest request)
+        public async Task<QueryReceiptForInvoiceResponse> QueryReceiptForInvoiceAsync(QueryReceiptForInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryReceiptsBaseInfoHeaders headers = new QueryReceiptsBaseInfoHeaders();
-            return await QueryReceiptsBaseInfoWithOptionsAsync(request, headers, runtime);
+            QueryReceiptForInvoiceHeaders headers = new QueryReceiptForInvoiceHeaders();
+            return await QueryReceiptForInvoiceWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryReceiptsBaseInfoResponse QueryReceiptsBaseInfoWithOptions(QueryReceiptsBaseInfoRequest request, QueryReceiptsBaseInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2194,7 +2879,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryReceiptsBaseInfoResponse>(DoROARequest("QueryReceiptsBaseInfo", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/receipts/dataInfos", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryReceiptsBaseInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/receipts/dataInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryReceiptsBaseInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryReceiptsBaseInfoResponse> QueryReceiptsBaseInfoWithOptionsAsync(QueryReceiptsBaseInfoRequest request, QueryReceiptsBaseInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2243,21 +2940,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryReceiptsBaseInfoResponse>(await DoROARequestAsync("QueryReceiptsBaseInfo", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/receipts/dataInfos", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryReceiptsBaseInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/receipts/dataInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryReceiptsBaseInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryReceiptsByPageResponse QueryReceiptsByPage(QueryReceiptsByPageRequest request)
+        public QueryReceiptsBaseInfoResponse QueryReceiptsBaseInfo(QueryReceiptsBaseInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryReceiptsByPageHeaders headers = new QueryReceiptsByPageHeaders();
-            return QueryReceiptsByPageWithOptions(request, headers, runtime);
+            QueryReceiptsBaseInfoHeaders headers = new QueryReceiptsBaseInfoHeaders();
+            return QueryReceiptsBaseInfoWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryReceiptsByPageResponse> QueryReceiptsByPageAsync(QueryReceiptsByPageRequest request)
+        public async Task<QueryReceiptsBaseInfoResponse> QueryReceiptsBaseInfoAsync(QueryReceiptsBaseInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryReceiptsByPageHeaders headers = new QueryReceiptsByPageHeaders();
-            return await QueryReceiptsByPageWithOptionsAsync(request, headers, runtime);
+            QueryReceiptsBaseInfoHeaders headers = new QueryReceiptsBaseInfoHeaders();
+            return await QueryReceiptsBaseInfoWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryReceiptsByPageResponse QueryReceiptsByPageWithOptions(QueryReceiptsByPageRequest request, QueryReceiptsByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2302,7 +3011,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryReceiptsByPageResponse>(DoROARequest("QueryReceiptsByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/receipts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryReceiptsByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/receipts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryReceiptsByPageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryReceiptsByPageResponse> QueryReceiptsByPageWithOptionsAsync(QueryReceiptsByPageRequest request, QueryReceiptsByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2347,21 +3068,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryReceiptsByPageResponse>(await DoROARequestAsync("QueryReceiptsByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/receipts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryReceiptsByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/receipts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryReceiptsByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QuerySupplierByPageResponse QuerySupplierByPage(QuerySupplierByPageRequest request)
+        public QueryReceiptsByPageResponse QueryReceiptsByPage(QueryReceiptsByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QuerySupplierByPageHeaders headers = new QuerySupplierByPageHeaders();
-            return QuerySupplierByPageWithOptions(request, headers, runtime);
+            QueryReceiptsByPageHeaders headers = new QueryReceiptsByPageHeaders();
+            return QueryReceiptsByPageWithOptions(request, headers, runtime);
         }
 
-        public async Task<QuerySupplierByPageResponse> QuerySupplierByPageAsync(QuerySupplierByPageRequest request)
+        public async Task<QueryReceiptsByPageResponse> QueryReceiptsByPageAsync(QueryReceiptsByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QuerySupplierByPageHeaders headers = new QuerySupplierByPageHeaders();
-            return await QuerySupplierByPageWithOptionsAsync(request, headers, runtime);
+            QueryReceiptsByPageHeaders headers = new QueryReceiptsByPageHeaders();
+            return await QueryReceiptsByPageWithOptionsAsync(request, headers, runtime);
         }
 
         public QuerySupplierByPageResponse QuerySupplierByPageWithOptions(QuerySupplierByPageRequest request, QuerySupplierByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2390,7 +3123,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QuerySupplierByPageResponse>(DoROARequest("QuerySupplierByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/suppliers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QuerySupplierByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/suppliers",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QuerySupplierByPageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QuerySupplierByPageResponse> QuerySupplierByPageWithOptionsAsync(QuerySupplierByPageRequest request, QuerySupplierByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2419,21 +3164,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QuerySupplierByPageResponse>(await DoROARequestAsync("QuerySupplierByPage", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/suppliers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QuerySupplierByPage",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/suppliers",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QuerySupplierByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryUserRoleListResponse QueryUserRoleList(QueryUserRoleListRequest request)
+        public QuerySupplierByPageResponse QuerySupplierByPage(QuerySupplierByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryUserRoleListHeaders headers = new QueryUserRoleListHeaders();
-            return QueryUserRoleListWithOptions(request, headers, runtime);
+            QuerySupplierByPageHeaders headers = new QuerySupplierByPageHeaders();
+            return QuerySupplierByPageWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryUserRoleListResponse> QueryUserRoleListAsync(QueryUserRoleListRequest request)
+        public async Task<QuerySupplierByPageResponse> QuerySupplierByPageAsync(QuerySupplierByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryUserRoleListHeaders headers = new QueryUserRoleListHeaders();
-            return await QueryUserRoleListWithOptionsAsync(request, headers, runtime);
+            QuerySupplierByPageHeaders headers = new QuerySupplierByPageHeaders();
+            return await QuerySupplierByPageWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryUserRoleListResponse QueryUserRoleListWithOptions(QueryUserRoleListRequest request, QueryUserRoleListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2458,7 +3215,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryUserRoleListResponse>(DoROARequest("QueryUserRoleList", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/users/roles", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUserRoleList",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/users/roles",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUserRoleListResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryUserRoleListResponse> QueryUserRoleListWithOptionsAsync(QueryUserRoleListRequest request, QueryUserRoleListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2483,21 +3252,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryUserRoleListResponse>(await DoROARequestAsync("QueryUserRoleList", "bizfinance_1.0", "HTTP", "GET", "AK", "/v1.0/bizfinance/users/roles", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUserRoleList",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/users/roles",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUserRoleListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UnbindApplyReceiptAndInvoiceRelatedResponse UnbindApplyReceiptAndInvoiceRelated(UnbindApplyReceiptAndInvoiceRelatedRequest request)
+        public QueryUserRoleListResponse QueryUserRoleList(QueryUserRoleListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UnbindApplyReceiptAndInvoiceRelatedHeaders headers = new UnbindApplyReceiptAndInvoiceRelatedHeaders();
-            return UnbindApplyReceiptAndInvoiceRelatedWithOptions(request, headers, runtime);
+            QueryUserRoleListHeaders headers = new QueryUserRoleListHeaders();
+            return QueryUserRoleListWithOptions(request, headers, runtime);
         }
 
-        public async Task<UnbindApplyReceiptAndInvoiceRelatedResponse> UnbindApplyReceiptAndInvoiceRelatedAsync(UnbindApplyReceiptAndInvoiceRelatedRequest request)
+        public async Task<QueryUserRoleListResponse> QueryUserRoleListAsync(QueryUserRoleListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UnbindApplyReceiptAndInvoiceRelatedHeaders headers = new UnbindApplyReceiptAndInvoiceRelatedHeaders();
-            return await UnbindApplyReceiptAndInvoiceRelatedWithOptionsAsync(request, headers, runtime);
+            QueryUserRoleListHeaders headers = new QueryUserRoleListHeaders();
+            return await QueryUserRoleListWithOptionsAsync(request, headers, runtime);
         }
 
         public UnbindApplyReceiptAndInvoiceRelatedResponse UnbindApplyReceiptAndInvoiceRelatedWithOptions(UnbindApplyReceiptAndInvoiceRelatedRequest request, UnbindApplyReceiptAndInvoiceRelatedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2530,7 +3311,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UnbindApplyReceiptAndInvoiceRelatedResponse>(DoROARequest("UnbindApplyReceiptAndInvoiceRelated", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/invoices/unbind", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UnbindApplyReceiptAndInvoiceRelated",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/unbind",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UnbindApplyReceiptAndInvoiceRelatedResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UnbindApplyReceiptAndInvoiceRelatedResponse> UnbindApplyReceiptAndInvoiceRelatedWithOptionsAsync(UnbindApplyReceiptAndInvoiceRelatedRequest request, UnbindApplyReceiptAndInvoiceRelatedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2563,21 +3356,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UnbindApplyReceiptAndInvoiceRelatedResponse>(await DoROARequestAsync("UnbindApplyReceiptAndInvoiceRelated", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/invoices/unbind", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UnbindApplyReceiptAndInvoiceRelated",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/unbind",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UnbindApplyReceiptAndInvoiceRelatedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateApplyReceiptAndInvoiceRelatedResponse UpdateApplyReceiptAndInvoiceRelated(UpdateApplyReceiptAndInvoiceRelatedRequest request)
+        public UnbindApplyReceiptAndInvoiceRelatedResponse UnbindApplyReceiptAndInvoiceRelated(UnbindApplyReceiptAndInvoiceRelatedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateApplyReceiptAndInvoiceRelatedHeaders headers = new UpdateApplyReceiptAndInvoiceRelatedHeaders();
-            return UpdateApplyReceiptAndInvoiceRelatedWithOptions(request, headers, runtime);
+            UnbindApplyReceiptAndInvoiceRelatedHeaders headers = new UnbindApplyReceiptAndInvoiceRelatedHeaders();
+            return UnbindApplyReceiptAndInvoiceRelatedWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateApplyReceiptAndInvoiceRelatedResponse> UpdateApplyReceiptAndInvoiceRelatedAsync(UpdateApplyReceiptAndInvoiceRelatedRequest request)
+        public async Task<UnbindApplyReceiptAndInvoiceRelatedResponse> UnbindApplyReceiptAndInvoiceRelatedAsync(UnbindApplyReceiptAndInvoiceRelatedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateApplyReceiptAndInvoiceRelatedHeaders headers = new UpdateApplyReceiptAndInvoiceRelatedHeaders();
-            return await UpdateApplyReceiptAndInvoiceRelatedWithOptionsAsync(request, headers, runtime);
+            UnbindApplyReceiptAndInvoiceRelatedHeaders headers = new UnbindApplyReceiptAndInvoiceRelatedHeaders();
+            return await UnbindApplyReceiptAndInvoiceRelatedWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateApplyReceiptAndInvoiceRelatedResponse UpdateApplyReceiptAndInvoiceRelatedWithOptions(UpdateApplyReceiptAndInvoiceRelatedRequest request, UpdateApplyReceiptAndInvoiceRelatedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2610,7 +3415,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateApplyReceiptAndInvoiceRelatedResponse>(DoROARequest("UpdateApplyReceiptAndInvoiceRelated", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/invoices/applyReceipts/relate", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateApplyReceiptAndInvoiceRelated",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/applyReceipts/relate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateApplyReceiptAndInvoiceRelatedResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateApplyReceiptAndInvoiceRelatedResponse> UpdateApplyReceiptAndInvoiceRelatedWithOptionsAsync(UpdateApplyReceiptAndInvoiceRelatedRequest request, UpdateApplyReceiptAndInvoiceRelatedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2643,21 +3460,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateApplyReceiptAndInvoiceRelatedResponse>(await DoROARequestAsync("UpdateApplyReceiptAndInvoiceRelated", "bizfinance_1.0", "HTTP", "POST", "AK", "/v1.0/bizfinance/invoices/applyReceipts/relate", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateApplyReceiptAndInvoiceRelated",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/applyReceipts/relate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateApplyReceiptAndInvoiceRelatedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateDigitalInvoiceOrgInfoResponse UpdateDigitalInvoiceOrgInfo(UpdateDigitalInvoiceOrgInfoRequest request)
+        public UpdateApplyReceiptAndInvoiceRelatedResponse UpdateApplyReceiptAndInvoiceRelated(UpdateApplyReceiptAndInvoiceRelatedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateDigitalInvoiceOrgInfoHeaders headers = new UpdateDigitalInvoiceOrgInfoHeaders();
-            return UpdateDigitalInvoiceOrgInfoWithOptions(request, headers, runtime);
+            UpdateApplyReceiptAndInvoiceRelatedHeaders headers = new UpdateApplyReceiptAndInvoiceRelatedHeaders();
+            return UpdateApplyReceiptAndInvoiceRelatedWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateDigitalInvoiceOrgInfoResponse> UpdateDigitalInvoiceOrgInfoAsync(UpdateDigitalInvoiceOrgInfoRequest request)
+        public async Task<UpdateApplyReceiptAndInvoiceRelatedResponse> UpdateApplyReceiptAndInvoiceRelatedAsync(UpdateApplyReceiptAndInvoiceRelatedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateDigitalInvoiceOrgInfoHeaders headers = new UpdateDigitalInvoiceOrgInfoHeaders();
-            return await UpdateDigitalInvoiceOrgInfoWithOptionsAsync(request, headers, runtime);
+            UpdateApplyReceiptAndInvoiceRelatedHeaders headers = new UpdateApplyReceiptAndInvoiceRelatedHeaders();
+            return await UpdateApplyReceiptAndInvoiceRelatedWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateDigitalInvoiceOrgInfoResponse UpdateDigitalInvoiceOrgInfoWithOptions(UpdateDigitalInvoiceOrgInfoRequest request, UpdateDigitalInvoiceOrgInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2694,7 +3523,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateDigitalInvoiceOrgInfoResponse>(DoROARequest("UpdateDigitalInvoiceOrgInfo", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/organizationInfos", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateDigitalInvoiceOrgInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/organizationInfos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateDigitalInvoiceOrgInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateDigitalInvoiceOrgInfoResponse> UpdateDigitalInvoiceOrgInfoWithOptionsAsync(UpdateDigitalInvoiceOrgInfoRequest request, UpdateDigitalInvoiceOrgInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2731,21 +3572,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateDigitalInvoiceOrgInfoResponse>(await DoROARequestAsync("UpdateDigitalInvoiceOrgInfo", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/organizationInfos", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateDigitalInvoiceOrgInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/organizationInfos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateDigitalInvoiceOrgInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateFinanceCompanyInfoResponse UpdateFinanceCompanyInfo(UpdateFinanceCompanyInfoRequest request)
+        public UpdateDigitalInvoiceOrgInfoResponse UpdateDigitalInvoiceOrgInfo(UpdateDigitalInvoiceOrgInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateFinanceCompanyInfoHeaders headers = new UpdateFinanceCompanyInfoHeaders();
-            return UpdateFinanceCompanyInfoWithOptions(request, headers, runtime);
+            UpdateDigitalInvoiceOrgInfoHeaders headers = new UpdateDigitalInvoiceOrgInfoHeaders();
+            return UpdateDigitalInvoiceOrgInfoWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateFinanceCompanyInfoResponse> UpdateFinanceCompanyInfoAsync(UpdateFinanceCompanyInfoRequest request)
+        public async Task<UpdateDigitalInvoiceOrgInfoResponse> UpdateDigitalInvoiceOrgInfoAsync(UpdateDigitalInvoiceOrgInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateFinanceCompanyInfoHeaders headers = new UpdateFinanceCompanyInfoHeaders();
-            return await UpdateFinanceCompanyInfoWithOptionsAsync(request, headers, runtime);
+            UpdateDigitalInvoiceOrgInfoHeaders headers = new UpdateDigitalInvoiceOrgInfoHeaders();
+            return await UpdateDigitalInvoiceOrgInfoWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateFinanceCompanyInfoResponse UpdateFinanceCompanyInfoWithOptions(UpdateFinanceCompanyInfoRequest request, UpdateFinanceCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2782,7 +3635,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<UpdateFinanceCompanyInfoResponse>(DoROARequest("UpdateFinanceCompanyInfo", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/companies", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateFinanceCompanyInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/companies",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateFinanceCompanyInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateFinanceCompanyInfoResponse> UpdateFinanceCompanyInfoWithOptionsAsync(UpdateFinanceCompanyInfoRequest request, UpdateFinanceCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2819,21 +3684,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<UpdateFinanceCompanyInfoResponse>(await DoROARequestAsync("UpdateFinanceCompanyInfo", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/companies", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateFinanceCompanyInfo",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/companies",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateFinanceCompanyInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateInvoiceAbandonStatusResponse UpdateInvoiceAbandonStatus(UpdateInvoiceAbandonStatusRequest request)
+        public UpdateFinanceCompanyInfoResponse UpdateFinanceCompanyInfo(UpdateFinanceCompanyInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceAbandonStatusHeaders headers = new UpdateInvoiceAbandonStatusHeaders();
-            return UpdateInvoiceAbandonStatusWithOptions(request, headers, runtime);
+            UpdateFinanceCompanyInfoHeaders headers = new UpdateFinanceCompanyInfoHeaders();
+            return UpdateFinanceCompanyInfoWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateInvoiceAbandonStatusResponse> UpdateInvoiceAbandonStatusAsync(UpdateInvoiceAbandonStatusRequest request)
+        public async Task<UpdateFinanceCompanyInfoResponse> UpdateFinanceCompanyInfoAsync(UpdateFinanceCompanyInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceAbandonStatusHeaders headers = new UpdateInvoiceAbandonStatusHeaders();
-            return await UpdateInvoiceAbandonStatusWithOptionsAsync(request, headers, runtime);
+            UpdateFinanceCompanyInfoHeaders headers = new UpdateFinanceCompanyInfoHeaders();
+            return await UpdateFinanceCompanyInfoWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateInvoiceAbandonStatusResponse UpdateInvoiceAbandonStatusWithOptions(UpdateInvoiceAbandonStatusRequest request, UpdateInvoiceAbandonStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2894,7 +3771,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceAbandonStatusResponse>(DoROARequest("UpdateInvoiceAbandonStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/abandonStatus", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceAbandonStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/abandonStatus",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceAbandonStatusResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateInvoiceAbandonStatusResponse> UpdateInvoiceAbandonStatusWithOptionsAsync(UpdateInvoiceAbandonStatusRequest request, UpdateInvoiceAbandonStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2955,21 +3844,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceAbandonStatusResponse>(await DoROARequestAsync("UpdateInvoiceAbandonStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/abandonStatus", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceAbandonStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/abandonStatus",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceAbandonStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateInvoiceAccountPeriodResponse UpdateInvoiceAccountPeriod(UpdateInvoiceAccountPeriodRequest request)
+        public UpdateInvoiceAbandonStatusResponse UpdateInvoiceAbandonStatus(UpdateInvoiceAbandonStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceAccountPeriodHeaders headers = new UpdateInvoiceAccountPeriodHeaders();
-            return UpdateInvoiceAccountPeriodWithOptions(request, headers, runtime);
+            UpdateInvoiceAbandonStatusHeaders headers = new UpdateInvoiceAbandonStatusHeaders();
+            return UpdateInvoiceAbandonStatusWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateInvoiceAccountPeriodResponse> UpdateInvoiceAccountPeriodAsync(UpdateInvoiceAccountPeriodRequest request)
+        public async Task<UpdateInvoiceAbandonStatusResponse> UpdateInvoiceAbandonStatusAsync(UpdateInvoiceAbandonStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceAccountPeriodHeaders headers = new UpdateInvoiceAccountPeriodHeaders();
-            return await UpdateInvoiceAccountPeriodWithOptionsAsync(request, headers, runtime);
+            UpdateInvoiceAbandonStatusHeaders headers = new UpdateInvoiceAbandonStatusHeaders();
+            return await UpdateInvoiceAbandonStatusWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateInvoiceAccountPeriodResponse UpdateInvoiceAccountPeriodWithOptions(UpdateInvoiceAccountPeriodRequest request, UpdateInvoiceAccountPeriodHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3006,7 +3907,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceAccountPeriodResponse>(DoROARequest("UpdateInvoiceAccountPeriod", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/accountPeriods", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceAccountPeriod",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/accountPeriods",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceAccountPeriodResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateInvoiceAccountPeriodResponse> UpdateInvoiceAccountPeriodWithOptionsAsync(UpdateInvoiceAccountPeriodRequest request, UpdateInvoiceAccountPeriodHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3043,21 +3956,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceAccountPeriodResponse>(await DoROARequestAsync("UpdateInvoiceAccountPeriod", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/accountPeriods", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceAccountPeriod",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/accountPeriods",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceAccountPeriodResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateInvoiceAccountingPeriodDateResponse UpdateInvoiceAccountingPeriodDate(UpdateInvoiceAccountingPeriodDateRequest request)
+        public UpdateInvoiceAccountPeriodResponse UpdateInvoiceAccountPeriod(UpdateInvoiceAccountPeriodRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceAccountingPeriodDateHeaders headers = new UpdateInvoiceAccountingPeriodDateHeaders();
-            return UpdateInvoiceAccountingPeriodDateWithOptions(request, headers, runtime);
+            UpdateInvoiceAccountPeriodHeaders headers = new UpdateInvoiceAccountPeriodHeaders();
+            return UpdateInvoiceAccountPeriodWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateInvoiceAccountingPeriodDateResponse> UpdateInvoiceAccountingPeriodDateAsync(UpdateInvoiceAccountingPeriodDateRequest request)
+        public async Task<UpdateInvoiceAccountPeriodResponse> UpdateInvoiceAccountPeriodAsync(UpdateInvoiceAccountPeriodRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceAccountingPeriodDateHeaders headers = new UpdateInvoiceAccountingPeriodDateHeaders();
-            return await UpdateInvoiceAccountingPeriodDateWithOptionsAsync(request, headers, runtime);
+            UpdateInvoiceAccountPeriodHeaders headers = new UpdateInvoiceAccountPeriodHeaders();
+            return await UpdateInvoiceAccountPeriodWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateInvoiceAccountingPeriodDateResponse UpdateInvoiceAccountingPeriodDateWithOptions(UpdateInvoiceAccountingPeriodDateRequest request, UpdateInvoiceAccountingPeriodDateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3086,7 +4011,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceAccountingPeriodDateResponse>(DoROARequest("UpdateInvoiceAccountingPeriodDate", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/accounts/periodDates", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceAccountingPeriodDate",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/accounts/periodDates",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceAccountingPeriodDateResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateInvoiceAccountingPeriodDateResponse> UpdateInvoiceAccountingPeriodDateWithOptionsAsync(UpdateInvoiceAccountingPeriodDateRequest request, UpdateInvoiceAccountingPeriodDateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3115,21 +4052,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceAccountingPeriodDateResponse>(await DoROARequestAsync("UpdateInvoiceAccountingPeriodDate", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/accounts/periodDates", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceAccountingPeriodDate",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/accounts/periodDates",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceAccountingPeriodDateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateInvoiceAccountingStatusResponse UpdateInvoiceAccountingStatus(UpdateInvoiceAccountingStatusRequest request)
+        public UpdateInvoiceAccountingPeriodDateResponse UpdateInvoiceAccountingPeriodDate(UpdateInvoiceAccountingPeriodDateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceAccountingStatusHeaders headers = new UpdateInvoiceAccountingStatusHeaders();
-            return UpdateInvoiceAccountingStatusWithOptions(request, headers, runtime);
+            UpdateInvoiceAccountingPeriodDateHeaders headers = new UpdateInvoiceAccountingPeriodDateHeaders();
+            return UpdateInvoiceAccountingPeriodDateWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateInvoiceAccountingStatusResponse> UpdateInvoiceAccountingStatusAsync(UpdateInvoiceAccountingStatusRequest request)
+        public async Task<UpdateInvoiceAccountingPeriodDateResponse> UpdateInvoiceAccountingPeriodDateAsync(UpdateInvoiceAccountingPeriodDateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceAccountingStatusHeaders headers = new UpdateInvoiceAccountingStatusHeaders();
-            return await UpdateInvoiceAccountingStatusWithOptionsAsync(request, headers, runtime);
+            UpdateInvoiceAccountingPeriodDateHeaders headers = new UpdateInvoiceAccountingPeriodDateHeaders();
+            return await UpdateInvoiceAccountingPeriodDateWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateInvoiceAccountingStatusResponse UpdateInvoiceAccountingStatusWithOptions(UpdateInvoiceAccountingStatusRequest request, UpdateInvoiceAccountingStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3158,7 +4107,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceAccountingStatusResponse>(DoROARequest("UpdateInvoiceAccountingStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/accounts/statuses", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceAccountingStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/accounts/statuses",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceAccountingStatusResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateInvoiceAccountingStatusResponse> UpdateInvoiceAccountingStatusWithOptionsAsync(UpdateInvoiceAccountingStatusRequest request, UpdateInvoiceAccountingStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3187,21 +4148,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceAccountingStatusResponse>(await DoROARequestAsync("UpdateInvoiceAccountingStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/accounts/statuses", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceAccountingStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/accounts/statuses",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceAccountingStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateInvoiceAndReceiptRelatedResponse UpdateInvoiceAndReceiptRelated(UpdateInvoiceAndReceiptRelatedRequest request)
+        public UpdateInvoiceAccountingStatusResponse UpdateInvoiceAccountingStatus(UpdateInvoiceAccountingStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceAndReceiptRelatedHeaders headers = new UpdateInvoiceAndReceiptRelatedHeaders();
-            return UpdateInvoiceAndReceiptRelatedWithOptions(request, headers, runtime);
+            UpdateInvoiceAccountingStatusHeaders headers = new UpdateInvoiceAccountingStatusHeaders();
+            return UpdateInvoiceAccountingStatusWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateInvoiceAndReceiptRelatedResponse> UpdateInvoiceAndReceiptRelatedAsync(UpdateInvoiceAndReceiptRelatedRequest request)
+        public async Task<UpdateInvoiceAccountingStatusResponse> UpdateInvoiceAccountingStatusAsync(UpdateInvoiceAccountingStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceAndReceiptRelatedHeaders headers = new UpdateInvoiceAndReceiptRelatedHeaders();
-            return await UpdateInvoiceAndReceiptRelatedWithOptionsAsync(request, headers, runtime);
+            UpdateInvoiceAccountingStatusHeaders headers = new UpdateInvoiceAccountingStatusHeaders();
+            return await UpdateInvoiceAccountingStatusWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateInvoiceAndReceiptRelatedResponse UpdateInvoiceAndReceiptRelatedWithOptions(UpdateInvoiceAndReceiptRelatedRequest request, UpdateInvoiceAndReceiptRelatedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3242,7 +4215,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceAndReceiptRelatedResponse>(DoROARequest("UpdateInvoiceAndReceiptRelated", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/approvalReceipts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceAndReceiptRelated",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/approvalReceipts",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceAndReceiptRelatedResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateInvoiceAndReceiptRelatedResponse> UpdateInvoiceAndReceiptRelatedWithOptionsAsync(UpdateInvoiceAndReceiptRelatedRequest request, UpdateInvoiceAndReceiptRelatedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3283,21 +4268,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceAndReceiptRelatedResponse>(await DoROARequestAsync("UpdateInvoiceAndReceiptRelated", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/approvalReceipts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceAndReceiptRelated",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/approvalReceipts",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceAndReceiptRelatedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateInvoiceIgnoreStatusResponse UpdateInvoiceIgnoreStatus(UpdateInvoiceIgnoreStatusRequest request)
+        public UpdateInvoiceAndReceiptRelatedResponse UpdateInvoiceAndReceiptRelated(UpdateInvoiceAndReceiptRelatedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceIgnoreStatusHeaders headers = new UpdateInvoiceIgnoreStatusHeaders();
-            return UpdateInvoiceIgnoreStatusWithOptions(request, headers, runtime);
+            UpdateInvoiceAndReceiptRelatedHeaders headers = new UpdateInvoiceAndReceiptRelatedHeaders();
+            return UpdateInvoiceAndReceiptRelatedWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateInvoiceIgnoreStatusResponse> UpdateInvoiceIgnoreStatusAsync(UpdateInvoiceIgnoreStatusRequest request)
+        public async Task<UpdateInvoiceAndReceiptRelatedResponse> UpdateInvoiceAndReceiptRelatedAsync(UpdateInvoiceAndReceiptRelatedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceIgnoreStatusHeaders headers = new UpdateInvoiceIgnoreStatusHeaders();
-            return await UpdateInvoiceIgnoreStatusWithOptionsAsync(request, headers, runtime);
+            UpdateInvoiceAndReceiptRelatedHeaders headers = new UpdateInvoiceAndReceiptRelatedHeaders();
+            return await UpdateInvoiceAndReceiptRelatedWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateInvoiceIgnoreStatusResponse UpdateInvoiceIgnoreStatusWithOptions(UpdateInvoiceIgnoreStatusRequest request, UpdateInvoiceIgnoreStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3330,7 +4327,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<UpdateInvoiceIgnoreStatusResponse>(DoROARequest("UpdateInvoiceIgnoreStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/ignoreStatus", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceIgnoreStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/ignoreStatus",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceIgnoreStatusResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateInvoiceIgnoreStatusResponse> UpdateInvoiceIgnoreStatusWithOptionsAsync(UpdateInvoiceIgnoreStatusRequest request, UpdateInvoiceIgnoreStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3363,21 +4372,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<UpdateInvoiceIgnoreStatusResponse>(await DoROARequestAsync("UpdateInvoiceIgnoreStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/ignoreStatus", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceIgnoreStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/ignoreStatus",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceIgnoreStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateInvoiceVerifyStatusResponse UpdateInvoiceVerifyStatus(UpdateInvoiceVerifyStatusRequest request)
+        public UpdateInvoiceIgnoreStatusResponse UpdateInvoiceIgnoreStatus(UpdateInvoiceIgnoreStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceVerifyStatusHeaders headers = new UpdateInvoiceVerifyStatusHeaders();
-            return UpdateInvoiceVerifyStatusWithOptions(request, headers, runtime);
+            UpdateInvoiceIgnoreStatusHeaders headers = new UpdateInvoiceIgnoreStatusHeaders();
+            return UpdateInvoiceIgnoreStatusWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateInvoiceVerifyStatusResponse> UpdateInvoiceVerifyStatusAsync(UpdateInvoiceVerifyStatusRequest request)
+        public async Task<UpdateInvoiceIgnoreStatusResponse> UpdateInvoiceIgnoreStatusAsync(UpdateInvoiceIgnoreStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceVerifyStatusHeaders headers = new UpdateInvoiceVerifyStatusHeaders();
-            return await UpdateInvoiceVerifyStatusWithOptionsAsync(request, headers, runtime);
+            UpdateInvoiceIgnoreStatusHeaders headers = new UpdateInvoiceIgnoreStatusHeaders();
+            return await UpdateInvoiceIgnoreStatusWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateInvoiceVerifyStatusResponse UpdateInvoiceVerifyStatusWithOptions(UpdateInvoiceVerifyStatusRequest request, UpdateInvoiceVerifyStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3418,7 +4439,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceVerifyStatusResponse>(DoROARequest("UpdateInvoiceVerifyStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/verifyStatus", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceVerifyStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/verifyStatus",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceVerifyStatusResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateInvoiceVerifyStatusResponse> UpdateInvoiceVerifyStatusWithOptionsAsync(UpdateInvoiceVerifyStatusRequest request, UpdateInvoiceVerifyStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3459,21 +4492,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceVerifyStatusResponse>(await DoROARequestAsync("UpdateInvoiceVerifyStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/verifyStatus", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceVerifyStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/verifyStatus",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceVerifyStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateInvoiceVoucherStatusResponse UpdateInvoiceVoucherStatus(UpdateInvoiceVoucherStatusRequest request)
+        public UpdateInvoiceVerifyStatusResponse UpdateInvoiceVerifyStatus(UpdateInvoiceVerifyStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceVoucherStatusHeaders headers = new UpdateInvoiceVoucherStatusHeaders();
-            return UpdateInvoiceVoucherStatusWithOptions(request, headers, runtime);
+            UpdateInvoiceVerifyStatusHeaders headers = new UpdateInvoiceVerifyStatusHeaders();
+            return UpdateInvoiceVerifyStatusWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateInvoiceVoucherStatusResponse> UpdateInvoiceVoucherStatusAsync(UpdateInvoiceVoucherStatusRequest request)
+        public async Task<UpdateInvoiceVerifyStatusResponse> UpdateInvoiceVerifyStatusAsync(UpdateInvoiceVerifyStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateInvoiceVoucherStatusHeaders headers = new UpdateInvoiceVoucherStatusHeaders();
-            return await UpdateInvoiceVoucherStatusWithOptionsAsync(request, headers, runtime);
+            UpdateInvoiceVerifyStatusHeaders headers = new UpdateInvoiceVerifyStatusHeaders();
+            return await UpdateInvoiceVerifyStatusWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateInvoiceVoucherStatusResponse UpdateInvoiceVoucherStatusWithOptions(UpdateInvoiceVoucherStatusRequest request, UpdateInvoiceVoucherStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3514,7 +4559,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceVoucherStatusResponse>(DoROARequest("UpdateInvoiceVoucherStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/vouchers/states", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceVoucherStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/vouchers/states",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceVoucherStatusResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateInvoiceVoucherStatusResponse> UpdateInvoiceVoucherStatusWithOptionsAsync(UpdateInvoiceVoucherStatusRequest request, UpdateInvoiceVoucherStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3555,21 +4612,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateInvoiceVoucherStatusResponse>(await DoROARequestAsync("UpdateInvoiceVoucherStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/invoices/vouchers/states", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceVoucherStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/invoices/vouchers/states",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceVoucherStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateReceiptResponse UpdateReceipt(UpdateReceiptRequest request)
+        public UpdateInvoiceVoucherStatusResponse UpdateInvoiceVoucherStatus(UpdateInvoiceVoucherStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateReceiptHeaders headers = new UpdateReceiptHeaders();
-            return UpdateReceiptWithOptions(request, headers, runtime);
+            UpdateInvoiceVoucherStatusHeaders headers = new UpdateInvoiceVoucherStatusHeaders();
+            return UpdateInvoiceVoucherStatusWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateReceiptResponse> UpdateReceiptAsync(UpdateReceiptRequest request)
+        public async Task<UpdateInvoiceVoucherStatusResponse> UpdateInvoiceVoucherStatusAsync(UpdateInvoiceVoucherStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateReceiptHeaders headers = new UpdateReceiptHeaders();
-            return await UpdateReceiptWithOptionsAsync(request, headers, runtime);
+            UpdateInvoiceVoucherStatusHeaders headers = new UpdateInvoiceVoucherStatusHeaders();
+            return await UpdateInvoiceVoucherStatusWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateReceiptResponse UpdateReceiptWithOptions(UpdateReceiptRequest request, UpdateReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3594,7 +4663,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateReceiptResponse>(DoROARequest("UpdateReceipt", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/receipts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateReceipt",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/receipts",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateReceiptResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateReceiptResponse> UpdateReceiptWithOptionsAsync(UpdateReceiptRequest request, UpdateReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3619,21 +4700,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateReceiptResponse>(await DoROARequestAsync("UpdateReceipt", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/receipts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateReceipt",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/receipts",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateReceiptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateReceiptVoucherStatusResponse UpdateReceiptVoucherStatus(UpdateReceiptVoucherStatusRequest request)
+        public UpdateReceiptResponse UpdateReceipt(UpdateReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateReceiptVoucherStatusHeaders headers = new UpdateReceiptVoucherStatusHeaders();
-            return UpdateReceiptVoucherStatusWithOptions(request, headers, runtime);
+            UpdateReceiptHeaders headers = new UpdateReceiptHeaders();
+            return UpdateReceiptWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateReceiptVoucherStatusResponse> UpdateReceiptVoucherStatusAsync(UpdateReceiptVoucherStatusRequest request)
+        public async Task<UpdateReceiptResponse> UpdateReceiptAsync(UpdateReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateReceiptVoucherStatusHeaders headers = new UpdateReceiptVoucherStatusHeaders();
-            return await UpdateReceiptVoucherStatusWithOptionsAsync(request, headers, runtime);
+            UpdateReceiptHeaders headers = new UpdateReceiptHeaders();
+            return await UpdateReceiptWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateReceiptVoucherStatusResponse UpdateReceiptVoucherStatusWithOptions(UpdateReceiptVoucherStatusRequest request, UpdateReceiptVoucherStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3678,7 +4771,19 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateReceiptVoucherStatusResponse>(DoROARequest("UpdateReceiptVoucherStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/vouchers/recepits", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateReceiptVoucherStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/vouchers/recepits",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateReceiptVoucherStatusResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateReceiptVoucherStatusResponse> UpdateReceiptVoucherStatusWithOptionsAsync(UpdateReceiptVoucherStatusRequest request, UpdateReceiptVoucherStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3723,7 +4828,33 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateReceiptVoucherStatusResponse>(await DoROARequestAsync("UpdateReceiptVoucherStatus", "bizfinance_1.0", "HTTP", "PUT", "AK", "/v1.0/bizfinance/vouchers/recepits", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateReceiptVoucherStatus",
+                Version = "bizfinance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/bizfinance/vouchers/recepits",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateReceiptVoucherStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpdateReceiptVoucherStatusResponse UpdateReceiptVoucherStatus(UpdateReceiptVoucherStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateReceiptVoucherStatusHeaders headers = new UpdateReceiptVoucherStatusHeaders();
+            return UpdateReceiptVoucherStatusWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateReceiptVoucherStatusResponse> UpdateReceiptVoucherStatusAsync(UpdateReceiptVoucherStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateReceiptVoucherStatusHeaders headers = new UpdateReceiptVoucherStatusHeaders();
+            return await UpdateReceiptVoucherStatusWithOptionsAsync(request, headers, runtime);
         }
 
     }

@@ -9,37 +9,22 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class SeachTaskStageRequest : TeaModel {
-        /// <summary>
-        /// 每页返回最大数量。默认10，最大300。
-        /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
-        /// <summary>
-        /// 分页标，从上一次请求结果中获取。
-        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
-        /// <summary>
-        /// 任务列表名字。
-        /// </summary>
         [NameInMap("query")]
         [Validation(Required=false)]
         public string Query { get; set; }
 
-        /// <summary>
-        /// 任务列表 ID 集合，逗号组合。
-        /// </summary>
         [NameInMap("stageIds")]
         [Validation(Required=false)]
         public string StageIds { get; set; }
 
-        /// <summary>
-        /// 项目分组ID。
-        /// </summary>
         [NameInMap("taskListId")]
         [Validation(Required=false)]
         public string TaskListId { get; set; }

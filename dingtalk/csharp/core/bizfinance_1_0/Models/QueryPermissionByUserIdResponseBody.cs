@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class QueryPermissionByUserIdResponseBody : TeaModel {
-        /// <summary>
-        /// 权限信息列表
-        /// </summary>
         [NameInMap("permissionDTOList")]
         [Validation(Required=false)]
         public List<QueryPermissionByUserIdResponseBodyPermissionDTOList> PermissionDTOList { get; set; }
@@ -26,9 +23,6 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 
         }
 
-        /// <summary>
-        /// 用户ID
-        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

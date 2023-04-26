@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryUserPayInfoResponseBody : TeaModel {
-        /// <summary>
-        /// 签约单号
-        /// </summary>
         [NameInMap("signNo")]
         [Validation(Required=false)]
         public string SignNo { get; set; }

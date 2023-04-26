@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class RemoveRobotFromConversationResponseBody : TeaModel {
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("chatBotUserId")]
         [Validation(Required=false)]
         public string ChatBotUserId { get; set; }

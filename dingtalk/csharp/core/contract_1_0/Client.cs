@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             }
         }
 
-
-        public SendContractCardResponse SendContractCard(SendContractCardRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SendContractCardHeaders headers = new SendContractCardHeaders();
-            return SendContractCardWithOptions(request, headers, runtime);
-        }
-
-        public async Task<SendContractCardResponse> SendContractCardAsync(SendContractCardRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SendContractCardHeaders headers = new SendContractCardHeaders();
-            return await SendContractCardWithOptionsAsync(request, headers, runtime);
-        }
 
         public SendContractCardResponse SendContractCardWithOptions(SendContractCardRequest request, SendContractCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -94,7 +83,19 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SendContractCardResponse>(DoROARequest("SendContractCard", "contract_1.0", "HTTP", "POST", "AK", "/v1.0/contract/cards/send", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendContractCard",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/cards/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendContractCardResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<SendContractCardResponse> SendContractCardWithOptionsAsync(SendContractCardRequest request, SendContractCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -151,7 +152,33 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SendContractCardResponse>(await DoROARequestAsync("SendContractCard", "contract_1.0", "HTTP", "POST", "AK", "/v1.0/contract/cards/send", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendContractCard",
+                Version = "contract_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contract/cards/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendContractCardResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public SendContractCardResponse SendContractCard(SendContractCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendContractCardHeaders headers = new SendContractCardHeaders();
+            return SendContractCardWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SendContractCardResponse> SendContractCardAsync(SendContractCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendContractCardHeaders headers = new SendContractCardHeaders();
+            return await SendContractCardWithOptionsAsync(request, headers, runtime);
         }
 
     }

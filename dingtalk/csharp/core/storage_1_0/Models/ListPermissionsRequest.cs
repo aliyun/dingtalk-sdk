@@ -9,43 +9,24 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
     public class ListPermissionsRequest : TeaModel {
-        /// <summary>
-        /// 可选参数
-        /// </summary>
         [NameInMap("option")]
         [Validation(Required=false)]
         public ListPermissionsRequestOption Option { get; set; }
         public class ListPermissionsRequestOption : TeaModel {
-            /// <summary>
-            /// 角色过滤列表
-            /// 最大size:
-            /// 	30
-            /// </summary>
             [NameInMap("filterRoleIds")]
             [Validation(Required=false)]
             public List<string> FilterRoleIds { get; set; }
 
-            /// <summary>
-            /// 分页大小
-            /// 默认值:
-            /// 	50
-            /// </summary>
             [NameInMap("maxResults")]
             [Validation(Required=false)]
             public int? MaxResults { get; set; }
 
-            /// <summary>
-            /// 分页游标
-            /// </summary>
             [NameInMap("nextToken")]
             [Validation(Required=false)]
             public string NextToken { get; set; }
 
         }
 
-        /// <summary>
-        /// 用户id
-        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

@@ -13,16 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [Validation(Required=false)]
         public List<AddAppRolesToMemberResponseBodyResult> Result { get; set; }
         public class AddAppRolesToMemberResponseBodyResult : TeaModel {
-            /// <summary>
-            /// 角色范围最新版本号
-            /// </summary>
             [NameInMap("latestScopeVersion")]
             [Validation(Required=false)]
             public long? LatestScopeVersion { get; set; }
 
-            /// <summary>
-            /// 角色id
-            /// </summary>
             [NameInMap("roleId")]
             [Validation(Required=false)]
             public long? RoleId { get; set; }
@@ -35,9 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             [Validation(Required=false)]
             public string SubErrorMsg { get; set; }
 
-            /// <summary>
-            /// 角色添加结果，true: 成功，false: 失败
-            /// </summary>
             [NameInMap("success")]
             [Validation(Required=false)]
             public bool? Success { get; set; }

@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class GetPrintDictionaryResponseBody : TeaModel {
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public string Result { get; set; }

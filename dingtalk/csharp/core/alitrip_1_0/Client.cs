@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
             }
         }
 
-
-        public AddCityCarApplyResponse AddCityCarApply(AddCityCarApplyRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AddCityCarApplyHeaders headers = new AddCityCarApplyHeaders();
-            return AddCityCarApplyWithOptions(request, headers, runtime);
-        }
-
-        public async Task<AddCityCarApplyResponse> AddCityCarApplyAsync(AddCityCarApplyRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AddCityCarApplyHeaders headers = new AddCityCarApplyHeaders();
-            return await AddCityCarApplyWithOptionsAsync(request, headers, runtime);
-        }
 
         public AddCityCarApplyResponse AddCityCarApplyWithOptions(AddCityCarApplyRequest request, AddCityCarApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -122,7 +111,19 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AddCityCarApplyResponse>(DoROARequest("AddCityCarApply", "alitrip_1.0", "HTTP", "POST", "AK", "/v1.0/alitrip/cityCarApprovals", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCityCarApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/cityCarApprovals",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddCityCarApplyResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<AddCityCarApplyResponse> AddCityCarApplyWithOptionsAsync(AddCityCarApplyRequest request, AddCityCarApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -207,21 +208,33 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AddCityCarApplyResponse>(await DoROARequestAsync("AddCityCarApply", "alitrip_1.0", "HTTP", "POST", "AK", "/v1.0/alitrip/cityCarApprovals", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCityCarApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/cityCarApprovals",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddCityCarApplyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public ApproveCityCarApplyResponse ApproveCityCarApply(ApproveCityCarApplyRequest request)
+        public AddCityCarApplyResponse AddCityCarApply(AddCityCarApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ApproveCityCarApplyHeaders headers = new ApproveCityCarApplyHeaders();
-            return ApproveCityCarApplyWithOptions(request, headers, runtime);
+            AddCityCarApplyHeaders headers = new AddCityCarApplyHeaders();
+            return AddCityCarApplyWithOptions(request, headers, runtime);
         }
 
-        public async Task<ApproveCityCarApplyResponse> ApproveCityCarApplyAsync(ApproveCityCarApplyRequest request)
+        public async Task<AddCityCarApplyResponse> AddCityCarApplyAsync(AddCityCarApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ApproveCityCarApplyHeaders headers = new ApproveCityCarApplyHeaders();
-            return await ApproveCityCarApplyWithOptionsAsync(request, headers, runtime);
+            AddCityCarApplyHeaders headers = new AddCityCarApplyHeaders();
+            return await AddCityCarApplyWithOptionsAsync(request, headers, runtime);
         }
 
         public ApproveCityCarApplyResponse ApproveCityCarApplyWithOptions(ApproveCityCarApplyRequest request, ApproveCityCarApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -266,7 +279,19 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ApproveCityCarApplyResponse>(DoROARequest("ApproveCityCarApply", "alitrip_1.0", "HTTP", "PUT", "AK", "/v1.0/alitrip/cityCarApprovals", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ApproveCityCarApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/cityCarApprovals",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ApproveCityCarApplyResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<ApproveCityCarApplyResponse> ApproveCityCarApplyWithOptionsAsync(ApproveCityCarApplyRequest request, ApproveCityCarApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -311,21 +336,33 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ApproveCityCarApplyResponse>(await DoROARequestAsync("ApproveCityCarApply", "alitrip_1.0", "HTTP", "PUT", "AK", "/v1.0/alitrip/cityCarApprovals", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ApproveCityCarApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/cityCarApprovals",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ApproveCityCarApplyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public BillSettementBtripTrainResponse BillSettementBtripTrain(BillSettementBtripTrainRequest request)
+        public ApproveCityCarApplyResponse ApproveCityCarApply(ApproveCityCarApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BillSettementBtripTrainHeaders headers = new BillSettementBtripTrainHeaders();
-            return BillSettementBtripTrainWithOptions(request, headers, runtime);
+            ApproveCityCarApplyHeaders headers = new ApproveCityCarApplyHeaders();
+            return ApproveCityCarApplyWithOptions(request, headers, runtime);
         }
 
-        public async Task<BillSettementBtripTrainResponse> BillSettementBtripTrainAsync(BillSettementBtripTrainRequest request)
+        public async Task<ApproveCityCarApplyResponse> ApproveCityCarApplyAsync(ApproveCityCarApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BillSettementBtripTrainHeaders headers = new BillSettementBtripTrainHeaders();
-            return await BillSettementBtripTrainWithOptionsAsync(request, headers, runtime);
+            ApproveCityCarApplyHeaders headers = new ApproveCityCarApplyHeaders();
+            return await ApproveCityCarApplyWithOptionsAsync(request, headers, runtime);
         }
 
         public BillSettementBtripTrainResponse BillSettementBtripTrainWithOptions(BillSettementBtripTrainRequest request, BillSettementBtripTrainHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -370,7 +407,19 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<BillSettementBtripTrainResponse>(DoROARequest("BillSettementBtripTrain", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/billSettlements/btripTrains", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BillSettementBtripTrain",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/billSettlements/btripTrains",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BillSettementBtripTrainResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<BillSettementBtripTrainResponse> BillSettementBtripTrainWithOptionsAsync(BillSettementBtripTrainRequest request, BillSettementBtripTrainHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -415,21 +464,33 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<BillSettementBtripTrainResponse>(await DoROARequestAsync("BillSettementBtripTrain", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/billSettlements/btripTrains", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BillSettementBtripTrain",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/billSettlements/btripTrains",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BillSettementBtripTrainResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public BillSettementCarResponse BillSettementCar(BillSettementCarRequest request)
+        public BillSettementBtripTrainResponse BillSettementBtripTrain(BillSettementBtripTrainRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BillSettementCarHeaders headers = new BillSettementCarHeaders();
-            return BillSettementCarWithOptions(request, headers, runtime);
+            BillSettementBtripTrainHeaders headers = new BillSettementBtripTrainHeaders();
+            return BillSettementBtripTrainWithOptions(request, headers, runtime);
         }
 
-        public async Task<BillSettementCarResponse> BillSettementCarAsync(BillSettementCarRequest request)
+        public async Task<BillSettementBtripTrainResponse> BillSettementBtripTrainAsync(BillSettementBtripTrainRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BillSettementCarHeaders headers = new BillSettementCarHeaders();
-            return await BillSettementCarWithOptionsAsync(request, headers, runtime);
+            BillSettementBtripTrainHeaders headers = new BillSettementBtripTrainHeaders();
+            return await BillSettementBtripTrainWithOptionsAsync(request, headers, runtime);
         }
 
         public BillSettementCarResponse BillSettementCarWithOptions(BillSettementCarRequest request, BillSettementCarHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -474,7 +535,19 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<BillSettementCarResponse>(DoROARequest("BillSettementCar", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/billSettlements/cars", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BillSettementCar",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/billSettlements/cars",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BillSettementCarResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<BillSettementCarResponse> BillSettementCarWithOptionsAsync(BillSettementCarRequest request, BillSettementCarHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -519,21 +592,33 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<BillSettementCarResponse>(await DoROARequestAsync("BillSettementCar", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/billSettlements/cars", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BillSettementCar",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/billSettlements/cars",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BillSettementCarResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public BillSettementFlightResponse BillSettementFlight(BillSettementFlightRequest request)
+        public BillSettementCarResponse BillSettementCar(BillSettementCarRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BillSettementFlightHeaders headers = new BillSettementFlightHeaders();
-            return BillSettementFlightWithOptions(request, headers, runtime);
+            BillSettementCarHeaders headers = new BillSettementCarHeaders();
+            return BillSettementCarWithOptions(request, headers, runtime);
         }
 
-        public async Task<BillSettementFlightResponse> BillSettementFlightAsync(BillSettementFlightRequest request)
+        public async Task<BillSettementCarResponse> BillSettementCarAsync(BillSettementCarRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BillSettementFlightHeaders headers = new BillSettementFlightHeaders();
-            return await BillSettementFlightWithOptionsAsync(request, headers, runtime);
+            BillSettementCarHeaders headers = new BillSettementCarHeaders();
+            return await BillSettementCarWithOptionsAsync(request, headers, runtime);
         }
 
         public BillSettementFlightResponse BillSettementFlightWithOptions(BillSettementFlightRequest request, BillSettementFlightHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -578,7 +663,19 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<BillSettementFlightResponse>(DoROARequest("BillSettementFlight", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/billSettlements/flights", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BillSettementFlight",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/billSettlements/flights",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BillSettementFlightResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<BillSettementFlightResponse> BillSettementFlightWithOptionsAsync(BillSettementFlightRequest request, BillSettementFlightHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -623,21 +720,33 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<BillSettementFlightResponse>(await DoROARequestAsync("BillSettementFlight", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/billSettlements/flights", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BillSettementFlight",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/billSettlements/flights",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BillSettementFlightResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public BillSettementHotelResponse BillSettementHotel(BillSettementHotelRequest request)
+        public BillSettementFlightResponse BillSettementFlight(BillSettementFlightRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BillSettementHotelHeaders headers = new BillSettementHotelHeaders();
-            return BillSettementHotelWithOptions(request, headers, runtime);
+            BillSettementFlightHeaders headers = new BillSettementFlightHeaders();
+            return BillSettementFlightWithOptions(request, headers, runtime);
         }
 
-        public async Task<BillSettementHotelResponse> BillSettementHotelAsync(BillSettementHotelRequest request)
+        public async Task<BillSettementFlightResponse> BillSettementFlightAsync(BillSettementFlightRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BillSettementHotelHeaders headers = new BillSettementHotelHeaders();
-            return await BillSettementHotelWithOptionsAsync(request, headers, runtime);
+            BillSettementFlightHeaders headers = new BillSettementFlightHeaders();
+            return await BillSettementFlightWithOptionsAsync(request, headers, runtime);
         }
 
         public BillSettementHotelResponse BillSettementHotelWithOptions(BillSettementHotelRequest request, BillSettementHotelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -682,7 +791,19 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<BillSettementHotelResponse>(DoROARequest("BillSettementHotel", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/billSettlements/hotels", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BillSettementHotel",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/billSettlements/hotels",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BillSettementHotelResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<BillSettementHotelResponse> BillSettementHotelWithOptionsAsync(BillSettementHotelRequest request, BillSettementHotelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -727,21 +848,33 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<BillSettementHotelResponse>(await DoROARequestAsync("BillSettementHotel", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/billSettlements/hotels", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BillSettementHotel",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/billSettlements/hotels",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BillSettementHotelResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetFlightExceedApplyResponse GetFlightExceedApply(GetFlightExceedApplyRequest request)
+        public BillSettementHotelResponse BillSettementHotel(BillSettementHotelRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetFlightExceedApplyHeaders headers = new GetFlightExceedApplyHeaders();
-            return GetFlightExceedApplyWithOptions(request, headers, runtime);
+            BillSettementHotelHeaders headers = new BillSettementHotelHeaders();
+            return BillSettementHotelWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetFlightExceedApplyResponse> GetFlightExceedApplyAsync(GetFlightExceedApplyRequest request)
+        public async Task<BillSettementHotelResponse> BillSettementHotelAsync(BillSettementHotelRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetFlightExceedApplyHeaders headers = new GetFlightExceedApplyHeaders();
-            return await GetFlightExceedApplyWithOptionsAsync(request, headers, runtime);
+            BillSettementHotelHeaders headers = new BillSettementHotelHeaders();
+            return await BillSettementHotelWithOptionsAsync(request, headers, runtime);
         }
 
         public GetFlightExceedApplyResponse GetFlightExceedApplyWithOptions(GetFlightExceedApplyRequest request, GetFlightExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -770,7 +903,19 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetFlightExceedApplyResponse>(DoROARequest("GetFlightExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/exceedapply/getFlight", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFlightExceedApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/exceedapply/getFlight",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFlightExceedApplyResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetFlightExceedApplyResponse> GetFlightExceedApplyWithOptionsAsync(GetFlightExceedApplyRequest request, GetFlightExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -799,21 +944,33 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetFlightExceedApplyResponse>(await DoROARequestAsync("GetFlightExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/exceedapply/getFlight", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFlightExceedApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/exceedapply/getFlight",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFlightExceedApplyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetHotelExceedApplyResponse GetHotelExceedApply(GetHotelExceedApplyRequest request)
+        public GetFlightExceedApplyResponse GetFlightExceedApply(GetFlightExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetHotelExceedApplyHeaders headers = new GetHotelExceedApplyHeaders();
-            return GetHotelExceedApplyWithOptions(request, headers, runtime);
+            GetFlightExceedApplyHeaders headers = new GetFlightExceedApplyHeaders();
+            return GetFlightExceedApplyWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetHotelExceedApplyResponse> GetHotelExceedApplyAsync(GetHotelExceedApplyRequest request)
+        public async Task<GetFlightExceedApplyResponse> GetFlightExceedApplyAsync(GetFlightExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetHotelExceedApplyHeaders headers = new GetHotelExceedApplyHeaders();
-            return await GetHotelExceedApplyWithOptionsAsync(request, headers, runtime);
+            GetFlightExceedApplyHeaders headers = new GetFlightExceedApplyHeaders();
+            return await GetFlightExceedApplyWithOptionsAsync(request, headers, runtime);
         }
 
         public GetHotelExceedApplyResponse GetHotelExceedApplyWithOptions(GetHotelExceedApplyRequest request, GetHotelExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -842,7 +999,19 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetHotelExceedApplyResponse>(DoROARequest("GetHotelExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/exceedapply/getHotel", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetHotelExceedApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/exceedapply/getHotel",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetHotelExceedApplyResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetHotelExceedApplyResponse> GetHotelExceedApplyWithOptionsAsync(GetHotelExceedApplyRequest request, GetHotelExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -871,21 +1040,33 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetHotelExceedApplyResponse>(await DoROARequestAsync("GetHotelExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/exceedapply/getHotel", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetHotelExceedApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/exceedapply/getHotel",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetHotelExceedApplyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetTrainExceedApplyResponse GetTrainExceedApply(GetTrainExceedApplyRequest request)
+        public GetHotelExceedApplyResponse GetHotelExceedApply(GetHotelExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetTrainExceedApplyHeaders headers = new GetTrainExceedApplyHeaders();
-            return GetTrainExceedApplyWithOptions(request, headers, runtime);
+            GetHotelExceedApplyHeaders headers = new GetHotelExceedApplyHeaders();
+            return GetHotelExceedApplyWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetTrainExceedApplyResponse> GetTrainExceedApplyAsync(GetTrainExceedApplyRequest request)
+        public async Task<GetHotelExceedApplyResponse> GetHotelExceedApplyAsync(GetHotelExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetTrainExceedApplyHeaders headers = new GetTrainExceedApplyHeaders();
-            return await GetTrainExceedApplyWithOptionsAsync(request, headers, runtime);
+            GetHotelExceedApplyHeaders headers = new GetHotelExceedApplyHeaders();
+            return await GetHotelExceedApplyWithOptionsAsync(request, headers, runtime);
         }
 
         public GetTrainExceedApplyResponse GetTrainExceedApplyWithOptions(GetTrainExceedApplyRequest request, GetTrainExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -914,7 +1095,19 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetTrainExceedApplyResponse>(DoROARequest("GetTrainExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/exceedapply/getTrain", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetTrainExceedApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/exceedapply/getTrain",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetTrainExceedApplyResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetTrainExceedApplyResponse> GetTrainExceedApplyWithOptionsAsync(GetTrainExceedApplyRequest request, GetTrainExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -943,21 +1136,33 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetTrainExceedApplyResponse>(await DoROARequestAsync("GetTrainExceedApply", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/exceedapply/getTrain", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetTrainExceedApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/exceedapply/getTrain",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetTrainExceedApplyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryCityCarApplyResponse QueryCityCarApply(QueryCityCarApplyRequest request)
+        public GetTrainExceedApplyResponse GetTrainExceedApply(GetTrainExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCityCarApplyHeaders headers = new QueryCityCarApplyHeaders();
-            return QueryCityCarApplyWithOptions(request, headers, runtime);
+            GetTrainExceedApplyHeaders headers = new GetTrainExceedApplyHeaders();
+            return GetTrainExceedApplyWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryCityCarApplyResponse> QueryCityCarApplyAsync(QueryCityCarApplyRequest request)
+        public async Task<GetTrainExceedApplyResponse> GetTrainExceedApplyAsync(GetTrainExceedApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCityCarApplyHeaders headers = new QueryCityCarApplyHeaders();
-            return await QueryCityCarApplyWithOptionsAsync(request, headers, runtime);
+            GetTrainExceedApplyHeaders headers = new GetTrainExceedApplyHeaders();
+            return await GetTrainExceedApplyWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryCityCarApplyResponse QueryCityCarApplyWithOptions(QueryCityCarApplyRequest request, QueryCityCarApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1006,7 +1211,19 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryCityCarApplyResponse>(DoROARequest("QueryCityCarApply", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/cityCarApprovals", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCityCarApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/cityCarApprovals",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCityCarApplyResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryCityCarApplyResponse> QueryCityCarApplyWithOptionsAsync(QueryCityCarApplyRequest request, QueryCityCarApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1055,21 +1272,33 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryCityCarApplyResponse>(await DoROARequestAsync("QueryCityCarApply", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/cityCarApprovals", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCityCarApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/cityCarApprovals",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCityCarApplyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryUnionOrderResponse QueryUnionOrder(QueryUnionOrderRequest request)
+        public QueryCityCarApplyResponse QueryCityCarApply(QueryCityCarApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryUnionOrderHeaders headers = new QueryUnionOrderHeaders();
-            return QueryUnionOrderWithOptions(request, headers, runtime);
+            QueryCityCarApplyHeaders headers = new QueryCityCarApplyHeaders();
+            return QueryCityCarApplyWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryUnionOrderResponse> QueryUnionOrderAsync(QueryUnionOrderRequest request)
+        public async Task<QueryCityCarApplyResponse> QueryCityCarApplyAsync(QueryCityCarApplyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryUnionOrderHeaders headers = new QueryUnionOrderHeaders();
-            return await QueryUnionOrderWithOptionsAsync(request, headers, runtime);
+            QueryCityCarApplyHeaders headers = new QueryCityCarApplyHeaders();
+            return await QueryCityCarApplyWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryUnionOrderResponse QueryUnionOrderWithOptions(QueryUnionOrderRequest request, QueryUnionOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1102,7 +1331,19 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryUnionOrderResponse>(DoROARequest("QueryUnionOrder", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/unionOrders", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUnionOrder",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/unionOrders",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUnionOrderResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryUnionOrderResponse> QueryUnionOrderWithOptionsAsync(QueryUnionOrderRequest request, QueryUnionOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1135,21 +1376,33 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryUnionOrderResponse>(await DoROARequestAsync("QueryUnionOrder", "alitrip_1.0", "HTTP", "GET", "AK", "/v1.0/alitrip/unionOrders", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUnionOrder",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/unionOrders",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUnionOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public SyncExceedApplyResponse SyncExceedApply(SyncExceedApplyRequest request)
+        public QueryUnionOrderResponse QueryUnionOrder(QueryUnionOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SyncExceedApplyHeaders headers = new SyncExceedApplyHeaders();
-            return SyncExceedApplyWithOptions(request, headers, runtime);
+            QueryUnionOrderHeaders headers = new QueryUnionOrderHeaders();
+            return QueryUnionOrderWithOptions(request, headers, runtime);
         }
 
-        public async Task<SyncExceedApplyResponse> SyncExceedApplyAsync(SyncExceedApplyRequest request)
+        public async Task<QueryUnionOrderResponse> QueryUnionOrderAsync(QueryUnionOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SyncExceedApplyHeaders headers = new SyncExceedApplyHeaders();
-            return await SyncExceedApplyWithOptionsAsync(request, headers, runtime);
+            QueryUnionOrderHeaders headers = new QueryUnionOrderHeaders();
+            return await QueryUnionOrderWithOptionsAsync(request, headers, runtime);
         }
 
         public SyncExceedApplyResponse SyncExceedApplyWithOptions(SyncExceedApplyRequest request, SyncExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1194,7 +1447,19 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<SyncExceedApplyResponse>(DoROARequest("SyncExceedApply", "alitrip_1.0", "HTTP", "POST", "AK", "/v1.0/alitrip/exceedapply/sync", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncExceedApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/exceedapply/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncExceedApplyResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<SyncExceedApplyResponse> SyncExceedApplyWithOptionsAsync(SyncExceedApplyRequest request, SyncExceedApplyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1239,7 +1504,33 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<SyncExceedApplyResponse>(await DoROARequestAsync("SyncExceedApply", "alitrip_1.0", "HTTP", "POST", "AK", "/v1.0/alitrip/exceedapply/sync", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncExceedApply",
+                Version = "alitrip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/alitrip/exceedapply/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncExceedApplyResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public SyncExceedApplyResponse SyncExceedApply(SyncExceedApplyRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncExceedApplyHeaders headers = new SyncExceedApplyHeaders();
+            return SyncExceedApplyWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SyncExceedApplyResponse> SyncExceedApplyAsync(SyncExceedApplyRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncExceedApplyHeaders headers = new SyncExceedApplyHeaders();
+            return await SyncExceedApplyWithOptionsAsync(request, headers, runtime);
         }
 
     }

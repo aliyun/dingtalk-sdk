@@ -45,16 +45,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
-        /// <summary>
-        /// 扩展信息
-        /// </summary>
         [NameInMap("extra")]
         [Validation(Required=false)]
         public Dictionary<string, string> Extra { get; set; }
 
-        /// <summary>
-        /// 日程id
-        /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
         public string Id { get; set; }
@@ -137,9 +131,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
-        /// <summary>
-        /// 日程开始时间
-        /// </summary>
         [NameInMap("start")]
         [Validation(Required=false)]
         public PatchEventRequestStart Start { get; set; }
@@ -158,9 +149,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
-        /// <summary>
-        /// 日程标题
-        /// </summary>
         [NameInMap("summary")]
         [Validation(Required=false)]
         public string Summary { get; set; }

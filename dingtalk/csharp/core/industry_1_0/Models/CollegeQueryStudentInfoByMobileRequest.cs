@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CollegeQueryStudentInfoByMobileRequest : TeaModel {
-        /// <summary>
-        /// 手机号
-        /// </summary>
         [NameInMap("mobile")]
         [Validation(Required=false)]
         public string Mobile { get; set; }

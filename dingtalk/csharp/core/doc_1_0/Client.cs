@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,6 +28,88 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             }
         }
 
+
+        public AddWorkspaceDocMembersResponse AddWorkspaceDocMembersWithOptions(string workspaceId, string nodeId, AddWorkspaceDocMembersRequest request, AddWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddWorkspaceDocMembers",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId + "/members",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<AddWorkspaceDocMembersResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<AddWorkspaceDocMembersResponse> AddWorkspaceDocMembersWithOptionsAsync(string workspaceId, string nodeId, AddWorkspaceDocMembersRequest request, AddWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddWorkspaceDocMembers",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId + "/members",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<AddWorkspaceDocMembersResponse>(await ExecuteAsync(params_, req, runtime));
+        }
 
         public AddWorkspaceDocMembersResponse AddWorkspaceDocMembers(string workspaceId, string nodeId, AddWorkspaceDocMembersRequest request)
         {
@@ -40,11 +125,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await AddWorkspaceDocMembersWithOptionsAsync(workspaceId, nodeId, request, headers, runtime);
         }
 
-        public AddWorkspaceDocMembersResponse AddWorkspaceDocMembersWithOptions(string workspaceId, string nodeId, AddWorkspaceDocMembersRequest request, AddWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public AddWorkspaceMembersResponse AddWorkspaceMembersWithOptions(string workspaceId, AddWorkspaceMembersRequest request, AddWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
             {
@@ -68,14 +151,24 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AddWorkspaceDocMembersResponse>(DoROARequest("AddWorkspaceDocMembers", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId + "/members", "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddWorkspaceMembers",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/members",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddWorkspaceMembersResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<AddWorkspaceDocMembersResponse> AddWorkspaceDocMembersWithOptionsAsync(string workspaceId, string nodeId, AddWorkspaceDocMembersRequest request, AddWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<AddWorkspaceMembersResponse> AddWorkspaceMembersWithOptionsAsync(string workspaceId, AddWorkspaceMembersRequest request, AddWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
             {
@@ -99,7 +192,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AddWorkspaceDocMembersResponse>(await DoROARequestAsync("AddWorkspaceDocMembers", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId + "/members", "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddWorkspaceMembers",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/members",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddWorkspaceMembersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public AddWorkspaceMembersResponse AddWorkspaceMembers(string workspaceId, AddWorkspaceMembersRequest request)
@@ -116,18 +221,18 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await AddWorkspaceMembersWithOptionsAsync(workspaceId, request, headers, runtime);
         }
 
-        public AddWorkspaceMembersResponse AddWorkspaceMembersWithOptions(string workspaceId, AddWorkspaceMembersRequest request, AddWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public AppendRowsResponse AppendRowsWithOptions(string workbookId, string sheetId, AppendRowsRequest request, AppendRowsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
-            {
-                body["members"] = request.Members;
-            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                body["operatorId"] = request.OperatorId;
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Values))
+            {
+                body["values"] = request.Values;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -141,23 +246,36 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AddWorkspaceMembersResponse>(DoROARequest("AddWorkspaceMembers", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/members", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AppendRows",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/appendRows",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<AppendRowsResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<AddWorkspaceMembersResponse> AddWorkspaceMembersWithOptionsAsync(string workspaceId, AddWorkspaceMembersRequest request, AddWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<AppendRowsResponse> AppendRowsWithOptionsAsync(string workbookId, string sheetId, AppendRowsRequest request, AppendRowsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
-            {
-                body["members"] = request.Members;
-            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                body["operatorId"] = request.OperatorId;
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Values))
+            {
+                body["values"] = request.Values;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -171,9 +289,22 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AddWorkspaceMembersResponse>(await DoROARequestAsync("AddWorkspaceMembers", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/members", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AppendRows",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/appendRows",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<AppendRowsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public AppendRowsResponse AppendRows(string workbookId, string sheetId, AppendRowsRequest request)
@@ -188,86 +319,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             AppendRowsHeaders headers = new AppendRowsHeaders();
             return await AppendRowsWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
-        }
-
-        public AppendRowsResponse AppendRowsWithOptions(string workbookId, string sheetId, AppendRowsRequest request, AppendRowsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Values))
-            {
-                body["values"] = request.Values;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<AppendRowsResponse>(DoROARequest("AppendRows", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/appendRows", "none", req, runtime));
-        }
-
-        public async Task<AppendRowsResponse> AppendRowsWithOptionsAsync(string workbookId, string sheetId, AppendRowsRequest request, AppendRowsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Values))
-            {
-                body["values"] = request.Values;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<AppendRowsResponse>(await DoROARequestAsync("AppendRows", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/appendRows", "none", req, runtime));
-        }
-
-        public BatchGetWorkspaceDocsResponse BatchGetWorkspaceDocs(BatchGetWorkspaceDocsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchGetWorkspaceDocsHeaders headers = new BatchGetWorkspaceDocsHeaders();
-            return BatchGetWorkspaceDocsWithOptions(request, headers, runtime);
-        }
-
-        public async Task<BatchGetWorkspaceDocsResponse> BatchGetWorkspaceDocsAsync(BatchGetWorkspaceDocsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchGetWorkspaceDocsHeaders headers = new BatchGetWorkspaceDocsHeaders();
-            return await BatchGetWorkspaceDocsWithOptionsAsync(request, headers, runtime);
         }
 
         public BatchGetWorkspaceDocsResponse BatchGetWorkspaceDocsWithOptions(BatchGetWorkspaceDocsRequest request, BatchGetWorkspaceDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -296,7 +347,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchGetWorkspaceDocsResponse>(DoROARequest("BatchGetWorkspaceDocs", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/docs/infos/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchGetWorkspaceDocs",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/docs/infos/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchGetWorkspaceDocsResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<BatchGetWorkspaceDocsResponse> BatchGetWorkspaceDocsWithOptionsAsync(BatchGetWorkspaceDocsRequest request, BatchGetWorkspaceDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -325,21 +388,33 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchGetWorkspaceDocsResponse>(await DoROARequestAsync("BatchGetWorkspaceDocs", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/docs/infos/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchGetWorkspaceDocs",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/docs/infos/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchGetWorkspaceDocsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public BatchGetWorkspacesResponse BatchGetWorkspaces(BatchGetWorkspacesRequest request)
+        public BatchGetWorkspaceDocsResponse BatchGetWorkspaceDocs(BatchGetWorkspaceDocsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchGetWorkspacesHeaders headers = new BatchGetWorkspacesHeaders();
-            return BatchGetWorkspacesWithOptions(request, headers, runtime);
+            BatchGetWorkspaceDocsHeaders headers = new BatchGetWorkspaceDocsHeaders();
+            return BatchGetWorkspaceDocsWithOptions(request, headers, runtime);
         }
 
-        public async Task<BatchGetWorkspacesResponse> BatchGetWorkspacesAsync(BatchGetWorkspacesRequest request)
+        public async Task<BatchGetWorkspaceDocsResponse> BatchGetWorkspaceDocsAsync(BatchGetWorkspaceDocsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchGetWorkspacesHeaders headers = new BatchGetWorkspacesHeaders();
-            return await BatchGetWorkspacesWithOptionsAsync(request, headers, runtime);
+            BatchGetWorkspaceDocsHeaders headers = new BatchGetWorkspaceDocsHeaders();
+            return await BatchGetWorkspaceDocsWithOptionsAsync(request, headers, runtime);
         }
 
         public BatchGetWorkspacesResponse BatchGetWorkspacesWithOptions(BatchGetWorkspacesRequest request, BatchGetWorkspacesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -372,7 +447,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchGetWorkspacesResponse>(DoROARequest("BatchGetWorkspaces", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/infos/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchGetWorkspaces",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/infos/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchGetWorkspacesResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<BatchGetWorkspacesResponse> BatchGetWorkspacesWithOptionsAsync(BatchGetWorkspacesRequest request, BatchGetWorkspacesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -405,7 +492,119 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchGetWorkspacesResponse>(await DoROARequestAsync("BatchGetWorkspaces", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/infos/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchGetWorkspaces",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/infos/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchGetWorkspacesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public BatchGetWorkspacesResponse BatchGetWorkspaces(BatchGetWorkspacesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchGetWorkspacesHeaders headers = new BatchGetWorkspacesHeaders();
+            return BatchGetWorkspacesWithOptions(request, headers, runtime);
+        }
+
+        public async Task<BatchGetWorkspacesResponse> BatchGetWorkspacesAsync(BatchGetWorkspacesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchGetWorkspacesHeaders headers = new BatchGetWorkspacesHeaders();
+            return await BatchGetWorkspacesWithOptionsAsync(request, headers, runtime);
+        }
+
+        public BindCoolAppToSheetResponse BindCoolAppToSheetWithOptions(string workbookId, BindCoolAppToSheetRequest request, BindCoolAppToSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                body["coolAppCode"] = request.CoolAppCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BindCoolAppToSheet",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/coolApps",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BindCoolAppToSheetResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<BindCoolAppToSheetResponse> BindCoolAppToSheetWithOptionsAsync(string workbookId, BindCoolAppToSheetRequest request, BindCoolAppToSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                body["coolAppCode"] = request.CoolAppCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BindCoolAppToSheet",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/coolApps",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BindCoolAppToSheetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public BindCoolAppToSheetResponse BindCoolAppToSheet(string workbookId, BindCoolAppToSheetRequest request)
@@ -422,19 +621,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await BindCoolAppToSheetWithOptionsAsync(workbookId, request, headers, runtime);
         }
 
-        public BindCoolAppToSheetResponse BindCoolAppToSheetWithOptions(string workbookId, BindCoolAppToSheetRequest request, BindCoolAppToSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public ClearResponse ClearWithOptions(string workbookId, string sheetId, string rangeAddress, ClearRequest request, ClearHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
-            {
-                body["coolAppCode"] = request.CoolAppCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -449,24 +642,29 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BindCoolAppToSheetResponse>(DoROARequest("BindCoolAppToSheet", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/coolApps", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "Clear",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/clear",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ClearResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<BindCoolAppToSheetResponse> BindCoolAppToSheetWithOptionsAsync(string workbookId, BindCoolAppToSheetRequest request, BindCoolAppToSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<ClearResponse> ClearWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, ClearRequest request, ClearHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
-            {
-                body["coolAppCode"] = request.CoolAppCode;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -481,9 +679,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BindCoolAppToSheetResponse>(await DoROARequestAsync("BindCoolAppToSheet", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/coolApps", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "Clear",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/clear",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ClearResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public ClearResponse Clear(string workbookId, string sheetId, string rangeAddress, ClearRequest request)
@@ -500,12 +709,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await ClearWithOptionsAsync(workbookId, sheetId, rangeAddress, request, headers, runtime);
         }
 
-        public ClearResponse ClearWithOptions(string workbookId, string sheetId, string rangeAddress, ClearRequest request, ClearHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public ClearDataResponse ClearDataWithOptions(string workbookId, string sheetId, string rangeAddress, ClearDataRequest request, ClearDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -525,15 +731,24 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ClearResponse>(DoROARequest("Clear", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/clear", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ClearData",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/clearData",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ClearDataResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<ClearResponse> ClearWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, ClearRequest request, ClearHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<ClearDataResponse> ClearDataWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, ClearDataRequest request, ClearDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -553,7 +768,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ClearResponse>(await DoROARequestAsync("Clear", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/clear", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ClearData",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/clearData",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ClearDataResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public ClearDataResponse ClearData(string workbookId, string sheetId, string rangeAddress, ClearDataRequest request)
@@ -570,16 +797,26 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await ClearDataWithOptionsAsync(workbookId, sheetId, rangeAddress, request, headers, runtime);
         }
 
-        public ClearDataResponse ClearDataWithOptions(string workbookId, string sheetId, string rangeAddress, ClearDataRequest request, ClearDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public CreateConditionalFormattingRuleResponse CreateConditionalFormattingRuleWithOptions(string workbookId, string sheetId, CreateConditionalFormattingRuleRequest request, CreateConditionalFormattingRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CellStyle))
+            {
+                body["cellStyle"] = request.CellStyle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DuplicateCondition))
+            {
+                body["duplicateCondition"] = request.DuplicateCondition;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Ranges))
+            {
+                body["ranges"] = request.Ranges;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -594,20 +831,43 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ClearDataResponse>(DoROARequest("ClearData", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/clearData", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateConditionalFormattingRule",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/conditionalFormattingRules",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateConditionalFormattingRuleResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<ClearDataResponse> ClearDataWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, ClearDataRequest request, ClearDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<CreateConditionalFormattingRuleResponse> CreateConditionalFormattingRuleWithOptionsAsync(string workbookId, string sheetId, CreateConditionalFormattingRuleRequest request, CreateConditionalFormattingRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CellStyle))
+            {
+                body["cellStyle"] = request.CellStyle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DuplicateCondition))
+            {
+                body["duplicateCondition"] = request.DuplicateCondition;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Ranges))
+            {
+                body["ranges"] = request.Ranges;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -622,8 +882,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ClearDataResponse>(await DoROARequestAsync("ClearData", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/clearData", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateConditionalFormattingRule",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/conditionalFormattingRules",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateConditionalFormattingRuleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public CreateConditionalFormattingRuleResponse CreateConditionalFormattingRule(string workbookId, string sheetId, CreateConditionalFormattingRuleRequest request)
@@ -640,28 +913,26 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await CreateConditionalFormattingRuleWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
-        public CreateConditionalFormattingRuleResponse CreateConditionalFormattingRuleWithOptions(string workbookId, string sheetId, CreateConditionalFormattingRuleRequest request, CreateConditionalFormattingRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public CreateDeveloperMetadataResponse CreateDeveloperMetadataWithOptions(string workbookId, CreateDeveloperMetadataRequest request, CreateDeveloperMetadataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CellStyle))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssociatedColumn))
             {
-                body["cellStyle"] = request.CellStyle;
+                body["associatedColumn"] = request.AssociatedColumn;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DuplicateCondition))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssociatedRow))
             {
-                body["duplicateCondition"] = request.DuplicateCondition;
+                body["associatedRow"] = request.AssociatedRow;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Ranges))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Value))
             {
-                body["ranges"] = request.Ranges;
+                body["value"] = request.Value;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -678,31 +949,41 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateConditionalFormattingRuleResponse>(DoROARequest("CreateConditionalFormattingRule", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/conditionalFormattingRules", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateDeveloperMetadata",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/developerMetadatas",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateDeveloperMetadataResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<CreateConditionalFormattingRuleResponse> CreateConditionalFormattingRuleWithOptionsAsync(string workbookId, string sheetId, CreateConditionalFormattingRuleRequest request, CreateConditionalFormattingRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<CreateDeveloperMetadataResponse> CreateDeveloperMetadataWithOptionsAsync(string workbookId, CreateDeveloperMetadataRequest request, CreateDeveloperMetadataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CellStyle))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssociatedColumn))
             {
-                body["cellStyle"] = request.CellStyle;
+                body["associatedColumn"] = request.AssociatedColumn;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DuplicateCondition))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssociatedRow))
             {
-                body["duplicateCondition"] = request.DuplicateCondition;
+                body["associatedRow"] = request.AssociatedRow;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Ranges))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Value))
             {
-                body["ranges"] = request.Ranges;
+                body["value"] = request.Value;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -719,7 +1000,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateConditionalFormattingRuleResponse>(await DoROARequestAsync("CreateConditionalFormattingRule", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/conditionalFormattingRules", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateDeveloperMetadata",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/developerMetadatas",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateDeveloperMetadataResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public CreateDeveloperMetadataResponse CreateDeveloperMetadata(string workbookId, CreateDeveloperMetadataRequest request)
@@ -736,27 +1029,22 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await CreateDeveloperMetadataWithOptionsAsync(workbookId, request, headers, runtime);
         }
 
-        public CreateDeveloperMetadataResponse CreateDeveloperMetadataWithOptions(string workbookId, CreateDeveloperMetadataRequest request, CreateDeveloperMetadataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public CreateRangeProtectionResponse CreateRangeProtectionWithOptions(string workbookId, string sheetId, string rangeAddress, CreateRangeProtectionRequest request, CreateRangeProtectionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssociatedColumn))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EditableSetting))
             {
-                body["associatedColumn"] = request.AssociatedColumn;
+                body["editableSetting"] = request.EditableSetting;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssociatedRow))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OtherUserPermission))
             {
-                body["associatedRow"] = request.AssociatedRow;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Value))
-            {
-                body["value"] = request.Value;
+                body["otherUserPermission"] = request.OtherUserPermission;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -773,30 +1061,37 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateDeveloperMetadataResponse>(DoROARequest("CreateDeveloperMetadata", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/developerMetadatas", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateRangeProtection",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/protections",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateRangeProtectionResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<CreateDeveloperMetadataResponse> CreateDeveloperMetadataWithOptionsAsync(string workbookId, CreateDeveloperMetadataRequest request, CreateDeveloperMetadataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<CreateRangeProtectionResponse> CreateRangeProtectionWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, CreateRangeProtectionRequest request, CreateRangeProtectionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssociatedColumn))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EditableSetting))
             {
-                body["associatedColumn"] = request.AssociatedColumn;
+                body["editableSetting"] = request.EditableSetting;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssociatedRow))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OtherUserPermission))
             {
-                body["associatedRow"] = request.AssociatedRow;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Value))
-            {
-                body["value"] = request.Value;
+                body["otherUserPermission"] = request.OtherUserPermission;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -813,7 +1108,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateDeveloperMetadataResponse>(await DoROARequestAsync("CreateDeveloperMetadata", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/developerMetadatas", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateRangeProtection",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/protections",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateRangeProtectionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public CreateRangeProtectionResponse CreateRangeProtection(string workbookId, string sheetId, string rangeAddress, CreateRangeProtectionRequest request)
@@ -830,25 +1137,18 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await CreateRangeProtectionWithOptionsAsync(workbookId, sheetId, rangeAddress, request, headers, runtime);
         }
 
-        public CreateRangeProtectionResponse CreateRangeProtectionWithOptions(string workbookId, string sheetId, string rangeAddress, CreateRangeProtectionRequest request, CreateRangeProtectionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public CreateSheetResponse CreateSheetWithOptions(string workbookId, CreateSheetRequest request, CreateSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EditableSetting))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
-                body["editableSetting"] = request.EditableSetting;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OtherUserPermission))
-            {
-                body["otherUserPermission"] = request.OtherUserPermission;
+                body["name"] = request.Name;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -865,28 +1165,33 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateRangeProtectionResponse>(DoROARequest("CreateRangeProtection", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/protections", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateSheet",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateSheetResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<CreateRangeProtectionResponse> CreateRangeProtectionWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, CreateRangeProtectionRequest request, CreateRangeProtectionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<CreateSheetResponse> CreateSheetWithOptionsAsync(string workbookId, CreateSheetRequest request, CreateSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EditableSetting))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
-                body["editableSetting"] = request.EditableSetting;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OtherUserPermission))
-            {
-                body["otherUserPermission"] = request.OtherUserPermission;
+                body["name"] = request.Name;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -903,7 +1208,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateRangeProtectionResponse>(await DoROARequestAsync("CreateRangeProtection", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/protections", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateSheet",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateSheetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public CreateSheetResponse CreateSheet(string workbookId, CreateSheetRequest request)
@@ -918,84 +1235,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateSheetHeaders headers = new CreateSheetHeaders();
             return await CreateSheetWithOptionsAsync(workbookId, request, headers, runtime);
-        }
-
-        public CreateSheetResponse CreateSheetWithOptions(string workbookId, CreateSheetRequest request, CreateSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
-            {
-                body["name"] = request.Name;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<CreateSheetResponse>(DoROARequest("CreateSheet", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets", "json", req, runtime));
-        }
-
-        public async Task<CreateSheetResponse> CreateSheetWithOptionsAsync(string workbookId, CreateSheetRequest request, CreateSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
-            {
-                body["name"] = request.Name;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<CreateSheetResponse>(await DoROARequestAsync("CreateSheet", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets", "json", req, runtime));
-        }
-
-        public CreateWorkspaceResponse CreateWorkspace(CreateWorkspaceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateWorkspaceHeaders headers = new CreateWorkspaceHeaders();
-            return CreateWorkspaceWithOptions(request, headers, runtime);
-        }
-
-        public async Task<CreateWorkspaceResponse> CreateWorkspaceAsync(CreateWorkspaceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateWorkspaceHeaders headers = new CreateWorkspaceHeaders();
-            return await CreateWorkspaceWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateWorkspaceResponse CreateWorkspaceWithOptions(CreateWorkspaceRequest request, CreateWorkspaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1028,7 +1267,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateWorkspaceResponse>(DoROARequest("CreateWorkspace", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateWorkspace",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateWorkspaceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateWorkspaceResponse> CreateWorkspaceWithOptionsAsync(CreateWorkspaceRequest request, CreateWorkspaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1061,7 +1312,147 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateWorkspaceResponse>(await DoROARequestAsync("CreateWorkspace", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateWorkspace",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateWorkspaceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public CreateWorkspaceResponse CreateWorkspace(CreateWorkspaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateWorkspaceHeaders headers = new CreateWorkspaceHeaders();
+            return CreateWorkspaceWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreateWorkspaceResponse> CreateWorkspaceAsync(CreateWorkspaceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateWorkspaceHeaders headers = new CreateWorkspaceHeaders();
+            return await CreateWorkspaceWithOptionsAsync(request, headers, runtime);
+        }
+
+        public CreateWorkspaceDocResponse CreateWorkspaceDocWithOptions(string workspaceId, CreateWorkspaceDocRequest request, CreateWorkspaceDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocType))
+            {
+                body["docType"] = request.DocType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentNodeId))
+            {
+                body["parentNodeId"] = request.ParentNodeId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateType))
+            {
+                body["templateType"] = request.TemplateType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateWorkspaceDoc",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/docs",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateWorkspaceDocResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<CreateWorkspaceDocResponse> CreateWorkspaceDocWithOptionsAsync(string workspaceId, CreateWorkspaceDocRequest request, CreateWorkspaceDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocType))
+            {
+                body["docType"] = request.DocType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentNodeId))
+            {
+                body["parentNodeId"] = request.ParentNodeId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateType))
+            {
+                body["templateType"] = request.TemplateType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateWorkspaceDoc",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/docs",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateWorkspaceDocResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public CreateWorkspaceDocResponse CreateWorkspaceDoc(string workspaceId, CreateWorkspaceDocRequest request)
@@ -1078,34 +1469,22 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await CreateWorkspaceDocWithOptionsAsync(workspaceId, request, headers, runtime);
         }
 
-        public CreateWorkspaceDocResponse CreateWorkspaceDocWithOptions(string workspaceId, CreateWorkspaceDocRequest request, CreateWorkspaceDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteColumnsResponse DeleteColumnsWithOptions(string workbookId, string sheetId, DeleteColumnsRequest request, DeleteColumnsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocType))
-            {
-                body["docType"] = request.DocType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
-            {
-                body["name"] = request.Name;
-            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                body["operatorId"] = request.OperatorId;
+                query["operatorId"] = request.OperatorId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentNodeId))
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
             {
-                body["parentNodeId"] = request.ParentNodeId;
+                body["column"] = request.Column;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
             {
-                body["templateId"] = request.TemplateId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateType))
-            {
-                body["templateType"] = request.TemplateType;
+                body["columnCount"] = request.ColumnCount;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1119,39 +1498,40 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateWorkspaceDocResponse>(DoROARequest("CreateWorkspaceDoc", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteColumns",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/deleteColumns",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteColumnsResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<CreateWorkspaceDocResponse> CreateWorkspaceDocWithOptionsAsync(string workspaceId, CreateWorkspaceDocRequest request, CreateWorkspaceDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteColumnsResponse> DeleteColumnsWithOptionsAsync(string workbookId, string sheetId, DeleteColumnsRequest request, DeleteColumnsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DocType))
-            {
-                body["docType"] = request.DocType;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
-            {
-                body["name"] = request.Name;
-            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                body["operatorId"] = request.OperatorId;
+                query["operatorId"] = request.OperatorId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentNodeId))
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
             {
-                body["parentNodeId"] = request.ParentNodeId;
+                body["column"] = request.Column;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
             {
-                body["templateId"] = request.TemplateId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateType))
-            {
-                body["templateType"] = request.TemplateType;
+                body["columnCount"] = request.ColumnCount;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1165,9 +1545,22 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateWorkspaceDocResponse>(await DoROARequestAsync("CreateWorkspaceDoc", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteColumns",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/deleteColumns",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteColumnsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public DeleteColumnsResponse DeleteColumns(string workbookId, string sheetId, DeleteColumnsRequest request)
@@ -1184,24 +1577,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await DeleteColumnsWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
-        public DeleteColumnsResponse DeleteColumnsWithOptions(string workbookId, string sheetId, DeleteColumnsRequest request, DeleteColumnsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteDropdownListsResponse DeleteDropdownListsWithOptions(string workbookId, string sheetId, string rangeAddress, DeleteDropdownListsRequest request, DeleteDropdownListsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
-            {
-                body["column"] = request.Column;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
-            {
-                body["columnCount"] = request.ColumnCount;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1216,29 +1598,29 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteColumnsResponse>(DoROARequest("DeleteColumns", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/deleteColumns", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteDropdownLists",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/deleteDropdownLists",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteDropdownListsResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<DeleteColumnsResponse> DeleteColumnsWithOptionsAsync(string workbookId, string sheetId, DeleteColumnsRequest request, DeleteColumnsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteDropdownListsResponse> DeleteDropdownListsWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, DeleteDropdownListsRequest request, DeleteDropdownListsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
-            {
-                body["column"] = request.Column;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
-            {
-                body["columnCount"] = request.ColumnCount;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1253,9 +1635,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteColumnsResponse>(await DoROARequestAsync("DeleteColumns", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/deleteColumns", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteDropdownLists",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/deleteDropdownLists",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteDropdownListsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public DeleteDropdownListsResponse DeleteDropdownLists(string workbookId, string sheetId, string rangeAddress, DeleteDropdownListsRequest request)
@@ -1272,12 +1665,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await DeleteDropdownListsWithOptionsAsync(workbookId, sheetId, rangeAddress, request, headers, runtime);
         }
 
-        public DeleteDropdownListsResponse DeleteDropdownListsWithOptions(string workbookId, string sheetId, string rangeAddress, DeleteDropdownListsRequest request, DeleteDropdownListsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteRangeProtectionResponse DeleteRangeProtectionWithOptions(string workbookId, string sheetId, string rangeAddress, string protectionId, DeleteRangeProtectionRequest request, DeleteRangeProtectionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1297,15 +1687,24 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeleteDropdownListsResponse>(DoROARequest("DeleteDropdownLists", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/deleteDropdownLists", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteRangeProtection",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/protections/" + protectionId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteRangeProtectionResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<DeleteDropdownListsResponse> DeleteDropdownListsWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, DeleteDropdownListsRequest request, DeleteDropdownListsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteRangeProtectionResponse> DeleteRangeProtectionWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, string protectionId, DeleteRangeProtectionRequest request, DeleteRangeProtectionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1325,7 +1724,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeleteDropdownListsResponse>(await DoROARequestAsync("DeleteDropdownLists", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/deleteDropdownLists", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteRangeProtection",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/protections/" + protectionId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteRangeProtectionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public DeleteRangeProtectionResponse DeleteRangeProtection(string workbookId, string sheetId, string rangeAddress, string protectionId, DeleteRangeProtectionRequest request)
@@ -1342,17 +1753,22 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await DeleteRangeProtectionWithOptionsAsync(workbookId, sheetId, rangeAddress, protectionId, request, headers, runtime);
         }
 
-        public DeleteRangeProtectionResponse DeleteRangeProtectionWithOptions(string workbookId, string sheetId, string rangeAddress, string protectionId, DeleteRangeProtectionRequest request, DeleteRangeProtectionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteRowsResponse DeleteRowsWithOptions(string workbookId, string sheetId, DeleteRowsRequest request, DeleteRowsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
-            protectionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(protectionId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
+            {
+                body["row"] = request.Row;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
+            {
+                body["rowCount"] = request.RowCount;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1367,21 +1783,39 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteRangeProtectionResponse>(DoROARequest("DeleteRangeProtection", "doc_1.0", "HTTP", "DELETE", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/protections/" + protectionId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteRows",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/deleteRows",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteRowsResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<DeleteRangeProtectionResponse> DeleteRangeProtectionWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, string protectionId, DeleteRangeProtectionRequest request, DeleteRangeProtectionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteRowsResponse> DeleteRowsWithOptionsAsync(string workbookId, string sheetId, DeleteRowsRequest request, DeleteRowsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
-            protectionId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(protectionId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
+            {
+                body["row"] = request.Row;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
+            {
+                body["rowCount"] = request.RowCount;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1396,8 +1830,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteRangeProtectionResponse>(await DoROARequestAsync("DeleteRangeProtection", "doc_1.0", "HTTP", "DELETE", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/protections/" + protectionId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteRows",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/deleteRows",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteRowsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public DeleteRowsResponse DeleteRows(string workbookId, string sheetId, DeleteRowsRequest request)
@@ -1414,24 +1861,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await DeleteRowsWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
-        public DeleteRowsResponse DeleteRowsWithOptions(string workbookId, string sheetId, DeleteRowsRequest request, DeleteRowsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteSheetResponse DeleteSheetWithOptions(string workbookId, string sheetId, DeleteSheetRequest request, DeleteSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
-            {
-                body["row"] = request.Row;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
-            {
-                body["rowCount"] = request.RowCount;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1446,29 +1882,29 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteRowsResponse>(DoROARequest("DeleteRows", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/deleteRows", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteSheet",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteSheetResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<DeleteRowsResponse> DeleteRowsWithOptionsAsync(string workbookId, string sheetId, DeleteRowsRequest request, DeleteRowsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteSheetResponse> DeleteSheetWithOptionsAsync(string workbookId, string sheetId, DeleteSheetRequest request, DeleteSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
-            {
-                body["row"] = request.Row;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
-            {
-                body["rowCount"] = request.RowCount;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1483,9 +1919,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteRowsResponse>(await DoROARequestAsync("DeleteRows", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/deleteRows", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteSheet",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteSheetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public DeleteSheetResponse DeleteSheet(string workbookId, string sheetId, DeleteSheetRequest request)
@@ -1502,11 +1949,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await DeleteSheetWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
-        public DeleteSheetResponse DeleteSheetWithOptions(string workbookId, string sheetId, DeleteSheetRequest request, DeleteSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteWorkspaceDocResponse DeleteWorkspaceDocWithOptions(string workspaceId, string nodeId, DeleteWorkspaceDocRequest request, DeleteWorkspaceDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1526,14 +1971,24 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeleteSheetResponse>(DoROARequest("DeleteSheet", "doc_1.0", "HTTP", "DELETE", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteWorkspaceDoc",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<DeleteWorkspaceDocResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<DeleteSheetResponse> DeleteSheetWithOptionsAsync(string workbookId, string sheetId, DeleteSheetRequest request, DeleteSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteWorkspaceDocResponse> DeleteWorkspaceDocWithOptionsAsync(string workspaceId, string nodeId, DeleteWorkspaceDocRequest request, DeleteWorkspaceDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1553,7 +2008,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeleteSheetResponse>(await DoROARequestAsync("DeleteSheet", "doc_1.0", "HTTP", "DELETE", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteWorkspaceDoc",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<DeleteWorkspaceDocResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public DeleteWorkspaceDocResponse DeleteWorkspaceDoc(string workspaceId, string nodeId, DeleteWorkspaceDocRequest request)
@@ -1570,15 +2037,17 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await DeleteWorkspaceDocWithOptionsAsync(workspaceId, nodeId, request, headers, runtime);
         }
 
-        public DeleteWorkspaceDocResponse DeleteWorkspaceDocWithOptions(string workspaceId, string nodeId, DeleteWorkspaceDocRequest request, DeleteWorkspaceDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteWorkspaceDocMembersResponse DeleteWorkspaceDocMembersWithOptions(string workspaceId, string nodeId, DeleteWorkspaceDocMembersRequest request, DeleteWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                query["operatorId"] = request.OperatorId;
+                body["operatorId"] = request.OperatorId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1592,20 +2061,34 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteWorkspaceDocResponse>(DoROARequest("DeleteWorkspaceDoc", "doc_1.0", "HTTP", "DELETE", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId, "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteWorkspaceDocMembers",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId + "/members/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<DeleteWorkspaceDocMembersResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<DeleteWorkspaceDocResponse> DeleteWorkspaceDocWithOptionsAsync(string workspaceId, string nodeId, DeleteWorkspaceDocRequest request, DeleteWorkspaceDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteWorkspaceDocMembersResponse> DeleteWorkspaceDocMembersWithOptionsAsync(string workspaceId, string nodeId, DeleteWorkspaceDocMembersRequest request, DeleteWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                query["operatorId"] = request.OperatorId;
+                body["operatorId"] = request.OperatorId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1619,9 +2102,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteWorkspaceDocResponse>(await DoROARequestAsync("DeleteWorkspaceDoc", "doc_1.0", "HTTP", "DELETE", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId, "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteWorkspaceDocMembers",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId + "/members/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<DeleteWorkspaceDocMembersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public DeleteWorkspaceDocMembersResponse DeleteWorkspaceDocMembers(string workspaceId, string nodeId, DeleteWorkspaceDocMembersRequest request)
@@ -1638,11 +2133,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await DeleteWorkspaceDocMembersWithOptionsAsync(workspaceId, nodeId, request, headers, runtime);
         }
 
-        public DeleteWorkspaceDocMembersResponse DeleteWorkspaceDocMembersWithOptions(string workspaceId, string nodeId, DeleteWorkspaceDocMembersRequest request, DeleteWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteWorkspaceMembersResponse DeleteWorkspaceMembersWithOptions(string workspaceId, DeleteWorkspaceMembersRequest request, DeleteWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
             {
@@ -1666,14 +2159,24 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteWorkspaceDocMembersResponse>(DoROARequest("DeleteWorkspaceDocMembers", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId + "/members/remove", "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteWorkspaceMembers",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/members/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<DeleteWorkspaceMembersResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<DeleteWorkspaceDocMembersResponse> DeleteWorkspaceDocMembersWithOptionsAsync(string workspaceId, string nodeId, DeleteWorkspaceDocMembersRequest request, DeleteWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteWorkspaceMembersResponse> DeleteWorkspaceMembersWithOptionsAsync(string workspaceId, DeleteWorkspaceMembersRequest request, DeleteWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
             {
@@ -1697,7 +2200,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteWorkspaceDocMembersResponse>(await DoROARequestAsync("DeleteWorkspaceDocMembers", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId + "/members/remove", "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteWorkspaceMembers",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/members/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<DeleteWorkspaceMembersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public DeleteWorkspaceMembersResponse DeleteWorkspaceMembers(string workspaceId, DeleteWorkspaceMembersRequest request)
@@ -1714,18 +2229,13 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await DeleteWorkspaceMembersWithOptionsAsync(workspaceId, request, headers, runtime);
         }
 
-        public DeleteWorkspaceMembersResponse DeleteWorkspaceMembersWithOptions(string workspaceId, DeleteWorkspaceMembersRequest request, DeleteWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetAllSheetsResponse GetAllSheetsWithOptions(string workbookId, GetAllSheetsRequest request, GetAllSheetsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
-            {
-                body["members"] = request.Members;
-            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                body["operatorId"] = request.OperatorId;
+                query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1739,23 +2249,30 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeleteWorkspaceMembersResponse>(DoROARequest("DeleteWorkspaceMembers", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/members/remove", "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAllSheets",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAllSheetsResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<DeleteWorkspaceMembersResponse> DeleteWorkspaceMembersWithOptionsAsync(string workspaceId, DeleteWorkspaceMembersRequest request, DeleteWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetAllSheetsResponse> GetAllSheetsWithOptionsAsync(string workbookId, GetAllSheetsRequest request, GetAllSheetsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
-            {
-                body["members"] = request.Members;
-            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                body["operatorId"] = request.OperatorId;
+                query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1769,9 +2286,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeleteWorkspaceMembersResponse>(await DoROARequestAsync("DeleteWorkspaceMembers", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/members/remove", "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAllSheets",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAllSheetsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetAllSheetsResponse GetAllSheets(string workbookId, GetAllSheetsRequest request)
@@ -1788,10 +2317,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await GetAllSheetsWithOptionsAsync(workbookId, request, headers, runtime);
         }
 
-        public GetAllSheetsResponse GetAllSheetsWithOptions(string workbookId, GetAllSheetsRequest request, GetAllSheetsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetDeveloperMetadataResponse GetDeveloperMetadataWithOptions(string workbookId, string developerMetadataId, GetDeveloperMetadataRequest request, GetDeveloperMetadataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1811,13 +2339,24 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetAllSheetsResponse>(DoROARequest("GetAllSheets", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDeveloperMetadata",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/developerMetadatas/" + developerMetadataId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDeveloperMetadataResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<GetAllSheetsResponse> GetAllSheetsWithOptionsAsync(string workbookId, GetAllSheetsRequest request, GetAllSheetsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetDeveloperMetadataResponse> GetDeveloperMetadataWithOptionsAsync(string workbookId, string developerMetadataId, GetDeveloperMetadataRequest request, GetDeveloperMetadataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
@@ -1837,7 +2376,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetAllSheetsResponse>(await DoROARequestAsync("GetAllSheets", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDeveloperMetadata",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/developerMetadatas/" + developerMetadataId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDeveloperMetadataResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetDeveloperMetadataResponse GetDeveloperMetadata(string workbookId, string developerMetadataId, GetDeveloperMetadataRequest request)
@@ -1854,15 +2405,17 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await GetDeveloperMetadataWithOptionsAsync(workbookId, developerMetadataId, request, headers, runtime);
         }
 
-        public GetDeveloperMetadataResponse GetDeveloperMetadataWithOptions(string workbookId, string developerMetadataId, GetDeveloperMetadataRequest request, GetDeveloperMetadataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetRangeResponse GetRangeWithOptions(string workbookId, string sheetId, string rangeAddress, GetRangeRequest request, GetRangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            developerMetadataId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(developerMetadataId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Select))
+            {
+                query["select"] = request.Select;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1878,18 +2431,32 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetDeveloperMetadataResponse>(DoROARequest("GetDeveloperMetadata", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workbooks/" + workbookId + "/developerMetadatas/" + developerMetadataId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRange",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRangeResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<GetDeveloperMetadataResponse> GetDeveloperMetadataWithOptionsAsync(string workbookId, string developerMetadataId, GetDeveloperMetadataRequest request, GetDeveloperMetadataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetRangeResponse> GetRangeWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, GetRangeRequest request, GetRangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            developerMetadataId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(developerMetadataId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Select))
+            {
+                query["select"] = request.Select;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1905,7 +2472,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetDeveloperMetadataResponse>(await DoROARequestAsync("GetDeveloperMetadata", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workbooks/" + workbookId + "/developerMetadatas/" + developerMetadataId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRange",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRangeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetRangeResponse GetRange(string workbookId, string sheetId, string rangeAddress, GetRangeRequest request)
@@ -1920,84 +2499,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetRangeHeaders headers = new GetRangeHeaders();
             return await GetRangeWithOptionsAsync(workbookId, sheetId, rangeAddress, request, headers, runtime);
-        }
-
-        public GetRangeResponse GetRangeWithOptions(string workbookId, string sheetId, string rangeAddress, GetRangeRequest request, GetRangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                query["operatorId"] = request.OperatorId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Select))
-            {
-                query["select"] = request.Select;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<GetRangeResponse>(DoROARequest("GetRange", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress, "json", req, runtime));
-        }
-
-        public async Task<GetRangeResponse> GetRangeWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, GetRangeRequest request, GetRangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                query["operatorId"] = request.OperatorId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Select))
-            {
-                query["select"] = request.Select;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<GetRangeResponse>(await DoROARequestAsync("GetRange", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress, "json", req, runtime));
-        }
-
-        public GetRecentEditDocsResponse GetRecentEditDocs(GetRecentEditDocsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetRecentEditDocsHeaders headers = new GetRecentEditDocsHeaders();
-            return GetRecentEditDocsWithOptions(request, headers, runtime);
-        }
-
-        public async Task<GetRecentEditDocsResponse> GetRecentEditDocsAsync(GetRecentEditDocsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetRecentEditDocsHeaders headers = new GetRecentEditDocsHeaders();
-            return await GetRecentEditDocsWithOptionsAsync(request, headers, runtime);
         }
 
         public GetRecentEditDocsResponse GetRecentEditDocsWithOptions(GetRecentEditDocsRequest request, GetRecentEditDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2030,7 +2531,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetRecentEditDocsResponse>(DoROARequest("GetRecentEditDocs", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/docs/recentEditDocs", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRecentEditDocs",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/docs/recentEditDocs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRecentEditDocsResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetRecentEditDocsResponse> GetRecentEditDocsWithOptionsAsync(GetRecentEditDocsRequest request, GetRecentEditDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2063,21 +2576,33 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetRecentEditDocsResponse>(await DoROARequestAsync("GetRecentEditDocs", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/docs/recentEditDocs", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRecentEditDocs",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/docs/recentEditDocs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRecentEditDocsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetRecentOpenDocsResponse GetRecentOpenDocs(GetRecentOpenDocsRequest request)
+        public GetRecentEditDocsResponse GetRecentEditDocs(GetRecentEditDocsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetRecentOpenDocsHeaders headers = new GetRecentOpenDocsHeaders();
-            return GetRecentOpenDocsWithOptions(request, headers, runtime);
+            GetRecentEditDocsHeaders headers = new GetRecentEditDocsHeaders();
+            return GetRecentEditDocsWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetRecentOpenDocsResponse> GetRecentOpenDocsAsync(GetRecentOpenDocsRequest request)
+        public async Task<GetRecentEditDocsResponse> GetRecentEditDocsAsync(GetRecentEditDocsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetRecentOpenDocsHeaders headers = new GetRecentOpenDocsHeaders();
-            return await GetRecentOpenDocsWithOptionsAsync(request, headers, runtime);
+            GetRecentEditDocsHeaders headers = new GetRecentEditDocsHeaders();
+            return await GetRecentEditDocsWithOptionsAsync(request, headers, runtime);
         }
 
         public GetRecentOpenDocsResponse GetRecentOpenDocsWithOptions(GetRecentOpenDocsRequest request, GetRecentOpenDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2110,7 +2635,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetRecentOpenDocsResponse>(DoROARequest("GetRecentOpenDocs", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/docs/recentOpenDocs", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRecentOpenDocs",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/docs/recentOpenDocs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRecentOpenDocsResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetRecentOpenDocsResponse> GetRecentOpenDocsWithOptionsAsync(GetRecentOpenDocsRequest request, GetRecentOpenDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2143,21 +2680,33 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetRecentOpenDocsResponse>(await DoROARequestAsync("GetRecentOpenDocs", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/docs/recentOpenDocs", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRecentOpenDocs",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/docs/recentOpenDocs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRecentOpenDocsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetRelatedWorkspacesResponse GetRelatedWorkspaces(GetRelatedWorkspacesRequest request)
+        public GetRecentOpenDocsResponse GetRecentOpenDocs(GetRecentOpenDocsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetRelatedWorkspacesHeaders headers = new GetRelatedWorkspacesHeaders();
-            return GetRelatedWorkspacesWithOptions(request, headers, runtime);
+            GetRecentOpenDocsHeaders headers = new GetRecentOpenDocsHeaders();
+            return GetRecentOpenDocsWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetRelatedWorkspacesResponse> GetRelatedWorkspacesAsync(GetRelatedWorkspacesRequest request)
+        public async Task<GetRecentOpenDocsResponse> GetRecentOpenDocsAsync(GetRecentOpenDocsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetRelatedWorkspacesHeaders headers = new GetRelatedWorkspacesHeaders();
-            return await GetRelatedWorkspacesWithOptionsAsync(request, headers, runtime);
+            GetRecentOpenDocsHeaders headers = new GetRecentOpenDocsHeaders();
+            return await GetRecentOpenDocsWithOptionsAsync(request, headers, runtime);
         }
 
         public GetRelatedWorkspacesResponse GetRelatedWorkspacesWithOptions(GetRelatedWorkspacesRequest request, GetRelatedWorkspacesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2186,7 +2735,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetRelatedWorkspacesResponse>(DoROARequest("GetRelatedWorkspaces", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRelatedWorkspaces",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRelatedWorkspacesResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetRelatedWorkspacesResponse> GetRelatedWorkspacesWithOptionsAsync(GetRelatedWorkspacesRequest request, GetRelatedWorkspacesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2215,7 +2776,107 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetRelatedWorkspacesResponse>(await DoROARequestAsync("GetRelatedWorkspaces", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetRelatedWorkspaces",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetRelatedWorkspacesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetRelatedWorkspacesResponse GetRelatedWorkspaces(GetRelatedWorkspacesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetRelatedWorkspacesHeaders headers = new GetRelatedWorkspacesHeaders();
+            return GetRelatedWorkspacesWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetRelatedWorkspacesResponse> GetRelatedWorkspacesAsync(GetRelatedWorkspacesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetRelatedWorkspacesHeaders headers = new GetRelatedWorkspacesHeaders();
+            return await GetRelatedWorkspacesWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetSheetResponse GetSheetWithOptions(string workbookId, string sheetId, GetSheetRequest request, GetSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSheet",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSheetResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetSheetResponse> GetSheetWithOptionsAsync(string workbookId, string sheetId, GetSheetRequest request, GetSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSheet",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSheetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetSheetResponse GetSheet(string workbookId, string sheetId, GetSheetRequest request)
@@ -2232,12 +2893,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await GetSheetWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
-        public GetSheetResponse GetSheetWithOptions(string workbookId, string sheetId, GetSheetRequest request, GetSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetTemplateByIdResponse GetTemplateByIdWithOptions(string templateId, GetTemplateByIdRequest request, GetTemplateByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Belong))
+            {
+                query["belong"] = request.Belong;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
@@ -2256,15 +2919,29 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetSheetResponse>(DoROARequest("GetSheet", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetTemplateById",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/templates/" + templateId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetTemplateByIdResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<GetSheetResponse> GetSheetWithOptionsAsync(string workbookId, string sheetId, GetSheetRequest request, GetSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetTemplateByIdResponse> GetTemplateByIdWithOptionsAsync(string templateId, GetTemplateByIdRequest request, GetTemplateByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Belong))
+            {
+                query["belong"] = request.Belong;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
@@ -2283,7 +2960,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetSheetResponse>(await DoROARequestAsync("GetSheet", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetTemplateById",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/templates/" + templateId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetTemplateByIdResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetTemplateByIdResponse GetTemplateById(string templateId, GetTemplateByIdRequest request)
@@ -2300,19 +2989,8 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await GetTemplateByIdWithOptionsAsync(templateId, request, headers, runtime);
         }
 
-        public GetTemplateByIdResponse GetTemplateByIdWithOptions(string templateId, GetTemplateByIdRequest request, GetTemplateByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetWorkspaceResponse GetWorkspaceWithOptions(string workspaceId, GetWorkspaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            templateId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(templateId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Belong))
-            {
-                query["belong"] = request.Belong;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                query["operatorId"] = request.OperatorId;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2325,24 +3003,24 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetTemplateByIdResponse>(DoROARequest("GetTemplateById", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/templates/" + templateId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetWorkspace",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetWorkspaceResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<GetTemplateByIdResponse> GetTemplateByIdWithOptionsAsync(string templateId, GetTemplateByIdRequest request, GetTemplateByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetWorkspaceResponse> GetWorkspaceWithOptionsAsync(string workspaceId, GetWorkspaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            templateId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(templateId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Belong))
-            {
-                query["belong"] = request.Belong;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                query["operatorId"] = request.OperatorId;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2355,9 +3033,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetTemplateByIdResponse>(await DoROARequestAsync("GetTemplateById", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/templates/" + templateId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetWorkspace",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetWorkspaceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetWorkspaceResponse GetWorkspace(string workspaceId)
@@ -2374,9 +3063,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await GetWorkspaceWithOptionsAsync(workspaceId, headers, runtime);
         }
 
-        public GetWorkspaceResponse GetWorkspaceWithOptions(string workspaceId, GetWorkspaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetWorkspaceNodeResponse GetWorkspaceNodeWithOptions(string workspaceId, string nodeId, GetWorkspaceNodeRequest request, GetWorkspaceNodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2389,13 +3083,31 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetWorkspaceResponse>(DoROARequest("GetWorkspace", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/" + workspaceId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetWorkspaceNode",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetWorkspaceNodeResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<GetWorkspaceResponse> GetWorkspaceWithOptionsAsync(string workspaceId, GetWorkspaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetWorkspaceNodeResponse> GetWorkspaceNodeWithOptionsAsync(string workspaceId, string nodeId, GetWorkspaceNodeRequest request, GetWorkspaceNodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -2408,8 +3120,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetWorkspaceResponse>(await DoROARequestAsync("GetWorkspace", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/" + workspaceId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetWorkspaceNode",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetWorkspaceNodeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetWorkspaceNodeResponse GetWorkspaceNode(string workspaceId, string nodeId, GetWorkspaceNodeRequest request)
@@ -2426,15 +3151,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await GetWorkspaceNodeWithOptionsAsync(workspaceId, nodeId, request, headers, runtime);
         }
 
-        public GetWorkspaceNodeResponse GetWorkspaceNodeWithOptions(string workspaceId, string nodeId, GetWorkspaceNodeRequest request, GetWorkspaceNodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public InsertBlocksResponse InsertBlocksWithOptions(string documentId, InsertBlocksRequest request, InsertBlocksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Blocks))
+            {
+                body["blocks"] = request.Blocks;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
+            {
+                body["location"] = request.Location;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                query["operatorId"] = request.OperatorId;
+                body["operatorId"] = request.OperatorId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2448,20 +3179,38 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetWorkspaceNodeResponse>(DoROARequest("GetWorkspaceNode", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InsertBlocks",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/documents/" + documentId + "/blocks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<InsertBlocksResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<GetWorkspaceNodeResponse> GetWorkspaceNodeWithOptionsAsync(string workspaceId, string nodeId, GetWorkspaceNodeRequest request, GetWorkspaceNodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<InsertBlocksResponse> InsertBlocksWithOptionsAsync(string documentId, InsertBlocksRequest request, InsertBlocksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Blocks))
+            {
+                body["blocks"] = request.Blocks;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
+            {
+                body["location"] = request.Location;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                query["operatorId"] = request.OperatorId;
+                body["operatorId"] = request.OperatorId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2475,9 +3224,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetWorkspaceNodeResponse>(await DoROARequestAsync("GetWorkspaceNode", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InsertBlocks",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/documents/" + documentId + "/blocks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<InsertBlocksResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public InsertBlocksResponse InsertBlocks(string documentId, InsertBlocksRequest request)
@@ -2494,22 +3255,22 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await InsertBlocksWithOptionsAsync(documentId, request, headers, runtime);
         }
 
-        public InsertBlocksResponse InsertBlocksWithOptions(string documentId, InsertBlocksRequest request, InsertBlocksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public InsertColumnsBeforeResponse InsertColumnsBeforeWithOptions(string workbookId, string sheetId, InsertColumnsBeforeRequest request, InsertColumnsBeforeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            documentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(documentId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Blocks))
-            {
-                body["blocks"] = request.Blocks;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
-            {
-                body["location"] = request.Location;
-            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                body["operatorId"] = request.OperatorId;
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
+            {
+                body["columnCount"] = request.ColumnCount;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2523,27 +3284,40 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<InsertBlocksResponse>(DoROARequest("InsertBlocks", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/documents/" + documentId + "/blocks", "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InsertColumnsBefore",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/insertColumnsBefore",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InsertColumnsBeforeResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<InsertBlocksResponse> InsertBlocksWithOptionsAsync(string documentId, InsertBlocksRequest request, InsertBlocksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<InsertColumnsBeforeResponse> InsertColumnsBeforeWithOptionsAsync(string workbookId, string sheetId, InsertColumnsBeforeRequest request, InsertColumnsBeforeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            documentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(documentId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Blocks))
-            {
-                body["blocks"] = request.Blocks;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Location))
-            {
-                body["location"] = request.Location;
-            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                body["operatorId"] = request.OperatorId;
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
+            {
+                body["columnCount"] = request.ColumnCount;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2557,9 +3331,22 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<InsertBlocksResponse>(await DoROARequestAsync("InsertBlocks", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/documents/" + documentId + "/blocks", "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InsertColumnsBefore",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/insertColumnsBefore",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InsertColumnsBeforeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public InsertColumnsBeforeResponse InsertColumnsBefore(string workbookId, string sheetId, InsertColumnsBeforeRequest request)
@@ -2576,24 +3363,18 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await InsertColumnsBeforeWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
-        public InsertColumnsBeforeResponse InsertColumnsBeforeWithOptions(string workbookId, string sheetId, InsertColumnsBeforeRequest request, InsertColumnsBeforeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public InsertDropdownListsResponse InsertDropdownListsWithOptions(string workbookId, string sheetId, string rangeAddress, InsertDropdownListsRequest request, InsertDropdownListsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Options))
             {
-                body["column"] = request.Column;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
-            {
-                body["columnCount"] = request.ColumnCount;
+                body["options"] = request.Options;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2610,27 +3391,33 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<InsertColumnsBeforeResponse>(DoROARequest("InsertColumnsBefore", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/insertColumnsBefore", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InsertDropdownLists",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/insertDropdownLists",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InsertDropdownListsResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<InsertColumnsBeforeResponse> InsertColumnsBeforeWithOptionsAsync(string workbookId, string sheetId, InsertColumnsBeforeRequest request, InsertColumnsBeforeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<InsertDropdownListsResponse> InsertDropdownListsWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, InsertDropdownListsRequest request, InsertDropdownListsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Options))
             {
-                body["column"] = request.Column;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
-            {
-                body["columnCount"] = request.ColumnCount;
+                body["options"] = request.Options;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2647,7 +3434,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<InsertColumnsBeforeResponse>(await DoROARequestAsync("InsertColumnsBefore", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/insertColumnsBefore", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InsertDropdownLists",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/insertDropdownLists",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InsertDropdownListsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public InsertDropdownListsResponse InsertDropdownLists(string workbookId, string sheetId, string rangeAddress, InsertDropdownListsRequest request)
@@ -2664,21 +3463,22 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await InsertDropdownListsWithOptionsAsync(workbookId, sheetId, rangeAddress, request, headers, runtime);
         }
 
-        public InsertDropdownListsResponse InsertDropdownListsWithOptions(string workbookId, string sheetId, string rangeAddress, InsertDropdownListsRequest request, InsertDropdownListsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public InsertRowsBeforeResponse InsertRowsBeforeWithOptions(string workbookId, string sheetId, InsertRowsBeforeRequest request, InsertRowsBeforeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Options))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
             {
-                body["options"] = request.Options;
+                body["row"] = request.Row;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
+            {
+                body["rowCount"] = request.RowCount;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2695,24 +3495,37 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<InsertDropdownListsResponse>(DoROARequest("InsertDropdownLists", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/insertDropdownLists", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InsertRowsBefore",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/insertRowsBefore",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InsertRowsBeforeResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<InsertDropdownListsResponse> InsertDropdownListsWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, InsertDropdownListsRequest request, InsertDropdownListsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<InsertRowsBeforeResponse> InsertRowsBeforeWithOptionsAsync(string workbookId, string sheetId, InsertRowsBeforeRequest request, InsertRowsBeforeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Options))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
             {
-                body["options"] = request.Options;
+                body["row"] = request.Row;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
+            {
+                body["rowCount"] = request.RowCount;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2729,7 +3542,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<InsertDropdownListsResponse>(await DoROARequestAsync("InsertDropdownLists", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/insertDropdownLists", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InsertRowsBefore",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/insertRowsBefore",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InsertRowsBeforeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public InsertRowsBeforeResponse InsertRowsBefore(string workbookId, string sheetId, InsertRowsBeforeRequest request)
@@ -2744,94 +3569,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             InsertRowsBeforeHeaders headers = new InsertRowsBeforeHeaders();
             return await InsertRowsBeforeWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
-        }
-
-        public InsertRowsBeforeResponse InsertRowsBeforeWithOptions(string workbookId, string sheetId, InsertRowsBeforeRequest request, InsertRowsBeforeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
-            {
-                body["row"] = request.Row;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
-            {
-                body["rowCount"] = request.RowCount;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<InsertRowsBeforeResponse>(DoROARequest("InsertRowsBefore", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/insertRowsBefore", "json", req, runtime));
-        }
-
-        public async Task<InsertRowsBeforeResponse> InsertRowsBeforeWithOptionsAsync(string workbookId, string sheetId, InsertRowsBeforeRequest request, InsertRowsBeforeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
-            {
-                body["row"] = request.Row;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
-            {
-                body["rowCount"] = request.RowCount;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<InsertRowsBeforeResponse>(await DoROARequestAsync("InsertRowsBefore", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/insertRowsBefore", "json", req, runtime));
-        }
-
-        public ListTemplateResponse ListTemplate(ListTemplateRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListTemplateHeaders headers = new ListTemplateHeaders();
-            return ListTemplateWithOptions(request, headers, runtime);
-        }
-
-        public async Task<ListTemplateResponse> ListTemplateAsync(ListTemplateRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListTemplateHeaders headers = new ListTemplateHeaders();
-            return await ListTemplateWithOptionsAsync(request, headers, runtime);
         }
 
         public ListTemplateResponse ListTemplateWithOptions(ListTemplateRequest request, ListTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2872,7 +3609,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListTemplateResponse>(DoROARequest("ListTemplate", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/templates", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListTemplate",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/templates",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListTemplateResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<ListTemplateResponse> ListTemplateWithOptionsAsync(ListTemplateRequest request, ListTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -2913,7 +3662,107 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListTemplateResponse>(await DoROARequestAsync("ListTemplate", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/templates", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListTemplate",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/templates",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public ListTemplateResponse ListTemplate(ListTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListTemplateHeaders headers = new ListTemplateHeaders();
+            return ListTemplateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ListTemplateResponse> ListTemplateAsync(ListTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListTemplateHeaders headers = new ListTemplateHeaders();
+            return await ListTemplateWithOptionsAsync(request, headers, runtime);
+        }
+
+        public MergeRangeResponse MergeRangeWithOptions(string workbookId, string sheetId, string rangeAddress, MergeRangeRequest request, MergeRangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MergeRange",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/merge",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MergeRangeResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<MergeRangeResponse> MergeRangeWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, MergeRangeRequest request, MergeRangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MergeRange",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/merge",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MergeRangeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public MergeRangeResponse MergeRange(string workbookId, string sheetId, string rangeAddress, MergeRangeRequest request)
@@ -2930,16 +3779,22 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await MergeRangeWithOptionsAsync(workbookId, sheetId, rangeAddress, request, headers, runtime);
         }
 
-        public MergeRangeResponse MergeRangeWithOptions(string workbookId, string sheetId, string rangeAddress, MergeRangeRequest request, MergeRangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public RangeFindNextResponse RangeFindNextWithOptions(string workbookId, string sheetId, string rangeAddress, RangeFindNextRequest request, RangeFindNextHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FindOptions))
+            {
+                body["findOptions"] = request.FindOptions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Text))
+            {
+                body["text"] = request.Text;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2954,20 +3809,39 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<MergeRangeResponse>(DoROARequest("MergeRange", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/merge", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RangeFindNext",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/findNext",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RangeFindNextResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<MergeRangeResponse> MergeRangeWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, MergeRangeRequest request, MergeRangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<RangeFindNextResponse> RangeFindNextWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, RangeFindNextRequest request, RangeFindNextHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FindOptions))
+            {
+                body["findOptions"] = request.FindOptions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Text))
+            {
+                body["text"] = request.Text;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -2982,8 +3856,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<MergeRangeResponse>(await DoROARequestAsync("MergeRange", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/merge", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RangeFindNext",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/findNext",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RangeFindNextResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public RangeFindNextResponse RangeFindNext(string workbookId, string sheetId, string rangeAddress, RangeFindNextRequest request)
@@ -2998,96 +3885,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             RangeFindNextHeaders headers = new RangeFindNextHeaders();
             return await RangeFindNextWithOptionsAsync(workbookId, sheetId, rangeAddress, request, headers, runtime);
-        }
-
-        public RangeFindNextResponse RangeFindNextWithOptions(string workbookId, string sheetId, string rangeAddress, RangeFindNextRequest request, RangeFindNextHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FindOptions))
-            {
-                body["findOptions"] = request.FindOptions;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Text))
-            {
-                body["text"] = request.Text;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<RangeFindNextResponse>(DoROARequest("RangeFindNext", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/findNext", "json", req, runtime));
-        }
-
-        public async Task<RangeFindNextResponse> RangeFindNextWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, RangeFindNextRequest request, RangeFindNextHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FindOptions))
-            {
-                body["findOptions"] = request.FindOptions;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Text))
-            {
-                body["text"] = request.Text;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<RangeFindNextResponse>(await DoROARequestAsync("RangeFindNext", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/findNext", "json", req, runtime));
-        }
-
-        public SearchWorkspaceDocsResponse SearchWorkspaceDocs(SearchWorkspaceDocsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SearchWorkspaceDocsHeaders headers = new SearchWorkspaceDocsHeaders();
-            return SearchWorkspaceDocsWithOptions(request, headers, runtime);
-        }
-
-        public async Task<SearchWorkspaceDocsResponse> SearchWorkspaceDocsAsync(SearchWorkspaceDocsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SearchWorkspaceDocsHeaders headers = new SearchWorkspaceDocsHeaders();
-            return await SearchWorkspaceDocsWithOptionsAsync(request, headers, runtime);
         }
 
         public SearchWorkspaceDocsResponse SearchWorkspaceDocsWithOptions(SearchWorkspaceDocsRequest request, SearchWorkspaceDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3128,7 +3925,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<SearchWorkspaceDocsResponse>(DoROARequest("SearchWorkspaceDocs", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/docs", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SearchWorkspaceDocs",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/docs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SearchWorkspaceDocsResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<SearchWorkspaceDocsResponse> SearchWorkspaceDocsWithOptionsAsync(SearchWorkspaceDocsRequest request, SearchWorkspaceDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -3169,7 +3978,135 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<SearchWorkspaceDocsResponse>(await DoROARequestAsync("SearchWorkspaceDocs", "doc_1.0", "HTTP", "GET", "AK", "/v1.0/doc/docs", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SearchWorkspaceDocs",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/docs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SearchWorkspaceDocsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public SearchWorkspaceDocsResponse SearchWorkspaceDocs(SearchWorkspaceDocsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SearchWorkspaceDocsHeaders headers = new SearchWorkspaceDocsHeaders();
+            return SearchWorkspaceDocsWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SearchWorkspaceDocsResponse> SearchWorkspaceDocsAsync(SearchWorkspaceDocsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SearchWorkspaceDocsHeaders headers = new SearchWorkspaceDocsHeaders();
+            return await SearchWorkspaceDocsWithOptionsAsync(request, headers, runtime);
+        }
+
+        public SetColumnsVisibilityResponse SetColumnsVisibilityWithOptions(string workbookId, string sheetId, SetColumnsVisibilityRequest request, SetColumnsVisibilityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
+            {
+                body["columnCount"] = request.ColumnCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Visibility))
+            {
+                body["visibility"] = request.Visibility;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetColumnsVisibility",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setColumnsVisibility",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetColumnsVisibilityResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<SetColumnsVisibilityResponse> SetColumnsVisibilityWithOptionsAsync(string workbookId, string sheetId, SetColumnsVisibilityRequest request, SetColumnsVisibilityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
+            {
+                body["columnCount"] = request.ColumnCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Visibility))
+            {
+                body["visibility"] = request.Visibility;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetColumnsVisibility",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setColumnsVisibility",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetColumnsVisibilityResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public SetColumnsVisibilityResponse SetColumnsVisibility(string workbookId, string sheetId, SetColumnsVisibilityRequest request)
@@ -3186,24 +4123,22 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await SetColumnsVisibilityWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
-        public SetColumnsVisibilityResponse SetColumnsVisibilityWithOptions(string workbookId, string sheetId, SetColumnsVisibilityRequest request, SetColumnsVisibilityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public SetRowsVisibilityResponse SetRowsVisibilityWithOptions(string workbookId, string sheetId, SetRowsVisibilityRequest request, SetRowsVisibilityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
             {
-                body["column"] = request.Column;
+                body["row"] = request.Row;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
             {
-                body["columnCount"] = request.ColumnCount;
+                body["rowCount"] = request.RowCount;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Visibility))
             {
@@ -3224,27 +4159,37 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SetColumnsVisibilityResponse>(DoROARequest("SetColumnsVisibility", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setColumnsVisibility", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetRowsVisibility",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setRowsVisibility",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetRowsVisibilityResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<SetColumnsVisibilityResponse> SetColumnsVisibilityWithOptionsAsync(string workbookId, string sheetId, SetColumnsVisibilityRequest request, SetColumnsVisibilityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<SetRowsVisibilityResponse> SetRowsVisibilityWithOptionsAsync(string workbookId, string sheetId, SetRowsVisibilityRequest request, SetRowsVisibilityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
             {
-                body["column"] = request.Column;
+                body["row"] = request.Row;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
             {
-                body["columnCount"] = request.ColumnCount;
+                body["rowCount"] = request.RowCount;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Visibility))
             {
@@ -3265,7 +4210,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SetColumnsVisibilityResponse>(await DoROARequestAsync("SetColumnsVisibility", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setColumnsVisibility", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetRowsVisibility",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setRowsVisibility",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetRowsVisibilityResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public SetRowsVisibilityResponse SetRowsVisibility(string workbookId, string sheetId, SetRowsVisibilityRequest request)
@@ -3282,17 +4239,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await SetRowsVisibilityWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
-        public SetRowsVisibilityResponse SetRowsVisibilityWithOptions(string workbookId, string sheetId, SetRowsVisibilityRequest request, SetRowsVisibilityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public SheetAutofitRowsResponse SheetAutofitRowsWithOptions(string workbookId, string sheetId, SheetAutofitRowsRequest request, SheetAutofitRowsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FontWidth))
+            {
+                body["fontWidth"] = request.FontWidth;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
             {
                 body["row"] = request.Row;
@@ -3300,10 +4259,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
             {
                 body["rowCount"] = request.RowCount;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Visibility))
-            {
-                body["visibility"] = request.Visibility;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3320,20 +4275,34 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SetRowsVisibilityResponse>(DoROARequest("SetRowsVisibility", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setRowsVisibility", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SheetAutofitRows",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/autofitRows",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SheetAutofitRowsResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<SetRowsVisibilityResponse> SetRowsVisibilityWithOptionsAsync(string workbookId, string sheetId, SetRowsVisibilityRequest request, SetRowsVisibilityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<SheetAutofitRowsResponse> SheetAutofitRowsWithOptionsAsync(string workbookId, string sheetId, SheetAutofitRowsRequest request, SheetAutofitRowsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FontWidth))
+            {
+                body["fontWidth"] = request.FontWidth;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
             {
                 body["row"] = request.Row;
@@ -3341,10 +4310,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
             {
                 body["rowCount"] = request.RowCount;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Visibility))
-            {
-                body["visibility"] = request.Visibility;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3361,7 +4326,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SetRowsVisibilityResponse>(await DoROARequestAsync("SetRowsVisibility", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setRowsVisibility", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SheetAutofitRows",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/autofitRows",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SheetAutofitRowsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public SheetAutofitRowsResponse SheetAutofitRows(string workbookId, string sheetId, SheetAutofitRowsRequest request)
@@ -3378,28 +4355,26 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await SheetAutofitRowsWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
-        public SheetAutofitRowsResponse SheetAutofitRowsWithOptions(string workbookId, string sheetId, SheetAutofitRowsRequest request, SheetAutofitRowsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public SheetFindAllResponse SheetFindAllWithOptions(string workbookId, string sheetId, SheetFindAllRequest request, SheetFindAllHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Select))
+            {
+                query["select"] = request.Select;
+            }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FontWidth))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FindOptions))
             {
-                body["fontWidth"] = request.FontWidth;
+                body["findOptions"] = request.FindOptions;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Text))
             {
-                body["row"] = request.Row;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
-            {
-                body["rowCount"] = request.RowCount;
+                body["text"] = request.Text;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3416,31 +4391,41 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SheetAutofitRowsResponse>(DoROARequest("SheetAutofitRows", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/autofitRows", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SheetFindAll",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/findAll",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SheetFindAllResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<SheetAutofitRowsResponse> SheetAutofitRowsWithOptionsAsync(string workbookId, string sheetId, SheetAutofitRowsRequest request, SheetAutofitRowsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<SheetFindAllResponse> SheetFindAllWithOptionsAsync(string workbookId, string sheetId, SheetFindAllRequest request, SheetFindAllHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Select))
+            {
+                query["select"] = request.Select;
+            }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FontWidth))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FindOptions))
             {
-                body["fontWidth"] = request.FontWidth;
+                body["findOptions"] = request.FindOptions;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Text))
             {
-                body["row"] = request.Row;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
-            {
-                body["rowCount"] = request.RowCount;
+                body["text"] = request.Text;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3457,7 +4442,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SheetAutofitRowsResponse>(await DoROARequestAsync("SheetAutofitRows", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/autofitRows", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SheetFindAll",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/findAll",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SheetFindAllResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public SheetFindAllResponse SheetFindAll(string workbookId, string sheetId, SheetFindAllRequest request)
@@ -3474,28 +4471,17 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await SheetFindAllWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
-        public SheetFindAllResponse SheetFindAllWithOptions(string workbookId, string sheetId, SheetFindAllRequest request, SheetFindAllHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public UnbindCoolAppToSheetResponse UnbindCoolAppToSheetWithOptions(string workbookId, UnbindCoolAppToSheetRequest request, UnbindCoolAppToSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                query["coolAppCode"] = request.CoolAppCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Select))
-            {
-                query["select"] = request.Select;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FindOptions))
-            {
-                body["findOptions"] = request.FindOptions;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Text))
-            {
-                body["text"] = request.Text;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3510,33 +4496,33 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SheetFindAllResponse>(DoROARequest("SheetFindAll", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/findAll", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UnbindCoolAppToSheet",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/coolApps",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UnbindCoolAppToSheetResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<SheetFindAllResponse> SheetFindAllWithOptionsAsync(string workbookId, string sheetId, SheetFindAllRequest request, SheetFindAllHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<UnbindCoolAppToSheetResponse> UnbindCoolAppToSheetWithOptionsAsync(string workbookId, UnbindCoolAppToSheetRequest request, UnbindCoolAppToSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
+            {
+                query["coolAppCode"] = request.CoolAppCode;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Select))
-            {
-                query["select"] = request.Select;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FindOptions))
-            {
-                body["findOptions"] = request.FindOptions;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Text))
-            {
-                body["text"] = request.Text;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3551,9 +4537,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SheetFindAllResponse>(await DoROARequestAsync("SheetFindAll", "doc_1.0", "HTTP", "POST", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/findAll", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UnbindCoolAppToSheet",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/coolApps",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UnbindCoolAppToSheetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public UnbindCoolAppToSheetResponse UnbindCoolAppToSheet(string workbookId, UnbindCoolAppToSheetRequest request)
@@ -3570,18 +4567,30 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await UnbindCoolAppToSheetWithOptionsAsync(workbookId, request, headers, runtime);
         }
 
-        public UnbindCoolAppToSheetResponse UnbindCoolAppToSheetWithOptions(string workbookId, UnbindCoolAppToSheetRequest request, UnbindCoolAppToSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public UpdateRangeResponse UpdateRangeWithOptions(string workbookId, string sheetId, string rangeAddress, UpdateRangeRequest request, UpdateRangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
-            {
-                query["coolAppCode"] = request.CoolAppCode;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BackgroundColors))
+            {
+                body["backgroundColors"] = request.BackgroundColors;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Hyperlinks))
+            {
+                body["hyperlinks"] = request.Hyperlinks;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberFormat))
+            {
+                body["numberFormat"] = request.NumberFormat;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Values))
+            {
+                body["values"] = request.Values;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3596,22 +4605,47 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UnbindCoolAppToSheetResponse>(DoROARequest("UnbindCoolAppToSheet", "doc_1.0", "HTTP", "DELETE", "AK", "/v1.0/doc/workbooks/" + workbookId + "/coolApps", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateRange",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateRangeResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<UnbindCoolAppToSheetResponse> UnbindCoolAppToSheetWithOptionsAsync(string workbookId, UnbindCoolAppToSheetRequest request, UnbindCoolAppToSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<UpdateRangeResponse> UpdateRangeWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, UpdateRangeRequest request, UpdateRangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CoolAppCode))
-            {
-                query["coolAppCode"] = request.CoolAppCode;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BackgroundColors))
+            {
+                body["backgroundColors"] = request.BackgroundColors;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Hyperlinks))
+            {
+                body["hyperlinks"] = request.Hyperlinks;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberFormat))
+            {
+                body["numberFormat"] = request.NumberFormat;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Values))
+            {
+                body["values"] = request.Values;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3626,8 +4660,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UnbindCoolAppToSheetResponse>(await DoROARequestAsync("UnbindCoolAppToSheet", "doc_1.0", "HTTP", "DELETE", "AK", "/v1.0/doc/workbooks/" + workbookId + "/coolApps", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateRange",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateRangeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public UpdateRangeResponse UpdateRange(string workbookId, string sheetId, string rangeAddress, UpdateRangeRequest request)
@@ -3644,33 +4691,22 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await UpdateRangeWithOptionsAsync(workbookId, sheetId, rangeAddress, request, headers, runtime);
         }
 
-        public UpdateRangeResponse UpdateRangeWithOptions(string workbookId, string sheetId, string rangeAddress, UpdateRangeRequest request, UpdateRangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public UpdateSheetResponse UpdateSheetWithOptions(string workbookId, string sheetId, UpdateSheetRequest request, UpdateSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BackgroundColors))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
-                body["backgroundColors"] = request.BackgroundColors;
+                body["name"] = request.Name;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Hyperlinks))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Visibility))
             {
-                body["hyperlinks"] = request.Hyperlinks;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberFormat))
-            {
-                body["numberFormat"] = request.NumberFormat;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Values))
-            {
-                body["values"] = request.Values;
+                body["visibility"] = request.Visibility;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3687,36 +4723,37 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateRangeResponse>(DoROARequest("UpdateRange", "doc_1.0", "HTTP", "PUT", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateSheet",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<UpdateSheetResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<UpdateRangeResponse> UpdateRangeWithOptionsAsync(string workbookId, string sheetId, string rangeAddress, UpdateRangeRequest request, UpdateRangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<UpdateSheetResponse> UpdateSheetWithOptionsAsync(string workbookId, string sheetId, UpdateSheetRequest request, UpdateSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            rangeAddress = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(rangeAddress);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BackgroundColors))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
             {
-                body["backgroundColors"] = request.BackgroundColors;
+                body["name"] = request.Name;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Hyperlinks))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Visibility))
             {
-                body["hyperlinks"] = request.Hyperlinks;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NumberFormat))
-            {
-                body["numberFormat"] = request.NumberFormat;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Values))
-            {
-                body["values"] = request.Values;
+                body["visibility"] = request.Visibility;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3733,7 +4770,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateRangeResponse>(await DoROARequestAsync("UpdateRange", "doc_1.0", "HTTP", "PUT", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateSheet",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<UpdateSheetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public UpdateSheetResponse UpdateSheet(string workbookId, string sheetId, UpdateSheetRequest request)
@@ -3750,24 +4799,17 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await UpdateSheetWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
-        public UpdateSheetResponse UpdateSheetWithOptions(string workbookId, string sheetId, UpdateSheetRequest request, UpdateSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public UpdateWorkspaceDocMembersResponse UpdateWorkspaceDocMembersWithOptions(string workspaceId, string nodeId, UpdateWorkspaceDocMembersRequest request, UpdateWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
-            {
-                body["name"] = request.Name;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Visibility))
-            {
-                body["visibility"] = request.Visibility;
+                body["operatorId"] = request.OperatorId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3781,30 +4823,34 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateSheetResponse>(DoROARequest("UpdateSheet", "doc_1.0", "HTTP", "PUT", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId, "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateWorkspaceDocMembers",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId + "/members",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<UpdateWorkspaceDocMembersResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<UpdateSheetResponse> UpdateSheetWithOptionsAsync(string workbookId, string sheetId, UpdateSheetRequest request, UpdateSheetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<UpdateWorkspaceDocMembersResponse> UpdateWorkspaceDocMembersWithOptionsAsync(string workspaceId, string nodeId, UpdateWorkspaceDocMembersRequest request, UpdateWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workbookId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workbookId);
-            sheetId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(sheetId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
             {
-                query["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
-            {
-                body["name"] = request.Name;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Visibility))
-            {
-                body["visibility"] = request.Visibility;
+                body["operatorId"] = request.OperatorId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3818,10 +4864,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateSheetResponse>(await DoROARequestAsync("UpdateSheet", "doc_1.0", "HTTP", "PUT", "AK", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId, "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateWorkspaceDocMembers",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId + "/members",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<UpdateWorkspaceDocMembersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public UpdateWorkspaceDocMembersResponse UpdateWorkspaceDocMembers(string workspaceId, string nodeId, UpdateWorkspaceDocMembersRequest request)
@@ -3838,11 +4895,9 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             return await UpdateWorkspaceDocMembersWithOptionsAsync(workspaceId, nodeId, request, headers, runtime);
         }
 
-        public UpdateWorkspaceDocMembersResponse UpdateWorkspaceDocMembersWithOptions(string workspaceId, string nodeId, UpdateWorkspaceDocMembersRequest request, UpdateWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public UpdateWorkspaceMembersResponse UpdateWorkspaceMembersWithOptions(string workspaceId, UpdateWorkspaceMembersRequest request, UpdateWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
             {
@@ -3866,14 +4921,24 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateWorkspaceDocMembersResponse>(DoROARequest("UpdateWorkspaceDocMembers", "doc_1.0", "HTTP", "PUT", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId + "/members", "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateWorkspaceMembers",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/members",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<UpdateWorkspaceMembersResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<UpdateWorkspaceDocMembersResponse> UpdateWorkspaceDocMembersWithOptionsAsync(string workspaceId, string nodeId, UpdateWorkspaceDocMembersRequest request, UpdateWorkspaceDocMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<UpdateWorkspaceMembersResponse> UpdateWorkspaceMembersWithOptionsAsync(string workspaceId, UpdateWorkspaceMembersRequest request, UpdateWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            nodeId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(nodeId);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
             {
@@ -3897,7 +4962,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateWorkspaceDocMembersResponse>(await DoROARequestAsync("UpdateWorkspaceDocMembers", "doc_1.0", "HTTP", "PUT", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/docs/" + nodeId + "/members", "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateWorkspaceMembers",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workspaces/" + workspaceId + "/members",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "none",
+            };
+            return TeaModel.ToObject<UpdateWorkspaceMembersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public UpdateWorkspaceMembersResponse UpdateWorkspaceMembers(string workspaceId, UpdateWorkspaceMembersRequest request)
@@ -3912,66 +4989,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateWorkspaceMembersHeaders headers = new UpdateWorkspaceMembersHeaders();
             return await UpdateWorkspaceMembersWithOptionsAsync(workspaceId, request, headers, runtime);
-        }
-
-        public UpdateWorkspaceMembersResponse UpdateWorkspaceMembersWithOptions(string workspaceId, UpdateWorkspaceMembersRequest request, UpdateWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
-            {
-                body["members"] = request.Members;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                body["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<UpdateWorkspaceMembersResponse>(DoROARequest("UpdateWorkspaceMembers", "doc_1.0", "HTTP", "PUT", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/members", "none", req, runtime));
-        }
-
-        public async Task<UpdateWorkspaceMembersResponse> UpdateWorkspaceMembersWithOptionsAsync(string workspaceId, UpdateWorkspaceMembersRequest request, UpdateWorkspaceMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            workspaceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(workspaceId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
-            {
-                body["members"] = request.Members;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
-            {
-                body["operatorId"] = request.OperatorId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<UpdateWorkspaceMembersResponse>(await DoROARequestAsync("UpdateWorkspaceMembers", "doc_1.0", "HTTP", "PUT", "AK", "/v1.0/doc/workspaces/" + workspaceId + "/members", "none", req, runtime));
         }
 
     }

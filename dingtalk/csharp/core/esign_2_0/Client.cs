@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,6 +28,74 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             }
         }
 
+
+        public ApprovalListResponse ApprovalListWithOptions(string taskId, ApprovalListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
+            {
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ApprovalList",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/approvals/" + taskId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ApprovalListResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<ApprovalListResponse> ApprovalListWithOptionsAsync(string taskId, ApprovalListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
+            {
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ApprovalList",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/approvals/" + taskId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ApprovalListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
 
         public ApprovalListResponse ApprovalList(string taskId)
         {
@@ -38,66 +109,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ApprovalListHeaders headers = new ApprovalListHeaders();
             return await ApprovalListWithOptionsAsync(taskId, headers, runtime);
-        }
-
-        public ApprovalListResponse ApprovalListWithOptions(string taskId, ApprovalListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
-            {
-                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<ApprovalListResponse>(DoROARequest("ApprovalList", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/approvals/" + taskId, "json", req, runtime));
-        }
-
-        public async Task<ApprovalListResponse> ApprovalListWithOptionsAsync(string taskId, ApprovalListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
-            {
-                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<ApprovalListResponse>(await DoROARequestAsync("ApprovalList", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/approvals/" + taskId, "json", req, runtime));
-        }
-
-        public CancelCorpAuthResponse CancelCorpAuth(CancelCorpAuthRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CancelCorpAuthHeaders headers = new CancelCorpAuthHeaders();
-            return CancelCorpAuthWithOptions(request, headers, runtime);
-        }
-
-        public async Task<CancelCorpAuthResponse> CancelCorpAuthAsync(CancelCorpAuthRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CancelCorpAuthHeaders headers = new CancelCorpAuthHeaders();
-            return await CancelCorpAuthWithOptionsAsync(request, headers, runtime);
         }
 
         public CancelCorpAuthResponse CancelCorpAuthWithOptions(CancelCorpAuthRequest request, CancelCorpAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -120,7 +131,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<CancelCorpAuthResponse>(DoROARequest("CancelCorpAuth", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/auths/cancel", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CancelCorpAuth",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/auths/cancel",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CancelCorpAuthResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CancelCorpAuthResponse> CancelCorpAuthWithOptionsAsync(CancelCorpAuthRequest request, CancelCorpAuthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -143,21 +166,33 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<CancelCorpAuthResponse>(await DoROARequestAsync("CancelCorpAuth", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/auths/cancel", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CancelCorpAuth",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/auths/cancel",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CancelCorpAuthResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public ChannelOrdersResponse ChannelOrders(ChannelOrdersRequest request)
+        public CancelCorpAuthResponse CancelCorpAuth(CancelCorpAuthRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ChannelOrdersHeaders headers = new ChannelOrdersHeaders();
-            return ChannelOrdersWithOptions(request, headers, runtime);
+            CancelCorpAuthHeaders headers = new CancelCorpAuthHeaders();
+            return CancelCorpAuthWithOptions(request, headers, runtime);
         }
 
-        public async Task<ChannelOrdersResponse> ChannelOrdersAsync(ChannelOrdersRequest request)
+        public async Task<CancelCorpAuthResponse> CancelCorpAuthAsync(CancelCorpAuthRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ChannelOrdersHeaders headers = new ChannelOrdersHeaders();
-            return await ChannelOrdersWithOptionsAsync(request, headers, runtime);
+            CancelCorpAuthHeaders headers = new CancelCorpAuthHeaders();
+            return await CancelCorpAuthWithOptionsAsync(request, headers, runtime);
         }
 
         public ChannelOrdersResponse ChannelOrdersWithOptions(ChannelOrdersRequest request, ChannelOrdersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -206,7 +241,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ChannelOrdersResponse>(DoROARequest("ChannelOrders", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/orders/channel", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChannelOrders",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/orders/channel",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChannelOrdersResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<ChannelOrdersResponse> ChannelOrdersWithOptionsAsync(ChannelOrdersRequest request, ChannelOrdersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -255,21 +302,33 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ChannelOrdersResponse>(await DoROARequestAsync("ChannelOrders", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/orders/channel", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChannelOrders",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/orders/channel",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChannelOrdersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CorpRealnameResponse CorpRealname(CorpRealnameRequest request)
+        public ChannelOrdersResponse ChannelOrders(ChannelOrdersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CorpRealnameHeaders headers = new CorpRealnameHeaders();
-            return CorpRealnameWithOptions(request, headers, runtime);
+            ChannelOrdersHeaders headers = new ChannelOrdersHeaders();
+            return ChannelOrdersWithOptions(request, headers, runtime);
         }
 
-        public async Task<CorpRealnameResponse> CorpRealnameAsync(CorpRealnameRequest request)
+        public async Task<ChannelOrdersResponse> ChannelOrdersAsync(ChannelOrdersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CorpRealnameHeaders headers = new CorpRealnameHeaders();
-            return await CorpRealnameWithOptionsAsync(request, headers, runtime);
+            ChannelOrdersHeaders headers = new ChannelOrdersHeaders();
+            return await ChannelOrdersWithOptionsAsync(request, headers, runtime);
         }
 
         public CorpRealnameResponse CorpRealnameWithOptions(CorpRealnameRequest request, CorpRealnameHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -302,7 +361,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CorpRealnameResponse>(DoROARequest("CorpRealname", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/corps/realnames", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CorpRealname",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/corps/realnames",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CorpRealnameResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CorpRealnameResponse> CorpRealnameWithOptionsAsync(CorpRealnameRequest request, CorpRealnameHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -335,21 +406,33 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CorpRealnameResponse>(await DoROARequestAsync("CorpRealname", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/corps/realnames", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CorpRealname",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/corps/realnames",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CorpRealnameResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CreateDevelopersResponse CreateDevelopers(CreateDevelopersRequest request)
+        public CorpRealnameResponse CorpRealname(CorpRealnameRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateDevelopersHeaders headers = new CreateDevelopersHeaders();
-            return CreateDevelopersWithOptions(request, headers, runtime);
+            CorpRealnameHeaders headers = new CorpRealnameHeaders();
+            return CorpRealnameWithOptions(request, headers, runtime);
         }
 
-        public async Task<CreateDevelopersResponse> CreateDevelopersAsync(CreateDevelopersRequest request)
+        public async Task<CorpRealnameResponse> CorpRealnameAsync(CorpRealnameRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateDevelopersHeaders headers = new CreateDevelopersHeaders();
-            return await CreateDevelopersWithOptionsAsync(request, headers, runtime);
+            CorpRealnameHeaders headers = new CorpRealnameHeaders();
+            return await CorpRealnameWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateDevelopersResponse CreateDevelopersWithOptions(CreateDevelopersRequest request, CreateDevelopersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -378,7 +461,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateDevelopersResponse>(DoROARequest("CreateDevelopers", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/developers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateDevelopers",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/developers",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateDevelopersResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateDevelopersResponse> CreateDevelopersWithOptionsAsync(CreateDevelopersRequest request, CreateDevelopersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -407,21 +502,33 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateDevelopersResponse>(await DoROARequestAsync("CreateDevelopers", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/developers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateDevelopers",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/developers",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateDevelopersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CreateProcessResponse CreateProcess(CreateProcessRequest request)
+        public CreateDevelopersResponse CreateDevelopers(CreateDevelopersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateProcessHeaders headers = new CreateProcessHeaders();
-            return CreateProcessWithOptions(request, headers, runtime);
+            CreateDevelopersHeaders headers = new CreateDevelopersHeaders();
+            return CreateDevelopersWithOptions(request, headers, runtime);
         }
 
-        public async Task<CreateProcessResponse> CreateProcessAsync(CreateProcessRequest request)
+        public async Task<CreateDevelopersResponse> CreateDevelopersAsync(CreateDevelopersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateProcessHeaders headers = new CreateProcessHeaders();
-            return await CreateProcessWithOptionsAsync(request, headers, runtime);
+            CreateDevelopersHeaders headers = new CreateDevelopersHeaders();
+            return await CreateDevelopersWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateProcessResponse CreateProcessWithOptions(CreateProcessRequest request, CreateProcessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -474,7 +581,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateProcessResponse>(DoROARequest("CreateProcess", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/process/startAtOnce", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateProcess",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/process/startAtOnce",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateProcessResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateProcessResponse> CreateProcessWithOptionsAsync(CreateProcessRequest request, CreateProcessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -527,7 +646,109 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateProcessResponse>(await DoROARequestAsync("CreateProcess", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/process/startAtOnce", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateProcess",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/process/startAtOnce",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateProcessResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public CreateProcessResponse CreateProcess(CreateProcessRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateProcessHeaders headers = new CreateProcessHeaders();
+            return CreateProcessWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreateProcessResponse> CreateProcessAsync(CreateProcessRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateProcessHeaders headers = new CreateProcessHeaders();
+            return await CreateProcessWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetAttachsApprovalResponse GetAttachsApprovalWithOptions(string instanceId, GetAttachsApprovalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
+            {
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.TsignOpenAppId))
+            {
+                realHeaders["tsignOpenAppId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.TsignOpenAppId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAttachsApproval",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/dingInstances/" + instanceId + "/attachments",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAttachsApprovalResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetAttachsApprovalResponse> GetAttachsApprovalWithOptionsAsync(string instanceId, GetAttachsApprovalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
+            {
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.TsignOpenAppId))
+            {
+                realHeaders["tsignOpenAppId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.TsignOpenAppId);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAttachsApproval",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/dingInstances/" + instanceId + "/attachments",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAttachsApprovalResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetAttachsApprovalResponse GetAttachsApproval(string instanceId)
@@ -542,74 +763,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetAttachsApprovalHeaders headers = new GetAttachsApprovalHeaders();
             return await GetAttachsApprovalWithOptionsAsync(instanceId, headers, runtime);
-        }
-
-        public GetAttachsApprovalResponse GetAttachsApprovalWithOptions(string instanceId, GetAttachsApprovalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            instanceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(instanceId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
-            {
-                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.TsignOpenAppId))
-            {
-                realHeaders["tsignOpenAppId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.TsignOpenAppId);
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetAttachsApprovalResponse>(DoROARequest("GetAttachsApproval", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/dingInstances/" + instanceId + "/attachments", "json", req, runtime));
-        }
-
-        public async Task<GetAttachsApprovalResponse> GetAttachsApprovalWithOptionsAsync(string instanceId, GetAttachsApprovalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            instanceId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(instanceId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
-            {
-                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.TsignOpenAppId))
-            {
-                realHeaders["tsignOpenAppId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.TsignOpenAppId);
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetAttachsApprovalResponse>(await DoROARequestAsync("GetAttachsApproval", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/dingInstances/" + instanceId + "/attachments", "json", req, runtime));
-        }
-
-        public GetAuthUrlResponse GetAuthUrl(GetAuthUrlRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetAuthUrlHeaders headers = new GetAuthUrlHeaders();
-            return GetAuthUrlWithOptions(request, headers, runtime);
-        }
-
-        public async Task<GetAuthUrlResponse> GetAuthUrlAsync(GetAuthUrlRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetAuthUrlHeaders headers = new GetAuthUrlHeaders();
-            return await GetAuthUrlWithOptionsAsync(request, headers, runtime);
         }
 
         public GetAuthUrlResponse GetAuthUrlWithOptions(GetAuthUrlRequest request, GetAuthUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -638,7 +791,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetAuthUrlResponse>(DoROARequest("GetAuthUrl", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/auths/urls", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAuthUrl",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/auths/urls",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAuthUrlResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetAuthUrlResponse> GetAuthUrlWithOptionsAsync(GetAuthUrlRequest request, GetAuthUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -667,21 +832,33 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetAuthUrlResponse>(await DoROARequestAsync("GetAuthUrl", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/auths/urls", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAuthUrl",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/auths/urls",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAuthUrlResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetContractMarginResponse GetContractMargin()
+        public GetAuthUrlResponse GetAuthUrl(GetAuthUrlRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetContractMarginHeaders headers = new GetContractMarginHeaders();
-            return GetContractMarginWithOptions(headers, runtime);
+            GetAuthUrlHeaders headers = new GetAuthUrlHeaders();
+            return GetAuthUrlWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetContractMarginResponse> GetContractMarginAsync()
+        public async Task<GetAuthUrlResponse> GetAuthUrlAsync(GetAuthUrlRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetContractMarginHeaders headers = new GetContractMarginHeaders();
-            return await GetContractMarginWithOptionsAsync(headers, runtime);
+            GetAuthUrlHeaders headers = new GetAuthUrlHeaders();
+            return await GetAuthUrlWithOptionsAsync(request, headers, runtime);
         }
 
         public GetContractMarginResponse GetContractMarginWithOptions(GetContractMarginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -703,7 +880,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetContractMarginResponse>(DoROARequest("GetContractMargin", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/margins", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetContractMargin",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/margins",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetContractMarginResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetContractMarginResponse> GetContractMarginWithOptionsAsync(GetContractMarginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -725,21 +914,33 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetContractMarginResponse>(await DoROARequestAsync("GetContractMargin", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/margins", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetContractMargin",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/margins",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetContractMarginResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetCorpConsoleResponse GetCorpConsole()
+        public GetContractMarginResponse GetContractMargin()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetCorpConsoleHeaders headers = new GetCorpConsoleHeaders();
-            return GetCorpConsoleWithOptions(headers, runtime);
+            GetContractMarginHeaders headers = new GetContractMarginHeaders();
+            return GetContractMarginWithOptions(headers, runtime);
         }
 
-        public async Task<GetCorpConsoleResponse> GetCorpConsoleAsync()
+        public async Task<GetContractMarginResponse> GetContractMarginAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetCorpConsoleHeaders headers = new GetCorpConsoleHeaders();
-            return await GetCorpConsoleWithOptionsAsync(headers, runtime);
+            GetContractMarginHeaders headers = new GetContractMarginHeaders();
+            return await GetContractMarginWithOptionsAsync(headers, runtime);
         }
 
         public GetCorpConsoleResponse GetCorpConsoleWithOptions(GetCorpConsoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -761,7 +962,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetCorpConsoleResponse>(DoROARequest("GetCorpConsole", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/corps/consoles", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCorpConsole",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/corps/consoles",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCorpConsoleResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetCorpConsoleResponse> GetCorpConsoleWithOptionsAsync(GetCorpConsoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -783,21 +996,33 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetCorpConsoleResponse>(await DoROARequestAsync("GetCorpConsole", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/corps/consoles", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCorpConsole",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/corps/consoles",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCorpConsoleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetCorpInfoResponse GetCorpInfo()
+        public GetCorpConsoleResponse GetCorpConsole()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetCorpInfoHeaders headers = new GetCorpInfoHeaders();
-            return GetCorpInfoWithOptions(headers, runtime);
+            GetCorpConsoleHeaders headers = new GetCorpConsoleHeaders();
+            return GetCorpConsoleWithOptions(headers, runtime);
         }
 
-        public async Task<GetCorpInfoResponse> GetCorpInfoAsync()
+        public async Task<GetCorpConsoleResponse> GetCorpConsoleAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetCorpInfoHeaders headers = new GetCorpInfoHeaders();
-            return await GetCorpInfoWithOptionsAsync(headers, runtime);
+            GetCorpConsoleHeaders headers = new GetCorpConsoleHeaders();
+            return await GetCorpConsoleWithOptionsAsync(headers, runtime);
         }
 
         public GetCorpInfoResponse GetCorpInfoWithOptions(GetCorpInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -819,7 +1044,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetCorpInfoResponse>(DoROARequest("GetCorpInfo", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/corps/infos", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCorpInfo",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/corps/infos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCorpInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetCorpInfoResponse> GetCorpInfoWithOptionsAsync(GetCorpInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -841,21 +1078,33 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetCorpInfoResponse>(await DoROARequestAsync("GetCorpInfo", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/corps/infos", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCorpInfo",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/corps/infos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCorpInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetExecuteUrlResponse GetExecuteUrl(GetExecuteUrlRequest request)
+        public GetCorpInfoResponse GetCorpInfo()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetExecuteUrlHeaders headers = new GetExecuteUrlHeaders();
-            return GetExecuteUrlWithOptions(request, headers, runtime);
+            GetCorpInfoHeaders headers = new GetCorpInfoHeaders();
+            return GetCorpInfoWithOptions(headers, runtime);
         }
 
-        public async Task<GetExecuteUrlResponse> GetExecuteUrlAsync(GetExecuteUrlRequest request)
+        public async Task<GetCorpInfoResponse> GetCorpInfoAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetExecuteUrlHeaders headers = new GetExecuteUrlHeaders();
-            return await GetExecuteUrlWithOptionsAsync(request, headers, runtime);
+            GetCorpInfoHeaders headers = new GetCorpInfoHeaders();
+            return await GetCorpInfoWithOptionsAsync(headers, runtime);
         }
 
         public GetExecuteUrlResponse GetExecuteUrlWithOptions(GetExecuteUrlRequest request, GetExecuteUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -892,7 +1141,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetExecuteUrlResponse>(DoROARequest("GetExecuteUrl", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/process/executeUrls", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetExecuteUrl",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/process/executeUrls",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetExecuteUrlResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetExecuteUrlResponse> GetExecuteUrlWithOptionsAsync(GetExecuteUrlRequest request, GetExecuteUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -929,7 +1190,101 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetExecuteUrlResponse>(await DoROARequestAsync("GetExecuteUrl", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/process/executeUrls", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetExecuteUrl",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/process/executeUrls",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetExecuteUrlResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetExecuteUrlResponse GetExecuteUrl(GetExecuteUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetExecuteUrlHeaders headers = new GetExecuteUrlHeaders();
+            return GetExecuteUrlWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetExecuteUrlResponse> GetExecuteUrlAsync(GetExecuteUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetExecuteUrlHeaders headers = new GetExecuteUrlHeaders();
+            return await GetExecuteUrlWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetFileInfoResponse GetFileInfoWithOptions(string fileId, GetFileInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
+            {
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFileInfo",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/files/" + fileId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFileInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetFileInfoResponse> GetFileInfoWithOptionsAsync(string fileId, GetFileInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
+            {
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFileInfo",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/files/" + fileId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFileInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetFileInfoResponse GetFileInfo(string fileId)
@@ -944,66 +1299,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetFileInfoHeaders headers = new GetFileInfoHeaders();
             return await GetFileInfoWithOptionsAsync(fileId, headers, runtime);
-        }
-
-        public GetFileInfoResponse GetFileInfoWithOptions(string fileId, GetFileInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
-            {
-                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetFileInfoResponse>(DoROARequest("GetFileInfo", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/files/" + fileId, "json", req, runtime));
-        }
-
-        public async Task<GetFileInfoResponse> GetFileInfoWithOptionsAsync(string fileId, GetFileInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            fileId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(fileId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
-            {
-                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetFileInfoResponse>(await DoROARequestAsync("GetFileInfo", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/files/" + fileId, "json", req, runtime));
-        }
-
-        public GetFileUploadUrlResponse GetFileUploadUrl(GetFileUploadUrlRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetFileUploadUrlHeaders headers = new GetFileUploadUrlHeaders();
-            return GetFileUploadUrlWithOptions(request, headers, runtime);
-        }
-
-        public async Task<GetFileUploadUrlResponse> GetFileUploadUrlAsync(GetFileUploadUrlRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetFileUploadUrlHeaders headers = new GetFileUploadUrlHeaders();
-            return await GetFileUploadUrlWithOptionsAsync(request, headers, runtime);
         }
 
         public GetFileUploadUrlResponse GetFileUploadUrlWithOptions(GetFileUploadUrlRequest request, GetFileUploadUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1048,7 +1343,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetFileUploadUrlResponse>(DoROARequest("GetFileUploadUrl", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/files/uploadUrls", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFileUploadUrl",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/files/uploadUrls",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFileUploadUrlResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetFileUploadUrlResponse> GetFileUploadUrlWithOptionsAsync(GetFileUploadUrlRequest request, GetFileUploadUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1093,7 +1400,101 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetFileUploadUrlResponse>(await DoROARequestAsync("GetFileUploadUrl", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/files/uploadUrls", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFileUploadUrl",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/files/uploadUrls",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFileUploadUrlResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetFileUploadUrlResponse GetFileUploadUrl(GetFileUploadUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFileUploadUrlHeaders headers = new GetFileUploadUrlHeaders();
+            return GetFileUploadUrlWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetFileUploadUrlResponse> GetFileUploadUrlAsync(GetFileUploadUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFileUploadUrlHeaders headers = new GetFileUploadUrlHeaders();
+            return await GetFileUploadUrlWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetFlowDetailResponse GetFlowDetailWithOptions(string taskId, GetFlowDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
+            {
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFlowDetail",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/flowTasks/" + taskId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFlowDetailResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetFlowDetailResponse> GetFlowDetailWithOptionsAsync(string taskId, GetFlowDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
+            {
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFlowDetail",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/flowTasks/" + taskId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFlowDetailResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetFlowDetailResponse GetFlowDetail(string taskId)
@@ -1110,9 +1511,8 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetFlowDetailWithOptionsAsync(taskId, headers, runtime);
         }
 
-        public GetFlowDetailResponse GetFlowDetailWithOptions(string taskId, GetFlowDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetFlowDocsResponse GetFlowDocsWithOptions(string taskId, GetFlowDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1130,12 +1530,23 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetFlowDetailResponse>(DoROARequest("GetFlowDetail", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/flowTasks/" + taskId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFlowDocs",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/flowTasks/" + taskId + "/docs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFlowDocsResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<GetFlowDetailResponse> GetFlowDetailWithOptionsAsync(string taskId, GetFlowDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetFlowDocsResponse> GetFlowDocsWithOptionsAsync(string taskId, GetFlowDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1153,7 +1564,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetFlowDetailResponse>(await DoROARequestAsync("GetFlowDetail", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/flowTasks/" + taskId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFlowDocs",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/flowTasks/" + taskId + "/docs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFlowDocsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetFlowDocsResponse GetFlowDocs(string taskId)
@@ -1168,66 +1591,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetFlowDocsHeaders headers = new GetFlowDocsHeaders();
             return await GetFlowDocsWithOptionsAsync(taskId, headers, runtime);
-        }
-
-        public GetFlowDocsResponse GetFlowDocsWithOptions(string taskId, GetFlowDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
-            {
-                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetFlowDocsResponse>(DoROARequest("GetFlowDocs", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/flowTasks/" + taskId + "/docs", "json", req, runtime));
-        }
-
-        public async Task<GetFlowDocsResponse> GetFlowDocsWithOptionsAsync(string taskId, GetFlowDocsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
-            {
-                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetFlowDocsResponse>(await DoROARequestAsync("GetFlowDocs", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/flowTasks/" + taskId + "/docs", "json", req, runtime));
-        }
-
-        public GetIsvStatusResponse GetIsvStatus()
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetIsvStatusHeaders headers = new GetIsvStatusHeaders();
-            return GetIsvStatusWithOptions(headers, runtime);
-        }
-
-        public async Task<GetIsvStatusResponse> GetIsvStatusAsync()
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetIsvStatusHeaders headers = new GetIsvStatusHeaders();
-            return await GetIsvStatusWithOptionsAsync(headers, runtime);
         }
 
         public GetIsvStatusResponse GetIsvStatusWithOptions(GetIsvStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1249,7 +1612,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetIsvStatusResponse>(DoROARequest("GetIsvStatus", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/corps/appStatus", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetIsvStatus",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/corps/appStatus",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetIsvStatusResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetIsvStatusResponse> GetIsvStatusWithOptionsAsync(GetIsvStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1271,7 +1646,101 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetIsvStatusResponse>(await DoROARequestAsync("GetIsvStatus", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/corps/appStatus", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetIsvStatus",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/corps/appStatus",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetIsvStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetIsvStatusResponse GetIsvStatus()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetIsvStatusHeaders headers = new GetIsvStatusHeaders();
+            return GetIsvStatusWithOptions(headers, runtime);
+        }
+
+        public async Task<GetIsvStatusResponse> GetIsvStatusAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetIsvStatusHeaders headers = new GetIsvStatusHeaders();
+            return await GetIsvStatusWithOptionsAsync(headers, runtime);
+        }
+
+        public GetSignDetailResponse GetSignDetailWithOptions(string taskId, GetSignDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
+            {
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSignDetail",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/signTasks/" + taskId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSignDetailResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetSignDetailResponse> GetSignDetailWithOptionsAsync(string taskId, GetSignDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
+            {
+                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSignDetail",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/signTasks/" + taskId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSignDetailResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetSignDetailResponse GetSignDetail(string taskId)
@@ -1288,9 +1757,8 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             return await GetSignDetailWithOptionsAsync(taskId, headers, runtime);
         }
 
-        public GetSignDetailResponse GetSignDetailWithOptions(string taskId, GetSignDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetUserInfoResponse GetUserInfoWithOptions(string userId, GetUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1308,12 +1776,23 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetSignDetailResponse>(DoROARequest("GetSignDetail", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/signTasks/" + taskId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetUserInfo",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/users/" + userId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetUserInfoResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<GetSignDetailResponse> GetSignDetailWithOptionsAsync(string taskId, GetSignDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetUserInfoResponse> GetUserInfoWithOptionsAsync(string userId, GetUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            taskId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(taskId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1331,7 +1810,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetSignDetailResponse>(await DoROARequestAsync("GetSignDetail", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/signTasks/" + taskId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetUserInfo",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/users/" + userId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetUserInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetUserInfoResponse GetUserInfo(string userId)
@@ -1346,66 +1837,6 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetUserInfoHeaders headers = new GetUserInfoHeaders();
             return await GetUserInfoWithOptionsAsync(userId, headers, runtime);
-        }
-
-        public GetUserInfoResponse GetUserInfoWithOptions(string userId, GetUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
-            {
-                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetUserInfoResponse>(DoROARequest("GetUserInfo", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/users/" + userId, "json", req, runtime));
-        }
-
-        public async Task<GetUserInfoResponse> GetUserInfoWithOptionsAsync(string userId, GetUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.ServiceGroup))
-            {
-                realHeaders["serviceGroup"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.ServiceGroup);
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetUserInfoResponse>(await DoROARequestAsync("GetUserInfo", "esign_2.0", "HTTP", "GET", "AK", "/v2.0/esign/users/" + userId, "json", req, runtime));
-        }
-
-        public ProcessStartResponse ProcessStart(ProcessStartRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ProcessStartHeaders headers = new ProcessStartHeaders();
-            return ProcessStartWithOptions(request, headers, runtime);
-        }
-
-        public async Task<ProcessStartResponse> ProcessStartAsync(ProcessStartRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ProcessStartHeaders headers = new ProcessStartHeaders();
-            return await ProcessStartWithOptionsAsync(request, headers, runtime);
         }
 
         public ProcessStartResponse ProcessStartWithOptions(ProcessStartRequest request, ProcessStartHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1462,7 +1893,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ProcessStartResponse>(DoROARequest("ProcessStart", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/processes/startUrls", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ProcessStart",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/processes/startUrls",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ProcessStartResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<ProcessStartResponse> ProcessStartWithOptionsAsync(ProcessStartRequest request, ProcessStartHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1519,21 +1962,33 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ProcessStartResponse>(await DoROARequestAsync("ProcessStart", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/processes/startUrls", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ProcessStart",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/processes/startUrls",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ProcessStartResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public ResaleOrderResponse ResaleOrder(ResaleOrderRequest request)
+        public ProcessStartResponse ProcessStart(ProcessStartRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ResaleOrderHeaders headers = new ResaleOrderHeaders();
-            return ResaleOrderWithOptions(request, headers, runtime);
+            ProcessStartHeaders headers = new ProcessStartHeaders();
+            return ProcessStartWithOptions(request, headers, runtime);
         }
 
-        public async Task<ResaleOrderResponse> ResaleOrderAsync(ResaleOrderRequest request)
+        public async Task<ProcessStartResponse> ProcessStartAsync(ProcessStartRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ResaleOrderHeaders headers = new ResaleOrderHeaders();
-            return await ResaleOrderWithOptionsAsync(request, headers, runtime);
+            ProcessStartHeaders headers = new ProcessStartHeaders();
+            return await ProcessStartWithOptionsAsync(request, headers, runtime);
         }
 
         public ResaleOrderResponse ResaleOrderWithOptions(ResaleOrderRequest request, ResaleOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1578,7 +2033,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ResaleOrderResponse>(DoROARequest("ResaleOrder", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/orders/resale", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ResaleOrder",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/orders/resale",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ResaleOrderResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<ResaleOrderResponse> ResaleOrderWithOptionsAsync(ResaleOrderRequest request, ResaleOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1623,21 +2090,33 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ResaleOrderResponse>(await DoROARequestAsync("ResaleOrder", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/orders/resale", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ResaleOrder",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/orders/resale",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ResaleOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UsersRealnameResponse UsersRealname(UsersRealnameRequest request)
+        public ResaleOrderResponse ResaleOrder(ResaleOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UsersRealnameHeaders headers = new UsersRealnameHeaders();
-            return UsersRealnameWithOptions(request, headers, runtime);
+            ResaleOrderHeaders headers = new ResaleOrderHeaders();
+            return ResaleOrderWithOptions(request, headers, runtime);
         }
 
-        public async Task<UsersRealnameResponse> UsersRealnameAsync(UsersRealnameRequest request)
+        public async Task<ResaleOrderResponse> ResaleOrderAsync(ResaleOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UsersRealnameHeaders headers = new UsersRealnameHeaders();
-            return await UsersRealnameWithOptionsAsync(request, headers, runtime);
+            ResaleOrderHeaders headers = new ResaleOrderHeaders();
+            return await ResaleOrderWithOptionsAsync(request, headers, runtime);
         }
 
         public UsersRealnameResponse UsersRealnameWithOptions(UsersRealnameRequest request, UsersRealnameHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1670,7 +2149,19 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UsersRealnameResponse>(DoROARequest("UsersRealname", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/users/realnames", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UsersRealname",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/users/realnames",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UsersRealnameResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UsersRealnameResponse> UsersRealnameWithOptionsAsync(UsersRealnameRequest request, UsersRealnameHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1703,7 +2194,33 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UsersRealnameResponse>(await DoROARequestAsync("UsersRealname", "esign_2.0", "HTTP", "POST", "AK", "/v2.0/esign/users/realnames", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UsersRealname",
+                Version = "esign_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/esign/users/realnames",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UsersRealnameResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UsersRealnameResponse UsersRealname(UsersRealnameRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UsersRealnameHeaders headers = new UsersRealnameHeaders();
+            return UsersRealnameWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UsersRealnameResponse> UsersRealnameAsync(UsersRealnameRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UsersRealnameHeaders headers = new UsersRealnameHeaders();
+            return await UsersRealnameWithOptionsAsync(request, headers, runtime);
         }
 
     }

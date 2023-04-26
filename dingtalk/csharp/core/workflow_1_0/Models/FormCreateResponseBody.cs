@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class FormCreateResponseBody : TeaModel {
-        /// <summary>
-        /// 表单模板信息
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public FormCreateResponseBodyResult Result { get; set; }
         public class FormCreateResponseBodyResult : TeaModel {
-            /// <summary>
-            /// 保存或更新的表单code
-            /// </summary>
             [NameInMap("processCode")]
             [Validation(Required=false)]
             public string ProcessCode { get; set; }

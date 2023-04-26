@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class RefundCommodityResponseBody : TeaModel {
-        /// <summary>
-        /// message
-        /// </summary>
         [NameInMap("message")]
         [Validation(Required=false)]
         public string Message { get; set; }
 
-        /// <summary>
-        /// success
-        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

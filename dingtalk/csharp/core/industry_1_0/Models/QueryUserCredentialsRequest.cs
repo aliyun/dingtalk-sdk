@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class QueryUserCredentialsRequest : TeaModel {
-        /// <summary>
-        /// userId列表
-        /// </summary>
         [NameInMap("userIds")]
         [Validation(Required=false)]
         public List<string> UserIds { get; set; }

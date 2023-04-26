@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
 {
     public class SendTopBoxInteractiveOTOMessageResponseBody : TeaModel {
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("requestId")]
         [Validation(Required=false)]
         public string RequestId { get; set; }

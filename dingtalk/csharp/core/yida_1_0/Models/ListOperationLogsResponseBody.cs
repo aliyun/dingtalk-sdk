@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class ListOperationLogsResponseBody : TeaModel {
-        /// <summary>
-        /// 操作记录对象
-        /// </summary>
         [NameInMap("operationLogMap")]
         [Validation(Required=false)]
         public Dictionary<string, object> OperationLogMap { get; set; }

@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class QueryCustomEntryProcessesResponseBody : TeaModel {
-        /// <summary>
-        /// 是否有更多
-        /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
 
-        /// <summary>
-        /// 表单信息列表
-        /// </summary>
         [NameInMap("list")]
         [Validation(Required=false)]
         public List<QueryCustomEntryProcessesResponseBodyList> List { get; set; }
@@ -41,9 +35,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 
         }
 
-        /// <summary>
-        /// 下次获取数据的起始游标
-        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public long? NextToken { get; set; }

@@ -13,16 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
         [Validation(Required=false)]
         public List<OpenObjectiveDTO> Content { get; set; }
 
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("requestId")]
         [Validation(Required=false)]
         public string RequestId { get; set; }
 
-        /// <summary>
-        /// 是否成功
-        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

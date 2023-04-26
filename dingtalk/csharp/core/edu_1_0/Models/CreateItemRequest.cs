@@ -49,9 +49,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public long? StartTime { get; set; }
 
-        /// <summary>
-        /// 状态
-        /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public int? Status { get; set; }

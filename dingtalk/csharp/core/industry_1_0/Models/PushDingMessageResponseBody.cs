@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class PushDingMessageResponseBody : TeaModel {
-        /// <summary>
-        /// 返回1表示当前批次成功
-        /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public long? Content { get; set; }

@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 {
     public class NotifyVerifyResultResponseBody : TeaModel {
-        /// <summary>
-        /// 结果
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public string Result { get; set; }

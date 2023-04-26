@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class DeleteAcrossCloudStroageConfigsResponseBody : TeaModel {
-        /// <summary>
-        /// 执行结果
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public bool? Result { get; set; }

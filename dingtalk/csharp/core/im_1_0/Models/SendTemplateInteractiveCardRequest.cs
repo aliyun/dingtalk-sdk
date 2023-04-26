@@ -9,88 +9,52 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class SendTemplateInteractiveCardRequest : TeaModel {
-        /// <summary>
-        /// 可控制卡片回调的url【可空：不填写无需回调】
-        /// </summary>
         [NameInMap("callbackUrl")]
         [Validation(Required=false)]
         public string CallbackUrl { get; set; }
 
-        /// <summary>
-        /// 卡片模板-文本内容参数（卡片json结构体）
-        /// </summary>
         [NameInMap("cardData")]
         [Validation(Required=false)]
         public string CardData { get; set; }
 
-        /// <summary>
-        /// 卡片内容模板ID，响应模板目前有：TuWenCard01、TuWenCard02、TuWenCard03、TuWenCard04 4种
-        /// </summary>
         [NameInMap("cardTemplateId")]
         [Validation(Required=false)]
         public string CardTemplateId { get; set; }
 
-        /// <summary>
-        /// 【openConversationId & singleChatReceiver 二选一必填】接收卡片的加密群ID，特指多人群会话（非单聊）
-        /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
-        /// <summary>
-        /// 唯一标识一张卡片的外部ID（卡片幂等ID，可用于更新或重复发送同一卡片到多个群会话）【备注：同一个outTrackId重复创建，卡片数据不覆盖更新】
-        /// </summary>
         [NameInMap("outTrackId")]
         [Validation(Required=false)]
         public string OutTrackId { get; set; }
 
-        /// <summary>
-        /// 机器人代码，群模板机器人网页有机器人ID；企业内部机器人为机器人appKey，企业三方机器人有robotCode
-        /// </summary>
         [NameInMap("robotCode")]
         [Validation(Required=false)]
         public string RobotCode { get; set; }
 
-        /// <summary>
-        /// 互动卡片发送选项
-        /// </summary>
         [NameInMap("sendOptions")]
         [Validation(Required=false)]
         public SendTemplateInteractiveCardRequestSendOptions SendOptions { get; set; }
         public class SendTemplateInteractiveCardRequestSendOptions : TeaModel {
-            /// <summary>
-            /// 是否@所有人
-            /// </summary>
             [NameInMap("atAll")]
             [Validation(Required=false)]
             public bool? AtAll { get; set; }
 
-            /// <summary>
-            /// 消息@人，JSON格式：[{"nickName":"张三","userId":"userId0001"},{"nickName":"李四","unionId":"unionId001"}]
-            /// </summary>
             [NameInMap("atUserListJson")]
             [Validation(Required=false)]
             public string AtUserListJson { get; set; }
 
-            /// <summary>
-            /// 卡片特殊属性json串
-            /// </summary>
             [NameInMap("cardPropertyJson")]
             [Validation(Required=false)]
             public string CardPropertyJson { get; set; }
 
-            /// <summary>
-            /// 消息仅部分人可见的接收人列表【可空：为空则群所有人可见】，JSON格式：[{"userId":"userId0001"},{"unionId":"unionId001"}]
-            /// </summary>
             [NameInMap("receiverListJson")]
             [Validation(Required=false)]
             public string ReceiverListJson { get; set; }
 
         }
 
-        /// <summary>
-        /// 【openConversationId & singleChatReceiver 二选一必填】单聊会话接受者json串
-        /// </summary>
         [NameInMap("singleChatReceiver")]
         [Validation(Required=false)]
         public string SingleChatReceiver { get; set; }

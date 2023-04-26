@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class UpdateTaskNoteRequest : TeaModel {
-        /// <summary>
-        /// 任务备注。
-        /// </summary>
         [NameInMap("note")]
         [Validation(Required=false)]
         public string Note { get; set; }

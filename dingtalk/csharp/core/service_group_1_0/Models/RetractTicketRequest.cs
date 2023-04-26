@@ -17,9 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             [Validation(Required=false)]
             public List<string> GroupNoticeReceiverUnionIds { get; set; }
 
-            /// <summary>
-            /// 是否向群内推送一个全员可见工单通知卡片
-            /// </summary>
             [NameInMap("noticeAllGroupMember")]
             [Validation(Required=false)]
             public bool? NoticeAllGroupMember { get; set; }
@@ -34,16 +31,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }
 
-        /// <summary>
-        /// 工单开放ID
-        /// </summary>
         [NameInMap("openTicketId")]
         [Validation(Required=false)]
         public string OpenTicketId { get; set; }
 
-        /// <summary>
-        /// 操作人ID
-        /// </summary>
         [NameInMap("operatorUnionId")]
         [Validation(Required=false)]
         public string OperatorUnionId { get; set; }

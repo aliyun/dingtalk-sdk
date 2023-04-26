@@ -9,65 +9,38 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
     public class GetSubscribedCalendarResponseBody : TeaModel {
-        /// <summary>
-        /// 日历作者
-        /// </summary>
         [NameInMap("author")]
         [Validation(Required=false)]
         public string Author { get; set; }
 
-        /// <summary>
-        /// 订阅日历id
-        /// </summary>
         [NameInMap("calendarId")]
         [Validation(Required=false)]
         public string CalendarId { get; set; }
 
-        /// <summary>
-        /// 日历描述
-        /// </summary>
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
 
-        /// <summary>
-        /// 可管理人群
-        /// </summary>
         [NameInMap("managers")]
         [Validation(Required=false)]
         public List<string> Managers { get; set; }
 
-        /// <summary>
-        /// 日历名
-        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
-        /// <summary>
-        /// 可订阅范围
-        /// </summary>
         [NameInMap("subscribeScope")]
         [Validation(Required=false)]
         public GetSubscribedCalendarResponseBodySubscribeScope SubscribeScope { get; set; }
         public class GetSubscribedCalendarResponseBodySubscribeScope : TeaModel {
-            /// <summary>
-            /// 可订阅组织
-            /// </summary>
             [NameInMap("corpIds")]
             [Validation(Required=false)]
             public List<string> CorpIds { get; set; }
 
-            /// <summary>
-            /// 可订阅群组
-            /// </summary>
             [NameInMap("openConversationIds")]
             [Validation(Required=false)]
             public List<string> OpenConversationIds { get; set; }
 
-            /// <summary>
-            /// 可订阅用户
-            /// </summary>
             [NameInMap("unionIds")]
             [Validation(Required=false)]
             public List<string> UnionIds { get; set; }

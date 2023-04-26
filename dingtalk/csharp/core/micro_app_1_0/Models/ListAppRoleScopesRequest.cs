@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class ListAppRoleScopesRequest : TeaModel {
-        /// <summary>
-        /// 起始点，默认0
-        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public long? NextToken { get; set; }
 
-        /// <summary>
-        /// 数据量，默认20，最大50
-        /// </summary>
         [NameInMap("size")]
         [Validation(Required=false)]
         public long? Size { get; set; }

@@ -37,9 +37,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
         }
 
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

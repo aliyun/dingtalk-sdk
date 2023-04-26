@@ -13,9 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
         [Validation(Required=false)]
         public List<long?> DeptVisibleScopes { get; set; }
 
-        /// <summary>
-        /// scopes
-        /// </summary>
         [NameInMap("userVisibleScopes")]
         [Validation(Required=false)]
         public List<string> UserVisibleScopes { get; set; }

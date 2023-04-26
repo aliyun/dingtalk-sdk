@@ -9,53 +9,32 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
 {
     public class LoadBizObjectsResponseBody : TeaModel {
-        /// <summary>
-        /// 状态码
-        /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }
 
-        /// <summary>
-        /// 返回结果
-        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public LoadBizObjectsResponseBodyData Data { get; set; }
         public class LoadBizObjectsResponseBodyData : TeaModel {
-            /// <summary>
-            /// 业务数据实例数组
-            /// </summary>
             [NameInMap("bizObjects")]
             [Validation(Required=false)]
             public List<Dictionary<string, object>> BizObjects { get; set; }
 
-            /// <summary>
-            /// 页码
-            /// </summary>
             [NameInMap("pageNumber")]
             [Validation(Required=false)]
             public int? PageNumber { get; set; }
 
-            /// <summary>
-            /// 页大小
-            /// </summary>
             [NameInMap("pageSize")]
             [Validation(Required=false)]
             public int? PageSize { get; set; }
 
-            /// <summary>
-            /// 匹配条件的结果总数量
-            /// </summary>
             [NameInMap("totalCount")]
             [Validation(Required=false)]
             public int? TotalCount { get; set; }
 
         }
 
-        /// <summary>
-        /// 提示信息
-        /// </summary>
         [NameInMap("message")]
         [Validation(Required=false)]
         public string Message { get; set; }

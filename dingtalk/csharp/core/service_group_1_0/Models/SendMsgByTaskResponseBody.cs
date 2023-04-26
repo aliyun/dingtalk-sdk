@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class SendMsgByTaskResponseBody : TeaModel {
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("openBatchTaskId")]
         [Validation(Required=false)]
         public string OpenBatchTaskId { get; set; }

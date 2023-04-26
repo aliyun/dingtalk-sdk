@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class QueryHospitalRoleUserInfoRequest : TeaModel {
-        /// <summary>
-        /// 分页查询页码
-        /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public long? PageNumber { get; set; }
 
-        /// <summary>
-        /// 分页查询分页大小
-        /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public long? PageSize { get; set; }

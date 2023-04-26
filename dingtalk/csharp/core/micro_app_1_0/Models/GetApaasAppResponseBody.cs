@@ -9,23 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class GetApaasAppResponseBody : TeaModel {
-        /// <summary>
-        /// 钉钉侧应用id
-        /// </summary>
         [NameInMap("agentId")]
         [Validation(Required=false)]
         public long? AgentId { get; set; }
 
-        /// <summary>
-        /// ISV侧应用id
-        /// </summary>
         [NameInMap("bizAppId")]
         [Validation(Required=false)]
         public string BizAppId { get; set; }
 
-        /// <summary>
-        /// 发布状态
-        /// </summary>
         [NameInMap("publishStatus")]
         [Validation(Required=false)]
         public string PublishStatus { get; set; }

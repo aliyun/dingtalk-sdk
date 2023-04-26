@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class GetResidentUserInfoRequest : TeaModel {
-        /// <summary>
-        /// 下属组织的组织ID，比如下属镇、村的corpId
-        /// </summary>
         [NameInMap("subCorpId")]
         [Validation(Required=false)]
         public string SubCorpId { get; set; }

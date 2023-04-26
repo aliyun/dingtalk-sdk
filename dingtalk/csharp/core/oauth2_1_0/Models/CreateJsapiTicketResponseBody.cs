@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
 {
     public class CreateJsapiTicketResponseBody : TeaModel {
-        /// <summary>
-        /// 超时时间
-        /// </summary>
         [NameInMap("expireIn")]
         [Validation(Required=false)]
         public long? ExpireIn { get; set; }
 
-        /// <summary>
-        /// jsapi ticket
-        /// </summary>
         [NameInMap("jsapiTicket")]
         [Validation(Required=false)]
         public string JsapiTicket { get; set; }

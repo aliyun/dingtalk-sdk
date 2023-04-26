@@ -15,9 +15,13 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             }
         }
 
-
-        public CreateJsapiTicketResponse CreateJsapiTicket()
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateJsapiTicketHeaders headers = new CreateJsapiTicketHeaders();
-            return CreateJsapiTicketWithOptions(headers, runtime);
-        }
-
-        public async Task<CreateJsapiTicketResponse> CreateJsapiTicketAsync()
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateJsapiTicketHeaders headers = new CreateJsapiTicketHeaders();
-            return await CreateJsapiTicketWithOptionsAsync(headers, runtime);
-        }
 
         public CreateJsapiTicketResponse CreateJsapiTicketWithOptions(CreateJsapiTicketHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -55,7 +45,19 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<CreateJsapiTicketResponse>(DoROARequest("CreateJsapiTicket", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/jsapiTickets", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateJsapiTicket",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/jsapiTickets",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateJsapiTicketResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateJsapiTicketResponse> CreateJsapiTicketWithOptionsAsync(CreateJsapiTicketHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -73,21 +75,33 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<CreateJsapiTicketResponse>(await DoROARequestAsync("CreateJsapiTicket", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/jsapiTickets", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateJsapiTicket",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/jsapiTickets",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateJsapiTicketResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetAccessTokenResponse GetAccessToken(GetAccessTokenRequest request)
+        public CreateJsapiTicketResponse CreateJsapiTicket()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
-            return GetAccessTokenWithOptions(request, headers, runtime);
+            CreateJsapiTicketHeaders headers = new CreateJsapiTicketHeaders();
+            return CreateJsapiTicketWithOptions(headers, runtime);
         }
 
-        public async Task<GetAccessTokenResponse> GetAccessTokenAsync(GetAccessTokenRequest request)
+        public async Task<CreateJsapiTicketResponse> CreateJsapiTicketAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
-            return await GetAccessTokenWithOptionsAsync(request, headers, runtime);
+            CreateJsapiTicketHeaders headers = new CreateJsapiTicketHeaders();
+            return await CreateJsapiTicketWithOptionsAsync(headers, runtime);
         }
 
         public GetAccessTokenResponse GetAccessTokenWithOptions(GetAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -107,7 +121,19 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = headers,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetAccessTokenResponse>(DoROARequest("GetAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/accessToken", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAccessToken",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/accessToken",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAccessTokenResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetAccessTokenResponse> GetAccessTokenWithOptionsAsync(GetAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -127,21 +153,33 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = headers,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetAccessTokenResponse>(await DoROARequestAsync("GetAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/accessToken", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAccessToken",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/accessToken",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetAuthInfoResponse GetAuthInfo(GetAuthInfoRequest request)
+        public GetAccessTokenResponse GetAccessToken(GetAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetAuthInfoHeaders headers = new GetAuthInfoHeaders();
-            return GetAuthInfoWithOptions(request, headers, runtime);
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return GetAccessTokenWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetAuthInfoResponse> GetAuthInfoAsync(GetAuthInfoRequest request)
+        public async Task<GetAccessTokenResponse> GetAccessTokenAsync(GetAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetAuthInfoHeaders headers = new GetAuthInfoHeaders();
-            return await GetAuthInfoWithOptionsAsync(request, headers, runtime);
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await GetAccessTokenWithOptionsAsync(request, headers, runtime);
         }
 
         public GetAuthInfoResponse GetAuthInfoWithOptions(GetAuthInfoRequest request, GetAuthInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -166,7 +204,19 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetAuthInfoResponse>(DoROARequest("GetAuthInfo", "oauth2_1.0", "HTTP", "GET", "AK", "/v1.0/oauth2/apps/authInfo", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAuthInfo",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/apps/authInfo",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAuthInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetAuthInfoResponse> GetAuthInfoWithOptionsAsync(GetAuthInfoRequest request, GetAuthInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -191,21 +241,33 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetAuthInfoResponse>(await DoROARequestAsync("GetAuthInfo", "oauth2_1.0", "HTTP", "GET", "AK", "/v1.0/oauth2/apps/authInfo", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAuthInfo",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/apps/authInfo",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAuthInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetCorpAccessTokenResponse GetCorpAccessToken(GetCorpAccessTokenRequest request)
+        public GetAuthInfoResponse GetAuthInfo(GetAuthInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
-            return GetCorpAccessTokenWithOptions(request, headers, runtime);
+            GetAuthInfoHeaders headers = new GetAuthInfoHeaders();
+            return GetAuthInfoWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetCorpAccessTokenResponse> GetCorpAccessTokenAsync(GetCorpAccessTokenRequest request)
+        public async Task<GetAuthInfoResponse> GetAuthInfoAsync(GetAuthInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
-            return await GetCorpAccessTokenWithOptionsAsync(request, headers, runtime);
+            GetAuthInfoHeaders headers = new GetAuthInfoHeaders();
+            return await GetAuthInfoWithOptionsAsync(request, headers, runtime);
         }
 
         public GetCorpAccessTokenResponse GetCorpAccessTokenWithOptions(GetCorpAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -233,7 +295,19 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = headers,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetCorpAccessTokenResponse>(DoROARequest("GetCorpAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/corpAccessToken", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCorpAccessToken",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/corpAccessToken",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCorpAccessTokenResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetCorpAccessTokenResponse> GetCorpAccessTokenWithOptionsAsync(GetCorpAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -261,21 +335,33 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = headers,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetCorpAccessTokenResponse>(await DoROARequestAsync("GetCorpAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/corpAccessToken", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCorpAccessToken",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/corpAccessToken",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCorpAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetPersonalAuthRuleResponse GetPersonalAuthRule()
+        public GetCorpAccessTokenResponse GetCorpAccessToken(GetCorpAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetPersonalAuthRuleHeaders headers = new GetPersonalAuthRuleHeaders();
-            return GetPersonalAuthRuleWithOptions(headers, runtime);
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return GetCorpAccessTokenWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetPersonalAuthRuleResponse> GetPersonalAuthRuleAsync()
+        public async Task<GetCorpAccessTokenResponse> GetCorpAccessTokenAsync(GetCorpAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetPersonalAuthRuleHeaders headers = new GetPersonalAuthRuleHeaders();
-            return await GetPersonalAuthRuleWithOptionsAsync(headers, runtime);
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await GetCorpAccessTokenWithOptionsAsync(request, headers, runtime);
         }
 
         public GetPersonalAuthRuleResponse GetPersonalAuthRuleWithOptions(GetPersonalAuthRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -293,7 +379,19 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetPersonalAuthRuleResponse>(DoROARequest("GetPersonalAuthRule", "oauth2_1.0", "HTTP", "GET", "AK", "/v1.0/oauth2/authRules/user", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPersonalAuthRule",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/authRules/user",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPersonalAuthRuleResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetPersonalAuthRuleResponse> GetPersonalAuthRuleWithOptionsAsync(GetPersonalAuthRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -311,21 +409,33 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<GetPersonalAuthRuleResponse>(await DoROARequestAsync("GetPersonalAuthRule", "oauth2_1.0", "HTTP", "GET", "AK", "/v1.0/oauth2/authRules/user", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPersonalAuthRule",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/authRules/user",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPersonalAuthRuleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetSsoAccessTokenResponse GetSsoAccessToken(GetSsoAccessTokenRequest request)
+        public GetPersonalAuthRuleResponse GetPersonalAuthRule()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
-            return GetSsoAccessTokenWithOptions(request, headers, runtime);
+            GetPersonalAuthRuleHeaders headers = new GetPersonalAuthRuleHeaders();
+            return GetPersonalAuthRuleWithOptions(headers, runtime);
         }
 
-        public async Task<GetSsoAccessTokenResponse> GetSsoAccessTokenAsync(GetSsoAccessTokenRequest request)
+        public async Task<GetPersonalAuthRuleResponse> GetPersonalAuthRuleAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
-            return await GetSsoAccessTokenWithOptionsAsync(request, headers, runtime);
+            GetPersonalAuthRuleHeaders headers = new GetPersonalAuthRuleHeaders();
+            return await GetPersonalAuthRuleWithOptionsAsync(headers, runtime);
         }
 
         public GetSsoAccessTokenResponse GetSsoAccessTokenWithOptions(GetSsoAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -345,7 +455,19 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = headers,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetSsoAccessTokenResponse>(DoROARequest("GetSsoAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/ssoAccessToken", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSsoAccessToken",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/ssoAccessToken",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSsoAccessTokenResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetSsoAccessTokenResponse> GetSsoAccessTokenWithOptionsAsync(GetSsoAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -365,21 +487,33 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = headers,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetSsoAccessTokenResponse>(await DoROARequestAsync("GetSsoAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/ssoAccessToken", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSsoAccessToken",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/ssoAccessToken",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSsoAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetSsoUserInfoResponse GetSsoUserInfo(GetSsoUserInfoRequest request)
+        public GetSsoAccessTokenResponse GetSsoAccessToken(GetSsoAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetSsoUserInfoHeaders headers = new GetSsoUserInfoHeaders();
-            return GetSsoUserInfoWithOptions(request, headers, runtime);
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return GetSsoAccessTokenWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetSsoUserInfoResponse> GetSsoUserInfoAsync(GetSsoUserInfoRequest request)
+        public async Task<GetSsoAccessTokenResponse> GetSsoAccessTokenAsync(GetSsoAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetSsoUserInfoHeaders headers = new GetSsoUserInfoHeaders();
-            return await GetSsoUserInfoWithOptionsAsync(request, headers, runtime);
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await GetSsoAccessTokenWithOptionsAsync(request, headers, runtime);
         }
 
         public GetSsoUserInfoResponse GetSsoUserInfoWithOptions(GetSsoUserInfoRequest request, GetSsoUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -404,7 +538,19 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetSsoUserInfoResponse>(DoROARequest("GetSsoUserInfo", "oauth2_1.0", "HTTP", "GET", "AK", "/v1.0/oauth2/ssoUserInfo", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSsoUserInfo",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/ssoUserInfo",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSsoUserInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetSsoUserInfoResponse> GetSsoUserInfoWithOptionsAsync(GetSsoUserInfoRequest request, GetSsoUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -429,21 +575,33 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetSsoUserInfoResponse>(await DoROARequestAsync("GetSsoUserInfo", "oauth2_1.0", "HTTP", "GET", "AK", "/v1.0/oauth2/ssoUserInfo", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSsoUserInfo",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/ssoUserInfo",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSsoUserInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetSuiteAccessTokenResponse GetSuiteAccessToken(GetSuiteAccessTokenRequest request)
+        public GetSsoUserInfoResponse GetSsoUserInfo(GetSsoUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
-            return GetSuiteAccessTokenWithOptions(request, headers, runtime);
+            GetSsoUserInfoHeaders headers = new GetSsoUserInfoHeaders();
+            return GetSsoUserInfoWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetSuiteAccessTokenResponse> GetSuiteAccessTokenAsync(GetSuiteAccessTokenRequest request)
+        public async Task<GetSsoUserInfoResponse> GetSsoUserInfoAsync(GetSsoUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
-            return await GetSuiteAccessTokenWithOptionsAsync(request, headers, runtime);
+            GetSsoUserInfoHeaders headers = new GetSsoUserInfoHeaders();
+            return await GetSsoUserInfoWithOptionsAsync(request, headers, runtime);
         }
 
         public GetSuiteAccessTokenResponse GetSuiteAccessTokenWithOptions(GetSuiteAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -467,7 +625,19 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = headers,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetSuiteAccessTokenResponse>(DoROARequest("GetSuiteAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/suiteAccessToken", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSuiteAccessToken",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/suiteAccessToken",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSuiteAccessTokenResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetSuiteAccessTokenResponse> GetSuiteAccessTokenWithOptionsAsync(GetSuiteAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -491,21 +661,33 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = headers,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetSuiteAccessTokenResponse>(await DoROARequestAsync("GetSuiteAccessToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/suiteAccessToken", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSuiteAccessToken",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/suiteAccessToken",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSuiteAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetUserTokenResponse GetUserToken(GetUserTokenRequest request)
+        public GetSuiteAccessTokenResponse GetSuiteAccessToken(GetSuiteAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             Dictionary<string, string> headers = new Dictionary<string, string>(){};
-            return GetUserTokenWithOptions(request, headers, runtime);
+            return GetSuiteAccessTokenWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetUserTokenResponse> GetUserTokenAsync(GetUserTokenRequest request)
+        public async Task<GetSuiteAccessTokenResponse> GetSuiteAccessTokenAsync(GetSuiteAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             Dictionary<string, string> headers = new Dictionary<string, string>(){};
-            return await GetUserTokenWithOptionsAsync(request, headers, runtime);
+            return await GetSuiteAccessTokenWithOptionsAsync(request, headers, runtime);
         }
 
         public GetUserTokenResponse GetUserTokenWithOptions(GetUserTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -537,7 +719,19 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = headers,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetUserTokenResponse>(DoROARequest("GetUserToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/userAccessToken", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetUserToken",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/userAccessToken",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetUserTokenResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetUserTokenResponse> GetUserTokenWithOptionsAsync(GetUserTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -569,7 +763,33 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 Headers = headers,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetUserTokenResponse>(await DoROARequestAsync("GetUserToken", "oauth2_1.0", "HTTP", "POST", "AK", "/v1.0/oauth2/userAccessToken", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetUserToken",
+                Version = "oauth2_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/oauth2/userAccessToken",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetUserTokenResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetUserTokenResponse GetUserToken(GetUserTokenRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return GetUserTokenWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetUserTokenResponse> GetUserTokenAsync(GetUserTokenRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await GetUserTokenWithOptionsAsync(request, headers, runtime);
         }
 
     }

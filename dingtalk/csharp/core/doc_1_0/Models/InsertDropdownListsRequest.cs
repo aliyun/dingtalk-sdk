@@ -23,9 +23,6 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
         }
 
-        /// <summary>
-        /// 操作人unionId
-        /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }

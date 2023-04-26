@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryPhysicalClassroomRequest : TeaModel {
-        /// <summary>
-        /// 教室id
-        /// </summary>
         [NameInMap("classroomId")]
         [Validation(Required=false)]
         public long? ClassroomId { get; set; }
 
-        /// <summary>
-        /// 操作人id
-        /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }

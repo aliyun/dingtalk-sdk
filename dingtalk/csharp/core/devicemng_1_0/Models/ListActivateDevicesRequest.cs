@@ -9,44 +9,26 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
 {
     public class ListActivateDevicesRequest : TeaModel {
-        /// <summary>
-        /// 设备分类（0：设备，1 : 助手）
-        /// </summary>
         [NameInMap("deviceCategory")]
         [Validation(Required=false)]
         public int? DeviceCategory { get; set; }
 
-        /// <summary>
-        /// deviceCode
-        /// </summary>
         [NameInMap("deviceCode")]
         [Validation(Required=false)]
         public string DeviceCode { get; set; }
 
-        /// <summary>
-        /// deviceTypeId
-        /// </summary>
         [NameInMap("deviceTypeId")]
         [Validation(Required=false)]
         public string DeviceTypeId { get; set; }
 
-        /// <summary>
-        /// groupId
-        /// </summary>
         [NameInMap("groupId")]
         [Validation(Required=false)]
         public string GroupId { get; set; }
 
-        /// <summary>
-        /// pageNo
-        /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public int? PageNumber { get; set; }
 
-        /// <summary>
-        /// pageSize
-        /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public int? PageSize { get; set; }

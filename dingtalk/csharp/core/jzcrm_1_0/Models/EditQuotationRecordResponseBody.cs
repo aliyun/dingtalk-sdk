@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
 {
     public class EditQuotationRecordResponseBody : TeaModel {
-        /// <summary>
-        /// 编辑数据的id
-        /// </summary>
         [NameInMap("msgid")]
         [Validation(Required=false)]
         public long? Msgid { get; set; }
 
-        /// <summary>
-        /// 响应时间
-        /// </summary>
         [NameInMap("time")]
         [Validation(Required=false)]
         public string Time { get; set; }

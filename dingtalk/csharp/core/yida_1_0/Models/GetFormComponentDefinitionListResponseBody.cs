@@ -13,30 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public List<GetFormComponentDefinitionListResponseBodyResult> Result { get; set; }
         public class GetFormComponentDefinitionListResponseBodyResult : TeaModel {
-            /// <summary>
-            /// componentName
-            /// </summary>
             [NameInMap("componentName")]
             [Validation(Required=false)]
             public string ComponentName { get; set; }
 
-            /// <summary>
-            /// key
-            /// </summary>
             [NameInMap("fieldId")]
             [Validation(Required=false)]
             public string FieldId { get; set; }
 
-            /// <summary>
-            /// label
-            /// </summary>
             [NameInMap("label")]
             [Validation(Required=false)]
             public string Label { get; set; }
 
-            /// <summary>
-            /// parentId
-            /// </summary>
             [NameInMap("parentId")]
             [Validation(Required=false)]
             public string ParentId { get; set; }

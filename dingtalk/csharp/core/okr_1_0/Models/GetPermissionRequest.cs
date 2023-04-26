@@ -17,9 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public string TargetType { get; set; }
 
-        /// <summary>
-        /// A short description of struct
-        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

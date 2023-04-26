@@ -9,37 +9,22 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class TopicStatisticsResponseBody : TeaModel {
-        /// <summary>
-        /// 话题趋势
-        /// </summary>
         [NameInMap("topicStatisticsRecords")]
         [Validation(Required=false)]
         public List<TopicStatisticsResponseBodyTopicStatisticsRecords> TopicStatisticsRecords { get; set; }
         public class TopicStatisticsResponseBodyTopicStatisticsRecords : TeaModel {
-            /// <summary>
-            /// 日期
-            /// </summary>
             [NameInMap("dt")]
             [Validation(Required=false)]
             public string Dt { get; set; }
 
-            /// <summary>
-            /// 消息量
-            /// </summary>
             [NameInMap("msgCount")]
             [Validation(Required=false)]
             public long? MsgCount { get; set; }
 
-            /// <summary>
-            /// 参与人数
-            /// </summary>
             [NameInMap("participantsNum")]
             [Validation(Required=false)]
             public long? ParticipantsNum { get; set; }
 
-            /// <summary>
-            /// 话题数量
-            /// </summary>
             [NameInMap("topicNum")]
             [Validation(Required=false)]
             public long? TopicNum { get; set; }

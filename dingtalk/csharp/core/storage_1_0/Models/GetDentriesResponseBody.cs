@@ -9,239 +9,128 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
     public class GetDentriesResponseBody : TeaModel {
-        /// <summary>
-        /// 批量获取文件(夹)信息结果列表
-        /// 最大size:
-        /// 	30
-        /// </summary>
         [NameInMap("resultItems")]
         [Validation(Required=false)]
         public List<GetDentriesResponseBodyResultItems> ResultItems { get; set; }
         public class GetDentriesResponseBodyResultItems : TeaModel {
-            /// <summary>
-            /// 文件(夹)信息
-            /// </summary>
             [NameInMap("dentry")]
             [Validation(Required=false)]
             public GetDentriesResponseBodyResultItemsDentry Dentry { get; set; }
             public class GetDentriesResponseBodyResultItemsDentry : TeaModel {
-                /// <summary>
-                /// 在特定应用上的属性。key是微应用Id, value是属性列表。
-                /// 可以通过修改DentryAppProperty里的scope来设置属性的可见性
-                /// 最大size:
-                /// 	10
-                /// </summary>
                 [NameInMap("appProperties")]
                 [Validation(Required=false)]
                 public Dictionary<string, List<ResultItemsDentryAppPropertiesValue>> AppProperties { get; set; }
 
-                /// <summary>
-                /// 创建时间
-                /// </summary>
                 [NameInMap("createTime")]
                 [Validation(Required=false)]
                 public string CreateTime { get; set; }
 
-                /// <summary>
-                /// 创建者id
-                /// </summary>
                 [NameInMap("creatorId")]
                 [Validation(Required=false)]
                 public string CreatorId { get; set; }
 
-                /// <summary>
-                /// 后缀
-                /// </summary>
                 [NameInMap("extension")]
                 [Validation(Required=false)]
                 public string Extension { get; set; }
 
-                /// <summary>
-                /// id
-                /// </summary>
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public string Id { get; set; }
 
-                /// <summary>
-                /// 修改时间
-                /// </summary>
                 [NameInMap("modifiedTime")]
                 [Validation(Required=false)]
                 public string ModifiedTime { get; set; }
 
-                /// <summary>
-                /// 修改者id
-                /// </summary>
                 [NameInMap("modifierId")]
                 [Validation(Required=false)]
                 public string ModifierId { get; set; }
 
-                /// <summary>
-                /// 名称
-                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
-                /// <summary>
-                /// 父目录id, 根目录id值为0
-                /// 空值代表根目录的parentId不存在
-                /// </summary>
                 [NameInMap("parentId")]
                 [Validation(Required=false)]
                 public string ParentId { get; set; }
 
-                /// <summary>
-                /// 存储分区，目前包括公有云OSS存储分区和专属Mini OSS存储分区
-                /// 枚举值:
-                /// 	PUBLIC_OSS_PARTITION: 公有云OSS存储分区
-                /// 	MINI_OSS_PARTITION: 专属Mini OSS存储分区
-                /// </summary>
                 [NameInMap("partitionType")]
                 [Validation(Required=false)]
                 public string PartitionType { get; set; }
 
-                /// <summary>
-                /// 路径
-                /// </summary>
                 [NameInMap("path")]
                 [Validation(Required=false)]
                 public string Path { get; set; }
 
-                /// <summary>
-                /// 属性
-                /// </summary>
                 [NameInMap("properties")]
                 [Validation(Required=false)]
                 public GetDentriesResponseBodyResultItemsDentryProperties Properties { get; set; }
                 public class GetDentriesResponseBodyResultItemsDentryProperties : TeaModel {
-                    /// <summary>
-                    /// 文件是否只读
-                    /// </summary>
                     [NameInMap("readOnly")]
                     [Validation(Required=false)]
                     public bool? ReadOnly { get; set; }
 
                 }
 
-                /// <summary>
-                /// 大小, 单位:Byte
-                /// </summary>
                 [NameInMap("size")]
                 [Validation(Required=false)]
                 public long? Size { get; set; }
 
-                /// <summary>
-                /// 所在空间id
-                /// </summary>
                 [NameInMap("spaceId")]
                 [Validation(Required=false)]
                 public string SpaceId { get; set; }
 
-                /// <summary>
-                /// 状态
-                /// 枚举值:
-                /// 	NORMAL: 正常
-                /// 	DELETED: 已删除
-                /// 	EXPIRED: 已过期
-                /// </summary>
                 [NameInMap("status")]
                 [Validation(Required=false)]
                 public string Status { get; set; }
 
-                /// <summary>
-                /// 驱动类型
-                /// 枚举值:
-                /// 	DINGTALK: 钉钉统一存储驱动
-                /// 	ALIDOC: 钉钉文档存储驱动
-                /// 	SHANJI: 闪记存储驱动
-                /// 	UNKNOWN: 未知驱动
-                /// </summary>
                 [NameInMap("storageDriver")]
                 [Validation(Required=false)]
                 public string StorageDriver { get; set; }
 
-                /// <summary>
-                /// 缩略图信息
-                /// </summary>
                 [NameInMap("thumbnail")]
                 [Validation(Required=false)]
                 public GetDentriesResponseBodyResultItemsDentryThumbnail Thumbnail { get; set; }
                 public class GetDentriesResponseBodyResultItemsDentryThumbnail : TeaModel {
-                    /// <summary>
-                    /// 缩略图高度
-                    /// </summary>
                     [NameInMap("height")]
                     [Validation(Required=false)]
                     public int? Height { get; set; }
 
-                    /// <summary>
-                    /// 缩略图url
-                    /// </summary>
                     [NameInMap("url")]
                     [Validation(Required=false)]
                     public string Url { get; set; }
 
-                    /// <summary>
-                    /// 缩略图宽度
-                    /// </summary>
                     [NameInMap("width")]
                     [Validation(Required=false)]
                     public int? Width { get; set; }
 
                 }
 
-                /// <summary>
-                /// 类型，目录或文件
-                /// 枚举值:
-                /// 	FILE: 文件
-                /// 	FOLDER: 文件夹
-                /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public string Type { get; set; }
 
-                /// <summary>
-                /// uuid，如移动文件，此字段不变
-                /// </summary>
                 [NameInMap("uuid")]
                 [Validation(Required=false)]
                 public string Uuid { get; set; }
 
-                /// <summary>
-                /// 版本
-                /// </summary>
                 [NameInMap("version")]
                 [Validation(Required=false)]
                 public long? Version { get; set; }
 
             }
 
-            /// <summary>
-            /// 文件(夹)id
-            /// </summary>
             [NameInMap("dentryId")]
             [Validation(Required=false)]
             public string DentryId { get; set; }
 
-            /// <summary>
-            /// 错误原因
-            /// </summary>
             [NameInMap("errorCode")]
             [Validation(Required=false)]
             public string ErrorCode { get; set; }
 
-            /// <summary>
-            /// 文件(夹)空间id
-            /// </summary>
             [NameInMap("spaceId")]
             [Validation(Required=false)]
             public string SpaceId { get; set; }
 
-            /// <summary>
-            /// 是否成功
-            /// </summary>
             [NameInMap("success")]
             [Validation(Required=false)]
             public bool? Success { get; set; }

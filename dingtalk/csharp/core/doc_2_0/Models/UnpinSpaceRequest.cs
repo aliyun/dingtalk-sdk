@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
     public class UnpinSpaceRequest : TeaModel {
-        /// <summary>
-        /// 操作人id
-        /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }

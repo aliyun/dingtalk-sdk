@@ -17,9 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         [Validation(Required=false)]
         public long? NextCursor { get; set; }
 
-        /// <summary>
-        /// 用户列表
-        /// </summary>
         [NameInMap("userList")]
         [Validation(Required=false)]
         public List<ListDeptUsersResponseBodyUserList> UserList { get; set; }
@@ -28,9 +25,6 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             [Validation(Required=false)]
             public bool? Active { get; set; }
 
-            /// <summary>
-            /// 部门ID列表
-            /// </summary>
             [NameInMap("departmentList")]
             [Validation(Required=false)]
             public List<long?> DepartmentList { get; set; }
@@ -43,16 +37,10 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
             [Validation(Required=false)]
             public string Name { get; set; }
 
-            /// <summary>
-            /// unionId
-            /// </summary>
             [NameInMap("unionId")]
             [Validation(Required=false)]
             public string UnionId { get; set; }
 
-            /// <summary>
-            /// 用户ID
-            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }

@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class ReplyRobotResponseBody : TeaModel {
-        /// <summary>
-        /// 回复是否成功结果
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public bool? Result { get; set; }

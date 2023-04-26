@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
 {
     public class ListAvaiableVersionResponseBody : TeaModel {
-        /// <summary>
-        /// result
-        /// </summary>
         [NameInMap("versions")]
         [Validation(Required=false)]
         public List<ListAvaiableVersionResponseBodyVersions> Versions { get; set; }

@@ -35,9 +35,6 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 
         }
 
-        /// <summary>
-        /// status
-        /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public int? Status { get; set; }

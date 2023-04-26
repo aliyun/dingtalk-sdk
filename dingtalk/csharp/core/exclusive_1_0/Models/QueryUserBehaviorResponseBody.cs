@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class QueryUserBehaviorResponseBody : TeaModel {
-        /// <summary>
-        /// 数据列表
-        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public List<QueryUserBehaviorResponseBodyData> Data { get; set; }

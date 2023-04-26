@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
             }
         }
 
-
-        public QueryAppActiveUsersResponse QueryAppActiveUsers(QueryAppActiveUsersRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryAppActiveUsersHeaders headers = new QueryAppActiveUsersHeaders();
-            return QueryAppActiveUsersWithOptions(request, headers, runtime);
-        }
-
-        public async Task<QueryAppActiveUsersResponse> QueryAppActiveUsersAsync(QueryAppActiveUsersRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryAppActiveUsersHeaders headers = new QueryAppActiveUsersHeaders();
-            return await QueryAppActiveUsersWithOptionsAsync(request, headers, runtime);
-        }
 
         public QueryAppActiveUsersResponse QueryAppActiveUsersWithOptions(QueryAppActiveUsersRequest request, QueryAppActiveUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -70,7 +59,19 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryAppActiveUsersResponse>(DoROARequest("QueryAppActiveUsers", "trajectory_1.0", "HTTP", "GET", "AK", "/v1.0/trajectory/activeUsers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryAppActiveUsers",
+                Version = "trajectory_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trajectory/activeUsers",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryAppActiveUsersResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryAppActiveUsersResponse> QueryAppActiveUsersWithOptionsAsync(QueryAppActiveUsersRequest request, QueryAppActiveUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -103,21 +104,33 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryAppActiveUsersResponse>(await DoROARequestAsync("QueryAppActiveUsers", "trajectory_1.0", "HTTP", "GET", "AK", "/v1.0/trajectory/activeUsers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryAppActiveUsers",
+                Version = "trajectory_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trajectory/activeUsers",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryAppActiveUsersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryCollectingTraceTaskResponse QueryCollectingTraceTask(QueryCollectingTraceTaskRequest request)
+        public QueryAppActiveUsersResponse QueryAppActiveUsers(QueryAppActiveUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCollectingTraceTaskHeaders headers = new QueryCollectingTraceTaskHeaders();
-            return QueryCollectingTraceTaskWithOptions(request, headers, runtime);
+            QueryAppActiveUsersHeaders headers = new QueryAppActiveUsersHeaders();
+            return QueryAppActiveUsersWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryCollectingTraceTaskResponse> QueryCollectingTraceTaskAsync(QueryCollectingTraceTaskRequest request)
+        public async Task<QueryAppActiveUsersResponse> QueryAppActiveUsersAsync(QueryAppActiveUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCollectingTraceTaskHeaders headers = new QueryCollectingTraceTaskHeaders();
-            return await QueryCollectingTraceTaskWithOptionsAsync(request, headers, runtime);
+            QueryAppActiveUsersHeaders headers = new QueryAppActiveUsersHeaders();
+            return await QueryAppActiveUsersWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryCollectingTraceTaskResponse QueryCollectingTraceTaskWithOptions(QueryCollectingTraceTaskRequest request, QueryCollectingTraceTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -142,7 +155,19 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryCollectingTraceTaskResponse>(DoROARequest("QueryCollectingTraceTask", "trajectory_1.0", "HTTP", "POST", "AK", "/v1.0/trajectory/currentTasks/queryByUserIds", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCollectingTraceTask",
+                Version = "trajectory_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trajectory/currentTasks/queryByUserIds",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCollectingTraceTaskResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryCollectingTraceTaskResponse> QueryCollectingTraceTaskWithOptionsAsync(QueryCollectingTraceTaskRequest request, QueryCollectingTraceTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -167,21 +192,33 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryCollectingTraceTaskResponse>(await DoROARequestAsync("QueryCollectingTraceTask", "trajectory_1.0", "HTTP", "POST", "AK", "/v1.0/trajectory/currentTasks/queryByUserIds", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCollectingTraceTask",
+                Version = "trajectory_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trajectory/currentTasks/queryByUserIds",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCollectingTraceTaskResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryPageTraceDataResponse QueryPageTraceData(QueryPageTraceDataRequest request)
+        public QueryCollectingTraceTaskResponse QueryCollectingTraceTask(QueryCollectingTraceTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryPageTraceDataHeaders headers = new QueryPageTraceDataHeaders();
-            return QueryPageTraceDataWithOptions(request, headers, runtime);
+            QueryCollectingTraceTaskHeaders headers = new QueryCollectingTraceTaskHeaders();
+            return QueryCollectingTraceTaskWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryPageTraceDataResponse> QueryPageTraceDataAsync(QueryPageTraceDataRequest request)
+        public async Task<QueryCollectingTraceTaskResponse> QueryCollectingTraceTaskAsync(QueryCollectingTraceTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryPageTraceDataHeaders headers = new QueryPageTraceDataHeaders();
-            return await QueryPageTraceDataWithOptionsAsync(request, headers, runtime);
+            QueryCollectingTraceTaskHeaders headers = new QueryCollectingTraceTaskHeaders();
+            return await QueryCollectingTraceTaskWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryPageTraceDataResponse QueryPageTraceDataWithOptions(QueryPageTraceDataRequest request, QueryPageTraceDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -226,7 +263,19 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryPageTraceDataResponse>(DoROARequest("QueryPageTraceData", "trajectory_1.0", "HTTP", "GET", "AK", "/v1.0/trajectory/data", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPageTraceData",
+                Version = "trajectory_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trajectory/data",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPageTraceDataResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryPageTraceDataResponse> QueryPageTraceDataWithOptionsAsync(QueryPageTraceDataRequest request, QueryPageTraceDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -271,7 +320,33 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryPageTraceDataResponse>(await DoROARequestAsync("QueryPageTraceData", "trajectory_1.0", "HTTP", "GET", "AK", "/v1.0/trajectory/data", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPageTraceData",
+                Version = "trajectory_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trajectory/data",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPageTraceDataResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public QueryPageTraceDataResponse QueryPageTraceData(QueryPageTraceDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPageTraceDataHeaders headers = new QueryPageTraceDataHeaders();
+            return QueryPageTraceDataWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryPageTraceDataResponse> QueryPageTraceDataAsync(QueryPageTraceDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPageTraceDataHeaders headers = new QueryPageTraceDataHeaders();
+            return await QueryPageTraceDataWithOptionsAsync(request, headers, runtime);
         }
 
     }

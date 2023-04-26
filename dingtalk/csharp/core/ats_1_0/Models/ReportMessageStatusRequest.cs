@@ -13,30 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
         [Validation(Required=false)]
         public string BizCode { get; set; }
 
-        /// <summary>
-        /// 渠道标识。
-        /// </summary>
         [NameInMap("channel")]
         [Validation(Required=false)]
         public string Channel { get; set; }
 
-        /// <summary>
-        /// 错误码。
-        /// </summary>
         [NameInMap("errorCode")]
         [Validation(Required=false)]
         public string ErrorCode { get; set; }
 
-        /// <summary>
-        /// 错误信息描述。
-        /// </summary>
         [NameInMap("errorMsg")]
         [Validation(Required=false)]
         public string ErrorMsg { get; set; }
 
-        /// <summary>
-        /// 消息ID。
-        /// </summary>
         [NameInMap("messageId")]
         [Validation(Required=false)]
         public string MessageId { get; set; }

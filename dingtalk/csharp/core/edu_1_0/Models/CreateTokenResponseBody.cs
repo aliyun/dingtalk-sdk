@@ -29,9 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public string SecurityToken { get; set; }
 
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public string Status { get; set; }

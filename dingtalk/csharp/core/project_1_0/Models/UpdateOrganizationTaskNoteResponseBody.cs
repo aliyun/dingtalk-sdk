@@ -13,16 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public UpdateOrganizationTaskNoteResponseBodyResult Result { get; set; }
         public class UpdateOrganizationTaskNoteResponseBodyResult : TeaModel {
-            /// <summary>
-            /// 任务备注
-            /// </summary>
             [NameInMap("note")]
             [Validation(Required=false)]
             public string Note { get; set; }
 
-            /// <summary>
-            /// 更新时间
-            /// </summary>
             [NameInMap("updated")]
             [Validation(Required=false)]
             public string Updated { get; set; }

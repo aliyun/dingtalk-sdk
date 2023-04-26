@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0
             }
         }
 
-
-        public CloseTopboxResponse CloseTopbox(CloseTopboxRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CloseTopboxHeaders headers = new CloseTopboxHeaders();
-            return CloseTopboxWithOptions(request, headers, runtime);
-        }
-
-        public async Task<CloseTopboxResponse> CloseTopboxAsync(CloseTopboxRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CloseTopboxHeaders headers = new CloseTopboxHeaders();
-            return await CloseTopboxWithOptionsAsync(request, headers, runtime);
-        }
 
         public CloseTopboxResponse CloseTopboxWithOptions(CloseTopboxRequest request, CloseTopboxHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -90,7 +79,19 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CloseTopboxResponse>(DoROARequest("CloseTopbox", "im_2.0", "HTTP", "POST", "AK", "/v2.0/im/topBoxes/close", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CloseTopbox",
+                Version = "im_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/im/topBoxes/close",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CloseTopboxResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CloseTopboxResponse> CloseTopboxWithOptionsAsync(CloseTopboxRequest request, CloseTopboxHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -143,21 +144,33 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CloseTopboxResponse>(await DoROARequestAsync("CloseTopbox", "im_2.0", "HTTP", "POST", "AK", "/v2.0/im/topBoxes/close", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CloseTopbox",
+                Version = "im_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/im/topBoxes/close",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CloseTopboxResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CreateTopboxResponse CreateTopbox(CreateTopboxRequest request)
+        public CloseTopboxResponse CloseTopbox(CloseTopboxRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateTopboxHeaders headers = new CreateTopboxHeaders();
-            return CreateTopboxWithOptions(request, headers, runtime);
+            CloseTopboxHeaders headers = new CloseTopboxHeaders();
+            return CloseTopboxWithOptions(request, headers, runtime);
         }
 
-        public async Task<CreateTopboxResponse> CreateTopboxAsync(CreateTopboxRequest request)
+        public async Task<CloseTopboxResponse> CloseTopboxAsync(CloseTopboxRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateTopboxHeaders headers = new CreateTopboxHeaders();
-            return await CreateTopboxWithOptionsAsync(request, headers, runtime);
+            CloseTopboxHeaders headers = new CloseTopboxHeaders();
+            return await CloseTopboxWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateTopboxResponse CreateTopboxWithOptions(CreateTopboxRequest request, CreateTopboxHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -250,7 +263,19 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateTopboxResponse>(DoROARequest("CreateTopbox", "im_2.0", "HTTP", "POST", "AK", "/v2.0/im/topBoxes", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateTopbox",
+                Version = "im_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/im/topBoxes",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateTopboxResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateTopboxResponse> CreateTopboxWithOptionsAsync(CreateTopboxRequest request, CreateTopboxHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -343,7 +368,33 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateTopboxResponse>(await DoROARequestAsync("CreateTopbox", "im_2.0", "HTTP", "POST", "AK", "/v2.0/im/topBoxes", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateTopbox",
+                Version = "im_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/im/topBoxes",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateTopboxResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public CreateTopboxResponse CreateTopbox(CreateTopboxRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateTopboxHeaders headers = new CreateTopboxHeaders();
+            return CreateTopboxWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreateTopboxResponse> CreateTopboxAsync(CreateTopboxRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateTopboxHeaders headers = new CreateTopboxHeaders();
+            return await CreateTopboxWithOptionsAsync(request, headers, runtime);
         }
 
     }

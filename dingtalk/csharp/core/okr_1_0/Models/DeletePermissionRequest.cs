@@ -29,9 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public string Type { get; set; }
 
-        /// <summary>
-        /// 当前用户的userId。
-        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class GetTbOrgIdByDingOrgIdRequest : TeaModel {
-        /// <summary>
-        /// 操作者userId
-        /// </summary>
         [NameInMap("optUserId")]
         [Validation(Required=false)]
         public string OptUserId { get; set; }

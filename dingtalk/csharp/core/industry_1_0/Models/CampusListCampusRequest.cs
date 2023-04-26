@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CampusListCampusRequest : TeaModel {
-        /// <summary>
-        /// 项目组ID
-        /// </summary>
         [NameInMap("groupDeptId")]
         [Validation(Required=false)]
         public long? GroupDeptId { get; set; }

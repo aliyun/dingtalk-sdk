@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class ListFormRemarksResponseBody : TeaModel {
-        /// <summary>
-        /// formRemarkVoMap
-        /// </summary>
         [NameInMap("formRemarkVoMap")]
         [Validation(Required=false)]
         public Dictionary<string, object> FormRemarkVoMap { get; set; }

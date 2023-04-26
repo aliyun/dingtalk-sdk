@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class BatchUpdateFormDataByInstanceIdResponseBody : TeaModel {
-        /// <summary>
-        /// 成功更新的表单实例的id
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public List<string> Result { get; set; }

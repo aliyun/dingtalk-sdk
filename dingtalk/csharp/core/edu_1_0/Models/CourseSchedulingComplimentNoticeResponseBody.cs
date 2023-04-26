@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CourseSchedulingComplimentNoticeResponseBody : TeaModel {
-        /// <summary>
-        /// 通知课程导入完成是否成功。
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public bool? Result { get; set; }

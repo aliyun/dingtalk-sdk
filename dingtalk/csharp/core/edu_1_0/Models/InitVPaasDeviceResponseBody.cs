@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class InitVPaasDeviceResponseBody : TeaModel {
-        /// <summary>
-        /// pspk
-        /// </summary>
         [NameInMap("pspk")]
         [Validation(Required=false)]
         public string Pspk { get; set; }

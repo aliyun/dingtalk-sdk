@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class ManagementListSpacesRequest : TeaModel {
-        /// <summary>
-        /// 空间id列表
-        /// </summary>
         [NameInMap("spaceIds")]
         [Validation(Required=false)]
         public List<string> SpaceIds { get; set; }
 
-        /// <summary>
-        /// 用户id
-        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

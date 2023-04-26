@@ -13,9 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string RequestId { get; set; }
 
-        /// <summary>
-        /// result
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public ServiceWindowMessageBatchPushResponseBodyResult Result { get; set; }

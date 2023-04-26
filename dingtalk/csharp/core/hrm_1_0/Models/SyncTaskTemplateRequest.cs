@@ -9,88 +9,52 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class SyncTaskTemplateRequest : TeaModel {
-        /// <summary>
-        /// 是否删除任务模版，true删除，false不删除
-        /// </summary>
         [NameInMap("delete")]
         [Validation(Required=false)]
         public bool? Delete { get; set; }
 
-        /// <summary>
-        /// 任务模板描述
-        /// </summary>
         [NameInMap("des")]
         [Validation(Required=false)]
         public string Des { get; set; }
 
-        /// <summary>
-        /// 扩展信息，json串
-        /// </summary>
         [NameInMap("ext")]
         [Validation(Required=false)]
         public string Ext { get; set; }
 
-        /// <summary>
-        /// 模版名称
-        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
-        /// <summary>
-        /// 任务模版创建人staffId
-        /// </summary>
         [NameInMap("optUserId")]
         [Validation(Required=false)]
         public string OptUserId { get; set; }
 
-        /// <summary>
-        /// isv对应的任务模版唯一键
-        /// </summary>
         [NameInMap("outerId")]
         [Validation(Required=false)]
         public string OuterId { get; set; }
 
-        /// <summary>
-        /// 圈人规则
-        /// </summary>
         [NameInMap("taskScopeVO")]
         [Validation(Required=false)]
         public SyncTaskTemplateRequestTaskScopeVO TaskScopeVO { get; set; }
         public class SyncTaskTemplateRequestTaskScopeVO : TeaModel {
-            /// <summary>
-            /// 按照部门圈人
-            /// </summary>
             [NameInMap("deptIds")]
             [Validation(Required=false)]
             public List<long?> DeptIds { get; set; }
 
-            /// <summary>
-            /// 按照职位圈人
-            /// </summary>
             [NameInMap("positionIds")]
             [Validation(Required=false)]
             public List<string> PositionIds { get; set; }
 
-            /// <summary>
-            /// 按照角色圈人
-            /// </summary>
             [NameInMap("roleIds")]
             [Validation(Required=false)]
             public List<string> RoleIds { get; set; }
 
-            /// <summary>
-            /// 按照员工userId圈人
-            /// </summary>
             [NameInMap("userIds")]
             [Validation(Required=false)]
             public List<string> UserIds { get; set; }
 
         }
 
-        /// <summary>
-        /// 任务模版类型：TRAIN_TASK、PERFORMANCE_TASK
-        /// </summary>
         [NameInMap("taskType")]
         [Validation(Required=false)]
         public string TaskType { get; set; }

@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class CreateApproveResponseBody : TeaModel {
-        /// <summary>
-        /// 返回结果
-        /// </summary>
         [NameInMap("dingtalkApproveId")]
         [Validation(Required=false)]
         public string DingtalkApproveId { get; set; }

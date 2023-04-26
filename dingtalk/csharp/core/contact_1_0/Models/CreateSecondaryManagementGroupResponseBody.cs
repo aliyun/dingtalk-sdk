@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class CreateSecondaryManagementGroupResponseBody : TeaModel {
-        /// <summary>
-        /// 管理组id
-        /// </summary>
         [NameInMap("groupId")]
         [Validation(Required=false)]
         public string GroupId { get; set; }

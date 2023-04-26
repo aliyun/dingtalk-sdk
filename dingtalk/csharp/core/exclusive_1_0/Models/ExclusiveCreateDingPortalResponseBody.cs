@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class ExclusiveCreateDingPortalResponseBody : TeaModel {
-        /// <summary>
-        /// 是否成功。
-        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public string Success { get; set; }

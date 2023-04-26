@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class ClearRobotPluginRequest : TeaModel {
-        /// <summary>
-        /// 钉钉开放平台后台机器人的robotCode
-        /// </summary>
         [NameInMap("robotCode")]
         [Validation(Required=false)]
         public string RobotCode { get; set; }

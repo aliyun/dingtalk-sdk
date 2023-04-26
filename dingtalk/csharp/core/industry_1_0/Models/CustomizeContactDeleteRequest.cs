@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CustomizeContactDeleteRequest : TeaModel {
-        /// <summary>
-        /// 自定义通讯录Code
-        /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }

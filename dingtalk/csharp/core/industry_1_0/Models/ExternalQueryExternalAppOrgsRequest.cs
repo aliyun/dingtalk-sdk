@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class ExternalQueryExternalAppOrgsRequest : TeaModel {
-        /// <summary>
-        /// 外部组织类型
-        /// </summary>
         [NameInMap("externalType")]
         [Validation(Required=false)]
         public string ExternalType { get; set; }

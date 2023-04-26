@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class UpdateContactHideSettingResponseBody : TeaModel {
-        /// <summary>
-        /// settingId
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public long? Result { get; set; }

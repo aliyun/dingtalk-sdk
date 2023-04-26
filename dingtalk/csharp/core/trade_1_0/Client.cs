@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             }
         }
 
-
-        public CheckOpportunityResultResponse CheckOpportunityResult(CheckOpportunityResultRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CheckOpportunityResultHeaders headers = new CheckOpportunityResultHeaders();
-            return CheckOpportunityResultWithOptions(request, headers, runtime);
-        }
-
-        public async Task<CheckOpportunityResultResponse> CheckOpportunityResultAsync(CheckOpportunityResultRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CheckOpportunityResultHeaders headers = new CheckOpportunityResultHeaders();
-            return await CheckOpportunityResultWithOptionsAsync(request, headers, runtime);
-        }
 
         public CheckOpportunityResultResponse CheckOpportunityResultWithOptions(CheckOpportunityResultRequest request, CheckOpportunityResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -78,7 +67,19 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<CheckOpportunityResultResponse>(DoROARequest("CheckOpportunityResult", "trade_1.0", "HTTP", "GET", "AK", "/v1.0/trade/opportunity/check", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CheckOpportunityResult",
+                Version = "trade_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trade/opportunity/check",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CheckOpportunityResultResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CheckOpportunityResultResponse> CheckOpportunityResultWithOptionsAsync(CheckOpportunityResultRequest request, CheckOpportunityResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -119,21 +120,33 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<CheckOpportunityResultResponse>(await DoROARequestAsync("CheckOpportunityResult", "trade_1.0", "HTTP", "GET", "AK", "/v1.0/trade/opportunity/check", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CheckOpportunityResult",
+                Version = "trade_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trade/opportunity/check",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CheckOpportunityResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CreateOpportunityResponse CreateOpportunity(CreateOpportunityRequest request)
+        public CheckOpportunityResultResponse CheckOpportunityResult(CheckOpportunityResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateOpportunityHeaders headers = new CreateOpportunityHeaders();
-            return CreateOpportunityWithOptions(request, headers, runtime);
+            CheckOpportunityResultHeaders headers = new CheckOpportunityResultHeaders();
+            return CheckOpportunityResultWithOptions(request, headers, runtime);
         }
 
-        public async Task<CreateOpportunityResponse> CreateOpportunityAsync(CreateOpportunityRequest request)
+        public async Task<CheckOpportunityResultResponse> CheckOpportunityResultAsync(CheckOpportunityResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateOpportunityHeaders headers = new CreateOpportunityHeaders();
-            return await CreateOpportunityWithOptionsAsync(request, headers, runtime);
+            CheckOpportunityResultHeaders headers = new CheckOpportunityResultHeaders();
+            return await CheckOpportunityResultWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateOpportunityResponse CreateOpportunityWithOptions(CreateOpportunityRequest request, CreateOpportunityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -174,7 +187,19 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateOpportunityResponse>(DoROARequest("CreateOpportunity", "trade_1.0", "HTTP", "POST", "AK", "/v1.0/trade/opportunities", "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateOpportunity",
+                Version = "trade_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trade/opportunities",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateOpportunityResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateOpportunityResponse> CreateOpportunityWithOptionsAsync(CreateOpportunityRequest request, CreateOpportunityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -215,21 +240,33 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateOpportunityResponse>(await DoROARequestAsync("CreateOpportunity", "trade_1.0", "HTTP", "POST", "AK", "/v1.0/trade/opportunities", "none", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateOpportunity",
+                Version = "trade_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trade/opportunities",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateOpportunityResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryTradeOrderResponse QueryTradeOrder(QueryTradeOrderRequest request)
+        public CreateOpportunityResponse CreateOpportunity(CreateOpportunityRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryTradeOrderHeaders headers = new QueryTradeOrderHeaders();
-            return QueryTradeOrderWithOptions(request, headers, runtime);
+            CreateOpportunityHeaders headers = new CreateOpportunityHeaders();
+            return CreateOpportunityWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryTradeOrderResponse> QueryTradeOrderAsync(QueryTradeOrderRequest request)
+        public async Task<CreateOpportunityResponse> CreateOpportunityAsync(CreateOpportunityRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryTradeOrderHeaders headers = new QueryTradeOrderHeaders();
-            return await QueryTradeOrderWithOptionsAsync(request, headers, runtime);
+            CreateOpportunityHeaders headers = new CreateOpportunityHeaders();
+            return await CreateOpportunityWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryTradeOrderResponse QueryTradeOrderWithOptions(QueryTradeOrderRequest request, QueryTradeOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -258,7 +295,19 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryTradeOrderResponse>(DoROARequest("QueryTradeOrder", "trade_1.0", "HTTP", "POST", "AK", "/v1.0/trade/orders/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryTradeOrder",
+                Version = "trade_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trade/orders/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryTradeOrderResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryTradeOrderResponse> QueryTradeOrderWithOptionsAsync(QueryTradeOrderRequest request, QueryTradeOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -287,7 +336,33 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryTradeOrderResponse>(await DoROARequestAsync("QueryTradeOrder", "trade_1.0", "HTTP", "POST", "AK", "/v1.0/trade/orders/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryTradeOrder",
+                Version = "trade_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trade/orders/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryTradeOrderResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public QueryTradeOrderResponse QueryTradeOrder(QueryTradeOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryTradeOrderHeaders headers = new QueryTradeOrderHeaders();
+            return QueryTradeOrderWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryTradeOrderResponse> QueryTradeOrderAsync(QueryTradeOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryTradeOrderHeaders headers = new QueryTradeOrderHeaders();
+            return await QueryTradeOrderWithOptionsAsync(request, headers, runtime);
         }
 
     }

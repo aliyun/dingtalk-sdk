@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class AddResidentUsersResponseBody : TeaModel {
-        /// <summary>
-        /// 创建成功的userId
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public string Result { get; set; }

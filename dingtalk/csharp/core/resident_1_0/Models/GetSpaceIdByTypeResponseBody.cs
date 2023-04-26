@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class GetSpaceIdByTypeResponseBody : TeaModel {
-        /// <summary>
-        /// 部门id
-        /// </summary>
         [NameInMap("referId")]
         [Validation(Required=false)]
         public long? ReferId { get; set; }

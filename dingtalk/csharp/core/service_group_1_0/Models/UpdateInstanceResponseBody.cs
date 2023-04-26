@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class UpdateInstanceResponseBody : TeaModel {
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("openDataInstanceId")]
         [Validation(Required=false)]
         public string OpenDataInstanceId { get; set; }

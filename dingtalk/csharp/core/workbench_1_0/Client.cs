@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,6 +28,66 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             }
         }
 
+
+        public GetDingPortalDetailResponse GetDingPortalDetailWithOptions(string appUuid, GetDingPortalDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDingPortalDetail",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/dingPortals/" + appUuid,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDingPortalDetailResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetDingPortalDetailResponse> GetDingPortalDetailWithOptionsAsync(string appUuid, GetDingPortalDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDingPortalDetail",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/dingPortals/" + appUuid,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDingPortalDetailResponse>(await ExecuteAsync(params_, req, runtime));
+        }
 
         public GetDingPortalDetailResponse GetDingPortalDetail(string appUuid)
         {
@@ -38,58 +101,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetDingPortalDetailHeaders headers = new GetDingPortalDetailHeaders();
             return await GetDingPortalDetailWithOptionsAsync(appUuid, headers, runtime);
-        }
-
-        public GetDingPortalDetailResponse GetDingPortalDetailWithOptions(string appUuid, GetDingPortalDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            appUuid = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(appUuid);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetDingPortalDetailResponse>(DoROARequest("GetDingPortalDetail", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/dingPortals/" + appUuid, "json", req, runtime));
-        }
-
-        public async Task<GetDingPortalDetailResponse> GetDingPortalDetailWithOptionsAsync(string appUuid, GetDingPortalDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            appUuid = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(appUuid);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetDingPortalDetailResponse>(await DoROARequestAsync("GetDingPortalDetail", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/dingPortals/" + appUuid, "json", req, runtime));
-        }
-
-        public GetPluginPermissionPointResponse GetPluginPermissionPoint(GetPluginPermissionPointRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetPluginPermissionPointHeaders headers = new GetPluginPermissionPointHeaders();
-            return GetPluginPermissionPointWithOptions(request, headers, runtime);
-        }
-
-        public async Task<GetPluginPermissionPointResponse> GetPluginPermissionPointAsync(GetPluginPermissionPointRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetPluginPermissionPointHeaders headers = new GetPluginPermissionPointHeaders();
-            return await GetPluginPermissionPointWithOptionsAsync(request, headers, runtime);
         }
 
         public GetPluginPermissionPointResponse GetPluginPermissionPointWithOptions(GetPluginPermissionPointRequest request, GetPluginPermissionPointHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -114,7 +125,19 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetPluginPermissionPointResponse>(DoROARequest("GetPluginPermissionPoint", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/plugins/permissions", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPluginPermissionPoint",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/plugins/permissions",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPluginPermissionPointResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetPluginPermissionPointResponse> GetPluginPermissionPointWithOptionsAsync(GetPluginPermissionPointRequest request, GetPluginPermissionPointHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -139,21 +162,33 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetPluginPermissionPointResponse>(await DoROARequestAsync("GetPluginPermissionPoint", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/plugins/permissions", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPluginPermissionPoint",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/plugins/permissions",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPluginPermissionPointResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetPluginRuleCheckInfoResponse GetPluginRuleCheckInfo(GetPluginRuleCheckInfoRequest request)
+        public GetPluginPermissionPointResponse GetPluginPermissionPoint(GetPluginPermissionPointRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetPluginRuleCheckInfoHeaders headers = new GetPluginRuleCheckInfoHeaders();
-            return GetPluginRuleCheckInfoWithOptions(request, headers, runtime);
+            GetPluginPermissionPointHeaders headers = new GetPluginPermissionPointHeaders();
+            return GetPluginPermissionPointWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetPluginRuleCheckInfoResponse> GetPluginRuleCheckInfoAsync(GetPluginRuleCheckInfoRequest request)
+        public async Task<GetPluginPermissionPointResponse> GetPluginPermissionPointAsync(GetPluginPermissionPointRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetPluginRuleCheckInfoHeaders headers = new GetPluginRuleCheckInfoHeaders();
-            return await GetPluginRuleCheckInfoWithOptionsAsync(request, headers, runtime);
+            GetPluginPermissionPointHeaders headers = new GetPluginPermissionPointHeaders();
+            return await GetPluginPermissionPointWithOptionsAsync(request, headers, runtime);
         }
 
         public GetPluginRuleCheckInfoResponse GetPluginRuleCheckInfoWithOptions(GetPluginRuleCheckInfoRequest request, GetPluginRuleCheckInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -178,7 +213,19 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetPluginRuleCheckInfoResponse>(DoROARequest("GetPluginRuleCheckInfo", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/plugins/validationRules", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPluginRuleCheckInfo",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/plugins/validationRules",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPluginRuleCheckInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetPluginRuleCheckInfoResponse> GetPluginRuleCheckInfoWithOptionsAsync(GetPluginRuleCheckInfoRequest request, GetPluginRuleCheckInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -203,21 +250,33 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetPluginRuleCheckInfoResponse>(await DoROARequestAsync("GetPluginRuleCheckInfo", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/plugins/validationRules", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPluginRuleCheckInfo",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/plugins/validationRules",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPluginRuleCheckInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public ListWorkBenchGroupResponse ListWorkBenchGroup(ListWorkBenchGroupRequest request)
+        public GetPluginRuleCheckInfoResponse GetPluginRuleCheckInfo(GetPluginRuleCheckInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListWorkBenchGroupHeaders headers = new ListWorkBenchGroupHeaders();
-            return ListWorkBenchGroupWithOptions(request, headers, runtime);
+            GetPluginRuleCheckInfoHeaders headers = new GetPluginRuleCheckInfoHeaders();
+            return GetPluginRuleCheckInfoWithOptions(request, headers, runtime);
         }
 
-        public async Task<ListWorkBenchGroupResponse> ListWorkBenchGroupAsync(ListWorkBenchGroupRequest request)
+        public async Task<GetPluginRuleCheckInfoResponse> GetPluginRuleCheckInfoAsync(GetPluginRuleCheckInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListWorkBenchGroupHeaders headers = new ListWorkBenchGroupHeaders();
-            return await ListWorkBenchGroupWithOptionsAsync(request, headers, runtime);
+            GetPluginRuleCheckInfoHeaders headers = new GetPluginRuleCheckInfoHeaders();
+            return await GetPluginRuleCheckInfoWithOptionsAsync(request, headers, runtime);
         }
 
         public ListWorkBenchGroupResponse ListWorkBenchGroupWithOptions(ListWorkBenchGroupRequest request, ListWorkBenchGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -250,7 +309,19 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListWorkBenchGroupResponse>(DoROARequest("ListWorkBenchGroup", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/groups", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListWorkBenchGroup",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/groups",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListWorkBenchGroupResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<ListWorkBenchGroupResponse> ListWorkBenchGroupWithOptionsAsync(ListWorkBenchGroupRequest request, ListWorkBenchGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -283,7 +354,93 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ListWorkBenchGroupResponse>(await DoROARequestAsync("ListWorkBenchGroup", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/groups", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListWorkBenchGroup",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/groups",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListWorkBenchGroupResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public ListWorkBenchGroupResponse ListWorkBenchGroup(ListWorkBenchGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListWorkBenchGroupHeaders headers = new ListWorkBenchGroupHeaders();
+            return ListWorkBenchGroupWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ListWorkBenchGroupResponse> ListWorkBenchGroupAsync(ListWorkBenchGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListWorkBenchGroupHeaders headers = new ListWorkBenchGroupHeaders();
+            return await ListWorkBenchGroupWithOptionsAsync(request, headers, runtime);
+        }
+
+        public QueryComponentScopesResponse QueryComponentScopesWithOptions(string componentId, QueryComponentScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryComponentScopes",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/components/" + componentId + "/scopes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryComponentScopesResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<QueryComponentScopesResponse> QueryComponentScopesWithOptionsAsync(string componentId, QueryComponentScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryComponentScopes",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/components/" + componentId + "/scopes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryComponentScopesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public QueryComponentScopesResponse QueryComponentScopes(string componentId)
@@ -300,9 +457,8 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return await QueryComponentScopesWithOptionsAsync(componentId, headers, runtime);
         }
 
-        public QueryComponentScopesResponse QueryComponentScopesWithOptions(string componentId, QueryComponentScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public QueryShortcutScopesResponse QueryShortcutScopesWithOptions(string shortcutKey, QueryShortcutScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            componentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(componentId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -316,12 +472,23 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<QueryComponentScopesResponse>(DoROARequest("QueryComponentScopes", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/components/" + componentId + "/scopes", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryShortcutScopes",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/shortcuts/" + shortcutKey + "/scopes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryShortcutScopesResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<QueryComponentScopesResponse> QueryComponentScopesWithOptionsAsync(string componentId, QueryComponentScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<QueryShortcutScopesResponse> QueryShortcutScopesWithOptionsAsync(string shortcutKey, QueryShortcutScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            componentId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(componentId);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -335,7 +502,19 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<QueryComponentScopesResponse>(await DoROARequestAsync("QueryComponentScopes", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/components/" + componentId + "/scopes", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryShortcutScopes",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/shortcuts/" + shortcutKey + "/scopes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryShortcutScopesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public QueryShortcutScopesResponse QueryShortcutScopes(string shortcutKey)
@@ -352,9 +531,26 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             return await QueryShortcutScopesWithOptionsAsync(shortcutKey, headers, runtime);
         }
 
-        public QueryShortcutScopesResponse QueryShortcutScopesWithOptions(string shortcutKey, QueryShortcutScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public UpdateDingPortalPageScopeResponse UpdateDingPortalPageScopeWithOptions(string pageUuid, string appUuid, UpdateDingPortalPageScopeRequest request, UpdateDingPortalPageScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            shortcutKey = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(shortcutKey);
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllVisible))
+            {
+                body["allVisible"] = request.AllVisible;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleIds))
+            {
+                body["roleIds"] = request.RoleIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userids))
+            {
+                body["userids"] = request.Userids;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -367,13 +563,43 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryShortcutScopesResponse>(DoROARequest("QueryShortcutScopes", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/shortcuts/" + shortcutKey + "/scopes", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateDingPortalPageScope",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/dingPortals/" + appUuid + "/pageScopes/" + pageUuid,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateDingPortalPageScopeResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<QueryShortcutScopesResponse> QueryShortcutScopesWithOptionsAsync(string shortcutKey, QueryShortcutScopesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<UpdateDingPortalPageScopeResponse> UpdateDingPortalPageScopeWithOptionsAsync(string pageUuid, string appUuid, UpdateDingPortalPageScopeRequest request, UpdateDingPortalPageScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            shortcutKey = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(shortcutKey);
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllVisible))
+            {
+                body["allVisible"] = request.AllVisible;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
+            {
+                body["deptIds"] = request.DeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleIds))
+            {
+                body["roleIds"] = request.RoleIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userids))
+            {
+                body["userids"] = request.Userids;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -386,8 +612,21 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryShortcutScopesResponse>(await DoROARequestAsync("QueryShortcutScopes", "workbench_1.0", "HTTP", "GET", "AK", "/v1.0/workbench/shortcuts/" + shortcutKey + "/scopes", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateDingPortalPageScope",
+                Version = "workbench_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workbench/dingPortals/" + appUuid + "/pageScopes/" + pageUuid,
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateDingPortalPageScopeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public UpdateDingPortalPageScopeResponse UpdateDingPortalPageScope(string pageUuid, string appUuid, UpdateDingPortalPageScopeRequest request)
@@ -402,84 +641,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateDingPortalPageScopeHeaders headers = new UpdateDingPortalPageScopeHeaders();
             return await UpdateDingPortalPageScopeWithOptionsAsync(pageUuid, appUuid, request, headers, runtime);
-        }
-
-        public UpdateDingPortalPageScopeResponse UpdateDingPortalPageScopeWithOptions(string pageUuid, string appUuid, UpdateDingPortalPageScopeRequest request, UpdateDingPortalPageScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            pageUuid = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(pageUuid);
-            appUuid = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(appUuid);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllVisible))
-            {
-                body["allVisible"] = request.AllVisible;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
-            {
-                body["deptIds"] = request.DeptIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleIds))
-            {
-                body["roleIds"] = request.RoleIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userids))
-            {
-                body["userids"] = request.Userids;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<UpdateDingPortalPageScopeResponse>(DoROARequest("UpdateDingPortalPageScope", "workbench_1.0", "HTTP", "PUT", "AK", "/v1.0/workbench/dingPortals/" + appUuid + "/pageScopes/" + pageUuid, "none", req, runtime));
-        }
-
-        public async Task<UpdateDingPortalPageScopeResponse> UpdateDingPortalPageScopeWithOptionsAsync(string pageUuid, string appUuid, UpdateDingPortalPageScopeRequest request, UpdateDingPortalPageScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            pageUuid = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(pageUuid);
-            appUuid = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(appUuid);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllVisible))
-            {
-                body["allVisible"] = request.AllVisible;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIds))
-            {
-                body["deptIds"] = request.DeptIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RoleIds))
-            {
-                body["roleIds"] = request.RoleIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userids))
-            {
-                body["userids"] = request.Userids;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<UpdateDingPortalPageScopeResponse>(await DoROARequestAsync("UpdateDingPortalPageScope", "workbench_1.0", "HTTP", "PUT", "AK", "/v1.0/workbench/dingPortals/" + appUuid + "/pageScopes/" + pageUuid, "none", req, runtime));
         }
 
     }

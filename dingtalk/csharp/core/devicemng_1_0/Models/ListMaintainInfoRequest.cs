@@ -13,16 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         [Validation(Required=false)]
         public List<string> DeviceUuid { get; set; }
 
-        /// <summary>
-        /// 页码
-        /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public int? PageNumber { get; set; }
 
-        /// <summary>
-        /// 页面大小
-        /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public int? PageSize { get; set; }

@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class DeleteFilesResponseBody : TeaModel {
-        /// <summary>
-        /// 是否成功
-        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }
 
-        /// <summary>
-        /// 异步任务id
-        /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]
         public string TaskId { get; set; }

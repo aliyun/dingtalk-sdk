@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             }
         }
 
-
-        public CreatePackageResponse CreatePackage(CreatePackageRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreatePackageHeaders headers = new CreatePackageHeaders();
-            return CreatePackageWithOptions(request, headers, runtime);
-        }
-
-        public async Task<CreatePackageResponse> CreatePackageAsync(CreatePackageRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreatePackageHeaders headers = new CreatePackageHeaders();
-            return await CreatePackageWithOptionsAsync(request, headers, runtime);
-        }
 
         public CreatePackageResponse CreatePackageWithOptions(CreatePackageRequest request, CreatePackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -74,7 +63,19 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreatePackageResponse>(DoROARequest("CreatePackage", "h5package_1.0", "HTTP", "POST", "AK", "/v1.0/h5package/asyncUpload", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreatePackage",
+                Version = "h5package_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/h5package/asyncUpload",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreatePackageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreatePackageResponse> CreatePackageWithOptionsAsync(CreatePackageRequest request, CreatePackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -111,21 +112,33 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreatePackageResponse>(await DoROARequestAsync("CreatePackage", "h5package_1.0", "HTTP", "POST", "AK", "/v1.0/h5package/asyncUpload", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreatePackage",
+                Version = "h5package_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/h5package/asyncUpload",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreatePackageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetAccessTokenResponse GetAccessToken(GetAccessTokenRequest request)
+        public CreatePackageResponse CreatePackage(CreatePackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetAccessTokenHeaders headers = new GetAccessTokenHeaders();
-            return GetAccessTokenWithOptions(request, headers, runtime);
+            CreatePackageHeaders headers = new CreatePackageHeaders();
+            return CreatePackageWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetAccessTokenResponse> GetAccessTokenAsync(GetAccessTokenRequest request)
+        public async Task<CreatePackageResponse> CreatePackageAsync(CreatePackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetAccessTokenHeaders headers = new GetAccessTokenHeaders();
-            return await GetAccessTokenWithOptionsAsync(request, headers, runtime);
+            CreatePackageHeaders headers = new CreatePackageHeaders();
+            return await CreatePackageWithOptionsAsync(request, headers, runtime);
         }
 
         public GetAccessTokenResponse GetAccessTokenWithOptions(GetAccessTokenRequest request, GetAccessTokenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -154,7 +167,19 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetAccessTokenResponse>(DoROARequest("GetAccessToken", "h5package_1.0", "HTTP", "GET", "AK", "/v1.0/h5package/uploadTokens", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAccessToken",
+                Version = "h5package_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/h5package/uploadTokens",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAccessTokenResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetAccessTokenResponse> GetAccessTokenWithOptionsAsync(GetAccessTokenRequest request, GetAccessTokenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -183,21 +208,33 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetAccessTokenResponse>(await DoROARequestAsync("GetAccessToken", "h5package_1.0", "HTTP", "GET", "AK", "/v1.0/h5package/uploadTokens", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAccessToken",
+                Version = "h5package_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/h5package/uploadTokens",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetCreateStatusResponse GetCreateStatus(GetCreateStatusRequest request)
+        public GetAccessTokenResponse GetAccessToken(GetAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetCreateStatusHeaders headers = new GetCreateStatusHeaders();
-            return GetCreateStatusWithOptions(request, headers, runtime);
+            GetAccessTokenHeaders headers = new GetAccessTokenHeaders();
+            return GetAccessTokenWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetCreateStatusResponse> GetCreateStatusAsync(GetCreateStatusRequest request)
+        public async Task<GetAccessTokenResponse> GetAccessTokenAsync(GetAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetCreateStatusHeaders headers = new GetCreateStatusHeaders();
-            return await GetCreateStatusWithOptionsAsync(request, headers, runtime);
+            GetAccessTokenHeaders headers = new GetAccessTokenHeaders();
+            return await GetAccessTokenWithOptionsAsync(request, headers, runtime);
         }
 
         public GetCreateStatusResponse GetCreateStatusWithOptions(GetCreateStatusRequest request, GetCreateStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -222,7 +259,19 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetCreateStatusResponse>(DoROARequest("GetCreateStatus", "h5package_1.0", "HTTP", "GET", "AK", "/v1.0/h5package/uploadStatus", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCreateStatus",
+                Version = "h5package_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/h5package/uploadStatus",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCreateStatusResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetCreateStatusResponse> GetCreateStatusWithOptionsAsync(GetCreateStatusRequest request, GetCreateStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -247,21 +296,33 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetCreateStatusResponse>(await DoROARequestAsync("GetCreateStatus", "h5package_1.0", "HTTP", "GET", "AK", "/v1.0/h5package/uploadStatus", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCreateStatus",
+                Version = "h5package_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/h5package/uploadStatus",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCreateStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public PublishPackageResponse PublishPackage(PublishPackageRequest request)
+        public GetCreateStatusResponse GetCreateStatus(GetCreateStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PublishPackageHeaders headers = new PublishPackageHeaders();
-            return PublishPackageWithOptions(request, headers, runtime);
+            GetCreateStatusHeaders headers = new GetCreateStatusHeaders();
+            return GetCreateStatusWithOptions(request, headers, runtime);
         }
 
-        public async Task<PublishPackageResponse> PublishPackageAsync(PublishPackageRequest request)
+        public async Task<GetCreateStatusResponse> GetCreateStatusAsync(GetCreateStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PublishPackageHeaders headers = new PublishPackageHeaders();
-            return await PublishPackageWithOptionsAsync(request, headers, runtime);
+            GetCreateStatusHeaders headers = new GetCreateStatusHeaders();
+            return await GetCreateStatusWithOptionsAsync(request, headers, runtime);
         }
 
         public PublishPackageResponse PublishPackageWithOptions(PublishPackageRequest request, PublishPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -294,7 +355,19 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PublishPackageResponse>(DoROARequest("PublishPackage", "h5package_1.0", "HTTP", "POST", "AK", "/v1.0/h5package/publish", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PublishPackage",
+                Version = "h5package_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/h5package/publish",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PublishPackageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<PublishPackageResponse> PublishPackageWithOptionsAsync(PublishPackageRequest request, PublishPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -327,7 +400,33 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PublishPackageResponse>(await DoROARequestAsync("PublishPackage", "h5package_1.0", "HTTP", "POST", "AK", "/v1.0/h5package/publish", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PublishPackage",
+                Version = "h5package_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/h5package/publish",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PublishPackageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public PublishPackageResponse PublishPackage(PublishPackageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PublishPackageHeaders headers = new PublishPackageHeaders();
+            return PublishPackageWithOptions(request, headers, runtime);
+        }
+
+        public async Task<PublishPackageResponse> PublishPackageAsync(PublishPackageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PublishPackageHeaders headers = new PublishPackageHeaders();
+            return await PublishPackageWithOptionsAsync(request, headers, runtime);
         }
 
     }

@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class ListTicketOperateRecordResponseBody : TeaModel {
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("records")]
         [Validation(Required=false)]
         public List<ListTicketOperateRecordResponseBodyRecords> Records { get; set; }
         public class ListTicketOperateRecordResponseBodyRecords : TeaModel {
-            /// <summary>
-            /// 工单开放ID
-            /// </summary>
             [NameInMap("openTicketId")]
             [Validation(Required=false)]
             public string OpenTicketId { get; set; }
@@ -27,23 +21,14 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             [Validation(Required=false)]
             public string OperateData { get; set; }
 
-            /// <summary>
-            /// 操作时间
-            /// </summary>
             [NameInMap("operateTime")]
             [Validation(Required=false)]
             public string OperateTime { get; set; }
 
-            /// <summary>
-            /// 动作
-            /// </summary>
             [NameInMap("operation")]
             [Validation(Required=false)]
             public string Operation { get; set; }
 
-            /// <summary>
-            /// 动作展示名
-            /// </summary>
             [NameInMap("operationDisplayName")]
             [Validation(Required=false)]
             public string OperationDisplayName { get; set; }

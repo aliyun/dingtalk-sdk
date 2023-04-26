@@ -9,23 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
 {
     public class QueryHtmlBundleBuildRequest : TeaModel {
-        /// <summary>
-        /// bundleId
-        /// </summary>
         [NameInMap("bundleId")]
         [Validation(Required=false)]
         public string BundleId { get; set; }
 
-        /// <summary>
-        /// miniAppId
-        /// </summary>
         [NameInMap("miniAppId")]
         [Validation(Required=false)]
         public string MiniAppId { get; set; }
 
-        /// <summary>
-        /// version
-        /// </summary>
         [NameInMap("version")]
         [Validation(Required=false)]
         public string Version { get; set; }

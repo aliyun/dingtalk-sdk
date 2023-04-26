@@ -17,9 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         [Validation(Required=false)]
         public string MediaId { get; set; }
 
-        /// <summary>
-        /// 格式yyyy-MM-dd HH:mm:ss
-        /// </summary>
         [NameInMap("sendTime")]
         [Validation(Required=false)]
         public string SendTime { get; set; }

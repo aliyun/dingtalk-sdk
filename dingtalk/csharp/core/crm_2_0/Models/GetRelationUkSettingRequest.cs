@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_2_0.Models
 {
     public class GetRelationUkSettingRequest : TeaModel {
-        /// <summary>
-        /// 关系类型。
-        /// </summary>
         [NameInMap("relationType")]
         [Validation(Required=false)]
         public string RelationType { get; set; }

@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class GetActionDetailRequest : TeaModel {
-        /// <summary>
-        /// 连接资产标识
-        /// </summary>
         [NameInMap("connectAssetUri")]
         [Validation(Required=false)]
         public string ConnectAssetUri { get; set; }

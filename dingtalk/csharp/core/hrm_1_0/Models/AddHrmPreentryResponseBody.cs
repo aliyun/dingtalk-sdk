@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class AddHrmPreentryResponseBody : TeaModel {
-        /// <summary>
-        /// result
-        /// </summary>
         [NameInMap("tmpUserId")]
         [Validation(Required=false)]
         public string TmpUserId { get; set; }

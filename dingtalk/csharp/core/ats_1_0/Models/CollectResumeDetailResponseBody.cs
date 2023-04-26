@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class CollectResumeDetailResponseBody : TeaModel {
-        /// <summary>
-        /// 简历标识
-        /// </summary>
         [NameInMap("resumeId")]
         [Validation(Required=false)]
         public string ResumeId { get; set; }

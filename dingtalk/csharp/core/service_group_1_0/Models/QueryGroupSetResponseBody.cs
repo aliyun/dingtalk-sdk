@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class QueryGroupSetResponseBody : TeaModel {
-        /// <summary>
-        /// records
-        /// </summary>
         [NameInMap("records")]
         [Validation(Required=false)]
         public List<QueryGroupSetResponseBodyRecords> Records { get; set; }

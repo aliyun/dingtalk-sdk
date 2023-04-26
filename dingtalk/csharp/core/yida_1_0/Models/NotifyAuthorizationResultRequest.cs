@@ -49,9 +49,6 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public string InstanceName { get; set; }
 
-        /// <summary>
-        /// 阿里云产品code
-        /// </summary>
         [NameInMap("produceCode")]
         [Validation(Required=false)]
         public string ProduceCode { get; set; }

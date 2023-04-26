@@ -9,30 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetPartnerTypeByParentIdResponseBody : TeaModel {
-        /// <summary>
-        /// 子标签列表
-        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public List<GetPartnerTypeByParentIdResponseBodyData> Data { get; set; }
         public class GetPartnerTypeByParentIdResponseBodyData : TeaModel {
-            /// <summary>
-            /// 子标签id
-            /// </summary>
             [NameInMap("labelId")]
             [Validation(Required=false)]
             public string LabelId { get; set; }
 
-            /// <summary>
-            /// 目前无意义
-            /// </summary>
             [NameInMap("typeId")]
             [Validation(Required=false)]
             public float? TypeId { get; set; }
 
-            /// <summary>
-            /// 子标签名
-            /// </summary>
             [NameInMap("typeName")]
             [Validation(Required=false)]
             public string TypeName { get; set; }

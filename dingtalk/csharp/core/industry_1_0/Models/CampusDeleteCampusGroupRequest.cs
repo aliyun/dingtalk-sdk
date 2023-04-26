@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CampusDeleteCampusGroupRequest : TeaModel {
-        /// <summary>
-        /// 园区项目组ID
-        /// </summary>
         [NameInMap("campusProjectGroupId")]
         [Validation(Required=false)]
         public long? CampusProjectGroupId { get; set; }

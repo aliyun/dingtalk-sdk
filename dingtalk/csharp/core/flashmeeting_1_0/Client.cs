@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
             }
         }
 
-
-        public CreateFlashMeetingResponse CreateFlashMeeting(CreateFlashMeetingRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateFlashMeetingHeaders headers = new CreateFlashMeetingHeaders();
-            return CreateFlashMeetingWithOptions(request, headers, runtime);
-        }
-
-        public async Task<CreateFlashMeetingResponse> CreateFlashMeetingAsync(CreateFlashMeetingRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateFlashMeetingHeaders headers = new CreateFlashMeetingHeaders();
-            return await CreateFlashMeetingWithOptionsAsync(request, headers, runtime);
-        }
 
         public CreateFlashMeetingResponse CreateFlashMeetingWithOptions(CreateFlashMeetingRequest request, CreateFlashMeetingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -70,7 +59,19 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateFlashMeetingResponse>(DoROARequest("CreateFlashMeeting", "flashmeeting_1.0", "HTTP", "POST", "AK", "/v1.0/flashmeeting/meetings", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateFlashMeeting",
+                Version = "flashmeeting_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmeeting/meetings",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateFlashMeetingResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateFlashMeetingResponse> CreateFlashMeetingWithOptionsAsync(CreateFlashMeetingRequest request, CreateFlashMeetingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -103,7 +104,33 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateFlashMeetingResponse>(await DoROARequestAsync("CreateFlashMeeting", "flashmeeting_1.0", "HTTP", "POST", "AK", "/v1.0/flashmeeting/meetings", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateFlashMeeting",
+                Version = "flashmeeting_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmeeting/meetings",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateFlashMeetingResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public CreateFlashMeetingResponse CreateFlashMeeting(CreateFlashMeetingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateFlashMeetingHeaders headers = new CreateFlashMeetingHeaders();
+            return CreateFlashMeetingWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreateFlashMeetingResponse> CreateFlashMeetingAsync(CreateFlashMeetingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateFlashMeetingHeaders headers = new CreateFlashMeetingHeaders();
+            return await CreateFlashMeetingWithOptionsAsync(request, headers, runtime);
         }
 
     }

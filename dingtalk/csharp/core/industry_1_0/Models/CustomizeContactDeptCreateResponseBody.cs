@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CustomizeContactDeptCreateResponseBody : TeaModel {
-        /// <summary>
-        /// 部门Id
-        /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public long? Content { get; set; }

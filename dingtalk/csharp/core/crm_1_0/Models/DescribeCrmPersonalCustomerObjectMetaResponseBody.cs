@@ -9,23 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class DescribeCrmPersonalCustomerObjectMetaResponseBody : TeaModel {
-        /// <summary>
-        /// 表单code
-        /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }
 
-        /// <summary>
-        /// 是否自定义对象
-        /// </summary>
         [NameInMap("customized")]
         [Validation(Required=false)]
         public bool? Customized { get; set; }
 
-        /// <summary>
-        /// 字段列表
-        /// </summary>
         [NameInMap("fields")]
         [Validation(Required=false)]
         public List<DescribeCrmPersonalCustomerObjectMetaResponseBodyFields> Fields { get; set; }
@@ -140,16 +131,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
         }
 
-        /// <summary>
-        /// 对象名称
-        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
-        /// <summary>
-        /// 表单状态
-        /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public string Status { get; set; }

@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class GetBookkeepingUserListResponseBody : TeaModel {
-        /// <summary>
-        /// staffId列表
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public List<string> Result { get; set; }

@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
 {
     public class SendCardResponseBody : TeaModel {
-        /// <summary>
-        /// result
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public string Result { get; set; }
 
-        /// <summary>
-        /// success
-        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

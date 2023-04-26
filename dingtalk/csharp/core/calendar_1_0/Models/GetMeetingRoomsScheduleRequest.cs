@@ -9,23 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
     public class GetMeetingRoomsScheduleRequest : TeaModel {
-        /// <summary>
-        /// 查询结束时间
-        /// </summary>
         [NameInMap("endTime")]
         [Validation(Required=false)]
         public string EndTime { get; set; }
 
-        /// <summary>
-        /// 待查询的用户列表
-        /// </summary>
         [NameInMap("roomIds")]
         [Validation(Required=false)]
         public List<string> RoomIds { get; set; }
 
-        /// <summary>
-        /// 查询开始时间
-        /// </summary>
         [NameInMap("startTime")]
         [Validation(Required=false)]
         public string StartTime { get; set; }

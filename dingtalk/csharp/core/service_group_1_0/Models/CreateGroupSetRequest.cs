@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class CreateGroupSetRequest : TeaModel {
-        /// <summary>
-        /// groupSetName
-        /// </summary>
         [NameInMap("groupSetName")]
         [Validation(Required=false)]
         public string GroupSetName { get; set; }
@@ -20,9 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string GroupTemplateId { get; set; }
 
-        /// <summary>
-        /// openTeamId
-        /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }

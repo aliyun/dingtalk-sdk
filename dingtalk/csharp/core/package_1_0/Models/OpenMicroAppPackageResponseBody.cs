@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkpackage_1_0.Models
 {
     public class OpenMicroAppPackageResponseBody : TeaModel {
-        /// <summary>
-        /// 离线包ID
-        /// </summary>
         [NameInMap("miniAppId")]
         [Validation(Required=false)]
         public string MiniAppId { get; set; }

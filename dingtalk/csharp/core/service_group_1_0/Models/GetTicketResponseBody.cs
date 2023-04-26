@@ -35,9 +35,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("openTicketId")]
         [Validation(Required=false)]
         public string OpenTicketId { get; set; }
@@ -86,23 +83,14 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public GetTicketResponseBodyTemplate Template { get; set; }
         public class GetTicketResponseBodyTemplate : TeaModel {
-            /// <summary>
-            /// 工单模版业务ID
-            /// </summary>
             [NameInMap("openTemplateBizId")]
             [Validation(Required=false)]
             public string OpenTemplateBizId { get; set; }
 
-            /// <summary>
-            /// 工单模版ID
-            /// </summary>
             [NameInMap("openTemplateId")]
             [Validation(Required=false)]
             public string OpenTemplateId { get; set; }
 
-            /// <summary>
-            /// 工单模版名称
-            /// </summary>
             [NameInMap("templateName")]
             [Validation(Required=false)]
             public string TemplateName { get; set; }

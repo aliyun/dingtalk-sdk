@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             }
         }
 
-
-        public CreateMeetingRoomResponse CreateMeetingRoom(CreateMeetingRoomRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateMeetingRoomHeaders headers = new CreateMeetingRoomHeaders();
-            return CreateMeetingRoomWithOptions(request, headers, runtime);
-        }
-
-        public async Task<CreateMeetingRoomResponse> CreateMeetingRoomAsync(CreateMeetingRoomRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateMeetingRoomHeaders headers = new CreateMeetingRoomHeaders();
-            return await CreateMeetingRoomWithOptionsAsync(request, headers, runtime);
-        }
 
         public CreateMeetingRoomResponse CreateMeetingRoomWithOptions(CreateMeetingRoomRequest request, CreateMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -94,7 +83,19 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateMeetingRoomResponse>(DoROARequest("CreateMeetingRoom", "rooms_1.0", "HTTP", "POST", "AK", "/v1.0/rooms/meetingrooms", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateMeetingRoom",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingrooms",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateMeetingRoomResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateMeetingRoomResponse> CreateMeetingRoomWithOptionsAsync(CreateMeetingRoomRequest request, CreateMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -151,21 +152,33 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateMeetingRoomResponse>(await DoROARequestAsync("CreateMeetingRoom", "rooms_1.0", "HTTP", "POST", "AK", "/v1.0/rooms/meetingrooms", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateMeetingRoom",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingrooms",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateMeetingRoomResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CreateMeetingRoomGroupResponse CreateMeetingRoomGroup(CreateMeetingRoomGroupRequest request)
+        public CreateMeetingRoomResponse CreateMeetingRoom(CreateMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateMeetingRoomGroupHeaders headers = new CreateMeetingRoomGroupHeaders();
-            return CreateMeetingRoomGroupWithOptions(request, headers, runtime);
+            CreateMeetingRoomHeaders headers = new CreateMeetingRoomHeaders();
+            return CreateMeetingRoomWithOptions(request, headers, runtime);
         }
 
-        public async Task<CreateMeetingRoomGroupResponse> CreateMeetingRoomGroupAsync(CreateMeetingRoomGroupRequest request)
+        public async Task<CreateMeetingRoomResponse> CreateMeetingRoomAsync(CreateMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateMeetingRoomGroupHeaders headers = new CreateMeetingRoomGroupHeaders();
-            return await CreateMeetingRoomGroupWithOptionsAsync(request, headers, runtime);
+            CreateMeetingRoomHeaders headers = new CreateMeetingRoomHeaders();
+            return await CreateMeetingRoomWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateMeetingRoomGroupResponse CreateMeetingRoomGroupWithOptions(CreateMeetingRoomGroupRequest request, CreateMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -198,7 +211,19 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateMeetingRoomGroupResponse>(DoROARequest("CreateMeetingRoomGroup", "rooms_1.0", "HTTP", "POST", "AK", "/v1.0/rooms/groups", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateMeetingRoomGroup",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/groups",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateMeetingRoomGroupResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateMeetingRoomGroupResponse> CreateMeetingRoomGroupWithOptionsAsync(CreateMeetingRoomGroupRequest request, CreateMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -231,7 +256,107 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateMeetingRoomGroupResponse>(await DoROARequestAsync("CreateMeetingRoomGroup", "rooms_1.0", "HTTP", "POST", "AK", "/v1.0/rooms/groups", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateMeetingRoomGroup",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/groups",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateMeetingRoomGroupResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public CreateMeetingRoomGroupResponse CreateMeetingRoomGroup(CreateMeetingRoomGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateMeetingRoomGroupHeaders headers = new CreateMeetingRoomGroupHeaders();
+            return CreateMeetingRoomGroupWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CreateMeetingRoomGroupResponse> CreateMeetingRoomGroupAsync(CreateMeetingRoomGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateMeetingRoomGroupHeaders headers = new CreateMeetingRoomGroupHeaders();
+            return await CreateMeetingRoomGroupWithOptionsAsync(request, headers, runtime);
+        }
+
+        public DeleteMeetingRoomResponse DeleteMeetingRoomWithOptions(string roomId, DeleteMeetingRoomRequest request, DeleteMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteMeetingRoom",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingRooms/" + roomId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteMeetingRoomResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<DeleteMeetingRoomResponse> DeleteMeetingRoomWithOptionsAsync(string roomId, DeleteMeetingRoomRequest request, DeleteMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteMeetingRoom",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingRooms/" + roomId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteMeetingRoomResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public DeleteMeetingRoomResponse DeleteMeetingRoom(string roomId, DeleteMeetingRoomRequest request)
@@ -248,10 +373,9 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await DeleteMeetingRoomWithOptionsAsync(roomId, request, headers, runtime);
         }
 
-        public DeleteMeetingRoomResponse DeleteMeetingRoomWithOptions(string roomId, DeleteMeetingRoomRequest request, DeleteMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public DeleteMeetingRoomGroupResponse DeleteMeetingRoomGroupWithOptions(string groupId, DeleteMeetingRoomGroupRequest request, DeleteMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            roomId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roomId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -271,13 +395,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeleteMeetingRoomResponse>(DoROARequest("DeleteMeetingRoom", "rooms_1.0", "HTTP", "DELETE", "AK", "/v1.0/rooms/meetingRooms/" + roomId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteMeetingRoomGroup",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/groups/" + groupId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteMeetingRoomGroupResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<DeleteMeetingRoomResponse> DeleteMeetingRoomWithOptionsAsync(string roomId, DeleteMeetingRoomRequest request, DeleteMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<DeleteMeetingRoomGroupResponse> DeleteMeetingRoomGroupWithOptionsAsync(string groupId, DeleteMeetingRoomGroupRequest request, DeleteMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            roomId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roomId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
@@ -297,7 +432,19 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeleteMeetingRoomResponse>(await DoROARequestAsync("DeleteMeetingRoom", "rooms_1.0", "HTTP", "DELETE", "AK", "/v1.0/rooms/meetingRooms/" + roomId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteMeetingRoomGroup",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/groups/" + groupId,
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteMeetingRoomGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public DeleteMeetingRoomGroupResponse DeleteMeetingRoomGroup(string groupId, DeleteMeetingRoomGroupRequest request)
@@ -314,14 +461,13 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await DeleteMeetingRoomGroupWithOptionsAsync(groupId, request, headers, runtime);
         }
 
-        public DeleteMeetingRoomGroupResponse DeleteMeetingRoomGroupWithOptions(string groupId, DeleteMeetingRoomGroupRequest request, DeleteMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public QueryDeviceIpByCodeResponse QueryDeviceIpByCodeWithOptions(string shareCode, QueryDeviceIpByCodeRequest request, QueryDeviceIpByCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            groupId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(groupId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceSn))
             {
-                query["unionId"] = request.UnionId;
+                query["deviceSn"] = request.DeviceSn;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -337,17 +483,28 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeleteMeetingRoomGroupResponse>(DoROARequest("DeleteMeetingRoomGroup", "rooms_1.0", "HTTP", "DELETE", "AK", "/v1.0/rooms/groups/" + groupId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDeviceIpByCode",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/shareCodes/" + shareCode,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDeviceIpByCodeResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<DeleteMeetingRoomGroupResponse> DeleteMeetingRoomGroupWithOptionsAsync(string groupId, DeleteMeetingRoomGroupRequest request, DeleteMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<QueryDeviceIpByCodeResponse> QueryDeviceIpByCodeWithOptionsAsync(string shareCode, QueryDeviceIpByCodeRequest request, QueryDeviceIpByCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            groupId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(groupId);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceSn))
             {
-                query["unionId"] = request.UnionId;
+                query["deviceSn"] = request.DeviceSn;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -363,7 +520,19 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<DeleteMeetingRoomGroupResponse>(await DoROARequestAsync("DeleteMeetingRoomGroup", "rooms_1.0", "HTTP", "DELETE", "AK", "/v1.0/rooms/groups/" + groupId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDeviceIpByCode",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/shareCodes/" + shareCode,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDeviceIpByCodeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public QueryDeviceIpByCodeResponse QueryDeviceIpByCode(string shareCode, QueryDeviceIpByCodeRequest request)
@@ -378,72 +547,6 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryDeviceIpByCodeHeaders headers = new QueryDeviceIpByCodeHeaders();
             return await QueryDeviceIpByCodeWithOptionsAsync(shareCode, request, headers, runtime);
-        }
-
-        public QueryDeviceIpByCodeResponse QueryDeviceIpByCodeWithOptions(string shareCode, QueryDeviceIpByCodeRequest request, QueryDeviceIpByCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            shareCode = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(shareCode);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceSn))
-            {
-                query["deviceSn"] = request.DeviceSn;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<QueryDeviceIpByCodeResponse>(DoROARequest("QueryDeviceIpByCode", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/devices/shareCodes/" + shareCode, "json", req, runtime));
-        }
-
-        public async Task<QueryDeviceIpByCodeResponse> QueryDeviceIpByCodeWithOptionsAsync(string shareCode, QueryDeviceIpByCodeRequest request, QueryDeviceIpByCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            shareCode = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(shareCode);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeviceSn))
-            {
-                query["deviceSn"] = request.DeviceSn;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<QueryDeviceIpByCodeResponse>(await DoROARequestAsync("QueryDeviceIpByCode", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/devices/shareCodes/" + shareCode, "json", req, runtime));
-        }
-
-        public QueryDevicePropertiesResponse QueryDeviceProperties(QueryDevicePropertiesRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryDevicePropertiesHeaders headers = new QueryDevicePropertiesHeaders();
-            return QueryDevicePropertiesWithOptions(request, headers, runtime);
-        }
-
-        public async Task<QueryDevicePropertiesResponse> QueryDevicePropertiesAsync(QueryDevicePropertiesRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryDevicePropertiesHeaders headers = new QueryDevicePropertiesHeaders();
-            return await QueryDevicePropertiesWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryDevicePropertiesResponse QueryDevicePropertiesWithOptions(QueryDevicePropertiesRequest request, QueryDevicePropertiesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -482,7 +585,19 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryDevicePropertiesResponse>(DoROARequest("QueryDeviceProperties", "rooms_1.0", "HTTP", "POST", "AK", "/v1.0/rooms/devices/properties/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDeviceProperties",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/properties/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDevicePropertiesResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryDevicePropertiesResponse> QueryDevicePropertiesWithOptionsAsync(QueryDevicePropertiesRequest request, QueryDevicePropertiesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -521,7 +636,107 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryDevicePropertiesResponse>(await DoROARequestAsync("QueryDeviceProperties", "rooms_1.0", "HTTP", "POST", "AK", "/v1.0/rooms/devices/properties/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDeviceProperties",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices/properties/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDevicePropertiesResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public QueryDevicePropertiesResponse QueryDeviceProperties(QueryDevicePropertiesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryDevicePropertiesHeaders headers = new QueryDevicePropertiesHeaders();
+            return QueryDevicePropertiesWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryDevicePropertiesResponse> QueryDevicePropertiesAsync(QueryDevicePropertiesRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryDevicePropertiesHeaders headers = new QueryDevicePropertiesHeaders();
+            return await QueryDevicePropertiesWithOptionsAsync(request, headers, runtime);
+        }
+
+        public QueryMeetingRoomResponse QueryMeetingRoomWithOptions(string roomId, QueryMeetingRoomRequest request, QueryMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMeetingRoom",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingRooms/" + roomId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMeetingRoomResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<QueryMeetingRoomResponse> QueryMeetingRoomWithOptionsAsync(string roomId, QueryMeetingRoomRequest request, QueryMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMeetingRoom",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingRooms/" + roomId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMeetingRoomResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public QueryMeetingRoomResponse QueryMeetingRoom(string roomId, QueryMeetingRoomRequest request)
@@ -536,72 +751,6 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryMeetingRoomHeaders headers = new QueryMeetingRoomHeaders();
             return await QueryMeetingRoomWithOptionsAsync(roomId, request, headers, runtime);
-        }
-
-        public QueryMeetingRoomResponse QueryMeetingRoomWithOptions(string roomId, QueryMeetingRoomRequest request, QueryMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            roomId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roomId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                query["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<QueryMeetingRoomResponse>(DoROARequest("QueryMeetingRoom", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/meetingRooms/" + roomId, "json", req, runtime));
-        }
-
-        public async Task<QueryMeetingRoomResponse> QueryMeetingRoomWithOptionsAsync(string roomId, QueryMeetingRoomRequest request, QueryMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            roomId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(roomId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                query["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<QueryMeetingRoomResponse>(await DoROARequestAsync("QueryMeetingRoom", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/meetingRooms/" + roomId, "json", req, runtime));
-        }
-
-        public QueryMeetingRoomDeviceResponse QueryMeetingRoomDevice(QueryMeetingRoomDeviceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryMeetingRoomDeviceHeaders headers = new QueryMeetingRoomDeviceHeaders();
-            return QueryMeetingRoomDeviceWithOptions(request, headers, runtime);
-        }
-
-        public async Task<QueryMeetingRoomDeviceResponse> QueryMeetingRoomDeviceAsync(QueryMeetingRoomDeviceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryMeetingRoomDeviceHeaders headers = new QueryMeetingRoomDeviceHeaders();
-            return await QueryMeetingRoomDeviceWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryMeetingRoomDeviceResponse QueryMeetingRoomDeviceWithOptions(QueryMeetingRoomDeviceRequest request, QueryMeetingRoomDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -634,7 +783,19 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryMeetingRoomDeviceResponse>(DoROARequest("QueryMeetingRoomDevice", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/devices", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMeetingRoomDevice",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMeetingRoomDeviceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryMeetingRoomDeviceResponse> QueryMeetingRoomDeviceWithOptionsAsync(QueryMeetingRoomDeviceRequest request, QueryMeetingRoomDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -667,7 +828,107 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryMeetingRoomDeviceResponse>(await DoROARequestAsync("QueryMeetingRoomDevice", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/devices", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMeetingRoomDevice",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/devices",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMeetingRoomDeviceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public QueryMeetingRoomDeviceResponse QueryMeetingRoomDevice(QueryMeetingRoomDeviceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMeetingRoomDeviceHeaders headers = new QueryMeetingRoomDeviceHeaders();
+            return QueryMeetingRoomDeviceWithOptions(request, headers, runtime);
+        }
+
+        public async Task<QueryMeetingRoomDeviceResponse> QueryMeetingRoomDeviceAsync(QueryMeetingRoomDeviceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMeetingRoomDeviceHeaders headers = new QueryMeetingRoomDeviceHeaders();
+            return await QueryMeetingRoomDeviceWithOptionsAsync(request, headers, runtime);
+        }
+
+        public QueryMeetingRoomGroupResponse QueryMeetingRoomGroupWithOptions(string groupId, QueryMeetingRoomGroupRequest request, QueryMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMeetingRoomGroup",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/groups/" + groupId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMeetingRoomGroupResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<QueryMeetingRoomGroupResponse> QueryMeetingRoomGroupWithOptionsAsync(string groupId, QueryMeetingRoomGroupRequest request, QueryMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMeetingRoomGroup",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/groups/" + groupId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMeetingRoomGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public QueryMeetingRoomGroupResponse QueryMeetingRoomGroup(string groupId, QueryMeetingRoomGroupRequest request)
@@ -682,72 +943,6 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryMeetingRoomGroupHeaders headers = new QueryMeetingRoomGroupHeaders();
             return await QueryMeetingRoomGroupWithOptionsAsync(groupId, request, headers, runtime);
-        }
-
-        public QueryMeetingRoomGroupResponse QueryMeetingRoomGroupWithOptions(string groupId, QueryMeetingRoomGroupRequest request, QueryMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            groupId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(groupId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                query["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<QueryMeetingRoomGroupResponse>(DoROARequest("QueryMeetingRoomGroup", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/groups/" + groupId, "json", req, runtime));
-        }
-
-        public async Task<QueryMeetingRoomGroupResponse> QueryMeetingRoomGroupWithOptionsAsync(string groupId, QueryMeetingRoomGroupRequest request, QueryMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            groupId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(groupId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
-            {
-                query["unionId"] = request.UnionId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
-            };
-            return TeaModel.ToObject<QueryMeetingRoomGroupResponse>(await DoROARequestAsync("QueryMeetingRoomGroup", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/groups/" + groupId, "json", req, runtime));
-        }
-
-        public QueryMeetingRoomGroupListResponse QueryMeetingRoomGroupList(QueryMeetingRoomGroupListRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryMeetingRoomGroupListHeaders headers = new QueryMeetingRoomGroupListHeaders();
-            return QueryMeetingRoomGroupListWithOptions(request, headers, runtime);
-        }
-
-        public async Task<QueryMeetingRoomGroupListResponse> QueryMeetingRoomGroupListAsync(QueryMeetingRoomGroupListRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryMeetingRoomGroupListHeaders headers = new QueryMeetingRoomGroupListHeaders();
-            return await QueryMeetingRoomGroupListWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryMeetingRoomGroupListResponse QueryMeetingRoomGroupListWithOptions(QueryMeetingRoomGroupListRequest request, QueryMeetingRoomGroupListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -772,7 +967,19 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryMeetingRoomGroupListResponse>(DoROARequest("QueryMeetingRoomGroupList", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/groupLists", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMeetingRoomGroupList",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/groupLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMeetingRoomGroupListResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryMeetingRoomGroupListResponse> QueryMeetingRoomGroupListWithOptionsAsync(QueryMeetingRoomGroupListRequest request, QueryMeetingRoomGroupListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -797,21 +1004,33 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryMeetingRoomGroupListResponse>(await DoROARequestAsync("QueryMeetingRoomGroupList", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/groupLists", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMeetingRoomGroupList",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/groupLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMeetingRoomGroupListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryMeetingRoomListResponse QueryMeetingRoomList(QueryMeetingRoomListRequest request)
+        public QueryMeetingRoomGroupListResponse QueryMeetingRoomGroupList(QueryMeetingRoomGroupListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryMeetingRoomListHeaders headers = new QueryMeetingRoomListHeaders();
-            return QueryMeetingRoomListWithOptions(request, headers, runtime);
+            QueryMeetingRoomGroupListHeaders headers = new QueryMeetingRoomGroupListHeaders();
+            return QueryMeetingRoomGroupListWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryMeetingRoomListResponse> QueryMeetingRoomListAsync(QueryMeetingRoomListRequest request)
+        public async Task<QueryMeetingRoomGroupListResponse> QueryMeetingRoomGroupListAsync(QueryMeetingRoomGroupListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryMeetingRoomListHeaders headers = new QueryMeetingRoomListHeaders();
-            return await QueryMeetingRoomListWithOptionsAsync(request, headers, runtime);
+            QueryMeetingRoomGroupListHeaders headers = new QueryMeetingRoomGroupListHeaders();
+            return await QueryMeetingRoomGroupListWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryMeetingRoomListResponse QueryMeetingRoomListWithOptions(QueryMeetingRoomListRequest request, QueryMeetingRoomListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -844,7 +1063,19 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryMeetingRoomListResponse>(DoROARequest("QueryMeetingRoomList", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/meetingRoomLists", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMeetingRoomList",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingRoomLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMeetingRoomListResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryMeetingRoomListResponse> QueryMeetingRoomListWithOptionsAsync(QueryMeetingRoomListRequest request, QueryMeetingRoomListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -877,21 +1108,33 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryMeetingRoomListResponse>(await DoROARequestAsync("QueryMeetingRoomList", "rooms_1.0", "HTTP", "GET", "AK", "/v1.0/rooms/meetingRoomLists", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMeetingRoomList",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingRoomLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMeetingRoomListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateMeetingRoomResponse UpdateMeetingRoom(UpdateMeetingRoomRequest request)
+        public QueryMeetingRoomListResponse QueryMeetingRoomList(QueryMeetingRoomListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateMeetingRoomHeaders headers = new UpdateMeetingRoomHeaders();
-            return UpdateMeetingRoomWithOptions(request, headers, runtime);
+            QueryMeetingRoomListHeaders headers = new QueryMeetingRoomListHeaders();
+            return QueryMeetingRoomListWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateMeetingRoomResponse> UpdateMeetingRoomAsync(UpdateMeetingRoomRequest request)
+        public async Task<QueryMeetingRoomListResponse> QueryMeetingRoomListAsync(QueryMeetingRoomListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateMeetingRoomHeaders headers = new UpdateMeetingRoomHeaders();
-            return await UpdateMeetingRoomWithOptionsAsync(request, headers, runtime);
+            QueryMeetingRoomListHeaders headers = new QueryMeetingRoomListHeaders();
+            return await QueryMeetingRoomListWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateMeetingRoomResponse UpdateMeetingRoomWithOptions(UpdateMeetingRoomRequest request, UpdateMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -952,7 +1195,19 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateMeetingRoomResponse>(DoROARequest("UpdateMeetingRoom", "rooms_1.0", "HTTP", "PUT", "AK", "/v1.0/rooms/meetingRooms", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateMeetingRoom",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingRooms",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateMeetingRoomResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateMeetingRoomResponse> UpdateMeetingRoomWithOptionsAsync(UpdateMeetingRoomRequest request, UpdateMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1013,21 +1268,33 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateMeetingRoomResponse>(await DoROARequestAsync("UpdateMeetingRoom", "rooms_1.0", "HTTP", "PUT", "AK", "/v1.0/rooms/meetingRooms", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateMeetingRoom",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/meetingRooms",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateMeetingRoomResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateMeetingRoomGroupResponse UpdateMeetingRoomGroup(UpdateMeetingRoomGroupRequest request)
+        public UpdateMeetingRoomResponse UpdateMeetingRoom(UpdateMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateMeetingRoomGroupHeaders headers = new UpdateMeetingRoomGroupHeaders();
-            return UpdateMeetingRoomGroupWithOptions(request, headers, runtime);
+            UpdateMeetingRoomHeaders headers = new UpdateMeetingRoomHeaders();
+            return UpdateMeetingRoomWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateMeetingRoomGroupResponse> UpdateMeetingRoomGroupAsync(UpdateMeetingRoomGroupRequest request)
+        public async Task<UpdateMeetingRoomResponse> UpdateMeetingRoomAsync(UpdateMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateMeetingRoomGroupHeaders headers = new UpdateMeetingRoomGroupHeaders();
-            return await UpdateMeetingRoomGroupWithOptionsAsync(request, headers, runtime);
+            UpdateMeetingRoomHeaders headers = new UpdateMeetingRoomHeaders();
+            return await UpdateMeetingRoomWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateMeetingRoomGroupResponse UpdateMeetingRoomGroupWithOptions(UpdateMeetingRoomGroupRequest request, UpdateMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1060,7 +1327,19 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateMeetingRoomGroupResponse>(DoROARequest("UpdateMeetingRoomGroup", "rooms_1.0", "HTTP", "PUT", "AK", "/v1.0/rooms/groups", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateMeetingRoomGroup",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/groups",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateMeetingRoomGroupResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateMeetingRoomGroupResponse> UpdateMeetingRoomGroupWithOptionsAsync(UpdateMeetingRoomGroupRequest request, UpdateMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1093,7 +1372,33 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateMeetingRoomGroupResponse>(await DoROARequestAsync("UpdateMeetingRoomGroup", "rooms_1.0", "HTTP", "PUT", "AK", "/v1.0/rooms/groups", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateMeetingRoomGroup",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/groups",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateMeetingRoomGroupResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpdateMeetingRoomGroupResponse UpdateMeetingRoomGroup(UpdateMeetingRoomGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateMeetingRoomGroupHeaders headers = new UpdateMeetingRoomGroupHeaders();
+            return UpdateMeetingRoomGroupWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateMeetingRoomGroupResponse> UpdateMeetingRoomGroupAsync(UpdateMeetingRoomGroupRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateMeetingRoomGroupHeaders headers = new UpdateMeetingRoomGroupHeaders();
+            return await UpdateMeetingRoomGroupWithOptionsAsync(request, headers, runtime);
         }
 
     }

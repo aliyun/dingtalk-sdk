@@ -9,30 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class BatchSendRequest : TeaModel {
-        /// <summary>
-        /// 接受者列表，外部用户
-        /// </summary>
         [NameInMap("appUids")]
         [Validation(Required=false)]
         public List<string> AppUids { get; set; }
 
-        /// <summary>
-        /// 消息内容
-        /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public string Content { get; set; }
 
-        /// <summary>
-        /// 接收消息的群聊列表
-        /// </summary>
         [NameInMap("conversationIds")]
         [Validation(Required=false)]
         public List<string> ConversationIds { get; set; }
 
-        /// <summary>
-        /// 发送者，企业员工账号
-        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

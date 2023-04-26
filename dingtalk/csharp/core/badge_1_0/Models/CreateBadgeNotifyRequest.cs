@@ -9,30 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
 {
     public class CreateBadgeNotifyRequest : TeaModel {
-        /// <summary>
-        /// 通知内容
-        /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public string Content { get; set; }
 
-        /// <summary>
-        /// 消息ID
-        /// </summary>
         [NameInMap("msgId")]
         [Validation(Required=false)]
         public string MsgId { get; set; }
 
-        /// <summary>
-        /// 消息类型
-        /// </summary>
         [NameInMap("msgType")]
         [Validation(Required=false)]
         public string MsgType { get; set; }
 
-        /// <summary>
-        /// 员工ID
-        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

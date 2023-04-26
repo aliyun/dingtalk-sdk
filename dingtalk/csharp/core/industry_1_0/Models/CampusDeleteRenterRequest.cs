@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CampusDeleteRenterRequest : TeaModel {
-        /// <summary>
-        /// 租客ID
-        /// </summary>
         [NameInMap("renterId")]
         [Validation(Required=false)]
         public long? RenterId { get; set; }

@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class QueryCardVisitorStatisticDataRequest : TeaModel {
-        /// <summary>
-        /// 用户的unionId
-        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

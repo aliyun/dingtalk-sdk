@@ -13,16 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public List<QueryUserRoleListResponseBodyRoleVOList> RoleVOList { get; set; }
         public class QueryUserRoleListResponseBodyRoleVOList : TeaModel {
-            /// <summary>
-            /// 角色Code
-            /// </summary>
             [NameInMap("roleCode")]
             [Validation(Required=false)]
             public string RoleCode { get; set; }
 
-            /// <summary>
-            /// 角色名字
-            /// </summary>
             [NameInMap("roleName")]
             [Validation(Required=false)]
             public string RoleName { get; set; }

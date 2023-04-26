@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class GetInstancesByIdsResponseBody : TeaModel {
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("customFormInstanceResponseList")]
         [Validation(Required=false)]
         public List<GetInstancesByIdsResponseBodyCustomFormInstanceResponseList> CustomFormInstanceResponseList { get; set; }

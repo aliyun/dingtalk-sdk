@@ -17,9 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string Endpoint { get; set; }
 
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("key")]
         [Validation(Required=false)]
         public string Key { get; set; }

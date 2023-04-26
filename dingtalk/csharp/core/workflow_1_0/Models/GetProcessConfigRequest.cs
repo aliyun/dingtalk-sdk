@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class GetProcessConfigRequest : TeaModel {
-        /// <summary>
-        /// 模板code
-        /// </summary>
         [NameInMap("procCode")]
         [Validation(Required=false)]
         public string ProcCode { get; set; }

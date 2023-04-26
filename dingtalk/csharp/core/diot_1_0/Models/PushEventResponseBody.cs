@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
 {
     public class PushEventResponseBody : TeaModel {
-        /// <summary>
-        /// 事件ID。
-        /// </summary>
         [NameInMap("eventId")]
         [Validation(Required=false)]
         public string EventId { get; set; }

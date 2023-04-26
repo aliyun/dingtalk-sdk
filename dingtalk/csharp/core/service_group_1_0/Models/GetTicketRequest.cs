@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class GetTicketRequest : TeaModel {
-        /// <summary>
-        /// eKWh3GBwsKEiE
-        /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }
 
-        /// <summary>
-        /// hNiPO2OVktNMiE
-        /// </summary>
         [NameInMap("openTicketId")]
         [Validation(Required=false)]
         public string OpenTicketId { get; set; }

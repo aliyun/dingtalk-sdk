@@ -13,9 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
 
-        /// <summary>
-        /// 当前分页条数
-        /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
@@ -24,9 +21,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
-        /// <summary>
-        /// 总条数
-        /// </summary>
         [NameInMap("totalCount")]
         [Validation(Required=false)]
         public int? TotalCount { get; set; }
@@ -35,95 +29,56 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public List<QueryCrmPersonalCustomerResponseBodyValues> Values { get; set; }
         public class QueryCrmPersonalCustomerResponseBodyValues : TeaModel {
-            /// <summary>
-            /// 创建记录的用户昵称
-            /// </summary>
             [NameInMap("creatorNick")]
             [Validation(Required=false)]
             public string CreatorNick { get; set; }
 
-            /// <summary>
-            /// 创建记录的用户ID
-            /// </summary>
             [NameInMap("creatorUserId")]
             [Validation(Required=false)]
             public string CreatorUserId { get; set; }
 
-            /// <summary>
-            /// 数据内容
-            /// </summary>
             [NameInMap("data")]
             [Validation(Required=false)]
             public Dictionary<string, object> Data { get; set; }
 
-            /// <summary>
-            /// 扩展数据内容
-            /// </summary>
             [NameInMap("extendData")]
             [Validation(Required=false)]
             public Dictionary<string, object> ExtendData { get; set; }
 
-            /// <summary>
-            /// 记录创建时间
-            /// </summary>
             [NameInMap("gmtCreate")]
             [Validation(Required=false)]
             public string GmtCreate { get; set; }
 
-            /// <summary>
-            /// 记录修改时间
-            /// </summary>
             [NameInMap("gmtModified")]
             [Validation(Required=false)]
             public string GmtModified { get; set; }
 
-            /// <summary>
-            /// 数据ID
-            /// </summary>
             [NameInMap("instanceId")]
             [Validation(Required=false)]
             public string InstanceId { get; set; }
 
-            /// <summary>
-            /// 数据类型
-            /// </summary>
             [NameInMap("objectType")]
             [Validation(Required=false)]
             public string ObjectType { get; set; }
 
-            /// <summary>
-            /// 数据权限信息
-            /// </summary>
             [NameInMap("permission")]
             [Validation(Required=false)]
             public QueryCrmPersonalCustomerResponseBodyValuesPermission Permission { get; set; }
             public class QueryCrmPersonalCustomerResponseBodyValuesPermission : TeaModel {
-                /// <summary>
-                /// 负责人用户ID列表
-                /// </summary>
                 [NameInMap("ownerStaffIds")]
                 [Validation(Required=false)]
                 public List<string> OwnerStaffIds { get; set; }
 
-                /// <summary>
-                /// 协同人用户ID列表
-                /// </summary>
                 [NameInMap("participantStaffIds")]
                 [Validation(Required=false)]
                 public List<string> ParticipantStaffIds { get; set; }
 
             }
 
-            /// <summary>
-            /// 审批状态
-            /// </summary>
             [NameInMap("procInstStatus")]
             [Validation(Required=false)]
             public string ProcInstStatus { get; set; }
 
-            /// <summary>
-            /// 审批结果
-            /// </summary>
             [NameInMap("procOutResult")]
             [Validation(Required=false)]
             public string ProcOutResult { get; set; }

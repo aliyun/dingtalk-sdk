@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
 {
     public class GetAttachsApprovalResponseBody : TeaModel {
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public List<GetAttachsApprovalResponseBodyData> Data { get; set; }

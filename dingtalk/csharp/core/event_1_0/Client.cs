@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
             }
         }
 
-
-        public GetCallBackFaileResultResponse GetCallBackFaileResult(GetCallBackFaileResultRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetCallBackFaileResultHeaders headers = new GetCallBackFaileResultHeaders();
-            return GetCallBackFaileResultWithOptions(request, headers, runtime);
-        }
-
-        public async Task<GetCallBackFaileResultResponse> GetCallBackFaileResultAsync(GetCallBackFaileResultRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetCallBackFaileResultHeaders headers = new GetCallBackFaileResultHeaders();
-            return await GetCallBackFaileResultWithOptionsAsync(request, headers, runtime);
-        }
 
         public GetCallBackFaileResultResponse GetCallBackFaileResultWithOptions(GetCallBackFaileResultRequest request, GetCallBackFaileResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -66,7 +55,19 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetCallBackFaileResultResponse>(DoROARequest("GetCallBackFaileResult", "event_1.0", "HTTP", "GET", "AK", "/v1.0/event/callbacks/failedResults", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCallBackFaileResult",
+                Version = "event_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/event/callbacks/failedResults",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCallBackFaileResultResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetCallBackFaileResultResponse> GetCallBackFaileResultWithOptionsAsync(GetCallBackFaileResultRequest request, GetCallBackFaileResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -95,7 +96,33 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetCallBackFaileResultResponse>(await DoROARequestAsync("GetCallBackFaileResult", "event_1.0", "HTTP", "GET", "AK", "/v1.0/event/callbacks/failedResults", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCallBackFaileResult",
+                Version = "event_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/event/callbacks/failedResults",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCallBackFaileResultResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetCallBackFaileResultResponse GetCallBackFaileResult(GetCallBackFaileResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCallBackFaileResultHeaders headers = new GetCallBackFaileResultHeaders();
+            return GetCallBackFaileResultWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetCallBackFaileResultResponse> GetCallBackFaileResultAsync(GetCallBackFaileResultRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCallBackFaileResultHeaders headers = new GetCallBackFaileResultHeaders();
+            return await GetCallBackFaileResultWithOptionsAsync(request, headers, runtime);
         }
 
     }

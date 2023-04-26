@@ -9,23 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class BatchRecallGroupRequest : TeaModel {
-        /// <summary>
-        /// 机器人的robotCode
-        /// </summary>
         [NameInMap("chatbotId")]
         [Validation(Required=false)]
         public string ChatbotId { get; set; }
 
-        /// <summary>
-        /// 开放的群id
-        /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
-        /// <summary>
-        /// 消息id
-        /// </summary>
         [NameInMap("processQueryKeys")]
         [Validation(Required=false)]
         public List<string> ProcessQueryKeys { get; set; }

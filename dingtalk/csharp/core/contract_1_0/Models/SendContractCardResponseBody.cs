@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontract_1_0.Models
 {
     public class SendContractCardResponseBody : TeaModel {
-        /// <summary>
-        /// 成功
-        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

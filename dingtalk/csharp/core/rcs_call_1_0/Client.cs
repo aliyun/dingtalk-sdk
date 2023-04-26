@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkrcs_call_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkrcs_call_1_0
             }
         }
 
-
-        public RunCallUserResponse RunCallUser(RunCallUserRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RunCallUserHeaders headers = new RunCallUserHeaders();
-            return RunCallUserWithOptions(request, headers, runtime);
-        }
-
-        public async Task<RunCallUserResponse> RunCallUserAsync(RunCallUserRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RunCallUserHeaders headers = new RunCallUserHeaders();
-            return await RunCallUserWithOptionsAsync(request, headers, runtime);
-        }
 
         public RunCallUserResponse RunCallUserWithOptions(RunCallUserRequest request, RunCallUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -74,7 +63,19 @@ namespace AlibabaCloud.SDK.Dingtalkrcs_call_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<RunCallUserResponse>(DoROARequest("RunCallUser", "rcsCall_1.0", "HTTP", "POST", "AK", "/v1.0/rcsCall/users/call", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RunCallUser",
+                Version = "rcsCall_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rcsCall/users/call",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RunCallUserResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<RunCallUserResponse> RunCallUserWithOptionsAsync(RunCallUserRequest request, RunCallUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -111,7 +112,33 @@ namespace AlibabaCloud.SDK.Dingtalkrcs_call_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<RunCallUserResponse>(await DoROARequestAsync("RunCallUser", "rcsCall_1.0", "HTTP", "POST", "AK", "/v1.0/rcsCall/users/call", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RunCallUser",
+                Version = "rcsCall_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rcsCall/users/call",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RunCallUserResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public RunCallUserResponse RunCallUser(RunCallUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RunCallUserHeaders headers = new RunCallUserHeaders();
+            return RunCallUserWithOptions(request, headers, runtime);
+        }
+
+        public async Task<RunCallUserResponse> RunCallUserAsync(RunCallUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RunCallUserHeaders headers = new RunCallUserHeaders();
+            return await RunCallUserWithOptionsAsync(request, headers, runtime);
         }
 
     }

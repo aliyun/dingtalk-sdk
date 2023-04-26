@@ -15,9 +15,13 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,6 +29,214 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
             }
         }
 
+
+        public IndustrializeManufactureJobBookResponse IndustrializeManufactureJobBookWithOptions(string userId, IndustrializeManufactureJobBookRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extend))
+            {
+                body["extend"] = request.Extend;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstNo))
+            {
+                body["instNo"] = request.InstNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsBatchJob))
+            {
+                body["isBatchJob"] = request.IsBatchJob;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManufactureDate))
+            {
+                body["manufactureDate"] = request.ManufactureDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MesAppKey))
+            {
+                body["mesAppKey"] = request.MesAppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessEnName))
+            {
+                body["processEnName"] = request.ProcessEnName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessName))
+            {
+                body["processName"] = request.ProcessName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                body["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductEnName))
+            {
+                body["productEnName"] = request.ProductEnName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductSpecification))
+            {
+                body["productSpecification"] = request.ProductSpecification;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QualifiedQuantity))
+            {
+                body["qualifiedQuantity"] = request.QualifiedQuantity;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReworkableQuantity))
+            {
+                body["reworkableQuantity"] = request.ReworkableQuantity;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScrappedQuantity))
+            {
+                body["scrappedQuantity"] = request.ScrappedQuantity;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitPrice))
+            {
+                body["unitPrice"] = request.UnitPrice;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
+            {
+                body["userIdList"] = request.UserIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
+            {
+                body["userName"] = request.UserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserNameList))
+            {
+                body["userNameList"] = request.UserNameList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "IndustrializeManufactureJobBook",
+                Version = "manufacturing_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/manufacturing/users/" + userId + "/jobs",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<IndustrializeManufactureJobBookResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<IndustrializeManufactureJobBookResponse> IndustrializeManufactureJobBookWithOptionsAsync(string userId, IndustrializeManufactureJobBookRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                body["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extend))
+            {
+                body["extend"] = request.Extend;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstNo))
+            {
+                body["instNo"] = request.InstNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsBatchJob))
+            {
+                body["isBatchJob"] = request.IsBatchJob;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManufactureDate))
+            {
+                body["manufactureDate"] = request.ManufactureDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MesAppKey))
+            {
+                body["mesAppKey"] = request.MesAppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessEnName))
+            {
+                body["processEnName"] = request.ProcessEnName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessName))
+            {
+                body["processName"] = request.ProcessName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
+            {
+                body["productCode"] = request.ProductCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductEnName))
+            {
+                body["productEnName"] = request.ProductEnName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
+            {
+                body["productName"] = request.ProductName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductSpecification))
+            {
+                body["productSpecification"] = request.ProductSpecification;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QualifiedQuantity))
+            {
+                body["qualifiedQuantity"] = request.QualifiedQuantity;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReworkableQuantity))
+            {
+                body["reworkableQuantity"] = request.ReworkableQuantity;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScrappedQuantity))
+            {
+                body["scrappedQuantity"] = request.ScrappedQuantity;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitPrice))
+            {
+                body["unitPrice"] = request.UnitPrice;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
+            {
+                body["userIdList"] = request.UserIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
+            {
+                body["userName"] = request.UserName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserNameList))
+            {
+                body["userNameList"] = request.UserNameList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
+            {
+                body["uuid"] = request.Uuid;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "IndustrializeManufactureJobBook",
+                Version = "manufacturing_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/manufacturing/users/" + userId + "/jobs",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<IndustrializeManufactureJobBookResponse>(await ExecuteAsync(params_, req, runtime));
+        }
 
         public IndustrializeManufactureJobBookResponse IndustrializeManufactureJobBook(string userId, IndustrializeManufactureJobBookRequest request)
         {
@@ -38,206 +250,6 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             Dictionary<string, string> headers = new Dictionary<string, string>(){};
             return await IndustrializeManufactureJobBookWithOptionsAsync(userId, request, headers, runtime);
-        }
-
-        public IndustrializeManufactureJobBookResponse IndustrializeManufactureJobBookWithOptions(string userId, IndustrializeManufactureJobBookRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                body["corpId"] = request.CorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extend))
-            {
-                body["extend"] = request.Extend;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstNo))
-            {
-                body["instNo"] = request.InstNo;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsBatchJob))
-            {
-                body["isBatchJob"] = request.IsBatchJob;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManufactureDate))
-            {
-                body["manufactureDate"] = request.ManufactureDate;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MesAppKey))
-            {
-                body["mesAppKey"] = request.MesAppKey;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessEnName))
-            {
-                body["processEnName"] = request.ProcessEnName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessName))
-            {
-                body["processName"] = request.ProcessName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
-            {
-                body["productCode"] = request.ProductCode;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductEnName))
-            {
-                body["productEnName"] = request.ProductEnName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
-            {
-                body["productName"] = request.ProductName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductSpecification))
-            {
-                body["productSpecification"] = request.ProductSpecification;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QualifiedQuantity))
-            {
-                body["qualifiedQuantity"] = request.QualifiedQuantity;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReworkableQuantity))
-            {
-                body["reworkableQuantity"] = request.ReworkableQuantity;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScrappedQuantity))
-            {
-                body["scrappedQuantity"] = request.ScrappedQuantity;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitPrice))
-            {
-                body["unitPrice"] = request.UnitPrice;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
-            {
-                body["userIdList"] = request.UserIdList;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
-            {
-                body["userName"] = request.UserName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserNameList))
-            {
-                body["userNameList"] = request.UserNameList;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
-            {
-                body["uuid"] = request.Uuid;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = headers,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<IndustrializeManufactureJobBookResponse>(DoROARequest("IndustrializeManufactureJobBook", "manufacturing_1.0", "HTTP", "POST", "AK", "/v1.0/manufacturing/users/" + userId + "/jobs", "json", req, runtime));
-        }
-
-        public async Task<IndustrializeManufactureJobBookResponse> IndustrializeManufactureJobBookWithOptionsAsync(string userId, IndustrializeManufactureJobBookRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
-            {
-                body["corpId"] = request.CorpId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extend))
-            {
-                body["extend"] = request.Extend;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstNo))
-            {
-                body["instNo"] = request.InstNo;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsBatchJob))
-            {
-                body["isBatchJob"] = request.IsBatchJob;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManufactureDate))
-            {
-                body["manufactureDate"] = request.ManufactureDate;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MesAppKey))
-            {
-                body["mesAppKey"] = request.MesAppKey;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessEnName))
-            {
-                body["processEnName"] = request.ProcessEnName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessName))
-            {
-                body["processName"] = request.ProcessName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductCode))
-            {
-                body["productCode"] = request.ProductCode;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductEnName))
-            {
-                body["productEnName"] = request.ProductEnName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductName))
-            {
-                body["productName"] = request.ProductName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProductSpecification))
-            {
-                body["productSpecification"] = request.ProductSpecification;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.QualifiedQuantity))
-            {
-                body["qualifiedQuantity"] = request.QualifiedQuantity;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReworkableQuantity))
-            {
-                body["reworkableQuantity"] = request.ReworkableQuantity;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScrappedQuantity))
-            {
-                body["scrappedQuantity"] = request.ScrappedQuantity;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnitPrice))
-            {
-                body["unitPrice"] = request.UnitPrice;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIdList))
-            {
-                body["userIdList"] = request.UserIdList;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserName))
-            {
-                body["userName"] = request.UserName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserNameList))
-            {
-                body["userNameList"] = request.UserNameList;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Uuid))
-            {
-                body["uuid"] = request.Uuid;
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = headers,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<IndustrializeManufactureJobBookResponse>(await DoROARequestAsync("IndustrializeManufactureJobBook", "manufacturing_1.0", "HTTP", "POST", "AK", "/v1.0/manufacturing/users/" + userId + "/jobs", "json", req, runtime));
-        }
-
-        public IndustrializeManufactureQueryJobsResponse IndustrializeManufactureQueryJobs(IndustrializeManufactureQueryJobsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            IndustrializeManufactureQueryJobsHeaders headers = new IndustrializeManufactureQueryJobsHeaders();
-            return IndustrializeManufactureQueryJobsWithOptions(request, headers, runtime);
-        }
-
-        public async Task<IndustrializeManufactureQueryJobsResponse> IndustrializeManufactureQueryJobsAsync(IndustrializeManufactureQueryJobsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            IndustrializeManufactureQueryJobsHeaders headers = new IndustrializeManufactureQueryJobsHeaders();
-            return await IndustrializeManufactureQueryJobsWithOptionsAsync(request, headers, runtime);
         }
 
         public IndustrializeManufactureQueryJobsResponse IndustrializeManufactureQueryJobsWithOptions(IndustrializeManufactureQueryJobsRequest request, IndustrializeManufactureQueryJobsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -318,7 +330,19 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<IndustrializeManufactureQueryJobsResponse>(DoROARequest("IndustrializeManufactureQueryJobs", "manufacturing_1.0", "HTTP", "POST", "AK", "/v1.0/manufacturing/users/jobs/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "IndustrializeManufactureQueryJobs",
+                Version = "manufacturing_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/manufacturing/users/jobs/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<IndustrializeManufactureQueryJobsResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<IndustrializeManufactureQueryJobsResponse> IndustrializeManufactureQueryJobsWithOptionsAsync(IndustrializeManufactureQueryJobsRequest request, IndustrializeManufactureQueryJobsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -399,7 +423,33 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<IndustrializeManufactureQueryJobsResponse>(await DoROARequestAsync("IndustrializeManufactureQueryJobs", "manufacturing_1.0", "HTTP", "POST", "AK", "/v1.0/manufacturing/users/jobs/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "IndustrializeManufactureQueryJobs",
+                Version = "manufacturing_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/manufacturing/users/jobs/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<IndustrializeManufactureQueryJobsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public IndustrializeManufactureQueryJobsResponse IndustrializeManufactureQueryJobs(IndustrializeManufactureQueryJobsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IndustrializeManufactureQueryJobsHeaders headers = new IndustrializeManufactureQueryJobsHeaders();
+            return IndustrializeManufactureQueryJobsWithOptions(request, headers, runtime);
+        }
+
+        public async Task<IndustrializeManufactureQueryJobsResponse> IndustrializeManufactureQueryJobsAsync(IndustrializeManufactureQueryJobsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IndustrializeManufactureQueryJobsHeaders headers = new IndustrializeManufactureQueryJobsHeaders();
+            return await IndustrializeManufactureQueryJobsWithOptionsAsync(request, headers, runtime);
         }
 
     }

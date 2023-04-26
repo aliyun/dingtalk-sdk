@@ -17,9 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
         [Validation(Required=false)]
         public int? PageSize { get; set; }
 
-        /// <summary>
-        /// 钉钉开放平台后台机器人的robotCode
-        /// </summary>
         [NameInMap("robotCode")]
         [Validation(Required=false)]
         public string RobotCode { get; set; }

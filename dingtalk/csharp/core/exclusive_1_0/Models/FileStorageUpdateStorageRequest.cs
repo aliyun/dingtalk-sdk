@@ -9,23 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class FileStorageUpdateStorageRequest : TeaModel {
-        /// <summary>
-        /// 密匙id
-        /// </summary>
         [NameInMap("accessKeyId")]
         [Validation(Required=false)]
         public string AccessKeyId { get; set; }
 
-        /// <summary>
-        /// 密匙密码
-        /// </summary>
         [NameInMap("accessKeySecret")]
         [Validation(Required=false)]
         public string AccessKeySecret { get; set; }
 
-        /// <summary>
-        /// 企业id
-        /// </summary>
         [NameInMap("targetCorpId")]
         [Validation(Required=false)]
         public string TargetCorpId { get; set; }

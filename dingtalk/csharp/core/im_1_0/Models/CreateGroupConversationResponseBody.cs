@@ -9,30 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class CreateGroupConversationResponseBody : TeaModel {
-        /// <summary>
-        /// 添加成功的钉外成员列表。
-        /// </summary>
         [NameInMap("appUserIds")]
         [Validation(Required=false)]
         public List<string> AppUserIds { get; set; }
 
-        /// <summary>
-        /// 钉钉群会话Id。
-        /// </summary>
         [NameInMap("conversationId")]
         [Validation(Required=false)]
         public string ConversationId { get; set; }
 
-        /// <summary>
-        /// 群会话Id。
-        /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
-        /// <summary>
-        /// 添加成功的钉内成员列表。
-        /// </summary>
         [NameInMap("userIds")]
         [Validation(Required=false)]
         public List<string> UserIds { get; set; }

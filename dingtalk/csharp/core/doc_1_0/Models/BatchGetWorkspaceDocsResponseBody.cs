@@ -25,16 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 [Validation(Required=false)]
                 public bool? Deleted { get; set; }
 
-                /// <summary>
-                /// 节点类型
-                /// </summary>
                 [NameInMap("docType")]
                 [Validation(Required=false)]
                 public string DocType { get; set; }
 
-                /// <summary>
-                /// 最后编辑时间
-                /// </summary>
                 [NameInMap("lastEditTime")]
                 [Validation(Required=false)]
                 public long? LastEditTime { get; set; }

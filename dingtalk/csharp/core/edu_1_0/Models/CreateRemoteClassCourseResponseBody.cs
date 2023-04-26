@@ -13,9 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public CreateRemoteClassCourseResponseBodyResult Result { get; set; }
         public class CreateRemoteClassCourseResponseBodyResult : TeaModel {
-            /// <summary>
-            /// 课程码
-            /// </summary>
             [NameInMap("courseCode")]
             [Validation(Required=false)]
             public string CourseCode { get; set; }

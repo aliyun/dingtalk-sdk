@@ -9,51 +9,30 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class GetEmpsByOrgIdResponseBody : TeaModel {
-        /// <summary>
-        /// empList
-        /// </summary>
         [NameInMap("empList")]
         [Validation(Required=false)]
         public List<GetEmpsByOrgIdResponseBodyEmpList> EmpList { get; set; }
         public class GetEmpsByOrgIdResponseBodyEmpList : TeaModel {
-            /// <summary>
-            /// avatar
-            /// </summary>
             [NameInMap("avatar")]
             [Validation(Required=false)]
             public string Avatar { get; set; }
 
-            /// <summary>
-            /// deptIdList
-            /// </summary>
             [NameInMap("dept_id_list")]
             [Validation(Required=false)]
             public List<long?> DeptIdList { get; set; }
 
-            /// <summary>
-            /// dingId
-            /// </summary>
             [NameInMap("dingId")]
             [Validation(Required=false)]
             public string DingId { get; set; }
 
-            /// <summary>
-            /// name
-            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
-            /// <summary>
-            /// nick
-            /// </summary>
             [NameInMap("nick")]
             [Validation(Required=false)]
             public string Nick { get; set; }
 
-            /// <summary>
-            /// orgId
-            /// </summary>
             [NameInMap("orgId")]
             [Validation(Required=false)]
             public long? OrgId { get; set; }
@@ -62,25 +41,16 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public string Position { get; set; }
 
-            /// <summary>
-            /// unionId
-            /// </summary>
             [NameInMap("unionid")]
             [Validation(Required=false)]
             public string Unionid { get; set; }
 
-            /// <summary>
-            /// userid
-            /// </summary>
             [NameInMap("userid")]
             [Validation(Required=false)]
             public string Userid { get; set; }
 
         }
 
-        /// <summary>
-        /// hasMore
-        /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
         public bool? HasMore { get; set; }

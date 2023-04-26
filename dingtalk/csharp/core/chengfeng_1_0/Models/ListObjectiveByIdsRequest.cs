@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
 {
     public class ListObjectiveByIdsRequest : TeaModel {
-        /// <summary>
-        /// 目标ID列表
-        /// </summary>
         [NameInMap("objectiveIds")]
         [Validation(Required=false)]
         public List<string> ObjectiveIds { get; set; }

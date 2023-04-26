@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CollegeAddManagerResponseBody : TeaModel {
-        /// <summary>
-        /// 添加负责人是否成功
-        /// </summary>
         [NameInMap("isSuccessful")]
         [Validation(Required=false)]
         public bool? IsSuccessful { get; set; }

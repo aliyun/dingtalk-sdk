@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
     public class GenerateCaldavAccountRequest : TeaModel {
-        /// <summary>
-        /// 设备名称
-        /// </summary>
         [NameInMap("device")]
         [Validation(Required=false)]
         public string Device { get; set; }

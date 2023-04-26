@@ -23,9 +23,6 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
 
         }
 
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("requestId")]
         [Validation(Required=false)]
         public string RequestId { get; set; }

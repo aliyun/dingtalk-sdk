@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
             }
         }
 
-
-        public PediaWordsAddResponse PediaWordsAdd(PediaWordsAddRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PediaWordsAddHeaders headers = new PediaWordsAddHeaders();
-            return PediaWordsAddWithOptions(request, headers, runtime);
-        }
-
-        public async Task<PediaWordsAddResponse> PediaWordsAddAsync(PediaWordsAddRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PediaWordsAddHeaders headers = new PediaWordsAddHeaders();
-            return await PediaWordsAddWithOptionsAsync(request, headers, runtime);
-        }
 
         public PediaWordsAddResponse PediaWordsAddWithOptions(PediaWordsAddRequest request, PediaWordsAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -94,7 +83,19 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PediaWordsAddResponse>(DoROARequest("PediaWordsAdd", "pedia_1.0", "HTTP", "POST", "AK", "/v1.0/pedia/words", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PediaWordsAdd",
+                Version = "pedia_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/pedia/words",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PediaWordsAddResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<PediaWordsAddResponse> PediaWordsAddWithOptionsAsync(PediaWordsAddRequest request, PediaWordsAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -151,21 +152,33 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PediaWordsAddResponse>(await DoROARequestAsync("PediaWordsAdd", "pedia_1.0", "HTTP", "POST", "AK", "/v1.0/pedia/words", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PediaWordsAdd",
+                Version = "pedia_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/pedia/words",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PediaWordsAddResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public PediaWordsApproveResponse PediaWordsApprove(PediaWordsApproveRequest request)
+        public PediaWordsAddResponse PediaWordsAdd(PediaWordsAddRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PediaWordsApproveHeaders headers = new PediaWordsApproveHeaders();
-            return PediaWordsApproveWithOptions(request, headers, runtime);
+            PediaWordsAddHeaders headers = new PediaWordsAddHeaders();
+            return PediaWordsAddWithOptions(request, headers, runtime);
         }
 
-        public async Task<PediaWordsApproveResponse> PediaWordsApproveAsync(PediaWordsApproveRequest request)
+        public async Task<PediaWordsAddResponse> PediaWordsAddAsync(PediaWordsAddRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PediaWordsApproveHeaders headers = new PediaWordsApproveHeaders();
-            return await PediaWordsApproveWithOptionsAsync(request, headers, runtime);
+            PediaWordsAddHeaders headers = new PediaWordsAddHeaders();
+            return await PediaWordsAddWithOptionsAsync(request, headers, runtime);
         }
 
         public PediaWordsApproveResponse PediaWordsApproveWithOptions(PediaWordsApproveRequest request, PediaWordsApproveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -210,7 +223,19 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PediaWordsApproveResponse>(DoROARequest("PediaWordsApprove", "pedia_1.0", "HTTP", "POST", "AK", "/v1.0/pedia/words/approve", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PediaWordsApprove",
+                Version = "pedia_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/pedia/words/approve",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PediaWordsApproveResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<PediaWordsApproveResponse> PediaWordsApproveWithOptionsAsync(PediaWordsApproveRequest request, PediaWordsApproveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -255,21 +280,33 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PediaWordsApproveResponse>(await DoROARequestAsync("PediaWordsApprove", "pedia_1.0", "HTTP", "POST", "AK", "/v1.0/pedia/words/approve", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PediaWordsApprove",
+                Version = "pedia_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/pedia/words/approve",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PediaWordsApproveResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public PediaWordsDeleteResponse PediaWordsDelete(PediaWordsDeleteRequest request)
+        public PediaWordsApproveResponse PediaWordsApprove(PediaWordsApproveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PediaWordsDeleteHeaders headers = new PediaWordsDeleteHeaders();
-            return PediaWordsDeleteWithOptions(request, headers, runtime);
+            PediaWordsApproveHeaders headers = new PediaWordsApproveHeaders();
+            return PediaWordsApproveWithOptions(request, headers, runtime);
         }
 
-        public async Task<PediaWordsDeleteResponse> PediaWordsDeleteAsync(PediaWordsDeleteRequest request)
+        public async Task<PediaWordsApproveResponse> PediaWordsApproveAsync(PediaWordsApproveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PediaWordsDeleteHeaders headers = new PediaWordsDeleteHeaders();
-            return await PediaWordsDeleteWithOptionsAsync(request, headers, runtime);
+            PediaWordsApproveHeaders headers = new PediaWordsApproveHeaders();
+            return await PediaWordsApproveWithOptionsAsync(request, headers, runtime);
         }
 
         public PediaWordsDeleteResponse PediaWordsDeleteWithOptions(PediaWordsDeleteRequest request, PediaWordsDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -298,7 +335,19 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<PediaWordsDeleteResponse>(DoROARequest("PediaWordsDelete", "pedia_1.0", "HTTP", "DELETE", "AK", "/v1.0/pedia/words", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PediaWordsDelete",
+                Version = "pedia_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/pedia/words",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PediaWordsDeleteResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<PediaWordsDeleteResponse> PediaWordsDeleteWithOptionsAsync(PediaWordsDeleteRequest request, PediaWordsDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -327,21 +376,33 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<PediaWordsDeleteResponse>(await DoROARequestAsync("PediaWordsDelete", "pedia_1.0", "HTTP", "DELETE", "AK", "/v1.0/pedia/words", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PediaWordsDelete",
+                Version = "pedia_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/pedia/words",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PediaWordsDeleteResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public PediaWordsQueryResponse PediaWordsQuery(PediaWordsQueryRequest request)
+        public PediaWordsDeleteResponse PediaWordsDelete(PediaWordsDeleteRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PediaWordsQueryHeaders headers = new PediaWordsQueryHeaders();
-            return PediaWordsQueryWithOptions(request, headers, runtime);
+            PediaWordsDeleteHeaders headers = new PediaWordsDeleteHeaders();
+            return PediaWordsDeleteWithOptions(request, headers, runtime);
         }
 
-        public async Task<PediaWordsQueryResponse> PediaWordsQueryAsync(PediaWordsQueryRequest request)
+        public async Task<PediaWordsDeleteResponse> PediaWordsDeleteAsync(PediaWordsDeleteRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PediaWordsQueryHeaders headers = new PediaWordsQueryHeaders();
-            return await PediaWordsQueryWithOptionsAsync(request, headers, runtime);
+            PediaWordsDeleteHeaders headers = new PediaWordsDeleteHeaders();
+            return await PediaWordsDeleteWithOptionsAsync(request, headers, runtime);
         }
 
         public PediaWordsQueryResponse PediaWordsQueryWithOptions(PediaWordsQueryRequest request, PediaWordsQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -370,7 +431,19 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<PediaWordsQueryResponse>(DoROARequest("PediaWordsQuery", "pedia_1.0", "HTTP", "POST", "AK", "/v1.0/pedia/words/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PediaWordsQuery",
+                Version = "pedia_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/pedia/words/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PediaWordsQueryResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<PediaWordsQueryResponse> PediaWordsQueryWithOptionsAsync(PediaWordsQueryRequest request, PediaWordsQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -399,21 +472,33 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<PediaWordsQueryResponse>(await DoROARequestAsync("PediaWordsQuery", "pedia_1.0", "HTTP", "POST", "AK", "/v1.0/pedia/words/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PediaWordsQuery",
+                Version = "pedia_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/pedia/words/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PediaWordsQueryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public PediaWordsSearchResponse PediaWordsSearch(PediaWordsSearchRequest request)
+        public PediaWordsQueryResponse PediaWordsQuery(PediaWordsQueryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PediaWordsSearchHeaders headers = new PediaWordsSearchHeaders();
-            return PediaWordsSearchWithOptions(request, headers, runtime);
+            PediaWordsQueryHeaders headers = new PediaWordsQueryHeaders();
+            return PediaWordsQueryWithOptions(request, headers, runtime);
         }
 
-        public async Task<PediaWordsSearchResponse> PediaWordsSearchAsync(PediaWordsSearchRequest request)
+        public async Task<PediaWordsQueryResponse> PediaWordsQueryAsync(PediaWordsQueryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PediaWordsSearchHeaders headers = new PediaWordsSearchHeaders();
-            return await PediaWordsSearchWithOptionsAsync(request, headers, runtime);
+            PediaWordsQueryHeaders headers = new PediaWordsQueryHeaders();
+            return await PediaWordsQueryWithOptionsAsync(request, headers, runtime);
         }
 
         public PediaWordsSearchResponse PediaWordsSearchWithOptions(PediaWordsSearchRequest request, PediaWordsSearchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -454,7 +539,19 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PediaWordsSearchResponse>(DoROARequest("PediaWordsSearch", "pedia_1.0", "HTTP", "POST", "AK", "/v1.0/pedia/words/search", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PediaWordsSearch",
+                Version = "pedia_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/pedia/words/search",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PediaWordsSearchResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<PediaWordsSearchResponse> PediaWordsSearchWithOptionsAsync(PediaWordsSearchRequest request, PediaWordsSearchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -495,21 +592,33 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PediaWordsSearchResponse>(await DoROARequestAsync("PediaWordsSearch", "pedia_1.0", "HTTP", "POST", "AK", "/v1.0/pedia/words/search", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PediaWordsSearch",
+                Version = "pedia_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/pedia/words/search",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PediaWordsSearchResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public PediaWordsUpdateResponse PediaWordsUpdate(PediaWordsUpdateRequest request)
+        public PediaWordsSearchResponse PediaWordsSearch(PediaWordsSearchRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PediaWordsUpdateHeaders headers = new PediaWordsUpdateHeaders();
-            return PediaWordsUpdateWithOptions(request, headers, runtime);
+            PediaWordsSearchHeaders headers = new PediaWordsSearchHeaders();
+            return PediaWordsSearchWithOptions(request, headers, runtime);
         }
 
-        public async Task<PediaWordsUpdateResponse> PediaWordsUpdateAsync(PediaWordsUpdateRequest request)
+        public async Task<PediaWordsSearchResponse> PediaWordsSearchAsync(PediaWordsSearchRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PediaWordsUpdateHeaders headers = new PediaWordsUpdateHeaders();
-            return await PediaWordsUpdateWithOptionsAsync(request, headers, runtime);
+            PediaWordsSearchHeaders headers = new PediaWordsSearchHeaders();
+            return await PediaWordsSearchWithOptionsAsync(request, headers, runtime);
         }
 
         public PediaWordsUpdateResponse PediaWordsUpdateWithOptions(PediaWordsUpdateRequest request, PediaWordsUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -574,7 +683,19 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PediaWordsUpdateResponse>(DoROARequest("PediaWordsUpdate", "pedia_1.0", "HTTP", "PUT", "AK", "/v1.0/pedia/words", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PediaWordsUpdate",
+                Version = "pedia_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/pedia/words",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PediaWordsUpdateResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<PediaWordsUpdateResponse> PediaWordsUpdateWithOptionsAsync(PediaWordsUpdateRequest request, PediaWordsUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -639,7 +760,33 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PediaWordsUpdateResponse>(await DoROARequestAsync("PediaWordsUpdate", "pedia_1.0", "HTTP", "PUT", "AK", "/v1.0/pedia/words", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PediaWordsUpdate",
+                Version = "pedia_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/pedia/words",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PediaWordsUpdateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public PediaWordsUpdateResponse PediaWordsUpdate(PediaWordsUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PediaWordsUpdateHeaders headers = new PediaWordsUpdateHeaders();
+            return PediaWordsUpdateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<PediaWordsUpdateResponse> PediaWordsUpdateAsync(PediaWordsUpdateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PediaWordsUpdateHeaders headers = new PediaWordsUpdateHeaders();
+            return await PediaWordsUpdateWithOptionsAsync(request, headers, runtime);
         }
 
     }

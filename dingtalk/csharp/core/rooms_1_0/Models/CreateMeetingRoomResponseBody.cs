@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
 {
     public class CreateMeetingRoomResponseBody : TeaModel {
-        /// <summary>
-        /// 创建的会议室id
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public string Result { get; set; }

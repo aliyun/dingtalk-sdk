@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class StopStreamOutResponseBody : TeaModel {
-        /// <summary>
-        /// conferenceId
-        /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }

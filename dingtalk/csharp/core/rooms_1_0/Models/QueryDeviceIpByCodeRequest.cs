@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
 {
     public class QueryDeviceIpByCodeRequest : TeaModel {
-        /// <summary>
-        /// 设备sn号
-        /// </summary>
         [NameInMap("deviceSn")]
         [Validation(Required=false)]
         public string DeviceSn { get; set; }

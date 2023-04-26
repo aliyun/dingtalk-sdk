@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CampusUpdateRenterResponseBody : TeaModel {
-        /// <summary>
-        /// 租客ID
-        /// </summary>
         [NameInMap("renterId")]
         [Validation(Required=false)]
         public string RenterId { get; set; }

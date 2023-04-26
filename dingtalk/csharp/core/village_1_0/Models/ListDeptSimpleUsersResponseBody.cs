@@ -21,23 +21,14 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         [Validation(Required=false)]
         public long? TotalCount { get; set; }
 
-        /// <summary>
-        /// 用户列表
-        /// </summary>
         [NameInMap("userList")]
         [Validation(Required=false)]
         public List<ListDeptSimpleUsersResponseBodyUserList> UserList { get; set; }
         public class ListDeptSimpleUsersResponseBodyUserList : TeaModel {
-            /// <summary>
-            /// 用户姓名
-            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
-            /// <summary>
-            /// 用户ID
-            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }

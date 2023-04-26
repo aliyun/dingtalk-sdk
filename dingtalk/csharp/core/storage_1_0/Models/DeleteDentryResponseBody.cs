@@ -9,17 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
     public class DeleteDentryResponseBody : TeaModel {
-        /// <summary>
-        /// 是否是异步任务
-        /// 如果操作对象有子节点，则会异步处理
-        /// </summary>
         [NameInMap("async")]
         [Validation(Required=false)]
         public bool? Async { get; set; }
 
-        /// <summary>
-        /// 任务id，用于查询任务执行状态
-        /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]
         public string TaskId { get; set; }

@@ -25,23 +25,14 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public long? DingTokenGrantType { get; set; }
 
-        /// <summary>
-        /// 群组开放ID
-        /// </summary>
         [NameInMap("openGroupSetId")]
         [Validation(Required=false)]
         public string OpenGroupSetId { get; set; }
 
-        /// <summary>
-        /// 开放团队ID
-        /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }
 
-        /// <summary>
-        /// 设置状态，0代表关闭,1代表开启
-        /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public string Status { get; set; }

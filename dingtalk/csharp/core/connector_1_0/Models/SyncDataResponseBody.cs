@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class SyncDataResponseBody : TeaModel {
-        /// <summary>
-        /// resultList
-        /// </summary>
         [NameInMap("list")]
         [Validation(Required=false)]
         public List<SyncDataResponseBodyList> List { get; set; }

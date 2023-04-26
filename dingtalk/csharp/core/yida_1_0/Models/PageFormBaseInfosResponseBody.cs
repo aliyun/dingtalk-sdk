@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class PageFormBaseInfosResponseBody : TeaModel {
-        /// <summary>
-        /// 结果集
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public PageFormBaseInfosResponseBodyResult Result { get; set; }
         public class PageFormBaseInfosResponseBodyResult : TeaModel {
-            /// <summary>
-            /// 当前页
-            /// </summary>
             [NameInMap("currentPage")]
             [Validation(Required=false)]
             public int? CurrentPage { get; set; }
@@ -59,18 +53,12 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 
             }
 
-            /// <summary>
-            /// 总行数
-            /// </summary>
             [NameInMap("totalCount")]
             [Validation(Required=false)]
             public int? TotalCount { get; set; }
 
         }
 
-        /// <summary>
-        /// 是否成功
-        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

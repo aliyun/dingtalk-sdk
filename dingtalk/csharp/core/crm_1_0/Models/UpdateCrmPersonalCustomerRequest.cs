@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class UpdateCrmPersonalCustomerRequest : TeaModel {
-        /// <summary>
-        /// 公海领取客户：publicDraw 公海分配客户：publicAssign 其余场景：（不用传）
-        /// </summary>
         [NameInMap("action")]
         [Validation(Required=false)]
         public string Action { get; set; }
@@ -54,9 +51,6 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string RelationType { get; set; }
 
-        /// <summary>
-        /// 跳过uk查重
-        /// </summary>
         [NameInMap("skipDuplicateCheck")]
         [Validation(Required=false)]
         public bool? SkipDuplicateCheck { get; set; }

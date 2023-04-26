@@ -31,9 +31,6 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_1_0.Models
         [Validation(Required=false)]
         public string ErrMsg { get; set; }
 
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

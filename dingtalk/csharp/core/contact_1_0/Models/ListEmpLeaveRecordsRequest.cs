@@ -9,30 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class ListEmpLeaveRecordsRequest : TeaModel {
-        /// <summary>
-        /// 结束时间，YYYY-MM-DDTHH:mm:ssZ (ISO 8601/RFC 3339)
-        /// </summary>
         [NameInMap("endTime")]
         [Validation(Required=false)]
         public string EndTime { get; set; }
 
-        /// <summary>
-        /// 分页大小
-        /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
-        /// <summary>
-        /// 分页token
-        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
-        /// <summary>
-        /// 开始时间，YYYY-MM-DDTHH:mm:ssZ (ISO 8601/RFC 3339)
-        /// </summary>
         [NameInMap("startTime")]
         [Validation(Required=false)]
         public string StartTime { get; set; }

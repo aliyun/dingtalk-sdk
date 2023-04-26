@@ -9,58 +9,34 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkh5package_1_0.Models
 {
     public class GetAccessTokenResponseBody : TeaModel {
-        /// <summary>
-        /// 阿里云OSS SDK初始化配置项
-        /// </summary>
         [NameInMap("accessKeyId")]
         [Validation(Required=false)]
         public string AccessKeyId { get; set; }
 
-        /// <summary>
-        /// 阿里云OSS SDK初始化配置项
-        /// </summary>
         [NameInMap("accessKeySecret")]
         [Validation(Required=false)]
         public string AccessKeySecret { get; set; }
 
-        /// <summary>
-        /// 阿里云OSS SDK初始化配置项
-        /// </summary>
         [NameInMap("bucket")]
         [Validation(Required=false)]
         public string Bucket { get; set; }
 
-        /// <summary>
-        /// 阿里云OSS SDK初始化配置项
-        /// </summary>
         [NameInMap("endpoint")]
         [Validation(Required=false)]
         public string Endpoint { get; set; }
 
-        /// <summary>
-        /// 阿里云OSS SDK初始化配置项
-        /// </summary>
         [NameInMap("expiration")]
         [Validation(Required=false)]
         public string Expiration { get; set; }
 
-        /// <summary>
-        /// 可上传的阿里云OSS文件地址
-        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
-        /// <summary>
-        /// 阿里云OSS SDK初始化配置项
-        /// </summary>
         [NameInMap("region")]
         [Validation(Required=false)]
         public string Region { get; set; }
 
-        /// <summary>
-        /// 阿里云OSS SDK初始化配置项
-        /// </summary>
         [NameInMap("stsToken")]
         [Validation(Required=false)]
         public string StsToken { get; set; }

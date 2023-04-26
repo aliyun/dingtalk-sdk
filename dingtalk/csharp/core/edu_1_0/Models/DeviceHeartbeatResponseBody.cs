@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class DeviceHeartbeatResponseBody : TeaModel {
-        /// <summary>
-        /// 指令
-        /// </summary>
         [NameInMap("command")]
         [Validation(Required=false)]
         public int? Command { get; set; }

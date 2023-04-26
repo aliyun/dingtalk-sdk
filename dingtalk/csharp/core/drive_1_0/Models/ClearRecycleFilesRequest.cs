@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class ClearRecycleFilesRequest : TeaModel {
-        /// <summary>
-        /// 回收站类型
-        /// </summary>
         [NameInMap("recycleType")]
         [Validation(Required=false)]
         public string RecycleType { get; set; }
 
-        /// <summary>
-        /// 用户id
-        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

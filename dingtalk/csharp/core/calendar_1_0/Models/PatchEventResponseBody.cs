@@ -13,9 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public List<PatchEventResponseBodyAttendees> Attendees { get; set; }
         public class PatchEventResponseBodyAttendees : TeaModel {
-            /// <summary>
-            /// 用户名
-            /// </summary>
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
@@ -28,25 +25,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public bool? IsOptional { get; set; }
 
-            /// <summary>
-            /// 回复状态
-            /// </summary>
             [NameInMap("responseStatus")]
             [Validation(Required=false)]
             public string ResponseStatus { get; set; }
 
-            /// <summary>
-            /// 是否是当前登陆用户
-            /// </summary>
             [NameInMap("self")]
             [Validation(Required=false)]
             public bool? Self { get; set; }
 
         }
 
-        /// <summary>
-        /// 创建时间
-        /// </summary>
         [NameInMap("createTime")]
         [Validation(Required=false)]
         public string CreateTime { get; set; }
@@ -99,9 +87,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public PatchEventResponseBodyOrganizer Organizer { get; set; }
         public class PatchEventResponseBodyOrganizer : TeaModel {
-            /// <summary>
-            /// 用户名
-            /// </summary>
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
@@ -110,16 +95,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public string Id { get; set; }
 
-            /// <summary>
-            /// 回复状态
-            /// </summary>
             [NameInMap("responseStatus")]
             [Validation(Required=false)]
             public string ResponseStatus { get; set; }
 
-            /// <summary>
-            /// 是否是当前登陆用户
-            /// </summary>
             [NameInMap("self")]
             [Validation(Required=false)]
             public bool? Self { get; set; }
@@ -190,9 +169,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
-        /// <summary>
-        /// 日程开始时间
-        /// </summary>
         [NameInMap("start")]
         [Validation(Required=false)]
         public PatchEventResponseBodyStart Start { get; set; }
@@ -215,9 +191,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public string Summary { get; set; }
 
-        /// <summary>
-        /// 更新时间
-        /// </summary>
         [NameInMap("updateTime")]
         [Validation(Required=false)]
         public string UpdateTime { get; set; }

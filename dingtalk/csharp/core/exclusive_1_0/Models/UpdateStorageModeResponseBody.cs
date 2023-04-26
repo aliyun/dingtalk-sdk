@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class UpdateStorageModeResponseBody : TeaModel {
-        /// <summary>
-        /// 组织id
-        /// </summary>
         [NameInMap("targetCorpId")]
         [Validation(Required=false)]
         public string TargetCorpId { get; set; }

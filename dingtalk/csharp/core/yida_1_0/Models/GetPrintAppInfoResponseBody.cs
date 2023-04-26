@@ -13,46 +13,28 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public List<GetPrintAppInfoResponseBodyResult> Result { get; set; }
         public class GetPrintAppInfoResponseBodyResult : TeaModel {
-            /// <summary>
-            /// 应用名称
-            /// </summary>
             [NameInMap("appName")]
             [Validation(Required=false)]
             public string AppName { get; set; }
 
-            /// <summary>
-            /// appType
-            /// </summary>
             [NameInMap("appType")]
             [Validation(Required=false)]
             public string AppType { get; set; }
 
-            /// <summary>
-            /// formInfoList
-            /// </summary>
             [NameInMap("formInfoList")]
             [Validation(Required=false)]
             public List<GetPrintAppInfoResponseBodyResultFormInfoList> FormInfoList { get; set; }
             public class GetPrintAppInfoResponseBodyResultFormInfoList : TeaModel {
-                /// <summary>
-                /// formName
-                /// </summary>
                 [NameInMap("formName")]
                 [Validation(Required=false)]
                 public string FormName { get; set; }
 
-                /// <summary>
-                /// formUuid
-                /// </summary>
                 [NameInMap("formUuid")]
                 [Validation(Required=false)]
                 public string FormUuid { get; set; }
 
             }
 
-            /// <summary>
-            /// 图标链接
-            /// </summary>
             [NameInMap("iconUrl")]
             [Validation(Required=false)]
             public string IconUrl { get; set; }

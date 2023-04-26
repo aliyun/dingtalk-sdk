@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class ModifyFeedWhiteListResponseBody : TeaModel {
-        /// <summary>
-        /// 是否修改成功
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public bool? Result { get; set; }

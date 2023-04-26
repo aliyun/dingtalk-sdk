@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
             }
         }
 
-
-        public SyncBusinessSignInfoResponse SyncBusinessSignInfo(SyncBusinessSignInfoRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SyncBusinessSignInfoHeaders headers = new SyncBusinessSignInfoHeaders();
-            return SyncBusinessSignInfoWithOptions(request, headers, runtime);
-        }
-
-        public async Task<SyncBusinessSignInfoResponse> SyncBusinessSignInfoAsync(SyncBusinessSignInfoRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SyncBusinessSignInfoHeaders headers = new SyncBusinessSignInfoHeaders();
-            return await SyncBusinessSignInfoWithOptionsAsync(request, headers, runtime);
-        }
 
         public SyncBusinessSignInfoResponse SyncBusinessSignInfoWithOptions(SyncBusinessSignInfoRequest request, SyncBusinessSignInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -82,7 +71,19 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SyncBusinessSignInfoResponse>(DoROARequest("SyncBusinessSignInfo", "trip_1.0", "HTTP", "POST", "AK", "/v1.0/trip/businessSignInfos/sync", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncBusinessSignInfo",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/businessSignInfos/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncBusinessSignInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<SyncBusinessSignInfoResponse> SyncBusinessSignInfoWithOptionsAsync(SyncBusinessSignInfoRequest request, SyncBusinessSignInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -127,21 +128,33 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SyncBusinessSignInfoResponse>(await DoROARequestAsync("SyncBusinessSignInfo", "trip_1.0", "HTTP", "POST", "AK", "/v1.0/trip/businessSignInfos/sync", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncBusinessSignInfo",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/businessSignInfos/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncBusinessSignInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public SyncSecretKeyResponse SyncSecretKey(SyncSecretKeyRequest request)
+        public SyncBusinessSignInfoResponse SyncBusinessSignInfo(SyncBusinessSignInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SyncSecretKeyHeaders headers = new SyncSecretKeyHeaders();
-            return SyncSecretKeyWithOptions(request, headers, runtime);
+            SyncBusinessSignInfoHeaders headers = new SyncBusinessSignInfoHeaders();
+            return SyncBusinessSignInfoWithOptions(request, headers, runtime);
         }
 
-        public async Task<SyncSecretKeyResponse> SyncSecretKeyAsync(SyncSecretKeyRequest request)
+        public async Task<SyncBusinessSignInfoResponse> SyncBusinessSignInfoAsync(SyncBusinessSignInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SyncSecretKeyHeaders headers = new SyncSecretKeyHeaders();
-            return await SyncSecretKeyWithOptionsAsync(request, headers, runtime);
+            SyncBusinessSignInfoHeaders headers = new SyncBusinessSignInfoHeaders();
+            return await SyncBusinessSignInfoWithOptionsAsync(request, headers, runtime);
         }
 
         public SyncSecretKeyResponse SyncSecretKeyWithOptions(SyncSecretKeyRequest request, SyncSecretKeyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -186,7 +199,19 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SyncSecretKeyResponse>(DoROARequest("SyncSecretKey", "trip_1.0", "HTTP", "POST", "AK", "/v1.0/trip/secretKeys/sync", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncSecretKey",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/secretKeys/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncSecretKeyResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<SyncSecretKeyResponse> SyncSecretKeyWithOptionsAsync(SyncSecretKeyRequest request, SyncSecretKeyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -231,21 +256,33 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SyncSecretKeyResponse>(await DoROARequestAsync("SyncSecretKey", "trip_1.0", "HTTP", "POST", "AK", "/v1.0/trip/secretKeys/sync", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncSecretKey",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/secretKeys/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncSecretKeyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public SyncTripOrderResponse SyncTripOrder(SyncTripOrderRequest request)
+        public SyncSecretKeyResponse SyncSecretKey(SyncSecretKeyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SyncTripOrderHeaders headers = new SyncTripOrderHeaders();
-            return SyncTripOrderWithOptions(request, headers, runtime);
+            SyncSecretKeyHeaders headers = new SyncSecretKeyHeaders();
+            return SyncSecretKeyWithOptions(request, headers, runtime);
         }
 
-        public async Task<SyncTripOrderResponse> SyncTripOrderAsync(SyncTripOrderRequest request)
+        public async Task<SyncSecretKeyResponse> SyncSecretKeyAsync(SyncSecretKeyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SyncTripOrderHeaders headers = new SyncTripOrderHeaders();
-            return await SyncTripOrderWithOptionsAsync(request, headers, runtime);
+            SyncSecretKeyHeaders headers = new SyncSecretKeyHeaders();
+            return await SyncSecretKeyWithOptionsAsync(request, headers, runtime);
         }
 
         public SyncTripOrderResponse SyncTripOrderWithOptions(SyncTripOrderRequest request, SyncTripOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -350,7 +387,19 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SyncTripOrderResponse>(DoROARequest("SyncTripOrder", "trip_1.0", "HTTP", "POST", "AK", "/v1.0/trip/tripOrders/sync", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncTripOrder",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/tripOrders/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncTripOrderResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<SyncTripOrderResponse> SyncTripOrderWithOptionsAsync(SyncTripOrderRequest request, SyncTripOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -455,7 +504,33 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SyncTripOrderResponse>(await DoROARequestAsync("SyncTripOrder", "trip_1.0", "HTTP", "POST", "AK", "/v1.0/trip/tripOrders/sync", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncTripOrder",
+                Version = "trip_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/trip/tripOrders/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncTripOrderResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public SyncTripOrderResponse SyncTripOrder(SyncTripOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncTripOrderHeaders headers = new SyncTripOrderHeaders();
+            return SyncTripOrderWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SyncTripOrderResponse> SyncTripOrderAsync(SyncTripOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncTripOrderHeaders headers = new SyncTripOrderHeaders();
+            return await SyncTripOrderWithOptionsAsync(request, headers, runtime);
         }
 
     }

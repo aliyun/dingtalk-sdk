@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class BatchCreateResponseBody : TeaModel {
-        /// <summary>
-        /// result
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public BatchCreateResponseBodyResult Result { get; set; }

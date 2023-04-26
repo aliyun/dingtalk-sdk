@@ -9,18 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
 {
     public class QueryUserFollowStatusResponseBody : TeaModel {
-        /// <summary>
-        /// 响应结果
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public QueryUserFollowStatusResponseBodyResult Result { get; set; }
         public class QueryUserFollowStatusResponseBodyResult : TeaModel {
-            /// <summary>
-            /// 用户关注服务窗的状态:
-            /// FOLLOWED：已关注。
-            /// UNFOLLOW：未关注。
-            /// </summary>
             [NameInMap("status")]
             [Validation(Required=false)]
             public string Status { get; set; }

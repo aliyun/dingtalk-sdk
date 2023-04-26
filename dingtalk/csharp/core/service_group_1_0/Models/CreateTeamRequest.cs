@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class CreateTeamRequest : TeaModel {
-        /// <summary>
-        /// 团队管理员钉钉unionId
-        /// </summary>
         [NameInMap("creatorDingUnionId")]
         [Validation(Required=false)]
         public string CreatorDingUnionId { get; set; }
 
-        /// <summary>
-        /// 团队名字
-        /// </summary>
         [NameInMap("teamName")]
         [Validation(Required=false)]
         public string TeamName { get; set; }

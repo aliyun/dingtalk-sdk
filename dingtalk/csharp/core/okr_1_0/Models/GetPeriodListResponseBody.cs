@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class GetPeriodListResponseBody : TeaModel {
-        /// <summary>
-        /// data
-        /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public GetPeriodListResponseBodyData Data { get; set; }
@@ -48,9 +45,6 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 
         }
 
-        /// <summary>
-        /// success
-        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

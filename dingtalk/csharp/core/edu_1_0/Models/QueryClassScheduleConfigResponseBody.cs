@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryClassScheduleConfigResponseBody : TeaModel {
-        /// <summary>
-        /// 查询结果
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public List<QueryClassScheduleConfigResponseBodyResult> Result { get; set; }
         public class QueryClassScheduleConfigResponseBodyResult : TeaModel {
-            /// <summary>
-            /// 班级的Id.
-            /// </summary>
             [NameInMap("classId")]
             [Validation(Required=false)]
             public long? ClassId { get; set; }
@@ -27,97 +21,58 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public QueryClassScheduleConfigResponseBodyResultEnd End { get; set; }
             public class QueryClassScheduleConfigResponseBodyResultEnd : TeaModel {
-                /// <summary>
-                /// 一个月中第几天
-                /// </summary>
                 [NameInMap("dayOfMonth")]
                 [Validation(Required=false)]
                 public long? DayOfMonth { get; set; }
 
-                /// <summary>
-                /// 月份
-                /// </summary>
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public long? Month { get; set; }
 
-                /// <summary>
-                /// 年份
-                /// </summary>
                 [NameInMap("year")]
                 [Validation(Required=false)]
                 public long? Year { get; set; }
 
             }
 
-            /// <summary>
-            /// 节次模型。
-            /// </summary>
             [NameInMap("sectionModels")]
             [Validation(Required=false)]
             public List<QueryClassScheduleConfigResponseBodyResultSectionModels> SectionModels { get; set; }
             public class QueryClassScheduleConfigResponseBodyResultSectionModels : TeaModel {
-                /// <summary>
-                /// 结束时间
-                /// </summary>
                 [NameInMap("end")]
                 [Validation(Required=false)]
                 public QueryClassScheduleConfigResponseBodyResultSectionModelsEnd End { get; set; }
                 public class QueryClassScheduleConfigResponseBodyResultSectionModelsEnd : TeaModel {
-                    /// <summary>
-                    /// 小时
-                    /// </summary>
                     [NameInMap("hour")]
                     [Validation(Required=false)]
                     public int? Hour { get; set; }
 
-                    /// <summary>
-                    /// 分钟
-                    /// </summary>
                     [NameInMap("min")]
                     [Validation(Required=false)]
                     public int? Min { get; set; }
 
                 }
 
-                /// <summary>
-                /// 节次设置
-                /// </summary>
                 [NameInMap("sectionIndex")]
                 [Validation(Required=false)]
                 public int? SectionIndex { get; set; }
 
-                /// <summary>
-                /// 节次名称
-                /// </summary>
                 [NameInMap("sectionName")]
                 [Validation(Required=false)]
                 public string SectionName { get; set; }
 
-                /// <summary>
-                /// 节次类型：COURSE/REST
-                /// </summary>
                 [NameInMap("sectionType")]
                 [Validation(Required=false)]
                 public string SectionType { get; set; }
 
-                /// <summary>
-                /// 开始时间（时分）
-                /// </summary>
                 [NameInMap("start")]
                 [Validation(Required=false)]
                 public QueryClassScheduleConfigResponseBodyResultSectionModelsStart Start { get; set; }
                 public class QueryClassScheduleConfigResponseBodyResultSectionModelsStart : TeaModel {
-                    /// <summary>
-                    /// 小时
-                    /// </summary>
                     [NameInMap("hour")]
                     [Validation(Required=false)]
                     public int? Hour { get; set; }
 
-                    /// <summary>
-                    /// 分钟
-                    /// </summary>
                     [NameInMap("min")]
                     [Validation(Required=false)]
                     public int? Min { get; set; }
@@ -126,30 +81,18 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             }
 
-            /// <summary>
-            /// 开始时间
-            /// </summary>
             [NameInMap("start")]
             [Validation(Required=false)]
             public QueryClassScheduleConfigResponseBodyResultStart Start { get; set; }
             public class QueryClassScheduleConfigResponseBodyResultStart : TeaModel {
-                /// <summary>
-                /// 一个月中的第几天
-                /// </summary>
                 [NameInMap("dayOfMonth")]
                 [Validation(Required=false)]
                 public int? DayOfMonth { get; set; }
 
-                /// <summary>
-                /// 月份
-                /// </summary>
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public int? Month { get; set; }
 
-                /// <summary>
-                /// 年份
-                /// </summary>
                 [NameInMap("year")]
                 [Validation(Required=false)]
                 public int? Year { get; set; }

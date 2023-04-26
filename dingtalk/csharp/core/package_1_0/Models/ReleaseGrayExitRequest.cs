@@ -9,16 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkpackage_1_0.Models
 {
     public class ReleaseGrayExitRequest : TeaModel {
-        /// <summary>
-        /// 离线包ID
-        /// </summary>
         [NameInMap("miniAppId")]
         [Validation(Required=false)]
         public string MiniAppId { get; set; }
 
-        /// <summary>
-        /// 退出灰度的版本号
-        /// </summary>
         [NameInMap("version")]
         [Validation(Required=false)]
         public string Version { get; set; }

@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class CreateConditionalFormattingRuleResponseBody : TeaModel {
-        /// <summary>
-        /// 条件格式ID
-        /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
         public string Id { get; set; }

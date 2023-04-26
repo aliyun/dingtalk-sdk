@@ -9,30 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
 {
     public class GetUserTokenResponseBody : TeaModel {
-        /// <summary>
-        /// accessToken
-        /// </summary>
         [NameInMap("accessToken")]
         [Validation(Required=false)]
         public string AccessToken { get; set; }
 
-        /// <summary>
-        /// 所选企业corpId
-        /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
-        /// <summary>
-        /// 超时时间
-        /// </summary>
         [NameInMap("expireIn")]
         [Validation(Required=false)]
         public long? ExpireIn { get; set; }
 
-        /// <summary>
-        /// refreshToken
-        /// </summary>
         [NameInMap("refreshToken")]
         [Validation(Required=false)]
         public string RefreshToken { get; set; }

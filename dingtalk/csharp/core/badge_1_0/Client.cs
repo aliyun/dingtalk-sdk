@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             }
         }
 
-
-        public CreateBadgeCodeUserInstanceResponse CreateBadgeCodeUserInstance(CreateBadgeCodeUserInstanceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateBadgeCodeUserInstanceHeaders headers = new CreateBadgeCodeUserInstanceHeaders();
-            return CreateBadgeCodeUserInstanceWithOptions(request, headers, runtime);
-        }
-
-        public async Task<CreateBadgeCodeUserInstanceResponse> CreateBadgeCodeUserInstanceAsync(CreateBadgeCodeUserInstanceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateBadgeCodeUserInstanceHeaders headers = new CreateBadgeCodeUserInstanceHeaders();
-            return await CreateBadgeCodeUserInstanceWithOptionsAsync(request, headers, runtime);
-        }
 
         public CreateBadgeCodeUserInstanceResponse CreateBadgeCodeUserInstanceWithOptions(CreateBadgeCodeUserInstanceRequest request, CreateBadgeCodeUserInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -102,7 +91,19 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateBadgeCodeUserInstanceResponse>(DoROARequest("CreateBadgeCodeUserInstance", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/userInstances", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateBadgeCodeUserInstance",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/userInstances",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateBadgeCodeUserInstanceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateBadgeCodeUserInstanceResponse> CreateBadgeCodeUserInstanceWithOptionsAsync(CreateBadgeCodeUserInstanceRequest request, CreateBadgeCodeUserInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -167,21 +168,33 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateBadgeCodeUserInstanceResponse>(await DoROARequestAsync("CreateBadgeCodeUserInstance", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/userInstances", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateBadgeCodeUserInstance",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/userInstances",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateBadgeCodeUserInstanceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CreateBadgeNotifyResponse CreateBadgeNotify(CreateBadgeNotifyRequest request)
+        public CreateBadgeCodeUserInstanceResponse CreateBadgeCodeUserInstance(CreateBadgeCodeUserInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateBadgeNotifyHeaders headers = new CreateBadgeNotifyHeaders();
-            return CreateBadgeNotifyWithOptions(request, headers, runtime);
+            CreateBadgeCodeUserInstanceHeaders headers = new CreateBadgeCodeUserInstanceHeaders();
+            return CreateBadgeCodeUserInstanceWithOptions(request, headers, runtime);
         }
 
-        public async Task<CreateBadgeNotifyResponse> CreateBadgeNotifyAsync(CreateBadgeNotifyRequest request)
+        public async Task<CreateBadgeCodeUserInstanceResponse> CreateBadgeCodeUserInstanceAsync(CreateBadgeCodeUserInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateBadgeNotifyHeaders headers = new CreateBadgeNotifyHeaders();
-            return await CreateBadgeNotifyWithOptionsAsync(request, headers, runtime);
+            CreateBadgeCodeUserInstanceHeaders headers = new CreateBadgeCodeUserInstanceHeaders();
+            return await CreateBadgeCodeUserInstanceWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateBadgeNotifyResponse CreateBadgeNotifyWithOptions(CreateBadgeNotifyRequest request, CreateBadgeNotifyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -218,7 +231,19 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateBadgeNotifyResponse>(DoROARequest("CreateBadgeNotify", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/notices", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateBadgeNotify",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/notices",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateBadgeNotifyResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateBadgeNotifyResponse> CreateBadgeNotifyWithOptionsAsync(CreateBadgeNotifyRequest request, CreateBadgeNotifyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -255,21 +280,33 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateBadgeNotifyResponse>(await DoROARequestAsync("CreateBadgeNotify", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/notices", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateBadgeNotify",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/notices",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateBadgeNotifyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public DecodeBadgeCodeResponse DecodeBadgeCode(DecodeBadgeCodeRequest request)
+        public CreateBadgeNotifyResponse CreateBadgeNotify(CreateBadgeNotifyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DecodeBadgeCodeHeaders headers = new DecodeBadgeCodeHeaders();
-            return DecodeBadgeCodeWithOptions(request, headers, runtime);
+            CreateBadgeNotifyHeaders headers = new CreateBadgeNotifyHeaders();
+            return CreateBadgeNotifyWithOptions(request, headers, runtime);
         }
 
-        public async Task<DecodeBadgeCodeResponse> DecodeBadgeCodeAsync(DecodeBadgeCodeRequest request)
+        public async Task<CreateBadgeNotifyResponse> CreateBadgeNotifyAsync(CreateBadgeNotifyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DecodeBadgeCodeHeaders headers = new DecodeBadgeCodeHeaders();
-            return await DecodeBadgeCodeWithOptionsAsync(request, headers, runtime);
+            CreateBadgeNotifyHeaders headers = new CreateBadgeNotifyHeaders();
+            return await CreateBadgeNotifyWithOptionsAsync(request, headers, runtime);
         }
 
         public DecodeBadgeCodeResponse DecodeBadgeCodeWithOptions(DecodeBadgeCodeRequest request, DecodeBadgeCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -298,7 +335,19 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DecodeBadgeCodeResponse>(DoROARequest("DecodeBadgeCode", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/decode", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DecodeBadgeCode",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/decode",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DecodeBadgeCodeResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<DecodeBadgeCodeResponse> DecodeBadgeCodeWithOptionsAsync(DecodeBadgeCodeRequest request, DecodeBadgeCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -327,21 +376,33 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DecodeBadgeCodeResponse>(await DoROARequestAsync("DecodeBadgeCode", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/decode", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DecodeBadgeCode",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/decode",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DecodeBadgeCodeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public NotifyBadgeCodePayResultResponse NotifyBadgeCodePayResult(NotifyBadgeCodePayResultRequest request)
+        public DecodeBadgeCodeResponse DecodeBadgeCode(DecodeBadgeCodeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            NotifyBadgeCodePayResultHeaders headers = new NotifyBadgeCodePayResultHeaders();
-            return NotifyBadgeCodePayResultWithOptions(request, headers, runtime);
+            DecodeBadgeCodeHeaders headers = new DecodeBadgeCodeHeaders();
+            return DecodeBadgeCodeWithOptions(request, headers, runtime);
         }
 
-        public async Task<NotifyBadgeCodePayResultResponse> NotifyBadgeCodePayResultAsync(NotifyBadgeCodePayResultRequest request)
+        public async Task<DecodeBadgeCodeResponse> DecodeBadgeCodeAsync(DecodeBadgeCodeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            NotifyBadgeCodePayResultHeaders headers = new NotifyBadgeCodePayResultHeaders();
-            return await NotifyBadgeCodePayResultWithOptionsAsync(request, headers, runtime);
+            DecodeBadgeCodeHeaders headers = new DecodeBadgeCodeHeaders();
+            return await DecodeBadgeCodeWithOptionsAsync(request, headers, runtime);
         }
 
         public NotifyBadgeCodePayResultResponse NotifyBadgeCodePayResultWithOptions(NotifyBadgeCodePayResultRequest request, NotifyBadgeCodePayResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -430,7 +491,19 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<NotifyBadgeCodePayResultResponse>(DoROARequest("NotifyBadgeCodePayResult", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/payResults", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "NotifyBadgeCodePayResult",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/payResults",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<NotifyBadgeCodePayResultResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<NotifyBadgeCodePayResultResponse> NotifyBadgeCodePayResultWithOptionsAsync(NotifyBadgeCodePayResultRequest request, NotifyBadgeCodePayResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -519,21 +592,33 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<NotifyBadgeCodePayResultResponse>(await DoROARequestAsync("NotifyBadgeCodePayResult", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/payResults", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "NotifyBadgeCodePayResult",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/payResults",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<NotifyBadgeCodePayResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public NotifyBadgeCodeRefundResultResponse NotifyBadgeCodeRefundResult(NotifyBadgeCodeRefundResultRequest request)
+        public NotifyBadgeCodePayResultResponse NotifyBadgeCodePayResult(NotifyBadgeCodePayResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            NotifyBadgeCodeRefundResultHeaders headers = new NotifyBadgeCodeRefundResultHeaders();
-            return NotifyBadgeCodeRefundResultWithOptions(request, headers, runtime);
+            NotifyBadgeCodePayResultHeaders headers = new NotifyBadgeCodePayResultHeaders();
+            return NotifyBadgeCodePayResultWithOptions(request, headers, runtime);
         }
 
-        public async Task<NotifyBadgeCodeRefundResultResponse> NotifyBadgeCodeRefundResultAsync(NotifyBadgeCodeRefundResultRequest request)
+        public async Task<NotifyBadgeCodePayResultResponse> NotifyBadgeCodePayResultAsync(NotifyBadgeCodePayResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            NotifyBadgeCodeRefundResultHeaders headers = new NotifyBadgeCodeRefundResultHeaders();
-            return await NotifyBadgeCodeRefundResultWithOptionsAsync(request, headers, runtime);
+            NotifyBadgeCodePayResultHeaders headers = new NotifyBadgeCodePayResultHeaders();
+            return await NotifyBadgeCodePayResultWithOptionsAsync(request, headers, runtime);
         }
 
         public NotifyBadgeCodeRefundResultResponse NotifyBadgeCodeRefundResultWithOptions(NotifyBadgeCodeRefundResultRequest request, NotifyBadgeCodeRefundResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -594,7 +679,19 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<NotifyBadgeCodeRefundResultResponse>(DoROARequest("NotifyBadgeCodeRefundResult", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/refundResults", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "NotifyBadgeCodeRefundResult",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/refundResults",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<NotifyBadgeCodeRefundResultResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<NotifyBadgeCodeRefundResultResponse> NotifyBadgeCodeRefundResultWithOptionsAsync(NotifyBadgeCodeRefundResultRequest request, NotifyBadgeCodeRefundResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -655,21 +752,33 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<NotifyBadgeCodeRefundResultResponse>(await DoROARequestAsync("NotifyBadgeCodeRefundResult", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/refundResults", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "NotifyBadgeCodeRefundResult",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/refundResults",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<NotifyBadgeCodeRefundResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public NotifyBadgeCodeVerifyResultResponse NotifyBadgeCodeVerifyResult(NotifyBadgeCodeVerifyResultRequest request)
+        public NotifyBadgeCodeRefundResultResponse NotifyBadgeCodeRefundResult(NotifyBadgeCodeRefundResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            NotifyBadgeCodeVerifyResultHeaders headers = new NotifyBadgeCodeVerifyResultHeaders();
-            return NotifyBadgeCodeVerifyResultWithOptions(request, headers, runtime);
+            NotifyBadgeCodeRefundResultHeaders headers = new NotifyBadgeCodeRefundResultHeaders();
+            return NotifyBadgeCodeRefundResultWithOptions(request, headers, runtime);
         }
 
-        public async Task<NotifyBadgeCodeVerifyResultResponse> NotifyBadgeCodeVerifyResultAsync(NotifyBadgeCodeVerifyResultRequest request)
+        public async Task<NotifyBadgeCodeRefundResultResponse> NotifyBadgeCodeRefundResultAsync(NotifyBadgeCodeRefundResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            NotifyBadgeCodeVerifyResultHeaders headers = new NotifyBadgeCodeVerifyResultHeaders();
-            return await NotifyBadgeCodeVerifyResultWithOptionsAsync(request, headers, runtime);
+            NotifyBadgeCodeRefundResultHeaders headers = new NotifyBadgeCodeRefundResultHeaders();
+            return await NotifyBadgeCodeRefundResultWithOptionsAsync(request, headers, runtime);
         }
 
         public NotifyBadgeCodeVerifyResultResponse NotifyBadgeCodeVerifyResultWithOptions(NotifyBadgeCodeVerifyResultRequest request, NotifyBadgeCodeVerifyResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -730,7 +839,19 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<NotifyBadgeCodeVerifyResultResponse>(DoROARequest("NotifyBadgeCodeVerifyResult", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/verifyResults", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "NotifyBadgeCodeVerifyResult",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/verifyResults",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<NotifyBadgeCodeVerifyResultResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<NotifyBadgeCodeVerifyResultResponse> NotifyBadgeCodeVerifyResultWithOptionsAsync(NotifyBadgeCodeVerifyResultRequest request, NotifyBadgeCodeVerifyResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -791,21 +912,33 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<NotifyBadgeCodeVerifyResultResponse>(await DoROARequestAsync("NotifyBadgeCodeVerifyResult", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/verifyResults", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "NotifyBadgeCodeVerifyResult",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/verifyResults",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<NotifyBadgeCodeVerifyResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public SaveBadgeCodeCorpInstanceResponse SaveBadgeCodeCorpInstance(SaveBadgeCodeCorpInstanceRequest request)
+        public NotifyBadgeCodeVerifyResultResponse NotifyBadgeCodeVerifyResult(NotifyBadgeCodeVerifyResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SaveBadgeCodeCorpInstanceHeaders headers = new SaveBadgeCodeCorpInstanceHeaders();
-            return SaveBadgeCodeCorpInstanceWithOptions(request, headers, runtime);
+            NotifyBadgeCodeVerifyResultHeaders headers = new NotifyBadgeCodeVerifyResultHeaders();
+            return NotifyBadgeCodeVerifyResultWithOptions(request, headers, runtime);
         }
 
-        public async Task<SaveBadgeCodeCorpInstanceResponse> SaveBadgeCodeCorpInstanceAsync(SaveBadgeCodeCorpInstanceRequest request)
+        public async Task<NotifyBadgeCodeVerifyResultResponse> NotifyBadgeCodeVerifyResultAsync(NotifyBadgeCodeVerifyResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SaveBadgeCodeCorpInstanceHeaders headers = new SaveBadgeCodeCorpInstanceHeaders();
-            return await SaveBadgeCodeCorpInstanceWithOptionsAsync(request, headers, runtime);
+            NotifyBadgeCodeVerifyResultHeaders headers = new NotifyBadgeCodeVerifyResultHeaders();
+            return await NotifyBadgeCodeVerifyResultWithOptionsAsync(request, headers, runtime);
         }
 
         public SaveBadgeCodeCorpInstanceResponse SaveBadgeCodeCorpInstanceWithOptions(SaveBadgeCodeCorpInstanceRequest request, SaveBadgeCodeCorpInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -842,7 +975,19 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SaveBadgeCodeCorpInstanceResponse>(DoROARequest("SaveBadgeCodeCorpInstance", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/corpInstances", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveBadgeCodeCorpInstance",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/corpInstances",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveBadgeCodeCorpInstanceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<SaveBadgeCodeCorpInstanceResponse> SaveBadgeCodeCorpInstanceWithOptionsAsync(SaveBadgeCodeCorpInstanceRequest request, SaveBadgeCodeCorpInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -879,21 +1024,33 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SaveBadgeCodeCorpInstanceResponse>(await DoROARequestAsync("SaveBadgeCodeCorpInstance", "badge_1.0", "HTTP", "POST", "AK", "/v1.0/badge/codes/corpInstances", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveBadgeCodeCorpInstance",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/corpInstances",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveBadgeCodeCorpInstanceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateBadgeCodeUserInstanceResponse UpdateBadgeCodeUserInstance(UpdateBadgeCodeUserInstanceRequest request)
+        public SaveBadgeCodeCorpInstanceResponse SaveBadgeCodeCorpInstance(SaveBadgeCodeCorpInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateBadgeCodeUserInstanceHeaders headers = new UpdateBadgeCodeUserInstanceHeaders();
-            return UpdateBadgeCodeUserInstanceWithOptions(request, headers, runtime);
+            SaveBadgeCodeCorpInstanceHeaders headers = new SaveBadgeCodeCorpInstanceHeaders();
+            return SaveBadgeCodeCorpInstanceWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateBadgeCodeUserInstanceResponse> UpdateBadgeCodeUserInstanceAsync(UpdateBadgeCodeUserInstanceRequest request)
+        public async Task<SaveBadgeCodeCorpInstanceResponse> SaveBadgeCodeCorpInstanceAsync(SaveBadgeCodeCorpInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateBadgeCodeUserInstanceHeaders headers = new UpdateBadgeCodeUserInstanceHeaders();
-            return await UpdateBadgeCodeUserInstanceWithOptionsAsync(request, headers, runtime);
+            SaveBadgeCodeCorpInstanceHeaders headers = new SaveBadgeCodeCorpInstanceHeaders();
+            return await SaveBadgeCodeCorpInstanceWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateBadgeCodeUserInstanceResponse UpdateBadgeCodeUserInstanceWithOptions(UpdateBadgeCodeUserInstanceRequest request, UpdateBadgeCodeUserInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -954,7 +1111,19 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateBadgeCodeUserInstanceResponse>(DoROARequest("UpdateBadgeCodeUserInstance", "badge_1.0", "HTTP", "PUT", "AK", "/v1.0/badge/codes/userInstances", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateBadgeCodeUserInstance",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/userInstances",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateBadgeCodeUserInstanceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateBadgeCodeUserInstanceResponse> UpdateBadgeCodeUserInstanceWithOptionsAsync(UpdateBadgeCodeUserInstanceRequest request, UpdateBadgeCodeUserInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1015,7 +1184,33 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateBadgeCodeUserInstanceResponse>(await DoROARequestAsync("UpdateBadgeCodeUserInstance", "badge_1.0", "HTTP", "PUT", "AK", "/v1.0/badge/codes/userInstances", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateBadgeCodeUserInstance",
+                Version = "badge_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/badge/codes/userInstances",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateBadgeCodeUserInstanceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpdateBadgeCodeUserInstanceResponse UpdateBadgeCodeUserInstance(UpdateBadgeCodeUserInstanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateBadgeCodeUserInstanceHeaders headers = new UpdateBadgeCodeUserInstanceHeaders();
+            return UpdateBadgeCodeUserInstanceWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateBadgeCodeUserInstanceResponse> UpdateBadgeCodeUserInstanceAsync(UpdateBadgeCodeUserInstanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateBadgeCodeUserInstanceHeaders headers = new UpdateBadgeCodeUserInstanceHeaders();
+            return await UpdateBadgeCodeUserInstanceWithOptionsAsync(request, headers, runtime);
         }
 
     }

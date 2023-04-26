@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListDeptUserIdsResponseBody : TeaModel {
-        /// <summary>
-        /// 用户ID列表
-        /// </summary>
         [NameInMap("userIdList")]
         [Validation(Required=false)]
         public List<string> UserIdList { get; set; }

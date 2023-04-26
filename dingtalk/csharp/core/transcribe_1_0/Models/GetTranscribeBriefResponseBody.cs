@@ -23,9 +23,6 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0.Models
         [Validation(Required=false)]
         public int? StatusCode { get; set; }
 
-        /// <summary>
-        /// 用于描述本次请求是否成功的字段
-        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

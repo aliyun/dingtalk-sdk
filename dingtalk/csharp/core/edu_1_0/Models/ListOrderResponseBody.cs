@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class ListOrderResponseBody : TeaModel {
-        /// <summary>
-        /// 列表
-        /// </summary>
         [NameInMap("list")]
         [Validation(Required=false)]
         public List<ListOrderResponseBodyList> List { get; set; }
@@ -70,9 +67,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
         }
 
-        /// <summary>
-        /// 总数
-        /// </summary>
         [NameInMap("total")]
         [Validation(Required=false)]
         public long? Total { get; set; }

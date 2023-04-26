@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
 {
     public class UpdateInteractiveOTOMessageRequest : TeaModel {
-        /// <summary>
-        /// 消息详情
-        /// </summary>
         [NameInMap("detail")]
         [Validation(Required=false)]
         public UpdateInteractiveOTOMessageRequestDetail Detail { get; set; }

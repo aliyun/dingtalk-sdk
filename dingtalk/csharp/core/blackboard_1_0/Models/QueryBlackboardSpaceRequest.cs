@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkblackboard_1_0.Models
 {
     public class QueryBlackboardSpaceRequest : TeaModel {
-        /// <summary>
-        /// 操作人userId。
-        /// </summary>
         [NameInMap("operationUserId")]
         [Validation(Required=false)]
         public string OperationUserId { get; set; }

@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class CheckWritePermissionResponseBody : TeaModel {
-        /// <summary>
-        /// entityPermissionMap
-        /// </summary>
         [NameInMap("entityPermissionMap")]
         [Validation(Required=false)]
         public Dictionary<string, bool?> EntityPermissionMap { get; set; }

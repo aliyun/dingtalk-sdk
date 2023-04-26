@@ -13,9 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public List<string> ProtectScenes { get; set; }
 
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("seniorStaffId")]
         [Validation(Required=false)]
         public string SeniorStaffId { get; set; }

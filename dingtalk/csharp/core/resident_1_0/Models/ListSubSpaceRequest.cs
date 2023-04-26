@@ -13,9 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         [Validation(Required=false)]
         public long? ReferId { get; set; }
 
-        /// <summary>
-        /// A short description of struct
-        /// </summary>
         [NameInMap("residentCorpId")]
         [Validation(Required=false)]
         public string ResidentCorpId { get; set; }

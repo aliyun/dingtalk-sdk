@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
             }
         }
 
-
-        public EditContactResponse EditContact(EditContactRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditContactHeaders headers = new EditContactHeaders();
-            return EditContactWithOptions(request, headers, runtime);
-        }
-
-        public async Task<EditContactResponse> EditContactAsync(EditContactRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditContactHeaders headers = new EditContactHeaders();
-            return await EditContactWithOptionsAsync(request, headers, runtime);
-        }
 
         public EditContactResponse EditContactWithOptions(EditContactRequest request, EditContactHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -74,7 +63,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditContactResponse>(DoROARequest("EditContact", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/contacts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditContact",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/contacts",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditContactResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<EditContactResponse> EditContactWithOptionsAsync(EditContactRequest request, EditContactHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -111,21 +112,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditContactResponse>(await DoROARequestAsync("EditContact", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/contacts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditContact",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/contacts",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditContactResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public EditCustomerResponse EditCustomer(EditCustomerRequest request)
+        public EditContactResponse EditContact(EditContactRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditCustomerHeaders headers = new EditCustomerHeaders();
-            return EditCustomerWithOptions(request, headers, runtime);
+            EditContactHeaders headers = new EditContactHeaders();
+            return EditContactWithOptions(request, headers, runtime);
         }
 
-        public async Task<EditCustomerResponse> EditCustomerAsync(EditCustomerRequest request)
+        public async Task<EditContactResponse> EditContactAsync(EditContactRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditCustomerHeaders headers = new EditCustomerHeaders();
-            return await EditCustomerWithOptionsAsync(request, headers, runtime);
+            EditContactHeaders headers = new EditContactHeaders();
+            return await EditContactWithOptionsAsync(request, headers, runtime);
         }
 
         public EditCustomerResponse EditCustomerWithOptions(EditCustomerRequest request, EditCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -162,7 +175,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditCustomerResponse>(DoROARequest("EditCustomer", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/customers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditCustomer",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/customers",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditCustomerResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<EditCustomerResponse> EditCustomerWithOptionsAsync(EditCustomerRequest request, EditCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -199,21 +224,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditCustomerResponse>(await DoROARequestAsync("EditCustomer", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/customers", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditCustomer",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/customers",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditCustomerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public EditCustomerPoolResponse EditCustomerPool(EditCustomerPoolRequest request)
+        public EditCustomerResponse EditCustomer(EditCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditCustomerPoolHeaders headers = new EditCustomerPoolHeaders();
-            return EditCustomerPoolWithOptions(request, headers, runtime);
+            EditCustomerHeaders headers = new EditCustomerHeaders();
+            return EditCustomerWithOptions(request, headers, runtime);
         }
 
-        public async Task<EditCustomerPoolResponse> EditCustomerPoolAsync(EditCustomerPoolRequest request)
+        public async Task<EditCustomerResponse> EditCustomerAsync(EditCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditCustomerPoolHeaders headers = new EditCustomerPoolHeaders();
-            return await EditCustomerPoolWithOptionsAsync(request, headers, runtime);
+            EditCustomerHeaders headers = new EditCustomerHeaders();
+            return await EditCustomerWithOptionsAsync(request, headers, runtime);
         }
 
         public EditCustomerPoolResponse EditCustomerPoolWithOptions(EditCustomerPoolRequest request, EditCustomerPoolHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -250,7 +287,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditCustomerPoolResponse>(DoROARequest("EditCustomerPool", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/customerPools", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditCustomerPool",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/customerPools",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditCustomerPoolResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<EditCustomerPoolResponse> EditCustomerPoolWithOptionsAsync(EditCustomerPoolRequest request, EditCustomerPoolHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -287,21 +336,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditCustomerPoolResponse>(await DoROARequestAsync("EditCustomerPool", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/customerPools", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditCustomerPool",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/customerPools",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditCustomerPoolResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public EditExchangeResponse EditExchange(EditExchangeRequest request)
+        public EditCustomerPoolResponse EditCustomerPool(EditCustomerPoolRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditExchangeHeaders headers = new EditExchangeHeaders();
-            return EditExchangeWithOptions(request, headers, runtime);
+            EditCustomerPoolHeaders headers = new EditCustomerPoolHeaders();
+            return EditCustomerPoolWithOptions(request, headers, runtime);
         }
 
-        public async Task<EditExchangeResponse> EditExchangeAsync(EditExchangeRequest request)
+        public async Task<EditCustomerPoolResponse> EditCustomerPoolAsync(EditCustomerPoolRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditExchangeHeaders headers = new EditExchangeHeaders();
-            return await EditExchangeWithOptionsAsync(request, headers, runtime);
+            EditCustomerPoolHeaders headers = new EditCustomerPoolHeaders();
+            return await EditCustomerPoolWithOptionsAsync(request, headers, runtime);
         }
 
         public EditExchangeResponse EditExchangeWithOptions(EditExchangeRequest request, EditExchangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -338,7 +399,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditExchangeResponse>(DoROARequest("EditExchange", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/exchanges", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditExchange",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/exchanges",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditExchangeResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<EditExchangeResponse> EditExchangeWithOptionsAsync(EditExchangeRequest request, EditExchangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -375,21 +448,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditExchangeResponse>(await DoROARequestAsync("EditExchange", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/exchanges", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditExchange",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/exchanges",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditExchangeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public EditGoodsResponse EditGoods(EditGoodsRequest request)
+        public EditExchangeResponse EditExchange(EditExchangeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditGoodsHeaders headers = new EditGoodsHeaders();
-            return EditGoodsWithOptions(request, headers, runtime);
+            EditExchangeHeaders headers = new EditExchangeHeaders();
+            return EditExchangeWithOptions(request, headers, runtime);
         }
 
-        public async Task<EditGoodsResponse> EditGoodsAsync(EditGoodsRequest request)
+        public async Task<EditExchangeResponse> EditExchangeAsync(EditExchangeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditGoodsHeaders headers = new EditGoodsHeaders();
-            return await EditGoodsWithOptionsAsync(request, headers, runtime);
+            EditExchangeHeaders headers = new EditExchangeHeaders();
+            return await EditExchangeWithOptionsAsync(request, headers, runtime);
         }
 
         public EditGoodsResponse EditGoodsWithOptions(EditGoodsRequest request, EditGoodsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -426,7 +511,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditGoodsResponse>(DoROARequest("EditGoods", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/goods", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditGoods",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/goods",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditGoodsResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<EditGoodsResponse> EditGoodsWithOptionsAsync(EditGoodsRequest request, EditGoodsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -463,21 +560,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditGoodsResponse>(await DoROARequestAsync("EditGoods", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/goods", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditGoods",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/goods",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditGoodsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public EditIntostockResponse EditIntostock(EditIntostockRequest request)
+        public EditGoodsResponse EditGoods(EditGoodsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditIntostockHeaders headers = new EditIntostockHeaders();
-            return EditIntostockWithOptions(request, headers, runtime);
+            EditGoodsHeaders headers = new EditGoodsHeaders();
+            return EditGoodsWithOptions(request, headers, runtime);
         }
 
-        public async Task<EditIntostockResponse> EditIntostockAsync(EditIntostockRequest request)
+        public async Task<EditGoodsResponse> EditGoodsAsync(EditGoodsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditIntostockHeaders headers = new EditIntostockHeaders();
-            return await EditIntostockWithOptionsAsync(request, headers, runtime);
+            EditGoodsHeaders headers = new EditGoodsHeaders();
+            return await EditGoodsWithOptionsAsync(request, headers, runtime);
         }
 
         public EditIntostockResponse EditIntostockWithOptions(EditIntostockRequest request, EditIntostockHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -514,7 +623,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditIntostockResponse>(DoROARequest("EditIntostock", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/intostocks", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditIntostock",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/intostocks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditIntostockResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<EditIntostockResponse> EditIntostockWithOptionsAsync(EditIntostockRequest request, EditIntostockHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -551,21 +672,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditIntostockResponse>(await DoROARequestAsync("EditIntostock", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/intostocks", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditIntostock",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/intostocks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditIntostockResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public EditInvoiceResponse EditInvoice(EditInvoiceRequest request)
+        public EditIntostockResponse EditIntostock(EditIntostockRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditInvoiceHeaders headers = new EditInvoiceHeaders();
-            return EditInvoiceWithOptions(request, headers, runtime);
+            EditIntostockHeaders headers = new EditIntostockHeaders();
+            return EditIntostockWithOptions(request, headers, runtime);
         }
 
-        public async Task<EditInvoiceResponse> EditInvoiceAsync(EditInvoiceRequest request)
+        public async Task<EditIntostockResponse> EditIntostockAsync(EditIntostockRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditInvoiceHeaders headers = new EditInvoiceHeaders();
-            return await EditInvoiceWithOptionsAsync(request, headers, runtime);
+            EditIntostockHeaders headers = new EditIntostockHeaders();
+            return await EditIntostockWithOptionsAsync(request, headers, runtime);
         }
 
         public EditInvoiceResponse EditInvoiceWithOptions(EditInvoiceRequest request, EditInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -602,7 +735,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditInvoiceResponse>(DoROARequest("EditInvoice", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/invoices", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditInvoice",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/invoices",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditInvoiceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<EditInvoiceResponse> EditInvoiceWithOptionsAsync(EditInvoiceRequest request, EditInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -639,21 +784,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditInvoiceResponse>(await DoROARequestAsync("EditInvoice", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/invoices", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditInvoice",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/invoices",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditInvoiceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public EditOrderResponse EditOrder(EditOrderRequest request)
+        public EditInvoiceResponse EditInvoice(EditInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditOrderHeaders headers = new EditOrderHeaders();
-            return EditOrderWithOptions(request, headers, runtime);
+            EditInvoiceHeaders headers = new EditInvoiceHeaders();
+            return EditInvoiceWithOptions(request, headers, runtime);
         }
 
-        public async Task<EditOrderResponse> EditOrderAsync(EditOrderRequest request)
+        public async Task<EditInvoiceResponse> EditInvoiceAsync(EditInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditOrderHeaders headers = new EditOrderHeaders();
-            return await EditOrderWithOptionsAsync(request, headers, runtime);
+            EditInvoiceHeaders headers = new EditInvoiceHeaders();
+            return await EditInvoiceWithOptionsAsync(request, headers, runtime);
         }
 
         public EditOrderResponse EditOrderWithOptions(EditOrderRequest request, EditOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -690,7 +847,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditOrderResponse>(DoROARequest("EditOrder", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/orders", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditOrder",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/orders",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditOrderResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<EditOrderResponse> EditOrderWithOptionsAsync(EditOrderRequest request, EditOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -727,21 +896,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditOrderResponse>(await DoROARequestAsync("EditOrder", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/orders", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditOrder",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/orders",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public EditOutstockResponse EditOutstock(EditOutstockRequest request)
+        public EditOrderResponse EditOrder(EditOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditOutstockHeaders headers = new EditOutstockHeaders();
-            return EditOutstockWithOptions(request, headers, runtime);
+            EditOrderHeaders headers = new EditOrderHeaders();
+            return EditOrderWithOptions(request, headers, runtime);
         }
 
-        public async Task<EditOutstockResponse> EditOutstockAsync(EditOutstockRequest request)
+        public async Task<EditOrderResponse> EditOrderAsync(EditOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditOutstockHeaders headers = new EditOutstockHeaders();
-            return await EditOutstockWithOptionsAsync(request, headers, runtime);
+            EditOrderHeaders headers = new EditOrderHeaders();
+            return await EditOrderWithOptionsAsync(request, headers, runtime);
         }
 
         public EditOutstockResponse EditOutstockWithOptions(EditOutstockRequest request, EditOutstockHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -778,7 +959,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditOutstockResponse>(DoROARequest("EditOutstock", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/outstocks", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditOutstock",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/outstocks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditOutstockResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<EditOutstockResponse> EditOutstockWithOptionsAsync(EditOutstockRequest request, EditOutstockHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -815,21 +1008,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditOutstockResponse>(await DoROARequestAsync("EditOutstock", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/outstocks", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditOutstock",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/outstocks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditOutstockResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public EditProductionResponse EditProduction(EditProductionRequest request)
+        public EditOutstockResponse EditOutstock(EditOutstockRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditProductionHeaders headers = new EditProductionHeaders();
-            return EditProductionWithOptions(request, headers, runtime);
+            EditOutstockHeaders headers = new EditOutstockHeaders();
+            return EditOutstockWithOptions(request, headers, runtime);
         }
 
-        public async Task<EditProductionResponse> EditProductionAsync(EditProductionRequest request)
+        public async Task<EditOutstockResponse> EditOutstockAsync(EditOutstockRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditProductionHeaders headers = new EditProductionHeaders();
-            return await EditProductionWithOptionsAsync(request, headers, runtime);
+            EditOutstockHeaders headers = new EditOutstockHeaders();
+            return await EditOutstockWithOptionsAsync(request, headers, runtime);
         }
 
         public EditProductionResponse EditProductionWithOptions(EditProductionRequest request, EditProductionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -866,7 +1071,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditProductionResponse>(DoROARequest("EditProduction", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/productions", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditProduction",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/productions",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditProductionResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<EditProductionResponse> EditProductionWithOptionsAsync(EditProductionRequest request, EditProductionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -903,21 +1120,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditProductionResponse>(await DoROARequestAsync("EditProduction", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/productions", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditProduction",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/productions",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditProductionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public EditPurchaseResponse EditPurchase(EditPurchaseRequest request)
+        public EditProductionResponse EditProduction(EditProductionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditPurchaseHeaders headers = new EditPurchaseHeaders();
-            return EditPurchaseWithOptions(request, headers, runtime);
+            EditProductionHeaders headers = new EditProductionHeaders();
+            return EditProductionWithOptions(request, headers, runtime);
         }
 
-        public async Task<EditPurchaseResponse> EditPurchaseAsync(EditPurchaseRequest request)
+        public async Task<EditProductionResponse> EditProductionAsync(EditProductionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditPurchaseHeaders headers = new EditPurchaseHeaders();
-            return await EditPurchaseWithOptionsAsync(request, headers, runtime);
+            EditProductionHeaders headers = new EditProductionHeaders();
+            return await EditProductionWithOptionsAsync(request, headers, runtime);
         }
 
         public EditPurchaseResponse EditPurchaseWithOptions(EditPurchaseRequest request, EditPurchaseHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -954,7 +1183,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditPurchaseResponse>(DoROARequest("EditPurchase", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/purchases", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditPurchase",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/purchases",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditPurchaseResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<EditPurchaseResponse> EditPurchaseWithOptionsAsync(EditPurchaseRequest request, EditPurchaseHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -991,21 +1232,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditPurchaseResponse>(await DoROARequestAsync("EditPurchase", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/purchases", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditPurchase",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/purchases",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditPurchaseResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public EditQuotationRecordResponse EditQuotationRecord(EditQuotationRecordRequest request)
+        public EditPurchaseResponse EditPurchase(EditPurchaseRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditQuotationRecordHeaders headers = new EditQuotationRecordHeaders();
-            return EditQuotationRecordWithOptions(request, headers, runtime);
+            EditPurchaseHeaders headers = new EditPurchaseHeaders();
+            return EditPurchaseWithOptions(request, headers, runtime);
         }
 
-        public async Task<EditQuotationRecordResponse> EditQuotationRecordAsync(EditQuotationRecordRequest request)
+        public async Task<EditPurchaseResponse> EditPurchaseAsync(EditPurchaseRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditQuotationRecordHeaders headers = new EditQuotationRecordHeaders();
-            return await EditQuotationRecordWithOptionsAsync(request, headers, runtime);
+            EditPurchaseHeaders headers = new EditPurchaseHeaders();
+            return await EditPurchaseWithOptionsAsync(request, headers, runtime);
         }
 
         public EditQuotationRecordResponse EditQuotationRecordWithOptions(EditQuotationRecordRequest request, EditQuotationRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1042,7 +1295,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditQuotationRecordResponse>(DoROARequest("EditQuotationRecord", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/quotationRecords", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditQuotationRecord",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/quotationRecords",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditQuotationRecordResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<EditQuotationRecordResponse> EditQuotationRecordWithOptionsAsync(EditQuotationRecordRequest request, EditQuotationRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1079,21 +1344,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditQuotationRecordResponse>(await DoROARequestAsync("EditQuotationRecord", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/quotationRecords", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditQuotationRecord",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/quotationRecords",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditQuotationRecordResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public EditSalesResponse EditSales(EditSalesRequest request)
+        public EditQuotationRecordResponse EditQuotationRecord(EditQuotationRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditSalesHeaders headers = new EditSalesHeaders();
-            return EditSalesWithOptions(request, headers, runtime);
+            EditQuotationRecordHeaders headers = new EditQuotationRecordHeaders();
+            return EditQuotationRecordWithOptions(request, headers, runtime);
         }
 
-        public async Task<EditSalesResponse> EditSalesAsync(EditSalesRequest request)
+        public async Task<EditQuotationRecordResponse> EditQuotationRecordAsync(EditQuotationRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            EditSalesHeaders headers = new EditSalesHeaders();
-            return await EditSalesWithOptionsAsync(request, headers, runtime);
+            EditQuotationRecordHeaders headers = new EditQuotationRecordHeaders();
+            return await EditQuotationRecordWithOptionsAsync(request, headers, runtime);
         }
 
         public EditSalesResponse EditSalesWithOptions(EditSalesRequest request, EditSalesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1130,7 +1407,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditSalesResponse>(DoROARequest("EditSales", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/sales", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditSales",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/sales",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditSalesResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<EditSalesResponse> EditSalesWithOptionsAsync(EditSalesRequest request, EditSalesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1167,21 +1456,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<EditSalesResponse>(await DoROARequestAsync("EditSales", "jzcrm_1.0", "HTTP", "POST", "AK", "/v1.0/jzcrm/sales", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EditSales",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/sales",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EditSalesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetDataListResponse GetDataList(GetDataListRequest request)
+        public EditSalesResponse EditSales(EditSalesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetDataListHeaders headers = new GetDataListHeaders();
-            return GetDataListWithOptions(request, headers, runtime);
+            EditSalesHeaders headers = new EditSalesHeaders();
+            return EditSalesWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetDataListResponse> GetDataListAsync(GetDataListRequest request)
+        public async Task<EditSalesResponse> EditSalesAsync(EditSalesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetDataListHeaders headers = new GetDataListHeaders();
-            return await GetDataListWithOptionsAsync(request, headers, runtime);
+            EditSalesHeaders headers = new EditSalesHeaders();
+            return await EditSalesWithOptionsAsync(request, headers, runtime);
         }
 
         public GetDataListResponse GetDataListWithOptions(GetDataListRequest request, GetDataListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1214,7 +1515,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetDataListResponse>(DoROARequest("GetDataList", "jzcrm_1.0", "HTTP", "GET", "AK", "/v1.0/jzcrm/data", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDataList",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/data",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDataListResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetDataListResponse> GetDataListWithOptionsAsync(GetDataListRequest request, GetDataListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1247,21 +1560,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetDataListResponse>(await DoROARequestAsync("GetDataList", "jzcrm_1.0", "HTTP", "GET", "AK", "/v1.0/jzcrm/data", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDataList",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/data",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDataListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetDataViewResponse GetDataView(GetDataViewRequest request)
+        public GetDataListResponse GetDataList(GetDataListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetDataViewHeaders headers = new GetDataViewHeaders();
-            return GetDataViewWithOptions(request, headers, runtime);
+            GetDataListHeaders headers = new GetDataListHeaders();
+            return GetDataListWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetDataViewResponse> GetDataViewAsync(GetDataViewRequest request)
+        public async Task<GetDataListResponse> GetDataListAsync(GetDataListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetDataViewHeaders headers = new GetDataViewHeaders();
-            return await GetDataViewWithOptionsAsync(request, headers, runtime);
+            GetDataListHeaders headers = new GetDataListHeaders();
+            return await GetDataListWithOptionsAsync(request, headers, runtime);
         }
 
         public GetDataViewResponse GetDataViewWithOptions(GetDataViewRequest request, GetDataViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1290,7 +1615,19 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetDataViewResponse>(DoROARequest("GetDataView", "jzcrm_1.0", "HTTP", "GET", "AK", "/v1.0/jzcrm/dataView", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDataView",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/dataView",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDataViewResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetDataViewResponse> GetDataViewWithOptionsAsync(GetDataViewRequest request, GetDataViewHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1319,7 +1656,33 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetDataViewResponse>(await DoROARequestAsync("GetDataView", "jzcrm_1.0", "HTTP", "GET", "AK", "/v1.0/jzcrm/dataView", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDataView",
+                Version = "jzcrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/jzcrm/dataView",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDataViewResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetDataViewResponse GetDataView(GetDataViewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetDataViewHeaders headers = new GetDataViewHeaders();
+            return GetDataViewWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetDataViewResponse> GetDataViewAsync(GetDataViewRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetDataViewHeaders headers = new GetDataViewHeaders();
+            return await GetDataViewWithOptionsAsync(request, headers, runtime);
         }
 
     }

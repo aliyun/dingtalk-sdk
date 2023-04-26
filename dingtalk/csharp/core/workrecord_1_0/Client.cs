@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkworkrecord_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkrecord_1_0
             }
         }
 
-
-        public CountWorkRecordResponse CountWorkRecord(CountWorkRecordRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CountWorkRecordHeaders headers = new CountWorkRecordHeaders();
-            return CountWorkRecordWithOptions(request, headers, runtime);
-        }
-
-        public async Task<CountWorkRecordResponse> CountWorkRecordAsync(CountWorkRecordRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CountWorkRecordHeaders headers = new CountWorkRecordHeaders();
-            return await CountWorkRecordWithOptionsAsync(request, headers, runtime);
-        }
 
         public CountWorkRecordResponse CountWorkRecordWithOptions(CountWorkRecordRequest request, CountWorkRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -62,7 +51,19 @@ namespace AlibabaCloud.SDK.Dingtalkworkrecord_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<CountWorkRecordResponse>(DoROARequest("CountWorkRecord", "workrecord_1.0", "HTTP", "GET", "AK", "/v1.0/workrecord/counts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CountWorkRecord",
+                Version = "workrecord_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workrecord/counts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CountWorkRecordResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CountWorkRecordResponse> CountWorkRecordWithOptionsAsync(CountWorkRecordRequest request, CountWorkRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -87,7 +88,33 @@ namespace AlibabaCloud.SDK.Dingtalkworkrecord_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<CountWorkRecordResponse>(await DoROARequestAsync("CountWorkRecord", "workrecord_1.0", "HTTP", "GET", "AK", "/v1.0/workrecord/counts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CountWorkRecord",
+                Version = "workrecord_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workrecord/counts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CountWorkRecordResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public CountWorkRecordResponse CountWorkRecord(CountWorkRecordRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CountWorkRecordHeaders headers = new CountWorkRecordHeaders();
+            return CountWorkRecordWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CountWorkRecordResponse> CountWorkRecordAsync(CountWorkRecordRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CountWorkRecordHeaders headers = new CountWorkRecordHeaders();
+            return await CountWorkRecordWithOptionsAsync(request, headers, runtime);
         }
 
     }

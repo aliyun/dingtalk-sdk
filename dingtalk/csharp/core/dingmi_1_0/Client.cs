@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
             }
         }
 
-
-        public AddRobotInstanceToGroupResponse AddRobotInstanceToGroup(AddRobotInstanceToGroupRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AddRobotInstanceToGroupHeaders headers = new AddRobotInstanceToGroupHeaders();
-            return AddRobotInstanceToGroupWithOptions(request, headers, runtime);
-        }
-
-        public async Task<AddRobotInstanceToGroupResponse> AddRobotInstanceToGroupAsync(AddRobotInstanceToGroupRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AddRobotInstanceToGroupHeaders headers = new AddRobotInstanceToGroupHeaders();
-            return await AddRobotInstanceToGroupWithOptionsAsync(request, headers, runtime);
-        }
 
         public AddRobotInstanceToGroupResponse AddRobotInstanceToGroupWithOptions(AddRobotInstanceToGroupRequest request, AddRobotInstanceToGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -66,7 +55,19 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AddRobotInstanceToGroupResponse>(DoROARequest("AddRobotInstanceToGroup", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/intelligentRobots/groups", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddRobotInstanceToGroup",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/intelligentRobots/groups",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddRobotInstanceToGroupResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<AddRobotInstanceToGroupResponse> AddRobotInstanceToGroupWithOptionsAsync(AddRobotInstanceToGroupRequest request, AddRobotInstanceToGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -95,21 +96,33 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AddRobotInstanceToGroupResponse>(await DoROARequestAsync("AddRobotInstanceToGroup", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/intelligentRobots/groups", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddRobotInstanceToGroup",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/intelligentRobots/groups",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddRobotInstanceToGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public AskRobotResponse AskRobot(AskRobotRequest request)
+        public AddRobotInstanceToGroupResponse AddRobotInstanceToGroup(AddRobotInstanceToGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AskRobotHeaders headers = new AskRobotHeaders();
-            return AskRobotWithOptions(request, headers, runtime);
+            AddRobotInstanceToGroupHeaders headers = new AddRobotInstanceToGroupHeaders();
+            return AddRobotInstanceToGroupWithOptions(request, headers, runtime);
         }
 
-        public async Task<AskRobotResponse> AskRobotAsync(AskRobotRequest request)
+        public async Task<AddRobotInstanceToGroupResponse> AddRobotInstanceToGroupAsync(AddRobotInstanceToGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AskRobotHeaders headers = new AskRobotHeaders();
-            return await AskRobotWithOptionsAsync(request, headers, runtime);
+            AddRobotInstanceToGroupHeaders headers = new AddRobotInstanceToGroupHeaders();
+            return await AddRobotInstanceToGroupWithOptionsAsync(request, headers, runtime);
         }
 
         public AskRobotResponse AskRobotWithOptions(AskRobotRequest request, AskRobotHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -146,7 +159,19 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AskRobotResponse>(DoROARequest("AskRobot", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/robots/ask", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AskRobot",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/robots/ask",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AskRobotResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<AskRobotResponse> AskRobotWithOptionsAsync(AskRobotRequest request, AskRobotHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -183,21 +208,33 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AskRobotResponse>(await DoROARequestAsync("AskRobot", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/robots/ask", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AskRobot",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/robots/ask",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AskRobotResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetDingMeBaseDataResponse GetDingMeBaseData(GetDingMeBaseDataRequest request)
+        public AskRobotResponse AskRobot(AskRobotRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetDingMeBaseDataHeaders headers = new GetDingMeBaseDataHeaders();
-            return GetDingMeBaseDataWithOptions(request, headers, runtime);
+            AskRobotHeaders headers = new AskRobotHeaders();
+            return AskRobotWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetDingMeBaseDataResponse> GetDingMeBaseDataAsync(GetDingMeBaseDataRequest request)
+        public async Task<AskRobotResponse> AskRobotAsync(AskRobotRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetDingMeBaseDataHeaders headers = new GetDingMeBaseDataHeaders();
-            return await GetDingMeBaseDataWithOptionsAsync(request, headers, runtime);
+            AskRobotHeaders headers = new AskRobotHeaders();
+            return await AskRobotWithOptionsAsync(request, headers, runtime);
         }
 
         public GetDingMeBaseDataResponse GetDingMeBaseDataWithOptions(GetDingMeBaseDataRequest request, GetDingMeBaseDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -234,7 +271,19 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetDingMeBaseDataResponse>(DoROARequest("GetDingMeBaseData", "dingmi_1.0", "HTTP", "GET", "AK", "/v1.0/dingmi/robots/data", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDingMeBaseData",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/robots/data",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDingMeBaseDataResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetDingMeBaseDataResponse> GetDingMeBaseDataWithOptionsAsync(GetDingMeBaseDataRequest request, GetDingMeBaseDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -271,21 +320,33 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetDingMeBaseDataResponse>(await DoROARequestAsync("GetDingMeBaseData", "dingmi_1.0", "HTTP", "GET", "AK", "/v1.0/dingmi/robots/data", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetDingMeBaseData",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/robots/data",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetDingMeBaseDataResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetIntelligentRobotInfoResponse GetIntelligentRobotInfo(GetIntelligentRobotInfoRequest request)
+        public GetDingMeBaseDataResponse GetDingMeBaseData(GetDingMeBaseDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetIntelligentRobotInfoHeaders headers = new GetIntelligentRobotInfoHeaders();
-            return GetIntelligentRobotInfoWithOptions(request, headers, runtime);
+            GetDingMeBaseDataHeaders headers = new GetDingMeBaseDataHeaders();
+            return GetDingMeBaseDataWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetIntelligentRobotInfoResponse> GetIntelligentRobotInfoAsync(GetIntelligentRobotInfoRequest request)
+        public async Task<GetDingMeBaseDataResponse> GetDingMeBaseDataAsync(GetDingMeBaseDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetIntelligentRobotInfoHeaders headers = new GetIntelligentRobotInfoHeaders();
-            return await GetIntelligentRobotInfoWithOptionsAsync(request, headers, runtime);
+            GetDingMeBaseDataHeaders headers = new GetDingMeBaseDataHeaders();
+            return await GetDingMeBaseDataWithOptionsAsync(request, headers, runtime);
         }
 
         public GetIntelligentRobotInfoResponse GetIntelligentRobotInfoWithOptions(GetIntelligentRobotInfoRequest request, GetIntelligentRobotInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -310,7 +371,19 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetIntelligentRobotInfoResponse>(DoROARequest("GetIntelligentRobotInfo", "dingmi_1.0", "HTTP", "GET", "AK", "/v1.0/dingmi/intelligentRobots/infos", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetIntelligentRobotInfo",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/intelligentRobots/infos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetIntelligentRobotInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetIntelligentRobotInfoResponse> GetIntelligentRobotInfoWithOptionsAsync(GetIntelligentRobotInfoRequest request, GetIntelligentRobotInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -335,21 +408,33 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetIntelligentRobotInfoResponse>(await DoROARequestAsync("GetIntelligentRobotInfo", "dingmi_1.0", "HTTP", "GET", "AK", "/v1.0/dingmi/intelligentRobots/infos", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetIntelligentRobotInfo",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/intelligentRobots/infos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetIntelligentRobotInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetOfficialAccountRobotInfoResponse GetOfficialAccountRobotInfo(GetOfficialAccountRobotInfoRequest request)
+        public GetIntelligentRobotInfoResponse GetIntelligentRobotInfo(GetIntelligentRobotInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetOfficialAccountRobotInfoHeaders headers = new GetOfficialAccountRobotInfoHeaders();
-            return GetOfficialAccountRobotInfoWithOptions(request, headers, runtime);
+            GetIntelligentRobotInfoHeaders headers = new GetIntelligentRobotInfoHeaders();
+            return GetIntelligentRobotInfoWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetOfficialAccountRobotInfoResponse> GetOfficialAccountRobotInfoAsync(GetOfficialAccountRobotInfoRequest request)
+        public async Task<GetIntelligentRobotInfoResponse> GetIntelligentRobotInfoAsync(GetIntelligentRobotInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetOfficialAccountRobotInfoHeaders headers = new GetOfficialAccountRobotInfoHeaders();
-            return await GetOfficialAccountRobotInfoWithOptionsAsync(request, headers, runtime);
+            GetIntelligentRobotInfoHeaders headers = new GetIntelligentRobotInfoHeaders();
+            return await GetIntelligentRobotInfoWithOptionsAsync(request, headers, runtime);
         }
 
         public GetOfficialAccountRobotInfoResponse GetOfficialAccountRobotInfoWithOptions(GetOfficialAccountRobotInfoRequest request, GetOfficialAccountRobotInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -374,7 +459,19 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetOfficialAccountRobotInfoResponse>(DoROARequest("GetOfficialAccountRobotInfo", "dingmi_1.0", "HTTP", "GET", "AK", "/v1.0/dingmi/officialAccounts/robots", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetOfficialAccountRobotInfo",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/officialAccounts/robots",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetOfficialAccountRobotInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetOfficialAccountRobotInfoResponse> GetOfficialAccountRobotInfoWithOptionsAsync(GetOfficialAccountRobotInfoRequest request, GetOfficialAccountRobotInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -399,21 +496,33 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetOfficialAccountRobotInfoResponse>(await DoROARequestAsync("GetOfficialAccountRobotInfo", "dingmi_1.0", "HTTP", "GET", "AK", "/v1.0/dingmi/officialAccounts/robots", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetOfficialAccountRobotInfo",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/officialAccounts/robots",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetOfficialAccountRobotInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetWebChannelUserTokenResponse GetWebChannelUserToken(GetWebChannelUserTokenRequest request)
+        public GetOfficialAccountRobotInfoResponse GetOfficialAccountRobotInfo(GetOfficialAccountRobotInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetWebChannelUserTokenHeaders headers = new GetWebChannelUserTokenHeaders();
-            return GetWebChannelUserTokenWithOptions(request, headers, runtime);
+            GetOfficialAccountRobotInfoHeaders headers = new GetOfficialAccountRobotInfoHeaders();
+            return GetOfficialAccountRobotInfoWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetWebChannelUserTokenResponse> GetWebChannelUserTokenAsync(GetWebChannelUserTokenRequest request)
+        public async Task<GetOfficialAccountRobotInfoResponse> GetOfficialAccountRobotInfoAsync(GetOfficialAccountRobotInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetWebChannelUserTokenHeaders headers = new GetWebChannelUserTokenHeaders();
-            return await GetWebChannelUserTokenWithOptionsAsync(request, headers, runtime);
+            GetOfficialAccountRobotInfoHeaders headers = new GetOfficialAccountRobotInfoHeaders();
+            return await GetOfficialAccountRobotInfoWithOptionsAsync(request, headers, runtime);
         }
 
         public GetWebChannelUserTokenResponse GetWebChannelUserTokenWithOptions(GetWebChannelUserTokenRequest request, GetWebChannelUserTokenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -446,7 +555,19 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetWebChannelUserTokenResponse>(DoROARequest("GetWebChannelUserToken", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/webChannels/userTokens", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetWebChannelUserToken",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/webChannels/userTokens",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetWebChannelUserTokenResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetWebChannelUserTokenResponse> GetWebChannelUserTokenWithOptionsAsync(GetWebChannelUserTokenRequest request, GetWebChannelUserTokenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -479,21 +600,33 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetWebChannelUserTokenResponse>(await DoROARequestAsync("GetWebChannelUserToken", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/webChannels/userTokens", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetWebChannelUserToken",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/webChannels/userTokens",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetWebChannelUserTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public PushCustomerGroupMessageResponse PushCustomerGroupMessage(PushCustomerGroupMessageRequest request)
+        public GetWebChannelUserTokenResponse GetWebChannelUserToken(GetWebChannelUserTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PushCustomerGroupMessageHeaders headers = new PushCustomerGroupMessageHeaders();
-            return PushCustomerGroupMessageWithOptions(request, headers, runtime);
+            GetWebChannelUserTokenHeaders headers = new GetWebChannelUserTokenHeaders();
+            return GetWebChannelUserTokenWithOptions(request, headers, runtime);
         }
 
-        public async Task<PushCustomerGroupMessageResponse> PushCustomerGroupMessageAsync(PushCustomerGroupMessageRequest request)
+        public async Task<GetWebChannelUserTokenResponse> GetWebChannelUserTokenAsync(GetWebChannelUserTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PushCustomerGroupMessageHeaders headers = new PushCustomerGroupMessageHeaders();
-            return await PushCustomerGroupMessageWithOptionsAsync(request, headers, runtime);
+            GetWebChannelUserTokenHeaders headers = new GetWebChannelUserTokenHeaders();
+            return await GetWebChannelUserTokenWithOptionsAsync(request, headers, runtime);
         }
 
         public PushCustomerGroupMessageResponse PushCustomerGroupMessageWithOptions(PushCustomerGroupMessageRequest request, PushCustomerGroupMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -526,7 +659,19 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PushCustomerGroupMessageResponse>(DoROARequest("PushCustomerGroupMessage", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/officialAccounts/robots/groupMessages/send", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushCustomerGroupMessage",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/officialAccounts/robots/groupMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushCustomerGroupMessageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<PushCustomerGroupMessageResponse> PushCustomerGroupMessageWithOptionsAsync(PushCustomerGroupMessageRequest request, PushCustomerGroupMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -559,21 +704,33 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PushCustomerGroupMessageResponse>(await DoROARequestAsync("PushCustomerGroupMessage", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/officialAccounts/robots/groupMessages/send", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushCustomerGroupMessage",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/officialAccounts/robots/groupMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushCustomerGroupMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public PushIntelligentRobotGroupMessageResponse PushIntelligentRobotGroupMessage(PushIntelligentRobotGroupMessageRequest request)
+        public PushCustomerGroupMessageResponse PushCustomerGroupMessage(PushCustomerGroupMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PushIntelligentRobotGroupMessageHeaders headers = new PushIntelligentRobotGroupMessageHeaders();
-            return PushIntelligentRobotGroupMessageWithOptions(request, headers, runtime);
+            PushCustomerGroupMessageHeaders headers = new PushCustomerGroupMessageHeaders();
+            return PushCustomerGroupMessageWithOptions(request, headers, runtime);
         }
 
-        public async Task<PushIntelligentRobotGroupMessageResponse> PushIntelligentRobotGroupMessageAsync(PushIntelligentRobotGroupMessageRequest request)
+        public async Task<PushCustomerGroupMessageResponse> PushCustomerGroupMessageAsync(PushCustomerGroupMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PushIntelligentRobotGroupMessageHeaders headers = new PushIntelligentRobotGroupMessageHeaders();
-            return await PushIntelligentRobotGroupMessageWithOptionsAsync(request, headers, runtime);
+            PushCustomerGroupMessageHeaders headers = new PushCustomerGroupMessageHeaders();
+            return await PushCustomerGroupMessageWithOptionsAsync(request, headers, runtime);
         }
 
         public PushIntelligentRobotGroupMessageResponse PushIntelligentRobotGroupMessageWithOptions(PushIntelligentRobotGroupMessageRequest request, PushIntelligentRobotGroupMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -610,7 +767,19 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PushIntelligentRobotGroupMessageResponse>(DoROARequest("PushIntelligentRobotGroupMessage", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/intelligentRobots/groupMessages/send", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushIntelligentRobotGroupMessage",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/intelligentRobots/groupMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushIntelligentRobotGroupMessageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<PushIntelligentRobotGroupMessageResponse> PushIntelligentRobotGroupMessageWithOptionsAsync(PushIntelligentRobotGroupMessageRequest request, PushIntelligentRobotGroupMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -647,21 +816,33 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PushIntelligentRobotGroupMessageResponse>(await DoROARequestAsync("PushIntelligentRobotGroupMessage", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/intelligentRobots/groupMessages/send", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushIntelligentRobotGroupMessage",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/intelligentRobots/groupMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushIntelligentRobotGroupMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public PushIntelligentRobotMessageResponse PushIntelligentRobotMessage(PushIntelligentRobotMessageRequest request)
+        public PushIntelligentRobotGroupMessageResponse PushIntelligentRobotGroupMessage(PushIntelligentRobotGroupMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PushIntelligentRobotMessageHeaders headers = new PushIntelligentRobotMessageHeaders();
-            return PushIntelligentRobotMessageWithOptions(request, headers, runtime);
+            PushIntelligentRobotGroupMessageHeaders headers = new PushIntelligentRobotGroupMessageHeaders();
+            return PushIntelligentRobotGroupMessageWithOptions(request, headers, runtime);
         }
 
-        public async Task<PushIntelligentRobotMessageResponse> PushIntelligentRobotMessageAsync(PushIntelligentRobotMessageRequest request)
+        public async Task<PushIntelligentRobotGroupMessageResponse> PushIntelligentRobotGroupMessageAsync(PushIntelligentRobotGroupMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PushIntelligentRobotMessageHeaders headers = new PushIntelligentRobotMessageHeaders();
-            return await PushIntelligentRobotMessageWithOptionsAsync(request, headers, runtime);
+            PushIntelligentRobotGroupMessageHeaders headers = new PushIntelligentRobotGroupMessageHeaders();
+            return await PushIntelligentRobotGroupMessageWithOptionsAsync(request, headers, runtime);
         }
 
         public PushIntelligentRobotMessageResponse PushIntelligentRobotMessageWithOptions(PushIntelligentRobotMessageRequest request, PushIntelligentRobotMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -698,7 +879,19 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PushIntelligentRobotMessageResponse>(DoROARequest("PushIntelligentRobotMessage", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/intelligentRobots/oToMessages/send", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushIntelligentRobotMessage",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/intelligentRobots/oToMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushIntelligentRobotMessageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<PushIntelligentRobotMessageResponse> PushIntelligentRobotMessageWithOptionsAsync(PushIntelligentRobotMessageRequest request, PushIntelligentRobotMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -735,21 +928,33 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PushIntelligentRobotMessageResponse>(await DoROARequestAsync("PushIntelligentRobotMessage", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/intelligentRobots/oToMessages/send", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushIntelligentRobotMessage",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/intelligentRobots/oToMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushIntelligentRobotMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public PushOfficialAccountMessageResponse PushOfficialAccountMessage(PushOfficialAccountMessageRequest request)
+        public PushIntelligentRobotMessageResponse PushIntelligentRobotMessage(PushIntelligentRobotMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PushOfficialAccountMessageHeaders headers = new PushOfficialAccountMessageHeaders();
-            return PushOfficialAccountMessageWithOptions(request, headers, runtime);
+            PushIntelligentRobotMessageHeaders headers = new PushIntelligentRobotMessageHeaders();
+            return PushIntelligentRobotMessageWithOptions(request, headers, runtime);
         }
 
-        public async Task<PushOfficialAccountMessageResponse> PushOfficialAccountMessageAsync(PushOfficialAccountMessageRequest request)
+        public async Task<PushIntelligentRobotMessageResponse> PushIntelligentRobotMessageAsync(PushIntelligentRobotMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PushOfficialAccountMessageHeaders headers = new PushOfficialAccountMessageHeaders();
-            return await PushOfficialAccountMessageWithOptionsAsync(request, headers, runtime);
+            PushIntelligentRobotMessageHeaders headers = new PushIntelligentRobotMessageHeaders();
+            return await PushIntelligentRobotMessageWithOptionsAsync(request, headers, runtime);
         }
 
         public PushOfficialAccountMessageResponse PushOfficialAccountMessageWithOptions(PushOfficialAccountMessageRequest request, PushOfficialAccountMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -782,7 +987,19 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PushOfficialAccountMessageResponse>(DoROARequest("PushOfficialAccountMessage", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/officialAccounts/robots/oToMessages/send", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushOfficialAccountMessage",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/officialAccounts/robots/oToMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushOfficialAccountMessageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<PushOfficialAccountMessageResponse> PushOfficialAccountMessageWithOptionsAsync(PushOfficialAccountMessageRequest request, PushOfficialAccountMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -815,21 +1032,33 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PushOfficialAccountMessageResponse>(await DoROARequestAsync("PushOfficialAccountMessage", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/officialAccounts/robots/oToMessages/send", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushOfficialAccountMessage",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/officialAccounts/robots/oToMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushOfficialAccountMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public PushRobotMessageResponse PushRobotMessage(PushRobotMessageRequest request)
+        public PushOfficialAccountMessageResponse PushOfficialAccountMessage(PushOfficialAccountMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PushRobotMessageHeaders headers = new PushRobotMessageHeaders();
-            return PushRobotMessageWithOptions(request, headers, runtime);
+            PushOfficialAccountMessageHeaders headers = new PushOfficialAccountMessageHeaders();
+            return PushOfficialAccountMessageWithOptions(request, headers, runtime);
         }
 
-        public async Task<PushRobotMessageResponse> PushRobotMessageAsync(PushRobotMessageRequest request)
+        public async Task<PushOfficialAccountMessageResponse> PushOfficialAccountMessageAsync(PushOfficialAccountMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PushRobotMessageHeaders headers = new PushRobotMessageHeaders();
-            return await PushRobotMessageWithOptionsAsync(request, headers, runtime);
+            PushOfficialAccountMessageHeaders headers = new PushOfficialAccountMessageHeaders();
+            return await PushOfficialAccountMessageWithOptionsAsync(request, headers, runtime);
         }
 
         public PushRobotMessageResponse PushRobotMessageWithOptions(PushRobotMessageRequest request, PushRobotMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -866,7 +1095,19 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PushRobotMessageResponse>(DoROARequest("PushRobotMessage", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/robots/oToMessages/send", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushRobotMessage",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/robots/oToMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushRobotMessageResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<PushRobotMessageResponse> PushRobotMessageWithOptionsAsync(PushRobotMessageRequest request, PushRobotMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -903,21 +1144,33 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PushRobotMessageResponse>(await DoROARequestAsync("PushRobotMessage", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/robots/oToMessages/send", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushRobotMessage",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/robots/oToMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushRobotMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public ReplyRobotResponse ReplyRobot(ReplyRobotRequest request)
+        public PushRobotMessageResponse PushRobotMessage(PushRobotMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ReplyRobotHeaders headers = new ReplyRobotHeaders();
-            return ReplyRobotWithOptions(request, headers, runtime);
+            PushRobotMessageHeaders headers = new PushRobotMessageHeaders();
+            return PushRobotMessageWithOptions(request, headers, runtime);
         }
 
-        public async Task<ReplyRobotResponse> ReplyRobotAsync(ReplyRobotRequest request)
+        public async Task<PushRobotMessageResponse> PushRobotMessageAsync(PushRobotMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ReplyRobotHeaders headers = new ReplyRobotHeaders();
-            return await ReplyRobotWithOptionsAsync(request, headers, runtime);
+            PushRobotMessageHeaders headers = new PushRobotMessageHeaders();
+            return await PushRobotMessageWithOptionsAsync(request, headers, runtime);
         }
 
         public ReplyRobotResponse ReplyRobotWithOptions(ReplyRobotRequest request, ReplyRobotHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -942,7 +1195,19 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ReplyRobotResponse>(DoROARequest("ReplyRobot", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/robots/reply", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ReplyRobot",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/robots/reply",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ReplyRobotResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<ReplyRobotResponse> ReplyRobotWithOptionsAsync(ReplyRobotRequest request, ReplyRobotHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -967,21 +1232,33 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ReplyRobotResponse>(await DoROARequestAsync("ReplyRobot", "dingmi_1.0", "HTTP", "POST", "AK", "/v1.0/dingmi/robots/reply", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ReplyRobot",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/robots/reply",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ReplyRobotResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateOfficialAccountRobotInfoResponse UpdateOfficialAccountRobotInfo(UpdateOfficialAccountRobotInfoRequest request)
+        public ReplyRobotResponse ReplyRobot(ReplyRobotRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateOfficialAccountRobotInfoHeaders headers = new UpdateOfficialAccountRobotInfoHeaders();
-            return UpdateOfficialAccountRobotInfoWithOptions(request, headers, runtime);
+            ReplyRobotHeaders headers = new ReplyRobotHeaders();
+            return ReplyRobotWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateOfficialAccountRobotInfoResponse> UpdateOfficialAccountRobotInfoAsync(UpdateOfficialAccountRobotInfoRequest request)
+        public async Task<ReplyRobotResponse> ReplyRobotAsync(ReplyRobotRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateOfficialAccountRobotInfoHeaders headers = new UpdateOfficialAccountRobotInfoHeaders();
-            return await UpdateOfficialAccountRobotInfoWithOptionsAsync(request, headers, runtime);
+            ReplyRobotHeaders headers = new ReplyRobotHeaders();
+            return await ReplyRobotWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateOfficialAccountRobotInfoResponse UpdateOfficialAccountRobotInfoWithOptions(UpdateOfficialAccountRobotInfoRequest request, UpdateOfficialAccountRobotInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1028,7 +1305,19 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateOfficialAccountRobotInfoResponse>(DoROARequest("UpdateOfficialAccountRobotInfo", "dingmi_1.0", "HTTP", "PUT", "AK", "/v1.0/dingmi/officialAccounts/robots", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateOfficialAccountRobotInfo",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/officialAccounts/robots",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateOfficialAccountRobotInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateOfficialAccountRobotInfoResponse> UpdateOfficialAccountRobotInfoWithOptionsAsync(UpdateOfficialAccountRobotInfoRequest request, UpdateOfficialAccountRobotInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1075,7 +1364,33 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateOfficialAccountRobotInfoResponse>(await DoROARequestAsync("UpdateOfficialAccountRobotInfo", "dingmi_1.0", "HTTP", "PUT", "AK", "/v1.0/dingmi/officialAccounts/robots", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateOfficialAccountRobotInfo",
+                Version = "dingmi_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/dingmi/officialAccounts/robots",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateOfficialAccountRobotInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpdateOfficialAccountRobotInfoResponse UpdateOfficialAccountRobotInfo(UpdateOfficialAccountRobotInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateOfficialAccountRobotInfoHeaders headers = new UpdateOfficialAccountRobotInfoHeaders();
+            return UpdateOfficialAccountRobotInfoWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateOfficialAccountRobotInfoResponse> UpdateOfficialAccountRobotInfoAsync(UpdateOfficialAccountRobotInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateOfficialAccountRobotInfoHeaders headers = new UpdateOfficialAccountRobotInfoHeaders();
+            return await UpdateOfficialAccountRobotInfoWithOptionsAsync(request, headers, runtime);
         }
 
     }

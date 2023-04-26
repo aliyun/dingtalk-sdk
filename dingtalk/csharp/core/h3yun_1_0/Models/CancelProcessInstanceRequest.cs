@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
 {
     public class CancelProcessInstanceRequest : TeaModel {
-        /// <summary>
-        /// 流程实例id
-        /// </summary>
         [NameInMap("processInstanceId")]
         [Validation(Required=false)]
         public string ProcessInstanceId { get; set; }

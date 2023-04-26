@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkworkrecord_1_0.Models
 {
     public class CountWorkRecordResponseBody : TeaModel {
-        /// <summary>
-        /// undoCount
-        /// </summary>
         [NameInMap("undoCount")]
         [Validation(Required=false)]
         public long? UndoCount { get; set; }

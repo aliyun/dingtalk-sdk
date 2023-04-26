@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             }
         }
 
-
-        public AddHrmPreentryResponse AddHrmPreentry(AddHrmPreentryRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AddHrmPreentryHeaders headers = new AddHrmPreentryHeaders();
-            return AddHrmPreentryWithOptions(request, headers, runtime);
-        }
-
-        public async Task<AddHrmPreentryResponse> AddHrmPreentryAsync(AddHrmPreentryRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AddHrmPreentryHeaders headers = new AddHrmPreentryHeaders();
-            return await AddHrmPreentryWithOptionsAsync(request, headers, runtime);
-        }
 
         public AddHrmPreentryResponse AddHrmPreentryWithOptions(AddHrmPreentryRequest request, AddHrmPreentryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -82,7 +71,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AddHrmPreentryResponse>(DoROARequest("AddHrmPreentry", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/preentries", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddHrmPreentry",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/preentries",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddHrmPreentryResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<AddHrmPreentryResponse> AddHrmPreentryWithOptionsAsync(AddHrmPreentryRequest request, AddHrmPreentryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -127,21 +128,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AddHrmPreentryResponse>(await DoROARequestAsync("AddHrmPreentry", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/preentries", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddHrmPreentry",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/preentries",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddHrmPreentryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public ECertQueryResponse ECertQuery(ECertQueryRequest request)
+        public AddHrmPreentryResponse AddHrmPreentry(AddHrmPreentryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ECertQueryHeaders headers = new ECertQueryHeaders();
-            return ECertQueryWithOptions(request, headers, runtime);
+            AddHrmPreentryHeaders headers = new AddHrmPreentryHeaders();
+            return AddHrmPreentryWithOptions(request, headers, runtime);
         }
 
-        public async Task<ECertQueryResponse> ECertQueryAsync(ECertQueryRequest request)
+        public async Task<AddHrmPreentryResponse> AddHrmPreentryAsync(AddHrmPreentryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ECertQueryHeaders headers = new ECertQueryHeaders();
-            return await ECertQueryWithOptionsAsync(request, headers, runtime);
+            AddHrmPreentryHeaders headers = new AddHrmPreentryHeaders();
+            return await AddHrmPreentryWithOptionsAsync(request, headers, runtime);
         }
 
         public ECertQueryResponse ECertQueryWithOptions(ECertQueryRequest request, ECertQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -166,7 +179,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ECertQueryResponse>(DoROARequest("ECertQuery", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/eCerts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ECertQuery",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/eCerts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ECertQueryResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<ECertQueryResponse> ECertQueryWithOptionsAsync(ECertQueryRequest request, ECertQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -191,21 +216,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<ECertQueryResponse>(await DoROARequestAsync("ECertQuery", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/eCerts", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ECertQuery",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/eCerts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ECertQueryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public HrmProcessRegularResponse HrmProcessRegular(HrmProcessRegularRequest request)
+        public ECertQueryResponse ECertQuery(ECertQueryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            HrmProcessRegularHeaders headers = new HrmProcessRegularHeaders();
-            return HrmProcessRegularWithOptions(request, headers, runtime);
+            ECertQueryHeaders headers = new ECertQueryHeaders();
+            return ECertQueryWithOptions(request, headers, runtime);
         }
 
-        public async Task<HrmProcessRegularResponse> HrmProcessRegularAsync(HrmProcessRegularRequest request)
+        public async Task<ECertQueryResponse> ECertQueryAsync(ECertQueryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            HrmProcessRegularHeaders headers = new HrmProcessRegularHeaders();
-            return await HrmProcessRegularWithOptionsAsync(request, headers, runtime);
+            ECertQueryHeaders headers = new ECertQueryHeaders();
+            return await ECertQueryWithOptionsAsync(request, headers, runtime);
         }
 
         public HrmProcessRegularResponse HrmProcessRegularWithOptions(HrmProcessRegularRequest request, HrmProcessRegularHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -242,7 +279,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<HrmProcessRegularResponse>(DoROARequest("HrmProcessRegular", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/processes/regulars/become", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmProcessRegular",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/processes/regulars/become",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmProcessRegularResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<HrmProcessRegularResponse> HrmProcessRegularWithOptionsAsync(HrmProcessRegularRequest request, HrmProcessRegularHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -279,21 +328,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<HrmProcessRegularResponse>(await DoROARequestAsync("HrmProcessRegular", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/processes/regulars/become", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmProcessRegular",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/processes/regulars/become",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmProcessRegularResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public HrmProcessTransferResponse HrmProcessTransfer(HrmProcessTransferRequest request)
+        public HrmProcessRegularResponse HrmProcessRegular(HrmProcessRegularRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            HrmProcessTransferHeaders headers = new HrmProcessTransferHeaders();
-            return HrmProcessTransferWithOptions(request, headers, runtime);
+            HrmProcessRegularHeaders headers = new HrmProcessRegularHeaders();
+            return HrmProcessRegularWithOptions(request, headers, runtime);
         }
 
-        public async Task<HrmProcessTransferResponse> HrmProcessTransferAsync(HrmProcessTransferRequest request)
+        public async Task<HrmProcessRegularResponse> HrmProcessRegularAsync(HrmProcessRegularRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            HrmProcessTransferHeaders headers = new HrmProcessTransferHeaders();
-            return await HrmProcessTransferWithOptionsAsync(request, headers, runtime);
+            HrmProcessRegularHeaders headers = new HrmProcessRegularHeaders();
+            return await HrmProcessRegularWithOptionsAsync(request, headers, runtime);
         }
 
         public HrmProcessTransferResponse HrmProcessTransferWithOptions(HrmProcessTransferRequest request, HrmProcessTransferHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -350,7 +411,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<HrmProcessTransferResponse>(DoROARequest("HrmProcessTransfer", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/processes/transfer", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmProcessTransfer",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/processes/transfer",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmProcessTransferResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<HrmProcessTransferResponse> HrmProcessTransferWithOptionsAsync(HrmProcessTransferRequest request, HrmProcessTransferHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -407,21 +480,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<HrmProcessTransferResponse>(await DoROARequestAsync("HrmProcessTransfer", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/processes/transfer", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmProcessTransfer",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/processes/transfer",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmProcessTransferResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public HrmProcessUpdateTerminationInfoResponse HrmProcessUpdateTerminationInfo(HrmProcessUpdateTerminationInfoRequest request)
+        public HrmProcessTransferResponse HrmProcessTransfer(HrmProcessTransferRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            HrmProcessUpdateTerminationInfoHeaders headers = new HrmProcessUpdateTerminationInfoHeaders();
-            return HrmProcessUpdateTerminationInfoWithOptions(request, headers, runtime);
+            HrmProcessTransferHeaders headers = new HrmProcessTransferHeaders();
+            return HrmProcessTransferWithOptions(request, headers, runtime);
         }
 
-        public async Task<HrmProcessUpdateTerminationInfoResponse> HrmProcessUpdateTerminationInfoAsync(HrmProcessUpdateTerminationInfoRequest request)
+        public async Task<HrmProcessTransferResponse> HrmProcessTransferAsync(HrmProcessTransferRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            HrmProcessUpdateTerminationInfoHeaders headers = new HrmProcessUpdateTerminationInfoHeaders();
-            return await HrmProcessUpdateTerminationInfoWithOptionsAsync(request, headers, runtime);
+            HrmProcessTransferHeaders headers = new HrmProcessTransferHeaders();
+            return await HrmProcessTransferWithOptionsAsync(request, headers, runtime);
         }
 
         public HrmProcessUpdateTerminationInfoResponse HrmProcessUpdateTerminationInfoWithOptions(HrmProcessUpdateTerminationInfoRequest request, HrmProcessUpdateTerminationInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -454,7 +539,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<HrmProcessUpdateTerminationInfoResponse>(DoROARequest("HrmProcessUpdateTerminationInfo", "hrm_1.0", "HTTP", "PUT", "AK", "/v1.0/hrm/processes/employees/terminations", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmProcessUpdateTerminationInfo",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/processes/employees/terminations",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmProcessUpdateTerminationInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<HrmProcessUpdateTerminationInfoResponse> HrmProcessUpdateTerminationInfoWithOptionsAsync(HrmProcessUpdateTerminationInfoRequest request, HrmProcessUpdateTerminationInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -487,21 +584,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<HrmProcessUpdateTerminationInfoResponse>(await DoROARequestAsync("HrmProcessUpdateTerminationInfo", "hrm_1.0", "HTTP", "PUT", "AK", "/v1.0/hrm/processes/employees/terminations", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmProcessUpdateTerminationInfo",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/processes/employees/terminations",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmProcessUpdateTerminationInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public MasterDataQueryResponse MasterDataQuery(MasterDataQueryRequest request)
+        public HrmProcessUpdateTerminationInfoResponse HrmProcessUpdateTerminationInfo(HrmProcessUpdateTerminationInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            MasterDataQueryHeaders headers = new MasterDataQueryHeaders();
-            return MasterDataQueryWithOptions(request, headers, runtime);
+            HrmProcessUpdateTerminationInfoHeaders headers = new HrmProcessUpdateTerminationInfoHeaders();
+            return HrmProcessUpdateTerminationInfoWithOptions(request, headers, runtime);
         }
 
-        public async Task<MasterDataQueryResponse> MasterDataQueryAsync(MasterDataQueryRequest request)
+        public async Task<HrmProcessUpdateTerminationInfoResponse> HrmProcessUpdateTerminationInfoAsync(HrmProcessUpdateTerminationInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            MasterDataQueryHeaders headers = new MasterDataQueryHeaders();
-            return await MasterDataQueryWithOptionsAsync(request, headers, runtime);
+            HrmProcessUpdateTerminationInfoHeaders headers = new HrmProcessUpdateTerminationInfoHeaders();
+            return await HrmProcessUpdateTerminationInfoWithOptionsAsync(request, headers, runtime);
         }
 
         public MasterDataQueryResponse MasterDataQueryWithOptions(MasterDataQueryRequest request, MasterDataQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -558,7 +667,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<MasterDataQueryResponse>(DoROARequest("MasterDataQuery", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/masters/datas/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MasterDataQuery",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/datas/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MasterDataQueryResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<MasterDataQueryResponse> MasterDataQueryWithOptionsAsync(MasterDataQueryRequest request, MasterDataQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -615,21 +736,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<MasterDataQueryResponse>(await DoROARequestAsync("MasterDataQuery", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/masters/datas/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MasterDataQuery",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/datas/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MasterDataQueryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public MasterDataSaveResponse MasterDataSave(MasterDataSaveRequest request)
+        public MasterDataQueryResponse MasterDataQuery(MasterDataQueryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            MasterDataSaveHeaders headers = new MasterDataSaveHeaders();
-            return MasterDataSaveWithOptions(request, headers, runtime);
+            MasterDataQueryHeaders headers = new MasterDataQueryHeaders();
+            return MasterDataQueryWithOptions(request, headers, runtime);
         }
 
-        public async Task<MasterDataSaveResponse> MasterDataSaveAsync(MasterDataSaveRequest request)
+        public async Task<MasterDataQueryResponse> MasterDataQueryAsync(MasterDataQueryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            MasterDataSaveHeaders headers = new MasterDataSaveHeaders();
-            return await MasterDataSaveWithOptionsAsync(request, headers, runtime);
+            MasterDataQueryHeaders headers = new MasterDataQueryHeaders();
+            return await MasterDataQueryWithOptionsAsync(request, headers, runtime);
         }
 
         public MasterDataSaveResponse MasterDataSaveWithOptions(MasterDataSaveRequest request, MasterDataSaveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -655,7 +788,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
             };
-            return TeaModel.ToObject<MasterDataSaveResponse>(DoROARequest("MasterDataSave", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/masters/datas/save", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MasterDataSave",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/datas/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MasterDataSaveResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<MasterDataSaveResponse> MasterDataSaveWithOptionsAsync(MasterDataSaveRequest request, MasterDataSaveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -681,21 +826,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
             };
-            return TeaModel.ToObject<MasterDataSaveResponse>(await DoROARequestAsync("MasterDataSave", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/masters/datas/save", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MasterDataSave",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/datas/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MasterDataSaveResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public MasterDataTenantQueyResponse MasterDataTenantQuey(MasterDataTenantQueyRequest request)
+        public MasterDataSaveResponse MasterDataSave(MasterDataSaveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            MasterDataTenantQueyHeaders headers = new MasterDataTenantQueyHeaders();
-            return MasterDataTenantQueyWithOptions(request, headers, runtime);
+            MasterDataSaveHeaders headers = new MasterDataSaveHeaders();
+            return MasterDataSaveWithOptions(request, headers, runtime);
         }
 
-        public async Task<MasterDataTenantQueyResponse> MasterDataTenantQueyAsync(MasterDataTenantQueyRequest request)
+        public async Task<MasterDataSaveResponse> MasterDataSaveAsync(MasterDataSaveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            MasterDataTenantQueyHeaders headers = new MasterDataTenantQueyHeaders();
-            return await MasterDataTenantQueyWithOptionsAsync(request, headers, runtime);
+            MasterDataSaveHeaders headers = new MasterDataSaveHeaders();
+            return await MasterDataSaveWithOptionsAsync(request, headers, runtime);
         }
 
         public MasterDataTenantQueyResponse MasterDataTenantQueyWithOptions(MasterDataTenantQueyRequest request, MasterDataTenantQueyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -724,7 +881,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<MasterDataTenantQueyResponse>(DoROARequest("MasterDataTenantQuey", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/masters/tenants", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MasterDataTenantQuey",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/tenants",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MasterDataTenantQueyResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<MasterDataTenantQueyResponse> MasterDataTenantQueyWithOptionsAsync(MasterDataTenantQueyRequest request, MasterDataTenantQueyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -753,21 +922,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<MasterDataTenantQueyResponse>(await DoROARequestAsync("MasterDataTenantQuey", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/masters/tenants", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "MasterDataTenantQuey",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/tenants",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<MasterDataTenantQueyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryCustomEntryProcessesResponse QueryCustomEntryProcesses(QueryCustomEntryProcessesRequest request)
+        public MasterDataTenantQueyResponse MasterDataTenantQuey(MasterDataTenantQueyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCustomEntryProcessesHeaders headers = new QueryCustomEntryProcessesHeaders();
-            return QueryCustomEntryProcessesWithOptions(request, headers, runtime);
+            MasterDataTenantQueyHeaders headers = new MasterDataTenantQueyHeaders();
+            return MasterDataTenantQueyWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryCustomEntryProcessesResponse> QueryCustomEntryProcessesAsync(QueryCustomEntryProcessesRequest request)
+        public async Task<MasterDataTenantQueyResponse> MasterDataTenantQueyAsync(MasterDataTenantQueyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCustomEntryProcessesHeaders headers = new QueryCustomEntryProcessesHeaders();
-            return await QueryCustomEntryProcessesWithOptionsAsync(request, headers, runtime);
+            MasterDataTenantQueyHeaders headers = new MasterDataTenantQueyHeaders();
+            return await MasterDataTenantQueyWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryCustomEntryProcessesResponse QueryCustomEntryProcessesWithOptions(QueryCustomEntryProcessesRequest request, QueryCustomEntryProcessesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -800,7 +981,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryCustomEntryProcessesResponse>(DoROARequest("QueryCustomEntryProcesses", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/customEntryProcesses", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCustomEntryProcesses",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/customEntryProcesses",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCustomEntryProcessesResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryCustomEntryProcessesResponse> QueryCustomEntryProcessesWithOptionsAsync(QueryCustomEntryProcessesRequest request, QueryCustomEntryProcessesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -833,21 +1026,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryCustomEntryProcessesResponse>(await DoROARequestAsync("QueryCustomEntryProcesses", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/customEntryProcesses", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCustomEntryProcesses",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/customEntryProcesses",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCustomEntryProcessesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryDismissionStaffIdListResponse QueryDismissionStaffIdList(QueryDismissionStaffIdListRequest request)
+        public QueryCustomEntryProcessesResponse QueryCustomEntryProcesses(QueryCustomEntryProcessesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryDismissionStaffIdListHeaders headers = new QueryDismissionStaffIdListHeaders();
-            return QueryDismissionStaffIdListWithOptions(request, headers, runtime);
+            QueryCustomEntryProcessesHeaders headers = new QueryCustomEntryProcessesHeaders();
+            return QueryCustomEntryProcessesWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryDismissionStaffIdListResponse> QueryDismissionStaffIdListAsync(QueryDismissionStaffIdListRequest request)
+        public async Task<QueryCustomEntryProcessesResponse> QueryCustomEntryProcessesAsync(QueryCustomEntryProcessesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryDismissionStaffIdListHeaders headers = new QueryDismissionStaffIdListHeaders();
-            return await QueryDismissionStaffIdListWithOptionsAsync(request, headers, runtime);
+            QueryCustomEntryProcessesHeaders headers = new QueryCustomEntryProcessesHeaders();
+            return await QueryCustomEntryProcessesWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryDismissionStaffIdListResponse QueryDismissionStaffIdListWithOptions(QueryDismissionStaffIdListRequest request, QueryDismissionStaffIdListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -876,7 +1081,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryDismissionStaffIdListResponse>(DoROARequest("QueryDismissionStaffIdList", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/employees/dismissions", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDismissionStaffIdList",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/employees/dismissions",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDismissionStaffIdListResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryDismissionStaffIdListResponse> QueryDismissionStaffIdListWithOptionsAsync(QueryDismissionStaffIdListRequest request, QueryDismissionStaffIdListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -905,21 +1122,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryDismissionStaffIdListResponse>(await DoROARequestAsync("QueryDismissionStaffIdList", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/employees/dismissions", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDismissionStaffIdList",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/employees/dismissions",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDismissionStaffIdListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryHrmEmployeeDismissionInfoResponse QueryHrmEmployeeDismissionInfo(QueryHrmEmployeeDismissionInfoRequest request)
+        public QueryDismissionStaffIdListResponse QueryDismissionStaffIdList(QueryDismissionStaffIdListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryHrmEmployeeDismissionInfoHeaders headers = new QueryHrmEmployeeDismissionInfoHeaders();
-            return QueryHrmEmployeeDismissionInfoWithOptions(request, headers, runtime);
+            QueryDismissionStaffIdListHeaders headers = new QueryDismissionStaffIdListHeaders();
+            return QueryDismissionStaffIdListWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryHrmEmployeeDismissionInfoResponse> QueryHrmEmployeeDismissionInfoAsync(QueryHrmEmployeeDismissionInfoRequest request)
+        public async Task<QueryDismissionStaffIdListResponse> QueryDismissionStaffIdListAsync(QueryDismissionStaffIdListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryHrmEmployeeDismissionInfoHeaders headers = new QueryHrmEmployeeDismissionInfoHeaders();
-            return await QueryHrmEmployeeDismissionInfoWithOptionsAsync(request, headers, runtime);
+            QueryDismissionStaffIdListHeaders headers = new QueryDismissionStaffIdListHeaders();
+            return await QueryDismissionStaffIdListWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryHrmEmployeeDismissionInfoResponse QueryHrmEmployeeDismissionInfoWithOptions(QueryHrmEmployeeDismissionInfoRequest tmpReq, QueryHrmEmployeeDismissionInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -950,7 +1179,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryHrmEmployeeDismissionInfoResponse>(DoROARequest("QueryHrmEmployeeDismissionInfo", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/employees/dimissionInfos", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryHrmEmployeeDismissionInfo",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/employees/dimissionInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryHrmEmployeeDismissionInfoResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryHrmEmployeeDismissionInfoResponse> QueryHrmEmployeeDismissionInfoWithOptionsAsync(QueryHrmEmployeeDismissionInfoRequest tmpReq, QueryHrmEmployeeDismissionInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -981,21 +1222,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryHrmEmployeeDismissionInfoResponse>(await DoROARequestAsync("QueryHrmEmployeeDismissionInfo", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/employees/dimissionInfos", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryHrmEmployeeDismissionInfo",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/employees/dimissionInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryHrmEmployeeDismissionInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryJobRanksResponse QueryJobRanks(QueryJobRanksRequest request)
+        public QueryHrmEmployeeDismissionInfoResponse QueryHrmEmployeeDismissionInfo(QueryHrmEmployeeDismissionInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryJobRanksHeaders headers = new QueryJobRanksHeaders();
-            return QueryJobRanksWithOptions(request, headers, runtime);
+            QueryHrmEmployeeDismissionInfoHeaders headers = new QueryHrmEmployeeDismissionInfoHeaders();
+            return QueryHrmEmployeeDismissionInfoWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryJobRanksResponse> QueryJobRanksAsync(QueryJobRanksRequest request)
+        public async Task<QueryHrmEmployeeDismissionInfoResponse> QueryHrmEmployeeDismissionInfoAsync(QueryHrmEmployeeDismissionInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryJobRanksHeaders headers = new QueryJobRanksHeaders();
-            return await QueryJobRanksWithOptionsAsync(request, headers, runtime);
+            QueryHrmEmployeeDismissionInfoHeaders headers = new QueryHrmEmployeeDismissionInfoHeaders();
+            return await QueryHrmEmployeeDismissionInfoWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryJobRanksResponse QueryJobRanksWithOptions(QueryJobRanksRequest request, QueryJobRanksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1036,7 +1289,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryJobRanksResponse>(DoROARequest("QueryJobRanks", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/jobRanks", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryJobRanks",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/jobRanks",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryJobRanksResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryJobRanksResponse> QueryJobRanksWithOptionsAsync(QueryJobRanksRequest request, QueryJobRanksHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1077,21 +1342,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryJobRanksResponse>(await DoROARequestAsync("QueryJobRanks", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/jobRanks", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryJobRanks",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/jobRanks",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryJobRanksResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryJobsResponse QueryJobs(QueryJobsRequest request)
+        public QueryJobRanksResponse QueryJobRanks(QueryJobRanksRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryJobsHeaders headers = new QueryJobsHeaders();
-            return QueryJobsWithOptions(request, headers, runtime);
+            QueryJobRanksHeaders headers = new QueryJobRanksHeaders();
+            return QueryJobRanksWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryJobsResponse> QueryJobsAsync(QueryJobsRequest request)
+        public async Task<QueryJobRanksResponse> QueryJobRanksAsync(QueryJobRanksRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryJobsHeaders headers = new QueryJobsHeaders();
-            return await QueryJobsWithOptionsAsync(request, headers, runtime);
+            QueryJobRanksHeaders headers = new QueryJobRanksHeaders();
+            return await QueryJobRanksWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryJobsResponse QueryJobsWithOptions(QueryJobsRequest request, QueryJobsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1124,7 +1401,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryJobsResponse>(DoROARequest("QueryJobs", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/jobs", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryJobs",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/jobs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryJobsResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryJobsResponse> QueryJobsWithOptionsAsync(QueryJobsRequest request, QueryJobsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1157,21 +1446,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryJobsResponse>(await DoROARequestAsync("QueryJobs", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/jobs", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryJobs",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/jobs",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryJobsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryPositionsResponse QueryPositions(QueryPositionsRequest request)
+        public QueryJobsResponse QueryJobs(QueryJobsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryPositionsHeaders headers = new QueryPositionsHeaders();
-            return QueryPositionsWithOptions(request, headers, runtime);
+            QueryJobsHeaders headers = new QueryJobsHeaders();
+            return QueryJobsWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryPositionsResponse> QueryPositionsAsync(QueryPositionsRequest request)
+        public async Task<QueryJobsResponse> QueryJobsAsync(QueryJobsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryPositionsHeaders headers = new QueryPositionsHeaders();
-            return await QueryPositionsWithOptionsAsync(request, headers, runtime);
+            QueryJobsHeaders headers = new QueryJobsHeaders();
+            return await QueryJobsWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryPositionsResponse QueryPositionsWithOptions(QueryPositionsRequest request, QueryPositionsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1218,7 +1519,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryPositionsResponse>(DoROARequest("QueryPositions", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/positions/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPositions",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/positions/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPositionsResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryPositionsResponse> QueryPositionsWithOptionsAsync(QueryPositionsRequest request, QueryPositionsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1265,21 +1578,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryPositionsResponse>(await DoROARequestAsync("QueryPositions", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/positions/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPositions",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/positions/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPositionsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public RosterMetaAvailableFieldListResponse RosterMetaAvailableFieldList(RosterMetaAvailableFieldListRequest request)
+        public QueryPositionsResponse QueryPositions(QueryPositionsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RosterMetaAvailableFieldListHeaders headers = new RosterMetaAvailableFieldListHeaders();
-            return RosterMetaAvailableFieldListWithOptions(request, headers, runtime);
+            QueryPositionsHeaders headers = new QueryPositionsHeaders();
+            return QueryPositionsWithOptions(request, headers, runtime);
         }
 
-        public async Task<RosterMetaAvailableFieldListResponse> RosterMetaAvailableFieldListAsync(RosterMetaAvailableFieldListRequest request)
+        public async Task<QueryPositionsResponse> QueryPositionsAsync(QueryPositionsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RosterMetaAvailableFieldListHeaders headers = new RosterMetaAvailableFieldListHeaders();
-            return await RosterMetaAvailableFieldListWithOptionsAsync(request, headers, runtime);
+            QueryPositionsHeaders headers = new QueryPositionsHeaders();
+            return await QueryPositionsWithOptionsAsync(request, headers, runtime);
         }
 
         public RosterMetaAvailableFieldListResponse RosterMetaAvailableFieldListWithOptions(RosterMetaAvailableFieldListRequest request, RosterMetaAvailableFieldListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1304,7 +1629,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<RosterMetaAvailableFieldListResponse>(DoROARequest("RosterMetaAvailableFieldList", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/rosters/meta/authorities/fields", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RosterMetaAvailableFieldList",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/rosters/meta/authorities/fields",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RosterMetaAvailableFieldListResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<RosterMetaAvailableFieldListResponse> RosterMetaAvailableFieldListWithOptionsAsync(RosterMetaAvailableFieldListRequest request, RosterMetaAvailableFieldListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1329,21 +1666,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<RosterMetaAvailableFieldListResponse>(await DoROARequestAsync("RosterMetaAvailableFieldList", "hrm_1.0", "HTTP", "GET", "AK", "/v1.0/hrm/rosters/meta/authorities/fields", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RosterMetaAvailableFieldList",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/rosters/meta/authorities/fields",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RosterMetaAvailableFieldListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public RosterMetaFieldOptionsUpdateResponse RosterMetaFieldOptionsUpdate(RosterMetaFieldOptionsUpdateRequest request)
+        public RosterMetaAvailableFieldListResponse RosterMetaAvailableFieldList(RosterMetaAvailableFieldListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RosterMetaFieldOptionsUpdateHeaders headers = new RosterMetaFieldOptionsUpdateHeaders();
-            return RosterMetaFieldOptionsUpdateWithOptions(request, headers, runtime);
+            RosterMetaAvailableFieldListHeaders headers = new RosterMetaAvailableFieldListHeaders();
+            return RosterMetaAvailableFieldListWithOptions(request, headers, runtime);
         }
 
-        public async Task<RosterMetaFieldOptionsUpdateResponse> RosterMetaFieldOptionsUpdateAsync(RosterMetaFieldOptionsUpdateRequest request)
+        public async Task<RosterMetaAvailableFieldListResponse> RosterMetaAvailableFieldListAsync(RosterMetaAvailableFieldListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RosterMetaFieldOptionsUpdateHeaders headers = new RosterMetaFieldOptionsUpdateHeaders();
-            return await RosterMetaFieldOptionsUpdateWithOptionsAsync(request, headers, runtime);
+            RosterMetaAvailableFieldListHeaders headers = new RosterMetaAvailableFieldListHeaders();
+            return await RosterMetaAvailableFieldListWithOptionsAsync(request, headers, runtime);
         }
 
         public RosterMetaFieldOptionsUpdateResponse RosterMetaFieldOptionsUpdateWithOptions(RosterMetaFieldOptionsUpdateRequest request, RosterMetaFieldOptionsUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1386,7 +1735,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RosterMetaFieldOptionsUpdateResponse>(DoROARequest("RosterMetaFieldOptionsUpdate", "hrm_1.0", "HTTP", "PUT", "AK", "/v1.0/hrm/rosters/meta/fields/options", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RosterMetaFieldOptionsUpdate",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/rosters/meta/fields/options",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RosterMetaFieldOptionsUpdateResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<RosterMetaFieldOptionsUpdateResponse> RosterMetaFieldOptionsUpdateWithOptionsAsync(RosterMetaFieldOptionsUpdateRequest request, RosterMetaFieldOptionsUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1429,21 +1790,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RosterMetaFieldOptionsUpdateResponse>(await DoROARequestAsync("RosterMetaFieldOptionsUpdate", "hrm_1.0", "HTTP", "PUT", "AK", "/v1.0/hrm/rosters/meta/fields/options", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RosterMetaFieldOptionsUpdate",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/rosters/meta/fields/options",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RosterMetaFieldOptionsUpdateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public SolutionTaskInitResponse SolutionTaskInit(SolutionTaskInitRequest request)
+        public RosterMetaFieldOptionsUpdateResponse RosterMetaFieldOptionsUpdate(RosterMetaFieldOptionsUpdateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SolutionTaskInitHeaders headers = new SolutionTaskInitHeaders();
-            return SolutionTaskInitWithOptions(request, headers, runtime);
+            RosterMetaFieldOptionsUpdateHeaders headers = new RosterMetaFieldOptionsUpdateHeaders();
+            return RosterMetaFieldOptionsUpdateWithOptions(request, headers, runtime);
         }
 
-        public async Task<SolutionTaskInitResponse> SolutionTaskInitAsync(SolutionTaskInitRequest request)
+        public async Task<RosterMetaFieldOptionsUpdateResponse> RosterMetaFieldOptionsUpdateAsync(RosterMetaFieldOptionsUpdateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SolutionTaskInitHeaders headers = new SolutionTaskInitHeaders();
-            return await SolutionTaskInitWithOptionsAsync(request, headers, runtime);
+            RosterMetaFieldOptionsUpdateHeaders headers = new RosterMetaFieldOptionsUpdateHeaders();
+            return await RosterMetaFieldOptionsUpdateWithOptionsAsync(request, headers, runtime);
         }
 
         public SolutionTaskInitResponse SolutionTaskInitWithOptions(SolutionTaskInitRequest request, SolutionTaskInitHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1502,7 +1875,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SolutionTaskInitResponse>(DoROARequest("SolutionTaskInit", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/init", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SolutionTaskInit",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/solutions/tasks/init",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SolutionTaskInitResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<SolutionTaskInitResponse> SolutionTaskInitWithOptionsAsync(SolutionTaskInitRequest request, SolutionTaskInitHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1561,21 +1946,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SolutionTaskInitResponse>(await DoROARequestAsync("SolutionTaskInit", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/init", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SolutionTaskInit",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/solutions/tasks/init",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SolutionTaskInitResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public SolutionTaskSaveResponse SolutionTaskSave(SolutionTaskSaveRequest request)
+        public SolutionTaskInitResponse SolutionTaskInit(SolutionTaskInitRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SolutionTaskSaveHeaders headers = new SolutionTaskSaveHeaders();
-            return SolutionTaskSaveWithOptions(request, headers, runtime);
+            SolutionTaskInitHeaders headers = new SolutionTaskInitHeaders();
+            return SolutionTaskInitWithOptions(request, headers, runtime);
         }
 
-        public async Task<SolutionTaskSaveResponse> SolutionTaskSaveAsync(SolutionTaskSaveRequest request)
+        public async Task<SolutionTaskInitResponse> SolutionTaskInitAsync(SolutionTaskInitRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SolutionTaskSaveHeaders headers = new SolutionTaskSaveHeaders();
-            return await SolutionTaskSaveWithOptionsAsync(request, headers, runtime);
+            SolutionTaskInitHeaders headers = new SolutionTaskInitHeaders();
+            return await SolutionTaskInitWithOptionsAsync(request, headers, runtime);
         }
 
         public SolutionTaskSaveResponse SolutionTaskSaveWithOptions(SolutionTaskSaveRequest request, SolutionTaskSaveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1646,7 +2043,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SolutionTaskSaveResponse>(DoROARequest("SolutionTaskSave", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/save", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SolutionTaskSave",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/solutions/tasks/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SolutionTaskSaveResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<SolutionTaskSaveResponse> SolutionTaskSaveWithOptionsAsync(SolutionTaskSaveRequest request, SolutionTaskSaveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1717,21 +2126,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SolutionTaskSaveResponse>(await DoROARequestAsync("SolutionTaskSave", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/save", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SolutionTaskSave",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/solutions/tasks/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SolutionTaskSaveResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public SyncTaskTemplateResponse SyncTaskTemplate(SyncTaskTemplateRequest request)
+        public SolutionTaskSaveResponse SolutionTaskSave(SolutionTaskSaveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SyncTaskTemplateHeaders headers = new SyncTaskTemplateHeaders();
-            return SyncTaskTemplateWithOptions(request, headers, runtime);
+            SolutionTaskSaveHeaders headers = new SolutionTaskSaveHeaders();
+            return SolutionTaskSaveWithOptions(request, headers, runtime);
         }
 
-        public async Task<SyncTaskTemplateResponse> SyncTaskTemplateAsync(SyncTaskTemplateRequest request)
+        public async Task<SolutionTaskSaveResponse> SolutionTaskSaveAsync(SolutionTaskSaveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SyncTaskTemplateHeaders headers = new SyncTaskTemplateHeaders();
-            return await SyncTaskTemplateWithOptionsAsync(request, headers, runtime);
+            SolutionTaskSaveHeaders headers = new SolutionTaskSaveHeaders();
+            return await SolutionTaskSaveWithOptionsAsync(request, headers, runtime);
         }
 
         public SyncTaskTemplateResponse SyncTaskTemplateWithOptions(SyncTaskTemplateRequest request, SyncTaskTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1790,7 +2211,19 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SyncTaskTemplateResponse>(DoROARequest("SyncTaskTemplate", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/templates/sync", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncTaskTemplate",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/solutions/tasks/templates/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncTaskTemplateResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<SyncTaskTemplateResponse> SyncTaskTemplateWithOptionsAsync(SyncTaskTemplateRequest request, SyncTaskTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1849,7 +2282,33 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SyncTaskTemplateResponse>(await DoROARequestAsync("SyncTaskTemplate", "hrm_1.0", "HTTP", "POST", "AK", "/v1.0/hrm/solutions/tasks/templates/sync", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SyncTaskTemplate",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/solutions/tasks/templates/sync",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SyncTaskTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public SyncTaskTemplateResponse SyncTaskTemplate(SyncTaskTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncTaskTemplateHeaders headers = new SyncTaskTemplateHeaders();
+            return SyncTaskTemplateWithOptions(request, headers, runtime);
+        }
+
+        public async Task<SyncTaskTemplateResponse> SyncTaskTemplateAsync(SyncTaskTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SyncTaskTemplateHeaders headers = new SyncTaskTemplateHeaders();
+            return await SyncTaskTemplateWithOptionsAsync(request, headers, runtime);
         }
 
     }

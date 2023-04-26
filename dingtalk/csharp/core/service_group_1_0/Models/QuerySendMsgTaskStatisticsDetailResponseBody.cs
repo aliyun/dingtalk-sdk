@@ -47,9 +47,6 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 
         }
 
-        /// <summary>
-        /// Id of the request
-        /// </summary>
         [NameInMap("totalCount")]
         [Validation(Required=false)]
         public long? TotalCount { get; set; }

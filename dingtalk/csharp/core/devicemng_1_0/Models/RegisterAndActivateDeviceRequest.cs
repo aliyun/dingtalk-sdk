@@ -13,9 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         [Validation(Required=false)]
         public string DeviceCallbackUrl { get; set; }
 
-        /// <summary>
-        /// 设备分类（0：设备，1 : 助手）
-        /// </summary>
         [NameInMap("deviceCategory")]
         [Validation(Required=false)]
         public int? DeviceCategory { get; set; }

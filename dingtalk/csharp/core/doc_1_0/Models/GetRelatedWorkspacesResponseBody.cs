@@ -9,30 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class GetRelatedWorkspacesResponseBody : TeaModel {
-        /// <summary>
-        /// 知识库结果集。
-        /// </summary>
         [NameInMap("workspaces")]
         [Validation(Required=false)]
         public List<GetRelatedWorkspacesResponseBodyWorkspaces> Workspaces { get; set; }
         public class GetRelatedWorkspacesResponseBodyWorkspaces : TeaModel {
-            /// <summary>
-            /// 知识库创建时间。
-            /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public long? CreateTime { get; set; }
 
-            /// <summary>
-            /// 知识库是否被删除。
-            /// </summary>
             [NameInMap("deleted")]
             [Validation(Required=false)]
             public bool? Deleted { get; set; }
 
-            /// <summary>
-            /// 知识库名称。
-            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
@@ -41,60 +29,36 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             [Validation(Required=false)]
             public string Owner { get; set; }
 
-            /// <summary>
-            /// 知识库最近访问文档列表。
-            /// </summary>
             [NameInMap("recentList")]
             [Validation(Required=false)]
             public List<GetRelatedWorkspacesResponseBodyWorkspacesRecentList> RecentList { get; set; }
             public class GetRelatedWorkspacesResponseBodyWorkspacesRecentList : TeaModel {
-                /// <summary>
-                /// 文档最后编辑时间
-                /// </summary>
                 [NameInMap("lastEditTime")]
                 [Validation(Required=false)]
                 public long? LastEditTime { get; set; }
 
-                /// <summary>
-                /// 文档名称
-                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
-                /// <summary>
-                /// 文档id
-                /// </summary>
                 [NameInMap("nodeId")]
                 [Validation(Required=false)]
                 public string NodeId { get; set; }
 
-                /// <summary>
-                /// 文档打开url
-                /// </summary>
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }
 
             }
 
-            /// <summary>
-            /// 用户的角色
-            /// </summary>
             [NameInMap("role")]
             [Validation(Required=false)]
             public string Role { get; set; }
 
-            /// <summary>
-            /// 知识库打开url。
-            /// </summary>
             [NameInMap("url")]
             [Validation(Required=false)]
             public string Url { get; set; }
 
-            /// <summary>
-            /// 知识库id。
-            /// </summary>
             [NameInMap("workspaceId")]
             [Validation(Required=false)]
             public string WorkspaceId { get; set; }

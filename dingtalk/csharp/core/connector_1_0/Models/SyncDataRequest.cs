@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class SyncDataRequest : TeaModel {
-        /// <summary>
-        /// 同步数据的应用id，isv应用传isv应用id，企业自建应用传agentId。
-        /// </summary>
         [NameInMap("appId")]
         [Validation(Required=false)]
         public string AppId { get; set; }

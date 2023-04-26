@@ -25,9 +25,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public bool? IsOptional { get; set; }
 
-            /// <summary>
-            /// 回复状态
-            /// </summary>
             [NameInMap("responseStatus")]
             [Validation(Required=false)]
             public string ResponseStatus { get; set; }
@@ -38,9 +35,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
-        /// <summary>
-        /// 创建时间
-        /// </summary>
         [NameInMap("createTime")]
         [Validation(Required=false)]
         public string CreateTime { get; set; }
@@ -111,9 +105,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public CreateEventResponseBodyOrganizer Organizer { get; set; }
         public class CreateEventResponseBodyOrganizer : TeaModel {
-            /// <summary>
-            /// 用户名
-            /// </summary>
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
@@ -122,9 +113,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public string Id { get; set; }
 
-            /// <summary>
-            /// 回复状态
-            /// </summary>
             [NameInMap("responseStatus")]
             [Validation(Required=false)]
             public string ResponseStatus { get; set; }
@@ -199,9 +187,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
-        /// <summary>
-        /// 日程开始时间
-        /// </summary>
         [NameInMap("start")]
         [Validation(Required=false)]
         public CreateEventResponseBodyStart Start { get; set; }
@@ -224,9 +209,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public string Summary { get; set; }
 
-        /// <summary>
-        /// 更新时间
-        /// </summary>
         [NameInMap("updateTime")]
         [Validation(Required=false)]
         public string UpdateTime { get; set; }

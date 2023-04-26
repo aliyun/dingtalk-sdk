@@ -13,30 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public List<SearchTeachersResponseBodyUsers> Users { get; set; }
         public class SearchTeachersResponseBodyUsers : TeaModel {
-            /// <summary>
-            /// 所在其中一个班级ID
-            /// </summary>
             [NameInMap("classId")]
             [Validation(Required=false)]
             public long? ClassId { get; set; }
 
-            /// <summary>
-            /// 所在其中一个班级名称
-            /// </summary>
             [NameInMap("deptName")]
             [Validation(Required=false)]
             public string DeptName { get; set; }
 
-            /// <summary>
-            /// 名称
-            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
-            /// <summary>
-            /// 用户ID
-            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }

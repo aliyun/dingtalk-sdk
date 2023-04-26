@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
     public class MarkStarResponseBody : TeaModel {
-        /// <summary>
-        /// 本次操作是否成功
-        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class ReplyRobotRequest : TeaModel {
-        /// <summary>
-        /// 回复消息内容的json string
-        /// </summary>
         [NameInMap("proxyMessageStr")]
         [Validation(Required=false)]
         public string ProxyMessageStr { get; set; }

@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class DeleteObjectiveRequest : TeaModel {
-        /// <summary>
-        /// 当前用户的 userId。
-        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

@@ -9,141 +9,84 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class UpdateUniversityCourseGroupRequest : TeaModel {
-        /// <summary>
-        /// 课程组编码
-        /// </summary>
         [NameInMap("courseGroupCode")]
         [Validation(Required=false)]
         public string CourseGroupCode { get; set; }
 
-        /// <summary>
-        /// 课程组介绍
-        /// </summary>
         [NameInMap("courseGroupIntroduce")]
         [Validation(Required=false)]
         public string CourseGroupIntroduce { get; set; }
 
-        /// <summary>
-        /// 课程组名称
-        /// </summary>
         [NameInMap("courseGroupName")]
         [Validation(Required=false)]
         public string CourseGroupName { get; set; }
 
-        /// <summary>
-        /// 课程组详细
-        /// </summary>
         [NameInMap("courserGroupItemModels")]
         [Validation(Required=false)]
         public List<UpdateUniversityCourseGroupRequestCourserGroupItemModels> CourserGroupItemModels { get; set; }
         public class UpdateUniversityCourseGroupRequestCourserGroupItemModels : TeaModel {
-            /// <summary>
-            /// 上课周期
-            /// </summary>
             [NameInMap("classPeriodType")]
             [Validation(Required=false)]
             public int? ClassPeriodType { get; set; }
 
-            /// <summary>
-            /// classroomId
-            /// </summary>
             [NameInMap("classroomId")]
             [Validation(Required=false)]
             public long? ClassroomId { get; set; }
 
-            /// <summary>
-            /// 课程类型
-            /// </summary>
             [NameInMap("courseType")]
             [Validation(Required=false)]
             public int? CourseType { get; set; }
 
-            /// <summary>
-            /// 结束时间
-            /// </summary>
             [NameInMap("courserGroupItemEndDate")]
             [Validation(Required=false)]
             public UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate CourserGroupItemEndDate { get; set; }
             public class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemEndDate : TeaModel {
-                /// <summary>
-                /// 一月的第几天
-                /// </summary>
                 [NameInMap("dayOfMonth")]
                 [Validation(Required=false)]
                 public int? DayOfMonth { get; set; }
 
-                /// <summary>
-                /// 月
-                /// </summary>
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public int? Month { get; set; }
 
-                /// <summary>
-                /// 年
-                /// </summary>
                 [NameInMap("year")]
                 [Validation(Required=false)]
                 public int? Year { get; set; }
 
             }
 
-            /// <summary>
-            /// 开始时间
-            /// </summary>
             [NameInMap("courserGroupItemStartDate")]
             [Validation(Required=false)]
             public UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate CourserGroupItemStartDate { get; set; }
             public class UpdateUniversityCourseGroupRequestCourserGroupItemModelsCourserGroupItemStartDate : TeaModel {
-                /// <summary>
-                /// 一月的第几天
-                /// </summary>
                 [NameInMap("dayOfMonth")]
                 [Validation(Required=false)]
                 public int? DayOfMonth { get; set; }
 
-                /// <summary>
-                /// 月
-                /// </summary>
                 [NameInMap("month")]
                 [Validation(Required=false)]
                 public int? Month { get; set; }
 
-                /// <summary>
-                /// 年
-                /// </summary>
                 [NameInMap("year")]
                 [Validation(Required=false)]
                 public int? Year { get; set; }
 
             }
 
-            /// <summary>
-            /// 一周的第几天
-            /// </summary>
             [NameInMap("dayOfWeek")]
             [Validation(Required=false)]
             public int? DayOfWeek { get; set; }
 
-            /// <summary>
-            /// 课节
-            /// </summary>
             [NameInMap("sectionIndex")]
             [Validation(Required=false)]
             public List<int?> SectionIndex { get; set; }
 
         }
 
-        /// <summary>
-        /// 扩展信息
-        /// </summary>
         [NameInMap("ext")]
         [Validation(Required=false)]
         public string Ext { get; set; }
 
-        /// <summary>
-        /// opUserId
-        /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }

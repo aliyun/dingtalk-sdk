@@ -23,53 +23,32 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
-        /// <summary>
-        /// 日程描述
-        /// </summary>
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
 
-        /// <summary>
-        /// 日程结束时间
-        /// </summary>
         [NameInMap("end")]
         [Validation(Required=false)]
         public CreateEventRequestEnd End { get; set; }
         public class CreateEventRequestEnd : TeaModel {
-            /// <summary>
-            /// 日程结束日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
-            /// </summary>
             [NameInMap("date")]
             [Validation(Required=false)]
             public string Date { get; set; }
 
-            /// <summary>
-            /// 日程结束时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
-            /// </summary>
             [NameInMap("dateTime")]
             [Validation(Required=false)]
             public string DateTime { get; set; }
 
-            /// <summary>
-            /// 日程结束时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-            /// </summary>
             [NameInMap("timeZone")]
             [Validation(Required=false)]
             public string TimeZone { get; set; }
 
         }
 
-        /// <summary>
-        /// 扩展信息
-        /// </summary>
         [NameInMap("extra")]
         [Validation(Required=false)]
         public Dictionary<string, string> Extra { get; set; }
 
-        /// <summary>
-        /// 是否为全天日程
-        /// </summary>
         [NameInMap("isAllDay")]
         [Validation(Required=false)]
         public bool? IsAllDay { get; set; }
@@ -94,16 +73,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
-        /// <summary>
-        /// 日程循环规则
-        /// </summary>
         [NameInMap("recurrence")]
         [Validation(Required=false)]
         public CreateEventRequestRecurrence Recurrence { get; set; }
         public class CreateEventRequestRecurrence : TeaModel {
-            /// <summary>
-            /// 循环规则
-            /// </summary>
             [NameInMap("pattern")]
             [Validation(Required=false)]
             public CreateEventRequestRecurrencePattern Pattern { get; set; }
@@ -124,10 +97,6 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 [Validation(Required=false)]
                 public int? Interval { get; set; }
 
-                /// <summary>
-                /// 循环规则类型：  daily：每interval天 weekly：每interval周的第daysOfWeek天 absoluteMonthly：每interval月的第dayOfMonth天 relativeMonthly：每interval月的第index周的第daysOfWeek天 absoluteYearly：每interval年
-                /// 
-                /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public string Type { get; set; }
@@ -168,39 +137,24 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
         }
 
-        /// <summary>
-        /// 日程开始时间
-        /// </summary>
         [NameInMap("start")]
         [Validation(Required=false)]
         public CreateEventRequestStart Start { get; set; }
         public class CreateEventRequestStart : TeaModel {
-            /// <summary>
-            /// 日程开始日期，如果是全天日程必须有值，非全天日程必须留空，格式：yyyy-MM-dd
-            /// </summary>
             [NameInMap("date")]
             [Validation(Required=false)]
             public string Date { get; set; }
 
-            /// <summary>
-            /// 日程开始时间，非全天日程必须有值，全天日程必须留空，格式为ISO-8601的date-time格式
-            /// </summary>
             [NameInMap("dateTime")]
             [Validation(Required=false)]
             public string DateTime { get; set; }
 
-            /// <summary>
-            /// 日程开始时间所属时区，非全天日程必须有值，全天日程必须留空，tz database name格式，参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-            /// </summary>
             [NameInMap("timeZone")]
             [Validation(Required=false)]
             public string TimeZone { get; set; }
 
         }
 
-        /// <summary>
-        /// 日程标题
-        /// </summary>
         [NameInMap("summary")]
         [Validation(Required=false)]
         public string Summary { get; set; }

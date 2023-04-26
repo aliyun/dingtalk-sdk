@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
             }
         }
 
-
-        public NlpWordDistinguishResponse NlpWordDistinguish(NlpWordDistinguishRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            NlpWordDistinguishHeaders headers = new NlpWordDistinguishHeaders();
-            return NlpWordDistinguishWithOptions(request, headers, runtime);
-        }
-
-        public async Task<NlpWordDistinguishResponse> NlpWordDistinguishAsync(NlpWordDistinguishRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            NlpWordDistinguishHeaders headers = new NlpWordDistinguishHeaders();
-            return await NlpWordDistinguishWithOptionsAsync(request, headers, runtime);
-        }
 
         public NlpWordDistinguishResponse NlpWordDistinguishWithOptions(NlpWordDistinguishRequest request, NlpWordDistinguishHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -70,7 +59,19 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<NlpWordDistinguishResponse>(DoROARequest("NlpWordDistinguish", "algo_1.0", "HTTP", "POST", "AK", "/v1.0/algo/okrs/keywords/extract", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "NlpWordDistinguish",
+                Version = "algo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/algo/okrs/keywords/extract",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<NlpWordDistinguishResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<NlpWordDistinguishResponse> NlpWordDistinguishWithOptionsAsync(NlpWordDistinguishRequest request, NlpWordDistinguishHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -103,21 +104,33 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<NlpWordDistinguishResponse>(await DoROARequestAsync("NlpWordDistinguish", "algo_1.0", "HTTP", "POST", "AK", "/v1.0/algo/okrs/keywords/extract", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "NlpWordDistinguish",
+                Version = "algo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/algo/okrs/keywords/extract",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<NlpWordDistinguishResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public OkrOpenRecommendResponse OkrOpenRecommend(OkrOpenRecommendRequest request)
+        public NlpWordDistinguishResponse NlpWordDistinguish(NlpWordDistinguishRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            OkrOpenRecommendHeaders headers = new OkrOpenRecommendHeaders();
-            return OkrOpenRecommendWithOptions(request, headers, runtime);
+            NlpWordDistinguishHeaders headers = new NlpWordDistinguishHeaders();
+            return NlpWordDistinguishWithOptions(request, headers, runtime);
         }
 
-        public async Task<OkrOpenRecommendResponse> OkrOpenRecommendAsync(OkrOpenRecommendRequest request)
+        public async Task<NlpWordDistinguishResponse> NlpWordDistinguishAsync(NlpWordDistinguishRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            OkrOpenRecommendHeaders headers = new OkrOpenRecommendHeaders();
-            return await OkrOpenRecommendWithOptionsAsync(request, headers, runtime);
+            NlpWordDistinguishHeaders headers = new NlpWordDistinguishHeaders();
+            return await NlpWordDistinguishWithOptionsAsync(request, headers, runtime);
         }
 
         public OkrOpenRecommendResponse OkrOpenRecommendWithOptions(OkrOpenRecommendRequest request, OkrOpenRecommendHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -162,7 +175,19 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<OkrOpenRecommendResponse>(DoROARequest("OkrOpenRecommend", "algo_1.0", "HTTP", "POST", "AK", "/v1.0/algo/okrs/recommend", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OkrOpenRecommend",
+                Version = "algo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/algo/okrs/recommend",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OkrOpenRecommendResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<OkrOpenRecommendResponse> OkrOpenRecommendWithOptionsAsync(OkrOpenRecommendRequest request, OkrOpenRecommendHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -207,7 +232,33 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<OkrOpenRecommendResponse>(await DoROARequestAsync("OkrOpenRecommend", "algo_1.0", "HTTP", "POST", "AK", "/v1.0/algo/okrs/recommend", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OkrOpenRecommend",
+                Version = "algo_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/algo/okrs/recommend",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OkrOpenRecommendResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public OkrOpenRecommendResponse OkrOpenRecommend(OkrOpenRecommendRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OkrOpenRecommendHeaders headers = new OkrOpenRecommendHeaders();
+            return OkrOpenRecommendWithOptions(request, headers, runtime);
+        }
+
+        public async Task<OkrOpenRecommendResponse> OkrOpenRecommendAsync(OkrOpenRecommendRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OkrOpenRecommendHeaders headers = new OkrOpenRecommendHeaders();
+            return await OkrOpenRecommendWithOptionsAsync(request, headers, runtime);
         }
 
     }

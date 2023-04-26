@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
             }
         }
 
-
-        public BatchDeleteDeviceResponse BatchDeleteDevice(BatchDeleteDeviceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchDeleteDeviceHeaders headers = new BatchDeleteDeviceHeaders();
-            return BatchDeleteDeviceWithOptions(request, headers, runtime);
-        }
-
-        public async Task<BatchDeleteDeviceResponse> BatchDeleteDeviceAsync(BatchDeleteDeviceRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchDeleteDeviceHeaders headers = new BatchDeleteDeviceHeaders();
-            return await BatchDeleteDeviceWithOptionsAsync(request, headers, runtime);
-        }
 
         public BatchDeleteDeviceResponse BatchDeleteDeviceWithOptions(BatchDeleteDeviceRequest request, BatchDeleteDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -66,7 +55,19 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchDeleteDeviceResponse>(DoROARequest("BatchDeleteDevice", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/devices/remove", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchDeleteDevice",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/devices/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchDeleteDeviceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<BatchDeleteDeviceResponse> BatchDeleteDeviceWithOptionsAsync(BatchDeleteDeviceRequest request, BatchDeleteDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -95,21 +96,33 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchDeleteDeviceResponse>(await DoROARequestAsync("BatchDeleteDevice", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/devices/remove", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchDeleteDevice",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/devices/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchDeleteDeviceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public BatchRegisterDeviceResponse BatchRegisterDevice(BatchRegisterDeviceRequest request)
+        public BatchDeleteDeviceResponse BatchDeleteDevice(BatchDeleteDeviceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchRegisterDeviceHeaders headers = new BatchRegisterDeviceHeaders();
-            return BatchRegisterDeviceWithOptions(request, headers, runtime);
+            BatchDeleteDeviceHeaders headers = new BatchDeleteDeviceHeaders();
+            return BatchDeleteDeviceWithOptions(request, headers, runtime);
         }
 
-        public async Task<BatchRegisterDeviceResponse> BatchRegisterDeviceAsync(BatchRegisterDeviceRequest request)
+        public async Task<BatchDeleteDeviceResponse> BatchDeleteDeviceAsync(BatchDeleteDeviceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchRegisterDeviceHeaders headers = new BatchRegisterDeviceHeaders();
-            return await BatchRegisterDeviceWithOptionsAsync(request, headers, runtime);
+            BatchDeleteDeviceHeaders headers = new BatchDeleteDeviceHeaders();
+            return await BatchDeleteDeviceWithOptionsAsync(request, headers, runtime);
         }
 
         public BatchRegisterDeviceResponse BatchRegisterDeviceWithOptions(BatchRegisterDeviceRequest request, BatchRegisterDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -138,7 +151,19 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchRegisterDeviceResponse>(DoROARequest("BatchRegisterDevice", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/devices/registrations/batch", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchRegisterDevice",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/devices/registrations/batch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchRegisterDeviceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<BatchRegisterDeviceResponse> BatchRegisterDeviceWithOptionsAsync(BatchRegisterDeviceRequest request, BatchRegisterDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -167,21 +192,33 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchRegisterDeviceResponse>(await DoROARequestAsync("BatchRegisterDevice", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/devices/registrations/batch", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchRegisterDevice",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/devices/registrations/batch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchRegisterDeviceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public BatchRegisterEventTypeResponse BatchRegisterEventType(BatchRegisterEventTypeRequest request)
+        public BatchRegisterDeviceResponse BatchRegisterDevice(BatchRegisterDeviceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchRegisterEventTypeHeaders headers = new BatchRegisterEventTypeHeaders();
-            return BatchRegisterEventTypeWithOptions(request, headers, runtime);
+            BatchRegisterDeviceHeaders headers = new BatchRegisterDeviceHeaders();
+            return BatchRegisterDeviceWithOptions(request, headers, runtime);
         }
 
-        public async Task<BatchRegisterEventTypeResponse> BatchRegisterEventTypeAsync(BatchRegisterEventTypeRequest request)
+        public async Task<BatchRegisterDeviceResponse> BatchRegisterDeviceAsync(BatchRegisterDeviceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchRegisterEventTypeHeaders headers = new BatchRegisterEventTypeHeaders();
-            return await BatchRegisterEventTypeWithOptionsAsync(request, headers, runtime);
+            BatchRegisterDeviceHeaders headers = new BatchRegisterDeviceHeaders();
+            return await BatchRegisterDeviceWithOptionsAsync(request, headers, runtime);
         }
 
         public BatchRegisterEventTypeResponse BatchRegisterEventTypeWithOptions(BatchRegisterEventTypeRequest request, BatchRegisterEventTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -210,7 +247,19 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchRegisterEventTypeResponse>(DoROARequest("BatchRegisterEventType", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/eventTypes/registrations/batch", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchRegisterEventType",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/eventTypes/registrations/batch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchRegisterEventTypeResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<BatchRegisterEventTypeResponse> BatchRegisterEventTypeWithOptionsAsync(BatchRegisterEventTypeRequest request, BatchRegisterEventTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -239,21 +288,33 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchRegisterEventTypeResponse>(await DoROARequestAsync("BatchRegisterEventType", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/eventTypes/registrations/batch", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchRegisterEventType",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/eventTypes/registrations/batch",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchRegisterEventTypeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public BatchUpdateDeviceResponse BatchUpdateDevice(BatchUpdateDeviceRequest request)
+        public BatchRegisterEventTypeResponse BatchRegisterEventType(BatchRegisterEventTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchUpdateDeviceHeaders headers = new BatchUpdateDeviceHeaders();
-            return BatchUpdateDeviceWithOptions(request, headers, runtime);
+            BatchRegisterEventTypeHeaders headers = new BatchRegisterEventTypeHeaders();
+            return BatchRegisterEventTypeWithOptions(request, headers, runtime);
         }
 
-        public async Task<BatchUpdateDeviceResponse> BatchUpdateDeviceAsync(BatchUpdateDeviceRequest request)
+        public async Task<BatchRegisterEventTypeResponse> BatchRegisterEventTypeAsync(BatchRegisterEventTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BatchUpdateDeviceHeaders headers = new BatchUpdateDeviceHeaders();
-            return await BatchUpdateDeviceWithOptionsAsync(request, headers, runtime);
+            BatchRegisterEventTypeHeaders headers = new BatchRegisterEventTypeHeaders();
+            return await BatchRegisterEventTypeWithOptionsAsync(request, headers, runtime);
         }
 
         public BatchUpdateDeviceResponse BatchUpdateDeviceWithOptions(BatchUpdateDeviceRequest request, BatchUpdateDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -282,7 +343,19 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchUpdateDeviceResponse>(DoROARequest("BatchUpdateDevice", "diot_1.0", "HTTP", "PUT", "AK", "/v1.0/diot/devices/batch", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchUpdateDevice",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/devices/batch",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchUpdateDeviceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<BatchUpdateDeviceResponse> BatchUpdateDeviceWithOptionsAsync(BatchUpdateDeviceRequest request, BatchUpdateDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -311,21 +384,33 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BatchUpdateDeviceResponse>(await DoROARequestAsync("BatchUpdateDevice", "diot_1.0", "HTTP", "PUT", "AK", "/v1.0/diot/devices/batch", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchUpdateDevice",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/devices/batch",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchUpdateDeviceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public BindSystemResponse BindSystem(BindSystemRequest request)
+        public BatchUpdateDeviceResponse BatchUpdateDevice(BatchUpdateDeviceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BindSystemHeaders headers = new BindSystemHeaders();
-            return BindSystemWithOptions(request, headers, runtime);
+            BatchUpdateDeviceHeaders headers = new BatchUpdateDeviceHeaders();
+            return BatchUpdateDeviceWithOptions(request, headers, runtime);
         }
 
-        public async Task<BindSystemResponse> BindSystemAsync(BindSystemRequest request)
+        public async Task<BatchUpdateDeviceResponse> BatchUpdateDeviceAsync(BatchUpdateDeviceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            BindSystemHeaders headers = new BindSystemHeaders();
-            return await BindSystemWithOptionsAsync(request, headers, runtime);
+            BatchUpdateDeviceHeaders headers = new BatchUpdateDeviceHeaders();
+            return await BatchUpdateDeviceWithOptionsAsync(request, headers, runtime);
         }
 
         public BindSystemResponse BindSystemWithOptions(BindSystemRequest request, BindSystemHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -366,7 +451,19 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BindSystemResponse>(DoROARequest("BindSystem", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/systems/bind", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BindSystem",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/systems/bind",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BindSystemResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<BindSystemResponse> BindSystemWithOptionsAsync(BindSystemRequest request, BindSystemHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -407,21 +504,33 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<BindSystemResponse>(await DoROARequestAsync("BindSystem", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/systems/bind", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BindSystem",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/systems/bind",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BindSystemResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public DeviceConferenceResponse DeviceConference(DeviceConferenceRequest request)
+        public BindSystemResponse BindSystem(BindSystemRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeviceConferenceHeaders headers = new DeviceConferenceHeaders();
-            return DeviceConferenceWithOptions(request, headers, runtime);
+            BindSystemHeaders headers = new BindSystemHeaders();
+            return BindSystemWithOptions(request, headers, runtime);
         }
 
-        public async Task<DeviceConferenceResponse> DeviceConferenceAsync(DeviceConferenceRequest request)
+        public async Task<BindSystemResponse> BindSystemAsync(BindSystemRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeviceConferenceHeaders headers = new DeviceConferenceHeaders();
-            return await DeviceConferenceWithOptionsAsync(request, headers, runtime);
+            BindSystemHeaders headers = new BindSystemHeaders();
+            return await BindSystemWithOptionsAsync(request, headers, runtime);
         }
 
         public DeviceConferenceResponse DeviceConferenceWithOptions(DeviceConferenceRequest request, DeviceConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -458,7 +567,19 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeviceConferenceResponse>(DoROARequest("DeviceConference", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/deviceConferences/initiate", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeviceConference",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/deviceConferences/initiate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeviceConferenceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<DeviceConferenceResponse> DeviceConferenceWithOptionsAsync(DeviceConferenceRequest request, DeviceConferenceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -495,21 +616,33 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeviceConferenceResponse>(await DoROARequestAsync("DeviceConference", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/deviceConferences/initiate", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeviceConference",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/deviceConferences/initiate",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeviceConferenceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public PushEventResponse PushEvent(PushEventRequest request)
+        public DeviceConferenceResponse DeviceConference(DeviceConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PushEventHeaders headers = new PushEventHeaders();
-            return PushEventWithOptions(request, headers, runtime);
+            DeviceConferenceHeaders headers = new DeviceConferenceHeaders();
+            return DeviceConferenceWithOptions(request, headers, runtime);
         }
 
-        public async Task<PushEventResponse> PushEventAsync(PushEventRequest request)
+        public async Task<DeviceConferenceResponse> DeviceConferenceAsync(DeviceConferenceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            PushEventHeaders headers = new PushEventHeaders();
-            return await PushEventWithOptionsAsync(request, headers, runtime);
+            DeviceConferenceHeaders headers = new DeviceConferenceHeaders();
+            return await DeviceConferenceWithOptionsAsync(request, headers, runtime);
         }
 
         public PushEventResponse PushEventWithOptions(PushEventRequest request, PushEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -570,7 +703,19 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PushEventResponse>(DoROARequest("PushEvent", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/events/push", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushEvent",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/events/push",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushEventResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<PushEventResponse> PushEventWithOptionsAsync(PushEventRequest request, PushEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -631,21 +776,33 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<PushEventResponse>(await DoROARequestAsync("PushEvent", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/events/push", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PushEvent",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/events/push",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PushEventResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryDeviceResponse QueryDevice(QueryDeviceRequest request)
+        public PushEventResponse PushEvent(PushEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryDeviceHeaders headers = new QueryDeviceHeaders();
-            return QueryDeviceWithOptions(request, headers, runtime);
+            PushEventHeaders headers = new PushEventHeaders();
+            return PushEventWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryDeviceResponse> QueryDeviceAsync(QueryDeviceRequest request)
+        public async Task<PushEventResponse> PushEventAsync(PushEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryDeviceHeaders headers = new QueryDeviceHeaders();
-            return await QueryDeviceWithOptionsAsync(request, headers, runtime);
+            PushEventHeaders headers = new PushEventHeaders();
+            return await PushEventWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryDeviceResponse QueryDeviceWithOptions(QueryDeviceRequest request, QueryDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -678,7 +835,19 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryDeviceResponse>(DoROARequest("QueryDevice", "diot_1.0", "HTTP", "GET", "AK", "/v1.0/diot/devices", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDevice",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/devices",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDeviceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryDeviceResponse> QueryDeviceWithOptionsAsync(QueryDeviceRequest request, QueryDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -711,21 +880,33 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryDeviceResponse>(await DoROARequestAsync("QueryDevice", "diot_1.0", "HTTP", "GET", "AK", "/v1.0/diot/devices", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDevice",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/devices",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDeviceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryEventResponse QueryEvent(QueryEventRequest request)
+        public QueryDeviceResponse QueryDevice(QueryDeviceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryEventHeaders headers = new QueryEventHeaders();
-            return QueryEventWithOptions(request, headers, runtime);
+            QueryDeviceHeaders headers = new QueryDeviceHeaders();
+            return QueryDeviceWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryEventResponse> QueryEventAsync(QueryEventRequest request)
+        public async Task<QueryDeviceResponse> QueryDeviceAsync(QueryDeviceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryEventHeaders headers = new QueryEventHeaders();
-            return await QueryEventWithOptionsAsync(request, headers, runtime);
+            QueryDeviceHeaders headers = new QueryDeviceHeaders();
+            return await QueryDeviceWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryEventResponse QueryEventWithOptions(QueryEventRequest request, QueryEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -782,7 +963,19 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryEventResponse>(DoROARequest("QueryEvent", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/events/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryEvent",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/events/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryEventResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryEventResponse> QueryEventWithOptionsAsync(QueryEventRequest request, QueryEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -839,21 +1032,33 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryEventResponse>(await DoROARequestAsync("QueryEvent", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/events/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryEvent",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/events/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryEventResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public RegisterDeviceResponse RegisterDevice(RegisterDeviceRequest request)
+        public QueryEventResponse QueryEvent(QueryEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RegisterDeviceHeaders headers = new RegisterDeviceHeaders();
-            return RegisterDeviceWithOptions(request, headers, runtime);
+            QueryEventHeaders headers = new QueryEventHeaders();
+            return QueryEventWithOptions(request, headers, runtime);
         }
 
-        public async Task<RegisterDeviceResponse> RegisterDeviceAsync(RegisterDeviceRequest request)
+        public async Task<QueryEventResponse> QueryEventAsync(QueryEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            RegisterDeviceHeaders headers = new RegisterDeviceHeaders();
-            return await RegisterDeviceWithOptionsAsync(request, headers, runtime);
+            QueryEventHeaders headers = new QueryEventHeaders();
+            return await QueryEventWithOptionsAsync(request, headers, runtime);
         }
 
         public RegisterDeviceResponse RegisterDeviceWithOptions(RegisterDeviceRequest request, RegisterDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -918,7 +1123,19 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RegisterDeviceResponse>(DoROARequest("RegisterDevice", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/devices/register", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RegisterDevice",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/devices/register",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RegisterDeviceResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<RegisterDeviceResponse> RegisterDeviceWithOptionsAsync(RegisterDeviceRequest request, RegisterDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -983,7 +1200,33 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RegisterDeviceResponse>(await DoROARequestAsync("RegisterDevice", "diot_1.0", "HTTP", "POST", "AK", "/v1.0/diot/devices/register", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RegisterDevice",
+                Version = "diot_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/diot/devices/register",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RegisterDeviceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public RegisterDeviceResponse RegisterDevice(RegisterDeviceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RegisterDeviceHeaders headers = new RegisterDeviceHeaders();
+            return RegisterDeviceWithOptions(request, headers, runtime);
+        }
+
+        public async Task<RegisterDeviceResponse> RegisterDeviceAsync(RegisterDeviceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RegisterDeviceHeaders headers = new RegisterDeviceHeaders();
+            return await RegisterDeviceWithOptionsAsync(request, headers, runtime);
         }
 
     }

@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class DistributePartnerAppRequest : TeaModel {
-        /// <summary>
-        /// 应用id
-        /// </summary>
         [NameInMap("appId")]
         [Validation(Required=false)]
         public long? AppId { get; set; }
@@ -24,9 +21,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public string SubCorpId { get; set; }
 
-        /// <summary>
-        /// 分发对象类型
-        /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]
         public long? Type { get; set; }

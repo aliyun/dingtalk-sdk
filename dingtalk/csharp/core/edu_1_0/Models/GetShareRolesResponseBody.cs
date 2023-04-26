@@ -13,16 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public List<GetShareRolesResponseBodyResult> Result { get; set; }
         public class GetShareRolesResponseBodyResult : TeaModel {
-            /// <summary>
-            /// 角色code
-            /// </summary>
             [NameInMap("shareRoleCode")]
             [Validation(Required=false)]
             public string ShareRoleCode { get; set; }
 
-            /// <summary>
-            /// 角色名称
-            /// </summary>
             [NameInMap("shareRoleName")]
             [Validation(Required=false)]
             public string ShareRoleName { get; set; }

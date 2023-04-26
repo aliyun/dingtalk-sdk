@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 {
     public class QueryAcquireRefundOrderRequest : TeaModel {
-        /// <summary>
-        /// 外部退款订单流水号
-        /// </summary>
         [NameInMap("outRefundNo")]
         [Validation(Required=false)]
         public string OutRefundNo { get; set; }

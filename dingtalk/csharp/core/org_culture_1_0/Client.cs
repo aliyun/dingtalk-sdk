@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             }
         }
 
-
-        public AssignOrgHoldingToEmpHoldingBatchResponse AssignOrgHoldingToEmpHoldingBatch(AssignOrgHoldingToEmpHoldingBatchRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AssignOrgHoldingToEmpHoldingBatchHeaders headers = new AssignOrgHoldingToEmpHoldingBatchHeaders();
-            return AssignOrgHoldingToEmpHoldingBatchWithOptions(request, headers, runtime);
-        }
-
-        public async Task<AssignOrgHoldingToEmpHoldingBatchResponse> AssignOrgHoldingToEmpHoldingBatchAsync(AssignOrgHoldingToEmpHoldingBatchRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            AssignOrgHoldingToEmpHoldingBatchHeaders headers = new AssignOrgHoldingToEmpHoldingBatchHeaders();
-            return await AssignOrgHoldingToEmpHoldingBatchWithOptionsAsync(request, headers, runtime);
-        }
 
         public AssignOrgHoldingToEmpHoldingBatchResponse AssignOrgHoldingToEmpHoldingBatchWithOptions(AssignOrgHoldingToEmpHoldingBatchRequest request, AssignOrgHoldingToEmpHoldingBatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -82,7 +71,19 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AssignOrgHoldingToEmpHoldingBatchResponse>(DoROARequest("AssignOrgHoldingToEmpHoldingBatch", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/organizations/points/assign", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AssignOrgHoldingToEmpHoldingBatch",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/organizations/points/assign",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AssignOrgHoldingToEmpHoldingBatchResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<AssignOrgHoldingToEmpHoldingBatchResponse> AssignOrgHoldingToEmpHoldingBatchWithOptionsAsync(AssignOrgHoldingToEmpHoldingBatchRequest request, AssignOrgHoldingToEmpHoldingBatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -127,7 +128,131 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<AssignOrgHoldingToEmpHoldingBatchResponse>(await DoROARequestAsync("AssignOrgHoldingToEmpHoldingBatch", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/organizations/points/assign", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AssignOrgHoldingToEmpHoldingBatch",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/organizations/points/assign",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AssignOrgHoldingToEmpHoldingBatchResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public AssignOrgHoldingToEmpHoldingBatchResponse AssignOrgHoldingToEmpHoldingBatch(AssignOrgHoldingToEmpHoldingBatchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AssignOrgHoldingToEmpHoldingBatchHeaders headers = new AssignOrgHoldingToEmpHoldingBatchHeaders();
+            return AssignOrgHoldingToEmpHoldingBatchWithOptions(request, headers, runtime);
+        }
+
+        public async Task<AssignOrgHoldingToEmpHoldingBatchResponse> AssignOrgHoldingToEmpHoldingBatchAsync(AssignOrgHoldingToEmpHoldingBatchRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AssignOrgHoldingToEmpHoldingBatchHeaders headers = new AssignOrgHoldingToEmpHoldingBatchHeaders();
+            return await AssignOrgHoldingToEmpHoldingBatchWithOptionsAsync(request, headers, runtime);
+        }
+
+        public ConsumeUserPointsResponse ConsumeUserPointsWithOptions(string userId, ConsumeUserPointsRequest request, ConsumeUserPointsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Amount))
+            {
+                body["amount"] = request.Amount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutId))
+            {
+                body["outId"] = request.OutId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Usage))
+            {
+                body["usage"] = request.Usage;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ConsumeUserPoints",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/" + userId + "/points/deduct",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ConsumeUserPointsResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<ConsumeUserPointsResponse> ConsumeUserPointsWithOptionsAsync(string userId, ConsumeUserPointsRequest request, ConsumeUserPointsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Amount))
+            {
+                body["amount"] = request.Amount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutId))
+            {
+                body["outId"] = request.OutId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Usage))
+            {
+                body["usage"] = request.Usage;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ConsumeUserPoints",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/" + userId + "/points/deduct",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ConsumeUserPointsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public ConsumeUserPointsResponse ConsumeUserPoints(string userId, ConsumeUserPointsRequest request)
@@ -142,96 +267,6 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ConsumeUserPointsHeaders headers = new ConsumeUserPointsHeaders();
             return await ConsumeUserPointsWithOptionsAsync(userId, request, headers, runtime);
-        }
-
-        public ConsumeUserPointsResponse ConsumeUserPointsWithOptions(string userId, ConsumeUserPointsRequest request, ConsumeUserPointsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Amount))
-            {
-                body["amount"] = request.Amount;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutId))
-            {
-                body["outId"] = request.OutId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
-            {
-                body["remark"] = request.Remark;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Usage))
-            {
-                body["usage"] = request.Usage;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<ConsumeUserPointsResponse>(DoROARequest("ConsumeUserPoints", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/users/" + userId + "/points/deduct", "json", req, runtime));
-        }
-
-        public async Task<ConsumeUserPointsResponse> ConsumeUserPointsWithOptionsAsync(string userId, ConsumeUserPointsRequest request, ConsumeUserPointsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Amount))
-            {
-                body["amount"] = request.Amount;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutId))
-            {
-                body["outId"] = request.OutId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
-            {
-                body["remark"] = request.Remark;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Usage))
-            {
-                body["usage"] = request.Usage;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<ConsumeUserPointsResponse>(await DoROARequestAsync("ConsumeUserPoints", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/users/" + userId + "/points/deduct", "json", req, runtime));
-        }
-
-        public CreateOrgHonorResponse CreateOrgHonor(CreateOrgHonorRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateOrgHonorHeaders headers = new CreateOrgHonorHeaders();
-            return CreateOrgHonorWithOptions(request, headers, runtime);
-        }
-
-        public async Task<CreateOrgHonorResponse> CreateOrgHonorAsync(CreateOrgHonorRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateOrgHonorHeaders headers = new CreateOrgHonorHeaders();
-            return await CreateOrgHonorWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateOrgHonorResponse CreateOrgHonorWithOptions(CreateOrgHonorRequest request, CreateOrgHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -276,7 +311,19 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateOrgHonorResponse>(DoROARequest("CreateOrgHonor", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/honors/templates", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateOrgHonor",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/honors/templates",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateOrgHonorResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateOrgHonorResponse> CreateOrgHonorWithOptionsAsync(CreateOrgHonorRequest request, CreateOrgHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -321,21 +368,33 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateOrgHonorResponse>(await DoROARequestAsync("CreateOrgHonor", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/honors/templates", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateOrgHonor",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/honors/templates",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateOrgHonorResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public DeductionPointBatchResponse DeductionPointBatch(DeductionPointBatchRequest request)
+        public CreateOrgHonorResponse CreateOrgHonor(CreateOrgHonorRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeductionPointBatchHeaders headers = new DeductionPointBatchHeaders();
-            return DeductionPointBatchWithOptions(request, headers, runtime);
+            CreateOrgHonorHeaders headers = new CreateOrgHonorHeaders();
+            return CreateOrgHonorWithOptions(request, headers, runtime);
         }
 
-        public async Task<DeductionPointBatchResponse> DeductionPointBatchAsync(DeductionPointBatchRequest request)
+        public async Task<CreateOrgHonorResponse> CreateOrgHonorAsync(CreateOrgHonorRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeductionPointBatchHeaders headers = new DeductionPointBatchHeaders();
-            return await DeductionPointBatchWithOptionsAsync(request, headers, runtime);
+            CreateOrgHonorHeaders headers = new CreateOrgHonorHeaders();
+            return await CreateOrgHonorWithOptionsAsync(request, headers, runtime);
         }
 
         public DeductionPointBatchResponse DeductionPointBatchWithOptions(DeductionPointBatchRequest request, DeductionPointBatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -376,7 +435,19 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeductionPointBatchResponse>(DoROARequest("DeductionPointBatch", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/users/points/deduct", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeductionPointBatch",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/points/deduct",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeductionPointBatchResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<DeductionPointBatchResponse> DeductionPointBatchWithOptionsAsync(DeductionPointBatchRequest request, DeductionPointBatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -417,21 +488,33 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeductionPointBatchResponse>(await DoROARequestAsync("DeductionPointBatch", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/users/points/deduct", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeductionPointBatch",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/points/deduct",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeductionPointBatchResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public ExportPointOpenResponse ExportPointOpen(ExportPointOpenRequest request)
+        public DeductionPointBatchResponse DeductionPointBatch(DeductionPointBatchRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ExportPointOpenHeaders headers = new ExportPointOpenHeaders();
-            return ExportPointOpenWithOptions(request, headers, runtime);
+            DeductionPointBatchHeaders headers = new DeductionPointBatchHeaders();
+            return DeductionPointBatchWithOptions(request, headers, runtime);
         }
 
-        public async Task<ExportPointOpenResponse> ExportPointOpenAsync(ExportPointOpenRequest request)
+        public async Task<DeductionPointBatchResponse> DeductionPointBatchAsync(DeductionPointBatchRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ExportPointOpenHeaders headers = new ExportPointOpenHeaders();
-            return await ExportPointOpenWithOptionsAsync(request, headers, runtime);
+            DeductionPointBatchHeaders headers = new DeductionPointBatchHeaders();
+            return await DeductionPointBatchWithOptionsAsync(request, headers, runtime);
         }
 
         public ExportPointOpenResponse ExportPointOpenWithOptions(ExportPointOpenRequest request, ExportPointOpenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -464,7 +547,19 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ExportPointOpenResponse>(DoROARequest("ExportPointOpen", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/users/points/export", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExportPointOpen",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/points/export",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExportPointOpenResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<ExportPointOpenResponse> ExportPointOpenWithOptionsAsync(ExportPointOpenRequest request, ExportPointOpenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -497,7 +592,163 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ExportPointOpenResponse>(await DoROARequestAsync("ExportPointOpen", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/users/points/export", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExportPointOpen",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/points/export",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExportPointOpenResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public ExportPointOpenResponse ExportPointOpen(ExportPointOpenRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExportPointOpenHeaders headers = new ExportPointOpenHeaders();
+            return ExportPointOpenWithOptions(request, headers, runtime);
+        }
+
+        public async Task<ExportPointOpenResponse> ExportPointOpenAsync(ExportPointOpenRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExportPointOpenHeaders headers = new ExportPointOpenHeaders();
+            return await ExportPointOpenWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GrantHonorResponse GrantHonorWithOptions(string honorId, GrantHonorRequest request, GrantHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExpirationTime))
+            {
+                body["expirationTime"] = request.ExpirationTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GrantReason))
+            {
+                body["grantReason"] = request.GrantReason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GranterName))
+            {
+                body["granterName"] = request.GranterName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoticeAnnouncer))
+            {
+                body["noticeAnnouncer"] = request.NoticeAnnouncer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoticeSingle))
+            {
+                body["noticeSingle"] = request.NoticeSingle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationIds))
+            {
+                body["openConversationIds"] = request.OpenConversationIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIds))
+            {
+                body["receiverUserIds"] = request.ReceiverUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
+            {
+                body["senderUserId"] = request.SenderUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GrantHonor",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/honors/" + honorId + "/grant",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GrantHonorResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GrantHonorResponse> GrantHonorWithOptionsAsync(string honorId, GrantHonorRequest request, GrantHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExpirationTime))
+            {
+                body["expirationTime"] = request.ExpirationTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GrantReason))
+            {
+                body["grantReason"] = request.GrantReason;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GranterName))
+            {
+                body["granterName"] = request.GranterName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoticeAnnouncer))
+            {
+                body["noticeAnnouncer"] = request.NoticeAnnouncer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoticeSingle))
+            {
+                body["noticeSingle"] = request.NoticeSingle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationIds))
+            {
+                body["openConversationIds"] = request.OpenConversationIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIds))
+            {
+                body["receiverUserIds"] = request.ReceiverUserIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
+            {
+                body["senderUserId"] = request.SenderUserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GrantHonor",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/honors/" + honorId + "/grant",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GrantHonorResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GrantHonorResponse GrantHonor(string honorId, GrantHonorRequest request)
@@ -512,128 +763,6 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GrantHonorHeaders headers = new GrantHonorHeaders();
             return await GrantHonorWithOptionsAsync(honorId, request, headers, runtime);
-        }
-
-        public GrantHonorResponse GrantHonorWithOptions(string honorId, GrantHonorRequest request, GrantHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            honorId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(honorId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExpirationTime))
-            {
-                body["expirationTime"] = request.ExpirationTime;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GrantReason))
-            {
-                body["grantReason"] = request.GrantReason;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GranterName))
-            {
-                body["granterName"] = request.GranterName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoticeAnnouncer))
-            {
-                body["noticeAnnouncer"] = request.NoticeAnnouncer;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoticeSingle))
-            {
-                body["noticeSingle"] = request.NoticeSingle;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationIds))
-            {
-                body["openConversationIds"] = request.OpenConversationIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIds))
-            {
-                body["receiverUserIds"] = request.ReceiverUserIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
-            {
-                body["senderUserId"] = request.SenderUserId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<GrantHonorResponse>(DoROARequest("GrantHonor", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/honors/" + honorId + "/grant", "json", req, runtime));
-        }
-
-        public async Task<GrantHonorResponse> GrantHonorWithOptionsAsync(string honorId, GrantHonorRequest request, GrantHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            honorId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(honorId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExpirationTime))
-            {
-                body["expirationTime"] = request.ExpirationTime;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GrantReason))
-            {
-                body["grantReason"] = request.GrantReason;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GranterName))
-            {
-                body["granterName"] = request.GranterName;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoticeAnnouncer))
-            {
-                body["noticeAnnouncer"] = request.NoticeAnnouncer;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoticeSingle))
-            {
-                body["noticeSingle"] = request.NoticeSingle;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationIds))
-            {
-                body["openConversationIds"] = request.OpenConversationIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReceiverUserIds))
-            {
-                body["receiverUserIds"] = request.ReceiverUserIds;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUserId))
-            {
-                body["senderUserId"] = request.SenderUserId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<GrantHonorResponse>(await DoROARequestAsync("GrantHonor", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/honors/" + honorId + "/grant", "json", req, runtime));
-        }
-
-        public QueryCorpPointsResponse QueryCorpPoints(QueryCorpPointsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCorpPointsHeaders headers = new QueryCorpPointsHeaders();
-            return QueryCorpPointsWithOptions(request, headers, runtime);
-        }
-
-        public async Task<QueryCorpPointsResponse> QueryCorpPointsAsync(QueryCorpPointsRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryCorpPointsHeaders headers = new QueryCorpPointsHeaders();
-            return await QueryCorpPointsWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryCorpPointsResponse QueryCorpPointsWithOptions(QueryCorpPointsRequest request, QueryCorpPointsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -658,7 +787,19 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryCorpPointsResponse>(DoROARequest("QueryCorpPoints", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/organizations/points", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCorpPoints",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/organizations/points",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCorpPointsResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryCorpPointsResponse> QueryCorpPointsWithOptionsAsync(QueryCorpPointsRequest request, QueryCorpPointsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -683,21 +824,33 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryCorpPointsResponse>(await DoROARequestAsync("QueryCorpPoints", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/organizations/points", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCorpPoints",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/organizations/points",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCorpPointsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryEmpPointDetailsResponse QueryEmpPointDetails(QueryEmpPointDetailsRequest request)
+        public QueryCorpPointsResponse QueryCorpPoints(QueryCorpPointsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryEmpPointDetailsHeaders headers = new QueryEmpPointDetailsHeaders();
-            return QueryEmpPointDetailsWithOptions(request, headers, runtime);
+            QueryCorpPointsHeaders headers = new QueryCorpPointsHeaders();
+            return QueryCorpPointsWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryEmpPointDetailsResponse> QueryEmpPointDetailsAsync(QueryEmpPointDetailsRequest request)
+        public async Task<QueryCorpPointsResponse> QueryCorpPointsAsync(QueryCorpPointsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryEmpPointDetailsHeaders headers = new QueryEmpPointDetailsHeaders();
-            return await QueryEmpPointDetailsWithOptionsAsync(request, headers, runtime);
+            QueryCorpPointsHeaders headers = new QueryCorpPointsHeaders();
+            return await QueryCorpPointsWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryEmpPointDetailsResponse QueryEmpPointDetailsWithOptions(QueryEmpPointDetailsRequest request, QueryEmpPointDetailsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -730,7 +883,19 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryEmpPointDetailsResponse>(DoROARequest("QueryEmpPointDetails", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/points/empDetails", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryEmpPointDetails",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/points/empDetails",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryEmpPointDetailsResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryEmpPointDetailsResponse> QueryEmpPointDetailsWithOptionsAsync(QueryEmpPointDetailsRequest request, QueryEmpPointDetailsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -763,21 +928,33 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryEmpPointDetailsResponse>(await DoROARequestAsync("QueryEmpPointDetails", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/points/empDetails", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryEmpPointDetails",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/points/empDetails",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryEmpPointDetailsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryOrgHonorsResponse QueryOrgHonors(QueryOrgHonorsRequest request)
+        public QueryEmpPointDetailsResponse QueryEmpPointDetails(QueryEmpPointDetailsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryOrgHonorsHeaders headers = new QueryOrgHonorsHeaders();
-            return QueryOrgHonorsWithOptions(request, headers, runtime);
+            QueryEmpPointDetailsHeaders headers = new QueryEmpPointDetailsHeaders();
+            return QueryEmpPointDetailsWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryOrgHonorsResponse> QueryOrgHonorsAsync(QueryOrgHonorsRequest request)
+        public async Task<QueryEmpPointDetailsResponse> QueryEmpPointDetailsAsync(QueryEmpPointDetailsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryOrgHonorsHeaders headers = new QueryOrgHonorsHeaders();
-            return await QueryOrgHonorsWithOptionsAsync(request, headers, runtime);
+            QueryEmpPointDetailsHeaders headers = new QueryEmpPointDetailsHeaders();
+            return await QueryEmpPointDetailsWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryOrgHonorsResponse QueryOrgHonorsWithOptions(QueryOrgHonorsRequest request, QueryOrgHonorsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -806,7 +983,19 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryOrgHonorsResponse>(DoROARequest("QueryOrgHonors", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/organizations/honors", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryOrgHonors",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/organizations/honors",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryOrgHonorsResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryOrgHonorsResponse> QueryOrgHonorsWithOptionsAsync(QueryOrgHonorsRequest request, QueryOrgHonorsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -835,21 +1024,33 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryOrgHonorsResponse>(await DoROARequestAsync("QueryOrgHonors", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/organizations/honors", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryOrgHonors",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/organizations/honors",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryOrgHonorsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryOrgPointDetailsResponse QueryOrgPointDetails(QueryOrgPointDetailsRequest request)
+        public QueryOrgHonorsResponse QueryOrgHonors(QueryOrgHonorsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryOrgPointDetailsHeaders headers = new QueryOrgPointDetailsHeaders();
-            return QueryOrgPointDetailsWithOptions(request, headers, runtime);
+            QueryOrgHonorsHeaders headers = new QueryOrgHonorsHeaders();
+            return QueryOrgHonorsWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryOrgPointDetailsResponse> QueryOrgPointDetailsAsync(QueryOrgPointDetailsRequest request)
+        public async Task<QueryOrgHonorsResponse> QueryOrgHonorsAsync(QueryOrgHonorsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryOrgPointDetailsHeaders headers = new QueryOrgPointDetailsHeaders();
-            return await QueryOrgPointDetailsWithOptionsAsync(request, headers, runtime);
+            QueryOrgHonorsHeaders headers = new QueryOrgHonorsHeaders();
+            return await QueryOrgHonorsWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryOrgPointDetailsResponse QueryOrgPointDetailsWithOptions(QueryOrgPointDetailsRequest request, QueryOrgPointDetailsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -886,7 +1087,19 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryOrgPointDetailsResponse>(DoROARequest("QueryOrgPointDetails", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/points/orgDetails", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryOrgPointDetails",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/points/orgDetails",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryOrgPointDetailsResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryOrgPointDetailsResponse> QueryOrgPointDetailsWithOptionsAsync(QueryOrgPointDetailsRequest request, QueryOrgPointDetailsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -923,21 +1136,33 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryOrgPointDetailsResponse>(await DoROARequestAsync("QueryOrgPointDetails", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/points/orgDetails", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryOrgPointDetails",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/points/orgDetails",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryOrgPointDetailsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryPointActionAutoAssignRuleResponse QueryPointActionAutoAssignRule()
+        public QueryOrgPointDetailsResponse QueryOrgPointDetails(QueryOrgPointDetailsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryPointActionAutoAssignRuleHeaders headers = new QueryPointActionAutoAssignRuleHeaders();
-            return QueryPointActionAutoAssignRuleWithOptions(headers, runtime);
+            QueryOrgPointDetailsHeaders headers = new QueryOrgPointDetailsHeaders();
+            return QueryOrgPointDetailsWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryPointActionAutoAssignRuleResponse> QueryPointActionAutoAssignRuleAsync()
+        public async Task<QueryOrgPointDetailsResponse> QueryOrgPointDetailsAsync(QueryOrgPointDetailsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryPointActionAutoAssignRuleHeaders headers = new QueryPointActionAutoAssignRuleHeaders();
-            return await QueryPointActionAutoAssignRuleWithOptionsAsync(headers, runtime);
+            QueryOrgPointDetailsHeaders headers = new QueryOrgPointDetailsHeaders();
+            return await QueryOrgPointDetailsWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryPointActionAutoAssignRuleResponse QueryPointActionAutoAssignRuleWithOptions(QueryPointActionAutoAssignRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -955,7 +1180,19 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<QueryPointActionAutoAssignRuleResponse>(DoROARequest("QueryPointActionAutoAssignRule", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/users/points/actionRules", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPointActionAutoAssignRule",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/points/actionRules",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPointActionAutoAssignRuleResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryPointActionAutoAssignRuleResponse> QueryPointActionAutoAssignRuleWithOptionsAsync(QueryPointActionAutoAssignRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -973,21 +1210,33 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<QueryPointActionAutoAssignRuleResponse>(await DoROARequestAsync("QueryPointActionAutoAssignRule", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/users/points/actionRules", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPointActionAutoAssignRule",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/points/actionRules",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPointActionAutoAssignRuleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryPointAutoIssueSettingResponse QueryPointAutoIssueSetting()
+        public QueryPointActionAutoAssignRuleResponse QueryPointActionAutoAssignRule()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryPointAutoIssueSettingHeaders headers = new QueryPointAutoIssueSettingHeaders();
-            return QueryPointAutoIssueSettingWithOptions(headers, runtime);
+            QueryPointActionAutoAssignRuleHeaders headers = new QueryPointActionAutoAssignRuleHeaders();
+            return QueryPointActionAutoAssignRuleWithOptions(headers, runtime);
         }
 
-        public async Task<QueryPointAutoIssueSettingResponse> QueryPointAutoIssueSettingAsync()
+        public async Task<QueryPointActionAutoAssignRuleResponse> QueryPointActionAutoAssignRuleAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryPointAutoIssueSettingHeaders headers = new QueryPointAutoIssueSettingHeaders();
-            return await QueryPointAutoIssueSettingWithOptionsAsync(headers, runtime);
+            QueryPointActionAutoAssignRuleHeaders headers = new QueryPointActionAutoAssignRuleHeaders();
+            return await QueryPointActionAutoAssignRuleWithOptionsAsync(headers, runtime);
         }
 
         public QueryPointAutoIssueSettingResponse QueryPointAutoIssueSettingWithOptions(QueryPointAutoIssueSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1005,7 +1254,19 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<QueryPointAutoIssueSettingResponse>(DoROARequest("QueryPointAutoIssueSetting", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/users/points", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPointAutoIssueSetting",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/points",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPointAutoIssueSettingResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryPointAutoIssueSettingResponse> QueryPointAutoIssueSettingWithOptionsAsync(QueryPointAutoIssueSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1023,7 +1284,115 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             {
                 Headers = realHeaders,
             };
-            return TeaModel.ToObject<QueryPointAutoIssueSettingResponse>(await DoROARequestAsync("QueryPointAutoIssueSetting", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/users/points", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPointAutoIssueSetting",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/points",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPointAutoIssueSettingResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public QueryPointAutoIssueSettingResponse QueryPointAutoIssueSetting()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPointAutoIssueSettingHeaders headers = new QueryPointAutoIssueSettingHeaders();
+            return QueryPointAutoIssueSettingWithOptions(headers, runtime);
+        }
+
+        public async Task<QueryPointAutoIssueSettingResponse> QueryPointAutoIssueSettingAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPointAutoIssueSettingHeaders headers = new QueryPointAutoIssueSettingHeaders();
+            return await QueryPointAutoIssueSettingWithOptionsAsync(headers, runtime);
+        }
+
+        public QueryUserHonorsResponse QueryUserHonorsWithOptions(string userId, QueryUserHonorsRequest request, QueryUserHonorsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUserHonors",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/honors/users/" + userId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUserHonorsResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<QueryUserHonorsResponse> QueryUserHonorsWithOptionsAsync(string userId, QueryUserHonorsRequest request, QueryUserHonorsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUserHonors",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/honors/users/" + userId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUserHonorsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public QueryUserHonorsResponse QueryUserHonors(string userId, QueryUserHonorsRequest request)
@@ -1040,19 +1409,8 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             return await QueryUserHonorsWithOptionsAsync(userId, request, headers, runtime);
         }
 
-        public QueryUserHonorsResponse QueryUserHonorsWithOptions(string userId, QueryUserHonorsRequest request, QueryUserHonorsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public QueryUserPointsResponse QueryUserPointsWithOptions(string userId, QueryUserPointsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
-            {
-                query["maxResults"] = request.MaxResults;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
-            {
-                query["nextToken"] = request.NextToken;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1065,24 +1423,24 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryUserHonorsResponse>(DoROARequest("QueryUserHonors", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/honors/users/" + userId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUserPoints",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/" + userId + "/points",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUserPointsResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<QueryUserHonorsResponse> QueryUserHonorsWithOptionsAsync(string userId, QueryUserHonorsRequest request, QueryUserHonorsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<QueryUserPointsResponse> QueryUserPointsWithOptionsAsync(string userId, QueryUserPointsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
-            {
-                query["maxResults"] = request.MaxResults;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
-            {
-                query["nextToken"] = request.NextToken;
-            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1095,9 +1453,20 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryUserHonorsResponse>(await DoROARequestAsync("QueryUserHonors", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/honors/users/" + userId, "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUserPoints",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/" + userId + "/points",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUserPointsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public QueryUserPointsResponse QueryUserPoints(string userId)
@@ -1114,9 +1483,14 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             return await QueryUserPointsWithOptionsAsync(userId, headers, runtime);
         }
 
-        public QueryUserPointsResponse QueryUserPointsWithOptions(string userId, QueryUserPointsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public RecallHonorResponse RecallHonorWithOptions(string honorId, RecallHonorRequest request, RecallHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1129,13 +1503,31 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryUserPointsResponse>(DoROARequest("QueryUserPoints", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/users/" + userId + "/points", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RecallHonor",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/honors/" + honorId + "/recall",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RecallHonorResponse>(Execute(params_, req, runtime));
         }
 
-        public async Task<QueryUserPointsResponse> QueryUserPointsWithOptionsAsync(string userId, QueryUserPointsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<RecallHonorResponse> RecallHonorWithOptionsAsync(string honorId, RecallHonorRequest request, RecallHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            userId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(userId);
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -1148,8 +1540,21 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<QueryUserPointsResponse>(await DoROARequestAsync("QueryUserPoints", "orgCulture_1.0", "HTTP", "GET", "AK", "/v1.0/orgCulture/users/" + userId + "/points", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RecallHonor",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/honors/" + honorId + "/recall",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RecallHonorResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public RecallHonorResponse RecallHonor(string honorId, RecallHonorRequest request)
@@ -1164,72 +1569,6 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             RecallHonorHeaders headers = new RecallHonorHeaders();
             return await RecallHonorWithOptionsAsync(honorId, request, headers, runtime);
-        }
-
-        public RecallHonorResponse RecallHonorWithOptions(string honorId, RecallHonorRequest request, RecallHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            honorId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(honorId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
-            {
-                body["userId"] = request.UserId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<RecallHonorResponse>(DoROARequest("RecallHonor", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/honors/" + honorId + "/recall", "json", req, runtime));
-        }
-
-        public async Task<RecallHonorResponse> RecallHonorWithOptionsAsync(string honorId, RecallHonorRequest request, RecallHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            honorId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(honorId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
-            {
-                body["userId"] = request.UserId;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<RecallHonorResponse>(await DoROARequestAsync("RecallHonor", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/honors/" + honorId + "/recall", "json", req, runtime));
-        }
-
-        public UpdateAutoIssuePointResponse UpdateAutoIssuePoint(UpdateAutoIssuePointRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateAutoIssuePointHeaders headers = new UpdateAutoIssuePointHeaders();
-            return UpdateAutoIssuePointWithOptions(request, headers, runtime);
-        }
-
-        public async Task<UpdateAutoIssuePointResponse> UpdateAutoIssuePointAsync(UpdateAutoIssuePointRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateAutoIssuePointHeaders headers = new UpdateAutoIssuePointHeaders();
-            return await UpdateAutoIssuePointWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateAutoIssuePointResponse UpdateAutoIssuePointWithOptions(UpdateAutoIssuePointRequest request, UpdateAutoIssuePointHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1266,7 +1605,19 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateAutoIssuePointResponse>(DoROARequest("UpdateAutoIssuePoint", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/users/points/set", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateAutoIssuePoint",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/points/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateAutoIssuePointResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateAutoIssuePointResponse> UpdateAutoIssuePointWithOptionsAsync(UpdateAutoIssuePointRequest request, UpdateAutoIssuePointHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1303,21 +1654,33 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateAutoIssuePointResponse>(await DoROARequestAsync("UpdateAutoIssuePoint", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/users/points/set", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateAutoIssuePoint",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/points/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateAutoIssuePointResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdatePointActionAutoAssignRuleResponse UpdatePointActionAutoAssignRule(UpdatePointActionAutoAssignRuleRequest request)
+        public UpdateAutoIssuePointResponse UpdateAutoIssuePoint(UpdateAutoIssuePointRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdatePointActionAutoAssignRuleHeaders headers = new UpdatePointActionAutoAssignRuleHeaders();
-            return UpdatePointActionAutoAssignRuleWithOptions(request, headers, runtime);
+            UpdateAutoIssuePointHeaders headers = new UpdateAutoIssuePointHeaders();
+            return UpdateAutoIssuePointWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdatePointActionAutoAssignRuleResponse> UpdatePointActionAutoAssignRuleAsync(UpdatePointActionAutoAssignRuleRequest request)
+        public async Task<UpdateAutoIssuePointResponse> UpdateAutoIssuePointAsync(UpdateAutoIssuePointRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdatePointActionAutoAssignRuleHeaders headers = new UpdatePointActionAutoAssignRuleHeaders();
-            return await UpdatePointActionAutoAssignRuleWithOptionsAsync(request, headers, runtime);
+            UpdateAutoIssuePointHeaders headers = new UpdateAutoIssuePointHeaders();
+            return await UpdateAutoIssuePointWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdatePointActionAutoAssignRuleResponse UpdatePointActionAutoAssignRuleWithOptions(UpdatePointActionAutoAssignRuleRequest request, UpdatePointActionAutoAssignRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1346,7 +1709,19 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdatePointActionAutoAssignRuleResponse>(DoROARequest("UpdatePointActionAutoAssignRule", "orgCulture_1.0", "HTTP", "PUT", "AK", "/v1.0/orgCulture/users/points/actionRules", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdatePointActionAutoAssignRule",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/points/actionRules",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdatePointActionAutoAssignRuleResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdatePointActionAutoAssignRuleResponse> UpdatePointActionAutoAssignRuleWithOptionsAsync(UpdatePointActionAutoAssignRuleRequest request, UpdatePointActionAutoAssignRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1375,7 +1750,115 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdatePointActionAutoAssignRuleResponse>(await DoROARequestAsync("UpdatePointActionAutoAssignRule", "orgCulture_1.0", "HTTP", "PUT", "AK", "/v1.0/orgCulture/users/points/actionRules", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdatePointActionAutoAssignRule",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/users/points/actionRules",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdatePointActionAutoAssignRuleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpdatePointActionAutoAssignRuleResponse UpdatePointActionAutoAssignRule(UpdatePointActionAutoAssignRuleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdatePointActionAutoAssignRuleHeaders headers = new UpdatePointActionAutoAssignRuleHeaders();
+            return UpdatePointActionAutoAssignRuleWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdatePointActionAutoAssignRuleResponse> UpdatePointActionAutoAssignRuleAsync(UpdatePointActionAutoAssignRuleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdatePointActionAutoAssignRuleHeaders headers = new UpdatePointActionAutoAssignRuleHeaders();
+            return await UpdatePointActionAutoAssignRuleWithOptionsAsync(request, headers, runtime);
+        }
+
+        public WearOrgHonorResponse WearOrgHonorWithOptions(string honorId, WearOrgHonorRequest request, WearOrgHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Wear))
+            {
+                body["wear"] = request.Wear;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "WearOrgHonor",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/honors/" + honorId + "/wear",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<WearOrgHonorResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<WearOrgHonorResponse> WearOrgHonorWithOptionsAsync(string honorId, WearOrgHonorRequest request, WearOrgHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Wear))
+            {
+                body["wear"] = request.Wear;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "WearOrgHonor",
+                Version = "orgCulture_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/orgCulture/honors/" + honorId + "/wear",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<WearOrgHonorResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public WearOrgHonorResponse WearOrgHonor(string honorId, WearOrgHonorRequest request)
@@ -1390,66 +1873,6 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             WearOrgHonorHeaders headers = new WearOrgHonorHeaders();
             return await WearOrgHonorWithOptionsAsync(honorId, request, headers, runtime);
-        }
-
-        public WearOrgHonorResponse WearOrgHonorWithOptions(string honorId, WearOrgHonorRequest request, WearOrgHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            honorId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(honorId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
-            {
-                body["userId"] = request.UserId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Wear))
-            {
-                body["wear"] = request.Wear;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<WearOrgHonorResponse>(DoROARequest("WearOrgHonor", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/honors/" + honorId + "/wear", "json", req, runtime));
-        }
-
-        public async Task<WearOrgHonorResponse> WearOrgHonorWithOptionsAsync(string honorId, WearOrgHonorRequest request, WearOrgHonorHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            honorId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(honorId);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
-            {
-                body["userId"] = request.UserId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Wear))
-            {
-                body["wear"] = request.Wear;
-            }
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
-            };
-            return TeaModel.ToObject<WearOrgHonorResponse>(await DoROARequestAsync("WearOrgHonor", "orgCulture_1.0", "HTTP", "POST", "AK", "/v1.0/orgCulture/honors/" + honorId + "/wear", "json", req, runtime));
         }
 
     }

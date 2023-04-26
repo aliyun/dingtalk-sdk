@@ -9,9 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
 {
     public class UpdateTodoTypeConfigResponseBody : TeaModel {
-        /// <summary>
-        /// 更新结果
-        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public bool? Result { get; set; }

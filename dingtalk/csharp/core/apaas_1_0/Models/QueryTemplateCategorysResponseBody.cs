@@ -13,25 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
         [Validation(Required=false)]
         public List<QueryTemplateCategorysResponseBodyCategoryList> CategoryList { get; set; }
         public class QueryTemplateCategorysResponseBodyCategoryList : TeaModel {
-            /// <summary>
-            /// 分类编码
-            /// </summary>
             [NameInMap("code")]
             [Validation(Required=false)]
             public string Code { get; set; }
 
-            /// <summary>
-            /// 分类名称
-            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
         }
 
-        /// <summary>
-        /// 总数
-        /// </summary>
         [NameInMap("total")]
         [Validation(Required=false)]
         public string Total { get; set; }

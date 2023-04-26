@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
             }
         }
 
-
-        public CheckUserTaskStatusResponse CheckUserTaskStatus(CheckUserTaskStatusRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CheckUserTaskStatusHeaders headers = new CheckUserTaskStatusHeaders();
-            return CheckUserTaskStatusWithOptions(request, headers, runtime);
-        }
-
-        public async Task<CheckUserTaskStatusResponse> CheckUserTaskStatusAsync(CheckUserTaskStatusRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CheckUserTaskStatusHeaders headers = new CheckUserTaskStatusHeaders();
-            return await CheckUserTaskStatusWithOptionsAsync(request, headers, runtime);
-        }
 
         public CheckUserTaskStatusResponse CheckUserTaskStatusWithOptions(CheckUserTaskStatusRequest request, CheckUserTaskStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -62,7 +51,19 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CheckUserTaskStatusResponse>(DoROARequest("CheckUserTaskStatus", "occupationauth_1.0", "HTTP", "POST", "AK", "/v1.0/occupationauth/auths/userTasks", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CheckUserTaskStatus",
+                Version = "occupationauth_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/occupationauth/auths/userTasks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CheckUserTaskStatusResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CheckUserTaskStatusResponse> CheckUserTaskStatusWithOptionsAsync(CheckUserTaskStatusRequest request, CheckUserTaskStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -87,21 +88,33 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CheckUserTaskStatusResponse>(await DoROARequestAsync("CheckUserTaskStatus", "occupationauth_1.0", "HTTP", "POST", "AK", "/v1.0/occupationauth/auths/userTasks", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CheckUserTaskStatus",
+                Version = "occupationauth_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/occupationauth/auths/userTasks",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CheckUserTaskStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CheckUserTasksStatusResponse CheckUserTasksStatus(CheckUserTasksStatusRequest request)
+        public CheckUserTaskStatusResponse CheckUserTaskStatus(CheckUserTaskStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CheckUserTasksStatusHeaders headers = new CheckUserTasksStatusHeaders();
-            return CheckUserTasksStatusWithOptions(request, headers, runtime);
+            CheckUserTaskStatusHeaders headers = new CheckUserTaskStatusHeaders();
+            return CheckUserTaskStatusWithOptions(request, headers, runtime);
         }
 
-        public async Task<CheckUserTasksStatusResponse> CheckUserTasksStatusAsync(CheckUserTasksStatusRequest request)
+        public async Task<CheckUserTaskStatusResponse> CheckUserTaskStatusAsync(CheckUserTaskStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CheckUserTasksStatusHeaders headers = new CheckUserTasksStatusHeaders();
-            return await CheckUserTasksStatusWithOptionsAsync(request, headers, runtime);
+            CheckUserTaskStatusHeaders headers = new CheckUserTaskStatusHeaders();
+            return await CheckUserTaskStatusWithOptionsAsync(request, headers, runtime);
         }
 
         public CheckUserTasksStatusResponse CheckUserTasksStatusWithOptions(CheckUserTasksStatusRequest request, CheckUserTasksStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -126,7 +139,19 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<CheckUserTasksStatusResponse>(DoROARequest("CheckUserTasksStatus", "occupationauth_1.0", "HTTP", "POST", "AK", "/v1.0/occupationauth/userTasks/check", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CheckUserTasksStatus",
+                Version = "occupationauth_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/occupationauth/userTasks/check",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CheckUserTasksStatusResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CheckUserTasksStatusResponse> CheckUserTasksStatusWithOptionsAsync(CheckUserTasksStatusRequest request, CheckUserTasksStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -151,7 +176,33 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<CheckUserTasksStatusResponse>(await DoROARequestAsync("CheckUserTasksStatus", "occupationauth_1.0", "HTTP", "POST", "AK", "/v1.0/occupationauth/userTasks/check", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CheckUserTasksStatus",
+                Version = "occupationauth_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/occupationauth/userTasks/check",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "json",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CheckUserTasksStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public CheckUserTasksStatusResponse CheckUserTasksStatus(CheckUserTasksStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CheckUserTasksStatusHeaders headers = new CheckUserTasksStatusHeaders();
+            return CheckUserTasksStatusWithOptions(request, headers, runtime);
+        }
+
+        public async Task<CheckUserTasksStatusResponse> CheckUserTasksStatusAsync(CheckUserTasksStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CheckUserTasksStatusHeaders headers = new CheckUserTasksStatusHeaders();
+            return await CheckUserTasksStatusWithOptionsAsync(request, headers, runtime);
         }
 
     }

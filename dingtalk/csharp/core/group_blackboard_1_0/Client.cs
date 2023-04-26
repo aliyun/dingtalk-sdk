@@ -15,9 +15,12 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +28,6 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
             }
         }
 
-
-        public CreateGroupBlackboardResponse CreateGroupBlackboard(CreateGroupBlackboardRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateGroupBlackboardHeaders headers = new CreateGroupBlackboardHeaders();
-            return CreateGroupBlackboardWithOptions(request, headers, runtime);
-        }
-
-        public async Task<CreateGroupBlackboardResponse> CreateGroupBlackboardAsync(CreateGroupBlackboardRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateGroupBlackboardHeaders headers = new CreateGroupBlackboardHeaders();
-            return await CreateGroupBlackboardWithOptionsAsync(request, headers, runtime);
-        }
 
         public CreateGroupBlackboardResponse CreateGroupBlackboardWithOptions(CreateGroupBlackboardRequest request, CreateGroupBlackboardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -82,7 +71,19 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateGroupBlackboardResponse>(DoROARequest("CreateGroupBlackboard", "groupBlackboard_1.0", "HTTP", "POST", "AK", "/v1.0/groupBlackboard/blackboards", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateGroupBlackboard",
+                Version = "groupBlackboard_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/groupBlackboard/blackboards",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateGroupBlackboardResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateGroupBlackboardResponse> CreateGroupBlackboardWithOptionsAsync(CreateGroupBlackboardRequest request, CreateGroupBlackboardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -127,21 +128,33 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateGroupBlackboardResponse>(await DoROARequestAsync("CreateGroupBlackboard", "groupBlackboard_1.0", "HTTP", "POST", "AK", "/v1.0/groupBlackboard/blackboards", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateGroupBlackboard",
+                Version = "groupBlackboard_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/groupBlackboard/blackboards",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateGroupBlackboardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public DeleteGroupBlackboardResponse DeleteGroupBlackboard(DeleteGroupBlackboardRequest request)
+        public CreateGroupBlackboardResponse CreateGroupBlackboard(CreateGroupBlackboardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeleteGroupBlackboardHeaders headers = new DeleteGroupBlackboardHeaders();
-            return DeleteGroupBlackboardWithOptions(request, headers, runtime);
+            CreateGroupBlackboardHeaders headers = new CreateGroupBlackboardHeaders();
+            return CreateGroupBlackboardWithOptions(request, headers, runtime);
         }
 
-        public async Task<DeleteGroupBlackboardResponse> DeleteGroupBlackboardAsync(DeleteGroupBlackboardRequest request)
+        public async Task<CreateGroupBlackboardResponse> CreateGroupBlackboardAsync(CreateGroupBlackboardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            DeleteGroupBlackboardHeaders headers = new DeleteGroupBlackboardHeaders();
-            return await DeleteGroupBlackboardWithOptionsAsync(request, headers, runtime);
+            CreateGroupBlackboardHeaders headers = new CreateGroupBlackboardHeaders();
+            return await CreateGroupBlackboardWithOptionsAsync(request, headers, runtime);
         }
 
         public DeleteGroupBlackboardResponse DeleteGroupBlackboardWithOptions(DeleteGroupBlackboardRequest request, DeleteGroupBlackboardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -174,7 +187,19 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteGroupBlackboardResponse>(DoROARequest("DeleteGroupBlackboard", "groupBlackboard_1.0", "HTTP", "POST", "AK", "/v1.0/groupBlackboard/blackboards/remove", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteGroupBlackboard",
+                Version = "groupBlackboard_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/groupBlackboard/blackboards/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteGroupBlackboardResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<DeleteGroupBlackboardResponse> DeleteGroupBlackboardWithOptionsAsync(DeleteGroupBlackboardRequest request, DeleteGroupBlackboardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -207,7 +232,33 @@ namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<DeleteGroupBlackboardResponse>(await DoROARequestAsync("DeleteGroupBlackboard", "groupBlackboard_1.0", "HTTP", "POST", "AK", "/v1.0/groupBlackboard/blackboards/remove", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteGroupBlackboard",
+                Version = "groupBlackboard_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/groupBlackboard/blackboards/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteGroupBlackboardResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public DeleteGroupBlackboardResponse DeleteGroupBlackboard(DeleteGroupBlackboardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteGroupBlackboardHeaders headers = new DeleteGroupBlackboardHeaders();
+            return DeleteGroupBlackboardWithOptions(request, headers, runtime);
+        }
+
+        public async Task<DeleteGroupBlackboardResponse> DeleteGroupBlackboardAsync(DeleteGroupBlackboardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteGroupBlackboardHeaders headers = new DeleteGroupBlackboardHeaders();
+            return await DeleteGroupBlackboardWithOptionsAsync(request, headers, runtime);
         }
 
     }

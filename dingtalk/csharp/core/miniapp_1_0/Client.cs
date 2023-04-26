@@ -15,9 +15,13 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
 {
     public class Client : AlibabaCloud.OpenApiClient.Client
     {
+        protected AlibabaCloud.GatewaySpi.Client _client;
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._client = new AlibabaCloud.GatewayDingTalk.Client();
+            this._spi = _client;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -25,20 +29,6 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
             }
         }
 
-
-        public CreateMiniAppResponse CreateMiniApp(CreateMiniAppRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateMiniAppHeaders headers = new CreateMiniAppHeaders();
-            return CreateMiniAppWithOptions(request, headers, runtime);
-        }
-
-        public async Task<CreateMiniAppResponse> CreateMiniAppAsync(CreateMiniAppRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateMiniAppHeaders headers = new CreateMiniAppHeaders();
-            return await CreateMiniAppWithOptionsAsync(request, headers, runtime);
-        }
 
         public CreateMiniAppResponse CreateMiniAppWithOptions(CreateMiniAppRequest request, CreateMiniAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
@@ -82,7 +72,19 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateMiniAppResponse>(DoROARequest("CreateMiniApp", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/apps", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateMiniApp",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/apps",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateMiniAppResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateMiniAppResponse> CreateMiniAppWithOptionsAsync(CreateMiniAppRequest request, CreateMiniAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -127,21 +129,33 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateMiniAppResponse>(await DoROARequestAsync("CreateMiniApp", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/apps", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateMiniApp",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/apps",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateMiniAppResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CreateMiniAppPluginResponse CreateMiniAppPlugin(CreateMiniAppPluginRequest request)
+        public CreateMiniAppResponse CreateMiniApp(CreateMiniAppRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateMiniAppPluginHeaders headers = new CreateMiniAppPluginHeaders();
-            return CreateMiniAppPluginWithOptions(request, headers, runtime);
+            CreateMiniAppHeaders headers = new CreateMiniAppHeaders();
+            return CreateMiniAppWithOptions(request, headers, runtime);
         }
 
-        public async Task<CreateMiniAppPluginResponse> CreateMiniAppPluginAsync(CreateMiniAppPluginRequest request)
+        public async Task<CreateMiniAppResponse> CreateMiniAppAsync(CreateMiniAppRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateMiniAppPluginHeaders headers = new CreateMiniAppPluginHeaders();
-            return await CreateMiniAppPluginWithOptionsAsync(request, headers, runtime);
+            CreateMiniAppHeaders headers = new CreateMiniAppHeaders();
+            return await CreateMiniAppWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateMiniAppPluginResponse CreateMiniAppPluginWithOptions(CreateMiniAppPluginRequest request, CreateMiniAppPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -186,7 +200,19 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateMiniAppPluginResponse>(DoROARequest("CreateMiniAppPlugin", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/plugins", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateMiniAppPlugin",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/plugins",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateMiniAppPluginResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateMiniAppPluginResponse> CreateMiniAppPluginWithOptionsAsync(CreateMiniAppPluginRequest request, CreateMiniAppPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -231,21 +257,33 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateMiniAppPluginResponse>(await DoROARequestAsync("CreateMiniAppPlugin", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/plugins", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateMiniAppPlugin",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/plugins",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateMiniAppPluginResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public CreateVersionAcrossBundleResponse CreateVersionAcrossBundle(CreateVersionAcrossBundleRequest request)
+        public CreateMiniAppPluginResponse CreateMiniAppPlugin(CreateMiniAppPluginRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateVersionAcrossBundleHeaders headers = new CreateVersionAcrossBundleHeaders();
-            return CreateVersionAcrossBundleWithOptions(request, headers, runtime);
+            CreateMiniAppPluginHeaders headers = new CreateMiniAppPluginHeaders();
+            return CreateMiniAppPluginWithOptions(request, headers, runtime);
         }
 
-        public async Task<CreateVersionAcrossBundleResponse> CreateVersionAcrossBundleAsync(CreateVersionAcrossBundleRequest request)
+        public async Task<CreateMiniAppPluginResponse> CreateMiniAppPluginAsync(CreateMiniAppPluginRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            CreateVersionAcrossBundleHeaders headers = new CreateVersionAcrossBundleHeaders();
-            return await CreateVersionAcrossBundleWithOptionsAsync(request, headers, runtime);
+            CreateMiniAppPluginHeaders headers = new CreateMiniAppPluginHeaders();
+            return await CreateMiniAppPluginWithOptionsAsync(request, headers, runtime);
         }
 
         public CreateVersionAcrossBundleResponse CreateVersionAcrossBundleWithOptions(CreateVersionAcrossBundleRequest request, CreateVersionAcrossBundleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -286,7 +324,19 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateVersionAcrossBundleResponse>(DoROARequest("CreateVersionAcrossBundle", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/versions/createAcrossBundle", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateVersionAcrossBundle",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/versions/createAcrossBundle",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateVersionAcrossBundleResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<CreateVersionAcrossBundleResponse> CreateVersionAcrossBundleWithOptionsAsync(CreateVersionAcrossBundleRequest request, CreateVersionAcrossBundleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -327,21 +377,33 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<CreateVersionAcrossBundleResponse>(await DoROARequestAsync("CreateVersionAcrossBundle", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/versions/createAcrossBundle", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateVersionAcrossBundle",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/versions/createAcrossBundle",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateVersionAcrossBundleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetMaxVersionResponse GetMaxVersion(GetMaxVersionRequest request)
+        public CreateVersionAcrossBundleResponse CreateVersionAcrossBundle(CreateVersionAcrossBundleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetMaxVersionHeaders headers = new GetMaxVersionHeaders();
-            return GetMaxVersionWithOptions(request, headers, runtime);
+            CreateVersionAcrossBundleHeaders headers = new CreateVersionAcrossBundleHeaders();
+            return CreateVersionAcrossBundleWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetMaxVersionResponse> GetMaxVersionAsync(GetMaxVersionRequest request)
+        public async Task<CreateVersionAcrossBundleResponse> CreateVersionAcrossBundleAsync(CreateVersionAcrossBundleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetMaxVersionHeaders headers = new GetMaxVersionHeaders();
-            return await GetMaxVersionWithOptionsAsync(request, headers, runtime);
+            CreateVersionAcrossBundleHeaders headers = new CreateVersionAcrossBundleHeaders();
+            return await CreateVersionAcrossBundleWithOptionsAsync(request, headers, runtime);
         }
 
         public GetMaxVersionResponse GetMaxVersionWithOptions(GetMaxVersionRequest request, GetMaxVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -374,7 +436,19 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetMaxVersionResponse>(DoROARequest("GetMaxVersion", "miniapp_1.0", "HTTP", "GET", "AK", "/v1.0/miniapp/apps/maxVersions", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMaxVersion",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/apps/maxVersions",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMaxVersionResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetMaxVersionResponse> GetMaxVersionWithOptionsAsync(GetMaxVersionRequest request, GetMaxVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -407,21 +481,33 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<GetMaxVersionResponse>(await DoROARequestAsync("GetMaxVersion", "miniapp_1.0", "HTTP", "GET", "AK", "/v1.0/miniapp/apps/maxVersions", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMaxVersion",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/apps/maxVersions",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMaxVersionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public GetMiniAppMetaDataResponse GetMiniAppMetaData(GetMiniAppMetaDataRequest request)
+        public GetMaxVersionResponse GetMaxVersion(GetMaxVersionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetMiniAppMetaDataHeaders headers = new GetMiniAppMetaDataHeaders();
-            return GetMiniAppMetaDataWithOptions(request, headers, runtime);
+            GetMaxVersionHeaders headers = new GetMaxVersionHeaders();
+            return GetMaxVersionWithOptions(request, headers, runtime);
         }
 
-        public async Task<GetMiniAppMetaDataResponse> GetMiniAppMetaDataAsync(GetMiniAppMetaDataRequest request)
+        public async Task<GetMaxVersionResponse> GetMaxVersionAsync(GetMaxVersionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            GetMiniAppMetaDataHeaders headers = new GetMiniAppMetaDataHeaders();
-            return await GetMiniAppMetaDataWithOptionsAsync(request, headers, runtime);
+            GetMaxVersionHeaders headers = new GetMaxVersionHeaders();
+            return await GetMaxVersionWithOptionsAsync(request, headers, runtime);
         }
 
         public GetMiniAppMetaDataResponse GetMiniAppMetaDataWithOptions(GetMiniAppMetaDataRequest request, GetMiniAppMetaDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -458,7 +544,19 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetMiniAppMetaDataResponse>(DoROARequest("GetMiniAppMetaData", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/apps/metadata", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMiniAppMetaData",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/apps/metadata",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMiniAppMetaDataResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<GetMiniAppMetaDataResponse> GetMiniAppMetaDataWithOptionsAsync(GetMiniAppMetaDataRequest request, GetMiniAppMetaDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -495,7 +593,93 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<GetMiniAppMetaDataResponse>(await DoROARequestAsync("GetMiniAppMetaData", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/apps/metadata", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetMiniAppMetaData",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/apps/metadata",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetMiniAppMetaDataResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public GetMiniAppMetaDataResponse GetMiniAppMetaData(GetMiniAppMetaDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMiniAppMetaDataHeaders headers = new GetMiniAppMetaDataHeaders();
+            return GetMiniAppMetaDataWithOptions(request, headers, runtime);
+        }
+
+        public async Task<GetMiniAppMetaDataResponse> GetMiniAppMetaDataAsync(GetMiniAppMetaDataRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetMiniAppMetaDataHeaders headers = new GetMiniAppMetaDataHeaders();
+            return await GetMiniAppMetaDataWithOptionsAsync(request, headers, runtime);
+        }
+
+        public GetSettingByMiniAppIdResponse GetSettingByMiniAppIdWithOptions(string miniAppId, GetSettingByMiniAppIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSettingByMiniAppId",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/apps/settings",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSettingByMiniAppIdResponse>(Execute(params_, req, runtime));
+        }
+
+        public async Task<GetSettingByMiniAppIdResponse> GetSettingByMiniAppIdWithOptionsAsync(string miniAppId, GetSettingByMiniAppIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSettingByMiniAppId",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/apps/settings",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSettingByMiniAppIdResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         public GetSettingByMiniAppIdResponse GetSettingByMiniAppId(string miniAppId)
@@ -510,58 +694,6 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetSettingByMiniAppIdHeaders headers = new GetSettingByMiniAppIdHeaders();
             return await GetSettingByMiniAppIdWithOptionsAsync(miniAppId, headers, runtime);
-        }
-
-        public GetSettingByMiniAppIdResponse GetSettingByMiniAppIdWithOptions(string miniAppId, GetSettingByMiniAppIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            miniAppId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(miniAppId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetSettingByMiniAppIdResponse>(DoROARequest("GetSettingByMiniAppId", "miniapp_1.0", "HTTP", "GET", "AK", "/v1.0/miniapp/apps/settings", "json", req, runtime));
-        }
-
-        public async Task<GetSettingByMiniAppIdResponse> GetSettingByMiniAppIdWithOptionsAsync(string miniAppId, GetSettingByMiniAppIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
-        {
-            miniAppId = AlibabaCloud.OpenApiUtil.Client.GetEncodeParam(miniAppId);
-            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
-            {
-                realHeaders = headers.CommonHeaders;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
-            {
-                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
-            }
-            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
-            {
-                Headers = realHeaders,
-            };
-            return TeaModel.ToObject<GetSettingByMiniAppIdResponse>(await DoROARequestAsync("GetSettingByMiniAppId", "miniapp_1.0", "HTTP", "GET", "AK", "/v1.0/miniapp/apps/settings", "json", req, runtime));
-        }
-
-        public InvokeHtmlBundleBuildResponse InvokeHtmlBundleBuild(InvokeHtmlBundleBuildRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            InvokeHtmlBundleBuildHeaders headers = new InvokeHtmlBundleBuildHeaders();
-            return InvokeHtmlBundleBuildWithOptions(request, headers, runtime);
-        }
-
-        public async Task<InvokeHtmlBundleBuildResponse> InvokeHtmlBundleBuildAsync(InvokeHtmlBundleBuildRequest request)
-        {
-            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            InvokeHtmlBundleBuildHeaders headers = new InvokeHtmlBundleBuildHeaders();
-            return await InvokeHtmlBundleBuildWithOptionsAsync(request, headers, runtime);
         }
 
         public InvokeHtmlBundleBuildResponse InvokeHtmlBundleBuildWithOptions(InvokeHtmlBundleBuildRequest request, InvokeHtmlBundleBuildHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -594,7 +726,19 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<InvokeHtmlBundleBuildResponse>(DoROARequest("InvokeHtmlBundleBuild", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/h5Bundles/build", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InvokeHtmlBundleBuild",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/h5Bundles/build",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InvokeHtmlBundleBuildResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<InvokeHtmlBundleBuildResponse> InvokeHtmlBundleBuildWithOptionsAsync(InvokeHtmlBundleBuildRequest request, InvokeHtmlBundleBuildHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -627,21 +771,33 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<InvokeHtmlBundleBuildResponse>(await DoROARequestAsync("InvokeHtmlBundleBuild", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/h5Bundles/build", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InvokeHtmlBundleBuild",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/h5Bundles/build",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InvokeHtmlBundleBuildResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public ListAvaiableVersionResponse ListAvaiableVersion(ListAvaiableVersionRequest request)
+        public InvokeHtmlBundleBuildResponse InvokeHtmlBundleBuild(InvokeHtmlBundleBuildRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListAvaiableVersionHeaders headers = new ListAvaiableVersionHeaders();
-            return ListAvaiableVersionWithOptions(request, headers, runtime);
+            InvokeHtmlBundleBuildHeaders headers = new InvokeHtmlBundleBuildHeaders();
+            return InvokeHtmlBundleBuildWithOptions(request, headers, runtime);
         }
 
-        public async Task<ListAvaiableVersionResponse> ListAvaiableVersionAsync(ListAvaiableVersionRequest request)
+        public async Task<InvokeHtmlBundleBuildResponse> InvokeHtmlBundleBuildAsync(InvokeHtmlBundleBuildRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            ListAvaiableVersionHeaders headers = new ListAvaiableVersionHeaders();
-            return await ListAvaiableVersionWithOptionsAsync(request, headers, runtime);
+            InvokeHtmlBundleBuildHeaders headers = new InvokeHtmlBundleBuildHeaders();
+            return await InvokeHtmlBundleBuildWithOptionsAsync(request, headers, runtime);
         }
 
         public ListAvaiableVersionResponse ListAvaiableVersionWithOptions(ListAvaiableVersionRequest request, ListAvaiableVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -682,7 +838,19 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ListAvaiableVersionResponse>(DoROARequest("ListAvaiableVersion", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/apps/versions/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListAvaiableVersion",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/apps/versions/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListAvaiableVersionResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<ListAvaiableVersionResponse> ListAvaiableVersionWithOptionsAsync(ListAvaiableVersionRequest request, ListAvaiableVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -723,21 +891,33 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<ListAvaiableVersionResponse>(await DoROARequestAsync("ListAvaiableVersion", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/apps/versions/query", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListAvaiableVersion",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/apps/versions/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListAvaiableVersionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public QueryHtmlBundleBuildResponse QueryHtmlBundleBuild(QueryHtmlBundleBuildRequest request)
+        public ListAvaiableVersionResponse ListAvaiableVersion(ListAvaiableVersionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryHtmlBundleBuildHeaders headers = new QueryHtmlBundleBuildHeaders();
-            return QueryHtmlBundleBuildWithOptions(request, headers, runtime);
+            ListAvaiableVersionHeaders headers = new ListAvaiableVersionHeaders();
+            return ListAvaiableVersionWithOptions(request, headers, runtime);
         }
 
-        public async Task<QueryHtmlBundleBuildResponse> QueryHtmlBundleBuildAsync(QueryHtmlBundleBuildRequest request)
+        public async Task<ListAvaiableVersionResponse> ListAvaiableVersionAsync(ListAvaiableVersionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            QueryHtmlBundleBuildHeaders headers = new QueryHtmlBundleBuildHeaders();
-            return await QueryHtmlBundleBuildWithOptionsAsync(request, headers, runtime);
+            ListAvaiableVersionHeaders headers = new ListAvaiableVersionHeaders();
+            return await ListAvaiableVersionWithOptionsAsync(request, headers, runtime);
         }
 
         public QueryHtmlBundleBuildResponse QueryHtmlBundleBuildWithOptions(QueryHtmlBundleBuildRequest request, QueryHtmlBundleBuildHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -770,7 +950,19 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryHtmlBundleBuildResponse>(DoROARequest("QueryHtmlBundleBuild", "miniapp_1.0", "HTTP", "GET", "AK", "/v1.0/miniapp/h5Bundles/buildResults", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryHtmlBundleBuild",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/h5Bundles/buildResults",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryHtmlBundleBuildResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<QueryHtmlBundleBuildResponse> QueryHtmlBundleBuildWithOptionsAsync(QueryHtmlBundleBuildRequest request, QueryHtmlBundleBuildHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -803,21 +995,33 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
-            return TeaModel.ToObject<QueryHtmlBundleBuildResponse>(await DoROARequestAsync("QueryHtmlBundleBuild", "miniapp_1.0", "HTTP", "GET", "AK", "/v1.0/miniapp/h5Bundles/buildResults", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryHtmlBundleBuild",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/h5Bundles/buildResults",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryHtmlBundleBuildResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public RollBackVersionResponse RollBackVersion(RollBackVersionRequest request)
+        public QueryHtmlBundleBuildResponse QueryHtmlBundleBuild(QueryHtmlBundleBuildRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
-            return RollBackVersionWithOptions(request, headers, runtime);
+            QueryHtmlBundleBuildHeaders headers = new QueryHtmlBundleBuildHeaders();
+            return QueryHtmlBundleBuildWithOptions(request, headers, runtime);
         }
 
-        public async Task<RollBackVersionResponse> RollBackVersionAsync(RollBackVersionRequest request)
+        public async Task<QueryHtmlBundleBuildResponse> QueryHtmlBundleBuildAsync(QueryHtmlBundleBuildRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            Dictionary<string, string> headers = new Dictionary<string, string>(){};
-            return await RollBackVersionWithOptionsAsync(request, headers, runtime);
+            QueryHtmlBundleBuildHeaders headers = new QueryHtmlBundleBuildHeaders();
+            return await QueryHtmlBundleBuildWithOptionsAsync(request, headers, runtime);
         }
 
         public RollBackVersionResponse RollBackVersionWithOptions(RollBackVersionRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -845,7 +1049,19 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = headers,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RollBackVersionResponse>(DoROARequest("RollBackVersion", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/versions/rollback", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RollBackVersion",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/versions/rollback",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RollBackVersionResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<RollBackVersionResponse> RollBackVersionWithOptionsAsync(RollBackVersionRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -873,21 +1089,33 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = headers,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<RollBackVersionResponse>(await DoROARequestAsync("RollBackVersion", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/versions/rollback", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RollBackVersion",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/versions/rollback",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RollBackVersionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public SetExtendSettingResponse SetExtendSetting(SetExtendSettingRequest request)
+        public RollBackVersionResponse RollBackVersion(RollBackVersionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SetExtendSettingHeaders headers = new SetExtendSettingHeaders();
-            return SetExtendSettingWithOptions(request, headers, runtime);
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return RollBackVersionWithOptions(request, headers, runtime);
         }
 
-        public async Task<SetExtendSettingResponse> SetExtendSettingAsync(SetExtendSettingRequest request)
+        public async Task<RollBackVersionResponse> RollBackVersionAsync(RollBackVersionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            SetExtendSettingHeaders headers = new SetExtendSettingHeaders();
-            return await SetExtendSettingWithOptionsAsync(request, headers, runtime);
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await RollBackVersionWithOptionsAsync(request, headers, runtime);
         }
 
         public SetExtendSettingResponse SetExtendSettingWithOptions(SetExtendSettingRequest request, SetExtendSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -916,7 +1144,19 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SetExtendSettingResponse>(DoROARequest("SetExtendSetting", "miniapp_1.0", "HTTP", "PUT", "AK", "/v1.0/miniapp/apps/settings", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetExtendSetting",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/apps/settings",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetExtendSettingResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<SetExtendSettingResponse> SetExtendSettingWithOptionsAsync(SetExtendSettingRequest request, SetExtendSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -945,21 +1185,33 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<SetExtendSettingResponse>(await DoROARequestAsync("SetExtendSetting", "miniapp_1.0", "HTTP", "PUT", "AK", "/v1.0/miniapp/apps/settings", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetExtendSetting",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/apps/settings",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetExtendSettingResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        public UpdateVersionStatusResponse UpdateVersionStatus(UpdateVersionStatusRequest request)
+        public SetExtendSettingResponse SetExtendSetting(SetExtendSettingRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateVersionStatusHeaders headers = new UpdateVersionStatusHeaders();
-            return UpdateVersionStatusWithOptions(request, headers, runtime);
+            SetExtendSettingHeaders headers = new SetExtendSettingHeaders();
+            return SetExtendSettingWithOptions(request, headers, runtime);
         }
 
-        public async Task<UpdateVersionStatusResponse> UpdateVersionStatusAsync(UpdateVersionStatusRequest request)
+        public async Task<SetExtendSettingResponse> SetExtendSettingAsync(SetExtendSettingRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
-            UpdateVersionStatusHeaders headers = new UpdateVersionStatusHeaders();
-            return await UpdateVersionStatusWithOptionsAsync(request, headers, runtime);
+            SetExtendSettingHeaders headers = new SetExtendSettingHeaders();
+            return await SetExtendSettingWithOptionsAsync(request, headers, runtime);
         }
 
         public UpdateVersionStatusResponse UpdateVersionStatusWithOptions(UpdateVersionStatusRequest request, UpdateVersionStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -996,7 +1248,19 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateVersionStatusResponse>(DoROARequest("UpdateVersionStatus", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/versions/status", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateVersionStatus",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/versions/status",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateVersionStatusResponse>(Execute(params_, req, runtime));
         }
 
         public async Task<UpdateVersionStatusResponse> UpdateVersionStatusWithOptionsAsync(UpdateVersionStatusRequest request, UpdateVersionStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
@@ -1033,7 +1297,33 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0
                 Headers = realHeaders,
                 Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
-            return TeaModel.ToObject<UpdateVersionStatusResponse>(await DoROARequestAsync("UpdateVersionStatus", "miniapp_1.0", "HTTP", "POST", "AK", "/v1.0/miniapp/versions/status", "json", req, runtime));
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateVersionStatus",
+                Version = "miniapp_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/miniapp/versions/status",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateVersionStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        public UpdateVersionStatusResponse UpdateVersionStatus(UpdateVersionStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateVersionStatusHeaders headers = new UpdateVersionStatusHeaders();
+            return UpdateVersionStatusWithOptions(request, headers, runtime);
+        }
+
+        public async Task<UpdateVersionStatusResponse> UpdateVersionStatusAsync(UpdateVersionStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateVersionStatusHeaders headers = new UpdateVersionStatusHeaders();
+            return await UpdateVersionStatusWithOptionsAsync(request, headers, runtime);
         }
 
     }

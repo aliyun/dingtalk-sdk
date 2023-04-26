@@ -13,9 +13,6 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         [Validation(Required=false)]
         public bool? Result { get; set; }
 
-        /// <summary>
-        /// 是否成功
-        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }
