@@ -10,7 +10,7 @@ use AlibabaCloud\Tea\Model;
 class GetSimpleOvertimeSettingResponseBody extends Model
 {
     /**
-     * @var result[]
+     * @var result
      */
     public $result;
     protected $_name = [
@@ -25,13 +25,7 @@ class GetSimpleOvertimeSettingResponseBody extends Model
     {
         $res = [];
         if (null !== $this->result) {
-            $res['result'] = [];
-            if (null !== $this->result && \is_array($this->result)) {
-                $n = 0;
-                foreach ($this->result as $item) {
-                    $res['result'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
 
         return $res;
@@ -46,13 +40,7 @@ class GetSimpleOvertimeSettingResponseBody extends Model
     {
         $model = new self();
         if (isset($map['result'])) {
-            if (!empty($map['result'])) {
-                $model->result = [];
-                $n             = 0;
-                foreach ($map['result'] as $item) {
-                    $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
-                }
-            }
+            $model->result = result::fromMap($map['result']);
         }
 
         return $model;

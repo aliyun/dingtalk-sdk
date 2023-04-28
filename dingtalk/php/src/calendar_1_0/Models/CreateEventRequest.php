@@ -11,6 +11,7 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\onlineMeet
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\recurrence;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\reminders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\start;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CreateEventRequest\uiConfigs;
 use AlibabaCloud\Tea\Model;
 
 class CreateEventRequest extends Model
@@ -69,6 +70,11 @@ class CreateEventRequest extends Model
      * @var string
      */
     public $summary;
+
+    /**
+     * @var uiConfigs[]
+     */
+    public $uiConfigs;
     protected $_name = [
         'attendees'         => 'attendees',
         'description'       => 'description',
@@ -81,6 +87,7 @@ class CreateEventRequest extends Model
         'reminders'         => 'reminders',
         'start'             => 'start',
         'summary'           => 'summary',
+        'uiConfigs'         => 'uiConfigs',
     ];
 
     public function validate()
@@ -134,6 +141,15 @@ class CreateEventRequest extends Model
         }
         if (null !== $this->summary) {
             $res['summary'] = $this->summary;
+        }
+        if (null !== $this->uiConfigs) {
+            $res['uiConfigs'] = [];
+            if (null !== $this->uiConfigs && \is_array($this->uiConfigs)) {
+                $n = 0;
+                foreach ($this->uiConfigs as $item) {
+                    $res['uiConfigs'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -191,6 +207,15 @@ class CreateEventRequest extends Model
         }
         if (isset($map['summary'])) {
             $model->summary = $map['summary'];
+        }
+        if (isset($map['uiConfigs'])) {
+            if (!empty($map['uiConfigs'])) {
+                $model->uiConfigs = [];
+                $n                = 0;
+                foreach ($map['uiConfigs'] as $item) {
+                    $model->uiConfigs[$n++] = null !== $item ? uiConfigs::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

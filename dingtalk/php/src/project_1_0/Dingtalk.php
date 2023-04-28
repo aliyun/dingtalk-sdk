@@ -3581,8 +3581,8 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->stageId)) {
-            $body['stageId'] = $request->stageId;
+        if (!Utils::isUnset($request->taskStageId)) {
+            $body['taskStageId'] = $request->taskStageId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

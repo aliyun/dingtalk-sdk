@@ -6,6 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TeamVO\creator;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TeamVO\relatedDeptInfo;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TeamVO\shareScopeInfo;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TeamVO\updater;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\TeamVO\visitInfo;
 use AlibabaCloud\Tea\Model;
@@ -65,6 +66,11 @@ class TeamVO extends Model
     public $relatedDeptInfo;
 
     /**
+     * @var shareScopeInfo
+     */
+    public $shareScopeInfo;
+
+    /**
      * @example 0
      *
      * @var int
@@ -110,6 +116,7 @@ class TeamVO extends Model
         'id'              => 'id',
         'name'            => 'name',
         'relatedDeptInfo' => 'relatedDeptInfo',
+        'shareScopeInfo'  => 'shareScopeInfo',
         'status'          => 'status',
         'type'            => 'type',
         'updatedTime'     => 'updatedTime',
@@ -148,6 +155,9 @@ class TeamVO extends Model
         }
         if (null !== $this->relatedDeptInfo) {
             $res['relatedDeptInfo'] = null !== $this->relatedDeptInfo ? $this->relatedDeptInfo->toMap() : null;
+        }
+        if (null !== $this->shareScopeInfo) {
+            $res['shareScopeInfo'] = null !== $this->shareScopeInfo ? $this->shareScopeInfo->toMap() : null;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -202,6 +212,9 @@ class TeamVO extends Model
         }
         if (isset($map['relatedDeptInfo'])) {
             $model->relatedDeptInfo = relatedDeptInfo::fromMap($map['relatedDeptInfo']);
+        }
+        if (isset($map['shareScopeInfo'])) {
+            $model->shareScopeInfo = shareScopeInfo::fromMap($map['shareScopeInfo']);
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

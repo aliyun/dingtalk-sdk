@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchUserTaskResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
 class SearchUserTaskResponseBody extends Model
@@ -21,7 +22,7 @@ class SearchUserTaskResponseBody extends Model
     public $requestId;
 
     /**
-     * @var string[]
+     * @var result[]
      */
     public $result;
 
@@ -50,7 +51,13 @@ class SearchUserTaskResponseBody extends Model
             $res['requestId'] = $this->requestId;
         }
         if (null !== $this->result) {
-            $res['result'] = $this->result;
+            $res['result'] = [];
+            if (null !== $this->result && \is_array($this->result)) {
+                $n = 0;
+                foreach ($this->result as $item) {
+                    $res['result'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->totalSize) {
             $res['totalSize'] = $this->totalSize;
@@ -75,7 +82,11 @@ class SearchUserTaskResponseBody extends Model
         }
         if (isset($map['result'])) {
             if (!empty($map['result'])) {
-                $model->result = $map['result'];
+                $model->result = [];
+                $n             = 0;
+                foreach ($map['result'] as $item) {
+                    $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
+                }
             }
         }
         if (isset($map['totalSize'])) {

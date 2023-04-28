@@ -62,6 +62,9 @@ use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\UpdateGroupNameResponse;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\UpdateGroupOwnerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\UpdateGroupOwnerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\UpdateGroupOwnerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\UploadFileHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\UploadFileRequest;
+use AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models\UploadFileResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client as DarabonbaGatewayDingTalkClient;
@@ -1278,5 +1281,67 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateGroupOwnerHeaders([]);
 
         return $this->updateGroupOwnerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param UploadFileRequest $request
+     * @param UploadFileHeaders $headers
+     * @param RuntimeOptions    $runtime
+     *
+     * @return UploadFileResponse
+     */
+    public function uploadFileWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileName)) {
+            $body['fileName'] = $request->fileName;
+        }
+        if (!Utils::isUnset($request->fileType)) {
+            $body['fileType'] = $request->fileType;
+        }
+        if (!Utils::isUnset($request->fileUrl)) {
+            $body['fileUrl'] = $request->fileUrl;
+        }
+        if (!Utils::isUnset($request->senderUid)) {
+            $body['senderUid'] = $request->senderUid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UploadFile',
+            'version'     => 'impaas_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/impaas/interconnections/files/upload',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UploadFileResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param UploadFileRequest $request
+     *
+     * @return UploadFileResponse
+     */
+    public function uploadFile($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UploadFileHeaders([]);
+
+        return $this->uploadFileWithOptions($request, $headers, $runtime);
     }
 }

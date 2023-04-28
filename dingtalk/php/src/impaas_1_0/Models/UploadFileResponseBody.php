@@ -2,20 +2,20 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vimpaas_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class UpdateTaskStageRequest extends Model
+class UploadFileResponseBody extends Model
 {
     /**
-     * @example 64ba333e4206372f3f5cxxxx
+     * @example $csvsvsdvsvdscs
      *
      * @var string
      */
-    public $taskStageId;
+    public $mediaId;
     protected $_name = [
-        'taskStageId' => 'taskStageId',
+        'mediaId' => 'mediaId',
     ];
 
     public function validate()
@@ -25,8 +25,8 @@ class UpdateTaskStageRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->taskStageId) {
-            $res['taskStageId'] = $this->taskStageId;
+        if (null !== $this->mediaId) {
+            $res['mediaId'] = $this->mediaId;
         }
 
         return $res;
@@ -35,13 +35,13 @@ class UpdateTaskStageRequest extends Model
     /**
      * @param array $map
      *
-     * @return UpdateTaskStageRequest
+     * @return UploadFileResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['taskStageId'])) {
-            $model->taskStageId = $map['taskStageId'];
+        if (isset($map['mediaId'])) {
+            $model->mediaId = $map['mediaId'];
         }
 
         return $model;

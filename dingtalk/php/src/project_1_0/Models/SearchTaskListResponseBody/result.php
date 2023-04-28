@@ -41,7 +41,7 @@ class result extends Model
      *
      * @var string
      */
-    public $taskId;
+    public $taskListId;
 
     /**
      * @example 自定义分组1
@@ -61,7 +61,7 @@ class result extends Model
         'creatorId'   => 'creatorId',
         'description' => 'description',
         'projectId'   => 'projectId',
-        'taskId'      => 'taskId',
+        'taskListId'  => 'taskListId',
         'title'       => 'title',
         'updated'     => 'updated',
     ];
@@ -85,8 +85,8 @@ class result extends Model
         if (null !== $this->projectId) {
             $res['projectId'] = $this->projectId;
         }
-        if (null !== $this->taskId) {
-            $res['taskId'] = $this->taskId;
+        if (null !== $this->taskListId) {
+            $res['taskListId'] = $this->taskListId;
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
@@ -118,8 +118,8 @@ class result extends Model
         if (isset($map['projectId'])) {
             $model->projectId = $map['projectId'];
         }
-        if (isset($map['taskId'])) {
-            $model->taskId = $map['taskId'];
+        if (isset($map['taskListId'])) {
+            $model->taskListId = $map['taskListId'];
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
