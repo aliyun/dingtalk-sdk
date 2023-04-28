@@ -33,9 +33,9 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public string ProjectId { get; set; }
 
-            [NameInMap("taskId")]
+            [NameInMap("taskListId")]
             [Validation(Required=false)]
-            public string TaskId { get; set; }
+            public string TaskListId { get; set; }
 
             [NameInMap("title")]
             [Validation(Required=false)]

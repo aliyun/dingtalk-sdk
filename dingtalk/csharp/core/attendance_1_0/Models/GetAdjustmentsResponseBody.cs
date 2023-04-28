@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
     public class GetAdjustmentsResponseBody : TeaModel {
         [NameInMap("result")]
         [Validation(Required=false)]
-        public List<GetAdjustmentsResponseBodyResult> Result { get; set; }
+        public GetAdjustmentsResponseBodyResult Result { get; set; }
         public class GetAdjustmentsResponseBodyResult : TeaModel {
             [NameInMap("items")]
             [Validation(Required=false)]

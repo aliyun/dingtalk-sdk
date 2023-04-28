@@ -9,9 +9,9 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class UpdateTaskStageRequest : TeaModel {
-        [NameInMap("stageId")]
+        [NameInMap("taskStageId")]
         [Validation(Required=false)]
-        public string StageId { get; set; }
+        public string TaskStageId { get; set; }
 
     }
 

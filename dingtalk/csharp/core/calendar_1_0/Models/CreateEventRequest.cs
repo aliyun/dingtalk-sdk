@@ -159,6 +159,20 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public string Summary { get; set; }
 
+        [NameInMap("uiConfigs")]
+        [Validation(Required=false)]
+        public List<CreateEventRequestUiConfigs> UiConfigs { get; set; }
+        public class CreateEventRequestUiConfigs : TeaModel {
+            [NameInMap("uiName")]
+            [Validation(Required=false)]
+            public string UiName { get; set; }
+
+            [NameInMap("uiStatus")]
+            [Validation(Required=false)]
+            public string UiStatus { get; set; }
+
+        }
+
     }
 
 }

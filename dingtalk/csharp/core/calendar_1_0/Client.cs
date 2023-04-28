@@ -519,6 +519,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             {
                 body["summary"] = request.Summary;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UiConfigs))
+            {
+                body["uiConfigs"] = request.UiConfigs;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -595,6 +599,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Summary))
             {
                 body["summary"] = request.Summary;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UiConfigs))
+            {
+                body["uiConfigs"] = request.UiConfigs;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

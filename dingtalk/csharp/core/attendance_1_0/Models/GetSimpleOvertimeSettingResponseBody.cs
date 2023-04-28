@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
     public class GetSimpleOvertimeSettingResponseBody : TeaModel {
         [NameInMap("result")]
         [Validation(Required=false)]
-        public List<GetSimpleOvertimeSettingResponseBodyResult> Result { get; set; }
+        public GetSimpleOvertimeSettingResponseBodyResult Result { get; set; }
         public class GetSimpleOvertimeSettingResponseBodyResult : TeaModel {
             [NameInMap("items")]
             [Validation(Required=false)]

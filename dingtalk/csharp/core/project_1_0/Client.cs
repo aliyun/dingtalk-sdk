@@ -5723,9 +5723,9 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StageId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskStageId))
             {
-                body["stageId"] = request.StageId;
+                body["taskStageId"] = request.TaskStageId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -5760,9 +5760,9 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StageId))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskStageId))
             {
-                body["stageId"] = request.StageId;
+                body["taskStageId"] = request.TaskStageId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))

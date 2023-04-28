@@ -61,6 +61,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 
         }
 
+        [NameInMap("shareScopeInfo")]
+        [Validation(Required=false)]
+        public TeamVOShareScopeInfo ShareScopeInfo { get; set; }
+        public class TeamVOShareScopeInfo : TeaModel {
+            [NameInMap("roleId")]
+            [Validation(Required=false)]
+            public string RoleId { get; set; }
+
+            [NameInMap("scope")]
+            [Validation(Required=false)]
+            public int? Scope { get; set; }
+
+        }
+
         [NameInMap("status")]
         [Validation(Required=false)]
         public int? Status { get; set; }
