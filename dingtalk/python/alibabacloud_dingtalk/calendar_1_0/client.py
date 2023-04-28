@@ -533,6 +533,8 @@ class Client(OpenApiClient):
             body['start'] = request.start
         if not UtilClient.is_unset(request.summary):
             body['summary'] = request.summary
+        if not UtilClient.is_unset(request.ui_configs):
+            body['uiConfigs'] = request.ui_configs
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -590,6 +592,8 @@ class Client(OpenApiClient):
             body['start'] = request.start
         if not UtilClient.is_unset(request.summary):
             body['summary'] = request.summary
+        if not UtilClient.is_unset(request.ui_configs):
+            body['uiConfigs'] = request.ui_configs
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

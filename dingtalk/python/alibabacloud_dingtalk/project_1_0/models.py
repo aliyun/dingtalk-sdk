@@ -8486,7 +8486,7 @@ class SearchTaskListResponseBodyResult(TeaModel):
         creator_id: str = None,
         description: str = None,
         project_id: str = None,
-        task_id: str = None,
+        task_list_id: str = None,
         title: str = None,
         updated: str = None,
     ):
@@ -8494,7 +8494,7 @@ class SearchTaskListResponseBodyResult(TeaModel):
         self.creator_id = creator_id
         self.description = description
         self.project_id = project_id
-        self.task_id = task_id
+        self.task_list_id = task_list_id
         self.title = title
         self.updated = updated
 
@@ -8515,8 +8515,8 @@ class SearchTaskListResponseBodyResult(TeaModel):
             result['description'] = self.description
         if self.project_id is not None:
             result['projectId'] = self.project_id
-        if self.task_id is not None:
-            result['taskId'] = self.task_id
+        if self.task_list_id is not None:
+            result['taskListId'] = self.task_list_id
         if self.title is not None:
             result['title'] = self.title
         if self.updated is not None:
@@ -8533,8 +8533,8 @@ class SearchTaskListResponseBodyResult(TeaModel):
             self.description = m.get('description')
         if m.get('projectId') is not None:
             self.project_id = m.get('projectId')
-        if m.get('taskId') is not None:
-            self.task_id = m.get('taskId')
+        if m.get('taskListId') is not None:
+            self.task_list_id = m.get('taskListId')
         if m.get('title') is not None:
             self.title = m.get('title')
         if m.get('updated') is not None:
@@ -8955,12 +8955,301 @@ class SearchUserTaskRequest(TeaModel):
         return self
 
 
+class SearchUserTaskResponseBodyResultCustomfieldsValue(TeaModel):
+    def __init__(
+        self,
+        fieldvalue_id: str = None,
+        meta_string: str = None,
+        title: str = None,
+        total_count: int = None,
+    ):
+        self.fieldvalue_id = fieldvalue_id
+        self.meta_string = meta_string
+        self.title = title
+        self.total_count = total_count
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fieldvalue_id is not None:
+            result['fieldvalueId'] = self.fieldvalue_id
+        if self.meta_string is not None:
+            result['metaString'] = self.meta_string
+        if self.title is not None:
+            result['title'] = self.title
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldvalueId') is not None:
+            self.fieldvalue_id = m.get('fieldvalueId')
+        if m.get('metaString') is not None:
+            self.meta_string = m.get('metaString')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class SearchUserTaskResponseBodyResultCustomfields(TeaModel):
+    def __init__(
+        self,
+        customfield_id: str = None,
+        type: str = None,
+        value: List[SearchUserTaskResponseBodyResultCustomfieldsValue] = None,
+    ):
+        self.customfield_id = customfield_id
+        self.type = type
+        self.value = value
+
+    def validate(self):
+        if self.value:
+            for k in self.value:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_id is not None:
+            result['customfieldId'] = self.customfield_id
+        if self.type is not None:
+            result['type'] = self.type
+        result['value'] = []
+        if self.value is not None:
+            for k in self.value:
+                result['value'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldId') is not None:
+            self.customfield_id = m.get('customfieldId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        self.value = []
+        if m.get('value') is not None:
+            for k in m.get('value'):
+                temp_model = SearchUserTaskResponseBodyResultCustomfieldsValue()
+                self.value.append(temp_model.from_map(k))
+        return self
+
+
+class SearchUserTaskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        accomplish_time: str = None,
+        ancestor_ids: List[str] = None,
+        content: str = None,
+        created: str = None,
+        creator_id: str = None,
+        customfields: List[SearchUserTaskResponseBodyResultCustomfields] = None,
+        due_date: str = None,
+        executor_id: str = None,
+        involve_members: List[str] = None,
+        is_archived: bool = None,
+        is_done: bool = None,
+        note: str = None,
+        parent_task_id: str = None,
+        priority: int = None,
+        project_id: str = None,
+        recurrence: List[str] = None,
+        sfc_id: str = None,
+        sprint_id: str = None,
+        start_date: str = None,
+        story_point: str = None,
+        tag_ids: List[str] = None,
+        task_id: str = None,
+        task_list_id: str = None,
+        taskflowstatus_id: str = None,
+        taskstage_id: str = None,
+        unique_id: str = None,
+        updated: str = None,
+        visible: str = None,
+    ):
+        self.accomplish_time = accomplish_time
+        self.ancestor_ids = ancestor_ids
+        self.content = content
+        self.created = created
+        self.creator_id = creator_id
+        self.customfields = customfields
+        self.due_date = due_date
+        self.executor_id = executor_id
+        self.involve_members = involve_members
+        self.is_archived = is_archived
+        self.is_done = is_done
+        self.note = note
+        self.parent_task_id = parent_task_id
+        self.priority = priority
+        self.project_id = project_id
+        self.recurrence = recurrence
+        self.sfc_id = sfc_id
+        self.sprint_id = sprint_id
+        self.start_date = start_date
+        self.story_point = story_point
+        self.tag_ids = tag_ids
+        self.task_id = task_id
+        self.task_list_id = task_list_id
+        self.taskflowstatus_id = taskflowstatus_id
+        self.taskstage_id = taskstage_id
+        self.unique_id = unique_id
+        self.updated = updated
+        self.visible = visible
+
+    def validate(self):
+        if self.customfields:
+            for k in self.customfields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.accomplish_time is not None:
+            result['accomplishTime'] = self.accomplish_time
+        if self.ancestor_ids is not None:
+            result['ancestorIds'] = self.ancestor_ids
+        if self.content is not None:
+            result['content'] = self.content
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        result['customfields'] = []
+        if self.customfields is not None:
+            for k in self.customfields:
+                result['customfields'].append(k.to_map() if k else None)
+        if self.due_date is not None:
+            result['dueDate'] = self.due_date
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
+        if self.involve_members is not None:
+            result['involveMembers'] = self.involve_members
+        if self.is_archived is not None:
+            result['isArchived'] = self.is_archived
+        if self.is_done is not None:
+            result['isDone'] = self.is_done
+        if self.note is not None:
+            result['note'] = self.note
+        if self.parent_task_id is not None:
+            result['parentTaskId'] = self.parent_task_id
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.recurrence is not None:
+            result['recurrence'] = self.recurrence
+        if self.sfc_id is not None:
+            result['sfcId'] = self.sfc_id
+        if self.sprint_id is not None:
+            result['sprintId'] = self.sprint_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.story_point is not None:
+            result['storyPoint'] = self.story_point
+        if self.tag_ids is not None:
+            result['tagIds'] = self.tag_ids
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.task_list_id is not None:
+            result['taskListId'] = self.task_list_id
+        if self.taskflowstatus_id is not None:
+            result['taskflowstatusId'] = self.taskflowstatus_id
+        if self.taskstage_id is not None:
+            result['taskstageId'] = self.taskstage_id
+        if self.unique_id is not None:
+            result['uniqueId'] = self.unique_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        if self.visible is not None:
+            result['visible'] = self.visible
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accomplishTime') is not None:
+            self.accomplish_time = m.get('accomplishTime')
+        if m.get('ancestorIds') is not None:
+            self.ancestor_ids = m.get('ancestorIds')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        self.customfields = []
+        if m.get('customfields') is not None:
+            for k in m.get('customfields'):
+                temp_model = SearchUserTaskResponseBodyResultCustomfields()
+                self.customfields.append(temp_model.from_map(k))
+        if m.get('dueDate') is not None:
+            self.due_date = m.get('dueDate')
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
+        if m.get('involveMembers') is not None:
+            self.involve_members = m.get('involveMembers')
+        if m.get('isArchived') is not None:
+            self.is_archived = m.get('isArchived')
+        if m.get('isDone') is not None:
+            self.is_done = m.get('isDone')
+        if m.get('note') is not None:
+            self.note = m.get('note')
+        if m.get('parentTaskId') is not None:
+            self.parent_task_id = m.get('parentTaskId')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('recurrence') is not None:
+            self.recurrence = m.get('recurrence')
+        if m.get('sfcId') is not None:
+            self.sfc_id = m.get('sfcId')
+        if m.get('sprintId') is not None:
+            self.sprint_id = m.get('sprintId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('storyPoint') is not None:
+            self.story_point = m.get('storyPoint')
+        if m.get('tagIds') is not None:
+            self.tag_ids = m.get('tagIds')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('taskListId') is not None:
+            self.task_list_id = m.get('taskListId')
+        if m.get('taskflowstatusId') is not None:
+            self.taskflowstatus_id = m.get('taskflowstatusId')
+        if m.get('taskstageId') is not None:
+            self.taskstage_id = m.get('taskstageId')
+        if m.get('uniqueId') is not None:
+            self.unique_id = m.get('uniqueId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        if m.get('visible') is not None:
+            self.visible = m.get('visible')
+        return self
+
+
 class SearchUserTaskResponseBody(TeaModel):
     def __init__(
         self,
         next_token: str = None,
         request_id: str = None,
-        result: List[str] = None,
+        result: List[SearchUserTaskResponseBodyResult] = None,
         total_size: int = None,
     ):
         self.next_token = next_token
@@ -8969,7 +9258,10 @@ class SearchUserTaskResponseBody(TeaModel):
         self.total_size = total_size
 
     def validate(self):
-        pass
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -8981,8 +9273,10 @@ class SearchUserTaskResponseBody(TeaModel):
             result['nextToken'] = self.next_token
         if self.request_id is not None:
             result['requestId'] = self.request_id
+        result['result'] = []
         if self.result is not None:
-            result['result'] = self.result
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
         if self.total_size is not None:
             result['totalSize'] = self.total_size
         return result
@@ -8993,8 +9287,11 @@ class SearchUserTaskResponseBody(TeaModel):
             self.next_token = m.get('nextToken')
         if m.get('requestId') is not None:
             self.request_id = m.get('requestId')
+        self.result = []
         if m.get('result') is not None:
-            self.result = m.get('result')
+            for k in m.get('result'):
+                temp_model = SearchUserTaskResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
         if m.get('totalSize') is not None:
             self.total_size = m.get('totalSize')
         return self
@@ -12209,9 +12506,9 @@ class UpdateTaskStageHeaders(TeaModel):
 class UpdateTaskStageRequest(TeaModel):
     def __init__(
         self,
-        stage_id: str = None,
+        task_stage_id: str = None,
     ):
-        self.stage_id = stage_id
+        self.task_stage_id = task_stage_id
 
     def validate(self):
         pass
@@ -12222,14 +12519,14 @@ class UpdateTaskStageRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.stage_id is not None:
-            result['stageId'] = self.stage_id
+        if self.task_stage_id is not None:
+            result['taskStageId'] = self.task_stage_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('stageId') is not None:
-            self.stage_id = m.get('stageId')
+        if m.get('taskStageId') is not None:
+            self.task_stage_id = m.get('taskStageId')
         return self
 
 

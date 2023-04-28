@@ -5459,8 +5459,8 @@ class Client(OpenApiClient):
     ) -> dingtalkproject__1__0_models.UpdateTaskStageResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.stage_id):
-            body['stageId'] = request.stage_id
+        if not UtilClient.is_unset(request.task_stage_id):
+            body['taskStageId'] = request.task_stage_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -5496,8 +5496,8 @@ class Client(OpenApiClient):
     ) -> dingtalkproject__1__0_models.UpdateTaskStageResponse:
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.stage_id):
-            body['stageId'] = request.stage_id
+        if not UtilClient.is_unset(request.task_stage_id):
+            body['taskStageId'] = request.task_stage_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

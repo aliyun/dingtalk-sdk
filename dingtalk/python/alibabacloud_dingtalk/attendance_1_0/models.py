@@ -2636,15 +2636,13 @@ class GetAdjustmentsResponseBodyResult(TeaModel):
 class GetAdjustmentsResponseBody(TeaModel):
     def __init__(
         self,
-        result: List[GetAdjustmentsResponseBodyResult] = None,
+        result: GetAdjustmentsResponseBodyResult = None,
     ):
         self.result = result
 
     def validate(self):
         if self.result:
-            for k in self.result:
-                if k:
-                    k.validate()
+            self.result.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -2652,19 +2650,15 @@ class GetAdjustmentsResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['result'] = []
         if self.result is not None:
-            for k in self.result:
-                result['result'].append(k.to_map() if k else None)
+            result['result'] = self.result.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.result = []
         if m.get('result') is not None:
-            for k in m.get('result'):
-                temp_model = GetAdjustmentsResponseBodyResult()
-                self.result.append(temp_model.from_map(k))
+            temp_model = GetAdjustmentsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
         return self
 
 
@@ -4970,15 +4964,13 @@ class GetSimpleOvertimeSettingResponseBodyResult(TeaModel):
 class GetSimpleOvertimeSettingResponseBody(TeaModel):
     def __init__(
         self,
-        result: List[GetSimpleOvertimeSettingResponseBodyResult] = None,
+        result: GetSimpleOvertimeSettingResponseBodyResult = None,
     ):
         self.result = result
 
     def validate(self):
         if self.result:
-            for k in self.result:
-                if k:
-                    k.validate()
+            self.result.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -4986,19 +4978,15 @@ class GetSimpleOvertimeSettingResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['result'] = []
         if self.result is not None:
-            for k in self.result:
-                result['result'].append(k.to_map() if k else None)
+            result['result'] = self.result.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.result = []
         if m.get('result') is not None:
-            for k in m.get('result'):
-                temp_model = GetSimpleOvertimeSettingResponseBodyResult()
-                self.result.append(temp_model.from_map(k))
+            temp_model = GetSimpleOvertimeSettingResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
         return self
 
 

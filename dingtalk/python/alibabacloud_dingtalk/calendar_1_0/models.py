@@ -1124,6 +1124,39 @@ class CreateEventRequestStart(TeaModel):
         return self
 
 
+class CreateEventRequestUiConfigs(TeaModel):
+    def __init__(
+        self,
+        ui_name: str = None,
+        ui_status: str = None,
+    ):
+        self.ui_name = ui_name
+        self.ui_status = ui_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ui_name is not None:
+            result['uiName'] = self.ui_name
+        if self.ui_status is not None:
+            result['uiStatus'] = self.ui_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('uiName') is not None:
+            self.ui_name = m.get('uiName')
+        if m.get('uiStatus') is not None:
+            self.ui_status = m.get('uiStatus')
+        return self
+
+
 class CreateEventRequest(TeaModel):
     def __init__(
         self,
@@ -1138,6 +1171,7 @@ class CreateEventRequest(TeaModel):
         reminders: List[CreateEventRequestReminders] = None,
         start: CreateEventRequestStart = None,
         summary: str = None,
+        ui_configs: List[CreateEventRequestUiConfigs] = None,
     ):
         self.attendees = attendees
         self.description = description
@@ -1150,6 +1184,7 @@ class CreateEventRequest(TeaModel):
         self.reminders = reminders
         self.start = start
         self.summary = summary
+        self.ui_configs = ui_configs
 
     def validate(self):
         if self.attendees:
@@ -1170,6 +1205,10 @@ class CreateEventRequest(TeaModel):
                     k.validate()
         if self.start:
             self.start.validate()
+        if self.ui_configs:
+            for k in self.ui_configs:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1203,6 +1242,10 @@ class CreateEventRequest(TeaModel):
             result['start'] = self.start.to_map()
         if self.summary is not None:
             result['summary'] = self.summary
+        result['uiConfigs'] = []
+        if self.ui_configs is not None:
+            for k in self.ui_configs:
+                result['uiConfigs'].append(k.to_map() if k else None)
         return result
 
     def from_map(self, m: dict = None):
@@ -1240,6 +1283,11 @@ class CreateEventRequest(TeaModel):
             self.start = temp_model.from_map(m['start'])
         if m.get('summary') is not None:
             self.summary = m.get('summary')
+        self.ui_configs = []
+        if m.get('uiConfigs') is not None:
+            for k in m.get('uiConfigs'):
+                temp_model = CreateEventRequestUiConfigs()
+                self.ui_configs.append(temp_model.from_map(k))
         return self
 
 
@@ -1650,6 +1698,39 @@ class CreateEventResponseBodyStart(TeaModel):
         return self
 
 
+class CreateEventResponseBodyUiConfigs(TeaModel):
+    def __init__(
+        self,
+        ui_name: str = None,
+        ui_status: str = None,
+    ):
+        self.ui_name = ui_name
+        self.ui_status = ui_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ui_name is not None:
+            result['uiName'] = self.ui_name
+        if self.ui_status is not None:
+            result['uiStatus'] = self.ui_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('uiName') is not None:
+            self.ui_name = m.get('uiName')
+        if m.get('uiStatus') is not None:
+            self.ui_status = m.get('uiStatus')
+        return self
+
+
 class CreateEventResponseBody(TeaModel):
     def __init__(
         self,
@@ -1666,6 +1747,7 @@ class CreateEventResponseBody(TeaModel):
         reminders: List[CreateEventResponseBodyReminders] = None,
         start: CreateEventResponseBodyStart = None,
         summary: str = None,
+        ui_configs: List[CreateEventResponseBodyUiConfigs] = None,
         update_time: str = None,
     ):
         self.attendees = attendees
@@ -1681,6 +1763,7 @@ class CreateEventResponseBody(TeaModel):
         self.reminders = reminders
         self.start = start
         self.summary = summary
+        self.ui_configs = ui_configs
         self.update_time = update_time
 
     def validate(self):
@@ -1704,6 +1787,10 @@ class CreateEventResponseBody(TeaModel):
                     k.validate()
         if self.start:
             self.start.validate()
+        if self.ui_configs:
+            for k in self.ui_configs:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1741,6 +1828,10 @@ class CreateEventResponseBody(TeaModel):
             result['start'] = self.start.to_map()
         if self.summary is not None:
             result['summary'] = self.summary
+        result['uiConfigs'] = []
+        if self.ui_configs is not None:
+            for k in self.ui_configs:
+                result['uiConfigs'].append(k.to_map() if k else None)
         if self.update_time is not None:
             result['updateTime'] = self.update_time
         return result
@@ -1785,6 +1876,11 @@ class CreateEventResponseBody(TeaModel):
             self.start = temp_model.from_map(m['start'])
         if m.get('summary') is not None:
             self.summary = m.get('summary')
+        self.ui_configs = []
+        if m.get('uiConfigs') is not None:
+            for k in m.get('uiConfigs'):
+                temp_model = CreateEventResponseBodyUiConfigs()
+                self.ui_configs.append(temp_model.from_map(k))
         if m.get('updateTime') is not None:
             self.update_time = m.get('updateTime')
         return self

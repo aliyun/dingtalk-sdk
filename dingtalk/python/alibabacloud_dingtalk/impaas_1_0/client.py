@@ -1914,3 +1914,101 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkimpaas__1__0_models.UpdateGroupOwnerHeaders()
         return await self.update_group_owner_with_options_async(request, headers, runtime)
+
+    def upload_file_with_options(
+        self,
+        request: dingtalkimpaas__1__0_models.UploadFileRequest,
+        headers: dingtalkimpaas__1__0_models.UploadFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkimpaas__1__0_models.UploadFileResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.file_type):
+            body['fileType'] = request.file_type
+        if not UtilClient.is_unset(request.file_url):
+            body['fileUrl'] = request.file_url
+        if not UtilClient.is_unset(request.sender_uid):
+            body['senderUid'] = request.sender_uid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UploadFile',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/files/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkimpaas__1__0_models.UploadFileResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def upload_file_with_options_async(
+        self,
+        request: dingtalkimpaas__1__0_models.UploadFileRequest,
+        headers: dingtalkimpaas__1__0_models.UploadFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkimpaas__1__0_models.UploadFileResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.file_type):
+            body['fileType'] = request.file_type
+        if not UtilClient.is_unset(request.file_url):
+            body['fileUrl'] = request.file_url
+        if not UtilClient.is_unset(request.sender_uid):
+            body['senderUid'] = request.sender_uid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UploadFile',
+            version='impaas_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/impaas/interconnections/files/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkimpaas__1__0_models.UploadFileResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def upload_file(
+        self,
+        request: dingtalkimpaas__1__0_models.UploadFileRequest,
+    ) -> dingtalkimpaas__1__0_models.UploadFileResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.UploadFileHeaders()
+        return self.upload_file_with_options(request, headers, runtime)
+
+    async def upload_file_async(
+        self,
+        request: dingtalkimpaas__1__0_models.UploadFileRequest,
+    ) -> dingtalkimpaas__1__0_models.UploadFileResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkimpaas__1__0_models.UploadFileHeaders()
+        return await self.upload_file_with_options_async(request, headers, runtime)

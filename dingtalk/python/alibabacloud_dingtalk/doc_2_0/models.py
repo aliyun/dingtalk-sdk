@@ -1402,6 +1402,39 @@ class TeamVORelatedDeptInfo(TeaModel):
         return self
 
 
+class TeamVOShareScopeInfo(TeaModel):
+    def __init__(
+        self,
+        role_id: str = None,
+        scope: int = None,
+    ):
+        self.role_id = role_id
+        self.scope = scope
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role_id is not None:
+            result['roleId'] = self.role_id
+        if self.scope is not None:
+            result['scope'] = self.scope
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roleId') is not None:
+            self.role_id = m.get('roleId')
+        if m.get('scope') is not None:
+            self.scope = m.get('scope')
+        return self
+
+
 class TeamVOUpdater(TeaModel):
     def __init__(
         self,
@@ -1473,6 +1506,7 @@ class TeamVO(TeaModel):
         id: str = None,
         name: str = None,
         related_dept_info: TeamVORelatedDeptInfo = None,
+        share_scope_info: TeamVOShareScopeInfo = None,
         status: int = None,
         type: int = None,
         updated_time: int = None,
@@ -1488,6 +1522,7 @@ class TeamVO(TeaModel):
         self.id = id
         self.name = name
         self.related_dept_info = related_dept_info
+        self.share_scope_info = share_scope_info
         self.status = status
         self.type = type
         self.updated_time = updated_time
@@ -1500,6 +1535,8 @@ class TeamVO(TeaModel):
             self.creator.validate()
         if self.related_dept_info:
             self.related_dept_info.validate()
+        if self.share_scope_info:
+            self.share_scope_info.validate()
         if self.updater:
             self.updater.validate()
         if self.visit_info:
@@ -1527,6 +1564,8 @@ class TeamVO(TeaModel):
             result['name'] = self.name
         if self.related_dept_info is not None:
             result['relatedDeptInfo'] = self.related_dept_info.to_map()
+        if self.share_scope_info is not None:
+            result['shareScopeInfo'] = self.share_scope_info.to_map()
         if self.status is not None:
             result['status'] = self.status
         if self.type is not None:
@@ -1561,6 +1600,9 @@ class TeamVO(TeaModel):
         if m.get('relatedDeptInfo') is not None:
             temp_model = TeamVORelatedDeptInfo()
             self.related_dept_info = temp_model.from_map(m['relatedDeptInfo'])
+        if m.get('shareScopeInfo') is not None:
+            temp_model = TeamVOShareScopeInfo()
+            self.share_scope_info = temp_model.from_map(m['shareScopeInfo'])
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('type') is not None:
