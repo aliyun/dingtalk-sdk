@@ -1070,7 +1070,7 @@ export class GetAdjustmentsRequest extends $tea.Model {
 }
 
 export class GetAdjustmentsResponseBody extends $tea.Model {
-  result?: GetAdjustmentsResponseBodyResult[];
+  result?: GetAdjustmentsResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
       result: 'result',
@@ -1079,7 +1079,7 @@ export class GetAdjustmentsResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      result: { 'type': 'array', 'itemType': GetAdjustmentsResponseBodyResult },
+      result: GetAdjustmentsResponseBodyResult,
     };
   }
 
@@ -1764,7 +1764,7 @@ export class GetSimpleOvertimeSettingRequest extends $tea.Model {
 }
 
 export class GetSimpleOvertimeSettingResponseBody extends $tea.Model {
-  result?: GetSimpleOvertimeSettingResponseBodyResult[];
+  result?: GetSimpleOvertimeSettingResponseBodyResult;
   static names(): { [key: string]: string } {
     return {
       result: 'result',
@@ -1773,7 +1773,7 @@ export class GetSimpleOvertimeSettingResponseBody extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      result: { 'type': 'array', 'itemType': GetSimpleOvertimeSettingResponseBodyResult },
+      result: GetSimpleOvertimeSettingResponseBodyResult,
     };
   }
 

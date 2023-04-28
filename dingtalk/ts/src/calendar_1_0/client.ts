@@ -439,6 +439,7 @@ export class CreateEventRequest extends $tea.Model {
   reminders?: CreateEventRequestReminders[];
   start?: CreateEventRequestStart;
   summary?: string;
+  uiConfigs?: CreateEventRequestUiConfigs[];
   static names(): { [key: string]: string } {
     return {
       attendees: 'attendees',
@@ -452,6 +453,7 @@ export class CreateEventRequest extends $tea.Model {
       reminders: 'reminders',
       start: 'start',
       summary: 'summary',
+      uiConfigs: 'uiConfigs',
     };
   }
 
@@ -468,6 +470,7 @@ export class CreateEventRequest extends $tea.Model {
       reminders: { 'type': 'array', 'itemType': CreateEventRequestReminders },
       start: CreateEventRequestStart,
       summary: 'string',
+      uiConfigs: { 'type': 'array', 'itemType': CreateEventRequestUiConfigs },
     };
   }
 
@@ -490,6 +493,7 @@ export class CreateEventResponseBody extends $tea.Model {
   reminders?: CreateEventResponseBodyReminders[];
   start?: CreateEventResponseBodyStart;
   summary?: string;
+  uiConfigs?: CreateEventResponseBodyUiConfigs[];
   updateTime?: string;
   static names(): { [key: string]: string } {
     return {
@@ -506,6 +510,7 @@ export class CreateEventResponseBody extends $tea.Model {
       reminders: 'reminders',
       start: 'start',
       summary: 'summary',
+      uiConfigs: 'uiConfigs',
       updateTime: 'updateTime',
     };
   }
@@ -525,6 +530,7 @@ export class CreateEventResponseBody extends $tea.Model {
       reminders: { 'type': 'array', 'itemType': CreateEventResponseBodyReminders },
       start: CreateEventResponseBodyStart,
       summary: 'string',
+      uiConfigs: { 'type': 'array', 'itemType': CreateEventResponseBodyUiConfigs },
       updateTime: 'string',
     };
   }
@@ -3116,6 +3122,28 @@ export class CreateEventRequestStart extends $tea.Model {
   }
 }
 
+export class CreateEventRequestUiConfigs extends $tea.Model {
+  uiName?: string;
+  uiStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      uiName: 'uiName',
+      uiStatus: 'uiStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      uiName: 'string',
+      uiStatus: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateEventResponseBodyAttendees extends $tea.Model {
   displayName?: string;
   id?: string;
@@ -3364,6 +3392,28 @@ export class CreateEventResponseBodyStart extends $tea.Model {
       date: 'string',
       dateTime: 'string',
       timeZone: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateEventResponseBodyUiConfigs extends $tea.Model {
+  uiName?: string;
+  uiStatus?: string;
+  static names(): { [key: string]: string } {
+    return {
+      uiName: 'uiName',
+      uiStatus: 'uiStatus',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      uiName: 'string',
+      uiStatus: 'string',
     };
   }
 
@@ -6513,6 +6563,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.summary)) {
       body["summary"] = request.summary;
+    }
+
+    if (!Util.isUnset(request.uiConfigs)) {
+      body["uiConfigs"] = request.uiConfigs;
     }
 
     let realHeaders : {[key: string ]: string} = { };

@@ -364,6 +364,7 @@ export class TeamVO extends $tea.Model {
   id?: string;
   name?: string;
   relatedDeptInfo?: TeamVORelatedDeptInfo;
+  shareScopeInfo?: TeamVOShareScopeInfo;
   status?: number;
   type?: number;
   updatedTime?: number;
@@ -380,6 +381,7 @@ export class TeamVO extends $tea.Model {
       id: 'id',
       name: 'name',
       relatedDeptInfo: 'relatedDeptInfo',
+      shareScopeInfo: 'shareScopeInfo',
       status: 'status',
       type: 'type',
       updatedTime: 'updatedTime',
@@ -399,6 +401,7 @@ export class TeamVO extends $tea.Model {
       id: 'string',
       name: 'string',
       relatedDeptInfo: TeamVORelatedDeptInfo,
+      shareScopeInfo: TeamVOShareScopeInfo,
       status: 'number',
       type: 'number',
       updatedTime: 'number',
@@ -4023,6 +4026,28 @@ export class TeamVORelatedDeptInfo extends $tea.Model {
     return {
       deptId: 'string',
       deptName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class TeamVOShareScopeInfo extends $tea.Model {
+  roleId?: string;
+  scope?: number;
+  static names(): { [key: string]: string } {
+    return {
+      roleId: 'roleId',
+      scope: 'scope',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      roleId: 'string',
+      scope: 'number',
     };
   }
 

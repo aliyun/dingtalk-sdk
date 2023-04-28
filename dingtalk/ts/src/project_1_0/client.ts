@@ -3425,7 +3425,7 @@ export class SearchUserTaskRequest extends $tea.Model {
 export class SearchUserTaskResponseBody extends $tea.Model {
   nextToken?: string;
   requestId?: string;
-  result?: string[];
+  result?: SearchUserTaskResponseBodyResult[];
   totalSize?: number;
   static names(): { [key: string]: string } {
     return {
@@ -3440,7 +3440,7 @@ export class SearchUserTaskResponseBody extends $tea.Model {
     return {
       nextToken: 'string',
       requestId: 'string',
-      result: { 'type': 'array', 'itemType': 'string' },
+      result: { 'type': 'array', 'itemType': SearchUserTaskResponseBodyResult },
       totalSize: 'number',
     };
   }
@@ -4968,16 +4968,16 @@ export class UpdateTaskStageHeaders extends $tea.Model {
 }
 
 export class UpdateTaskStageRequest extends $tea.Model {
-  stageId?: string;
+  taskStageId?: string;
   static names(): { [key: string]: string } {
     return {
-      stageId: 'stageId',
+      taskStageId: 'taskStageId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      stageId: 'string',
+      taskStageId: 'string',
     };
   }
 
@@ -7122,7 +7122,7 @@ export class SearchTaskListResponseBodyResult extends $tea.Model {
   creatorId?: string;
   description?: string;
   projectId?: string;
-  taskId?: string;
+  taskListId?: string;
   title?: string;
   updated?: string;
   static names(): { [key: string]: string } {
@@ -7131,7 +7131,7 @@ export class SearchTaskListResponseBodyResult extends $tea.Model {
       creatorId: 'creatorId',
       description: 'description',
       projectId: 'projectId',
-      taskId: 'taskId',
+      taskListId: 'taskListId',
       title: 'title',
       updated: 'updated',
     };
@@ -7143,7 +7143,7 @@ export class SearchTaskListResponseBodyResult extends $tea.Model {
       creatorId: 'string',
       description: 'string',
       projectId: 'string',
-      taskId: 'string',
+      taskListId: 'string',
       title: 'string',
       updated: 'string',
     };
@@ -7195,6 +7195,159 @@ export class SearchTaskflowStatusResponseBodyResult extends $tea.Model {
       taskflowId: 'string',
       taskflowStatusId: 'string',
       updated: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchUserTaskResponseBodyResultCustomfieldsValue extends $tea.Model {
+  fieldvalueId?: string;
+  metaString?: string;
+  title?: string;
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      fieldvalueId: 'fieldvalueId',
+      metaString: 'metaString',
+      title: 'title',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fieldvalueId: 'string',
+      metaString: 'string',
+      title: 'string',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchUserTaskResponseBodyResultCustomfields extends $tea.Model {
+  customfieldId?: string;
+  type?: string;
+  value?: SearchUserTaskResponseBodyResultCustomfieldsValue[];
+  static names(): { [key: string]: string } {
+    return {
+      customfieldId: 'customfieldId',
+      type: 'type',
+      value: 'value',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      customfieldId: 'string',
+      type: 'string',
+      value: { 'type': 'array', 'itemType': SearchUserTaskResponseBodyResultCustomfieldsValue },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SearchUserTaskResponseBodyResult extends $tea.Model {
+  accomplishTime?: string;
+  ancestorIds?: string[];
+  content?: string;
+  created?: string;
+  creatorId?: string;
+  customfields?: SearchUserTaskResponseBodyResultCustomfields[];
+  dueDate?: string;
+  executorId?: string;
+  involveMembers?: string[];
+  isArchived?: boolean;
+  isDone?: boolean;
+  note?: string;
+  parentTaskId?: string;
+  priority?: number;
+  projectId?: string;
+  recurrence?: string[];
+  sfcId?: string;
+  sprintId?: string;
+  startDate?: string;
+  storyPoint?: string;
+  tagIds?: string[];
+  taskId?: string;
+  taskListId?: string;
+  taskflowstatusId?: string;
+  taskstageId?: string;
+  uniqueId?: string;
+  updated?: string;
+  visible?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accomplishTime: 'accomplishTime',
+      ancestorIds: 'ancestorIds',
+      content: 'content',
+      created: 'created',
+      creatorId: 'creatorId',
+      customfields: 'customfields',
+      dueDate: 'dueDate',
+      executorId: 'executorId',
+      involveMembers: 'involveMembers',
+      isArchived: 'isArchived',
+      isDone: 'isDone',
+      note: 'note',
+      parentTaskId: 'parentTaskId',
+      priority: 'priority',
+      projectId: 'projectId',
+      recurrence: 'recurrence',
+      sfcId: 'sfcId',
+      sprintId: 'sprintId',
+      startDate: 'startDate',
+      storyPoint: 'storyPoint',
+      tagIds: 'tagIds',
+      taskId: 'taskId',
+      taskListId: 'taskListId',
+      taskflowstatusId: 'taskflowstatusId',
+      taskstageId: 'taskstageId',
+      uniqueId: 'uniqueId',
+      updated: 'updated',
+      visible: 'visible',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accomplishTime: 'string',
+      ancestorIds: { 'type': 'array', 'itemType': 'string' },
+      content: 'string',
+      created: 'string',
+      creatorId: 'string',
+      customfields: { 'type': 'array', 'itemType': SearchUserTaskResponseBodyResultCustomfields },
+      dueDate: 'string',
+      executorId: 'string',
+      involveMembers: { 'type': 'array', 'itemType': 'string' },
+      isArchived: 'boolean',
+      isDone: 'boolean',
+      note: 'string',
+      parentTaskId: 'string',
+      priority: 'number',
+      projectId: 'string',
+      recurrence: { 'type': 'array', 'itemType': 'string' },
+      sfcId: 'string',
+      sprintId: 'string',
+      startDate: 'string',
+      storyPoint: 'string',
+      tagIds: { 'type': 'array', 'itemType': 'string' },
+      taskId: 'string',
+      taskListId: 'string',
+      taskflowstatusId: 'string',
+      taskstageId: 'string',
+      uniqueId: 'string',
+      updated: 'string',
+      visible: 'string',
     };
   }
 
@@ -10489,8 +10642,8 @@ export default class Client extends OpenApi {
   async updateTaskStageWithOptions(userId: string, taskId: string, request: UpdateTaskStageRequest, headers: UpdateTaskStageHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateTaskStageResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.stageId)) {
-      body["stageId"] = request.stageId;
+    if (!Util.isUnset(request.taskStageId)) {
+      body["taskStageId"] = request.taskStageId;
     }
 
     let realHeaders : {[key: string ]: string} = { };

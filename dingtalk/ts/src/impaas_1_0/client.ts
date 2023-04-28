@@ -1708,6 +1708,100 @@ export class UpdateGroupOwnerResponse extends $tea.Model {
   }
 }
 
+export class UploadFileHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadFileRequest extends $tea.Model {
+  fileName?: string;
+  fileType?: string;
+  fileUrl?: string;
+  senderUid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileName: 'fileName',
+      fileType: 'fileType',
+      fileUrl: 'fileUrl',
+      senderUid: 'senderUid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileName: 'string',
+      fileType: 'string',
+      fileUrl: 'string',
+      senderUid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadFileResponseBody extends $tea.Model {
+  mediaId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mediaId: 'mediaId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mediaId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadFileResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: UploadFileResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UploadFileResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddGroupMembersRequestMembers extends $tea.Model {
   nick?: string;
   uid?: string;
@@ -2831,6 +2925,58 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateGroupOwnerHeaders({ });
     return await this.updateGroupOwnerWithOptions(request, headers, runtime);
+  }
+
+  async uploadFileWithOptions(request: UploadFileRequest, headers: UploadFileHeaders, runtime: $Util.RuntimeOptions): Promise<UploadFileResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.fileName)) {
+      body["fileName"] = request.fileName;
+    }
+
+    if (!Util.isUnset(request.fileType)) {
+      body["fileType"] = request.fileType;
+    }
+
+    if (!Util.isUnset(request.fileUrl)) {
+      body["fileUrl"] = request.fileUrl;
+    }
+
+    if (!Util.isUnset(request.senderUid)) {
+      body["senderUid"] = request.senderUid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UploadFile",
+      version: "impaas_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/impaas/interconnections/files/upload`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UploadFileResponse>(await this.execute(params, req, runtime), new UploadFileResponse({}));
+  }
+
+  async uploadFile(request: UploadFileRequest): Promise<UploadFileResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UploadFileHeaders({ });
+    return await this.uploadFileWithOptions(request, headers, runtime);
   }
 
 }
