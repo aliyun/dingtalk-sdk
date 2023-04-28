@@ -28,6 +28,9 @@ public class TeamVO extends TeaModel {
     @NameInMap("relatedDeptInfo")
     public TeamVORelatedDeptInfo relatedDeptInfo;
 
+    @NameInMap("shareScopeInfo")
+    public TeamVOShareScopeInfo shareScopeInfo;
+
     @NameInMap("status")
     public Integer status;
 
@@ -113,6 +116,14 @@ public class TeamVO extends TeaModel {
     }
     public TeamVORelatedDeptInfo getRelatedDeptInfo() {
         return this.relatedDeptInfo;
+    }
+
+    public TeamVO setShareScopeInfo(TeamVOShareScopeInfo shareScopeInfo) {
+        this.shareScopeInfo = shareScopeInfo;
+        return this;
+    }
+    public TeamVOShareScopeInfo getShareScopeInfo() {
+        return this.shareScopeInfo;
     }
 
     public TeamVO setStatus(Integer status) {
@@ -219,6 +230,36 @@ public class TeamVO extends TeaModel {
         }
         public String getDeptName() {
             return this.deptName;
+        }
+
+    }
+
+    public static class TeamVOShareScopeInfo extends TeaModel {
+        @NameInMap("roleId")
+        public String roleId;
+
+        @NameInMap("scope")
+        public Integer scope;
+
+        public static TeamVOShareScopeInfo build(java.util.Map<String, ?> map) throws Exception {
+            TeamVOShareScopeInfo self = new TeamVOShareScopeInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public TeamVOShareScopeInfo setRoleId(String roleId) {
+            this.roleId = roleId;
+            return this;
+        }
+        public String getRoleId() {
+            return this.roleId;
+        }
+
+        public TeamVOShareScopeInfo setScope(Integer scope) {
+            this.scope = scope;
+            return this;
+        }
+        public Integer getScope() {
+            return this.scope;
         }
 
     }

@@ -55,8 +55,8 @@ public class SearchTaskListResponseBody extends TeaModel {
         @NameInMap("projectId")
         public String projectId;
 
-        @NameInMap("taskId")
-        public String taskId;
+        @NameInMap("taskListId")
+        public String taskListId;
 
         @NameInMap("title")
         public String title;
@@ -101,12 +101,12 @@ public class SearchTaskListResponseBody extends TeaModel {
             return this.projectId;
         }
 
-        public SearchTaskListResponseBodyResult setTaskId(String taskId) {
-            this.taskId = taskId;
+        public SearchTaskListResponseBodyResult setTaskListId(String taskListId) {
+            this.taskListId = taskListId;
             return this;
         }
-        public String getTaskId() {
-            return this.taskId;
+        public String getTaskListId() {
+            return this.taskListId;
         }
 
         public SearchTaskListResponseBodyResult setTitle(String title) {

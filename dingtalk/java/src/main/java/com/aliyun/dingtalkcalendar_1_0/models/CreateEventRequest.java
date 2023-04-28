@@ -37,6 +37,9 @@ public class CreateEventRequest extends TeaModel {
     @NameInMap("summary")
     public String summary;
 
+    @NameInMap("uiConfigs")
+    public java.util.List<CreateEventRequestUiConfigs> uiConfigs;
+
     public static CreateEventRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateEventRequest self = new CreateEventRequest();
         return TeaModel.build(map, self);
@@ -128,6 +131,14 @@ public class CreateEventRequest extends TeaModel {
     }
     public String getSummary() {
         return this.summary;
+    }
+
+    public CreateEventRequest setUiConfigs(java.util.List<CreateEventRequestUiConfigs> uiConfigs) {
+        this.uiConfigs = uiConfigs;
+        return this;
+    }
+    public java.util.List<CreateEventRequestUiConfigs> getUiConfigs() {
+        return this.uiConfigs;
     }
 
     public static class CreateEventRequestAttendees extends TeaModel {
@@ -440,6 +451,36 @@ public class CreateEventRequest extends TeaModel {
         }
         public String getTimeZone() {
             return this.timeZone;
+        }
+
+    }
+
+    public static class CreateEventRequestUiConfigs extends TeaModel {
+        @NameInMap("uiName")
+        public String uiName;
+
+        @NameInMap("uiStatus")
+        public String uiStatus;
+
+        public static CreateEventRequestUiConfigs build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventRequestUiConfigs self = new CreateEventRequestUiConfigs();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateEventRequestUiConfigs setUiName(String uiName) {
+            this.uiName = uiName;
+            return this;
+        }
+        public String getUiName() {
+            return this.uiName;
+        }
+
+        public CreateEventRequestUiConfigs setUiStatus(String uiStatus) {
+            this.uiStatus = uiStatus;
+            return this;
+        }
+        public String getUiStatus() {
+            return this.uiStatus;
         }
 
     }

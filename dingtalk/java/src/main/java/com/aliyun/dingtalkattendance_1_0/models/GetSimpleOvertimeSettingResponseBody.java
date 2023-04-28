@@ -5,18 +5,18 @@ import com.aliyun.tea.*;
 
 public class GetSimpleOvertimeSettingResponseBody extends TeaModel {
     @NameInMap("result")
-    public java.util.List<GetSimpleOvertimeSettingResponseBodyResult> result;
+    public GetSimpleOvertimeSettingResponseBodyResult result;
 
     public static GetSimpleOvertimeSettingResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetSimpleOvertimeSettingResponseBody self = new GetSimpleOvertimeSettingResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetSimpleOvertimeSettingResponseBody setResult(java.util.List<GetSimpleOvertimeSettingResponseBodyResult> result) {
+    public GetSimpleOvertimeSettingResponseBody setResult(GetSimpleOvertimeSettingResponseBodyResult result) {
         this.result = result;
         return this;
     }
-    public java.util.List<GetSimpleOvertimeSettingResponseBodyResult> getResult() {
+    public GetSimpleOvertimeSettingResponseBodyResult getResult() {
         return this.result;
     }
 

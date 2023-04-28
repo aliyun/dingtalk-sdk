@@ -43,6 +43,9 @@ public class CreateEventResponseBody extends TeaModel {
     @NameInMap("summary")
     public String summary;
 
+    @NameInMap("uiConfigs")
+    public java.util.List<CreateEventResponseBodyUiConfigs> uiConfigs;
+
     @NameInMap("updateTime")
     public String updateTime;
 
@@ -153,6 +156,14 @@ public class CreateEventResponseBody extends TeaModel {
     }
     public String getSummary() {
         return this.summary;
+    }
+
+    public CreateEventResponseBody setUiConfigs(java.util.List<CreateEventResponseBodyUiConfigs> uiConfigs) {
+        this.uiConfigs = uiConfigs;
+        return this;
+    }
+    public java.util.List<CreateEventResponseBodyUiConfigs> getUiConfigs() {
+        return this.uiConfigs;
     }
 
     public CreateEventResponseBody setUpdateTime(String updateTime) {
@@ -591,6 +602,36 @@ public class CreateEventResponseBody extends TeaModel {
         }
         public String getTimeZone() {
             return this.timeZone;
+        }
+
+    }
+
+    public static class CreateEventResponseBodyUiConfigs extends TeaModel {
+        @NameInMap("uiName")
+        public String uiName;
+
+        @NameInMap("uiStatus")
+        public String uiStatus;
+
+        public static CreateEventResponseBodyUiConfigs build(java.util.Map<String, ?> map) throws Exception {
+            CreateEventResponseBodyUiConfigs self = new CreateEventResponseBodyUiConfigs();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateEventResponseBodyUiConfigs setUiName(String uiName) {
+            this.uiName = uiName;
+            return this;
+        }
+        public String getUiName() {
+            return this.uiName;
+        }
+
+        public CreateEventResponseBodyUiConfigs setUiStatus(String uiStatus) {
+            this.uiStatus = uiStatus;
+            return this;
+        }
+        public String getUiStatus() {
+            return this.uiStatus;
         }
 
     }

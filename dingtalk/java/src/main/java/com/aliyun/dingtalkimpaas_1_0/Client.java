@@ -1030,4 +1030,56 @@ public class Client extends com.aliyun.teaopenapi.Client {
         UpdateGroupOwnerHeaders headers = new UpdateGroupOwnerHeaders();
         return this.updateGroupOwnerWithOptions(request, headers, runtime);
     }
+
+    public UploadFileResponse uploadFileWithOptions(UploadFileRequest request, UploadFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.fileName)) {
+            body.put("fileName", request.fileName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileType)) {
+            body.put("fileType", request.fileType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.fileUrl)) {
+            body.put("fileUrl", request.fileUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.senderUid)) {
+            body.put("senderUid", request.senderUid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UploadFile"),
+            new TeaPair("version", "impaas_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/impaas/interconnections/files/upload"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UploadFileResponse());
+    }
+
+    public UploadFileResponse uploadFile(UploadFileRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UploadFileHeaders headers = new UploadFileHeaders();
+        return this.uploadFileWithOptions(request, headers, runtime);
+    }
 }

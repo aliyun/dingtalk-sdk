@@ -5,18 +5,18 @@ import com.aliyun.tea.*;
 
 public class GetAdjustmentsResponseBody extends TeaModel {
     @NameInMap("result")
-    public java.util.List<GetAdjustmentsResponseBodyResult> result;
+    public GetAdjustmentsResponseBodyResult result;
 
     public static GetAdjustmentsResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetAdjustmentsResponseBody self = new GetAdjustmentsResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetAdjustmentsResponseBody setResult(java.util.List<GetAdjustmentsResponseBodyResult> result) {
+    public GetAdjustmentsResponseBody setResult(GetAdjustmentsResponseBodyResult result) {
         this.result = result;
         return this;
     }
-    public java.util.List<GetAdjustmentsResponseBodyResult> getResult() {
+    public GetAdjustmentsResponseBodyResult getResult() {
         return this.result;
     }
 
