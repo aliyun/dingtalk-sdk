@@ -7,6 +7,9 @@ public class CreateCardRequest extends TeaModel {
     @NameInMap("callbackRouteKey")
     public String callbackRouteKey;
 
+    @NameInMap("callbackType")
+    public String callbackType;
+
     @NameInMap("cardData")
     public CreateCardRequestCardData cardData;
 
@@ -51,6 +54,14 @@ public class CreateCardRequest extends TeaModel {
     }
     public String getCallbackRouteKey() {
         return this.callbackRouteKey;
+    }
+
+    public CreateCardRequest setCallbackType(String callbackType) {
+        this.callbackType = callbackType;
+        return this;
+    }
+    public String getCallbackType() {
+        return this.callbackType;
     }
 
     public CreateCardRequest setCardData(CreateCardRequestCardData cardData) {

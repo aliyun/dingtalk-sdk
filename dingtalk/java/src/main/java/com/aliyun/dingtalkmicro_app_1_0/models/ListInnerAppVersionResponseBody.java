@@ -33,6 +33,9 @@ public class ListInnerAppVersionResponseBody extends TeaModel {
         @NameInMap("createTime")
         public String createTime;
 
+        @NameInMap("entranceLink")
+        public String entranceLink;
+
         @NameInMap("miniAppId")
         public String miniAppId;
 
@@ -77,6 +80,14 @@ public class ListInnerAppVersionResponseBody extends TeaModel {
         }
         public String getCreateTime() {
             return this.createTime;
+        }
+
+        public ListInnerAppVersionResponseBodyAppVersionList setEntranceLink(String entranceLink) {
+            this.entranceLink = entranceLink;
+            return this;
+        }
+        public String getEntranceLink() {
+            return this.entranceLink;
         }
 
         public ListInnerAppVersionResponseBodyAppVersionList setMiniAppId(String miniAppId) {
