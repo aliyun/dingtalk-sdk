@@ -22,6 +22,13 @@ class CreateCardRequest extends Model
     public $callbackRouteKey;
 
     /**
+     * @example STREAM
+     *
+     * @var string
+     */
+    public $callbackType;
+
+    /**
      * @var cardData
      */
     public $cardData;
@@ -83,6 +90,7 @@ class CreateCardRequest extends Model
     public $userIdType;
     protected $_name = [
         'callbackRouteKey'      => 'callbackRouteKey',
+        'callbackType'          => 'callbackType',
         'cardData'              => 'cardData',
         'cardTemplateId'        => 'cardTemplateId',
         'coFeedOpenSpaceModel'  => 'coFeedOpenSpaceModel',
@@ -105,6 +113,9 @@ class CreateCardRequest extends Model
         $res = [];
         if (null !== $this->callbackRouteKey) {
             $res['callbackRouteKey'] = $this->callbackRouteKey;
+        }
+        if (null !== $this->callbackType) {
+            $res['callbackType'] = $this->callbackType;
         }
         if (null !== $this->cardData) {
             $res['cardData'] = null !== $this->cardData ? $this->cardData->toMap() : null;
@@ -158,6 +169,9 @@ class CreateCardRequest extends Model
         $model = new self();
         if (isset($map['callbackRouteKey'])) {
             $model->callbackRouteKey = $map['callbackRouteKey'];
+        }
+        if (isset($map['callbackType'])) {
+            $model->callbackType = $map['callbackType'];
         }
         if (isset($map['cardData'])) {
             $model->cardData = cardData::fromMap($map['cardData']);

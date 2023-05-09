@@ -142,6 +142,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetFieldsR
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialDatasetListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialFormDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialFormDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOfficialFormDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOnlineUserStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOnlineUserStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryOnlineUserStatisticalDataResponse;
@@ -2909,6 +2912,62 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryOfficialDatasetListHeaders([]);
 
         return $this->queryOfficialDatasetListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param QueryOfficialFormDataRequest $request
+     * @param QueryOfficialFormDataHeaders $headers
+     * @param RuntimeOptions               $runtime
+     *
+     * @return QueryOfficialFormDataResponse
+     */
+    public function queryOfficialFormDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryOfficialFormData',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/datas/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryOfficialFormDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param QueryOfficialFormDataRequest $request
+     *
+     * @return QueryOfficialFormDataResponse
+     */
+    public function queryOfficialFormData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOfficialFormDataHeaders([]);
+
+        return $this->queryOfficialFormDataWithOptions($request, $headers, $runtime);
     }
 
     /**

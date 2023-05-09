@@ -25,6 +25,13 @@ class CreateAndDeliverRequest extends Model
     public $callbackRouteKey;
 
     /**
+     * @example STREAM
+     *
+     * @var string
+     */
+    public $callbackType;
+
+    /**
      * @var cardData
      */
     public $cardData;
@@ -75,7 +82,7 @@ class CreateAndDeliverRequest extends Model
     public $openDynamicDataConfig;
 
     /**
-     * @example dtv1.card//im_group.cidp4Gh*******VCQ==;im_robot.manager****67;co_feed.manager****67;one_box.cidp4Gh*******VCQ==
+     * @example dtv1.card//im_group.cidp4Gh*******VCQ==;im_robot.manager****67;im_robot.staff****89;co_feed.manager****67;one_box.cidp4Gh*******VCQ==;
      *
      * @var string
      */
@@ -112,6 +119,7 @@ class CreateAndDeliverRequest extends Model
     public $userIdType;
     protected $_name = [
         'callbackRouteKey'        => 'callbackRouteKey',
+        'callbackType'            => 'callbackType',
         'cardData'                => 'cardData',
         'cardTemplateId'          => 'cardTemplateId',
         'coFeedOpenDeliverModel'  => 'coFeedOpenDeliverModel',
@@ -140,6 +148,9 @@ class CreateAndDeliverRequest extends Model
         $res = [];
         if (null !== $this->callbackRouteKey) {
             $res['callbackRouteKey'] = $this->callbackRouteKey;
+        }
+        if (null !== $this->callbackType) {
+            $res['callbackType'] = $this->callbackType;
         }
         if (null !== $this->cardData) {
             $res['cardData'] = null !== $this->cardData ? $this->cardData->toMap() : null;
@@ -211,6 +222,9 @@ class CreateAndDeliverRequest extends Model
         $model = new self();
         if (isset($map['callbackRouteKey'])) {
             $model->callbackRouteKey = $map['callbackRouteKey'];
+        }
+        if (isset($map['callbackType'])) {
+            $model->callbackType = $map['callbackType'];
         }
         if (isset($map['cardData'])) {
             $model->cardData = cardData::fromMap($map['cardData']);

@@ -39,6 +39,11 @@ class appVersionList extends Model
     /**
      * @var string
      */
+    public $entranceLink;
+
+    /**
+     * @var string
+     */
     public $miniAppId;
 
     /**
@@ -57,6 +62,7 @@ class appVersionList extends Model
         'appVersionId'   => 'appVersionId',
         'appVersionType' => 'appVersionType',
         'createTime'     => 'createTime',
+        'entranceLink'   => 'entranceLink',
         'miniAppId'      => 'miniAppId',
         'miniAppOnPc'    => 'miniAppOnPc',
         'modifyTime'     => 'modifyTime',
@@ -80,6 +86,9 @@ class appVersionList extends Model
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
+        }
+        if (null !== $this->entranceLink) {
+            $res['entranceLink'] = $this->entranceLink;
         }
         if (null !== $this->miniAppId) {
             $res['miniAppId'] = $this->miniAppId;
@@ -113,6 +122,9 @@ class appVersionList extends Model
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
+        }
+        if (isset($map['entranceLink'])) {
+            $model->entranceLink = $map['entranceLink'];
         }
         if (isset($map['miniAppId'])) {
             $model->miniAppId = $map['miniAppId'];
