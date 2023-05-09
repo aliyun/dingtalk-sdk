@@ -152,6 +152,7 @@ export class CreateAndDeliverHeaders extends $tea.Model {
 
 export class CreateAndDeliverRequest extends $tea.Model {
   callbackRouteKey?: string;
+  callbackType?: string;
   cardData?: CreateAndDeliverRequestCardData;
   cardTemplateId?: string;
   coFeedOpenDeliverModel?: CreateAndDeliverRequestCoFeedOpenDeliverModel;
@@ -172,6 +173,7 @@ export class CreateAndDeliverRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       callbackRouteKey: 'callbackRouteKey',
+      callbackType: 'callbackType',
       cardData: 'cardData',
       cardTemplateId: 'cardTemplateId',
       coFeedOpenDeliverModel: 'coFeedOpenDeliverModel',
@@ -195,6 +197,7 @@ export class CreateAndDeliverRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       callbackRouteKey: 'string',
+      callbackType: 'string',
       cardData: CreateAndDeliverRequestCardData,
       cardTemplateId: 'string',
       coFeedOpenDeliverModel: CreateAndDeliverRequestCoFeedOpenDeliverModel,
@@ -291,6 +294,7 @@ export class CreateCardHeaders extends $tea.Model {
 
 export class CreateCardRequest extends $tea.Model {
   callbackRouteKey?: string;
+  callbackType?: string;
   cardData?: CreateCardRequestCardData;
   cardTemplateId?: string;
   coFeedOpenSpaceModel?: CreateCardRequestCoFeedOpenSpaceModel;
@@ -305,6 +309,7 @@ export class CreateCardRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       callbackRouteKey: 'callbackRouteKey',
+      callbackType: 'callbackType',
       cardData: 'cardData',
       cardTemplateId: 'cardTemplateId',
       coFeedOpenSpaceModel: 'coFeedOpenSpaceModel',
@@ -322,6 +327,7 @@ export class CreateCardRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       callbackRouteKey: 'string',
+      callbackType: 'string',
       cardData: CreateCardRequestCardData,
       cardTemplateId: 'string',
       coFeedOpenSpaceModel: CreateCardRequestCoFeedOpenSpaceModel,
@@ -1874,6 +1880,10 @@ export default class Client extends OpenApi {
       body["callbackRouteKey"] = request.callbackRouteKey;
     }
 
+    if (!Util.isUnset(request.callbackType)) {
+      body["callbackType"] = request.callbackType;
+    }
+
     if (!Util.isUnset(request.cardData)) {
       body["cardData"] = request.cardData;
     }
@@ -1980,6 +1990,10 @@ export default class Client extends OpenApi {
     let body : {[key: string ]: any} = { };
     if (!Util.isUnset(request.callbackRouteKey)) {
       body["callbackRouteKey"] = request.callbackRouteKey;
+    }
+
+    if (!Util.isUnset(request.callbackType)) {
+      body["callbackType"] = request.callbackType;
     }
 
     if (!Util.isUnset(request.cardData)) {

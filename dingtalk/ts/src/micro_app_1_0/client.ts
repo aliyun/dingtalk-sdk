@@ -2973,6 +2973,7 @@ export class ListInnerAppVersionResponseBodyAppVersionList extends $tea.Model {
   appVersionId?: number;
   appVersionType?: number;
   createTime?: string;
+  entranceLink?: string;
   miniAppId?: string;
   miniAppOnPc?: boolean;
   modifyTime?: string;
@@ -2982,6 +2983,7 @@ export class ListInnerAppVersionResponseBodyAppVersionList extends $tea.Model {
       appVersionId: 'appVersionId',
       appVersionType: 'appVersionType',
       createTime: 'createTime',
+      entranceLink: 'entranceLink',
       miniAppId: 'miniAppId',
       miniAppOnPc: 'miniAppOnPc',
       modifyTime: 'modifyTime',
@@ -2994,6 +2996,7 @@ export class ListInnerAppVersionResponseBodyAppVersionList extends $tea.Model {
       appVersionId: 'number',
       appVersionType: 'number',
       createTime: 'string',
+      entranceLink: 'string',
       miniAppId: 'string',
       miniAppOnPc: 'boolean',
       modifyTime: 'string',

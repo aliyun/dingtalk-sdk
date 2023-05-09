@@ -77,6 +77,7 @@ import * as trip_1_0 from './trip_1_0/client';
 import * as village_1_0 from './village_1_0/client';
 import * as watt_1_0 from './watt_1_0/client';
 import * as wiki_1_0 from './wiki_1_0/client';
+import * as wiki_2_0 from './wiki_2_0/client';
 import * as wms_1_0 from './wms_1_0/client';
 import * as workbench_1_0 from './workbench_1_0/client';
 import * as workflow_1_0 from './workflow_1_0/client';
@@ -163,6 +164,7 @@ export = {
   village_1_0,
   watt_1_0,
   wiki_1_0,
+  wiki_2_0,
   wms_1_0,
   workbench_1_0,
   workflow_1_0,
