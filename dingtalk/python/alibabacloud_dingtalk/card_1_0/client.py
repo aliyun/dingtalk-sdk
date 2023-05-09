@@ -141,6 +141,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
             body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.callback_type):
+            body['callbackType'] = request.callback_type
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
         if not UtilClient.is_unset(request.card_template_id):
@@ -210,6 +212,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
             body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.callback_type):
+            body['callbackType'] = request.callback_type
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
         if not UtilClient.is_unset(request.card_template_id):
@@ -295,6 +299,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
             body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.callback_type):
+            body['callbackType'] = request.callback_type
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
         if not UtilClient.is_unset(request.card_template_id):
@@ -352,6 +358,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.callback_route_key):
             body['callbackRouteKey'] = request.callback_route_key
+        if not UtilClient.is_unset(request.callback_type):
+            body['callbackType'] = request.callback_type
         if not UtilClient.is_unset(request.card_data):
             body['cardData'] = request.card_data
         if not UtilClient.is_unset(request.card_template_id):

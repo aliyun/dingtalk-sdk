@@ -1149,6 +1149,7 @@ class CreateAndDeliverRequest(TeaModel):
     def __init__(
         self,
         callback_route_key: str = None,
+        callback_type: str = None,
         card_data: CreateAndDeliverRequestCardData = None,
         card_template_id: str = None,
         co_feed_open_deliver_model: CreateAndDeliverRequestCoFeedOpenDeliverModel = None,
@@ -1168,6 +1169,7 @@ class CreateAndDeliverRequest(TeaModel):
         user_id_type: int = None,
     ):
         self.callback_route_key = callback_route_key
+        self.callback_type = callback_type
         self.card_data = card_data
         self.card_template_id = card_template_id
         self.co_feed_open_deliver_model = co_feed_open_deliver_model
@@ -1222,6 +1224,8 @@ class CreateAndDeliverRequest(TeaModel):
         result = dict()
         if self.callback_route_key is not None:
             result['callbackRouteKey'] = self.callback_route_key
+        if self.callback_type is not None:
+            result['callbackType'] = self.callback_type
         if self.card_data is not None:
             result['cardData'] = self.card_data.to_map()
         if self.card_template_id is not None:
@@ -1264,6 +1268,8 @@ class CreateAndDeliverRequest(TeaModel):
         m = m or dict()
         if m.get('callbackRouteKey') is not None:
             self.callback_route_key = m.get('callbackRouteKey')
+        if m.get('callbackType') is not None:
+            self.callback_type = m.get('callbackType')
         if m.get('cardData') is not None:
             temp_model = CreateAndDeliverRequestCardData()
             self.card_data = temp_model.from_map(m['cardData'])
@@ -1957,6 +1963,7 @@ class CreateCardRequest(TeaModel):
     def __init__(
         self,
         callback_route_key: str = None,
+        callback_type: str = None,
         card_data: CreateCardRequestCardData = None,
         card_template_id: str = None,
         co_feed_open_space_model: CreateCardRequestCoFeedOpenSpaceModel = None,
@@ -1970,6 +1977,7 @@ class CreateCardRequest(TeaModel):
         user_id_type: int = None,
     ):
         self.callback_route_key = callback_route_key
+        self.callback_type = callback_type
         self.card_data = card_data
         self.card_template_id = card_template_id
         self.co_feed_open_space_model = co_feed_open_space_model
@@ -2008,6 +2016,8 @@ class CreateCardRequest(TeaModel):
         result = dict()
         if self.callback_route_key is not None:
             result['callbackRouteKey'] = self.callback_route_key
+        if self.callback_type is not None:
+            result['callbackType'] = self.callback_type
         if self.card_data is not None:
             result['cardData'] = self.card_data.to_map()
         if self.card_template_id is not None:
@@ -2038,6 +2048,8 @@ class CreateCardRequest(TeaModel):
         m = m or dict()
         if m.get('callbackRouteKey') is not None:
             self.callback_route_key = m.get('callbackRouteKey')
+        if m.get('callbackType') is not None:
+            self.callback_type = m.get('callbackType')
         if m.get('cardData') is not None:
             temp_model = CreateCardRequestCardData()
             self.card_data = temp_model.from_map(m['cardData'])

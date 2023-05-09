@@ -2861,6 +2861,7 @@ class ListInnerAppVersionResponseBodyAppVersionList(TeaModel):
         app_version_id: int = None,
         app_version_type: int = None,
         create_time: str = None,
+        entrance_link: str = None,
         mini_app_id: str = None,
         mini_app_on_pc: bool = None,
         modify_time: str = None,
@@ -2869,6 +2870,7 @@ class ListInnerAppVersionResponseBodyAppVersionList(TeaModel):
         self.app_version_id = app_version_id
         self.app_version_type = app_version_type
         self.create_time = create_time
+        self.entrance_link = entrance_link
         self.mini_app_id = mini_app_id
         self.mini_app_on_pc = mini_app_on_pc
         self.modify_time = modify_time
@@ -2890,6 +2892,8 @@ class ListInnerAppVersionResponseBodyAppVersionList(TeaModel):
             result['appVersionType'] = self.app_version_type
         if self.create_time is not None:
             result['createTime'] = self.create_time
+        if self.entrance_link is not None:
+            result['entranceLink'] = self.entrance_link
         if self.mini_app_id is not None:
             result['miniAppId'] = self.mini_app_id
         if self.mini_app_on_pc is not None:
@@ -2908,6 +2912,8 @@ class ListInnerAppVersionResponseBodyAppVersionList(TeaModel):
             self.app_version_type = m.get('appVersionType')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
+        if m.get('entranceLink') is not None:
+            self.entrance_link = m.get('entranceLink')
         if m.get('miniAppId') is not None:
             self.mini_app_id = m.get('miniAppId')
         if m.get('miniAppOnPc') is not None:

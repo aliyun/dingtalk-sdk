@@ -4203,6 +4203,96 @@ class Client(OpenApiClient):
         headers = dingtalkdatacenter__1__0_models.QueryOfficialDatasetListHeaders()
         return await self.query_official_dataset_list_with_options_async(request, headers, runtime)
 
+    def query_official_form_data_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialFormDataRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryOfficialFormDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialFormDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryOfficialFormData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/datas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryOfficialFormDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_official_form_data_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialFormDataRequest,
+        headers: dingtalkdatacenter__1__0_models.QueryOfficialFormDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialFormDataResponse:
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryOfficialFormData',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/datas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryOfficialFormDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_official_form_data(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialFormDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialFormDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialFormDataHeaders()
+        return self.query_official_form_data_with_options(request, headers, runtime)
+
+    async def query_official_form_data_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.QueryOfficialFormDataRequest,
+    ) -> dingtalkdatacenter__1__0_models.QueryOfficialFormDataResponse:
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryOfficialFormDataHeaders()
+        return await self.query_official_form_data_with_options_async(request, headers, runtime)
+
     def query_online_user_statistical_data_with_options(
         self,
         request: dingtalkdatacenter__1__0_models.QueryOnlineUserStatisticalDataRequest,
