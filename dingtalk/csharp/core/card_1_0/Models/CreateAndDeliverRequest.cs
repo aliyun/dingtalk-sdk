@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public string CallbackRouteKey { get; set; }
 
+        [NameInMap("callbackType")]
+        [Validation(Required=false)]
+        public string CallbackType { get; set; }
+
         [NameInMap("cardData")]
         [Validation(Required=false)]
         public CreateAndDeliverRequestCardData CardData { get; set; }

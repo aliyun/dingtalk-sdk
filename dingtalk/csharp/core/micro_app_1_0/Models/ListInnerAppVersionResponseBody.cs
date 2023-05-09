@@ -29,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             [Validation(Required=false)]
             public string CreateTime { get; set; }
 
+            [NameInMap("entranceLink")]
+            [Validation(Required=false)]
+            public string EntranceLink { get; set; }
+
             [NameInMap("miniAppId")]
             [Validation(Required=false)]
             public string MiniAppId { get; set; }
