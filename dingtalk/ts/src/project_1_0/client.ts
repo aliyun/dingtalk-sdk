@@ -646,24 +646,24 @@ export class CreateProjectCustomfieldStatusHeaders extends $tea.Model {
 }
 
 export class CreateProjectCustomfieldStatusRequest extends $tea.Model {
-  customfieldId?: string;
-  customfieldInstanceId?: string;
-  customfieldName?: string;
+  customFieldId?: string;
+  customFieldInstanceId?: string;
+  customFieldName?: string;
   value?: CreateProjectCustomfieldStatusRequestValue[];
   static names(): { [key: string]: string } {
     return {
-      customfieldId: 'customfieldId',
-      customfieldInstanceId: 'customfieldInstanceId',
-      customfieldName: 'customfieldName',
+      customFieldId: 'customFieldId',
+      customFieldInstanceId: 'customFieldInstanceId',
+      customFieldName: 'customFieldName',
       value: 'value',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      customfieldId: 'string',
-      customfieldInstanceId: 'string',
-      customfieldName: 'string',
+      customFieldId: 'string',
+      customFieldInstanceId: 'string',
+      customFieldName: 'string',
       value: { 'type': 'array', 'itemType': CreateProjectCustomfieldStatusRequestValue },
     };
   }
@@ -2437,12 +2437,10 @@ export class GetUserJoinedProjectRequest extends $tea.Model {
 export class GetUserJoinedProjectResponseBody extends $tea.Model {
   nextToken?: string;
   result?: string[];
-  totalCount?: number;
   static names(): { [key: string]: string } {
     return {
       nextToken: 'nextToken',
       result: 'result',
-      totalCount: 'totalCount',
     };
   }
 
@@ -2450,7 +2448,6 @@ export class GetUserJoinedProjectResponseBody extends $tea.Model {
     return {
       nextToken: 'string',
       result: { 'type': 'array', 'itemType': 'string' },
-      totalCount: 'number',
     };
   }
 
@@ -2704,15 +2701,15 @@ export class SeachTaskStageRequest extends $tea.Model {
   maxResults?: number;
   nextToken?: string;
   query?: string;
-  stageIds?: string;
   taskListId?: string;
+  taskStageIds?: string;
   static names(): { [key: string]: string } {
     return {
       maxResults: 'maxResults',
       nextToken: 'nextToken',
       query: 'query',
-      stageIds: 'stageIds',
       taskListId: 'taskListId',
+      taskStageIds: 'taskStageIds',
     };
   }
 
@@ -2721,8 +2718,8 @@ export class SeachTaskStageRequest extends $tea.Model {
       maxResults: 'number',
       nextToken: 'string',
       query: 'string',
-      stageIds: 'string',
       taskListId: 'string',
+      taskStageIds: 'string',
     };
   }
 
@@ -2734,12 +2731,10 @@ export class SeachTaskStageRequest extends $tea.Model {
 export class SeachTaskStageResponseBody extends $tea.Model {
   nextToken?: string;
   result?: SeachTaskStageResponseBodyResult[];
-  totalCount?: number;
   static names(): { [key: string]: string } {
     return {
       nextToken: 'nextToken',
       result: 'result',
-      totalCount: 'totalCount',
     };
   }
 
@@ -2747,7 +2742,6 @@ export class SeachTaskStageResponseBody extends $tea.Model {
     return {
       nextToken: 'string',
       result: { 'type': 'array', 'itemType': SeachTaskStageResponseBodyResult },
-      totalCount: 'number',
     };
   }
 
@@ -2804,34 +2798,31 @@ export class SearchOranizationCustomfieldHeaders extends $tea.Model {
 }
 
 export class SearchOranizationCustomfieldRequest extends $tea.Model {
-  customfieldIds?: string;
+  customFieldIds?: string;
   instanceIds?: string;
   maxResults?: number;
   nextToken?: string;
   projectIds?: string;
   query?: string;
-  scope?: string;
   static names(): { [key: string]: string } {
     return {
-      customfieldIds: 'customfieldIds',
+      customFieldIds: 'customFieldIds',
       instanceIds: 'instanceIds',
       maxResults: 'maxResults',
       nextToken: 'nextToken',
       projectIds: 'projectIds',
       query: 'query',
-      scope: 'scope',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      customfieldIds: 'string',
+      customFieldIds: 'string',
       instanceIds: 'string',
       maxResults: 'number',
       nextToken: 'string',
       projectIds: 'string',
       query: 'string',
-      scope: 'string',
     };
   }
 
@@ -2843,12 +2834,10 @@ export class SearchOranizationCustomfieldRequest extends $tea.Model {
 export class SearchOranizationCustomfieldResponseBody extends $tea.Model {
   nextToken?: string;
   result?: SearchOranizationCustomfieldResponseBodyResult[];
-  totalCount?: number;
   static names(): { [key: string]: string } {
     return {
       nextToken: 'nextToken',
       result: 'result',
-      totalCount: 'totalCount',
     };
   }
 
@@ -2856,7 +2845,6 @@ export class SearchOranizationCustomfieldResponseBody extends $tea.Model {
     return {
       nextToken: 'string',
       result: { 'type': 'array', 'itemType': SearchOranizationCustomfieldResponseBodyResult },
-      totalCount: 'number',
     };
   }
 
@@ -2913,34 +2901,31 @@ export class SearchProjectCustomfieldHeaders extends $tea.Model {
 }
 
 export class SearchProjectCustomfieldRequest extends $tea.Model {
-  customfieldIds?: string;
+  customFieldIds?: string;
   instanceIds?: string;
   maxResults?: number;
   nextToken?: string;
   query?: string;
-  scenariofieldconfigId?: string;
-  scope?: string;
+  scenarioFieldConfigId?: string;
   static names(): { [key: string]: string } {
     return {
-      customfieldIds: 'customfieldIds',
+      customFieldIds: 'customFieldIds',
       instanceIds: 'instanceIds',
       maxResults: 'maxResults',
       nextToken: 'nextToken',
       query: 'query',
-      scenariofieldconfigId: 'scenariofieldconfigId',
-      scope: 'scope',
+      scenarioFieldConfigId: 'scenarioFieldConfigId',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      customfieldIds: 'string',
+      customFieldIds: 'string',
       instanceIds: 'string',
       maxResults: 'number',
       nextToken: 'string',
       query: 'string',
-      scenariofieldconfigId: 'string',
-      scope: 'string',
+      scenarioFieldConfigId: 'string',
     };
   }
 
@@ -2952,12 +2937,10 @@ export class SearchProjectCustomfieldRequest extends $tea.Model {
 export class SearchProjectCustomfieldResponseBody extends $tea.Model {
   nextToken?: string;
   result?: SearchProjectCustomfieldResponseBodyResult[];
-  totalCount?: number;
   static names(): { [key: string]: string } {
     return {
       nextToken: 'nextToken',
       result: 'result',
-      totalCount: 'totalCount',
     };
   }
 
@@ -2965,7 +2948,6 @@ export class SearchProjectCustomfieldResponseBody extends $tea.Model {
     return {
       nextToken: 'string',
       result: { 'type': 'array', 'itemType': SearchProjectCustomfieldResponseBodyResult },
-      totalCount: 'number',
     };
   }
 
@@ -3231,12 +3213,10 @@ export class SearchTaskListRequest extends $tea.Model {
 export class SearchTaskListResponseBody extends $tea.Model {
   nextToken?: string;
   result?: SearchTaskListResponseBodyResult[];
-  totalCount?: number;
   static names(): { [key: string]: string } {
     return {
       nextToken: 'nextToken',
       result: 'result',
-      totalCount: 'totalCount',
     };
   }
 
@@ -3244,7 +3224,6 @@ export class SearchTaskListResponseBody extends $tea.Model {
     return {
       nextToken: 'string',
       result: { 'type': 'array', 'itemType': SearchTaskListResponseBodyResult },
-      totalCount: 'number',
     };
   }
 
@@ -3398,21 +3377,24 @@ export class SearchUserTaskHeaders extends $tea.Model {
 }
 
 export class SearchUserTaskRequest extends $tea.Model {
-  maxResults?: number;
+  maxResults?: string;
   nextToken?: string;
+  roleTypes?: string;
   tql?: string;
   static names(): { [key: string]: string } {
     return {
       maxResults: 'maxResults',
       nextToken: 'nextToken',
+      roleTypes: 'roleTypes',
       tql: 'tql',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      maxResults: 'number',
+      maxResults: 'string',
       nextToken: 'string',
+      roleTypes: 'string',
       tql: 'string',
     };
   }
@@ -3423,25 +3405,19 @@ export class SearchUserTaskRequest extends $tea.Model {
 }
 
 export class SearchUserTaskResponseBody extends $tea.Model {
-  nextToken?: string;
   requestId?: string;
   result?: SearchUserTaskResponseBodyResult[];
-  totalSize?: number;
   static names(): { [key: string]: string } {
     return {
-      nextToken: 'nextToken',
       requestId: 'requestId',
       result: 'result',
-      totalSize: 'totalSize',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      nextToken: 'string',
       requestId: 'string',
       result: { 'type': 'array', 'itemType': SearchUserTaskResponseBodyResult },
-      totalSize: 'number',
     };
   }
 
@@ -3630,21 +3606,21 @@ export class UpdateCustomfieldValueHeaders extends $tea.Model {
 }
 
 export class UpdateCustomfieldValueRequest extends $tea.Model {
-  customfieldId?: string;
-  customfieldName?: string;
+  customFieldId?: string;
+  customFieldName?: string;
   value?: UpdateCustomfieldValueRequestValue[];
   static names(): { [key: string]: string } {
     return {
-      customfieldId: 'customfieldId',
-      customfieldName: 'customfieldName',
+      customFieldId: 'customFieldId',
+      customFieldName: 'customFieldName',
       value: 'value',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      customfieldId: 'string',
-      customfieldName: 'string',
+      customFieldId: 'string',
+      customFieldName: 'string',
       value: { 'type': 'array', 'itemType': UpdateCustomfieldValueRequestValue },
     };
   }
@@ -5139,18 +5115,18 @@ export class UpdateTaskTaskflowstatusHeaders extends $tea.Model {
 
 export class UpdateTaskTaskflowstatusRequest extends $tea.Model {
   taskflowStatusId?: string;
-  tfsUpdateNote?: string;
+  taskflowStatusUpdateNote?: string;
   static names(): { [key: string]: string } {
     return {
       taskflowStatusId: 'taskflowStatusId',
-      tfsUpdateNote: 'tfsUpdateNote',
+      taskflowStatusUpdateNote: 'taskflowStatusUpdateNote',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
       taskflowStatusId: 'string',
-      tfsUpdateNote: 'string',
+      taskflowStatusUpdateNote: 'string',
     };
   }
 
@@ -5570,13 +5546,13 @@ export class CreatePlanTimeResponseBodyResult extends $tea.Model {
   }
 }
 
-export class CreateProjectResponseBodyResultCustomfieldsValue extends $tea.Model {
-  fieldvalueId?: string;
+export class CreateProjectResponseBodyResultCustomFieldsValue extends $tea.Model {
+  customFieldValueId?: string;
   metaString?: string;
   title?: string;
   static names(): { [key: string]: string } {
     return {
-      fieldvalueId: 'fieldvalueId',
+      customFieldValueId: 'customFieldValueId',
       metaString: 'metaString',
       title: 'title',
     };
@@ -5584,7 +5560,7 @@ export class CreateProjectResponseBodyResultCustomfieldsValue extends $tea.Model
 
   static types(): { [key: string]: any } {
     return {
-      fieldvalueId: 'string',
+      customFieldValueId: 'string',
       metaString: 'string',
       title: 'string',
     };
@@ -5595,13 +5571,13 @@ export class CreateProjectResponseBodyResultCustomfieldsValue extends $tea.Model
   }
 }
 
-export class CreateProjectResponseBodyResultCustomfields extends $tea.Model {
-  customfieldId?: string;
+export class CreateProjectResponseBodyResultCustomFields extends $tea.Model {
+  customFieldId?: string;
   type?: string;
-  value?: CreateProjectResponseBodyResultCustomfieldsValue[];
+  value?: CreateProjectResponseBodyResultCustomFieldsValue[];
   static names(): { [key: string]: string } {
     return {
-      customfieldId: 'customfieldId',
+      customFieldId: 'customFieldId',
       type: 'type',
       value: 'value',
     };
@@ -5609,9 +5585,9 @@ export class CreateProjectResponseBodyResultCustomfields extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      customfieldId: 'string',
+      customFieldId: 'string',
       type: 'string',
-      value: { 'type': 'array', 'itemType': CreateProjectResponseBodyResultCustomfieldsValue },
+      value: { 'type': 'array', 'itemType': CreateProjectResponseBodyResultCustomFieldsValue },
     };
   }
 
@@ -5623,7 +5599,7 @@ export class CreateProjectResponseBodyResultCustomfields extends $tea.Model {
 export class CreateProjectResponseBodyResult extends $tea.Model {
   created?: string;
   creatorId?: string;
-  customfields?: CreateProjectResponseBodyResultCustomfields[];
+  customFields?: CreateProjectResponseBodyResultCustomFields[];
   defaultCollectionId?: string;
   isArchived?: boolean;
   isSuspended?: boolean;
@@ -5641,7 +5617,7 @@ export class CreateProjectResponseBodyResult extends $tea.Model {
     return {
       created: 'created',
       creatorId: 'creatorId',
-      customfields: 'customfields',
+      customFields: 'customFields',
       defaultCollectionId: 'defaultCollectionId',
       isArchived: 'isArchived',
       isSuspended: 'isSuspended',
@@ -5662,7 +5638,7 @@ export class CreateProjectResponseBodyResult extends $tea.Model {
     return {
       created: 'string',
       creatorId: 'string',
-      customfields: { 'type': 'array', 'itemType': CreateProjectResponseBodyResultCustomfields },
+      customFields: { 'type': 'array', 'itemType': CreateProjectResponseBodyResultCustomFields },
       defaultCollectionId: 'string',
       isArchived: 'boolean',
       isSuspended: 'boolean',
@@ -5713,12 +5689,12 @@ export class CreateProjectByTemplateResponseBodyResult extends $tea.Model {
 }
 
 export class CreateProjectCustomfieldStatusRequestValue extends $tea.Model {
-  fieldvalueId?: string;
+  customFieldValueId?: string;
   metaString?: string;
   title?: string;
   static names(): { [key: string]: string } {
     return {
-      fieldvalueId: 'fieldvalueId',
+      customFieldValueId: 'customFieldValueId',
       metaString: 'metaString',
       title: 'title',
     };
@@ -5726,7 +5702,7 @@ export class CreateProjectCustomfieldStatusRequestValue extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      fieldvalueId: 'string',
+      customFieldValueId: 'string',
       metaString: 'string',
       title: 'string',
     };
@@ -5738,12 +5714,12 @@ export class CreateProjectCustomfieldStatusRequestValue extends $tea.Model {
 }
 
 export class CreateProjectCustomfieldStatusResponseBodyResultValue extends $tea.Model {
-  fieldvalueId?: string;
+  customFieldValueId?: string;
   metaString?: string;
   title?: string;
   static names(): { [key: string]: string } {
     return {
-      fieldvalueId: 'fieldvalueId',
+      customFieldValueId: 'customFieldValueId',
       metaString: 'metaString',
       title: 'title',
     };
@@ -5751,7 +5727,7 @@ export class CreateProjectCustomfieldStatusResponseBodyResultValue extends $tea.
 
   static types(): { [key: string]: any } {
     return {
-      fieldvalueId: 'string',
+      customFieldValueId: 'string',
       metaString: 'string',
       title: 'string',
     };
@@ -5763,16 +5739,16 @@ export class CreateProjectCustomfieldStatusResponseBodyResultValue extends $tea.
 }
 
 export class CreateProjectCustomfieldStatusResponseBodyResult extends $tea.Model {
-  advCfObjectType?: string;
-  customfieldId?: string;
+  advancedCustomFieldObjectType?: string;
+  customFieldId?: string;
   name?: string;
   originalId?: string;
   type?: string;
   value?: CreateProjectCustomfieldStatusResponseBodyResultValue[];
   static names(): { [key: string]: string } {
     return {
-      advCfObjectType: 'advCfObjectType',
-      customfieldId: 'customfieldId',
+      advancedCustomFieldObjectType: 'advancedCustomFieldObjectType',
+      customFieldId: 'customFieldId',
       name: 'name',
       originalId: 'originalId',
       type: 'type',
@@ -5782,8 +5758,8 @@ export class CreateProjectCustomfieldStatusResponseBodyResult extends $tea.Model
 
   static types(): { [key: string]: any } {
     return {
-      advCfObjectType: 'string',
-      customfieldId: 'string',
+      advancedCustomFieldObjectType: 'string',
+      customFieldId: 'string',
       name: 'string',
       originalId: 'string',
       type: 'string',
@@ -6396,13 +6372,13 @@ export class GetProjectStatusListResponseBodyResult extends $tea.Model {
   }
 }
 
-export class GetTaskByIdsResponseBodyResultCustomfieldsValue extends $tea.Model {
-  fieldvalueId?: string;
+export class GetTaskByIdsResponseBodyResultCustomFieldsValue extends $tea.Model {
+  customFieldValueId?: string;
   metaString?: string;
   title?: string;
   static names(): { [key: string]: string } {
     return {
-      fieldvalueId: 'fieldvalueId',
+      customFieldValueId: 'customFieldValueId',
       metaString: 'metaString',
       title: 'title',
     };
@@ -6410,7 +6386,7 @@ export class GetTaskByIdsResponseBodyResultCustomfieldsValue extends $tea.Model 
 
   static types(): { [key: string]: any } {
     return {
-      fieldvalueId: 'string',
+      customFieldValueId: 'string',
       metaString: 'string',
       title: 'string',
     };
@@ -6421,13 +6397,13 @@ export class GetTaskByIdsResponseBodyResultCustomfieldsValue extends $tea.Model 
   }
 }
 
-export class GetTaskByIdsResponseBodyResultCustomfields extends $tea.Model {
-  customfieldId?: string;
+export class GetTaskByIdsResponseBodyResultCustomFields extends $tea.Model {
+  customFieldId?: string;
   type?: string;
-  value?: GetTaskByIdsResponseBodyResultCustomfieldsValue[];
+  value?: GetTaskByIdsResponseBodyResultCustomFieldsValue[];
   static names(): { [key: string]: string } {
     return {
-      customfieldId: 'customfieldId',
+      customFieldId: 'customFieldId',
       type: 'type',
       value: 'value',
     };
@@ -6435,9 +6411,9 @@ export class GetTaskByIdsResponseBodyResultCustomfields extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      customfieldId: 'string',
+      customFieldId: 'string',
       type: 'string',
-      value: { 'type': 'array', 'itemType': GetTaskByIdsResponseBodyResultCustomfieldsValue },
+      value: { 'type': 'array', 'itemType': GetTaskByIdsResponseBodyResultCustomFieldsValue },
     };
   }
 
@@ -6452,7 +6428,7 @@ export class GetTaskByIdsResponseBodyResult extends $tea.Model {
   content?: string;
   created?: string;
   creatorId?: string;
-  customfields?: GetTaskByIdsResponseBodyResultCustomfields[];
+  customFields?: GetTaskByIdsResponseBodyResultCustomFields[];
   dueDate?: string;
   executorId?: string;
   involveMembers?: string[];
@@ -6463,15 +6439,15 @@ export class GetTaskByIdsResponseBodyResult extends $tea.Model {
   priority?: number;
   projectId?: string;
   recurrence?: string[];
-  scenariofieldconfigId?: string;
+  scenarioFieldConfigId?: string;
   sprintId?: string;
-  stageId?: string;
   startDate?: string;
   storyPoint?: string;
   tagIds?: string[];
   taskId?: string;
   taskListId?: string;
-  taskflowstatusId?: string;
+  taskStageId?: string;
+  taskflowStatusId?: string;
   uniqueId?: string;
   updated?: string;
   visible?: string;
@@ -6482,7 +6458,7 @@ export class GetTaskByIdsResponseBodyResult extends $tea.Model {
       content: 'content',
       created: 'created',
       creatorId: 'creatorId',
-      customfields: 'customfields',
+      customFields: 'customFields',
       dueDate: 'dueDate',
       executorId: 'executorId',
       involveMembers: 'involveMembers',
@@ -6493,15 +6469,15 @@ export class GetTaskByIdsResponseBodyResult extends $tea.Model {
       priority: 'priority',
       projectId: 'projectId',
       recurrence: 'recurrence',
-      scenariofieldconfigId: 'scenariofieldconfigId',
+      scenarioFieldConfigId: 'scenarioFieldConfigId',
       sprintId: 'sprintId',
-      stageId: 'stageId',
       startDate: 'startDate',
       storyPoint: 'storyPoint',
       tagIds: 'tagIds',
       taskId: 'taskId',
       taskListId: 'taskListId',
-      taskflowstatusId: 'taskflowstatusId',
+      taskStageId: 'taskStageId',
+      taskflowStatusId: 'taskflowStatusId',
       uniqueId: 'uniqueId',
       updated: 'updated',
       visible: 'visible',
@@ -6515,7 +6491,7 @@ export class GetTaskByIdsResponseBodyResult extends $tea.Model {
       content: 'string',
       created: 'string',
       creatorId: 'string',
-      customfields: { 'type': 'array', 'itemType': GetTaskByIdsResponseBodyResultCustomfields },
+      customFields: { 'type': 'array', 'itemType': GetTaskByIdsResponseBodyResultCustomFields },
       dueDate: 'string',
       executorId: 'string',
       involveMembers: { 'type': 'array', 'itemType': 'string' },
@@ -6526,15 +6502,15 @@ export class GetTaskByIdsResponseBodyResult extends $tea.Model {
       priority: 'number',
       projectId: 'string',
       recurrence: { 'type': 'array', 'itemType': 'string' },
-      scenariofieldconfigId: 'string',
+      scenarioFieldConfigId: 'string',
       sprintId: 'string',
-      stageId: 'string',
       startDate: 'string',
       storyPoint: 'string',
       tagIds: { 'type': 'array', 'itemType': 'string' },
       taskId: 'string',
       taskListId: 'string',
-      taskflowstatusId: 'string',
+      taskStageId: 'string',
+      taskflowStatusId: 'string',
       uniqueId: 'string',
       updated: 'string',
       visible: 'string',
@@ -6584,13 +6560,13 @@ export class GetTbUserIdByStaffIdResponseBodyResult extends $tea.Model {
   }
 }
 
-export class QueryProjectResponseBodyResultCustomfieldsValue extends $tea.Model {
-  fieldvalueId?: string;
+export class QueryProjectResponseBodyResultCustomFieldsValue extends $tea.Model {
+  customFieldValueId?: string;
   metaString?: string;
   title?: string;
   static names(): { [key: string]: string } {
     return {
-      fieldvalueId: 'fieldvalueId',
+      customFieldValueId: 'customFieldValueId',
       metaString: 'metaString',
       title: 'title',
     };
@@ -6598,7 +6574,7 @@ export class QueryProjectResponseBodyResultCustomfieldsValue extends $tea.Model 
 
   static types(): { [key: string]: any } {
     return {
-      fieldvalueId: 'string',
+      customFieldValueId: 'string',
       metaString: 'string',
       title: 'string',
     };
@@ -6609,13 +6585,13 @@ export class QueryProjectResponseBodyResultCustomfieldsValue extends $tea.Model 
   }
 }
 
-export class QueryProjectResponseBodyResultCustomfields extends $tea.Model {
-  customfieldId?: string;
+export class QueryProjectResponseBodyResultCustomFields extends $tea.Model {
+  customFieldId?: string;
   type?: string;
-  value?: QueryProjectResponseBodyResultCustomfieldsValue[];
+  value?: QueryProjectResponseBodyResultCustomFieldsValue[];
   static names(): { [key: string]: string } {
     return {
-      customfieldId: 'customfieldId',
+      customFieldId: 'customFieldId',
       type: 'type',
       value: 'value',
     };
@@ -6623,9 +6599,9 @@ export class QueryProjectResponseBodyResultCustomfields extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      customfieldId: 'string',
+      customFieldId: 'string',
       type: 'string',
-      value: { 'type': 'array', 'itemType': QueryProjectResponseBodyResultCustomfieldsValue },
+      value: { 'type': 'array', 'itemType': QueryProjectResponseBodyResultCustomFieldsValue },
     };
   }
 
@@ -6637,7 +6613,7 @@ export class QueryProjectResponseBodyResultCustomfields extends $tea.Model {
 export class QueryProjectResponseBodyResult extends $tea.Model {
   created?: string;
   creatorId?: string;
-  customfields?: QueryProjectResponseBodyResultCustomfields[];
+  customFields?: QueryProjectResponseBodyResultCustomFields[];
   description?: string;
   endDate?: string;
   isArchived?: boolean;
@@ -6655,7 +6631,7 @@ export class QueryProjectResponseBodyResult extends $tea.Model {
     return {
       created: 'created',
       creatorId: 'creatorId',
-      customfields: 'customfields',
+      customFields: 'customFields',
       description: 'description',
       endDate: 'endDate',
       isArchived: 'isArchived',
@@ -6676,7 +6652,7 @@ export class QueryProjectResponseBodyResult extends $tea.Model {
     return {
       created: 'string',
       creatorId: 'string',
-      customfields: { 'type': 'array', 'itemType': QueryProjectResponseBodyResultCustomfields },
+      customFields: { 'type': 'array', 'itemType': QueryProjectResponseBodyResultCustomFields },
       description: 'string',
       endDate: 'string',
       isArchived: 'boolean',
@@ -6854,13 +6830,13 @@ export class SeachTaskStageResponseBodyResult extends $tea.Model {
   }
 }
 
-export class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield extends $tea.Model {
-  advancedCustomfieldId?: string;
+export class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField extends $tea.Model {
+  advancedCustomFieldId?: string;
   name?: string;
   objectType?: string;
   static names(): { [key: string]: string } {
     return {
-      advancedCustomfieldId: 'advancedCustomfieldId',
+      advancedCustomFieldId: 'advancedCustomFieldId',
       name: 'name',
       objectType: 'objectType',
     };
@@ -6868,7 +6844,7 @@ export class SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield e
 
   static types(): { [key: string]: any } {
     return {
-      advancedCustomfieldId: 'string',
+      advancedCustomFieldId: 'string',
       name: 'string',
       objectType: 'string',
     };
@@ -6902,21 +6878,21 @@ export class SearchOranizationCustomfieldResponseBodyResultChoices extends $tea.
 }
 
 export class SearchOranizationCustomfieldResponseBodyResult extends $tea.Model {
-  advancedCustomfield?: SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield;
+  advancedCustomField?: SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField;
   choices?: SearchOranizationCustomfieldResponseBodyResultChoices[];
   created?: string;
   creatorId?: string;
-  customfieldsId?: string;
+  customFieldsId?: string;
   name?: string;
   payload?: { [key: string]: any };
   type?: string;
   static names(): { [key: string]: string } {
     return {
-      advancedCustomfield: 'advancedCustomfield',
+      advancedCustomField: 'advancedCustomField',
       choices: 'choices',
       created: 'created',
       creatorId: 'creatorId',
-      customfieldsId: 'customfieldsId',
+      customFieldsId: 'customFieldsId',
       name: 'name',
       payload: 'payload',
       type: 'type',
@@ -6925,11 +6901,11 @@ export class SearchOranizationCustomfieldResponseBodyResult extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      advancedCustomfield: SearchOranizationCustomfieldResponseBodyResultAdvancedCustomfield,
+      advancedCustomField: SearchOranizationCustomfieldResponseBodyResultAdvancedCustomField,
       choices: { 'type': 'array', 'itemType': SearchOranizationCustomfieldResponseBodyResultChoices },
       created: 'string',
       creatorId: 'string',
-      customfieldsId: 'string',
+      customFieldsId: 'string',
       name: 'string',
       payload: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       type: 'string',
@@ -6941,13 +6917,13 @@ export class SearchOranizationCustomfieldResponseBodyResult extends $tea.Model {
   }
 }
 
-export class SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield extends $tea.Model {
-  advancedCustomfieldId?: string;
+export class SearchProjectCustomfieldResponseBodyResultAdvancedCustomField extends $tea.Model {
+  advancedCustomFieldId?: string;
   name?: string;
   objectType?: string;
   static names(): { [key: string]: string } {
     return {
-      advancedCustomfieldId: 'advancedCustomfieldId',
+      advancedCustomFieldId: 'advancedCustomFieldId',
       name: 'name',
       objectType: 'objectType',
     };
@@ -6955,7 +6931,7 @@ export class SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield exten
 
   static types(): { [key: string]: any } {
     return {
-      advancedCustomfieldId: 'string',
+      advancedCustomFieldId: 'string',
       name: 'string',
       objectType: 'string',
     };
@@ -6989,24 +6965,24 @@ export class SearchProjectCustomfieldResponseBodyResultChoices extends $tea.Mode
 }
 
 export class SearchProjectCustomfieldResponseBodyResult extends $tea.Model {
-  advancedCustomfield?: SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield;
+  advancedCustomField?: SearchProjectCustomfieldResponseBodyResultAdvancedCustomField;
   boundToObjectId?: string;
   choices?: SearchProjectCustomfieldResponseBodyResultChoices[];
   created?: string;
   creatorId?: string;
-  customfiledId?: string;
+  customFieldId?: string;
   name?: string;
   originalId?: string;
   payload?: { [key: string]: any };
   type?: string;
   static names(): { [key: string]: string } {
     return {
-      advancedCustomfield: 'advancedCustomfield',
+      advancedCustomField: 'advancedCustomField',
       boundToObjectId: 'boundToObjectId',
       choices: 'choices',
       created: 'created',
       creatorId: 'creatorId',
-      customfiledId: 'customfiledId',
+      customFieldId: 'customFieldId',
       name: 'name',
       originalId: 'originalId',
       payload: 'payload',
@@ -7016,12 +6992,12 @@ export class SearchProjectCustomfieldResponseBodyResult extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      advancedCustomfield: SearchProjectCustomfieldResponseBodyResultAdvancedCustomfield,
+      advancedCustomField: SearchProjectCustomfieldResponseBodyResultAdvancedCustomField,
       boundToObjectId: 'string',
       choices: { 'type': 'array', 'itemType': SearchProjectCustomfieldResponseBodyResultChoices },
       created: 'string',
       creatorId: 'string',
-      customfiledId: 'string',
+      customFieldId: 'string',
       name: 'string',
       originalId: 'string',
       payload: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
@@ -7203,26 +7179,23 @@ export class SearchTaskflowStatusResponseBodyResult extends $tea.Model {
   }
 }
 
-export class SearchUserTaskResponseBodyResultCustomfieldsValue extends $tea.Model {
-  fieldvalueId?: string;
+export class SearchUserTaskResponseBodyResultCustomFieldsValue extends $tea.Model {
+  customFieldValueId?: string;
   metaString?: string;
   title?: string;
-  totalCount?: number;
   static names(): { [key: string]: string } {
     return {
-      fieldvalueId: 'fieldvalueId',
+      customFieldValueId: 'customFieldValueId',
       metaString: 'metaString',
       title: 'title',
-      totalCount: 'totalCount',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      fieldvalueId: 'string',
+      customFieldValueId: 'string',
       metaString: 'string',
       title: 'string',
-      totalCount: 'number',
     };
   }
 
@@ -7231,13 +7204,13 @@ export class SearchUserTaskResponseBodyResultCustomfieldsValue extends $tea.Mode
   }
 }
 
-export class SearchUserTaskResponseBodyResultCustomfields extends $tea.Model {
-  customfieldId?: string;
+export class SearchUserTaskResponseBodyResultCustomFields extends $tea.Model {
+  customFieldId?: string;
   type?: string;
-  value?: SearchUserTaskResponseBodyResultCustomfieldsValue[];
+  value?: SearchUserTaskResponseBodyResultCustomFieldsValue[];
   static names(): { [key: string]: string } {
     return {
-      customfieldId: 'customfieldId',
+      customFieldId: 'customFieldId',
       type: 'type',
       value: 'value',
     };
@@ -7245,9 +7218,9 @@ export class SearchUserTaskResponseBodyResultCustomfields extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      customfieldId: 'string',
+      customFieldId: 'string',
       type: 'string',
-      value: { 'type': 'array', 'itemType': SearchUserTaskResponseBodyResultCustomfieldsValue },
+      value: { 'type': 'array', 'itemType': SearchUserTaskResponseBodyResultCustomFieldsValue },
     };
   }
 
@@ -7262,7 +7235,7 @@ export class SearchUserTaskResponseBodyResult extends $tea.Model {
   content?: string;
   created?: string;
   creatorId?: string;
-  customfields?: SearchUserTaskResponseBodyResultCustomfields[];
+  customFields?: SearchUserTaskResponseBodyResultCustomFields[];
   dueDate?: string;
   executorId?: string;
   involveMembers?: string[];
@@ -7273,15 +7246,15 @@ export class SearchUserTaskResponseBodyResult extends $tea.Model {
   priority?: number;
   projectId?: string;
   recurrence?: string[];
-  sfcId?: string;
+  scenarioFieldConfigId?: string;
   sprintId?: string;
   startDate?: string;
   storyPoint?: string;
   tagIds?: string[];
   taskId?: string;
   taskListId?: string;
-  taskflowstatusId?: string;
-  taskstageId?: string;
+  taskStageId?: string;
+  taskflowStatusId?: string;
   uniqueId?: string;
   updated?: string;
   visible?: string;
@@ -7292,7 +7265,7 @@ export class SearchUserTaskResponseBodyResult extends $tea.Model {
       content: 'content',
       created: 'created',
       creatorId: 'creatorId',
-      customfields: 'customfields',
+      customFields: 'customFields',
       dueDate: 'dueDate',
       executorId: 'executorId',
       involveMembers: 'involveMembers',
@@ -7303,15 +7276,15 @@ export class SearchUserTaskResponseBodyResult extends $tea.Model {
       priority: 'priority',
       projectId: 'projectId',
       recurrence: 'recurrence',
-      sfcId: 'sfcId',
+      scenarioFieldConfigId: 'scenarioFieldConfigId',
       sprintId: 'sprintId',
       startDate: 'startDate',
       storyPoint: 'storyPoint',
       tagIds: 'tagIds',
       taskId: 'taskId',
       taskListId: 'taskListId',
-      taskflowstatusId: 'taskflowstatusId',
-      taskstageId: 'taskstageId',
+      taskStageId: 'taskStageId',
+      taskflowStatusId: 'taskflowStatusId',
       uniqueId: 'uniqueId',
       updated: 'updated',
       visible: 'visible',
@@ -7325,7 +7298,7 @@ export class SearchUserTaskResponseBodyResult extends $tea.Model {
       content: 'string',
       created: 'string',
       creatorId: 'string',
-      customfields: { 'type': 'array', 'itemType': SearchUserTaskResponseBodyResultCustomfields },
+      customFields: { 'type': 'array', 'itemType': SearchUserTaskResponseBodyResultCustomFields },
       dueDate: 'string',
       executorId: 'string',
       involveMembers: { 'type': 'array', 'itemType': 'string' },
@@ -7336,15 +7309,15 @@ export class SearchUserTaskResponseBodyResult extends $tea.Model {
       priority: 'number',
       projectId: 'string',
       recurrence: { 'type': 'array', 'itemType': 'string' },
-      sfcId: 'string',
+      scenarioFieldConfigId: 'string',
       sprintId: 'string',
       startDate: 'string',
       storyPoint: 'string',
       tagIds: { 'type': 'array', 'itemType': 'string' },
       taskId: 'string',
       taskListId: 'string',
-      taskflowstatusId: 'string',
-      taskstageId: 'string',
+      taskStageId: 'string',
+      taskflowStatusId: 'string',
       uniqueId: 'string',
       updated: 'string',
       visible: 'string',
@@ -7413,7 +7386,7 @@ export class UpdateCustomfieldValueRequestValue extends $tea.Model {
   }
 }
 
-export class UpdateCustomfieldValueResponseBodyResultCustomfieldsValue extends $tea.Model {
+export class UpdateCustomfieldValueResponseBodyResultCustomFieldsValue extends $tea.Model {
   title?: string;
   static names(): { [key: string]: string } {
     return {
@@ -7432,20 +7405,20 @@ export class UpdateCustomfieldValueResponseBodyResultCustomfieldsValue extends $
   }
 }
 
-export class UpdateCustomfieldValueResponseBodyResultCustomfields extends $tea.Model {
-  customfieldId?: string;
-  value?: UpdateCustomfieldValueResponseBodyResultCustomfieldsValue[];
+export class UpdateCustomfieldValueResponseBodyResultCustomFields extends $tea.Model {
+  customFieldId?: string;
+  value?: UpdateCustomfieldValueResponseBodyResultCustomFieldsValue[];
   static names(): { [key: string]: string } {
     return {
-      customfieldId: 'customfieldId',
+      customFieldId: 'customFieldId',
       value: 'value',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      customfieldId: 'string',
-      value: { 'type': 'array', 'itemType': UpdateCustomfieldValueResponseBodyResultCustomfieldsValue },
+      customFieldId: 'string',
+      value: { 'type': 'array', 'itemType': UpdateCustomfieldValueResponseBodyResultCustomFieldsValue },
     };
   }
 
@@ -7455,16 +7428,16 @@ export class UpdateCustomfieldValueResponseBodyResultCustomfields extends $tea.M
 }
 
 export class UpdateCustomfieldValueResponseBodyResult extends $tea.Model {
-  customfields?: UpdateCustomfieldValueResponseBodyResultCustomfields[];
+  customFields?: UpdateCustomfieldValueResponseBodyResultCustomFields[];
   static names(): { [key: string]: string } {
     return {
-      customfields: 'customfields',
+      customFields: 'customFields',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
-      customfields: { 'type': 'array', 'itemType': UpdateCustomfieldValueResponseBodyResultCustomfields },
+      customFields: { 'type': 'array', 'itemType': UpdateCustomfieldValueResponseBodyResultCustomFields },
     };
   }
 
@@ -7863,18 +7836,18 @@ export class UpdateTaskStageResponseBodyResult extends $tea.Model {
   accomplishTime?: string;
   isDone?: boolean;
   projectId?: string;
-  stageId?: string;
   taskId?: string;
   taskListId?: string;
+  taskStageId?: string;
   updated?: string;
   static names(): { [key: string]: string } {
     return {
       accomplishTime: 'accomplishTime',
       isDone: 'isDone',
       projectId: 'projectId',
-      stageId: 'stageId',
       taskId: 'taskId',
       taskListId: 'taskListId',
+      taskStageId: 'taskStageId',
       updated: 'updated',
     };
   }
@@ -7884,9 +7857,9 @@ export class UpdateTaskStageResponseBodyResult extends $tea.Model {
       accomplishTime: 'string',
       isDone: 'boolean',
       projectId: 'string',
-      stageId: 'string',
       taskId: 'string',
       taskListId: 'string',
+      taskStageId: 'string',
       updated: 'string',
     };
   }
@@ -8361,16 +8334,16 @@ export default class Client extends OpenApi {
   async createProjectCustomfieldStatusWithOptions(userId: string, projectId: string, request: CreateProjectCustomfieldStatusRequest, headers: CreateProjectCustomfieldStatusHeaders, runtime: $Util.RuntimeOptions): Promise<CreateProjectCustomfieldStatusResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.customfieldId)) {
-      body["customfieldId"] = request.customfieldId;
+    if (!Util.isUnset(request.customFieldId)) {
+      body["customFieldId"] = request.customFieldId;
     }
 
-    if (!Util.isUnset(request.customfieldInstanceId)) {
-      body["customfieldInstanceId"] = request.customfieldInstanceId;
+    if (!Util.isUnset(request.customFieldInstanceId)) {
+      body["customFieldInstanceId"] = request.customFieldInstanceId;
     }
 
-    if (!Util.isUnset(request.customfieldName)) {
-      body["customfieldName"] = request.customfieldName;
+    if (!Util.isUnset(request.customFieldName)) {
+      body["customFieldName"] = request.customFieldName;
     }
 
     if (!Util.isUnset(request.value)) {
@@ -9472,12 +9445,12 @@ export default class Client extends OpenApi {
       query["query"] = request.query;
     }
 
-    if (!Util.isUnset(request.stageIds)) {
-      query["stageIds"] = request.stageIds;
-    }
-
     if (!Util.isUnset(request.taskListId)) {
       query["taskListId"] = request.taskListId;
+    }
+
+    if (!Util.isUnset(request.taskStageIds)) {
+      query["taskStageIds"] = request.taskStageIds;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -9516,8 +9489,8 @@ export default class Client extends OpenApi {
   async searchOranizationCustomfieldWithOptions(userId: string, request: SearchOranizationCustomfieldRequest, headers: SearchOranizationCustomfieldHeaders, runtime: $Util.RuntimeOptions): Promise<SearchOranizationCustomfieldResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.customfieldIds)) {
-      query["customfieldIds"] = request.customfieldIds;
+    if (!Util.isUnset(request.customFieldIds)) {
+      query["customFieldIds"] = request.customFieldIds;
     }
 
     if (!Util.isUnset(request.instanceIds)) {
@@ -9538,10 +9511,6 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.query)) {
       query["query"] = request.query;
-    }
-
-    if (!Util.isUnset(request.scope)) {
-      query["scope"] = request.scope;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -9580,8 +9549,8 @@ export default class Client extends OpenApi {
   async searchProjectCustomfieldWithOptions(userId: string, projectId: string, request: SearchProjectCustomfieldRequest, headers: SearchProjectCustomfieldHeaders, runtime: $Util.RuntimeOptions): Promise<SearchProjectCustomfieldResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.customfieldIds)) {
-      query["customfieldIds"] = request.customfieldIds;
+    if (!Util.isUnset(request.customFieldIds)) {
+      query["customFieldIds"] = request.customFieldIds;
     }
 
     if (!Util.isUnset(request.instanceIds)) {
@@ -9600,12 +9569,8 @@ export default class Client extends OpenApi {
       query["query"] = request.query;
     }
 
-    if (!Util.isUnset(request.scenariofieldconfigId)) {
-      query["scenariofieldconfigId"] = request.scenariofieldconfigId;
-    }
-
-    if (!Util.isUnset(request.scope)) {
-      query["scope"] = request.scope;
+    if (!Util.isUnset(request.scenarioFieldConfigId)) {
+      query["scenarioFieldConfigId"] = request.scenarioFieldConfigId;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -9852,6 +9817,10 @@ export default class Client extends OpenApi {
       query["nextToken"] = request.nextToken;
     }
 
+    if (!Util.isUnset(request.roleTypes)) {
+      query["roleTypes"] = request.roleTypes;
+    }
+
     if (!Util.isUnset(request.tql)) {
       query["tql"] = request.tql;
     }
@@ -9958,12 +9927,12 @@ export default class Client extends OpenApi {
   async updateCustomfieldValueWithOptions(userId: string, taskId: string, request: UpdateCustomfieldValueRequest, headers: UpdateCustomfieldValueHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCustomfieldValueResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.customfieldId)) {
-      body["customfieldId"] = request.customfieldId;
+    if (!Util.isUnset(request.customFieldId)) {
+      body["customFieldId"] = request.customFieldId;
     }
 
-    if (!Util.isUnset(request.customfieldName)) {
-      body["customfieldName"] = request.customfieldName;
+    if (!Util.isUnset(request.customFieldName)) {
+      body["customFieldName"] = request.customFieldName;
     }
 
     if (!Util.isUnset(request.value)) {
@@ -10726,8 +10695,8 @@ export default class Client extends OpenApi {
       body["taskflowStatusId"] = request.taskflowStatusId;
     }
 
-    if (!Util.isUnset(request.tfsUpdateNote)) {
-      body["tfsUpdateNote"] = request.tfsUpdateNote;
+    if (!Util.isUnset(request.taskflowStatusUpdateNote)) {
+      body["taskflowStatusUpdateNote"] = request.taskflowStatusUpdateNote;
     }
 
     let realHeaders : {[key: string ]: string} = { };

@@ -9,6 +9,103 @@ import OpenApi, * as $OpenApi from '@alicloud/openapi-client';
 import OpenApiUtil from '@alicloud/openapi-util';
 import * as $tea from '@alicloud/tea-typescript';
 
+export class AppLoginCodeGenHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppLoginCodeGenRequest extends $tea.Model {
+  appKey?: string;
+  signTimestampStr?: string;
+  signature?: string;
+  fullUrl?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appKey: 'appKey',
+      signTimestampStr: 'signTimestampStr',
+      signature: 'signature',
+      fullUrl: 'fullUrl',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appKey: 'string',
+      signTimestampStr: 'string',
+      signature: 'string',
+      fullUrl: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppLoginCodeGenResponseBody extends $tea.Model {
+  loginCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      loginCode: 'loginCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      loginCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AppLoginCodeGenResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: AppLoginCodeGenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AppLoginCodeGenResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchGetFormDataByIdListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -12208,6 +12305,64 @@ export default class Client extends OpenApi {
 
   }
 
+
+  async appLoginCodeGenWithOptions(request: AppLoginCodeGenRequest, headers: AppLoginCodeGenHeaders, runtime: $Util.RuntimeOptions): Promise<AppLoginCodeGenResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.fullUrl)) {
+      query["fullUrl"] = request.fullUrl;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appKey)) {
+      body["appKey"] = request.appKey;
+    }
+
+    if (!Util.isUnset(request.signTimestampStr)) {
+      body["signTimestampStr"] = request.signTimestampStr;
+    }
+
+    if (!Util.isUnset(request.signature)) {
+      body["signature"] = request.signature;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AppLoginCodeGen",
+      version: "yida_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/yida/authorizations/appLoginCodes`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AppLoginCodeGenResponse>(await this.execute(params, req, runtime), new AppLoginCodeGenResponse({}));
+  }
+
+  async appLoginCodeGen(request: AppLoginCodeGenRequest): Promise<AppLoginCodeGenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AppLoginCodeGenHeaders({ });
+    return await this.appLoginCodeGenWithOptions(request, headers, runtime);
+  }
 
   async batchGetFormDataByIdListWithOptions(request: BatchGetFormDataByIdListRequest, headers: BatchGetFormDataByIdListHeaders, runtime: $Util.RuntimeOptions): Promise<BatchGetFormDataByIdListResponse> {
     Util.validateModel(request);

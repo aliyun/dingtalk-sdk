@@ -570,6 +570,94 @@ export class EditFeedReplayResponse extends $tea.Model {
   }
 }
 
+export class GetLiveReplayUrlHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLiveReplayUrlRequest extends $tea.Model {
+  liveId?: string;
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      liveId: 'liveId',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      liveId: 'string',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLiveReplayUrlResponseBody extends $tea.Model {
+  result?: GetLiveReplayUrlResponseBodyResult;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetLiveReplayUrlResponseBodyResult,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetLiveReplayUrlResponse extends $tea.Model {
+  headers: { [key: string]: string };
+  statusCode: number;
+  body: GetLiveReplayUrlResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetLiveReplayUrlResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUserAllLiveListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1950,6 +2038,25 @@ export class DeleteLiveResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetLiveReplayUrlResponseBodyResult extends $tea.Model {
+  replayUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      replayUrl: 'replayUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      replayUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetUserAllLiveListResponseBodyResultLiveInfoPopModelListExtraInfo extends $tea.Model {
   hasSubscribed?: boolean;
   isForecastExpired?: boolean;
@@ -2942,6 +3049,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new EditFeedReplayHeaders({ });
     return await this.editFeedReplayWithOptions(feedId, request, headers, runtime);
+  }
+
+  async getLiveReplayUrlWithOptions(request: GetLiveReplayUrlRequest, headers: GetLiveReplayUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetLiveReplayUrlResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.liveId)) {
+      query["liveId"] = request.liveId;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetLiveReplayUrl",
+      version: "live_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/live/lives/replayUrls`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetLiveReplayUrlResponse>(await this.execute(params, req, runtime), new GetLiveReplayUrlResponse({}));
+  }
+
+  async getLiveReplayUrl(request: GetLiveReplayUrlRequest): Promise<GetLiveReplayUrlResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetLiveReplayUrlHeaders({ });
+    return await this.getLiveReplayUrlWithOptions(request, headers, runtime);
   }
 
   async getUserAllLiveListWithOptions(request: GetUserAllLiveListRequest, headers: GetUserAllLiveListHeaders, runtime: $Util.RuntimeOptions): Promise<GetUserAllLiveListResponse> {
