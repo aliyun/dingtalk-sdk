@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class SearchUserTaskRequest extends Model
 {
     /**
-     * @var int
+     * @var string
      */
     public $maxResults;
 
@@ -21,10 +21,16 @@ class SearchUserTaskRequest extends Model
     /**
      * @var string
      */
+    public $roleTypes;
+
+    /**
+     * @var string
+     */
     public $tql;
     protected $_name = [
         'maxResults' => 'maxResults',
         'nextToken'  => 'nextToken',
+        'roleTypes'  => 'roleTypes',
         'tql'        => 'tql',
     ];
 
@@ -40,6 +46,9 @@ class SearchUserTaskRequest extends Model
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->roleTypes) {
+            $res['roleTypes'] = $this->roleTypes;
         }
         if (null !== $this->tql) {
             $res['tql'] = $this->tql;
@@ -61,6 +70,9 @@ class SearchUserTaskRequest extends Model
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['roleTypes'])) {
+            $model->roleTypes = $map['roleTypes'];
         }
         if (isset($map['tql'])) {
             $model->tql = $map['tql'];

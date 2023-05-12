@@ -2,30 +2,26 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateProjectResponseBody\result;
+namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateCustomfieldValueResponseBody\result;
 
-use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateProjectResponseBody\result\customfields\value;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateCustomfieldValueResponseBody\result\customFields\value;
 use AlibabaCloud\Tea\Model;
 
-class customfields extends Model
+class customFields extends Model
 {
     /**
+     * @example 62fb0b77xxxxx
+     *
      * @var string
      */
-    public $customfieldId;
-
-    /**
-     * @var string
-     */
-    public $type;
+    public $customFieldId;
 
     /**
      * @var value[]
      */
     public $value;
     protected $_name = [
-        'customfieldId' => 'customfieldId',
-        'type'          => 'type',
+        'customFieldId' => 'customFieldId',
         'value'         => 'value',
     ];
 
@@ -36,11 +32,8 @@ class customfields extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->customfieldId) {
-            $res['customfieldId'] = $this->customfieldId;
-        }
-        if (null !== $this->type) {
-            $res['type'] = $this->type;
+        if (null !== $this->customFieldId) {
+            $res['customFieldId'] = $this->customFieldId;
         }
         if (null !== $this->value) {
             $res['value'] = [];
@@ -58,16 +51,13 @@ class customfields extends Model
     /**
      * @param array $map
      *
-     * @return customfields
+     * @return customFields
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['customfieldId'])) {
-            $model->customfieldId = $map['customfieldId'];
-        }
-        if (isset($map['type'])) {
-            $model->type = $map['type'];
+        if (isset($map['customFieldId'])) {
+            $model->customFieldId = $map['customFieldId'];
         }
         if (isset($map['value'])) {
             if (!empty($map['value'])) {

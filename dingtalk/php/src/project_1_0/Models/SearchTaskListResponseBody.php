@@ -20,17 +20,9 @@ class SearchTaskListResponseBody extends Model
      * @var result[]
      */
     public $result;
-
-    /**
-     * @example 32
-     *
-     * @var int
-     */
-    public $totalCount;
     protected $_name = [
-        'nextToken'  => 'nextToken',
-        'result'     => 'result',
-        'totalCount' => 'totalCount',
+        'nextToken' => 'nextToken',
+        'result'    => 'result',
     ];
 
     public function validate()
@@ -51,9 +43,6 @@ class SearchTaskListResponseBody extends Model
                     $res['result'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
-        }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -78,9 +67,6 @@ class SearchTaskListResponseBody extends Model
                     $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
                 }
             }
-        }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

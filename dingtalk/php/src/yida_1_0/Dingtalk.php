@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vyida_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\AppLoginCodeGenHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\AppLoginCodeGenRequest;
+use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\AppLoginCodeGenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchGetFormDataByIdListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchGetFormDataByIdListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vyida_1_0\Models\BatchGetFormDataByIdListResponse;
@@ -298,6 +301,73 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @param AppLoginCodeGenRequest $request
+     * @param AppLoginCodeGenHeaders $headers
+     * @param RuntimeOptions         $runtime
+     *
+     * @return AppLoginCodeGenResponse
+     */
+    public function appLoginCodeGenWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->fullUrl)) {
+            $query['fullUrl'] = $request->fullUrl;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->appKey)) {
+            $body['appKey'] = $request->appKey;
+        }
+        if (!Utils::isUnset($request->signTimestampStr)) {
+            $body['signTimestampStr'] = $request->signTimestampStr;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            $body['signature'] = $request->signature;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AppLoginCodeGen',
+            'version'     => 'yida_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/yida/authorizations/appLoginCodes',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AppLoginCodeGenResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param AppLoginCodeGenRequest $request
+     *
+     * @return AppLoginCodeGenResponse
+     */
+    public function appLoginCodeGen($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AppLoginCodeGenHeaders([]);
+
+        return $this->appLoginCodeGenWithOptions($request, $headers, $runtime);
     }
 
     /**

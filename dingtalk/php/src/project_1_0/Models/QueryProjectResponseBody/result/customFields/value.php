@@ -2,38 +2,36 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchUserTaskResponseBody\result\customfields;
+namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\QueryProjectResponseBody\result\customFields;
 
 use AlibabaCloud\Tea\Model;
 
 class value extends Model
 {
     /**
+     * @example 64ba333e4206372f3f5cxxxx
+     *
      * @var string
      */
-    public $fieldvalueId;
+    public $customFieldValueId;
 
     /**
+     * @example 3
+     *
      * @var string
      */
     public $metaString;
 
     /**
+     * @example 自定义字段1
+     *
      * @var string
      */
     public $title;
-
-    /**
-     * @example 35
-     *
-     * @var int
-     */
-    public $totalCount;
     protected $_name = [
-        'fieldvalueId' => 'fieldvalueId',
-        'metaString'   => 'metaString',
-        'title'        => 'title',
-        'totalCount'   => 'totalCount',
+        'customFieldValueId' => 'customFieldValueId',
+        'metaString'         => 'metaString',
+        'title'              => 'title',
     ];
 
     public function validate()
@@ -43,17 +41,14 @@ class value extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->fieldvalueId) {
-            $res['fieldvalueId'] = $this->fieldvalueId;
+        if (null !== $this->customFieldValueId) {
+            $res['customFieldValueId'] = $this->customFieldValueId;
         }
         if (null !== $this->metaString) {
             $res['metaString'] = $this->metaString;
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
-        }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -67,17 +62,14 @@ class value extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['fieldvalueId'])) {
-            $model->fieldvalueId = $map['fieldvalueId'];
+        if (isset($map['customFieldValueId'])) {
+            $model->customFieldValueId = $map['customFieldValueId'];
         }
         if (isset($map['metaString'])) {
             $model->metaString = $map['metaString'];
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
-        }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

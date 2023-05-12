@@ -4,17 +4,17 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateCustomfieldValueResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateCustomfieldValueResponseBody\result\customfields;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateCustomfieldValueResponseBody\result\customFields;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
 {
     /**
-     * @var customfields[]
+     * @var customFields[]
      */
-    public $customfields;
+    public $customFields;
     protected $_name = [
-        'customfields' => 'customfields',
+        'customFields' => 'customFields',
     ];
 
     public function validate()
@@ -24,12 +24,12 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->customfields) {
-            $res['customfields'] = [];
-            if (null !== $this->customfields && \is_array($this->customfields)) {
+        if (null !== $this->customFields) {
+            $res['customFields'] = [];
+            if (null !== $this->customFields && \is_array($this->customFields)) {
                 $n = 0;
-                foreach ($this->customfields as $item) {
-                    $res['customfields'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->customFields as $item) {
+                    $res['customFields'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -45,12 +45,12 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['customfields'])) {
-            if (!empty($map['customfields'])) {
-                $model->customfields = [];
+        if (isset($map['customFields'])) {
+            if (!empty($map['customFields'])) {
+                $model->customFields = [];
                 $n                   = 0;
-                foreach ($map['customfields'] as $item) {
-                    $model->customfields[$n++] = null !== $item ? customfields::fromMap($item) : $item;
+                foreach ($map['customFields'] as $item) {
+                    $model->customFields[$n++] = null !== $item ? customFields::fromMap($item) : $item;
                 }
             }
         }

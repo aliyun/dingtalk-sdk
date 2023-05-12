@@ -4,7 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateProjectResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateProjectResponseBody\result\customfields;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\CreateProjectResponseBody\result\customFields;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
@@ -24,9 +24,9 @@ class result extends Model
     public $creatorId;
 
     /**
-     * @var customfields[]
+     * @var customFields[]
      */
-    public $customfields;
+    public $customFields;
 
     /**
      * @example 6398042ec98a4e4e33xxxxxx
@@ -121,7 +121,7 @@ class result extends Model
     protected $_name = [
         'created'             => 'created',
         'creatorId'           => 'creatorId',
-        'customfields'        => 'customfields',
+        'customFields'        => 'customFields',
         'defaultCollectionId' => 'defaultCollectionId',
         'isArchived'          => 'isArchived',
         'isSuspended'         => 'isSuspended',
@@ -150,12 +150,12 @@ class result extends Model
         if (null !== $this->creatorId) {
             $res['creatorId'] = $this->creatorId;
         }
-        if (null !== $this->customfields) {
-            $res['customfields'] = [];
-            if (null !== $this->customfields && \is_array($this->customfields)) {
+        if (null !== $this->customFields) {
+            $res['customFields'] = [];
+            if (null !== $this->customFields && \is_array($this->customFields)) {
                 $n = 0;
-                foreach ($this->customfields as $item) {
-                    $res['customfields'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->customFields as $item) {
+                    $res['customFields'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -216,12 +216,12 @@ class result extends Model
         if (isset($map['creatorId'])) {
             $model->creatorId = $map['creatorId'];
         }
-        if (isset($map['customfields'])) {
-            if (!empty($map['customfields'])) {
-                $model->customfields = [];
+        if (isset($map['customFields'])) {
+            if (!empty($map['customFields'])) {
+                $model->customFields = [];
                 $n                   = 0;
-                foreach ($map['customfields'] as $item) {
-                    $model->customfields[$n++] = null !== $item ? customfields::fromMap($item) : $item;
+                foreach ($map['customFields'] as $item) {
+                    $model->customFields[$n++] = null !== $item ? customFields::fromMap($item) : $item;
                 }
             }
         }

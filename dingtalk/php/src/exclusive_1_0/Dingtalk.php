@@ -176,6 +176,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAcrossCloudStroageConfig
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAndSubmitAuthInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAndSubmitAuthInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveAndSubmitAuthInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveOpenTerminalInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveOpenTerminalInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveOpenTerminalInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveWhiteAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveWhiteAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SaveWhiteAppResponse;
@@ -3773,6 +3776,68 @@ class Dingtalk extends OpenApiClient
         $headers = new SaveAndSubmitAuthInfoHeaders([]);
 
         return $this->saveAndSubmitAuthInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param SaveOpenTerminalInfoRequest $request
+     * @param SaveOpenTerminalInfoHeaders $headers
+     * @param RuntimeOptions              $runtime
+     *
+     * @return SaveOpenTerminalInfoResponse
+     */
+    public function saveOpenTerminalInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->logSource)) {
+            $body['logSource'] = $request->logSource;
+        }
+        if (!Utils::isUnset($request->logType)) {
+            $body['logType'] = $request->logType;
+        }
+        if (!Utils::isUnset($request->openExt)) {
+            $body['openExt'] = $request->openExt;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SaveOpenTerminalInfo',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/externalLogs/terminalInfos/save',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SaveOpenTerminalInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param SaveOpenTerminalInfoRequest $request
+     *
+     * @return SaveOpenTerminalInfoResponse
+     */
+    public function saveOpenTerminalInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveOpenTerminalInfoHeaders([]);
+
+        return $this->saveOpenTerminalInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

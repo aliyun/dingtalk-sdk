@@ -14,14 +14,14 @@ class result extends Model
      *
      * @var string
      */
-    public $advCfObjectType;
+    public $advancedCustomFieldObjectType;
 
     /**
      * @example 63a5301e420637003f5dxxxx
      *
      * @var string
      */
-    public $customfieldId;
+    public $customFieldId;
 
     /**
      * @example 项目进度
@@ -49,12 +49,12 @@ class result extends Model
      */
     public $value;
     protected $_name = [
-        'advCfObjectType' => 'advCfObjectType',
-        'customfieldId'   => 'customfieldId',
-        'name'            => 'name',
-        'originalId'      => 'originalId',
-        'type'            => 'type',
-        'value'           => 'value',
+        'advancedCustomFieldObjectType' => 'advancedCustomFieldObjectType',
+        'customFieldId'                 => 'customFieldId',
+        'name'                          => 'name',
+        'originalId'                    => 'originalId',
+        'type'                          => 'type',
+        'value'                         => 'value',
     ];
 
     public function validate()
@@ -64,11 +64,11 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->advCfObjectType) {
-            $res['advCfObjectType'] = $this->advCfObjectType;
+        if (null !== $this->advancedCustomFieldObjectType) {
+            $res['advancedCustomFieldObjectType'] = $this->advancedCustomFieldObjectType;
         }
-        if (null !== $this->customfieldId) {
-            $res['customfieldId'] = $this->customfieldId;
+        if (null !== $this->customFieldId) {
+            $res['customFieldId'] = $this->customFieldId;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -100,11 +100,11 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['advCfObjectType'])) {
-            $model->advCfObjectType = $map['advCfObjectType'];
+        if (isset($map['advancedCustomFieldObjectType'])) {
+            $model->advancedCustomFieldObjectType = $map['advancedCustomFieldObjectType'];
         }
-        if (isset($map['customfieldId'])) {
-            $model->customfieldId = $map['customfieldId'];
+        if (isset($map['customFieldId'])) {
+            $model->customFieldId = $map['customFieldId'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

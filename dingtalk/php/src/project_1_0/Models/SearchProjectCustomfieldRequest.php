@@ -13,7 +13,7 @@ class SearchProjectCustomfieldRequest extends Model
      *
      * @var string
      */
-    public $customfieldIds;
+    public $customFieldIds;
 
     /**
      * @example 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
@@ -48,22 +48,14 @@ class SearchProjectCustomfieldRequest extends Model
      *
      * @var string
      */
-    public $scenariofieldconfigId;
-
-    /**
-     * @example all
-     *
-     * @var string
-     */
-    public $scope;
+    public $scenarioFieldConfigId;
     protected $_name = [
-        'customfieldIds'        => 'customfieldIds',
+        'customFieldIds'        => 'customFieldIds',
         'instanceIds'           => 'instanceIds',
         'maxResults'            => 'maxResults',
         'nextToken'             => 'nextToken',
         'query'                 => 'query',
-        'scenariofieldconfigId' => 'scenariofieldconfigId',
-        'scope'                 => 'scope',
+        'scenarioFieldConfigId' => 'scenarioFieldConfigId',
     ];
 
     public function validate()
@@ -73,8 +65,8 @@ class SearchProjectCustomfieldRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->customfieldIds) {
-            $res['customfieldIds'] = $this->customfieldIds;
+        if (null !== $this->customFieldIds) {
+            $res['customFieldIds'] = $this->customFieldIds;
         }
         if (null !== $this->instanceIds) {
             $res['instanceIds'] = $this->instanceIds;
@@ -88,11 +80,8 @@ class SearchProjectCustomfieldRequest extends Model
         if (null !== $this->query) {
             $res['query'] = $this->query;
         }
-        if (null !== $this->scenariofieldconfigId) {
-            $res['scenariofieldconfigId'] = $this->scenariofieldconfigId;
-        }
-        if (null !== $this->scope) {
-            $res['scope'] = $this->scope;
+        if (null !== $this->scenarioFieldConfigId) {
+            $res['scenarioFieldConfigId'] = $this->scenarioFieldConfigId;
         }
 
         return $res;
@@ -106,8 +95,8 @@ class SearchProjectCustomfieldRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['customfieldIds'])) {
-            $model->customfieldIds = $map['customfieldIds'];
+        if (isset($map['customFieldIds'])) {
+            $model->customFieldIds = $map['customFieldIds'];
         }
         if (isset($map['instanceIds'])) {
             $model->instanceIds = $map['instanceIds'];
@@ -121,11 +110,8 @@ class SearchProjectCustomfieldRequest extends Model
         if (isset($map['query'])) {
             $model->query = $map['query'];
         }
-        if (isset($map['scenariofieldconfigId'])) {
-            $model->scenariofieldconfigId = $map['scenariofieldconfigId'];
-        }
-        if (isset($map['scope'])) {
-            $model->scope = $map['scope'];
+        if (isset($map['scenarioFieldConfigId'])) {
+            $model->scenarioFieldConfigId = $map['scenarioFieldConfigId'];
         }
 
         return $model;

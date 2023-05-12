@@ -2,36 +2,36 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\QueryProjectResponseBody\result\customfields;
+namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchUserTaskResponseBody\result\customFields;
 
 use AlibabaCloud\Tea\Model;
 
 class value extends Model
 {
     /**
-     * @example 64ba333e4206372f3f5cxxxx
+     * @example 642fb16c4a622b2e3184229c
      *
      * @var string
      */
-    public $fieldvalueId;
+    public $customFieldValueId;
 
     /**
-     * @example 3
+     * @example 元数据内容
      *
      * @var string
      */
     public $metaString;
 
     /**
-     * @example 自定义字段1
+     * @example 标题
      *
      * @var string
      */
     public $title;
     protected $_name = [
-        'fieldvalueId' => 'fieldvalueId',
-        'metaString'   => 'metaString',
-        'title'        => 'title',
+        'customFieldValueId' => 'customFieldValueId',
+        'metaString'         => 'metaString',
+        'title'              => 'title',
     ];
 
     public function validate()
@@ -41,8 +41,8 @@ class value extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->fieldvalueId) {
-            $res['fieldvalueId'] = $this->fieldvalueId;
+        if (null !== $this->customFieldValueId) {
+            $res['customFieldValueId'] = $this->customFieldValueId;
         }
         if (null !== $this->metaString) {
             $res['metaString'] = $this->metaString;
@@ -62,8 +62,8 @@ class value extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['fieldvalueId'])) {
-            $model->fieldvalueId = $map['fieldvalueId'];
+        if (isset($map['customFieldValueId'])) {
+            $model->customFieldValueId = $map['customFieldValueId'];
         }
         if (isset($map['metaString'])) {
             $model->metaString = $map['metaString'];

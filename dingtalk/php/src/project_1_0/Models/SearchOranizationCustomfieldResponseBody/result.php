@@ -4,16 +4,16 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchOranizationCustomfieldResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchOranizationCustomfieldResponseBody\result\advancedCustomfield;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchOranizationCustomfieldResponseBody\result\advancedCustomField;
 use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchOranizationCustomfieldResponseBody\result\choices;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
 {
     /**
-     * @var advancedCustomfield
+     * @var advancedCustomField
      */
-    public $advancedCustomfield;
+    public $advancedCustomField;
 
     /**
      * @var choices[]
@@ -39,7 +39,7 @@ class result extends Model
      *
      * @var string
      */
-    public $customfieldsId;
+    public $customFieldsId;
 
     /**
      * @example 自定义字段
@@ -62,11 +62,11 @@ class result extends Model
      */
     public $type;
     protected $_name = [
-        'advancedCustomfield' => 'advancedCustomfield',
+        'advancedCustomField' => 'advancedCustomField',
         'choices'             => 'choices',
         'created'             => 'created',
         'creatorId'           => 'creatorId',
-        'customfieldsId'      => 'customfieldsId',
+        'customFieldsId'      => 'customFieldsId',
         'name'                => 'name',
         'payload'             => 'payload',
         'type'                => 'type',
@@ -79,8 +79,8 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->advancedCustomfield) {
-            $res['advancedCustomfield'] = null !== $this->advancedCustomfield ? $this->advancedCustomfield->toMap() : null;
+        if (null !== $this->advancedCustomField) {
+            $res['advancedCustomField'] = null !== $this->advancedCustomField ? $this->advancedCustomField->toMap() : null;
         }
         if (null !== $this->choices) {
             $res['choices'] = [];
@@ -97,8 +97,8 @@ class result extends Model
         if (null !== $this->creatorId) {
             $res['creatorId'] = $this->creatorId;
         }
-        if (null !== $this->customfieldsId) {
-            $res['customfieldsId'] = $this->customfieldsId;
+        if (null !== $this->customFieldsId) {
+            $res['customFieldsId'] = $this->customFieldsId;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -121,8 +121,8 @@ class result extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['advancedCustomfield'])) {
-            $model->advancedCustomfield = advancedCustomfield::fromMap($map['advancedCustomfield']);
+        if (isset($map['advancedCustomField'])) {
+            $model->advancedCustomField = advancedCustomField::fromMap($map['advancedCustomField']);
         }
         if (isset($map['choices'])) {
             if (!empty($map['choices'])) {
@@ -139,8 +139,8 @@ class result extends Model
         if (isset($map['creatorId'])) {
             $model->creatorId = $map['creatorId'];
         }
-        if (isset($map['customfieldsId'])) {
-            $model->customfieldsId = $map['customfieldsId'];
+        if (isset($map['customFieldsId'])) {
+            $model->customFieldsId = $map['customFieldsId'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

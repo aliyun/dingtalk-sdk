@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\AddHrmPreentryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EsignRollbackHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EsignRollbackRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EsignRollbackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessRegularHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessRegularRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessRegularResponse;
@@ -204,6 +207,59 @@ class Dingtalk extends OpenApiClient
         $headers = new ECertQueryHeaders([]);
 
         return $this->eCertQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @param EsignRollbackRequest $request
+     * @param EsignRollbackHeaders $headers
+     * @param RuntimeOptions       $runtime
+     *
+     * @return EsignRollbackResponse
+     */
+    public function esignRollbackWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->optUserId)) {
+            $query['optUserId'] = $request->optUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'EsignRollback',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/contracts/esign/rollback',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return EsignRollbackResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param EsignRollbackRequest $request
+     *
+     * @return EsignRollbackResponse
+     */
+    public function esignRollback($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EsignRollbackHeaders([]);
+
+        return $this->esignRollbackWithOptions($request, $headers, $runtime);
     }
 
     /**

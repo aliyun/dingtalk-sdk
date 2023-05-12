@@ -30,24 +30,24 @@ class SeachTaskStageRequest extends Model
     public $query;
 
     /**
-     * @example 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
-     *
-     * @var string
-     */
-    public $stageIds;
-
-    /**
      * @example 60a2187eb72xxxxxxx
      *
      * @var string
      */
     public $taskListId;
+
+    /**
+     * @example 60a2187eb72xxxxxxx,60a2187eb72xxxxxxx
+     *
+     * @var string
+     */
+    public $taskStageIds;
     protected $_name = [
-        'maxResults' => 'maxResults',
-        'nextToken'  => 'nextToken',
-        'query'      => 'query',
-        'stageIds'   => 'stageIds',
-        'taskListId' => 'taskListId',
+        'maxResults'   => 'maxResults',
+        'nextToken'    => 'nextToken',
+        'query'        => 'query',
+        'taskListId'   => 'taskListId',
+        'taskStageIds' => 'taskStageIds',
     ];
 
     public function validate()
@@ -66,11 +66,11 @@ class SeachTaskStageRequest extends Model
         if (null !== $this->query) {
             $res['query'] = $this->query;
         }
-        if (null !== $this->stageIds) {
-            $res['stageIds'] = $this->stageIds;
-        }
         if (null !== $this->taskListId) {
             $res['taskListId'] = $this->taskListId;
+        }
+        if (null !== $this->taskStageIds) {
+            $res['taskStageIds'] = $this->taskStageIds;
         }
 
         return $res;
@@ -93,11 +93,11 @@ class SeachTaskStageRequest extends Model
         if (isset($map['query'])) {
             $model->query = $map['query'];
         }
-        if (isset($map['stageIds'])) {
-            $model->stageIds = $map['stageIds'];
-        }
         if (isset($map['taskListId'])) {
             $model->taskListId = $map['taskListId'];
+        }
+        if (isset($map['taskStageIds'])) {
+            $model->taskStageIds = $map['taskStageIds'];
         }
 
         return $model;

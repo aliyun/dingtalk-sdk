@@ -4,12 +4,14 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchUserTaskResponseBody;
 
-use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchUserTaskResponseBody\result\customfields;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchUserTaskResponseBody\result\customFields;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
 {
     /**
+     * @example 2023-04-12T03:39:54.918Z
+     *
      * @var string
      */
     public $accomplishTime;
@@ -20,6 +22,8 @@ class result extends Model
     public $ancestorIds;
 
     /**
+     * @example 任务内容
+     *
      * @var string
      */
     public $content;
@@ -32,21 +36,27 @@ class result extends Model
     public $created;
 
     /**
+     * @example 63a9207a042f7c254f60519c
+     *
      * @var string
      */
     public $creatorId;
 
     /**
-     * @var customfields[]
+     * @var customFields[]
      */
-    public $customfields;
+    public $customFields;
 
     /**
+     * @example 2022-07-05T03:29:34.770Z
+     *
      * @var string
      */
     public $dueDate;
 
     /**
+     * @example 63a9207a042f7c254f60519c
+     *
      * @var string
      */
     public $executorId;
@@ -67,11 +77,15 @@ class result extends Model
     public $isDone;
 
     /**
+     * @example 备注内容
+     *
      * @var string
      */
     public $note;
 
     /**
+     * @example 644b6f4cca369863fbc8abbb
+     *
      * @var string
      */
     public $parentTaskId;
@@ -82,6 +96,8 @@ class result extends Model
     public $priority;
 
     /**
+     * @example 643394f81502a928dbd5ba37
+     *
      * @var string
      */
     public $projectId;
@@ -92,11 +108,15 @@ class result extends Model
     public $recurrence;
 
     /**
+     * @example 64099d5b2f404400174d7fc1
+     *
      * @var string
      */
-    public $sfcId;
+    public $scenarioFieldConfigId;
 
     /**
+     * @example 64099d5b2f404400174d7fc1
+     *
      * @var string
      */
     public $sprintId;
@@ -109,6 +129,8 @@ class result extends Model
     public $startDate;
 
     /**
+     * @example 0
+     *
      * @var string
      */
     public $storyPoint;
@@ -119,26 +141,36 @@ class result extends Model
     public $tagIds;
 
     /**
+     * @example 642befe827feb683f91bd529
+     *
      * @var string
      */
     public $taskId;
 
     /**
+     * @example 6436278ea14fe435351668a2
+     *
      * @var string
      */
     public $taskListId;
 
     /**
+     * @example 6436278ea14fe435351668a4
+     *
      * @var string
      */
-    public $taskflowstatusId;
+    public $taskStageId;
 
     /**
+     * @example 64099d5b2f404400174d7fbb
+     *
      * @var string
      */
-    public $taskstageId;
+    public $taskflowStatusId;
 
     /**
+     * @example 3
+     *
      * @var string
      */
     public $uniqueId;
@@ -151,38 +183,40 @@ class result extends Model
     public $updated;
 
     /**
+     * @example projectMembers
+     *
      * @var string
      */
     public $visible;
     protected $_name = [
-        'accomplishTime'   => 'accomplishTime',
-        'ancestorIds'      => 'ancestorIds',
-        'content'          => 'content',
-        'created'          => 'created',
-        'creatorId'        => 'creatorId',
-        'customfields'     => 'customfields',
-        'dueDate'          => 'dueDate',
-        'executorId'       => 'executorId',
-        'involveMembers'   => 'involveMembers',
-        'isArchived'       => 'isArchived',
-        'isDone'           => 'isDone',
-        'note'             => 'note',
-        'parentTaskId'     => 'parentTaskId',
-        'priority'         => 'priority',
-        'projectId'        => 'projectId',
-        'recurrence'       => 'recurrence',
-        'sfcId'            => 'sfcId',
-        'sprintId'         => 'sprintId',
-        'startDate'        => 'startDate',
-        'storyPoint'       => 'storyPoint',
-        'tagIds'           => 'tagIds',
-        'taskId'           => 'taskId',
-        'taskListId'       => 'taskListId',
-        'taskflowstatusId' => 'taskflowstatusId',
-        'taskstageId'      => 'taskstageId',
-        'uniqueId'         => 'uniqueId',
-        'updated'          => 'updated',
-        'visible'          => 'visible',
+        'accomplishTime'        => 'accomplishTime',
+        'ancestorIds'           => 'ancestorIds',
+        'content'               => 'content',
+        'created'               => 'created',
+        'creatorId'             => 'creatorId',
+        'customFields'          => 'customFields',
+        'dueDate'               => 'dueDate',
+        'executorId'            => 'executorId',
+        'involveMembers'        => 'involveMembers',
+        'isArchived'            => 'isArchived',
+        'isDone'                => 'isDone',
+        'note'                  => 'note',
+        'parentTaskId'          => 'parentTaskId',
+        'priority'              => 'priority',
+        'projectId'             => 'projectId',
+        'recurrence'            => 'recurrence',
+        'scenarioFieldConfigId' => 'scenarioFieldConfigId',
+        'sprintId'              => 'sprintId',
+        'startDate'             => 'startDate',
+        'storyPoint'            => 'storyPoint',
+        'tagIds'                => 'tagIds',
+        'taskId'                => 'taskId',
+        'taskListId'            => 'taskListId',
+        'taskStageId'           => 'taskStageId',
+        'taskflowStatusId'      => 'taskflowStatusId',
+        'uniqueId'              => 'uniqueId',
+        'updated'               => 'updated',
+        'visible'               => 'visible',
     ];
 
     public function validate()
@@ -207,12 +241,12 @@ class result extends Model
         if (null !== $this->creatorId) {
             $res['creatorId'] = $this->creatorId;
         }
-        if (null !== $this->customfields) {
-            $res['customfields'] = [];
-            if (null !== $this->customfields && \is_array($this->customfields)) {
+        if (null !== $this->customFields) {
+            $res['customFields'] = [];
+            if (null !== $this->customFields && \is_array($this->customFields)) {
                 $n = 0;
-                foreach ($this->customfields as $item) {
-                    $res['customfields'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->customFields as $item) {
+                    $res['customFields'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -246,8 +280,8 @@ class result extends Model
         if (null !== $this->recurrence) {
             $res['recurrence'] = $this->recurrence;
         }
-        if (null !== $this->sfcId) {
-            $res['sfcId'] = $this->sfcId;
+        if (null !== $this->scenarioFieldConfigId) {
+            $res['scenarioFieldConfigId'] = $this->scenarioFieldConfigId;
         }
         if (null !== $this->sprintId) {
             $res['sprintId'] = $this->sprintId;
@@ -267,11 +301,11 @@ class result extends Model
         if (null !== $this->taskListId) {
             $res['taskListId'] = $this->taskListId;
         }
-        if (null !== $this->taskflowstatusId) {
-            $res['taskflowstatusId'] = $this->taskflowstatusId;
+        if (null !== $this->taskStageId) {
+            $res['taskStageId'] = $this->taskStageId;
         }
-        if (null !== $this->taskstageId) {
-            $res['taskstageId'] = $this->taskstageId;
+        if (null !== $this->taskflowStatusId) {
+            $res['taskflowStatusId'] = $this->taskflowStatusId;
         }
         if (null !== $this->uniqueId) {
             $res['uniqueId'] = $this->uniqueId;
@@ -311,12 +345,12 @@ class result extends Model
         if (isset($map['creatorId'])) {
             $model->creatorId = $map['creatorId'];
         }
-        if (isset($map['customfields'])) {
-            if (!empty($map['customfields'])) {
-                $model->customfields = [];
+        if (isset($map['customFields'])) {
+            if (!empty($map['customFields'])) {
+                $model->customFields = [];
                 $n                   = 0;
-                foreach ($map['customfields'] as $item) {
-                    $model->customfields[$n++] = null !== $item ? customfields::fromMap($item) : $item;
+                foreach ($map['customFields'] as $item) {
+                    $model->customFields[$n++] = null !== $item ? customFields::fromMap($item) : $item;
                 }
             }
         }
@@ -354,8 +388,8 @@ class result extends Model
                 $model->recurrence = $map['recurrence'];
             }
         }
-        if (isset($map['sfcId'])) {
-            $model->sfcId = $map['sfcId'];
+        if (isset($map['scenarioFieldConfigId'])) {
+            $model->scenarioFieldConfigId = $map['scenarioFieldConfigId'];
         }
         if (isset($map['sprintId'])) {
             $model->sprintId = $map['sprintId'];
@@ -377,11 +411,11 @@ class result extends Model
         if (isset($map['taskListId'])) {
             $model->taskListId = $map['taskListId'];
         }
-        if (isset($map['taskflowstatusId'])) {
-            $model->taskflowstatusId = $map['taskflowstatusId'];
+        if (isset($map['taskStageId'])) {
+            $model->taskStageId = $map['taskStageId'];
         }
-        if (isset($map['taskstageId'])) {
-            $model->taskstageId = $map['taskstageId'];
+        if (isset($map['taskflowStatusId'])) {
+            $model->taskflowStatusId = $map['taskflowStatusId'];
         }
         if (isset($map['uniqueId'])) {
             $model->uniqueId = $map['uniqueId'];

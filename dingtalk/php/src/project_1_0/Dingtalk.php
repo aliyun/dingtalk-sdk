@@ -642,14 +642,14 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->customfieldId)) {
-            $body['customfieldId'] = $request->customfieldId;
+        if (!Utils::isUnset($request->customFieldId)) {
+            $body['customFieldId'] = $request->customFieldId;
         }
-        if (!Utils::isUnset($request->customfieldInstanceId)) {
-            $body['customfieldInstanceId'] = $request->customfieldInstanceId;
+        if (!Utils::isUnset($request->customFieldInstanceId)) {
+            $body['customFieldInstanceId'] = $request->customFieldInstanceId;
         }
-        if (!Utils::isUnset($request->customfieldName)) {
-            $body['customfieldName'] = $request->customfieldName;
+        if (!Utils::isUnset($request->customFieldName)) {
+            $body['customFieldName'] = $request->customFieldName;
         }
         if (!Utils::isUnset($request->value)) {
             $body['value'] = $request->value;
@@ -2040,11 +2040,11 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->query)) {
             $query['query'] = $request->query;
         }
-        if (!Utils::isUnset($request->stageIds)) {
-            $query['stageIds'] = $request->stageIds;
-        }
         if (!Utils::isUnset($request->taskListId)) {
             $query['taskListId'] = $request->taskListId;
+        }
+        if (!Utils::isUnset($request->taskStageIds)) {
+            $query['taskStageIds'] = $request->taskStageIds;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -2099,8 +2099,8 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->customfieldIds)) {
-            $query['customfieldIds'] = $request->customfieldIds;
+        if (!Utils::isUnset($request->customFieldIds)) {
+            $query['customFieldIds'] = $request->customFieldIds;
         }
         if (!Utils::isUnset($request->instanceIds)) {
             $query['instanceIds'] = $request->instanceIds;
@@ -2116,9 +2116,6 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->query)) {
             $query['query'] = $request->query;
-        }
-        if (!Utils::isUnset($request->scope)) {
-            $query['scope'] = $request->scope;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -2173,8 +2170,8 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->customfieldIds)) {
-            $query['customfieldIds'] = $request->customfieldIds;
+        if (!Utils::isUnset($request->customFieldIds)) {
+            $query['customFieldIds'] = $request->customFieldIds;
         }
         if (!Utils::isUnset($request->instanceIds)) {
             $query['instanceIds'] = $request->instanceIds;
@@ -2188,11 +2185,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->query)) {
             $query['query'] = $request->query;
         }
-        if (!Utils::isUnset($request->scenariofieldconfigId)) {
-            $query['scenariofieldconfigId'] = $request->scenariofieldconfigId;
-        }
-        if (!Utils::isUnset($request->scope)) {
-            $query['scope'] = $request->scope;
+        if (!Utils::isUnset($request->scenarioFieldConfigId)) {
+            $query['scenarioFieldConfigId'] = $request->scenarioFieldConfigId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -2509,6 +2503,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->nextToken)) {
             $query['nextToken'] = $request->nextToken;
         }
+        if (!Utils::isUnset($request->roleTypes)) {
+            $query['roleTypes'] = $request->roleTypes;
+        }
         if (!Utils::isUnset($request->tql)) {
             $query['tql'] = $request->tql;
         }
@@ -2663,11 +2660,11 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->customfieldId)) {
-            $body['customfieldId'] = $request->customfieldId;
+        if (!Utils::isUnset($request->customFieldId)) {
+            $body['customFieldId'] = $request->customFieldId;
         }
-        if (!Utils::isUnset($request->customfieldName)) {
-            $body['customfieldName'] = $request->customfieldName;
+        if (!Utils::isUnset($request->customFieldName)) {
+            $body['customFieldName'] = $request->customFieldName;
         }
         if (!Utils::isUnset($request->value)) {
             $body['value'] = $request->value;
@@ -3698,8 +3695,8 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->taskflowStatusId)) {
             $body['taskflowStatusId'] = $request->taskflowStatusId;
         }
-        if (!Utils::isUnset($request->tfsUpdateNote)) {
-            $body['tfsUpdateNote'] = $request->tfsUpdateNote;
+        if (!Utils::isUnset($request->taskflowStatusUpdateNote)) {
+            $body['taskflowStatusUpdateNote'] = $request->taskflowStatusUpdateNote;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {

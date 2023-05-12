@@ -19,17 +19,9 @@ class GetUserJoinedProjectResponseBody extends Model
      * @var string[]
      */
     public $result;
-
-    /**
-     * @example 35
-     *
-     * @var int
-     */
-    public $totalCount;
     protected $_name = [
-        'nextToken'  => 'nextToken',
-        'result'     => 'result',
-        'totalCount' => 'totalCount',
+        'nextToken' => 'nextToken',
+        'result'    => 'result',
     ];
 
     public function validate()
@@ -44,9 +36,6 @@ class GetUserJoinedProjectResponseBody extends Model
         }
         if (null !== $this->result) {
             $res['result'] = $this->result;
-        }
-        if (null !== $this->totalCount) {
-            $res['totalCount'] = $this->totalCount;
         }
 
         return $res;
@@ -67,9 +56,6 @@ class GetUserJoinedProjectResponseBody extends Model
             if (!empty($map['result'])) {
                 $model->result = $map['result'];
             }
-        }
-        if (isset($map['totalCount'])) {
-            $model->totalCount = $map['totalCount'];
         }
 
         return $model;

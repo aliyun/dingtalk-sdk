@@ -6,14 +6,14 @@ namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchProjectCustomfield
 
 use AlibabaCloud\Tea\Model;
 
-class advancedCustomfield extends Model
+class advancedCustomField extends Model
 {
     /**
      * @example 63a5301e420637003f5dxxxx
      *
      * @var string
      */
-    public $advancedCustomfieldId;
+    public $advancedCustomFieldId;
 
     /**
      * @example 所思文档
@@ -29,7 +29,7 @@ class advancedCustomfield extends Model
      */
     public $objectType;
     protected $_name = [
-        'advancedCustomfieldId' => 'advancedCustomfieldId',
+        'advancedCustomFieldId' => 'advancedCustomFieldId',
         'name'                  => 'name',
         'objectType'            => 'objectType',
     ];
@@ -41,8 +41,8 @@ class advancedCustomfield extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->advancedCustomfieldId) {
-            $res['advancedCustomfieldId'] = $this->advancedCustomfieldId;
+        if (null !== $this->advancedCustomFieldId) {
+            $res['advancedCustomFieldId'] = $this->advancedCustomFieldId;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -57,13 +57,13 @@ class advancedCustomfield extends Model
     /**
      * @param array $map
      *
-     * @return advancedCustomfield
+     * @return advancedCustomField
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['advancedCustomfieldId'])) {
-            $model->advancedCustomfieldId = $map['advancedCustomfieldId'];
+        if (isset($map['advancedCustomFieldId'])) {
+            $model->advancedCustomFieldId = $map['advancedCustomFieldId'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

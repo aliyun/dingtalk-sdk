@@ -30,13 +30,6 @@ class result extends Model
     public $projectId;
 
     /**
-     * @example 69a5301e420637003f5dxxxx
-     *
-     * @var string
-     */
-    public $stageId;
-
-    /**
      * @example 63a5301e420637003f5dxxxx
      *
      * @var string
@@ -51,6 +44,13 @@ class result extends Model
     public $taskListId;
 
     /**
+     * @example 69a5301e420637003f5dxxxx
+     *
+     * @var string
+     */
+    public $taskStageId;
+
+    /**
      * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
@@ -60,9 +60,9 @@ class result extends Model
         'accomplishTime' => 'accomplishTime',
         'isDone'         => 'isDone',
         'projectId'      => 'projectId',
-        'stageId'        => 'stageId',
         'taskId'         => 'taskId',
         'taskListId'     => 'taskListId',
+        'taskStageId'    => 'taskStageId',
         'updated'        => 'updated',
     ];
 
@@ -82,14 +82,14 @@ class result extends Model
         if (null !== $this->projectId) {
             $res['projectId'] = $this->projectId;
         }
-        if (null !== $this->stageId) {
-            $res['stageId'] = $this->stageId;
-        }
         if (null !== $this->taskId) {
             $res['taskId'] = $this->taskId;
         }
         if (null !== $this->taskListId) {
             $res['taskListId'] = $this->taskListId;
+        }
+        if (null !== $this->taskStageId) {
+            $res['taskStageId'] = $this->taskStageId;
         }
         if (null !== $this->updated) {
             $res['updated'] = $this->updated;
@@ -115,14 +115,14 @@ class result extends Model
         if (isset($map['projectId'])) {
             $model->projectId = $map['projectId'];
         }
-        if (isset($map['stageId'])) {
-            $model->stageId = $map['stageId'];
-        }
         if (isset($map['taskId'])) {
             $model->taskId = $map['taskId'];
         }
         if (isset($map['taskListId'])) {
             $model->taskListId = $map['taskListId'];
+        }
+        if (isset($map['taskStageId'])) {
+            $model->taskStageId = $map['taskStageId'];
         }
         if (isset($map['updated'])) {
             $model->updated = $map['updated'];

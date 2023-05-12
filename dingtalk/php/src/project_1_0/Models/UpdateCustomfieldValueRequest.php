@@ -14,22 +14,22 @@ class UpdateCustomfieldValueRequest extends Model
      *
      * @var string
      */
-    public $customfieldId;
+    public $customFieldId;
 
     /**
      * @example 自定义字段-文本
      *
      * @var string
      */
-    public $customfieldName;
+    public $customFieldName;
 
     /**
      * @var value[]
      */
     public $value;
     protected $_name = [
-        'customfieldId'   => 'customfieldId',
-        'customfieldName' => 'customfieldName',
+        'customFieldId'   => 'customFieldId',
+        'customFieldName' => 'customFieldName',
         'value'           => 'value',
     ];
 
@@ -40,11 +40,11 @@ class UpdateCustomfieldValueRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->customfieldId) {
-            $res['customfieldId'] = $this->customfieldId;
+        if (null !== $this->customFieldId) {
+            $res['customFieldId'] = $this->customFieldId;
         }
-        if (null !== $this->customfieldName) {
-            $res['customfieldName'] = $this->customfieldName;
+        if (null !== $this->customFieldName) {
+            $res['customFieldName'] = $this->customFieldName;
         }
         if (null !== $this->value) {
             $res['value'] = [];
@@ -67,11 +67,11 @@ class UpdateCustomfieldValueRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['customfieldId'])) {
-            $model->customfieldId = $map['customfieldId'];
+        if (isset($map['customFieldId'])) {
+            $model->customFieldId = $map['customFieldId'];
         }
-        if (isset($map['customfieldName'])) {
-            $model->customfieldName = $map['customfieldName'];
+        if (isset($map['customFieldName'])) {
+            $model->customFieldName = $map['customFieldName'];
         }
         if (isset($map['value'])) {
             if (!empty($map['value'])) {

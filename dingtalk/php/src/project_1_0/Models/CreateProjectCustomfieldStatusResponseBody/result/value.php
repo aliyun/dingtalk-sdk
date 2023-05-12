@@ -13,7 +13,7 @@ class value extends Model
      *
      * @var string
      */
-    public $fieldvalueId;
+    public $customFieldValueId;
 
     /**
      * @var string
@@ -27,9 +27,9 @@ class value extends Model
      */
     public $title;
     protected $_name = [
-        'fieldvalueId' => 'fieldvalueId',
-        'metaString'   => 'metaString',
-        'title'        => 'title',
+        'customFieldValueId' => 'customFieldValueId',
+        'metaString'         => 'metaString',
+        'title'              => 'title',
     ];
 
     public function validate()
@@ -39,8 +39,8 @@ class value extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->fieldvalueId) {
-            $res['fieldvalueId'] = $this->fieldvalueId;
+        if (null !== $this->customFieldValueId) {
+            $res['customFieldValueId'] = $this->customFieldValueId;
         }
         if (null !== $this->metaString) {
             $res['metaString'] = $this->metaString;
@@ -60,8 +60,8 @@ class value extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['fieldvalueId'])) {
-            $model->fieldvalueId = $map['fieldvalueId'];
+        if (isset($map['customFieldValueId'])) {
+            $model->customFieldValueId = $map['customFieldValueId'];
         }
         if (isset($map['metaString'])) {
             $model->metaString = $map['metaString'];

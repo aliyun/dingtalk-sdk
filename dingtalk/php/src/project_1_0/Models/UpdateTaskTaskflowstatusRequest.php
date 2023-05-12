@@ -20,10 +20,10 @@ class UpdateTaskTaskflowstatusRequest extends Model
      *
      * @var string
      */
-    public $tfsUpdateNote;
+    public $taskflowStatusUpdateNote;
     protected $_name = [
-        'taskflowStatusId' => 'taskflowStatusId',
-        'tfsUpdateNote'    => 'tfsUpdateNote',
+        'taskflowStatusId'         => 'taskflowStatusId',
+        'taskflowStatusUpdateNote' => 'taskflowStatusUpdateNote',
     ];
 
     public function validate()
@@ -36,8 +36,8 @@ class UpdateTaskTaskflowstatusRequest extends Model
         if (null !== $this->taskflowStatusId) {
             $res['taskflowStatusId'] = $this->taskflowStatusId;
         }
-        if (null !== $this->tfsUpdateNote) {
-            $res['tfsUpdateNote'] = $this->tfsUpdateNote;
+        if (null !== $this->taskflowStatusUpdateNote) {
+            $res['taskflowStatusUpdateNote'] = $this->taskflowStatusUpdateNote;
         }
 
         return $res;
@@ -54,8 +54,8 @@ class UpdateTaskTaskflowstatusRequest extends Model
         if (isset($map['taskflowStatusId'])) {
             $model->taskflowStatusId = $map['taskflowStatusId'];
         }
-        if (isset($map['tfsUpdateNote'])) {
-            $model->tfsUpdateNote = $map['tfsUpdateNote'];
+        if (isset($map['taskflowStatusUpdateNote'])) {
+            $model->taskflowStatusUpdateNote = $map['taskflowStatusUpdateNote'];
         }
 
         return $model;

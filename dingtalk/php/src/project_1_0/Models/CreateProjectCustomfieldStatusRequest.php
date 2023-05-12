@@ -14,30 +14,30 @@ class CreateProjectCustomfieldStatusRequest extends Model
      *
      * @var string
      */
-    public $customfieldId;
+    public $customFieldId;
 
     /**
      * @example 64a5301e420637003f5dxxxx
      *
      * @var string
      */
-    public $customfieldInstanceId;
+    public $customFieldInstanceId;
 
     /**
      * @example 项目进度
      *
      * @var string
      */
-    public $customfieldName;
+    public $customFieldName;
 
     /**
      * @var value[]
      */
     public $value;
     protected $_name = [
-        'customfieldId'         => 'customfieldId',
-        'customfieldInstanceId' => 'customfieldInstanceId',
-        'customfieldName'       => 'customfieldName',
+        'customFieldId'         => 'customFieldId',
+        'customFieldInstanceId' => 'customFieldInstanceId',
+        'customFieldName'       => 'customFieldName',
         'value'                 => 'value',
     ];
 
@@ -48,14 +48,14 @@ class CreateProjectCustomfieldStatusRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->customfieldId) {
-            $res['customfieldId'] = $this->customfieldId;
+        if (null !== $this->customFieldId) {
+            $res['customFieldId'] = $this->customFieldId;
         }
-        if (null !== $this->customfieldInstanceId) {
-            $res['customfieldInstanceId'] = $this->customfieldInstanceId;
+        if (null !== $this->customFieldInstanceId) {
+            $res['customFieldInstanceId'] = $this->customFieldInstanceId;
         }
-        if (null !== $this->customfieldName) {
-            $res['customfieldName'] = $this->customfieldName;
+        if (null !== $this->customFieldName) {
+            $res['customFieldName'] = $this->customFieldName;
         }
         if (null !== $this->value) {
             $res['value'] = [];
@@ -78,14 +78,14 @@ class CreateProjectCustomfieldStatusRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['customfieldId'])) {
-            $model->customfieldId = $map['customfieldId'];
+        if (isset($map['customFieldId'])) {
+            $model->customFieldId = $map['customFieldId'];
         }
-        if (isset($map['customfieldInstanceId'])) {
-            $model->customfieldInstanceId = $map['customfieldInstanceId'];
+        if (isset($map['customFieldInstanceId'])) {
+            $model->customFieldInstanceId = $map['customFieldInstanceId'];
         }
-        if (isset($map['customfieldName'])) {
-            $model->customfieldName = $map['customfieldName'];
+        if (isset($map['customFieldName'])) {
+            $model->customFieldName = $map['customFieldName'];
         }
         if (isset($map['value'])) {
             if (!empty($map['value'])) {

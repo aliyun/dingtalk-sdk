@@ -13,7 +13,7 @@ class SearchOranizationCustomfieldRequest extends Model
      *
      * @var string
      */
-    public $customfieldIds;
+    public $customFieldIds;
 
     /**
      * @example 60a2187eb72xxxxxxx
@@ -49,21 +49,13 @@ class SearchOranizationCustomfieldRequest extends Model
      * @var string
      */
     public $query;
-
-    /**
-     * @example all
-     *
-     * @var string
-     */
-    public $scope;
     protected $_name = [
-        'customfieldIds' => 'customfieldIds',
+        'customFieldIds' => 'customFieldIds',
         'instanceIds'    => 'instanceIds',
         'maxResults'     => 'maxResults',
         'nextToken'      => 'nextToken',
         'projectIds'     => 'projectIds',
         'query'          => 'query',
-        'scope'          => 'scope',
     ];
 
     public function validate()
@@ -73,8 +65,8 @@ class SearchOranizationCustomfieldRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->customfieldIds) {
-            $res['customfieldIds'] = $this->customfieldIds;
+        if (null !== $this->customFieldIds) {
+            $res['customFieldIds'] = $this->customFieldIds;
         }
         if (null !== $this->instanceIds) {
             $res['instanceIds'] = $this->instanceIds;
@@ -91,9 +83,6 @@ class SearchOranizationCustomfieldRequest extends Model
         if (null !== $this->query) {
             $res['query'] = $this->query;
         }
-        if (null !== $this->scope) {
-            $res['scope'] = $this->scope;
-        }
 
         return $res;
     }
@@ -106,8 +95,8 @@ class SearchOranizationCustomfieldRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['customfieldIds'])) {
-            $model->customfieldIds = $map['customfieldIds'];
+        if (isset($map['customFieldIds'])) {
+            $model->customFieldIds = $map['customFieldIds'];
         }
         if (isset($map['instanceIds'])) {
             $model->instanceIds = $map['instanceIds'];
@@ -123,9 +112,6 @@ class SearchOranizationCustomfieldRequest extends Model
         }
         if (isset($map['query'])) {
             $model->query = $map['query'];
-        }
-        if (isset($map['scope'])) {
-            $model->scope = $map['scope'];
         }
 
         return $model;

@@ -2,26 +2,32 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateCustomfieldValueResponseBody\result;
+namespace AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchUserTaskResponseBody\result;
 
-use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\UpdateCustomfieldValueResponseBody\result\customfields\value;
+use AlibabaCloud\SDK\Dingtalk\Vproject_1_0\Models\SearchUserTaskResponseBody\result\customFields\value;
 use AlibabaCloud\Tea\Model;
 
-class customfields extends Model
+class customFields extends Model
 {
     /**
-     * @example 62fb0b77xxxxx
+     * @var string
+     */
+    public $customFieldId;
+
+    /**
+     * @example number
      *
      * @var string
      */
-    public $customfieldId;
+    public $type;
 
     /**
      * @var value[]
      */
     public $value;
     protected $_name = [
-        'customfieldId' => 'customfieldId',
+        'customFieldId' => 'customFieldId',
+        'type'          => 'type',
         'value'         => 'value',
     ];
 
@@ -32,8 +38,11 @@ class customfields extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->customfieldId) {
-            $res['customfieldId'] = $this->customfieldId;
+        if (null !== $this->customFieldId) {
+            $res['customFieldId'] = $this->customFieldId;
+        }
+        if (null !== $this->type) {
+            $res['type'] = $this->type;
         }
         if (null !== $this->value) {
             $res['value'] = [];
@@ -51,13 +60,16 @@ class customfields extends Model
     /**
      * @param array $map
      *
-     * @return customfields
+     * @return customFields
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['customfieldId'])) {
-            $model->customfieldId = $map['customfieldId'];
+        if (isset($map['customFieldId'])) {
+            $model->customFieldId = $map['customFieldId'];
+        }
+        if (isset($map['type'])) {
+            $model->type = $map['type'];
         }
         if (isset($map['value'])) {
             if (!empty($map['value'])) {

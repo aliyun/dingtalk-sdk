@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\DeleteLiveResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\EditFeedReplayHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\EditFeedReplayRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\EditFeedReplayResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetLiveReplayUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetLiveReplayUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetLiveReplayUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserAllLiveListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserAllLiveListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserAllLiveListResponse;
@@ -459,6 +462,62 @@ class Dingtalk extends OpenApiClient
         $headers = new EditFeedReplayHeaders([]);
 
         return $this->editFeedReplayWithOptions($feedId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @param GetLiveReplayUrlRequest $request
+     * @param GetLiveReplayUrlHeaders $headers
+     * @param RuntimeOptions          $runtime
+     *
+     * @return GetLiveReplayUrlResponse
+     */
+    public function getLiveReplayUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->liveId)) {
+            $query['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetLiveReplayUrl',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/lives/replayUrls',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetLiveReplayUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @param GetLiveReplayUrlRequest $request
+     *
+     * @return GetLiveReplayUrlResponse
+     */
+    public function getLiveReplayUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetLiveReplayUrlHeaders([]);
+
+        return $this->getLiveReplayUrlWithOptions($request, $headers, $runtime);
     }
 
     /**
